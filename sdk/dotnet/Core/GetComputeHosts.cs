@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = computeHostAvailabilityDomain,
+        ///         ComputeHostGroupId = testComputeHostGroup.Id,
         ///         ComputeHostHealth = computeHostComputeHostHealth,
         ///         ComputeHostLifecycleState = computeHostComputeHostLifecycleState,
         ///         DisplayName = computeHostDisplayName,
@@ -63,6 +64,7 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = computeHostAvailabilityDomain,
+        ///         ComputeHostGroupId = testComputeHostGroup.Id,
         ///         ComputeHostHealth = computeHostComputeHostHealth,
         ///         ComputeHostLifecycleState = computeHostComputeHostLifecycleState,
         ///         DisplayName = computeHostDisplayName,
@@ -95,6 +97,7 @@ namespace Pulumi.Oci.Core
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = computeHostAvailabilityDomain,
+        ///         ComputeHostGroupId = testComputeHostGroup.Id,
         ///         ComputeHostHealth = computeHostComputeHostHealth,
         ///         ComputeHostLifecycleState = computeHostComputeHostLifecycleState,
         ///         DisplayName = computeHostDisplayName,
@@ -122,6 +125,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+        /// </summary>
+        [Input("computeHostGroupId")]
+        public string? ComputeHostGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
@@ -177,6 +186,12 @@ namespace Pulumi.Oci.Core
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+        /// </summary>
+        [Input("computeHostGroupId")]
+        public Input<string>? ComputeHostGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
@@ -235,6 +250,10 @@ namespace Pulumi.Oci.Core
         /// The list of compute_host_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetComputeHostsComputeHostCollectionResult> ComputeHostCollections;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        /// </summary>
+        public readonly string? ComputeHostGroupId;
         public readonly string? ComputeHostHealth;
         public readonly string? ComputeHostLifecycleState;
         /// <summary>
@@ -246,6 +265,10 @@ namespace Pulumi.Oci.Core
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// A free-form description detailing why the host is in its current state.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> LifecycleDetails;
         public readonly string? NetworkResourceId;
 
         [OutputConstructor]
@@ -255,6 +278,8 @@ namespace Pulumi.Oci.Core
             string compartmentId,
 
             ImmutableArray<Outputs.GetComputeHostsComputeHostCollectionResult> computeHostCollections,
+
+            string? computeHostGroupId,
 
             string? computeHostHealth,
 
@@ -266,16 +291,20 @@ namespace Pulumi.Oci.Core
 
             string id,
 
+            ImmutableDictionary<string, string> lifecycleDetails,
+
             string? networkResourceId)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             ComputeHostCollections = computeHostCollections;
+            ComputeHostGroupId = computeHostGroupId;
             ComputeHostHealth = computeHostHealth;
             ComputeHostLifecycleState = computeHostLifecycleState;
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            LifecycleDetails = lifecycleDetails;
             NetworkResourceId = networkResourceId;
         }
     }

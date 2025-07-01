@@ -183,7 +183,8 @@ def get_inventory_resources(compartment_id: Optional[builtins.str] = None,
     """
     This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of InventoryResources.
+    Returns a list of Inventory Resources based on the criteria provided.
+    instance, dbsystem, cloudvmcluster resources are supported.
 
     ## Example Usage
 
@@ -254,7 +255,8 @@ def get_inventory_resources_output(compartment_id: Optional[pulumi.Input[builtin
     """
     This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Returns a list of InventoryResources.
+    Returns a list of Inventory Resources based on the criteria provided.
+    instance, dbsystem, cloudvmcluster resources are supported.
 
     ## Example Usage
 

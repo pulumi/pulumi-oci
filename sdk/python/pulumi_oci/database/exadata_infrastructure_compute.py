@@ -29,6 +29,9 @@ class ExadataInfrastructureComputeArgs:
         """
         The set of arguments for constructing a ExadataInfrastructureCompute resource.
         :param pulumi.Input[builtins.str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        :param pulumi.Input[builtins.int] additional_compute_count_compute_managed_resource: The requested number of additional compute servers for the Exadata infrastructure.
+        :param pulumi.Input[builtins.str] additional_compute_system_model_compute_managed_resource: The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         """
         pulumi.set(__self__, "exadata_infrastructure_id", exadata_infrastructure_id)
         if activation_file is not None:
@@ -53,6 +56,9 @@ class ExadataInfrastructureComputeArgs:
     @property
     @pulumi.getter(name="activationFile")
     def activation_file(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        """
         return pulumi.get(self, "activation_file")
 
     @activation_file.setter
@@ -62,6 +68,9 @@ class ExadataInfrastructureComputeArgs:
     @property
     @pulumi.getter(name="additionalComputeCountComputeManagedResource")
     def additional_compute_count_compute_managed_resource(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
         return pulumi.get(self, "additional_compute_count_compute_managed_resource")
 
     @additional_compute_count_compute_managed_resource.setter
@@ -71,6 +80,9 @@ class ExadataInfrastructureComputeArgs:
     @property
     @pulumi.getter(name="additionalComputeSystemModelComputeManagedResource")
     def additional_compute_system_model_compute_managed_resource(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
         return pulumi.get(self, "additional_compute_system_model_compute_managed_resource")
 
     @additional_compute_system_model_compute_managed_resource.setter
@@ -129,8 +141,11 @@ class _ExadataInfrastructureComputeState:
         """
         Input properties used for looking up and filtering ExadataInfrastructureCompute resources.
         :param pulumi.Input[builtins.int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
+        :param pulumi.Input[builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[builtins.int] additional_compute_count: The number of additional compute servers for the Exadata infrastructure.
+        :param pulumi.Input[builtins.int] additional_compute_count_compute_managed_resource: The requested number of additional compute servers for the Exadata infrastructure.
         :param pulumi.Input[builtins.str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        :param pulumi.Input[builtins.str] additional_compute_system_model_compute_managed_resource: The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[builtins.int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[builtins.str] admin_network_cidr: The CIDR block for the Exadata administration network.
         :param pulumi.Input[builtins.str] cloud_control_plane_server1: The IP address for the first control plane server.
@@ -276,6 +291,9 @@ class _ExadataInfrastructureComputeState:
     @property
     @pulumi.getter(name="activationFile")
     def activation_file(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        """
         return pulumi.get(self, "activation_file")
 
     @activation_file.setter
@@ -297,6 +315,9 @@ class _ExadataInfrastructureComputeState:
     @property
     @pulumi.getter(name="additionalComputeCountComputeManagedResource")
     def additional_compute_count_compute_managed_resource(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
         return pulumi.get(self, "additional_compute_count_compute_managed_resource")
 
     @additional_compute_count_compute_managed_resource.setter
@@ -318,6 +339,9 @@ class _ExadataInfrastructureComputeState:
     @property
     @pulumi.getter(name="additionalComputeSystemModelComputeManagedResource")
     def additional_compute_system_model_compute_managed_resource(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
         return pulumi.get(self, "additional_compute_system_model_compute_managed_resource")
 
     @additional_compute_system_model_compute_managed_resource.setter
@@ -802,22 +826,13 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
                  exadata_infrastructure_id: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
-        This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
-
-        Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-        To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        :param pulumi.Input[builtins.int] additional_compute_count_compute_managed_resource: The requested number of additional compute servers for the Exadata infrastructure.
+        :param pulumi.Input[builtins.str] additional_compute_system_model_compute_managed_resource: The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[builtins.str] exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         ...
@@ -827,19 +842,7 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
                  args: ExadataInfrastructureComputeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
-
-        Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
-        To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-
         ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_exadata_infrastructure = oci.Database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"])
-        ```
 
         :param str resource_name: The name of the resource.
         :param ExadataInfrastructureComputeArgs args: The arguments to use to populate this resource's properties.
@@ -979,8 +982,11 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[builtins.int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
+        :param pulumi.Input[builtins.str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         :param pulumi.Input[builtins.int] additional_compute_count: The number of additional compute servers for the Exadata infrastructure.
+        :param pulumi.Input[builtins.int] additional_compute_count_compute_managed_resource: The requested number of additional compute servers for the Exadata infrastructure.
         :param pulumi.Input[builtins.str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        :param pulumi.Input[builtins.str] additional_compute_system_model_compute_managed_resource: The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[builtins.int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[builtins.str] admin_network_cidr: The CIDR block for the Exadata administration network.
         :param pulumi.Input[builtins.str] cloud_control_plane_server1: The IP address for the first control plane server.
@@ -1082,6 +1088,9 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
     @property
     @pulumi.getter(name="activationFile")
     def activation_file(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        """
         return pulumi.get(self, "activation_file")
 
     @property
@@ -1095,6 +1104,9 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
     @property
     @pulumi.getter(name="additionalComputeCountComputeManagedResource")
     def additional_compute_count_compute_managed_resource(self) -> pulumi.Output[Optional[builtins.int]]:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
         return pulumi.get(self, "additional_compute_count_compute_managed_resource")
 
     @property
@@ -1108,6 +1120,9 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
     @property
     @pulumi.getter(name="additionalComputeSystemModelComputeManagedResource")
     def additional_compute_system_model_compute_managed_resource(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
         return pulumi.get(self, "additional_compute_system_model_compute_managed_resource")
 
     @property

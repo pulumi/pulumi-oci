@@ -57,10 +57,15 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigClusterConfig',
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfig',
     'ComputeCapacityTopologyCapacitySource',
+    'ComputeHostConfigurationData',
+    'ComputeHostConfigurationDataCheckDetail',
+    'ComputeHostGroupConfiguration',
+    'ComputeHostRecycleDetail',
     'CrossConnectGroupMacsecProperties',
     'CrossConnectGroupMacsecPropertiesPrimaryKey',
     'CrossConnectMacsecProperties',
     'CrossConnectMacsecPropertiesPrimaryKey',
+    'DedicatedVmHostCapacityBin',
     'DedicatedVmHostPlacementConstraintDetails',
     'DefaultDhcpOptionsOption',
     'DefaultRouteTableRouteRule',
@@ -349,6 +354,14 @@ __all__ = [
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult',
     'GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult',
     'GetComputeGpuMemoryFabricsFilterResult',
+    'GetComputeHostConfigurationDataResult',
+    'GetComputeHostConfigurationDataCheckDetailResult',
+    'GetComputeHostGroupConfigurationResult',
+    'GetComputeHostGroupsComputeHostGroupCollectionResult',
+    'GetComputeHostGroupsComputeHostGroupCollectionItemResult',
+    'GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult',
+    'GetComputeHostGroupsFilterResult',
+    'GetComputeHostRecycleDetailResult',
     'GetComputeHostsComputeHostCollectionResult',
     'GetComputeHostsComputeHostCollectionItemResult',
     'GetComputeHostsFilterResult',
@@ -379,6 +392,7 @@ __all__ = [
     'GetCrossConnectsCrossConnectMacsecPropertyResult',
     'GetCrossConnectsCrossConnectMacsecPropertyPrimaryKeyResult',
     'GetCrossConnectsFilterResult',
+    'GetDedicatedVmHostCapacityBinResult',
     'GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult',
     'GetDedicatedVmHostInstanceShapesFilterResult',
     'GetDedicatedVmHostInstancesDedicatedVmHostInstanceResult',
@@ -387,6 +401,7 @@ __all__ = [
     'GetDedicatedVmHostShapesDedicatedVmHostShapeResult',
     'GetDedicatedVmHostShapesFilterResult',
     'GetDedicatedVmHostsDedicatedVmHostResult',
+    'GetDedicatedVmHostsDedicatedVmHostCapacityBinResult',
     'GetDedicatedVmHostsDedicatedVmHostPlacementConstraintDetailResult',
     'GetDedicatedVmHostsFilterResult',
     'GetDhcpOptionsFilterResult',
@@ -3375,6 +3390,256 @@ class ComputeCapacityTopologyCapacitySource(dict):
 
 
 @pulumi.output_type
+class ComputeHostConfigurationData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "checkDetails":
+            suggest = "check_details"
+        elif key == "timeLastApply":
+            suggest = "time_last_apply"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeHostConfigurationData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeHostConfigurationData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeHostConfigurationData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 check_details: Optional[Sequence['outputs.ComputeHostConfigurationDataCheckDetail']] = None,
+                 time_last_apply: Optional[builtins.str] = None):
+        """
+        :param Sequence['ComputeHostConfigurationDataCheckDetailArgs'] check_details: Compute Host Group Configuration Details Check
+        :param builtins.str time_last_apply: The time that was last applied.
+        """
+        if check_details is not None:
+            pulumi.set(__self__, "check_details", check_details)
+        if time_last_apply is not None:
+            pulumi.set(__self__, "time_last_apply", time_last_apply)
+
+    @property
+    @pulumi.getter(name="checkDetails")
+    def check_details(self) -> Optional[Sequence['outputs.ComputeHostConfigurationDataCheckDetail']]:
+        """
+        Compute Host Group Configuration Details Check
+        """
+        return pulumi.get(self, "check_details")
+
+    @property
+    @pulumi.getter(name="timeLastApply")
+    def time_last_apply(self) -> Optional[builtins.str]:
+        """
+        The time that was last applied.
+        """
+        return pulumi.get(self, "time_last_apply")
+
+
+@pulumi.output_type
+class ComputeHostConfigurationDataCheckDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configurationState":
+            suggest = "configuration_state"
+        elif key == "firmwareBundleId":
+            suggest = "firmware_bundle_id"
+        elif key == "recycleLevel":
+            suggest = "recycle_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeHostConfigurationDataCheckDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeHostConfigurationDataCheckDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeHostConfigurationDataCheckDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 configuration_state: Optional[builtins.str] = None,
+                 firmware_bundle_id: Optional[builtins.str] = None,
+                 recycle_level: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str configuration_state: Configuration state of the Compute Bare Metal Host.
+        :param builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        :param builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param builtins.str type: The type of configuration
+        """
+        if configuration_state is not None:
+            pulumi.set(__self__, "configuration_state", configuration_state)
+        if firmware_bundle_id is not None:
+            pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        if recycle_level is not None:
+            pulumi.set(__self__, "recycle_level", recycle_level)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="configurationState")
+    def configuration_state(self) -> Optional[builtins.str]:
+        """
+        Configuration state of the Compute Bare Metal Host.
+        """
+        return pulumi.get(self, "configuration_state")
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> Optional[builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> Optional[builtins.str]:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        The type of configuration
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class ComputeHostGroupConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firmwareBundleId":
+            suggest = "firmware_bundle_id"
+        elif key == "recycleLevel":
+            suggest = "recycle_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeHostGroupConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeHostGroupConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeHostGroupConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 firmware_bundle_id: Optional[builtins.str] = None,
+                 recycle_level: Optional[builtins.str] = None,
+                 target: Optional[builtins.str] = None):
+        """
+        :param builtins.str firmware_bundle_id: (Updatable) The OCID for firmware bundle
+        :param builtins.str recycle_level: (Updatable) Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param builtins.str target: (Updatable) Either the platform name or compute shape that the configuration is targeting
+        """
+        if firmware_bundle_id is not None:
+            pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        if recycle_level is not None:
+            pulumi.set(__self__, "recycle_level", recycle_level)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OCID for firmware bundle
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Either the platform name or compute shape that the configuration is targeting
+        """
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class ComputeHostRecycleDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "computeHostGroupId":
+            suggest = "compute_host_group_id"
+        elif key == "recycleLevel":
+            suggest = "recycle_level"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ComputeHostRecycleDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ComputeHostRecycleDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ComputeHostRecycleDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compute_host_group_id: Optional[builtins.str] = None,
+                 recycle_level: Optional[builtins.str] = None):
+        """
+        :param builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        :param builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        if compute_host_group_id is not None:
+            pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        if recycle_level is not None:
+            pulumi.set(__self__, "recycle_level", recycle_level)
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> Optional[builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> Optional[builtins.str]:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+
+@pulumi.output_type
 class CrossConnectGroupMacsecProperties(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -3690,6 +3955,112 @@ class CrossConnectMacsecPropertiesPrimaryKey(dict):
         The secret version of the connectivity association name secret in Vault.
         """
         return pulumi.get(self, "connectivity_association_name_secret_version")
+
+
+@pulumi.output_type
+class DedicatedVmHostCapacityBin(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "capacityIndex":
+            suggest = "capacity_index"
+        elif key == "remainingMemoryInGbs":
+            suggest = "remaining_memory_in_gbs"
+        elif key == "remainingOcpus":
+            suggest = "remaining_ocpus"
+        elif key == "supportedShapes":
+            suggest = "supported_shapes"
+        elif key == "totalMemoryInGbs":
+            suggest = "total_memory_in_gbs"
+        elif key == "totalOcpus":
+            suggest = "total_ocpus"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DedicatedVmHostCapacityBin. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DedicatedVmHostCapacityBin.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DedicatedVmHostCapacityBin.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 capacity_index: Optional[builtins.int] = None,
+                 remaining_memory_in_gbs: Optional[builtins.float] = None,
+                 remaining_ocpus: Optional[builtins.float] = None,
+                 supported_shapes: Optional[Sequence[builtins.str]] = None,
+                 total_memory_in_gbs: Optional[builtins.float] = None,
+                 total_ocpus: Optional[builtins.float] = None):
+        """
+        :param builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
+        :param builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
+        :param Sequence[builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
+        :param builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
+        """
+        if capacity_index is not None:
+            pulumi.set(__self__, "capacity_index", capacity_index)
+        if remaining_memory_in_gbs is not None:
+            pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
+        if remaining_ocpus is not None:
+            pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
+        if supported_shapes is not None:
+            pulumi.set(__self__, "supported_shapes", supported_shapes)
+        if total_memory_in_gbs is not None:
+            pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        if total_ocpus is not None:
+            pulumi.set(__self__, "total_ocpus", total_ocpus)
+
+    @property
+    @pulumi.getter(name="capacityIndex")
+    def capacity_index(self) -> Optional[builtins.int]:
+        """
+        Zero-based index for the corresponding capacity bucket.
+        """
+        return pulumi.get(self, "capacity_index")
+
+    @property
+    @pulumi.getter(name="remainingMemoryInGbs")
+    def remaining_memory_in_gbs(self) -> Optional[builtins.float]:
+        """
+        The current available memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="remainingOcpus")
+    def remaining_ocpus(self) -> Optional[builtins.float]:
+        """
+        The current available OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "remaining_ocpus")
+
+    @property
+    @pulumi.getter(name="supportedShapes")
+    def supported_shapes(self) -> Optional[Sequence[builtins.str]]:
+        """
+        List of VMI shapes supported on each capacity bucket.
+        """
+        return pulumi.get(self, "supported_shapes")
+
+    @property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> Optional[builtins.float]:
+        """
+        The current total memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalOcpus")
+    def total_ocpus(self) -> Optional[builtins.float]:
+        """
+        The current total OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "total_ocpus")
 
 
 @pulumi.output_type
@@ -23773,6 +24144,367 @@ class GetComputeGpuMemoryFabricsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetComputeHostConfigurationDataResult(dict):
+    def __init__(__self__, *,
+                 check_details: Sequence['outputs.GetComputeHostConfigurationDataCheckDetailResult'],
+                 time_last_apply: builtins.str):
+        """
+        :param Sequence['GetComputeHostConfigurationDataCheckDetailArgs'] check_details: Compute Host Group Configuration Details Check
+        :param builtins.str time_last_apply: The time that was last applied.
+        """
+        pulumi.set(__self__, "check_details", check_details)
+        pulumi.set(__self__, "time_last_apply", time_last_apply)
+
+    @property
+    @pulumi.getter(name="checkDetails")
+    def check_details(self) -> Sequence['outputs.GetComputeHostConfigurationDataCheckDetailResult']:
+        """
+        Compute Host Group Configuration Details Check
+        """
+        return pulumi.get(self, "check_details")
+
+    @property
+    @pulumi.getter(name="timeLastApply")
+    def time_last_apply(self) -> builtins.str:
+        """
+        The time that was last applied.
+        """
+        return pulumi.get(self, "time_last_apply")
+
+
+@pulumi.output_type
+class GetComputeHostConfigurationDataCheckDetailResult(dict):
+    def __init__(__self__, *,
+                 configuration_state: builtins.str,
+                 firmware_bundle_id: builtins.str,
+                 recycle_level: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str configuration_state: Configuration state of the Compute Bare Metal Host.
+        :param builtins.str firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        :param builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param builtins.str type: The type of configuration
+        """
+        pulumi.set(__self__, "configuration_state", configuration_state)
+        pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        pulumi.set(__self__, "recycle_level", recycle_level)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="configurationState")
+    def configuration_state(self) -> builtins.str:
+        """
+        Configuration state of the Compute Bare Metal Host.
+        """
+        return pulumi.get(self, "configuration_state")
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> builtins.str:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        The type of configuration
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetComputeHostGroupConfigurationResult(dict):
+    def __init__(__self__, *,
+                 firmware_bundle_id: builtins.str,
+                 recycle_level: builtins.str,
+                 target: builtins.str):
+        """
+        :param builtins.str firmware_bundle_id: The OCID for firmware bundle
+        :param builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param builtins.str target: Either the platform name or compute shape that the configuration is targeting
+        """
+        pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        pulumi.set(__self__, "recycle_level", recycle_level)
+        pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> builtins.str:
+        """
+        The OCID for firmware bundle
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> builtins.str:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @property
+    @pulumi.getter
+    def target(self) -> builtins.str:
+        """
+        Either the platform name or compute shape that the configuration is targeting
+        """
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetComputeHostGroupsComputeHostGroupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetComputeHostGroupsComputeHostGroupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: builtins.str,
+                 compartment_id: builtins.str,
+                 configurations: Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult'],
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 is_targeted_placement_required: builtins.bool,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str availability_domain: The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
+        :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group
+        :param builtins.bool is_targeted_placement_required: A flag that allows customers to restrict placement for hosts attached to the group. If true, the only way to place on hosts is to target the specific host group.
+        :param builtins.str state: The lifecycle state of the host group
+        :param Mapping[str, builtins.str] system_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str time_created: The date and time the host group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param builtins.str time_updated: The date and time the host group was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_targeted_placement_required", is_targeted_placement_required)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> builtins.str:
+        """
+        The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult']:
+        return pulumi.get(self, "configurations")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host group
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isTargetedPlacementRequired")
+    def is_targeted_placement_required(self) -> builtins.bool:
+        """
+        A flag that allows customers to restrict placement for hosts attached to the group. If true, the only way to place on hosts is to target the specific host group.
+        """
+        return pulumi.get(self, "is_targeted_placement_required")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The lifecycle state of the host group
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The date and time the host group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The date and time the host group was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetComputeHostGroupsComputeHostGroupCollectionItemConfigurationResult(dict):
+    def __init__(__self__, *,
+                 firmware_bundle_id: builtins.str,
+                 recycle_level: builtins.str,
+                 target: builtins.str):
+        pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        pulumi.set(__self__, "recycle_level", recycle_level)
+        pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> builtins.str:
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> builtins.str:
+        return pulumi.get(self, "recycle_level")
+
+    @property
+    @pulumi.getter
+    def target(self) -> builtins.str:
+        return pulumi.get(self, "target")
+
+
+@pulumi.output_type
+class GetComputeHostGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetComputeHostRecycleDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_host_group_id: builtins.str,
+                 recycle_level: builtins.str):
+        """
+        :param builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        :param builtins.str recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "recycle_level", recycle_level)
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> builtins.str:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+
+@pulumi.output_type
 class GetComputeHostsComputeHostCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetComputeHostsComputeHostCollectionItemResult']):
@@ -23790,6 +24522,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
                  availability_domain: builtins.str,
                  capacity_reservation_id: builtins.str,
                  compartment_id: builtins.str,
+                 compute_host_group_id: builtins.str,
                  defined_tags: Mapping[str, builtins.str],
                  display_name: builtins.str,
                  fault_domain: builtins.str,
@@ -23800,7 +24533,6 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
                  hpc_island_id: builtins.str,
                  id: builtins.str,
                  instance_id: builtins.str,
-                 lifecycle_details: Mapping[str, builtins.str],
                  local_block_id: builtins.str,
                  network_block_id: builtins.str,
                  shape: builtins.str,
@@ -23811,6 +24543,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         :param builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
         :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param builtins.str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -23820,7 +24553,6 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         :param builtins.str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique host
         :param builtins.str instance_id: The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
-        :param Mapping[str, builtins.str] lifecycle_details: A free-form description detailing why the host is in its current state.
         :param builtins.str local_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
         :param builtins.str network_block_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
         :param builtins.str shape: The shape of host
@@ -23831,6 +24563,7 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "fault_domain", fault_domain)
@@ -23841,7 +24574,6 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         pulumi.set(__self__, "hpc_island_id", hpc_island_id)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "instance_id", instance_id)
-        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "local_block_id", local_block_id)
         pulumi.set(__self__, "network_block_id", network_block_id)
         pulumi.set(__self__, "shape", shape)
@@ -23872,6 +24604,14 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -23949,14 +24689,6 @@ class GetComputeHostsComputeHostCollectionItemResult(dict):
         The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
         """
         return pulumi.get(self, "instance_id")
-
-    @property
-    @pulumi.getter(name="lifecycleDetails")
-    def lifecycle_details(self) -> Mapping[str, builtins.str]:
-        """
-        A free-form description detailing why the host is in its current state.
-        """
-        return pulumi.get(self, "lifecycle_details")
 
     @property
     @pulumi.getter(name="localBlockId")
@@ -25529,6 +26261,79 @@ class GetCrossConnectsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDedicatedVmHostCapacityBinResult(dict):
+    def __init__(__self__, *,
+                 capacity_index: builtins.int,
+                 remaining_memory_in_gbs: builtins.float,
+                 remaining_ocpus: builtins.float,
+                 supported_shapes: Sequence[builtins.str],
+                 total_memory_in_gbs: builtins.float,
+                 total_ocpus: builtins.float):
+        """
+        :param builtins.int capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
+        :param builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
+        :param Sequence[builtins.str] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
+        :param builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
+        """
+        pulumi.set(__self__, "capacity_index", capacity_index)
+        pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
+        pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
+        pulumi.set(__self__, "supported_shapes", supported_shapes)
+        pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        pulumi.set(__self__, "total_ocpus", total_ocpus)
+
+    @property
+    @pulumi.getter(name="capacityIndex")
+    def capacity_index(self) -> builtins.int:
+        """
+        Zero-based index for the corresponding capacity bucket.
+        """
+        return pulumi.get(self, "capacity_index")
+
+    @property
+    @pulumi.getter(name="remainingMemoryInGbs")
+    def remaining_memory_in_gbs(self) -> builtins.float:
+        """
+        The current available memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="remainingOcpus")
+    def remaining_ocpus(self) -> builtins.float:
+        """
+        The current available OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "remaining_ocpus")
+
+    @property
+    @pulumi.getter(name="supportedShapes")
+    def supported_shapes(self) -> Sequence[builtins.str]:
+        """
+        List of VMI shapes supported on each capacity bucket.
+        """
+        return pulumi.get(self, "supported_shapes")
+
+    @property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> builtins.float:
+        """
+        The current total memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalOcpus")
+    def total_ocpus(self) -> builtins.float:
+        """
+        The current total OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "total_ocpus")
+
+
+@pulumi.output_type
 class GetDedicatedVmHostInstanceShapesDedicatedVmHostInstanceShapeResult(dict):
     def __init__(__self__, *,
                  availability_domain: builtins.str,
@@ -25762,7 +26567,9 @@ class GetDedicatedVmHostShapesFilterResult(dict):
 class GetDedicatedVmHostsDedicatedVmHostResult(dict):
     def __init__(__self__, *,
                  availability_domain: builtins.str,
+                 capacity_bins: Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult'],
                  compartment_id: builtins.str,
+                 compute_bare_metal_host_id: builtins.str,
                  dedicated_vm_host_shape: builtins.str,
                  defined_tags: Mapping[str, builtins.str],
                  display_name: builtins.str,
@@ -25779,6 +26586,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         """
         :param builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param builtins.str compute_bare_metal_host_id: The OCID of the compute bare metal host.
         :param builtins.str dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
         :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -25794,7 +26602,9 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         :param builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "capacity_bins", capacity_bins)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_bare_metal_host_id", compute_bare_metal_host_id)
         pulumi.set(__self__, "dedicated_vm_host_shape", dedicated_vm_host_shape)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -25818,12 +26628,25 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         return pulumi.get(self, "availability_domain")
 
     @property
+    @pulumi.getter(name="capacityBins")
+    def capacity_bins(self) -> Sequence['outputs.GetDedicatedVmHostsDedicatedVmHostCapacityBinResult']:
+        return pulumi.get(self, "capacity_bins")
+
+    @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> builtins.str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="computeBareMetalHostId")
+    def compute_bare_metal_host_id(self) -> builtins.str:
+        """
+        The OCID of the compute bare metal host.
+        """
+        return pulumi.get(self, "compute_bare_metal_host_id")
 
     @property
     @pulumi.getter(name="dedicatedVmHostShape")
@@ -25912,6 +26735,71 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         The date and time the dedicated VM host was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> builtins.float:
+        """
+        The current total memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalOcpus")
+    def total_ocpus(self) -> builtins.float:
+        """
+        The current total OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "total_ocpus")
+
+
+@pulumi.output_type
+class GetDedicatedVmHostsDedicatedVmHostCapacityBinResult(dict):
+    def __init__(__self__, *,
+                 capacity_index: builtins.int,
+                 remaining_memory_in_gbs: builtins.float,
+                 remaining_ocpus: builtins.float,
+                 supported_shapes: Sequence[builtins.str],
+                 total_memory_in_gbs: builtins.float,
+                 total_ocpus: builtins.float):
+        """
+        :param builtins.float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
+        :param builtins.float remaining_ocpus: The current available OCPUs of the dedicated VM host.
+        :param builtins.float total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
+        :param builtins.float total_ocpus: The current total OCPUs of the dedicated VM host.
+        """
+        pulumi.set(__self__, "capacity_index", capacity_index)
+        pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
+        pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
+        pulumi.set(__self__, "supported_shapes", supported_shapes)
+        pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        pulumi.set(__self__, "total_ocpus", total_ocpus)
+
+    @property
+    @pulumi.getter(name="capacityIndex")
+    def capacity_index(self) -> builtins.int:
+        return pulumi.get(self, "capacity_index")
+
+    @property
+    @pulumi.getter(name="remainingMemoryInGbs")
+    def remaining_memory_in_gbs(self) -> builtins.float:
+        """
+        The current available memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="remainingOcpus")
+    def remaining_ocpus(self) -> builtins.float:
+        """
+        The current available OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "remaining_ocpus")
+
+    @property
+    @pulumi.getter(name="supportedShapes")
+    def supported_shapes(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "supported_shapes")
 
     @property
     @pulumi.getter(name="totalMemoryInGbs")

@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -16,7 +17,11 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
      * 
      */
     private String id;
+    private Boolean isRemote;
+    private String remoteRegion;
     private String type;
+    private String vpcPassword;
+    private String vpcUser;
 
     private GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
     public String dbrsPolicyId() {
@@ -29,8 +34,20 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
     public String id() {
         return this.id;
     }
+    public Boolean isRemote() {
+        return this.isRemote;
+    }
+    public String remoteRegion() {
+        return this.remoteRegion;
+    }
     public String type() {
         return this.type;
+    }
+    public String vpcPassword() {
+        return this.vpcPassword;
+    }
+    public String vpcUser() {
+        return this.vpcUser;
     }
 
     public static Builder builder() {
@@ -44,13 +61,21 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
     public static final class Builder {
         private String dbrsPolicyId;
         private String id;
+        private Boolean isRemote;
+        private String remoteRegion;
         private String type;
+        private String vpcPassword;
+        private String vpcUser;
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
+    	      this.vpcPassword = defaults.vpcPassword;
+    	      this.vpcUser = defaults.vpcUser;
         }
 
         @CustomType.Setter
@@ -70,6 +95,22 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
             return this;
         }
         @CustomType.Setter
+        public Builder isRemote(Boolean isRemote) {
+            if (isRemote == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "isRemote");
+            }
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(String remoteRegion) {
+            if (remoteRegion == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "remoteRegion");
+            }
+            this.remoteRegion = remoteRegion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "type");
@@ -77,11 +118,31 @@ public final class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder vpcPassword(String vpcPassword) {
+            if (vpcPassword == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "vpcPassword");
+            }
+            this.vpcPassword = vpcPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vpcUser(String vpcUser) {
+            if (vpcUser == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail", "vpcUser");
+            }
+            this.vpcUser = vpcUser;
+            return this;
+        }
         public GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
+            _resultValue.vpcPassword = vpcPassword;
+            _resultValue.vpcUser = vpcUser;
             return _resultValue;
         }
     }

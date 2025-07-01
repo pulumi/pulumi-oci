@@ -24,7 +24,11 @@ type BackendSetBackend struct {
 	Drain *bool `pulumi:"drain"`
 	// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress string `pulumi:"ipAddress"`
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections *int `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	//
@@ -62,7 +66,11 @@ type BackendSetBackendArgs struct {
 	Drain pulumi.BoolPtrInput `pulumi:"drain"`
 	// (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections pulumi.IntPtrInput `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	//
@@ -148,7 +156,11 @@ func (o BackendSetBackendOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v BackendSetBackend) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+//
+// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+//
+// Example: `300`
 func (o BackendSetBackendOutput) MaxConnections() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *int { return v.MaxConnections }).(pulumi.IntPtrOutput)
 }
@@ -2293,7 +2305,9 @@ type LoadBalancerReservedIp struct {
 	//
 	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 	//
-	// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+	// Example: "ocid1.publicip.oc1.phx.unique_ID"
+	//
+	// IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id *string `pulumi:"id"`
 }
 
@@ -2317,7 +2331,9 @@ type LoadBalancerReservedIpArgs struct {
 	//
 	// Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 	//
-	// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+	// Example: "ocid1.publicip.oc1.phx.unique_ID"
+	//
+	// IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -2380,7 +2396,9 @@ func (o LoadBalancerReservedIpOutput) ToLoadBalancerReservedIpOutputWithContext(
 //
 // Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 //
-// Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+// Example: "ocid1.publicip.oc1.phx.unique_ID"
+//
+// IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
 func (o LoadBalancerReservedIpOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LoadBalancerReservedIp) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -4219,7 +4237,7 @@ func (o GetBackendHealthHealthCheckResultArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetBackendSetsBackendset struct {
-	// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
 	BackendMaxConnections int                               `pulumi:"backendMaxConnections"`
 	Backends              []GetBackendSetsBackendsetBackend `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
@@ -4252,7 +4270,7 @@ type GetBackendSetsBackendsetInput interface {
 }
 
 type GetBackendSetsBackendsetArgs struct {
-	// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+	// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
 	BackendMaxConnections pulumi.IntInput                           `pulumi:"backendMaxConnections"`
 	Backends              GetBackendSetsBackendsetBackendArrayInput `pulumi:"backends"`
 	// The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
@@ -4324,7 +4342,7 @@ func (o GetBackendSetsBackendsetOutput) ToGetBackendSetsBackendsetOutputWithCont
 	return o
 }
 
-// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+// The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
 func (o GetBackendSetsBackendsetOutput) BackendMaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendset) int { return v.BackendMaxConnections }).(pulumi.IntOutput)
 }
@@ -4409,7 +4427,7 @@ type GetBackendSetsBackendsetBackend struct {
 	Drain bool `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress string `pulumi:"ipAddress"`
-	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
 	MaxConnections int `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	Name string `pulumi:"name"`
@@ -4439,7 +4457,7 @@ type GetBackendSetsBackendsetBackendArgs struct {
 	Drain pulumi.BoolInput `pulumi:"drain"`
 	// The IP address of the backend server.  Example: `10.0.0.3`
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
 	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 	// A friendly name for the backend set. It must be unique and it cannot be changed.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -4517,7 +4535,7 @@ func (o GetBackendSetsBackendsetBackendOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
-// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
 func (o GetBackendSetsBackendsetBackendOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendSetsBackendsetBackend) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
@@ -5268,7 +5286,7 @@ type GetBackendsBackend struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
 	MaxConnections int `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name string `pulumi:"name"`
@@ -5303,7 +5321,7 @@ type GetBackendsBackendArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
-	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
 	MaxConnections pulumi.IntInput `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name pulumi.StringInput `pulumi:"name"`
@@ -5392,7 +5410,7 @@ func (o GetBackendsBackendOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackendsBackend) string { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+// The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
 func (o GetBackendsBackendOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBackendsBackend) int { return v.MaxConnections }).(pulumi.IntOutput)
 }
@@ -7669,8 +7687,9 @@ type GetLoadBalancersLoadBalancer struct {
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead.
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
-	IpAddresses []string `pulumi:"ipAddresses"`
-	IpMode      string   `pulumi:"ipMode"`
+	IpAddresses    []string `pulumi:"ipAddresses"`
+	IpMode         string   `pulumi:"ipMode"`
+	Ipv6subnetCidr string   `pulumi:"ipv6subnetCidr"`
 	// Whether or not the load balancer has delete protection enabled.
 	IsDeleteProtectionEnabled bool `pulumi:"isDeleteProtectionEnabled"`
 	// Whether the load balancer has a VCN-local (private) IP address.
@@ -7725,8 +7744,9 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead.
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
-	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
-	IpMode      pulumi.StringInput      `pulumi:"ipMode"`
+	IpAddresses    pulumi.StringArrayInput `pulumi:"ipAddresses"`
+	IpMode         pulumi.StringInput      `pulumi:"ipMode"`
+	Ipv6subnetCidr pulumi.StringInput      `pulumi:"ipv6subnetCidr"`
 	// Whether or not the load balancer has delete protection enabled.
 	IsDeleteProtectionEnabled pulumi.BoolInput `pulumi:"isDeleteProtectionEnabled"`
 	// Whether the load balancer has a VCN-local (private) IP address.
@@ -7846,6 +7866,10 @@ func (o GetLoadBalancersLoadBalancerOutput) IpAddresses() pulumi.StringArrayOutp
 
 func (o GetLoadBalancersLoadBalancerOutput) IpMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.IpMode }).(pulumi.StringOutput)
+}
+
+func (o GetLoadBalancersLoadBalancerOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) string { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
 }
 
 // Whether or not the load balancer has delete protection enabled.

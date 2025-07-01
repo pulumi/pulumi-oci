@@ -20,6 +20,8 @@ __all__ = [
     'LogAnalyticsEntityMetadataArgsDict',
     'LogAnalyticsEntityMetadataItemArgs',
     'LogAnalyticsEntityMetadataItemArgsDict',
+    'LogAnalyticsEntityTypePropertyArgs',
+    'LogAnalyticsEntityTypePropertyArgsDict',
     'LogAnalyticsImportCustomContentChangeListArgs',
     'LogAnalyticsImportCustomContentChangeListArgsDict',
     'LogAnalyticsObjectCollectionRuleOverrideArgs',
@@ -58,6 +60,8 @@ __all__ = [
     'GetLogAnalyticsEntitiesFilterArgsDict',
     'GetLogAnalyticsEntityTopologyFilterArgs',
     'GetLogAnalyticsEntityTopologyFilterArgsDict',
+    'GetLogAnalyticsEntityTypesFilterArgs',
+    'GetLogAnalyticsEntityTypesFilterArgsDict',
     'GetLogAnalyticsLogGroupsFilterArgs',
     'GetLogAnalyticsLogGroupsFilterArgsDict',
     'GetLogAnalyticsObjectCollectionRulesFilterArgs',
@@ -186,6 +190,69 @@ class LogAnalyticsEntityMetadataItemArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class LogAnalyticsEntityTypePropertyArgsDict(TypedDict):
+        name: pulumi.Input[builtins.str]
+        """
+        Log analytics entity type property name. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        description: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Description for the log analytics entity type property.
+        """
+elif False:
+    LogAnalyticsEntityTypePropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class LogAnalyticsEntityTypePropertyArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[builtins.str],
+                 description: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] name: Log analytics entity type property name. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] description: Description for the log analytics entity type property.
+        """
+        pulumi.set(__self__, "name", name)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[builtins.str]:
+        """
+        Log analytics entity type property name. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Description for the log analytics entity type property.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "description", value)
 
 
 if not MYPY:
@@ -1905,6 +1972,62 @@ class GetLogAnalyticsEntityTopologyFilterArgs:
     def name(self) -> builtins.str:
         """
         Log analytics entity name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetLogAnalyticsEntityTypesFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetLogAnalyticsEntityTypesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetLogAnalyticsEntityTypesFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return only log analytics entity types whose name matches the entire name given. The match is case-insensitive.
         """
         return pulumi.get(self, "name")
 

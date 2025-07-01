@@ -69,6 +69,7 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				IpMode:                    pulumi.Any(loadBalancerIpMode),
+//				Ipv6subnetCidr:            pulumi.Any(loadBalancerIpv6subnetCidr),
 //				IsDeleteProtectionEnabled: pulumi.Any(loadBalancerIsDeleteProtectionEnabled),
 //				IsPrivate:                 pulumi.Any(loadBalancerIsPrivate),
 //				IsRequestIdEnabled:        pulumi.Any(loadBalancerIsRequestIdEnabled),
@@ -115,6 +116,7 @@ type LoadBalancer struct {
 	// An array of IP addresses.
 	IpAddressDetails LoadBalancerIpAddressDetailArrayOutput `pulumi:"ipAddressDetails"`
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead
+	// *
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses pulumi.StringArrayOutput `pulumi:"ipAddresses"`
@@ -126,6 +128,12 @@ type LoadBalancer struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringOutput `pulumi:"ipMode"`
+	// Applies to IPV6 LB creation only.
+	//
+	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+	//
+	// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+	Ipv6subnetCidr pulumi.StringOutput `pulumi:"ipv6subnetCidr"`
 	// (Updatable) Whether or not the load balancer has delete protection enabled.
 	//
 	// If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -250,6 +258,7 @@ type loadBalancerState struct {
 	// An array of IP addresses.
 	IpAddressDetails []LoadBalancerIpAddressDetail `pulumi:"ipAddressDetails"`
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead
+	// *
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses []string `pulumi:"ipAddresses"`
@@ -261,6 +270,12 @@ type loadBalancerState struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode *string `pulumi:"ipMode"`
+	// Applies to IPV6 LB creation only.
+	//
+	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+	//
+	// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
 	// (Updatable) Whether or not the load balancer has delete protection enabled.
 	//
 	// If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -344,6 +359,7 @@ type LoadBalancerState struct {
 	// An array of IP addresses.
 	IpAddressDetails LoadBalancerIpAddressDetailArrayInput
 	// An array of IP addresses. Deprecated: use ipAddressDetails instead
+	// *
 	//
 	// Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 	IpAddresses pulumi.StringArrayInput
@@ -355,6 +371,12 @@ type LoadBalancerState struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringPtrInput
+	// Applies to IPV6 LB creation only.
+	//
+	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+	//
+	// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+	Ipv6subnetCidr pulumi.StringPtrInput
 	// (Updatable) Whether or not the load balancer has delete protection enabled.
 	//
 	// If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -447,6 +469,12 @@ type loadBalancerArgs struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode *string `pulumi:"ipMode"`
+	// Applies to IPV6 LB creation only.
+	//
+	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+	//
+	// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+	Ipv6subnetCidr *string `pulumi:"ipv6subnetCidr"`
 	// (Updatable) Whether or not the load balancer has delete protection enabled.
 	//
 	// If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -530,6 +558,12 @@ type LoadBalancerArgs struct {
 	//
 	// Example: "ipMode":"IPV6"
 	IpMode pulumi.StringPtrInput
+	// Applies to IPV6 LB creation only.
+	//
+	// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+	//
+	// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+	Ipv6subnetCidr pulumi.StringPtrInput
 	// (Updatable) Whether or not the load balancer has delete protection enabled.
 	//
 	// If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -708,6 +742,7 @@ func (o LoadBalancerOutput) IpAddressDetails() LoadBalancerIpAddressDetailArrayO
 }
 
 // An array of IP addresses. Deprecated: use ipAddressDetails instead
+// *
 //
 // Deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.
 func (o LoadBalancerOutput) IpAddresses() pulumi.StringArrayOutput {
@@ -723,6 +758,15 @@ func (o LoadBalancerOutput) IpAddresses() pulumi.StringArrayOutput {
 // Example: "ipMode":"IPV6"
 func (o LoadBalancerOutput) IpMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.IpMode }).(pulumi.StringOutput)
+}
+
+// Applies to IPV6 LB creation only.
+//
+// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+//
+// Example: "2002::1234:abcd:ffff:c0a8:101/64"
+func (o LoadBalancerOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v *LoadBalancer) pulumi.StringOutput { return v.Ipv6subnetCidr }).(pulumi.StringOutput)
 }
 
 // (Updatable) Whether or not the load balancer has delete protection enabled.

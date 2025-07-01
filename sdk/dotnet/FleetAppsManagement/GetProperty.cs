@@ -124,7 +124,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetPropertyResult
     {
         /// <summary>
-        /// Tenancy OCID
+        /// Compartment OCID
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

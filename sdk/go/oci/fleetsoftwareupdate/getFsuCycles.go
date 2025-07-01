@@ -74,7 +74,7 @@ type GetFsuCyclesArgs struct {
 
 // A collection of values returned by getFsuCycles.
 type GetFsuCyclesResult struct {
-	// Type of Collection this Exadata Fleet Update Cycle belongs to.
+	// Type of Exadata Fleet Update collection being upgraded.
 	CollectionType *string `pulumi:"collectionType"`
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -137,7 +137,7 @@ func (o GetFsuCyclesResultOutput) ToGetFsuCyclesResultOutputWithContext(ctx cont
 	return o
 }
 
-// Type of Collection this Exadata Fleet Update Cycle belongs to.
+// Type of Exadata Fleet Update collection being upgraded.
 func (o GetFsuCyclesResultOutput) CollectionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetFsuCyclesResult) *string { return v.CollectionType }).(pulumi.StringPtrOutput)
 }

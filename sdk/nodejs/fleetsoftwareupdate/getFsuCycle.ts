@@ -52,7 +52,7 @@ export interface GetFsuCycleResult {
      */
     readonly batchingStrategies: outputs.FleetSoftwareUpdate.GetFsuCycleBatchingStrategy[];
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update collection being upgraded.
      */
     readonly collectionType: string;
     /**
@@ -93,11 +93,11 @@ export interface GetFsuCycleResult {
      */
     readonly id: string;
     /**
-     * List of bug numbers to ignore.
+     * List of identifiers of patches to ignore.
      */
     readonly isIgnoreMissingPatches: string[];
     /**
-     * Ignore all patches between the source and target homes during patching.
+     * Ignore patch conflicts or missing patches between the source and goal homes.
      */
     readonly isIgnorePatches: boolean;
     /**
@@ -156,6 +156,10 @@ export interface GetFsuCycleResult {
      * Type of Exadata Fleet Update Cycle.
      */
     readonly type: string;
+    /**
+     * Details of supported upgrade options for DB or GI collection.
+     */
+    readonly upgradeDetails: outputs.FleetSoftwareUpdate.GetFsuCycleUpgradeDetail[];
 }
 /**
  * This data source provides details about a specific Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.

@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSchedulerJobJobActivityStepsStepCollectionItem {
     /**
-     * @return Description of the step Execution
+     * @return Description of the step Execution.
      * 
      */
     private String description;
@@ -28,7 +28,7 @@ public final class GetSchedulerJobJobActivityStepsStepCollectionItem {
      */
     private String sequence;
     /**
-     * @return Status of the Task
+     * @return Status of the Task.
      * 
      */
     private String status;
@@ -43,7 +43,7 @@ public final class GetSchedulerJobJobActivityStepsStepCollectionItem {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The OCID of taskRecord assocaited with the step
+     * @return The OCID of taskRecord assocaited with the step.
      * 
      */
     private String taskRecordId;
@@ -60,7 +60,7 @@ public final class GetSchedulerJobJobActivityStepsStepCollectionItem {
 
     private GetSchedulerJobJobActivityStepsStepCollectionItem() {}
     /**
-     * @return Description of the step Execution
+     * @return Description of the step Execution.
      * 
      */
     public String description() {
@@ -81,7 +81,7 @@ public final class GetSchedulerJobJobActivityStepsStepCollectionItem {
         return this.sequence;
     }
     /**
-     * @return Status of the Task
+     * @return Status of the Task.
      * 
      */
     public String status() {
@@ -102,7 +102,7 @@ public final class GetSchedulerJobJobActivityStepsStepCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The OCID of taskRecord assocaited with the step
+     * @return The OCID of taskRecord assocaited with the step.
      * 
      */
     public String taskRecordId() {

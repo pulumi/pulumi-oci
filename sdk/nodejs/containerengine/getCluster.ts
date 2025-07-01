@@ -42,7 +42,7 @@ export interface GetClusterArgs {
     /**
      * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
      */
-    shouldIncludeOidcConfigFile?: string;
+    shouldIncludeOidcConfigFile?: boolean;
 }
 
 /**
@@ -118,7 +118,7 @@ export interface GetClusterResult {
      * Optional attributes for the cluster.
      */
     readonly options: outputs.ContainerEngine.GetClusterOption[];
-    readonly shouldIncludeOidcConfigFile?: string;
+    readonly shouldIncludeOidcConfigFile?: boolean;
     /**
      * The state of the cluster masters.
      */
@@ -168,5 +168,5 @@ export interface GetClusterOutputArgs {
     /**
      * Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
      */
-    shouldIncludeOidcConfigFile?: pulumi.Input<string>;
+    shouldIncludeOidcConfigFile?: pulumi.Input<boolean>;
 }

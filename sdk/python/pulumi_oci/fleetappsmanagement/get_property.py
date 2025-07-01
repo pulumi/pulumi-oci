@@ -84,7 +84,7 @@ class GetPropertyResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> builtins.str:
         """
-        Tenancy OCID
+        Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 

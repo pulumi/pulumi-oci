@@ -34,7 +34,7 @@ class IndexArgs:
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         :param pulumi.Input[builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[builtins.bool] is_if_not_exists: If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error.
         :param pulumi.Input[builtins.str] name: Index name.
@@ -68,7 +68,7 @@ class IndexArgs:
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "table_name_or_id")
 
@@ -139,7 +139,7 @@ class _IndexState:
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -264,7 +264,7 @@ class _IndexState:
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "table_name_or_id")
 
@@ -326,7 +326,7 @@ class Index(pulumi.CustomResource):
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         ...
     @overload
@@ -445,7 +445,7 @@ class Index(pulumi.CustomResource):
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -534,7 +534,7 @@ class Index(pulumi.CustomResource):
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "table_name_or_id")
 

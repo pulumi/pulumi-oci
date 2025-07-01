@@ -5,6 +5,7 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetAnnouncementsFilterArgs;
 import java.lang.String;
 import java.util.List;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetAnnouncementsArgs Empty = new GetAnnouncementsArgs();
+
+    /**
+     * The ID of the compartment in which to list resources.
+     * 
+     */
+    @Import(name="compartmentId", required=true)
+    private Output<String> compartmentId;
+
+    /**
+     * @return The ID of the compartment in which to list resources.
+     * 
+     */
+    public Output<String> compartmentId() {
+        return this.compartmentId;
+    }
 
     /**
      * A filter to return only resources that match the entire display name given.
@@ -57,6 +73,7 @@ public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs 
     private GetAnnouncementsArgs() {}
 
     private GetAnnouncementsArgs(GetAnnouncementsArgs $) {
+        this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.summaryContains = $.summaryContains;
@@ -78,6 +95,27 @@ public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs 
 
         public Builder(GetAnnouncementsArgs defaults) {
             $ = new GetAnnouncementsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId The ID of the compartment in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId The ID of the compartment in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**
@@ -136,6 +174,9 @@ public final class GetAnnouncementsArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetAnnouncementsArgs build() {
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetAnnouncementsArgs", "compartmentId");
+            }
             return $;
         }
     }

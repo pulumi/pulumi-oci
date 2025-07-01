@@ -1407,6 +1407,10 @@ if not MYPY:
         """
         (Updatable) Number of days to retain this backup.
         """
+        soft_delete: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
         window_start_time: NotRequired[pulumi.Input[builtins.str]]
         """
         The start time of the maintenance window.
@@ -1423,6 +1427,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
                  is_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  pitr_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
+                 soft_delete: Optional[pulumi.Input[builtins.str]] = None,
                  window_start_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs']]] copy_policies: List of policies of a DB system to schedule cross-region DB system backup copy.
@@ -1431,6 +1436,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
         :param pulumi.Input[builtins.bool] is_enabled: Specifies if the DB System read endpoint is enabled or not.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]] pitr_policies: The PITR policy for the DB System.
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
+        :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input[builtins.str] window_start_time: The start time of the maintenance window.
         """
         if copy_policies is not None:
@@ -1445,6 +1451,8 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
             pulumi.set(__self__, "pitr_policies", pitr_policies)
         if retention_in_days is not None:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
+        if soft_delete is not None:
+            pulumi.set(__self__, "soft_delete", soft_delete)
         if window_start_time is not None:
             pulumi.set(__self__, "window_start_time", window_start_time)
 
@@ -1519,6 +1527,18 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     @retention_in_days.setter
     def retention_in_days(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "retention_in_days", value)
+
+    @property
+    @pulumi.getter(name="softDelete")
+    def soft_delete(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
+        return pulumi.get(self, "soft_delete")
+
+    @soft_delete.setter
+    def soft_delete(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "soft_delete", value)
 
     @property
     @pulumi.getter(name="windowStartTime")
@@ -5396,6 +5416,10 @@ if not MYPY:
         """
         (Updatable) Number of days to retain an automatic backup.
         """
+        soft_delete: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
         window_start_time: NotRequired[pulumi.Input[builtins.str]]
         """
         (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
@@ -5416,6 +5440,7 @@ class MysqlDbSystemBackupPolicyArgs:
                  is_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  pitr_policy: Optional[pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs']] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
+                 soft_delete: Optional[pulumi.Input[builtins.str]] = None,
                  window_start_time: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemBackupPolicyCopyPolicyArgs']]] copy_policies: (Updatable) List of policies of a DB system to schedule cross-region DB system backup copy.
@@ -5436,6 +5461,7 @@ class MysqlDbSystemBackupPolicyArgs:
         :param pulumi.Input[builtins.bool] is_enabled: (Updatable) Specifies if automatic backups are enabled.
         :param pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs'] pitr_policy: (Updatable) The PITR policy for the DB System.
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain an automatic backup.
+        :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input[builtins.str] window_start_time: (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
                
                This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
@@ -5454,6 +5480,8 @@ class MysqlDbSystemBackupPolicyArgs:
             pulumi.set(__self__, "pitr_policy", pitr_policy)
         if retention_in_days is not None:
             pulumi.set(__self__, "retention_in_days", retention_in_days)
+        if soft_delete is not None:
+            pulumi.set(__self__, "soft_delete", soft_delete)
         if window_start_time is not None:
             pulumi.set(__self__, "window_start_time", window_start_time)
 
@@ -5540,6 +5568,18 @@ class MysqlDbSystemBackupPolicyArgs:
     @retention_in_days.setter
     def retention_in_days(self, value: Optional[pulumi.Input[builtins.int]]):
         pulumi.set(self, "retention_in_days", value)
+
+    @property
+    @pulumi.getter(name="softDelete")
+    def soft_delete(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
+        return pulumi.get(self, "soft_delete")
+
+    @soft_delete.setter
+    def soft_delete(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "soft_delete", value)
 
     @property
     @pulumi.getter(name="windowStartTime")

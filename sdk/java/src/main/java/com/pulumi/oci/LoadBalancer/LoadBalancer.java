@@ -87,6 +87,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .ipMode(loadBalancerIpMode)
+ *             .ipv6subnetCidr(loadBalancerIpv6subnetCidr)
  *             .isDeleteProtectionEnabled(loadBalancerIsDeleteProtectionEnabled)
  *             .isPrivate(loadBalancerIsPrivate)
  *             .isRequestIdEnabled(loadBalancerIsRequestIdEnabled)
@@ -191,6 +192,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     }
     /**
      * An array of IP addresses. Deprecated: use ip_address_details instead
+     * *
      * 
      * @deprecated
      * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
@@ -202,6 +204,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
 
     /**
      * @return An array of IP addresses. Deprecated: use ip_address_details instead
+     * *
      * 
      */
     public Output<List<String>> ipAddresses() {
@@ -232,6 +235,28 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      */
     public Output<String> ipMode() {
         return this.ipMode;
+    }
+    /**
+     * Applies to IPV6 LB creation only.
+     * 
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * 
+     * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+     * 
+     */
+    @Export(name="ipv6subnetCidr", refs={String.class}, tree="[0]")
+    private Output<String> ipv6subnetCidr;
+
+    /**
+     * @return Applies to IPV6 LB creation only.
+     * 
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * 
+     * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+     * 
+     */
+    public Output<String> ipv6subnetCidr() {
+        return this.ipv6subnetCidr;
     }
     /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.

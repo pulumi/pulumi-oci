@@ -22,6 +22,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string InternetProxy;
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        public readonly bool IsRemote;
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// </summary>
+        public readonly string RemoteRegion;
+        /// <summary>
         /// A filter to return only backups that matches with the given type of Backup.
         /// </summary>
         public readonly string Type;
@@ -40,6 +48,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string internetProxy,
 
+            bool isRemote,
+
+            string remoteRegion,
+
             string type,
 
             string vpcPassword,
@@ -48,6 +60,8 @@ namespace Pulumi.Oci.Database.Outputs
         {
             Id = id;
             InternetProxy = internetProxy;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;
             VpcUser = vpcUser;

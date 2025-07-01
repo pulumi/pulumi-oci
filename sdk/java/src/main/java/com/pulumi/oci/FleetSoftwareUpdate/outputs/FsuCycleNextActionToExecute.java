@@ -19,9 +19,6 @@ public final class FsuCycleNextActionToExecute {
     /**
      * @return (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private @Nullable String type;
 
@@ -35,9 +32,6 @@ public final class FsuCycleNextActionToExecute {
     }
     /**
      * @return (Updatable) Type of Exadata Fleet Update Cycle.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> type() {

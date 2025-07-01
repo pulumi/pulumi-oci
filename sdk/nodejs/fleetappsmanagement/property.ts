@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
+ * Create a business-specific metadata property in Fleet Application Management.
  *
  * ## Example Usage
  *
@@ -17,9 +17,9 @@ import * as utilities from "../utilities";
  *
  * const testProperty = new oci.fleetappsmanagement.Property("test_property", {
  *     compartmentId: compartmentId,
+ *     displayName: propertyDisplayName,
  *     selection: propertySelection,
  *     valueType: propertyValueType,
- *     displayName: propertyDisplayName,
  *     values: propertyValues,
  * });
  * ```
@@ -61,7 +61,7 @@ export class Property extends pulumi.CustomResource {
     }
 
     /**
-     * Tenancy OCID
+     * (Updatable) Compartment OCID
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -158,6 +158,9 @@ export class Property extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            if ((!args || args.displayName === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'displayName'");
+            }
             if ((!args || args.selection === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'selection'");
             }
@@ -190,7 +193,7 @@ export class Property extends pulumi.CustomResource {
  */
 export interface PropertyState {
     /**
-     * Tenancy OCID
+     * (Updatable) Compartment OCID
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -260,13 +263,13 @@ export interface PropertyState {
  */
 export interface PropertyArgs {
     /**
-     * Tenancy OCID
+     * (Updatable) Compartment OCID
      */
     compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
      */
-    displayName?: pulumi.Input<string>;
+    displayName: pulumi.Input<string>;
     /**
      * (Updatable) Text selection of the property.
      */

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetAnnouncementsAnnouncementCollectionResult
     {
         /// <summary>
-        /// List of AnnouncementSummary items
+        /// List of AnnouncementSummary items.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAnnouncementsAnnouncementCollectionItemResult> Items;
 

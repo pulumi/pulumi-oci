@@ -17,13 +17,15 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnboardingPolicies = oci.FleetAppsManagement.getOnboardingPolicies({});
+ * const testOnboardingPolicies = oci.FleetAppsManagement.getOnboardingPolicies({
+ *     compartmentId: compartmentId,
+ * });
  * ```
  */
-export function getOnboardingPolicies(args?: GetOnboardingPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetOnboardingPoliciesResult> {
-    args = args || {};
+export function getOnboardingPolicies(args: GetOnboardingPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetOnboardingPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", {
+        "compartmentId": args.compartmentId,
         "filters": args.filters,
     }, opts);
 }
@@ -32,6 +34,10 @@ export function getOnboardingPolicies(args?: GetOnboardingPoliciesArgs, opts?: p
  * A collection of arguments for invoking getOnboardingPolicies.
  */
 export interface GetOnboardingPoliciesArgs {
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    compartmentId: string;
     filters?: inputs.FleetAppsManagement.GetOnboardingPoliciesFilter[];
 }
 
@@ -39,6 +45,7 @@ export interface GetOnboardingPoliciesArgs {
  * A collection of values returned by getOnboardingPolicies.
  */
 export interface GetOnboardingPoliciesResult {
+    readonly compartmentId: string;
     readonly filters?: outputs.FleetAppsManagement.GetOnboardingPoliciesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -60,13 +67,15 @@ export interface GetOnboardingPoliciesResult {
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testOnboardingPolicies = oci.FleetAppsManagement.getOnboardingPolicies({});
+ * const testOnboardingPolicies = oci.FleetAppsManagement.getOnboardingPolicies({
+ *     compartmentId: compartmentId,
+ * });
  * ```
  */
-export function getOnboardingPoliciesOutput(args?: GetOnboardingPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOnboardingPoliciesResult> {
-    args = args || {};
+export function getOnboardingPoliciesOutput(args: GetOnboardingPoliciesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetOnboardingPoliciesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies", {
+        "compartmentId": args.compartmentId,
         "filters": args.filters,
     }, opts);
 }
@@ -75,5 +84,9 @@ export function getOnboardingPoliciesOutput(args?: GetOnboardingPoliciesOutputAr
  * A collection of arguments for invoking getOnboardingPolicies.
  */
 export interface GetOnboardingPoliciesOutputArgs {
+    /**
+     * The ID of the compartment in which to list resources.
+     */
+    compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetOnboardingPoliciesFilterArgs>[]>;
 }

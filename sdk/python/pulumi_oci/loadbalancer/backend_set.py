@@ -35,7 +35,11 @@ class BackendSetArgs:
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input[builtins.str] load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a backend set.
         :param pulumi.Input[builtins.str] policy: (Updatable) The load balancer policy for the backend set. To get a list of available policies, use the [ListPolicies](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerPolicy/ListPolicies) operation.  Example: `LEAST_CONNECTIONS`
-        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+               
+               If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs'] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
                
                Session persistence enables the Load Balancing service to direct all requests that originate from a single logical client to a single backend web server. For more information, see [Session Persistence](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/sessionpersistence.htm).
@@ -127,7 +131,11 @@ class BackendSetArgs:
     @pulumi.getter(name="backendMaxConnections")
     def backend_max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+
+        If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "backend_max_connections")
 
@@ -231,7 +239,11 @@ class _BackendSetState:
                  state: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering BackendSet resources.
-        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+               
+               If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[Sequence[pulumi.Input['BackendSetBackendArgs']]] backends: (Updatable)
         :param pulumi.Input['BackendSetHealthCheckerArgs'] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input['BackendSetLbCookieSessionPersistenceConfigurationArgs'] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
@@ -298,7 +310,11 @@ class _BackendSetState:
     @pulumi.getter(name="backendMaxConnections")
     def backend_max_connections(self) -> Optional[pulumi.Input[builtins.int]]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+
+        If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "backend_max_connections")
 
@@ -528,7 +544,11 @@ class BackendSet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+               
+               If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
                
@@ -717,7 +737,11 @@ class BackendSet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        :param pulumi.Input[builtins.int] backend_max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+               
+               If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param pulumi.Input[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict']]]] backends: (Updatable)
         :param pulumi.Input[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict']] health_checker: (Updatable) The health check policy's configuration details.
         :param pulumi.Input[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict']] lb_cookie_session_persistence_configuration: (Updatable) The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
@@ -779,7 +803,11 @@ class BackendSet(pulumi.CustomResource):
     @pulumi.getter(name="backendMaxConnections")
     def backend_max_connections(self) -> pulumi.Output[builtins.int]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+
+        If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "backend_max_connections")
 

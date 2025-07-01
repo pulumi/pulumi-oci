@@ -100,6 +100,21 @@ public final class GetMysqlBackupsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
+     * Backup Soft Delete
+     * 
+     */
+    @Import(name="softDelete")
+    private @Nullable String softDelete;
+
+    /**
+     * @return Backup Soft Delete
+     * 
+     */
+    public Optional<String> softDelete() {
+        return Optional.ofNullable(this.softDelete);
+    }
+
+    /**
      * Backup Lifecycle State
      * 
      */
@@ -123,6 +138,7 @@ public final class GetMysqlBackupsPlainArgs extends com.pulumi.resources.InvokeA
         this.dbSystemId = $.dbSystemId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.softDelete = $.softDelete;
         this.state = $.state;
     }
 
@@ -206,6 +222,17 @@ public final class GetMysqlBackupsPlainArgs extends com.pulumi.resources.InvokeA
 
         public Builder filters(GetMysqlBackupsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param softDelete Backup Soft Delete
+         * 
+         * @return builder
+         * 
+         */
+        public Builder softDelete(@Nullable String softDelete) {
+            $.softDelete = softDelete;
+            return this;
         }
 
         /**

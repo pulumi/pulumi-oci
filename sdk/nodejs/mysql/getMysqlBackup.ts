@@ -117,6 +117,10 @@ export interface GetMysqlBackupResult {
      * The shape of the DB System instance used for backup.
      */
     readonly shapeName: string;
+    /**
+     * Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     */
+    readonly softDelete: string;
     readonly sourceDetails: outputs.Mysql.GetMysqlBackupSourceDetail[];
     /**
      * The state of the backup.

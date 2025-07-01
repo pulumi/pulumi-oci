@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -62,6 +63,40 @@ public final class AutonomousContainerDatabaseDataguardAssociationPeerAutonomous
     }
 
     /**
+     * Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    @Import(name="isRemote")
+    private @Nullable Output<Boolean> isRemote;
+
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Output<Boolean>> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    @Import(name="remoteRegion")
+    private @Nullable Output<String> remoteRegion;
+
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<Output<String>> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
+    }
+
+    /**
      * Type of the database backup destination.
      * 
      */
@@ -112,6 +147,8 @@ public final class AutonomousContainerDatabaseDataguardAssociationPeerAutonomous
         this.dbrsPolicyId = $.dbrsPolicyId;
         this.id = $.id;
         this.internetProxy = $.internetProxy;
+        this.isRemote = $.isRemote;
+        this.remoteRegion = $.remoteRegion;
         this.type = $.type;
         this.vpcPassword = $.vpcPassword;
         this.vpcUser = $.vpcUser;
@@ -196,6 +233,52 @@ public final class AutonomousContainerDatabaseDataguardAssociationPeerAutonomous
          */
         public Builder internetProxy(String internetProxy) {
             return internetProxy(Output.of(internetProxy));
+        }
+
+        /**
+         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemote(@Nullable Output<Boolean> isRemote) {
+            $.isRemote = isRemote;
+            return this;
+        }
+
+        /**
+         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemote(Boolean isRemote) {
+            return isRemote(Output.of(isRemote));
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * 
+         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteRegion(@Nullable Output<String> remoteRegion) {
+            $.remoteRegion = remoteRegion;
+            return this;
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * 
+         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteRegion(String remoteRegion) {
+            return remoteRegion(Output.of(remoteRegion));
         }
 
         /**

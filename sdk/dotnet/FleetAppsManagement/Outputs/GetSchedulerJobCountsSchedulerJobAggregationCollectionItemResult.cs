@@ -18,7 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulerJobCountsSchedulerJobAggregationCollectionItemDimensionResult> Dimensions;
         /// <summary>
-        /// Count of jobs in a Tenancy.
+        /// Count of jobs in a Compartment.
         /// </summary>
         public readonly int SchedulerJobCountCount;
 

@@ -36,6 +36,8 @@ __all__ = [
     'FsuCycleNextActionToExecuteArgsDict',
     'FsuCycleStageActionScheduleArgs',
     'FsuCycleStageActionScheduleArgsDict',
+    'FsuCycleUpgradeDetailsArgs',
+    'FsuCycleUpgradeDetailsArgsDict',
     'GetFsuCollectionsFilterArgs',
     'GetFsuCollectionsFilterArgsDict',
     'GetFsuCyclesFilterArgs',
@@ -741,11 +743,7 @@ if not MYPY:
         """
         type: NotRequired[pulumi.Input[builtins.str]]
         """
-        (Updatable) Type of Exadata Fleet Update Cycle. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of Exadata Fleet Update Cycle.
         """
 elif False:
     FsuCycleNextActionToExecuteArgsDict: TypeAlias = Mapping[str, Any]
@@ -757,11 +755,7 @@ class FsuCycleNextActionToExecuteArgs:
                  type: Optional[pulumi.Input[builtins.str]] = None):
         """
         :param pulumi.Input[builtins.str] time_to_start: The date and time the Exadata Fleet Update Action is expected to start. [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[builtins.str] type: (Updatable) Type of Exadata Fleet Update Cycle.
         """
         if time_to_start is not None:
             pulumi.set(__self__, "time_to_start", time_to_start)
@@ -784,11 +778,7 @@ class FsuCycleNextActionToExecuteArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        (Updatable) Type of Exadata Fleet Update Cycle. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of Exadata Fleet Update Cycle.
         """
         return pulumi.get(self, "type")
 
@@ -845,6 +835,89 @@ class FsuCycleStageActionScheduleArgs:
     @type.setter
     def type(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class FsuCycleUpgradeDetailsArgsDict(TypedDict):
+        collection_type: pulumi.Input[builtins.str]
+        """
+        (Updatable) Type of Exadata Fleet Update collection being upgraded.
+        """
+        is_recompile_invalid_objects: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) Enables or disables the recompilation of invalid objects.
+        """
+        is_time_zone_upgrade: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) Enables or disables time zone upgrade. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    FsuCycleUpgradeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class FsuCycleUpgradeDetailsArgs:
+    def __init__(__self__, *,
+                 collection_type: pulumi.Input[builtins.str],
+                 is_recompile_invalid_objects: Optional[pulumi.Input[builtins.bool]] = None,
+                 is_time_zone_upgrade: Optional[pulumi.Input[builtins.bool]] = None):
+        """
+        :param pulumi.Input[builtins.str] collection_type: (Updatable) Type of Exadata Fleet Update collection being upgraded.
+        :param pulumi.Input[builtins.bool] is_recompile_invalid_objects: (Updatable) Enables or disables the recompilation of invalid objects.
+        :param pulumi.Input[builtins.bool] is_time_zone_upgrade: (Updatable) Enables or disables time zone upgrade. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "collection_type", collection_type)
+        if is_recompile_invalid_objects is not None:
+            pulumi.set(__self__, "is_recompile_invalid_objects", is_recompile_invalid_objects)
+        if is_time_zone_upgrade is not None:
+            pulumi.set(__self__, "is_time_zone_upgrade", is_time_zone_upgrade)
+
+    @property
+    @pulumi.getter(name="collectionType")
+    def collection_type(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) Type of Exadata Fleet Update collection being upgraded.
+        """
+        return pulumi.get(self, "collection_type")
+
+    @collection_type.setter
+    def collection_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "collection_type", value)
+
+    @property
+    @pulumi.getter(name="isRecompileInvalidObjects")
+    def is_recompile_invalid_objects(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Enables or disables the recompilation of invalid objects.
+        """
+        return pulumi.get(self, "is_recompile_invalid_objects")
+
+    @is_recompile_invalid_objects.setter
+    def is_recompile_invalid_objects(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_recompile_invalid_objects", value)
+
+    @property
+    @pulumi.getter(name="isTimeZoneUpgrade")
+    def is_time_zone_upgrade(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Enables or disables time zone upgrade. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_time_zone_upgrade")
+
+    @is_time_zone_upgrade.setter
+    def is_time_zone_upgrade(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_time_zone_upgrade", value)
 
 
 if not MYPY:

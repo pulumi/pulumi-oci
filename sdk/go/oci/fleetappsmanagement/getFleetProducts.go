@@ -56,7 +56,7 @@ func GetFleetProducts(ctx *pulumi.Context, args *GetFleetProductsArgs, opts ...p
 
 // A collection of arguments for invoking getFleetProducts.
 type GetFleetProductsArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                  `pulumi:"displayName"`
@@ -98,7 +98,7 @@ func GetFleetProductsOutput(ctx *pulumi.Context, args GetFleetProductsOutputArgs
 
 // A collection of arguments for invoking getFleetProducts.
 type GetFleetProductsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`

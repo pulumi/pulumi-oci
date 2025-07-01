@@ -56,6 +56,7 @@ import (
 //						IsEnabled: pulumi.Any(mysqlDbSystemBackupPolicyPitrPolicyIsEnabled),
 //					},
 //					RetentionInDays: pulumi.Any(mysqlDbSystemBackupPolicyRetentionInDays),
+//					SoftDelete:      pulumi.Any(mysqlDbSystemBackupPolicySoftDelete),
 //					WindowStartTime: pulumi.Any(mysqlDbSystemBackupPolicyWindowStartTime),
 //				},
 //				ConfigurationId: pulumi.Any(testConfiguration.Id),

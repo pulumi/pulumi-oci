@@ -22,44 +22,9 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This data source provides details about a specific Exadata Infrastructure compute managed resource in Oracle Cloud Infrastructure Database service.
- * 
- * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud{@literal @}Customer instances only.
- * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
- * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Database.DatabaseFunctions;
- * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
- *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.id())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  */
@@ -79,9 +44,17 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<Integer> activatedStorageCount() {
         return this.activatedStorageCount;
     }
+    /**
+     * (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     * 
+     */
     @Export(name="activationFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> activationFile;
 
+    /**
+     * @return (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+     * 
+     */
     public Output<Optional<String>> activationFile() {
         return Codegen.optional(this.activationFile);
     }
@@ -99,9 +72,17 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<Integer> additionalComputeCount() {
         return this.additionalComputeCount;
     }
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
     @Export(name="additionalComputeCountComputeManagedResource", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> additionalComputeCountComputeManagedResource;
 
+    /**
+     * @return The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
     public Output<Optional<Integer>> additionalComputeCountComputeManagedResource() {
         return Codegen.optional(this.additionalComputeCountComputeManagedResource);
     }
@@ -119,9 +100,17 @@ public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomRes
     public Output<String> additionalComputeSystemModel() {
         return this.additionalComputeSystemModel;
     }
+    /**
+     * The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
     @Export(name="additionalComputeSystemModelComputeManagedResource", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> additionalComputeSystemModelComputeManagedResource;
 
+    /**
+     * @return The requested Oracle Exadata System Model specification for the additional compute servers. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
     public Output<Optional<String>> additionalComputeSystemModelComputeManagedResource() {
         return Codegen.optional(this.additionalComputeSystemModelComputeManagedResource);
     }

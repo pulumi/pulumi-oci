@@ -122,7 +122,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<int> Port { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
+        /// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<int> Port { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
+        /// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
+        /// (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }

@@ -127,6 +127,7 @@ namespace Pulumi.Oci.Database
         /// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult> AssociatedBackupConfigurationDetails;
+        public readonly string AutonomousContainerDatabaseBackupId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
@@ -235,7 +236,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsDstFileUpdateEnabled;
         /// <summary>
-        /// Whether it is multiple standby Autonomous Dataguard
+        /// Indicates if it is multiple standby Autonomous Dataguard
         /// </summary>
         public readonly bool IsMultipleStandby;
         /// <summary>
@@ -340,6 +341,7 @@ namespace Pulumi.Oci.Database
         /// The service level agreement type of the container database. The default is STANDARD.
         /// </summary>
         public readonly string ServiceLevelAgreementType;
+        public readonly string Source;
         /// <summary>
         /// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
@@ -381,6 +383,8 @@ namespace Pulumi.Oci.Database
         [OutputConstructor]
         private GetAutonomousContainerDatabaseResult(
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailResult> associatedBackupConfigurationDetails,
+
+            string autonomousContainerDatabaseBackupId,
 
             string autonomousContainerDatabaseId,
 
@@ -508,6 +512,8 @@ namespace Pulumi.Oci.Database
 
             string serviceLevelAgreementType,
 
+            string source,
+
             int standbyMaintenanceBufferInDays,
 
             string state,
@@ -529,6 +535,7 @@ namespace Pulumi.Oci.Database
             int vmFailoverReservation)
         {
             AssociatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+            AutonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
             AutonomousContainerDatabaseId = autonomousContainerDatabaseId;
             AutonomousExadataInfrastructureId = autonomousExadataInfrastructureId;
             AutonomousVmClusterId = autonomousVmClusterId;
@@ -592,6 +599,7 @@ namespace Pulumi.Oci.Database
             Role = role;
             RotateKeyTrigger = rotateKeyTrigger;
             ServiceLevelAgreementType = serviceLevelAgreementType;
+            Source = source;
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             SwitchoverTrigger = switchoverTrigger;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+ * Retrieve aggregated summary information of Scheduler Jobs within a Compartment.
  *
  * ## Example Usage
  *
@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSchedulerJobCounts = oci.FleetAppsManagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -27,6 +28,7 @@ export function getSchedulerJobCounts(args?: GetSchedulerJobCountsArgs, opts?: p
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FleetAppsManagement/getSchedulerJobCounts:getSchedulerJobCounts", {
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
     }, opts);
 }
@@ -36,9 +38,13 @@ export function getSchedulerJobCounts(args?: GetSchedulerJobCountsArgs, opts?: p
  */
 export interface GetSchedulerJobCountsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: string;
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     */
+    compartmentIdInSubtree?: boolean;
     filters?: inputs.FleetAppsManagement.GetSchedulerJobCountsFilter[];
 }
 
@@ -47,6 +53,7 @@ export interface GetSchedulerJobCountsArgs {
  */
 export interface GetSchedulerJobCountsResult {
     readonly compartmentId?: string;
+    readonly compartmentIdInSubtree?: boolean;
     readonly filters?: outputs.FleetAppsManagement.GetSchedulerJobCountsFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -60,7 +67,7 @@ export interface GetSchedulerJobCountsResult {
 /**
  * This data source provides the list of Scheduler Job Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+ * Retrieve aggregated summary information of Scheduler Jobs within a Compartment.
  *
  * ## Example Usage
  *
@@ -70,6 +77,7 @@ export interface GetSchedulerJobCountsResult {
  *
  * const testSchedulerJobCounts = oci.FleetAppsManagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -78,6 +86,7 @@ export function getSchedulerJobCountsOutput(args?: GetSchedulerJobCountsOutputAr
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:FleetAppsManagement/getSchedulerJobCounts:getSchedulerJobCounts", {
         "compartmentId": args.compartmentId,
+        "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
     }, opts);
 }
@@ -87,8 +96,12 @@ export function getSchedulerJobCountsOutput(args?: GetSchedulerJobCountsOutputAr
  */
 export interface GetSchedulerJobCountsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     */
+    compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.FleetAppsManagement.GetSchedulerJobCountsFilterArgs>[]>;
 }

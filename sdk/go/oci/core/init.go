@@ -47,6 +47,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ComputeGpuMemoryCluster{}
 	case "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric":
 		r = &ComputeGpuMemoryFabric{}
+	case "oci:Core/computeHost:ComputeHost":
+		r = &ComputeHost{}
+	case "oci:Core/computeHostGroup:ComputeHostGroup":
+		r = &ComputeHostGroup{}
 	case "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema":
 		r = &ComputeImageCapabilitySchema{}
 	case "oci:Core/consoleHistory:ConsoleHistory":
@@ -239,6 +243,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Core/computeGpuMemoryFabric",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/computeHost",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Core/computeHostGroup",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

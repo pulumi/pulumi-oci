@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Gets information about a CompliancePolicy.
+// Gets information about a compliance policy.
 //
 // ## Example Usage
 //
@@ -81,6 +81,8 @@ type GetCompliancePolicyResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the CompliancePolicy was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// The type of the Compliance Policy.
+	Type string `pulumi:"type"`
 }
 
 func GetCompliancePolicyOutput(ctx *pulumi.Context, args GetCompliancePolicyOutputArgs, opts ...pulumi.InvokeOption) GetCompliancePolicyResultOutput {
@@ -174,6 +176,11 @@ func (o GetCompliancePolicyResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time the CompliancePolicy was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 func (o GetCompliancePolicyResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetCompliancePolicyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The type of the Compliance Policy.
+func (o GetCompliancePolicyResultOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCompliancePolicyResult) string { return v.Type }).(pulumi.StringOutput)
 }
 
 func init() {

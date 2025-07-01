@@ -47,6 +47,11 @@ public final class GetMysqlDbSystemBackupPolicy {
      */
     private Integer retentionInDays;
     /**
+     * @return Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    private String softDelete;
+    /**
      * @return The start time of the maintenance window.
      * 
      */
@@ -96,6 +101,13 @@ public final class GetMysqlDbSystemBackupPolicy {
         return this.retentionInDays;
     }
     /**
+     * @return Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public String softDelete() {
+        return this.softDelete;
+    }
+    /**
      * @return The start time of the maintenance window.
      * 
      */
@@ -118,6 +130,7 @@ public final class GetMysqlDbSystemBackupPolicy {
         private Boolean isEnabled;
         private List<GetMysqlDbSystemBackupPolicyPitrPolicy> pitrPolicies;
         private Integer retentionInDays;
+        private String softDelete;
         private String windowStartTime;
         public Builder() {}
         public Builder(GetMysqlDbSystemBackupPolicy defaults) {
@@ -128,6 +141,7 @@ public final class GetMysqlDbSystemBackupPolicy {
     	      this.isEnabled = defaults.isEnabled;
     	      this.pitrPolicies = defaults.pitrPolicies;
     	      this.retentionInDays = defaults.retentionInDays;
+    	      this.softDelete = defaults.softDelete;
     	      this.windowStartTime = defaults.windowStartTime;
         }
 
@@ -186,6 +200,14 @@ public final class GetMysqlDbSystemBackupPolicy {
             return this;
         }
         @CustomType.Setter
+        public Builder softDelete(String softDelete) {
+            if (softDelete == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemBackupPolicy", "softDelete");
+            }
+            this.softDelete = softDelete;
+            return this;
+        }
+        @CustomType.Setter
         public Builder windowStartTime(String windowStartTime) {
             if (windowStartTime == null) {
               throw new MissingRequiredPropertyException("GetMysqlDbSystemBackupPolicy", "windowStartTime");
@@ -201,6 +223,7 @@ public final class GetMysqlDbSystemBackupPolicy {
             _resultValue.isEnabled = isEnabled;
             _resultValue.pitrPolicies = pitrPolicies;
             _resultValue.retentionInDays = retentionInDays;
+            _resultValue.softDelete = softDelete;
             _resultValue.windowStartTime = windowStartTime;
             return _resultValue;
         }

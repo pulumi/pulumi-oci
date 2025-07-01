@@ -112,6 +112,10 @@ export interface GetMigrationResult {
      */
     readonly sourceDatabaseConnectionId: string;
     /**
+     * The OCID of the resource being referenced.
+     */
+    readonly sourceStandbyDatabaseConnectionId: string;
+    /**
      * The current state of the Migration resource.
      */
     readonly state: string;

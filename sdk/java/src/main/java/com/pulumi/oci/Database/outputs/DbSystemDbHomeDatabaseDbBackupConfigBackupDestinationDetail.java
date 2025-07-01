@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -21,6 +22,18 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private @Nullable String id;
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    private @Nullable Boolean isRemote;
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    private @Nullable String remoteRegion;
     /**
      * @return Type of the database backup destination.
      * 
@@ -43,6 +56,22 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Boolean> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<String> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
+    }
+    /**
      * @return Type of the database backup destination.
      * 
      */
@@ -61,12 +90,16 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     public static final class Builder {
         private @Nullable String dbrsPolicyId;
         private @Nullable String id;
+        private @Nullable Boolean isRemote;
+        private @Nullable String remoteRegion;
         private @Nullable String type;
         public Builder() {}
         public Builder(DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
         }
 
@@ -83,6 +116,18 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder isRemote(@Nullable Boolean isRemote) {
+
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(@Nullable String remoteRegion) {
+
+            this.remoteRegion = remoteRegion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
 
             this.type = type;
@@ -92,6 +137,8 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             final var _resultValue = new DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail();
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             return _resultValue;
         }

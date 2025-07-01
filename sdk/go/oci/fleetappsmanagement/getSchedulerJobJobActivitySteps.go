@@ -80,11 +80,11 @@ type GetSchedulerJobJobActivityStepsResult struct {
 	JobActivityId  string  `pulumi:"jobActivityId"`
 	ResourceTaskId *string `pulumi:"resourceTaskId"`
 	SchedulerJobId string  `pulumi:"schedulerJobId"`
-	// The sequence of the step
+	// The sequence of the step.
 	Sequence *string `pulumi:"sequence"`
 	// The list of step_collection.
 	StepCollections []GetSchedulerJobJobActivityStepsStepCollection `pulumi:"stepCollections"`
-	// Name of the Step
+	// Name of the Step.
 	StepName   *string `pulumi:"stepName"`
 	TargetName *string `pulumi:"targetName"`
 }
@@ -157,7 +157,7 @@ func (o GetSchedulerJobJobActivityStepsResultOutput) SchedulerJobId() pulumi.Str
 	return o.ApplyT(func(v GetSchedulerJobJobActivityStepsResult) string { return v.SchedulerJobId }).(pulumi.StringOutput)
 }
 
-// The sequence of the step
+// The sequence of the step.
 func (o GetSchedulerJobJobActivityStepsResultOutput) Sequence() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulerJobJobActivityStepsResult) *string { return v.Sequence }).(pulumi.StringPtrOutput)
 }
@@ -169,7 +169,7 @@ func (o GetSchedulerJobJobActivityStepsResultOutput) StepCollections() GetSchedu
 	}).(GetSchedulerJobJobActivityStepsStepCollectionArrayOutput)
 }
 
-// Name of the Step
+// Name of the Step.
 func (o GetSchedulerJobJobActivityStepsResultOutput) StepName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulerJobJobActivityStepsResult) *string { return v.StepName }).(pulumi.StringPtrOutput)
 }

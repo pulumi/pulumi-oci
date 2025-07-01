@@ -98,6 +98,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * An array of IP addresses. Deprecated: use ip_address_details instead
+     * *
      * 
      * @deprecated
      * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
@@ -109,6 +110,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return An array of IP addresses. Deprecated: use ip_address_details instead
+     * *
      * 
      * @deprecated
      * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
@@ -144,6 +146,29 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> ipMode() {
         return Optional.ofNullable(this.ipMode);
+    }
+
+    /**
+     * Applies to IPV6 LB creation only.
+     * 
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * 
+     * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+     * 
+     */
+    @Import(name="ipv6subnetCidr")
+    private @Nullable Output<String> ipv6subnetCidr;
+
+    /**
+     * @return Applies to IPV6 LB creation only.
+     * 
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * 
+     * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+     * 
+     */
+    public Optional<Output<String>> ipv6subnetCidr() {
+        return Optional.ofNullable(this.ipv6subnetCidr);
     }
 
     /**
@@ -437,6 +462,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         this.ipAddressDetails = $.ipAddressDetails;
         this.ipAddresses = $.ipAddresses;
         this.ipMode = $.ipMode;
+        this.ipv6subnetCidr = $.ipv6subnetCidr;
         this.isDeleteProtectionEnabled = $.isDeleteProtectionEnabled;
         this.isPrivate = $.isPrivate;
         this.isRequestIdEnabled = $.isRequestIdEnabled;
@@ -587,6 +613,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddresses An array of IP addresses. Deprecated: use ip_address_details instead
+         * *
          * 
          * @return builder
          * 
@@ -602,6 +629,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddresses An array of IP addresses. Deprecated: use ip_address_details instead
+         * *
          * 
          * @return builder
          * 
@@ -616,6 +644,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddresses An array of IP addresses. Deprecated: use ip_address_details instead
+         * *
          * 
          * @return builder
          * 
@@ -659,6 +688,35 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipMode(String ipMode) {
             return ipMode(Output.of(ipMode));
+        }
+
+        /**
+         * @param ipv6subnetCidr Applies to IPV6 LB creation only.
+         * 
+         * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+         * 
+         * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6subnetCidr(@Nullable Output<String> ipv6subnetCidr) {
+            $.ipv6subnetCidr = ipv6subnetCidr;
+            return this;
+        }
+
+        /**
+         * @param ipv6subnetCidr Applies to IPV6 LB creation only.
+         * 
+         * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+         * 
+         * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
+            return ipv6subnetCidr(Output.of(ipv6subnetCidr));
         }
 
         /**

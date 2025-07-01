@@ -4,7 +4,9 @@
 package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesFilter;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +16,21 @@ import javax.annotation.Nullable;
 public final class GetOnboardingPoliciesPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetOnboardingPoliciesPlainArgs Empty = new GetOnboardingPoliciesPlainArgs();
+
+    /**
+     * The ID of the compartment in which to list resources.
+     * 
+     */
+    @Import(name="compartmentId", required=true)
+    private String compartmentId;
+
+    /**
+     * @return The ID of the compartment in which to list resources.
+     * 
+     */
+    public String compartmentId() {
+        return this.compartmentId;
+    }
 
     @Import(name="filters")
     private @Nullable List<GetOnboardingPoliciesFilter> filters;
@@ -25,6 +42,7 @@ public final class GetOnboardingPoliciesPlainArgs extends com.pulumi.resources.I
     private GetOnboardingPoliciesPlainArgs() {}
 
     private GetOnboardingPoliciesPlainArgs(GetOnboardingPoliciesPlainArgs $) {
+        this.compartmentId = $.compartmentId;
         this.filters = $.filters;
     }
 
@@ -46,6 +64,17 @@ public final class GetOnboardingPoliciesPlainArgs extends com.pulumi.resources.I
             $ = new GetOnboardingPoliciesPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
         public Builder filters(@Nullable List<GetOnboardingPoliciesFilter> filters) {
             $.filters = filters;
             return this;
@@ -56,6 +85,9 @@ public final class GetOnboardingPoliciesPlainArgs extends com.pulumi.resources.I
         }
 
         public GetOnboardingPoliciesPlainArgs build() {
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetOnboardingPoliciesPlainArgs", "compartmentId");
+            }
             return $;
         }
     }

@@ -17,14 +17,14 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
     public static final GetCompliancePoliciesPlainArgs Empty = new GetCompliancePoliciesPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public Optional<String> compartmentId() {
@@ -54,14 +54,14 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * unique CompliancePolicy identifier.
+     * Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique CompliancePolicy identifier.
+     * @return Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
      * 
      */
     public Optional<String> id() {
@@ -83,6 +83,21 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return Platform Configurations whose type matches the given type.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable String type;
+
+    /**
+     * @return A filter to return Platform Configurations whose type matches the given type.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private GetCompliancePoliciesPlainArgs() {}
 
     private GetCompliancePoliciesPlainArgs(GetCompliancePoliciesPlainArgs $) {
@@ -91,6 +106,7 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
         this.filters = $.filters;
         this.id = $.id;
         this.state = $.state;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -112,7 +128,7 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
@@ -143,7 +159,7 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param id unique CompliancePolicy identifier.
+         * @param id Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
          * 
          * @return builder
          * 
@@ -161,6 +177,17 @@ public final class GetCompliancePoliciesPlainArgs extends com.pulumi.resources.I
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param type A filter to return Platform Configurations whose type matches the given type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable String type) {
+            $.type = type;
             return this;
         }
 

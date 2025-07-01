@@ -70,10 +70,22 @@ namespace Pulumi.Oci.Core
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
+        /// A list of total and remaining CPU &amp; memory per capacity bucket.
+        /// </summary>
+        [Output("capacityBins")]
+        public Output<ImmutableArray<Outputs.DedicatedVmHostCapacityBin>> CapacityBins { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the compute bare metal host.
+        /// </summary>
+        [Output("computeBareMetalHostId")]
+        public Output<string> ComputeBareMetalHostId { get; private set; } = null!;
 
         /// <summary>
         /// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
@@ -275,11 +287,29 @@ namespace Pulumi.Oci.Core
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
 
+        [Input("capacityBins")]
+        private InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>? _capacityBins;
+
+        /// <summary>
+        /// A list of total and remaining CPU &amp; memory per capacity bucket.
+        /// </summary>
+        public InputList<Inputs.DedicatedVmHostCapacityBinGetArgs> CapacityBins
+        {
+            get => _capacityBins ?? (_capacityBins = new InputList<Inputs.DedicatedVmHostCapacityBinGetArgs>());
+            set => _capacityBins = value;
+        }
+
         /// <summary>
         /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// The OCID of the compute bare metal host.
+        /// </summary>
+        [Input("computeBareMetalHostId")]
+        public Input<string>? ComputeBareMetalHostId { get; set; }
 
         /// <summary>
         /// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.

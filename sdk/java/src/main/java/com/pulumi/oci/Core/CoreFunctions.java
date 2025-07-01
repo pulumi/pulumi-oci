@@ -99,6 +99,10 @@ import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsArgs;
 import com.pulumi.oci.Core.inputs.GetComputeGpuMemoryFabricsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeHostArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostGroupPlainArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
+import com.pulumi.oci.Core.inputs.GetComputeHostGroupsPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeHostPlainArgs;
 import com.pulumi.oci.Core.inputs.GetComputeHostsArgs;
 import com.pulumi.oci.Core.inputs.GetComputeHostsPlainArgs;
@@ -375,6 +379,8 @@ import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClusterResult;
 import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryClustersResult;
 import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricResult;
 import com.pulumi.oci.Core.outputs.GetComputeGpuMemoryFabricsResult;
+import com.pulumi.oci.Core.outputs.GetComputeHostGroupResult;
+import com.pulumi.oci.Core.outputs.GetComputeHostGroupsResult;
 import com.pulumi.oci.Core.outputs.GetComputeHostResult;
 import com.pulumi.oci.Core.outputs.GetComputeHostsResult;
 import com.pulumi.oci.Core.outputs.GetComputeImageCapabilitySchemaResult;
@@ -11319,6 +11325,446 @@ public final class CoreFunctions {
         return Deployment.getInstance().invokeAsync("oci:Core/getComputeHost:getComputeHost", TypeShape.of(GetComputeHostResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Compute Host Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host group
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostGroupResult> getComputeHostGroup(GetComputeHostGroupArgs args) {
+        return getComputeHostGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Host Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host group
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostGroupResult> getComputeHostGroupPlain(GetComputeHostGroupPlainArgs args) {
+        return getComputeHostGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Compute Host Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host group
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostGroupResult> getComputeHostGroup(GetComputeHostGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHostGroup:getComputeHostGroup", TypeShape.of(GetComputeHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Host Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host group
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostGroupResult> getComputeHostGroup(GetComputeHostGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHostGroup:getComputeHostGroup", TypeShape.of(GetComputeHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Compute Host Group resource in Oracle Cloud Infrastructure Core service.
+     * 
+     * Gets information about the specified compute host group
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroup = CoreFunctions.getComputeHostGroup(GetComputeHostGroupArgs.builder()
+     *             .computeHostGroupId(testComputeHostGroupOciCoreComputeHostGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostGroupResult> getComputeHostGroupPlain(GetComputeHostGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeHostGroup:getComputeHostGroup", TypeShape.of(GetComputeHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute host groups that match the specified criteria and compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroups = CoreFunctions.getComputeHostGroups(GetComputeHostGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostGroupsResult> getComputeHostGroups(GetComputeHostGroupsArgs args) {
+        return getComputeHostGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute host groups that match the specified criteria and compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroups = CoreFunctions.getComputeHostGroups(GetComputeHostGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostGroupsResult> getComputeHostGroupsPlain(GetComputeHostGroupsPlainArgs args) {
+        return getComputeHostGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute host groups that match the specified criteria and compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroups = CoreFunctions.getComputeHostGroups(GetComputeHostGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostGroupsResult> getComputeHostGroups(GetComputeHostGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHostGroups:getComputeHostGroups", TypeShape.of(GetComputeHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute host groups that match the specified criteria and compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroups = CoreFunctions.getComputeHostGroups(GetComputeHostGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetComputeHostGroupsResult> getComputeHostGroups(GetComputeHostGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Core/getComputeHostGroups:getComputeHostGroups", TypeShape.of(GetComputeHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Compute Host Groups in Oracle Cloud Infrastructure Core service.
+     * 
+     * Lists the compute host groups that match the specified criteria and compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetComputeHostGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testComputeHostGroups = CoreFunctions.getComputeHostGroups(GetComputeHostGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetComputeHostGroupsResult> getComputeHostGroupsPlain(GetComputeHostGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Core/getComputeHostGroups:getComputeHostGroups", TypeShape.of(GetComputeHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
      * 
      * Generates a list of summary host details
@@ -11351,6 +11797,7 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostGroupId(testComputeHostGroup.id())
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
@@ -11400,6 +11847,7 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostGroupId(testComputeHostGroup.id())
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
@@ -11449,6 +11897,7 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostGroupId(testComputeHostGroup.id())
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
@@ -11498,6 +11947,7 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostGroupId(testComputeHostGroup.id())
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)
@@ -11547,6 +11997,7 @@ public final class CoreFunctions {
      *         final var testComputeHosts = CoreFunctions.getComputeHosts(GetComputeHostsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(computeHostAvailabilityDomain)
+     *             .computeHostGroupId(testComputeHostGroup.id())
      *             .computeHostHealth(computeHostComputeHostHealth)
      *             .computeHostLifecycleState(computeHostComputeHostLifecycleState)
      *             .displayName(computeHostDisplayName)

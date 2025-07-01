@@ -14,12 +14,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetConnectionsConnectionCollectionItemResult
     {
         /// <summary>
-        /// Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        /// Access key ID to access the Amazon S3 bucket.
         /// </summary>
         public readonly string AccessKeyId;
         public readonly string AccountKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         /// </summary>
         public readonly string AccountKeySecretId;
         /// <summary>
@@ -51,6 +51,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult> BootstrapServers;
+        /// <summary>
+        /// Represents the catalog of given type used in an Iceberg connection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemCatalogResult> Catalogs;
         /// <summary>
         /// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         /// </summary>
@@ -89,9 +93,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The base64 encoded content of the consumer.properties file.
         /// </summary>
         public readonly string ConsumerProperties;
+        /// <summary>
+        /// The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// </summary>
         public readonly string CoreSiteXml;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         /// </summary>
         public readonly string DatabaseId;
         /// <summary>
@@ -123,7 +130,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly bool DoesUseSecretIds;
         /// <summary>
-        /// Service endpoint. e.g for Azure Storage service: https://test.blob.core.windows.net. Optional for Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
         /// </summary>
         public readonly string Endpoint;
         public readonly string Fingerprint;
@@ -221,13 +228,16 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The base64 encoded content of the producer.properties file.
         /// </summary>
         public readonly string ProducerProperties;
+        /// <summary>
+        /// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        /// </summary>
         public readonly string PublicKeyFingerprint;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         /// </summary>
         public readonly string RedisClusterId;
         /// <summary>
-        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        /// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         /// </summary>
         public readonly string Region;
         /// <summary>
@@ -241,7 +251,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string SasTokenSecretId;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         /// <summary>
@@ -257,7 +267,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string Servers;
         public readonly string ServiceAccountKeyFile;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         /// </summary>
         public readonly string ServiceAccountKeyFileSecretId;
         /// <summary>
@@ -277,9 +287,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly bool ShouldValidateServerCertificate;
         /// <summary>
-        /// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+        /// Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
         /// </summary>
         public readonly string SslCa;
+        /// <summary>
+        /// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// </summary>
         public readonly string SslCert;
         public readonly string SslClientKeystash;
         /// <summary>
@@ -291,6 +304,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
         /// </summary>
         public readonly string SslClientKeystoredbSecretId;
+        /// <summary>
+        /// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// </summary>
         public readonly string SslCrl;
         public readonly string SslKey;
         public readonly string SslKeyPassword;
@@ -307,6 +323,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         /// </summary>
         public readonly string SslMode;
+        /// <summary>
+        /// The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// </summary>
         public readonly string SslServerCertificate;
         /// <summary>
         /// A filter to return only connections having the 'lifecycleState' given.
@@ -316,6 +335,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         /// </summary>
         public readonly string StorageCredentialName;
+        /// <summary>
+        /// Represents the storage of given type used in an Iceberg connection.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemStorageResult> Storages;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         /// </summary>
@@ -348,6 +371,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        /// </summary>
         public readonly string TlsCaFile;
         public readonly string TlsCertificateKeyFile;
         public readonly string TlsCertificateKeyFilePassword;
@@ -412,6 +438,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string azureTenantId,
 
             ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult> bootstrapServers,
+
+            ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemCatalogResult> catalogs,
 
             string clientId,
 
@@ -571,6 +599,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string storageCredentialName,
 
+            ImmutableArray<Outputs.GetConnectionsConnectionCollectionItemStorageResult> storages,
+
             string streamPoolId,
 
             string subnetId,
@@ -628,6 +658,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             AuthenticationType = authenticationType;
             AzureTenantId = azureTenantId;
             BootstrapServers = bootstrapServers;
+            Catalogs = catalogs;
             ClientId = clientId;
             ClientSecret = clientSecret;
             ClientSecretSecretId = clientSecretSecretId;
@@ -707,6 +738,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             SslServerCertificate = sslServerCertificate;
             State = state;
             StorageCredentialName = storageCredentialName;
+            Storages = storages;
             StreamPoolId = streamPoolId;
             SubnetId = subnetId;
             SystemTags = systemTags;

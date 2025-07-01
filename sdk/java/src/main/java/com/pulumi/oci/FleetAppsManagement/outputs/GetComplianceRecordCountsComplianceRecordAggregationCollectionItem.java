@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetComplianceRecordCountsComplianceRecordAggregationCollectionItem {
     /**
-     * @return count of ComplianceRecord in a Tenancy.
+     * @return Count of compliance records in a compartment.
      * 
      */
     private Integer complianceRecordCountCount;
@@ -25,7 +25,7 @@ public final class GetComplianceRecordCountsComplianceRecordAggregationCollectio
 
     private GetComplianceRecordCountsComplianceRecordAggregationCollectionItem() {}
     /**
-     * @return count of ComplianceRecord in a Tenancy.
+     * @return Count of compliance records in a compartment.
      * 
      */
     public Integer complianceRecordCountCount() {

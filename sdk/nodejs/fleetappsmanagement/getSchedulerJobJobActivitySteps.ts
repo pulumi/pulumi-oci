@@ -84,7 +84,7 @@ export interface GetSchedulerJobJobActivityStepsResult {
     readonly resourceTaskId?: string;
     readonly schedulerJobId: string;
     /**
-     * The sequence of the step
+     * The sequence of the step.
      */
     readonly sequence?: string;
     /**
@@ -92,7 +92,7 @@ export interface GetSchedulerJobJobActivityStepsResult {
      */
     readonly stepCollections: outputs.FleetAppsManagement.GetSchedulerJobJobActivityStepsStepCollection[];
     /**
-     * Name of the Step
+     * Name of the Step.
      */
     readonly stepName?: string;
     readonly targetName?: string;

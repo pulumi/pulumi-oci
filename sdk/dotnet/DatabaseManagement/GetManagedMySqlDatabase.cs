@@ -147,6 +147,10 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string HeatWaveClusterDisplayName;
         /// <summary>
+        /// The customer's selected type for HeatWave management.
+        /// </summary>
+        public readonly string HeatWaveManagementType;
+        /// <summary>
         /// The total memory belonging to the HeatWave cluster in GBs.
         /// </summary>
         public readonly int HeatWaveMemorySize;
@@ -212,6 +216,8 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string heatWaveClusterDisplayName,
 
+            string heatWaveManagementType,
+
             int heatWaveMemorySize,
 
             string heatWaveNodeShape,
@@ -245,6 +251,7 @@ namespace Pulumi.Oci.DatabaseManagement
             DbName = dbName;
             DbVersion = dbVersion;
             HeatWaveClusterDisplayName = heatWaveClusterDisplayName;
+            HeatWaveManagementType = heatWaveManagementType;
             HeatWaveMemorySize = heatWaveMemorySize;
             HeatWaveNodeShape = heatWaveNodeShape;
             HeatWaveNodes = heatWaveNodes;

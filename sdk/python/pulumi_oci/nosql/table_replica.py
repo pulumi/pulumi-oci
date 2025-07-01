@@ -32,7 +32,7 @@ class TableReplicaInitArgs:
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         :param pulumi.Input[builtins.str] compartment_id: The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
         :param pulumi.Input[builtins.int] max_read_units: Maximum sustained read throughput limit for the new replica table. If not specified, the local table's read limit is used.
         :param pulumi.Input[builtins.int] max_write_units: Maximum sustained write throughput limit for the new replica table. If not specified, the local table's write limit is used.
@@ -66,7 +66,7 @@ class TableReplicaInitArgs:
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "table_name_or_id")
 
@@ -129,7 +129,7 @@ class _TableReplicaState:
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -198,7 +198,7 @@ class _TableReplicaState:
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "table_name_or_id")
 
@@ -222,7 +222,7 @@ class TableReplica(pulumi.CustomResource):
         """
         This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
 
-        Add a replica for this table
+        Add a replica for this table. The table's schema must be frozen prior to this operation.
 
         ## Example Usage
 
@@ -256,7 +256,7 @@ class TableReplica(pulumi.CustomResource):
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         ...
     @overload
@@ -267,7 +267,7 @@ class TableReplica(pulumi.CustomResource):
         """
         This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
 
-        Add a replica for this table
+        Add a replica for this table. The table's schema must be frozen prior to this operation.
 
         ## Example Usage
 
@@ -359,7 +359,7 @@ class TableReplica(pulumi.CustomResource):
                
                
                ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+               Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -412,7 +412,7 @@ class TableReplica(pulumi.CustomResource):
 
 
         ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         """
         return pulumi.get(self, "table_name_or_id")
 

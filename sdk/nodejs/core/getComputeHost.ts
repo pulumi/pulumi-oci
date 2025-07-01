@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -57,7 +59,19 @@ export interface GetComputeHostResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      */
     readonly compartmentId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+     */
+    readonly computeHostGroupId: string;
     readonly computeHostId: string;
+    /**
+     * Compute Host Configuration Data
+     */
+    readonly configurationDatas: outputs.Core.GetComputeHostConfigurationData[];
+    /**
+     * Configuration state of the Compute Bare Metal Host.
+     */
+    readonly configurationState: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -111,6 +125,10 @@ export interface GetComputeHostResult {
      */
     readonly networkBlockId: string;
     /**
+     * Shows details about the last recycle performed on this host.
+     */
+    readonly recycleDetails: outputs.Core.GetComputeHostRecycleDetail[];
+    /**
      * The shape of host
      */
     readonly shape: string;
@@ -118,6 +136,10 @@ export interface GetComputeHostResult {
      * The lifecycle state of the host
      */
     readonly state: string;
+    /**
+     * The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+     */
+    readonly timeConfigurationCheck: string;
     /**
      * The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */

@@ -80,9 +80,17 @@ export class DedicatedVmHost extends pulumi.CustomResource {
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
+     * A list of total and remaining CPU & memory per capacity bucket.
+     */
+    public /*out*/ readonly capacityBins!: pulumi.Output<outputs.Core.DedicatedVmHostCapacityBin[]>;
+    /**
      * (Updatable) The OCID of the compartment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * The OCID of the compute bare metal host.
+     */
+    public /*out*/ readonly computeBareMetalHostId!: pulumi.Output<string>;
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
      */
@@ -150,7 +158,9 @@ export class DedicatedVmHost extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DedicatedVmHostState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["capacityBins"] = state ? state.capacityBins : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeBareMetalHostId"] = state ? state.computeBareMetalHostId : undefined;
             resourceInputs["dedicatedVmHostShape"] = state ? state.dedicatedVmHostShape : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -182,6 +192,8 @@ export class DedicatedVmHost extends pulumi.CustomResource {
             resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["placementConstraintDetails"] = args ? args.placementConstraintDetails : undefined;
+            resourceInputs["capacityBins"] = undefined /*out*/;
+            resourceInputs["computeBareMetalHostId"] = undefined /*out*/;
             resourceInputs["remainingMemoryInGbs"] = undefined /*out*/;
             resourceInputs["remainingOcpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -203,9 +215,17 @@ export interface DedicatedVmHostState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
+     * A list of total and remaining CPU & memory per capacity bucket.
+     */
+    capacityBins?: pulumi.Input<pulumi.Input<inputs.Core.DedicatedVmHostCapacityBin>[]>;
+    /**
      * (Updatable) The OCID of the compartment.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * The OCID of the compute bare metal host.
+     */
+    computeBareMetalHostId?: pulumi.Input<string>;
     /**
      * The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VM instances launched on the dedicated virtual machine host.
      */

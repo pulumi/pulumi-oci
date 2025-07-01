@@ -42,6 +42,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableArray<string> IpAddresses;
         public readonly string IpMode;
+        public readonly string Ipv6subnetCidr;
         /// <summary>
         /// Whether or not the load balancer has delete protection enabled.
         /// </summary>
@@ -110,6 +111,8 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
 
             string ipMode,
 
+            string ipv6subnetCidr,
+
             bool isDeleteProtectionEnabled,
 
             bool isPrivate,
@@ -144,6 +147,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
             IpAddressDetails = ipAddressDetails;
             IpAddresses = ipAddresses;
             IpMode = ipMode;
+            Ipv6subnetCidr = ipv6subnetCidr;
             IsDeleteProtectionEnabled = isDeleteProtectionEnabled;
             IsPrivate = isPrivate;
             IsRequestIdEnabled = isRequestIdEnabled;

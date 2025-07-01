@@ -32,6 +32,7 @@ import (
 //			_, err := core.GetComputeHosts(ctx, &core.GetComputeHostsArgs{
 //				CompartmentId:             compartmentId,
 //				AvailabilityDomain:        pulumi.StringRef(computeHostAvailabilityDomain),
+//				ComputeHostGroupId:        pulumi.StringRef(testComputeHostGroup.Id),
 //				ComputeHostHealth:         pulumi.StringRef(computeHostComputeHostHealth),
 //				ComputeHostLifecycleState: pulumi.StringRef(computeHostComputeHostLifecycleState),
 //				DisplayName:               pulumi.StringRef(computeHostDisplayName),
@@ -61,6 +62,8 @@ type GetComputeHostsArgs struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+	ComputeHostGroupId *string `pulumi:"computeHostGroupId"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
 	ComputeHostHealth *string `pulumi:"computeHostHealth"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
@@ -82,15 +85,19 @@ type GetComputeHostsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of compute_host_collection.
-	ComputeHostCollections    []GetComputeHostsComputeHostCollection `pulumi:"computeHostCollections"`
-	ComputeHostHealth         *string                                `pulumi:"computeHostHealth"`
-	ComputeHostLifecycleState *string                                `pulumi:"computeHostLifecycleState"`
+	ComputeHostCollections []GetComputeHostsComputeHostCollection `pulumi:"computeHostCollections"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+	ComputeHostGroupId        *string `pulumi:"computeHostGroupId"`
+	ComputeHostHealth         *string `pulumi:"computeHostHealth"`
+	ComputeHostLifecycleState *string `pulumi:"computeHostLifecycleState"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetComputeHostsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id                string  `pulumi:"id"`
-	NetworkResourceId *string `pulumi:"networkResourceId"`
+	Id string `pulumi:"id"`
+	// A free-form description detailing why the host is in its current state.
+	LifecycleDetails  map[string]string `pulumi:"lifecycleDetails"`
+	NetworkResourceId *string           `pulumi:"networkResourceId"`
 }
 
 func GetComputeHostsOutput(ctx *pulumi.Context, args GetComputeHostsOutputArgs, opts ...pulumi.InvokeOption) GetComputeHostsResultOutput {
@@ -108,6 +115,8 @@ type GetComputeHostsOutputArgs struct {
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+	ComputeHostGroupId pulumi.StringPtrInput `pulumi:"computeHostGroupId"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
 	ComputeHostHealth pulumi.StringPtrInput `pulumi:"computeHostHealth"`
 	// A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
@@ -156,6 +165,11 @@ func (o GetComputeHostsResultOutput) ComputeHostCollections() GetComputeHostsCom
 	return o.ApplyT(func(v GetComputeHostsResult) []GetComputeHostsComputeHostCollection { return v.ComputeHostCollections }).(GetComputeHostsComputeHostCollectionArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+func (o GetComputeHostsResultOutput) ComputeHostGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetComputeHostsResult) *string { return v.ComputeHostGroupId }).(pulumi.StringPtrOutput)
+}
+
 func (o GetComputeHostsResultOutput) ComputeHostHealth() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComputeHostsResult) *string { return v.ComputeHostHealth }).(pulumi.StringPtrOutput)
 }
@@ -176,6 +190,11 @@ func (o GetComputeHostsResultOutput) Filters() GetComputeHostsFilterArrayOutput 
 // The provider-assigned unique ID for this managed resource.
 func (o GetComputeHostsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetComputeHostsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A free-form description detailing why the host is in its current state.
+func (o GetComputeHostsResultOutput) LifecycleDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetComputeHostsResult) map[string]string { return v.LifecycleDetails }).(pulumi.StringMapOutput)
 }
 
 func (o GetComputeHostsResultOutput) NetworkResourceId() pulumi.StringPtrOutput {

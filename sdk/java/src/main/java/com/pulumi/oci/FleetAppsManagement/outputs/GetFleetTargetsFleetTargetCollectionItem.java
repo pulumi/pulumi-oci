@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetTargetsFleetTargetCollectionItem {
     /**
-     * @return Tenancy OCID
+     * @return compartment OCID
      * 
      */
     private String compartmentId;
@@ -77,7 +77,7 @@ public final class GetFleetTargetsFleetTargetCollectionItem {
 
     private GetFleetTargetsFleetTargetCollectionItem() {}
     /**
-     * @return Tenancy OCID
+     * @return compartment OCID
      * 
      */
     public String compartmentId() {

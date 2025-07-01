@@ -29,10 +29,13 @@ class GetManagedEntityCountsResult:
     """
     A collection of values returned by getManagedEntityCounts.
     """
-    def __init__(__self__, compartment_id=None, filters=None, id=None, managed_entity_aggregation_collections=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, managed_entity_aggregation_collections=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
+            raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
+        pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -47,6 +50,11 @@ class GetManagedEntityCountsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[builtins.str]:
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="compartmentIdInSubtree")
+    def compartment_id_in_subtree(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "compartment_id_in_subtree")
 
     @property
     @pulumi.getter
@@ -77,18 +85,20 @@ class AwaitableGetManagedEntityCountsResult(GetManagedEntityCountsResult):
             yield self
         return GetManagedEntityCountsResult(
             compartment_id=self.compartment_id,
+            compartment_id_in_subtree=self.compartment_id_in_subtree,
             filters=self.filters,
             id=self.id,
             managed_entity_aggregation_collections=self.managed_entity_aggregation_collections)
 
 
 def get_managed_entity_counts(compartment_id: Optional[builtins.str] = None,
+                              compartment_id_in_subtree: Optional[builtins.bool] = None,
                               filters: Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict']]] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetManagedEntityCountsResult:
     """
     This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Retrieve  aggregated summary information of Managed Entities within a Tenancy.
+    Retrieve  aggregated summary information of Managed entities within a Compartment.
 
     ## Example Usage
 
@@ -96,30 +106,35 @@ def get_managed_entity_counts(compartment_id: Optional[builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id)
+    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree)
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+    :param builtins.bool compartment_id_in_subtree: If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getManagedEntityCounts:getManagedEntityCounts', __args__, opts=opts, typ=GetManagedEntityCountsResult).value
 
     return AwaitableGetManagedEntityCountsResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         managed_entity_aggregation_collections=pulumi.get(__ret__, 'managed_entity_aggregation_collections'))
 def get_managed_entity_counts_output(compartment_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                     compartment_id_in_subtree: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
                                      filters: Optional[pulumi.Input[Optional[Sequence[Union['GetManagedEntityCountsFilterArgs', 'GetManagedEntityCountsFilterArgsDict']]]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetManagedEntityCountsResult]:
     """
     This data source provides the list of Managed Entity Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Retrieve  aggregated summary information of Managed Entities within a Tenancy.
+    Retrieve  aggregated summary information of Managed entities within a Compartment.
 
     ## Example Usage
 
@@ -127,19 +142,23 @@ def get_managed_entity_counts_output(compartment_id: Optional[pulumi.Input[Optio
     import pulumi
     import pulumi_oci as oci
 
-    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id)
+    test_managed_entity_counts = oci.FleetAppsManagement.get_managed_entity_counts(compartment_id=compartment_id,
+        compartment_id_in_subtree=managed_entity_count_compartment_id_in_subtree)
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+    :param builtins.bool compartment_id_in_subtree: If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getManagedEntityCounts:getManagedEntityCounts', __args__, opts=opts, typ=GetManagedEntityCountsResult)
     return __ret__.apply(lambda __response__: GetManagedEntityCountsResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         managed_entity_aggregation_collections=pulumi.get(__response__, 'managed_entity_aggregation_collections')))

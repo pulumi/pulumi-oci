@@ -106,9 +106,6 @@ class GetConnectionsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[builtins.str]:
-        """
-        An object's Display Name.
-        """
         return pulumi.get(self, "display_name")
 
     @property

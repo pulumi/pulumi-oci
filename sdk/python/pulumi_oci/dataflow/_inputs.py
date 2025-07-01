@@ -1216,6 +1216,10 @@ if not MYPY:
         """
         The host name prefix.
         """
+        nsg_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        The OCIDs of Network Security Groups (NSGs).
+        """
         private_endpoint_ip: NotRequired[pulumi.Input[builtins.str]]
         """
         Ip Address of private endpoint
@@ -1241,6 +1245,7 @@ class SqlEndpointNetworkConfigurationArgs:
                  network_type: pulumi.Input[builtins.str],
                  access_control_rules: Optional[pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]]] = None,
                  host_name_prefix: Optional[pulumi.Input[builtins.str]] = None,
+                 nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  private_endpoint_ip: Optional[pulumi.Input[builtins.str]] = None,
                  public_endpoint_ip: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1249,6 +1254,7 @@ class SqlEndpointNetworkConfigurationArgs:
         :param pulumi.Input[builtins.str] network_type: The type of network configuration.
         :param pulumi.Input[Sequence[pulumi.Input['SqlEndpointNetworkConfigurationAccessControlRuleArgs']]] access_control_rules: A list of SecureAccessControlRule's to which access is limited to
         :param pulumi.Input[builtins.str] host_name_prefix: The host name prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: The OCIDs of Network Security Groups (NSGs).
         :param pulumi.Input[builtins.str] private_endpoint_ip: Ip Address of private endpoint
         :param pulumi.Input[builtins.str] public_endpoint_ip: Ip Address of public endpoint
         :param pulumi.Input[builtins.str] subnet_id: The VCN Subnet OCID.
@@ -1259,6 +1265,8 @@ class SqlEndpointNetworkConfigurationArgs:
             pulumi.set(__self__, "access_control_rules", access_control_rules)
         if host_name_prefix is not None:
             pulumi.set(__self__, "host_name_prefix", host_name_prefix)
+        if nsg_ids is not None:
+            pulumi.set(__self__, "nsg_ids", nsg_ids)
         if private_endpoint_ip is not None:
             pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         if public_endpoint_ip is not None:
@@ -1303,6 +1311,18 @@ class SqlEndpointNetworkConfigurationArgs:
     @host_name_prefix.setter
     def host_name_prefix(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "host_name_prefix", value)
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        The OCIDs of Network Security Groups (NSGs).
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @nsg_ids.setter
+    def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "nsg_ids", value)
 
     @property
     @pulumi.getter(name="privateEndpointIp")

@@ -281,6 +281,32 @@ def get_log_analytics_entities(cloud_resource_id: Optional[builtins.str] = None,
 
     Return a list of log analytics entities.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=compartment_id,
+        namespace=log_analytics_entity_namespace,
+        cloud_resource_id=log_analytics_entity_cloud_resource_id,
+        defined_tag_equals=log_analytics_entity_defined_tag_equals,
+        defined_tag_exists=log_analytics_entity_defined_tag_exists,
+        entity_type_names=log_analytics_entity_entity_type_name,
+        freeform_tag_equals=log_analytics_entity_freeform_tag_equals,
+        freeform_tag_exists=log_analytics_entity_freeform_tag_exists,
+        hostname=log_analytics_entity_hostname,
+        hostname_contains=log_analytics_entity_hostname_contains,
+        is_management_agent_id_null=log_analytics_entity_is_management_agent_id_null,
+        is_show_associated_sources_count=log_analytics_entity_is_show_associated_sources_count,
+        lifecycle_details_contains=log_analytics_entity_lifecycle_details_contains,
+        metadata_equals=log_analytics_entity_metadata_equals,
+        name=log_analytics_entity_name,
+        name_contains=log_analytics_entity_name_contains,
+        source_id=test_source["id"],
+        state=log_analytics_entity_state)
+    ```
+
 
     :param builtins.str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
     :param builtins.str compartment_id: The ID of the compartment in which to list resources.
@@ -370,6 +396,32 @@ def get_log_analytics_entities_output(cloud_resource_id: Optional[pulumi.Input[O
     This data source provides the list of Log Analytics Entities in Oracle Cloud Infrastructure Log Analytics service.
 
     Return a list of log analytics entities.
+
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_log_analytics_entities = oci.LogAnalytics.get_log_analytics_entities(compartment_id=compartment_id,
+        namespace=log_analytics_entity_namespace,
+        cloud_resource_id=log_analytics_entity_cloud_resource_id,
+        defined_tag_equals=log_analytics_entity_defined_tag_equals,
+        defined_tag_exists=log_analytics_entity_defined_tag_exists,
+        entity_type_names=log_analytics_entity_entity_type_name,
+        freeform_tag_equals=log_analytics_entity_freeform_tag_equals,
+        freeform_tag_exists=log_analytics_entity_freeform_tag_exists,
+        hostname=log_analytics_entity_hostname,
+        hostname_contains=log_analytics_entity_hostname_contains,
+        is_management_agent_id_null=log_analytics_entity_is_management_agent_id_null,
+        is_show_associated_sources_count=log_analytics_entity_is_show_associated_sources_count,
+        lifecycle_details_contains=log_analytics_entity_lifecycle_details_contains,
+        metadata_equals=log_analytics_entity_metadata_equals,
+        name=log_analytics_entity_name,
+        name_contains=log_analytics_entity_name_contains,
+        source_id=test_source["id"],
+        state=log_analytics_entity_state)
+    ```
 
 
     :param builtins.str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.

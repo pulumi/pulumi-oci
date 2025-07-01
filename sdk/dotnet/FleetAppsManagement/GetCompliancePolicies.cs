@@ -14,7 +14,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a list of compliancePolicies.
+        /// Returns a list of all the Compliance Policies in the specified compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -33,6 +34,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         DisplayName = compliancePolicyDisplayName,
         ///         Id = compliancePolicyId,
         ///         State = compliancePolicyState,
+        ///         Type = compliancePolicyType,
         ///     });
         /// 
         /// });
@@ -44,7 +46,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a list of compliancePolicies.
+        /// Returns a list of all the Compliance Policies in the specified compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -63,6 +66,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         DisplayName = compliancePolicyDisplayName,
         ///         Id = compliancePolicyId,
         ///         State = compliancePolicyState,
+        ///         Type = compliancePolicyType,
         ///     });
         /// 
         /// });
@@ -74,7 +78,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets a list of compliancePolicies.
+        /// Returns a list of all the Compliance Policies in the specified compartment.
+        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -93,6 +98,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///         DisplayName = compliancePolicyDisplayName,
         ///         Id = compliancePolicyId,
         ///         State = compliancePolicyState,
+        ///         Type = compliancePolicyType,
         ///     });
         /// 
         /// });
@@ -106,7 +112,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetCompliancePoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -126,7 +132,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique CompliancePolicy identifier.
+        /// Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -137,6 +143,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return Platform Configurations whose type matches the given type.
+        /// </summary>
+        [Input("type")]
+        public string? Type { get; set; }
+
         public GetCompliancePoliciesArgs()
         {
         }
@@ -146,7 +158,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetCompliancePoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -166,7 +178,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         }
 
         /// <summary>
-        /// unique CompliancePolicy identifier.
+        /// Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -176,6 +188,12 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// A filter to return Platform Configurations whose type matches the given type.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         public GetCompliancePoliciesInvokeArgs()
         {
@@ -208,6 +226,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The current state of the CompliancePolicy.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The type of the Compliance Policy.
+        /// </summary>
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetCompliancePoliciesResult(
@@ -221,7 +243,9 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string? id,
 
-            string? state)
+            string? state,
+
+            string? type)
         {
             CompartmentId = compartmentId;
             CompliancePolicyCollections = compliancePolicyCollections;
@@ -229,6 +253,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             Filters = filters;
             Id = id;
             State = state;
+            Type = type;
         }
     }
 }

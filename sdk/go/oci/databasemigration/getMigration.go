@@ -92,6 +92,8 @@ type LookupMigrationResult struct {
 	SourceContainerDatabaseConnectionId string `pulumi:"sourceContainerDatabaseConnectionId"`
 	// The OCID of the resource being referenced.
 	SourceDatabaseConnectionId string `pulumi:"sourceDatabaseConnectionId"`
+	// The OCID of the resource being referenced.
+	SourceStandbyDatabaseConnectionId string `pulumi:"sourceStandbyDatabaseConnectionId"`
 	// The current state of the Migration resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -245,6 +247,11 @@ func (o LookupMigrationResultOutput) SourceContainerDatabaseConnectionId() pulum
 // The OCID of the resource being referenced.
 func (o LookupMigrationResultOutput) SourceDatabaseConnectionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMigrationResult) string { return v.SourceDatabaseConnectionId }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o LookupMigrationResultOutput) SourceStandbyDatabaseConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMigrationResult) string { return v.SourceStandbyDatabaseConnectionId }).(pulumi.StringOutput)
 }
 
 // The current state of the Migration resource.

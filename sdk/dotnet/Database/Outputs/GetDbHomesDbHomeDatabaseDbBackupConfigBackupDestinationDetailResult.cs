@@ -18,7 +18,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsRemote;
+        public readonly string RemoteRegion;
         public readonly string Type;
+        public readonly string VpcPassword;
+        public readonly string VpcUser;
 
         [OutputConstructor]
         private GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult(
@@ -26,11 +30,23 @@ namespace Pulumi.Oci.Database.Outputs
 
             string id,
 
-            string type)
+            bool isRemote,
+
+            string remoteRegion,
+
+            string type,
+
+            string vpcPassword,
+
+            string vpcUser)
         {
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
+            VpcPassword = vpcPassword;
+            VpcUser = vpcUser;
         }
     }
 }

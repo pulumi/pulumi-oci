@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetComputeHost(ctx *pulumi.Context, args *GetComputeHostArgs, opts ...pulumi.InvokeOption) (*GetComputeHostResult, error) {
+func LookupComputeHost(ctx *pulumi.Context, args *LookupComputeHostArgs, opts ...pulumi.InvokeOption) (*LookupComputeHostResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetComputeHostResult
+	var rv LookupComputeHostResult
 	err := ctx.Invoke("oci:Core/getComputeHost:getComputeHost", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetComputeHost(ctx *pulumi.Context, args *GetComputeHostArgs, opts ...pulum
 }
 
 // A collection of arguments for invoking getComputeHost.
-type GetComputeHostArgs struct {
+type LookupComputeHostArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId string `pulumi:"computeHostId"`
 }
 
 // A collection of values returned by getComputeHost.
-type GetComputeHostResult struct {
+type LookupComputeHostResult struct {
 	// Additional data that can be exposed to the customer.  Will include raw fault codes for strategic customers
 	AdditionalData string `pulumi:"additionalData"`
 	// The availability domain of the compute host.  Example: `Uocm:US-CHICAGO-1-AD-2`
@@ -66,7 +66,13 @@ type GetComputeHostResult struct {
 	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	ComputeHostId string `pulumi:"computeHostId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+	ComputeHostGroupId string `pulumi:"computeHostGroupId"`
+	ComputeHostId      string `pulumi:"computeHostId"`
+	// Compute Host Configuration Data
+	ConfigurationDatas []GetComputeHostConfigurationData `pulumi:"configurationDatas"`
+	// Configuration state of the Compute Bare Metal Host.
+	ConfigurationState string `pulumi:"configurationState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -93,159 +99,188 @@ type GetComputeHostResult struct {
 	LocalBlockId string `pulumi:"localBlockId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
 	NetworkBlockId string `pulumi:"networkBlockId"`
+	// Shows details about the last recycle performed on this host.
+	RecycleDetails []GetComputeHostRecycleDetail `pulumi:"recycleDetails"`
 	// The shape of host
 	Shape string `pulumi:"shape"`
 	// The lifecycle state of the host
 	State string `pulumi:"state"`
+	// The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeConfigurationCheck string `pulumi:"timeConfigurationCheck"`
 	// The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
-func GetComputeHostOutput(ctx *pulumi.Context, args GetComputeHostOutputArgs, opts ...pulumi.InvokeOption) GetComputeHostResultOutput {
+func LookupComputeHostOutput(ctx *pulumi.Context, args LookupComputeHostOutputArgs, opts ...pulumi.InvokeOption) LookupComputeHostResultOutput {
 	return pulumi.ToOutputWithContext(ctx.Context(), args).
-		ApplyT(func(v interface{}) (GetComputeHostResultOutput, error) {
-			args := v.(GetComputeHostArgs)
+		ApplyT(func(v interface{}) (LookupComputeHostResultOutput, error) {
+			args := v.(LookupComputeHostArgs)
 			options := pulumi.InvokeOutputOptions{InvokeOptions: internal.PkgInvokeDefaultOpts(opts)}
-			return ctx.InvokeOutput("oci:Core/getComputeHost:getComputeHost", args, GetComputeHostResultOutput{}, options).(GetComputeHostResultOutput), nil
-		}).(GetComputeHostResultOutput)
+			return ctx.InvokeOutput("oci:Core/getComputeHost:getComputeHost", args, LookupComputeHostResultOutput{}, options).(LookupComputeHostResultOutput), nil
+		}).(LookupComputeHostResultOutput)
 }
 
 // A collection of arguments for invoking getComputeHost.
-type GetComputeHostOutputArgs struct {
+type LookupComputeHostOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host.
 	ComputeHostId pulumi.StringInput `pulumi:"computeHostId"`
 }
 
-func (GetComputeHostOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetComputeHostArgs)(nil)).Elem()
+func (LookupComputeHostOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupComputeHostArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getComputeHost.
-type GetComputeHostResultOutput struct{ *pulumi.OutputState }
+type LookupComputeHostResultOutput struct{ *pulumi.OutputState }
 
-func (GetComputeHostResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetComputeHostResult)(nil)).Elem()
+func (LookupComputeHostResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupComputeHostResult)(nil)).Elem()
 }
 
-func (o GetComputeHostResultOutput) ToGetComputeHostResultOutput() GetComputeHostResultOutput {
+func (o LookupComputeHostResultOutput) ToLookupComputeHostResultOutput() LookupComputeHostResultOutput {
 	return o
 }
 
-func (o GetComputeHostResultOutput) ToGetComputeHostResultOutputWithContext(ctx context.Context) GetComputeHostResultOutput {
+func (o LookupComputeHostResultOutput) ToLookupComputeHostResultOutputWithContext(ctx context.Context) LookupComputeHostResultOutput {
 	return o
 }
 
 // Additional data that can be exposed to the customer.  Will include raw fault codes for strategic customers
-func (o GetComputeHostResultOutput) AdditionalData() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.AdditionalData }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) AdditionalData() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.AdditionalData }).(pulumi.StringOutput)
 }
 
 // The availability domain of the compute host.  Example: `Uocm:US-CHICAGO-1-AD-2`
-func (o GetComputeHostResultOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Capacity Reserver that is currently on host
-func (o GetComputeHostResultOutput) CapacityReservationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
-func (o GetComputeHostResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetComputeHostResultOutput) ComputeHostId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.ComputeHostId }).(pulumi.StringOutput)
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+func (o LookupComputeHostResultOutput) ComputeHostGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.ComputeHostGroupId }).(pulumi.StringOutput)
+}
+
+func (o LookupComputeHostResultOutput) ComputeHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.ComputeHostId }).(pulumi.StringOutput)
+}
+
+// Compute Host Configuration Data
+func (o LookupComputeHostResultOutput) ConfigurationDatas() GetComputeHostConfigurationDataArrayOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) []GetComputeHostConfigurationData { return v.ConfigurationDatas }).(GetComputeHostConfigurationDataArrayOutput)
+}
+
+// Configuration state of the Compute Bare Metal Host.
+func (o LookupComputeHostResultOutput) ConfigurationState() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.ConfigurationState }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetComputeHostResultOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetComputeHostResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+func (o LookupComputeHostResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-func (o GetComputeHostResultOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.DisplayName }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
 // A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-func (o GetComputeHostResultOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.FaultDomain }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetComputeHostResultOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetComputeHostResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+func (o LookupComputeHostResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique GPU Memory Fabric
-func (o GetComputeHostResultOutput) GpuMemoryFabricId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.GpuMemoryFabricId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) GpuMemoryFabricId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.GpuMemoryFabricId }).(pulumi.StringOutput)
 }
 
 // The heathy state of the host
-func (o GetComputeHostResultOutput) Health() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.Health }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) Health() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.Health }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique HPC Island
-func (o GetComputeHostResultOutput) HpcIslandId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.HpcIslandId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) HpcIslandId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.HpcIslandId }).(pulumi.StringOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
-func (o GetComputeHostResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // A list that contains impacted components related to an unhealthy host. An impacted component will be a  free-form structure of key values pairs that will provide more or less details based on data tiering
-func (o GetComputeHostResultOutput) ImpactedComponentDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.ImpactedComponentDetails }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) ImpactedComponentDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.ImpactedComponentDetails }).(pulumi.StringOutput)
 }
 
 // The public [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Virtual Machine or Bare Metal instance
-func (o GetComputeHostResultOutput) InstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.InstanceId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) InstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.InstanceId }).(pulumi.StringOutput)
 }
 
 // A free-form description detailing why the host is in its current state.
-func (o GetComputeHostResultOutput) LifecycleDetails() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetComputeHostResult) map[string]string { return v.LifecycleDetails }).(pulumi.StringMapOutput)
+func (o LookupComputeHostResultOutput) LifecycleDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) map[string]string { return v.LifecycleDetails }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Local Block
-func (o GetComputeHostResultOutput) LocalBlockId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.LocalBlockId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) LocalBlockId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.LocalBlockId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for Customer-unique Network Block
-func (o GetComputeHostResultOutput) NetworkBlockId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.NetworkBlockId }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) NetworkBlockId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.NetworkBlockId }).(pulumi.StringOutput)
+}
+
+// Shows details about the last recycle performed on this host.
+func (o LookupComputeHostResultOutput) RecycleDetails() GetComputeHostRecycleDetailArrayOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) []GetComputeHostRecycleDetail { return v.RecycleDetails }).(GetComputeHostRecycleDetailArrayOutput)
 }
 
 // The shape of host
-func (o GetComputeHostResultOutput) Shape() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.Shape }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The lifecycle state of the host
-func (o GetComputeHostResultOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.State }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o LookupComputeHostResultOutput) TimeConfigurationCheck() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.TimeConfigurationCheck }).(pulumi.StringOutput)
 }
 
 // The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetComputeHostResultOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
 // The date and time that the compute host record was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetComputeHostResultOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetComputeHostResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+func (o LookupComputeHostResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeHostResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetComputeHostResultOutput{})
+	pulumi.RegisterOutputType(LookupComputeHostResultOutput{})
 }

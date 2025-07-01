@@ -29,7 +29,10 @@ class GetOnboardingPoliciesResult:
     """
     A collection of values returned by getOnboardingPolicies.
     """
-    def __init__(__self__, filters=None, id=None, onboarding_policy_collections=None):
+    def __init__(__self__, compartment_id=None, filters=None, id=None, onboarding_policy_collections=None):
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -39,6 +42,11 @@ class GetOnboardingPoliciesResult:
         if onboarding_policy_collections and not isinstance(onboarding_policy_collections, list):
             raise TypeError("Expected argument 'onboarding_policy_collections' to be a list")
         pulumi.set(__self__, "onboarding_policy_collections", onboarding_policy_collections)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter
@@ -68,12 +76,14 @@ class AwaitableGetOnboardingPoliciesResult(GetOnboardingPoliciesResult):
         if False:
             yield self
         return GetOnboardingPoliciesResult(
+            compartment_id=self.compartment_id,
             filters=self.filters,
             id=self.id,
             onboarding_policy_collections=self.onboarding_policy_collections)
 
 
-def get_onboarding_policies(filters: Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]] = None,
+def get_onboarding_policies(compartment_id: Optional[builtins.str] = None,
+                            filters: Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetOnboardingPoliciesResult:
     """
     This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -86,19 +96,25 @@ def get_onboarding_policies(filters: Optional[Sequence[Union['GetOnboardingPolic
     import pulumi
     import pulumi_oci as oci
 
-    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies()
+    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies(compartment_id=compartment_id)
     ```
+
+
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies', __args__, opts=opts, typ=GetOnboardingPoliciesResult).value
 
     return AwaitableGetOnboardingPoliciesResult(
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         onboarding_policy_collections=pulumi.get(__ret__, 'onboarding_policy_collections'))
-def get_onboarding_policies_output(filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]]]] = None,
+def get_onboarding_policies_output(compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                                   filters: Optional[pulumi.Input[Optional[Sequence[Union['GetOnboardingPoliciesFilterArgs', 'GetOnboardingPoliciesFilterArgsDict']]]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetOnboardingPoliciesResult]:
     """
     This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
@@ -111,14 +127,19 @@ def get_onboarding_policies_output(filters: Optional[pulumi.Input[Optional[Seque
     import pulumi
     import pulumi_oci as oci
 
-    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies()
+    test_onboarding_policies = oci.FleetAppsManagement.get_onboarding_policies(compartment_id=compartment_id)
     ```
+
+
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getOnboardingPolicies:getOnboardingPolicies', __args__, opts=opts, typ=GetOnboardingPoliciesResult)
     return __ret__.apply(lambda __response__: GetOnboardingPoliciesResult(
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         onboarding_policy_collections=pulumi.get(__response__, 'onboarding_policy_collections')))

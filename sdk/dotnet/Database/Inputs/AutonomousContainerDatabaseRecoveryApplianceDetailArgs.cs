@@ -26,7 +26,6 @@ namespace Pulumi.Oci.Database.Inputs
 
         /// <summary>
         /// The time when the recovery appliance details are updated.
-        /// =======
         /// </summary>
         [Input("timeRecoveryApplianceDetailsUpdated")]
         public Input<string>? TimeRecoveryApplianceDetailsUpdated { get; set; }

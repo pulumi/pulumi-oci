@@ -92,7 +92,11 @@ namespace Pulumi.Oci.LoadBalancer
     public partial class BackendSet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+        /// 
+        /// If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+        /// 
+        /// Example: `300`
         /// </summary>
         [Output("backendMaxConnections")]
         public Output<int> BackendMaxConnections { get; private set; } = null!;
@@ -227,7 +231,11 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class BackendSetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+        /// 
+        /// If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+        /// 
+        /// Example: `300`
         /// </summary>
         [Input("backendMaxConnections")]
         public Input<int>? BackendMaxConnections { get; set; }
@@ -315,7 +323,11 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class BackendSetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        /// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+        /// 
+        /// If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+        /// 
+        /// Example: `300`
         /// </summary>
         [Input("backendMaxConnections")]
         public Input<int>? BackendMaxConnections { get; set; }

@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ConfigurationArgs, ConfigurationState } from "./configuration";
+export type Configuration = import("./configuration").Configuration;
+export const Configuration: typeof import("./configuration").Configuration = null as any;
+utilities.lazyLoad(exports, ["Configuration"], () => require("./configuration"));
+
+export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
+export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
+export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getConfiguration","getConfigurationOutput"], () => require("./getConfiguration"));
+
 export { GetIndexArgs, GetIndexResult, GetIndexOutputArgs } from "./getIndex";
 export const getIndex: typeof import("./getIndex").getIndex = null as any;
 export const getIndexOutput: typeof import("./getIndex").getIndexOutput = null as any;
@@ -45,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Nosql/configuration:Configuration":
+                return new Configuration(name, <any>undefined, { urn })
             case "oci:Nosql/index:Index":
                 return new Index(name, <any>undefined, { urn })
             case "oci:Nosql/table:Table":
@@ -56,6 +68,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Nosql/configuration", _module)
 pulumi.runtime.registerResourceModule("oci", "Nosql/index", _module)
 pulumi.runtime.registerResourceModule("oci", "Nosql/table", _module)
 pulumi.runtime.registerResourceModule("oci", "Nosql/tableReplica", _module)

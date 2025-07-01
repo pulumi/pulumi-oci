@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPropertyResult {
     /**
-     * @return Tenancy OCID
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
@@ -96,7 +96,7 @@ public final class GetPropertyResult {
 
     private GetPropertyResult() {}
     /**
-     * @return Tenancy OCID
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {

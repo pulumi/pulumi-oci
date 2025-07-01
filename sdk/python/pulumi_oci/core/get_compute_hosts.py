@@ -29,7 +29,7 @@ class GetComputeHostsResult:
     """
     A collection of values returned by getComputeHosts.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, compute_host_collections=None, compute_host_health=None, compute_host_lifecycle_state=None, display_name=None, filters=None, id=None, network_resource_id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, compute_host_collections=None, compute_host_group_id=None, compute_host_health=None, compute_host_lifecycle_state=None, display_name=None, filters=None, id=None, lifecycle_details=None, network_resource_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -39,6 +39,9 @@ class GetComputeHostsResult:
         if compute_host_collections and not isinstance(compute_host_collections, list):
             raise TypeError("Expected argument 'compute_host_collections' to be a list")
         pulumi.set(__self__, "compute_host_collections", compute_host_collections)
+        if compute_host_group_id and not isinstance(compute_host_group_id, str):
+            raise TypeError("Expected argument 'compute_host_group_id' to be a str")
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
         if compute_host_health and not isinstance(compute_host_health, str):
             raise TypeError("Expected argument 'compute_host_health' to be a str")
         pulumi.set(__self__, "compute_host_health", compute_host_health)
@@ -54,6 +57,9 @@ class GetComputeHostsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if lifecycle_details and not isinstance(lifecycle_details, dict):
+            raise TypeError("Expected argument 'lifecycle_details' to be a dict")
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if network_resource_id and not isinstance(network_resource_id, str):
             raise TypeError("Expected argument 'network_resource_id' to be a str")
         pulumi.set(__self__, "network_resource_id", network_resource_id)
@@ -81,6 +87,14 @@ class GetComputeHostsResult:
         The list of compute_host_collection.
         """
         return pulumi.get(self, "compute_host_collections")
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> Optional[builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @property
     @pulumi.getter(name="computeHostHealth")
@@ -114,6 +128,14 @@ class GetComputeHostsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Mapping[str, builtins.str]:
+        """
+        A free-form description detailing why the host is in its current state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
     @pulumi.getter(name="networkResourceId")
     def network_resource_id(self) -> Optional[builtins.str]:
         return pulumi.get(self, "network_resource_id")
@@ -128,16 +150,19 @@ class AwaitableGetComputeHostsResult(GetComputeHostsResult):
             availability_domain=self.availability_domain,
             compartment_id=self.compartment_id,
             compute_host_collections=self.compute_host_collections,
+            compute_host_group_id=self.compute_host_group_id,
             compute_host_health=self.compute_host_health,
             compute_host_lifecycle_state=self.compute_host_lifecycle_state,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            lifecycle_details=self.lifecycle_details,
             network_resource_id=self.network_resource_id)
 
 
 def get_compute_hosts(availability_domain: Optional[builtins.str] = None,
                       compartment_id: Optional[builtins.str] = None,
+                      compute_host_group_id: Optional[builtins.str] = None,
                       compute_host_health: Optional[builtins.str] = None,
                       compute_host_lifecycle_state: Optional[builtins.str] = None,
                       display_name: Optional[builtins.str] = None,
@@ -157,6 +182,7 @@ def get_compute_hosts(availability_domain: Optional[builtins.str] = None,
 
     test_compute_hosts = oci.Core.get_compute_hosts(compartment_id=compartment_id,
         availability_domain=compute_host_availability_domain,
+        compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
@@ -166,6 +192,7 @@ def get_compute_hosts(availability_domain: Optional[builtins.str] = None,
 
     :param builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
     :param builtins.str compute_host_health: A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
     :param builtins.str compute_host_lifecycle_state: A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
     :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -177,6 +204,7 @@ def get_compute_hosts(availability_domain: Optional[builtins.str] = None,
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
+    __args__['computeHostGroupId'] = compute_host_group_id
     __args__['computeHostHealth'] = compute_host_health
     __args__['computeHostLifecycleState'] = compute_host_lifecycle_state
     __args__['displayName'] = display_name
@@ -189,14 +217,17 @@ def get_compute_hosts(availability_domain: Optional[builtins.str] = None,
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_host_collections=pulumi.get(__ret__, 'compute_host_collections'),
+        compute_host_group_id=pulumi.get(__ret__, 'compute_host_group_id'),
         compute_host_health=pulumi.get(__ret__, 'compute_host_health'),
         compute_host_lifecycle_state=pulumi.get(__ret__, 'compute_host_lifecycle_state'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         network_resource_id=pulumi.get(__ret__, 'network_resource_id'))
 def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                             compute_host_group_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              compute_host_health: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              compute_host_lifecycle_state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
@@ -216,6 +247,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
 
     test_compute_hosts = oci.Core.get_compute_hosts(compartment_id=compartment_id,
         availability_domain=compute_host_availability_domain,
+        compute_host_group_id=test_compute_host_group["id"],
         compute_host_health=compute_host_compute_host_health,
         compute_host_lifecycle_state=compute_host_compute_host_lifecycle_state,
         display_name=compute_host_display_name,
@@ -225,6 +257,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
 
     :param builtins.str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
     :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param builtins.str compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
     :param builtins.str compute_host_health: A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
     :param builtins.str compute_host_lifecycle_state: A filter to return only ComputeHostSummary resources that match the given Compute Host lifecycle State OCID exactly.
     :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -236,6 +269,7 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
+    __args__['computeHostGroupId'] = compute_host_group_id
     __args__['computeHostHealth'] = compute_host_health
     __args__['computeHostLifecycleState'] = compute_host_lifecycle_state
     __args__['displayName'] = display_name
@@ -247,9 +281,11 @@ def get_compute_hosts_output(availability_domain: Optional[pulumi.Input[Optional
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_host_collections=pulumi.get(__response__, 'compute_host_collections'),
+        compute_host_group_id=pulumi.get(__response__, 'compute_host_group_id'),
         compute_host_health=pulumi.get(__response__, 'compute_host_health'),
         compute_host_lifecycle_state=pulumi.get(__response__, 'compute_host_lifecycle_state'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         network_resource_id=pulumi.get(__response__, 'network_resource_id')))

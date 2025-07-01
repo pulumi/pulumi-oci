@@ -45,6 +45,13 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         return Optional.ofNullable(this.associatedBackupConfigurationDetails);
     }
 
+    @Import(name="autonomousContainerDatabaseBackupId")
+    private @Nullable Output<String> autonomousContainerDatabaseBackupId;
+
+    public Optional<Output<String>> autonomousContainerDatabaseBackupId() {
+        return Optional.ofNullable(this.autonomousContainerDatabaseBackupId);
+    }
+
     /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
@@ -443,14 +450,14 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
-     * Whether it is multiple standby Autonomous Dataguard
+     * Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     @Import(name="isMultipleStandby")
     private @Nullable Output<Boolean> isMultipleStandby;
 
     /**
-     * @return Whether it is multiple standby Autonomous Dataguard
+     * @return Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     public Optional<Output<Boolean>> isMultipleStandby() {
@@ -818,7 +825,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Import(name="provisionedCpus")
@@ -826,7 +832,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
     /**
      * @return The number of CPUs provisioned in an Autonomous Container Database.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Optional<Output<Double>> provisionedCpus() {
@@ -837,7 +842,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Import(name="reclaimableCpus")
@@ -847,7 +851,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Optional<Output<Double>> reclaimableCpus() {
@@ -952,6 +955,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      */
     public Optional<Output<String>> serviceLevelAgreementType() {
         return Optional.ofNullable(this.serviceLevelAgreementType);
+    }
+
+    /**
+     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * 
+     */
+    @Import(name="source")
+    private @Nullable Output<String> source;
+
+    /**
+     * @return The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * 
+     */
+    public Optional<Output<String>> source() {
+        return Optional.ofNullable(this.source);
     }
 
     /**
@@ -1108,6 +1126,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
     private AutonomousContainerDatabaseState(AutonomousContainerDatabaseState $) {
         this.associatedBackupConfigurationDetails = $.associatedBackupConfigurationDetails;
+        this.autonomousContainerDatabaseBackupId = $.autonomousContainerDatabaseBackupId;
         this.autonomousExadataInfrastructureId = $.autonomousExadataInfrastructureId;
         this.autonomousVmClusterId = $.autonomousVmClusterId;
         this.availabilityDomain = $.availabilityDomain;
@@ -1169,6 +1188,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.role = $.role;
         this.rotateKeyTrigger = $.rotateKeyTrigger;
         this.serviceLevelAgreementType = $.serviceLevelAgreementType;
+        this.source = $.source;
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.state = $.state;
         this.switchoverTrigger = $.switchoverTrigger;
@@ -1228,6 +1248,15 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder associatedBackupConfigurationDetails(AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs... associatedBackupConfigurationDetails) {
             return associatedBackupConfigurationDetails(List.of(associatedBackupConfigurationDetails));
+        }
+
+        public Builder autonomousContainerDatabaseBackupId(@Nullable Output<String> autonomousContainerDatabaseBackupId) {
+            $.autonomousContainerDatabaseBackupId = autonomousContainerDatabaseBackupId;
+            return this;
+        }
+
+        public Builder autonomousContainerDatabaseBackupId(String autonomousContainerDatabaseBackupId) {
+            return autonomousContainerDatabaseBackupId(Output.of(autonomousContainerDatabaseBackupId));
         }
 
         /**
@@ -1816,7 +1845,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param isMultipleStandby Whether it is multiple standby Autonomous Dataguard
+         * @param isMultipleStandby Indicates if it is multiple standby Autonomous Dataguard
          * 
          * @return builder
          * 
@@ -1827,7 +1856,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
-         * @param isMultipleStandby Whether it is multiple standby Autonomous Dataguard
+         * @param isMultipleStandby Indicates if it is multiple standby Autonomous Dataguard
          * 
          * @return builder
          * 
@@ -2379,7 +2408,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
         /**
          * @param provisionedCpus The number of CPUs provisioned in an Autonomous Container Database.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -2391,7 +2419,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
 
         /**
          * @param provisionedCpus The number of CPUs provisioned in an Autonomous Container Database.
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
          * 
          * @return builder
          * 
@@ -2404,7 +2431,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
          * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -2418,7 +2444,6 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          * @param reclaimableCpus For Autonomous Databases on Dedicated Exadata Infrastructure:
          * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
-         * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
          * 
          * @return builder
          * 
@@ -2571,6 +2596,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder serviceLevelAgreementType(String serviceLevelAgreementType) {
             return serviceLevelAgreementType(Output.of(serviceLevelAgreementType));
+        }
+
+        /**
+         * @param source The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder source(@Nullable Output<String> source) {
+            $.source = source;
+            return this;
+        }
+
+        /**
+         * @param source The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder source(String source) {
+            return source(Output.of(source));
         }
 
         /**

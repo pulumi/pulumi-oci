@@ -25,11 +25,44 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        [Input("isRemote")]
+        public Input<bool>? IsRemote { get; set; }
+
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// 
+        /// For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        [Input("remoteRegion")]
+        public Input<string>? RemoteRegion { get; set; }
+
+        /// <summary>
         /// Type of the database backup destination.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
+        [Input("vpcPassword")]
+        private Input<string>? _vpcPassword;
+
+        /// <summary>
+        /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        /// </summary>
+        public Input<string>? VpcPassword
+        {
+            get => _vpcPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _vpcPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        /// </summary>
         [Input("vpcUser")]
         public Input<string>? VpcUser { get; set; }
 

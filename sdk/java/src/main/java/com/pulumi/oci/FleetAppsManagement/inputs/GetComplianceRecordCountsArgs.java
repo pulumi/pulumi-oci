@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetComplianceRecordCountsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -18,18 +19,33 @@ public final class GetComplianceRecordCountsArgs extends com.pulumi.resources.In
     public static final GetComplianceRecordCountsArgs Empty = new GetComplianceRecordCountsArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Output<Boolean> compartmentIdInSubtree;
+
+    /**
+     * @return If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    public Optional<Output<Boolean>> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
     @Import(name="filters")
@@ -43,6 +59,7 @@ public final class GetComplianceRecordCountsArgs extends com.pulumi.resources.In
 
     private GetComplianceRecordCountsArgs(GetComplianceRecordCountsArgs $) {
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
     }
 
@@ -65,7 +82,7 @@ public final class GetComplianceRecordCountsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
@@ -76,13 +93,34 @@ public final class GetComplianceRecordCountsArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param compartmentIdInSubtree If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Output<Boolean> compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
         }
 
         public Builder filters(@Nullable Output<List<GetComplianceRecordCountsFilterArgs>> filters) {

@@ -223,7 +223,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         public readonly string? ResourceTaskId;
         public readonly string SchedulerJobId;
         /// <summary>
-        /// The sequence of the step
+        /// The sequence of the step.
         /// </summary>
         public readonly string? Sequence;
         /// <summary>
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulerJobJobActivityStepsStepCollectionResult> StepCollections;
         /// <summary>
-        /// Name of the Step
+        /// Name of the Step.
         /// </summary>
         public readonly string? StepName;
         public readonly string? TargetName;

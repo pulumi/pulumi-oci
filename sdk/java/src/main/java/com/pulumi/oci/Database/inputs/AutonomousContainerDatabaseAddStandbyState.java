@@ -394,14 +394,14 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
     }
 
     /**
-     * Whether it is multiple standby Autonomous Dataguard
+     * Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     @Import(name="isMultipleStandby")
     private @Nullable Output<Boolean> isMultipleStandby;
 
     /**
-     * @return Whether it is multiple standby Autonomous Dataguard
+     * @return Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     public Optional<Output<Boolean>> isMultipleStandby() {
@@ -1599,7 +1599,7 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         }
 
         /**
-         * @param isMultipleStandby Whether it is multiple standby Autonomous Dataguard
+         * @param isMultipleStandby Indicates if it is multiple standby Autonomous Dataguard
          * 
          * @return builder
          * 
@@ -1610,7 +1610,7 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         }
 
         /**
-         * @param isMultipleStandby Whether it is multiple standby Autonomous Dataguard
+         * @param isMultipleStandby Indicates if it is multiple standby Autonomous Dataguard
          * 
          * @return builder
          * 

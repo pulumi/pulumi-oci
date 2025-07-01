@@ -192,7 +192,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * A table name within the compartment, or a table OCID.
      * 
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
      * 
      */
     @Export(name="tableNameOrId", refs={String.class}, tree="[0]")
@@ -202,7 +202,7 @@ public class Index extends com.pulumi.resources.CustomResource {
      * @return A table name within the compartment, or a table OCID.
      * 
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
      * 
      */
     public Output<String> tableNameOrId() {

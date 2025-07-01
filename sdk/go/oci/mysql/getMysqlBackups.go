@@ -35,6 +35,7 @@ import (
 //				CreationType:  pulumi.StringRef(mysqlBackupCreationType),
 //				DbSystemId:    pulumi.StringRef(testDbSystem.Id),
 //				DisplayName:   pulumi.StringRef(mysqlBackupDisplayName),
+//				SoftDelete:    pulumi.StringRef(mysqlBackupSoftDelete),
 //				State:         pulumi.StringRef(mysqlBackupState),
 //			}, nil)
 //			if err != nil {
@@ -68,6 +69,8 @@ type GetMysqlBackupsArgs struct {
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName *string                 `pulumi:"displayName"`
 	Filters     []GetMysqlBackupsFilter `pulumi:"filters"`
+	// Backup Soft Delete
+	SoftDelete *string `pulumi:"softDelete"`
 	// Backup Lifecycle State
 	State *string `pulumi:"state"`
 }
@@ -88,6 +91,8 @@ type GetMysqlBackupsResult struct {
 	Filters     []GetMysqlBackupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+	SoftDelete *string `pulumi:"softDelete"`
 	// The state of the backup.
 	State *string `pulumi:"state"`
 }
@@ -114,6 +119,8 @@ type GetMysqlBackupsOutputArgs struct {
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringPtrInput           `pulumi:"displayName"`
 	Filters     GetMysqlBackupsFilterArrayInput `pulumi:"filters"`
+	// Backup Soft Delete
+	SoftDelete pulumi.StringPtrInput `pulumi:"softDelete"`
 	// Backup Lifecycle State
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -173,6 +180,11 @@ func (o GetMysqlBackupsResultOutput) Filters() GetMysqlBackupsFilterArrayOutput 
 // The provider-assigned unique ID for this managed resource.
 func (o GetMysqlBackupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+func (o GetMysqlBackupsResultOutput) SoftDelete() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMysqlBackupsResult) *string { return v.SoftDelete }).(pulumi.StringPtrOutput)
 }
 
 // The state of the backup.

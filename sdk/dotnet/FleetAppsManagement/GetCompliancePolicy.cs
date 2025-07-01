@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets information about a CompliancePolicy.
+        /// Gets information about a compliance policy.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets information about a CompliancePolicy.
+        /// Gets information about a compliance policy.
         /// 
         /// ## Example Usage
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides details about a specific Compliance Policy resource in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Gets information about a CompliancePolicy.
+        /// Gets information about a compliance policy.
         /// 
         /// ## Example Usage
         /// 
@@ -168,6 +168,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// The date and time the CompliancePolicy was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// The type of the Compliance Policy.
+        /// </summary>
+        public readonly string Type;
 
         [OutputConstructor]
         private GetCompliancePolicyResult(
@@ -193,7 +197,9 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string type)
         {
             CompartmentId = compartmentId;
             CompliancePolicyId = compliancePolicyId;
@@ -207,6 +213,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Type = type;
         }
     }
 }

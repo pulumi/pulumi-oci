@@ -74,7 +74,11 @@ type Backend struct {
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringOutput `pulumi:"loadBalancerId"`
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections pulumi.IntOutput `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -146,7 +150,11 @@ type backendState struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections *int `pulumi:"maxConnections"`
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name *string `pulumi:"name"`
@@ -177,7 +185,11 @@ type BackendState struct {
 	IpAddress pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringPtrInput
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections pulumi.IntPtrInput
 	// A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
 	Name pulumi.StringPtrInput
@@ -212,7 +224,11 @@ type backendArgs struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId string `pulumi:"loadBalancerId"`
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections *int `pulumi:"maxConnections"`
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline *bool `pulumi:"offline"`
@@ -241,7 +257,11 @@ type BackendArgs struct {
 	IpAddress pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
 	LoadBalancerId pulumi.StringInput
-	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+	// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+	//
+	// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+	//
+	// Example: `300`
 	MaxConnections pulumi.IntPtrInput
 	// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	Offline pulumi.BoolPtrInput
@@ -370,7 +390,11 @@ func (o BackendOutput) LoadBalancerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Backend) pulumi.StringOutput { return v.LoadBalancerId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+// (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+//
+// If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+//
+// Example: `300`
 func (o BackendOutput) MaxConnections() pulumi.IntOutput {
 	return o.ApplyT(func(v *Backend) pulumi.IntOutput { return v.MaxConnections }).(pulumi.IntOutput)
 }

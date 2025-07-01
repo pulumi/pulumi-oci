@@ -7,8 +7,10 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionBootstrapServer;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionCatalog;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionIngressIp;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionLock;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionStorage;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -19,13 +21,13 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionResult {
     /**
-     * @return Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * @return Access key ID to access the Amazon S3 bucket.
      * 
      */
     private String accessKeyId;
     private String accountKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * 
      */
     private String accountKeySecretId;
@@ -64,6 +66,11 @@ public final class GetConnectionResult {
      * 
      */
     private List<GetConnectionBootstrapServer> bootstrapServers;
+    /**
+     * @return Represents the catalog of given type used in an Iceberg connection.
+     * 
+     */
+    private List<GetConnectionCatalog> catalogs;
     /**
      * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
@@ -111,6 +118,10 @@ public final class GetConnectionResult {
      * 
      */
     private String consumerProperties;
+    /**
+     * @return The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     private String coreSiteXml;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -153,10 +164,14 @@ public final class GetConnectionResult {
      */
     private Boolean doesUseSecretIds;
     /**
-     * @return Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * @return The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
      * 
      */
     private String endpoint;
+    /**
+     * @return Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
     private String fingerprint;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -273,6 +288,10 @@ public final class GetConnectionResult {
      * 
      */
     private String producerProperties;
+    /**
+     * @return The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
     private String publicKeyFingerprint;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
@@ -280,7 +299,7 @@ public final class GetConnectionResult {
      */
     private String redisClusterId;
     /**
-     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
      * 
      */
     private String region;
@@ -297,14 +316,14 @@ public final class GetConnectionResult {
     private String sasTokenSecretId;
     private String secretAccessKey;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      * 
      */
     private String secretAccessKeySecretId;
     /**
      * @return Security Protocol to be provided for the following connection types:
-     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     private String securityProtocol;
@@ -316,7 +335,7 @@ public final class GetConnectionResult {
     private String servers;
     private String serviceAccountKeyFile;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
      * 
      */
     private String serviceAccountKeyFileSecretId;
@@ -341,10 +360,14 @@ public final class GetConnectionResult {
      */
     private Boolean shouldValidateServerCertificate;
     /**
-     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     private String sslCa;
+    /**
+     * @return Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     private String sslCert;
     private String sslClientKeystash;
     /**
@@ -358,6 +381,10 @@ public final class GetConnectionResult {
      * 
      */
     private String sslClientKeystoredbSecretId;
+    /**
+     * @return The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     private String sslCrl;
     private String sslKey;
     private String sslKeyPassword;
@@ -377,6 +404,10 @@ public final class GetConnectionResult {
      * 
      */
     private String sslMode;
+    /**
+     * @return The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     private String sslServerCertificate;
     /**
      * @return Possible lifecycle states for connection.
@@ -388,6 +419,11 @@ public final class GetConnectionResult {
      * 
      */
     private String storageCredentialName;
+    /**
+     * @return Represents the storage of given type used in an Iceberg connection.
+     * 
+     */
+    private List<GetConnectionStorage> storages;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      * 
@@ -428,6 +464,10 @@ public final class GetConnectionResult {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     private String tlsCaFile;
     private String tlsCertificateKeyFile;
     private String tlsCertificateKeyFilePassword;
@@ -484,7 +524,7 @@ public final class GetConnectionResult {
 
     private GetConnectionResult() {}
     /**
-     * @return Access key ID to access the Amazon S3 bucket. e.g.: &#34;this-is-not-the-secret&#34;
+     * @return Access key ID to access the Amazon S3 bucket.
      * 
      */
     public String accessKeyId() {
@@ -494,7 +534,7 @@ public final class GetConnectionResult {
         return this.accountKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, &#39;accountKey&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * 
      */
     public String accountKeySecretId() {
@@ -546,6 +586,13 @@ public final class GetConnectionResult {
      */
     public List<GetConnectionBootstrapServer> bootstrapServers() {
         return this.bootstrapServers;
+    }
+    /**
+     * @return Represents the catalog of given type used in an Iceberg connection.
+     * 
+     */
+    public List<GetConnectionCatalog> catalogs() {
+        return this.catalogs;
     }
     /**
      * @return Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
@@ -614,6 +661,10 @@ public final class GetConnectionResult {
     public String consumerProperties() {
         return this.consumerProperties;
     }
+    /**
+     * @return The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     public String coreSiteXml() {
         return this.coreSiteXml;
     }
@@ -674,12 +725,16 @@ public final class GetConnectionResult {
         return this.doesUseSecretIds;
     }
     /**
-     * @return Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * @return The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
      * 
      */
     public String endpoint() {
         return this.endpoint;
     }
+    /**
+     * @return Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
     public String fingerprint() {
         return this.fingerprint;
     }
@@ -854,6 +909,10 @@ public final class GetConnectionResult {
     public String producerProperties() {
         return this.producerProperties;
     }
+    /**
+     * @return The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * 
+     */
     public String publicKeyFingerprint() {
         return this.publicKeyFingerprint;
     }
@@ -865,7 +924,7 @@ public final class GetConnectionResult {
         return this.redisClusterId;
     }
     /**
-     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * @return The AMAZON region where the S3 bucket is hosted. e.g.: &#39;us-east-2&#39;
      * 
      */
     public String region() {
@@ -892,7 +951,7 @@ public final class GetConnectionResult {
         return this.secretAccessKey;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, &#39;secretAccessKey&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      * 
      */
     public String secretAccessKeySecretId() {
@@ -900,8 +959,8 @@ public final class GetConnectionResult {
     }
     /**
      * @return Security Protocol to be provided for the following connection types:
-     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      * 
      */
     public String securityProtocol() {
@@ -919,7 +978,7 @@ public final class GetConnectionResult {
         return this.serviceAccountKeyFile;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, &#39;serviceAccountKeyFile&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
      * 
      */
     public String serviceAccountKeyFileSecretId() {
@@ -954,12 +1013,16 @@ public final class GetConnectionResult {
         return this.shouldValidateServerCertificate;
     }
     /**
-     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+     * @return Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public String sslCa() {
         return this.sslCa;
     }
+    /**
+     * @return Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     public String sslCert() {
         return this.sslCert;
     }
@@ -983,6 +1046,10 @@ public final class GetConnectionResult {
     public String sslClientKeystoredbSecretId() {
         return this.sslClientKeystoredbSecretId;
     }
+    /**
+     * @return The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     public String sslCrl() {
         return this.sslCrl;
     }
@@ -1014,6 +1081,10 @@ public final class GetConnectionResult {
     public String sslMode() {
         return this.sslMode;
     }
+    /**
+     * @return The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     public String sslServerCertificate() {
         return this.sslServerCertificate;
     }
@@ -1030,6 +1101,13 @@ public final class GetConnectionResult {
      */
     public String storageCredentialName() {
         return this.storageCredentialName;
+    }
+    /**
+     * @return Represents the storage of given type used in an Iceberg connection.
+     * 
+     */
+    public List<GetConnectionStorage> storages() {
+        return this.storages;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -1087,6 +1165,10 @@ public final class GetConnectionResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * 
+     */
     public String tlsCaFile() {
         return this.tlsCaFile;
     }
@@ -1191,6 +1273,7 @@ public final class GetConnectionResult {
         private String authenticationType;
         private String azureTenantId;
         private List<GetConnectionBootstrapServer> bootstrapServers;
+        private List<GetConnectionCatalog> catalogs;
         private String clientId;
         private String clientSecret;
         private String clientSecretSecretId;
@@ -1271,6 +1354,7 @@ public final class GetConnectionResult {
         private String sslServerCertificate;
         private String state;
         private String storageCredentialName;
+        private List<GetConnectionStorage> storages;
         private String streamPoolId;
         private String subnetId;
         private Map<String,String> systemTags;
@@ -1307,6 +1391,7 @@ public final class GetConnectionResult {
     	      this.authenticationType = defaults.authenticationType;
     	      this.azureTenantId = defaults.azureTenantId;
     	      this.bootstrapServers = defaults.bootstrapServers;
+    	      this.catalogs = defaults.catalogs;
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
     	      this.clientSecretSecretId = defaults.clientSecretSecretId;
@@ -1387,6 +1472,7 @@ public final class GetConnectionResult {
     	      this.sslServerCertificate = defaults.sslServerCertificate;
     	      this.state = defaults.state;
     	      this.storageCredentialName = defaults.storageCredentialName;
+    	      this.storages = defaults.storages;
     	      this.streamPoolId = defaults.streamPoolId;
     	      this.subnetId = defaults.subnetId;
     	      this.systemTags = defaults.systemTags;
@@ -1490,6 +1576,17 @@ public final class GetConnectionResult {
         }
         public Builder bootstrapServers(GetConnectionBootstrapServer... bootstrapServers) {
             return bootstrapServers(List.of(bootstrapServers));
+        }
+        @CustomType.Setter
+        public Builder catalogs(List<GetConnectionCatalog> catalogs) {
+            if (catalogs == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "catalogs");
+            }
+            this.catalogs = catalogs;
+            return this;
+        }
+        public Builder catalogs(GetConnectionCatalog... catalogs) {
+            return catalogs(List.of(catalogs));
         }
         @CustomType.Setter
         public Builder clientId(String clientId) {
@@ -2141,6 +2238,17 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder storages(List<GetConnectionStorage> storages) {
+            if (storages == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "storages");
+            }
+            this.storages = storages;
+            return this;
+        }
+        public Builder storages(GetConnectionStorage... storages) {
+            return storages(List.of(storages));
+        }
+        @CustomType.Setter
         public Builder streamPoolId(String streamPoolId) {
             if (streamPoolId == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "streamPoolId");
@@ -2343,6 +2451,7 @@ public final class GetConnectionResult {
             _resultValue.authenticationType = authenticationType;
             _resultValue.azureTenantId = azureTenantId;
             _resultValue.bootstrapServers = bootstrapServers;
+            _resultValue.catalogs = catalogs;
             _resultValue.clientId = clientId;
             _resultValue.clientSecret = clientSecret;
             _resultValue.clientSecretSecretId = clientSecretSecretId;
@@ -2423,6 +2532,7 @@ public final class GetConnectionResult {
             _resultValue.sslServerCertificate = sslServerCertificate;
             _resultValue.state = state;
             _resultValue.storageCredentialName = storageCredentialName;
+            _resultValue.storages = storages;
             _resultValue.streamPoolId = streamPoolId;
             _resultValue.subnetId = subnetId;
             _resultValue.systemTags = systemTags;

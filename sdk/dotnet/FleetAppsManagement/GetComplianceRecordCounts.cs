@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+        /// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -30,6 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testComplianceRecordCounts = Oci.FleetAppsManagement.GetComplianceRecordCounts.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = complianceRecordCountCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -41,7 +42,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+        /// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testComplianceRecordCounts = Oci.FleetAppsManagement.GetComplianceRecordCounts.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = complianceRecordCountCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -68,7 +70,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
-        /// Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+        /// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         ///     var testComplianceRecordCounts = Oci.FleetAppsManagement.GetComplianceRecordCounts.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CompartmentIdInSubtree = complianceRecordCountCompartmentIdInSubtree,
         ///     });
         /// 
         /// });
@@ -97,10 +100,16 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetComplianceRecordCountsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
+
+        /// <summary>
+        /// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public bool? CompartmentIdInSubtree { get; set; }
 
         [Input("filters")]
         private List<Inputs.GetComplianceRecordCountsFilterArgs>? _filters;
@@ -119,10 +128,16 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetComplianceRecordCountsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
+        /// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+        /// </summary>
+        [Input("compartmentIdInSubtree")]
+        public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         [Input("filters")]
         private InputList<Inputs.GetComplianceRecordCountsFilterInputArgs>? _filters;
@@ -143,6 +158,7 @@ namespace Pulumi.Oci.FleetAppsManagement
     public sealed class GetComplianceRecordCountsResult
     {
         public readonly string? CompartmentId;
+        public readonly bool? CompartmentIdInSubtree;
         /// <summary>
         /// The list of compliance_record_aggregation_collection.
         /// </summary>
@@ -157,6 +173,8 @@ namespace Pulumi.Oci.FleetAppsManagement
         private GetComplianceRecordCountsResult(
             string? compartmentId,
 
+            bool? compartmentIdInSubtree,
+
             ImmutableArray<Outputs.GetComplianceRecordCountsComplianceRecordAggregationCollectionResult> complianceRecordAggregationCollections,
 
             ImmutableArray<Outputs.GetComplianceRecordCountsFilterResult> filters,
@@ -164,6 +182,7 @@ namespace Pulumi.Oci.FleetAppsManagement
             string id)
         {
             CompartmentId = compartmentId;
+            CompartmentIdInSubtree = compartmentIdInSubtree;
             ComplianceRecordAggregationCollections = complianceRecordAggregationCollections;
             Filters = filters;
             Id = id;

@@ -48,6 +48,21 @@ public final class GetComputeHostsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     * 
+     */
+    @Import(name="computeHostGroupId")
+    private @Nullable String computeHostGroupId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     * 
+     */
+    public Optional<String> computeHostGroupId() {
+        return Optional.ofNullable(this.computeHostGroupId);
+    }
+
+    /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      * 
      */
@@ -125,6 +140,7 @@ public final class GetComputeHostsPlainArgs extends com.pulumi.resources.InvokeA
     private GetComputeHostsPlainArgs(GetComputeHostsPlainArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
+        this.computeHostGroupId = $.computeHostGroupId;
         this.computeHostHealth = $.computeHostHealth;
         this.computeHostLifecycleState = $.computeHostLifecycleState;
         this.displayName = $.displayName;
@@ -169,6 +185,17 @@ public final class GetComputeHostsPlainArgs extends com.pulumi.resources.InvokeA
          */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param computeHostGroupId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeHostGroupId(@Nullable String computeHostGroupId) {
+            $.computeHostGroupId = computeHostGroupId;
             return this;
         }
 

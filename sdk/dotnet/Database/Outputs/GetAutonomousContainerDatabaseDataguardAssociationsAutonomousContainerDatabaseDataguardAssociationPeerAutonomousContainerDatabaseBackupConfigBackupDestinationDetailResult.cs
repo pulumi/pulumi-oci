@@ -19,6 +19,8 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         public readonly string InternetProxy;
+        public readonly bool IsRemote;
+        public readonly string RemoteRegion;
         public readonly string Type;
         public readonly string VpcPassword;
         public readonly string VpcUser;
@@ -31,6 +33,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string internetProxy,
 
+            bool isRemote,
+
+            string remoteRegion,
+
             string type,
 
             string vpcPassword,
@@ -40,6 +46,8 @@ namespace Pulumi.Oci.Database.Outputs
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
             InternetProxy = internetProxy;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
             VpcPassword = vpcPassword;
             VpcUser = vpcUser;

@@ -2468,6 +2468,8 @@ type SqlEndpointNetworkConfiguration struct {
 	HostNamePrefix *string `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
 	NetworkType string `pulumi:"networkType"`
+	// The OCIDs of Network Security Groups (NSGs).
+	NsgIds []string `pulumi:"nsgIds"`
 	// Ip Address of private endpoint
 	PrivateEndpointIp *string `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
@@ -2496,6 +2498,8 @@ type SqlEndpointNetworkConfigurationArgs struct {
 	HostNamePrefix pulumi.StringPtrInput `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The OCIDs of Network Security Groups (NSGs).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Ip Address of private endpoint
 	PrivateEndpointIp pulumi.StringPtrInput `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
@@ -2600,6 +2604,11 @@ func (o SqlEndpointNetworkConfigurationOutput) NetworkType() pulumi.StringOutput
 	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
+// The OCIDs of Network Security Groups (NSGs).
+func (o SqlEndpointNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
 // Ip Address of private endpoint
 func (o SqlEndpointNetworkConfigurationOutput) PrivateEndpointIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SqlEndpointNetworkConfiguration) *string { return v.PrivateEndpointIp }).(pulumi.StringPtrOutput)
@@ -2672,6 +2681,16 @@ func (o SqlEndpointNetworkConfigurationPtrOutput) NetworkType() pulumi.StringPtr
 		}
 		return &v.NetworkType
 	}).(pulumi.StringPtrOutput)
+}
+
+// The OCIDs of Network Security Groups (NSGs).
+func (o SqlEndpointNetworkConfigurationPtrOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SqlEndpointNetworkConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // Ip Address of private endpoint
@@ -9218,6 +9237,8 @@ type GetSqlEndpointNetworkConfiguration struct {
 	HostNamePrefix string `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
 	NetworkType string `pulumi:"networkType"`
+	// The OCIDs of Network Security Groups (NSGs).
+	NsgIds []string `pulumi:"nsgIds"`
 	// Ip Address of private endpoint
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
@@ -9246,6 +9267,8 @@ type GetSqlEndpointNetworkConfigurationArgs struct {
 	HostNamePrefix pulumi.StringInput `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The OCIDs of Network Security Groups (NSGs).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Ip Address of private endpoint
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
@@ -9322,6 +9345,11 @@ func (o GetSqlEndpointNetworkConfigurationOutput) HostNamePrefix() pulumi.String
 // The type of network configuration.
 func (o GetSqlEndpointNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The OCIDs of Network Security Groups (NSGs).
+func (o GetSqlEndpointNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointNetworkConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Ip Address of private endpoint
@@ -10212,6 +10240,8 @@ type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration struct {
 	HostNamePrefix string `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
 	NetworkType string `pulumi:"networkType"`
+	// The OCIDs of Network Security Groups (NSGs).
+	NsgIds []string `pulumi:"nsgIds"`
 	// Ip Address of private endpoint
 	PrivateEndpointIp string `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
@@ -10240,6 +10270,8 @@ type GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs struct {
 	HostNamePrefix pulumi.StringInput `pulumi:"hostNamePrefix"`
 	// The type of network configuration.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// The OCIDs of Network Security Groups (NSGs).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Ip Address of private endpoint
 	PrivateEndpointIp pulumi.StringInput `pulumi:"privateEndpointIp"`
 	// Ip Address of public endpoint
@@ -10316,6 +10348,11 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) Host
 // The type of network configuration.
 func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) string { return v.NetworkType }).(pulumi.StringOutput)
+}
+
+// The OCIDs of Network Security Groups (NSGs).
+func (o GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
 // Ip Address of private endpoint

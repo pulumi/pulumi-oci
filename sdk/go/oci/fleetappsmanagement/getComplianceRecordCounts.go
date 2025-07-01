@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Retrieve  aggregated summary information of ComplianceRecords within a Tenancy.
+// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
 //
 // ## Example Usage
 //
@@ -30,7 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := fleetappsmanagement.GetComplianceRecordCounts(ctx, &fleetappsmanagement.GetComplianceRecordCountsArgs{
-//				CompartmentId: pulumi.StringRef(compartmentId),
+//				CompartmentId:          pulumi.StringRef(compartmentId),
+//				CompartmentIdInSubtree: pulumi.BoolRef(complianceRecordCountCompartmentIdInSubtree),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -52,14 +53,17 @@ func GetComplianceRecordCounts(ctx *pulumi.Context, args *GetComplianceRecordCou
 
 // A collection of arguments for invoking getComplianceRecordCounts.
 type GetComplianceRecordCountsArgs struct {
-	// The ID of the compartment in which to list resources.
-	CompartmentId *string                           `pulumi:"compartmentId"`
-	Filters       []GetComplianceRecordCountsFilter `pulumi:"filters"`
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+	CompartmentIdInSubtree *bool                             `pulumi:"compartmentIdInSubtree"`
+	Filters                []GetComplianceRecordCountsFilter `pulumi:"filters"`
 }
 
 // A collection of values returned by getComplianceRecordCounts.
 type GetComplianceRecordCountsResult struct {
-	CompartmentId *string `pulumi:"compartmentId"`
+	CompartmentId          *string `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool   `pulumi:"compartmentIdInSubtree"`
 	// The list of compliance_record_aggregation_collection.
 	ComplianceRecordAggregationCollections []GetComplianceRecordCountsComplianceRecordAggregationCollection `pulumi:"complianceRecordAggregationCollections"`
 	Filters                                []GetComplianceRecordCountsFilter                                `pulumi:"filters"`
@@ -78,9 +82,11 @@ func GetComplianceRecordCountsOutput(ctx *pulumi.Context, args GetComplianceReco
 
 // A collection of arguments for invoking getComplianceRecordCounts.
 type GetComplianceRecordCountsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
-	CompartmentId pulumi.StringPtrInput                     `pulumi:"compartmentId"`
-	Filters       GetComplianceRecordCountsFilterArrayInput `pulumi:"filters"`
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+	CompartmentIdInSubtree pulumi.BoolPtrInput                       `pulumi:"compartmentIdInSubtree"`
+	Filters                GetComplianceRecordCountsFilterArrayInput `pulumi:"filters"`
 }
 
 func (GetComplianceRecordCountsOutputArgs) ElementType() reflect.Type {
@@ -104,6 +110,10 @@ func (o GetComplianceRecordCountsResultOutput) ToGetComplianceRecordCountsResult
 
 func (o GetComplianceRecordCountsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetComplianceRecordCountsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetComplianceRecordCountsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetComplianceRecordCountsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
 // The list of compliance_record_aggregation_collection.

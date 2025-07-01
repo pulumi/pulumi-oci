@@ -29,7 +29,7 @@ class GetMysqlBackupsResult:
     """
     A collection of values returned by getMysqlBackups.
     """
-    def __init__(__self__, backup_id=None, backups=None, compartment_id=None, creation_type=None, db_system_id=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, backup_id=None, backups=None, compartment_id=None, creation_type=None, db_system_id=None, display_name=None, filters=None, id=None, soft_delete=None, state=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -54,6 +54,9 @@ class GetMysqlBackupsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if soft_delete and not isinstance(soft_delete, str):
+            raise TypeError("Expected argument 'soft_delete' to be a str")
+        pulumi.set(__self__, "soft_delete", soft_delete)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -117,6 +120,14 @@ class GetMysqlBackupsResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="softDelete")
+    def soft_delete(self) -> Optional[builtins.str]:
+        """
+        Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+        """
+        return pulumi.get(self, "soft_delete")
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[builtins.str]:
         """
@@ -139,6 +150,7 @@ class AwaitableGetMysqlBackupsResult(GetMysqlBackupsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            soft_delete=self.soft_delete,
             state=self.state)
 
 
@@ -148,6 +160,7 @@ def get_mysql_backups(backup_id: Optional[builtins.str] = None,
                       db_system_id: Optional[builtins.str] = None,
                       display_name: Optional[builtins.str] = None,
                       filters: Optional[Sequence[Union['GetMysqlBackupsFilterArgs', 'GetMysqlBackupsFilterArgsDict']]] = None,
+                      soft_delete: Optional[builtins.str] = None,
                       state: Optional[builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMysqlBackupsResult:
     """
@@ -166,6 +179,7 @@ def get_mysql_backups(backup_id: Optional[builtins.str] = None,
         creation_type=mysql_backup_creation_type,
         db_system_id=test_db_system["id"],
         display_name=mysql_backup_display_name,
+        soft_delete=mysql_backup_soft_delete,
         state=mysql_backup_state)
     ```
 
@@ -175,6 +189,7 @@ def get_mysql_backups(backup_id: Optional[builtins.str] = None,
     :param builtins.str creation_type: Backup creationType
     :param builtins.str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param builtins.str display_name: A filter to return only the resource matching the given display name exactly.
+    :param builtins.str soft_delete: Backup Soft Delete
     :param builtins.str state: Backup Lifecycle State
     """
     __args__ = dict()
@@ -184,6 +199,7 @@ def get_mysql_backups(backup_id: Optional[builtins.str] = None,
     __args__['dbSystemId'] = db_system_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['softDelete'] = soft_delete
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Mysql/getMysqlBackups:getMysqlBackups', __args__, opts=opts, typ=GetMysqlBackupsResult).value
@@ -197,6 +213,7 @@ def get_mysql_backups(backup_id: Optional[builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        soft_delete=pulumi.get(__ret__, 'soft_delete'),
         state=pulumi.get(__ret__, 'state'))
 def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              compartment_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -204,6 +221,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[builtins.
                              db_system_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMysqlBackupsFilterArgs', 'GetMysqlBackupsFilterArgsDict']]]]] = None,
+                             soft_delete: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlBackupsResult]:
     """
@@ -222,6 +240,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[builtins.
         creation_type=mysql_backup_creation_type,
         db_system_id=test_db_system["id"],
         display_name=mysql_backup_display_name,
+        soft_delete=mysql_backup_soft_delete,
         state=mysql_backup_state)
     ```
 
@@ -231,6 +250,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[builtins.
     :param builtins.str creation_type: Backup creationType
     :param builtins.str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param builtins.str display_name: A filter to return only the resource matching the given display name exactly.
+    :param builtins.str soft_delete: Backup Soft Delete
     :param builtins.str state: Backup Lifecycle State
     """
     __args__ = dict()
@@ -240,6 +260,7 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[builtins.
     __args__['dbSystemId'] = db_system_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['softDelete'] = soft_delete
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Mysql/getMysqlBackups:getMysqlBackups', __args__, opts=opts, typ=GetMysqlBackupsResult)
@@ -252,4 +273,5 @@ def get_mysql_backups_output(backup_id: Optional[pulumi.Input[Optional[builtins.
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        soft_delete=pulumi.get(__response__, 'soft_delete'),
         state=pulumi.get(__response__, 'state')))

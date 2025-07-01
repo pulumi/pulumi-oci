@@ -88,10 +88,9 @@ type GetConnectionsResult struct {
 	// The list of connection_collection.
 	ConnectionCollections []GetConnectionsConnectionCollection `pulumi:"connectionCollections"`
 	// The connection type.
-	ConnectionTypes []string `pulumi:"connectionTypes"`
-	// An object's Display Name.
-	DisplayName *string                `pulumi:"displayName"`
-	Filters     []GetConnectionsFilter `pulumi:"filters"`
+	ConnectionTypes []string               `pulumi:"connectionTypes"`
+	DisplayName     *string                `pulumi:"displayName"`
+	Filters         []GetConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Possible lifecycle states for connection.
@@ -176,7 +175,6 @@ func (o GetConnectionsResultOutput) ConnectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetConnectionsResult) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
 }
 
-// An object's Display Name.
 func (o GetConnectionsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

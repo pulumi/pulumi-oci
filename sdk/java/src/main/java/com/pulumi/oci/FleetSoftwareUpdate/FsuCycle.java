@@ -15,6 +15,7 @@ import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleDiagnosticsCollection;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleGoalVersionDetails;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleNextActionToExecute;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleStageActionSchedule;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleUpgradeDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -45,6 +46,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleBatchingStrategyArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleDiagnosticsCollectionArgs;
  * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleStageActionScheduleArgs;
+ * import com.pulumi.oci.FleetSoftwareUpdate.inputs.FsuCycleUpgradeDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -92,6 +94,11 @@ import javax.annotation.Nullable;
  *             .stageActionSchedule(FsuCycleStageActionScheduleArgs.builder()
  *                 .timeToStart(fsuCycleStageActionScheduleTimeToStart)
  *                 .type(fsuCycleStageActionScheduleType)
+ *                 .build())
+ *             .upgradeDetails(FsuCycleUpgradeDetailsArgs.builder()
+ *                 .collectionType(fsuCycleUpgradeDetailsCollectionType)
+ *                 .isRecompileInvalidObjects(fsuCycleUpgradeDetailsIsRecompileInvalidObjects)
+ *                 .isTimeZoneUpgrade(fsuCycleUpgradeDetailsIsTimeZoneUpgrade)
  *                 .build())
  *             .build());
  * 
@@ -141,14 +148,14 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
         return this.batchingStrategy;
     }
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     @Export(name="collectionType", refs={String.class}, tree="[0]")
     private Output<String> collectionType;
 
     /**
-     * @return Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * @return Type of Exadata Fleet Update collection being upgraded.
      * 
      */
     public Output<String> collectionType() {
@@ -479,9 +486,6 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
@@ -489,12 +493,23 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Type of Exadata Fleet Update Cycle.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<String> type() {
         return this.type;
+    }
+    /**
+     * (Updatable) Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    @Export(name="upgradeDetails", refs={FsuCycleUpgradeDetails.class}, tree="[0]")
+    private Output<FsuCycleUpgradeDetails> upgradeDetails;
+
+    /**
+     * @return (Updatable) Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    public Output<FsuCycleUpgradeDetails> upgradeDetails() {
+        return this.upgradeDetails;
     }
 
     /**

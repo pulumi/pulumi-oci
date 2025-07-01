@@ -128,9 +128,17 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// A list of total and remaining CPU &amp; memory per capacity bucket.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDedicatedVmHostCapacityBinResult> CapacityBins;
+        /// <summary>
         /// The OCID of the compartment that contains the dedicated virtual machine host.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The OCID of the compute bare metal host.
+        /// </summary>
+        public readonly string ComputeBareMetalHostId;
         public readonly string DedicatedVmHostId;
         /// <summary>
         /// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
@@ -189,7 +197,11 @@ namespace Pulumi.Oci.Core
         private GetDedicatedVmHostResult(
             string availabilityDomain,
 
+            ImmutableArray<Outputs.GetDedicatedVmHostCapacityBinResult> capacityBins,
+
             string compartmentId,
+
+            string computeBareMetalHostId,
 
             string dedicatedVmHostId,
 
@@ -220,7 +232,9 @@ namespace Pulumi.Oci.Core
             double totalOcpus)
         {
             AvailabilityDomain = availabilityDomain;
+            CapacityBins = capacityBins;
             CompartmentId = compartmentId;
+            ComputeBareMetalHostId = computeBareMetalHostId;
             DedicatedVmHostId = dedicatedVmHostId;
             DedicatedVmHostShape = dedicatedVmHostShape;
             DefinedTags = definedTags;

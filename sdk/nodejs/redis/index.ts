@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetOciCacheUserArgs, GetOciCacheUserResult, GetOciCacheUserOutputArgs } from "./getOciCacheUser";
+export const getOciCacheUser: typeof import("./getOciCacheUser").getOciCacheUser = null as any;
+export const getOciCacheUserOutput: typeof import("./getOciCacheUser").getOciCacheUserOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheUser","getOciCacheUserOutput"], () => require("./getOciCacheUser"));
+
+export { GetOciCacheUsersArgs, GetOciCacheUsersResult, GetOciCacheUsersOutputArgs } from "./getOciCacheUsers";
+export const getOciCacheUsers: typeof import("./getOciCacheUsers").getOciCacheUsers = null as any;
+export const getOciCacheUsersOutput: typeof import("./getOciCacheUsers").getOciCacheUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheUsers","getOciCacheUsersOutput"], () => require("./getOciCacheUsers"));
+
 export { GetRedisClusterArgs, GetRedisClusterResult, GetRedisClusterOutputArgs } from "./getRedisCluster";
 export const getRedisCluster: typeof import("./getRedisCluster").getRedisCluster = null as any;
 export const getRedisClusterOutput: typeof import("./getRedisCluster").getRedisClusterOutput = null as any;
@@ -20,21 +30,69 @@ export const getRedisClusters: typeof import("./getRedisClusters").getRedisClust
 export const getRedisClustersOutput: typeof import("./getRedisClusters").getRedisClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getRedisClusters","getRedisClustersOutput"], () => require("./getRedisClusters"));
 
+export { OciCacheUserArgs, OciCacheUserState } from "./ociCacheUser";
+export type OciCacheUser = import("./ociCacheUser").OciCacheUser;
+export const OciCacheUser: typeof import("./ociCacheUser").OciCacheUser = null as any;
+utilities.lazyLoad(exports, ["OciCacheUser"], () => require("./ociCacheUser"));
+
+export { OciCacheUserGetRedisClusterArgs, OciCacheUserGetRedisClusterState } from "./ociCacheUserGetRedisCluster";
+export type OciCacheUserGetRedisCluster = import("./ociCacheUserGetRedisCluster").OciCacheUserGetRedisCluster;
+export const OciCacheUserGetRedisCluster: typeof import("./ociCacheUserGetRedisCluster").OciCacheUserGetRedisCluster = null as any;
+utilities.lazyLoad(exports, ["OciCacheUserGetRedisCluster"], () => require("./ociCacheUserGetRedisCluster"));
+
 export { RedisClusterArgs, RedisClusterState } from "./redisCluster";
 export type RedisCluster = import("./redisCluster").RedisCluster;
 export const RedisCluster: typeof import("./redisCluster").RedisCluster = null as any;
 utilities.lazyLoad(exports, ["RedisCluster"], () => require("./redisCluster"));
+
+export { RedisClusterAttachOciCacheUserArgs, RedisClusterAttachOciCacheUserState } from "./redisClusterAttachOciCacheUser";
+export type RedisClusterAttachOciCacheUser = import("./redisClusterAttachOciCacheUser").RedisClusterAttachOciCacheUser;
+export const RedisClusterAttachOciCacheUser: typeof import("./redisClusterAttachOciCacheUser").RedisClusterAttachOciCacheUser = null as any;
+utilities.lazyLoad(exports, ["RedisClusterAttachOciCacheUser"], () => require("./redisClusterAttachOciCacheUser"));
+
+export { RedisClusterCreateIdentityTokenArgs, RedisClusterCreateIdentityTokenState } from "./redisClusterCreateIdentityToken";
+export type RedisClusterCreateIdentityToken = import("./redisClusterCreateIdentityToken").RedisClusterCreateIdentityToken;
+export const RedisClusterCreateIdentityToken: typeof import("./redisClusterCreateIdentityToken").RedisClusterCreateIdentityToken = null as any;
+utilities.lazyLoad(exports, ["RedisClusterCreateIdentityToken"], () => require("./redisClusterCreateIdentityToken"));
+
+export { RedisClusterDetachOciCacheUserArgs, RedisClusterDetachOciCacheUserState } from "./redisClusterDetachOciCacheUser";
+export type RedisClusterDetachOciCacheUser = import("./redisClusterDetachOciCacheUser").RedisClusterDetachOciCacheUser;
+export const RedisClusterDetachOciCacheUser: typeof import("./redisClusterDetachOciCacheUser").RedisClusterDetachOciCacheUser = null as any;
+utilities.lazyLoad(exports, ["RedisClusterDetachOciCacheUser"], () => require("./redisClusterDetachOciCacheUser"));
+
+export { RedisClusterGetOciCacheUserArgs, RedisClusterGetOciCacheUserState } from "./redisClusterGetOciCacheUser";
+export type RedisClusterGetOciCacheUser = import("./redisClusterGetOciCacheUser").RedisClusterGetOciCacheUser;
+export const RedisClusterGetOciCacheUser: typeof import("./redisClusterGetOciCacheUser").RedisClusterGetOciCacheUser = null as any;
+utilities.lazyLoad(exports, ["RedisClusterGetOciCacheUser"], () => require("./redisClusterGetOciCacheUser"));
 
 
 const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Redis/ociCacheUser:OciCacheUser":
+                return new OciCacheUser(name, <any>undefined, { urn })
+            case "oci:Redis/ociCacheUserGetRedisCluster:OciCacheUserGetRedisCluster":
+                return new OciCacheUserGetRedisCluster(name, <any>undefined, { urn })
             case "oci:Redis/redisCluster:RedisCluster":
                 return new RedisCluster(name, <any>undefined, { urn })
+            case "oci:Redis/redisClusterAttachOciCacheUser:RedisClusterAttachOciCacheUser":
+                return new RedisClusterAttachOciCacheUser(name, <any>undefined, { urn })
+            case "oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken":
+                return new RedisClusterCreateIdentityToken(name, <any>undefined, { urn })
+            case "oci:Redis/redisClusterDetachOciCacheUser:RedisClusterDetachOciCacheUser":
+                return new RedisClusterDetachOciCacheUser(name, <any>undefined, { urn })
+            case "oci:Redis/redisClusterGetOciCacheUser:RedisClusterGetOciCacheUser":
+                return new RedisClusterGetOciCacheUser(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheUser", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheUserGetRedisCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/redisCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/redisClusterAttachOciCacheUser", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/redisClusterCreateIdentityToken", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/redisClusterDetachOciCacheUser", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/redisClusterGetOciCacheUser", _module)

@@ -64,6 +64,12 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     public Output<List<AutonomousContainerDatabaseAssociatedBackupConfigurationDetail>> associatedBackupConfigurationDetails() {
         return this.associatedBackupConfigurationDetails;
     }
+    @Export(name="autonomousContainerDatabaseBackupId", refs={String.class}, tree="[0]")
+    private Output<String> autonomousContainerDatabaseBackupId;
+
+    public Output<String> autonomousContainerDatabaseBackupId() {
+        return this.autonomousContainerDatabaseBackupId;
+    }
     /**
      * **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
      * 
@@ -435,14 +441,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.isDstFileUpdateEnabled;
     }
     /**
-     * Whether it is multiple standby Autonomous Dataguard
+     * Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     @Export(name="isMultipleStandby", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isMultipleStandby;
 
     /**
-     * @return Whether it is multiple standby Autonomous Dataguard
+     * @return Indicates if it is multiple standby Autonomous Dataguard
      * 
      */
     public Output<Boolean> isMultipleStandby() {
@@ -784,7 +790,6 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     }
     /**
      * The number of CPUs provisioned in an Autonomous Container Database.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="provisionedCpus", refs={Double.class}, tree="[0]")
@@ -792,7 +797,6 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
 
     /**
      * @return The number of CPUs provisioned in an Autonomous Container Database.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<Double> provisionedCpus() {
@@ -802,7 +806,6 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     @Export(name="reclaimableCpus", refs={Double.class}, tree="[0]")
@@ -812,7 +815,6 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      * @return For Autonomous Databases on Dedicated Exadata Infrastructure:
      * * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster&#39;s compute model.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public Output<Double> reclaimableCpus() {
@@ -911,6 +913,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> serviceLevelAgreementType() {
         return this.serviceLevelAgreementType;
+    }
+    /**
+     * The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * 
+     */
+    @Export(name="source", refs={String.class}, tree="[0]")
+    private Output<String> source;
+
+    /**
+     * @return The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+     * 
+     */
+    public Output<String> source() {
+        return this.source;
     }
     /**
      * (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.

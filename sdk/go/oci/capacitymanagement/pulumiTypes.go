@@ -2847,6 +2847,2851 @@ func (o GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionIt
 	}).(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput)
 }
 
+type GetInternalOccmDemandSignalCatalogResourcesFilter struct {
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesFilterInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesFilterArgs and GetInternalOccmDemandSignalCatalogResourcesFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesFilterInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesFilterArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesFilterOutput() GetInternalOccmDemandSignalCatalogResourcesFilterOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesFilterOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesFilterOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesFilterArgs struct {
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesFilterArgs) ToGetInternalOccmDemandSignalCatalogResourcesFilterOutput() GetInternalOccmDemandSignalCatalogResourcesFilterOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesFilterArgs) ToGetInternalOccmDemandSignalCatalogResourcesFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesFilterOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesFilterArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesFilterArray and GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesFilterArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesFilterArray{ GetInternalOccmDemandSignalCatalogResourcesFilterArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput() GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesFilterArray []GetInternalOccmDemandSignalCatalogResourcesFilterInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesFilterArray) ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput() GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesFilterArray) ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterOutput) ToGetInternalOccmDemandSignalCatalogResourcesFilterOutput() GetInternalOccmDemandSignalCatalogResourcesFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterOutput) ToGetInternalOccmDemandSignalCatalogResourcesFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesFilterOutput {
+	return o
+}
+
+// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput() GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesFilter {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesFilter)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesFilterOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput {
+	return o
+}
+
+// An array of items containing detailed information about a resource's property dependecies.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput) Items() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection) []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollection)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the demand signal catalog resource.
+	Id string `pulumi:"id"`
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name string `pulumi:"name"`
+	// The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+	Namespace string `pulumi:"namespace"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	// The ocid of demand signal catalog id.
+	OccmDemandSignalCatalogId string `pulumi:"occmDemandSignalCatalogId"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	Region string `pulumi:"region"`
+	// A list containing detailed information about a resource's properties.
+	ResourceProperties []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty `pulumi:"resourceProperties"`
+	// A list containing detailed information about a resource's property constraints.
+	ResourcePropertyConstraints []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint `pulumi:"resourcePropertyConstraints"`
+	// The current lifecycle state of the demand signal catalog resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+	TargetCompartmentId string `pulumi:"targetCompartmentId"`
+	// The time when the demand signal catalog resource was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the demand signal catalog resource was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the demand signal catalog resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	// The ocid of demand signal catalog id.
+	OccmDemandSignalCatalogId pulumi.StringInput `pulumi:"occmDemandSignalCatalogId"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	Region pulumi.StringInput `pulumi:"region"`
+	// A list containing detailed information about a resource's properties.
+	ResourceProperties GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput `pulumi:"resourceProperties"`
+	// A list containing detailed information about a resource's property constraints.
+	ResourcePropertyConstraints GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput `pulumi:"resourcePropertyConstraints"`
+	// The current lifecycle state of the demand signal catalog resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
+	// The time when the demand signal catalog resource was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the demand signal catalog resource was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return o
+}
+
+// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the demand signal catalog resource.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The customer group ocid by which we would filter the list.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of demand signal catalog id.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) OccmDemandSignalCatalogId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.OccmDemandSignalCatalogId
+	}).(pulumi.StringOutput)
+}
+
+// The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// A list containing detailed information about a resource's properties.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) ResourceProperties() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty {
+		return v.ResourceProperties
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput)
+}
+
+// A list containing detailed information about a resource's property constraints.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) ResourcePropertyConstraints() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint {
+		return v.ResourcePropertyConstraints
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput)
+}
+
+// The current lifecycle state of the demand signal catalog resource.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) TargetCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.TargetCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the demand signal catalog resource was created.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time when the demand signal catalog resource was last updated.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return o
+}
+
+// An array of items containing detailed information about a resource's property dependecies.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) Items() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty) []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourceProperty)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return o
+}
+
+// An array of items containing detailed information about a resource's property dependecies.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) Items() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint) []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem struct {
+	// The name of demand signal resource's property constraint.
+	ConstraintName string `pulumi:"constraintName"`
+	// The value of demand signal resource's property constraint.
+	ConstraintValue string `pulumi:"constraintValue"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs struct {
+	// The name of demand signal resource's property constraint.
+	ConstraintName pulumi.StringInput `pulumi:"constraintName"`
+	// The value of demand signal resource's property constraint.
+	ConstraintValue pulumi.StringInput `pulumi:"constraintValue"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return o
+}
+
+// The name of demand signal resource's property constraint.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ConstraintName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem) string {
+		return v.ConstraintName
+	}).(pulumi.StringOutput)
+}
+
+// The value of demand signal resource's property constraint.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ConstraintValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem) string {
+		return v.ConstraintValue
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem struct {
+	// This will indicate if demand signal resource's property is editable.
+	IsEditable bool `pulumi:"isEditable"`
+	// The maximum value of demand signal resource's property. This is an optional parameter.
+	PropertyMaxValue string `pulumi:"propertyMaxValue"`
+	// The minimum value of demand signal resource's property. This is an optional parameter.
+	PropertyMinValue string `pulumi:"propertyMinValue"`
+	// The name of demand signal resource's property.
+	PropertyName string `pulumi:"propertyName"`
+	// Predefined options for demand signal resource's property. This is an optional parameter.
+	PropertyOptions []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption `pulumi:"propertyOptions"`
+	// Unit for demand signal resource's property.
+	PropertyUnit string `pulumi:"propertyUnit"`
+	// Default value of demand signal resource's property.
+	PropertyValue string `pulumi:"propertyValue"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs struct {
+	// This will indicate if demand signal resource's property is editable.
+	IsEditable pulumi.BoolInput `pulumi:"isEditable"`
+	// The maximum value of demand signal resource's property. This is an optional parameter.
+	PropertyMaxValue pulumi.StringInput `pulumi:"propertyMaxValue"`
+	// The minimum value of demand signal resource's property. This is an optional parameter.
+	PropertyMinValue pulumi.StringInput `pulumi:"propertyMinValue"`
+	// The name of demand signal resource's property.
+	PropertyName pulumi.StringInput `pulumi:"propertyName"`
+	// Predefined options for demand signal resource's property. This is an optional parameter.
+	PropertyOptions GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput `pulumi:"propertyOptions"`
+	// Unit for demand signal resource's property.
+	PropertyUnit pulumi.StringInput `pulumi:"propertyUnit"`
+	// Default value of demand signal resource's property.
+	PropertyValue pulumi.StringInput `pulumi:"propertyValue"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return o
+}
+
+// This will indicate if demand signal resource's property is editable.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) IsEditable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) bool {
+		return v.IsEditable
+	}).(pulumi.BoolOutput)
+}
+
+// The maximum value of demand signal resource's property. This is an optional parameter.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyMaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyMaxValue
+	}).(pulumi.StringOutput)
+}
+
+// The minimum value of demand signal resource's property. This is an optional parameter.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyMinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyMinValue
+	}).(pulumi.StringOutput)
+}
+
+// The name of demand signal resource's property.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyName
+	}).(pulumi.StringOutput)
+}
+
+// Predefined options for demand signal resource's property. This is an optional parameter.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyOptions() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption {
+		return v.PropertyOptions
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput)
+}
+
+// Unit for demand signal resource's property.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyUnit
+	}).(pulumi.StringOutput)
+}
+
+// Default value of demand signal resource's property.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyValue
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption struct {
+	// key of a property option like memoryValue, ocpuValue.
+	OptionKey string `pulumi:"optionKey"`
+	// value of a property option like 64, 2 fastconnect etc.
+	OptionValue string `pulumi:"optionValue"`
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs{...}
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs struct {
+	// key of a property option like memoryValue, ocpuValue.
+	OptionKey pulumi.StringInput `pulumi:"optionKey"`
+	// value of a property option like 64, 2 fastconnect etc.
+	OptionValue pulumi.StringInput `pulumi:"optionValue"`
+}
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray and GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray{ GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs{...} }
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput
+	ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray []GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return o
+}
+
+// key of a property option like memoryValue, ocpuValue.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) OptionKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption) string {
+		return v.OptionKey
+	}).(pulumi.StringOutput)
+}
+
+// value of a property option like 64, 2 fastconnect etc.
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) OptionValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption) string {
+		return v.OptionValue
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput() GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) ToGetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccmDemandSignalCatalogsFilterInput is an input type that accepts GetInternalOccmDemandSignalCatalogsFilterArgs and GetInternalOccmDemandSignalCatalogsFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogsFilterInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogsFilterArgs{...}
+type GetInternalOccmDemandSignalCatalogsFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogsFilterOutput() GetInternalOccmDemandSignalCatalogsFilterOutput
+	ToGetInternalOccmDemandSignalCatalogsFilterOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogsFilterOutput
+}
+
+type GetInternalOccmDemandSignalCatalogsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccmDemandSignalCatalogsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogsFilterArgs) ToGetInternalOccmDemandSignalCatalogsFilterOutput() GetInternalOccmDemandSignalCatalogsFilterOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogsFilterArgs) ToGetInternalOccmDemandSignalCatalogsFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogsFilterOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogsFilterArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogsFilterArray and GetInternalOccmDemandSignalCatalogsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogsFilterArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogsFilterArray{ GetInternalOccmDemandSignalCatalogsFilterArgs{...} }
+type GetInternalOccmDemandSignalCatalogsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogsFilterArrayOutput() GetInternalOccmDemandSignalCatalogsFilterArrayOutput
+	ToGetInternalOccmDemandSignalCatalogsFilterArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogsFilterArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogsFilterArray []GetInternalOccmDemandSignalCatalogsFilterInput
+
+func (GetInternalOccmDemandSignalCatalogsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogsFilterArray) ToGetInternalOccmDemandSignalCatalogsFilterArrayOutput() GetInternalOccmDemandSignalCatalogsFilterArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogsFilterArray) ToGetInternalOccmDemandSignalCatalogsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogsFilterArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterOutput) ToGetInternalOccmDemandSignalCatalogsFilterOutput() GetInternalOccmDemandSignalCatalogsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterOutput) ToGetInternalOccmDemandSignalCatalogsFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterArrayOutput) ToGetInternalOccmDemandSignalCatalogsFilterArrayOutput() GetInternalOccmDemandSignalCatalogsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterArrayOutput) ToGetInternalOccmDemandSignalCatalogsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogsFilter {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogsFilter)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogsFilterOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection struct {
+	Items []GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionInput is an input type that accepts GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs and GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs{...}
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs struct {
+	Items GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray and GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray{ GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs{...} }
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray []GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionInput
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput) Items() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection) []GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollection)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem struct {
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// description of demand signal catalog.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The ocid of demand signal catalog.
+	Id string `pulumi:"id"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	// The current lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time when the demand signal catalog was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the demand signal catalog was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemInput is an input type that accepts GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs and GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs{...}
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs struct {
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// description of demand signal catalog.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The ocid of demand signal catalog.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	// The current lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time when the demand signal catalog was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the demand signal catalog was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput)
+}
+
+// GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayInput is an input type that accepts GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray and GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray{ GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs{...} }
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput
+	ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray []GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemInput
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput {
+	return o
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// description of demand signal catalog.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The ocid of demand signal catalog.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The customer group ocid by which we would filter the list.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the resource.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time when the demand signal catalog was created.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time when the demand signal catalog was last updated.
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput() GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput) ToGetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem {
+		return vs[0].([]GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccmDemandSignalDeliveriesFilterInput is an input type that accepts GetInternalOccmDemandSignalDeliveriesFilterArgs and GetInternalOccmDemandSignalDeliveriesFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalDeliveriesFilterInput` via:
+//
+//	GetInternalOccmDemandSignalDeliveriesFilterArgs{...}
+type GetInternalOccmDemandSignalDeliveriesFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalDeliveriesFilterOutput() GetInternalOccmDemandSignalDeliveriesFilterOutput
+	ToGetInternalOccmDemandSignalDeliveriesFilterOutputWithContext(context.Context) GetInternalOccmDemandSignalDeliveriesFilterOutput
+}
+
+type GetInternalOccmDemandSignalDeliveriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccmDemandSignalDeliveriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesFilterArgs) ToGetInternalOccmDemandSignalDeliveriesFilterOutput() GetInternalOccmDemandSignalDeliveriesFilterOutput {
+	return i.ToGetInternalOccmDemandSignalDeliveriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesFilterArgs) ToGetInternalOccmDemandSignalDeliveriesFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalDeliveriesFilterOutput)
+}
+
+// GetInternalOccmDemandSignalDeliveriesFilterArrayInput is an input type that accepts GetInternalOccmDemandSignalDeliveriesFilterArray and GetInternalOccmDemandSignalDeliveriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalDeliveriesFilterArrayInput` via:
+//
+//	GetInternalOccmDemandSignalDeliveriesFilterArray{ GetInternalOccmDemandSignalDeliveriesFilterArgs{...} }
+type GetInternalOccmDemandSignalDeliveriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutput() GetInternalOccmDemandSignalDeliveriesFilterArrayOutput
+	ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalDeliveriesFilterArrayOutput
+}
+
+type GetInternalOccmDemandSignalDeliveriesFilterArray []GetInternalOccmDemandSignalDeliveriesFilterInput
+
+func (GetInternalOccmDemandSignalDeliveriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesFilterArray) ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutput() GetInternalOccmDemandSignalDeliveriesFilterArrayOutput {
+	return i.ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesFilterArray) ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalDeliveriesFilterArrayOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalDeliveriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterOutput) ToGetInternalOccmDemandSignalDeliveriesFilterOutput() GetInternalOccmDemandSignalDeliveriesFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterOutput) ToGetInternalOccmDemandSignalDeliveriesFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalDeliveriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterArrayOutput) ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutput() GetInternalOccmDemandSignalDeliveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterArrayOutput) ToGetInternalOccmDemandSignalDeliveriesFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalDeliveriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalDeliveriesFilter {
+		return vs[0].([]GetInternalOccmDemandSignalDeliveriesFilter)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalDeliveriesFilterOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection struct {
+	Items []GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionInput is an input type that accepts GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs and GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionInput` via:
+//
+//	GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs{...}
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutputWithContext(context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs struct {
+	Items GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput {
+	return i.ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput)
+}
+
+// GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayInput is an input type that accepts GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray and GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayInput` via:
+//
+//	GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray{ GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs{...} }
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray []GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionInput
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput {
+	return i.ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput) Items() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection) []GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection {
+		return vs[0].([]GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollection)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem struct {
+	// The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+	AcceptedQuantity string `pulumi:"acceptedQuantity"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The OCID of the demand signal under which this delivery will be grouped.
+	DemandSignalId string `pulumi:"demandSignalId"`
+	// The OCID of the demand signal item corresponding to which this delivery is made.
+	DemandSignalItemId string `pulumi:"demandSignalItemId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id string `pulumi:"id"`
+	// This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+	Justification string `pulumi:"justification"`
+	// The enum values corresponding to the various states associated with the delivery resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// This field acts as a notes section for operators.
+	Notes string `pulumi:"notes"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	// The current lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
+	TimeDelivered string `pulumi:"timeDelivered"`
+}
+
+// GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemInput is an input type that accepts GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs and GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemInput` via:
+//
+//	GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs{...}
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutputWithContext(context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs struct {
+	// The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+	AcceptedQuantity pulumi.StringInput `pulumi:"acceptedQuantity"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The OCID of the demand signal under which this delivery will be grouped.
+	DemandSignalId pulumi.StringInput `pulumi:"demandSignalId"`
+	// The OCID of the demand signal item corresponding to which this delivery is made.
+	DemandSignalItemId pulumi.StringInput `pulumi:"demandSignalItemId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+	Justification pulumi.StringInput `pulumi:"justification"`
+	// The enum values corresponding to the various states associated with the delivery resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// This field acts as a notes section for operators.
+	Notes pulumi.StringInput `pulumi:"notes"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	// The current lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
+	TimeDelivered pulumi.StringInput `pulumi:"timeDelivered"`
+}
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput {
+	return i.ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput)
+}
+
+// GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayInput is an input type that accepts GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray and GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray{ GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs{...} }
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput
+	ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray []GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemInput
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput {
+	return o
+}
+
+// The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) AcceptedQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.AcceptedQuantity
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the demand signal under which this delivery will be grouped.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) DemandSignalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.DemandSignalId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the demand signal item corresponding to which this delivery is made.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) DemandSignalItemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.DemandSignalItemId
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A query parameter to filter the list of demand signals based on it's OCID.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
+// The enum values corresponding to the various states associated with the delivery resource.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// This field acts as a notes section for operators.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) Notes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.Notes
+	}).(pulumi.StringOutput)
+}
+
+// The customer group ocid by which we would filter the list.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the resource.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date on which the Oracle Cloud Infrastructure delivered the resource to the customers. The default value for this will be the corresponding demand signal item resource's need by date.
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput) TimeDelivered() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem) string {
+		return v.TimeDelivered
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput() GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput) ToGetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem {
+		return vs[0].([]GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput)
+}
+
+type GetInternalOccmDemandSignalItemsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccmDemandSignalItemsFilterInput is an input type that accepts GetInternalOccmDemandSignalItemsFilterArgs and GetInternalOccmDemandSignalItemsFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalItemsFilterInput` via:
+//
+//	GetInternalOccmDemandSignalItemsFilterArgs{...}
+type GetInternalOccmDemandSignalItemsFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalItemsFilterOutput() GetInternalOccmDemandSignalItemsFilterOutput
+	ToGetInternalOccmDemandSignalItemsFilterOutputWithContext(context.Context) GetInternalOccmDemandSignalItemsFilterOutput
+}
+
+type GetInternalOccmDemandSignalItemsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccmDemandSignalItemsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalItemsFilterArgs) ToGetInternalOccmDemandSignalItemsFilterOutput() GetInternalOccmDemandSignalItemsFilterOutput {
+	return i.ToGetInternalOccmDemandSignalItemsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalItemsFilterArgs) ToGetInternalOccmDemandSignalItemsFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalItemsFilterOutput)
+}
+
+// GetInternalOccmDemandSignalItemsFilterArrayInput is an input type that accepts GetInternalOccmDemandSignalItemsFilterArray and GetInternalOccmDemandSignalItemsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalItemsFilterArrayInput` via:
+//
+//	GetInternalOccmDemandSignalItemsFilterArray{ GetInternalOccmDemandSignalItemsFilterArgs{...} }
+type GetInternalOccmDemandSignalItemsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalItemsFilterArrayOutput() GetInternalOccmDemandSignalItemsFilterArrayOutput
+	ToGetInternalOccmDemandSignalItemsFilterArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalItemsFilterArrayOutput
+}
+
+type GetInternalOccmDemandSignalItemsFilterArray []GetInternalOccmDemandSignalItemsFilterInput
+
+func (GetInternalOccmDemandSignalItemsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalItemsFilterArray) ToGetInternalOccmDemandSignalItemsFilterArrayOutput() GetInternalOccmDemandSignalItemsFilterArrayOutput {
+	return i.ToGetInternalOccmDemandSignalItemsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalItemsFilterArray) ToGetInternalOccmDemandSignalItemsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalItemsFilterArrayOutput)
+}
+
+type GetInternalOccmDemandSignalItemsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalItemsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterOutput) ToGetInternalOccmDemandSignalItemsFilterOutput() GetInternalOccmDemandSignalItemsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterOutput) ToGetInternalOccmDemandSignalItemsFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccmDemandSignalItemsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalItemsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterArrayOutput) ToGetInternalOccmDemandSignalItemsFilterArrayOutput() GetInternalOccmDemandSignalItemsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterArrayOutput) ToGetInternalOccmDemandSignalItemsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalItemsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalItemsFilter {
+		return vs[0].([]GetInternalOccmDemandSignalItemsFilter)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalItemsFilterOutput)
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection struct {
+	// An array of items containing detailed information about different resource demanded as part of a demand signal.
+	Items []GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionInput is an input type that accepts GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs and GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionInput` via:
+//
+//	GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs{...}
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutputWithContext(context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs struct {
+	// An array of items containing detailed information about different resource demanded as part of a demand signal.
+	Items GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput {
+	return i.ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput)
+}
+
+// GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayInput is an input type that accepts GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray and GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayInput` via:
+//
+//	GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray{ GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs{...} }
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray []GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionInput
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput {
+	return i.ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput)
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput {
+	return o
+}
+
+// An array of items containing detailed information about different resource demanded as part of a demand signal.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput) Items() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection) []GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection {
+		return vs[0].([]GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollection)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput)
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The OCID of the corresponding demand signal catalog resource.
+	DemandSignalCatalogResourceId string `pulumi:"demandSignalCatalogResourceId"`
+	// The OCID of the demand signal under which this item will be grouped.
+	DemandSignalId string `pulumi:"demandSignalId"`
+	// A query parameter to filter the list of demand signal details based on the namespace.
+	DemandSignalNamespace string `pulumi:"demandSignalNamespace"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the demand signal resource request.
+	Id string `pulumi:"id"`
+	// This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+	Notes string `pulumi:"notes"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	// The quantity of the resource that you want to demand from Oracle Cloud Infrastructure or return to OCI.
+	Quantity string `pulumi:"quantity"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+	Region string `pulumi:"region"`
+	// The type of request (DEMAND or RETURN) made against a particular demand signal item.
+	RequestType string `pulumi:"requestType"`
+	// A query parameter to filter the list of demand signal details based on the resource name.
+	ResourceName string `pulumi:"resourceName"`
+	// A map of various properties associated with the Oracle Cloud Infrastructure resource.
+	ResourceProperties map[string]string `pulumi:"resourceProperties"`
+	// The current lifecycle state of the demand signal item.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The ocid of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+	TargetCompartmentId string `pulumi:"targetCompartmentId"`
+	// the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+	TimeNeededBefore string `pulumi:"timeNeededBefore"`
+}
+
+// GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemInput is an input type that accepts GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs and GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemInput` via:
+//
+//	GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs{...}
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutputWithContext(context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The OCID of the corresponding demand signal catalog resource.
+	DemandSignalCatalogResourceId pulumi.StringInput `pulumi:"demandSignalCatalogResourceId"`
+	// The OCID of the demand signal under which this item will be grouped.
+	DemandSignalId pulumi.StringInput `pulumi:"demandSignalId"`
+	// A query parameter to filter the list of demand signal details based on the namespace.
+	DemandSignalNamespace pulumi.StringInput `pulumi:"demandSignalNamespace"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the demand signal resource request.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+	Notes pulumi.StringInput `pulumi:"notes"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	// The quantity of the resource that you want to demand from Oracle Cloud Infrastructure or return to OCI.
+	Quantity pulumi.StringInput `pulumi:"quantity"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The type of request (DEMAND or RETURN) made against a particular demand signal item.
+	RequestType pulumi.StringInput `pulumi:"requestType"`
+	// A query parameter to filter the list of demand signal details based on the resource name.
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	// A map of various properties associated with the Oracle Cloud Infrastructure resource.
+	ResourceProperties pulumi.StringMapInput `pulumi:"resourceProperties"`
+	// The current lifecycle state of the demand signal item.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The ocid of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
+	// the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+	TimeNeededBefore pulumi.StringInput `pulumi:"timeNeededBefore"`
+}
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput {
+	return i.ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput)
+}
+
+// GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayInput is an input type that accepts GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray and GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray{ GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs{...} }
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput
+	ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray []GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemInput
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput {
+	return o
+}
+
+// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the corresponding demand signal catalog resource.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) DemandSignalCatalogResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.DemandSignalCatalogResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the demand signal under which this item will be grouped.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) DemandSignalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.DemandSignalId
+	}).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signal details based on the namespace.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) DemandSignalNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.DemandSignalNamespace
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the demand signal resource request.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) Notes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.Notes
+	}).(pulumi.StringOutput)
+}
+
+// The customer group ocid by which we would filter the list.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The quantity of the resource that you want to demand from Oracle Cloud Infrastructure or return to OCI.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) Quantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.Quantity
+	}).(pulumi.StringOutput)
+}
+
+// The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// The type of request (DEMAND or RETURN) made against a particular demand signal item.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) RequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.RequestType
+	}).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signal details based on the resource name.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.ResourceName
+	}).(pulumi.StringOutput)
+}
+
+// A map of various properties associated with the Oracle Cloud Infrastructure resource.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) ResourceProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.ResourceProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// The current lifecycle state of the demand signal item.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The ocid of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) TargetCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.TargetCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput) TimeNeededBefore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem) string {
+		return v.TimeNeededBefore
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput() GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput) ToGetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem {
+		return vs[0].([]GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput)
+}
+
+type GetInternalOccmDemandSignalsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetInternalOccmDemandSignalsFilterInput is an input type that accepts GetInternalOccmDemandSignalsFilterArgs and GetInternalOccmDemandSignalsFilterOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalsFilterInput` via:
+//
+//	GetInternalOccmDemandSignalsFilterArgs{...}
+type GetInternalOccmDemandSignalsFilterInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalsFilterOutput() GetInternalOccmDemandSignalsFilterOutput
+	ToGetInternalOccmDemandSignalsFilterOutputWithContext(context.Context) GetInternalOccmDemandSignalsFilterOutput
+}
+
+type GetInternalOccmDemandSignalsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetInternalOccmDemandSignalsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalsFilterArgs) ToGetInternalOccmDemandSignalsFilterOutput() GetInternalOccmDemandSignalsFilterOutput {
+	return i.ToGetInternalOccmDemandSignalsFilterOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalsFilterArgs) ToGetInternalOccmDemandSignalsFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalsFilterOutput)
+}
+
+// GetInternalOccmDemandSignalsFilterArrayInput is an input type that accepts GetInternalOccmDemandSignalsFilterArray and GetInternalOccmDemandSignalsFilterArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalsFilterArrayInput` via:
+//
+//	GetInternalOccmDemandSignalsFilterArray{ GetInternalOccmDemandSignalsFilterArgs{...} }
+type GetInternalOccmDemandSignalsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalsFilterArrayOutput() GetInternalOccmDemandSignalsFilterArrayOutput
+	ToGetInternalOccmDemandSignalsFilterArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalsFilterArrayOutput
+}
+
+type GetInternalOccmDemandSignalsFilterArray []GetInternalOccmDemandSignalsFilterInput
+
+func (GetInternalOccmDemandSignalsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalsFilterArray) ToGetInternalOccmDemandSignalsFilterArrayOutput() GetInternalOccmDemandSignalsFilterArrayOutput {
+	return i.ToGetInternalOccmDemandSignalsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalsFilterArray) ToGetInternalOccmDemandSignalsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalsFilterArrayOutput)
+}
+
+type GetInternalOccmDemandSignalsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalsFilterOutput) ToGetInternalOccmDemandSignalsFilterOutput() GetInternalOccmDemandSignalsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsFilterOutput) ToGetInternalOccmDemandSignalsFilterOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsFilterOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccmDemandSignalsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetInternalOccmDemandSignalsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetInternalOccmDemandSignalsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalsFilterArrayOutput) ToGetInternalOccmDemandSignalsFilterArrayOutput() GetInternalOccmDemandSignalsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsFilterArrayOutput) ToGetInternalOccmDemandSignalsFilterArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsFilterArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsFilterArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalsFilter {
+		return vs[0].([]GetInternalOccmDemandSignalsFilter)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalsFilterOutput)
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection struct {
+	Items []GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem `pulumi:"items"`
+}
+
+// GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionInput is an input type that accepts GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs and GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionInput` via:
+//
+//	GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs{...}
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutputWithContext(context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs struct {
+	Items GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput {
+	return i.ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput)
+}
+
+// GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayInput is an input type that accepts GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray and GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayInput` via:
+//
+//	GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray{ GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs{...} }
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray []GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionInput
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput {
+	return i.ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput)
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput) Items() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection) []GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem {
+		return v.Items
+	}).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection {
+		return vs[0].([]GetInternalOccmDemandSignalsInternalOccmDemandSignalCollection)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput)
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem struct {
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A short description about the demand signal.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id string `pulumi:"id"`
+	// A query parameter to filter the list of demand signals based on its state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId string `pulumi:"occCustomerGroupId"`
+	OccmDemandSignalId string `pulumi:"occmDemandSignalId"`
+	// The current lifecycle state of the demand signal.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time when the demand signal was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the demand signal was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemInput is an input type that accepts GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs and GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemInput` via:
+//
+//	GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs{...}
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutputWithContext(context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs struct {
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A short description about the demand signal.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A query parameter to filter the list of demand signals based on its state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The customer group ocid by which we would filter the list.
+	OccCustomerGroupId pulumi.StringInput `pulumi:"occCustomerGroupId"`
+	OccmDemandSignalId pulumi.StringInput `pulumi:"occmDemandSignalId"`
+	// The current lifecycle state of the demand signal.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time when the demand signal was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the demand signal was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput {
+	return i.ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput)
+}
+
+// GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayInput is an input type that accepts GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray and GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayInput` via:
+//
+//	GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray{ GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs{...} }
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput
+	ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutputWithContext(context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray []GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemInput
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput {
+	return i.ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput)
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput {
+	return o
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A short description about the demand signal.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A query parameter to filter the list of demand signals based on it's OCID.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signals based on its state.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The customer group ocid by which we would filter the list.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) OccCustomerGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.OccCustomerGroupId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) OccmDemandSignalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.OccmDemandSignalId
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the demand signal.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time when the demand signal was created.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time when the demand signal was last updated.
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput() GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput) ToGetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutputWithContext(ctx context.Context) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput) Index(i pulumi.IntInput) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem {
+		return vs[0].([]GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItem)[vs[1].(int)]
+	}).(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput)
+}
+
 type GetNamespaceOccOverviewsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -7733,6 +10578,2326 @@ func (o GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacem
 	}).(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput)
 }
 
+type GetOccmDemandSignalCatalogResourcesFilter struct {
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccmDemandSignalCatalogResourcesFilterInput is an input type that accepts GetOccmDemandSignalCatalogResourcesFilterArgs and GetOccmDemandSignalCatalogResourcesFilterOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesFilterInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesFilterArgs{...}
+type GetOccmDemandSignalCatalogResourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesFilterOutput() GetOccmDemandSignalCatalogResourcesFilterOutput
+	ToGetOccmDemandSignalCatalogResourcesFilterOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesFilterOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesFilterArgs struct {
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesFilterArgs) ToGetOccmDemandSignalCatalogResourcesFilterOutput() GetOccmDemandSignalCatalogResourcesFilterOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesFilterArgs) ToGetOccmDemandSignalCatalogResourcesFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesFilterOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesFilterArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesFilterArray and GetOccmDemandSignalCatalogResourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesFilterArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesFilterArray{ GetOccmDemandSignalCatalogResourcesFilterArgs{...} }
+type GetOccmDemandSignalCatalogResourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesFilterArrayOutput() GetOccmDemandSignalCatalogResourcesFilterArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesFilterArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesFilterArray []GetOccmDemandSignalCatalogResourcesFilterInput
+
+func (GetOccmDemandSignalCatalogResourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesFilterArray) ToGetOccmDemandSignalCatalogResourcesFilterArrayOutput() GetOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesFilterArray) ToGetOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesFilterArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterOutput) ToGetOccmDemandSignalCatalogResourcesFilterOutput() GetOccmDemandSignalCatalogResourcesFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterOutput) ToGetOccmDemandSignalCatalogResourcesFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesFilterOutput {
+	return o
+}
+
+// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+func (o GetOccmDemandSignalCatalogResourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterArrayOutput) ToGetOccmDemandSignalCatalogResourcesFilterArrayOutput() GetOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterArrayOutput) ToGetOccmDemandSignalCatalogResourcesFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesFilterArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesFilter {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesFilter)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesFilterOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem `pulumi:"items"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput {
+	return o
+}
+
+// An array of items containing detailed information about a resource's property dependecies.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput) Items() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection) []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem {
+		return v.Items
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollection)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the demand signal catalog resource.
+	Id string `pulumi:"id"`
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name string `pulumi:"name"`
+	// The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+	Namespace string `pulumi:"namespace"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	Region string `pulumi:"region"`
+	// A list containing detailed information about a resource's properties.
+	ResourceProperties []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty `pulumi:"resourceProperties"`
+	// A list containing detailed information about a resource's property constraints.
+	ResourcePropertyConstraints []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint `pulumi:"resourcePropertyConstraints"`
+	// The current lifecycles state of the demand signal catalog resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+	TargetCompartmentId string `pulumi:"targetCompartmentId"`
+	// The time when the demand signal catalog resource was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the demand signal catalog resource was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the demand signal catalog resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+	Region pulumi.StringInput `pulumi:"region"`
+	// A list containing detailed information about a resource's properties.
+	ResourceProperties GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput `pulumi:"resourceProperties"`
+	// A list containing detailed information about a resource's property constraints.
+	ResourcePropertyConstraints GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput `pulumi:"resourcePropertyConstraints"`
+	// The current lifecycles state of the demand signal catalog resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
+	// The time when the demand signal catalog resource was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the demand signal catalog resource was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return o
+}
+
+// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the demand signal catalog resource.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signal catalog resource based on the resource name.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// The name of the Oracle Cloud Infrastructure service in consideration for demand signal submission. For example: COMPUTE, NETWORK, GPU etc.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The name of region for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.Region
+	}).(pulumi.StringOutput)
+}
+
+// A list containing detailed information about a resource's properties.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) ResourceProperties() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty {
+		return v.ResourceProperties
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput)
+}
+
+// A list containing detailed information about a resource's property constraints.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) ResourcePropertyConstraints() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint {
+		return v.ResourcePropertyConstraints
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput)
+}
+
+// The current lifecycles state of the demand signal catalog resource.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the customer tenancy for which this resource will be available for the customer to order against.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) TargetCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.TargetCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The time when the demand signal catalog resource was created.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The time when the demand signal catalog resource was last updated.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItem)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem `pulumi:"items"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return o
+}
+
+// An array of items containing detailed information about a resource's property dependecies.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput) Items() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty) []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem {
+		return v.Items
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourceProperty)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem `pulumi:"items"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs struct {
+	// An array of items containing detailed information about a resource's property dependecies.
+	Items GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return o
+}
+
+// An array of items containing detailed information about a resource's property dependecies.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput) Items() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint) []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem {
+		return v.Items
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraint)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem struct {
+	// The name of demand signal resource's property constraint.
+	ConstraintName string `pulumi:"constraintName"`
+	// The value of demand signal resource's property constraint.
+	ConstraintValue string `pulumi:"constraintValue"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs struct {
+	// The name of demand signal resource's property constraint.
+	ConstraintName pulumi.StringInput `pulumi:"constraintName"`
+	// The value of demand signal resource's property constraint.
+	ConstraintValue pulumi.StringInput `pulumi:"constraintValue"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return o
+}
+
+// The name of demand signal resource's property constraint.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ConstraintName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem) string {
+		return v.ConstraintName
+	}).(pulumi.StringOutput)
+}
+
+// The value of demand signal resource's property constraint.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput) ConstraintValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem) string {
+		return v.ConstraintValue
+	}).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItem)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem struct {
+	// This will indicate if demand signal resource's property is editable.
+	IsEditable bool `pulumi:"isEditable"`
+	// The maximum value of demand signal resource's property. This is an optional parameter.
+	PropertyMaxValue string `pulumi:"propertyMaxValue"`
+	// The minimum value of demand signal resource's property. This is an optional parameter.
+	PropertyMinValue string `pulumi:"propertyMinValue"`
+	// The name of demand signal resource's property.
+	PropertyName string `pulumi:"propertyName"`
+	// Predefined options for demand signal resource's property. This is an optional parameter.
+	PropertyOptions []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption `pulumi:"propertyOptions"`
+	// Unit for demand signal resource's property.
+	PropertyUnit string `pulumi:"propertyUnit"`
+	// Default value of demand signal resource's property.
+	PropertyValue string `pulumi:"propertyValue"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs struct {
+	// This will indicate if demand signal resource's property is editable.
+	IsEditable pulumi.BoolInput `pulumi:"isEditable"`
+	// The maximum value of demand signal resource's property. This is an optional parameter.
+	PropertyMaxValue pulumi.StringInput `pulumi:"propertyMaxValue"`
+	// The minimum value of demand signal resource's property. This is an optional parameter.
+	PropertyMinValue pulumi.StringInput `pulumi:"propertyMinValue"`
+	// The name of demand signal resource's property.
+	PropertyName pulumi.StringInput `pulumi:"propertyName"`
+	// Predefined options for demand signal resource's property. This is an optional parameter.
+	PropertyOptions GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput `pulumi:"propertyOptions"`
+	// Unit for demand signal resource's property.
+	PropertyUnit pulumi.StringInput `pulumi:"propertyUnit"`
+	// Default value of demand signal resource's property.
+	PropertyValue pulumi.StringInput `pulumi:"propertyValue"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return o
+}
+
+// This will indicate if demand signal resource's property is editable.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) IsEditable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) bool {
+		return v.IsEditable
+	}).(pulumi.BoolOutput)
+}
+
+// The maximum value of demand signal resource's property. This is an optional parameter.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyMaxValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyMaxValue
+	}).(pulumi.StringOutput)
+}
+
+// The minimum value of demand signal resource's property. This is an optional parameter.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyMinValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyMinValue
+	}).(pulumi.StringOutput)
+}
+
+// The name of demand signal resource's property.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyName
+	}).(pulumi.StringOutput)
+}
+
+// Predefined options for demand signal resource's property. This is an optional parameter.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyOptions() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption {
+		return v.PropertyOptions
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput)
+}
+
+// Unit for demand signal resource's property.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyUnit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyUnit
+	}).(pulumi.StringOutput)
+}
+
+// Default value of demand signal resource's property.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput) PropertyValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem) string {
+		return v.PropertyValue
+	}).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItem)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption struct {
+	// key of a property option like memoryValue, ocpuValue.
+	OptionKey string `pulumi:"optionKey"`
+	// value of a property option like 64, 2 fastconnect etc.
+	OptionValue string `pulumi:"optionValue"`
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs{...}
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs struct {
+	// key of a property option like memoryValue, ocpuValue.
+	OptionKey pulumi.StringInput `pulumi:"optionKey"`
+	// value of a property option like 64, 2 fastconnect etc.
+	OptionValue pulumi.StringInput `pulumi:"optionValue"`
+}
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput)
+}
+
+// GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput is an input type that accepts GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray and GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput` via:
+//
+//	GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray{ GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs{...} }
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput
+	ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray []GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return i.ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return o
+}
+
+// key of a property option like memoryValue, ocpuValue.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) OptionKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption) string {
+		return v.OptionKey
+	}).(pulumi.StringOutput)
+}
+
+// value of a property option like 64, 2 fastconnect etc.
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput) OptionValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption) string {
+		return v.OptionValue
+	}).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput() GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) ToGetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption {
+		return vs[0].([]GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOption)[vs[1].(int)]
+	}).(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput)
+}
+
+type GetOccmDemandSignalDeliveriesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccmDemandSignalDeliveriesFilterInput is an input type that accepts GetOccmDemandSignalDeliveriesFilterArgs and GetOccmDemandSignalDeliveriesFilterOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalDeliveriesFilterInput` via:
+//
+//	GetOccmDemandSignalDeliveriesFilterArgs{...}
+type GetOccmDemandSignalDeliveriesFilterInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalDeliveriesFilterOutput() GetOccmDemandSignalDeliveriesFilterOutput
+	ToGetOccmDemandSignalDeliveriesFilterOutputWithContext(context.Context) GetOccmDemandSignalDeliveriesFilterOutput
+}
+
+type GetOccmDemandSignalDeliveriesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccmDemandSignalDeliveriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalDeliveriesFilterArgs) ToGetOccmDemandSignalDeliveriesFilterOutput() GetOccmDemandSignalDeliveriesFilterOutput {
+	return i.ToGetOccmDemandSignalDeliveriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalDeliveriesFilterArgs) ToGetOccmDemandSignalDeliveriesFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalDeliveriesFilterOutput)
+}
+
+// GetOccmDemandSignalDeliveriesFilterArrayInput is an input type that accepts GetOccmDemandSignalDeliveriesFilterArray and GetOccmDemandSignalDeliveriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalDeliveriesFilterArrayInput` via:
+//
+//	GetOccmDemandSignalDeliveriesFilterArray{ GetOccmDemandSignalDeliveriesFilterArgs{...} }
+type GetOccmDemandSignalDeliveriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalDeliveriesFilterArrayOutput() GetOccmDemandSignalDeliveriesFilterArrayOutput
+	ToGetOccmDemandSignalDeliveriesFilterArrayOutputWithContext(context.Context) GetOccmDemandSignalDeliveriesFilterArrayOutput
+}
+
+type GetOccmDemandSignalDeliveriesFilterArray []GetOccmDemandSignalDeliveriesFilterInput
+
+func (GetOccmDemandSignalDeliveriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalDeliveriesFilterArray) ToGetOccmDemandSignalDeliveriesFilterArrayOutput() GetOccmDemandSignalDeliveriesFilterArrayOutput {
+	return i.ToGetOccmDemandSignalDeliveriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalDeliveriesFilterArray) ToGetOccmDemandSignalDeliveriesFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalDeliveriesFilterArrayOutput)
+}
+
+type GetOccmDemandSignalDeliveriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalDeliveriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterOutput) ToGetOccmDemandSignalDeliveriesFilterOutput() GetOccmDemandSignalDeliveriesFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterOutput) ToGetOccmDemandSignalDeliveriesFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccmDemandSignalDeliveriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalDeliveriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalDeliveriesFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterArrayOutput) ToGetOccmDemandSignalDeliveriesFilterArrayOutput() GetOccmDemandSignalDeliveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterArrayOutput) ToGetOccmDemandSignalDeliveriesFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesFilterArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalDeliveriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalDeliveriesFilter {
+		return vs[0].([]GetOccmDemandSignalDeliveriesFilter)[vs[1].(int)]
+	}).(GetOccmDemandSignalDeliveriesFilterOutput)
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection struct {
+	// An array of items containing detailed information about demand signal delivery resources.
+	Items []GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem `pulumi:"items"`
+}
+
+// GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionInput is an input type that accepts GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs and GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionInput` via:
+//
+//	GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs{...}
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutputWithContext(context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs struct {
+	// An array of items containing detailed information about demand signal delivery resources.
+	Items GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput {
+	return i.ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput)
+}
+
+// GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayInput is an input type that accepts GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray and GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayInput` via:
+//
+//	GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray{ GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs{...} }
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutputWithContext(context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray []GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionInput
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput {
+	return i.ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput)
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput {
+	return o
+}
+
+// An array of items containing detailed information about demand signal delivery resources.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput) Items() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection) []GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem {
+		return v.Items
+	}).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection {
+		return vs[0].([]GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollection)[vs[1].(int)]
+	}).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput)
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem struct {
+	// The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+	AcceptedQuantity string `pulumi:"acceptedQuantity"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The OCID of the demand signal under which this delivery will be grouped.
+	DemandSignalId string `pulumi:"demandSignalId"`
+	// The OCID of the demand signal item corresponding to which this delivery is made.
+	DemandSignalItemId string `pulumi:"demandSignalItemId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id string `pulumi:"id"`
+	// This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+	Justification string `pulumi:"justification"`
+	// The enum values corresponding to the various states associated with the delivery resource.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date on which the Oracle Cloud Infrastructure delivered the resource to the customers.
+	TimeDelivered string `pulumi:"timeDelivered"`
+}
+
+// GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemInput is an input type that accepts GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs and GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemInput` via:
+//
+//	GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs{...}
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutputWithContext(context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs struct {
+	// The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+	AcceptedQuantity pulumi.StringInput `pulumi:"acceptedQuantity"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The OCID of the demand signal under which this delivery will be grouped.
+	DemandSignalId pulumi.StringInput `pulumi:"demandSignalId"`
+	// The OCID of the demand signal item corresponding to which this delivery is made.
+	DemandSignalItemId pulumi.StringInput `pulumi:"demandSignalItemId"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+	Justification pulumi.StringInput `pulumi:"justification"`
+	// The enum values corresponding to the various states associated with the delivery resource.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date on which the Oracle Cloud Infrastructure delivered the resource to the customers.
+	TimeDelivered pulumi.StringInput `pulumi:"timeDelivered"`
+}
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput {
+	return i.ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput)
+}
+
+// GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayInput is an input type that accepts GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray and GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayInput` via:
+//
+//	GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray{ GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs{...} }
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput
+	ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray []GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemInput
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return i.ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput {
+	return o
+}
+
+// The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) AcceptedQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.AcceptedQuantity
+	}).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the demand signal under which this delivery will be grouped.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) DemandSignalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.DemandSignalId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the demand signal item corresponding to which this delivery is made.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) DemandSignalItemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.DemandSignalItemId
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A query parameter to filter the list of demand signals based on it's OCID.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This field could be used by Oracle Cloud Infrastructure to communicate the reason for accepting or declining the request.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) Justification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.Justification
+	}).(pulumi.StringOutput)
+}
+
+// The enum values corresponding to the various states associated with the delivery resource.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the resource.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date on which the Oracle Cloud Infrastructure delivered the resource to the customers.
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput) TimeDelivered() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem) string {
+		return v.TimeDelivered
+	}).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput() GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput) ToGetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem {
+		return vs[0].([]GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItem)[vs[1].(int)]
+	}).(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput)
+}
+
+type GetOccmDemandSignalItemsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccmDemandSignalItemsFilterInput is an input type that accepts GetOccmDemandSignalItemsFilterArgs and GetOccmDemandSignalItemsFilterOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalItemsFilterInput` via:
+//
+//	GetOccmDemandSignalItemsFilterArgs{...}
+type GetOccmDemandSignalItemsFilterInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalItemsFilterOutput() GetOccmDemandSignalItemsFilterOutput
+	ToGetOccmDemandSignalItemsFilterOutputWithContext(context.Context) GetOccmDemandSignalItemsFilterOutput
+}
+
+type GetOccmDemandSignalItemsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccmDemandSignalItemsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalItemsFilterArgs) ToGetOccmDemandSignalItemsFilterOutput() GetOccmDemandSignalItemsFilterOutput {
+	return i.ToGetOccmDemandSignalItemsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalItemsFilterArgs) ToGetOccmDemandSignalItemsFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalItemsFilterOutput)
+}
+
+// GetOccmDemandSignalItemsFilterArrayInput is an input type that accepts GetOccmDemandSignalItemsFilterArray and GetOccmDemandSignalItemsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalItemsFilterArrayInput` via:
+//
+//	GetOccmDemandSignalItemsFilterArray{ GetOccmDemandSignalItemsFilterArgs{...} }
+type GetOccmDemandSignalItemsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalItemsFilterArrayOutput() GetOccmDemandSignalItemsFilterArrayOutput
+	ToGetOccmDemandSignalItemsFilterArrayOutputWithContext(context.Context) GetOccmDemandSignalItemsFilterArrayOutput
+}
+
+type GetOccmDemandSignalItemsFilterArray []GetOccmDemandSignalItemsFilterInput
+
+func (GetOccmDemandSignalItemsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalItemsFilterArray) ToGetOccmDemandSignalItemsFilterArrayOutput() GetOccmDemandSignalItemsFilterArrayOutput {
+	return i.ToGetOccmDemandSignalItemsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalItemsFilterArray) ToGetOccmDemandSignalItemsFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalItemsFilterArrayOutput)
+}
+
+type GetOccmDemandSignalItemsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalItemsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalItemsFilterOutput) ToGetOccmDemandSignalItemsFilterOutput() GetOccmDemandSignalItemsFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsFilterOutput) ToGetOccmDemandSignalItemsFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccmDemandSignalItemsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccmDemandSignalItemsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccmDemandSignalItemsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalItemsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalItemsFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalItemsFilterArrayOutput) ToGetOccmDemandSignalItemsFilterArrayOutput() GetOccmDemandSignalItemsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsFilterArrayOutput) ToGetOccmDemandSignalItemsFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsFilterArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalItemsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalItemsFilter {
+		return vs[0].([]GetOccmDemandSignalItemsFilter)[vs[1].(int)]
+	}).(GetOccmDemandSignalItemsFilterOutput)
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollection struct {
+	Items []GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem `pulumi:"items"`
+}
+
+// GetOccmDemandSignalItemsOccmDemandSignalItemCollectionInput is an input type that accepts GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs and GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalItemsOccmDemandSignalItemCollectionInput` via:
+//
+//	GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs{...}
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutputWithContext(context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs struct {
+	Items GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput {
+	return i.ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput)
+}
+
+// GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayInput is an input type that accepts GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray and GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayInput` via:
+//
+//	GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray{ GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs{...} }
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutputWithContext(context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray []GetOccmDemandSignalItemsOccmDemandSignalItemCollectionInput
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalItemsOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput {
+	return i.ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput)
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput) Items() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollection) []GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem {
+		return v.Items
+	}).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalItemsOccmDemandSignalItemCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalItemsOccmDemandSignalItemCollection {
+		return vs[0].([]GetOccmDemandSignalItemsOccmDemandSignalItemCollection)[vs[1].(int)]
+	}).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput)
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The quantity of the resource that you want to demand from OCI.
+	DemandQuantity string `pulumi:"demandQuantity"`
+	// The OCID of the corresponding demand signal catalog resource.
+	DemandSignalCatalogResourceId string `pulumi:"demandSignalCatalogResourceId"`
+	// The OCID of the demand signal under which this item will be grouped.
+	DemandSignalId string `pulumi:"demandSignalId"`
+	// A query parameter to filter the list of demand signal details based on the namespace.
+	DemandSignalNamespace string `pulumi:"demandSignalNamespace"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the demand signal item.
+	Id string `pulumi:"id"`
+	// This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+	Notes string `pulumi:"notes"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+	Region string `pulumi:"region"`
+	// The type of request (DEMAND or RETURN) made against a particular demand signal item.
+	RequestType string `pulumi:"requestType"`
+	// A query parameter to filter the list of demand signal details based on the resource name.
+	ResourceName string `pulumi:"resourceName"`
+	// A map of various properties associated with the Oracle Cloud Infrastructure resource.
+	ResourceProperties map[string]string `pulumi:"resourceProperties"`
+	// The current lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+	TargetCompartmentId string `pulumi:"targetCompartmentId"`
+	// the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+	TimeNeededBefore string `pulumi:"timeNeededBefore"`
+}
+
+// GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemInput is an input type that accepts GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs and GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemInput` via:
+//
+//	GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs{...}
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutputWithContext(context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs struct {
+	// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The quantity of the resource that you want to demand from OCI.
+	DemandQuantity pulumi.StringInput `pulumi:"demandQuantity"`
+	// The OCID of the corresponding demand signal catalog resource.
+	DemandSignalCatalogResourceId pulumi.StringInput `pulumi:"demandSignalCatalogResourceId"`
+	// The OCID of the demand signal under which this item will be grouped.
+	DemandSignalId pulumi.StringInput `pulumi:"demandSignalId"`
+	// A query parameter to filter the list of demand signal details based on the namespace.
+	DemandSignalNamespace pulumi.StringInput `pulumi:"demandSignalNamespace"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the demand signal item.
+	Id pulumi.StringInput `pulumi:"id"`
+	// This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+	Notes pulumi.StringInput `pulumi:"notes"`
+	// The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+	Region pulumi.StringInput `pulumi:"region"`
+	// The type of request (DEMAND or RETURN) made against a particular demand signal item.
+	RequestType pulumi.StringInput `pulumi:"requestType"`
+	// A query parameter to filter the list of demand signal details based on the resource name.
+	ResourceName pulumi.StringInput `pulumi:"resourceName"`
+	// A map of various properties associated with the Oracle Cloud Infrastructure resource.
+	ResourceProperties pulumi.StringMapInput `pulumi:"resourceProperties"`
+	// The current lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+	TargetCompartmentId pulumi.StringInput `pulumi:"targetCompartmentId"`
+	// the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+	TimeNeededBefore pulumi.StringInput `pulumi:"timeNeededBefore"`
+}
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput {
+	return i.ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput)
+}
+
+// GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayInput is an input type that accepts GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray and GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayInput` via:
+//
+//	GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray{ GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs{...} }
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput
+	ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutputWithContext(context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray []GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemInput
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput {
+	return i.ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput {
+	return o
+}
+
+// The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The quantity of the resource that you want to demand from OCI.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) DemandQuantity() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.DemandQuantity }).(pulumi.StringOutput)
+}
+
+// The OCID of the corresponding demand signal catalog resource.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) DemandSignalCatalogResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string {
+		return v.DemandSignalCatalogResourceId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the demand signal under which this item will be grouped.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) DemandSignalId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.DemandSignalId }).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signal details based on the namespace.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) DemandSignalNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string {
+		return v.DemandSignalNamespace
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the demand signal item.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// This field will serve as notes section for you. You can use this section to convey a message to Oracle Cloud Infrastructure regarding your resource request.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) Notes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.Notes }).(pulumi.StringOutput)
+}
+
+// The name of region for which you want to request the Oracle Cloud Infrastructure resource.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// The type of request (DEMAND or RETURN) made against a particular demand signal item.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) RequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.RequestType }).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signal details based on the resource name.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) ResourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.ResourceName }).(pulumi.StringOutput)
+}
+
+// A map of various properties associated with the Oracle Cloud Infrastructure resource.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) ResourceProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.ResourceProperties
+	}).(pulumi.StringMapOutput)
+}
+
+// The current lifecycle state of the resource.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the tenancy for which you want to request the Oracle Cloud Infrastructure resource for. This is an optional parameter.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) TargetCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string {
+		return v.TargetCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput) TimeNeededBefore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem) string { return v.TimeNeededBefore }).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput() GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput) ToGetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem {
+		return vs[0].([]GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItem)[vs[1].(int)]
+	}).(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput)
+}
+
+type GetOccmDemandSignalsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOccmDemandSignalsFilterInput is an input type that accepts GetOccmDemandSignalsFilterArgs and GetOccmDemandSignalsFilterOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalsFilterInput` via:
+//
+//	GetOccmDemandSignalsFilterArgs{...}
+type GetOccmDemandSignalsFilterInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalsFilterOutput() GetOccmDemandSignalsFilterOutput
+	ToGetOccmDemandSignalsFilterOutputWithContext(context.Context) GetOccmDemandSignalsFilterOutput
+}
+
+type GetOccmDemandSignalsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOccmDemandSignalsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalsFilterArgs) ToGetOccmDemandSignalsFilterOutput() GetOccmDemandSignalsFilterOutput {
+	return i.ToGetOccmDemandSignalsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalsFilterArgs) ToGetOccmDemandSignalsFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalsFilterOutput)
+}
+
+// GetOccmDemandSignalsFilterArrayInput is an input type that accepts GetOccmDemandSignalsFilterArray and GetOccmDemandSignalsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalsFilterArrayInput` via:
+//
+//	GetOccmDemandSignalsFilterArray{ GetOccmDemandSignalsFilterArgs{...} }
+type GetOccmDemandSignalsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalsFilterArrayOutput() GetOccmDemandSignalsFilterArrayOutput
+	ToGetOccmDemandSignalsFilterArrayOutputWithContext(context.Context) GetOccmDemandSignalsFilterArrayOutput
+}
+
+type GetOccmDemandSignalsFilterArray []GetOccmDemandSignalsFilterInput
+
+func (GetOccmDemandSignalsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalsFilterArray) ToGetOccmDemandSignalsFilterArrayOutput() GetOccmDemandSignalsFilterArrayOutput {
+	return i.ToGetOccmDemandSignalsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalsFilterArray) ToGetOccmDemandSignalsFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalsFilterArrayOutput)
+}
+
+type GetOccmDemandSignalsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalsFilterOutput) ToGetOccmDemandSignalsFilterOutput() GetOccmDemandSignalsFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsFilterOutput) ToGetOccmDemandSignalsFilterOutputWithContext(ctx context.Context) GetOccmDemandSignalsFilterOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOccmDemandSignalsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOccmDemandSignalsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOccmDemandSignalsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalsFilter)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalsFilterArrayOutput) ToGetOccmDemandSignalsFilterArrayOutput() GetOccmDemandSignalsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsFilterArrayOutput) ToGetOccmDemandSignalsFilterArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalsFilterArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsFilterArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalsFilter {
+		return vs[0].([]GetOccmDemandSignalsFilter)[vs[1].(int)]
+	}).(GetOccmDemandSignalsFilterOutput)
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollection struct {
+	Items []GetOccmDemandSignalsOccmDemandSignalCollectionItem `pulumi:"items"`
+}
+
+// GetOccmDemandSignalsOccmDemandSignalCollectionInput is an input type that accepts GetOccmDemandSignalsOccmDemandSignalCollectionArgs and GetOccmDemandSignalsOccmDemandSignalCollectionOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalsOccmDemandSignalCollectionInput` via:
+//
+//	GetOccmDemandSignalsOccmDemandSignalCollectionArgs{...}
+type GetOccmDemandSignalsOccmDemandSignalCollectionInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionOutput() GetOccmDemandSignalsOccmDemandSignalCollectionOutput
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionOutputWithContext(context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionOutput
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionArgs struct {
+	Items GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionArgs) ToGetOccmDemandSignalsOccmDemandSignalCollectionOutput() GetOccmDemandSignalsOccmDemandSignalCollectionOutput {
+	return i.ToGetOccmDemandSignalsOccmDemandSignalCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionArgs) ToGetOccmDemandSignalsOccmDemandSignalCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalsOccmDemandSignalCollectionOutput)
+}
+
+// GetOccmDemandSignalsOccmDemandSignalCollectionArrayInput is an input type that accepts GetOccmDemandSignalsOccmDemandSignalCollectionArray and GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalsOccmDemandSignalCollectionArrayInput` via:
+//
+//	GetOccmDemandSignalsOccmDemandSignalCollectionArray{ GetOccmDemandSignalsOccmDemandSignalCollectionArgs{...} }
+type GetOccmDemandSignalsOccmDemandSignalCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput() GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutputWithContext(context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionArray []GetOccmDemandSignalsOccmDemandSignalCollectionInput
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalsOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionArray) ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput() GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput {
+	return i.ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionArray) ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput)
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionOutput() GetOccmDemandSignalsOccmDemandSignalCollectionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionOutput) Items() GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollection) []GetOccmDemandSignalsOccmDemandSignalCollectionItem {
+		return v.Items
+	}).(GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalsOccmDemandSignalCollection)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput() GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalsOccmDemandSignalCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalsOccmDemandSignalCollection {
+		return vs[0].([]GetOccmDemandSignalsOccmDemandSignalCollection)[vs[1].(int)]
+	}).(GetOccmDemandSignalsOccmDemandSignalCollectionOutput)
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionItem struct {
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Meaningful text about the demand signal.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id string `pulumi:"id"`
+	// A query parameter to filter the list of demand signals based on its state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the resource.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time when the demand signal was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when the demand signal was last updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOccmDemandSignalsOccmDemandSignalCollectionItemInput is an input type that accepts GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs and GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalsOccmDemandSignalCollectionItemInput` via:
+//
+//	GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs{...}
+type GetOccmDemandSignalsOccmDemandSignalCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutput() GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutputWithContext(context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs struct {
+	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Meaningful text about the demand signal.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// A query parameter to filter the list of demand signals based on it's OCID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A query parameter to filter the list of demand signals based on its state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current lifecycle state of the resource.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time when the demand signal was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when the demand signal was last updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutput() GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput {
+	return i.ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput)
+}
+
+// GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayInput is an input type that accepts GetOccmDemandSignalsOccmDemandSignalCollectionItemArray and GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayInput` via:
+//
+//	GetOccmDemandSignalsOccmDemandSignalCollectionItemArray{ GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs{...} }
+type GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput() GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput
+	ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutputWithContext(context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionItemArray []GetOccmDemandSignalsOccmDemandSignalCollectionItemInput
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalsOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionItemArray) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput() GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput {
+	return i.ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOccmDemandSignalsOccmDemandSignalCollectionItemArray) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput)
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutput() GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput {
+	return o
+}
+
+// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Meaningful text about the demand signal.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire display name. The match is not case sensitive.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// A query parameter to filter the list of demand signals based on it's OCID.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A query parameter to filter the list of demand signals based on its state.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the resource.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time when the demand signal was created.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time when the demand signal was last updated.
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOccmDemandSignalsOccmDemandSignalCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOccmDemandSignalsOccmDemandSignalCollectionItem)(nil)).Elem()
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput() GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput) ToGetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutputWithContext(ctx context.Context) GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOccmDemandSignalsOccmDemandSignalCollectionItem {
+		return vs[0].([]GetOccmDemandSignalsOccmDemandSignalCollectionItem)[vs[1].(int)]
+	}).(GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OccAvailabilityCatalogDetailInput)(nil)).Elem(), OccAvailabilityCatalogDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OccAvailabilityCatalogDetailArrayInput)(nil)).Elem(), OccAvailabilityCatalogDetailArray{})
@@ -7776,6 +12941,46 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput)(nil)).Elem(), GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesFilterInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesFilterArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsFilterInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsFilterArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesFilterInput)(nil)).Elem(), GetInternalOccmDemandSignalDeliveriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesFilterArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalDeliveriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionInput)(nil)).Elem(), GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemInput)(nil)).Elem(), GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalItemsFilterInput)(nil)).Elem(), GetInternalOccmDemandSignalItemsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalItemsFilterArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalItemsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionInput)(nil)).Elem(), GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemInput)(nil)).Elem(), GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalsFilterInput)(nil)).Elem(), GetInternalOccmDemandSignalsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalsFilterArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionInput)(nil)).Elem(), GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemInput)(nil)).Elem(), GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayInput)(nil)).Elem(), GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsFilterInput)(nil)).Elem(), GetNamespaceOccOverviewsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsFilterArrayInput)(nil)).Elem(), GetNamespaceOccOverviewsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNamespaceOccOverviewsOccOverviewCollectionInput)(nil)).Elem(), GetNamespaceOccOverviewsOccOverviewCollectionArgs{})
@@ -7846,6 +13051,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayInput)(nil)).Elem(), GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesFilterInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesFilterArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayInput)(nil)).Elem(), GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalDeliveriesFilterInput)(nil)).Elem(), GetOccmDemandSignalDeliveriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalDeliveriesFilterArrayInput)(nil)).Elem(), GetOccmDemandSignalDeliveriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionInput)(nil)).Elem(), GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayInput)(nil)).Elem(), GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemInput)(nil)).Elem(), GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayInput)(nil)).Elem(), GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalItemsFilterInput)(nil)).Elem(), GetOccmDemandSignalItemsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalItemsFilterArrayInput)(nil)).Elem(), GetOccmDemandSignalItemsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollectionInput)(nil)).Elem(), GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayInput)(nil)).Elem(), GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemInput)(nil)).Elem(), GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayInput)(nil)).Elem(), GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalsFilterInput)(nil)).Elem(), GetOccmDemandSignalsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalsFilterArrayInput)(nil)).Elem(), GetOccmDemandSignalsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollectionInput)(nil)).Elem(), GetOccmDemandSignalsOccmDemandSignalCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollectionArrayInput)(nil)).Elem(), GetOccmDemandSignalsOccmDemandSignalCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollectionItemInput)(nil)).Elem(), GetOccmDemandSignalsOccmDemandSignalCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayInput)(nil)).Elem(), GetOccmDemandSignalsOccmDemandSignalCollectionItemArray{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogDetailOutput{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogDetailArrayOutput{})
 	pulumi.RegisterOutputType(OccAvailabilityCatalogMetadataDetailsOutput{})
@@ -7888,6 +13127,46 @@ func init() {
 	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput{})
 	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput{})
 	pulumi.RegisterOutputType(GetInternalOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogResourcesInternalOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogsFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalCatalogsOccmDemandSignalCatalogCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalDeliveriesFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalDeliveriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalDeliveriesInternalOccmDemandSignalDeliveryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalItemsFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalItemsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalItemsInternalOccmDemandSignalItemCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalsFilterOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetInternalOccmDemandSignalsInternalOccmDemandSignalCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceOccOverviewsFilterOutput{})
 	pulumi.RegisterOutputType(GetNamespaceOccOverviewsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNamespaceOccOverviewsOccOverviewCollectionOutput{})
@@ -7958,4 +13237,38 @@ func init() {
 	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemAssociatedCapacityRequestArrayOutput{})
 	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailOutput{})
 	pulumi.RegisterOutputType(GetOccHandoverResourceBlocksOccHandoverResourceBlockCollectionItemPlacementDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyConstraintItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalCatalogResourcesOccmDemandSignalCatalogResourceCollectionItemResourcePropertyItemPropertyOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalDeliveriesFilterOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalDeliveriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalDeliveriesOccmDemandSignalDeliveryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalItemsFilterOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalItemsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalItemsOccmDemandSignalItemCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalsFilterOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalsOccmDemandSignalCollectionOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalsOccmDemandSignalCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalsOccmDemandSignalCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOccmDemandSignalsOccmDemandSignalCollectionItemArrayOutput{})
 }

@@ -13,6 +13,2473 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail struct {
+	// The device name.
+	Device string `pulumi:"device"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Whether the attachment should be created in read-only mode.
+	IsReadOnly bool `pulumi:"isReadOnly"`
+	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+	IsShareable bool `pulumi:"isShareable"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
+	UseChap bool `pulumi:"useChap"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs struct {
+	// The device name.
+	Device pulumi.StringInput `pulumi:"device"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Whether the attachment should be created in read-only mode.
+	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
+	// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+	IsShareable pulumi.BoolInput `pulumi:"isShareable"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+	// Whether to use CHAP authentication for the volume attachment. Defaults to false.
+	UseChap pulumi.BoolInput `pulumi:"useChap"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
+	return o
+}
+
+// The device name.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) Device() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) string {
+		return v.Device
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool {
+		return v.IsPvEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the attachment should be created in read-only mode.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsReadOnly() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool {
+		return v.IsReadOnly
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the attachment should be created in shareable mode. If an attachment is created in shareable mode, then other instances can attach the same volume, provided that they also create their attachments in shareable mode. Only certain volume types can be attached in shareable mode. Defaults to false if not specified.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) IsShareable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool {
+		return v.IsShareable
+	}).(pulumi.BoolOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+// Whether to use CHAP authentication for the volume attachment. Defaults to false.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput) UseChap() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail) bool {
+		return v.UseChap
+	}).(pulumi.BoolOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail struct {
+	// The list of autotune policies enabled for this volume.
+	AutotunePolicies []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy `pulumi:"autotunePolicies"`
+	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+	BackupPolicyId string `pulumi:"backupPolicyId"`
+	// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+	BlockVolumeReplicas []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica `pulumi:"blockVolumeReplicas"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
+	// The OCID of the Vault service key to assign as the master encryption key for the volume.
+	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The size of the volume in GBs.
+	SizeInGbs     string                                                                                                  `pulumi:"sizeInGbs"`
+	SourceDetails []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail `pulumi:"sourceDetails"`
+	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	VpusPerGb string `pulumi:"vpusPerGb"`
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId string `pulumi:"xrcKmsKeyId"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs struct {
+	// The list of autotune policies enabled for this volume.
+	AutotunePolicies GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput `pulumi:"autotunePolicies"`
+	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+	BackupPolicyId pulumi.StringInput `pulumi:"backupPolicyId"`
+	// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+	BlockVolumeReplicas GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput `pulumi:"blockVolumeReplicas"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+	IsAutoTuneEnabled pulumi.BoolInput `pulumi:"isAutoTuneEnabled"`
+	// The OCID of the Vault service key to assign as the master encryption key for the volume.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The size of the volume in GBs.
+	SizeInGbs     pulumi.StringInput                                                                                              `pulumi:"sizeInGbs"`
+	SourceDetails GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput `pulumi:"sourceDetails"`
+	// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+	VpusPerGb pulumi.StringInput `pulumi:"vpusPerGb"`
+	// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+	XrcKmsKeyId pulumi.StringInput `pulumi:"xrcKmsKeyId"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
+	return o
+}
+
+// The list of autotune policies enabled for this volume.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) AutotunePolicies() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy {
+		return v.AutotunePolicies
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput)
+}
+
+// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) BackupPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.BackupPolicyId
+	}).(pulumi.StringOutput)
+}
+
+// The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) BlockVolumeReplicas() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica {
+		return v.BlockVolumeReplicas
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput)
+}
+
+// The OCID of the cluster placement group of the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) bool {
+		return v.IsAutoTuneEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The OCID of the Vault service key to assign as the master encryption key for the volume.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.KmsKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The size of the volume in GBs.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) SizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.SizeInGbs
+	}).(pulumi.StringOutput)
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) SourceDetails() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail {
+		return v.SourceDetails
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput)
+}
+
+// The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) VpusPerGb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.VpusPerGb
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput) XrcKmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail) string {
+		return v.XrcKmsKeyId
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy struct {
+	// This specifies the type of autotunes supported by OCI.
+	AutotuneType string `pulumi:"autotuneType"`
+	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+	MaxVpusPerGb string `pulumi:"maxVpusPerGb"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs struct {
+	// This specifies the type of autotunes supported by OCI.
+	AutotuneType pulumi.StringInput `pulumi:"autotuneType"`
+	// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+	MaxVpusPerGb pulumi.StringInput `pulumi:"maxVpusPerGb"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
+	return o
+}
+
+// This specifies the type of autotunes supported by OCI.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) AutotuneType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy) string {
+		return v.AutotuneType
+	}).(pulumi.StringOutput)
+}
+
+// This will be the maximum VPUs/GB performance level that the volume will be auto-tuned temporarily based on performance monitoring.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput) MaxVpusPerGb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy) string {
+		return v.MaxVpusPerGb
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicy)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica struct {
+	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs struct {
+	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
+	return o
+}
+
+// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplica)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail struct {
+	// The OCID of the volume backup.
+	Id string `pulumi:"id"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs struct {
+	// The OCID of the volume backup.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
+	return o
+}
+
+// The OCID of the volume backup.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail struct {
+	// Configuration options for the Oracle Cloud Agent software running on the instance.
+	AgentConfigs []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig `pulumi:"agentConfigs"`
+	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+	AvailabilityConfigs []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig `pulumi:"availabilityConfigs"`
+	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The OCID of the compute capacity reservation this instance is launched under.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+	CreateVnicDetails []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail `pulumi:"createVnicDetails"`
+	// The OCID of the dedicated virtual machine host to place the instance on.
+	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
+	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+	FaultDomain string `pulumi:"faultDomain"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
+	InstanceOptions []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption `pulumi:"instanceOptions"`
+	// This is an advanced option.
+	IpxeScript string `pulumi:"ipxeScript"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	LaunchMode string `pulumi:"launchMode"`
+	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+	LaunchOptions []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption `pulumi:"launchOptions"`
+	// List of licensing configurations associated with target launch values.
+	LicensingConfigs []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig `pulumi:"licensingConfigs"`
+	// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+	Metadata map[string]string `pulumi:"metadata"`
+	// The platform configuration requested for the instance.
+	PlatformConfigs []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig `pulumi:"platformConfigs"`
+	// Configuration options for preemptible instances.
+	PreemptibleInstanceConfigs []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig `pulumi:"preemptibleInstanceConfigs"`
+	// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+	// * `LIVE_MIGRATE` - Run maintenance using a live migration.
+	// * `REBOOT` - Run maintenance using a reboot.
+	PreferredMaintenanceAction string `pulumi:"preferredMaintenanceAction"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the instance.
+	ShapeConfigs  []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig  `pulumi:"shapeConfigs"`
+	SourceDetails []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail `pulumi:"sourceDetails"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs struct {
+	// Configuration options for the Oracle Cloud Agent software running on the instance.
+	AgentConfigs GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput `pulumi:"agentConfigs"`
+	// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+	AvailabilityConfigs GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput `pulumi:"availabilityConfigs"`
+	// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The OCID of the compute capacity reservation this instance is launched under.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
+	// The OCID of the cluster placement group of the instance.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+	CreateVnicDetails GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput `pulumi:"createVnicDetails"`
+	// The OCID of the dedicated virtual machine host to place the instance on.
+	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
+	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
+	InstanceOptions GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput `pulumi:"instanceOptions"`
+	// This is an advanced option.
+	IpxeScript pulumi.StringInput `pulumi:"ipxeScript"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
+	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+	LaunchOptions GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput `pulumi:"launchOptions"`
+	// List of licensing configurations associated with target launch values.
+	LicensingConfigs GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput `pulumi:"licensingConfigs"`
+	// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// The platform configuration requested for the instance.
+	PlatformConfigs GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput `pulumi:"platformConfigs"`
+	// Configuration options for preemptible instances.
+	PreemptibleInstanceConfigs GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput `pulumi:"preemptibleInstanceConfigs"`
+	// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+	// * `LIVE_MIGRATE` - Run maintenance using a live migration.
+	// * `REBOOT` - Run maintenance using a reboot.
+	PreferredMaintenanceAction pulumi.StringInput `pulumi:"preferredMaintenanceAction"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the instance.
+	ShapeConfigs  GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayInput  `pulumi:"shapeConfigs"`
+	SourceDetails GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayInput `pulumi:"sourceDetails"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
+	return o
+}
+
+// Configuration options for the Oracle Cloud Agent software running on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) AgentConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig {
+		return v.AgentConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput)
+}
+
+// Options for defining the availabiity of a VM instance after a maintenance event that impacts the underlying hardware.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) AvailabilityConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig {
+		return v.AvailabilityConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput)
+}
+
+// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.AvailabilityDomain
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the compute capacity reservation this instance is launched under.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.CapacityReservationId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster placement group of the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.ClusterPlacementGroupId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) CreateVnicDetails() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail {
+		return v.CreateVnicDetails
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput)
+}
+
+// The OCID of the dedicated virtual machine host to place the instance on.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) DedicatedVmHostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.DedicatedVmHostId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
+		return v.ExtendedMetadata
+	}).(pulumi.StringMapOutput)
+}
+
+// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.FaultDomain
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) InstanceOptions() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption {
+		return v.InstanceOptions
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput)
+}
+
+// This is an advanced option.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IpxeScript() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.IpxeScript
+	}).(pulumi.StringOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) bool {
+		return v.IsPvEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LaunchMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.LaunchMode
+	}).(pulumi.StringOutput)
+}
+
+// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LaunchOptions() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption {
+		return v.LaunchOptions
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput)
+}
+
+// List of licensing configurations associated with target launch values.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) LicensingConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig {
+		return v.LicensingConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput)
+}
+
+// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
+		return v.Metadata
+	}).(pulumi.StringMapOutput)
+}
+
+// The platform configuration requested for the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PlatformConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig {
+		return v.PlatformConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput)
+}
+
+// Configuration options for preemptible instances.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PreemptibleInstanceConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig {
+		return v.PreemptibleInstanceConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput)
+}
+
+// The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+// * `LIVE_MIGRATE` - Run maintenance using a live migration.
+// * `REBOOT` - Run maintenance using a reboot.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) PreferredMaintenanceAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.PreferredMaintenanceAction
+	}).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) string {
+		return v.Shape
+	}).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) ShapeConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfig {
+		return v.ShapeConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailShapeConfigArrayOutput)
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput) SourceDetails() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetail {
+		return v.SourceDetails
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig struct {
+	// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+	AreAllPluginsDisabled bool `pulumi:"areAllPluginsDisabled"`
+	// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+	IsManagementDisabled bool `pulumi:"isManagementDisabled"`
+	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+	IsMonitoringDisabled bool `pulumi:"isMonitoringDisabled"`
+	// The configuration of plugins associated with this instance.
+	PluginsConfigs []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig `pulumi:"pluginsConfigs"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs struct {
+	// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+	AreAllPluginsDisabled pulumi.BoolInput `pulumi:"areAllPluginsDisabled"`
+	// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+	IsManagementDisabled pulumi.BoolInput `pulumi:"isManagementDisabled"`
+	// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+	IsMonitoringDisabled pulumi.BoolInput `pulumi:"isMonitoringDisabled"`
+	// The configuration of plugins associated with this instance.
+	PluginsConfigs GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput `pulumi:"pluginsConfigs"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
+	return o
+}
+
+// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) AreAllPluginsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) bool {
+		return v.AreAllPluginsDisabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether Oracle Cloud Agent can run all the available management plugins. Default value is false (management plugins are enabled).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) IsManagementDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) bool {
+		return v.IsManagementDisabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. Default value is false (monitoring plugins are enabled).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) IsMonitoringDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) bool {
+		return v.IsMonitoringDisabled
+	}).(pulumi.BoolOutput)
+}
+
+// The configuration of plugins associated with this instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput) PluginsConfigs() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig {
+		return v.PluginsConfigs
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig struct {
+	// Whether the plugin should be enabled or disabled.
+	DesiredState string `pulumi:"desiredState"`
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name string `pulumi:"name"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs struct {
+	// Whether the plugin should be enabled or disabled.
+	DesiredState pulumi.StringInput `pulumi:"desiredState"`
+	// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
+	return o
+}
+
+// Whether the plugin should be enabled or disabled.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) DesiredState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig) string {
+		return v.DesiredState
+	}).(pulumi.StringOutput)
+}
+
+// The plugin name. To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig struct {
+	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+	IsLiveMigrationPreferred bool `pulumi:"isLiveMigrationPreferred"`
+	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
+	RecoveryAction string `pulumi:"recoveryAction"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs struct {
+	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+	IsLiveMigrationPreferred pulumi.BoolInput `pulumi:"isLiveMigrationPreferred"`
+	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
+	RecoveryAction pulumi.StringInput `pulumi:"recoveryAction"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
+	return o
+}
+
+// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) IsLiveMigrationPreferred() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig) bool {
+		return v.IsLiveMigrationPreferred
+	}).(pulumi.BoolOutput)
+}
+
+// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput) RecoveryAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig) string {
+		return v.RecoveryAction
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail struct {
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	AssignIpv6ip bool `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPrivateDnsRecord bool `pulumi:"assignPrivateDnsRecord"`
+	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPublicIp bool `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	HostnameLabel string `pulumi:"hostnameLabel"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+	NsgIds []string `pulumi:"nsgIds"`
+	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIp string `pulumi:"privateIp"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SkipSourceDestCheck bool `pulumi:"skipSourceDestCheck"`
+	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs struct {
+	// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+	AssignIpv6ip pulumi.BoolInput `pulumi:"assignIpv6ip"`
+	// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPrivateDnsRecord pulumi.BoolInput `pulumi:"assignPrivateDnsRecord"`
+	// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
+	// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+	Ipv6addressIpv6subnetCidrPairDetails GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput `pulumi:"ipv6addressIpv6subnetCidrPairDetails"`
+	// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+	// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SkipSourceDestCheck pulumi.BoolInput `pulumi:"skipSourceDestCheck"`
+	// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
+	return o
+}
+
+// Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) AssignIpv6ip() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
+		return v.AssignIpv6ip
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) AssignPrivateDnsRecord() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
+		return v.AssignPrivateDnsRecord
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
+		return v.AssignPublicIp
+	}).(pulumi.BoolOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) HostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
+		return v.HostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) Ipv6addressIpv6subnetCidrPairDetails() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return v.Ipv6addressIpv6subnetCidrPairDetails
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+// A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
+		return v.PrivateIp
+	}).(pulumi.StringOutput)
+}
+
+// [Security attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR) policy to control access to ZPR-supported resources.  Example: `{"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}`
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SecurityAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) map[string]string {
+		return v.SecurityAttributes
+	}).(pulumi.StringMapOutput)
+}
+
+// Whether the source/destination check is disabled on the VNIC. See the `skipSourceDestCheck` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SkipSourceDestCheck() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) bool {
+		return v.SkipSourceDestCheck
+	}).(pulumi.BoolOutput)
+}
+
+// The OCID of the subnet to create the VNIC in. See the `subnetId` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail struct {
+	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+	Ipv6address string `pulumi:"ipv6address"`
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr string `pulumi:"ipv6subnetCidr"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs struct {
+	// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+	Ipv6address pulumi.StringInput `pulumi:"ipv6address"`
+	// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+	Ipv6subnetCidr pulumi.StringInput `pulumi:"ipv6subnetCidr"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return o
+}
+
+// Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6address() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6address
+	}).(pulumi.StringOutput)
+}
+
+// Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput) Ipv6subnetCidr() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail) string {
+		return v.Ipv6subnetCidr
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption struct {
+	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+	AreLegacyImdsEndpointsDisabled bool `pulumi:"areLegacyImdsEndpointsDisabled"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs struct {
+	// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+	AreLegacyImdsEndpointsDisabled pulumi.BoolInput `pulumi:"areLegacyImdsEndpointsDisabled"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
+	return o
+}
+
+// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput) AreLegacyImdsEndpointsDisabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption) bool {
+		return v.AreLegacyImdsEndpointsDisabled
+	}).(pulumi.BoolOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOption)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption struct {
+	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	BootVolumeType string `pulumi:"bootVolumeType"`
+	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+	Firmware string `pulumi:"firmware"`
+	// Whether to enable consistent volume naming feature. Defaults to false.
+	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	NetworkType string `pulumi:"networkType"`
+	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs struct {
+	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
+	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+	Firmware pulumi.StringInput `pulumi:"firmware"`
+	// Whether to enable consistent volume naming feature. Defaults to false.
+	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
+	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
+	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	NetworkType pulumi.StringInput `pulumi:"networkType"`
+	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
+	return o
+}
+
+// Emulation type for the boot volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
+		return v.BootVolumeType
+	}).(pulumi.StringOutput)
+}
+
+// Firmware used to boot VM. Select the option that matches your operating system.
+// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) Firmware() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
+		return v.Firmware
+	}).(pulumi.StringOutput)
+}
+
+// Whether to enable consistent volume naming feature. Defaults to false.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsConsistentVolumeNamingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
+		return v.IsConsistentVolumeNamingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) IsPvEncryptionInTransitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) bool {
+		return v.IsPvEncryptionInTransitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Emulation type for the physical network interface card (NIC).
+// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) NetworkType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
+		return v.NetworkType
+	}).(pulumi.StringOutput)
+}
+
+// Emulation type for volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption) string {
+		return v.RemoteDataVolumeType
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOption)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig struct {
+	// License Type for the OS license.
+	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	LicenseType string `pulumi:"licenseType"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs struct {
+	// License Type for the OS license.
+	// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+	// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+	LicenseType pulumi.StringInput `pulumi:"licenseType"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
+	return o
+}
+
+// License Type for the OS license.
+// * `OCI_PROVIDED` - Oracle Cloud Infrastructure provided license (e.g. metered $/OCPU-hour).
+// * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) LicenseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig) string {
+		return v.LicenseType
+	}).(pulumi.StringOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig struct {
+	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+	AreVirtualInstructionsEnabled bool `pulumi:"areVirtualInstructionsEnabled"`
+	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+	IsAccessControlServiceEnabled bool `pulumi:"isAccessControlServiceEnabled"`
+	// Whether the input-output memory management unit is enabled.
+	IsInputOutputMemoryManagementUnitEnabled bool `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
+	// Whether the Measured Boot feature is enabled on the instance.
+	IsMeasuredBootEnabled bool `pulumi:"isMeasuredBootEnabled"`
+	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+	IsMemoryEncryptionEnabled bool `pulumi:"isMemoryEncryptionEnabled"`
+	// Whether Secure Boot is enabled on the instance.
+	IsSecureBootEnabled bool `pulumi:"isSecureBootEnabled"`
+	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+	IsSymmetricMultiThreadingEnabled bool `pulumi:"isSymmetricMultiThreadingEnabled"`
+	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
+	IsTrustedPlatformModuleEnabled bool `pulumi:"isTrustedPlatformModuleEnabled"`
+	// The number of NUMA nodes per socket (NPS).
+	NumaNodesPerSocket string `pulumi:"numaNodesPerSocket"`
+	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+	PercentageOfCoresEnabled int `pulumi:"percentageOfCoresEnabled"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type string `pulumi:"type"`
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{...}
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs struct {
+	// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+	AreVirtualInstructionsEnabled pulumi.BoolInput `pulumi:"areVirtualInstructionsEnabled"`
+	// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+	IsAccessControlServiceEnabled pulumi.BoolInput `pulumi:"isAccessControlServiceEnabled"`
+	// Whether the input-output memory management unit is enabled.
+	IsInputOutputMemoryManagementUnitEnabled pulumi.BoolInput `pulumi:"isInputOutputMemoryManagementUnitEnabled"`
+	// Whether the Measured Boot feature is enabled on the instance.
+	IsMeasuredBootEnabled pulumi.BoolInput `pulumi:"isMeasuredBootEnabled"`
+	// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+	IsMemoryEncryptionEnabled pulumi.BoolInput `pulumi:"isMemoryEncryptionEnabled"`
+	// Whether Secure Boot is enabled on the instance.
+	IsSecureBootEnabled pulumi.BoolInput `pulumi:"isSecureBootEnabled"`
+	// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+	IsSymmetricMultiThreadingEnabled pulumi.BoolInput `pulumi:"isSymmetricMultiThreadingEnabled"`
+	// Whether the Trusted Platform Module (TPM) is enabled on the instance.
+	IsTrustedPlatformModuleEnabled pulumi.BoolInput `pulumi:"isTrustedPlatformModuleEnabled"`
+	// The number of NUMA nodes per socket (NPS).
+	NumaNodesPerSocket pulumi.StringInput `pulumi:"numaNodesPerSocket"`
+	// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+	PercentageOfCoresEnabled pulumi.IntInput `pulumi:"percentageOfCoresEnabled"`
+	// The type of action to run when the instance is interrupted for eviction.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput)
+}
+
+// GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput is an input type that accepts GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray and GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput values.
+// You can construct a concrete instance of `GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput` via:
+//
+//	GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray{ GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{...} }
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput
+	ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
+	return i.ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
+	return o
+}
+
+// Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) AreVirtualInstructionsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.AreVirtualInstructionsEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsAccessControlServiceEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsAccessControlServiceEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the input-output memory management unit is enabled.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsInputOutputMemoryManagementUnitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsInputOutputMemoryManagementUnitEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the Measured Boot feature is enabled on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsMeasuredBootEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsMeasuredBootEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsMemoryEncryptionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsMemoryEncryptionEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether Secure Boot is enabled on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsSecureBootEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsSecureBootEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether symmetric multithreading is enabled on the instance. Symmetric multithreading is also called simultaneous multithreading (SMT) or Intel Hyper-Threading.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsSymmetricMultiThreadingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsSymmetricMultiThreadingEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Whether the Trusted Platform Module (TPM) is enabled on the instance.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) IsTrustedPlatformModuleEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) bool {
+		return v.IsTrustedPlatformModuleEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// The number of NUMA nodes per socket (NPS).
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) NumaNodesPerSocket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) string {
+		return v.NumaNodesPerSocket
+	}).(pulumi.StringOutput)
+}
+
+// The percentage of cores enabled. Value must be a multiple of 25%. If the requested percentage results in a fractional number of cores, the system rounds up the number of cores across processors and provisions an instance with a whole number of cores.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) PercentageOfCoresEnabled() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) int {
+		return v.PercentageOfCoresEnabled
+	}).(pulumi.IntOutput)
+}
+
+// The type of action to run when the instance is interrupted for eviction.
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)(nil)).Elem()
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput() GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) ToGetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutputWithContext(ctx context.Context) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput {
+	return o
+}
+
+func (o GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput) Index(i pulumi.IntInput) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig {
+		return vs[0].([]GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfig)[vs[1].(int)]
+	}).(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput)
+}
+
 type GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfig struct {
 	// The action to run when the preemptible instance is interrupted for eviction.
 	PreemptionActions []GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionAction `pulumi:"preemptionActions"`
@@ -35333,6 +37800,36 @@ func (o GetVtapsVtapArrayOutput) Index(i pulumi.IntInput) GetVtapsVtapOutput {
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionInput)(nil)).Elem(), GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionArgs{})
@@ -35841,6 +38338,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsFilterArrayInput)(nil)).Elem(), GetVtapsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapInput)(nil)).Elem(), GetVtapsVtapArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVtapsVtapArrayInput)(nil)).Elem(), GetVtapsVtapArray{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeAttachDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailAutotunePolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAgentConfigPluginsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailAvailabilityConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionOutput{})

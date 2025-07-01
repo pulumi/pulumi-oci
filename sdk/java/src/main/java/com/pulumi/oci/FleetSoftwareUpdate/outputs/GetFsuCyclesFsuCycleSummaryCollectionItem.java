@@ -11,6 +11,7 @@ import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesFsuCycleSummaryCol
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesFsuCycleSummaryCollectionItemStageActionSchedule;
+import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
@@ -81,12 +82,12 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
      */
     private String id;
     /**
-     * @return List of bug numbers to ignore.
+     * @return List of identifiers of patches to ignore.
      * 
      */
     private List<String> isIgnoreMissingPatches;
     /**
-     * @return Ignore all patches between the source and target homes during patching.
+     * @return Ignore patch conflicts or missing patches between the source and goal homes.
      * 
      */
     private Boolean isIgnorePatches;
@@ -160,6 +161,11 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
      * 
      */
     private String type;
+    /**
+     * @return Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    private List<GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail> upgradeDetails;
 
     private GetFsuCyclesFsuCycleSummaryCollectionItem() {}
     /**
@@ -247,14 +253,14 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
         return this.id;
     }
     /**
-     * @return List of bug numbers to ignore.
+     * @return List of identifiers of patches to ignore.
      * 
      */
     public List<String> isIgnoreMissingPatches() {
         return this.isIgnoreMissingPatches;
     }
     /**
-     * @return Ignore all patches between the source and target homes during patching.
+     * @return Ignore patch conflicts or missing patches between the source and goal homes.
      * 
      */
     public Boolean isIgnorePatches() {
@@ -358,6 +364,13 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
     public String type() {
         return this.type;
     }
+    /**
+     * @return Details of supported upgrade options for DB or GI collection.
+     * 
+     */
+    public List<GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail> upgradeDetails() {
+        return this.upgradeDetails;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -396,6 +409,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
         private String timeFinished;
         private String timeUpdated;
         private String type;
+        private List<GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail> upgradeDetails;
         public Builder() {}
         public Builder(GetFsuCyclesFsuCycleSummaryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -427,6 +441,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.type = defaults.type;
+    	      this.upgradeDetails = defaults.upgradeDetails;
         }
 
         @CustomType.Setter
@@ -674,6 +689,17 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
             this.type = type;
             return this;
         }
+        @CustomType.Setter
+        public Builder upgradeDetails(List<GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail> upgradeDetails) {
+            if (upgradeDetails == null) {
+              throw new MissingRequiredPropertyException("GetFsuCyclesFsuCycleSummaryCollectionItem", "upgradeDetails");
+            }
+            this.upgradeDetails = upgradeDetails;
+            return this;
+        }
+        public Builder upgradeDetails(GetFsuCyclesFsuCycleSummaryCollectionItemUpgradeDetail... upgradeDetails) {
+            return upgradeDetails(List.of(upgradeDetails));
+        }
         public GetFsuCyclesFsuCycleSummaryCollectionItem build() {
             final var _resultValue = new GetFsuCyclesFsuCycleSummaryCollectionItem();
             _resultValue.applyActionSchedules = applyActionSchedules;
@@ -704,6 +730,7 @@ public final class GetFsuCyclesFsuCycleSummaryCollectionItem {
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.type = type;
+            _resultValue.upgradeDetails = upgradeDetails;
             return _resultValue;
         }
     }

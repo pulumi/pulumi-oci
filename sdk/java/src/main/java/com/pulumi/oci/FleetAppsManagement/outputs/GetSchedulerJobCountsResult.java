@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerJobCountsFilter;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetSchedulerJobCountsSchedulerJobAggregationCollection;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSchedulerJobCountsResult {
     private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     private @Nullable List<GetSchedulerJobCountsFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -31,6 +33,9 @@ public final class GetSchedulerJobCountsResult {
     private GetSchedulerJobCountsResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     public List<GetSchedulerJobCountsFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
@@ -60,6 +65,7 @@ public final class GetSchedulerJobCountsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<GetSchedulerJobCountsFilter> filters;
         private String id;
         private List<GetSchedulerJobCountsSchedulerJobAggregationCollection> schedulerJobAggregationCollections;
@@ -67,6 +73,7 @@ public final class GetSchedulerJobCountsResult {
         public Builder(GetSchedulerJobCountsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.schedulerJobAggregationCollections = defaults.schedulerJobAggregationCollections;
@@ -76,6 +83,12 @@ public final class GetSchedulerJobCountsResult {
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -109,6 +122,7 @@ public final class GetSchedulerJobCountsResult {
         public GetSchedulerJobCountsResult build() {
             final var _resultValue = new GetSchedulerJobCountsResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.schedulerJobAggregationCollections = schedulerJobAggregationCollections;

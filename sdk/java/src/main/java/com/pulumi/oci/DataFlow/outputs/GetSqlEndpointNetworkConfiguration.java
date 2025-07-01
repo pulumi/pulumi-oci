@@ -28,6 +28,11 @@ public final class GetSqlEndpointNetworkConfiguration {
      */
     private String networkType;
     /**
+     * @return The OCIDs of Network Security Groups (NSGs).
+     * 
+     */
+    private List<String> nsgIds;
+    /**
      * @return Ip Address of private endpoint
      * 
      */
@@ -71,6 +76,13 @@ public final class GetSqlEndpointNetworkConfiguration {
         return this.networkType;
     }
     /**
+     * @return The OCIDs of Network Security Groups (NSGs).
+     * 
+     */
+    public List<String> nsgIds() {
+        return this.nsgIds;
+    }
+    /**
      * @return Ip Address of private endpoint
      * 
      */
@@ -111,6 +123,7 @@ public final class GetSqlEndpointNetworkConfiguration {
         private List<GetSqlEndpointNetworkConfigurationAccessControlRule> accessControlRules;
         private String hostNamePrefix;
         private String networkType;
+        private List<String> nsgIds;
         private String privateEndpointIp;
         private String publicEndpointIp;
         private String subnetId;
@@ -121,6 +134,7 @@ public final class GetSqlEndpointNetworkConfiguration {
     	      this.accessControlRules = defaults.accessControlRules;
     	      this.hostNamePrefix = defaults.hostNamePrefix;
     	      this.networkType = defaults.networkType;
+    	      this.nsgIds = defaults.nsgIds;
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.publicEndpointIp = defaults.publicEndpointIp;
     	      this.subnetId = defaults.subnetId;
@@ -153,6 +167,17 @@ public final class GetSqlEndpointNetworkConfiguration {
             }
             this.networkType = networkType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder nsgIds(List<String> nsgIds) {
+            if (nsgIds == null) {
+              throw new MissingRequiredPropertyException("GetSqlEndpointNetworkConfiguration", "nsgIds");
+            }
+            this.nsgIds = nsgIds;
+            return this;
+        }
+        public Builder nsgIds(String... nsgIds) {
+            return nsgIds(List.of(nsgIds));
         }
         @CustomType.Setter
         public Builder privateEndpointIp(String privateEndpointIp) {
@@ -191,6 +216,7 @@ public final class GetSqlEndpointNetworkConfiguration {
             _resultValue.accessControlRules = accessControlRules;
             _resultValue.hostNamePrefix = hostNamePrefix;
             _resultValue.networkType = networkType;
+            _resultValue.nsgIds = nsgIds;
             _resultValue.privateEndpointIp = privateEndpointIp;
             _resultValue.publicEndpointIp = publicEndpointIp;
             _resultValue.subnetId = subnetId;

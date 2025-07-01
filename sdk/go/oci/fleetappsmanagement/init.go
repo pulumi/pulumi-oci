@@ -21,8 +21,38 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:FleetAppsManagement/catalogItem:CatalogItem":
+		r = &CatalogItem{}
+	case "oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule":
+		r = &CompliancePolicyRule{}
+	case "oci:FleetAppsManagement/fleet:Fleet":
+		r = &Fleet{}
+	case "oci:FleetAppsManagement/fleetCredential:FleetCredential":
+		r = &FleetCredential{}
+	case "oci:FleetAppsManagement/fleetProperty:FleetProperty":
+		r = &FleetProperty{}
+	case "oci:FleetAppsManagement/fleetResource:FleetResource":
+		r = &FleetResource{}
+	case "oci:FleetAppsManagement/maintenanceWindow:MaintenanceWindow":
+		r = &MaintenanceWindow{}
+	case "oci:FleetAppsManagement/onboarding:Onboarding":
+		r = &Onboarding{}
+	case "oci:FleetAppsManagement/patch:Patch":
+		r = &Patch{}
+	case "oci:FleetAppsManagement/platformConfiguration:PlatformConfiguration":
+		r = &PlatformConfiguration{}
 	case "oci:FleetAppsManagement/property:Property":
 		r = &Property{}
+	case "oci:FleetAppsManagement/provision:Provision":
+		r = &Provision{}
+	case "oci:FleetAppsManagement/runbook:Runbook":
+		r = &Runbook{}
+	case "oci:FleetAppsManagement/runbookVersion:RunbookVersion":
+		r = &RunbookVersion{}
+	case "oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition":
+		r = &SchedulerDefinition{}
+	case "oci:FleetAppsManagement/taskRecord:TaskRecord":
+		r = &TaskRecord{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -38,7 +68,82 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"FleetAppsManagement/catalogItem",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/compliancePolicyRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/fleet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/fleetCredential",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/fleetProperty",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/fleetResource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/maintenanceWindow",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/onboarding",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/patch",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/platformConfiguration",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"FleetAppsManagement/property",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/provision",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/runbook",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/runbookVersion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/schedulerDefinition",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"FleetAppsManagement/taskRecord",
 		&module{version},
 	)
 }

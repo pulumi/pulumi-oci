@@ -5,6 +5,7 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetManagedEntityCountsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,18 +18,33 @@ public final class GetManagedEntityCountsPlainArgs extends com.pulumi.resources.
     public static final GetManagedEntityCountsPlainArgs Empty = new GetManagedEntityCountsPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    @Import(name="compartmentIdInSubtree")
+    private @Nullable Boolean compartmentIdInSubtree;
+
+    /**
+     * @return If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+     * 
+     */
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
     @Import(name="filters")
@@ -42,6 +58,7 @@ public final class GetManagedEntityCountsPlainArgs extends com.pulumi.resources.
 
     private GetManagedEntityCountsPlainArgs(GetManagedEntityCountsPlainArgs $) {
         this.compartmentId = $.compartmentId;
+        this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
     }
 
@@ -64,13 +81,24 @@ public final class GetManagedEntityCountsPlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 
          */
         public Builder compartmentId(@Nullable String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentIdInSubtree If set to true, resources will be returned for not only the provided compartment, but all compartments which descend from it. Which resources are returned and their field contents depends on the value of accessLevel.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+            $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
 

@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Gets a list of compliancePolicies.
+// Returns a list of all the Compliance Policies in the specified compartment.
+// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
 //
 // ## Example Usage
 //
@@ -34,6 +35,7 @@ import (
 //				DisplayName:   pulumi.StringRef(compliancePolicyDisplayName),
 //				Id:            pulumi.StringRef(compliancePolicyId),
 //				State:         pulumi.StringRef(compliancePolicyState),
+//				Type:          pulumi.StringRef(compliancePolicyType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,15 +57,17 @@ func GetCompliancePolicies(ctx *pulumi.Context, args *GetCompliancePoliciesArgs,
 
 // A collection of arguments for invoking getCompliancePolicies.
 type GetCompliancePoliciesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                       `pulumi:"displayName"`
 	Filters     []GetCompliancePoliciesFilter `pulumi:"filters"`
-	// unique CompliancePolicy identifier.
+	// Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
 	Id *string `pulumi:"id"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
+	// A filter to return Platform Configurations whose type matches the given type.
+	Type *string `pulumi:"type"`
 }
 
 // A collection of values returned by getCompliancePolicies.
@@ -79,6 +83,8 @@ type GetCompliancePoliciesResult struct {
 	Id *string `pulumi:"id"`
 	// The current state of the CompliancePolicy.
 	State *string `pulumi:"state"`
+	// The type of the Compliance Policy.
+	Type *string `pulumi:"type"`
 }
 
 func GetCompliancePoliciesOutput(ctx *pulumi.Context, args GetCompliancePoliciesOutputArgs, opts ...pulumi.InvokeOption) GetCompliancePoliciesResultOutput {
@@ -92,15 +98,17 @@ func GetCompliancePoliciesOutput(ctx *pulumi.Context, args GetCompliancePolicies
 
 // A collection of arguments for invoking getCompliancePolicies.
 type GetCompliancePoliciesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput                 `pulumi:"displayName"`
 	Filters     GetCompliancePoliciesFilterArrayInput `pulumi:"filters"`
-	// unique CompliancePolicy identifier.
+	// Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return Platform Configurations whose type matches the given type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetCompliancePoliciesOutputArgs) ElementType() reflect.Type {
@@ -151,6 +159,11 @@ func (o GetCompliancePoliciesResultOutput) Id() pulumi.StringPtrOutput {
 // The current state of the CompliancePolicy.
 func (o GetCompliancePoliciesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetCompliancePoliciesResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The type of the Compliance Policy.
+func (o GetCompliancePoliciesResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetCompliancePoliciesResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

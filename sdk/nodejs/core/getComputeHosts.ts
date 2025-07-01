@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testComputeHosts = oci.Core.getComputeHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeHostAvailabilityDomain,
+ *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
@@ -32,6 +33,7 @@ export function getComputeHosts(args: GetComputeHostsArgs, opts?: pulumi.InvokeO
     return pulumi.runtime.invoke("oci:Core/getComputeHosts:getComputeHosts", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
+        "computeHostGroupId": args.computeHostGroupId,
         "computeHostHealth": args.computeHostHealth,
         "computeHostLifecycleState": args.computeHostLifecycleState,
         "displayName": args.displayName,
@@ -52,6 +54,10 @@ export interface GetComputeHostsArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     */
+    computeHostGroupId?: string;
     /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      */
@@ -90,6 +96,10 @@ export interface GetComputeHostsResult {
      * The list of compute_host_collection.
      */
     readonly computeHostCollections: outputs.Core.GetComputeHostsComputeHostCollection[];
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+     */
+    readonly computeHostGroupId?: string;
     readonly computeHostHealth?: string;
     readonly computeHostLifecycleState?: string;
     /**
@@ -101,6 +111,10 @@ export interface GetComputeHostsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * A free-form description detailing why the host is in its current state.
+     */
+    readonly lifecycleDetails: {[key: string]: string};
     readonly networkResourceId?: string;
 }
 /**
@@ -117,6 +131,7 @@ export interface GetComputeHostsResult {
  * const testComputeHosts = oci.Core.getComputeHosts({
  *     compartmentId: compartmentId,
  *     availabilityDomain: computeHostAvailabilityDomain,
+ *     computeHostGroupId: testComputeHostGroup.id,
  *     computeHostHealth: computeHostComputeHostHealth,
  *     computeHostLifecycleState: computeHostComputeHostLifecycleState,
  *     displayName: computeHostDisplayName,
@@ -129,6 +144,7 @@ export function getComputeHostsOutput(args: GetComputeHostsOutputArgs, opts?: pu
     return pulumi.runtime.invokeOutput("oci:Core/getComputeHosts:getComputeHosts", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
+        "computeHostGroupId": args.computeHostGroupId,
         "computeHostHealth": args.computeHostHealth,
         "computeHostLifecycleState": args.computeHostLifecycleState,
         "displayName": args.displayName,
@@ -149,6 +165,10 @@ export interface GetComputeHostsOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group.
+     */
+    computeHostGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only ComputeHostSummary resources that match the given Compute Host health State OCID exactly.
      */

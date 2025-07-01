@@ -302,7 +302,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
         :param pulumi.Input[builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param pulumi.Input[builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[builtins.bool] is_multiple_standby: Whether it is multiple standby Autonomous Dataguard
+        :param pulumi.Input[builtins.bool] is_multiple_standby: Indicates if it is multiple standby Autonomous Dataguard
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs']]] key_history_entries: Key History Entry.
         :param pulumi.Input[builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -773,7 +773,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
     @pulumi.getter(name="isMultipleStandby")
     def is_multiple_standby(self) -> Optional[pulumi.Input[builtins.bool]]:
         """
-        Whether it is multiple standby Autonomous Dataguard
+        Indicates if it is multiple standby Autonomous Dataguard
         """
         return pulumi.get(self, "is_multiple_standby")
 
@@ -1251,9 +1251,8 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         """
         This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
 
-        Create Standby Autonomous Container Database.
-        For more information about changing Autonomous Container Databases Add Standby, see
-        [Create Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+        [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
 
         ## Example Usage
 
@@ -1320,9 +1319,8 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         """
         This resource provides the Autonomous Container Database Add Standby resource in Oracle Cloud Infrastructure Database service.
 
-        Create Standby Autonomous Container Database.
-        For more information about changing Autonomous Container Databases Add Standby, see
-        [Create Standby Autonomous Container Database](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-D3B503F1-0032-4B0D-9F00-ACAE8151AB80) and [Convert Snapshot Standby to Physical Standby](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html#ADBCL-GUID-E8D7E0EE-8244-467D-B33A-1BC6F969A0A4).
+        Add a standby Autonomous Container Database. For more information about Autonomous Data Guard,see
+        [Protect Critical Databases from Failures and Disasters Using Autonomous Data Guard](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbau/GUID-C57B9A6E-7471-4CDC-8F10-B8386538E31C).
 
         ## Example Usage
 
@@ -1566,7 +1564,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[builtins.bool] is_automatic_failover_enabled: Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association
         :param pulumi.Input[builtins.bool] is_data_guard_enabled: **Deprecated.** Indicates whether the Autonomous Database has local (in-region) Data Guard enabled. Not applicable to cross-region Autonomous Data Guard associations, or to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
         :param pulumi.Input[builtins.bool] is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
-        :param pulumi.Input[builtins.bool] is_multiple_standby: Whether it is multiple standby Autonomous Dataguard
+        :param pulumi.Input[builtins.bool] is_multiple_standby: Indicates if it is multiple standby Autonomous Dataguard
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgs', 'AutonomousContainerDatabaseAddStandbyKeyHistoryEntryArgsDict']]]] key_history_entries: Key History Entry.
         :param pulumi.Input[builtins.str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
@@ -1879,7 +1877,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
     @pulumi.getter(name="isMultipleStandby")
     def is_multiple_standby(self) -> pulumi.Output[builtins.bool]:
         """
-        Whether it is multiple standby Autonomous Dataguard
+        Indicates if it is multiple standby Autonomous Dataguard
         """
         return pulumi.get(self, "is_multiple_standby")
 

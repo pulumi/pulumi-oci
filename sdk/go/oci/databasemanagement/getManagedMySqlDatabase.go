@@ -68,6 +68,8 @@ type GetManagedMySqlDatabaseResult struct {
 	DbVersion string `pulumi:"dbVersion"`
 	// The name of the HeatWave cluster.
 	HeatWaveClusterDisplayName string `pulumi:"heatWaveClusterDisplayName"`
+	// The customer's selected type for HeatWave management.
+	HeatWaveManagementType string `pulumi:"heatWaveManagementType"`
 	// The total memory belonging to the HeatWave cluster in GBs.
 	HeatWaveMemorySize int `pulumi:"heatWaveMemorySize"`
 	// The shape of the nodes in the HeatWave cluster.
@@ -154,6 +156,11 @@ func (o GetManagedMySqlDatabaseResultOutput) DbVersion() pulumi.StringOutput {
 // The name of the HeatWave cluster.
 func (o GetManagedMySqlDatabaseResultOutput) HeatWaveClusterDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.HeatWaveClusterDisplayName }).(pulumi.StringOutput)
+}
+
+// The customer's selected type for HeatWave management.
+func (o GetManagedMySqlDatabaseResultOutput) HeatWaveManagementType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedMySqlDatabaseResult) string { return v.HeatWaveManagementType }).(pulumi.StringOutput)
 }
 
 // The total memory belonging to the HeatWave cluster in GBs.

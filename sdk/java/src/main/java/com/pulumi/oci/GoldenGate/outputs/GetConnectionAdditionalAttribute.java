@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionAdditionalAttribute {
     /**
-     * @return The name of the property entry.
+     * @return The catalog name within Polaris where Iceberg tables are registered.
      * 
      */
     private String name;
@@ -23,7 +23,7 @@ public final class GetConnectionAdditionalAttribute {
 
     private GetConnectionAdditionalAttribute() {}
     /**
-     * @return The name of the property entry.
+     * @return The catalog name within Polaris where Iceberg tables are registered.
      * 
      */
     public String name() {

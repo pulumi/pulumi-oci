@@ -4,6 +4,7 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -22,10 +23,24 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
      */
     private @Nullable String id;
     /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    private @Nullable Boolean isRemote;
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    private @Nullable String remoteRegion;
+    /**
      * @return Type of the database backup destination. Supported values: `NFS`.
      * 
      */
     private @Nullable String type;
+    private @Nullable String vpcPassword;
+    private @Nullable String vpcUser;
 
     private DbHomeDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
@@ -43,11 +58,33 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Boolean> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<String> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
+    }
+    /**
      * @return Type of the database backup destination. Supported values: `NFS`.
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
+    }
+    public Optional<String> vpcPassword() {
+        return Optional.ofNullable(this.vpcPassword);
+    }
+    public Optional<String> vpcUser() {
+        return Optional.ofNullable(this.vpcUser);
     }
 
     public static Builder builder() {
@@ -61,13 +98,21 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
     public static final class Builder {
         private @Nullable String dbrsPolicyId;
         private @Nullable String id;
+        private @Nullable Boolean isRemote;
+        private @Nullable String remoteRegion;
         private @Nullable String type;
+        private @Nullable String vpcPassword;
+        private @Nullable String vpcUser;
         public Builder() {}
         public Builder(DbHomeDatabaseDbBackupConfigBackupDestinationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
+    	      this.vpcPassword = defaults.vpcPassword;
+    	      this.vpcUser = defaults.vpcUser;
         }
 
         @CustomType.Setter
@@ -83,16 +128,44 @@ public final class DbHomeDatabaseDbBackupConfigBackupDestinationDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder isRemote(@Nullable Boolean isRemote) {
+
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(@Nullable String remoteRegion) {
+
+            this.remoteRegion = remoteRegion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
 
             this.type = type;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vpcPassword(@Nullable String vpcPassword) {
+
+            this.vpcPassword = vpcPassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder vpcUser(@Nullable String vpcUser) {
+
+            this.vpcUser = vpcUser;
             return this;
         }
         public DbHomeDatabaseDbBackupConfigBackupDestinationDetail build() {
             final var _resultValue = new DbHomeDatabaseDbBackupConfigBackupDestinationDetail();
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
+            _resultValue.vpcPassword = vpcPassword;
+            _resultValue.vpcUser = vpcUser;
             return _resultValue;
         }
     }

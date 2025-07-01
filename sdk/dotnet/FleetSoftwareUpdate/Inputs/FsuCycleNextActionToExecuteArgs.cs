@@ -19,11 +19,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Inputs
         public Input<string>? TimeToStart { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of Exadata Fleet Update Cycle. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of Exadata Fleet Update Cycle.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

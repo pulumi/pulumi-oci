@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetSchedulerJobJobActivityStepsStepCollectionItemResult
     {
         /// <summary>
-        /// Description of the step Execution
+        /// Description of the step Execution.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string Sequence;
         /// <summary>
-        /// Status of the Task
+        /// Status of the Task.
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The OCID of taskRecord assocaited with the step
+        /// The OCID of taskRecord assocaited with the step.
         /// </summary>
         public readonly string TaskRecordId;
         /// <summary>

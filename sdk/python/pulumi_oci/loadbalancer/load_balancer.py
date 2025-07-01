@@ -29,6 +29,7 @@ class LoadBalancerArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ip_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[builtins.str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_private: Optional[pulumi.Input[builtins.bool]] = None,
                  is_request_id_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -56,6 +57,11 @@ class LoadBalancerArgs:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+               
+               Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+               
+               Example: "2002::1234:abcd:ffff:c0a8:101/64"
         :param pulumi.Input[builtins.bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
                
                If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -115,6 +121,8 @@ class LoadBalancerArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if ip_mode is not None:
             pulumi.set(__self__, "ip_mode", ip_mode)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
         if is_delete_protection_enabled is not None:
             pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         if is_private is not None:
@@ -225,6 +233,22 @@ class LoadBalancerArgs:
     @ip_mode.setter
     def ip_mode(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "ip_mode", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Applies to IPV6 LB creation only. 
+
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: "2002::1234:abcd:ffff:c0a8:101/64"
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
     @property
     @pulumi.getter(name="isDeleteProtectionEnabled")
@@ -373,6 +397,7 @@ class _LoadBalancerState:
                  ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ip_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[builtins.str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_private: Optional[pulumi.Input[builtins.bool]] = None,
                  is_request_id_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -394,6 +419,7 @@ class _LoadBalancerState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['LoadBalancerIpAddressDetailArgs']]] ip_address_details: An array of IP addresses.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
+               *
         :param pulumi.Input[builtins.str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
                
                If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
@@ -401,6 +427,11 @@ class _LoadBalancerState:
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+               
+               Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+               
+               Example: "2002::1234:abcd:ffff:c0a8:101/64"
         :param pulumi.Input[builtins.bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
                
                If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -476,6 +507,8 @@ class _LoadBalancerState:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if ip_mode is not None:
             pulumi.set(__self__, "ip_mode", ip_mode)
+        if ipv6subnet_cidr is not None:
+            pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
         if is_delete_protection_enabled is not None:
             pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         if is_private is not None:
@@ -569,6 +602,7 @@ class _LoadBalancerState:
     def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
         An array of IP addresses. Deprecated: use ip_address_details instead
+        *
         """
         return pulumi.get(self, "ip_addresses")
 
@@ -593,6 +627,22 @@ class _LoadBalancerState:
     @ip_mode.setter
     def ip_mode(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "ip_mode", value)
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Applies to IPV6 LB creation only. 
+
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: "2002::1234:abcd:ffff:c0a8:101/64"
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
+
+    @ipv6subnet_cidr.setter
+    def ipv6subnet_cidr(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "ipv6subnet_cidr", value)
 
     @property
     @pulumi.getter(name="isDeleteProtectionEnabled")
@@ -806,6 +856,7 @@ class LoadBalancer(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ip_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[builtins.str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_private: Optional[pulumi.Input[builtins.bool]] = None,
                  is_request_id_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -867,6 +918,7 @@ class LoadBalancer(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ip_mode=load_balancer_ip_mode,
+            ipv6subnet_cidr=load_balancer_ipv6subnet_cidr,
             is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
             is_private=load_balancer_is_private,
             is_request_id_enabled=load_balancer_is_request_id_enabled,
@@ -903,6 +955,11 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+               
+               Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+               
+               Example: "2002::1234:abcd:ffff:c0a8:101/64"
         :param pulumi.Input[builtins.bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
                
                If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -1014,6 +1071,7 @@ class LoadBalancer(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ip_mode=load_balancer_ip_mode,
+            ipv6subnet_cidr=load_balancer_ipv6subnet_cidr,
             is_delete_protection_enabled=load_balancer_is_delete_protection_enabled,
             is_private=load_balancer_is_private,
             is_request_id_enabled=load_balancer_is_request_id_enabled,
@@ -1057,6 +1115,7 @@ class LoadBalancer(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ip_mode: Optional[pulumi.Input[builtins.str]] = None,
+                 ipv6subnet_cidr: Optional[pulumi.Input[builtins.str]] = None,
                  is_delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
                  is_private: Optional[pulumi.Input[builtins.bool]] = None,
                  is_request_id_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1085,6 +1144,7 @@ class LoadBalancer(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["ip_mode"] = ip_mode
+            __props__.__dict__["ipv6subnet_cidr"] = ipv6subnet_cidr
             __props__.__dict__["is_delete_protection_enabled"] = is_delete_protection_enabled
             __props__.__dict__["is_private"] = is_private
             __props__.__dict__["is_request_id_enabled"] = is_request_id_enabled
@@ -1121,6 +1181,7 @@ class LoadBalancer(pulumi.CustomResource):
             ip_address_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict']]]]] = None,
             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             ip_mode: Optional[pulumi.Input[builtins.str]] = None,
+            ipv6subnet_cidr: Optional[pulumi.Input[builtins.str]] = None,
             is_delete_protection_enabled: Optional[pulumi.Input[builtins.bool]] = None,
             is_private: Optional[pulumi.Input[builtins.bool]] = None,
             is_request_id_enabled: Optional[pulumi.Input[builtins.bool]] = None,
@@ -1147,6 +1208,7 @@ class LoadBalancer(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict']]]] ip_address_details: An array of IP addresses.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ip_addresses: An array of IP addresses. Deprecated: use ip_address_details instead
+               *
         :param pulumi.Input[builtins.str] ip_mode: IPv6 is currently supported only in the Government Cloud. Whether the load balancer has an IPv4 or IPv6 IP address.
                
                If "IPV4", the service assigns an IPv4 address and the load balancer supports IPv4 traffic.
@@ -1154,6 +1216,11 @@ class LoadBalancer(pulumi.CustomResource):
                If "IPV6", the service assigns an IPv6 address and the load balancer supports IPv6 traffic.
                
                Example: "ipMode":"IPV6"
+        :param pulumi.Input[builtins.str] ipv6subnet_cidr: Applies to IPV6 LB creation only. 
+               
+               Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+               
+               Example: "2002::1234:abcd:ffff:c0a8:101/64"
         :param pulumi.Input[builtins.bool] is_delete_protection_enabled: (Updatable) Whether or not the load balancer has delete protection enabled.
                
                If "true", the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -1223,6 +1290,7 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["ip_address_details"] = ip_address_details
         __props__.__dict__["ip_addresses"] = ip_addresses
         __props__.__dict__["ip_mode"] = ip_mode
+        __props__.__dict__["ipv6subnet_cidr"] = ipv6subnet_cidr
         __props__.__dict__["is_delete_protection_enabled"] = is_delete_protection_enabled
         __props__.__dict__["is_private"] = is_private
         __props__.__dict__["is_request_id_enabled"] = is_request_id_enabled
@@ -1284,6 +1352,7 @@ class LoadBalancer(pulumi.CustomResource):
     def ip_addresses(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
         An array of IP addresses. Deprecated: use ip_address_details instead
+        *
         """
         return pulumi.get(self, "ip_addresses")
 
@@ -1300,6 +1369,18 @@ class LoadBalancer(pulumi.CustomResource):
         Example: "ipMode":"IPV6"
         """
         return pulumi.get(self, "ip_mode")
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> pulumi.Output[builtins.str]:
+        """
+        Applies to IPV6 LB creation only. 
+
+        Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+
+        Example: "2002::1234:abcd:ffff:c0a8:101/64"
+        """
+        return pulumi.get(self, "ipv6subnet_cidr")
 
     @property
     @pulumi.getter(name="isDeleteProtectionEnabled")

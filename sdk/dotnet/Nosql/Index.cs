@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Nosql
         /// 
         /// 
         /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         /// </summary>
         [Output("tableNameOrId")]
         public Output<string> TableNameOrId { get; private set; } = null!;
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.Nosql
         /// 
         /// 
         /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         /// </summary>
         [Input("tableNameOrId", required: true)]
         public Input<string> TableNameOrId { get; set; } = null!;
@@ -266,7 +266,7 @@ namespace Pulumi.Oci.Nosql
         /// 
         /// 
         /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         /// </summary>
         [Input("tableNameOrId")]
         public Input<string>? TableNameOrId { get; set; }

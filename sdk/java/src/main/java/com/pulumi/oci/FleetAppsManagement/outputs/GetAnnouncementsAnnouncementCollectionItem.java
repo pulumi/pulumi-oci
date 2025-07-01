@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAnnouncementsAnnouncementCollectionItem {
     /**
-     * @return Announcement end date
+     * @return Announcement end date.
      * 
      */
     private String announcementEnd;
@@ -22,7 +22,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
      */
     private String announcementStart;
     /**
-     * @return Tenancy OCID
+     * @return The ID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -37,7 +37,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
      */
     private String description;
     /**
-     * @return Announcement Details.
+     * @return Announcement details.
      * 
      */
     private String details;
@@ -99,7 +99,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
 
     private GetAnnouncementsAnnouncementCollectionItem() {}
     /**
-     * @return Announcement end date
+     * @return Announcement end date.
      * 
      */
     public String announcementEnd() {
@@ -113,7 +113,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
         return this.announcementStart;
     }
     /**
-     * @return Tenancy OCID
+     * @return The ID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -134,7 +134,7 @@ public final class GetAnnouncementsAnnouncementCollectionItem {
         return this.description;
     }
     /**
-     * @return Announcement Details.
+     * @return Announcement details.
      * 
      */
     public String details() {

@@ -41,6 +41,7 @@ import * as utilities from "../utilities";
  *             isEnabled: mysqlDbSystemBackupPolicyPitrPolicyIsEnabled,
  *         },
  *         retentionInDays: mysqlDbSystemBackupPolicyRetentionInDays,
+ *         softDelete: mysqlDbSystemBackupPolicySoftDelete,
  *         windowStartTime: mysqlDbSystemBackupPolicyWindowStartTime,
  *     },
  *     configurationId: testConfiguration.id,

@@ -28,6 +28,7 @@ type AutonomousContainerDatabase struct {
 
 	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
 	AssociatedBackupConfigurationDetails AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput `pulumi:"associatedBackupConfigurationDetails"`
+	AutonomousContainerDatabaseBackupId  pulumi.StringOutput                                                       `pulumi:"autonomousContainerDatabaseBackupId"`
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringOutput `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -81,7 +82,7 @@ type AutonomousContainerDatabase struct {
 	IsDataGuardEnabled pulumi.BoolOutput `pulumi:"isDataGuardEnabled"`
 	// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled pulumi.BoolOutput `pulumi:"isDstFileUpdateEnabled"`
-	// Whether it is multiple standby Autonomous Dataguard
+	// Indicates if it is multiple standby Autonomous Dataguard
 	IsMultipleStandby pulumi.BoolOutput `pulumi:"isMultipleStandby"`
 	// Key History Entry.
 	KeyHistoryEntries AutonomousContainerDatabaseKeyHistoryEntryArrayOutput `pulumi:"keyHistoryEntries"`
@@ -132,12 +133,10 @@ type AutonomousContainerDatabase struct {
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses pulumi.Float64ArrayOutput `pulumi:"provisionableCpuses"`
 	// The number of CPUs provisioned in an Autonomous Container Database.
-	// <<<<<<< ours
 	ProvisionedCpus pulumi.Float64Output `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	// > > > > > > > theirs
 	ReclaimableCpus pulumi.Float64Output `pulumi:"reclaimableCpus"`
 	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
 	RecoveryApplianceDetails AutonomousContainerDatabaseRecoveryApplianceDetailArrayOutput `pulumi:"recoveryApplianceDetails"`
@@ -156,6 +155,8 @@ type AutonomousContainerDatabase struct {
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType pulumi.StringOutput `pulumi:"serviceLevelAgreementType"`
+	// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+	Source pulumi.StringOutput `pulumi:"source"`
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntOutput `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
@@ -216,6 +217,7 @@ func GetAutonomousContainerDatabase(ctx *pulumi.Context,
 type autonomousContainerDatabaseState struct {
 	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
 	AssociatedBackupConfigurationDetails []AutonomousContainerDatabaseAssociatedBackupConfigurationDetail `pulumi:"associatedBackupConfigurationDetails"`
+	AutonomousContainerDatabaseBackupId  *string                                                          `pulumi:"autonomousContainerDatabaseBackupId"`
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -269,7 +271,7 @@ type autonomousContainerDatabaseState struct {
 	IsDataGuardEnabled *bool `pulumi:"isDataGuardEnabled"`
 	// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled *bool `pulumi:"isDstFileUpdateEnabled"`
-	// Whether it is multiple standby Autonomous Dataguard
+	// Indicates if it is multiple standby Autonomous Dataguard
 	IsMultipleStandby *bool `pulumi:"isMultipleStandby"`
 	// Key History Entry.
 	KeyHistoryEntries []AutonomousContainerDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
@@ -320,12 +322,10 @@ type autonomousContainerDatabaseState struct {
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// The number of CPUs provisioned in an Autonomous Container Database.
-	// <<<<<<< ours
 	ProvisionedCpus *float64 `pulumi:"provisionedCpus"`
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	// > > > > > > > theirs
 	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
 	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
 	RecoveryApplianceDetails []AutonomousContainerDatabaseRecoveryApplianceDetail `pulumi:"recoveryApplianceDetails"`
@@ -344,6 +344,8 @@ type autonomousContainerDatabaseState struct {
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType *string `pulumi:"serviceLevelAgreementType"`
+	// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+	Source *string `pulumi:"source"`
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
@@ -369,6 +371,7 @@ type autonomousContainerDatabaseState struct {
 type AutonomousContainerDatabaseState struct {
 	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
 	AssociatedBackupConfigurationDetails AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayInput
+	AutonomousContainerDatabaseBackupId  pulumi.StringPtrInput
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
@@ -422,7 +425,7 @@ type AutonomousContainerDatabaseState struct {
 	IsDataGuardEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled pulumi.BoolPtrInput
-	// Whether it is multiple standby Autonomous Dataguard
+	// Indicates if it is multiple standby Autonomous Dataguard
 	IsMultipleStandby pulumi.BoolPtrInput
 	// Key History Entry.
 	KeyHistoryEntries AutonomousContainerDatabaseKeyHistoryEntryArrayInput
@@ -473,12 +476,10 @@ type AutonomousContainerDatabaseState struct {
 	// An array of CPU values that can be used to successfully provision a single Autonomous Database.
 	ProvisionableCpuses pulumi.Float64ArrayInput
 	// The number of CPUs provisioned in an Autonomous Container Database.
-	// <<<<<<< ours
 	ProvisionedCpus pulumi.Float64PtrInput
 	// For Autonomous Databases on Dedicated Exadata Infrastructure:
 	// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 	// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-	// > > > > > > > theirs
 	ReclaimableCpus pulumi.Float64PtrInput
 	// Information about the recovery appliance configuration associated with the Autonomous Container Database.
 	RecoveryApplianceDetails AutonomousContainerDatabaseRecoveryApplianceDetailArrayInput
@@ -497,6 +498,8 @@ type AutonomousContainerDatabaseState struct {
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType pulumi.StringPtrInput
+	// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+	Source pulumi.StringPtrInput
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntPtrInput
 	// The current state of the Autonomous Container Database.
@@ -524,6 +527,7 @@ func (AutonomousContainerDatabaseState) ElementType() reflect.Type {
 }
 
 type autonomousContainerDatabaseArgs struct {
+	AutonomousContainerDatabaseBackupId *string `pulumi:"autonomousContainerDatabaseBackupId"`
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId *string `pulumi:"autonomousExadataInfrastructureId"`
 	// The OCID of the Autonomous VM Cluster.
@@ -594,6 +598,8 @@ type autonomousContainerDatabaseArgs struct {
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType *string `pulumi:"serviceLevelAgreementType"`
+	// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+	Source *string `pulumi:"source"`
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays *int `pulumi:"standbyMaintenanceBufferInDays"`
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
@@ -608,6 +614,7 @@ type autonomousContainerDatabaseArgs struct {
 
 // The set of arguments for constructing a AutonomousContainerDatabase resource.
 type AutonomousContainerDatabaseArgs struct {
+	AutonomousContainerDatabaseBackupId pulumi.StringPtrInput
 	// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
 	AutonomousExadataInfrastructureId pulumi.StringPtrInput
 	// The OCID of the Autonomous VM Cluster.
@@ -678,6 +685,8 @@ type AutonomousContainerDatabaseArgs struct {
 	RotateKeyTrigger pulumi.BoolPtrInput
 	// The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 	ServiceLevelAgreementType pulumi.StringPtrInput
+	// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+	Source pulumi.StringPtrInput
 	// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
@@ -782,6 +791,10 @@ func (o AutonomousContainerDatabaseOutput) AssociatedBackupConfigurationDetails(
 	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput {
 		return v.AssociatedBackupConfigurationDetails
 	}).(AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput)
+}
+
+func (o AutonomousContainerDatabaseOutput) AutonomousContainerDatabaseBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.AutonomousContainerDatabaseBackupId }).(pulumi.StringOutput)
 }
 
 // **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -926,7 +939,7 @@ func (o AutonomousContainerDatabaseOutput) IsDstFileUpdateEnabled() pulumi.BoolO
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.BoolOutput { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
-// Whether it is multiple standby Autonomous Dataguard
+// Indicates if it is multiple standby Autonomous Dataguard
 func (o AutonomousContainerDatabaseOutput) IsMultipleStandby() pulumi.BoolOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.BoolOutput { return v.IsMultipleStandby }).(pulumi.BoolOutput)
 }
@@ -1071,7 +1084,6 @@ func (o AutonomousContainerDatabaseOutput) ProvisionableCpuses() pulumi.Float64A
 }
 
 // The number of CPUs provisioned in an Autonomous Container Database.
-// <<<<<<< ours
 func (o AutonomousContainerDatabaseOutput) ProvisionedCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.ProvisionedCpus }).(pulumi.Float64Output)
 }
@@ -1079,7 +1091,6 @@ func (o AutonomousContainerDatabaseOutput) ProvisionedCpus() pulumi.Float64Outpu
 // For Autonomous Databases on Dedicated Exadata Infrastructure:
 // * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
 // * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-// > > > > > > > theirs
 func (o AutonomousContainerDatabaseOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
@@ -1119,6 +1130,11 @@ func (o AutonomousContainerDatabaseOutput) RotateKeyTrigger() pulumi.BoolPtrOutp
 // The service level agreement type of the Autonomous Container Database. The default is STANDARD. For an autonomous dataguard Autonomous Container Database, the specified Autonomous Exadata Infrastructure must be associated with a remote Autonomous Exadata Infrastructure.
 func (o AutonomousContainerDatabaseOutput) ServiceLevelAgreementType() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ServiceLevelAgreementType }).(pulumi.StringOutput)
+}
+
+// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+func (o AutonomousContainerDatabaseOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.Source }).(pulumi.StringOutput)
 }
 
 // (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.

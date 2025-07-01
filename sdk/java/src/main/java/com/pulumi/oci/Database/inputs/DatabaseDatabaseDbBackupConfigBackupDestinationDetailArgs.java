@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -46,6 +47,40 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs ext
     }
 
     /**
+     * Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    @Import(name="isRemote")
+    private @Nullable Output<Boolean> isRemote;
+
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Output<Boolean>> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+
+    /**
+     * The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    @Import(name="remoteRegion")
+    private @Nullable Output<String> remoteRegion;
+
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<Output<String>> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
+    }
+
+    /**
      * Type of the database backup destination.
      * 
      */
@@ -60,9 +95,32 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs ext
         return Optional.ofNullable(this.type);
     }
 
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * 
+     */
+    @Import(name="vpcPassword")
+    private @Nullable Output<String> vpcPassword;
+
+    /**
+     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * 
+     */
+    public Optional<Output<String>> vpcPassword() {
+        return Optional.ofNullable(this.vpcPassword);
+    }
+
+    /**
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * 
+     */
     @Import(name="vpcUser")
     private @Nullable Output<String> vpcUser;
 
+    /**
+     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * 
+     */
     public Optional<Output<String>> vpcUser() {
         return Optional.ofNullable(this.vpcUser);
     }
@@ -72,7 +130,10 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs ext
     private DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs $) {
         this.dbrsPolicyId = $.dbrsPolicyId;
         this.id = $.id;
+        this.isRemote = $.isRemote;
+        this.remoteRegion = $.remoteRegion;
         this.type = $.type;
+        this.vpcPassword = $.vpcPassword;
         this.vpcUser = $.vpcUser;
     }
 
@@ -137,6 +198,52 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs ext
         }
 
         /**
+         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemote(@Nullable Output<Boolean> isRemote) {
+            $.isRemote = isRemote;
+            return this;
+        }
+
+        /**
+         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRemote(Boolean isRemote) {
+            return isRemote(Output.of(isRemote));
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * 
+         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteRegion(@Nullable Output<String> remoteRegion) {
+            $.remoteRegion = remoteRegion;
+            return this;
+        }
+
+        /**
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
+         * 
+         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteRegion(String remoteRegion) {
+            return remoteRegion(Output.of(remoteRegion));
+        }
+
+        /**
          * @param type Type of the database backup destination.
          * 
          * @return builder
@@ -157,11 +264,44 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs ext
             return type(Output.of(type));
         }
 
+        /**
+         * @param vpcPassword For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcPassword(@Nullable Output<String> vpcPassword) {
+            $.vpcPassword = vpcPassword;
+            return this;
+        }
+
+        /**
+         * @param vpcPassword For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder vpcPassword(String vpcPassword) {
+            return vpcPassword(Output.of(vpcPassword));
+        }
+
+        /**
+         * @param vpcUser For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpcUser(@Nullable Output<String> vpcUser) {
             $.vpcUser = vpcUser;
             return this;
         }
 
+        /**
+         * @param vpcUser For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         * 
+         * @return builder
+         * 
+         */
         public Builder vpcUser(String vpcUser) {
             return vpcUser(Output.of(vpcUser));
         }

@@ -56,6 +56,11 @@ import * as utilities from "../utilities";
  *         timeToStart: fsuCycleStageActionScheduleTimeToStart,
  *         type: fsuCycleStageActionScheduleType,
  *     },
+ *     upgradeDetails: {
+ *         collectionType: fsuCycleUpgradeDetailsCollectionType,
+ *         isRecompileInvalidObjects: fsuCycleUpgradeDetailsIsRecompileInvalidObjects,
+ *         isTimeZoneUpgrade: fsuCycleUpgradeDetailsIsTimeZoneUpgrade,
+ *     },
  * });
  * ```
  *
@@ -104,7 +109,7 @@ export class FsuCycle extends pulumi.CustomResource {
      */
     public readonly batchingStrategy!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update collection being upgraded.
      */
     public /*out*/ readonly collectionType!: pulumi.Output<string>;
     /**
@@ -200,13 +205,13 @@ export class FsuCycle extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Type of Exadata Fleet Update Cycle. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of Exadata Fleet Update Cycle.
      */
     public readonly type!: pulumi.Output<string>;
+    /**
+     * (Updatable) Details of supported upgrade options for DB or GI collection.
+     */
+    public readonly upgradeDetails!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
 
     /**
      * Create a FsuCycle resource with the given unique name, arguments, and options.
@@ -248,6 +253,7 @@ export class FsuCycle extends pulumi.CustomResource {
             resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["type"] = state ? state.type : undefined;
+            resourceInputs["upgradeDetails"] = state ? state.upgradeDetails : undefined;
         } else {
             const args = argsOrState as FsuCycleArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
@@ -277,6 +283,7 @@ export class FsuCycle extends pulumi.CustomResource {
             resourceInputs["maxDrainTimeoutInSeconds"] = args ? args.maxDrainTimeoutInSeconds : undefined;
             resourceInputs["stageActionSchedule"] = args ? args.stageActionSchedule : undefined;
             resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["upgradeDetails"] = args ? args.upgradeDetails : undefined;
             resourceInputs["collectionType"] = undefined /*out*/;
             resourceInputs["executingFsuActionId"] = undefined /*out*/;
             resourceInputs["lastCompletedAction"] = undefined /*out*/;
@@ -308,7 +315,7 @@ export interface FsuCycleState {
      */
     batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
     /**
-     * Type of Collection this Exadata Fleet Update Cycle belongs to.
+     * Type of Exadata Fleet Update collection being upgraded.
      */
     collectionType?: pulumi.Input<string>;
     /**
@@ -404,13 +411,13 @@ export interface FsuCycleState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Type of Exadata Fleet Update Cycle. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of Exadata Fleet Update Cycle.
      */
     type?: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of supported upgrade options for DB or GI collection.
+     */
+    upgradeDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
 }
 
 /**
@@ -474,11 +481,11 @@ export interface FsuCycleArgs {
      */
     stageActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
     /**
-     * (Updatable) Type of Exadata Fleet Update Cycle. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of Exadata Fleet Update Cycle.
      */
     type: pulumi.Input<string>;
+    /**
+     * (Updatable) Details of supported upgrade options for DB or GI collection.
+     */
+    upgradeDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleUpgradeDetails>;
 }

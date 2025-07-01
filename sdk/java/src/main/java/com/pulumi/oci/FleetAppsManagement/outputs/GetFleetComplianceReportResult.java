@@ -6,6 +6,7 @@ package com.pulumi.oci.FleetAppsManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetFleetComplianceReportResource;
+import java.lang.Double;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,6 +29,11 @@ public final class GetFleetComplianceReportResult {
      * 
      */
     private String id;
+    /**
+     * @return The compliance percentage.
+     * 
+     */
+    private Double percentCompliant;
     /**
      * @return Resources associated with the Fleet.
      * 
@@ -60,6 +66,13 @@ public final class GetFleetComplianceReportResult {
         return this.id;
     }
     /**
+     * @return The compliance percentage.
+     * 
+     */
+    public Double percentCompliant() {
+        return this.percentCompliant;
+    }
+    /**
      * @return Resources associated with the Fleet.
      * 
      */
@@ -80,6 +93,7 @@ public final class GetFleetComplianceReportResult {
         private String complianceState;
         private String fleetId;
         private String id;
+        private Double percentCompliant;
         private List<GetFleetComplianceReportResource> resources;
         public Builder() {}
         public Builder(GetFleetComplianceReportResult defaults) {
@@ -88,6 +102,7 @@ public final class GetFleetComplianceReportResult {
     	      this.complianceState = defaults.complianceState;
     	      this.fleetId = defaults.fleetId;
     	      this.id = defaults.id;
+    	      this.percentCompliant = defaults.percentCompliant;
     	      this.resources = defaults.resources;
         }
 
@@ -124,6 +139,14 @@ public final class GetFleetComplianceReportResult {
             return this;
         }
         @CustomType.Setter
+        public Builder percentCompliant(Double percentCompliant) {
+            if (percentCompliant == null) {
+              throw new MissingRequiredPropertyException("GetFleetComplianceReportResult", "percentCompliant");
+            }
+            this.percentCompliant = percentCompliant;
+            return this;
+        }
+        @CustomType.Setter
         public Builder resources(List<GetFleetComplianceReportResource> resources) {
             if (resources == null) {
               throw new MissingRequiredPropertyException("GetFleetComplianceReportResult", "resources");
@@ -140,6 +163,7 @@ public final class GetFleetComplianceReportResult {
             _resultValue.complianceState = complianceState;
             _resultValue.fleetId = fleetId;
             _resultValue.id = id;
+            _resultValue.percentCompliant = percentCompliant;
             _resultValue.resources = resources;
             return _resultValue;
         }

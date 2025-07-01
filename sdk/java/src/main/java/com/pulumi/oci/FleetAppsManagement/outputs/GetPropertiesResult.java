@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetPropertiesResult {
     /**
-     * @return Tenancy OCID
+     * @return Compartment OCID
      * 
      */
     private @Nullable String compartmentId;
@@ -46,10 +46,15 @@ public final class GetPropertiesResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The type of the property.
+     * 
+     */
+    private @Nullable String type;
 
     private GetPropertiesResult() {}
     /**
-     * @return Tenancy OCID
+     * @return Compartment OCID
      * 
      */
     public Optional<String> compartmentId() {
@@ -93,6 +98,13 @@ public final class GetPropertiesResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The type of the property.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -110,6 +122,7 @@ public final class GetPropertiesResult {
         private List<GetPropertiesPropertyCollection> propertyCollections;
         private @Nullable String scope;
         private @Nullable String state;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetPropertiesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -120,6 +133,7 @@ public final class GetPropertiesResult {
     	      this.propertyCollections = defaults.propertyCollections;
     	      this.scope = defaults.scope;
     	      this.state = defaults.state;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -172,6 +186,12 @@ public final class GetPropertiesResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+
+            this.type = type;
+            return this;
+        }
         public GetPropertiesResult build() {
             final var _resultValue = new GetPropertiesResult();
             _resultValue.compartmentId = compartmentId;
@@ -181,6 +201,7 @@ public final class GetPropertiesResult {
             _resultValue.propertyCollections = propertyCollections;
             _resultValue.scope = scope;
             _resultValue.state = state;
+            _resultValue.type = type;
             return _resultValue;
         }
     }

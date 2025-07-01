@@ -131,7 +131,11 @@ class BackendSetBackend(dict):
                
                Example: `false`
         :param builtins.bool drain: (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
-        :param builtins.int max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param builtins.int max_connections: (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+               
+               If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+               
+               Example: `300`
         :param builtins.str name: A friendly name for the backend set. It must be unique and it cannot be changed.
                
                Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
@@ -195,7 +199,11 @@ class BackendSetBackend(dict):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> Optional[builtins.int]:
         """
-        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        (Updatable) The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.
+
+        If setting maxConnections to some value other than 0 then that value must be greater or equal to 256.
+
+        Example: `300`
         """
         return pulumi.get(self, "max_connections")
 
@@ -1193,7 +1201,9 @@ class LoadBalancerReservedIp(dict):
                
                Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
                
-               Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+               Example: "ocid1.publicip.oc1.phx.unique_ID"
+               
+               IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1210,7 +1220,9 @@ class LoadBalancerReservedIp(dict):
 
         Reserved IPs will not be deleted when the Load balancer is deleted. They will be unattached from the Load balancer.
 
-        Example: "ocid1.publicip.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+        Example: "ocid1.publicip.oc1.phx.unique_ID"
+
+        IPV6 example: "ocid1.ipv6.oc1.phx.unique_ID" Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
         """
         return pulumi.get(self, "id")
 
@@ -2191,7 +2203,7 @@ class GetBackendSetsBackendsetResult(dict):
                  ssl_configurations: Sequence['outputs.GetBackendSetsBackendsetSslConfigurationResult'],
                  state: builtins.str):
         """
-        :param builtins.int backend_max_connections: The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        :param builtins.int backend_max_connections: The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
         :param Sequence['GetBackendSetsBackendsetHealthCheckerArgs'] health_checkers: The health check policy configuration. For more information, see [Editing Health Check Policies](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/editinghealthcheck.htm).
         :param Sequence['GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationArgs'] lb_cookie_session_persistence_configurations: The configuration details for implementing load balancer cookie session persistence (LB cookie stickiness).
         :param builtins.str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend sets to retrieve.
@@ -2216,7 +2228,7 @@ class GetBackendSetsBackendsetResult(dict):
     @pulumi.getter(name="backendMaxConnections")
     def backend_max_connections(self) -> builtins.int:
         """
-        The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+        The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
         """
         return pulumi.get(self, "backend_max_connections")
 
@@ -2307,7 +2319,7 @@ class GetBackendSetsBackendsetBackendResult(dict):
         :param builtins.bool backup: Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         :param builtins.bool drain: Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param builtins.str ip_address: The IP address of the backend server.  Example: `10.0.0.3`
-        :param builtins.int max_connections: The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param builtins.int max_connections: The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         :param builtins.str name: A friendly name for the backend set. It must be unique and it cannot be changed.
         :param builtins.bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param builtins.int port: The backend server port against which to run the health check. If the port is not specified, the load balancer uses the port information from the `Backend` object.  Example: `8080`
@@ -2350,7 +2362,7 @@ class GetBackendSetsBackendsetBackendResult(dict):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> builtins.int:
         """
-        The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         """
         return pulumi.get(self, "max_connections")
 
@@ -2753,7 +2765,7 @@ class GetBackendsBackendResult(dict):
         :param builtins.bool drain: Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
         :param builtins.str ip_address: The IP address of the backend server.  Example: `10.0.0.3`
         :param builtins.str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer associated with the backend set and servers.
-        :param builtins.int max_connections: The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        :param builtins.int max_connections: The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         :param builtins.str name: A read-only field showing the IP address and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`
         :param builtins.bool offline: Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
         :param builtins.int port: The communication port for the backend server.  Example: `8080`
@@ -2809,7 +2821,7 @@ class GetBackendsBackendResult(dict):
     @pulumi.getter(name="maxConnections")
     def max_connections(self) -> builtins.int:
         """
-        The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
+        The maximum number of simultaneous connections the load balancer can make to the backend. If this is not set or set to 0 then the maximum number of simultaneous connections the load balancer can make to the backend is unlimited.  Example: `300`
         """
         return pulumi.get(self, "max_connections")
 
@@ -3733,6 +3745,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
                  ip_address_details: Sequence['outputs.GetLoadBalancersLoadBalancerIpAddressDetailResult'],
                  ip_addresses: Sequence[builtins.str],
                  ip_mode: builtins.str,
+                 ipv6subnet_cidr: builtins.str,
                  is_delete_protection_enabled: builtins.bool,
                  is_private: builtins.bool,
                  is_request_id_enabled: builtins.bool,
@@ -3775,6 +3788,7 @@ class GetLoadBalancersLoadBalancerResult(dict):
         pulumi.set(__self__, "ip_address_details", ip_address_details)
         pulumi.set(__self__, "ip_addresses", ip_addresses)
         pulumi.set(__self__, "ip_mode", ip_mode)
+        pulumi.set(__self__, "ipv6subnet_cidr", ipv6subnet_cidr)
         pulumi.set(__self__, "is_delete_protection_enabled", is_delete_protection_enabled)
         pulumi.set(__self__, "is_private", is_private)
         pulumi.set(__self__, "is_request_id_enabled", is_request_id_enabled)
@@ -3850,6 +3864,11 @@ class GetLoadBalancersLoadBalancerResult(dict):
     @pulumi.getter(name="ipMode")
     def ip_mode(self) -> builtins.str:
         return pulumi.get(self, "ip_mode")
+
+    @property
+    @pulumi.getter(name="ipv6subnetCidr")
+    def ipv6subnet_cidr(self) -> builtins.str:
+        return pulumi.get(self, "ipv6subnet_cidr")
 
     @property
     @pulumi.getter(name="isDeleteProtectionEnabled")

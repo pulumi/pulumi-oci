@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetComplianceRecordCountsComplianceRecordAggregationCollection;
 import com.pulumi.oci.FleetAppsManagement.outputs.GetComplianceRecordCountsFilter;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -16,6 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetComplianceRecordCountsResult {
     private @Nullable String compartmentId;
+    private @Nullable Boolean compartmentIdInSubtree;
     /**
      * @return The list of compliance_record_aggregation_collection.
      * 
@@ -31,6 +33,9 @@ public final class GetComplianceRecordCountsResult {
     private GetComplianceRecordCountsResult() {}
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    public Optional<Boolean> compartmentIdInSubtree() {
+        return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
      * @return The list of compliance_record_aggregation_collection.
@@ -60,6 +65,7 @@ public final class GetComplianceRecordCountsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
+        private @Nullable Boolean compartmentIdInSubtree;
         private List<GetComplianceRecordCountsComplianceRecordAggregationCollection> complianceRecordAggregationCollections;
         private @Nullable List<GetComplianceRecordCountsFilter> filters;
         private String id;
@@ -67,6 +73,7 @@ public final class GetComplianceRecordCountsResult {
         public Builder(GetComplianceRecordCountsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.complianceRecordAggregationCollections = defaults.complianceRecordAggregationCollections;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -76,6 +83,12 @@ public final class GetComplianceRecordCountsResult {
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
+
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
         }
         @CustomType.Setter
@@ -109,6 +122,7 @@ public final class GetComplianceRecordCountsResult {
         public GetComplianceRecordCountsResult build() {
             final var _resultValue = new GetComplianceRecordCountsResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.complianceRecordAggregationCollections = complianceRecordAggregationCollections;
             _resultValue.filters = filters;
             _resultValue.id = id;

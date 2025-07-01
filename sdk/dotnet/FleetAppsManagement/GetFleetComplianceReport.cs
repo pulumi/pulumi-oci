@@ -152,6 +152,10 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The compliance percentage.
+        /// </summary>
+        public readonly double PercentCompliant;
+        /// <summary>
         /// Resources associated with the Fleet.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetComplianceReportResourceResult> Resources;
@@ -166,12 +170,15 @@ namespace Pulumi.Oci.FleetAppsManagement
 
             string id,
 
+            double percentCompliant,
+
             ImmutableArray<Outputs.GetFleetComplianceReportResourceResult> resources)
         {
             ComplianceReportId = complianceReportId;
             ComplianceState = complianceState;
             FleetId = fleetId;
             Id = id;
+            PercentCompliant = percentCompliant;
             Resources = resources;
         }
     }

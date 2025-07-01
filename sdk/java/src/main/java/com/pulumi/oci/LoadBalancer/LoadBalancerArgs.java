@@ -109,6 +109,29 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Applies to IPV6 LB creation only.
+     * 
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * 
+     * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+     * 
+     */
+    @Import(name="ipv6subnetCidr")
+    private @Nullable Output<String> ipv6subnetCidr;
+
+    /**
+     * @return Applies to IPV6 LB creation only.
+     * 
+     * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+     * 
+     * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+     * 
+     */
+    public Optional<Output<String>> ipv6subnetCidr() {
+        return Optional.ofNullable(this.ipv6subnetCidr);
+    }
+
+    /**
      * (Updatable) Whether or not the load balancer has delete protection enabled.
      * 
      * If &#34;true&#34;, the loadbalancer will be protected against deletion if configured to accept traffic.
@@ -352,6 +375,7 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.ipMode = $.ipMode;
+        this.ipv6subnetCidr = $.ipv6subnetCidr;
         this.isDeleteProtectionEnabled = $.isDeleteProtectionEnabled;
         this.isPrivate = $.isPrivate;
         this.isRequestIdEnabled = $.isRequestIdEnabled;
@@ -497,6 +521,35 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ipMode(String ipMode) {
             return ipMode(Output.of(ipMode));
+        }
+
+        /**
+         * @param ipv6subnetCidr Applies to IPV6 LB creation only.
+         * 
+         * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+         * 
+         * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6subnetCidr(@Nullable Output<String> ipv6subnetCidr) {
+            $.ipv6subnetCidr = ipv6subnetCidr;
+            return this;
+        }
+
+        /**
+         * @param ipv6subnetCidr Applies to IPV6 LB creation only.
+         * 
+         * Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
+         * 
+         * Example: &#34;2002::1234:abcd:ffff:c0a8:101/64&#34;
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ipv6subnetCidr(String ipv6subnetCidr) {
+            return ipv6subnetCidr(Output.of(ipv6subnetCidr));
         }
 
         /**

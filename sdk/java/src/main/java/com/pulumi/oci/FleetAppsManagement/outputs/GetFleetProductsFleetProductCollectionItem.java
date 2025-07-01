@@ -15,7 +15,7 @@ import java.util.Objects;
 @CustomType
 public final class GetFleetProductsFleetProductCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     private String compartmentId;
@@ -42,7 +42,7 @@ public final class GetFleetProductsFleetProductCollectionItem {
 
     private GetFleetProductsFleetProductCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public String compartmentId() {

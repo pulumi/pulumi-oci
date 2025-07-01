@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -17,6 +18,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
      */
     private String id;
     private String internetProxy;
+    private Boolean isRemote;
+    private String remoteRegion;
     private String type;
     private String vpcPassword;
     private String vpcUser;
@@ -34,6 +37,12 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
     }
     public String internetProxy() {
         return this.internetProxy;
+    }
+    public Boolean isRemote() {
+        return this.isRemote;
+    }
+    public String remoteRegion() {
+        return this.remoteRegion;
     }
     public String type() {
         return this.type;
@@ -57,6 +66,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
         private String dbrsPolicyId;
         private String id;
         private String internetProxy;
+        private Boolean isRemote;
+        private String remoteRegion;
         private String type;
         private String vpcPassword;
         private String vpcUser;
@@ -66,6 +77,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
     	      this.dbrsPolicyId = defaults.dbrsPolicyId;
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -93,6 +106,22 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "internetProxy");
             }
             this.internetProxy = internetProxy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRemote(Boolean isRemote) {
+            if (isRemote == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "isRemote");
+            }
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(String remoteRegion) {
+            if (remoteRegion == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetail", "remoteRegion");
+            }
+            this.remoteRegion = remoteRegion;
             return this;
         }
         @CustomType.Setter
@@ -124,6 +153,8 @@ public final class GetAutonomousContainerDatabaseDataguardAssociationPeerAutonom
             _resultValue.dbrsPolicyId = dbrsPolicyId;
             _resultValue.id = id;
             _resultValue.internetProxy = internetProxy;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

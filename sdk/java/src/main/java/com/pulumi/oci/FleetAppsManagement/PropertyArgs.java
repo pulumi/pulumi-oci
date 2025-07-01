@@ -18,14 +18,14 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
     public static final PropertyArgs Empty = new PropertyArgs();
 
     /**
-     * Tenancy OCID
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return Tenancy OCID
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -36,15 +36,15 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    @Import(name="displayName")
-    private @Nullable Output<String> displayName;
+    @Import(name="displayName", required=true)
+    private Output<String> displayName;
 
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.  Example: `My new resource`
      * 
      */
-    public Optional<Output<String>> displayName() {
-        return Optional.ofNullable(this.displayName);
+    public Output<String> displayName() {
+        return this.displayName;
     }
 
     /**
@@ -127,7 +127,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId Tenancy OCID
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId Tenancy OCID
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder displayName(@Nullable Output<String> displayName) {
+        public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
@@ -253,6 +253,9 @@ public final class PropertyArgs extends com.pulumi.resources.ResourceArgs {
         public PropertyArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("PropertyArgs", "compartmentId");
+            }
+            if ($.displayName == null) {
+                throw new MissingRequiredPropertyException("PropertyArgs", "displayName");
             }
             if ($.selection == null) {
                 throw new MissingRequiredPropertyException("PropertyArgs", "selection");

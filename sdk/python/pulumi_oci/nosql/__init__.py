@@ -6,6 +6,8 @@ import builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .configuration import *
+from .get_configuration import *
 from .get_index import *
 from .get_indexes import *
 from .get_table import *

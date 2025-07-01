@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of InventoryResources.
+ * Returns a list of Inventory Resources based on the criteria provided.
+ * instance, dbsystem, cloudvmcluster resources are supported.
  *
  * ## Example Usage
  *
@@ -130,7 +131,8 @@ export interface GetInventoryResourcesResult {
 /**
  * This data source provides the list of Inventory Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
  *
- * Returns a list of InventoryResources.
+ * Returns a list of Inventory Resources based on the criteria provided.
+ * instance, dbsystem, cloudvmcluster resources are supported.
  *
  * ## Example Usage
  *

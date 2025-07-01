@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Return a list of AnnouncementSummary items.
+// Return a list of Announcement Summary items in a tenancy.
 //
 // ## Example Usage
 //
@@ -30,6 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := fleetappsmanagement.GetAnnouncements(ctx, &fleetappsmanagement.GetAnnouncementsArgs{
+//				CompartmentId:   compartmentId,
 //				DisplayName:     pulumi.StringRef(announcementDisplayName),
 //				SummaryContains: pulumi.StringRef(announcementSummaryContains),
 //			}, nil)
@@ -53,6 +54,8 @@ func GetAnnouncements(ctx *pulumi.Context, args *GetAnnouncementsArgs, opts ...p
 
 // A collection of arguments for invoking getAnnouncements.
 type GetAnnouncementsArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetAnnouncementsFilter `pulumi:"filters"`
@@ -64,6 +67,8 @@ type GetAnnouncementsArgs struct {
 type GetAnnouncementsResult struct {
 	// The list of announcement_collection.
 	AnnouncementCollections []GetAnnouncementsAnnouncementCollection `pulumi:"announcementCollections"`
+	// Tenancy OCID
+	CompartmentId string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string                  `pulumi:"displayName"`
 	Filters     []GetAnnouncementsFilter `pulumi:"filters"`
@@ -83,6 +88,8 @@ func GetAnnouncementsOutput(ctx *pulumi.Context, args GetAnnouncementsOutputArgs
 
 // A collection of arguments for invoking getAnnouncements.
 type GetAnnouncementsOutputArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput            `pulumi:"displayName"`
 	Filters     GetAnnouncementsFilterArrayInput `pulumi:"filters"`
@@ -114,6 +121,11 @@ func (o GetAnnouncementsResultOutput) AnnouncementCollections() GetAnnouncements
 	return o.ApplyT(func(v GetAnnouncementsResult) []GetAnnouncementsAnnouncementCollection {
 		return v.AnnouncementCollections
 	}).(GetAnnouncementsAnnouncementCollectionArrayOutput)
+}
+
+// Tenancy OCID
+func (o GetAnnouncementsResultOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAnnouncementsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`

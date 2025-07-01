@@ -29,7 +29,7 @@ class GetPropertiesResult:
     """
     A collection of values returned by getProperties.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, property_collections=None, scope=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, property_collections=None, scope=None, state=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51,12 +51,15 @@ class GetPropertiesResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[builtins.str]:
         """
-        Tenancy OCID
+        Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -105,6 +108,14 @@ class GetPropertiesResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        The type of the property.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetPropertiesResult(GetPropertiesResult):
     # pylint: disable=using-constant-test
@@ -118,7 +129,8 @@ class AwaitableGetPropertiesResult(GetPropertiesResult):
             id=self.id,
             property_collections=self.property_collections,
             scope=self.scope,
-            state=self.state)
+            state=self.state,
+            type=self.type)
 
 
 def get_properties(compartment_id: Optional[builtins.str] = None,
@@ -127,11 +139,13 @@ def get_properties(compartment_id: Optional[builtins.str] = None,
                    id: Optional[builtins.str] = None,
                    scope: Optional[builtins.str] = None,
                    state: Optional[builtins.str] = None,
+                   type: Optional[builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetPropertiesResult:
     """
     This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    List properties and their values for a tenancy in Fleet Application Management.
+    Returns a list of all the Properties in the specified compartment.
+    The query parameter `compartmentId` is required unless the query parameter `id` is specified.
 
     ## Example Usage
 
@@ -143,15 +157,17 @@ def get_properties(compartment_id: Optional[builtins.str] = None,
         display_name=property_display_name,
         id=property_id,
         scope=property_scope,
-        state=property_state)
+        state=property_state,
+        type=property_type)
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param builtins.str id: A filter to return only resources whose Property identifier matches the given identifier.
+    :param builtins.str id: Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
     :param builtins.str scope: A filter to return only resources their scope matches the given scope.
     :param builtins.str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param builtins.str type: A filter to return properties whose type matches the given type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -160,6 +176,7 @@ def get_properties(compartment_id: Optional[builtins.str] = None,
     __args__['id'] = id
     __args__['scope'] = scope
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getProperties:getProperties', __args__, opts=opts, typ=GetPropertiesResult).value
 
@@ -170,18 +187,21 @@ def get_properties(compartment_id: Optional[builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         property_collections=pulumi.get(__ret__, 'property_collections'),
         scope=pulumi.get(__ret__, 'scope'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        type=pulumi.get(__ret__, 'type'))
 def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                           display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                           filters: Optional[pulumi.Input[Optional[Sequence[Union['GetPropertiesFilterArgs', 'GetPropertiesFilterArgsDict']]]]] = None,
                           id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                           scope: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                           state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                          type: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetPropertiesResult]:
     """
     This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    List properties and their values for a tenancy in Fleet Application Management.
+    Returns a list of all the Properties in the specified compartment.
+    The query parameter `compartmentId` is required unless the query parameter `id` is specified.
 
     ## Example Usage
 
@@ -193,15 +213,17 @@ def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[builtin
         display_name=property_display_name,
         id=property_id,
         scope=property_scope,
-        state=property_state)
+        state=property_state,
+        type=property_type)
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param builtins.str id: A filter to return only resources whose Property identifier matches the given identifier.
+    :param builtins.str id: Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
     :param builtins.str scope: A filter to return only resources their scope matches the given scope.
     :param builtins.str state: A filter to return only resources whose lifecycleState matches the given lifecycleState.
+    :param builtins.str type: A filter to return properties whose type matches the given type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -210,6 +232,7 @@ def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[builtin
     __args__['id'] = id
     __args__['scope'] = scope
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getProperties:getProperties', __args__, opts=opts, typ=GetPropertiesResult)
     return __ret__.apply(lambda __response__: GetPropertiesResult(
@@ -219,4 +242,5 @@ def get_properties_output(compartment_id: Optional[pulumi.Input[Optional[builtin
         id=pulumi.get(__response__, 'id'),
         property_collections=pulumi.get(__response__, 'property_collections'),
         scope=pulumi.get(__response__, 'scope'),
-        state=pulumi.get(__response__, 'state')))
+        state=pulumi.get(__response__, 'state'),
+        type=pulumi.get(__response__, 'type')))

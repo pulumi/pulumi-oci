@@ -285,6 +285,21 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The OCID of the resource being referenced.
      * 
      */
+    @Import(name="sourceStandbyDatabaseConnectionId")
+    private @Nullable Output<String> sourceStandbyDatabaseConnectionId;
+
+    /**
+     * @return (Updatable) The OCID of the resource being referenced.
+     * 
+     */
+    public Optional<Output<String>> sourceStandbyDatabaseConnectionId() {
+        return Optional.ofNullable(this.sourceStandbyDatabaseConnectionId);
+    }
+
+    /**
+     * (Updatable) The OCID of the resource being referenced.
+     * 
+     */
     @Import(name="targetDatabaseConnectionId", required=true)
     private Output<String> targetDatabaseConnectionId;
 
@@ -337,6 +352,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         this.initialLoadSettings = $.initialLoadSettings;
         this.sourceContainerDatabaseConnectionId = $.sourceContainerDatabaseConnectionId;
         this.sourceDatabaseConnectionId = $.sourceDatabaseConnectionId;
+        this.sourceStandbyDatabaseConnectionId = $.sourceStandbyDatabaseConnectionId;
         this.targetDatabaseConnectionId = $.targetDatabaseConnectionId;
         this.type = $.type;
     }
@@ -744,6 +760,27 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sourceDatabaseConnectionId(String sourceDatabaseConnectionId) {
             return sourceDatabaseConnectionId(Output.of(sourceDatabaseConnectionId));
+        }
+
+        /**
+         * @param sourceStandbyDatabaseConnectionId (Updatable) The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceStandbyDatabaseConnectionId(@Nullable Output<String> sourceStandbyDatabaseConnectionId) {
+            $.sourceStandbyDatabaseConnectionId = sourceStandbyDatabaseConnectionId;
+            return this;
+        }
+
+        /**
+         * @param sourceStandbyDatabaseConnectionId (Updatable) The OCID of the resource being referenced.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceStandbyDatabaseConnectionId(String sourceStandbyDatabaseConnectionId) {
+            return sourceStandbyDatabaseConnectionId(Output.of(sourceStandbyDatabaseConnectionId));
         }
 
         /**

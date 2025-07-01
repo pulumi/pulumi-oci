@@ -5,9 +5,11 @@ package com.pulumi.oci.Core.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Core.inputs.DedicatedVmHostCapacityBinArgs;
 import com.pulumi.oci.Core.inputs.DedicatedVmHostPlacementConstraintDetailsArgs;
 import java.lang.Double;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -34,6 +36,21 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * A list of total and remaining CPU &amp; memory per capacity bucket.
+     * 
+     */
+    @Import(name="capacityBins")
+    private @Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins;
+
+    /**
+     * @return A list of total and remaining CPU &amp; memory per capacity bucket.
+     * 
+     */
+    public Optional<Output<List<DedicatedVmHostCapacityBinArgs>>> capacityBins() {
+        return Optional.ofNullable(this.capacityBins);
+    }
+
+    /**
      * (Updatable) The OCID of the compartment.
      * 
      */
@@ -46,6 +63,21 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The OCID of the compute bare metal host.
+     * 
+     */
+    @Import(name="computeBareMetalHostId")
+    private @Nullable Output<String> computeBareMetalHostId;
+
+    /**
+     * @return The OCID of the compute bare metal host.
+     * 
+     */
+    public Optional<Output<String>> computeBareMetalHostId() {
+        return Optional.ofNullable(this.computeBareMetalHostId);
     }
 
     /**
@@ -240,7 +272,9 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
 
     private DedicatedVmHostState(DedicatedVmHostState $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.capacityBins = $.capacityBins;
         this.compartmentId = $.compartmentId;
+        this.computeBareMetalHostId = $.computeBareMetalHostId;
         this.dedicatedVmHostShape = $.dedicatedVmHostShape;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -295,6 +329,37 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param capacityBins A list of total and remaining CPU &amp; memory per capacity bucket.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityBins(@Nullable Output<List<DedicatedVmHostCapacityBinArgs>> capacityBins) {
+            $.capacityBins = capacityBins;
+            return this;
+        }
+
+        /**
+         * @param capacityBins A list of total and remaining CPU &amp; memory per capacity bucket.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityBins(List<DedicatedVmHostCapacityBinArgs> capacityBins) {
+            return capacityBins(Output.of(capacityBins));
+        }
+
+        /**
+         * @param capacityBins A list of total and remaining CPU &amp; memory per capacity bucket.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityBins(DedicatedVmHostCapacityBinArgs... capacityBins) {
+            return capacityBins(List.of(capacityBins));
+        }
+
+        /**
          * @param compartmentId (Updatable) The OCID of the compartment.
          * 
          * @return builder
@@ -313,6 +378,27 @@ public final class DedicatedVmHostState extends com.pulumi.resources.ResourceArg
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeBareMetalHostId The OCID of the compute bare metal host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeBareMetalHostId(@Nullable Output<String> computeBareMetalHostId) {
+            $.computeBareMetalHostId = computeBareMetalHostId;
+            return this;
+        }
+
+        /**
+         * @param computeBareMetalHostId The OCID of the compute bare metal host.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeBareMetalHostId(String computeBareMetalHostId) {
+            return computeBareMetalHostId(Output.of(computeBareMetalHostId));
         }
 
         /**

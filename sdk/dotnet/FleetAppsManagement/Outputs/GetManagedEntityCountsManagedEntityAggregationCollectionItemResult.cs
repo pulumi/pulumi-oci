@@ -18,7 +18,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedEntityCountsManagedEntityAggregationCollectionItemDimensionResult> Dimensions;
         /// <summary>
-        /// count of Managed Entities in a Tenancy.
+        /// Count of managed entities in a compartment.
         /// </summary>
         public readonly int ManagedEntityCountCount;
 

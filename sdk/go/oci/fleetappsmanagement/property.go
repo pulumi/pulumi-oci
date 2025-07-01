@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Property resource in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// Create a business-specific metadata property in Fleet Application Management and capture the business metadata classifications.
+// Create a business-specific metadata property in Fleet Application Management.
 //
 // ## Example Usage
 //
@@ -32,9 +32,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := fleetappsmanagement.NewProperty(ctx, "test_property", &fleetappsmanagement.PropertyArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
+//				DisplayName:   pulumi.Any(propertyDisplayName),
 //				Selection:     pulumi.Any(propertySelection),
 //				ValueType:     pulumi.Any(propertyValueType),
-//				DisplayName:   pulumi.Any(propertyDisplayName),
 //				Values:        pulumi.Any(propertyValues),
 //			})
 //			if err != nil {
@@ -56,7 +56,7 @@ import (
 type Property struct {
 	pulumi.CustomResourceState
 
-	// Tenancy OCID
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -101,6 +101,9 @@ func NewProperty(ctx *pulumi.Context,
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
 	}
+	if args.DisplayName == nil {
+		return nil, errors.New("invalid value for required argument 'DisplayName'")
+	}
 	if args.Selection == nil {
 		return nil, errors.New("invalid value for required argument 'Selection'")
 	}
@@ -130,7 +133,7 @@ func GetProperty(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Property resources.
 type propertyState struct {
-	// Tenancy OCID
+	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -166,7 +169,7 @@ type propertyState struct {
 }
 
 type PropertyState struct {
-	// Tenancy OCID
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
@@ -206,10 +209,10 @@ func (PropertyState) ElementType() reflect.Type {
 }
 
 type propertyArgs struct {
-	// Tenancy OCID
+	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName *string `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Text selection of the property.
 	Selection string `pulumi:"selection"`
 	// (Updatable) Format of the value.
@@ -223,10 +226,10 @@ type propertyArgs struct {
 
 // The set of arguments for constructing a Property resource.
 type PropertyArgs struct {
-	// Tenancy OCID
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
-	DisplayName pulumi.StringPtrInput
+	DisplayName pulumi.StringInput
 	// (Updatable) Text selection of the property.
 	Selection pulumi.StringInput
 	// (Updatable) Format of the value.
@@ -325,7 +328,7 @@ func (o PropertyOutput) ToPropertyOutputWithContext(ctx context.Context) Propert
 	return o
 }
 
-// Tenancy OCID
+// (Updatable) Compartment OCID
 func (o PropertyOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Property) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

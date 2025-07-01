@@ -115,7 +115,7 @@ export class Listener extends pulumi.CustomResource {
      */
     public readonly port!: pulumi.Output<number>;
     /**
-     * (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
+     * (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
      */
     public readonly protocol!: pulumi.Output<string>;
     /**
@@ -228,7 +228,7 @@ export interface ListenerState {
      */
     port?: pulumi.Input<number>;
     /**
-     * (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
+     * (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
      */
     protocol?: pulumi.Input<string>;
     /**
@@ -285,7 +285,7 @@ export interface ListenerArgs {
      */
     port: pulumi.Input<number>;
     /**
-     * (Updatable) The protocol on which the listener accepts connection requests. The supported protocols are HTTP, HTTP2, TCP, and GRPC. You can also use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation to get a list of valid protocols.  Example: `HTTP`
+     * (Updatable) The protocol on which the listener accepts connection requests. To get a list of valid protocols, use the [ListProtocols](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerProtocol/ListProtocols) operation.  Example: `HTTP`
      */
     protocol: pulumi.Input<string>;
     /**

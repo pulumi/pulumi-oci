@@ -22,9 +22,21 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// Indicates whether the backup destination is cross-region or local region.
+        /// </summary>
+        public readonly bool? IsRemote;
+        /// <summary>
+        /// The name of the remote region where the remote automatic incremental backups will be stored.
+        /// 
+        /// For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        public readonly string? RemoteRegion;
+        /// <summary>
         /// Type of the database backup destination. Supported values: `NFS`.
         /// </summary>
         public readonly string? Type;
+        public readonly string? VpcPassword;
+        public readonly string? VpcUser;
 
         [OutputConstructor]
         private DbHomeDatabaseDbBackupConfigBackupDestinationDetail(
@@ -32,11 +44,23 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? id,
 
-            string? type)
+            bool? isRemote,
+
+            string? remoteRegion,
+
+            string? type,
+
+            string? vpcPassword,
+
+            string? vpcUser)
         {
             DbrsPolicyId = dbrsPolicyId;
             Id = id;
+            IsRemote = isRemote;
+            RemoteRegion = remoteRegion;
             Type = type;
+            VpcPassword = vpcPassword;
+            VpcUser = vpcUser;
         }
     }
 }

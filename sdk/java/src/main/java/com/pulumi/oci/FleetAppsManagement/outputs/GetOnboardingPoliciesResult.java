@@ -14,6 +14,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetOnboardingPoliciesResult {
+    private String compartmentId;
     private @Nullable List<GetOnboardingPoliciesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -27,6 +28,9 @@ public final class GetOnboardingPoliciesResult {
     private List<GetOnboardingPoliciesOnboardingPolicyCollection> onboardingPolicyCollections;
 
     private GetOnboardingPoliciesResult() {}
+    public String compartmentId() {
+        return this.compartmentId;
+    }
     public List<GetOnboardingPoliciesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -54,17 +58,27 @@ public final class GetOnboardingPoliciesResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String compartmentId;
         private @Nullable List<GetOnboardingPoliciesFilter> filters;
         private String id;
         private List<GetOnboardingPoliciesOnboardingPolicyCollection> onboardingPolicyCollections;
         public Builder() {}
         public Builder(GetOnboardingPoliciesResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.onboardingPolicyCollections = defaults.onboardingPolicyCollections;
         }
 
+        @CustomType.Setter
+        public Builder compartmentId(String compartmentId) {
+            if (compartmentId == null) {
+              throw new MissingRequiredPropertyException("GetOnboardingPoliciesResult", "compartmentId");
+            }
+            this.compartmentId = compartmentId;
+            return this;
+        }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetOnboardingPoliciesFilter> filters) {
 
@@ -95,6 +109,7 @@ public final class GetOnboardingPoliciesResult {
         }
         public GetOnboardingPoliciesResult build() {
             final var _resultValue = new GetOnboardingPoliciesResult();
+            _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.onboardingPolicyCollections = onboardingPolicyCollections;

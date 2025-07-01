@@ -58,7 +58,7 @@ type LookupPropertyArgs struct {
 
 // A collection of values returned by getProperty.
 type LookupPropertyResult struct {
-	// Tenancy OCID
+	// Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -127,7 +127,7 @@ func (o LookupPropertyResultOutput) ToLookupPropertyResultOutputWithContext(ctx 
 	return o
 }
 
-// Tenancy OCID
+// Compartment OCID
 func (o LookupPropertyResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPropertyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

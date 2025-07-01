@@ -8,6 +8,8 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
+import com.pulumi.oci.Nosql.inputs.GetConfigurationPlainArgs;
 import com.pulumi.oci.Nosql.inputs.GetIndexArgs;
 import com.pulumi.oci.Nosql.inputs.GetIndexPlainArgs;
 import com.pulumi.oci.Nosql.inputs.GetIndexesArgs;
@@ -16,6 +18,7 @@ import com.pulumi.oci.Nosql.inputs.GetTableArgs;
 import com.pulumi.oci.Nosql.inputs.GetTablePlainArgs;
 import com.pulumi.oci.Nosql.inputs.GetTablesArgs;
 import com.pulumi.oci.Nosql.inputs.GetTablesPlainArgs;
+import com.pulumi.oci.Nosql.outputs.GetConfigurationResult;
 import com.pulumi.oci.Nosql.outputs.GetIndexResult;
 import com.pulumi.oci.Nosql.outputs.GetIndexesResult;
 import com.pulumi.oci.Nosql.outputs.GetTableResult;
@@ -24,6 +27,246 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class NosqlFunctions {
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Retrieves the current service-level configuration.  The
+     * service may of the standard MULTI_TENANCY type, or of the
+     * HOSTED environment type.  In the latter case, information about the
+     * current state of the environment&#39;s global encryption key is
+     * included in the response.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = NosqlFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
+        return getConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Retrieves the current service-level configuration.  The
+     * service may of the standard MULTI_TENANCY type, or of the
+     * HOSTED environment type.  In the latter case, information about the
+     * current state of the environment&#39;s global encryption key is
+     * included in the response.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = NosqlFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args) {
+        return getConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Retrieves the current service-level configuration.  The
+     * service may of the standard MULTI_TENANCY type, or of the
+     * HOSTED environment type.  In the latter case, information about the
+     * current state of the environment&#39;s global encryption key is
+     * included in the response.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = NosqlFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Nosql/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Retrieves the current service-level configuration.  The
+     * service may of the standard MULTI_TENANCY type, or of the
+     * HOSTED environment type.  In the latter case, information about the
+     * current state of the environment&#39;s global encryption key is
+     * included in the response.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = NosqlFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Nosql/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure NoSQL Database service.
+     * 
+     * Retrieves the current service-level configuration.  The
+     * service may of the standard MULTI_TENANCY type, or of the
+     * HOSTED environment type.  In the latter case, information about the
+     * current state of the environment&#39;s global encryption key is
+     * included in the response.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Nosql.NosqlFunctions;
+     * import com.pulumi.oci.Nosql.inputs.GetConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = NosqlFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain(GetConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Nosql/getConfiguration:getConfiguration", TypeShape.of(GetConfigurationResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Index resource in Oracle Cloud Infrastructure NoSQL Database service.
      * 

@@ -70,6 +70,16 @@ export type ComputeGpuMemoryFabric = import("./computeGpuMemoryFabric").ComputeG
 export const ComputeGpuMemoryFabric: typeof import("./computeGpuMemoryFabric").ComputeGpuMemoryFabric = null as any;
 utilities.lazyLoad(exports, ["ComputeGpuMemoryFabric"], () => require("./computeGpuMemoryFabric"));
 
+export { ComputeHostArgs, ComputeHostState } from "./computeHost";
+export type ComputeHost = import("./computeHost").ComputeHost;
+export const ComputeHost: typeof import("./computeHost").ComputeHost = null as any;
+utilities.lazyLoad(exports, ["ComputeHost"], () => require("./computeHost"));
+
+export { ComputeHostGroupArgs, ComputeHostGroupState } from "./computeHostGroup";
+export type ComputeHostGroup = import("./computeHostGroup").ComputeHostGroup;
+export const ComputeHostGroup: typeof import("./computeHostGroup").ComputeHostGroup = null as any;
+utilities.lazyLoad(exports, ["ComputeHostGroup"], () => require("./computeHostGroup"));
+
 export { ComputeImageCapabilitySchemaArgs, ComputeImageCapabilitySchemaState } from "./computeImageCapabilitySchema";
 export type ComputeImageCapabilitySchema = import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema;
 export const ComputeImageCapabilitySchema: typeof import("./computeImageCapabilitySchema").ComputeImageCapabilitySchema = null as any;
@@ -389,6 +399,16 @@ export { GetComputeHostArgs, GetComputeHostResult, GetComputeHostOutputArgs } fr
 export const getComputeHost: typeof import("./getComputeHost").getComputeHost = null as any;
 export const getComputeHostOutput: typeof import("./getComputeHost").getComputeHostOutput = null as any;
 utilities.lazyLoad(exports, ["getComputeHost","getComputeHostOutput"], () => require("./getComputeHost"));
+
+export { GetComputeHostGroupArgs, GetComputeHostGroupResult, GetComputeHostGroupOutputArgs } from "./getComputeHostGroup";
+export const getComputeHostGroup: typeof import("./getComputeHostGroup").getComputeHostGroup = null as any;
+export const getComputeHostGroupOutput: typeof import("./getComputeHostGroup").getComputeHostGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeHostGroup","getComputeHostGroupOutput"], () => require("./getComputeHostGroup"));
+
+export { GetComputeHostGroupsArgs, GetComputeHostGroupsResult, GetComputeHostGroupsOutputArgs } from "./getComputeHostGroups";
+export const getComputeHostGroups: typeof import("./getComputeHostGroups").getComputeHostGroups = null as any;
+export const getComputeHostGroupsOutput: typeof import("./getComputeHostGroups").getComputeHostGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getComputeHostGroups","getComputeHostGroupsOutput"], () => require("./getComputeHostGroups"));
 
 export { GetComputeHostsArgs, GetComputeHostsResult, GetComputeHostsOutputArgs } from "./getComputeHosts";
 export const getComputeHosts: typeof import("./getComputeHosts").getComputeHosts = null as any;
@@ -1201,6 +1221,10 @@ const _module = {
                 return new ComputeGpuMemoryCluster(name, <any>undefined, { urn })
             case "oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric":
                 return new ComputeGpuMemoryFabric(name, <any>undefined, { urn })
+            case "oci:Core/computeHost:ComputeHost":
+                return new ComputeHost(name, <any>undefined, { urn })
+            case "oci:Core/computeHostGroup:ComputeHostGroup":
+                return new ComputeHostGroup(name, <any>undefined, { urn })
             case "oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema":
                 return new ComputeImageCapabilitySchema(name, <any>undefined, { urn })
             case "oci:Core/consoleHistory:ConsoleHistory":
@@ -1335,6 +1359,8 @@ pulumi.runtime.registerResourceModule("oci", "Core/computeCapacityTopology", _mo
 pulumi.runtime.registerResourceModule("oci", "Core/computeCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeGpuMemoryCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeGpuMemoryFabric", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeHost", _module)
+pulumi.runtime.registerResourceModule("oci", "Core/computeHostGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/computeImageCapabilitySchema", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/consoleHistory", _module)
 pulumi.runtime.registerResourceModule("oci", "Core/cpe", _module)

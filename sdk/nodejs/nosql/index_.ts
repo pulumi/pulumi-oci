@@ -103,7 +103,7 @@ export class Index extends pulumi.CustomResource {
      *
      *
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
     public readonly tableNameOrId!: pulumi.Output<string>;
 
@@ -193,7 +193,7 @@ export interface IndexState {
      *
      *
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
     tableNameOrId?: pulumi.Input<string>;
 }
@@ -223,7 +223,7 @@ export interface IndexArgs {
      *
      *
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
      */
     tableNameOrId: pulumi.Input<string>;
 }

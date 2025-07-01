@@ -28,7 +28,7 @@ class GetMigrationResult:
     """
     A collection of values returned by getMigration.
     """
-    def __init__(__self__, advanced_parameters=None, advisor_settings=None, bulk_include_exclude_data=None, compartment_id=None, data_transfer_medium_details=None, database_combination=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, ggs_details=None, hub_details=None, id=None, include_objects=None, initial_load_settings=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, wait_after=None):
+    def __init__(__self__, advanced_parameters=None, advisor_settings=None, bulk_include_exclude_data=None, compartment_id=None, data_transfer_medium_details=None, database_combination=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, ggs_details=None, hub_details=None, id=None, include_objects=None, initial_load_settings=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, source_standby_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, wait_after=None):
         if advanced_parameters and not isinstance(advanced_parameters, list):
             raise TypeError("Expected argument 'advanced_parameters' to be a list")
         pulumi.set(__self__, "advanced_parameters", advanced_parameters)
@@ -92,6 +92,9 @@ class GetMigrationResult:
         if source_database_connection_id and not isinstance(source_database_connection_id, str):
             raise TypeError("Expected argument 'source_database_connection_id' to be a str")
         pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
+        if source_standby_database_connection_id and not isinstance(source_standby_database_connection_id, str):
+            raise TypeError("Expected argument 'source_standby_database_connection_id' to be a str")
+        pulumi.set(__self__, "source_standby_database_connection_id", source_standby_database_connection_id)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -274,6 +277,14 @@ class GetMigrationResult:
         return pulumi.get(self, "source_database_connection_id")
 
     @property
+    @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
+    def source_standby_database_connection_id(self) -> builtins.str:
+        """
+        The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "source_standby_database_connection_id")
+
+    @property
     @pulumi.getter
     def state(self) -> builtins.str:
         """
@@ -365,6 +376,7 @@ class AwaitableGetMigrationResult(GetMigrationResult):
             migration_id=self.migration_id,
             source_container_database_connection_id=self.source_container_database_connection_id,
             source_database_connection_id=self.source_database_connection_id,
+            source_standby_database_connection_id=self.source_standby_database_connection_id,
             state=self.state,
             system_tags=self.system_tags,
             target_database_connection_id=self.target_database_connection_id,
@@ -417,6 +429,7 @@ def get_migration(migration_id: Optional[builtins.str] = None,
         migration_id=pulumi.get(__ret__, 'migration_id'),
         source_container_database_connection_id=pulumi.get(__ret__, 'source_container_database_connection_id'),
         source_database_connection_id=pulumi.get(__ret__, 'source_database_connection_id'),
+        source_standby_database_connection_id=pulumi.get(__ret__, 'source_standby_database_connection_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_database_connection_id=pulumi.get(__ret__, 'target_database_connection_id'),
@@ -466,6 +479,7 @@ def get_migration_output(migration_id: Optional[pulumi.Input[builtins.str]] = No
         migration_id=pulumi.get(__response__, 'migration_id'),
         source_container_database_connection_id=pulumi.get(__response__, 'source_container_database_connection_id'),
         source_database_connection_id=pulumi.get(__response__, 'source_database_connection_id'),
+        source_standby_database_connection_id=pulumi.get(__response__, 'source_standby_database_connection_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         target_database_connection_id=pulumi.get(__response__, 'target_database_connection_id'),

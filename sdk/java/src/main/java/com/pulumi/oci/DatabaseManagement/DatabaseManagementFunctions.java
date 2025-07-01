@@ -205,9 +205,23 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPri
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabasesUserSystemPrivilegesPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseConfigurationDataArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseConfigurationDataPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabasePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseSqlDataArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseSqlDataPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabasesArgs;
@@ -314,7 +328,14 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserProxyUse
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserProxyUsersResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserSystemPrivilegeResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedDatabasesUserSystemPrivilegesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseBinaryLogInformationResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseConfigurationDataResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseDigestErrorsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseGeneralReplicationInformationResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseHighAvailabilityMembersResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseInboundReplicationsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseOutboundReplicationsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseQueryDetailResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabaseSqlDataResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetManagedMySqlDatabasesResult;
@@ -24015,6 +24036,226 @@ public final class DatabaseManagementFunctions {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabase:getManagedMySqlDatabase", TypeShape.of(GetManagedMySqlDatabaseResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseBinaryLogInformationResult> getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs args) {
+        return getManagedMySqlDatabaseBinaryLogInformation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseBinaryLogInformationResult> getManagedMySqlDatabaseBinaryLogInformationPlain(GetManagedMySqlDatabaseBinaryLogInformationPlainArgs args) {
+        return getManagedMySqlDatabaseBinaryLogInformationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseBinaryLogInformationResult> getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseBinaryLogInformation:getManagedMySqlDatabaseBinaryLogInformation", TypeShape.of(GetManagedMySqlDatabaseBinaryLogInformationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseBinaryLogInformationResult> getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseBinaryLogInformation:getManagedMySqlDatabaseBinaryLogInformation", TypeShape.of(GetManagedMySqlDatabaseBinaryLogInformationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseBinaryLogInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseBinaryLogInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseBinaryLogInformation(GetManagedMySqlDatabaseBinaryLogInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseBinaryLogInformationResult> getManagedMySqlDatabaseBinaryLogInformationPlain(GetManagedMySqlDatabaseBinaryLogInformationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseBinaryLogInformation:getManagedMySqlDatabaseBinaryLogInformation", TypeShape.of(GetManagedMySqlDatabaseBinaryLogInformationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Managed My Sql Database Configuration Data in Oracle Cloud Infrastructure Database Management service.
      * 
      * Retrieves Configuration Data for given MySQL Instance.
@@ -24233,6 +24474,1336 @@ public final class DatabaseManagementFunctions {
      */
     public static CompletableFuture<GetManagedMySqlDatabaseConfigurationDataResult> getManagedMySqlDatabaseConfigurationDataPlain(GetManagedMySqlDatabaseConfigurationDataPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseConfigurationData:getManagedMySqlDatabaseConfigurationData", TypeShape.of(GetManagedMySqlDatabaseConfigurationDataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves any potential errors for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
+     *             .digest(managedMySqlDatabaseDigestErrorDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseDigestErrorsResult> getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs args) {
+        return getManagedMySqlDatabaseDigestErrors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves any potential errors for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
+     *             .digest(managedMySqlDatabaseDigestErrorDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseDigestErrorsResult> getManagedMySqlDatabaseDigestErrorsPlain(GetManagedMySqlDatabaseDigestErrorsPlainArgs args) {
+        return getManagedMySqlDatabaseDigestErrorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves any potential errors for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
+     *             .digest(managedMySqlDatabaseDigestErrorDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseDigestErrorsResult> getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseDigestErrors:getManagedMySqlDatabaseDigestErrors", TypeShape.of(GetManagedMySqlDatabaseDigestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves any potential errors for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
+     *             .digest(managedMySqlDatabaseDigestErrorDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseDigestErrorsResult> getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseDigestErrors:getManagedMySqlDatabaseDigestErrors", TypeShape.of(GetManagedMySqlDatabaseDigestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Digest Errors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves any potential errors for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseDigestErrorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseDigestErrors = DatabaseManagementFunctions.getManagedMySqlDatabaseDigestErrors(GetManagedMySqlDatabaseDigestErrorsArgs.builder()
+     *             .digest(managedMySqlDatabaseDigestErrorDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseDigestErrorsResult> getManagedMySqlDatabaseDigestErrorsPlain(GetManagedMySqlDatabaseDigestErrorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseDigestErrors:getManagedMySqlDatabaseDigestErrors", TypeShape.of(GetManagedMySqlDatabaseDigestErrorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves general information regarding replication of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseGeneralReplicationInformationResult> getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs args) {
+        return getManagedMySqlDatabaseGeneralReplicationInformation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves general information regarding replication of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseGeneralReplicationInformationResult> getManagedMySqlDatabaseGeneralReplicationInformationPlain(GetManagedMySqlDatabaseGeneralReplicationInformationPlainArgs args) {
+        return getManagedMySqlDatabaseGeneralReplicationInformationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves general information regarding replication of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseGeneralReplicationInformationResult> getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseGeneralReplicationInformation:getManagedMySqlDatabaseGeneralReplicationInformation", TypeShape.of(GetManagedMySqlDatabaseGeneralReplicationInformationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves general information regarding replication of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseGeneralReplicationInformationResult> getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseGeneralReplicationInformation:getManagedMySqlDatabaseGeneralReplicationInformation", TypeShape.of(GetManagedMySqlDatabaseGeneralReplicationInformationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves general information regarding replication of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseGeneralReplicationInformationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseGeneralReplicationInformation = DatabaseManagementFunctions.getManagedMySqlDatabaseGeneralReplicationInformation(GetManagedMySqlDatabaseGeneralReplicationInformationArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseGeneralReplicationInformationResult> getManagedMySqlDatabaseGeneralReplicationInformationPlain(GetManagedMySqlDatabaseGeneralReplicationInformationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseGeneralReplicationInformation:getManagedMySqlDatabaseGeneralReplicationInformation", TypeShape.of(GetManagedMySqlDatabaseGeneralReplicationInformationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseHighAvailabilityMembersResult> getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs args) {
+        return getManagedMySqlDatabaseHighAvailabilityMembers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseHighAvailabilityMembersResult> getManagedMySqlDatabaseHighAvailabilityMembersPlain(GetManagedMySqlDatabaseHighAvailabilityMembersPlainArgs args) {
+        return getManagedMySqlDatabaseHighAvailabilityMembersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseHighAvailabilityMembersResult> getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseHighAvailabilityMembers:getManagedMySqlDatabaseHighAvailabilityMembers", TypeShape.of(GetManagedMySqlDatabaseHighAvailabilityMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseHighAvailabilityMembersResult> getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseHighAvailabilityMembers:getManagedMySqlDatabaseHighAvailabilityMembers", TypeShape.of(GetManagedMySqlDatabaseHighAvailabilityMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseHighAvailabilityMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseHighAvailabilityMembers = DatabaseManagementFunctions.getManagedMySqlDatabaseHighAvailabilityMembers(GetManagedMySqlDatabaseHighAvailabilityMembersArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseHighAvailabilityMembersResult> getManagedMySqlDatabaseHighAvailabilityMembersPlain(GetManagedMySqlDatabaseHighAvailabilityMembersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseHighAvailabilityMembers:getManagedMySqlDatabaseHighAvailabilityMembers", TypeShape.of(GetManagedMySqlDatabaseHighAvailabilityMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseInboundReplicationsResult> getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs args) {
+        return getManagedMySqlDatabaseInboundReplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseInboundReplicationsResult> getManagedMySqlDatabaseInboundReplicationsPlain(GetManagedMySqlDatabaseInboundReplicationsPlainArgs args) {
+        return getManagedMySqlDatabaseInboundReplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseInboundReplicationsResult> getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseInboundReplications:getManagedMySqlDatabaseInboundReplications", TypeShape.of(GetManagedMySqlDatabaseInboundReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseInboundReplicationsResult> getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseInboundReplications:getManagedMySqlDatabaseInboundReplications", TypeShape.of(GetManagedMySqlDatabaseInboundReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Inbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information about the inbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseInboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseInboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseInboundReplications(GetManagedMySqlDatabaseInboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseInboundReplicationsResult> getManagedMySqlDatabaseInboundReplicationsPlain(GetManagedMySqlDatabaseInboundReplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseInboundReplications:getManagedMySqlDatabaseInboundReplications", TypeShape.of(GetManagedMySqlDatabaseInboundReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseOutboundReplicationsResult> getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs args) {
+        return getManagedMySqlDatabaseOutboundReplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseOutboundReplicationsResult> getManagedMySqlDatabaseOutboundReplicationsPlain(GetManagedMySqlDatabaseOutboundReplicationsPlainArgs args) {
+        return getManagedMySqlDatabaseOutboundReplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseOutboundReplicationsResult> getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseOutboundReplications:getManagedMySqlDatabaseOutboundReplications", TypeShape.of(GetManagedMySqlDatabaseOutboundReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseOutboundReplicationsResult> getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseOutboundReplications:getManagedMySqlDatabaseOutboundReplications", TypeShape.of(GetManagedMySqlDatabaseOutboundReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseOutboundReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseOutboundReplications = DatabaseManagementFunctions.getManagedMySqlDatabaseOutboundReplications(GetManagedMySqlDatabaseOutboundReplicationsArgs.builder()
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseOutboundReplicationsResult> getManagedMySqlDatabaseOutboundReplicationsPlain(GetManagedMySqlDatabaseOutboundReplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseOutboundReplications:getManagedMySqlDatabaseOutboundReplications", TypeShape.of(GetManagedMySqlDatabaseOutboundReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
+     *             .digest(managedMySqlDatabaseQueryDetailDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseQueryDetailResult> getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs args) {
+        return getManagedMySqlDatabaseQueryDetail(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
+     *             .digest(managedMySqlDatabaseQueryDetailDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseQueryDetailResult> getManagedMySqlDatabaseQueryDetailPlain(GetManagedMySqlDatabaseQueryDetailPlainArgs args) {
+        return getManagedMySqlDatabaseQueryDetailPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
+     *             .digest(managedMySqlDatabaseQueryDetailDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseQueryDetailResult> getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseQueryDetail:getManagedMySqlDatabaseQueryDetail", TypeShape.of(GetManagedMySqlDatabaseQueryDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
+     *             .digest(managedMySqlDatabaseQueryDetailDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedMySqlDatabaseQueryDetailResult> getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedMySqlDatabaseQueryDetail:getManagedMySqlDatabaseQueryDetail", TypeShape.of(GetManagedMySqlDatabaseQueryDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Managed My Sql Database Query Detail resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Retrieves query sample details, explain plan and potential warnings for a given digest.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedMySqlDatabaseQueryDetailArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedMySqlDatabaseQueryDetail = DatabaseManagementFunctions.getManagedMySqlDatabaseQueryDetail(GetManagedMySqlDatabaseQueryDetailArgs.builder()
+     *             .digest(managedMySqlDatabaseQueryDetailDigest)
+     *             .managedMySqlDatabaseId(testManagedMySqlDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedMySqlDatabaseQueryDetailResult> getManagedMySqlDatabaseQueryDetailPlain(GetManagedMySqlDatabaseQueryDetailPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getManagedMySqlDatabaseQueryDetail:getManagedMySqlDatabaseQueryDetail", TypeShape.of(GetManagedMySqlDatabaseQueryDetailResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Managed My Sql Database Sql Data in Oracle Cloud Infrastructure Database Management service.

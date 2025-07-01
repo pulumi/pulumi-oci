@@ -124,7 +124,7 @@ type CloudVmCluster struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The compute model of the cloud VM cluster.
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
-	// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
 	// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
 	// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -309,7 +309,7 @@ type cloudVmClusterState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The compute model of the cloud VM cluster.
 	ComputeModel *string `pulumi:"computeModel"`
-	// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
 	// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
 	// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -438,7 +438,7 @@ type CloudVmClusterState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The compute model of the cloud VM cluster.
 	ComputeModel pulumi.StringPtrInput
-	// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
 	// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
 	// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -567,7 +567,7 @@ type cloudVmClusterArgs struct {
 	ClusterName *string `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
 	// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
 	// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -657,7 +657,7 @@ type CloudVmClusterArgs struct {
 	ClusterName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
-	// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+	// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 	// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
 	// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
 	// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -862,7 +862,7 @@ func (o CloudVmClusterOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
-// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster.
 // * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
 // * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
 // * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.

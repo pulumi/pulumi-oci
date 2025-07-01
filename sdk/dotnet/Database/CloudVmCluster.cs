@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
         /// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
         /// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -544,7 +544,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
         /// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
         /// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.
@@ -841,7 +841,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
-        /// (Updatable) The number of CPU cores to enable for a cloud VM cluster. Valid values depend on the specified shape:
+        /// (Updatable) The number of ECPUs (X11M and higher) or number of OCPUs (X10M and earlier) to enable for the VM cluster. 
         /// * Exadata.Base.48 - Specify a multiple of 2, from 0 to 48.
         /// * Exadata.Quarter1.84 - Specify a multiple of 2, from 22 to 84.
         /// * Exadata.Half1.168 - Specify a multiple of 4, from 44 to 168.

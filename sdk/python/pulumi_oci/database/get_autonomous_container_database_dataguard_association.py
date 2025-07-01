@@ -342,7 +342,7 @@ def get_autonomous_container_database_dataguard_association(autonomous_container
     """
     This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
 
-    Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+    **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
 
     ## Example Usage
 
@@ -398,7 +398,7 @@ def get_autonomous_container_database_dataguard_association_output(autonomous_co
     """
     This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
 
-    Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+    **Deprecated.** Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get the details of an Autonomous Container Database (ACD) enabled with Autonomous Data Guard associated with the specified ACD.
 
     ## Example Usage
 

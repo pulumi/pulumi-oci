@@ -25,7 +25,7 @@ public final class GetSchedulerJobJobActivityStepsResult {
     private @Nullable String resourceTaskId;
     private String schedulerJobId;
     /**
-     * @return The sequence of the step
+     * @return The sequence of the step.
      * 
      */
     private @Nullable String sequence;
@@ -35,7 +35,7 @@ public final class GetSchedulerJobJobActivityStepsResult {
      */
     private List<GetSchedulerJobJobActivityStepsStepCollection> stepCollections;
     /**
-     * @return Name of the Step
+     * @return Name of the Step.
      * 
      */
     private @Nullable String stepName;
@@ -62,7 +62,7 @@ public final class GetSchedulerJobJobActivityStepsResult {
         return this.schedulerJobId;
     }
     /**
-     * @return The sequence of the step
+     * @return The sequence of the step.
      * 
      */
     public Optional<String> sequence() {
@@ -76,7 +76,7 @@ public final class GetSchedulerJobJobActivityStepsResult {
         return this.stepCollections;
     }
     /**
-     * @return Name of the Step
+     * @return Name of the Step.
      * 
      */
     public Optional<String> stepName() {

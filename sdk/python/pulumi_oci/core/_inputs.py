@@ -96,6 +96,14 @@ __all__ = [
     'ComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgsDict',
     'ComputeCapacityTopologyCapacitySourceArgs',
     'ComputeCapacityTopologyCapacitySourceArgsDict',
+    'ComputeHostConfigurationDataArgs',
+    'ComputeHostConfigurationDataArgsDict',
+    'ComputeHostConfigurationDataCheckDetailArgs',
+    'ComputeHostConfigurationDataCheckDetailArgsDict',
+    'ComputeHostGroupConfigurationArgs',
+    'ComputeHostGroupConfigurationArgsDict',
+    'ComputeHostRecycleDetailArgs',
+    'ComputeHostRecycleDetailArgsDict',
     'CrossConnectGroupMacsecPropertiesArgs',
     'CrossConnectGroupMacsecPropertiesArgsDict',
     'CrossConnectGroupMacsecPropertiesPrimaryKeyArgs',
@@ -104,6 +112,8 @@ __all__ = [
     'CrossConnectMacsecPropertiesArgsDict',
     'CrossConnectMacsecPropertiesPrimaryKeyArgs',
     'CrossConnectMacsecPropertiesPrimaryKeyArgsDict',
+    'DedicatedVmHostCapacityBinArgs',
+    'DedicatedVmHostCapacityBinArgsDict',
     'DedicatedVmHostPlacementConstraintDetailsArgs',
     'DedicatedVmHostPlacementConstraintDetailsArgsDict',
     'DefaultDhcpOptionsOptionArgs',
@@ -440,6 +450,8 @@ __all__ = [
     'GetComputeGpuMemoryClustersFilterArgsDict',
     'GetComputeGpuMemoryFabricsFilterArgs',
     'GetComputeGpuMemoryFabricsFilterArgsDict',
+    'GetComputeHostGroupsFilterArgs',
+    'GetComputeHostGroupsFilterArgsDict',
     'GetComputeHostsFilterArgs',
     'GetComputeHostsFilterArgsDict',
     'GetComputeImageCapabilitySchemasFilterArgs',
@@ -3861,6 +3873,292 @@ class ComputeCapacityTopologyCapacitySourceArgs:
 
 
 if not MYPY:
+    class ComputeHostConfigurationDataArgsDict(TypedDict):
+        check_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgsDict']]]]
+        """
+        Compute Host Group Configuration Details Check
+        """
+        time_last_apply: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The time that was last applied.
+        """
+elif False:
+    ComputeHostConfigurationDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ComputeHostConfigurationDataArgs:
+    def __init__(__self__, *,
+                 check_details: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgs']]]] = None,
+                 time_last_apply: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgs']]] check_details: Compute Host Group Configuration Details Check
+        :param pulumi.Input[builtins.str] time_last_apply: The time that was last applied.
+        """
+        if check_details is not None:
+            pulumi.set(__self__, "check_details", check_details)
+        if time_last_apply is not None:
+            pulumi.set(__self__, "time_last_apply", time_last_apply)
+
+    @property
+    @pulumi.getter(name="checkDetails")
+    def check_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgs']]]]:
+        """
+        Compute Host Group Configuration Details Check
+        """
+        return pulumi.get(self, "check_details")
+
+    @check_details.setter
+    def check_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ComputeHostConfigurationDataCheckDetailArgs']]]]):
+        pulumi.set(self, "check_details", value)
+
+    @property
+    @pulumi.getter(name="timeLastApply")
+    def time_last_apply(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The time that was last applied.
+        """
+        return pulumi.get(self, "time_last_apply")
+
+    @time_last_apply.setter
+    def time_last_apply(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "time_last_apply", value)
+
+
+if not MYPY:
+    class ComputeHostConfigurationDataCheckDetailArgsDict(TypedDict):
+        configuration_state: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Configuration state of the Compute Bare Metal Host.
+        """
+        firmware_bundle_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        """
+        recycle_level: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The type of configuration
+        """
+elif False:
+    ComputeHostConfigurationDataCheckDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ComputeHostConfigurationDataCheckDetailArgs:
+    def __init__(__self__, *,
+                 configuration_state: Optional[pulumi.Input[builtins.str]] = None,
+                 firmware_bundle_id: Optional[pulumi.Input[builtins.str]] = None,
+                 recycle_level: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] configuration_state: Configuration state of the Compute Bare Metal Host.
+        :param pulumi.Input[builtins.str] firmware_bundle_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        :param pulumi.Input[builtins.str] recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param pulumi.Input[builtins.str] type: The type of configuration
+        """
+        if configuration_state is not None:
+            pulumi.set(__self__, "configuration_state", configuration_state)
+        if firmware_bundle_id is not None:
+            pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        if recycle_level is not None:
+            pulumi.set(__self__, "recycle_level", recycle_level)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="configurationState")
+    def configuration_state(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Configuration state of the Compute Bare Metal Host.
+        """
+        return pulumi.get(self, "configuration_state")
+
+    @configuration_state.setter
+    def configuration_state(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "configuration_state", value)
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Customer-unique firmware bundle associated with the Host Configuration.
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @firmware_bundle_id.setter
+    def firmware_bundle_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "firmware_bundle_id", value)
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @recycle_level.setter
+    def recycle_level(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "recycle_level", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The type of configuration
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class ComputeHostGroupConfigurationArgsDict(TypedDict):
+        firmware_bundle_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The OCID for firmware bundle
+        """
+        recycle_level: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        target: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Either the platform name or compute shape that the configuration is targeting
+        """
+elif False:
+    ComputeHostGroupConfigurationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ComputeHostGroupConfigurationArgs:
+    def __init__(__self__, *,
+                 firmware_bundle_id: Optional[pulumi.Input[builtins.str]] = None,
+                 recycle_level: Optional[pulumi.Input[builtins.str]] = None,
+                 target: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] firmware_bundle_id: (Updatable) The OCID for firmware bundle
+        :param pulumi.Input[builtins.str] recycle_level: (Updatable) Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        :param pulumi.Input[builtins.str] target: (Updatable) Either the platform name or compute shape that the configuration is targeting
+        """
+        if firmware_bundle_id is not None:
+            pulumi.set(__self__, "firmware_bundle_id", firmware_bundle_id)
+        if recycle_level is not None:
+            pulumi.set(__self__, "recycle_level", recycle_level)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+
+    @property
+    @pulumi.getter(name="firmwareBundleId")
+    def firmware_bundle_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The OCID for firmware bundle
+        """
+        return pulumi.get(self, "firmware_bundle_id")
+
+    @firmware_bundle_id.setter
+    def firmware_bundle_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "firmware_bundle_id", value)
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @recycle_level.setter
+    def recycle_level(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "recycle_level", value)
+
+    @property
+    @pulumi.getter
+    def target(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Either the platform name or compute shape that the configuration is targeting
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "target", value)
+
+
+if not MYPY:
+    class ComputeHostRecycleDetailArgsDict(TypedDict):
+        compute_host_group_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        """
+        recycle_level: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+elif False:
+    ComputeHostRecycleDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ComputeHostRecycleDetailArgs:
+    def __init__(__self__, *,
+                 compute_host_group_id: Optional[pulumi.Input[builtins.str]] = None,
+                 recycle_level: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] compute_host_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        :param pulumi.Input[builtins.str] recycle_level: Preferred recycle level for hosts associated with the reservation config.
+               * `SKIP_RECYCLE` - Skips host wipe.
+               * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        if compute_host_group_id is not None:
+            pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        if recycle_level is not None:
+            pulumi.set(__self__, "recycle_level", recycle_level)
+
+    @property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "compute_host_group_id", value)
+
+    @property
+    @pulumi.getter(name="recycleLevel")
+    def recycle_level(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Preferred recycle level for hosts associated with the reservation config.
+        * `SKIP_RECYCLE` - Skips host wipe.
+        * `FULL_RECYCLE` - Does not skip host wipe. This is the default behavior.
+        """
+        return pulumi.get(self, "recycle_level")
+
+    @recycle_level.setter
+    def recycle_level(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "recycle_level", value)
+
+
+if not MYPY:
     class CrossConnectGroupMacsecPropertiesArgsDict(TypedDict):
         state: pulumi.Input[builtins.str]
         """
@@ -4244,6 +4542,138 @@ class CrossConnectMacsecPropertiesPrimaryKeyArgs:
     @connectivity_association_name_secret_version.setter
     def connectivity_association_name_secret_version(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "connectivity_association_name_secret_version", value)
+
+
+if not MYPY:
+    class DedicatedVmHostCapacityBinArgsDict(TypedDict):
+        capacity_index: NotRequired[pulumi.Input[builtins.int]]
+        """
+        Zero-based index for the corresponding capacity bucket.
+        """
+        remaining_memory_in_gbs: NotRequired[pulumi.Input[builtins.float]]
+        """
+        The current available memory of the dedicated VM host, in GBs.
+        """
+        remaining_ocpus: NotRequired[pulumi.Input[builtins.float]]
+        """
+        The current available OCPUs of the dedicated VM host.
+        """
+        supported_shapes: NotRequired[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]
+        """
+        List of VMI shapes supported on each capacity bucket.
+        """
+        total_memory_in_gbs: NotRequired[pulumi.Input[builtins.float]]
+        """
+        The current total memory of the dedicated VM host, in GBs.
+        """
+        total_ocpus: NotRequired[pulumi.Input[builtins.float]]
+        """
+        The current total OCPUs of the dedicated VM host.
+        """
+elif False:
+    DedicatedVmHostCapacityBinArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DedicatedVmHostCapacityBinArgs:
+    def __init__(__self__, *,
+                 capacity_index: Optional[pulumi.Input[builtins.int]] = None,
+                 remaining_memory_in_gbs: Optional[pulumi.Input[builtins.float]] = None,
+                 remaining_ocpus: Optional[pulumi.Input[builtins.float]] = None,
+                 supported_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 total_memory_in_gbs: Optional[pulumi.Input[builtins.float]] = None,
+                 total_ocpus: Optional[pulumi.Input[builtins.float]] = None):
+        """
+        :param pulumi.Input[builtins.int] capacity_index: Zero-based index for the corresponding capacity bucket.
+        :param pulumi.Input[builtins.float] remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
+        :param pulumi.Input[builtins.float] remaining_ocpus: The current available OCPUs of the dedicated VM host.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] supported_shapes: List of VMI shapes supported on each capacity bucket.
+        :param pulumi.Input[builtins.float] total_memory_in_gbs: The current total memory of the dedicated VM host, in GBs.
+        :param pulumi.Input[builtins.float] total_ocpus: The current total OCPUs of the dedicated VM host.
+        """
+        if capacity_index is not None:
+            pulumi.set(__self__, "capacity_index", capacity_index)
+        if remaining_memory_in_gbs is not None:
+            pulumi.set(__self__, "remaining_memory_in_gbs", remaining_memory_in_gbs)
+        if remaining_ocpus is not None:
+            pulumi.set(__self__, "remaining_ocpus", remaining_ocpus)
+        if supported_shapes is not None:
+            pulumi.set(__self__, "supported_shapes", supported_shapes)
+        if total_memory_in_gbs is not None:
+            pulumi.set(__self__, "total_memory_in_gbs", total_memory_in_gbs)
+        if total_ocpus is not None:
+            pulumi.set(__self__, "total_ocpus", total_ocpus)
+
+    @property
+    @pulumi.getter(name="capacityIndex")
+    def capacity_index(self) -> Optional[pulumi.Input[builtins.int]]:
+        """
+        Zero-based index for the corresponding capacity bucket.
+        """
+        return pulumi.get(self, "capacity_index")
+
+    @capacity_index.setter
+    def capacity_index(self, value: Optional[pulumi.Input[builtins.int]]):
+        pulumi.set(self, "capacity_index", value)
+
+    @property
+    @pulumi.getter(name="remainingMemoryInGbs")
+    def remaining_memory_in_gbs(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        The current available memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "remaining_memory_in_gbs")
+
+    @remaining_memory_in_gbs.setter
+    def remaining_memory_in_gbs(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "remaining_memory_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="remainingOcpus")
+    def remaining_ocpus(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        The current available OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "remaining_ocpus")
+
+    @remaining_ocpus.setter
+    def remaining_ocpus(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "remaining_ocpus", value)
+
+    @property
+    @pulumi.getter(name="supportedShapes")
+    def supported_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
+        """
+        List of VMI shapes supported on each capacity bucket.
+        """
+        return pulumi.get(self, "supported_shapes")
+
+    @supported_shapes.setter
+    def supported_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "supported_shapes", value)
+
+    @property
+    @pulumi.getter(name="totalMemoryInGbs")
+    def total_memory_in_gbs(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        The current total memory of the dedicated VM host, in GBs.
+        """
+        return pulumi.get(self, "total_memory_in_gbs")
+
+    @total_memory_in_gbs.setter
+    def total_memory_in_gbs(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "total_memory_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="totalOcpus")
+    def total_ocpus(self) -> Optional[pulumi.Input[builtins.float]]:
+        """
+        The current total OCPUs of the dedicated VM host.
+        """
+        return pulumi.get(self, "total_ocpus")
+
+    @total_ocpus.setter
+    def total_ocpus(self, value: Optional[pulumi.Input[builtins.float]]):
+        pulumi.set(self, "total_ocpus", value)
 
 
 if not MYPY:
@@ -21183,6 +21613,53 @@ elif False:
 
 @pulumi.input_type
 class GetComputeGpuMemoryFabricsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetComputeHostGroupsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetComputeHostGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetComputeHostGroupsFilterArgs:
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],

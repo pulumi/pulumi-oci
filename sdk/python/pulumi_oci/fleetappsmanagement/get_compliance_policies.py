@@ -29,7 +29,7 @@ class GetCompliancePoliciesResult:
     """
     A collection of values returned by getCompliancePolicies.
     """
-    def __init__(__self__, compartment_id=None, compliance_policy_collections=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, compartment_id=None, compliance_policy_collections=None, display_name=None, filters=None, id=None, state=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +48,9 @@ class GetCompliancePoliciesResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -94,6 +97,14 @@ class GetCompliancePoliciesResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        The type of the Compliance Policy.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetCompliancePoliciesResult(GetCompliancePoliciesResult):
     # pylint: disable=using-constant-test
@@ -106,7 +117,8 @@ class AwaitableGetCompliancePoliciesResult(GetCompliancePoliciesResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
-            state=self.state)
+            state=self.state,
+            type=self.type)
 
 
 def get_compliance_policies(compartment_id: Optional[builtins.str] = None,
@@ -114,11 +126,13 @@ def get_compliance_policies(compartment_id: Optional[builtins.str] = None,
                             filters: Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict']]] = None,
                             id: Optional[builtins.str] = None,
                             state: Optional[builtins.str] = None,
+                            type: Optional[builtins.str] = None,
                             opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetCompliancePoliciesResult:
     """
     This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a list of compliancePolicies.
+    Returns a list of all the Compliance Policies in the specified compartment.
+    The query parameter `compartmentId` is required unless the query parameter `id` is specified.
 
     ## Example Usage
 
@@ -129,14 +143,16 @@ def get_compliance_policies(compartment_id: Optional[builtins.str] = None,
     test_compliance_policies = oci.FleetAppsManagement.get_compliance_policies(compartment_id=compartment_id,
         display_name=compliance_policy_display_name,
         id=compliance_policy_id,
-        state=compliance_policy_state)
+        state=compliance_policy_state,
+        type=compliance_policy_type)
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param builtins.str id: unique CompliancePolicy identifier.
+    :param builtins.str id: Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
     :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+    :param builtins.str type: A filter to return Platform Configurations whose type matches the given type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -144,6 +160,7 @@ def get_compliance_policies(compartment_id: Optional[builtins.str] = None,
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:FleetAppsManagement/getCompliancePolicies:getCompliancePolicies', __args__, opts=opts, typ=GetCompliancePoliciesResult).value
 
@@ -153,17 +170,20 @@ def get_compliance_policies(compartment_id: Optional[builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        type=pulumi.get(__ret__, 'type'))
 def get_compliance_policies_output(compartment_id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                    display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                    filters: Optional[pulumi.Input[Optional[Sequence[Union['GetCompliancePoliciesFilterArgs', 'GetCompliancePoliciesFilterArgsDict']]]]] = None,
                                    id: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                    state: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                                   type: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                                    opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetCompliancePoliciesResult]:
     """
     This data source provides the list of Compliance Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Gets a list of compliancePolicies.
+    Returns a list of all the Compliance Policies in the specified compartment.
+    The query parameter `compartmentId` is required unless the query parameter `id` is specified.
 
     ## Example Usage
 
@@ -174,14 +194,16 @@ def get_compliance_policies_output(compartment_id: Optional[pulumi.Input[Optiona
     test_compliance_policies = oci.FleetAppsManagement.get_compliance_policies(compartment_id=compartment_id,
         display_name=compliance_policy_display_name,
         id=compliance_policy_id,
-        state=compliance_policy_state)
+        state=compliance_policy_state,
+        type=compliance_policy_type)
     ```
 
 
-    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param builtins.str id: unique CompliancePolicy identifier.
+    :param builtins.str id: Unique identifier or OCID for listing a single Compliance Policy by id. Either compartmentId or id must be provided.
     :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+    :param builtins.str type: A filter to return Platform Configurations whose type matches the given type.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -189,6 +211,7 @@ def get_compliance_policies_output(compartment_id: Optional[pulumi.Input[Optiona
     __args__['filters'] = filters
     __args__['id'] = id
     __args__['state'] = state
+    __args__['type'] = type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getCompliancePolicies:getCompliancePolicies', __args__, opts=opts, typ=GetCompliancePoliciesResult)
     return __ret__.apply(lambda __response__: GetCompliancePoliciesResult(
@@ -197,4 +220,5 @@ def get_compliance_policies_output(compartment_id: Optional[pulumi.Input[Optiona
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
-        state=pulumi.get(__response__, 'state')))
+        state=pulumi.get(__response__, 'state'),
+        type=pulumi.get(__response__, 'type')))

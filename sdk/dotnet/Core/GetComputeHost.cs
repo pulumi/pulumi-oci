@@ -142,7 +142,19 @@ namespace Pulumi.Oci.Core
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         /// </summary>
         public readonly string CompartmentId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+        /// </summary>
+        public readonly string ComputeHostGroupId;
         public readonly string ComputeHostId;
+        /// <summary>
+        /// Compute Host Configuration Data
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetComputeHostConfigurationDataResult> ConfigurationDatas;
+        /// <summary>
+        /// Configuration state of the Compute Bare Metal Host.
+        /// </summary>
+        public readonly string ConfigurationState;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -196,6 +208,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string NetworkBlockId;
         /// <summary>
+        /// Shows details about the last recycle performed on this host.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetComputeHostRecycleDetailResult> RecycleDetails;
+        /// <summary>
         /// The shape of host
         /// </summary>
         public readonly string Shape;
@@ -203,6 +219,10 @@ namespace Pulumi.Oci.Core
         /// The lifecycle state of the host
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The date and time that the compute bare metal host configuration check was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        /// </summary>
+        public readonly string TimeConfigurationCheck;
         /// <summary>
         /// The date and time that the compute host record was created, in the format defined by [RFC3339](https://tools .ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -222,7 +242,13 @@ namespace Pulumi.Oci.Core
 
             string compartmentId,
 
+            string computeHostGroupId,
+
             string computeHostId,
+
+            ImmutableArray<Outputs.GetComputeHostConfigurationDataResult> configurationDatas,
+
+            string configurationState,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -250,9 +276,13 @@ namespace Pulumi.Oci.Core
 
             string networkBlockId,
 
+            ImmutableArray<Outputs.GetComputeHostRecycleDetailResult> recycleDetails,
+
             string shape,
 
             string state,
+
+            string timeConfigurationCheck,
 
             string timeCreated,
 
@@ -262,7 +292,10 @@ namespace Pulumi.Oci.Core
             AvailabilityDomain = availabilityDomain;
             CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
+            ComputeHostGroupId = computeHostGroupId;
             ComputeHostId = computeHostId;
+            ConfigurationDatas = configurationDatas;
+            ConfigurationState = configurationState;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FaultDomain = faultDomain;
@@ -276,8 +309,10 @@ namespace Pulumi.Oci.Core
             LifecycleDetails = lifecycleDetails;
             LocalBlockId = localBlockId;
             NetworkBlockId = networkBlockId;
+            RecycleDetails = recycleDetails;
             Shape = shape;
             State = state;
+            TimeConfigurationCheck = timeConfigurationCheck;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

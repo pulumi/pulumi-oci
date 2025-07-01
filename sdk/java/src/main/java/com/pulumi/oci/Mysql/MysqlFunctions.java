@@ -1002,6 +1002,7 @@ public final class MysqlFunctions {
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
+     *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
      *             .build());
      * 
@@ -1051,6 +1052,7 @@ public final class MysqlFunctions {
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
+     *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
      *             .build());
      * 
@@ -1100,6 +1102,7 @@ public final class MysqlFunctions {
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
+     *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
      *             .build());
      * 
@@ -1149,6 +1152,7 @@ public final class MysqlFunctions {
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
+     *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
      *             .build());
      * 
@@ -1198,6 +1202,7 @@ public final class MysqlFunctions {
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
+     *             .softDelete(mysqlBackupSoftDelete)
      *             .state(mysqlBackupState)
      *             .build());
      * 

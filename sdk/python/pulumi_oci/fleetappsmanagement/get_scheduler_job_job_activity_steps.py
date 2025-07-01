@@ -90,7 +90,7 @@ class GetSchedulerJobJobActivityStepsResult:
     @pulumi.getter
     def sequence(self) -> Optional[builtins.str]:
         """
-        The sequence of the step
+        The sequence of the step.
         """
         return pulumi.get(self, "sequence")
 
@@ -106,7 +106,7 @@ class GetSchedulerJobJobActivityStepsResult:
     @pulumi.getter(name="stepName")
     def step_name(self) -> Optional[builtins.str]:
         """
-        Name of the Step
+        Name of the Step.
         """
         return pulumi.get(self, "step_name")
 

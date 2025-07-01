@@ -17,8 +17,15 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'OciCacheUserAuthenticationMode',
+    'OciCacheUserGetRedisClusterOciCacheCluster',
+    'RedisClusterGetOciCacheUserOciCacheUser',
     'RedisClusterNodeCollection',
     'RedisClusterNodeCollectionItem',
+    'GetOciCacheUserAuthenticationModeResult',
+    'GetOciCacheUsersFilterResult',
+    'GetOciCacheUsersOciCacheUserCollectionResult',
+    'GetOciCacheUsersOciCacheUserCollectionItemResult',
     'GetRedisClusterNodeCollectionResult',
     'GetRedisClusterNodeCollectionItemResult',
     'GetRedisClusterNodesFilterResult',
@@ -30,6 +37,127 @@ __all__ = [
     'GetRedisClustersRedisClusterCollectionItemNodeCollectionResult',
     'GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult',
 ]
+
+@pulumi.output_type
+class OciCacheUserAuthenticationMode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authenticationType":
+            suggest = "authentication_type"
+        elif key == "hashedPasswords":
+            suggest = "hashed_passwords"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OciCacheUserAuthenticationMode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OciCacheUserAuthenticationMode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OciCacheUserAuthenticationMode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authentication_type: builtins.str,
+                 hashed_passwords: Optional[Sequence[builtins.str]] = None):
+        """
+        :param builtins.str authentication_type: (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+        :param Sequence[builtins.str] hashed_passwords: (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        if hashed_passwords is not None:
+            pulumi.set(__self__, "hashed_passwords", hashed_passwords)
+
+    @property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> builtins.str:
+        """
+        (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @property
+    @pulumi.getter(name="hashedPasswords")
+    def hashed_passwords(self) -> Optional[Sequence[builtins.str]]:
+        """
+        (Updatable) SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+        return pulumi.get(self, "hashed_passwords")
+
+
+@pulumi.output_type
+class OciCacheUserGetRedisClusterOciCacheCluster(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ociCacheClusterId":
+            suggest = "oci_cache_cluster_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OciCacheUserGetRedisClusterOciCacheCluster. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OciCacheUserGetRedisClusterOciCacheCluster.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OciCacheUserGetRedisClusterOciCacheCluster.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 oci_cache_cluster_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str oci_cache_cluster_id: OCID of the OciCacheCluster
+        """
+        if oci_cache_cluster_id is not None:
+            pulumi.set(__self__, "oci_cache_cluster_id", oci_cache_cluster_id)
+
+    @property
+    @pulumi.getter(name="ociCacheClusterId")
+    def oci_cache_cluster_id(self) -> Optional[builtins.str]:
+        """
+        OCID of the OciCacheCluster
+        """
+        return pulumi.get(self, "oci_cache_cluster_id")
+
+
+@pulumi.output_type
+class RedisClusterGetOciCacheUserOciCacheUser(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ociCacheUserId":
+            suggest = "oci_cache_user_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RedisClusterGetOciCacheUserOciCacheUser. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RedisClusterGetOciCacheUserOciCacheUser.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RedisClusterGetOciCacheUserOciCacheUser.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 oci_cache_user_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str oci_cache_user_id: OCID of the OciCacheUser
+        """
+        if oci_cache_user_id is not None:
+            pulumi.set(__self__, "oci_cache_user_id", oci_cache_user_id)
+
+    @property
+    @pulumi.getter(name="ociCacheUserId")
+    def oci_cache_user_id(self) -> Optional[builtins.str]:
+        """
+        OCID of the OciCacheUser
+        """
+        return pulumi.get(self, "oci_cache_user_id")
+
 
 @pulumi.output_type
 class RedisClusterNodeCollection(dict):
@@ -112,6 +240,208 @@ class RedisClusterNodeCollectionItem(dict):
         The private IP address of the API endpoint to access a specific node.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
+
+
+@pulumi.output_type
+class GetOciCacheUserAuthenticationModeResult(dict):
+    def __init__(__self__, *,
+                 authentication_type: builtins.str,
+                 hashed_passwords: Sequence[builtins.str]):
+        """
+        :param builtins.str authentication_type: This is Authentication Type of Oracle Cloud Infrastructure cache user
+        :param Sequence[builtins.str] hashed_passwords: SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "hashed_passwords", hashed_passwords)
+
+    @property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> builtins.str:
+        """
+        This is Authentication Type of Oracle Cloud Infrastructure cache user
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @property
+    @pulumi.getter(name="hashedPasswords")
+    def hashed_passwords(self) -> Sequence[builtins.str]:
+        """
+        SHA-256 hashed passwords for Oracle Cloud Infrastructure Cache user,required if authenticationType is set to PASSWORD.
+        """
+        return pulumi.get(self, "hashed_passwords")
+
+
+@pulumi.output_type
+class GetOciCacheUsersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOciCacheUsersOciCacheUserCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheUsersOciCacheUserCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheUsersOciCacheUserCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheUsersOciCacheUserCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 authentication_type: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 name: builtins.str,
+                 state: builtins.str,
+                 status: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str):
+        """
+        :param builtins.str authentication_type: This is Authentication Type of Oracle Cloud Infrastructure cache user
+        :param builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param builtins.str description: Description of Oracle Cloud Infrastructure cache user.
+        :param Mapping[str, builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param builtins.str id: Oracle Cloud Infrastructure Cache user unique ID.
+        :param builtins.str name: A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        :param builtins.str state: A filter to return the resources, whose lifecycleState matches with the given lifecycleState.
+        :param builtins.str status: Oracle Cloud Infrastructure Cache user status. ON enables and OFF disables the Oracle Cloud Infrastructure cache user to login to the cluster.
+        :param Mapping[str, builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: The date and time, when the Oracle Cloud Infrastructure cache user was created.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> builtins.str:
+        """
+        This is Authentication Type of Oracle Cloud Infrastructure cache user
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        Description of Oracle Cloud Infrastructure cache user.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        Oracle Cloud Infrastructure Cache user unique ID.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        A filter to return the resources that match with the given Oracle Cloud Infrastructure cache user name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return the resources, whose lifecycleState matches with the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        Oracle Cloud Infrastructure Cache user status. ON enables and OFF disables the Oracle Cloud Infrastructure cache user to login to the cluster.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The date and time, when the Oracle Cloud Infrastructure cache user was created.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type

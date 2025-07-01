@@ -10,17 +10,6 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
  *
  * Retrieves a Connection.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testConnection = oci.GoldenGate.getConnection({
- *     connectionId: testConnectionOciGoldenGateConnection.id,
- * });
- * ```
  */
 export function getConnection(args: GetConnectionArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -44,12 +33,12 @@ export interface GetConnectionArgs {
  */
 export interface GetConnectionResult {
     /**
-     * Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     * Access key ID to access the Amazon S3 bucket.
      */
     readonly accessKeyId: string;
     readonly accountKey: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      */
     readonly accountKeySecretId: string;
     /**
@@ -81,6 +70,10 @@ export interface GetConnectionResult {
      * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
      */
     readonly bootstrapServers: outputs.GoldenGate.GetConnectionBootstrapServer[];
+    /**
+     * Represents the catalog of given type used in an Iceberg connection.
+     */
+    readonly catalogs: outputs.GoldenGate.GetConnectionCatalog[];
     /**
      * Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      */
@@ -120,6 +113,9 @@ export interface GetConnectionResult {
      * The base64 encoded content of the consumer.properties file.
      */
     readonly consumerProperties: string;
+    /**
+     * The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     */
     readonly coreSiteXml: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
@@ -154,9 +150,12 @@ export interface GetConnectionResult {
      */
     readonly doesUseSecretIds: boolean;
     /**
-     * Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
      */
     readonly endpoint: string;
+    /**
+     * Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     */
     readonly fingerprint: string;
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -252,13 +251,16 @@ export interface GetConnectionResult {
      * The base64 encoded content of the producer.properties file.
      */
     readonly producerProperties: string;
+    /**
+     * The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     */
     readonly publicKeyFingerprint: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
      */
     readonly redisClusterId: string;
     /**
-     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
      */
     readonly region: string;
     /**
@@ -272,13 +274,13 @@ export interface GetConnectionResult {
     readonly sasTokenSecretId: string;
     readonly secretAccessKey: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
      */
     readonly secretAccessKeySecretId: string;
     /**
      * Security Protocol to be provided for the following connection types:
-     * * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+     * * DB2, ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
+     * * JAVA_MESSAGE_SERVICE - If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
      */
     readonly securityProtocol: string;
     /**
@@ -288,7 +290,7 @@ export interface GetConnectionResult {
     readonly servers: string;
     readonly serviceAccountKeyFile: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
      */
     readonly serviceAccountKeyFileSecretId: string;
     /**
@@ -308,9 +310,12 @@ export interface GetConnectionResult {
      */
     readonly shouldValidateServerCertificate: boolean;
     /**
-     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+     * Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     readonly sslCa: string;
+    /**
+     * Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     */
     readonly sslCert: string;
     readonly sslClientKeystash: string;
     /**
@@ -322,6 +327,9 @@ export interface GetConnectionResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
      */
     readonly sslClientKeystoredbSecretId: string;
+    /**
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     */
     readonly sslCrl: string;
     readonly sslKey: string;
     readonly sslKeyPassword: string;
@@ -338,6 +346,9 @@ export interface GetConnectionResult {
      * SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      */
     readonly sslMode: string;
+    /**
+     * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     */
     readonly sslServerCertificate: string;
     /**
      * Possible lifecycle states for connection.
@@ -347,6 +358,10 @@ export interface GetConnectionResult {
      * Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
      */
     readonly storageCredentialName: string;
+    /**
+     * Represents the storage of given type used in an Iceberg connection.
+     */
+    readonly storages: outputs.GoldenGate.GetConnectionStorage[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      */
@@ -379,6 +394,9 @@ export interface GetConnectionResult {
      * The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      */
     readonly timeUpdated: string;
+    /**
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     */
     readonly tlsCaFile: string;
     readonly tlsCertificateKeyFile: string;
     readonly tlsCertificateKeyFilePassword: string;
@@ -428,17 +446,6 @@ export interface GetConnectionResult {
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
  *
  * Retrieves a Connection.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testConnection = oci.GoldenGate.getConnection({
- *     connectionId: testConnectionOciGoldenGateConnection.id,
- * });
- * ```
  */
 export function getConnectionOutput(args: GetConnectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

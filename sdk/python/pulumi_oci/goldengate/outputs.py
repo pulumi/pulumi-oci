@@ -19,8 +19,10 @@ from . import outputs
 __all__ = [
     'ConnectionAdditionalAttribute',
     'ConnectionBootstrapServer',
+    'ConnectionCatalog',
     'ConnectionIngressIp',
     'ConnectionLock',
+    'ConnectionStorage',
     'DeploymentBackupLock',
     'DeploymentBackupSchedule',
     'DeploymentDeploymentDiagnosticData',
@@ -44,14 +46,18 @@ __all__ = [
     'GetConnectionAssignmentsConnectionAssignmentCollectionItemResult',
     'GetConnectionAssignmentsFilterResult',
     'GetConnectionBootstrapServerResult',
+    'GetConnectionCatalogResult',
     'GetConnectionIngressIpResult',
     'GetConnectionLockResult',
+    'GetConnectionStorageResult',
     'GetConnectionsConnectionCollectionResult',
     'GetConnectionsConnectionCollectionItemResult',
     'GetConnectionsConnectionCollectionItemAdditionalAttributeResult',
     'GetConnectionsConnectionCollectionItemBootstrapServerResult',
+    'GetConnectionsConnectionCollectionItemCatalogResult',
     'GetConnectionsConnectionCollectionItemIngressIpResult',
     'GetConnectionsConnectionCollectionItemLockResult',
+    'GetConnectionsConnectionCollectionItemStorageResult',
     'GetConnectionsFilterResult',
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionResult',
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult',
@@ -242,6 +248,147 @@ class ConnectionBootstrapServer(dict):
 
 
 @pulumi.output_type
+class ConnectionCatalog(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "catalogType":
+            suggest = "catalog_type"
+        elif key == "clientId":
+            suggest = "client_id"
+        elif key == "clientSecretSecretId":
+            suggest = "client_secret_secret_id"
+        elif key == "glueId":
+            suggest = "glue_id"
+        elif key == "principalRole":
+            suggest = "principal_role"
+        elif key == "propertiesSecretId":
+            suggest = "properties_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionCatalog. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionCatalog.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionCatalog.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 catalog_type: builtins.str,
+                 branch: Optional[builtins.str] = None,
+                 client_id: Optional[builtins.str] = None,
+                 client_secret_secret_id: Optional[builtins.str] = None,
+                 glue_id: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 principal_role: Optional[builtins.str] = None,
+                 properties_secret_id: Optional[builtins.str] = None,
+                 uri: Optional[builtins.str] = None):
+        """
+        :param builtins.str catalog_type: (Updatable) The catalog type.
+        :param builtins.str branch: (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        :param builtins.str client_id: (Updatable) The OAuth client ID used for authentication.
+        :param builtins.str client_secret_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        :param builtins.str glue_id: (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
+        :param builtins.str name: (Updatable) The catalog name within Polaris where Iceberg tables are registered.
+        :param builtins.str principal_role: (Updatable) The Snowflake role used to access Polaris.
+        :param builtins.str properties_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param builtins.str uri: (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        """
+        pulumi.set(__self__, "catalog_type", catalog_type)
+        if branch is not None:
+            pulumi.set(__self__, "branch", branch)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret_secret_id is not None:
+            pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
+        if glue_id is not None:
+            pulumi.set(__self__, "glue_id", glue_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if principal_role is not None:
+            pulumi.set(__self__, "principal_role", principal_role)
+        if properties_secret_id is not None:
+            pulumi.set(__self__, "properties_secret_id", properties_secret_id)
+        if uri is not None:
+            pulumi.set(__self__, "uri", uri)
+
+    @property
+    @pulumi.getter(name="catalogType")
+    def catalog_type(self) -> builtins.str:
+        """
+        (Updatable) The catalog type.
+        """
+        return pulumi.get(self, "catalog_type")
+
+    @property
+    @pulumi.getter
+    def branch(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        """
+        return pulumi.get(self, "branch")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The OAuth client ID used for authentication.
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="clientSecretSecretId")
+    def client_secret_secret_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Snowflake platform.
+        """
+        return pulumi.get(self, "client_secret_secret_id")
+
+    @property
+    @pulumi.getter(name="glueId")
+    def glue_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The AWS Glue Catalog ID where Iceberg tables are registered.
+        """
+        return pulumi.get(self, "glue_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The catalog name within Polaris where Iceberg tables are registered.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="principalRole")
+    def principal_role(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The Snowflake role used to access Polaris.
+        """
+        return pulumi.get(self, "principal_role")
+
+    @property
+    @pulumi.getter(name="propertiesSecretId")
+    def properties_secret_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "properties_secret_id")
+
+    @property
+    @pulumi.getter
+    def uri(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        """
+        return pulumi.get(self, "uri")
+
+
+@pulumi.output_type
 class ConnectionIngressIp(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -348,6 +495,187 @@ class ConnectionLock(dict):
         The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class ConnectionStorage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "storageType":
+            suggest = "storage_type"
+        elif key == "accessKeyId":
+            suggest = "access_key_id"
+        elif key == "accountKeySecretId":
+            suggest = "account_key_secret_id"
+        elif key == "accountName":
+            suggest = "account_name"
+        elif key == "projectId":
+            suggest = "project_id"
+        elif key == "schemeType":
+            suggest = "scheme_type"
+        elif key == "secretAccessKeySecretId":
+            suggest = "secret_access_key_secret_id"
+        elif key == "serviceAccountKeyFileSecretId":
+            suggest = "service_account_key_file_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionStorage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionStorage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionStorage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 storage_type: builtins.str,
+                 access_key_id: Optional[builtins.str] = None,
+                 account_key_secret_id: Optional[builtins.str] = None,
+                 account_name: Optional[builtins.str] = None,
+                 bucket: Optional[builtins.str] = None,
+                 container: Optional[builtins.str] = None,
+                 endpoint: Optional[builtins.str] = None,
+                 project_id: Optional[builtins.str] = None,
+                 region: Optional[builtins.str] = None,
+                 scheme_type: Optional[builtins.str] = None,
+                 secret_access_key_secret_id: Optional[builtins.str] = None,
+                 service_account_key_file_secret_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str storage_type: (Updatable) The storage type used in the Iceberg connection.
+        :param builtins.str access_key_id: (Updatable) Access key ID to access the Amazon S3 bucket.
+        :param builtins.str account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        :param builtins.str account_name: (Updatable) Sets the Azure storage account name.
+        :param builtins.str bucket: (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        :param builtins.str container: (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
+        :param builtins.str endpoint: (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param builtins.str project_id: (Updatable) The Google Cloud Project where the bucket exists.
+        :param builtins.str region: (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        :param builtins.str scheme_type: (Updatable) The scheme of the storage.
+        :param builtins.str secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        :param builtins.str service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        """
+        pulumi.set(__self__, "storage_type", storage_type)
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if account_key_secret_id is not None:
+            pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        if account_name is not None:
+            pulumi.set(__self__, "account_name", account_name)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if container is not None:
+            pulumi.set(__self__, "container", container)
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if scheme_type is not None:
+            pulumi.set(__self__, "scheme_type", scheme_type)
+        if secret_access_key_secret_id is not None:
+            pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if service_account_key_file_secret_id is not None:
+            pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> builtins.str:
+        """
+        (Updatable) The storage type used in the Iceberg connection.
+        """
+        return pulumi.get(self, "storage_type")
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Access key ID to access the Amazon S3 bucket.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Sets the Azure storage account name.
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def container(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
+        """
+        return pulumi.get(self, "container")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The Google Cloud Project where the bucket exists.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="schemeType")
+    def scheme_type(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The scheme of the storage.
+        """
+        return pulumi.get(self, "scheme_type")
+
+    @property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFileSecretId")
+    def service_account_key_file_secret_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        """
+        return pulumi.get(self, "service_account_key_file_secret_id")
 
 
 @pulumi.output_type
@@ -1597,7 +1925,7 @@ class GetConnectionAdditionalAttributeResult(dict):
                  name: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str name: The name of the property entry.
+        :param builtins.str name: The catalog name within Polaris where Iceberg tables are registered.
         :param builtins.str value: The value of the property entry.
         """
         pulumi.set(__self__, "name", name)
@@ -1607,7 +1935,7 @@ class GetConnectionAdditionalAttributeResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        The name of the property entry.
+        The catalog name within Polaris where Iceberg tables are registered.
         """
         return pulumi.get(self, "name")
 
@@ -1814,6 +2142,112 @@ class GetConnectionBootstrapServerResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionCatalogResult(dict):
+    def __init__(__self__, *,
+                 branch: builtins.str,
+                 catalog_type: builtins.str,
+                 client_id: builtins.str,
+                 client_secret_secret_id: builtins.str,
+                 glue_id: builtins.str,
+                 name: builtins.str,
+                 principal_role: builtins.str,
+                 properties_secret_id: builtins.str,
+                 uri: builtins.str):
+        """
+        :param builtins.str branch: The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        :param builtins.str catalog_type: The catalog type.
+        :param builtins.str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        :param builtins.str client_secret_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        :param builtins.str glue_id: The AWS Glue Catalog ID where Iceberg tables are registered.
+        :param builtins.str name: The catalog name within Polaris where Iceberg tables are registered.
+        :param builtins.str principal_role: The Snowflake role used to access Polaris.
+        :param builtins.str properties_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param builtins.str uri: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        """
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "catalog_type", catalog_type)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
+        pulumi.set(__self__, "glue_id", glue_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "principal_role", principal_role)
+        pulumi.set(__self__, "properties_secret_id", properties_secret_id)
+        pulumi.set(__self__, "uri", uri)
+
+    @property
+    @pulumi.getter
+    def branch(self) -> builtins.str:
+        """
+        The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        """
+        return pulumi.get(self, "branch")
+
+    @property
+    @pulumi.getter(name="catalogType")
+    def catalog_type(self) -> builtins.str:
+        """
+        The catalog type.
+        """
+        return pulumi.get(self, "catalog_type")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> builtins.str:
+        """
+        Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="clientSecretSecretId")
+    def client_secret_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        """
+        return pulumi.get(self, "client_secret_secret_id")
+
+    @property
+    @pulumi.getter(name="glueId")
+    def glue_id(self) -> builtins.str:
+        """
+        The AWS Glue Catalog ID where Iceberg tables are registered.
+        """
+        return pulumi.get(self, "glue_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The catalog name within Polaris where Iceberg tables are registered.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="principalRole")
+    def principal_role(self) -> builtins.str:
+        """
+        The Snowflake role used to access Polaris.
+        """
+        return pulumi.get(self, "principal_role")
+
+    @property
+    @pulumi.getter(name="propertiesSecretId")
+    def properties_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "properties_secret_id")
+
+    @property
+    @pulumi.getter
+    def uri(self) -> builtins.str:
+        """
+        The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        """
+        return pulumi.get(self, "uri")
+
+
+@pulumi.output_type
 class GetConnectionIngressIpResult(dict):
     def __init__(__self__, *,
                  ingress_ip: builtins.str):
@@ -1883,6 +2317,145 @@ class GetConnectionLockResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionStorageResult(dict):
+    def __init__(__self__, *,
+                 access_key_id: builtins.str,
+                 account_key_secret_id: builtins.str,
+                 account_name: builtins.str,
+                 bucket: builtins.str,
+                 container: builtins.str,
+                 endpoint: builtins.str,
+                 project_id: builtins.str,
+                 region: builtins.str,
+                 scheme_type: builtins.str,
+                 secret_access_key_secret_id: builtins.str,
+                 service_account_key_file_secret_id: builtins.str,
+                 storage_type: builtins.str):
+        """
+        :param builtins.str access_key_id: Access key ID to access the Amazon S3 bucket.
+        :param builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        :param builtins.str account_name: Sets the Azure storage account name.
+        :param builtins.str bucket: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        :param builtins.str container: The Azure Blob Storage container where Iceberg tables are stored.
+        :param builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param builtins.str project_id: The Google Cloud Project where the bucket exists.
+        :param builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        :param builtins.str scheme_type: The scheme of the storage.
+        :param builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        :param builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        :param builtins.str storage_type: The storage type used in the Iceberg connection.
+        """
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "container", container)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "scheme_type", scheme_type)
+        pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
+        pulumi.set(__self__, "storage_type", storage_type)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> builtins.str:
+        """
+        Access key ID to access the Amazon S3 bucket.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> builtins.str:
+        """
+        Sets the Azure storage account name.
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def container(self) -> builtins.str:
+        """
+        The Azure Blob Storage container where Iceberg tables are stored.
+        """
+        return pulumi.get(self, "container")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> builtins.str:
+        """
+        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        The Google Cloud Project where the bucket exists.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="schemeType")
+    def scheme_type(self) -> builtins.str:
+        """
+        The scheme of the storage.
+        """
+        return pulumi.get(self, "scheme_type")
+
+    @property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFileSecretId")
+    def service_account_key_file_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        """
+        return pulumi.get(self, "service_account_key_file_secret_id")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> builtins.str:
+        """
+        The storage type used in the Iceberg connection.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
@@ -1906,6 +2479,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  authentication_type: builtins.str,
                  azure_tenant_id: builtins.str,
                  bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
+                 catalogs: Sequence['outputs.GetConnectionsConnectionCollectionItemCatalogResult'],
                  client_id: builtins.str,
                  client_secret: builtins.str,
                  client_secret_secret_id: builtins.str,
@@ -1985,6 +2559,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  ssl_server_certificate: builtins.str,
                  state: builtins.str,
                  storage_credential_name: builtins.str,
+                 storages: Sequence['outputs.GetConnectionsConnectionCollectionItemStorageResult'],
                  stream_pool_id: builtins.str,
                  subnet_id: builtins.str,
                  system_tags: Mapping[str, builtins.str],
@@ -2010,8 +2585,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  wallet: builtins.str,
                  wallet_secret_id: builtins.str):
         """
-        :param builtins.str access_key_id: Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
-        :param builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        :param builtins.str access_key_id: Access key ID to access the Amazon S3 bucket.
+        :param builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param builtins.str account_name: Sets the Azure storage account name.
         :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param builtins.str authentication_mode: Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
@@ -2023,6 +2598,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                * OAUTH_M2M: user must enter clientId and clientSecret
         :param builtins.str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+        :param Sequence['GetConnectionsConnectionCollectionItemCatalogArgs'] catalogs: Represents the catalog of given type used in an Iceberg connection.
         :param builtins.str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param builtins.str client_secret_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
         :param builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -2036,7 +2612,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
                * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
         :param builtins.str consumer_properties: The base64 encoded content of the consumer.properties file.
-        :param builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        :param builtins.str core_site_xml: The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        :param builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         :param builtins.str database_name: The name of the database.
         :param builtins.str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
         :param Mapping[str, builtins.str] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
@@ -2044,7 +2621,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param builtins.str description: Metadata about this specific object.
         :param builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param builtins.bool does_use_secret_ids: Indicates that sensitive attributes are provided via Secrets.
-        :param builtins.str endpoint: Service endpoint. e.g for Azure Storage service: https://test.blob.core.windows.net. Optional for Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        :param builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
         :param Mapping[str, builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param builtins.str host: The name or address of a host.
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
@@ -2069,30 +2646,35 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param builtins.str private_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param builtins.str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param builtins.str producer_properties: The base64 encoded content of the producer.properties file.
+        :param builtins.str public_key_fingerprint: The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param builtins.str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param builtins.str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param builtins.str routing_method: Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param builtins.str sas_token_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
-        :param builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        :param builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         :param builtins.str security_protocol: Security Protocol to be provided for the following connection types:
                * ELASTICSEARCH, KAFKA, MICROSOFT_SQLSERVER, MYSQL, POSTGRESQL, REDIS
                * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param builtins.str servers: Comma separated list of server addresses, specified as host:port entries, where :port is optional. Example: `"server1.example.com:4000,server2.example.com:4000"`
                If port is not specified, a default value is set, in case of ELASTICSEARCH: 9200, for REDIS 6379.
-        :param builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        :param builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         :param builtins.str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param builtins.bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
         :param builtins.bool should_use_resource_principal: Indicates that the user intents to connect to the instance through resource principal.
         :param builtins.bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
-        :param builtins.str ssl_ca: Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+        :param builtins.str ssl_ca: Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        :param builtins.str ssl_cert: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param builtins.str ssl_client_keystash_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
         :param builtins.str ssl_client_keystoredb_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        :param builtins.str ssl_crl: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param builtins.str ssl_key_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword' field must not be provided.
         :param builtins.str ssl_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
                * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         :param builtins.str ssl_mode: SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
+        :param builtins.str ssl_server_certificate: The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param builtins.str state: A filter to return only connections having the 'lifecycleState' given.
         :param builtins.str storage_credential_name: Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
+        :param Sequence['GetConnectionsConnectionCollectionItemStorageArgs'] storages: Represents the storage of given type used in an Iceberg connection.
         :param builtins.str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param Mapping[str, builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -2101,6 +2683,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param builtins.str tenant_id: Azure tenant ID of the application. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param builtins.str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param builtins.str tls_ca_file: Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param builtins.str tls_certificate_key_file_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         :param builtins.str tls_certificate_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
                * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
@@ -2121,6 +2704,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "authentication_type", authentication_type)
         pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
         pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        pulumi.set(__self__, "catalogs", catalogs)
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
         pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
@@ -2200,6 +2784,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_credential_name", storage_credential_name)
+        pulumi.set(__self__, "storages", storages)
         pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -2229,7 +2814,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> builtins.str:
         """
-        Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+        Access key ID to access the Amazon S3 bucket.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -2242,7 +2827,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="accountKeySecretId")
     def account_key_secret_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored. Note: When provided, 'accountKey' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         """
         return pulumi.get(self, "account_key_secret_id")
 
@@ -2298,6 +2883,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         """
         return pulumi.get(self, "bootstrap_servers")
+
+    @property
+    @pulumi.getter
+    def catalogs(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemCatalogResult']:
+        """
+        Represents the catalog of given type used in an Iceberg connection.
+        """
+        return pulumi.get(self, "catalogs")
 
     @property
     @pulumi.getter(name="clientId")
@@ -2376,13 +2969,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="coreSiteXml")
     def core_site_xml(self) -> builtins.str:
+        """
+        The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "core_site_xml")
 
     @property
     @pulumi.getter(name="databaseId")
     def database_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
         """
         return pulumi.get(self, "database_id")
 
@@ -2446,7 +3042,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def endpoint(self) -> builtins.str:
         """
-        Service endpoint. e.g for Azure Storage service: https://test.blob.core.windows.net. Optional for Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
         """
         return pulumi.get(self, "endpoint")
 
@@ -2664,6 +3260,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> builtins.str:
+        """
+        The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
         return pulumi.get(self, "public_key_fingerprint")
 
     @property
@@ -2678,7 +3277,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def region(self) -> builtins.str:
         """
-        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         """
         return pulumi.get(self, "region")
 
@@ -2712,7 +3311,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -2744,7 +3343,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="serviceAccountKeyFileSecretId")
     def service_account_key_file_secret_id(self) -> builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which containing the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
         return pulumi.get(self, "service_account_key_file_secret_id")
 
@@ -2784,13 +3383,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> builtins.str:
         """
-        Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL).
+        Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_ca")
 
     @property
     @pulumi.getter(name="sslCert")
     def ssl_cert(self) -> builtins.str:
+        """
+        Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "ssl_cert")
 
     @property
@@ -2822,6 +3424,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> builtins.str:
+        """
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "ssl_crl")
 
     @property
@@ -2862,6 +3467,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="sslServerCertificate")
     def ssl_server_certificate(self) -> builtins.str:
+        """
+        The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "ssl_server_certificate")
 
     @property
@@ -2879,6 +3487,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         """
         return pulumi.get(self, "storage_credential_name")
+
+    @property
+    @pulumi.getter
+    def storages(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemStorageResult']:
+        """
+        Represents the storage of given type used in an Iceberg connection.
+        """
+        return pulumi.get(self, "storages")
 
     @property
     @pulumi.getter(name="streamPoolId")
@@ -2947,6 +3563,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @property
     @pulumi.getter(name="tlsCaFile")
     def tls_ca_file(self) -> builtins.str:
+        """
+        Database Certificate - The base64 encoded content of a .pem file, containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        """
         return pulumi.get(self, "tls_ca_file")
 
     @property
@@ -3059,7 +3678,7 @@ class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
                  name: builtins.str,
                  value: builtins.str):
         """
-        :param builtins.str name: The name of the property entry.
+        :param builtins.str name: The catalog name within Polaris where Iceberg tables are registered.
         :param builtins.str value: The value of the property entry.
         """
         pulumi.set(__self__, "name", name)
@@ -3069,7 +3688,7 @@ class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        The name of the property entry.
+        The catalog name within Polaris where Iceberg tables are registered.
         """
         return pulumi.get(self, "name")
 
@@ -3126,6 +3745,112 @@ class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
         The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
         """
         return pulumi.get(self, "private_ip")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemCatalogResult(dict):
+    def __init__(__self__, *,
+                 branch: builtins.str,
+                 catalog_type: builtins.str,
+                 client_id: builtins.str,
+                 client_secret_secret_id: builtins.str,
+                 glue_id: builtins.str,
+                 name: builtins.str,
+                 principal_role: builtins.str,
+                 properties_secret_id: builtins.str,
+                 uri: builtins.str):
+        """
+        :param builtins.str branch: The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        :param builtins.str catalog_type: The catalog type.
+        :param builtins.str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        :param builtins.str client_secret_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        :param builtins.str glue_id: The AWS Glue Catalog ID where Iceberg tables are registered.
+        :param builtins.str name: The catalog name within Polaris where Iceberg tables are registered.
+        :param builtins.str principal_role: The Snowflake role used to access Polaris.
+        :param builtins.str properties_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param builtins.str uri: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        """
+        pulumi.set(__self__, "branch", branch)
+        pulumi.set(__self__, "catalog_type", catalog_type)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
+        pulumi.set(__self__, "glue_id", glue_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "principal_role", principal_role)
+        pulumi.set(__self__, "properties_secret_id", properties_secret_id)
+        pulumi.set(__self__, "uri", uri)
+
+    @property
+    @pulumi.getter
+    def branch(self) -> builtins.str:
+        """
+        The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
+        """
+        return pulumi.get(self, "branch")
+
+    @property
+    @pulumi.getter(name="catalogType")
+    def catalog_type(self) -> builtins.str:
+        """
+        The catalog type.
+        """
+        return pulumi.get(self, "catalog_type")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> builtins.str:
+        """
+        Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="clientSecretSecretId")
+    def client_secret_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not be provided.
+        """
+        return pulumi.get(self, "client_secret_secret_id")
+
+    @property
+    @pulumi.getter(name="glueId")
+    def glue_id(self) -> builtins.str:
+        """
+        The AWS Glue Catalog ID where Iceberg tables are registered.
+        """
+        return pulumi.get(self, "glue_id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The catalog name within Polaris where Iceberg tables are registered.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="principalRole")
+    def principal_role(self) -> builtins.str:
+        """
+        The Snowflake role used to access Polaris.
+        """
+        return pulumi.get(self, "principal_role")
+
+    @property
+    @pulumi.getter(name="propertiesSecretId")
+    def properties_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "properties_secret_id")
+
+    @property
+    @pulumi.getter
+    def uri(self) -> builtins.str:
+        """
+        The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
+        """
+        return pulumi.get(self, "uri")
 
 
 @pulumi.output_type
@@ -3198,13 +3923,152 @@ class GetConnectionsConnectionCollectionItemLockResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionsConnectionCollectionItemStorageResult(dict):
+    def __init__(__self__, *,
+                 access_key_id: builtins.str,
+                 account_key_secret_id: builtins.str,
+                 account_name: builtins.str,
+                 bucket: builtins.str,
+                 container: builtins.str,
+                 endpoint: builtins.str,
+                 project_id: builtins.str,
+                 region: builtins.str,
+                 scheme_type: builtins.str,
+                 secret_access_key_secret_id: builtins.str,
+                 service_account_key_file_secret_id: builtins.str,
+                 storage_type: builtins.str):
+        """
+        :param builtins.str access_key_id: Access key ID to access the Amazon S3 bucket.
+        :param builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        :param builtins.str account_name: Sets the Azure storage account name.
+        :param builtins.str bucket: Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        :param builtins.str container: The Azure Blob Storage container where Iceberg tables are stored.
+        :param builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param builtins.str project_id: The Google Cloud Project where the bucket exists.
+        :param builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        :param builtins.str scheme_type: The scheme of the storage.
+        :param builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        :param builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        :param builtins.str storage_type: The storage type used in the Iceberg connection.
+        """
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "container", container)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "scheme_type", scheme_type)
+        pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        pulumi.set(__self__, "service_account_key_file_secret_id", service_account_key_file_secret_id)
+        pulumi.set(__self__, "storage_type", storage_type)
+
+    @property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> builtins.str:
+        """
+        Access key ID to access the Amazon S3 bucket.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> builtins.str:
+        """
+        Sets the Azure storage account name.
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        Google Cloud Storage bucket where Iceberg stores metadata and data files.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def container(self) -> builtins.str:
+        """
+        The Azure Blob Storage container where Iceberg tables are stored.
+        """
+        return pulumi.get(self, "container")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> builtins.str:
+        """
+        The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> builtins.str:
+        """
+        The Google Cloud Project where the bucket exists.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> builtins.str:
+        """
+        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="schemeType")
+    def scheme_type(self) -> builtins.str:
+        """
+        The scheme of the storage.
+        """
+        return pulumi.get(self, "scheme_type")
+
+    @property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @property
+    @pulumi.getter(name="serviceAccountKeyFileSecretId")
+    def service_account_key_file_secret_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
+        """
+        return pulumi.get(self, "service_account_key_file_secret_id")
+
+    @property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> builtins.str:
+        """
+        The storage type used in the Iceberg connection.
+        """
+        return pulumi.get(self, "storage_type")
+
+
+@pulumi.output_type
 class GetConnectionsFilterResult(dict):
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],
                  regex: Optional[builtins.bool] = None):
         """
-        :param builtins.str name: The name of the property entry.
+        :param builtins.str name: The catalog name within Polaris where Iceberg tables are registered.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -3215,7 +4079,7 @@ class GetConnectionsFilterResult(dict):
     @pulumi.getter
     def name(self) -> builtins.str:
         """
-        The name of the property entry.
+        The catalog name within Polaris where Iceberg tables are registered.
         """
         return pulumi.get(self, "name")
 

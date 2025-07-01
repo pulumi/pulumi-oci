@@ -29,10 +29,13 @@ class GetAnnouncementsResult:
     """
     A collection of values returned by getAnnouncements.
     """
-    def __init__(__self__, announcement_collections=None, display_name=None, filters=None, id=None, summary_contains=None):
+    def __init__(__self__, announcement_collections=None, compartment_id=None, display_name=None, filters=None, id=None, summary_contains=None):
         if announcement_collections and not isinstance(announcement_collections, list):
             raise TypeError("Expected argument 'announcement_collections' to be a list")
         pulumi.set(__self__, "announcement_collections", announcement_collections)
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -53,6 +56,14 @@ class GetAnnouncementsResult:
         The list of announcement_collection.
         """
         return pulumi.get(self, "announcement_collections")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        Tenancy OCID
+        """
+        return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
@@ -88,20 +99,22 @@ class AwaitableGetAnnouncementsResult(GetAnnouncementsResult):
             yield self
         return GetAnnouncementsResult(
             announcement_collections=self.announcement_collections,
+            compartment_id=self.compartment_id,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
             summary_contains=self.summary_contains)
 
 
-def get_announcements(display_name: Optional[builtins.str] = None,
+def get_announcements(compartment_id: Optional[builtins.str] = None,
+                      display_name: Optional[builtins.str] = None,
                       filters: Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]] = None,
                       summary_contains: Optional[builtins.str] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAnnouncementsResult:
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Return a list of AnnouncementSummary items.
+    Return a list of Announcement Summary items in a tenancy.
 
     ## Example Usage
 
@@ -109,15 +122,18 @@ def get_announcements(display_name: Optional[builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.FleetAppsManagement.get_announcements(display_name=announcement_display_name,
+    test_announcements = oci.FleetAppsManagement.get_announcements(compartment_id=compartment_id,
+        display_name=announcement_display_name,
         summary_contains=announcement_summary_contains)
     ```
 
 
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param builtins.str summary_contains: Filter the list of announcements that contains the given summary value.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['summaryContains'] = summary_contains
@@ -126,18 +142,20 @@ def get_announcements(display_name: Optional[builtins.str] = None,
 
     return AwaitableGetAnnouncementsResult(
         announcement_collections=pulumi.get(__ret__, 'announcement_collections'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         summary_contains=pulumi.get(__ret__, 'summary_contains'))
-def get_announcements_output(display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+def get_announcements_output(compartment_id: Optional[pulumi.Input[builtins.str]] = None,
+                             display_name: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              filters: Optional[pulumi.Input[Optional[Sequence[Union['GetAnnouncementsFilterArgs', 'GetAnnouncementsFilterArgsDict']]]]] = None,
                              summary_contains: Optional[pulumi.Input[Optional[builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAnnouncementsResult]:
     """
     This data source provides the list of Announcements in Oracle Cloud Infrastructure Fleet Apps Management service.
 
-    Return a list of AnnouncementSummary items.
+    Return a list of Announcement Summary items in a tenancy.
 
     ## Example Usage
 
@@ -145,15 +163,18 @@ def get_announcements_output(display_name: Optional[pulumi.Input[Optional[builti
     import pulumi
     import pulumi_oci as oci
 
-    test_announcements = oci.FleetAppsManagement.get_announcements(display_name=announcement_display_name,
+    test_announcements = oci.FleetAppsManagement.get_announcements(compartment_id=compartment_id,
+        display_name=announcement_display_name,
         summary_contains=announcement_summary_contains)
     ```
 
 
+    :param builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param builtins.str display_name: A filter to return only resources that match the entire display name given.
     :param builtins.str summary_contains: Filter the list of announcements that contains the given summary value.
     """
     __args__ = dict()
+    __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['summaryContains'] = summary_contains
@@ -161,6 +182,7 @@ def get_announcements_output(display_name: Optional[pulumi.Input[Optional[builti
     __ret__ = pulumi.runtime.invoke_output('oci:FleetAppsManagement/getAnnouncements:getAnnouncements', __args__, opts=opts, typ=GetAnnouncementsResult)
     return __ret__.apply(lambda __response__: GetAnnouncementsResult(
         announcement_collections=pulumi.get(__response__, 'announcement_collections'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

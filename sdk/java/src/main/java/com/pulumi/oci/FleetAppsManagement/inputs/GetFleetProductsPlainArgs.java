@@ -18,14 +18,14 @@ public final class GetFleetProductsPlainArgs extends com.pulumi.resources.Invoke
     public static final GetFleetProductsPlainArgs Empty = new GetFleetProductsPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
      * 
      */
     public Optional<String> compartmentId() {
@@ -129,7 +129,7 @@ public final class GetFleetProductsPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
          * 
          * @return builder
          * 

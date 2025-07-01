@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *             .displayName(mysqlBackupDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .retentionInDays(mysqlBackupRetentionInDays)
+ *             .softDelete(mysqlBackupSoftDelete)
  *             .build());
  * 
  *     }
@@ -320,6 +321,20 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> shapeName() {
         return this.shapeName;
+    }
+    /**
+     * (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    @Export(name="softDelete", refs={String.class}, tree="[0]")
+    private Output<String> softDelete;
+
+    /**
+     * @return (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
+     * 
+     */
+    public Output<String> softDelete() {
+        return this.softDelete;
     }
     /**
      * Details of backup source in the cloud.

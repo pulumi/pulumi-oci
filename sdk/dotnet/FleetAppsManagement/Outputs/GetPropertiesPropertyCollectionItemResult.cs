@@ -14,7 +14,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
     public sealed class GetPropertiesPropertyCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// A filter to return only resources whose Property identifier matches the given identifier.
+        /// Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// The type of the property.
+        /// A filter to return properties whose type matches the given type.
         /// </summary>
         public readonly string Type;
         /// <summary>

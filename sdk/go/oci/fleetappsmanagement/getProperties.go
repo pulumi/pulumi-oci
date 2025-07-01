@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
 //
-// List properties and their values for a tenancy in Fleet Application Management.
+// Returns a list of all the Properties in the specified compartment.
+// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
 //
 // ## Example Usage
 //
@@ -35,6 +36,7 @@ import (
 //				Id:            pulumi.StringRef(propertyId),
 //				Scope:         pulumi.StringRef(propertyScope),
 //				State:         pulumi.StringRef(propertyState),
+//				Type:          pulumi.StringRef(propertyType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -56,22 +58,24 @@ func GetProperties(ctx *pulumi.Context, args *GetPropertiesArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getProperties.
 type GetPropertiesArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string               `pulumi:"displayName"`
 	Filters     []GetPropertiesFilter `pulumi:"filters"`
-	// A filter to return only resources whose Property identifier matches the given identifier.
+	// Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
 	Id *string `pulumi:"id"`
 	// A filter to return only resources their scope matches the given scope.
 	Scope *string `pulumi:"scope"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State *string `pulumi:"state"`
+	// A filter to return properties whose type matches the given type.
+	Type *string `pulumi:"type"`
 }
 
 // A collection of values returned by getProperties.
 type GetPropertiesResult struct {
-	// Tenancy OCID
+	// Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string               `pulumi:"displayName"`
@@ -84,6 +88,8 @@ type GetPropertiesResult struct {
 	Scope *string `pulumi:"scope"`
 	// The current state of the Property.
 	State *string `pulumi:"state"`
+	// The type of the property.
+	Type *string `pulumi:"type"`
 }
 
 func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts ...pulumi.InvokeOption) GetPropertiesResultOutput {
@@ -97,17 +103,19 @@ func GetPropertiesOutput(ctx *pulumi.Context, args GetPropertiesOutputArgs, opts
 
 // A collection of arguments for invoking getProperties.
 type GetPropertiesOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The ID of the compartment in which to list resources. Empty only if the resource OCID query param is not specified.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput         `pulumi:"displayName"`
 	Filters     GetPropertiesFilterArrayInput `pulumi:"filters"`
-	// A filter to return only resources whose Property identifier matches the given identifier.
+	// Unique identifier or OCID for listing a single Property by id. Either compartmentId or id must be provided.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// A filter to return only resources their scope matches the given scope.
 	Scope pulumi.StringPtrInput `pulumi:"scope"`
 	// A filter to return only resources whose lifecycleState matches the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return properties whose type matches the given type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (GetPropertiesOutputArgs) ElementType() reflect.Type {
@@ -129,7 +137,7 @@ func (o GetPropertiesResultOutput) ToGetPropertiesResultOutputWithContext(ctx co
 	return o
 }
 
-// Tenancy OCID
+// Compartment OCID
 func (o GetPropertiesResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPropertiesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -161,6 +169,11 @@ func (o GetPropertiesResultOutput) Scope() pulumi.StringPtrOutput {
 // The current state of the Property.
 func (o GetPropertiesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPropertiesResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The type of the property.
+func (o GetPropertiesResultOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetPropertiesResult) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
 func init() {

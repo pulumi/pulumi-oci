@@ -5,7 +5,9 @@ package com.pulumi.oci.FleetAppsManagement.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetAppsManagement.inputs.GetOnboardingPoliciesFilterArgs;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -15,6 +17,21 @@ import javax.annotation.Nullable;
 public final class GetOnboardingPoliciesArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetOnboardingPoliciesArgs Empty = new GetOnboardingPoliciesArgs();
+
+    /**
+     * The ID of the compartment in which to list resources.
+     * 
+     */
+    @Import(name="compartmentId", required=true)
+    private Output<String> compartmentId;
+
+    /**
+     * @return The ID of the compartment in which to list resources.
+     * 
+     */
+    public Output<String> compartmentId() {
+        return this.compartmentId;
+    }
 
     @Import(name="filters")
     private @Nullable Output<List<GetOnboardingPoliciesFilterArgs>> filters;
@@ -26,6 +43,7 @@ public final class GetOnboardingPoliciesArgs extends com.pulumi.resources.Invoke
     private GetOnboardingPoliciesArgs() {}
 
     private GetOnboardingPoliciesArgs(GetOnboardingPoliciesArgs $) {
+        this.compartmentId = $.compartmentId;
         this.filters = $.filters;
     }
 
@@ -47,6 +65,27 @@ public final class GetOnboardingPoliciesArgs extends com.pulumi.resources.Invoke
             $ = new GetOnboardingPoliciesArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compartmentId The ID of the compartment in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId The ID of the compartment in which to list resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
+        }
+
         public Builder filters(@Nullable Output<List<GetOnboardingPoliciesFilterArgs>> filters) {
             $.filters = filters;
             return this;
@@ -61,6 +100,9 @@ public final class GetOnboardingPoliciesArgs extends com.pulumi.resources.Invoke
         }
 
         public GetOnboardingPoliciesArgs build() {
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("GetOnboardingPoliciesArgs", "compartmentId");
+            }
             return $;
         }
     }

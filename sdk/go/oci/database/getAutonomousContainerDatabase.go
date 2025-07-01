@@ -60,6 +60,7 @@ type LookupAutonomousContainerDatabaseArgs struct {
 type LookupAutonomousContainerDatabaseResult struct {
 	// A backup config object holds information about preferred backup destinations only. This object holds information about the associated backup destinations, such as secondary backup destinations created for local backups or remote replicated backups.
 	AssociatedBackupConfigurationDetails []GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail `pulumi:"associatedBackupConfigurationDetails"`
+	AutonomousContainerDatabaseBackupId  string                                                              `pulumi:"autonomousContainerDatabaseBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`
 	// **No longer used.** For Autonomous Database on dedicated Exadata infrastructure, the container database is created within a specified `cloudAutonomousVmCluster`.
@@ -115,7 +116,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	IsDataGuardEnabled bool `pulumi:"isDataGuardEnabled"`
 	// Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
 	IsDstFileUpdateEnabled bool `pulumi:"isDstFileUpdateEnabled"`
-	// Whether it is multiple standby Autonomous Dataguard
+	// Indicates if it is multiple standby Autonomous Dataguard
 	IsMultipleStandby bool `pulumi:"isMultipleStandby"`
 	// Key History Entry.
 	KeyHistoryEntries []GetAutonomousContainerDatabaseKeyHistoryEntry `pulumi:"keyHistoryEntries"`
@@ -173,6 +174,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	RotateKeyTrigger bool   `pulumi:"rotateKeyTrigger"`
 	// The service level agreement type of the container database. The default is STANDARD.
 	ServiceLevelAgreementType string `pulumi:"serviceLevelAgreementType"`
+	Source                    string `pulumi:"source"`
 	// The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
 	StandbyMaintenanceBufferInDays int `pulumi:"standbyMaintenanceBufferInDays"`
 	// The current state of the Autonomous Container Database.
@@ -233,6 +235,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) AssociatedBackupConfigura
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail {
 		return v.AssociatedBackupConfigurationDetails
 	}).(GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetailArrayOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) AutonomousContainerDatabaseBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.AutonomousContainerDatabaseBackupId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database that has a relationship with the peer Autonomous Container Database. Used only by Autonomous Database on Dedicated Exadata Infrastructure.
@@ -385,7 +391,7 @@ func (o LookupAutonomousContainerDatabaseResultOutput) IsDstFileUpdateEnabled() 
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.IsDstFileUpdateEnabled }).(pulumi.BoolOutput)
 }
 
-// Whether it is multiple standby Autonomous Dataguard
+// Indicates if it is multiple standby Autonomous Dataguard
 func (o LookupAutonomousContainerDatabaseResultOutput) IsMultipleStandby() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) bool { return v.IsMultipleStandby }).(pulumi.BoolOutput)
 }
@@ -559,6 +565,10 @@ func (o LookupAutonomousContainerDatabaseResultOutput) RotateKeyTrigger() pulumi
 // The service level agreement type of the container database. The default is STANDARD.
 func (o LookupAutonomousContainerDatabaseResultOutput) ServiceLevelAgreementType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ServiceLevelAgreementType }).(pulumi.StringOutput)
+}
+
+func (o LookupAutonomousContainerDatabaseResultOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.Source }).(pulumi.StringOutput)
 }
 
 // The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.

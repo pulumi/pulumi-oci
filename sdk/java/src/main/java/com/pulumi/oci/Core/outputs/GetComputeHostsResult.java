@@ -9,6 +9,7 @@ import com.pulumi.oci.Core.outputs.GetComputeHostsComputeHostCollection;
 import com.pulumi.oci.Core.outputs.GetComputeHostsFilter;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -30,6 +31,11 @@ public final class GetComputeHostsResult {
      * 
      */
     private List<GetComputeHostsComputeHostCollection> computeHostCollections;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+     * 
+     */
+    private @Nullable String computeHostGroupId;
     private @Nullable String computeHostHealth;
     private @Nullable String computeHostLifecycleState;
     /**
@@ -43,6 +49,11 @@ public final class GetComputeHostsResult {
      * 
      */
     private String id;
+    /**
+     * @return A free-form description detailing why the host is in its current state.
+     * 
+     */
+    private Map<String,String> lifecycleDetails;
     private @Nullable String networkResourceId;
 
     private GetComputeHostsResult() {}
@@ -67,6 +78,13 @@ public final class GetComputeHostsResult {
     public List<GetComputeHostsComputeHostCollection> computeHostCollections() {
         return this.computeHostCollections;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
+     * 
+     */
+    public Optional<String> computeHostGroupId() {
+        return Optional.ofNullable(this.computeHostGroupId);
+    }
     public Optional<String> computeHostHealth() {
         return Optional.ofNullable(this.computeHostHealth);
     }
@@ -90,6 +108,13 @@ public final class GetComputeHostsResult {
     public String id() {
         return this.id;
     }
+    /**
+     * @return A free-form description detailing why the host is in its current state.
+     * 
+     */
+    public Map<String,String> lifecycleDetails() {
+        return this.lifecycleDetails;
+    }
     public Optional<String> networkResourceId() {
         return Optional.ofNullable(this.networkResourceId);
     }
@@ -106,11 +131,13 @@ public final class GetComputeHostsResult {
         private @Nullable String availabilityDomain;
         private String compartmentId;
         private List<GetComputeHostsComputeHostCollection> computeHostCollections;
+        private @Nullable String computeHostGroupId;
         private @Nullable String computeHostHealth;
         private @Nullable String computeHostLifecycleState;
         private @Nullable String displayName;
         private @Nullable List<GetComputeHostsFilter> filters;
         private String id;
+        private Map<String,String> lifecycleDetails;
         private @Nullable String networkResourceId;
         public Builder() {}
         public Builder(GetComputeHostsResult defaults) {
@@ -118,11 +145,13 @@ public final class GetComputeHostsResult {
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeHostCollections = defaults.computeHostCollections;
+    	      this.computeHostGroupId = defaults.computeHostGroupId;
     	      this.computeHostHealth = defaults.computeHostHealth;
     	      this.computeHostLifecycleState = defaults.computeHostLifecycleState;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.networkResourceId = defaults.networkResourceId;
         }
 
@@ -150,6 +179,12 @@ public final class GetComputeHostsResult {
         }
         public Builder computeHostCollections(GetComputeHostsComputeHostCollection... computeHostCollections) {
             return computeHostCollections(List.of(computeHostCollections));
+        }
+        @CustomType.Setter
+        public Builder computeHostGroupId(@Nullable String computeHostGroupId) {
+
+            this.computeHostGroupId = computeHostGroupId;
+            return this;
         }
         @CustomType.Setter
         public Builder computeHostHealth(@Nullable String computeHostHealth) {
@@ -187,6 +222,14 @@ public final class GetComputeHostsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder lifecycleDetails(Map<String,String> lifecycleDetails) {
+            if (lifecycleDetails == null) {
+              throw new MissingRequiredPropertyException("GetComputeHostsResult", "lifecycleDetails");
+            }
+            this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder networkResourceId(@Nullable String networkResourceId) {
 
             this.networkResourceId = networkResourceId;
@@ -197,11 +240,13 @@ public final class GetComputeHostsResult {
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeHostCollections = computeHostCollections;
+            _resultValue.computeHostGroupId = computeHostGroupId;
             _resultValue.computeHostHealth = computeHostHealth;
             _resultValue.computeHostLifecycleState = computeHostLifecycleState;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.networkResourceId = networkResourceId;
             return _resultValue;
         }

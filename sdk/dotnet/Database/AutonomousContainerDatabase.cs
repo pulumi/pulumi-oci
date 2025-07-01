@@ -31,6 +31,9 @@ namespace Pulumi.Oci.Database
         [Output("associatedBackupConfigurationDetails")]
         public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail>> AssociatedBackupConfigurationDetails { get; private set; } = null!;
 
+        [Output("autonomousContainerDatabaseBackupId")]
+        public Output<string> AutonomousContainerDatabaseBackupId { get; private set; } = null!;
+
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
@@ -191,7 +194,7 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsDstFileUpdateEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// Whether it is multiple standby Autonomous Dataguard
+        /// Indicates if it is multiple standby Autonomous Dataguard
         /// </summary>
         [Output("isMultipleStandby")]
         public Output<bool> IsMultipleStandby { get; private set; } = null!;
@@ -342,7 +345,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous Container Database.
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Output("provisionedCpus")]
         public Output<double> ProvisionedCpus { get; private set; } = null!;
@@ -351,7 +353,6 @@ namespace Pulumi.Oci.Database
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Output("reclaimableCpus")]
         public Output<double> ReclaimableCpus { get; private set; } = null!;
@@ -396,6 +397,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("serviceLevelAgreementType")]
         public Output<string> ServiceLevelAgreementType { get; private set; } = null!;
+
+        /// <summary>
+        /// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+        /// </summary>
+        [Output("source")]
+        public Output<string> Source { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
@@ -503,6 +510,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class AutonomousContainerDatabaseArgs : global::Pulumi.ResourceArgs
     {
+        [Input("autonomousContainerDatabaseBackupId")]
+        public Input<string>? AutonomousContainerDatabaseBackupId { get; set; }
+
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
         /// </summary>
@@ -720,6 +730,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? ServiceLevelAgreementType { get; set; }
 
         /// <summary>
+        /// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+        /// </summary>
+        [Input("source")]
+        public Input<string>? Source { get; set; }
+
+        /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         /// </summary>
         [Input("standbyMaintenanceBufferInDays")]
@@ -768,6 +784,9 @@ namespace Pulumi.Oci.Database
             get => _associatedBackupConfigurationDetails ?? (_associatedBackupConfigurationDetails = new InputList<Inputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetailGetArgs>());
             set => _associatedBackupConfigurationDetails = value;
         }
+
+        [Input("autonomousContainerDatabaseBackupId")]
+        public Input<string>? AutonomousContainerDatabaseBackupId { get; set; }
 
         /// <summary>
         /// **No longer used.** This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `cloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -959,7 +978,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDstFileUpdateEnabled { get; set; }
 
         /// <summary>
-        /// Whether it is multiple standby Autonomous Dataguard
+        /// Indicates if it is multiple standby Autonomous Dataguard
         /// </summary>
         [Input("isMultipleStandby")]
         public Input<bool>? IsMultipleStandby { get; set; }
@@ -1134,7 +1153,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The number of CPUs provisioned in an Autonomous Container Database.
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         [Input("provisionedCpus")]
         public Input<double>? ProvisionedCpus { get; set; }
@@ -1143,7 +1161,6 @@ namespace Pulumi.Oci.Database
         /// For Autonomous Databases on Dedicated Exadata Infrastructure:
         /// * These are the CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
         /// * The CPU type (OCPUs or ECPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model.
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
         /// </summary>
         [Input("reclaimableCpus")]
         public Input<double>? ReclaimableCpus { get; set; }
@@ -1194,6 +1211,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("serviceLevelAgreementType")]
         public Input<string>? ServiceLevelAgreementType { get; set; }
+
+        /// <summary>
+        /// The source of the database: Use `NONE` for creating a new Autonomous Container Database. Use `BACKUP_FROM_ID` for creating a new Autonomous Container Database from a specified backup.
+        /// </summary>
+        [Input("source")]
+        public Input<string>? Source { get; set; }
 
         /// <summary>
         /// (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.

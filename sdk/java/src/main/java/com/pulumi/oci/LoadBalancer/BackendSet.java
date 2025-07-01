@@ -121,14 +121,22 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:LoadBalancer/backendSet:BackendSet")
 public class BackendSet extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+     * 
+     * If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+     * 
+     * Example: `300`
      * 
      */
     @Export(name="backendMaxConnections", refs={Integer.class}, tree="[0]")
     private Output<Integer> backendMaxConnections;
 
     /**
-     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.  Example: `300`
+     * @return (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
+     * 
+     * If setting backendMaxConnections to some value other than 0 then that value must be greater or equal to 256.
+     * 
+     * Example: `300`
      * 
      */
     public Output<Integer> backendMaxConnections() {

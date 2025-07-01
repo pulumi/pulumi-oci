@@ -28,7 +28,7 @@ class GetManagedMySqlDatabaseResult:
     """
     A collection of values returned by getManagedMySqlDatabase.
     """
-    def __init__(__self__, compartment_id=None, database_type=None, db_name=None, db_version=None, heat_wave_cluster_display_name=None, heat_wave_memory_size=None, heat_wave_node_shape=None, heat_wave_nodes=None, id=None, is_heat_wave_active=None, is_heat_wave_enabled=None, is_lakehouse_enabled=None, managed_my_sql_database_id=None, management_state=None, name=None, state=None, time_created=None, time_created_heat_wave=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, database_type=None, db_name=None, db_version=None, heat_wave_cluster_display_name=None, heat_wave_management_type=None, heat_wave_memory_size=None, heat_wave_node_shape=None, heat_wave_nodes=None, id=None, is_heat_wave_active=None, is_heat_wave_enabled=None, is_lakehouse_enabled=None, managed_my_sql_database_id=None, management_state=None, name=None, state=None, time_created=None, time_created_heat_wave=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -44,6 +44,9 @@ class GetManagedMySqlDatabaseResult:
         if heat_wave_cluster_display_name and not isinstance(heat_wave_cluster_display_name, str):
             raise TypeError("Expected argument 'heat_wave_cluster_display_name' to be a str")
         pulumi.set(__self__, "heat_wave_cluster_display_name", heat_wave_cluster_display_name)
+        if heat_wave_management_type and not isinstance(heat_wave_management_type, str):
+            raise TypeError("Expected argument 'heat_wave_management_type' to be a str")
+        pulumi.set(__self__, "heat_wave_management_type", heat_wave_management_type)
         if heat_wave_memory_size and not isinstance(heat_wave_memory_size, int):
             raise TypeError("Expected argument 'heat_wave_memory_size' to be a int")
         pulumi.set(__self__, "heat_wave_memory_size", heat_wave_memory_size)
@@ -126,6 +129,14 @@ class GetManagedMySqlDatabaseResult:
         The name of the HeatWave cluster.
         """
         return pulumi.get(self, "heat_wave_cluster_display_name")
+
+    @property
+    @pulumi.getter(name="heatWaveManagementType")
+    def heat_wave_management_type(self) -> builtins.str:
+        """
+        The customer's selected type for HeatWave management.
+        """
+        return pulumi.get(self, "heat_wave_management_type")
 
     @property
     @pulumi.getter(name="heatWaveMemorySize")
@@ -248,6 +259,7 @@ class AwaitableGetManagedMySqlDatabaseResult(GetManagedMySqlDatabaseResult):
             db_name=self.db_name,
             db_version=self.db_version,
             heat_wave_cluster_display_name=self.heat_wave_cluster_display_name,
+            heat_wave_management_type=self.heat_wave_management_type,
             heat_wave_memory_size=self.heat_wave_memory_size,
             heat_wave_node_shape=self.heat_wave_node_shape,
             heat_wave_nodes=self.heat_wave_nodes,
@@ -294,6 +306,7 @@ def get_managed_my_sql_database(managed_my_sql_database_id: Optional[builtins.st
         db_name=pulumi.get(__ret__, 'db_name'),
         db_version=pulumi.get(__ret__, 'db_version'),
         heat_wave_cluster_display_name=pulumi.get(__ret__, 'heat_wave_cluster_display_name'),
+        heat_wave_management_type=pulumi.get(__ret__, 'heat_wave_management_type'),
         heat_wave_memory_size=pulumi.get(__ret__, 'heat_wave_memory_size'),
         heat_wave_node_shape=pulumi.get(__ret__, 'heat_wave_node_shape'),
         heat_wave_nodes=pulumi.get(__ret__, 'heat_wave_nodes'),
@@ -337,6 +350,7 @@ def get_managed_my_sql_database_output(managed_my_sql_database_id: Optional[pulu
         db_name=pulumi.get(__response__, 'db_name'),
         db_version=pulumi.get(__response__, 'db_version'),
         heat_wave_cluster_display_name=pulumi.get(__response__, 'heat_wave_cluster_display_name'),
+        heat_wave_management_type=pulumi.get(__response__, 'heat_wave_management_type'),
         heat_wave_memory_size=pulumi.get(__response__, 'heat_wave_memory_size'),
         heat_wave_node_shape=pulumi.get(__response__, 'heat_wave_node_shape'),
         heat_wave_nodes=pulumi.get(__response__, 'heat_wave_nodes'),

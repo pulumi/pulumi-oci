@@ -40,7 +40,8 @@ class MigrationArgs:
                  hub_details: Optional[pulumi.Input['MigrationHubDetailsArgs']] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
                  initial_load_settings: Optional[pulumi.Input['MigrationInitialLoadSettingsArgs']] = None,
-                 source_container_database_connection_id: Optional[pulumi.Input[builtins.str]] = None):
+                 source_container_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
+                 source_standby_database_connection_id: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a Migration resource.
         :param pulumi.Input[builtins.str] compartment_id: (Updatable) The OCID of the resource being referenced.
@@ -66,6 +67,7 @@ class MigrationArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
         :param pulumi.Input['MigrationInitialLoadSettingsArgs'] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
+        :param pulumi.Input[builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "database_combination", database_combination)
@@ -100,6 +102,8 @@ class MigrationArgs:
             pulumi.set(__self__, "initial_load_settings", initial_load_settings)
         if source_container_database_connection_id is not None:
             pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
+        if source_standby_database_connection_id is not None:
+            pulumi.set(__self__, "source_standby_database_connection_id", source_standby_database_connection_id)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -333,6 +337,18 @@ class MigrationArgs:
     def source_container_database_connection_id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "source_container_database_connection_id", value)
 
+    @property
+    @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
+    def source_standby_database_connection_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "source_standby_database_connection_id")
+
+    @source_standby_database_connection_id.setter
+    def source_standby_database_connection_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_standby_database_connection_id", value)
+
 
 @pulumi.input_type
 class _MigrationState:
@@ -356,6 +372,7 @@ class _MigrationState:
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
+                 source_standby_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  target_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -385,6 +402,7 @@ class _MigrationState:
         :param pulumi.Input[builtins.str] lifecycle_details: Additional status related to the execution and current state of the Migration.
         :param pulumi.Input[builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
+        :param pulumi.Input[builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] state: The current state of the Migration resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
@@ -436,6 +454,8 @@ class _MigrationState:
             pulumi.set(__self__, "source_container_database_connection_id", source_container_database_connection_id)
         if source_database_connection_id is not None:
             pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
+        if source_standby_database_connection_id is not None:
+            pulumi.set(__self__, "source_standby_database_connection_id", source_standby_database_connection_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -682,6 +702,18 @@ class _MigrationState:
         pulumi.set(self, "source_database_connection_id", value)
 
     @property
+    @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
+    def source_standby_database_connection_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "source_standby_database_connection_id")
+
+    @source_standby_database_connection_id.setter
+    def source_standby_database_connection_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "source_standby_database_connection_id", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -805,6 +837,7 @@ class Migration(pulumi.CustomResource):
                  initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
+                 source_standby_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  target_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -939,7 +972,8 @@ class Migration(pulumi.CustomResource):
                     "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
                 },
             },
-            source_container_database_connection_id=test_connection["id"])
+            source_container_database_connection_id=test_connection["id"],
+            source_standby_database_connection_id=test_connection["id"])
         ```
 
         ## Import
@@ -969,6 +1003,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']] initial_load_settings: (Updatable) Optional settings for Data Pump Export and Import jobs
         :param pulumi.Input[builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
+        :param pulumi.Input[builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] type: (Updatable) The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
                
@@ -1113,7 +1148,8 @@ class Migration(pulumi.CustomResource):
                     "remap_target": migration_initial_load_settings_tablespace_details_remap_target,
                 },
             },
-            source_container_database_connection_id=test_connection["id"])
+            source_container_database_connection_id=test_connection["id"],
+            source_standby_database_connection_id=test_connection["id"])
         ```
 
         ## Import
@@ -1156,6 +1192,7 @@ class Migration(pulumi.CustomResource):
                  initial_load_settings: Optional[pulumi.Input[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict']]] = None,
                  source_container_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
+                 source_standby_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  target_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
                  type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -1190,6 +1227,7 @@ class Migration(pulumi.CustomResource):
             if source_database_connection_id is None and not opts.urn:
                 raise TypeError("Missing required property 'source_database_connection_id'")
             __props__.__dict__["source_database_connection_id"] = source_database_connection_id
+            __props__.__dict__["source_standby_database_connection_id"] = source_standby_database_connection_id
             if target_database_connection_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_database_connection_id'")
             __props__.__dict__["target_database_connection_id"] = target_database_connection_id
@@ -1233,6 +1271,7 @@ class Migration(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             source_container_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
             source_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
+            source_standby_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             target_database_connection_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1267,6 +1306,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] lifecycle_details: Additional status related to the execution and current state of the Migration.
         :param pulumi.Input[builtins.str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
+        :param pulumi.Input[builtins.str] source_standby_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[builtins.str] state: The current state of the Migration resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
@@ -1303,6 +1343,7 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["source_container_database_connection_id"] = source_container_database_connection_id
         __props__.__dict__["source_database_connection_id"] = source_database_connection_id
+        __props__.__dict__["source_standby_database_connection_id"] = source_standby_database_connection_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_database_connection_id"] = target_database_connection_id
@@ -1464,6 +1505,14 @@ class Migration(pulumi.CustomResource):
         (Updatable) The OCID of the resource being referenced.
         """
         return pulumi.get(self, "source_database_connection_id")
+
+    @property
+    @pulumi.getter(name="sourceStandbyDatabaseConnectionId")
+    def source_standby_database_connection_id(self) -> pulumi.Output[Optional[builtins.str]]:
+        """
+        (Updatable) The OCID of the resource being referenced.
+        """
+        return pulumi.get(self, "source_standby_database_connection_id")
 
     @property
     @pulumi.getter

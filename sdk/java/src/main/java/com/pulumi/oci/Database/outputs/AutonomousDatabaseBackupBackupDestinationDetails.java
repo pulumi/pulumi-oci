@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -22,6 +23,16 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
      * 
      */
     private @Nullable String internetProxy;
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    private @Nullable Boolean isRemote;
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     */
+    private @Nullable String remoteRegion;
     /**
      * @return The type of backup.
      * 
@@ -52,6 +63,20 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
      */
     public Optional<String> internetProxy() {
         return Optional.ofNullable(this.internetProxy);
+    }
+    /**
+     * @return Indicates whether the backup destination is cross-region or local region.
+     * 
+     */
+    public Optional<Boolean> isRemote() {
+        return Optional.ofNullable(this.isRemote);
+    }
+    /**
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.
+     * 
+     */
+    public Optional<String> remoteRegion() {
+        return Optional.ofNullable(this.remoteRegion);
     }
     /**
      * @return The type of backup.
@@ -86,6 +111,8 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
     public static final class Builder {
         private @Nullable String id;
         private @Nullable String internetProxy;
+        private @Nullable Boolean isRemote;
+        private @Nullable String remoteRegion;
         private String type;
         private @Nullable String vpcPassword;
         private @Nullable String vpcUser;
@@ -94,6 +121,8 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
     	      Objects.requireNonNull(defaults);
     	      this.id = defaults.id;
     	      this.internetProxy = defaults.internetProxy;
+    	      this.isRemote = defaults.isRemote;
+    	      this.remoteRegion = defaults.remoteRegion;
     	      this.type = defaults.type;
     	      this.vpcPassword = defaults.vpcPassword;
     	      this.vpcUser = defaults.vpcUser;
@@ -109,6 +138,18 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
         public Builder internetProxy(@Nullable String internetProxy) {
 
             this.internetProxy = internetProxy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isRemote(@Nullable Boolean isRemote) {
+
+            this.isRemote = isRemote;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder remoteRegion(@Nullable String remoteRegion) {
+
+            this.remoteRegion = remoteRegion;
             return this;
         }
         @CustomType.Setter
@@ -135,6 +176,8 @@ public final class AutonomousDatabaseBackupBackupDestinationDetails {
             final var _resultValue = new AutonomousDatabaseBackupBackupDestinationDetails();
             _resultValue.id = id;
             _resultValue.internetProxy = internetProxy;
+            _resultValue.isRemote = isRemote;
+            _resultValue.remoteRegion = remoteRegion;
             _resultValue.type = type;
             _resultValue.vpcPassword = vpcPassword;
             _resultValue.vpcUser = vpcUser;

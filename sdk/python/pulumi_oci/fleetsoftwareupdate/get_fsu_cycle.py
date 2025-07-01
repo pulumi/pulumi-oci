@@ -28,7 +28,7 @@ class GetFsuCycleResult:
     """
     A collection of values returned by getFsuCycle.
     """
-    def __init__(__self__, apply_action_schedules=None, batching_strategies=None, collection_type=None, compartment_id=None, defined_tags=None, diagnostics_collections=None, display_name=None, executing_fsu_action_id=None, freeform_tags=None, fsu_collection_id=None, fsu_cycle_id=None, goal_version_details=None, id=None, is_ignore_missing_patches=None, is_ignore_patches=None, is_keep_placement=None, last_completed_action=None, last_completed_action_id=None, lifecycle_details=None, max_drain_timeout_in_seconds=None, next_action_to_executes=None, rollback_cycle_state=None, stage_action_schedules=None, state=None, system_tags=None, time_created=None, time_finished=None, time_updated=None, type=None):
+    def __init__(__self__, apply_action_schedules=None, batching_strategies=None, collection_type=None, compartment_id=None, defined_tags=None, diagnostics_collections=None, display_name=None, executing_fsu_action_id=None, freeform_tags=None, fsu_collection_id=None, fsu_cycle_id=None, goal_version_details=None, id=None, is_ignore_missing_patches=None, is_ignore_patches=None, is_keep_placement=None, last_completed_action=None, last_completed_action_id=None, lifecycle_details=None, max_drain_timeout_in_seconds=None, next_action_to_executes=None, rollback_cycle_state=None, stage_action_schedules=None, state=None, system_tags=None, time_created=None, time_finished=None, time_updated=None, type=None, upgrade_details=None):
         if apply_action_schedules and not isinstance(apply_action_schedules, list):
             raise TypeError("Expected argument 'apply_action_schedules' to be a list")
         pulumi.set(__self__, "apply_action_schedules", apply_action_schedules)
@@ -116,6 +116,9 @@ class GetFsuCycleResult:
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
+        if upgrade_details and not isinstance(upgrade_details, list):
+            raise TypeError("Expected argument 'upgrade_details' to be a list")
+        pulumi.set(__self__, "upgrade_details", upgrade_details)
 
     @property
     @pulumi.getter(name="applyActionSchedules")
@@ -137,7 +140,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="collectionType")
     def collection_type(self) -> builtins.str:
         """
-        Type of Collection this Exadata Fleet Update Cycle belongs to.
+        Type of Exadata Fleet Update collection being upgraded.
         """
         return pulumi.get(self, "collection_type")
 
@@ -222,7 +225,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="isIgnoreMissingPatches")
     def is_ignore_missing_patches(self) -> Sequence[builtins.str]:
         """
-        List of bug numbers to ignore.
+        List of identifiers of patches to ignore.
         """
         return pulumi.get(self, "is_ignore_missing_patches")
 
@@ -230,7 +233,7 @@ class GetFsuCycleResult:
     @pulumi.getter(name="isIgnorePatches")
     def is_ignore_patches(self) -> builtins.bool:
         """
-        Ignore all patches between the source and target homes during patching.
+        Ignore patch conflicts or missing patches between the source and goal homes.
         """
         return pulumi.get(self, "is_ignore_patches")
 
@@ -346,6 +349,14 @@ class GetFsuCycleResult:
         """
         return pulumi.get(self, "type")
 
+    @property
+    @pulumi.getter(name="upgradeDetails")
+    def upgrade_details(self) -> Sequence['outputs.GetFsuCycleUpgradeDetailResult']:
+        """
+        Details of supported upgrade options for DB or GI collection.
+        """
+        return pulumi.get(self, "upgrade_details")
+
 
 class AwaitableGetFsuCycleResult(GetFsuCycleResult):
     # pylint: disable=using-constant-test
@@ -381,7 +392,8 @@ class AwaitableGetFsuCycleResult(GetFsuCycleResult):
             time_created=self.time_created,
             time_finished=self.time_finished,
             time_updated=self.time_updated,
-            type=self.type)
+            type=self.type,
+            upgrade_details=self.upgrade_details)
 
 
 def get_fsu_cycle(fsu_cycle_id: Optional[builtins.str] = None,
@@ -437,7 +449,8 @@ def get_fsu_cycle(fsu_cycle_id: Optional[builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
-        type=pulumi.get(__ret__, 'type'))
+        type=pulumi.get(__ret__, 'type'),
+        upgrade_details=pulumi.get(__ret__, 'upgrade_details'))
 def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetFsuCycleResult]:
     """
@@ -490,4 +503,5 @@ def get_fsu_cycle_output(fsu_cycle_id: Optional[pulumi.Input[builtins.str]] = No
         time_created=pulumi.get(__response__, 'time_created'),
         time_finished=pulumi.get(__response__, 'time_finished'),
         time_updated=pulumi.get(__response__, 'time_updated'),
-        type=pulumi.get(__response__, 'type')))
+        type=pulumi.get(__response__, 'type'),
+        upgrade_details=pulumi.get(__response__, 'upgrade_details')))

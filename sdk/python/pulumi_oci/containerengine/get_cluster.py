@@ -83,8 +83,8 @@ class GetClusterResult:
         if options and not isinstance(options, list):
             raise TypeError("Expected argument 'options' to be a list")
         pulumi.set(__self__, "options", options)
-        if should_include_oidc_config_file and not isinstance(should_include_oidc_config_file, str):
-            raise TypeError("Expected argument 'should_include_oidc_config_file' to be a str")
+        if should_include_oidc_config_file and not isinstance(should_include_oidc_config_file, bool):
+            raise TypeError("Expected argument 'should_include_oidc_config_file' to be a bool")
         pulumi.set(__self__, "should_include_oidc_config_file", should_include_oidc_config_file)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
@@ -239,7 +239,7 @@ class GetClusterResult:
 
     @property
     @pulumi.getter(name="shouldIncludeOidcConfigFile")
-    def should_include_oidc_config_file(self) -> Optional[builtins.str]:
+    def should_include_oidc_config_file(self) -> Optional[builtins.bool]:
         return pulumi.get(self, "should_include_oidc_config_file")
 
     @property
@@ -298,7 +298,7 @@ class AwaitableGetClusterResult(GetClusterResult):
 
 
 def get_cluster(cluster_id: Optional[builtins.str] = None,
-                should_include_oidc_config_file: Optional[builtins.str] = None,
+                should_include_oidc_config_file: Optional[builtins.bool] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetClusterResult:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
@@ -317,7 +317,7 @@ def get_cluster(cluster_id: Optional[builtins.str] = None,
 
 
     :param builtins.str cluster_id: The OCID of the cluster.
-    :param builtins.str should_include_oidc_config_file: Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+    :param builtins.bool should_include_oidc_config_file: Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id
@@ -349,7 +349,7 @@ def get_cluster(cluster_id: Optional[builtins.str] = None,
         type=pulumi.get(__ret__, 'type'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_cluster_output(cluster_id: Optional[pulumi.Input[builtins.str]] = None,
-                       should_include_oidc_config_file: Optional[pulumi.Input[Optional[builtins.str]]] = None,
+                       should_include_oidc_config_file: Optional[pulumi.Input[Optional[builtins.bool]]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetClusterResult]:
     """
     This data source provides details about a specific Cluster resource in Oracle Cloud Infrastructure Container Engine service.
@@ -368,7 +368,7 @@ def get_cluster_output(cluster_id: Optional[pulumi.Input[builtins.str]] = None,
 
 
     :param builtins.str cluster_id: The OCID of the cluster.
-    :param builtins.str should_include_oidc_config_file: Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
+    :param builtins.bool should_include_oidc_config_file: Boolean value to determine if the OpenIdConnectAuth configuration file should be displayed for the provided cluster.
     """
     __args__ = dict()
     __args__['clusterId'] = cluster_id

@@ -35,6 +35,16 @@ export const getLogAnalyticsEntityTopology: typeof import("./getLogAnalyticsEnti
 export const getLogAnalyticsEntityTopologyOutput: typeof import("./getLogAnalyticsEntityTopology").getLogAnalyticsEntityTopologyOutput = null as any;
 utilities.lazyLoad(exports, ["getLogAnalyticsEntityTopology","getLogAnalyticsEntityTopologyOutput"], () => require("./getLogAnalyticsEntityTopology"));
 
+export { GetLogAnalyticsEntityTypeArgs, GetLogAnalyticsEntityTypeResult, GetLogAnalyticsEntityTypeOutputArgs } from "./getLogAnalyticsEntityType";
+export const getLogAnalyticsEntityType: typeof import("./getLogAnalyticsEntityType").getLogAnalyticsEntityType = null as any;
+export const getLogAnalyticsEntityTypeOutput: typeof import("./getLogAnalyticsEntityType").getLogAnalyticsEntityTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getLogAnalyticsEntityType","getLogAnalyticsEntityTypeOutput"], () => require("./getLogAnalyticsEntityType"));
+
+export { GetLogAnalyticsEntityTypesArgs, GetLogAnalyticsEntityTypesResult, GetLogAnalyticsEntityTypesOutputArgs } from "./getLogAnalyticsEntityTypes";
+export const getLogAnalyticsEntityTypes: typeof import("./getLogAnalyticsEntityTypes").getLogAnalyticsEntityTypes = null as any;
+export const getLogAnalyticsEntityTypesOutput: typeof import("./getLogAnalyticsEntityTypes").getLogAnalyticsEntityTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getLogAnalyticsEntityTypes","getLogAnalyticsEntityTypesOutput"], () => require("./getLogAnalyticsEntityTypes"));
+
 export { GetLogAnalyticsLogGroupArgs, GetLogAnalyticsLogGroupResult, GetLogAnalyticsLogGroupOutputArgs } from "./getLogAnalyticsLogGroup";
 export const getLogAnalyticsLogGroup: typeof import("./getLogAnalyticsLogGroup").getLogAnalyticsLogGroup = null as any;
 export const getLogAnalyticsLogGroupOutput: typeof import("./getLogAnalyticsLogGroup").getLogAnalyticsLogGroupOutput = null as any;
@@ -185,6 +195,11 @@ export type LogAnalyticsEntity = import("./logAnalyticsEntity").LogAnalyticsEnti
 export const LogAnalyticsEntity: typeof import("./logAnalyticsEntity").LogAnalyticsEntity = null as any;
 utilities.lazyLoad(exports, ["LogAnalyticsEntity"], () => require("./logAnalyticsEntity"));
 
+export { LogAnalyticsEntityTypeArgs, LogAnalyticsEntityTypeState } from "./logAnalyticsEntityType";
+export type LogAnalyticsEntityType = import("./logAnalyticsEntityType").LogAnalyticsEntityType;
+export const LogAnalyticsEntityType: typeof import("./logAnalyticsEntityType").LogAnalyticsEntityType = null as any;
+utilities.lazyLoad(exports, ["LogAnalyticsEntityType"], () => require("./logAnalyticsEntityType"));
+
 export { LogAnalyticsImportCustomContentArgs, LogAnalyticsImportCustomContentState } from "./logAnalyticsImportCustomContent";
 export type LogAnalyticsImportCustomContent = import("./logAnalyticsImportCustomContent").LogAnalyticsImportCustomContent;
 export const LogAnalyticsImportCustomContent: typeof import("./logAnalyticsImportCustomContent").LogAnalyticsImportCustomContent = null as any;
@@ -267,6 +282,8 @@ const _module = {
         switch (type) {
             case "oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity":
                 return new LogAnalyticsEntity(name, <any>undefined, { urn })
+            case "oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType":
+                return new LogAnalyticsEntityType(name, <any>undefined, { urn })
             case "oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent":
                 return new LogAnalyticsImportCustomContent(name, <any>undefined, { urn })
             case "oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup":
@@ -303,6 +320,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsEntity", _module)
+pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsEntityType", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsImportCustomContent", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsLogGroup", _module)
 pulumi.runtime.registerResourceModule("oci", "LogAnalytics/logAnalyticsObjectCollectionRule", _module)

@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Table Replica resource in Oracle Cloud Infrastructure NoSQL Database service.
  * 
- * Add a replica for this table
+ * Add a replica for this table. The table&#39;s schema must be frozen prior to this operation.
  * 
  * ## Example Usage
  * 
@@ -129,7 +129,7 @@ public class TableReplica extends com.pulumi.resources.CustomResource {
      * A table name within the compartment, or a table OCID.
      * 
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
      * 
      */
     @Export(name="tableNameOrId", refs={String.class}, tree="[0]")
@@ -139,7 +139,7 @@ public class TableReplica extends com.pulumi.resources.CustomResource {
      * @return A table name within the compartment, or a table OCID.
      * 
      * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Any change to a property that is not identified as &#34;Updateable&#34; will force the destruction and recreation of the resource with the new property values.
      * 
      */
     public Output<String> tableNameOrId() {

@@ -629,6 +629,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
+     * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     * 
+     */
+    @Import(name="opcDryRun")
+    private @Nullable Output<Boolean> opcDryRun;
+
+    /**
+     * @return (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     * 
+     */
+    public Optional<Output<Boolean>> opcDryRun() {
+        return Optional.ofNullable(this.opcDryRun);
+    }
+
+    /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
@@ -798,6 +813,36 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time that the cloud Autonomous VM cluster was created.
      * 
      */
@@ -951,6 +996,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.ocpusLowestScaledValue = $.ocpusLowestScaledValue;
+        this.opcDryRun = $.opcDryRun;
         this.provisionableAutonomousContainerDatabases = $.provisionableAutonomousContainerDatabases;
         this.provisionedAutonomousContainerDatabases = $.provisionedAutonomousContainerDatabases;
         this.provisionedCpus = $.provisionedCpus;
@@ -962,6 +1008,8 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.shape = $.shape;
         this.state = $.state;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeDatabaseSslCertificateExpires = $.timeDatabaseSslCertificateExpires;
         this.timeOrdsCertificateExpires = $.timeOrdsCertificateExpires;
@@ -1867,6 +1915,27 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
+         * @param opcDryRun (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcDryRun(@Nullable Output<Boolean> opcDryRun) {
+            $.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
+         * @param opcDryRun (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            return opcDryRun(Output.of(opcDryRun));
+        }
+
+        /**
          * @param provisionableAutonomousContainerDatabases The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
          * 
          * @return builder
@@ -2099,6 +2168,48 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

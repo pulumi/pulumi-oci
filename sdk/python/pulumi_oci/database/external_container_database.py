@@ -116,6 +116,7 @@ class _ExternalContainerDatabaseState:
                  ncharacter_set: Optional[pulumi.Input[builtins.str]] = None,
                  stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseStackMonitoringConfigArgs']]]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -140,6 +141,7 @@ class _ExternalContainerDatabaseState:
         :param pulumi.Input[builtins.str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input['ExternalContainerDatabaseStackMonitoringConfigArgs']]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[builtins.str] state: The current state of the Oracle Cloud Infrastructure external database resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the database was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         """
@@ -175,6 +177,8 @@ class _ExternalContainerDatabaseState:
             pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
@@ -377,6 +381,18 @@ class _ExternalContainerDatabaseState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -533,6 +549,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["ncharacter_set"] = None
             __props__.__dict__["stack_monitoring_configs"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_zone"] = None
         super(ExternalContainerDatabase, __self__).__init__(
@@ -561,6 +578,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
             ncharacter_set: Optional[pulumi.Input[builtins.str]] = None,
             stack_monitoring_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict']]]]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_zone: Optional[pulumi.Input[builtins.str]] = None) -> 'ExternalContainerDatabase':
         """
@@ -590,6 +608,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] ncharacter_set: The national character of the external database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict']]]] stack_monitoring_configs: The configuration of Stack Monitoring for the external database.
         :param pulumi.Input[builtins.str] state: The current state of the Oracle Cloud Infrastructure external database resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the database was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
         """
@@ -613,6 +632,7 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["ncharacter_set"] = ncharacter_set
         __props__.__dict__["stack_monitoring_configs"] = stack_monitoring_configs
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         return ExternalContainerDatabase(resource_name, opts=opts, __props__=__props__)
@@ -748,6 +768,14 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         The current state of the Oracle Cloud Infrastructure external database resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

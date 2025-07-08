@@ -85,6 +85,10 @@ import (
 //				},
 //				Description: pulumi.Any(mysqlDbSystemDescription),
 //				DisplayName: pulumi.Any(mysqlDbSystemDisplayName),
+//				EncryptData: &mysql.MysqlDbSystemEncryptDataArgs{
+//					KeyGenerationType: pulumi.Any(mysqlDbSystemEncryptDataKeyGenerationType),
+//					KeyId:             pulumi.Any(testKey.Id),
+//				},
 //				FaultDomain: pulumi.Any(mysqlDbSystemFaultDomain),
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
@@ -182,6 +186,8 @@ type MysqlDbSystem struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// (Updatable) Encrypt data details.
+	EncryptData MysqlDbSystemEncryptDataOutput `pulumi:"encryptData"`
 	// The network endpoints available for this DB System.
 	Endpoints MysqlDbSystemEndpointArrayOutput `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -345,6 +351,8 @@ type mysqlDbSystemState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Encrypt data details.
+	EncryptData *MysqlDbSystemEncryptData `pulumi:"encryptData"`
 	// The network endpoints available for this DB System.
 	Endpoints []MysqlDbSystemEndpoint `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -460,6 +468,8 @@ type MysqlDbSystemState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Encrypt data details.
+	EncryptData MysqlDbSystemEncryptDataPtrInput
 	// The network endpoints available for this DB System.
 	Endpoints MysqlDbSystemEndpointArrayInput
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -575,6 +585,8 @@ type mysqlDbSystemArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// (Updatable) Encrypt data details.
+	EncryptData *MysqlDbSystemEncryptData `pulumi:"encryptData"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	//
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -671,6 +683,8 @@ type MysqlDbSystemArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// (Updatable) Encrypt data details.
+	EncryptData MysqlDbSystemEncryptDataPtrInput
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	//
 	// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -911,6 +925,11 @@ func (o MysqlDbSystemOutput) Description() pulumi.StringOutput {
 // (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 func (o MysqlDbSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// (Updatable) Encrypt data details.
+func (o MysqlDbSystemOutput) EncryptData() MysqlDbSystemEncryptDataOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) MysqlDbSystemEncryptDataOutput { return v.EncryptData }).(MysqlDbSystemEncryptDataOutput)
 }
 
 // The network endpoints available for this DB System.

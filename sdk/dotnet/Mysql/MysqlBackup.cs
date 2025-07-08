@@ -120,6 +120,12 @@ namespace Pulumi.Oci.Mysql
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        [Output("encryptData")]
+        public Output<Outputs.MysqlBackupEncryptData> EncryptData { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
@@ -299,6 +305,12 @@ namespace Pulumi.Oci.Mysql
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        [Input("encryptData")]
+        public Input<Inputs.MysqlBackupEncryptDataArgs>? EncryptData { get; set; }
+
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;
 
@@ -416,6 +428,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        [Input("encryptData")]
+        public Input<Inputs.MysqlBackupEncryptDataGetArgs>? EncryptData { get; set; }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

@@ -172,6 +172,7 @@ class _OneoffPatchState:
                  sha256sum: Optional[pulumi.Input[builtins.str]] = None,
                  size_in_kbs: Optional[pulumi.Input[builtins.float]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_of_expiration: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None):
@@ -193,6 +194,7 @@ class _OneoffPatchState:
         :param pulumi.Input[builtins.str] sha256sum: SHA-256 checksum of the one-off patch.
         :param pulumi.Input[builtins.float] size_in_kbs: The size of one-off patch in kilobytes.
         :param pulumi.Input[builtins.str] state: The current state of the one-off patch.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time one-off patch was created.
         :param pulumi.Input[builtins.str] time_of_expiration: The date and time until which the one-off patch will be available for download.
         :param pulumi.Input[builtins.str] time_updated: The date and time one-off patch was updated.
@@ -221,6 +223,8 @@ class _OneoffPatchState:
             pulumi.set(__self__, "size_in_kbs", size_in_kbs)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_of_expiration is not None:
@@ -375,6 +379,18 @@ class _OneoffPatchState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -563,6 +579,7 @@ class OneoffPatch(pulumi.CustomResource):
             __props__.__dict__["sha256sum"] = None
             __props__.__dict__["size_in_kbs"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_of_expiration"] = None
             __props__.__dict__["time_updated"] = None
@@ -588,6 +605,7 @@ class OneoffPatch(pulumi.CustomResource):
             sha256sum: Optional[pulumi.Input[builtins.str]] = None,
             size_in_kbs: Optional[pulumi.Input[builtins.float]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_of_expiration: Optional[pulumi.Input[builtins.str]] = None,
             time_updated: Optional[pulumi.Input[builtins.str]] = None) -> 'OneoffPatch':
@@ -614,6 +632,7 @@ class OneoffPatch(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] sha256sum: SHA-256 checksum of the one-off patch.
         :param pulumi.Input[builtins.float] size_in_kbs: The size of one-off patch in kilobytes.
         :param pulumi.Input[builtins.str] state: The current state of the one-off patch.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time one-off patch was created.
         :param pulumi.Input[builtins.str] time_of_expiration: The date and time until which the one-off patch will be available for download.
         :param pulumi.Input[builtins.str] time_updated: The date and time one-off patch was updated.
@@ -634,6 +653,7 @@ class OneoffPatch(pulumi.CustomResource):
         __props__.__dict__["sha256sum"] = sha256sum
         __props__.__dict__["size_in_kbs"] = size_in_kbs
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_of_expiration"] = time_of_expiration
         __props__.__dict__["time_updated"] = time_updated
@@ -738,6 +758,14 @@ class OneoffPatch(pulumi.CustomResource):
         The current state of the one-off patch.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

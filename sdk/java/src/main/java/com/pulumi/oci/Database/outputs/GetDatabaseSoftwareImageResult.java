@@ -96,6 +96,11 @@ public final class GetDatabaseSoftwareImageResult {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the database software image was created.
      * 
      */
@@ -221,6 +226,13 @@ public final class GetDatabaseSoftwareImageResult {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the database software image was created.
      * 
      */
@@ -255,6 +267,7 @@ public final class GetDatabaseSoftwareImageResult {
         private String patchSet;
         private String sourceDbHomeId;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetDatabaseSoftwareImageResult defaults) {
@@ -277,6 +290,7 @@ public final class GetDatabaseSoftwareImageResult {
     	      this.patchSet = defaults.patchSet;
     	      this.sourceDbHomeId = defaults.sourceDbHomeId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
         }
 
@@ -431,6 +445,14 @@ public final class GetDatabaseSoftwareImageResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDatabaseSoftwareImageResult", "timeCreated");
@@ -458,6 +480,7 @@ public final class GetDatabaseSoftwareImageResult {
             _resultValue.patchSet = patchSet;
             _resultValue.sourceDbHomeId = sourceDbHomeId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;
         }

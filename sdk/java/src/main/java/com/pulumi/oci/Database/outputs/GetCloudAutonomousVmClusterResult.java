@@ -220,6 +220,7 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Integer ocpusLowestScaledValue;
+    private Boolean opcDryRun;
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
@@ -277,6 +278,16 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private String subnetId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
     /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
      * 
@@ -601,6 +612,9 @@ public final class GetCloudAutonomousVmClusterResult {
     public Integer ocpusLowestScaledValue() {
         return this.ocpusLowestScaledValue;
     }
+    public Boolean opcDryRun() {
+        return this.opcDryRun;
+    }
     /**
      * @return The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
@@ -679,6 +693,20 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The date and time that the cloud Autonomous VM cluster was created.
@@ -781,6 +809,7 @@ public final class GetCloudAutonomousVmClusterResult {
         private List<String> nsgIds;
         private Double ocpuCount;
         private Integer ocpusLowestScaledValue;
+        private Boolean opcDryRun;
         private Integer provisionableAutonomousContainerDatabases;
         private Integer provisionedAutonomousContainerDatabases;
         private Double provisionedCpus;
@@ -792,6 +821,8 @@ public final class GetCloudAutonomousVmClusterResult {
         private String shape;
         private String state;
         private String subnetId;
+        private String subscriptionId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeDatabaseSslCertificateExpires;
         private String timeOrdsCertificateExpires;
@@ -844,6 +875,7 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.ocpusLowestScaledValue = defaults.ocpusLowestScaledValue;
+    	      this.opcDryRun = defaults.opcDryRun;
     	      this.provisionableAutonomousContainerDatabases = defaults.provisionableAutonomousContainerDatabases;
     	      this.provisionedAutonomousContainerDatabases = defaults.provisionedAutonomousContainerDatabases;
     	      this.provisionedCpus = defaults.provisionedCpus;
@@ -855,6 +887,8 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeDatabaseSslCertificateExpires = defaults.timeDatabaseSslCertificateExpires;
     	      this.timeOrdsCertificateExpires = defaults.timeOrdsCertificateExpires;
@@ -1213,6 +1247,14 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder opcDryRun(Boolean opcDryRun) {
+            if (opcDryRun == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "opcDryRun");
+            }
+            this.opcDryRun = opcDryRun;
+            return this;
+        }
+        @CustomType.Setter
         public Builder provisionableAutonomousContainerDatabases(Integer provisionableAutonomousContainerDatabases) {
             if (provisionableAutonomousContainerDatabases == null) {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "provisionableAutonomousContainerDatabases");
@@ -1298,6 +1340,22 @@ public final class GetCloudAutonomousVmClusterResult {
               throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "subnetId");
             }
             this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetCloudAutonomousVmClusterResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -1400,6 +1458,7 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.nsgIds = nsgIds;
             _resultValue.ocpuCount = ocpuCount;
             _resultValue.ocpusLowestScaledValue = ocpusLowestScaledValue;
+            _resultValue.opcDryRun = opcDryRun;
             _resultValue.provisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             _resultValue.provisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             _resultValue.provisionedCpus = provisionedCpus;
@@ -1411,6 +1470,8 @@ public final class GetCloudAutonomousVmClusterResult {
             _resultValue.shape = shape;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
             _resultValue.timeOrdsCertificateExpires = timeOrdsCertificateExpires;

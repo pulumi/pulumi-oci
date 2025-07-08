@@ -28,7 +28,7 @@ class GetKeyStoreResult:
     """
     A collection of values returned by getKeyStore.
     """
-    def __init__(__self__, associated_databases=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, time_created=None, type_details=None):
+    def __init__(__self__, associated_databases=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, type_details=None):
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
@@ -59,6 +59,9 @@ class GetKeyStoreResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -141,6 +144,14 @@ class GetKeyStoreResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -173,6 +184,7 @@ class AwaitableGetKeyStoreResult(GetKeyStoreResult):
             key_store_id=self.key_store_id,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             type_details=self.type_details)
 
@@ -212,6 +224,7 @@ def get_key_store(key_store_id: Optional[builtins.str] = None,
         key_store_id=pulumi.get(__ret__, 'key_store_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         type_details=pulumi.get(__ret__, 'type_details'))
 def get_key_store_output(key_store_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -248,5 +261,6 @@ def get_key_store_output(key_store_id: Optional[pulumi.Input[builtins.str]] = No
         key_store_id=pulumi.get(__response__, 'key_store_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         type_details=pulumi.get(__response__, 'type_details')))

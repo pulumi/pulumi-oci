@@ -7,30 +7,44 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class DatabaseDatabaseEncryptionKeyLocationDetails {
     /**
+     * @return Provide the key OCID of a registered Azure key.
+     * 
+     */
+    private @Nullable String azureEncryptionKeyId;
+    /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
-    private String hsmPassword;
+    private @Nullable String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     private String providerType;
 
     private DatabaseDatabaseEncryptionKeyLocationDetails() {}
     /**
+     * @return Provide the key OCID of a registered Azure key.
+     * 
+     */
+    public Optional<String> azureEncryptionKeyId() {
+        return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+    /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
-    public String hsmPassword() {
-        return this.hsmPassword;
+    public Optional<String> hsmPassword() {
+        return Optional.ofNullable(this.hsmPassword);
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     public String providerType() {
@@ -46,20 +60,26 @@ public final class DatabaseDatabaseEncryptionKeyLocationDetails {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String hsmPassword;
+        private @Nullable String azureEncryptionKeyId;
+        private @Nullable String hsmPassword;
         private String providerType;
         public Builder() {}
         public Builder(DatabaseDatabaseEncryptionKeyLocationDetails defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
     	      this.providerType = defaults.providerType;
         }
 
         @CustomType.Setter
-        public Builder hsmPassword(String hsmPassword) {
-            if (hsmPassword == null) {
-              throw new MissingRequiredPropertyException("DatabaseDatabaseEncryptionKeyLocationDetails", "hsmPassword");
-            }
+        public Builder azureEncryptionKeyId(@Nullable String azureEncryptionKeyId) {
+
+            this.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder hsmPassword(@Nullable String hsmPassword) {
+
             this.hsmPassword = hsmPassword;
             return this;
         }
@@ -73,6 +93,7 @@ public final class DatabaseDatabaseEncryptionKeyLocationDetails {
         }
         public DatabaseDatabaseEncryptionKeyLocationDetails build() {
             final var _resultValue = new DatabaseDatabaseEncryptionKeyLocationDetails();
+            _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;
             _resultValue.providerType = providerType;
             return _resultValue;

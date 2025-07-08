@@ -66,6 +66,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the `connectionStatus` of this external connector was last updated.
         /// </summary>
         public readonly string TimeConnectionStatusLastUpdated;
@@ -102,6 +106,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeConnectionStatusLastUpdated,
 
             string timeCreated)
@@ -119,6 +125,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             State = state;
+            SystemTags = systemTags;
             TimeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             TimeCreated = timeCreated;
         }

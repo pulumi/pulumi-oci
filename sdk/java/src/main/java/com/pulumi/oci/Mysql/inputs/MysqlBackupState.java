@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSummaryArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupSourceDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -176,6 +177,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Encrypt data details.
+     * 
+     */
+    @Import(name="encryptData")
+    private @Nullable Output<MysqlBackupEncryptDataArgs> encryptData;
+
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    public Optional<Output<MysqlBackupEncryptDataArgs>> encryptData() {
+        return Optional.ofNullable(this.encryptData);
     }
 
     /**
@@ -402,6 +418,7 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.encryptData = $.encryptData;
         this.freeformTags = $.freeformTags;
         this.immediateSourceBackupId = $.immediateSourceBackupId;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -667,6 +684,27 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptData Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptData(@Nullable Output<MysqlBackupEncryptDataArgs> encryptData) {
+            $.encryptData = encryptData;
+            return this;
+        }
+
+        /**
+         * @param encryptData Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptData(MysqlBackupEncryptDataArgs encryptData) {
+            return encryptData(Output.of(encryptData));
         }
 
         /**

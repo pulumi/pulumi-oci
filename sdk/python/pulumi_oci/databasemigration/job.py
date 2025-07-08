@@ -117,6 +117,7 @@ class JobArgs:
 @pulumi.input_type
 class _JobState:
     def __init__(__self__, *,
+                 collect_traces_datas: Optional[pulumi.Input[Sequence[pulumi.Input['JobCollectTracesDataArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -134,6 +135,7 @@ class _JobState:
                  unsupported_objects: Optional[pulumi.Input[Sequence[pulumi.Input['JobUnsupportedObjectArgs']]]] = None):
         """
         Input properties used for looking up and filtering Job resources.
+        :param pulumi.Input[Sequence[pulumi.Input['JobCollectTracesDataArgs']]] collect_traces_datas: Information regarding the DB trace and alert log collection
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) Name of the job.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
@@ -154,6 +156,8 @@ class _JobState:
         :param pulumi.Input[builtins.str] type: Type of unsupported object
         :param pulumi.Input[Sequence[pulumi.Input['JobUnsupportedObjectArgs']]] unsupported_objects: Database objects not supported.
         """
+        if collect_traces_datas is not None:
+            pulumi.set(__self__, "collect_traces_datas", collect_traces_datas)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -184,6 +188,18 @@ class _JobState:
             pulumi.set(__self__, "type", type)
         if unsupported_objects is not None:
             pulumi.set(__self__, "unsupported_objects", unsupported_objects)
+
+    @property
+    @pulumi.getter(name="collectTracesDatas")
+    def collect_traces_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['JobCollectTracesDataArgs']]]]:
+        """
+        Information regarding the DB trace and alert log collection
+        """
+        return pulumi.get(self, "collect_traces_datas")
+
+    @collect_traces_datas.setter
+    def collect_traces_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['JobCollectTracesDataArgs']]]]):
+        pulumi.set(self, "collect_traces_datas", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -458,6 +474,7 @@ class Job(pulumi.CustomResource):
                 raise TypeError("Missing required property 'job_id'")
             __props__.__dict__["job_id"] = job_id
             __props__.__dict__["suspend_trigger"] = suspend_trigger
+            __props__.__dict__["collect_traces_datas"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["migration_id"] = None
             __props__.__dict__["parameter_file_versions"] = None
@@ -478,6 +495,7 @@ class Job(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            collect_traces_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -500,6 +518,7 @@ class Job(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict']]]] collect_traces_datas: Information regarding the DB trace and alert log collection
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] display_name: (Updatable) Name of the job.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
@@ -524,6 +543,7 @@ class Job(pulumi.CustomResource):
 
         __props__ = _JobState.__new__(_JobState)
 
+        __props__.__dict__["collect_traces_datas"] = collect_traces_datas
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -540,6 +560,14 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         __props__.__dict__["unsupported_objects"] = unsupported_objects
         return Job(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="collectTracesDatas")
+    def collect_traces_datas(self) -> pulumi.Output[Sequence['outputs.JobCollectTracesData']]:
+        """
+        Information regarding the DB trace and alert log collection
+        """
+        return pulumi.get(self, "collect_traces_datas")
 
     @property
     @pulumi.getter(name="definedTags")

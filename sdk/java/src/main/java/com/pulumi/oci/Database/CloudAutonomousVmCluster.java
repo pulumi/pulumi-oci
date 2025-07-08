@@ -86,9 +86,11 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .memoryPerOracleComputeUnitInGbs(cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs)
  *             .nsgIds(cloudAutonomousVmClusterNsgIds)
+ *             .opcDryRun(cloudAutonomousVmClusterOpcDryRun)
  *             .scanListenerPortNonTls(cloudAutonomousVmClusterScanListenerPortNonTls)
  *             .scanListenerPortTls(cloudAutonomousVmClusterScanListenerPortTls)
  *             .securityAttributes(cloudAutonomousVmClusterSecurityAttributes)
+ *             .subscriptionId(testSubscription.id())
  *             .totalContainerDatabases(cloudAutonomousVmClusterTotalContainerDatabases)
  *             .build());
  * 
@@ -676,6 +678,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.ocpusLowestScaledValue;
     }
     /**
+     * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     * 
+     */
+    @Export(name="opcDryRun", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> opcDryRun;
+
+    /**
+     * @return (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     * 
+     */
+    public Output<Boolean> opcDryRun() {
+        return this.opcDryRun;
+    }
+    /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      * 
      */
@@ -832,6 +848,34 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The date and time that the cloud Autonomous VM cluster was created.

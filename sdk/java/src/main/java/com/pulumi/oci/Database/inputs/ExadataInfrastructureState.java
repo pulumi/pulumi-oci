@@ -789,6 +789,21 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time the Exadata infrastructure was created.
      * 
      */
@@ -872,6 +887,7 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
         this.storageCount = $.storageCount;
         this.storageServerType = $.storageServerType;
         this.storageServerVersion = $.storageServerVersion;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
     }
@@ -2007,6 +2023,27 @@ public final class ExadataInfrastructureState extends com.pulumi.resources.Resou
          */
         public Builder storageServerVersion(String storageServerVersion) {
             return storageServerVersion(Output.of(storageServerVersion));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

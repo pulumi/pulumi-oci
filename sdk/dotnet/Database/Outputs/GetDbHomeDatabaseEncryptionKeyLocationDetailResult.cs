@@ -13,15 +13,19 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbHomeDatabaseEncryptionKeyLocationDetailResult
     {
+        public readonly string AzureEncryptionKeyId;
         public readonly string HsmPassword;
         public readonly string ProviderType;
 
         [OutputConstructor]
         private GetDbHomeDatabaseEncryptionKeyLocationDetailResult(
+            string azureEncryptionKeyId,
+
             string hsmPassword,
 
             string providerType)
         {
+            AzureEncryptionKeyId = azureEncryptionKeyId;
             HsmPassword = hsmPassword;
             ProviderType = providerType;
         }

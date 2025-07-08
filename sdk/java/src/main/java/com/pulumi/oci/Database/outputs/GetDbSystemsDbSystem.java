@@ -256,6 +256,11 @@ public final class GetDbSystemsDbSystem {
      */
     private String subnetId;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the DB system was created.
      * 
      */
@@ -627,6 +632,13 @@ public final class GetDbSystemsDbSystem {
         return this.subnetId;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the DB system was created.
      * 
      */
@@ -730,6 +742,7 @@ public final class GetDbSystemsDbSystem {
         private String state;
         private String storageVolumePerformanceMode;
         private String subnetId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeZone;
         private String version;
@@ -791,6 +804,7 @@ public final class GetDbSystemsDbSystem {
     	      this.state = defaults.state;
     	      this.storageVolumePerformanceMode = defaults.storageVolumePerformanceMode;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
     	      this.version = defaults.version;
@@ -1252,6 +1266,14 @@ public final class GetDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "timeCreated");
@@ -1359,6 +1381,7 @@ public final class GetDbSystemsDbSystem {
             _resultValue.state = state;
             _resultValue.storageVolumePerformanceMode = storageVolumePerformanceMode;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             _resultValue.version = version;

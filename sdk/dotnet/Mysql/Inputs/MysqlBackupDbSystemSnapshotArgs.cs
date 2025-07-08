@@ -114,6 +114,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("encryptDatas")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotEncryptDataArgs>? _encryptDatas;
+
+        /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotEncryptDataArgs> EncryptDatas
+        {
+            get => _encryptDatas ?? (_encryptDatas = new InputList<Inputs.MysqlBackupDbSystemSnapshotEncryptDataArgs>());
+            set => _encryptDatas = value;
+        }
+
         [Input("endpoints")]
         private InputList<Inputs.MysqlBackupDbSystemSnapshotEndpointArgs>? _endpoints;
 

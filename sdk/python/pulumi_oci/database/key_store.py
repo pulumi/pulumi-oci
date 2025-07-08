@@ -127,6 +127,7 @@ class _KeyStoreState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  type_details: Optional[pulumi.Input['KeyStoreTypeDetailsArgs']] = None):
         """
@@ -138,6 +139,7 @@ class _KeyStoreState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] state: The current state of the key store.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the key store was created.
         :param pulumi.Input['KeyStoreTypeDetailsArgs'] type_details: (Updatable) Key store type details.
         """
@@ -157,6 +159,8 @@ class _KeyStoreState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if type_details is not None:
@@ -254,6 +258,18 @@ class _KeyStoreState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -422,6 +438,7 @@ class KeyStore(pulumi.CustomResource):
             __props__.__dict__["associated_databases"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(KeyStore, __self__).__init__(
             'oci:Database/keyStore:KeyStore',
@@ -441,6 +458,7 @@ class KeyStore(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             type_details: Optional[pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']]] = None) -> 'KeyStore':
         """
@@ -457,6 +475,7 @@ class KeyStore(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] state: The current state of the key store.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the key store was created.
         :param pulumi.Input[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict']] type_details: (Updatable) Key store type details.
         """
@@ -472,6 +491,7 @@ class KeyStore(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["type_details"] = type_details
         return KeyStore(resource_name, opts=opts, __props__=__props__)
@@ -536,6 +556,14 @@ class KeyStore(pulumi.CustomResource):
         The current state of the key store.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

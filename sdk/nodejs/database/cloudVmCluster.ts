@@ -245,6 +245,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public readonly memorySizeInGbs!: pulumi.Output<number>;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    public /*out*/ readonly multiCloudIdentityConnectorConfigs!: pulumi.Output<outputs.Database.CloudVmClusterMultiCloudIdentityConnectorConfig[]>;
+    /**
      * The number of nodes in the cloud VM cluster.
      */
     public /*out*/ readonly nodeCount!: pulumi.Output<number>;
@@ -322,6 +326,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public readonly systemVersion!: pulumi.Output<string>;
     /**
+     * Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+     */
+    public readonly tdeKeyStoreType!: pulumi.Output<string>;
+    /**
      * The date and time that the cloud VM cluster was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -394,6 +402,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
+            resourceInputs["multiCloudIdentityConnectorConfigs"] = state ? state.multiCloudIdentityConnectorConfigs : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
@@ -413,6 +422,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["systemVersion"] = state ? state.systemVersion : undefined;
+            resourceInputs["tdeKeyStoreType"] = state ? state.tdeKeyStoreType : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["vipIds"] = state ? state.vipIds : undefined;
@@ -482,6 +492,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["systemVersion"] = args ? args.systemVersion : undefined;
+            resourceInputs["tdeKeyStoreType"] = args ? args.tdeKeyStoreType : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
             resourceInputs["vmClusterType"] = args ? args.vmClusterType : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
@@ -491,6 +502,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["lastUpdateHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["listenerPort"] = undefined /*out*/;
+            resourceInputs["multiCloudIdentityConnectorConfigs"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
             resourceInputs["scanDnsName"] = undefined /*out*/;
             resourceInputs["scanDnsRecordId"] = undefined /*out*/;
@@ -647,6 +659,10 @@ export interface CloudVmClusterState {
      */
     memorySizeInGbs?: pulumi.Input<number>;
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    multiCloudIdentityConnectorConfigs?: pulumi.Input<pulumi.Input<inputs.Database.CloudVmClusterMultiCloudIdentityConnectorConfig>[]>;
+    /**
      * The number of nodes in the cloud VM cluster.
      */
     nodeCount?: pulumi.Input<number>;
@@ -723,6 +739,10 @@ export interface CloudVmClusterState {
      * Operating system version of the image.
      */
     systemVersion?: pulumi.Input<string>;
+    /**
+     * Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+     */
+    tdeKeyStoreType?: pulumi.Input<string>;
     /**
      * The date and time that the cloud VM cluster was created.
      */
@@ -902,6 +922,10 @@ export interface CloudVmClusterArgs {
      * Operating system version of the image.
      */
     systemVersion?: pulumi.Input<string>;
+    /**
+     * Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+     */
+    tdeKeyStoreType?: pulumi.Input<string>;
     /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

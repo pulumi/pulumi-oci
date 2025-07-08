@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.ReplicaEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaReplicaOverridesArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaSecureConnectionArgs;
 import java.lang.Boolean;
@@ -124,6 +125,21 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Encrypt data details.
+     * 
+     */
+    @Import(name="encryptDatas")
+    private @Nullable Output<List<ReplicaEncryptDataArgs>> encryptDatas;
+
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    public Optional<Output<List<ReplicaEncryptDataArgs>>> encryptDatas() {
+        return Optional.ofNullable(this.encryptDatas);
     }
 
     /**
@@ -361,6 +377,7 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.encryptDatas = $.encryptDatas;
         this.faultDomain = $.faultDomain;
         this.freeformTags = $.freeformTags;
         this.ipAddress = $.ipAddress;
@@ -541,6 +558,37 @@ public final class ReplicaState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptDatas Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptDatas(@Nullable Output<List<ReplicaEncryptDataArgs>> encryptDatas) {
+            $.encryptDatas = encryptDatas;
+            return this;
+        }
+
+        /**
+         * @param encryptDatas Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptDatas(List<ReplicaEncryptDataArgs> encryptDatas) {
+            return encryptDatas(Output.of(encryptDatas));
+        }
+
+        /**
+         * @param encryptDatas Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptDatas(ReplicaEncryptDataArgs... encryptDatas) {
+            return encryptDatas(List.of(encryptDatas));
         }
 
         /**

@@ -14,20 +14,27 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class DbHomeDatabaseEncryptionKeyLocationDetails
     {
         /// <summary>
+        /// Provide the key OCID of a registered Azure key.
+        /// </summary>
+        public readonly string? AzureEncryptionKeyId;
+        /// <summary>
         /// Provide the HSM password as you would in RDBMS for External HSM.
         /// </summary>
-        public readonly string HsmPassword;
+        public readonly string? HsmPassword;
         /// <summary>
-        /// Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        /// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         /// </summary>
         public readonly string ProviderType;
 
         [OutputConstructor]
         private DbHomeDatabaseEncryptionKeyLocationDetails(
-            string hsmPassword,
+            string? azureEncryptionKeyId,
+
+            string? hsmPassword,
 
             string providerType)
         {
+            AzureEncryptionKeyId = azureEncryptionKeyId;
             HsmPassword = hsmPassword;
             ProviderType = providerType;
         }

@@ -137,6 +137,10 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the database software image was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -170,6 +174,7 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
             resourceInputs["patchSet"] = state ? state.patchSet : undefined;
             resourceInputs["sourceDbHomeId"] = state ? state.sourceDbHomeId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
             const args = argsOrState as DatabaseSoftwareImageArgs | undefined;
@@ -195,6 +200,7 @@ export class DatabaseSoftwareImage extends pulumi.CustomResource {
             resourceInputs["isUpgradeSupported"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -274,6 +280,10 @@ export interface DatabaseSoftwareImageState {
      * The current state of the database software image.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the database software image was created.
      */

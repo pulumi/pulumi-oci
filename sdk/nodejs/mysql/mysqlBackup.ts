@@ -111,6 +111,10 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * Encrypt data details.
+     */
+    public readonly encryptData!: pulumi.Output<outputs.Mysql.MysqlBackupEncryptData>;
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
@@ -191,6 +195,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["encryptData"] = state ? state.encryptData : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["immediateSourceBackupId"] = state ? state.immediateSourceBackupId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -214,6 +219,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["encryptData"] = args ? args.encryptData : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["retentionInDays"] = args ? args.retentionInDays : undefined;
             resourceInputs["softDelete"] = args ? args.softDelete : undefined;
@@ -283,6 +289,10 @@ export interface MysqlBackupState {
      * (Updatable) A user-supplied display name for the backup.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Encrypt data details.
+     */
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlBackupEncryptData>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
@@ -370,6 +380,10 @@ export interface MysqlBackupArgs {
      * (Updatable) A user-supplied display name for the backup.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Encrypt data details.
+     */
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlBackupEncryptData>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */

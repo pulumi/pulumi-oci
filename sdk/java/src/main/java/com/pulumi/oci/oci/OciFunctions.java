@@ -23,6 +23,34 @@ import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestPlainArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolPrivilegedApiRequestsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancePlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
@@ -64,6 +92,20 @@ import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiControlResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiControlsResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiRequestResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolPrivilegedApiRequestsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveriesResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveryResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobContainerResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobContainersResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobMountResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobMountsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureConnectorResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureConnectorsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureKeyResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureKeysResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultAssociationResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultAssociationsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceScanResultsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServerInstalledPatchesResult;
@@ -2080,6 +2122,3251 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetApiaccesscontrolPrivilegedApiRequestsResult> getApiaccesscontrolPrivilegedApiRequestsPlain(GetApiaccesscontrolPrivilegedApiRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getApiaccesscontrolPrivilegedApiRequests:getApiaccesscontrolPrivilegedApiRequests", TypeShape.of(GetApiaccesscontrolPrivilegedApiRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multiCloudResourceDiscoveryDisplayName)
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .state(multiCloudResourceDiscoveryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudMultiCloudResourceDiscoveriesResult> getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs args) {
+        return getDbmulticloudMultiCloudResourceDiscoveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multiCloudResourceDiscoveryDisplayName)
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .state(multiCloudResourceDiscoveryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudMultiCloudResourceDiscoveriesResult> getDbmulticloudMultiCloudResourceDiscoveriesPlain(GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs args) {
+        return getDbmulticloudMultiCloudResourceDiscoveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multiCloudResourceDiscoveryDisplayName)
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .state(multiCloudResourceDiscoveryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudMultiCloudResourceDiscoveriesResult> getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multiCloudResourceDiscoveryDisplayName)
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .state(multiCloudResourceDiscoveryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudMultiCloudResourceDiscoveriesResult> getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(multiCloudResourceDiscoveryDisplayName)
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .state(multiCloudResourceDiscoveryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudMultiCloudResourceDiscoveriesResult> getDbmulticloudMultiCloudResourceDiscoveriesPlain(GetDbmulticloudMultiCloudResourceDiscoveriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudMultiCloudResourceDiscoveryResult> getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs args) {
+        return getDbmulticloudMultiCloudResourceDiscovery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudMultiCloudResourceDiscoveryResult> getDbmulticloudMultiCloudResourceDiscoveryPlain(GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs args) {
+        return getDbmulticloudMultiCloudResourceDiscoveryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudMultiCloudResourceDiscoveryResult> getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudMultiCloudResourceDiscovery:getDbmulticloudMultiCloudResourceDiscovery", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudMultiCloudResourceDiscoveryResult> getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudMultiCloudResourceDiscovery:getDbmulticloudMultiCloudResourceDiscovery", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudMultiCloudResourceDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudMultiCloudResourceDiscoveryResult> getDbmulticloudMultiCloudResourceDiscoveryPlain(GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudMultiCloudResourceDiscovery:getDbmulticloudMultiCloudResourceDiscovery", TypeShape.of(GetDbmulticloudMultiCloudResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobContainerResult> getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs args) {
+        return getDbmulticloudOracleDbAzureBlobContainer(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobContainerResult> getDbmulticloudOracleDbAzureBlobContainerPlain(GetDbmulticloudOracleDbAzureBlobContainerPlainArgs args) {
+        return getDbmulticloudOracleDbAzureBlobContainerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobContainerResult> getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobContainer:getDbmulticloudOracleDbAzureBlobContainer", TypeShape.of(GetDbmulticloudOracleDbAzureBlobContainerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobContainerResult> getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobContainer:getDbmulticloudOracleDbAzureBlobContainer", TypeShape.of(GetDbmulticloudOracleDbAzureBlobContainerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobContainerResult> getDbmulticloudOracleDbAzureBlobContainerPlain(GetDbmulticloudOracleDbAzureBlobContainerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureBlobContainer:getDbmulticloudOracleDbAzureBlobContainer", TypeShape.of(GetDbmulticloudOracleDbAzureBlobContainerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainers = OciFunctions.getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
+     *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
+     *             .displayName(oracleDbAzureBlobContainerDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .state(oracleDbAzureBlobContainerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobContainersResult> getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs args) {
+        return getDbmulticloudOracleDbAzureBlobContainers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainers = OciFunctions.getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
+     *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
+     *             .displayName(oracleDbAzureBlobContainerDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .state(oracleDbAzureBlobContainerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobContainersResult> getDbmulticloudOracleDbAzureBlobContainersPlain(GetDbmulticloudOracleDbAzureBlobContainersPlainArgs args) {
+        return getDbmulticloudOracleDbAzureBlobContainersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainers = OciFunctions.getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
+     *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
+     *             .displayName(oracleDbAzureBlobContainerDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .state(oracleDbAzureBlobContainerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobContainersResult> getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobContainers:getDbmulticloudOracleDbAzureBlobContainers", TypeShape.of(GetDbmulticloudOracleDbAzureBlobContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainers = OciFunctions.getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
+     *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
+     *             .displayName(oracleDbAzureBlobContainerDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .state(oracleDbAzureBlobContainerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobContainersResult> getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobContainers:getDbmulticloudOracleDbAzureBlobContainers", TypeShape.of(GetDbmulticloudOracleDbAzureBlobContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobContainers = OciFunctions.getDbmulticloudOracleDbAzureBlobContainers(GetDbmulticloudOracleDbAzureBlobContainersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
+     *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
+     *             .displayName(oracleDbAzureBlobContainerDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .state(oracleDbAzureBlobContainerState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobContainersResult> getDbmulticloudOracleDbAzureBlobContainersPlain(GetDbmulticloudOracleDbAzureBlobContainersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureBlobContainers:getDbmulticloudOracleDbAzureBlobContainers", TypeShape.of(GetDbmulticloudOracleDbAzureBlobContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobMountResult> getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs args) {
+        return getDbmulticloudOracleDbAzureBlobMount(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobMountResult> getDbmulticloudOracleDbAzureBlobMountPlain(GetDbmulticloudOracleDbAzureBlobMountPlainArgs args) {
+        return getDbmulticloudOracleDbAzureBlobMountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobMountResult> getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobMount:getDbmulticloudOracleDbAzureBlobMount", TypeShape.of(GetDbmulticloudOracleDbAzureBlobMountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobMountResult> getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobMount:getDbmulticloudOracleDbAzureBlobMount", TypeShape.of(GetDbmulticloudOracleDbAzureBlobMountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobMountResult> getDbmulticloudOracleDbAzureBlobMountPlain(GetDbmulticloudOracleDbAzureBlobMountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureBlobMount:getDbmulticloudOracleDbAzureBlobMount", TypeShape.of(GetDbmulticloudOracleDbAzureBlobMountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureBlobMountDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureBlobMountState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobMountsResult> getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs args) {
+        return getDbmulticloudOracleDbAzureBlobMounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureBlobMountDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureBlobMountState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobMountsResult> getDbmulticloudOracleDbAzureBlobMountsPlain(GetDbmulticloudOracleDbAzureBlobMountsPlainArgs args) {
+        return getDbmulticloudOracleDbAzureBlobMountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureBlobMountDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureBlobMountState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobMountsResult> getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobMounts:getDbmulticloudOracleDbAzureBlobMounts", TypeShape.of(GetDbmulticloudOracleDbAzureBlobMountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureBlobMountDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureBlobMountState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureBlobMountsResult> getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureBlobMounts:getDbmulticloudOracleDbAzureBlobMounts", TypeShape.of(GetDbmulticloudOracleDbAzureBlobMountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobMountsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureBlobMountDisplayName)
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureBlobMountState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureBlobMountsResult> getDbmulticloudOracleDbAzureBlobMountsPlain(GetDbmulticloudOracleDbAzureBlobMountsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureBlobMounts:getDbmulticloudOracleDbAzureBlobMounts", TypeShape.of(GetDbmulticloudOracleDbAzureBlobMountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureConnectorResult> getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs args) {
+        return getDbmulticloudOracleDbAzureConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureConnectorResult> getDbmulticloudOracleDbAzureConnectorPlain(GetDbmulticloudOracleDbAzureConnectorPlainArgs args) {
+        return getDbmulticloudOracleDbAzureConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureConnectorResult> getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureConnector:getDbmulticloudOracleDbAzureConnector", TypeShape.of(GetDbmulticloudOracleDbAzureConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureConnectorResult> getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureConnector:getDbmulticloudOracleDbAzureConnector", TypeShape.of(GetDbmulticloudOracleDbAzureConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureConnectorResult> getDbmulticloudOracleDbAzureConnectorPlain(GetDbmulticloudOracleDbAzureConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureConnector:getDbmulticloudOracleDbAzureConnector", TypeShape.of(GetDbmulticloudOracleDbAzureConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbClusterResourceId(testResource.id())
+     *             .displayName(oracleDbAzureConnectorDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureConnectorsResult> getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs args) {
+        return getDbmulticloudOracleDbAzureConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbClusterResourceId(testResource.id())
+     *             .displayName(oracleDbAzureConnectorDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureConnectorsResult> getDbmulticloudOracleDbAzureConnectorsPlain(GetDbmulticloudOracleDbAzureConnectorsPlainArgs args) {
+        return getDbmulticloudOracleDbAzureConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbClusterResourceId(testResource.id())
+     *             .displayName(oracleDbAzureConnectorDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureConnectorsResult> getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureConnectors:getDbmulticloudOracleDbAzureConnectors", TypeShape.of(GetDbmulticloudOracleDbAzureConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbClusterResourceId(testResource.id())
+     *             .displayName(oracleDbAzureConnectorDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureConnectorsResult> getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureConnectors:getDbmulticloudOracleDbAzureConnectors", TypeShape.of(GetDbmulticloudOracleDbAzureConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbClusterResourceId(testResource.id())
+     *             .displayName(oracleDbAzureConnectorDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .state(oracleDbAzureConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureConnectorsResult> getDbmulticloudOracleDbAzureConnectorsPlain(GetDbmulticloudOracleDbAzureConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureConnectors:getDbmulticloudOracleDbAzureConnectors", TypeShape.of(GetDbmulticloudOracleDbAzureConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureKeyResult> getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs args) {
+        return getDbmulticloudOracleDbAzureKey(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureKeyResult> getDbmulticloudOracleDbAzureKeyPlain(GetDbmulticloudOracleDbAzureKeyPlainArgs args) {
+        return getDbmulticloudOracleDbAzureKeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureKeyResult> getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureKey:getDbmulticloudOracleDbAzureKey", TypeShape.of(GetDbmulticloudOracleDbAzureKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureKeyResult> getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureKey:getDbmulticloudOracleDbAzureKey", TypeShape.of(GetDbmulticloudOracleDbAzureKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureKeyResult> getDbmulticloudOracleDbAzureKeyPlain(GetDbmulticloudOracleDbAzureKeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureKey:getDbmulticloudOracleDbAzureKey", TypeShape.of(GetDbmulticloudOracleDbAzureKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Keys based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureKeyDisplayName)
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureKeysResult> getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs args) {
+        return getDbmulticloudOracleDbAzureKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Keys based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureKeyDisplayName)
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureKeysResult> getDbmulticloudOracleDbAzureKeysPlain(GetDbmulticloudOracleDbAzureKeysPlainArgs args) {
+        return getDbmulticloudOracleDbAzureKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Keys based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureKeyDisplayName)
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureKeysResult> getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureKeys:getDbmulticloudOracleDbAzureKeys", TypeShape.of(GetDbmulticloudOracleDbAzureKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Keys based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureKeyDisplayName)
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureKeysResult> getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureKeys:getDbmulticloudOracleDbAzureKeys", TypeShape.of(GetDbmulticloudOracleDbAzureKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Keys based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureKeyDisplayName)
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureKeysResult> getDbmulticloudOracleDbAzureKeysPlain(GetDbmulticloudOracleDbAzureKeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureKeys:getDbmulticloudOracleDbAzureKeys", TypeShape.of(GetDbmulticloudOracleDbAzureKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultResult> getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs args) {
+        return getDbmulticloudOracleDbAzureVault(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultResult> getDbmulticloudOracleDbAzureVaultPlain(GetDbmulticloudOracleDbAzureVaultPlainArgs args) {
+        return getDbmulticloudOracleDbAzureVaultPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultResult> getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVault:getDbmulticloudOracleDbAzureVault", TypeShape.of(GetDbmulticloudOracleDbAzureVaultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultResult> getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVault:getDbmulticloudOracleDbAzureVault", TypeShape.of(GetDbmulticloudOracleDbAzureVaultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultResult> getDbmulticloudOracleDbAzureVaultPlain(GetDbmulticloudOracleDbAzureVaultPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureVault:getDbmulticloudOracleDbAzureVault", TypeShape.of(GetDbmulticloudOracleDbAzureVaultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultAssociationResult> getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs args) {
+        return getDbmulticloudOracleDbAzureVaultAssociation(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultAssociationResult> getDbmulticloudOracleDbAzureVaultAssociationPlain(GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs args) {
+        return getDbmulticloudOracleDbAzureVaultAssociationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultAssociationResult> getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVaultAssociation:getDbmulticloudOracleDbAzureVaultAssociation", TypeShape.of(GetDbmulticloudOracleDbAzureVaultAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultAssociationResult> getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVaultAssociation:getDbmulticloudOracleDbAzureVaultAssociation", TypeShape.of(GetDbmulticloudOracleDbAzureVaultAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultAssociationResult> getDbmulticloudOracleDbAzureVaultAssociationPlain(GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureVaultAssociation:getDbmulticloudOracleDbAzureVaultAssociation", TypeShape.of(GetDbmulticloudOracleDbAzureVaultAssociationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Associations based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultAssociationDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultAssociationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultAssociationsResult> getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs args) {
+        return getDbmulticloudOracleDbAzureVaultAssociations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Associations based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultAssociationDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultAssociationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultAssociationsResult> getDbmulticloudOracleDbAzureVaultAssociationsPlain(GetDbmulticloudOracleDbAzureVaultAssociationsPlainArgs args) {
+        return getDbmulticloudOracleDbAzureVaultAssociationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Associations based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultAssociationDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultAssociationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultAssociationsResult> getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVaultAssociations:getDbmulticloudOracleDbAzureVaultAssociations", TypeShape.of(GetDbmulticloudOracleDbAzureVaultAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Associations based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultAssociationDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultAssociationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultAssociationsResult> getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVaultAssociations:getDbmulticloudOracleDbAzureVaultAssociations", TypeShape.of(GetDbmulticloudOracleDbAzureVaultAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all Oracle DB Azure Associations based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultAssociationDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultAssociationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultAssociationsResult> getDbmulticloudOracleDbAzureVaultAssociationsPlain(GetDbmulticloudOracleDbAzureVaultAssociationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureVaultAssociations:getDbmulticloudOracleDbAzureVaultAssociations", TypeShape.of(GetDbmulticloudOracleDbAzureVaultAssociationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB Azure Vaults based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs args) {
+        return getDbmulticloudOracleDbAzureVaults(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB Azure Vaults based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaultsPlain(GetDbmulticloudOracleDbAzureVaultsPlainArgs args) {
+        return getDbmulticloudOracleDbAzureVaultsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB Azure Vaults based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", TypeShape.of(GetDbmulticloudOracleDbAzureVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB Azure Vaults based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", TypeShape.of(GetDbmulticloudOracleDbAzureVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB Azure Vaults based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAzureVaultDisplayName)
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .state(oracleDbAzureVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaultsPlain(GetDbmulticloudOracleDbAzureVaultsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", TypeShape.of(GetDbmulticloudOracleDbAzureVaultsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.

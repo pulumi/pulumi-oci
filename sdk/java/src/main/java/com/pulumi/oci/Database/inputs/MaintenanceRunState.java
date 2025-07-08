@@ -10,6 +10,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -399,6 +400,21 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The target software version for the database server patching operation.
      * 
      */
@@ -552,6 +568,7 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
         this.peerMaintenanceRunId = $.peerMaintenanceRunId;
         this.peerMaintenanceRunIds = $.peerMaintenanceRunIds;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.targetDbServerVersion = $.targetDbServerVersion;
         this.targetResourceId = $.targetResourceId;
         this.targetResourceType = $.targetResourceType;
@@ -1127,6 +1144,27 @@ public final class MaintenanceRunState extends com.pulumi.resources.ResourceArgs
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

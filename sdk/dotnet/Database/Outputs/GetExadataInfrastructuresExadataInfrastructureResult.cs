@@ -216,6 +216,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string StorageServerVersion;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time the Exadata infrastructure was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -330,6 +334,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string storageServerVersion,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeZone)
@@ -386,6 +392,7 @@ namespace Pulumi.Oci.Database.Outputs
             StorageCount = storageCount;
             StorageServerType = storageServerType;
             StorageServerVersion = storageServerVersion;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
         }

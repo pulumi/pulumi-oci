@@ -28,7 +28,7 @@ class GetVmClusterNetworkResult:
     """
     A collection of values returned by getVmClusterNetwork.
     """
-    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, display_name=None, dns=None, dr_scans=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, ntps=None, scans=None, state=None, time_created=None, validate_vm_cluster_network=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_networks=None):
+    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, display_name=None, dns=None, dr_scans=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, ntps=None, scans=None, state=None, system_tags=None, time_created=None, validate_vm_cluster_network=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_networks=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -68,6 +68,9 @@ class GetVmClusterNetworkResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -186,6 +189,14 @@ class GetVmClusterNetworkResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -239,6 +250,7 @@ class AwaitableGetVmClusterNetworkResult(GetVmClusterNetworkResult):
             ntps=self.ntps,
             scans=self.scans,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             validate_vm_cluster_network=self.validate_vm_cluster_network,
             vm_cluster_id=self.vm_cluster_id,
@@ -289,6 +301,7 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[builtins.str] = N
         ntps=pulumi.get(__ret__, 'ntps'),
         scans=pulumi.get(__ret__, 'scans'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         validate_vm_cluster_network=pulumi.get(__ret__, 'validate_vm_cluster_network'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'),
@@ -336,6 +349,7 @@ def get_vm_cluster_network_output(exadata_infrastructure_id: Optional[pulumi.Inp
         ntps=pulumi.get(__response__, 'ntps'),
         scans=pulumi.get(__response__, 'scans'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         validate_vm_cluster_network=pulumi.get(__response__, 'validate_vm_cluster_network'),
         vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id'),

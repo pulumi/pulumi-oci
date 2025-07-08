@@ -41,6 +41,7 @@ class MysqlDbSystemArgs:
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
@@ -87,6 +88,7 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[builtins.str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
+        :param pulumi.Input['MysqlDbSystemEncryptDataArgs'] encrypt_data: (Updatable) Encrypt data details.
         :param pulumi.Input[builtins.str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -151,6 +153,8 @@ class MysqlDbSystemArgs:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encrypt_data is not None:
+            pulumi.set(__self__, "encrypt_data", encrypt_data)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
@@ -422,6 +426,18 @@ class MysqlDbSystemArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="encryptData")
+    def encrypt_data(self) -> Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]:
+        """
+        (Updatable) Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_data")
+
+    @encrypt_data.setter
+    def encrypt_data(self, value: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]):
+        pulumi.set(self, "encrypt_data", value)
+
+    @property
     @pulumi.getter(name="faultDomain")
     def fault_domain(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -649,6 +665,7 @@ class _MysqlDbSystemState:
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']] = None,
                  endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -704,6 +721,7 @@ class _MysqlDbSystemState:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[builtins.str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
+        :param pulumi.Input['MysqlDbSystemEncryptDataArgs'] encrypt_data: (Updatable) Encrypt data details.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemEndpointArgs']]] endpoints: The network endpoints available for this DB System.
         :param pulumi.Input[builtins.str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
@@ -783,6 +801,8 @@ class _MysqlDbSystemState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encrypt_data is not None:
+            pulumi.set(__self__, "encrypt_data", encrypt_data)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
         if fault_domain is not None:
@@ -1071,6 +1091,18 @@ class _MysqlDbSystemState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptData")
+    def encrypt_data(self) -> Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]:
+        """
+        (Updatable) Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_data")
+
+    @encrypt_data.setter
+    def encrypt_data(self, value: Optional[pulumi.Input['MysqlDbSystemEncryptDataArgs']]):
+        pulumi.set(self, "encrypt_data", value)
 
     @property
     @pulumi.getter
@@ -1422,6 +1454,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
@@ -1501,6 +1534,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             }],
             description=mysql_db_system_description,
             display_name=mysql_db_system_display_name,
+            encrypt_data={
+                "key_generation_type": mysql_db_system_encrypt_data_key_generation_type,
+                "key_id": test_key["id"],
+            },
             fault_domain=mysql_db_system_fault_domain,
             freeform_tags={
                 "bar-key": "value",
@@ -1569,6 +1606,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[builtins.str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
+        :param pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']] encrypt_data: (Updatable) Encrypt data details.
         :param pulumi.Input[builtins.str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
                In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -1668,6 +1706,10 @@ class MysqlDbSystem(pulumi.CustomResource):
             }],
             description=mysql_db_system_description,
             display_name=mysql_db_system_display_name,
+            encrypt_data={
+                "key_generation_type": mysql_db_system_encrypt_data_key_generation_type,
+                "key_id": test_key["id"],
+            },
             fault_domain=mysql_db_system_fault_domain,
             freeform_tags={
                 "bar-key": "value",
@@ -1741,6 +1783,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  hostname_label: Optional[pulumi.Input[builtins.str]] = None,
@@ -1789,6 +1832,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["deletion_policies"] = deletion_policies
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["encrypt_data"] = encrypt_data
             __props__.__dict__["fault_domain"] = fault_domain
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["hostname_label"] = hostname_label
@@ -1852,6 +1896,7 @@ class MysqlDbSystem(pulumi.CustomResource):
             deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
+            encrypt_data: Optional[pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']]] = None,
             endpoints: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict']]]]] = None,
             fault_domain: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -1912,6 +1957,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemDeletionPolicyArgs', 'MysqlDbSystemDeletionPolicyArgsDict']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[builtins.str] description: (Updatable) User-provided data about the DB System.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
+        :param pulumi.Input[Union['MysqlDbSystemEncryptDataArgs', 'MysqlDbSystemEncryptDataArgsDict']] encrypt_data: (Updatable) Encrypt data details.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlDbSystemEndpointArgs', 'MysqlDbSystemEndpointArgsDict']]]] endpoints: The network endpoints available for this DB System.
         :param pulumi.Input[builtins.str] fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
                
@@ -1976,6 +2022,7 @@ class MysqlDbSystem(pulumi.CustomResource):
         __props__.__dict__["deletion_policies"] = deletion_policies
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["encrypt_data"] = encrypt_data
         __props__.__dict__["endpoints"] = endpoints
         __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -2163,6 +2210,14 @@ class MysqlDbSystem(pulumi.CustomResource):
         (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptData")
+    def encrypt_data(self) -> pulumi.Output['outputs.MysqlDbSystemEncryptData']:
+        """
+        (Updatable) Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_data")
 
     @property
     @pulumi.getter

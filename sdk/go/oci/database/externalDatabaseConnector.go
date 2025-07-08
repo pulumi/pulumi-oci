@@ -100,6 +100,8 @@ type ExternalDatabaseConnector struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external database connector resource.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the `connectionStatus` of this external connector was last updated.
 	TimeConnectionStatusLastUpdated pulumi.StringOutput `pulumi:"timeConnectionStatusLastUpdated"`
 	// The date and time the external connector was created.
@@ -178,6 +180,8 @@ type externalDatabaseConnectorState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external database connector resource.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the `connectionStatus` of this external connector was last updated.
 	TimeConnectionStatusLastUpdated *string `pulumi:"timeConnectionStatusLastUpdated"`
 	// The date and time the external connector was created.
@@ -212,6 +216,8 @@ type ExternalDatabaseConnectorState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The current lifecycle state of the external database connector resource.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time the `connectionStatus` of this external connector was last updated.
 	TimeConnectionStatusLastUpdated pulumi.StringPtrInput
 	// The date and time the external connector was created.
@@ -419,6 +425,11 @@ func (o ExternalDatabaseConnectorOutput) LifecycleDetails() pulumi.StringOutput 
 // The current lifecycle state of the external database connector resource.
 func (o ExternalDatabaseConnectorOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o ExternalDatabaseConnectorOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the `connectionStatus` of this external connector was last updated.

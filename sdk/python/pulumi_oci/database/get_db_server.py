@@ -28,7 +28,7 @@ class GetDbServerResult:
     """
     A collection of values returned by getDbServer.
     """
-    def __init__(__self__, autonomous_virtual_machine_ids=None, autonomous_vm_cluster_ids=None, compartment_id=None, compute_model=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, time_created=None, vm_cluster_ids=None):
+    def __init__(__self__, autonomous_virtual_machine_ids=None, autonomous_vm_cluster_ids=None, compartment_id=None, compute_model=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, system_tags=None, time_created=None, vm_cluster_ids=None):
         if autonomous_virtual_machine_ids and not isinstance(autonomous_virtual_machine_ids, list):
             raise TypeError("Expected argument 'autonomous_virtual_machine_ids' to be a list")
         pulumi.set(__self__, "autonomous_virtual_machine_ids", autonomous_virtual_machine_ids)
@@ -92,6 +92,9 @@ class GetDbServerResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -265,6 +268,14 @@ class GetDbServerResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -308,6 +319,7 @@ class AwaitableGetDbServerResult(GetDbServerResult):
             memory_size_in_gbs=self.memory_size_in_gbs,
             shape=self.shape,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             vm_cluster_ids=self.vm_cluster_ids)
 
@@ -362,6 +374,7 @@ def get_db_server(db_server_id: Optional[builtins.str] = None,
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vm_cluster_ids=pulumi.get(__ret__, 'vm_cluster_ids'))
 def get_db_server_output(db_server_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -413,5 +426,6 @@ def get_db_server_output(db_server_id: Optional[pulumi.Input[builtins.str]] = No
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         vm_cluster_ids=pulumi.get(__response__, 'vm_cluster_ids')))

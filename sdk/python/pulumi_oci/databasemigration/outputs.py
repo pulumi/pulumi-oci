@@ -19,6 +19,7 @@ from . import outputs
 __all__ = [
     'ConnectionAdditionalAttribute',
     'ConnectionIngressIp',
+    'JobCollectTracesData',
     'JobParameterFileVersion',
     'JobProgress',
     'JobProgressPhase',
@@ -171,6 +172,78 @@ class ConnectionIngressIp(dict):
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class JobCollectTracesData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "collectTracesState":
+            suggest = "collect_traces_state"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobCollectTracesData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobCollectTracesData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobCollectTracesData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: Optional[builtins.str] = None,
+                 collect_traces_state: Optional[builtins.str] = None,
+                 namespace: Optional[builtins.str] = None,
+                 object: Optional[builtins.str] = None):
+        """
+        :param builtins.str bucket: Name of the bucket containing the log file.
+        :param builtins.str collect_traces_state: Status of trace collection process.
+        :param builtins.str namespace: Object Storage namespace.
+        :param builtins.str object: Name of the object (regular expression is allowed)
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if collect_traces_state is not None:
+            pulumi.set(__self__, "collect_traces_state", collect_traces_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[builtins.str]:
+        """
+        Name of the bucket containing the log file.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="collectTracesState")
+    def collect_traces_state(self) -> Optional[builtins.str]:
+        """
+        Status of trace collection process.
+        """
+        return pulumi.get(self, "collect_traces_state")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[builtins.str]:
+        """
+        Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[builtins.str]:
+        """
+        Name of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "object")
 
 
 @pulumi.output_type

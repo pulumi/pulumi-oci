@@ -173,6 +173,7 @@ class _ExternalDatabaseConnectorState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_connection_status_last_updated: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -193,6 +194,7 @@ class _ExternalDatabaseConnectorState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] state: The current lifecycle state of the external database connector resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_connection_status_last_updated: The date and time the `connectionStatus` of this external connector was last updated.
         :param pulumi.Input[builtins.str] time_created: The date and time the external connector was created.
         """
@@ -220,6 +222,8 @@ class _ExternalDatabaseConnectorState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_connection_status_last_updated is not None:
             pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
         if time_created is not None:
@@ -372,6 +376,18 @@ class _ExternalDatabaseConnectorState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
@@ -576,6 +592,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             __props__.__dict__["connection_status"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_connection_status_last_updated"] = None
             __props__.__dict__["time_created"] = None
         super(ExternalDatabaseConnector, __self__).__init__(
@@ -600,6 +617,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_connection_status_last_updated: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None) -> 'ExternalDatabaseConnector':
         """
@@ -625,6 +643,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] state: The current lifecycle state of the external database connector resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_connection_status_last_updated: The date and time the `connectionStatus` of this external connector was last updated.
         :param pulumi.Input[builtins.str] time_created: The date and time the external connector was created.
         """
@@ -644,6 +663,7 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_connection_status_last_updated"] = time_connection_status_last_updated
         __props__.__dict__["time_created"] = time_created
         return ExternalDatabaseConnector(resource_name, opts=opts, __props__=__props__)
@@ -747,6 +767,14 @@ class ExternalDatabaseConnector(pulumi.CustomResource):
         The current lifecycle state of the external database connector resource.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")

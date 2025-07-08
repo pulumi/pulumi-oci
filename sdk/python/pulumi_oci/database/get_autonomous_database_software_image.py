@@ -27,7 +27,7 @@ class GetAutonomousDatabaseSoftwareImageResult:
     """
     A collection of values returned by getAutonomousDatabaseSoftwareImage.
     """
-    def __init__(__self__, autonomous_database_software_image_id=None, autonomous_dsi_one_off_patches=None, compartment_id=None, database_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_shape_family=None, lifecycle_details=None, release_update=None, source_cdb_id=None, state=None, time_created=None):
+    def __init__(__self__, autonomous_database_software_image_id=None, autonomous_dsi_one_off_patches=None, compartment_id=None, database_version=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_shape_family=None, lifecycle_details=None, release_update=None, source_cdb_id=None, state=None, system_tags=None, time_created=None):
         if autonomous_database_software_image_id and not isinstance(autonomous_database_software_image_id, str):
             raise TypeError("Expected argument 'autonomous_database_software_image_id' to be a str")
         pulumi.set(__self__, "autonomous_database_software_image_id", autonomous_database_software_image_id)
@@ -67,6 +67,9 @@ class GetAutonomousDatabaseSoftwareImageResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -170,6 +173,14 @@ class GetAutonomousDatabaseSoftwareImageResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -197,6 +208,7 @@ class AwaitableGetAutonomousDatabaseSoftwareImageResult(GetAutonomousDatabaseSof
             release_update=self.release_update,
             source_cdb_id=self.source_cdb_id,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created)
 
 
@@ -238,6 +250,7 @@ def get_autonomous_database_software_image(autonomous_database_software_image_id
         release_update=pulumi.get(__ret__, 'release_update'),
         source_cdb_id=pulumi.get(__ret__, 'source_cdb_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_autonomous_database_software_image_output(autonomous_database_software_image_id: Optional[pulumi.Input[builtins.str]] = None,
                                                   opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAutonomousDatabaseSoftwareImageResult]:
@@ -276,4 +289,5 @@ def get_autonomous_database_software_image_output(autonomous_database_software_i
         release_update=pulumi.get(__response__, 'release_update'),
         source_cdb_id=pulumi.get(__response__, 'source_cdb_id'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created')))

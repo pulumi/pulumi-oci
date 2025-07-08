@@ -725,6 +725,7 @@ class _AutonomousContainerDatabaseState:
                  key_store_wallet_name: Optional[pulumi.Input[builtins.str]] = None,
                  key_version_id: Optional[pulumi.Input[builtins.str]] = None,
                  kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
+                 kms_key_version_id: Optional[pulumi.Input[builtins.str]] = None,
                  largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[builtins.float]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
@@ -757,6 +758,7 @@ class _AutonomousContainerDatabaseState:
                  standby_maintenance_buffer_in_days: Optional[pulumi.Input[builtins.int]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  switchover_trigger: Optional[pulumi.Input[builtins.int]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_of_last_backup: Optional[pulumi.Input[builtins.str]] = None,
                  time_snapshot_standby_revert: Optional[pulumi.Input[builtins.str]] = None,
@@ -799,6 +801,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[builtins.str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[builtins.float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         :param pulumi.Input[builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -836,6 +839,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[builtins.int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[builtins.int] switchover_trigger: (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[builtins.str] time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param pulumi.Input[builtins.str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
@@ -914,6 +918,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "key_version_id", key_version_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
+        if kms_key_version_id is not None:
+            pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         if largest_provisionable_autonomous_database_in_cpus is not None:
             pulumi.set(__self__, "largest_provisionable_autonomous_database_in_cpus", largest_provisionable_autonomous_database_in_cpus)
         if last_maintenance_run_id is not None:
@@ -978,6 +984,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "state", state)
         if switchover_trigger is not None:
             pulumi.set(__self__, "switchover_trigger", switchover_trigger)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_of_last_backup is not None:
@@ -1408,6 +1416,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "kms_key_id", value)
 
     @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @kms_key_version_id.setter
+    def kms_key_version_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "kms_key_version_id", value)
+
+    @property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> Optional[pulumi.Input[builtins.float]]:
         """
@@ -1793,6 +1813,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "switchover_trigger", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -2127,6 +2159,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["is_multiple_standby"] = None
             __props__.__dict__["key_history_entries"] = None
             __props__.__dict__["key_store_wallet_name"] = None
+            __props__.__dict__["kms_key_version_id"] = None
             __props__.__dict__["largest_provisionable_autonomous_database_in_cpus"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -2142,6 +2175,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["reserved_cpus"] = None
             __props__.__dict__["role"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_of_last_backup"] = None
             __props__.__dict__["time_snapshot_standby_revert"] = None
@@ -2191,6 +2225,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             key_store_wallet_name: Optional[pulumi.Input[builtins.str]] = None,
             key_version_id: Optional[pulumi.Input[builtins.str]] = None,
             kms_key_id: Optional[pulumi.Input[builtins.str]] = None,
+            kms_key_version_id: Optional[pulumi.Input[builtins.str]] = None,
             largest_provisionable_autonomous_database_in_cpus: Optional[pulumi.Input[builtins.float]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
@@ -2223,6 +2258,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             standby_maintenance_buffer_in_days: Optional[pulumi.Input[builtins.int]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             switchover_trigger: Optional[pulumi.Input[builtins.int]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_of_last_backup: Optional[pulumi.Input[builtins.str]] = None,
             time_snapshot_standby_revert: Optional[pulumi.Input[builtins.str]] = None,
@@ -2270,6 +2306,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] key_store_wallet_name: The wallet name for Oracle Key Vault.
         :param pulumi.Input[builtins.str] key_version_id: The OCID of the key version that is used in rotate key operations.
         :param pulumi.Input[builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+        :param pulumi.Input[builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[builtins.float] largest_provisionable_autonomous_database_in_cpus: The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         :param pulumi.Input[builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
@@ -2307,6 +2344,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] standby_maintenance_buffer_in_days: (Updatable) The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param pulumi.Input[builtins.str] state: The current state of the Autonomous Container Database.
         :param pulumi.Input[builtins.int] switchover_trigger: (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the Autonomous Container Database was created.
         :param pulumi.Input[builtins.str] time_of_last_backup: The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
         :param pulumi.Input[builtins.str] time_snapshot_standby_revert: The date and time the Autonomous Container Database will be reverted to Standby from Snapshot Standby.
@@ -2354,6 +2392,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["key_store_wallet_name"] = key_store_wallet_name
         __props__.__dict__["key_version_id"] = key_version_id
         __props__.__dict__["kms_key_id"] = kms_key_id
+        __props__.__dict__["kms_key_version_id"] = kms_key_version_id
         __props__.__dict__["largest_provisionable_autonomous_database_in_cpus"] = largest_provisionable_autonomous_database_in_cpus
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -2386,6 +2425,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["standby_maintenance_buffer_in_days"] = standby_maintenance_buffer_in_days
         __props__.__dict__["state"] = state
         __props__.__dict__["switchover_trigger"] = switchover_trigger
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_of_last_backup"] = time_of_last_backup
         __props__.__dict__["time_snapshot_standby_revert"] = time_snapshot_standby_revert
@@ -2670,6 +2710,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         return pulumi.get(self, "kms_key_id")
 
     @property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> pulumi.Output[builtins.str]:
+        """
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @property
     @pulumi.getter(name="largestProvisionableAutonomousDatabaseInCpus")
     def largest_provisionable_autonomous_database_in_cpus(self) -> pulumi.Output[builtins.float]:
         """
@@ -2925,6 +2973,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
         """
         return pulumi.get(self, "switchover_trigger")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

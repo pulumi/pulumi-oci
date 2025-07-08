@@ -180,6 +180,8 @@ type CloudVmCluster struct {
 	ListenerPort pulumi.StringOutput `pulumi:"listenerPort"`
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs CloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The number of nodes in the cloud VM cluster.
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -219,6 +221,8 @@ type CloudVmCluster struct {
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion pulumi.StringOutput `pulumi:"systemVersion"`
+	// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+	TdeKeyStoreType pulumi.StringOutput `pulumi:"tdeKeyStoreType"`
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -365,6 +369,8 @@ type cloudVmClusterState struct {
 	ListenerPort *string `pulumi:"listenerPort"`
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []CloudVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The number of nodes in the cloud VM cluster.
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -404,6 +410,8 @@ type cloudVmClusterState struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
+	// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -494,6 +502,8 @@ type CloudVmClusterState struct {
 	ListenerPort pulumi.StringPtrInput
 	// (Updatable) The memory to be allocated in GBs.
 	MemorySizeInGbs pulumi.IntPtrInput
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs CloudVmClusterMultiCloudIdentityConnectorConfigArrayInput
 	// The number of nodes in the cloud VM cluster.
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -533,6 +543,8 @@ type CloudVmClusterState struct {
 	SystemTags pulumi.StringMapInput
 	// Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
+	// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+	TdeKeyStoreType pulumi.StringPtrInput
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -634,6 +646,8 @@ type cloudVmClusterArgs struct {
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
+	// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+	TdeKeyStoreType *string `pulumi:"tdeKeyStoreType"`
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -724,6 +738,8 @@ type CloudVmClusterArgs struct {
 	SubscriptionId pulumi.StringPtrInput
 	// Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
+	// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+	TdeKeyStoreType pulumi.StringPtrInput
 	// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// The vmcluster type for the VM cluster/Cloud VM cluster.
@@ -989,6 +1005,13 @@ func (o CloudVmClusterOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o CloudVmClusterOutput) MultiCloudIdentityConnectorConfigs() CloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(CloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
+}
+
 // The number of nodes in the cloud VM cluster.
 func (o CloudVmClusterOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
@@ -1083,6 +1106,11 @@ func (o CloudVmClusterOutput) SystemTags() pulumi.StringMapOutput {
 // Operating system version of the image.
 func (o CloudVmClusterOutput) SystemVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.SystemVersion }).(pulumi.StringOutput)
+}
+
+// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+func (o CloudVmClusterOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.TdeKeyStoreType }).(pulumi.StringOutput)
 }
 
 // The date and time that the cloud VM cluster was created.

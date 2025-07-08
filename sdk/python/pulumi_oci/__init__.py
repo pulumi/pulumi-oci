@@ -6994,6 +6994,54 @@ _utilities.register(
   "classes": {
    "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest": "ApiaccesscontrolPrivilegedApiRequest"
   }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudMultiCloudResourceDiscovery",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery": "DbmulticloudMultiCloudResourceDiscovery"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAzureBlobContainer",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer": "DbmulticloudOracleDbAzureBlobContainer"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAzureBlobMount",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount": "DbmulticloudOracleDbAzureBlobMount"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAzureConnector",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector": "DbmulticloudOracleDbAzureConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAzureVault",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault": "DbmulticloudOracleDbAzureVault"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAzureVaultAssociation",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation": "DbmulticloudOracleDbAzureVaultAssociation"
+  }
  }
 ]
 """,

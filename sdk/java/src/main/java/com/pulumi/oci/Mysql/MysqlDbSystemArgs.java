@@ -10,6 +10,7 @@ import com.pulumi.oci.Mysql.inputs.MysqlDbSystemBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemCustomerContactArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
@@ -298,6 +299,21 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * (Updatable) Encrypt data details.
+     * 
+     */
+    @Import(name="encryptData")
+    private @Nullable Output<MysqlDbSystemEncryptDataArgs> encryptData;
+
+    /**
+     * @return (Updatable) Encrypt data details.
+     * 
+     */
+    public Optional<Output<MysqlDbSystemEncryptDataArgs>> encryptData() {
+        return Optional.ofNullable(this.encryptData);
     }
 
     /**
@@ -618,6 +634,7 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.deletionPolicies = $.deletionPolicies;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.encryptData = $.encryptData;
         this.faultDomain = $.faultDomain;
         this.freeformTags = $.freeformTags;
         this.hostnameLabel = $.hostnameLabel;
@@ -1047,6 +1064,27 @@ public final class MysqlDbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptData (Updatable) Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptData(@Nullable Output<MysqlDbSystemEncryptDataArgs> encryptData) {
+            $.encryptData = encryptData;
+            return this;
+        }
+
+        /**
+         * @param encryptData (Updatable) Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptData(MysqlDbSystemEncryptDataArgs encryptData) {
+            return encryptData(Output.of(encryptData));
         }
 
         /**

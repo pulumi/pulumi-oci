@@ -92,6 +92,11 @@ namespace Pulumi.Oci.Mysql
     ///         },
     ///         Description = mysqlDbSystemDescription,
     ///         DisplayName = mysqlDbSystemDisplayName,
+    ///         EncryptData = new Oci.Mysql.Inputs.MysqlDbSystemEncryptDataArgs
+    ///         {
+    ///             KeyGenerationType = mysqlDbSystemEncryptDataKeyGenerationType,
+    ///             KeyId = testKey.Id,
+    ///         },
     ///         FaultDomain = mysqlDbSystemFaultDomain,
     ///         FreeformTags = 
     ///         {
@@ -266,6 +271,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Encrypt data details.
+        /// </summary>
+        [Output("encryptData")]
+        public Output<Outputs.MysqlDbSystemEncryptData> EncryptData { get; private set; } = null!;
 
         /// <summary>
         /// The network endpoints available for this DB System.
@@ -626,6 +637,12 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
+        /// (Updatable) Encrypt data details.
+        /// </summary>
+        [Input("encryptData")]
+        public Input<Inputs.MysqlDbSystemEncryptDataArgs>? EncryptData { get; set; }
+
+        /// <summary>
         /// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         /// 
         /// In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains and the MySQL instance in that domain is promoted to the primary instance. This redirection does not affect the IP address of the DB System in any way.
@@ -928,6 +945,12 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Encrypt data details.
+        /// </summary>
+        [Input("encryptData")]
+        public Input<Inputs.MysqlDbSystemEncryptDataGetArgs>? EncryptData { get; set; }
 
         [Input("endpoints")]
         private InputList<Inputs.MysqlDbSystemEndpointGetArgs>? _endpoints;

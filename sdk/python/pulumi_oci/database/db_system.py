@@ -752,6 +752,7 @@ class _DbSystemState:
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  version: Optional[pulumi.Input[builtins.str]] = None,
@@ -850,6 +851,7 @@ class _DbSystemState:
                * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
                
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the DB system was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
                
@@ -963,6 +965,8 @@ class _DbSystemState:
             pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
@@ -1628,6 +1632,18 @@ class _DbSystemState:
         pulumi.set(self, "subnet_id", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -2070,6 +2086,7 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["scan_ip_ids"] = None
             __props__.__dict__["scan_ipv6ids"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["version"] = None
             __props__.__dict__["vip_ids"] = None
@@ -2136,6 +2153,7 @@ class DbSystem(pulumi.CustomResource):
             state: Optional[pulumi.Input[builtins.str]] = None,
             storage_volume_performance_mode: Optional[pulumi.Input[builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_zone: Optional[pulumi.Input[builtins.str]] = None,
             version: Optional[pulumi.Input[builtins.str]] = None,
@@ -2239,6 +2257,7 @@ class DbSystem(pulumi.CustomResource):
                * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
                
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the DB system was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
                
@@ -2305,6 +2324,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["version"] = version
@@ -2759,6 +2779,14 @@ class DbSystem(pulumi.CustomResource):
         These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

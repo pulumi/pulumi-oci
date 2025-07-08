@@ -46,6 +46,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImageArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagePlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseSoftwareImagesArgs;
@@ -325,6 +327,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseInstanceWalletManage
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasePeersResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRegionalWalletManagementResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResourcePoolMembersResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseSoftwareImageResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseSoftwareImagesResult;
@@ -5343,6 +5346,226 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousDatabaseRegionalWalletManagementResult> getAutonomousDatabaseRegionalWalletManagementPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseRegionalWalletManagement:getAutonomousDatabaseRegionalWalletManagement", TypeShape.of(GetAutonomousDatabaseRegionalWalletManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseResourcePoolMembers = DatabaseFunctions.getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseResourcePoolMembersResult> getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs args) {
+        return getAutonomousDatabaseResourcePoolMembers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseResourcePoolMembers = DatabaseFunctions.getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseResourcePoolMembersResult> getAutonomousDatabaseResourcePoolMembersPlain(GetAutonomousDatabaseResourcePoolMembersPlainArgs args) {
+        return getAutonomousDatabaseResourcePoolMembersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseResourcePoolMembers = DatabaseFunctions.getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseResourcePoolMembersResult> getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseResourcePoolMembers:getAutonomousDatabaseResourcePoolMembers", TypeShape.of(GetAutonomousDatabaseResourcePoolMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseResourcePoolMembers = DatabaseFunctions.getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabaseResourcePoolMembersResult> getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseResourcePoolMembers:getAutonomousDatabaseResourcePoolMembers", TypeShape.of(GetAutonomousDatabaseResourcePoolMembersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Resource Pool Members in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the OCIDs of the Autonomous Database resource pool members for the specified Autonomous Database leader.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseResourcePoolMembersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseResourcePoolMembers = DatabaseFunctions.getAutonomousDatabaseResourcePoolMembers(GetAutonomousDatabaseResourcePoolMembersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabaseResourcePoolMembersResult> getAutonomousDatabaseResourcePoolMembersPlain(GetAutonomousDatabaseResourcePoolMembersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseResourcePoolMembers:getAutonomousDatabaseResourcePoolMembers", TypeShape.of(GetAutonomousDatabaseResourcePoolMembersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Autonomous Database Software Image resource in Oracle Cloud Infrastructure Database service.

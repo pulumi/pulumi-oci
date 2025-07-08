@@ -113,6 +113,8 @@ type MaintenanceRun struct {
 	PeerMaintenanceRunIds pulumi.StringArrayOutput `pulumi:"peerMaintenanceRunIds"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The target software version for the database server patching operation.
 	TargetDbServerVersion pulumi.StringOutput `pulumi:"targetDbServerVersion"`
 	// The ID of the target resource for which the maintenance run should be created.
@@ -225,6 +227,8 @@ type maintenanceRunState struct {
 	PeerMaintenanceRunIds []string `pulumi:"peerMaintenanceRunIds"`
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The target software version for the database server patching operation.
 	TargetDbServerVersion *string `pulumi:"targetDbServerVersion"`
 	// The ID of the target resource for which the maintenance run should be created.
@@ -299,6 +303,8 @@ type MaintenanceRunState struct {
 	PeerMaintenanceRunIds pulumi.StringArrayInput
 	// The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The target software version for the database server patching operation.
 	TargetDbServerVersion pulumi.StringPtrInput
 	// The ID of the target resource for which the maintenance run should be created.
@@ -583,6 +589,11 @@ func (o MaintenanceRunOutput) PeerMaintenanceRunIds() pulumi.StringArrayOutput {
 // The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
 func (o MaintenanceRunOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o MaintenanceRunOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MaintenanceRun) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The target software version for the database server patching operation.

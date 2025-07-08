@@ -92,6 +92,8 @@ type LookupDbHomeResult struct {
 	Source           string `pulumi:"source"`
 	// The current state of the Database Home.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Database Home was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -224,6 +226,11 @@ func (o LookupDbHomeResultOutput) Source() pulumi.StringOutput {
 // The current state of the Database Home.
 func (o LookupDbHomeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbHomeResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupDbHomeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Database Home was created.

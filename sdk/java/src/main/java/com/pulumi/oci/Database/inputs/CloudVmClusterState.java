@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.inputs.CloudVmClusterCloudAutomationUpdateDetails
 import com.pulumi.oci.Database.inputs.CloudVmClusterDataCollectionOptionsArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterFileSystemConfigurationDetailArgs;
 import com.pulumi.oci.Database.inputs.CloudVmClusterIormConfigCachArgs;
+import com.pulumi.oci.Database.inputs.CloudVmClusterMultiCloudIdentityConnectorConfigArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -504,6 +505,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    @Import(name="multiCloudIdentityConnectorConfigs")
+    private @Nullable Output<List<CloudVmClusterMultiCloudIdentityConnectorConfigArgs>> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public Optional<Output<List<CloudVmClusterMultiCloudIdentityConnectorConfigArgs>>> multiCloudIdentityConnectorConfigs() {
+        return Optional.ofNullable(this.multiCloudIdentityConnectorConfigs);
+    }
+
+    /**
      * The number of nodes in the cloud VM cluster.
      * 
      */
@@ -791,6 +807,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+     * 
+     */
+    @Import(name="tdeKeyStoreType")
+    private @Nullable Output<String> tdeKeyStoreType;
+
+    /**
+     * @return Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+     * 
+     */
+    public Optional<Output<String>> tdeKeyStoreType() {
+        return Optional.ofNullable(this.tdeKeyStoreType);
+    }
+
+    /**
      * The date and time that the cloud VM cluster was created.
      * 
      */
@@ -920,6 +951,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.lifecycleDetails = $.lifecycleDetails;
         this.listenerPort = $.listenerPort;
         this.memorySizeInGbs = $.memorySizeInGbs;
+        this.multiCloudIdentityConnectorConfigs = $.multiCloudIdentityConnectorConfigs;
         this.nodeCount = $.nodeCount;
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
@@ -939,6 +971,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.subscriptionId = $.subscriptionId;
         this.systemTags = $.systemTags;
         this.systemVersion = $.systemVersion;
+        this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
         this.vipIds = $.vipIds;
@@ -1667,6 +1700,37 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param multiCloudIdentityConnectorConfigs Details of the multi cloud identity connectors of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiCloudIdentityConnectorConfigs(@Nullable Output<List<CloudVmClusterMultiCloudIdentityConnectorConfigArgs>> multiCloudIdentityConnectorConfigs) {
+            $.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            return this;
+        }
+
+        /**
+         * @param multiCloudIdentityConnectorConfigs Details of the multi cloud identity connectors of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiCloudIdentityConnectorConfigs(List<CloudVmClusterMultiCloudIdentityConnectorConfigArgs> multiCloudIdentityConnectorConfigs) {
+            return multiCloudIdentityConnectorConfigs(Output.of(multiCloudIdentityConnectorConfigs));
+        }
+
+        /**
+         * @param multiCloudIdentityConnectorConfigs Details of the multi cloud identity connectors of the VM cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiCloudIdentityConnectorConfigs(CloudVmClusterMultiCloudIdentityConnectorConfigArgs... multiCloudIdentityConnectorConfigs) {
+            return multiCloudIdentityConnectorConfigs(List.of(multiCloudIdentityConnectorConfigs));
+        }
+
+        /**
          * @param nodeCount The number of nodes in the cloud VM cluster.
          * 
          * @return builder
@@ -2106,6 +2170,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder systemVersion(String systemVersion) {
             return systemVersion(Output.of(systemVersion));
+        }
+
+        /**
+         * @param tdeKeyStoreType Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(@Nullable Output<String> tdeKeyStoreType) {
+            $.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+
+        /**
+         * @param tdeKeyStoreType Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            return tdeKeyStoreType(Output.of(tdeKeyStoreType));
         }
 
         /**

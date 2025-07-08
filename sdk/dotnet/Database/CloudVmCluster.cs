@@ -301,6 +301,12 @@ namespace Pulumi.Oci.Database
         public Output<int> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        [Output("multiCloudIdentityConnectorConfigs")]
+        public Output<ImmutableArray<Outputs.CloudVmClusterMultiCloudIdentityConnectorConfig>> MultiCloudIdentityConnectorConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
         [Output("nodeCount")]
@@ -414,6 +420,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("systemVersion")]
         public Output<string> SystemVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+        /// </summary>
+        [Output("tdeKeyStoreType")]
+        public Output<string> TdeKeyStoreType { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the cloud VM cluster was created.
@@ -763,6 +775,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? SystemVersion { get; set; }
 
         /// <summary>
+        /// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+        /// </summary>
+        [Input("tdeKeyStoreType")]
+        public Input<string>? TdeKeyStoreType { get; set; }
+
+        /// <summary>
         /// The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
         [Input("timeZone")]
@@ -1016,6 +1034,18 @@ namespace Pulumi.Oci.Database
         [Input("memorySizeInGbs")]
         public Input<int>? MemorySizeInGbs { get; set; }
 
+        [Input("multiCloudIdentityConnectorConfigs")]
+        private InputList<Inputs.CloudVmClusterMultiCloudIdentityConnectorConfigGetArgs>? _multiCloudIdentityConnectorConfigs;
+
+        /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        public InputList<Inputs.CloudVmClusterMultiCloudIdentityConnectorConfigGetArgs> MultiCloudIdentityConnectorConfigs
+        {
+            get => _multiCloudIdentityConnectorConfigs ?? (_multiCloudIdentityConnectorConfigs = new InputList<Inputs.CloudVmClusterMultiCloudIdentityConnectorConfigGetArgs>());
+            set => _multiCloudIdentityConnectorConfigs = value;
+        }
+
         /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
@@ -1166,6 +1196,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("systemVersion")]
         public Input<string>? SystemVersion { get; set; }
+
+        /// <summary>
+        /// Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+        /// </summary>
+        [Input("tdeKeyStoreType")]
+        public Input<string>? TdeKeyStoreType { get; set; }
 
         /// <summary>
         /// The date and time that the cloud VM cluster was created.

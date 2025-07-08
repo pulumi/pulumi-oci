@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshot;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotSummary;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupSourceDetail;
 import java.lang.Integer;
 import java.lang.String;
@@ -68,6 +69,11 @@ public final class GetMysqlBackupResult {
      * 
      */
     private String displayName;
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    private List<GetMysqlBackupEncryptData> encryptDatas;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -218,6 +224,13 @@ public final class GetMysqlBackupResult {
         return this.displayName;
     }
     /**
+     * @return Encrypt data details.
+     * 
+     */
+    public List<GetMysqlBackupEncryptData> encryptDatas() {
+        return this.encryptDatas;
+    }
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -340,6 +353,7 @@ public final class GetMysqlBackupResult {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private List<GetMysqlBackupEncryptData> encryptDatas;
         private Map<String,String> freeformTags;
         private String id;
         private String immediateSourceBackupId;
@@ -370,6 +384,7 @@ public final class GetMysqlBackupResult {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.encryptDatas = defaults.encryptDatas;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.immediateSourceBackupId = defaults.immediateSourceBackupId;
@@ -488,6 +503,17 @@ public final class GetMysqlBackupResult {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptDatas(List<GetMysqlBackupEncryptData> encryptDatas) {
+            if (encryptDatas == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupResult", "encryptDatas");
+            }
+            this.encryptDatas = encryptDatas;
+            return this;
+        }
+        public Builder encryptDatas(GetMysqlBackupEncryptData... encryptDatas) {
+            return encryptDatas(List.of(encryptDatas));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -626,6 +652,7 @@ public final class GetMysqlBackupResult {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.encryptDatas = encryptDatas;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.immediateSourceBackupId = immediateSourceBackupId;

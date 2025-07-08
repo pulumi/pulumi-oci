@@ -11,6 +11,7 @@ import com.pulumi.oci.Mysql.MysqlBackupArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupState;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshot;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotSummary;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupSourceDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -223,6 +224,20 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * Encrypt data details.
+     * 
+     */
+    @Export(name="encryptData", refs={MysqlBackupEncryptData.class}, tree="[0]")
+    private Output<MysqlBackupEncryptData> encryptData;
+
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    public Output<MysqlBackupEncryptData> encryptData() {
+        return this.encryptData;
     }
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`

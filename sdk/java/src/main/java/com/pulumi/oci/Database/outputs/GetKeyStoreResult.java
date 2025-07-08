@@ -58,6 +58,11 @@ public final class GetKeyStoreResult {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time that the key store was created.
      * 
      */
@@ -132,6 +137,13 @@ public final class GetKeyStoreResult {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time that the key store was created.
      * 
      */
@@ -165,6 +177,7 @@ public final class GetKeyStoreResult {
         private String keyStoreId;
         private String lifecycleDetails;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private List<GetKeyStoreTypeDetail> typeDetails;
         public Builder() {}
@@ -180,6 +193,7 @@ public final class GetKeyStoreResult {
     	      this.keyStoreId = defaults.keyStoreId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.typeDetails = defaults.typeDetails;
         }
@@ -268,6 +282,14 @@ public final class GetKeyStoreResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetKeyStoreResult", "timeCreated");
@@ -298,6 +320,7 @@ public final class GetKeyStoreResult {
             _resultValue.keyStoreId = keyStoreId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.typeDetails = typeDetails;
             return _resultValue;

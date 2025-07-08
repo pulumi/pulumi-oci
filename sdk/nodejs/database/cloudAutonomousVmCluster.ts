@@ -53,9 +53,11 @@ import * as utilities from "../utilities";
  *     },
  *     memoryPerOracleComputeUnitInGbs: cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs,
  *     nsgIds: cloudAutonomousVmClusterNsgIds,
+ *     opcDryRun: cloudAutonomousVmClusterOpcDryRun,
  *     scanListenerPortNonTls: cloudAutonomousVmClusterScanListenerPortNonTls,
  *     scanListenerPortTls: cloudAutonomousVmClusterScanListenerPortTls,
  *     securityAttributes: cloudAutonomousVmClusterSecurityAttributes,
+ *     subscriptionId: testSubscription.id,
  *     totalContainerDatabases: cloudAutonomousVmClusterTotalContainerDatabases,
  * });
  * ```
@@ -260,6 +262,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly ocpusLowestScaledValue!: pulumi.Output<number>;
     /**
+     * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     */
+    public readonly opcDryRun!: pulumi.Output<boolean>;
+    /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
     public /*out*/ readonly provisionableAutonomousContainerDatabases!: pulumi.Output<number>;
@@ -305,6 +311,14 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */
     public readonly subnetId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    public readonly subscriptionId!: pulumi.Output<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */
@@ -390,6 +404,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
             resourceInputs["ocpusLowestScaledValue"] = state ? state.ocpusLowestScaledValue : undefined;
+            resourceInputs["opcDryRun"] = state ? state.opcDryRun : undefined;
             resourceInputs["provisionableAutonomousContainerDatabases"] = state ? state.provisionableAutonomousContainerDatabases : undefined;
             resourceInputs["provisionedAutonomousContainerDatabases"] = state ? state.provisionedAutonomousContainerDatabases : undefined;
             resourceInputs["provisionedCpus"] = state ? state.provisionedCpus : undefined;
@@ -401,6 +416,8 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeDatabaseSslCertificateExpires"] = state ? state.timeDatabaseSslCertificateExpires : undefined;
             resourceInputs["timeOrdsCertificateExpires"] = state ? state.timeOrdsCertificateExpires : undefined;
@@ -438,10 +455,12 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = args ? args.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["opcDryRun"] = args ? args.opcDryRun : undefined;
             resourceInputs["scanListenerPortNonTls"] = args ? args.scanListenerPortNonTls : undefined;
             resourceInputs["scanListenerPortTls"] = args ? args.scanListenerPortTls : undefined;
             resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["timeUpdated"] = args ? args.timeUpdated : undefined;
             resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
             resourceInputs["autonomousDataStoragePercentage"] = undefined /*out*/;
@@ -475,6 +494,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["reservedCpus"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeDatabaseSslCertificateExpires"] = undefined /*out*/;
             resourceInputs["timeOrdsCertificateExpires"] = undefined /*out*/;
@@ -654,6 +674,10 @@ export interface CloudAutonomousVmClusterState {
      */
     ocpusLowestScaledValue?: pulumi.Input<number>;
     /**
+     * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     */
+    opcDryRun?: pulumi.Input<boolean>;
+    /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
     provisionableAutonomousContainerDatabases?: pulumi.Input<number>;
@@ -699,6 +723,14 @@ export interface CloudAutonomousVmClusterState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */
@@ -804,6 +836,10 @@ export interface CloudAutonomousVmClusterArgs {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     */
+    opcDryRun?: pulumi.Input<boolean>;
+    /**
      * The SCAN Listener Non TLS port. Default is 1521.
      */
     scanListenerPortNonTls?: pulumi.Input<number>;
@@ -819,6 +855,10 @@ export interface CloudAutonomousVmClusterArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */
     subnetId: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */

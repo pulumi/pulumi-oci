@@ -87,6 +87,8 @@ type LookupVmClusterNetworkResult struct {
 	Scans []GetVmClusterNetworkScan `pulumi:"scans"`
 	// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time when the VM cluster network was created.
 	TimeCreated              string `pulumi:"timeCreated"`
 	ValidateVmClusterNetwork bool   `pulumi:"validateVmClusterNetwork"`
@@ -195,6 +197,11 @@ func (o LookupVmClusterNetworkResultOutput) Scans() GetVmClusterNetworkScanArray
 // The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
 func (o LookupVmClusterNetworkResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVmClusterNetworkResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupVmClusterNetworkResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVmClusterNetworkResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time when the VM cluster network was created.

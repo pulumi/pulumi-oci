@@ -115,6 +115,11 @@ public final class GetDbServersDbServer {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time that the Db Server was created.
      * 
      */
@@ -267,6 +272,13 @@ public final class GetDbServersDbServer {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time that the Db Server was created.
      * 
      */
@@ -310,6 +322,7 @@ public final class GetDbServersDbServer {
         private Integer memorySizeInGbs;
         private String shape;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private List<String> vmClusterIds;
         public Builder() {}
@@ -335,6 +348,7 @@ public final class GetDbServersDbServer {
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vmClusterIds = defaults.vmClusterIds;
         }
@@ -512,6 +526,14 @@ public final class GetDbServersDbServer {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDbServersDbServer", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDbServersDbServer", "timeCreated");
@@ -552,6 +574,7 @@ public final class GetDbServersDbServer {
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.shape = shape;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vmClusterIds = vmClusterIds;
             return _resultValue;

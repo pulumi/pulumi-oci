@@ -30,14 +30,14 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs extend
     }
 
     /**
-     * Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     @Import(name="providerType", required=true)
     private Output<String> providerType;
 
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     public Output<String> providerType() {
@@ -91,7 +91,7 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs extend
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs extend
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
          * 
          * @return builder
          * 

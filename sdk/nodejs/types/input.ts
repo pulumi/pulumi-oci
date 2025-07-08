@@ -27215,11 +27215,15 @@ export namespace Database {
 
     export interface BackupEncryptionKeyLocationDetail {
         /**
+         * The key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId?: pulumi.Input<string>;
+        /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
         hsmPassword?: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
          */
         providerType?: pulumi.Input<string>;
     }
@@ -27564,6 +27568,17 @@ export namespace Database {
         share: pulumi.Input<number>;
     }
 
+    export interface CloudVmClusterMultiCloudIdentityConnectorConfig {
+        /**
+         * Cloud provider
+         */
+        cloudProvider?: pulumi.Input<string>;
+        /**
+         * The OCID of the identity connector
+         */
+        id?: pulumi.Input<string>;
+    }
+
     export interface DataGuardAssociationDataCollectionOptions {
         /**
          * Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
@@ -27841,11 +27856,15 @@ export namespace Database {
 
     export interface DatabaseDatabaseEncryptionKeyLocationDetails {
         /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId?: pulumi.Input<string>;
+        /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
-        hsmPassword: pulumi.Input<string>;
+        hsmPassword?: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
          */
         providerType: pulumi.Input<string>;
     }
@@ -27867,7 +27886,7 @@ export namespace Database {
          */
         hsmPassword: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
          */
         providerType: pulumi.Input<string>;
     }
@@ -28290,11 +28309,15 @@ export namespace Database {
 
     export interface DbHomeDatabaseEncryptionKeyLocationDetails {
         /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId?: pulumi.Input<string>;
+        /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
-        hsmPassword: pulumi.Input<string>;
+        hsmPassword?: pulumi.Input<string>;
         /**
-         * Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+         * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
          */
         providerType: pulumi.Input<string>;
     }
@@ -29593,6 +29616,18 @@ export namespace Database {
     }
 
     export interface GetAutonomousDatabaseRefreshableClonesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousDatabaseResourcePoolMembersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousDatabaseResourcePoolMembersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -34332,6 +34367,25 @@ export namespace DatabaseMigration {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface JobCollectTracesData {
+        /**
+         * Name of the bucket containing the log file.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * Status of trace collection process.
+         */
+        collectTracesState?: pulumi.Input<string>;
+        /**
+         * Object Storage namespace.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * Name of the object (regular expression is allowed)
+         */
+        object?: pulumi.Input<string>;
     }
 
     export interface JobParameterFileVersion {
@@ -77362,6 +77416,10 @@ export namespace Mysql {
          */
         displayName?: pulumi.Input<string>;
         /**
+         * Encrypt data details.
+         */
+        encryptDatas?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotEncryptData>[]>;
+        /**
          * The network endpoints available for this DB System.
          */
         endpoints?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotEndpoint>[]>;
@@ -77526,6 +77584,17 @@ export namespace Mysql {
         isDeleteProtected?: pulumi.Input<boolean>;
     }
 
+    export interface MysqlBackupDbSystemSnapshotEncryptData {
+        /**
+         * Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+         */
+        keyGenerationType?: pulumi.Input<string>;
+        /**
+         * The OCID of the key to use.
+         */
+        keyId?: pulumi.Input<string>;
+    }
+
     export interface MysqlBackupDbSystemSnapshotEndpoint {
         /**
          * The network address of the DB System.
@@ -77626,6 +77695,17 @@ export namespace Mysql {
          * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
          */
         region?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupEncryptData {
+        /**
+         * Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+         */
+        keyGenerationType: pulumi.Input<string>;
+        /**
+         * The OCID of the key to use.
+         */
+        keyId?: pulumi.Input<string>;
     }
 
     export interface MysqlBackupSourceDetails {
@@ -78622,6 +78702,17 @@ export namespace Mysql {
         isDeleteProtected?: pulumi.Input<boolean>;
     }
 
+    export interface MysqlDbSystemEncryptData {
+        /**
+         * (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+         */
+        keyGenerationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the key to use.
+         */
+        keyId?: pulumi.Input<string>;
+    }
+
     export interface MysqlDbSystemEndpoint {
         /**
          * The network address of the DB System.
@@ -78781,6 +78872,17 @@ export namespace Mysql {
          * The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
          */
         sourceUrl?: pulumi.Input<string>;
+    }
+
+    export interface ReplicaEncryptData {
+        /**
+         * Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+         */
+        keyGenerationType?: pulumi.Input<string>;
+        /**
+         * The OCID of the key to use.
+         */
+        keyId?: pulumi.Input<string>;
     }
 
     export interface ReplicaReplicaOverrides {
@@ -89745,6 +89847,56 @@ export namespace oci {
         attributeNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface DbmulticloudMultiCloudResourceDiscoveryResource {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Discovered Resource Location.
+         */
+        location?: pulumi.Input<string>;
+        /**
+         * Discovered Resource Name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Discovered Resource's properties.
+         */
+        properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * Discovered Resource Group Name.
+         */
+        resourceGroup?: pulumi.Input<string>;
+        /**
+         * Discovered Resource Type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface DbmulticloudOracleDbAzureConnectorArcAgentNode {
+        /**
+         * Current Arc Agent Version installed on this node of VM Cluster.
+         */
+        currentArcAgentVersion?: pulumi.Input<string>;
+        /**
+         * Host ID.
+         */
+        hostId?: pulumi.Input<string>;
+        /**
+         * Host Name or Azure Arc Agent Name.
+         */
+        hostName?: pulumi.Input<string>;
+        /**
+         * The current status of the Azure Arc Agent Resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+         */
+        timeLastChecked?: pulumi.Input<string>;
+    }
+
     export interface GetApiaccesscontrolApiMetadataByEntityTypesFilter {
         name: string;
         regex?: boolean;
@@ -89788,6 +89940,96 @@ export namespace oci {
     }
 
     export interface GetApiaccesscontrolPrivilegedApiRequestsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudMultiCloudResourceDiscoveriesFilter {
+        /**
+         * Discovered Resource Name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs {
+        /**
+         * Discovered Resource Name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAzureBlobContainersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAzureBlobContainersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAzureBlobMountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAzureBlobMountsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAzureConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAzureConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAzureKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAzureKeysFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAzureVaultAssociationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAzureVaultsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAzureVaultsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

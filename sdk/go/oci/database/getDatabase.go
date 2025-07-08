@@ -125,6 +125,8 @@ type LookupDatabaseResult struct {
 	SourceDatabasePointInTimeRecoveryTimestamp string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// The current state of the database.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the database was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -343,6 +345,11 @@ func (o LookupDatabaseResultOutput) SourceDatabasePointInTimeRecoveryTimestamp()
 // The current state of the database.
 func (o LookupDatabaseResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the database was created.

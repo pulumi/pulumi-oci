@@ -28,7 +28,7 @@ class GetBackupDestinationResult:
     """
     A collection of values returned by getBackupDestination.
     """
-    def __init__(__self__, associated_databases=None, backup_destination_id=None, compartment_id=None, connection_string=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, local_mount_point_path=None, mount_type_details=None, nfs_mount_type=None, nfs_server_export=None, nfs_servers=None, state=None, time_at_which_storage_details_are_updated=None, time_created=None, total_storage_size_in_gbs=None, type=None, utilized_storage_size_in_gbs=None, vpc_users=None):
+    def __init__(__self__, associated_databases=None, backup_destination_id=None, compartment_id=None, connection_string=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, local_mount_point_path=None, mount_type_details=None, nfs_mount_type=None, nfs_server_export=None, nfs_servers=None, state=None, system_tags=None, time_at_which_storage_details_are_updated=None, time_created=None, total_storage_size_in_gbs=None, type=None, utilized_storage_size_in_gbs=None, vpc_users=None):
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
@@ -74,6 +74,9 @@ class GetBackupDestinationResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_at_which_storage_details_are_updated and not isinstance(time_at_which_storage_details_are_updated, str):
             raise TypeError("Expected argument 'time_at_which_storage_details_are_updated' to be a str")
         pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
@@ -209,6 +212,14 @@ class GetBackupDestinationResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
     def time_at_which_storage_details_are_updated(self) -> builtins.str:
         """
@@ -278,6 +289,7 @@ class AwaitableGetBackupDestinationResult(GetBackupDestinationResult):
             nfs_server_export=self.nfs_server_export,
             nfs_servers=self.nfs_servers,
             state=self.state,
+            system_tags=self.system_tags,
             time_at_which_storage_details_are_updated=self.time_at_which_storage_details_are_updated,
             time_created=self.time_created,
             total_storage_size_in_gbs=self.total_storage_size_in_gbs,
@@ -326,6 +338,7 @@ def get_backup_destination(backup_destination_id: Optional[builtins.str] = None,
         nfs_server_export=pulumi.get(__ret__, 'nfs_server_export'),
         nfs_servers=pulumi.get(__ret__, 'nfs_servers'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_at_which_storage_details_are_updated=pulumi.get(__ret__, 'time_at_which_storage_details_are_updated'),
         time_created=pulumi.get(__ret__, 'time_created'),
         total_storage_size_in_gbs=pulumi.get(__ret__, 'total_storage_size_in_gbs'),
@@ -371,6 +384,7 @@ def get_backup_destination_output(backup_destination_id: Optional[pulumi.Input[b
         nfs_server_export=pulumi.get(__response__, 'nfs_server_export'),
         nfs_servers=pulumi.get(__response__, 'nfs_servers'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_at_which_storage_details_are_updated=pulumi.get(__response__, 'time_at_which_storage_details_are_updated'),
         time_created=pulumi.get(__response__, 'time_created'),
         total_storage_size_in_gbs=pulumi.get(__response__, 'total_storage_size_in_gbs'),

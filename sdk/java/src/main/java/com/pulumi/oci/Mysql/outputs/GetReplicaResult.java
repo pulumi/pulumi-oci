@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetReplicaEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetReplicaReplicaOverride;
 import com.pulumi.oci.Mysql.outputs.GetReplicaSecureConnection;
 import java.lang.Boolean;
@@ -51,6 +52,11 @@ public final class GetReplicaResult {
      * 
      */
     private String displayName;
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    private List<GetReplicaEncryptData> encryptDatas;
     /**
      * @return The name of the Fault Domain the read replica is located in.
      * 
@@ -184,6 +190,13 @@ public final class GetReplicaResult {
         return this.displayName;
     }
     /**
+     * @return Encrypt data details.
+     * 
+     */
+    public List<GetReplicaEncryptData> encryptDatas() {
+        return this.encryptDatas;
+    }
+    /**
      * @return The name of the Fault Domain the read replica is located in.
      * 
      */
@@ -315,6 +328,7 @@ public final class GetReplicaResult {
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
+        private List<GetReplicaEncryptData> encryptDatas;
         private String faultDomain;
         private Map<String,String> freeformTags;
         private String id;
@@ -342,6 +356,7 @@ public final class GetReplicaResult {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.encryptDatas = defaults.encryptDatas;
     	      this.faultDomain = defaults.faultDomain;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -416,6 +431,17 @@ public final class GetReplicaResult {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptDatas(List<GetReplicaEncryptData> encryptDatas) {
+            if (encryptDatas == null) {
+              throw new MissingRequiredPropertyException("GetReplicaResult", "encryptDatas");
+            }
+            this.encryptDatas = encryptDatas;
+            return this;
+        }
+        public Builder encryptDatas(GetReplicaEncryptData... encryptDatas) {
+            return encryptDatas(List.of(encryptDatas));
         }
         @CustomType.Setter
         public Builder faultDomain(String faultDomain) {
@@ -571,6 +597,7 @@ public final class GetReplicaResult {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.encryptDatas = encryptDatas;
             _resultValue.faultDomain = faultDomain;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

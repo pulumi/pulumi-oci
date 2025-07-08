@@ -175,6 +175,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The lowest value to which ocpus can be scaled down.
         /// </summary>
         public readonly int OcpusLowestScaledValue;
+        public readonly bool OpcDryRun;
         /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
@@ -221,6 +222,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         /// </summary>
         public readonly string SubnetId;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.
         /// </summary>
@@ -334,6 +343,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int ocpusLowestScaledValue,
 
+            bool opcDryRun,
+
             int provisionableAutonomousContainerDatabases,
 
             int provisionedAutonomousContainerDatabases,
@@ -355,6 +366,10 @@ namespace Pulumi.Oci.Database.Outputs
             string state,
 
             string subnetId,
+
+            string subscriptionId,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -411,6 +426,7 @@ namespace Pulumi.Oci.Database.Outputs
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
             OcpusLowestScaledValue = ocpusLowestScaledValue;
+            OpcDryRun = opcDryRun;
             ProvisionableAutonomousContainerDatabases = provisionableAutonomousContainerDatabases;
             ProvisionedAutonomousContainerDatabases = provisionedAutonomousContainerDatabases;
             ProvisionedCpus = provisionedCpus;
@@ -422,6 +438,8 @@ namespace Pulumi.Oci.Database.Outputs
             Shape = shape;
             State = state;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
             TimeOrdsCertificateExpires = timeOrdsCertificateExpires;

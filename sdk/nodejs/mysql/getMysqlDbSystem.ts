@@ -122,6 +122,10 @@ export interface GetMysqlDbSystemResult {
      */
     readonly displayName: string;
     /**
+     * Encrypt data details.
+     */
+    readonly encryptDatas: outputs.Mysql.GetMysqlDbSystemEncryptData[];
+    /**
      * The network endpoints available for this DB System.
      */
     readonly endpoints: outputs.Mysql.GetMysqlDbSystemEndpoint[];

@@ -12,7 +12,13 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DbHomeDatabaseEncryptionKeyLocationDetailsArgs : global::Pulumi.ResourceArgs
     {
-        [Input("hsmPassword", required: true)]
+        /// <summary>
+        /// Provide the key OCID of a registered Azure key.
+        /// </summary>
+        [Input("azureEncryptionKeyId")]
+        public Input<string>? AzureEncryptionKeyId { get; set; }
+
+        [Input("hsmPassword")]
         private Input<string>? _hsmPassword;
 
         /// <summary>
@@ -29,7 +35,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        /// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         /// </summary>
         [Input("providerType", required: true)]
         public Input<string> ProviderType { get; set; } = null!;

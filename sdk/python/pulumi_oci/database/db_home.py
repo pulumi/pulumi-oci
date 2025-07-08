@@ -284,6 +284,7 @@ class _DbHomeState:
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  source: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -309,6 +310,7 @@ class _DbHomeState:
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[builtins.str] state: The current state of the Database Home.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
                
@@ -352,6 +354,8 @@ class _DbHomeState:
             pulumi.set(__self__, "source", source)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if vm_cluster_id is not None:
@@ -575,6 +579,18 @@ class _DbHomeState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -757,6 +773,7 @@ class DbHome(pulumi.CustomResource):
             __props__.__dict__["last_patch_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(DbHome, __self__).__init__(
             'oci:Database/dbHome:DbHome',
@@ -786,6 +803,7 @@ class DbHome(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             source: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             vm_cluster_id: Optional[pulumi.Input[builtins.str]] = None) -> 'DbHome':
         """
@@ -816,6 +834,7 @@ class DbHome(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] source: The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup. VM_CLUSTER_NEW for creating a database for VM Cluster.
         :param pulumi.Input[builtins.str] state: The current state of the Database Home.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[builtins.str] vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
                
@@ -845,6 +864,7 @@ class DbHome(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["source"] = source
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["vm_cluster_id"] = vm_cluster_id
         return DbHome(resource_name, opts=opts, __props__=__props__)
@@ -993,6 +1013,14 @@ class DbHome(pulumi.CustomResource):
         The current state of the Database Home.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

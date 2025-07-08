@@ -180,6 +180,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly kmsKeyId: string;
     /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     */
+    readonly kmsKeyVersionId: string;
+    /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      */
     readonly largestProvisionableAutonomousDatabaseInCpus: number;
@@ -271,6 +275,10 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly state: string;
     readonly switchoverTrigger: number;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time the Autonomous Container Database was created.
      */

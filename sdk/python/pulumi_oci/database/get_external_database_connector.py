@@ -28,7 +28,7 @@ class GetExternalDatabaseConnectorResult:
     """
     A collection of values returned by getExternalDatabaseConnector.
     """
-    def __init__(__self__, compartment_id=None, connection_credentials=None, connection_status=None, connection_strings=None, connector_agent_id=None, connector_type=None, defined_tags=None, display_name=None, external_database_connector_id=None, external_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, time_connection_status_last_updated=None, time_created=None):
+    def __init__(__self__, compartment_id=None, connection_credentials=None, connection_status=None, connection_strings=None, connector_agent_id=None, connector_type=None, defined_tags=None, display_name=None, external_database_connector_id=None, external_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, system_tags=None, time_connection_status_last_updated=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -71,6 +71,9 @@ class GetExternalDatabaseConnectorResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_connection_status_last_updated and not isinstance(time_connection_status_last_updated, str):
             raise TypeError("Expected argument 'time_connection_status_last_updated' to be a str")
         pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
@@ -188,6 +191,14 @@ class GetExternalDatabaseConnectorResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeConnectionStatusLastUpdated")
     def time_connection_status_last_updated(self) -> builtins.str:
         """
@@ -224,6 +235,7 @@ class AwaitableGetExternalDatabaseConnectorResult(GetExternalDatabaseConnectorRe
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
+            system_tags=self.system_tags,
             time_connection_status_last_updated=self.time_connection_status_last_updated,
             time_created=self.time_created)
 
@@ -267,6 +279,7 @@ def get_external_database_connector(external_database_connector_id: Optional[bui
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_connection_status_last_updated=pulumi.get(__ret__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__ret__, 'time_created'))
 def get_external_database_connector_output(external_database_connector_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -307,5 +320,6 @@ def get_external_database_connector_output(external_database_connector_id: Optio
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_connection_status_last_updated=pulumi.get(__response__, 'time_connection_status_last_updated'),
         time_created=pulumi.get(__response__, 'time_created')))

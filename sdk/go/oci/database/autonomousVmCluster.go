@@ -173,6 +173,8 @@ type AutonomousVmCluster struct {
 	ScanListenerPortTls pulumi.IntOutput `pulumi:"scanListenerPortTls"`
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -316,6 +318,8 @@ type autonomousVmClusterState struct {
 	ScanListenerPortTls *int `pulumi:"scanListenerPortTls"`
 	// The current state of the Autonomous VM cluster.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -418,6 +422,8 @@ type AutonomousVmClusterState struct {
 	ScanListenerPortTls pulumi.IntPtrInput
 	// The current state of the Autonomous VM cluster.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time of Database SSL certificate expiration.
@@ -830,6 +836,11 @@ func (o AutonomousVmClusterOutput) ScanListenerPortTls() pulumi.IntOutput {
 // The current state of the Autonomous VM cluster.
 func (o AutonomousVmClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o AutonomousVmClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutonomousVmCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the Autonomous VM cluster was created.

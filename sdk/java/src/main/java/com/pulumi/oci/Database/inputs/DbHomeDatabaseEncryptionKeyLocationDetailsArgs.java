@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,29 +17,44 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
     public static final DbHomeDatabaseEncryptionKeyLocationDetailsArgs Empty = new DbHomeDatabaseEncryptionKeyLocationDetailsArgs();
 
     /**
+     * Provide the key OCID of a registered Azure key.
+     * 
+     */
+    @Import(name="azureEncryptionKeyId")
+    private @Nullable Output<String> azureEncryptionKeyId;
+
+    /**
+     * @return Provide the key OCID of a registered Azure key.
+     * 
+     */
+    public Optional<Output<String>> azureEncryptionKeyId() {
+        return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+
+    /**
      * Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
-    @Import(name="hsmPassword", required=true)
-    private Output<String> hsmPassword;
+    @Import(name="hsmPassword")
+    private @Nullable Output<String> hsmPassword;
 
     /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
-    public Output<String> hsmPassword() {
-        return this.hsmPassword;
+    public Optional<Output<String>> hsmPassword() {
+        return Optional.ofNullable(this.hsmPassword);
     }
 
     /**
-     * Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     @Import(name="providerType", required=true)
     private Output<String> providerType;
 
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     public Output<String> providerType() {
@@ -47,6 +64,7 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
     private DbHomeDatabaseEncryptionKeyLocationDetailsArgs() {}
 
     private DbHomeDatabaseEncryptionKeyLocationDetailsArgs(DbHomeDatabaseEncryptionKeyLocationDetailsArgs $) {
+        this.azureEncryptionKeyId = $.azureEncryptionKeyId;
         this.hsmPassword = $.hsmPassword;
         this.providerType = $.providerType;
     }
@@ -70,12 +88,33 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
         }
 
         /**
+         * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureEncryptionKeyId(@Nullable Output<String> azureEncryptionKeyId) {
+            $.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
+            return azureEncryptionKeyId(Output.of(azureEncryptionKeyId));
+        }
+
+        /**
          * @param hsmPassword Provide the HSM password as you would in RDBMS for External HSM.
          * 
          * @return builder
          * 
          */
-        public Builder hsmPassword(Output<String> hsmPassword) {
+        public Builder hsmPassword(@Nullable Output<String> hsmPassword) {
             $.hsmPassword = hsmPassword;
             return this;
         }
@@ -91,7 +130,7 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
          * 
          * @return builder
          * 
@@ -102,7 +141,7 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
          * 
          * @return builder
          * 
@@ -112,9 +151,6 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetailsArgs extends com.pu
         }
 
         public DbHomeDatabaseEncryptionKeyLocationDetailsArgs build() {
-            if ($.hsmPassword == null) {
-                throw new MissingRequiredPropertyException("DbHomeDatabaseEncryptionKeyLocationDetailsArgs", "hsmPassword");
-            }
             if ($.providerType == null) {
                 throw new MissingRequiredPropertyException("DbHomeDatabaseEncryptionKeyLocationDetailsArgs", "providerType");
             }

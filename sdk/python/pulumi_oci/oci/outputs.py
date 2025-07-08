@@ -20,6 +20,8 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList',
     'ApiaccesscontrolPrivilegedApiRequestApproverDetail',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
+    'DbmulticloudMultiCloudResourceDiscoveryResource',
+    'DbmulticloudOracleDbAzureConnectorArcAgentNode',
     'GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionResult',
     'GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemResult',
     'GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataResult',
@@ -39,6 +41,31 @@ __all__ = [
     'GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemResult',
     'GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailResult',
     'GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListResult',
+    'GetDbmulticloudMultiCloudResourceDiscoveriesFilterResult',
+    'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionResult',
+    'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResult',
+    'GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceResult',
+    'GetDbmulticloudMultiCloudResourceDiscoveryResourceResult',
+    'GetDbmulticloudOracleDbAzureBlobContainersFilterResult',
+    'GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionResult',
+    'GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbAzureBlobMountsFilterResult',
+    'GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionResult',
+    'GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult',
+    'GetDbmulticloudOracleDbAzureConnectorsFilterResult',
+    'GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionResult',
+    'GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult',
+    'GetDbmulticloudOracleDbAzureKeysFilterResult',
+    'GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionResult',
+    'GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbAzureVaultAssociationsFilterResult',
+    'GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionResult',
+    'GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbAzureVaultsFilterResult',
+    'GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionResult',
+    'GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemResult',
     'GetWlmsManagedInstanceConfigurationResult',
     'GetWlmsManagedInstanceScanResultsFilterResult',
     'GetWlmsManagedInstanceScanResultsScanResultCollectionResult',
@@ -282,6 +309,192 @@ class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList(dict):
         list of attributes belonging to the above api which needs to be protected.
         """
         return pulumi.get(self, "attribute_names")
+
+
+@pulumi.output_type
+class DbmulticloudMultiCloudResourceDiscoveryResource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceGroup":
+            suggest = "resource_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudMultiCloudResourceDiscoveryResource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudMultiCloudResourceDiscoveryResource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudMultiCloudResourceDiscoveryResource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 id: Optional[builtins.str] = None,
+                 location: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 properties: Optional[Mapping[str, builtins.str]] = None,
+                 resource_group: Optional[builtins.str] = None,
+                 type: Optional[builtins.str] = None):
+        """
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param builtins.str location: Discovered Resource Location.
+        :param builtins.str name: Discovered Resource Name.
+        :param Mapping[str, builtins.str] properties: Discovered Resource's properties.
+        :param builtins.str resource_group: Discovered Resource Group Name.
+        :param builtins.str type: Discovered Resource Type.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[builtins.str]:
+        """
+        Discovered Resource Location.
+        """
+        return pulumi.get(self, "location")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        Discovered Resource Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional[Mapping[str, builtins.str]]:
+        """
+        Discovered Resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[builtins.str]:
+        """
+        Discovered Resource Group Name.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[builtins.str]:
+        """
+        Discovered Resource Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "currentArcAgentVersion":
+            suggest = "current_arc_agent_version"
+        elif key == "hostId":
+            suggest = "host_id"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "timeLastChecked":
+            suggest = "time_last_checked"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudOracleDbAzureConnectorArcAgentNode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudOracleDbAzureConnectorArcAgentNode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudOracleDbAzureConnectorArcAgentNode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 current_arc_agent_version: Optional[builtins.str] = None,
+                 host_id: Optional[builtins.str] = None,
+                 host_name: Optional[builtins.str] = None,
+                 status: Optional[builtins.str] = None,
+                 time_last_checked: Optional[builtins.str] = None):
+        """
+        :param builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param builtins.str host_id: Host ID.
+        :param builtins.str host_name: Host Name or Azure Arc Agent Name.
+        :param builtins.str status: The current status of the Azure Arc Agent Resource.
+        :param builtins.str time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        if current_arc_agent_version is not None:
+            pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_checked is not None:
+            pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @property
+    @pulumi.getter(name="currentArcAgentVersion")
+    def current_arc_agent_version(self) -> Optional[builtins.str]:
+        """
+        Current Arc Agent Version installed on this node of VM Cluster.
+        """
+        return pulumi.get(self, "current_arc_agent_version")
+
+    @property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> Optional[builtins.str]:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[builtins.str]:
+        """
+        Host Name or Azure Arc Agent Name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[builtins.str]:
+        """
+        The current status of the Azure Arc Agent Resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> Optional[builtins.str]:
+        """
+        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
 
 
 @pulumi.output_type
@@ -1654,6 +1867,1726 @@ class GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItem
         list of attributes belonging to the above api which needs to be protected.
         """
         return pulumi.get(self, "attribute_names")
+
+
+@pulumi.output_type
+class GetDbmulticloudMultiCloudResourceDiscoveriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: Discovered Resource Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Discovered Resource Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 oracle_db_connector_id: builtins.str,
+                 resource_type: builtins.str,
+                 resources: Sequence['outputs.GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceResult'],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: Display Name of the Multi Cloud Discovery Resource.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param builtins.str last_modification: Description of the latest modification of the Multi Cloud Discovery Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+        :param builtins.str resource_type: The type of Multi Cloud Resource.
+        :param Sequence['GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs'] resources: List of All Discovered resources.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "resources", resources)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        Display Name of the Multi Cloud Discovery Resource.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the Multi Cloud Discovery Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter(name="oracleDbConnectorId")
+    def oracle_db_connector_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+        """
+        return pulumi.get(self, "oracle_db_connector_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> builtins.str:
+        """
+        The type of Multi Cloud Resource.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @property
+    @pulumi.getter
+    def resources(self) -> Sequence['outputs.GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceResult']:
+        """
+        List of All Discovered resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceResult(dict):
+    def __init__(__self__, *,
+                 id: builtins.str,
+                 location: builtins.str,
+                 name: builtins.str,
+                 properties: Mapping[str, builtins.str],
+                 resource_group: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param builtins.str location: Discovered Resource Location.
+        :param builtins.str name: Discovered Resource Name.
+        :param Mapping[str, builtins.str] properties: Discovered Resource's properties.
+        :param builtins.str resource_group: Discovered Resource Group Name.
+        :param builtins.str type: Discovered Resource Type.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def location(self) -> builtins.str:
+        """
+        Discovered Resource Location.
+        """
+        return pulumi.get(self, "location")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Discovered Resource Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, builtins.str]:
+        """
+        Discovered Resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> builtins.str:
+        """
+        Discovered Resource Group Name.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Discovered Resource Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDbmulticloudMultiCloudResourceDiscoveryResourceResult(dict):
+    def __init__(__self__, *,
+                 id: builtins.str,
+                 location: builtins.str,
+                 name: builtins.str,
+                 properties: Mapping[str, builtins.str],
+                 resource_group: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param builtins.str location: Discovered Resource Location.
+        :param builtins.str name: Discovered Resource Name.
+        :param Mapping[str, builtins.str] properties: Discovered Resource's properties.
+        :param builtins.str resource_group: Discovered Resource Group Name.
+        :param builtins.str type: Discovered Resource Type.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def location(self) -> builtins.str:
+        """
+        Discovered Resource Location.
+        """
+        return pulumi.get(self, "location")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Discovered Resource Name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, builtins.str]:
+        """
+        Discovered Resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> builtins.str:
+        """
+        Discovered Resource Group Name.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Discovered Resource Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureBlobContainersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 azure_storage_account_name: builtins.str,
+                 azure_storage_container_name: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 private_endpoint_dns_alias: builtins.str,
+                 private_endpoint_ip_address: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str azure_storage_account_name: A filter to return Azure Blob Containers.
+        :param builtins.str azure_storage_container_name: A filter to return Azure Blob containers.
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: A filter to return Azure Containers.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        :param builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str private_endpoint_dns_alias: Private endpoint DNS Alias.
+        :param builtins.str private_endpoint_ip_address: Private endpoint IP.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "azure_storage_account_name", azure_storage_account_name)
+        pulumi.set(__self__, "azure_storage_container_name", azure_storage_container_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "private_endpoint_dns_alias", private_endpoint_dns_alias)
+        pulumi.set(__self__, "private_endpoint_ip_address", private_endpoint_ip_address)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="azureStorageAccountName")
+    def azure_storage_account_name(self) -> builtins.str:
+        """
+        A filter to return Azure Blob Containers.
+        """
+        return pulumi.get(self, "azure_storage_account_name")
+
+    @property
+    @pulumi.getter(name="azureStorageContainerName")
+    def azure_storage_container_name(self) -> builtins.str:
+        """
+        A filter to return Azure Blob containers.
+        """
+        return pulumi.get(self, "azure_storage_container_name")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return Azure Containers.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter(name="privateEndpointDnsAlias")
+    def private_endpoint_dns_alias(self) -> builtins.str:
+        """
+        Private endpoint DNS Alias.
+        """
+        return pulumi.get(self, "private_endpoint_dns_alias")
+
+    @property
+    @pulumi.getter(name="privateEndpointIpAddress")
+    def private_endpoint_ip_address(self) -> builtins.str:
+        """
+        Private endpoint IP.
+        """
+        return pulumi.get(self, "private_endpoint_ip_address")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureBlobMountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 mount_path: builtins.str,
+                 oracle_db_azure_blob_container_id: builtins.str,
+                 oracle_db_azure_connector_id: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: A filter to return Oracle DB Azure Blob Mount Resources.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The OCID for the new Oracle DB Azure Blob Mount resource.
+        :param builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str mount_path: Azure Container mount path.
+        :param builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Mount Resources.
+        :param builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "mount_path", mount_path)
+        pulumi.set(__self__, "oracle_db_azure_blob_container_id", oracle_db_azure_blob_container_id)
+        pulumi.set(__self__, "oracle_db_azure_connector_id", oracle_db_azure_connector_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Blob Mount Resources.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The OCID for the new Oracle DB Azure Blob Mount resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter(name="mountPath")
+    def mount_path(self) -> builtins.str:
+        """
+        Azure Container mount path.
+        """
+        return pulumi.get(self, "mount_path")
+
+    @property
+    @pulumi.getter(name="oracleDbAzureBlobContainerId")
+    def oracle_db_azure_blob_container_id(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Blob Mount Resources.
+        """
+        return pulumi.get(self, "oracle_db_azure_blob_container_id")
+
+    @property
+    @pulumi.getter(name="oracleDbAzureConnectorId")
+    def oracle_db_azure_connector_id(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Blob Mount Resources.
+        """
+        return pulumi.get(self, "oracle_db_azure_connector_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult(dict):
+    def __init__(__self__, *,
+                 current_arc_agent_version: builtins.str,
+                 host_id: builtins.str,
+                 host_name: builtins.str,
+                 status: builtins.str,
+                 time_last_checked: builtins.str):
+        """
+        :param builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param builtins.str host_id: Host ID.
+        :param builtins.str host_name: Host Name or Azure Arc Agent Name.
+        :param builtins.str status: The current status of the Azure Arc Agent Resource.
+        :param builtins.str time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
+        pulumi.set(__self__, "host_id", host_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @property
+    @pulumi.getter(name="currentArcAgentVersion")
+    def current_arc_agent_version(self) -> builtins.str:
+        """
+        Current Arc Agent Version installed on this node of VM Cluster.
+        """
+        return pulumi.get(self, "current_arc_agent_version")
+
+    @property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> builtins.str:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> builtins.str:
+        """
+        Host Name or Azure Arc Agent Name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        The current status of the Azure Arc Agent Resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> builtins.str:
+        """
+        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureConnectorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 access_token: builtins.str,
+                 arc_agent_nodes: Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult'],
+                 azure_identity_mechanism: builtins.str,
+                 azure_resource_group: builtins.str,
+                 azure_subscription_id: builtins.str,
+                 azure_tenant_id: builtins.str,
+                 compartment_id: builtins.str,
+                 db_cluster_resource_id: builtins.str,
+                 display_name: builtins.str,
+                 id: builtins.str,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 state: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str access_token: Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        :param Sequence['GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs'] arc_agent_nodes: List of All VMs where Arc Agent is Install under VMCluster.
+        :param builtins.str azure_identity_mechanism: Azure Identity Mechanism.
+        :param builtins.str azure_resource_group: Azure Resource Group Name.
+        :param builtins.str azure_subscription_id: Azure Subscription ID.
+        :param builtins.str azure_tenant_id: Azure Tenant ID.
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+        :param builtins.str display_name: A filter to return Oracle DB Azure Connector Resource that match the given display name.
+        :param builtins.str id: The ID of the Oracle DB Azure Connector resource.
+        :param builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Connector Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param builtins.str time_created: Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "access_token", access_token)
+        pulumi.set(__self__, "arc_agent_nodes", arc_agent_nodes)
+        pulumi.set(__self__, "azure_identity_mechanism", azure_identity_mechanism)
+        pulumi.set(__self__, "azure_resource_group", azure_resource_group)
+        pulumi.set(__self__, "azure_subscription_id", azure_subscription_id)
+        pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_cluster_resource_id", db_cluster_resource_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> builtins.str:
+        """
+        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        """
+        return pulumi.get(self, "access_token")
+
+    @property
+    @pulumi.getter(name="arcAgentNodes")
+    def arc_agent_nodes(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult']:
+        """
+        List of All VMs where Arc Agent is Install under VMCluster.
+        """
+        return pulumi.get(self, "arc_agent_nodes")
+
+    @property
+    @pulumi.getter(name="azureIdentityMechanism")
+    def azure_identity_mechanism(self) -> builtins.str:
+        """
+        Azure Identity Mechanism.
+        """
+        return pulumi.get(self, "azure_identity_mechanism")
+
+    @property
+    @pulumi.getter(name="azureResourceGroup")
+    def azure_resource_group(self) -> builtins.str:
+        """
+        Azure Resource Group Name.
+        """
+        return pulumi.get(self, "azure_resource_group")
+
+    @property
+    @pulumi.getter(name="azureSubscriptionId")
+    def azure_subscription_id(self) -> builtins.str:
+        """
+        Azure Subscription ID.
+        """
+        return pulumi.get(self, "azure_subscription_id")
+
+    @property
+    @pulumi.getter(name="azureTenantId")
+    def azure_tenant_id(self) -> builtins.str:
+        """
+        Azure Tenant ID.
+        """
+        return pulumi.get(self, "azure_tenant_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbClusterResourceId")
+    def db_cluster_resource_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+        """
+        return pulumi.get(self, "db_cluster_resource_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Connector Resource that match the given display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The ID of the Oracle DB Azure Connector resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult(dict):
+    def __init__(__self__, *,
+                 current_arc_agent_version: builtins.str,
+                 host_id: builtins.str,
+                 host_name: builtins.str,
+                 status: builtins.str,
+                 time_last_checked: builtins.str):
+        """
+        :param builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param builtins.str host_id: Host ID.
+        :param builtins.str host_name: Host Name or Azure Arc Agent Name.
+        :param builtins.str status: The current status of the Azure Arc Agent Resource.
+        :param builtins.str time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
+        pulumi.set(__self__, "host_id", host_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @property
+    @pulumi.getter(name="currentArcAgentVersion")
+    def current_arc_agent_version(self) -> builtins.str:
+        """
+        Current Arc Agent Version installed on this node of VM Cluster.
+        """
+        return pulumi.get(self, "current_arc_agent_version")
+
+    @property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> builtins.str:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> builtins.str:
+        """
+        Host Name or Azure Arc Agent Name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def status(self) -> builtins.str:
+        """
+        The current status of the Azure Arc Agent Resource.
+        """
+        return pulumi.get(self, "status")
+
+    @property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> builtins.str:
+        """
+        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 azure_key_id: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 oracle_db_azure_vault_id: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str azure_key_id: The Azure ID of the Azure Key, Azure Key URL.
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: A filter to return Azure Vault Keys.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+        :param builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "azure_key_id", azure_key_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "oracle_db_azure_vault_id", oracle_db_azure_vault_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="azureKeyId")
+    def azure_key_id(self) -> builtins.str:
+        """
+        The Azure ID of the Azure Key, Azure Key URL.
+        """
+        return pulumi.get(self, "azure_key_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return Azure Vault Keys.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter(name="oracleDbAzureVaultId")
+    def oracle_db_azure_vault_id(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Vault Resources.
+        """
+        return pulumi.get(self, "oracle_db_azure_vault_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureVaultAssociationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 is_resource_accessible: builtins.bool,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 oracle_db_azure_connector_id: builtins.str,
+                 oracle_db_azure_vault_id: builtins.str,
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: A filter to return Azure Vault Association.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+        :param builtins.bool is_resource_accessible: The Associated Resources are accessible or not.
+        :param builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
+        :param builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_resource_accessible", is_resource_accessible)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "oracle_db_azure_connector_id", oracle_db_azure_connector_id)
+        pulumi.set(__self__, "oracle_db_azure_vault_id", oracle_db_azure_vault_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return Azure Vault Association.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isResourceAccessible")
+    def is_resource_accessible(self) -> builtins.bool:
+        """
+        The Associated Resources are accessible or not.
+        """
+        return pulumi.get(self, "is_resource_accessible")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter(name="oracleDbAzureConnectorId")
+    def oracle_db_azure_connector_id(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Blob Mount Resources.
+        """
+        return pulumi.get(self, "oracle_db_azure_connector_id")
+
+    @property
+    @pulumi.getter(name="oracleDbAzureVaultId")
+    def oracle_db_azure_vault_id(self) -> builtins.str:
+        """
+        A filter to return Oracle DB Azure Vault Resources.
+        """
+        return pulumi.get(self, "oracle_db_azure_vault_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureVaultsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 azure_vault_id: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 last_modification: builtins.str,
+                 lifecycle_state_details: builtins.str,
+                 location: builtins.str,
+                 oracle_db_azure_resource_group: builtins.str,
+                 oracle_db_connector_id: builtins.str,
+                 properties: Mapping[str, builtins.str],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str,
+                 type: builtins.str):
+        """
+        :param builtins.str azure_vault_id: Azure Vault Id.
+        :param builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str display_name: A filter to return Azure Vaults.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+        :param builtins.str last_modification: Description of the latest modification of the DB Azure Vault Resource.
+        :param builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param builtins.str location: Vault Resource Location.
+        :param builtins.str oracle_db_azure_resource_group: A filter to return Azure Vaults.
+        :param builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        :param Mapping[str, builtins.str] properties: Resource's properties.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param builtins.str time_updated: Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param builtins.str type: Vault Resource Type.
+        """
+        pulumi.set(__self__, "azure_vault_id", azure_vault_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_modification", last_modification)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "oracle_db_azure_resource_group", oracle_db_azure_resource_group)
+        pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter(name="azureVaultId")
+    def azure_vault_id(self) -> builtins.str:
+        """
+        Azure Vault Id.
+        """
+        return pulumi.get(self, "azure_vault_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return Azure Vaults.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastModification")
+    def last_modification(self) -> builtins.str:
+        """
+        Description of the latest modification of the DB Azure Vault Resource.
+        """
+        return pulumi.get(self, "last_modification")
+
+    @property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @property
+    @pulumi.getter
+    def location(self) -> builtins.str:
+        """
+        Vault Resource Location.
+        """
+        return pulumi.get(self, "location")
+
+    @property
+    @pulumi.getter(name="oracleDbAzureResourceGroup")
+    def oracle_db_azure_resource_group(self) -> builtins.str:
+        """
+        A filter to return Azure Vaults.
+        """
+        return pulumi.get(self, "oracle_db_azure_resource_group")
+
+    @property
+    @pulumi.getter(name="oracleDbConnectorId")
+    def oracle_db_connector_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        """
+        return pulumi.get(self, "oracle_db_connector_id")
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, builtins.str]:
+        """
+        Resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def type(self) -> builtins.str:
+        """
+        Vault Resource Type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

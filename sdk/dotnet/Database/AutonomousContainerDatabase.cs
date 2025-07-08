@@ -230,6 +230,12 @@ namespace Pulumi.Oci.Database
         public Output<string> KmsKeyId { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// </summary>
+        [Output("kmsKeyVersionId")]
+        public Output<string> KmsKeyVersionId { get; private set; } = null!;
+
+        /// <summary>
         /// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         /// </summary>
         [Output("largestProvisionableAutonomousDatabaseInCpus")]
@@ -421,6 +427,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("switchoverTrigger")]
         public Output<int?> SwitchoverTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
@@ -1020,6 +1032,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// </summary>
+        [Input("kmsKeyVersionId")]
+        public Input<string>? KmsKeyVersionId { get; set; }
+
+        /// <summary>
         /// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         /// </summary>
         [Input("largestProvisionableAutonomousDatabaseInCpus")]
@@ -1235,6 +1253,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("switchoverTrigger")]
         public Input<int>? SwitchoverTrigger { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time the Autonomous Container Database was created.

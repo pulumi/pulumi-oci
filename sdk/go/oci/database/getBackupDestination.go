@@ -88,6 +88,8 @@ type LookupBackupDestinationResult struct {
 	NfsServers []string `pulumi:"nfsServers"`
 	// The current lifecycle state of the backup destination.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the total storage size and the utilized storage size of the backup destination are updated.
 	TimeAtWhichStorageDetailsAreUpdated string `pulumi:"timeAtWhichStorageDetailsAreUpdated"`
 	// The date and time the backup destination was created.
@@ -211,6 +213,11 @@ func (o LookupBackupDestinationResultOutput) NfsServers() pulumi.StringArrayOutp
 // The current lifecycle state of the backup destination.
 func (o LookupBackupDestinationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupBackupDestinationResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupBackupDestinationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the total storage size and the utilized storage size of the backup destination are updated.

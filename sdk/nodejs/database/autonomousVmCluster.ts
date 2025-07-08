@@ -250,6 +250,10 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time that the Autonomous VM cluster was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -335,6 +339,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortNonTls"] = state ? state.scanListenerPortNonTls : undefined;
             resourceInputs["scanListenerPortTls"] = state ? state.scanListenerPortTls : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeDatabaseSslCertificateExpires"] = state ? state.timeDatabaseSslCertificateExpires : undefined;
             resourceInputs["timeOrdsCertificateExpires"] = state ? state.timeOrdsCertificateExpires : undefined;
@@ -402,6 +407,7 @@ export class AutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["reclaimableCpus"] = undefined /*out*/;
             resourceInputs["reservedCpus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeDatabaseSslCertificateExpires"] = undefined /*out*/;
             resourceInputs["timeOrdsCertificateExpires"] = undefined /*out*/;
@@ -575,6 +581,10 @@ export interface AutonomousVmClusterState {
      * The current state of the Autonomous VM cluster.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time that the Autonomous VM cluster was created.
      */

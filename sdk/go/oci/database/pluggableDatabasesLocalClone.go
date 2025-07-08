@@ -87,6 +87,8 @@ type PluggableDatabasesLocalClone struct {
 	ShouldPdbAdminAccountBeLocked pulumi.BoolOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The existing TDE wallet password of the target CDB.
 	//
 	// ** IMPORTANT **
@@ -177,6 +179,8 @@ type pluggableDatabasesLocalCloneState struct {
 	ShouldPdbAdminAccountBeLocked *bool `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The existing TDE wallet password of the target CDB.
 	//
 	// ** IMPORTANT **
@@ -221,6 +225,8 @@ type PluggableDatabasesLocalCloneState struct {
 	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrInput
 	// The current state of the pluggable database.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The existing TDE wallet password of the target CDB.
 	//
 	// ** IMPORTANT **
@@ -445,6 +451,11 @@ func (o PluggableDatabasesLocalCloneOutput) ShouldPdbAdminAccountBeLocked() pulu
 // The current state of the pluggable database.
 func (o PluggableDatabasesLocalCloneOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o PluggableDatabasesLocalCloneOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The existing TDE wallet password of the target CDB.

@@ -269,6 +269,21 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     * 
+     */
+    @Import(name="opcDryRun")
+    private @Nullable Output<Boolean> opcDryRun;
+
+    /**
+     * @return (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+     * 
+     */
+    public Optional<Output<Boolean>> opcDryRun() {
+        return Optional.ofNullable(this.opcDryRun);
+    }
+
+    /**
      * The SCAN Listener Non TLS port. Default is 1521.
      * 
      */
@@ -329,6 +344,21 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
+    /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      * 
      */
@@ -383,10 +413,12 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.nsgIds = $.nsgIds;
+        this.opcDryRun = $.opcDryRun;
         this.scanListenerPortNonTls = $.scanListenerPortNonTls;
         this.scanListenerPortTls = $.scanListenerPortTls;
         this.securityAttributes = $.securityAttributes;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
         this.timeUpdated = $.timeUpdated;
         this.totalContainerDatabases = $.totalContainerDatabases;
     }
@@ -773,6 +805,27 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
+         * @param opcDryRun (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcDryRun(@Nullable Output<Boolean> opcDryRun) {
+            $.opcDryRun = opcDryRun;
+            return this;
+        }
+
+        /**
+         * @param opcDryRun (Updatable) Indicates that the request is a dry run, if set to &#34;true&#34;. A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcDryRun(Boolean opcDryRun) {
+            return opcDryRun(Output.of(opcDryRun));
+        }
+
+        /**
          * @param scanListenerPortNonTls The SCAN Listener Non TLS port. Default is 1521.
          * 
          * @return builder
@@ -854,6 +907,27 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         /**

@@ -28,7 +28,7 @@ class GetReplicaResult:
     """
     A collection of values returned by getReplica.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, configuration_id=None, db_system_id=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, fault_domain=None, freeform_tags=None, id=None, ip_address=None, is_delete_protected=None, lifecycle_details=None, mysql_version=None, nsg_ids=None, port=None, port_x=None, replica_id=None, replica_overrides=None, secure_connections=None, shape_name=None, state=None, time_created=None, time_updated=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -50,6 +50,9 @@ class GetReplicaResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if encrypt_datas and not isinstance(encrypt_datas, list):
+            raise TypeError("Expected argument 'encrypt_datas' to be a list")
+        pulumi.set(__self__, "encrypt_datas", encrypt_datas)
         if fault_domain and not isinstance(fault_domain, str):
             raise TypeError("Expected argument 'fault_domain' to be a str")
         pulumi.set(__self__, "fault_domain", fault_domain)
@@ -157,6 +160,14 @@ class GetReplicaResult:
         The user-friendly name for the read replica. It does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptDatas")
+    def encrypt_datas(self) -> Sequence['outputs.GetReplicaEncryptDataResult']:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_datas")
 
     @property
     @pulumi.getter(name="faultDomain")
@@ -305,6 +316,7 @@ class AwaitableGetReplicaResult(GetReplicaResult):
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            encrypt_datas=self.encrypt_datas,
             fault_domain=self.fault_domain,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -356,6 +368,7 @@ def get_replica(replica_id: Optional[builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        encrypt_datas=pulumi.get(__ret__, 'encrypt_datas'),
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -404,6 +417,7 @@ def get_replica_output(replica_id: Optional[pulumi.Input[builtins.str]] = None,
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        encrypt_datas=pulumi.get(__response__, 'encrypt_datas'),
         fault_domain=pulumi.get(__response__, 'fault_domain'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),

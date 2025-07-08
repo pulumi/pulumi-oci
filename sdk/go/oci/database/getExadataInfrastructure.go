@@ -136,6 +136,8 @@ type LookupExadataInfrastructureResult struct {
 	StorageServerType string `pulumi:"storageServerType"`
 	// The software version of the storage servers (cells) in the Exadata infrastructure.
 	StorageServerVersion string `pulumi:"storageServerVersion"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Exadata infrastructure was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -444,6 +446,11 @@ func (o LookupExadataInfrastructureResultOutput) StorageServerType() pulumi.Stri
 // The software version of the storage servers (cells) in the Exadata infrastructure.
 func (o LookupExadataInfrastructureResultOutput) StorageServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.StorageServerVersion }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupExadataInfrastructureResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Exadata infrastructure was created.

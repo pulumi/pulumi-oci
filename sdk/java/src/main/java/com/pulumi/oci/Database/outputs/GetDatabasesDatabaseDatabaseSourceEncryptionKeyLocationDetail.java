@@ -16,7 +16,7 @@ public final class GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail
      */
     private String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     private String providerType;
@@ -30,7 +30,7 @@ public final class GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail
         return this.hsmPassword;
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     public String providerType() {

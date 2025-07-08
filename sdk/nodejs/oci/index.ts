@@ -15,6 +15,36 @@ export type ApiaccesscontrolPrivilegedApiRequest = import("./apiaccesscontrolPri
 export const ApiaccesscontrolPrivilegedApiRequest: typeof import("./apiaccesscontrolPrivilegedApiRequest").ApiaccesscontrolPrivilegedApiRequest = null as any;
 utilities.lazyLoad(exports, ["ApiaccesscontrolPrivilegedApiRequest"], () => require("./apiaccesscontrolPrivilegedApiRequest"));
 
+export { DbmulticloudMultiCloudResourceDiscoveryArgs, DbmulticloudMultiCloudResourceDiscoveryState } from "./dbmulticloudMultiCloudResourceDiscovery";
+export type DbmulticloudMultiCloudResourceDiscovery = import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery;
+export const DbmulticloudMultiCloudResourceDiscovery: typeof import("./dbmulticloudMultiCloudResourceDiscovery").DbmulticloudMultiCloudResourceDiscovery = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudMultiCloudResourceDiscovery"], () => require("./dbmulticloudMultiCloudResourceDiscovery"));
+
+export { DbmulticloudOracleDbAzureBlobContainerArgs, DbmulticloudOracleDbAzureBlobContainerState } from "./dbmulticloudOracleDbAzureBlobContainer";
+export type DbmulticloudOracleDbAzureBlobContainer = import("./dbmulticloudOracleDbAzureBlobContainer").DbmulticloudOracleDbAzureBlobContainer;
+export const DbmulticloudOracleDbAzureBlobContainer: typeof import("./dbmulticloudOracleDbAzureBlobContainer").DbmulticloudOracleDbAzureBlobContainer = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureBlobContainer"], () => require("./dbmulticloudOracleDbAzureBlobContainer"));
+
+export { DbmulticloudOracleDbAzureBlobMountArgs, DbmulticloudOracleDbAzureBlobMountState } from "./dbmulticloudOracleDbAzureBlobMount";
+export type DbmulticloudOracleDbAzureBlobMount = import("./dbmulticloudOracleDbAzureBlobMount").DbmulticloudOracleDbAzureBlobMount;
+export const DbmulticloudOracleDbAzureBlobMount: typeof import("./dbmulticloudOracleDbAzureBlobMount").DbmulticloudOracleDbAzureBlobMount = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureBlobMount"], () => require("./dbmulticloudOracleDbAzureBlobMount"));
+
+export { DbmulticloudOracleDbAzureConnectorArgs, DbmulticloudOracleDbAzureConnectorState } from "./dbmulticloudOracleDbAzureConnector";
+export type DbmulticloudOracleDbAzureConnector = import("./dbmulticloudOracleDbAzureConnector").DbmulticloudOracleDbAzureConnector;
+export const DbmulticloudOracleDbAzureConnector: typeof import("./dbmulticloudOracleDbAzureConnector").DbmulticloudOracleDbAzureConnector = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureConnector"], () => require("./dbmulticloudOracleDbAzureConnector"));
+
+export { DbmulticloudOracleDbAzureVaultArgs, DbmulticloudOracleDbAzureVaultState } from "./dbmulticloudOracleDbAzureVault";
+export type DbmulticloudOracleDbAzureVault = import("./dbmulticloudOracleDbAzureVault").DbmulticloudOracleDbAzureVault;
+export const DbmulticloudOracleDbAzureVault: typeof import("./dbmulticloudOracleDbAzureVault").DbmulticloudOracleDbAzureVault = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureVault"], () => require("./dbmulticloudOracleDbAzureVault"));
+
+export { DbmulticloudOracleDbAzureVaultAssociationArgs, DbmulticloudOracleDbAzureVaultAssociationState } from "./dbmulticloudOracleDbAzureVaultAssociation";
+export type DbmulticloudOracleDbAzureVaultAssociation = import("./dbmulticloudOracleDbAzureVaultAssociation").DbmulticloudOracleDbAzureVaultAssociation;
+export const DbmulticloudOracleDbAzureVaultAssociation: typeof import("./dbmulticloudOracleDbAzureVaultAssociation").DbmulticloudOracleDbAzureVaultAssociation = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureVaultAssociation"], () => require("./dbmulticloudOracleDbAzureVaultAssociation"));
+
 export { GetApiaccesscontrolApiMetadataArgs, GetApiaccesscontrolApiMetadataResult, GetApiaccesscontrolApiMetadataOutputArgs } from "./getApiaccesscontrolApiMetadata";
 export const getApiaccesscontrolApiMetadata: typeof import("./getApiaccesscontrolApiMetadata").getApiaccesscontrolApiMetadata = null as any;
 export const getApiaccesscontrolApiMetadataOutput: typeof import("./getApiaccesscontrolApiMetadata").getApiaccesscontrolApiMetadataOutput = null as any;
@@ -49,6 +79,76 @@ export { GetApiaccesscontrolPrivilegedApiRequestsArgs, GetApiaccesscontrolPrivil
 export const getApiaccesscontrolPrivilegedApiRequests: typeof import("./getApiaccesscontrolPrivilegedApiRequests").getApiaccesscontrolPrivilegedApiRequests = null as any;
 export const getApiaccesscontrolPrivilegedApiRequestsOutput: typeof import("./getApiaccesscontrolPrivilegedApiRequests").getApiaccesscontrolPrivilegedApiRequestsOutput = null as any;
 utilities.lazyLoad(exports, ["getApiaccesscontrolPrivilegedApiRequests","getApiaccesscontrolPrivilegedApiRequestsOutput"], () => require("./getApiaccesscontrolPrivilegedApiRequests"));
+
+export { GetDbmulticloudMultiCloudResourceDiscoveriesArgs, GetDbmulticloudMultiCloudResourceDiscoveriesResult, GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs } from "./getDbmulticloudMultiCloudResourceDiscoveries";
+export const getDbmulticloudMultiCloudResourceDiscoveries: typeof import("./getDbmulticloudMultiCloudResourceDiscoveries").getDbmulticloudMultiCloudResourceDiscoveries = null as any;
+export const getDbmulticloudMultiCloudResourceDiscoveriesOutput: typeof import("./getDbmulticloudMultiCloudResourceDiscoveries").getDbmulticloudMultiCloudResourceDiscoveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudMultiCloudResourceDiscoveries","getDbmulticloudMultiCloudResourceDiscoveriesOutput"], () => require("./getDbmulticloudMultiCloudResourceDiscoveries"));
+
+export { GetDbmulticloudMultiCloudResourceDiscoveryArgs, GetDbmulticloudMultiCloudResourceDiscoveryResult, GetDbmulticloudMultiCloudResourceDiscoveryOutputArgs } from "./getDbmulticloudMultiCloudResourceDiscovery";
+export const getDbmulticloudMultiCloudResourceDiscovery: typeof import("./getDbmulticloudMultiCloudResourceDiscovery").getDbmulticloudMultiCloudResourceDiscovery = null as any;
+export const getDbmulticloudMultiCloudResourceDiscoveryOutput: typeof import("./getDbmulticloudMultiCloudResourceDiscovery").getDbmulticloudMultiCloudResourceDiscoveryOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudMultiCloudResourceDiscovery","getDbmulticloudMultiCloudResourceDiscoveryOutput"], () => require("./getDbmulticloudMultiCloudResourceDiscovery"));
+
+export { GetDbmulticloudOracleDbAzureBlobContainerArgs, GetDbmulticloudOracleDbAzureBlobContainerResult, GetDbmulticloudOracleDbAzureBlobContainerOutputArgs } from "./getDbmulticloudOracleDbAzureBlobContainer";
+export const getDbmulticloudOracleDbAzureBlobContainer: typeof import("./getDbmulticloudOracleDbAzureBlobContainer").getDbmulticloudOracleDbAzureBlobContainer = null as any;
+export const getDbmulticloudOracleDbAzureBlobContainerOutput: typeof import("./getDbmulticloudOracleDbAzureBlobContainer").getDbmulticloudOracleDbAzureBlobContainerOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureBlobContainer","getDbmulticloudOracleDbAzureBlobContainerOutput"], () => require("./getDbmulticloudOracleDbAzureBlobContainer"));
+
+export { GetDbmulticloudOracleDbAzureBlobContainersArgs, GetDbmulticloudOracleDbAzureBlobContainersResult, GetDbmulticloudOracleDbAzureBlobContainersOutputArgs } from "./getDbmulticloudOracleDbAzureBlobContainers";
+export const getDbmulticloudOracleDbAzureBlobContainers: typeof import("./getDbmulticloudOracleDbAzureBlobContainers").getDbmulticloudOracleDbAzureBlobContainers = null as any;
+export const getDbmulticloudOracleDbAzureBlobContainersOutput: typeof import("./getDbmulticloudOracleDbAzureBlobContainers").getDbmulticloudOracleDbAzureBlobContainersOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureBlobContainers","getDbmulticloudOracleDbAzureBlobContainersOutput"], () => require("./getDbmulticloudOracleDbAzureBlobContainers"));
+
+export { GetDbmulticloudOracleDbAzureBlobMountArgs, GetDbmulticloudOracleDbAzureBlobMountResult, GetDbmulticloudOracleDbAzureBlobMountOutputArgs } from "./getDbmulticloudOracleDbAzureBlobMount";
+export const getDbmulticloudOracleDbAzureBlobMount: typeof import("./getDbmulticloudOracleDbAzureBlobMount").getDbmulticloudOracleDbAzureBlobMount = null as any;
+export const getDbmulticloudOracleDbAzureBlobMountOutput: typeof import("./getDbmulticloudOracleDbAzureBlobMount").getDbmulticloudOracleDbAzureBlobMountOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureBlobMount","getDbmulticloudOracleDbAzureBlobMountOutput"], () => require("./getDbmulticloudOracleDbAzureBlobMount"));
+
+export { GetDbmulticloudOracleDbAzureBlobMountsArgs, GetDbmulticloudOracleDbAzureBlobMountsResult, GetDbmulticloudOracleDbAzureBlobMountsOutputArgs } from "./getDbmulticloudOracleDbAzureBlobMounts";
+export const getDbmulticloudOracleDbAzureBlobMounts: typeof import("./getDbmulticloudOracleDbAzureBlobMounts").getDbmulticloudOracleDbAzureBlobMounts = null as any;
+export const getDbmulticloudOracleDbAzureBlobMountsOutput: typeof import("./getDbmulticloudOracleDbAzureBlobMounts").getDbmulticloudOracleDbAzureBlobMountsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureBlobMounts","getDbmulticloudOracleDbAzureBlobMountsOutput"], () => require("./getDbmulticloudOracleDbAzureBlobMounts"));
+
+export { GetDbmulticloudOracleDbAzureConnectorArgs, GetDbmulticloudOracleDbAzureConnectorResult, GetDbmulticloudOracleDbAzureConnectorOutputArgs } from "./getDbmulticloudOracleDbAzureConnector";
+export const getDbmulticloudOracleDbAzureConnector: typeof import("./getDbmulticloudOracleDbAzureConnector").getDbmulticloudOracleDbAzureConnector = null as any;
+export const getDbmulticloudOracleDbAzureConnectorOutput: typeof import("./getDbmulticloudOracleDbAzureConnector").getDbmulticloudOracleDbAzureConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureConnector","getDbmulticloudOracleDbAzureConnectorOutput"], () => require("./getDbmulticloudOracleDbAzureConnector"));
+
+export { GetDbmulticloudOracleDbAzureConnectorsArgs, GetDbmulticloudOracleDbAzureConnectorsResult, GetDbmulticloudOracleDbAzureConnectorsOutputArgs } from "./getDbmulticloudOracleDbAzureConnectors";
+export const getDbmulticloudOracleDbAzureConnectors: typeof import("./getDbmulticloudOracleDbAzureConnectors").getDbmulticloudOracleDbAzureConnectors = null as any;
+export const getDbmulticloudOracleDbAzureConnectorsOutput: typeof import("./getDbmulticloudOracleDbAzureConnectors").getDbmulticloudOracleDbAzureConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureConnectors","getDbmulticloudOracleDbAzureConnectorsOutput"], () => require("./getDbmulticloudOracleDbAzureConnectors"));
+
+export { GetDbmulticloudOracleDbAzureKeyArgs, GetDbmulticloudOracleDbAzureKeyResult, GetDbmulticloudOracleDbAzureKeyOutputArgs } from "./getDbmulticloudOracleDbAzureKey";
+export const getDbmulticloudOracleDbAzureKey: typeof import("./getDbmulticloudOracleDbAzureKey").getDbmulticloudOracleDbAzureKey = null as any;
+export const getDbmulticloudOracleDbAzureKeyOutput: typeof import("./getDbmulticloudOracleDbAzureKey").getDbmulticloudOracleDbAzureKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureKey","getDbmulticloudOracleDbAzureKeyOutput"], () => require("./getDbmulticloudOracleDbAzureKey"));
+
+export { GetDbmulticloudOracleDbAzureKeysArgs, GetDbmulticloudOracleDbAzureKeysResult, GetDbmulticloudOracleDbAzureKeysOutputArgs } from "./getDbmulticloudOracleDbAzureKeys";
+export const getDbmulticloudOracleDbAzureKeys: typeof import("./getDbmulticloudOracleDbAzureKeys").getDbmulticloudOracleDbAzureKeys = null as any;
+export const getDbmulticloudOracleDbAzureKeysOutput: typeof import("./getDbmulticloudOracleDbAzureKeys").getDbmulticloudOracleDbAzureKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureKeys","getDbmulticloudOracleDbAzureKeysOutput"], () => require("./getDbmulticloudOracleDbAzureKeys"));
+
+export { GetDbmulticloudOracleDbAzureVaultArgs, GetDbmulticloudOracleDbAzureVaultResult, GetDbmulticloudOracleDbAzureVaultOutputArgs } from "./getDbmulticloudOracleDbAzureVault";
+export const getDbmulticloudOracleDbAzureVault: typeof import("./getDbmulticloudOracleDbAzureVault").getDbmulticloudOracleDbAzureVault = null as any;
+export const getDbmulticloudOracleDbAzureVaultOutput: typeof import("./getDbmulticloudOracleDbAzureVault").getDbmulticloudOracleDbAzureVaultOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureVault","getDbmulticloudOracleDbAzureVaultOutput"], () => require("./getDbmulticloudOracleDbAzureVault"));
+
+export { GetDbmulticloudOracleDbAzureVaultAssociationArgs, GetDbmulticloudOracleDbAzureVaultAssociationResult, GetDbmulticloudOracleDbAzureVaultAssociationOutputArgs } from "./getDbmulticloudOracleDbAzureVaultAssociation";
+export const getDbmulticloudOracleDbAzureVaultAssociation: typeof import("./getDbmulticloudOracleDbAzureVaultAssociation").getDbmulticloudOracleDbAzureVaultAssociation = null as any;
+export const getDbmulticloudOracleDbAzureVaultAssociationOutput: typeof import("./getDbmulticloudOracleDbAzureVaultAssociation").getDbmulticloudOracleDbAzureVaultAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureVaultAssociation","getDbmulticloudOracleDbAzureVaultAssociationOutput"], () => require("./getDbmulticloudOracleDbAzureVaultAssociation"));
+
+export { GetDbmulticloudOracleDbAzureVaultAssociationsArgs, GetDbmulticloudOracleDbAzureVaultAssociationsResult, GetDbmulticloudOracleDbAzureVaultAssociationsOutputArgs } from "./getDbmulticloudOracleDbAzureVaultAssociations";
+export const getDbmulticloudOracleDbAzureVaultAssociations: typeof import("./getDbmulticloudOracleDbAzureVaultAssociations").getDbmulticloudOracleDbAzureVaultAssociations = null as any;
+export const getDbmulticloudOracleDbAzureVaultAssociationsOutput: typeof import("./getDbmulticloudOracleDbAzureVaultAssociations").getDbmulticloudOracleDbAzureVaultAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureVaultAssociations","getDbmulticloudOracleDbAzureVaultAssociationsOutput"], () => require("./getDbmulticloudOracleDbAzureVaultAssociations"));
+
+export { GetDbmulticloudOracleDbAzureVaultsArgs, GetDbmulticloudOracleDbAzureVaultsResult, GetDbmulticloudOracleDbAzureVaultsOutputArgs } from "./getDbmulticloudOracleDbAzureVaults";
+export const getDbmulticloudOracleDbAzureVaults: typeof import("./getDbmulticloudOracleDbAzureVaults").getDbmulticloudOracleDbAzureVaults = null as any;
+export const getDbmulticloudOracleDbAzureVaultsOutput: typeof import("./getDbmulticloudOracleDbAzureVaults").getDbmulticloudOracleDbAzureVaultsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureVaults","getDbmulticloudOracleDbAzureVaultsOutput"], () => require("./getDbmulticloudOracleDbAzureVaults"));
 
 export { GetWlmsManagedInstanceArgs, GetWlmsManagedInstanceResult, GetWlmsManagedInstanceOutputArgs } from "./getWlmsManagedInstance";
 export const getWlmsManagedInstance: typeof import("./getWlmsManagedInstance").getWlmsManagedInstance = null as any;
@@ -144,6 +244,18 @@ const _module = {
                 return new ApiaccesscontrolPrivilegedApiControl(name, <any>undefined, { urn })
             case "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest":
                 return new ApiaccesscontrolPrivilegedApiRequest(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
+                return new DbmulticloudMultiCloudResourceDiscovery(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer":
+                return new DbmulticloudOracleDbAzureBlobContainer(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount":
+                return new DbmulticloudOracleDbAzureBlobMount(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector":
+                return new DbmulticloudOracleDbAzureConnector(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault":
+                return new DbmulticloudOracleDbAzureVault(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation":
+                return new DbmulticloudOracleDbAzureVaultAssociation(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -151,3 +263,9 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiControl", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiRequest", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobContainer", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobMount", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVaultAssociation", _module)

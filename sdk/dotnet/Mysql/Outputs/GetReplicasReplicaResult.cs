@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetReplicasReplicaEncryptDataResult> EncryptDatas;
+        /// <summary>
         /// The name of the Fault Domain the read replica is located in.
         /// </summary>
         public readonly string FaultDomain;
@@ -122,6 +126,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetReplicasReplicaEncryptDataResult> encryptDatas,
+
             string faultDomain,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -161,6 +167,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            EncryptDatas = encryptDatas;
             FaultDomain = faultDomain;
             FreeformTags = freeformTags;
             Id = id;

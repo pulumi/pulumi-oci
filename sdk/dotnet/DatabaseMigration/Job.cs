@@ -24,6 +24,12 @@ namespace Pulumi.Oci.DatabaseMigration
     public partial class Job : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// Information regarding the DB trace and alert log collection
+        /// </summary>
+        [Output("collectTracesDatas")]
+        public Output<ImmutableArray<Outputs.JobCollectTracesData>> CollectTracesDatas { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
@@ -217,6 +223,18 @@ namespace Pulumi.Oci.DatabaseMigration
 
     public sealed class JobState : global::Pulumi.ResourceArgs
     {
+        [Input("collectTracesDatas")]
+        private InputList<Inputs.JobCollectTracesDataGetArgs>? _collectTracesDatas;
+
+        /// <summary>
+        /// Information regarding the DB trace and alert log collection
+        /// </summary>
+        public InputList<Inputs.JobCollectTracesDataGetArgs> CollectTracesDatas
+        {
+            get => _collectTracesDatas ?? (_collectTracesDatas = new InputList<Inputs.JobCollectTracesDataGetArgs>());
+            set => _collectTracesDatas = value;
+        }
+
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
 

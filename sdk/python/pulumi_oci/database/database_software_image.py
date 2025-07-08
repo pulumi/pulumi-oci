@@ -226,6 +226,7 @@ class _DatabaseSoftwareImageState:
                  patch_set: Optional[pulumi.Input[builtins.str]] = None,
                  source_db_home_id: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None):
         """
         Input properties used for looking up and filtering DatabaseSoftwareImage resources.
@@ -249,6 +250,7 @@ class _DatabaseSoftwareImageState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] state: The current state of the database software image.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the database software image was created.
         """
         if compartment_id is not None:
@@ -283,6 +285,8 @@ class _DatabaseSoftwareImageState:
             pulumi.set(__self__, "source_db_home_id", source_db_home_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
 
@@ -483,6 +487,18 @@ class _DatabaseSoftwareImageState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -662,6 +678,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             __props__.__dict__["is_upgrade_supported"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(DatabaseSoftwareImage, __self__).__init__(
             'oci:Database/databaseSoftwareImage:DatabaseSoftwareImage',
@@ -689,6 +706,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
             patch_set: Optional[pulumi.Input[builtins.str]] = None,
             source_db_home_id: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None) -> 'DatabaseSoftwareImage':
         """
         Get an existing DatabaseSoftwareImage resource's state with the given name, id, and optional extra
@@ -717,6 +735,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[builtins.str] state: The current state of the database software image.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the database software image was created.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -739,6 +758,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         __props__.__dict__["patch_set"] = patch_set
         __props__.__dict__["source_db_home_id"] = source_db_home_id
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         return DatabaseSoftwareImage(resource_name, opts=opts, __props__=__props__)
 
@@ -873,6 +893,14 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         The current state of the database software image.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

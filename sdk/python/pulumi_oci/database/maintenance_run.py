@@ -176,6 +176,7 @@ class _MaintenanceRunState:
                  peer_maintenance_run_id: Optional[pulumi.Input[builtins.str]] = None,
                  peer_maintenance_run_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  target_db_server_version: Optional[pulumi.Input[builtins.str]] = None,
                  target_resource_id: Optional[pulumi.Input[builtins.str]] = None,
                  target_resource_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -213,6 +214,7 @@ class _MaintenanceRunState:
         :param pulumi.Input[builtins.str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param pulumi.Input[builtins.str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] target_db_server_version: The target software version for the database server patching operation.
         :param pulumi.Input[builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[builtins.str] target_resource_type: The type of the target resource on which the maintenance run occurs.
@@ -276,6 +278,8 @@ class _MaintenanceRunState:
             pulumi.set(__self__, "peer_maintenance_run_ids", peer_maintenance_run_ids)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_db_server_version is not None:
             pulumi.set(__self__, "target_db_server_version", target_db_server_version)
         if target_resource_id is not None:
@@ -596,6 +600,18 @@ class _MaintenanceRunState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="targetDbServerVersion")
     def target_db_server_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -860,6 +876,7 @@ class MaintenanceRun(pulumi.CustomResource):
             __props__.__dict__["peer_maintenance_run_id"] = None
             __props__.__dict__["peer_maintenance_run_ids"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["target_db_server_version"] = None
             __props__.__dict__["target_resource_type"] = None
             __props__.__dict__["target_storage_server_version"] = None
@@ -901,6 +918,7 @@ class MaintenanceRun(pulumi.CustomResource):
             peer_maintenance_run_id: Optional[pulumi.Input[builtins.str]] = None,
             peer_maintenance_run_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             target_db_server_version: Optional[pulumi.Input[builtins.str]] = None,
             target_resource_id: Optional[pulumi.Input[builtins.str]] = None,
             target_resource_type: Optional[pulumi.Input[builtins.str]] = None,
@@ -943,6 +961,7 @@ class MaintenanceRun(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] peer_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance run for the Autonomous Data Guard association's peer container database.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] peer_maintenance_run_ids: The list of OCIDs for the maintenance runs associated with their Autonomous Data Guard peer container databases.
         :param pulumi.Input[builtins.str] state: The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] target_db_server_version: The target software version for the database server patching operation.
         :param pulumi.Input[builtins.str] target_resource_id: The ID of the target resource for which the maintenance run should be created.
         :param pulumi.Input[builtins.str] target_resource_type: The type of the target resource on which the maintenance run occurs.
@@ -985,6 +1004,7 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["peer_maintenance_run_id"] = peer_maintenance_run_id
         __props__.__dict__["peer_maintenance_run_ids"] = peer_maintenance_run_ids
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_db_server_version"] = target_db_server_version
         __props__.__dict__["target_resource_id"] = target_resource_id
         __props__.__dict__["target_resource_type"] = target_resource_type
@@ -1196,6 +1216,14 @@ class MaintenanceRun(pulumi.CustomResource):
         The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetDbServerVersion")

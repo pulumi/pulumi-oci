@@ -197,6 +197,10 @@ export class Database extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the database was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -257,6 +261,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["source"] = state ? state.source : undefined;
             resourceInputs["sourceDatabasePointInTimeRecoveryTimestamp"] = state ? state.sourceDatabasePointInTimeRecoveryTimestamp : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
             resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
@@ -307,6 +312,7 @@ export class Database extends pulumi.CustomResource {
             resourceInputs["sidPrefix"] = undefined /*out*/;
             resourceInputs["sourceDatabasePointInTimeRecoveryTimestamp"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["vmClusterId"] = undefined /*out*/;
         }
@@ -466,6 +472,10 @@ export interface DatabaseState {
      * The current state of the database.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the database was created.
      */

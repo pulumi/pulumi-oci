@@ -87,6 +87,8 @@ type OneoffPatch struct {
 	SizeInKbs pulumi.Float64Output `pulumi:"sizeInKbs"`
 	// The current state of the one-off patch.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time one-off patch was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time until which the one-off patch will be available for download.
@@ -164,6 +166,8 @@ type oneoffPatchState struct {
 	SizeInKbs *float64 `pulumi:"sizeInKbs"`
 	// The current state of the one-off patch.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time one-off patch was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time until which the one-off patch will be available for download.
@@ -200,6 +204,8 @@ type OneoffPatchState struct {
 	SizeInKbs pulumi.Float64PtrInput
 	// The current state of the one-off patch.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time one-off patch was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time until which the one-off patch will be available for download.
@@ -405,6 +411,11 @@ func (o OneoffPatchOutput) SizeInKbs() pulumi.Float64Output {
 // The current state of the one-off patch.
 func (o OneoffPatchOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *OneoffPatch) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o OneoffPatchOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time one-off patch was created.

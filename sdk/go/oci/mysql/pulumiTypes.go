@@ -1170,6 +1170,8 @@ type MysqlBackupDbSystemSnapshot struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName *string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []MysqlBackupDbSystemSnapshotEncryptData `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints []MysqlBackupDbSystemSnapshotEndpoint `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
@@ -1246,6 +1248,8 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas MysqlBackupDbSystemSnapshotEncryptDataArrayInput `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints MysqlBackupDbSystemSnapshotEndpointArrayInput `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
@@ -1400,6 +1404,11 @@ func (o MysqlBackupDbSystemSnapshotOutput) Description() pulumi.StringPtrOutput 
 // (Updatable) A user-supplied display name for the backup.
 func (o MysqlBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+}
+
+// Encrypt data details.
+func (o MysqlBackupDbSystemSnapshotOutput) EncryptDatas() MysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotEncryptData { return v.EncryptDatas }).(MysqlBackupDbSystemSnapshotEncryptDataArrayOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -2129,6 +2138,112 @@ func (o MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.Int
 	}).(MysqlBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
+type MysqlBackupDbSystemSnapshotEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType *string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId *string `pulumi:"keyId"`
+}
+
+// MysqlBackupDbSystemSnapshotEncryptDataInput is an input type that accepts MysqlBackupDbSystemSnapshotEncryptDataArgs and MysqlBackupDbSystemSnapshotEncryptDataOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotEncryptDataInput` via:
+//
+//	MysqlBackupDbSystemSnapshotEncryptDataArgs{...}
+type MysqlBackupDbSystemSnapshotEncryptDataInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotEncryptDataOutput() MysqlBackupDbSystemSnapshotEncryptDataOutput
+	ToMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotEncryptDataOutput
+}
+
+type MysqlBackupDbSystemSnapshotEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringPtrInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
+}
+
+func (MysqlBackupDbSystemSnapshotEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotEncryptDataArgs) ToMysqlBackupDbSystemSnapshotEncryptDataOutput() MysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return i.ToMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotEncryptDataArgs) ToMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotEncryptDataOutput)
+}
+
+// MysqlBackupDbSystemSnapshotEncryptDataArrayInput is an input type that accepts MysqlBackupDbSystemSnapshotEncryptDataArray and MysqlBackupDbSystemSnapshotEncryptDataArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupDbSystemSnapshotEncryptDataArrayInput` via:
+//
+//	MysqlBackupDbSystemSnapshotEncryptDataArray{ MysqlBackupDbSystemSnapshotEncryptDataArgs{...} }
+type MysqlBackupDbSystemSnapshotEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutput() MysqlBackupDbSystemSnapshotEncryptDataArrayOutput
+	ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Context) MysqlBackupDbSystemSnapshotEncryptDataArrayOutput
+}
+
+type MysqlBackupDbSystemSnapshotEncryptDataArray []MysqlBackupDbSystemSnapshotEncryptDataInput
+
+func (MysqlBackupDbSystemSnapshotEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (i MysqlBackupDbSystemSnapshotEncryptDataArray) ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutput() MysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return i.ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupDbSystemSnapshotEncryptDataArray) ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupDbSystemSnapshotEncryptDataArrayOutput)
+}
+
+type MysqlBackupDbSystemSnapshotEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotEncryptDataOutput) ToMysqlBackupDbSystemSnapshotEncryptDataOutput() MysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotEncryptDataOutput) ToMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o MysqlBackupDbSystemSnapshotEncryptDataOutput) KeyGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEncryptData) *string { return v.KeyGenerationType }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the key to use.
+func (o MysqlBackupDbSystemSnapshotEncryptDataOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEncryptData) *string { return v.KeyId }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupDbSystemSnapshotEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupDbSystemSnapshotEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (o MysqlBackupDbSystemSnapshotEncryptDataArrayOutput) ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutput() MysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotEncryptDataArrayOutput) ToMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) MysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o
+}
+
+func (o MysqlBackupDbSystemSnapshotEncryptDataArrayOutput) Index(i pulumi.IntInput) MysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotEncryptData {
+		return vs[0].([]MysqlBackupDbSystemSnapshotEncryptData)[vs[1].(int)]
+	}).(MysqlBackupDbSystemSnapshotEncryptDataOutput)
+}
+
 type MysqlBackupDbSystemSnapshotEndpoint struct {
 	// The network address of the DB System.
 	Hostname *string `pulumi:"hostname"`
@@ -2844,6 +2959,162 @@ func (o MysqlBackupDbSystemSnapshotSummaryArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupDbSystemSnapshotSummary {
 		return vs[0].([]MysqlBackupDbSystemSnapshotSummary)[vs[1].(int)]
 	}).(MysqlBackupDbSystemSnapshotSummaryOutput)
+}
+
+type MysqlBackupEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId *string `pulumi:"keyId"`
+}
+
+// MysqlBackupEncryptDataInput is an input type that accepts MysqlBackupEncryptDataArgs and MysqlBackupEncryptDataOutput values.
+// You can construct a concrete instance of `MysqlBackupEncryptDataInput` via:
+//
+//	MysqlBackupEncryptDataArgs{...}
+type MysqlBackupEncryptDataInput interface {
+	pulumi.Input
+
+	ToMysqlBackupEncryptDataOutput() MysqlBackupEncryptDataOutput
+	ToMysqlBackupEncryptDataOutputWithContext(context.Context) MysqlBackupEncryptDataOutput
+}
+
+type MysqlBackupEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
+}
+
+func (MysqlBackupEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (i MysqlBackupEncryptDataArgs) ToMysqlBackupEncryptDataOutput() MysqlBackupEncryptDataOutput {
+	return i.ToMysqlBackupEncryptDataOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupEncryptDataArgs) ToMysqlBackupEncryptDataOutputWithContext(ctx context.Context) MysqlBackupEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupEncryptDataOutput)
+}
+
+func (i MysqlBackupEncryptDataArgs) ToMysqlBackupEncryptDataPtrOutput() MysqlBackupEncryptDataPtrOutput {
+	return i.ToMysqlBackupEncryptDataPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupEncryptDataArgs) ToMysqlBackupEncryptDataPtrOutputWithContext(ctx context.Context) MysqlBackupEncryptDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupEncryptDataOutput).ToMysqlBackupEncryptDataPtrOutputWithContext(ctx)
+}
+
+// MysqlBackupEncryptDataPtrInput is an input type that accepts MysqlBackupEncryptDataArgs, MysqlBackupEncryptDataPtr and MysqlBackupEncryptDataPtrOutput values.
+// You can construct a concrete instance of `MysqlBackupEncryptDataPtrInput` via:
+//
+//	        MysqlBackupEncryptDataArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlBackupEncryptDataPtrInput interface {
+	pulumi.Input
+
+	ToMysqlBackupEncryptDataPtrOutput() MysqlBackupEncryptDataPtrOutput
+	ToMysqlBackupEncryptDataPtrOutputWithContext(context.Context) MysqlBackupEncryptDataPtrOutput
+}
+
+type mysqlBackupEncryptDataPtrType MysqlBackupEncryptDataArgs
+
+func MysqlBackupEncryptDataPtr(v *MysqlBackupEncryptDataArgs) MysqlBackupEncryptDataPtrInput {
+	return (*mysqlBackupEncryptDataPtrType)(v)
+}
+
+func (*mysqlBackupEncryptDataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (i *mysqlBackupEncryptDataPtrType) ToMysqlBackupEncryptDataPtrOutput() MysqlBackupEncryptDataPtrOutput {
+	return i.ToMysqlBackupEncryptDataPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlBackupEncryptDataPtrType) ToMysqlBackupEncryptDataPtrOutputWithContext(ctx context.Context) MysqlBackupEncryptDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupEncryptDataPtrOutput)
+}
+
+type MysqlBackupEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (o MysqlBackupEncryptDataOutput) ToMysqlBackupEncryptDataOutput() MysqlBackupEncryptDataOutput {
+	return o
+}
+
+func (o MysqlBackupEncryptDataOutput) ToMysqlBackupEncryptDataOutputWithContext(ctx context.Context) MysqlBackupEncryptDataOutput {
+	return o
+}
+
+func (o MysqlBackupEncryptDataOutput) ToMysqlBackupEncryptDataPtrOutput() MysqlBackupEncryptDataPtrOutput {
+	return o.ToMysqlBackupEncryptDataPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlBackupEncryptDataOutput) ToMysqlBackupEncryptDataPtrOutputWithContext(ctx context.Context) MysqlBackupEncryptDataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlBackupEncryptData) *MysqlBackupEncryptData {
+		return &v
+	}).(MysqlBackupEncryptDataPtrOutput)
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o MysqlBackupEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlBackupEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o MysqlBackupEncryptDataOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupEncryptData) *string { return v.KeyId }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupEncryptDataPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupEncryptDataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (o MysqlBackupEncryptDataPtrOutput) ToMysqlBackupEncryptDataPtrOutput() MysqlBackupEncryptDataPtrOutput {
+	return o
+}
+
+func (o MysqlBackupEncryptDataPtrOutput) ToMysqlBackupEncryptDataPtrOutputWithContext(ctx context.Context) MysqlBackupEncryptDataPtrOutput {
+	return o
+}
+
+func (o MysqlBackupEncryptDataPtrOutput) Elem() MysqlBackupEncryptDataOutput {
+	return o.ApplyT(func(v *MysqlBackupEncryptData) MysqlBackupEncryptData {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlBackupEncryptData
+		return ret
+	}).(MysqlBackupEncryptDataOutput)
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o MysqlBackupEncryptDataPtrOutput) KeyGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlBackupEncryptData) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.KeyGenerationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the key to use.
+func (o MysqlBackupEncryptDataPtrOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlBackupEncryptData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyId
+	}).(pulumi.StringPtrOutput)
 }
 
 type MysqlBackupSourceDetails struct {
@@ -8321,6 +8592,162 @@ func (o MysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) MysqlDb
 	}).(MysqlDbSystemDeletionPolicyOutput)
 }
 
+type MysqlDbSystemEncryptData struct {
+	// (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// (Updatable) The OCID of the key to use.
+	KeyId *string `pulumi:"keyId"`
+}
+
+// MysqlDbSystemEncryptDataInput is an input type that accepts MysqlDbSystemEncryptDataArgs and MysqlDbSystemEncryptDataOutput values.
+// You can construct a concrete instance of `MysqlDbSystemEncryptDataInput` via:
+//
+//	MysqlDbSystemEncryptDataArgs{...}
+type MysqlDbSystemEncryptDataInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemEncryptDataOutput() MysqlDbSystemEncryptDataOutput
+	ToMysqlDbSystemEncryptDataOutputWithContext(context.Context) MysqlDbSystemEncryptDataOutput
+}
+
+type MysqlDbSystemEncryptDataArgs struct {
+	// (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// (Updatable) The OCID of the key to use.
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
+}
+
+func (MysqlDbSystemEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (i MysqlDbSystemEncryptDataArgs) ToMysqlDbSystemEncryptDataOutput() MysqlDbSystemEncryptDataOutput {
+	return i.ToMysqlDbSystemEncryptDataOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemEncryptDataArgs) ToMysqlDbSystemEncryptDataOutputWithContext(ctx context.Context) MysqlDbSystemEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEncryptDataOutput)
+}
+
+func (i MysqlDbSystemEncryptDataArgs) ToMysqlDbSystemEncryptDataPtrOutput() MysqlDbSystemEncryptDataPtrOutput {
+	return i.ToMysqlDbSystemEncryptDataPtrOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemEncryptDataArgs) ToMysqlDbSystemEncryptDataPtrOutputWithContext(ctx context.Context) MysqlDbSystemEncryptDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEncryptDataOutput).ToMysqlDbSystemEncryptDataPtrOutputWithContext(ctx)
+}
+
+// MysqlDbSystemEncryptDataPtrInput is an input type that accepts MysqlDbSystemEncryptDataArgs, MysqlDbSystemEncryptDataPtr and MysqlDbSystemEncryptDataPtrOutput values.
+// You can construct a concrete instance of `MysqlDbSystemEncryptDataPtrInput` via:
+//
+//	        MysqlDbSystemEncryptDataArgs{...}
+//
+//	or:
+//
+//	        nil
+type MysqlDbSystemEncryptDataPtrInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemEncryptDataPtrOutput() MysqlDbSystemEncryptDataPtrOutput
+	ToMysqlDbSystemEncryptDataPtrOutputWithContext(context.Context) MysqlDbSystemEncryptDataPtrOutput
+}
+
+type mysqlDbSystemEncryptDataPtrType MysqlDbSystemEncryptDataArgs
+
+func MysqlDbSystemEncryptDataPtr(v *MysqlDbSystemEncryptDataArgs) MysqlDbSystemEncryptDataPtrInput {
+	return (*mysqlDbSystemEncryptDataPtrType)(v)
+}
+
+func (*mysqlDbSystemEncryptDataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (i *mysqlDbSystemEncryptDataPtrType) ToMysqlDbSystemEncryptDataPtrOutput() MysqlDbSystemEncryptDataPtrOutput {
+	return i.ToMysqlDbSystemEncryptDataPtrOutputWithContext(context.Background())
+}
+
+func (i *mysqlDbSystemEncryptDataPtrType) ToMysqlDbSystemEncryptDataPtrOutputWithContext(ctx context.Context) MysqlDbSystemEncryptDataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemEncryptDataPtrOutput)
+}
+
+type MysqlDbSystemEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (o MysqlDbSystemEncryptDataOutput) ToMysqlDbSystemEncryptDataOutput() MysqlDbSystemEncryptDataOutput {
+	return o
+}
+
+func (o MysqlDbSystemEncryptDataOutput) ToMysqlDbSystemEncryptDataOutputWithContext(ctx context.Context) MysqlDbSystemEncryptDataOutput {
+	return o
+}
+
+func (o MysqlDbSystemEncryptDataOutput) ToMysqlDbSystemEncryptDataPtrOutput() MysqlDbSystemEncryptDataPtrOutput {
+	return o.ToMysqlDbSystemEncryptDataPtrOutputWithContext(context.Background())
+}
+
+func (o MysqlDbSystemEncryptDataOutput) ToMysqlDbSystemEncryptDataPtrOutputWithContext(ctx context.Context) MysqlDbSystemEncryptDataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MysqlDbSystemEncryptData) *MysqlDbSystemEncryptData {
+		return &v
+	}).(MysqlDbSystemEncryptDataPtrOutput)
+}
+
+// (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o MysqlDbSystemEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v MysqlDbSystemEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the key to use.
+func (o MysqlDbSystemEncryptDataOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemEncryptData) *string { return v.KeyId }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemEncryptDataPtrOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemEncryptDataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (o MysqlDbSystemEncryptDataPtrOutput) ToMysqlDbSystemEncryptDataPtrOutput() MysqlDbSystemEncryptDataPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemEncryptDataPtrOutput) ToMysqlDbSystemEncryptDataPtrOutputWithContext(ctx context.Context) MysqlDbSystemEncryptDataPtrOutput {
+	return o
+}
+
+func (o MysqlDbSystemEncryptDataPtrOutput) Elem() MysqlDbSystemEncryptDataOutput {
+	return o.ApplyT(func(v *MysqlDbSystemEncryptData) MysqlDbSystemEncryptData {
+		if v != nil {
+			return *v
+		}
+		var ret MysqlDbSystemEncryptData
+		return ret
+	}).(MysqlDbSystemEncryptDataOutput)
+}
+
+// (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o MysqlDbSystemEncryptDataPtrOutput) KeyGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemEncryptData) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.KeyGenerationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the key to use.
+func (o MysqlDbSystemEncryptDataPtrOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemEncryptData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyId
+	}).(pulumi.StringPtrOutput)
+}
+
 type MysqlDbSystemEndpoint struct {
 	// The network address of the DB System.
 	Hostname *string `pulumi:"hostname"`
@@ -9643,6 +10070,112 @@ func (o MysqlDbSystemSourcePtrOutput) SourceUrl() pulumi.StringPtrOutput {
 		}
 		return v.SourceUrl
 	}).(pulumi.StringPtrOutput)
+}
+
+type ReplicaEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType *string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId *string `pulumi:"keyId"`
+}
+
+// ReplicaEncryptDataInput is an input type that accepts ReplicaEncryptDataArgs and ReplicaEncryptDataOutput values.
+// You can construct a concrete instance of `ReplicaEncryptDataInput` via:
+//
+//	ReplicaEncryptDataArgs{...}
+type ReplicaEncryptDataInput interface {
+	pulumi.Input
+
+	ToReplicaEncryptDataOutput() ReplicaEncryptDataOutput
+	ToReplicaEncryptDataOutputWithContext(context.Context) ReplicaEncryptDataOutput
+}
+
+type ReplicaEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringPtrInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
+}
+
+func (ReplicaEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaEncryptData)(nil)).Elem()
+}
+
+func (i ReplicaEncryptDataArgs) ToReplicaEncryptDataOutput() ReplicaEncryptDataOutput {
+	return i.ToReplicaEncryptDataOutputWithContext(context.Background())
+}
+
+func (i ReplicaEncryptDataArgs) ToReplicaEncryptDataOutputWithContext(ctx context.Context) ReplicaEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaEncryptDataOutput)
+}
+
+// ReplicaEncryptDataArrayInput is an input type that accepts ReplicaEncryptDataArray and ReplicaEncryptDataArrayOutput values.
+// You can construct a concrete instance of `ReplicaEncryptDataArrayInput` via:
+//
+//	ReplicaEncryptDataArray{ ReplicaEncryptDataArgs{...} }
+type ReplicaEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToReplicaEncryptDataArrayOutput() ReplicaEncryptDataArrayOutput
+	ToReplicaEncryptDataArrayOutputWithContext(context.Context) ReplicaEncryptDataArrayOutput
+}
+
+type ReplicaEncryptDataArray []ReplicaEncryptDataInput
+
+func (ReplicaEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaEncryptData)(nil)).Elem()
+}
+
+func (i ReplicaEncryptDataArray) ToReplicaEncryptDataArrayOutput() ReplicaEncryptDataArrayOutput {
+	return i.ToReplicaEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i ReplicaEncryptDataArray) ToReplicaEncryptDataArrayOutputWithContext(ctx context.Context) ReplicaEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ReplicaEncryptDataArrayOutput)
+}
+
+type ReplicaEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (ReplicaEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ReplicaEncryptData)(nil)).Elem()
+}
+
+func (o ReplicaEncryptDataOutput) ToReplicaEncryptDataOutput() ReplicaEncryptDataOutput {
+	return o
+}
+
+func (o ReplicaEncryptDataOutput) ToReplicaEncryptDataOutputWithContext(ctx context.Context) ReplicaEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o ReplicaEncryptDataOutput) KeyGenerationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaEncryptData) *string { return v.KeyGenerationType }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the key to use.
+func (o ReplicaEncryptDataOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ReplicaEncryptData) *string { return v.KeyId }).(pulumi.StringPtrOutput)
+}
+
+type ReplicaEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (ReplicaEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ReplicaEncryptData)(nil)).Elem()
+}
+
+func (o ReplicaEncryptDataArrayOutput) ToReplicaEncryptDataArrayOutput() ReplicaEncryptDataArrayOutput {
+	return o
+}
+
+func (o ReplicaEncryptDataArrayOutput) ToReplicaEncryptDataArrayOutputWithContext(ctx context.Context) ReplicaEncryptDataArrayOutput {
+	return o
+}
+
+func (o ReplicaEncryptDataArrayOutput) Index(i pulumi.IntInput) ReplicaEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ReplicaEncryptData {
+		return vs[0].([]ReplicaEncryptData)[vs[1].(int)]
+	}).(ReplicaEncryptDataOutput)
 }
 
 type ReplicaReplicaOverrides struct {
@@ -11724,6 +12257,8 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	Description string `pulumi:"description"`
 	// A user-supplied display name for the backup.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetMysqlBackupDbSystemSnapshotEncryptData `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlBackupDbSystemSnapshotEndpoint `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
@@ -11800,6 +12335,8 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A user-supplied display name for the backup.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas GetMysqlBackupDbSystemSnapshotEncryptDataArrayInput `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints GetMysqlBackupDbSystemSnapshotEndpointArrayInput `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
@@ -11958,6 +12495,13 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) Description() pulumi.StringOutput 
 // A user-supplied display name for the backup.
 func (o GetMysqlBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o GetMysqlBackupDbSystemSnapshotOutput) EncryptDatas() GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotEncryptData {
+		return v.EncryptDatas
+	}).(GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -12691,6 +13235,112 @@ func (o GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.
 	}).(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
+type GetMysqlBackupDbSystemSnapshotEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetMysqlBackupDbSystemSnapshotEncryptDataInput is an input type that accepts GetMysqlBackupDbSystemSnapshotEncryptDataArgs and GetMysqlBackupDbSystemSnapshotEncryptDataOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotEncryptDataInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotEncryptDataArgs{...}
+type GetMysqlBackupDbSystemSnapshotEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupDbSystemSnapshotEncryptDataOutput
+	ToGetMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotEncryptDataOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetMysqlBackupDbSystemSnapshotEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotEncryptDataArgs) ToGetMysqlBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotEncryptDataArgs) ToGetMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotEncryptDataOutput)
+}
+
+// GetMysqlBackupDbSystemSnapshotEncryptDataArrayInput is an input type that accepts GetMysqlBackupDbSystemSnapshotEncryptDataArray and GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupDbSystemSnapshotEncryptDataArrayInput` via:
+//
+//	GetMysqlBackupDbSystemSnapshotEncryptDataArray{ GetMysqlBackupDbSystemSnapshotEncryptDataArgs{...} }
+type GetMysqlBackupDbSystemSnapshotEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput
+	ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Context) GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput
+}
+
+type GetMysqlBackupDbSystemSnapshotEncryptDataArray []GetMysqlBackupDbSystemSnapshotEncryptDataInput
+
+func (GetMysqlBackupDbSystemSnapshotEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupDbSystemSnapshotEncryptDataArray) ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return i.ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupDbSystemSnapshotEncryptDataArray) ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataOutput) ToGetMysqlBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataOutput) ToGetMysqlBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput) ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput) ToGetMysqlBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupDbSystemSnapshotEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupDbSystemSnapshotEncryptData {
+		return vs[0].([]GetMysqlBackupDbSystemSnapshotEncryptData)[vs[1].(int)]
+	}).(GetMysqlBackupDbSystemSnapshotEncryptDataOutput)
+}
+
 type GetMysqlBackupDbSystemSnapshotEndpoint struct {
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
@@ -13408,6 +14058,112 @@ func (o GetMysqlBackupDbSystemSnapshotSummaryArrayOutput) Index(i pulumi.IntInpu
 	}).(GetMysqlBackupDbSystemSnapshotSummaryOutput)
 }
 
+type GetMysqlBackupEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetMysqlBackupEncryptDataInput is an input type that accepts GetMysqlBackupEncryptDataArgs and GetMysqlBackupEncryptDataOutput values.
+// You can construct a concrete instance of `GetMysqlBackupEncryptDataInput` via:
+//
+//	GetMysqlBackupEncryptDataArgs{...}
+type GetMysqlBackupEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupEncryptDataOutput() GetMysqlBackupEncryptDataOutput
+	ToGetMysqlBackupEncryptDataOutputWithContext(context.Context) GetMysqlBackupEncryptDataOutput
+}
+
+type GetMysqlBackupEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetMysqlBackupEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupEncryptDataArgs) ToGetMysqlBackupEncryptDataOutput() GetMysqlBackupEncryptDataOutput {
+	return i.ToGetMysqlBackupEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupEncryptDataArgs) ToGetMysqlBackupEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupEncryptDataOutput)
+}
+
+// GetMysqlBackupEncryptDataArrayInput is an input type that accepts GetMysqlBackupEncryptDataArray and GetMysqlBackupEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupEncryptDataArrayInput` via:
+//
+//	GetMysqlBackupEncryptDataArray{ GetMysqlBackupEncryptDataArgs{...} }
+type GetMysqlBackupEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupEncryptDataArrayOutput() GetMysqlBackupEncryptDataArrayOutput
+	ToGetMysqlBackupEncryptDataArrayOutputWithContext(context.Context) GetMysqlBackupEncryptDataArrayOutput
+}
+
+type GetMysqlBackupEncryptDataArray []GetMysqlBackupEncryptDataInput
+
+func (GetMysqlBackupEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupEncryptDataArray) ToGetMysqlBackupEncryptDataArrayOutput() GetMysqlBackupEncryptDataArrayOutput {
+	return i.ToGetMysqlBackupEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupEncryptDataArray) ToGetMysqlBackupEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupEncryptDataArrayOutput)
+}
+
+type GetMysqlBackupEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupEncryptDataOutput) ToGetMysqlBackupEncryptDataOutput() GetMysqlBackupEncryptDataOutput {
+	return o
+}
+
+func (o GetMysqlBackupEncryptDataOutput) ToGetMysqlBackupEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetMysqlBackupEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetMysqlBackupEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupEncryptDataArrayOutput) ToGetMysqlBackupEncryptDataArrayOutput() GetMysqlBackupEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupEncryptDataArrayOutput) ToGetMysqlBackupEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupEncryptData {
+		return vs[0].([]GetMysqlBackupEncryptData)[vs[1].(int)]
+	}).(GetMysqlBackupEncryptDataOutput)
+}
+
 type GetMysqlBackupSourceDetail struct {
 	// The OCID of the Backup
 	BackupId string `pulumi:"backupId"`
@@ -13545,6 +14301,8 @@ type GetMysqlBackupsBackup struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetMysqlBackupsBackupEncryptData `pulumi:"encryptDatas"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the backup itself
@@ -13609,6 +14367,8 @@ type GetMysqlBackupsBackupArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas GetMysqlBackupsBackupEncryptDataArrayInput `pulumi:"encryptDatas"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the backup itself
@@ -13747,6 +14507,11 @@ func (o GetMysqlBackupsBackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Encrypt data details.
+func (o GetMysqlBackupsBackupOutput) EncryptDatas() GetMysqlBackupsBackupEncryptDataArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) []GetMysqlBackupsBackupEncryptData { return v.EncryptDatas }).(GetMysqlBackupsBackupEncryptDataArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetMysqlBackupsBackupOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
@@ -13868,6 +14633,8 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetMysqlBackupsBackupDbSystemSnapshotEncryptData `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlBackupsBackupDbSystemSnapshotEndpoint `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
@@ -13944,6 +14711,8 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput `pulumi:"endpoints"`
 	// The name of the Fault Domain the DB System is located in.
@@ -14102,6 +14871,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Description() pulumi.String
 // A filter to return only the resource matching the given display name exactly.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) EncryptDatas() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotEncryptData {
+		return v.EncryptDatas
+	}).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -14841,6 +15617,112 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i 
 	}).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput)
 }
 
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs and GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs{...}
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput)
+}
+
+// GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray and GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput` via:
+//
+//	GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray{ GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs{...} }
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput
+	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray []GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput
+
+func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return i.ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotEncryptData {
+		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotEncryptData)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput)
+}
+
 type GetMysqlBackupsBackupDbSystemSnapshotEndpoint struct {
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
@@ -15558,6 +16440,112 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotSummary {
 		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotSummary)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupDbSystemSnapshotSummaryOutput)
+}
+
+type GetMysqlBackupsBackupEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetMysqlBackupsBackupEncryptDataInput is an input type that accepts GetMysqlBackupsBackupEncryptDataArgs and GetMysqlBackupsBackupEncryptDataOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupEncryptDataInput` via:
+//
+//	GetMysqlBackupsBackupEncryptDataArgs{...}
+type GetMysqlBackupsBackupEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupEncryptDataOutput() GetMysqlBackupsBackupEncryptDataOutput
+	ToGetMysqlBackupsBackupEncryptDataOutputWithContext(context.Context) GetMysqlBackupsBackupEncryptDataOutput
+}
+
+type GetMysqlBackupsBackupEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetMysqlBackupsBackupEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupEncryptDataArgs) ToGetMysqlBackupsBackupEncryptDataOutput() GetMysqlBackupsBackupEncryptDataOutput {
+	return i.ToGetMysqlBackupsBackupEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupEncryptDataArgs) ToGetMysqlBackupsBackupEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupsBackupEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupEncryptDataOutput)
+}
+
+// GetMysqlBackupsBackupEncryptDataArrayInput is an input type that accepts GetMysqlBackupsBackupEncryptDataArray and GetMysqlBackupsBackupEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupsBackupEncryptDataArrayInput` via:
+//
+//	GetMysqlBackupsBackupEncryptDataArray{ GetMysqlBackupsBackupEncryptDataArgs{...} }
+type GetMysqlBackupsBackupEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupsBackupEncryptDataArrayOutput() GetMysqlBackupsBackupEncryptDataArrayOutput
+	ToGetMysqlBackupsBackupEncryptDataArrayOutputWithContext(context.Context) GetMysqlBackupsBackupEncryptDataArrayOutput
+}
+
+type GetMysqlBackupsBackupEncryptDataArray []GetMysqlBackupsBackupEncryptDataInput
+
+func (GetMysqlBackupsBackupEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlBackupsBackupEncryptDataArray) ToGetMysqlBackupsBackupEncryptDataArrayOutput() GetMysqlBackupsBackupEncryptDataArrayOutput {
+	return i.ToGetMysqlBackupsBackupEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupsBackupEncryptDataArray) ToGetMysqlBackupsBackupEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupEncryptDataArrayOutput)
+}
+
+type GetMysqlBackupsBackupEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupsBackupEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupEncryptDataOutput) ToGetMysqlBackupsBackupEncryptDataOutput() GetMysqlBackupsBackupEncryptDataOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupEncryptDataOutput) ToGetMysqlBackupsBackupEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupsBackupEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetMysqlBackupsBackupEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetMysqlBackupsBackupEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupsBackupEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupsBackupEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupsBackupEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlBackupsBackupEncryptDataArrayOutput) ToGetMysqlBackupsBackupEncryptDataArrayOutput() GetMysqlBackupsBackupEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupEncryptDataArrayOutput) ToGetMysqlBackupsBackupEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupsBackupEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupEncryptData {
+		return vs[0].([]GetMysqlBackupsBackupEncryptData)[vs[1].(int)]
+	}).(GetMysqlBackupsBackupEncryptDataOutput)
 }
 
 type GetMysqlBackupsBackupSourceDetail struct {
@@ -20395,6 +21383,112 @@ func (o GetMysqlDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetM
 	}).(GetMysqlDbSystemDeletionPolicyOutput)
 }
 
+type GetMysqlDbSystemEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetMysqlDbSystemEncryptDataInput is an input type that accepts GetMysqlDbSystemEncryptDataArgs and GetMysqlDbSystemEncryptDataOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemEncryptDataInput` via:
+//
+//	GetMysqlDbSystemEncryptDataArgs{...}
+type GetMysqlDbSystemEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemEncryptDataOutput() GetMysqlDbSystemEncryptDataOutput
+	ToGetMysqlDbSystemEncryptDataOutputWithContext(context.Context) GetMysqlDbSystemEncryptDataOutput
+}
+
+type GetMysqlDbSystemEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetMysqlDbSystemEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemEncryptDataArgs) ToGetMysqlDbSystemEncryptDataOutput() GetMysqlDbSystemEncryptDataOutput {
+	return i.ToGetMysqlDbSystemEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemEncryptDataArgs) ToGetMysqlDbSystemEncryptDataOutputWithContext(ctx context.Context) GetMysqlDbSystemEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemEncryptDataOutput)
+}
+
+// GetMysqlDbSystemEncryptDataArrayInput is an input type that accepts GetMysqlDbSystemEncryptDataArray and GetMysqlDbSystemEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemEncryptDataArrayInput` via:
+//
+//	GetMysqlDbSystemEncryptDataArray{ GetMysqlDbSystemEncryptDataArgs{...} }
+type GetMysqlDbSystemEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemEncryptDataArrayOutput() GetMysqlDbSystemEncryptDataArrayOutput
+	ToGetMysqlDbSystemEncryptDataArrayOutputWithContext(context.Context) GetMysqlDbSystemEncryptDataArrayOutput
+}
+
+type GetMysqlDbSystemEncryptDataArray []GetMysqlDbSystemEncryptDataInput
+
+func (GetMysqlDbSystemEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemEncryptDataArray) ToGetMysqlDbSystemEncryptDataArrayOutput() GetMysqlDbSystemEncryptDataArrayOutput {
+	return i.ToGetMysqlDbSystemEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemEncryptDataArray) ToGetMysqlDbSystemEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemEncryptDataArrayOutput)
+}
+
+type GetMysqlDbSystemEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemEncryptDataOutput) ToGetMysqlDbSystemEncryptDataOutput() GetMysqlDbSystemEncryptDataOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemEncryptDataOutput) ToGetMysqlDbSystemEncryptDataOutputWithContext(ctx context.Context) GetMysqlDbSystemEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetMysqlDbSystemEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetMysqlDbSystemEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemEncryptDataArrayOutput) ToGetMysqlDbSystemEncryptDataArrayOutput() GetMysqlDbSystemEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemEncryptDataArrayOutput) ToGetMysqlDbSystemEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemEncryptData {
+		return vs[0].([]GetMysqlDbSystemEncryptData)[vs[1].(int)]
+	}).(GetMysqlDbSystemEncryptDataOutput)
+}
+
 type GetMysqlDbSystemEndpoint struct {
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
@@ -21416,6 +22510,8 @@ type GetMysqlDbSystemsDbSystem struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetMysqlDbSystemsDbSystemEncryptData `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlDbSystemsDbSystemEndpoint `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -21523,6 +22619,8 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas GetMysqlDbSystemsDbSystemEncryptDataArrayInput `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints GetMysqlDbSystemsDbSystemEndpointArrayInput `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -21728,6 +22826,11 @@ func (o GetMysqlDbSystemsDbSystemOutput) Description() pulumi.StringOutput {
 // A filter to return only the resource matching the given display name exactly.
 func (o GetMysqlDbSystemsDbSystemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o GetMysqlDbSystemsDbSystemOutput) EncryptDatas() GetMysqlDbSystemsDbSystemEncryptDataArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemEncryptData { return v.EncryptDatas }).(GetMysqlDbSystemsDbSystemEncryptDataArrayOutput)
 }
 
 // The network endpoints available for this DB System.
@@ -23561,6 +24664,112 @@ func (o GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput) Index(i pulumi.IntIn
 	}).(GetMysqlDbSystemsDbSystemDeletionPolicyOutput)
 }
 
+type GetMysqlDbSystemsDbSystemEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetMysqlDbSystemsDbSystemEncryptDataInput is an input type that accepts GetMysqlDbSystemsDbSystemEncryptDataArgs and GetMysqlDbSystemsDbSystemEncryptDataOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemEncryptDataInput` via:
+//
+//	GetMysqlDbSystemsDbSystemEncryptDataArgs{...}
+type GetMysqlDbSystemsDbSystemEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemEncryptDataOutput() GetMysqlDbSystemsDbSystemEncryptDataOutput
+	ToGetMysqlDbSystemsDbSystemEncryptDataOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemEncryptDataOutput
+}
+
+type GetMysqlDbSystemsDbSystemEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetMysqlDbSystemsDbSystemEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemEncryptDataArgs) ToGetMysqlDbSystemsDbSystemEncryptDataOutput() GetMysqlDbSystemsDbSystemEncryptDataOutput {
+	return i.ToGetMysqlDbSystemsDbSystemEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemEncryptDataArgs) ToGetMysqlDbSystemsDbSystemEncryptDataOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemEncryptDataOutput)
+}
+
+// GetMysqlDbSystemsDbSystemEncryptDataArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemEncryptDataArray and GetMysqlDbSystemsDbSystemEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemEncryptDataArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemEncryptDataArray{ GetMysqlDbSystemsDbSystemEncryptDataArgs{...} }
+type GetMysqlDbSystemsDbSystemEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutput() GetMysqlDbSystemsDbSystemEncryptDataArrayOutput
+	ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemEncryptDataArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemEncryptDataArray []GetMysqlDbSystemsDbSystemEncryptDataInput
+
+func (GetMysqlDbSystemsDbSystemEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemEncryptData)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemEncryptDataArray) ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutput() GetMysqlDbSystemsDbSystemEncryptDataArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemEncryptDataArray) ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemEncryptDataArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemEncryptDataOutput) ToGetMysqlDbSystemsDbSystemEncryptDataOutput() GetMysqlDbSystemsDbSystemEncryptDataOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemEncryptDataOutput) ToGetMysqlDbSystemsDbSystemEncryptDataOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetMysqlDbSystemsDbSystemEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetMysqlDbSystemsDbSystemEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemEncryptData)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemEncryptDataArrayOutput) ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutput() GetMysqlDbSystemsDbSystemEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemEncryptDataArrayOutput) ToGetMysqlDbSystemsDbSystemEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemEncryptData {
+		return vs[0].([]GetMysqlDbSystemsDbSystemEncryptData)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemEncryptDataOutput)
+}
+
 type GetMysqlDbSystemsDbSystemEndpoint struct {
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
@@ -24965,6 +26174,112 @@ func (o GetMysqlVersionVersionVersionArrayOutput) Index(i pulumi.IntInput) GetMy
 	}).(GetMysqlVersionVersionVersionOutput)
 }
 
+type GetReplicaEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetReplicaEncryptDataInput is an input type that accepts GetReplicaEncryptDataArgs and GetReplicaEncryptDataOutput values.
+// You can construct a concrete instance of `GetReplicaEncryptDataInput` via:
+//
+//	GetReplicaEncryptDataArgs{...}
+type GetReplicaEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetReplicaEncryptDataOutput() GetReplicaEncryptDataOutput
+	ToGetReplicaEncryptDataOutputWithContext(context.Context) GetReplicaEncryptDataOutput
+}
+
+type GetReplicaEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetReplicaEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaEncryptData)(nil)).Elem()
+}
+
+func (i GetReplicaEncryptDataArgs) ToGetReplicaEncryptDataOutput() GetReplicaEncryptDataOutput {
+	return i.ToGetReplicaEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetReplicaEncryptDataArgs) ToGetReplicaEncryptDataOutputWithContext(ctx context.Context) GetReplicaEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaEncryptDataOutput)
+}
+
+// GetReplicaEncryptDataArrayInput is an input type that accepts GetReplicaEncryptDataArray and GetReplicaEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetReplicaEncryptDataArrayInput` via:
+//
+//	GetReplicaEncryptDataArray{ GetReplicaEncryptDataArgs{...} }
+type GetReplicaEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicaEncryptDataArrayOutput() GetReplicaEncryptDataArrayOutput
+	ToGetReplicaEncryptDataArrayOutputWithContext(context.Context) GetReplicaEncryptDataArrayOutput
+}
+
+type GetReplicaEncryptDataArray []GetReplicaEncryptDataInput
+
+func (GetReplicaEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaEncryptData)(nil)).Elem()
+}
+
+func (i GetReplicaEncryptDataArray) ToGetReplicaEncryptDataArrayOutput() GetReplicaEncryptDataArrayOutput {
+	return i.ToGetReplicaEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicaEncryptDataArray) ToGetReplicaEncryptDataArrayOutputWithContext(ctx context.Context) GetReplicaEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicaEncryptDataArrayOutput)
+}
+
+type GetReplicaEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicaEncryptData)(nil)).Elem()
+}
+
+func (o GetReplicaEncryptDataOutput) ToGetReplicaEncryptDataOutput() GetReplicaEncryptDataOutput {
+	return o
+}
+
+func (o GetReplicaEncryptDataOutput) ToGetReplicaEncryptDataOutputWithContext(ctx context.Context) GetReplicaEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetReplicaEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetReplicaEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicaEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetReplicaEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicaEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicaEncryptData)(nil)).Elem()
+}
+
+func (o GetReplicaEncryptDataArrayOutput) ToGetReplicaEncryptDataArrayOutput() GetReplicaEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetReplicaEncryptDataArrayOutput) ToGetReplicaEncryptDataArrayOutputWithContext(ctx context.Context) GetReplicaEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetReplicaEncryptDataArrayOutput) Index(i pulumi.IntInput) GetReplicaEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicaEncryptData {
+		return vs[0].([]GetReplicaEncryptData)[vs[1].(int)]
+	}).(GetReplicaEncryptDataOutput)
+}
+
 type GetReplicaReplicaOverride struct {
 	// The OCID of the Configuration to be used by the read replica.
 	ConfigurationId string `pulumi:"configurationId"`
@@ -25316,6 +26631,8 @@ type GetReplicasReplica struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetReplicasReplicaEncryptData `pulumi:"encryptDatas"`
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -25376,6 +26693,8 @@ type GetReplicasReplicaArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas GetReplicasReplicaEncryptDataArrayInput `pulumi:"encryptDatas"`
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -25496,6 +26815,11 @@ func (o GetReplicasReplicaOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Encrypt data details.
+func (o GetReplicasReplicaOutput) EncryptDatas() GetReplicasReplicaEncryptDataArrayOutput {
+	return o.ApplyT(func(v GetReplicasReplica) []GetReplicasReplicaEncryptData { return v.EncryptDatas }).(GetReplicasReplicaEncryptDataArrayOutput)
+}
+
 // The name of the Fault Domain the read replica is located in.
 func (o GetReplicasReplicaOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetReplicasReplica) string { return v.FaultDomain }).(pulumi.StringOutput)
@@ -25594,6 +26918,112 @@ func (o GetReplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetReplicasRepli
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplica {
 		return vs[0].([]GetReplicasReplica)[vs[1].(int)]
 	}).(GetReplicasReplicaOutput)
+}
+
+type GetReplicasReplicaEncryptData struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType string `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId string `pulumi:"keyId"`
+}
+
+// GetReplicasReplicaEncryptDataInput is an input type that accepts GetReplicasReplicaEncryptDataArgs and GetReplicasReplicaEncryptDataOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaEncryptDataInput` via:
+//
+//	GetReplicasReplicaEncryptDataArgs{...}
+type GetReplicasReplicaEncryptDataInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaEncryptDataOutput() GetReplicasReplicaEncryptDataOutput
+	ToGetReplicasReplicaEncryptDataOutputWithContext(context.Context) GetReplicasReplicaEncryptDataOutput
+}
+
+type GetReplicasReplicaEncryptDataArgs struct {
+	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
+	// The OCID of the key to use.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (GetReplicasReplicaEncryptDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaEncryptData)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaEncryptDataArgs) ToGetReplicasReplicaEncryptDataOutput() GetReplicasReplicaEncryptDataOutput {
+	return i.ToGetReplicasReplicaEncryptDataOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaEncryptDataArgs) ToGetReplicasReplicaEncryptDataOutputWithContext(ctx context.Context) GetReplicasReplicaEncryptDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaEncryptDataOutput)
+}
+
+// GetReplicasReplicaEncryptDataArrayInput is an input type that accepts GetReplicasReplicaEncryptDataArray and GetReplicasReplicaEncryptDataArrayOutput values.
+// You can construct a concrete instance of `GetReplicasReplicaEncryptDataArrayInput` via:
+//
+//	GetReplicasReplicaEncryptDataArray{ GetReplicasReplicaEncryptDataArgs{...} }
+type GetReplicasReplicaEncryptDataArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicasReplicaEncryptDataArrayOutput() GetReplicasReplicaEncryptDataArrayOutput
+	ToGetReplicasReplicaEncryptDataArrayOutputWithContext(context.Context) GetReplicasReplicaEncryptDataArrayOutput
+}
+
+type GetReplicasReplicaEncryptDataArray []GetReplicasReplicaEncryptDataInput
+
+func (GetReplicasReplicaEncryptDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaEncryptData)(nil)).Elem()
+}
+
+func (i GetReplicasReplicaEncryptDataArray) ToGetReplicasReplicaEncryptDataArrayOutput() GetReplicasReplicaEncryptDataArrayOutput {
+	return i.ToGetReplicasReplicaEncryptDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicasReplicaEncryptDataArray) ToGetReplicasReplicaEncryptDataArrayOutputWithContext(ctx context.Context) GetReplicasReplicaEncryptDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicasReplicaEncryptDataArrayOutput)
+}
+
+type GetReplicasReplicaEncryptDataOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaEncryptDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicasReplicaEncryptData)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaEncryptDataOutput) ToGetReplicasReplicaEncryptDataOutput() GetReplicasReplicaEncryptDataOutput {
+	return o
+}
+
+func (o GetReplicasReplicaEncryptDataOutput) ToGetReplicasReplicaEncryptDataOutputWithContext(ctx context.Context) GetReplicasReplicaEncryptDataOutput {
+	return o
+}
+
+// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+func (o GetReplicasReplicaEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
+}
+
+// The OCID of the key to use.
+func (o GetReplicasReplicaEncryptDataOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicasReplicaEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type GetReplicasReplicaEncryptDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicasReplicaEncryptDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicasReplicaEncryptData)(nil)).Elem()
+}
+
+func (o GetReplicasReplicaEncryptDataArrayOutput) ToGetReplicasReplicaEncryptDataArrayOutput() GetReplicasReplicaEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaEncryptDataArrayOutput) ToGetReplicasReplicaEncryptDataArrayOutputWithContext(ctx context.Context) GetReplicasReplicaEncryptDataArrayOutput {
+	return o
+}
+
+func (o GetReplicasReplicaEncryptDataArrayOutput) Index(i pulumi.IntInput) GetReplicasReplicaEncryptDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicasReplicaEncryptData {
+		return vs[0].([]GetReplicasReplicaEncryptData)[vs[1].(int)]
+	}).(GetReplicasReplicaEncryptDataOutput)
 }
 
 type GetReplicasReplicaReplicaOverride struct {
@@ -26084,6 +27514,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotDeletionPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEncryptDataInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEncryptDataArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotMaintenanceArgs{})
@@ -26096,6 +27528,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotSummaryArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupEncryptDataInput)(nil)).Elem(), MysqlBackupEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupEncryptDataPtrInput)(nil)).Elem(), MysqlBackupEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupSourceDetailsInput)(nil)).Elem(), MysqlBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupSourceDetailsPtrInput)(nil)).Elem(), MysqlBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
@@ -26128,6 +27562,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDataStoragePtrInput)(nil)).Elem(), MysqlDbSystemDataStorageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyArrayInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEncryptDataInput)(nil)).Elem(), MysqlDbSystemEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEncryptDataPtrInput)(nil)).Elem(), MysqlDbSystemEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEndpointInput)(nil)).Elem(), MysqlDbSystemEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemEndpointArrayInput)(nil)).Elem(), MysqlDbSystemEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemHeatWaveClusterInput)(nil)).Elem(), MysqlDbSystemHeatWaveClusterArgs{})
@@ -26144,6 +27580,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSecureConnectionsPtrInput)(nil)).Elem(), MysqlDbSystemSecureConnectionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourceInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemSourcePtrInput)(nil)).Elem(), MysqlDbSystemSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaEncryptDataInput)(nil)).Elem(), ReplicaEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaEncryptDataArrayInput)(nil)).Elem(), ReplicaEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaReplicaOverridesPtrInput)(nil)).Elem(), ReplicaReplicaOverridesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ReplicaSecureConnectionInput)(nil)).Elem(), ReplicaSecureConnectionArgs{})
@@ -26186,6 +27624,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotDeletionPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEncryptDataInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotMaintenanceArgs{})
@@ -26198,6 +27638,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotSummaryArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupEncryptDataInput)(nil)).Elem(), GetMysqlBackupEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupSourceDetailInput)(nil)).Elem(), GetMysqlBackupSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupSourceDetailArrayInput)(nil)).Elem(), GetMysqlBackupSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupInput)(nil)).Elem(), GetMysqlBackupsBackupArgs{})
@@ -26214,6 +27656,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs{})
@@ -26226,6 +27670,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSummaryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupEncryptDataInput)(nil)).Elem(), GetMysqlBackupsBackupEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupsBackupEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupSourceDetailInput)(nil)).Elem(), GetMysqlBackupsBackupSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupSourceDetailArrayInput)(nil)).Elem(), GetMysqlBackupsBackupSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterInput)(nil)).Elem(), GetMysqlBackupsFilterArgs{})
@@ -26268,6 +27714,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEncryptDataInput)(nil)).Elem(), GetMysqlDbSystemEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEncryptDataArrayInput)(nil)).Elem(), GetMysqlDbSystemEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEndpointInput)(nil)).Elem(), GetMysqlDbSystemEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemHeatWaveClusterInput)(nil)).Elem(), GetMysqlDbSystemHeatWaveClusterArgs{})
@@ -26312,6 +27760,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDataStorageArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDataStorageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEncryptDataInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEncryptDataArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEndpointInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemEndpointArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemEndpointArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemHeatWaveClusterInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemHeatWaveClusterArgs{})
@@ -26336,6 +27786,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionInput)(nil)).Elem(), GetMysqlVersionVersionVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlVersionVersionVersionArrayInput)(nil)).Elem(), GetMysqlVersionVersionVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaEncryptDataInput)(nil)).Elem(), GetReplicaEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaEncryptDataArrayInput)(nil)).Elem(), GetReplicaEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicaReplicaOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicaReplicaOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicaSecureConnectionInput)(nil)).Elem(), GetReplicaSecureConnectionArgs{})
@@ -26344,6 +27796,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasFilterArrayInput)(nil)).Elem(), GetReplicasFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaInput)(nil)).Elem(), GetReplicasReplicaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaArrayInput)(nil)).Elem(), GetReplicasReplicaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaEncryptDataInput)(nil)).Elem(), GetReplicasReplicaEncryptDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaEncryptDataArrayInput)(nil)).Elem(), GetReplicasReplicaEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaReplicaOverrideArrayInput)(nil)).Elem(), GetReplicasReplicaReplicaOverrideArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicasReplicaSecureConnectionInput)(nil)).Elem(), GetReplicasReplicaSecureConnectionArgs{})
@@ -26376,6 +27830,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEncryptDataOutput{})
+	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotMaintenanceOutput{})
@@ -26388,6 +27844,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSummaryOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotSummaryArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupEncryptDataOutput{})
+	pulumi.RegisterOutputType(MysqlBackupEncryptDataPtrOutput{})
 	pulumi.RegisterOutputType(MysqlBackupSourceDetailsOutput{})
 	pulumi.RegisterOutputType(MysqlBackupSourceDetailsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesOutput{})
@@ -26420,6 +27878,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemDataStoragePtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemEncryptDataOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemEncryptDataPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemEndpointOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemEndpointArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemHeatWaveClusterOutput{})
@@ -26436,6 +27896,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemSecureConnectionsPtrOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemSourcePtrOutput{})
+	pulumi.RegisterOutputType(ReplicaEncryptDataOutput{})
+	pulumi.RegisterOutputType(ReplicaEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(ReplicaReplicaOverridesOutput{})
 	pulumi.RegisterOutputType(ReplicaReplicaOverridesPtrOutput{})
 	pulumi.RegisterOutputType(ReplicaSecureConnectionOutput{})
@@ -26478,6 +27940,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotMaintenanceOutput{})
@@ -26490,6 +27954,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSummaryOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupOutput{})
@@ -26506,6 +27972,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput{})
@@ -26518,6 +27986,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSummaryOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupsBackupEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterOutput{})
@@ -26560,6 +28030,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemHeatWaveClusterOutput{})
@@ -26604,6 +28076,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDataStorageArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEndpointOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemEndpointArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemHeatWaveClusterOutput{})
@@ -26628,6 +28102,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlVersionVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionOutput{})
 	pulumi.RegisterOutputType(GetMysqlVersionVersionVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicaEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetReplicaEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicaReplicaOverrideOutput{})
 	pulumi.RegisterOutputType(GetReplicaReplicaOverrideArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicaSecureConnectionOutput{})
@@ -26636,6 +28112,8 @@ func init() {
 	pulumi.RegisterOutputType(GetReplicasFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaEncryptDataOutput{})
+	pulumi.RegisterOutputType(GetReplicasReplicaEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaReplicaOverrideArrayOutput{})
 	pulumi.RegisterOutputType(GetReplicasReplicaSecureConnectionOutput{})

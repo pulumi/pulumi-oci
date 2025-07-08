@@ -331,6 +331,10 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the DB system was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -423,6 +427,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["storageVolumePerformanceMode"] = state ? state.storageVolumePerformanceMode : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
             resourceInputs["version"] = state ? state.version : undefined;
@@ -504,6 +509,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["scanIpIds"] = undefined /*out*/;
             resourceInputs["scanIpv6ids"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["version"] = undefined /*out*/;
             resourceInputs["vipIds"] = undefined /*out*/;
@@ -762,6 +768,10 @@ export interface DbSystemState {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the DB system was created.
      */

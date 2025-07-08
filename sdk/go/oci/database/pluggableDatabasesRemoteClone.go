@@ -92,6 +92,8 @@ type PluggableDatabasesRemoteClone struct {
 	SourceContainerDbAdminPassword pulumi.StringOutput `pulumi:"sourceContainerDbAdminPassword"`
 	// The current state of the pluggable database.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId pulumi.StringOutput `pulumi:"targetContainerDatabaseId"`
 	// The existing TDE wallet password of the target CDB.
@@ -196,6 +198,8 @@ type pluggableDatabasesRemoteCloneState struct {
 	SourceContainerDbAdminPassword *string `pulumi:"sourceContainerDbAdminPassword"`
 	// The current state of the pluggable database.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId *string `pulumi:"targetContainerDatabaseId"`
 	// The existing TDE wallet password of the target CDB.
@@ -244,6 +248,8 @@ type PluggableDatabasesRemoteCloneState struct {
 	SourceContainerDbAdminPassword pulumi.StringPtrInput
 	// The current state of the pluggable database.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
 	TargetContainerDatabaseId pulumi.StringPtrInput
 	// The existing TDE wallet password of the target CDB.
@@ -483,6 +489,11 @@ func (o PluggableDatabasesRemoteCloneOutput) SourceContainerDbAdminPassword() pu
 // The current state of the pluggable database.
 func (o PluggableDatabasesRemoteCloneOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o PluggableDatabasesRemoteCloneOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB

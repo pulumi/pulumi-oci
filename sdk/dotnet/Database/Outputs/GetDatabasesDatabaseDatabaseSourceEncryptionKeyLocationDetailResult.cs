@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string HsmPassword;
         /// <summary>
-        /// Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        /// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         /// </summary>
         public readonly string ProviderType;
 

@@ -99,6 +99,8 @@ type DatabaseSoftwareImage struct {
 	SourceDbHomeId pulumi.StringOutput `pulumi:"sourceDbHomeId"`
 	// The current state of the database software image.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the database software image was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -174,6 +176,8 @@ type databaseSoftwareImageState struct {
 	SourceDbHomeId *string `pulumi:"sourceDbHomeId"`
 	// The current state of the database software image.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the database software image was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -214,6 +218,8 @@ type DatabaseSoftwareImageState struct {
 	SourceDbHomeId pulumi.StringPtrInput
 	// The current state of the database software image.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time the database software image was created.
 	TimeCreated pulumi.StringPtrInput
 }
@@ -447,6 +453,11 @@ func (o DatabaseSoftwareImageOutput) SourceDbHomeId() pulumi.StringOutput {
 // The current state of the database software image.
 func (o DatabaseSoftwareImageOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o DatabaseSoftwareImageOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the database software image was created.

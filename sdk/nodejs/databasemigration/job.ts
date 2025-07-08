@@ -46,6 +46,10 @@ export class Job extends pulumi.CustomResource {
     }
 
     /**
+     * Information regarding the DB trace and alert log collection
+     */
+    public /*out*/ readonly collectTracesDatas!: pulumi.Output<outputs.DatabaseMigration.JobCollectTracesData[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
@@ -123,6 +127,7 @@ export class Job extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as JobState | undefined;
+            resourceInputs["collectTracesDatas"] = state ? state.collectTracesDatas : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -148,6 +153,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["jobId"] = args ? args.jobId : undefined;
             resourceInputs["suspendTrigger"] = args ? args.suspendTrigger : undefined;
+            resourceInputs["collectTracesDatas"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["migrationId"] = undefined /*out*/;
             resourceInputs["parameterFileVersions"] = undefined /*out*/;
@@ -168,6 +174,10 @@ export class Job extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Job resources.
  */
 export interface JobState {
+    /**
+     * Information regarding the DB trace and alert log collection
+     */
+    collectTracesDatas?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.JobCollectTracesData>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */

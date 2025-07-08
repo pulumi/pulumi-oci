@@ -141,6 +141,10 @@ export class VmClusterNetwork extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time when the VM cluster network was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -179,6 +183,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
             resourceInputs["ntps"] = state ? state.ntps : undefined;
             resourceInputs["scans"] = state ? state.scans : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["validateVmClusterNetwork"] = state ? state.validateVmClusterNetwork : undefined;
             resourceInputs["vmClusterId"] = state ? state.vmClusterId : undefined;
@@ -214,6 +219,7 @@ export class VmClusterNetwork extends pulumi.CustomResource {
             resourceInputs["vmNetworks"] = args ? args.vmNetworks : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["vmClusterId"] = undefined /*out*/;
         }
@@ -271,6 +277,10 @@ export interface VmClusterNetworkState {
      * The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time when the VM cluster network was created.
      */

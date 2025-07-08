@@ -63,6 +63,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The date and time one-off patch was created.
         /// </summary>
         public readonly string TimeCreated;
@@ -103,6 +107,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeOfExpiration,
@@ -122,6 +128,7 @@ namespace Pulumi.Oci.Database.Outputs
             Sha256sum = sha256sum;
             SizeInKbs = sizeInKbs;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeOfExpiration = timeOfExpiration;
             TimeUpdated = timeUpdated;

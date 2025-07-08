@@ -519,6 +519,7 @@ class _ExadataInfrastructureState:
                  storage_count: Optional[pulumi.Input[builtins.int]] = None,
                  storage_server_type: Optional[pulumi.Input[builtins.str]] = None,
                  storage_server_version: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -576,6 +577,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
         :param pulumi.Input[builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[builtins.str] storage_server_version: The software version of the storage servers (cells) in the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the Exadata infrastructure was created.
         :param pulumi.Input[builtins.str] time_zone: (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
@@ -681,6 +683,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "storage_server_type", storage_server_type)
         if storage_server_version is not None:
             pulumi.set(__self__, "storage_server_version", storage_server_version)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
@@ -1299,6 +1303,18 @@ class _ExadataInfrastructureState:
         pulumi.set(self, "storage_server_version", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1677,6 +1693,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["rack_serial_number"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_server_version"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(ExadataInfrastructure, __self__).__init__(
             'oci:Database/exadataInfrastructure:ExadataInfrastructure',
@@ -1739,6 +1756,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             storage_count: Optional[pulumi.Input[builtins.int]] = None,
             storage_server_type: Optional[pulumi.Input[builtins.str]] = None,
             storage_server_version: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_zone: Optional[pulumi.Input[builtins.str]] = None) -> 'ExadataInfrastructure':
         """
@@ -1801,6 +1819,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] storage_count: The number of storage servers for the Exadata infrastructure.
         :param pulumi.Input[builtins.str] storage_server_type: The storage server type of the Exadata infrastructure.
         :param pulumi.Input[builtins.str] storage_server_version: The software version of the storage servers (cells) in the Exadata infrastructure.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time the Exadata infrastructure was created.
         :param pulumi.Input[builtins.str] time_zone: (Updatable) The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         """
@@ -1859,6 +1878,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["storage_count"] = storage_count
         __props__.__dict__["storage_server_type"] = storage_server_type
         __props__.__dict__["storage_server_version"] = storage_server_version
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         return ExadataInfrastructure(resource_name, opts=opts, __props__=__props__)
@@ -2270,6 +2290,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         The software version of the storage servers (cells) in the Exadata infrastructure.
         """
         return pulumi.get(self, "storage_server_version")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

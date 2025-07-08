@@ -36,15 +36,7 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
      * 
      */
     private String type;
-    /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-     * 
-     */
     private String vpcPassword;
-    /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-     * 
-     */
     private String vpcUser;
 
     private GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail() {}
@@ -83,17 +75,9 @@ public final class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
     public String type() {
         return this.type;
     }
-    /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-     * 
-     */
     public String vpcPassword() {
         return this.vpcPassword;
     }
-    /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-     * 
-     */
     public String vpcUser() {
         return this.vpcUser;
     }

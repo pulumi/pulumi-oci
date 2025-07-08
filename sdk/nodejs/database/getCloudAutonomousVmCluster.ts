@@ -206,6 +206,7 @@ export interface GetCloudAutonomousVmClusterResult {
      * The lowest value to which ocpus can be scaled down.
      */
     readonly ocpusLowestScaledValue: number;
+    readonly opcDryRun: boolean;
     /**
      * The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
      */
@@ -252,6 +253,14 @@ export interface GetCloudAutonomousVmClusterResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */
     readonly subnetId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    readonly subscriptionId: string;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time that the cloud Autonomous VM cluster was created.
      */

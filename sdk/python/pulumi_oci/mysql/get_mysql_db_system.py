@@ -28,7 +28,7 @@ class GetMysqlDbSystemResult:
     """
     A collection of values returned by getMysqlDbSystem.
     """
-    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, nsg_ids=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, rests=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_mode=None, admin_password=None, admin_username=None, availability_domain=None, backup_policies=None, channels=None, compartment_id=None, configuration_id=None, crash_recovery=None, current_placements=None, customer_contacts=None, data_storage_size_in_gb=None, data_storages=None, database_management=None, database_mode=None, db_system_id=None, defined_tags=None, deletion_policies=None, description=None, display_name=None, encrypt_datas=None, endpoints=None, fault_domain=None, freeform_tags=None, heat_wave_clusters=None, hostname_label=None, id=None, ip_address=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, maintenances=None, mysql_version=None, nsg_ids=None, point_in_time_recovery_details=None, port=None, port_x=None, read_endpoints=None, rests=None, secure_connections=None, shape_name=None, shutdown_type=None, sources=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if access_mode and not isinstance(access_mode, str):
             raise TypeError("Expected argument 'access_mode' to be a str")
         pulumi.set(__self__, "access_mode", access_mode)
@@ -89,6 +89,9 @@ class GetMysqlDbSystemResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if encrypt_datas and not isinstance(encrypt_datas, list):
+            raise TypeError("Expected argument 'encrypt_datas' to be a list")
+        pulumi.set(__self__, "encrypt_datas", encrypt_datas)
         if endpoints and not isinstance(endpoints, list):
             raise TypeError("Expected argument 'endpoints' to be a list")
         pulumi.set(__self__, "endpoints", endpoints)
@@ -330,6 +333,14 @@ class GetMysqlDbSystemResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="encryptDatas")
+    def encrypt_datas(self) -> Sequence['outputs.GetMysqlDbSystemEncryptDataResult']:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_datas")
+
+    @property
     @pulumi.getter
     def endpoints(self) -> Sequence['outputs.GetMysqlDbSystemEndpointResult']:
         """
@@ -569,6 +580,7 @@ class AwaitableGetMysqlDbSystemResult(GetMysqlDbSystemResult):
             deletion_policies=self.deletion_policies,
             description=self.description,
             display_name=self.display_name,
+            encrypt_datas=self.encrypt_datas,
             endpoints=self.endpoints,
             fault_domain=self.fault_domain,
             freeform_tags=self.freeform_tags,
@@ -643,6 +655,7 @@ def get_mysql_db_system(db_system_id: Optional[builtins.str] = None,
         deletion_policies=pulumi.get(__ret__, 'deletion_policies'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        encrypt_datas=pulumi.get(__ret__, 'encrypt_datas'),
         endpoints=pulumi.get(__ret__, 'endpoints'),
         fault_domain=pulumi.get(__ret__, 'fault_domain'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
@@ -714,6 +727,7 @@ def get_mysql_db_system_output(db_system_id: Optional[pulumi.Input[builtins.str]
         deletion_policies=pulumi.get(__response__, 'deletion_policies'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        encrypt_datas=pulumi.get(__response__, 'encrypt_datas'),
         endpoints=pulumi.get(__response__, 'endpoints'),
         fault_domain=pulumi.get(__response__, 'fault_domain'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),

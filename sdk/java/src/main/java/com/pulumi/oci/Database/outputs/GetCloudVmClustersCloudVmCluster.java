@@ -9,6 +9,7 @@ import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterCloudAuto
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterDataCollectionOption;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -131,7 +132,7 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private String hostname;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
+     * @return The OCID of the identity connector
      * 
      */
     private String id;
@@ -171,6 +172,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private Integer memorySizeInGbs;
+    /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    private List<GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
     /**
      * @return The number of nodes in the cloud VM cluster.
      * 
@@ -263,6 +269,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String systemVersion;
+    /**
+     * @return TDE keystore type
+     * 
+     */
+    private String tdeKeyStoreType;
     /**
      * @return The date and time that the cloud VM cluster was created.
      * 
@@ -453,7 +464,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.hostname;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
+     * @return The OCID of the identity connector
      * 
      */
     public String id() {
@@ -510,6 +521,13 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     public Integer memorySizeInGbs() {
         return this.memorySizeInGbs;
+    }
+    /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public List<GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs() {
+        return this.multiCloudIdentityConnectorConfigs;
     }
     /**
      * @return The number of nodes in the cloud VM cluster.
@@ -642,6 +660,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.systemVersion;
     }
     /**
+     * @return TDE keystore type
+     * 
+     */
+    public String tdeKeyStoreType() {
+        return this.tdeKeyStoreType;
+    }
+    /**
      * @return The date and time that the cloud VM cluster was created.
      * 
      */
@@ -725,6 +750,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String lifecycleDetails;
         private String listenerPort;
         private Integer memorySizeInGbs;
+        private List<GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs;
         private Integer nodeCount;
         private List<String> nsgIds;
         private Double ocpuCount;
@@ -744,6 +770,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String subscriptionId;
         private Map<String,String> systemTags;
         private String systemVersion;
+        private String tdeKeyStoreType;
         private String timeCreated;
         private String timeZone;
         private List<String> vipIds;
@@ -785,6 +812,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.listenerPort = defaults.listenerPort;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
+    	      this.multiCloudIdentityConnectorConfigs = defaults.multiCloudIdentityConnectorConfigs;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
@@ -804,6 +832,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.systemVersion = defaults.systemVersion;
+    	      this.tdeKeyStoreType = defaults.tdeKeyStoreType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
     	      this.vipIds = defaults.vipIds;
@@ -1087,6 +1116,17 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder multiCloudIdentityConnectorConfigs(List<GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig> multiCloudIdentityConnectorConfigs) {
+            if (multiCloudIdentityConnectorConfigs == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "multiCloudIdentityConnectorConfigs");
+            }
+            this.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
+            return this;
+        }
+        public Builder multiCloudIdentityConnectorConfigs(GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfig... multiCloudIdentityConnectorConfigs) {
+            return multiCloudIdentityConnectorConfigs(List.of(multiCloudIdentityConnectorConfigs));
+        }
+        @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
             if (nodeCount == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "nodeCount");
@@ -1251,6 +1291,14 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            if (tdeKeyStoreType == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "tdeKeyStoreType");
+            }
+            this.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "timeCreated");
@@ -1338,6 +1386,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.listenerPort = listenerPort;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
+            _resultValue.multiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             _resultValue.nodeCount = nodeCount;
             _resultValue.nsgIds = nsgIds;
             _resultValue.ocpuCount = ocpuCount;
@@ -1357,6 +1406,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.systemVersion = systemVersion;
+            _resultValue.tdeKeyStoreType = tdeKeyStoreType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             _resultValue.vipIds = vipIds;

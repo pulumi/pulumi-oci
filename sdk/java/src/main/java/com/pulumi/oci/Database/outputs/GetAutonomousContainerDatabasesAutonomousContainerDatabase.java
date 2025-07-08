@@ -186,6 +186,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String kmsKeyId;
     /**
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * 
+     */
+    private String kmsKeyVersionId;
+    /**
      * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
@@ -297,6 +302,11 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
      */
     private String state;
     private Integer switchoverTrigger;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the Autonomous Container Database was created.
      * 
@@ -567,6 +577,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.kmsKeyId;
     }
     /**
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * 
+     */
+    public String kmsKeyVersionId() {
+        return this.kmsKeyVersionId;
+    }
+    /**
      * @return The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
@@ -743,6 +760,13 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         return this.switchoverTrigger;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Autonomous Container Database was created.
      * 
      */
@@ -837,6 +861,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private String keyStoreWalletName;
         private String keyVersionId;
         private String kmsKeyId;
+        private String kmsKeyVersionId;
         private Double largestProvisionableAutonomousDatabaseInCpus;
         private String lastMaintenanceRunId;
         private String lifecycleDetails;
@@ -869,6 +894,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
         private Integer standbyMaintenanceBufferInDays;
         private String state;
         private Integer switchoverTrigger;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeOfLastBackup;
         private String timeSnapshotStandbyRevert;
@@ -915,6 +941,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.keyStoreWalletName = defaults.keyStoreWalletName;
     	      this.keyVersionId = defaults.keyVersionId;
     	      this.kmsKeyId = defaults.kmsKeyId;
+    	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.largestProvisionableAutonomousDatabaseInCpus = defaults.largestProvisionableAutonomousDatabaseInCpus;
     	      this.lastMaintenanceRunId = defaults.lastMaintenanceRunId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -947,6 +974,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
     	      this.standbyMaintenanceBufferInDays = defaults.standbyMaintenanceBufferInDays;
     	      this.state = defaults.state;
     	      this.switchoverTrigger = defaults.switchoverTrigger;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeOfLastBackup = defaults.timeOfLastBackup;
     	      this.timeSnapshotStandbyRevert = defaults.timeSnapshotStandbyRevert;
@@ -1263,6 +1291,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            if (kmsKeyVersionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "kmsKeyVersionId");
+            }
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder largestProvisionableAutonomousDatabaseInCpus(Double largestProvisionableAutonomousDatabaseInCpus) {
             if (largestProvisionableAutonomousDatabaseInCpus == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "largestProvisionableAutonomousDatabaseInCpus");
@@ -1537,6 +1573,14 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabasesAutonomousContainerDatabase", "timeCreated");
@@ -1630,6 +1674,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.keyStoreWalletName = keyStoreWalletName;
             _resultValue.keyVersionId = keyVersionId;
             _resultValue.kmsKeyId = kmsKeyId;
+            _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.largestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             _resultValue.lastMaintenanceRunId = lastMaintenanceRunId;
             _resultValue.lifecycleDetails = lifecycleDetails;
@@ -1662,6 +1707,7 @@ public final class GetAutonomousContainerDatabasesAutonomousContainerDatabase {
             _resultValue.standbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             _resultValue.state = state;
             _resultValue.switchoverTrigger = switchoverTrigger;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeOfLastBackup = timeOfLastBackup;
             _resultValue.timeSnapshotStandbyRevert = timeSnapshotStandbyRevert;

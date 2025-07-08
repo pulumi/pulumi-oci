@@ -84,6 +84,8 @@ type AutonomousDatabaseSoftwareImage struct {
 	SourceCdbId pulumi.StringOutput `pulumi:"sourceCdbId"`
 	// The current state of the Autonomous Database Software Image.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the Autonomous Database Software Image was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -155,6 +157,8 @@ type autonomousDatabaseSoftwareImageState struct {
 	SourceCdbId *string `pulumi:"sourceCdbId"`
 	// The current state of the Autonomous Database Software Image.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Autonomous Database Software Image was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -185,6 +189,8 @@ type AutonomousDatabaseSoftwareImageState struct {
 	SourceCdbId pulumi.StringPtrInput
 	// The current state of the Autonomous Database Software Image.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time the Autonomous Database Software Image was created.
 	TimeCreated pulumi.StringPtrInput
 }
@@ -373,6 +379,11 @@ func (o AutonomousDatabaseSoftwareImageOutput) SourceCdbId() pulumi.StringOutput
 // The current state of the Autonomous Database Software Image.
 func (o AutonomousDatabaseSoftwareImageOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseSoftwareImage) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o AutonomousDatabaseSoftwareImageOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutonomousDatabaseSoftwareImage) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Autonomous Database Software Image was created.

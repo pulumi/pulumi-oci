@@ -88,6 +88,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemEncryptDataResult> EncryptDatas;
+        /// <summary>
         /// The network endpoints available for this DB System.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemEndpointResult> Endpoints;
@@ -233,6 +237,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemEncryptDataResult> encryptDatas,
+
             ImmutableArray<Outputs.GetMysqlDbSystemsDbSystemEndpointResult> endpoints,
 
             string faultDomain,
@@ -306,6 +312,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             DeletionPolicies = deletionPolicies;
             Description = description;
             DisplayName = displayName;
+            EncryptDatas = encryptDatas;
             Endpoints = endpoints;
             FaultDomain = faultDomain;
             FreeformTags = freeformTags;

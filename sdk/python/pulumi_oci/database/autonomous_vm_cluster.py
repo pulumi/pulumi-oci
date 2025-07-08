@@ -381,6 +381,7 @@ class _AutonomousVmClusterState:
                  scan_listener_port_non_tls: Optional[pulumi.Input[builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[builtins.int]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_database_ssl_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
                  time_ords_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
@@ -430,6 +431,7 @@ class _AutonomousVmClusterState:
         :param pulumi.Input[builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[builtins.int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[builtins.str] state: The current state of the Autonomous VM cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the Autonomous VM cluster was created.
         :param pulumi.Input[builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
@@ -527,6 +529,8 @@ class _AutonomousVmClusterState:
             pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_database_ssl_certificate_expires is not None:
@@ -1046,6 +1050,18 @@ class _AutonomousVmClusterState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1396,6 +1412,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["reclaimable_cpus"] = None
             __props__.__dict__["reserved_cpus"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_database_ssl_certificate_expires"] = None
             __props__.__dict__["time_ords_certificate_expires"] = None
@@ -1453,6 +1470,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
             scan_listener_port_non_tls: Optional[pulumi.Input[builtins.int]] = None,
             scan_listener_port_tls: Optional[pulumi.Input[builtins.int]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_database_ssl_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
             time_ords_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
@@ -1507,6 +1525,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
         :param pulumi.Input[builtins.int] scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param pulumi.Input[builtins.str] state: The current state of the Autonomous VM cluster.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the Autonomous VM cluster was created.
         :param pulumi.Input[builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
@@ -1565,6 +1584,7 @@ class AutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
         __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_database_ssl_certificate_expires"] = time_database_ssl_certificate_expires
         __props__.__dict__["time_ords_certificate_expires"] = time_ords_certificate_expires
@@ -1904,6 +1924,14 @@ class AutonomousVmCluster(pulumi.CustomResource):
         The current state of the Autonomous VM cluster.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

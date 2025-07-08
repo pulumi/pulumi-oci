@@ -182,6 +182,8 @@ __all__ = [
     'CloudVmClusterIormConfigCachDbPlanArgsDict',
     'CloudVmClusterIormConfigDbPlanArgs',
     'CloudVmClusterIormConfigDbPlanArgsDict',
+    'CloudVmClusterMultiCloudIdentityConnectorConfigArgs',
+    'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict',
     'DataGuardAssociationDataCollectionOptionsArgs',
     'DataGuardAssociationDataCollectionOptionsArgsDict',
     'DatabaseConnectionStringArgs',
@@ -464,6 +466,8 @@ __all__ = [
     'GetAutonomousDatabasePeersFilterArgsDict',
     'GetAutonomousDatabaseRefreshableClonesFilterArgs',
     'GetAutonomousDatabaseRefreshableClonesFilterArgsDict',
+    'GetAutonomousDatabaseResourcePoolMembersFilterArgs',
+    'GetAutonomousDatabaseResourcePoolMembersFilterArgsDict',
     'GetAutonomousDatabaseSoftwareImagesFilterArgs',
     'GetAutonomousDatabaseSoftwareImagesFilterArgsDict',
     'GetAutonomousDatabasesClonesFilterArgs',
@@ -8252,13 +8256,17 @@ class BackupDestinationMountTypeDetailsArgs:
 
 if not MYPY:
     class BackupEncryptionKeyLocationDetailArgsDict(TypedDict):
+        azure_encryption_key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The key OCID of a registered Azure key.
+        """
         hsm_password: NotRequired[pulumi.Input[builtins.str]]
         """
         Provide the HSM password as you would in RDBMS for External HSM.
         """
         provider_type: NotRequired[pulumi.Input[builtins.str]]
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
 elif False:
     BackupEncryptionKeyLocationDetailArgsDict: TypeAlias = Mapping[str, Any]
@@ -8266,16 +8274,32 @@ elif False:
 @pulumi.input_type
 class BackupEncryptionKeyLocationDetailArgs:
     def __init__(__self__, *,
+                 azure_encryption_key_id: Optional[pulumi.Input[builtins.str]] = None,
                  hsm_password: Optional[pulumi.Input[builtins.str]] = None,
                  provider_type: Optional[pulumi.Input[builtins.str]] = None):
         """
+        :param pulumi.Input[builtins.str] azure_encryption_key_id: The key OCID of a registered Azure key.
         :param pulumi.Input[builtins.str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         if hsm_password is not None:
             pulumi.set(__self__, "hsm_password", hsm_password)
         if provider_type is not None:
             pulumi.set(__self__, "provider_type", provider_type)
+
+    @property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @azure_encryption_key_id.setter
+    def azure_encryption_key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "azure_encryption_key_id", value)
 
     @property
     @pulumi.getter(name="hsmPassword")
@@ -8293,7 +8317,7 @@ class BackupEncryptionKeyLocationDetailArgs:
     @pulumi.getter(name="providerType")
     def provider_type(self) -> Optional[pulumi.Input[builtins.str]]:
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
         return pulumi.get(self, "provider_type")
 
@@ -9929,6 +9953,58 @@ class CloudVmClusterIormConfigDbPlanArgs:
 
 
 if not MYPY:
+    class CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict(TypedDict):
+        cloud_provider: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Cloud provider
+        """
+        id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the identity connector
+        """
+elif False:
+    CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CloudVmClusterMultiCloudIdentityConnectorConfigArgs:
+    def __init__(__self__, *,
+                 cloud_provider: Optional[pulumi.Input[builtins.str]] = None,
+                 id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] cloud_provider: Cloud provider
+        :param pulumi.Input[builtins.str] id: The OCID of the identity connector
+        """
+        if cloud_provider is not None:
+            pulumi.set(__self__, "cloud_provider", cloud_provider)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="cloudProvider")
+    def cloud_provider(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Cloud provider
+        """
+        return pulumi.get(self, "cloud_provider")
+
+    @cloud_provider.setter
+    def cloud_provider(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "cloud_provider", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the identity connector
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "id", value)
+
+
+if not MYPY:
     class DataGuardAssociationDataCollectionOptionsArgsDict(TypedDict):
         is_diagnostics_events_enabled: NotRequired[pulumi.Input[builtins.bool]]
         """
@@ -11248,13 +11324,17 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs:
 
 if not MYPY:
     class DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
-        hsm_password: pulumi.Input[builtins.str]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
         provider_type: pulumi.Input[builtins.str]
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        """
+        azure_encryption_key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        hsm_password: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
         """
 elif False:
     DatabaseDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -11262,38 +11342,55 @@ elif False:
 @pulumi.input_type
 class DatabaseDatabaseEncryptionKeyLocationDetailsArgs:
     def __init__(__self__, *,
-                 hsm_password: pulumi.Input[builtins.str],
-                 provider_type: pulumi.Input[builtins.str]):
+                 provider_type: pulumi.Input[builtins.str],
+                 azure_encryption_key_id: Optional[pulumi.Input[builtins.str]] = None,
+                 hsm_password: Optional[pulumi.Input[builtins.str]] = None):
         """
+        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param pulumi.Input[builtins.str] azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param pulumi.Input[builtins.str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
         """
-        pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
-
-    @property
-    @pulumi.getter(name="hsmPassword")
-    def hsm_password(self) -> pulumi.Input[builtins.str]:
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-        return pulumi.get(self, "hsm_password")
-
-    @hsm_password.setter
-    def hsm_password(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "hsm_password", value)
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
 
     @property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> pulumi.Input[builtins.str]:
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
         return pulumi.get(self, "provider_type")
 
     @provider_type.setter
     def provider_type(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "provider_type", value)
+
+    @property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @azure_encryption_key_id.setter
+    def azure_encryption_key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "azure_encryption_key_id", value)
+
+    @property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "hsm_password", value)
 
 
 if not MYPY:
@@ -11356,7 +11453,7 @@ if not MYPY:
         """
         provider_type: pulumi.Input[builtins.str]
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
 elif False:
     DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -11368,7 +11465,7 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs:
                  provider_type: pulumi.Input[builtins.str]):
         """
         :param pulumi.Input[builtins.str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
@@ -11389,7 +11486,7 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs:
     @pulumi.getter(name="providerType")
     def provider_type(self) -> pulumi.Input[builtins.str]:
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
         return pulumi.get(self, "provider_type")
 
@@ -13463,13 +13560,17 @@ class DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
 
 if not MYPY:
     class DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict(TypedDict):
-        hsm_password: pulumi.Input[builtins.str]
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
         provider_type: pulumi.Input[builtins.str]
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        """
+        azure_encryption_key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        hsm_password: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
         """
 elif False:
     DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict: TypeAlias = Mapping[str, Any]
@@ -13477,38 +13578,55 @@ elif False:
 @pulumi.input_type
 class DbHomeDatabaseEncryptionKeyLocationDetailsArgs:
     def __init__(__self__, *,
-                 hsm_password: pulumi.Input[builtins.str],
-                 provider_type: pulumi.Input[builtins.str]):
+                 provider_type: pulumi.Input[builtins.str],
+                 azure_encryption_key_id: Optional[pulumi.Input[builtins.str]] = None,
+                 hsm_password: Optional[pulumi.Input[builtins.str]] = None):
         """
+        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+        :param pulumi.Input[builtins.str] azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param pulumi.Input[builtins.str] hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
-        :param pulumi.Input[builtins.str] provider_type: Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
         """
-        pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
-
-    @property
-    @pulumi.getter(name="hsmPassword")
-    def hsm_password(self) -> pulumi.Input[builtins.str]:
-        """
-        Provide the HSM password as you would in RDBMS for External HSM.
-        """
-        return pulumi.get(self, "hsm_password")
-
-    @hsm_password.setter
-    def hsm_password(self, value: pulumi.Input[builtins.str]):
-        pulumi.set(self, "hsm_password", value)
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if hsm_password is not None:
+            pulumi.set(__self__, "hsm_password", hsm_password)
 
     @property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> pulumi.Input[builtins.str]:
         """
-        Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
         return pulumi.get(self, "provider_type")
 
     @provider_type.setter
     def provider_type(self, value: pulumi.Input[builtins.str]):
         pulumi.set(self, "provider_type", value)
+
+    @property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @azure_encryption_key_id.setter
+    def azure_encryption_key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "azure_encryption_key_id", value)
+
+    @property
+    @pulumi.getter(name="hsmPassword")
+    def hsm_password(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Provide the HSM password as you would in RDBMS for External HSM.
+        """
+        return pulumi.get(self, "hsm_password")
+
+    @hsm_password.setter
+    def hsm_password(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "hsm_password", value)
 
 
 if not MYPY:
@@ -22692,6 +22810,53 @@ elif False:
 
 @pulumi.input_type
 class GetAutonomousDatabaseRefreshableClonesFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetAutonomousDatabaseResourcePoolMembersFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetAutonomousDatabaseResourcePoolMembersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAutonomousDatabaseResourcePoolMembersFilterArgs:
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],

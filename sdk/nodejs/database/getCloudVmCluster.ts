@@ -134,7 +134,7 @@ export interface GetCloudVmClusterResult {
      */
     readonly hostname: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
+     * The OCID of the identity connector
      */
     readonly id: string;
     /**
@@ -169,6 +169,10 @@ export interface GetCloudVmClusterResult {
      * The memory to be allocated in GBs.
      */
     readonly memorySizeInGbs: number;
+    /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     */
+    readonly multiCloudIdentityConnectorConfigs: outputs.Database.GetCloudVmClusterMultiCloudIdentityConnectorConfig[];
     /**
      * The number of nodes in the cloud VM cluster.
      */
@@ -243,6 +247,10 @@ export interface GetCloudVmClusterResult {
      * Operating system version of the image.
      */
     readonly systemVersion: string;
+    /**
+     * TDE keystore type
+     */
+    readonly tdeKeyStoreType: string;
     /**
      * The date and time that the cloud VM cluster was created.
      */

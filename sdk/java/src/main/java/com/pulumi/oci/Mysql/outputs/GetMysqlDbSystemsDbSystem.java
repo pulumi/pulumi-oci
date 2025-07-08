@@ -11,6 +11,7 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCurrentPlacement;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemCustomerContact;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemDeletionPolicy;
+import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.GetMysqlDbSystemsDbSystemMaintenance;
@@ -119,6 +120,11 @@ public final class GetMysqlDbSystemsDbSystem {
      * 
      */
     private String displayName;
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    private List<GetMysqlDbSystemsDbSystemEncryptData> encryptDatas;
     /**
      * @return The network endpoints available for this DB System.
      * 
@@ -382,6 +388,13 @@ public final class GetMysqlDbSystemsDbSystem {
         return this.displayName;
     }
     /**
+     * @return Encrypt data details.
+     * 
+     */
+    public List<GetMysqlDbSystemsDbSystemEncryptData> encryptDatas() {
+        return this.encryptDatas;
+    }
+    /**
      * @return The network endpoints available for this DB System.
      * 
      */
@@ -595,6 +608,7 @@ public final class GetMysqlDbSystemsDbSystem {
         private List<GetMysqlDbSystemsDbSystemDeletionPolicy> deletionPolicies;
         private String description;
         private String displayName;
+        private List<GetMysqlDbSystemsDbSystemEncryptData> encryptDatas;
         private List<GetMysqlDbSystemsDbSystemEndpoint> endpoints;
         private String faultDomain;
         private Map<String,String> freeformTags;
@@ -644,6 +658,7 @@ public final class GetMysqlDbSystemsDbSystem {
     	      this.deletionPolicies = defaults.deletionPolicies;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.encryptDatas = defaults.encryptDatas;
     	      this.endpoints = defaults.endpoints;
     	      this.faultDomain = defaults.faultDomain;
     	      this.freeformTags = defaults.freeformTags;
@@ -842,6 +857,17 @@ public final class GetMysqlDbSystemsDbSystem {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptDatas(List<GetMysqlDbSystemsDbSystemEncryptData> encryptDatas) {
+            if (encryptDatas == null) {
+              throw new MissingRequiredPropertyException("GetMysqlDbSystemsDbSystem", "encryptDatas");
+            }
+            this.encryptDatas = encryptDatas;
+            return this;
+        }
+        public Builder encryptDatas(GetMysqlDbSystemsDbSystemEncryptData... encryptDatas) {
+            return encryptDatas(List.of(encryptDatas));
         }
         @CustomType.Setter
         public Builder endpoints(List<GetMysqlDbSystemsDbSystemEndpoint> endpoints) {
@@ -1107,6 +1133,7 @@ public final class GetMysqlDbSystemsDbSystem {
             _resultValue.deletionPolicies = deletionPolicies;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.encryptDatas = encryptDatas;
             _resultValue.endpoints = endpoints;
             _resultValue.faultDomain = faultDomain;
             _resultValue.freeformTags = freeformTags;

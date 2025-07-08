@@ -95,8 +95,10 @@ type LookupPluggableDatabaseResult struct {
 	ShouldCreatePdbBackup         bool                                         `pulumi:"shouldCreatePdbBackup"`
 	ShouldPdbAdminAccountBeLocked bool                                         `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
-	State             string `pulumi:"state"`
-	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags        map[string]string `pulumi:"systemTags"`
+	TdeWalletPassword string            `pulumi:"tdeWalletPassword"`
 	// The date and time the pluggable database was created.
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -253,6 +255,11 @@ func (o LookupPluggableDatabaseResultOutput) ShouldPdbAdminAccountBeLocked() pul
 // The current state of the pluggable database.
 func (o LookupPluggableDatabaseResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupPluggableDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupPluggableDatabaseResultOutput) TdeWalletPassword() pulumi.StringOutput {

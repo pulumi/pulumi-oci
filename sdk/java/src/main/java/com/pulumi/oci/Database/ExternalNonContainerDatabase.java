@@ -317,6 +317,20 @@ public class ExternalNonContainerDatabase extends com.pulumi.resources.CustomRes
         return this.state;
     }
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * The date and time the database was created.
      * 
      */

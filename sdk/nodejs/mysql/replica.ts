@@ -102,6 +102,10 @@ export class Replica extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * Encrypt data details.
+     */
+    public /*out*/ readonly encryptDatas!: pulumi.Output<outputs.Mysql.ReplicaEncryptData[]>;
+    /**
      * The name of the Fault Domain the read replica is located in.
      */
     public /*out*/ readonly faultDomain!: pulumi.Output<string>;
@@ -182,6 +186,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["encryptDatas"] = state ? state.encryptDatas : undefined;
             resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ipAddress"] = state ? state.ipAddress : undefined;
@@ -212,6 +217,7 @@ export class Replica extends pulumi.CustomResource {
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["configurationId"] = undefined /*out*/;
+            resourceInputs["encryptDatas"] = undefined /*out*/;
             resourceInputs["faultDomain"] = undefined /*out*/;
             resourceInputs["ipAddress"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -262,6 +268,10 @@ export interface ReplicaState {
      * (Updatable) The user-friendly name for the read replica. It does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Encrypt data details.
+     */
+    encryptDatas?: pulumi.Input<pulumi.Input<inputs.Mysql.ReplicaEncryptData>[]>;
     /**
      * The name of the Fault Domain the read replica is located in.
      */

@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Hostname;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
+        /// The OCID of the identity connector
         /// </summary>
         public readonly string Id;
         public readonly ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterIormConfigCachResult> IormConfigCaches;
@@ -135,6 +135,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The memory to be allocated in GBs.
         /// </summary>
         public readonly int MemorySizeInGbs;
+        /// <summary>
+        /// Details of the multi cloud identity connectors of the VM cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigResult> MultiCloudIdentityConnectorConfigs;
         /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
@@ -209,6 +213,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// Operating system version of the image.
         /// </summary>
         public readonly string SystemVersion;
+        /// <summary>
+        /// TDE keystore type
+        /// </summary>
+        public readonly string TdeKeyStoreType;
         /// <summary>
         /// The date and time that the cloud VM cluster was created.
         /// </summary>
@@ -300,6 +308,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int memorySizeInGbs,
 
+            ImmutableArray<Outputs.GetCloudVmClustersCloudVmClusterMultiCloudIdentityConnectorConfigResult> multiCloudIdentityConnectorConfigs,
+
             int nodeCount,
 
             ImmutableArray<string> nsgIds,
@@ -337,6 +347,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableDictionary<string, string> systemTags,
 
             string systemVersion,
+
+            string tdeKeyStoreType,
 
             string timeCreated,
 
@@ -382,6 +394,7 @@ namespace Pulumi.Oci.Database.Outputs
             LifecycleDetails = lifecycleDetails;
             ListenerPort = listenerPort;
             MemorySizeInGbs = memorySizeInGbs;
+            MultiCloudIdentityConnectorConfigs = multiCloudIdentityConnectorConfigs;
             NodeCount = nodeCount;
             NsgIds = nsgIds;
             OcpuCount = ocpuCount;
@@ -401,6 +414,7 @@ namespace Pulumi.Oci.Database.Outputs
             SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             SystemVersion = systemVersion;
+            TdeKeyStoreType = tdeKeyStoreType;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
             VipIds = vipIds;

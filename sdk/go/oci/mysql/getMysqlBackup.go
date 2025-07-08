@@ -80,6 +80,8 @@ type LookupMysqlBackupResult struct {
 	Description string `pulumi:"description"`
 	// A user-supplied display name for the backup.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetMysqlBackupEncryptData `pulumi:"encryptDatas"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the backup itself
@@ -203,6 +205,11 @@ func (o LookupMysqlBackupResultOutput) Description() pulumi.StringOutput {
 // A user-supplied display name for the backup.
 func (o LookupMysqlBackupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o LookupMysqlBackupResultOutput) EncryptDatas() GetMysqlBackupEncryptDataArrayOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) []GetMysqlBackupEncryptData { return v.EncryptDatas }).(GetMysqlBackupEncryptDataArrayOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

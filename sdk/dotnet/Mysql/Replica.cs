@@ -104,6 +104,12 @@ namespace Pulumi.Oci.Mysql
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        [Output("encryptDatas")]
+        public Output<ImmutableArray<Outputs.ReplicaEncryptData>> EncryptDatas { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the Fault Domain the read replica is located in.
         /// </summary>
         [Output("faultDomain")]
@@ -348,6 +354,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("encryptDatas")]
+        private InputList<Inputs.ReplicaEncryptDataGetArgs>? _encryptDatas;
+
+        /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        public InputList<Inputs.ReplicaEncryptDataGetArgs> EncryptDatas
+        {
+            get => _encryptDatas ?? (_encryptDatas = new InputList<Inputs.ReplicaEncryptDataGetArgs>());
+            set => _encryptDatas = value;
+        }
 
         /// <summary>
         /// The name of the Fault Domain the read replica is located in.

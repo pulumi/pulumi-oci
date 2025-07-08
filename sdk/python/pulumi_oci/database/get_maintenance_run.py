@@ -28,7 +28,7 @@ class GetMaintenanceRunResult:
     """
     A collection of values returned by getMaintenanceRun.
     """
-    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, is_maintenance_run_granular=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, peer_maintenance_run_ids=None, state=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None, total_time_taken_in_mins=None):
+    def __init__(__self__, compartment_id=None, current_custom_action_timeout_in_mins=None, current_patching_component=None, custom_action_timeout_in_mins=None, database_software_image_id=None, description=None, display_name=None, estimated_component_patching_start_time=None, estimated_patching_times=None, id=None, is_custom_action_timeout_enabled=None, is_dst_file_update_enabled=None, is_maintenance_run_granular=None, lifecycle_details=None, maintenance_run_id=None, maintenance_subtype=None, maintenance_type=None, patch_failure_count=None, patch_id=None, patch_type=None, patching_end_time=None, patching_mode=None, patching_start_time=None, patching_status=None, peer_maintenance_run_id=None, peer_maintenance_run_ids=None, state=None, system_tags=None, target_db_server_version=None, target_resource_id=None, target_resource_type=None, target_storage_server_version=None, time_ended=None, time_scheduled=None, time_started=None, total_time_taken_in_mins=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -110,6 +110,9 @@ class GetMaintenanceRunResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if target_db_server_version and not isinstance(target_db_server_version, str):
             raise TypeError("Expected argument 'target_db_server_version' to be a str")
         pulumi.set(__self__, "target_db_server_version", target_db_server_version)
@@ -346,6 +349,14 @@ class GetMaintenanceRunResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="targetDbServerVersion")
     def target_db_server_version(self) -> builtins.str:
         """
@@ -443,6 +454,7 @@ class AwaitableGetMaintenanceRunResult(GetMaintenanceRunResult):
             peer_maintenance_run_id=self.peer_maintenance_run_id,
             peer_maintenance_run_ids=self.peer_maintenance_run_ids,
             state=self.state,
+            system_tags=self.system_tags,
             target_db_server_version=self.target_db_server_version,
             target_resource_id=self.target_resource_id,
             target_resource_type=self.target_resource_type,
@@ -505,6 +517,7 @@ def get_maintenance_run(maintenance_run_id: Optional[builtins.str] = None,
         peer_maintenance_run_id=pulumi.get(__ret__, 'peer_maintenance_run_id'),
         peer_maintenance_run_ids=pulumi.get(__ret__, 'peer_maintenance_run_ids'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         target_db_server_version=pulumi.get(__ret__, 'target_db_server_version'),
         target_resource_id=pulumi.get(__ret__, 'target_resource_id'),
         target_resource_type=pulumi.get(__ret__, 'target_resource_type'),
@@ -564,6 +577,7 @@ def get_maintenance_run_output(maintenance_run_id: Optional[pulumi.Input[builtin
         peer_maintenance_run_id=pulumi.get(__response__, 'peer_maintenance_run_id'),
         peer_maintenance_run_ids=pulumi.get(__response__, 'peer_maintenance_run_ids'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         target_db_server_version=pulumi.get(__response__, 'target_db_server_version'),
         target_resource_id=pulumi.get(__response__, 'target_resource_id'),
         target_resource_type=pulumi.get(__response__, 'target_resource_type'),

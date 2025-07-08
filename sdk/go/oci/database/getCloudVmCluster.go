@@ -104,7 +104,7 @@ type LookupCloudVmClusterResult struct {
 	GiVersion string `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster.
 	Hostname string `pulumi:"hostname"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
+	// The OCID of the identity connector
 	Id string `pulumi:"id"`
 	// The IORM settings of the Exadata DB system.
 	IormConfigCaches []GetCloudVmClusterIormConfigCach `pulumi:"iormConfigCaches"`
@@ -122,6 +122,8 @@ type LookupCloudVmClusterResult struct {
 	ListenerPort string `pulumi:"listenerPort"`
 	// The memory to be allocated in GBs.
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
+	// Details of the multi cloud identity connectors of the VM cluster.
+	MultiCloudIdentityConnectorConfigs []GetCloudVmClusterMultiCloudIdentityConnectorConfig `pulumi:"multiCloudIdentityConnectorConfigs"`
 	// The number of nodes in the cloud VM cluster.
 	NodeCount int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
@@ -160,6 +162,8 @@ type LookupCloudVmClusterResult struct {
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion string `pulumi:"systemVersion"`
+	// TDE keystore type
+	TdeKeyStoreType string `pulumi:"tdeKeyStoreType"`
 	// The date and time that the cloud VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -332,7 +336,7 @@ func (o LookupCloudVmClusterResultOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
+// The OCID of the identity connector
 func (o LookupCloudVmClusterResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -375,6 +379,13 @@ func (o LookupCloudVmClusterResultOutput) ListenerPort() pulumi.StringOutput {
 // The memory to be allocated in GBs.
 func (o LookupCloudVmClusterResultOutput) MemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
+// Details of the multi cloud identity connectors of the VM cluster.
+func (o LookupCloudVmClusterResultOutput) MultiCloudIdentityConnectorConfigs() GetCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterMultiCloudIdentityConnectorConfig {
+		return v.MultiCloudIdentityConnectorConfigs
+	}).(GetCloudVmClusterMultiCloudIdentityConnectorConfigArrayOutput)
 }
 
 // The number of nodes in the cloud VM cluster.
@@ -470,6 +481,11 @@ func (o LookupCloudVmClusterResultOutput) SystemTags() pulumi.StringMapOutput {
 // Operating system version of the image.
 func (o LookupCloudVmClusterResultOutput) SystemVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.SystemVersion }).(pulumi.StringOutput)
+}
+
+// TDE keystore type
+func (o LookupCloudVmClusterResultOutput) TdeKeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.TdeKeyStoreType }).(pulumi.StringOutput)
 }
 
 // The date and time that the cloud VM cluster was created.

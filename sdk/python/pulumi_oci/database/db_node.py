@@ -104,6 +104,7 @@ class _DbNodeState:
                  memory_size_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
                  software_storage_size_in_gb: Optional[pulumi.Input[builtins.int]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_maintenance_window_end: Optional[pulumi.Input[builtins.str]] = None,
                  time_maintenance_window_start: Optional[pulumi.Input[builtins.str]] = None,
@@ -137,6 +138,7 @@ class _DbNodeState:
         :param pulumi.Input[builtins.int] memory_size_in_gbs: The allocated memory in GBs on the Db node.
         :param pulumi.Input[builtins.int] software_storage_size_in_gb: The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
         :param pulumi.Input[builtins.str] state: The current state of the database node.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the database node was created.
         :param pulumi.Input[builtins.str] time_maintenance_window_end: End date and time of maintenance window.
         :param pulumi.Input[builtins.str] time_maintenance_window_start: Start date and time of maintenance window.
@@ -186,6 +188,8 @@ class _DbNodeState:
             pulumi.set(__self__, "software_storage_size_in_gb", software_storage_size_in_gb)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_maintenance_window_end is not None:
@@ -456,6 +460,18 @@ class _DbNodeState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -630,6 +646,7 @@ class DbNode(pulumi.CustomResource):
             __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["software_storage_size_in_gb"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_maintenance_window_end"] = None
             __props__.__dict__["time_maintenance_window_start"] = None
@@ -667,6 +684,7 @@ class DbNode(pulumi.CustomResource):
             memory_size_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
             software_storage_size_in_gb: Optional[pulumi.Input[builtins.int]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_maintenance_window_end: Optional[pulumi.Input[builtins.str]] = None,
             time_maintenance_window_start: Optional[pulumi.Input[builtins.str]] = None,
@@ -705,6 +723,7 @@ class DbNode(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] memory_size_in_gbs: The allocated memory in GBs on the Db node.
         :param pulumi.Input[builtins.int] software_storage_size_in_gb: The size (in GB) of the block storage volume allocation for the DB system. This attribute applies only for virtual machine DB systems.
         :param pulumi.Input[builtins.str] state: The current state of the database node.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the database node was created.
         :param pulumi.Input[builtins.str] time_maintenance_window_end: End date and time of maintenance window.
         :param pulumi.Input[builtins.str] time_maintenance_window_start: Start date and time of maintenance window.
@@ -737,6 +756,7 @@ class DbNode(pulumi.CustomResource):
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["software_storage_size_in_gb"] = software_storage_size_in_gb
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_maintenance_window_end"] = time_maintenance_window_end
         __props__.__dict__["time_maintenance_window_start"] = time_maintenance_window_start
@@ -916,6 +936,14 @@ class DbNode(pulumi.CustomResource):
         The current state of the database node.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

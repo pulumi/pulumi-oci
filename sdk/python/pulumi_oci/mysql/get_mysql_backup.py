@@ -28,7 +28,7 @@ class GetMysqlBackupResult:
     """
     A collection of values returned by getMysqlBackup.
     """
-    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, soft_delete=None, source_details=None, state=None, system_tags=None, time_copy_created=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, soft_delete=None, source_details=None, state=None, system_tags=None, time_copy_created=None, time_created=None, time_updated=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -65,6 +65,9 @@ class GetMysqlBackupResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if encrypt_datas and not isinstance(encrypt_datas, list):
+            raise TypeError("Expected argument 'encrypt_datas' to be a list")
+        pulumi.set(__self__, "encrypt_datas", encrypt_datas)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -202,6 +205,14 @@ class GetMysqlBackupResult:
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="encryptDatas")
+    def encrypt_datas(self) -> Sequence['outputs.GetMysqlBackupEncryptDataResult']:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_datas")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, builtins.str]:
         """
@@ -337,6 +348,7 @@ class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
+            encrypt_datas=self.encrypt_datas,
             freeform_tags=self.freeform_tags,
             id=self.id,
             immediate_source_backup_id=self.immediate_source_backup_id,
@@ -391,6 +403,7 @@ def get_mysql_backup(backup_id: Optional[builtins.str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        encrypt_datas=pulumi.get(__ret__, 'encrypt_datas'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         immediate_source_backup_id=pulumi.get(__ret__, 'immediate_source_backup_id'),
@@ -442,6 +455,7 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[builtins.str]] = No
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
+        encrypt_datas=pulumi.get(__response__, 'encrypt_datas'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         immediate_source_backup_id=pulumi.get(__response__, 'immediate_source_backup_id'),

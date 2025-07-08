@@ -79,6 +79,8 @@ type KeyStore struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current state of the key store.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the key store was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) Key store type details.
@@ -139,6 +141,8 @@ type keyStoreState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the key store.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the key store was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) Key store type details.
@@ -161,6 +165,8 @@ type KeyStoreState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The current state of the key store.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time that the key store was created.
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) Key store type details.
@@ -324,6 +330,11 @@ func (o KeyStoreOutput) LifecycleDetails() pulumi.StringOutput {
 // The current state of the key store.
 func (o KeyStoreOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyStore) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o KeyStoreOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *KeyStore) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the key store was created.

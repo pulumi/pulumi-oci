@@ -72,6 +72,8 @@ type LookupReplicaResult struct {
 	Description string `pulumi:"description"`
 	// The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetReplicaEncryptData `pulumi:"encryptDatas"`
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -174,6 +176,11 @@ func (o LookupReplicaResultOutput) Description() pulumi.StringOutput {
 // The user-friendly name for the read replica. It does not have to be unique.
 func (o LookupReplicaResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReplicaResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o LookupReplicaResultOutput) EncryptDatas() GetReplicaEncryptDataArrayOutput {
+	return o.ApplyT(func(v LookupReplicaResult) []GetReplicaEncryptData { return v.EncryptDatas }).(GetReplicaEncryptDataArrayOutput)
 }
 
 // The name of the Fault Domain the read replica is located in.

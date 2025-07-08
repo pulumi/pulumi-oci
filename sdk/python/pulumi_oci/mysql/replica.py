@@ -148,6 +148,7 @@ class _ReplicaState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_datas: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaEncryptDataArgs']]]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  ip_address: Optional[pulumi.Input[builtins.str]] = None,
@@ -172,6 +173,7 @@ class _ReplicaState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) User provided description of the read replica.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input['ReplicaEncryptDataArgs']]] encrypt_datas: Encrypt data details.
         :param pulumi.Input[builtins.str] fault_domain: The name of the Fault Domain the read replica is located in.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.str] ip_address: The IP address the read replica is configured to listen on.
@@ -202,6 +204,8 @@ class _ReplicaState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encrypt_datas is not None:
+            pulumi.set(__self__, "encrypt_datas", encrypt_datas)
         if fault_domain is not None:
             pulumi.set(__self__, "fault_domain", fault_domain)
         if freeform_tags is not None:
@@ -316,6 +320,18 @@ class _ReplicaState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptDatas")
+    def encrypt_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaEncryptDataArgs']]]]:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_datas")
+
+    @encrypt_datas.setter
+    def encrypt_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ReplicaEncryptDataArgs']]]]):
+        pulumi.set(self, "encrypt_datas", value)
 
     @property
     @pulumi.getter(name="faultDomain")
@@ -647,6 +663,7 @@ class Replica(pulumi.CustomResource):
             __props__.__dict__["availability_domain"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["configuration_id"] = None
+            __props__.__dict__["encrypt_datas"] = None
             __props__.__dict__["fault_domain"] = None
             __props__.__dict__["ip_address"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -676,6 +693,7 @@ class Replica(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
+            encrypt_datas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict']]]]] = None,
             fault_domain: Optional[pulumi.Input[builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             ip_address: Optional[pulumi.Input[builtins.str]] = None,
@@ -705,6 +723,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) User provided description of the read replica.
         :param pulumi.Input[builtins.str] display_name: (Updatable) The user-friendly name for the read replica. It does not have to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict']]]] encrypt_datas: Encrypt data details.
         :param pulumi.Input[builtins.str] fault_domain: The name of the Fault Domain the read replica is located in.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.str] ip_address: The IP address the read replica is configured to listen on.
@@ -732,6 +751,7 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["encrypt_datas"] = encrypt_datas
         __props__.__dict__["fault_domain"] = fault_domain
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ip_address"] = ip_address
@@ -804,6 +824,14 @@ class Replica(pulumi.CustomResource):
         (Updatable) The user-friendly name for the read replica. It does not have to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptDatas")
+    def encrypt_datas(self) -> pulumi.Output[Sequence['outputs.ReplicaEncryptData']]:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_datas")
 
     @property
     @pulumi.getter(name="faultDomain")

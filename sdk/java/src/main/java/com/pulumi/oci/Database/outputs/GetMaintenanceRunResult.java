@@ -10,6 +10,7 @@ import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -141,6 +142,11 @@ public final class GetMaintenanceRunResult {
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
     /**
      * @return The target software version for the database server patching operation.
      * 
@@ -365,6 +371,13 @@ public final class GetMaintenanceRunResult {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The target software version for the database server patching operation.
      * 
      */
@@ -457,6 +470,7 @@ public final class GetMaintenanceRunResult {
         private String peerMaintenanceRunId;
         private List<String> peerMaintenanceRunIds;
         private String state;
+        private Map<String,String> systemTags;
         private String targetDbServerVersion;
         private String targetResourceId;
         private String targetResourceType;
@@ -495,6 +509,7 @@ public final class GetMaintenanceRunResult {
     	      this.peerMaintenanceRunId = defaults.peerMaintenanceRunId;
     	      this.peerMaintenanceRunIds = defaults.peerMaintenanceRunIds;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.targetDbServerVersion = defaults.targetDbServerVersion;
     	      this.targetResourceId = defaults.targetResourceId;
     	      this.targetResourceType = defaults.targetResourceType;
@@ -728,6 +743,14 @@ public final class GetMaintenanceRunResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetMaintenanceRunResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetDbServerVersion(String targetDbServerVersion) {
             if (targetDbServerVersion == null) {
               throw new MissingRequiredPropertyException("GetMaintenanceRunResult", "targetDbServerVersion");
@@ -820,6 +843,7 @@ public final class GetMaintenanceRunResult {
             _resultValue.peerMaintenanceRunId = peerMaintenanceRunId;
             _resultValue.peerMaintenanceRunIds = peerMaintenanceRunIds;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.targetDbServerVersion = targetDbServerVersion;
             _resultValue.targetResourceId = targetResourceId;
             _resultValue.targetResourceType = targetResourceType;

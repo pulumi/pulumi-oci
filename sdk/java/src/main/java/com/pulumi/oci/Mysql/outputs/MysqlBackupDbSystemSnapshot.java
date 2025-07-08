@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotBackupPolicy;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDataStorage;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotDeletionPolicy;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotMaintenance;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotReadEndpoint;
@@ -88,6 +89,11 @@ public final class MysqlBackupDbSystemSnapshot {
      * 
      */
     private @Nullable String displayName;
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    private @Nullable List<MysqlBackupDbSystemSnapshotEncryptData> encryptDatas;
     /**
      * @return The network endpoints available for this DB System.
      * 
@@ -272,6 +278,13 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.displayName);
     }
     /**
+     * @return Encrypt data details.
+     * 
+     */
+    public List<MysqlBackupDbSystemSnapshotEncryptData> encryptDatas() {
+        return this.encryptDatas == null ? List.of() : this.encryptDatas;
+    }
+    /**
      * @return The network endpoints available for this DB System.
      * 
      */
@@ -420,6 +433,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable List<MysqlBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
         private @Nullable String description;
         private @Nullable String displayName;
+        private @Nullable List<MysqlBackupDbSystemSnapshotEncryptData> encryptDatas;
         private @Nullable List<MysqlBackupDbSystemSnapshotEndpoint> endpoints;
         private @Nullable String faultDomain;
         private @Nullable Map<String,String> freeformTags;
@@ -454,6 +468,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.deletionPolicies = defaults.deletionPolicies;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
+    	      this.encryptDatas = defaults.encryptDatas;
     	      this.endpoints = defaults.endpoints;
     	      this.faultDomain = defaults.faultDomain;
     	      this.freeformTags = defaults.freeformTags;
@@ -560,6 +575,15 @@ public final class MysqlBackupDbSystemSnapshot {
 
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder encryptDatas(@Nullable List<MysqlBackupDbSystemSnapshotEncryptData> encryptDatas) {
+
+            this.encryptDatas = encryptDatas;
+            return this;
+        }
+        public Builder encryptDatas(MysqlBackupDbSystemSnapshotEncryptData... encryptDatas) {
+            return encryptDatas(List.of(encryptDatas));
         }
         @CustomType.Setter
         public Builder endpoints(@Nullable List<MysqlBackupDbSystemSnapshotEndpoint> endpoints) {
@@ -702,6 +726,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.deletionPolicies = deletionPolicies;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
+            _resultValue.encryptDatas = encryptDatas;
             _resultValue.endpoints = endpoints;
             _resultValue.faultDomain = faultDomain;
             _resultValue.freeformTags = freeformTags;

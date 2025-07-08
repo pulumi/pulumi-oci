@@ -140,7 +140,8 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount float64 `pulumi:"ocpuCount"`
 	// The lowest value to which ocpus can be scaled down.
-	OcpusLowestScaledValue int `pulumi:"ocpusLowestScaledValue"`
+	OcpusLowestScaledValue int  `pulumi:"ocpusLowestScaledValue"`
+	OpcDryRun              bool `pulumi:"opcDryRun"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases int `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -165,6 +166,10 @@ type LookupCloudAutonomousVmClusterResult struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -430,6 +435,10 @@ func (o LookupCloudAutonomousVmClusterResultOutput) OcpusLowestScaledValue() pul
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.OcpusLowestScaledValue }).(pulumi.IntOutput)
 }
 
+func (o LookupCloudAutonomousVmClusterResultOutput) OpcDryRun() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) bool { return v.OpcDryRun }).(pulumi.BoolOutput)
+}
+
 // The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 func (o LookupCloudAutonomousVmClusterResultOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.ProvisionableAutonomousContainerDatabases }).(pulumi.IntOutput)
@@ -485,6 +494,16 @@ func (o LookupCloudAutonomousVmClusterResultOutput) State() pulumi.StringOutput 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 func (o LookupCloudAutonomousVmClusterResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o LookupCloudAutonomousVmClusterResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupCloudAutonomousVmClusterResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the cloud Autonomous VM cluster was created.

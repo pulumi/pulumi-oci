@@ -83,6 +83,8 @@ type MysqlBackup struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptData MysqlBackupEncryptDataOutput `pulumi:"encryptData"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
@@ -164,6 +166,8 @@ type mysqlBackupState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName *string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptData *MysqlBackupEncryptData `pulumi:"encryptData"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
@@ -216,6 +220,8 @@ type MysqlBackupState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringPtrInput
+	// Encrypt data details.
+	EncryptData MysqlBackupEncryptDataPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
@@ -264,6 +270,8 @@ type mysqlBackupArgs struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName *string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptData *MysqlBackupEncryptData `pulumi:"encryptData"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Number of days to retain this backup.
@@ -289,6 +297,8 @@ type MysqlBackupArgs struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringPtrInput
+	// Encrypt data details.
+	EncryptData MysqlBackupEncryptDataPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
 	// (Updatable) Number of days to retain this backup.
@@ -438,6 +448,11 @@ func (o MysqlBackupOutput) Description() pulumi.StringOutput {
 // (Updatable) A user-supplied display name for the backup.
 func (o MysqlBackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o MysqlBackupOutput) EncryptData() MysqlBackupEncryptDataOutput {
+	return o.ApplyT(func(v *MysqlBackup) MysqlBackupEncryptDataOutput { return v.EncryptData }).(MysqlBackupEncryptDataOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

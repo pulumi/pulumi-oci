@@ -13,6 +13,7 @@ import com.pulumi.oci.Database.outputs.CloudVmClusterCloudAutomationUpdateDetail
 import com.pulumi.oci.Database.outputs.CloudVmClusterDataCollectionOptions;
 import com.pulumi.oci.Database.outputs.CloudVmClusterFileSystemConfigurationDetail;
 import com.pulumi.oci.Database.outputs.CloudVmClusterIormConfigCach;
+import com.pulumi.oci.Database.outputs.CloudVmClusterMultiCloudIdentityConnectorConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -580,6 +581,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
         return this.memorySizeInGbs;
     }
     /**
+     * Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    @Export(name="multiCloudIdentityConnectorConfigs", refs={List.class,CloudVmClusterMultiCloudIdentityConnectorConfig.class}, tree="[0,1]")
+    private Output<List<CloudVmClusterMultiCloudIdentityConnectorConfig>> multiCloudIdentityConnectorConfigs;
+
+    /**
+     * @return Details of the multi cloud identity connectors of the VM cluster.
+     * 
+     */
+    public Output<List<CloudVmClusterMultiCloudIdentityConnectorConfig>> multiCloudIdentityConnectorConfigs() {
+        return this.multiCloudIdentityConnectorConfigs;
+    }
+    /**
      * The number of nodes in the cloud VM cluster.
      * 
      */
@@ -846,6 +861,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> systemVersion() {
         return this.systemVersion;
+    }
+    /**
+     * Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+     * 
+     */
+    @Export(name="tdeKeyStoreType", refs={String.class}, tree="[0]")
+    private Output<String> tdeKeyStoreType;
+
+    /**
+     * @return Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+     * 
+     */
+    public Output<String> tdeKeyStoreType() {
+        return this.tdeKeyStoreType;
     }
     /**
      * The date and time that the cloud VM cluster was created.

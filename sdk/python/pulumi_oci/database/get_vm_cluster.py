@@ -28,7 +28,7 @@ class GetVmClusterResult:
     """
     A collection of values returned by getVmCluster.
     """
-    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None):
+    def __init__(__self__, availability_domain=None, cloud_automation_update_details=None, compartment_id=None, compute_model=None, cpu_core_count=None, cpus_enabled=None, data_collection_options=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, file_system_configuration_details=None, freeform_tags=None, gi_version=None, id=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_patch_history_entry_id=None, license_model=None, lifecycle_details=None, memory_size_in_gbs=None, ocpu_count=None, ocpus_enabled=None, shape=None, ssh_public_keys=None, state=None, storage_management_type=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_cluster_type=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -122,6 +122,9 @@ class GetVmClusterResult:
         if storage_management_type and not isinstance(storage_management_type, str):
             raise TypeError("Expected argument 'storage_management_type' to be a str")
         pulumi.set(__self__, "storage_management_type", storage_management_type)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if system_version and not isinstance(system_version, str):
             raise TypeError("Expected argument 'system_version' to be a str")
         pulumi.set(__self__, "system_version", system_version)
@@ -381,6 +384,14 @@ class GetVmClusterResult:
         return pulumi.get(self, "storage_management_type")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> builtins.str:
         """
@@ -463,6 +474,7 @@ class AwaitableGetVmClusterResult(GetVmClusterResult):
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
             storage_management_type=self.storage_management_type,
+            system_tags=self.system_tags,
             system_version=self.system_version,
             time_created=self.time_created,
             time_zone=self.time_zone,
@@ -527,6 +539,7 @@ def get_vm_cluster(vm_cluster_id: Optional[builtins.str] = None,
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
         storage_management_type=pulumi.get(__ret__, 'storage_management_type'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         system_version=pulumi.get(__ret__, 'system_version'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
@@ -588,6 +601,7 @@ def get_vm_cluster_output(vm_cluster_id: Optional[pulumi.Input[builtins.str]] = 
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),
         storage_management_type=pulumi.get(__response__, 'storage_management_type'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         system_version=pulumi.get(__response__, 'system_version'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),

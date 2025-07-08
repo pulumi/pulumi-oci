@@ -453,6 +453,7 @@ class _VmClusterState:
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  storage_management_type: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  system_version: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None,
@@ -487,6 +488,7 @@ class _VmClusterState:
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[builtins.str] state: The current state of the VM cluster.
         :param pulumi.Input[builtins.str] storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[builtins.str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -557,6 +559,8 @@ class _VmClusterState:
             pulumi.set(__self__, "state", state)
         if storage_management_type is not None:
             pulumi.set(__self__, "storage_management_type", storage_management_type)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
         if time_created is not None:
@@ -920,6 +924,18 @@ class _VmClusterState:
         pulumi.set(self, "storage_management_type", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1279,6 +1295,7 @@ class VmCluster(pulumi.CustomResource):
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["storage_management_type"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         super(VmCluster, __self__).__init__(
             'oci:Database/vmCluster:VmCluster',
@@ -1320,6 +1337,7 @@ class VmCluster(pulumi.CustomResource):
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             storage_management_type: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             system_version: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_zone: Optional[pulumi.Input[builtins.str]] = None,
@@ -1359,6 +1377,7 @@ class VmCluster(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the VM cluster.
         :param pulumi.Input[builtins.str] state: The current state of the VM cluster.
         :param pulumi.Input[builtins.str] storage_management_type: Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] system_version: Operating system version of the image.
         :param pulumi.Input[builtins.str] time_created: The date and time that the VM cluster was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -1403,6 +1422,7 @@ class VmCluster(pulumi.CustomResource):
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_management_type"] = storage_management_type
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["system_version"] = system_version
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -1640,6 +1660,14 @@ class VmCluster(pulumi.CustomResource):
         Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
         """
         return pulumi.get(self, "storage_management_type")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="systemVersion")

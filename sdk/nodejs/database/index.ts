@@ -390,6 +390,11 @@ export const getAutonomousDatabaseRegionalWalletManagement: typeof import("./get
 export const getAutonomousDatabaseRegionalWalletManagementOutput: typeof import("./getAutonomousDatabaseRegionalWalletManagement").getAutonomousDatabaseRegionalWalletManagementOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousDatabaseRegionalWalletManagement","getAutonomousDatabaseRegionalWalletManagementOutput"], () => require("./getAutonomousDatabaseRegionalWalletManagement"));
 
+export { GetAutonomousDatabaseResourcePoolMembersArgs, GetAutonomousDatabaseResourcePoolMembersResult, GetAutonomousDatabaseResourcePoolMembersOutputArgs } from "./getAutonomousDatabaseResourcePoolMembers";
+export const getAutonomousDatabaseResourcePoolMembers: typeof import("./getAutonomousDatabaseResourcePoolMembers").getAutonomousDatabaseResourcePoolMembers = null as any;
+export const getAutonomousDatabaseResourcePoolMembersOutput: typeof import("./getAutonomousDatabaseResourcePoolMembers").getAutonomousDatabaseResourcePoolMembersOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseResourcePoolMembers","getAutonomousDatabaseResourcePoolMembersOutput"], () => require("./getAutonomousDatabaseResourcePoolMembers"));
+
 export { GetAutonomousDatabaseSoftwareImageArgs, GetAutonomousDatabaseSoftwareImageResult, GetAutonomousDatabaseSoftwareImageOutputArgs } from "./getAutonomousDatabaseSoftwareImage";
 export const getAutonomousDatabaseSoftwareImage: typeof import("./getAutonomousDatabaseSoftwareImage").getAutonomousDatabaseSoftwareImage = null as any;
 export const getAutonomousDatabaseSoftwareImageOutput: typeof import("./getAutonomousDatabaseSoftwareImage").getAutonomousDatabaseSoftwareImageOutput = null as any;

@@ -29,6 +29,7 @@ class MysqlBackupArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input['MysqlBackupEncryptDataArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
                  soft_delete: Optional[pulumi.Input[builtins.str]] = None,
@@ -41,6 +42,7 @@ class MysqlBackupArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
+        :param pulumi.Input['MysqlBackupEncryptDataArgs'] encrypt_data: Encrypt data details.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
@@ -60,6 +62,8 @@ class MysqlBackupArgs:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encrypt_data is not None:
+            pulumi.set(__self__, "encrypt_data", encrypt_data)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if retention_in_days is not None:
@@ -151,6 +155,18 @@ class MysqlBackupArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="encryptData")
+    def encrypt_data(self) -> Optional[pulumi.Input['MysqlBackupEncryptDataArgs']]:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_data")
+
+    @encrypt_data.setter
+    def encrypt_data(self, value: Optional[pulumi.Input['MysqlBackupEncryptDataArgs']]):
+        pulumi.set(self, "encrypt_data", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
         """
@@ -213,6 +229,7 @@ class _MysqlBackupState:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input['MysqlBackupEncryptDataArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  immediate_source_backup_id: Optional[pulumi.Input[builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
@@ -239,6 +256,7 @@ class _MysqlBackupState:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
+        :param pulumi.Input['MysqlBackupEncryptDataArgs'] encrypt_data: Encrypt data details.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.str] immediate_source_backup_id: The OCID of the immediate source DB system backup from which this DB system backup was copied.
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycleState.
@@ -276,6 +294,8 @@ class _MysqlBackupState:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encrypt_data is not None:
+            pulumi.set(__self__, "encrypt_data", encrypt_data)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if immediate_source_backup_id is not None:
@@ -433,6 +453,18 @@ class _MysqlBackupState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptData")
+    def encrypt_data(self) -> Optional[pulumi.Input['MysqlBackupEncryptDataArgs']]:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_data")
+
+    @encrypt_data.setter
+    def encrypt_data(self, value: Optional[pulumi.Input['MysqlBackupEncryptDataArgs']]):
+        pulumi.set(self, "encrypt_data", value)
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -616,6 +648,7 @@ class MysqlBackup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input[Union['MysqlBackupEncryptDataArgs', 'MysqlBackupEncryptDataArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
                  soft_delete: Optional[pulumi.Input[builtins.str]] = None,
@@ -663,6 +696,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
+        :param pulumi.Input[Union['MysqlBackupEncryptDataArgs', 'MysqlBackupEncryptDataArgsDict']] encrypt_data: Encrypt data details.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
@@ -730,6 +764,7 @@ class MysqlBackup(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_data: Optional[pulumi.Input[Union['MysqlBackupEncryptDataArgs', 'MysqlBackupEncryptDataArgsDict']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[builtins.int]] = None,
                  soft_delete: Optional[pulumi.Input[builtins.str]] = None,
@@ -750,6 +785,7 @@ class MysqlBackup(pulumi.CustomResource):
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["encrypt_data"] = encrypt_data
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["retention_in_days"] = retention_in_days
             __props__.__dict__["soft_delete"] = soft_delete
@@ -789,6 +825,7 @@ class MysqlBackup(pulumi.CustomResource):
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             description: Optional[pulumi.Input[builtins.str]] = None,
             display_name: Optional[pulumi.Input[builtins.str]] = None,
+            encrypt_data: Optional[pulumi.Input[Union['MysqlBackupEncryptDataArgs', 'MysqlBackupEncryptDataArgsDict']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             immediate_source_backup_id: Optional[pulumi.Input[builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
@@ -820,6 +857,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
+        :param pulumi.Input[Union['MysqlBackupEncryptDataArgs', 'MysqlBackupEncryptDataArgsDict']] encrypt_data: Encrypt data details.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[builtins.str] immediate_source_backup_id: The OCID of the immediate source DB system backup from which this DB system backup was copied.
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycleState.
@@ -850,6 +888,7 @@ class MysqlBackup(pulumi.CustomResource):
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["encrypt_data"] = encrypt_data
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["immediate_source_backup_id"] = immediate_source_backup_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -950,6 +989,14 @@ class MysqlBackup(pulumi.CustomResource):
         (Updatable) A user-supplied display name for the backup.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="encryptData")
+    def encrypt_data(self) -> pulumi.Output['outputs.MysqlBackupEncryptData']:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_data")
 
     @property
     @pulumi.getter(name="freeformTags")

@@ -33,13 +33,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Type of the database backup destination.
         /// </summary>
         public readonly string Type;
-        /// <summary>
-        /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
-        /// </summary>
         public readonly string VpcPassword;
-        /// <summary>
-        /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
-        /// </summary>
         public readonly string VpcUser;
 
         [OutputConstructor]

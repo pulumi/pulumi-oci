@@ -24,6 +24,8 @@ import (
 type Job struct {
 	pulumi.CustomResourceState
 
+	// Information regarding the DB trace and alert log collection
+	CollectTracesDatas JobCollectTracesDataArrayOutput `pulumi:"collectTracesDatas"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the job.
@@ -92,6 +94,8 @@ func GetJob(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Job resources.
 type jobState struct {
+	// Information regarding the DB trace and alert log collection
+	CollectTracesDatas []JobCollectTracesData `pulumi:"collectTracesDatas"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the job.
@@ -128,6 +132,8 @@ type jobState struct {
 }
 
 type JobState struct {
+	// Information regarding the DB trace and alert log collection
+	CollectTracesDatas JobCollectTracesDataArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the job.
@@ -285,6 +291,11 @@ func (o JobOutput) ToJobOutput() JobOutput {
 
 func (o JobOutput) ToJobOutputWithContext(ctx context.Context) JobOutput {
 	return o
+}
+
+// Information regarding the DB trace and alert log collection
+func (o JobOutput) CollectTracesDatas() JobCollectTracesDataArrayOutput {
+	return o.ApplyT(func(v *Job) JobCollectTracesDataArrayOutput { return v.CollectTracesDatas }).(JobCollectTracesDataArrayOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`

@@ -100,6 +100,8 @@ type LookupMysqlDbSystemResult struct {
 	Description string `pulumi:"description"`
 	// The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []GetMysqlDbSystemEncryptData `pulumi:"encryptDatas"`
 	// The network endpoints available for this DB System.
 	Endpoints []GetMysqlDbSystemEndpoint `pulumi:"endpoints"`
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
@@ -289,6 +291,11 @@ func (o LookupMysqlDbSystemResultOutput) Description() pulumi.StringOutput {
 // The user-friendly name for the DB System. It does not have to be unique.
 func (o LookupMysqlDbSystemResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlDbSystemResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o LookupMysqlDbSystemResultOutput) EncryptDatas() GetMysqlDbSystemEncryptDataArrayOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) []GetMysqlDbSystemEncryptData { return v.EncryptDatas }).(GetMysqlDbSystemEncryptDataArrayOutput)
 }
 
 // The network endpoints available for this DB System.

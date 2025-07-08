@@ -20,6 +20,8 @@ __all__ = [
     'ConnectionAdditionalAttributeArgsDict',
     'ConnectionIngressIpArgs',
     'ConnectionIngressIpArgsDict',
+    'JobCollectTracesDataArgs',
+    'JobCollectTracesDataArgsDict',
     'JobParameterFileVersionArgs',
     'JobParameterFileVersionArgsDict',
     'JobProgressArgs',
@@ -166,6 +168,98 @@ class ConnectionIngressIpArgs:
     @ingress_ip.setter
     def ingress_ip(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "ingress_ip", value)
+
+
+if not MYPY:
+    class JobCollectTracesDataArgsDict(TypedDict):
+        bucket: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the bucket containing the log file.
+        """
+        collect_traces_state: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Status of trace collection process.
+        """
+        namespace: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Object Storage namespace.
+        """
+        object: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Name of the object (regular expression is allowed)
+        """
+elif False:
+    JobCollectTracesDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class JobCollectTracesDataArgs:
+    def __init__(__self__, *,
+                 bucket: Optional[pulumi.Input[builtins.str]] = None,
+                 collect_traces_state: Optional[pulumi.Input[builtins.str]] = None,
+                 namespace: Optional[pulumi.Input[builtins.str]] = None,
+                 object: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] bucket: Name of the bucket containing the log file.
+        :param pulumi.Input[builtins.str] collect_traces_state: Status of trace collection process.
+        :param pulumi.Input[builtins.str] namespace: Object Storage namespace.
+        :param pulumi.Input[builtins.str] object: Name of the object (regular expression is allowed)
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if collect_traces_state is not None:
+            pulumi.set(__self__, "collect_traces_state", collect_traces_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the bucket containing the log file.
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="collectTracesState")
+    def collect_traces_state(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Status of trace collection process.
+        """
+        return pulumi.get(self, "collect_traces_state")
+
+    @collect_traces_state.setter
+    def collect_traces_state(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "collect_traces_state", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Name of the object (regular expression is allowed)
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "object", value)
 
 
 if not MYPY:

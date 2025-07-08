@@ -316,6 +316,10 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
      */
     public /*out*/ readonly storageServerVersion!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the Exadata infrastructure was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -388,6 +392,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["storageCount"] = state ? state.storageCount : undefined;
             resourceInputs["storageServerType"] = state ? state.storageServerType : undefined;
             resourceInputs["storageServerVersion"] = state ? state.storageServerVersion : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeZone"] = state ? state.timeZone : undefined;
         } else {
@@ -480,6 +485,7 @@ export class ExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["rackSerialNumber"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["storageServerVersion"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -695,6 +701,10 @@ export interface ExadataInfrastructureState {
      * The software version of the storage servers (cells) in the Exadata infrastructure.
      */
     storageServerVersion?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the Exadata infrastructure was created.
      */

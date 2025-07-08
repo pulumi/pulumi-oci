@@ -145,6 +145,8 @@ type LookupAutonomousVmClusterResult struct {
 	ScanListenerPortTls int `pulumi:"scanListenerPortTls"`
 	// The current state of the Autonomous VM cluster.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the Autonomous VM cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -418,6 +420,11 @@ func (o LookupAutonomousVmClusterResultOutput) ScanListenerPortTls() pulumi.IntO
 // The current state of the Autonomous VM cluster.
 func (o LookupAutonomousVmClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousVmClusterResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupAutonomousVmClusterResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutonomousVmClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the Autonomous VM cluster was created.

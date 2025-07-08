@@ -133,6 +133,7 @@ class _PluggableDatabasesLocalCloneState:
                  refreshable_clone_configs: Optional[pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesLocalCloneRefreshableCloneConfigArgs']]]] = None,
                  should_pdb_admin_account_be_locked: Optional[pulumi.Input[builtins.bool]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  target_tde_wallet_password: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -154,6 +155,7 @@ class _PluggableDatabasesLocalCloneState:
         :param pulumi.Input[Sequence[pulumi.Input['PluggableDatabasesLocalCloneRefreshableCloneConfigArgs']]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
         :param pulumi.Input[builtins.bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[builtins.str] state: The current state of the pluggable database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
                
                
@@ -195,6 +197,8 @@ class _PluggableDatabasesLocalCloneState:
             pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if target_tde_wallet_password is not None:
             pulumi.set(__self__, "target_tde_wallet_password", target_tde_wallet_password)
         if time_created is not None:
@@ -405,6 +409,18 @@ class _PluggableDatabasesLocalCloneState:
         pulumi.set(self, "state", value)
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="targetTdeWalletPassword")
     def target_tde_wallet_password(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -562,6 +578,7 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
             __props__.__dict__["pluggable_database_management_configs"] = None
             __props__.__dict__["refreshable_clone_configs"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["pdbAdminPassword", "targetTdeWalletPassword"])
         opts = pulumi.ResourceOptions.merge(opts, secret_opts)
@@ -592,6 +609,7 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
             refreshable_clone_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesLocalCloneRefreshableCloneConfigArgs', 'PluggableDatabasesLocalCloneRefreshableCloneConfigArgsDict']]]]] = None,
             should_pdb_admin_account_be_locked: Optional[pulumi.Input[builtins.bool]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             target_tde_wallet_password: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None) -> 'PluggableDatabasesLocalClone':
         """
@@ -618,6 +636,7 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['PluggableDatabasesLocalCloneRefreshableCloneConfigArgs', 'PluggableDatabasesLocalCloneRefreshableCloneConfigArgsDict']]]] refreshable_clone_configs: Pluggable Database Refreshable Clone Configuration.
         :param pulumi.Input[builtins.bool] should_pdb_admin_account_be_locked: The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         :param pulumi.Input[builtins.str] state: The current state of the pluggable database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] target_tde_wallet_password: The existing TDE wallet password of the target CDB.
                
                
@@ -646,6 +665,7 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         __props__.__dict__["refreshable_clone_configs"] = refreshable_clone_configs
         __props__.__dict__["should_pdb_admin_account_be_locked"] = should_pdb_admin_account_be_locked
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_tde_wallet_password"] = target_tde_wallet_password
         __props__.__dict__["time_created"] = time_created
         return PluggableDatabasesLocalClone(resource_name, opts=opts, __props__=__props__)
@@ -785,6 +805,14 @@ class PluggableDatabasesLocalClone(pulumi.CustomResource):
         The current state of the pluggable database.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="targetTdeWalletPassword")

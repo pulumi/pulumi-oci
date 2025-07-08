@@ -6,6 +6,7 @@ package com.pulumi.oci.Mysql;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSummaryArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupSourceDetailsArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -118,6 +119,21 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Encrypt data details.
+     * 
+     */
+    @Import(name="encryptData")
+    private @Nullable Output<MysqlBackupEncryptDataArgs> encryptData;
+
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    public Optional<Output<MysqlBackupEncryptDataArgs>> encryptData() {
+        return Optional.ofNullable(this.encryptData);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -187,6 +203,7 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.encryptData = $.encryptData;
         this.freeformTags = $.freeformTags;
         this.retentionInDays = $.retentionInDays;
         this.softDelete = $.softDelete;
@@ -348,6 +365,27 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptData Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptData(@Nullable Output<MysqlBackupEncryptDataArgs> encryptData) {
+            $.encryptData = encryptData;
+            return this;
+        }
+
+        /**
+         * @param encryptData Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptData(MysqlBackupEncryptDataArgs encryptData) {
+            return encryptData(Output.of(encryptData));
         }
 
         /**

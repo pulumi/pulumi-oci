@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotBackupPolicyArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDataStorageArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotDeletionPolicyArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotEndpointArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotMaintenanceArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotReadEndpointArgs;
@@ -220,6 +221,21 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Encrypt data details.
+     * 
+     */
+    @Import(name="encryptDatas")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotEncryptDataArgs>> encryptDatas;
+
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotEncryptDataArgs>>> encryptDatas() {
+        return Optional.ofNullable(this.encryptDatas);
     }
 
     /**
@@ -508,6 +524,7 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
         this.deletionPolicies = $.deletionPolicies;
         this.description = $.description;
         this.displayName = $.displayName;
+        this.encryptDatas = $.encryptDatas;
         this.endpoints = $.endpoints;
         this.faultDomain = $.faultDomain;
         this.freeformTags = $.freeformTags;
@@ -847,6 +864,37 @@ public final class MysqlBackupDbSystemSnapshotArgs extends com.pulumi.resources.
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param encryptDatas Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptDatas(@Nullable Output<List<MysqlBackupDbSystemSnapshotEncryptDataArgs>> encryptDatas) {
+            $.encryptDatas = encryptDatas;
+            return this;
+        }
+
+        /**
+         * @param encryptDatas Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptDatas(List<MysqlBackupDbSystemSnapshotEncryptDataArgs> encryptDatas) {
+            return encryptDatas(Output.of(encryptDatas));
+        }
+
+        /**
+         * @param encryptDatas Encrypt data details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder encryptDatas(MysqlBackupDbSystemSnapshotEncryptDataArgs... encryptDatas) {
+            return encryptDatas(List.of(encryptDatas));
         }
 
         /**

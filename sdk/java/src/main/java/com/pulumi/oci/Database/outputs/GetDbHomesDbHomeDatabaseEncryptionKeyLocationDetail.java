@@ -10,10 +10,14 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
+    private String azureEncryptionKeyId;
     private String hsmPassword;
     private String providerType;
 
     private GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail() {}
+    public String azureEncryptionKeyId() {
+        return this.azureEncryptionKeyId;
+    }
     public String hsmPassword() {
         return this.hsmPassword;
     }
@@ -30,15 +34,25 @@ public final class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String azureEncryptionKeyId;
         private String hsmPassword;
         private String providerType;
         public Builder() {}
         public Builder(GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
     	      this.providerType = defaults.providerType;
         }
 
+        @CustomType.Setter
+        public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
+            if (azureEncryptionKeyId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail", "azureEncryptionKeyId");
+            }
+            this.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder hsmPassword(String hsmPassword) {
             if (hsmPassword == null) {
@@ -57,6 +71,7 @@ public final class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
         }
         public GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail build() {
             final var _resultValue = new GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail();
+            _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;
             _resultValue.providerType = providerType;
             return _resultValue;

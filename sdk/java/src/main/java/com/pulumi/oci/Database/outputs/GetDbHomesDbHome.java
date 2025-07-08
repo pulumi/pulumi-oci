@@ -91,6 +91,11 @@ public final class GetDbHomesDbHome {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the Database Home was created.
      * 
      */
@@ -219,6 +224,13 @@ public final class GetDbHomesDbHome {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Database Home was created.
      * 
      */
@@ -262,6 +274,7 @@ public final class GetDbHomesDbHome {
         private String lifecycleDetails;
         private String source;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String vmClusterId;
         public Builder() {}
@@ -287,6 +300,7 @@ public final class GetDbHomesDbHome {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.source = defaults.source;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vmClusterId = defaults.vmClusterId;
         }
@@ -455,6 +469,14 @@ public final class GetDbHomesDbHome {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHome", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHome", "timeCreated");
@@ -492,6 +514,7 @@ public final class GetDbHomesDbHome {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.source = source;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.vmClusterId = vmClusterId;
             return _resultValue;

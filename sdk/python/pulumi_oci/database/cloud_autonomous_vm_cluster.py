@@ -39,9 +39,11 @@ class CloudAutonomousVmClusterArgs:
                  maintenance_window_details: Optional[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs']] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
                  total_container_databases: Optional[pulumi.Input[builtins.int]] = None):
         """
@@ -66,9 +68,11 @@ class CloudAutonomousVmClusterArgs:
         :param pulumi.Input[builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
         :param pulumi.Input[builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[builtins.int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
+        :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
                
@@ -105,12 +109,16 @@ class CloudAutonomousVmClusterArgs:
             pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if opc_dry_run is not None:
+            pulumi.set(__self__, "opc_dry_run", opc_dry_run)
         if scan_listener_port_non_tls is not None:
             pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
         if scan_listener_port_tls is not None:
             pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
         if total_container_databases is not None:
@@ -324,6 +332,18 @@ class CloudAutonomousVmClusterArgs:
         pulumi.set(self, "nsg_ids", value)
 
     @property
+    @pulumi.getter(name="opcDryRun")
+    def opc_dry_run(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        """
+        return pulumi.get(self, "opc_dry_run")
+
+    @opc_dry_run.setter
+    def opc_dry_run(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "opc_dry_run", value)
+
+    @property
     @pulumi.getter(name="scanListenerPortNonTls")
     def scan_listener_port_non_tls(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -358,6 +378,18 @@ class CloudAutonomousVmClusterArgs:
     @security_attributes.setter
     def security_attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @property
     @pulumi.getter(name="timeUpdated")
@@ -430,6 +462,7 @@ class _CloudAutonomousVmClusterState:
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[builtins.float]] = None,
                  ocpus_lowest_scaled_value: Optional[pulumi.Input[builtins.int]] = None,
+                 opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  provisionable_autonomous_container_databases: Optional[pulumi.Input[builtins.int]] = None,
                  provisioned_autonomous_container_databases: Optional[pulumi.Input[builtins.int]] = None,
                  provisioned_cpus: Optional[pulumi.Input[builtins.float]] = None,
@@ -441,6 +474,8 @@ class _CloudAutonomousVmClusterState:
                  shape: Optional[pulumi.Input[builtins.str]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_database_ssl_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
                  time_ords_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
@@ -493,6 +528,7 @@ class _CloudAutonomousVmClusterState:
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[builtins.float] ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param pulumi.Input[builtins.int] ocpus_lowest_scaled_value: The lowest value to which ocpus can be scaled down.
+        :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
         :param pulumi.Input[builtins.int] provisionable_autonomous_container_databases: The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[builtins.int] provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
@@ -506,6 +542,8 @@ class _CloudAutonomousVmClusterState:
         :param pulumi.Input[builtins.str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[builtins.str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+        :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param pulumi.Input[builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
@@ -597,6 +635,8 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
         if ocpus_lowest_scaled_value is not None:
             pulumi.set(__self__, "ocpus_lowest_scaled_value", ocpus_lowest_scaled_value)
+        if opc_dry_run is not None:
+            pulumi.set(__self__, "opc_dry_run", opc_dry_run)
         if provisionable_autonomous_container_databases is not None:
             pulumi.set(__self__, "provisionable_autonomous_container_databases", provisionable_autonomous_container_databases)
         if provisioned_autonomous_container_databases is not None:
@@ -619,6 +659,10 @@ class _CloudAutonomousVmClusterState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_database_ssl_certificate_expires is not None:
@@ -1118,6 +1162,18 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "ocpus_lowest_scaled_value", value)
 
     @property
+    @pulumi.getter(name="opcDryRun")
+    def opc_dry_run(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        """
+        return pulumi.get(self, "opc_dry_run")
+
+    @opc_dry_run.setter
+    def opc_dry_run(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "opc_dry_run", value)
+
+    @property
     @pulumi.getter(name="provisionableAutonomousContainerDatabases")
     def provisionable_autonomous_container_databases(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -1252,6 +1308,30 @@ class _CloudAutonomousVmClusterState:
         pulumi.set(self, "subnet_id", value)
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1361,10 +1441,12 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  maintenance_window_details: Optional[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
                  total_container_databases: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
@@ -1415,9 +1497,11 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             },
             memory_per_oracle_compute_unit_in_gbs=cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
             nsg_ids=cloud_autonomous_vm_cluster_nsg_ids,
+            opc_dry_run=cloud_autonomous_vm_cluster_opc_dry_run,
             scan_listener_port_non_tls=cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
             scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
             security_attributes=cloud_autonomous_vm_cluster_security_attributes,
+            subscription_id=test_subscription["id"],
             total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
         ```
 
@@ -1450,10 +1534,12 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) to be enabled per OCPU or ECPU.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
         :param pulumi.Input[builtins.int] scan_listener_port_non_tls: The SCAN Listener Non TLS port. Default is 1521.
         :param pulumi.Input[builtins.int] scan_listener_port_tls: The SCAN Listener TLS port. Default is 2484.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+        :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[builtins.str] time_updated: The last date and time that the cloud Autonomous VM cluster was updated.
         :param pulumi.Input[builtins.int] total_container_databases: (Updatable) The total number of Autonomous Container Databases that can be created.
                
@@ -1513,9 +1599,11 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             },
             memory_per_oracle_compute_unit_in_gbs=cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
             nsg_ids=cloud_autonomous_vm_cluster_nsg_ids,
+            opc_dry_run=cloud_autonomous_vm_cluster_opc_dry_run,
             scan_listener_port_non_tls=cloud_autonomous_vm_cluster_scan_listener_port_non_tls,
             scan_listener_port_tls=cloud_autonomous_vm_cluster_scan_listener_port_tls,
             security_attributes=cloud_autonomous_vm_cluster_security_attributes,
+            subscription_id=test_subscription["id"],
             total_container_databases=cloud_autonomous_vm_cluster_total_container_databases)
         ```
 
@@ -1558,10 +1646,12 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                  maintenance_window_details: Optional[pulumi.Input[Union['CloudAutonomousVmClusterMaintenanceWindowDetailsArgs', 'CloudAutonomousVmClusterMaintenanceWindowDetailsArgsDict']]] = None,
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
                  scan_listener_port_non_tls: Optional[pulumi.Input[builtins.int]] = None,
                  scan_listener_port_tls: Optional[pulumi.Input[builtins.int]] = None,
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[builtins.str]] = None,
                  total_container_databases: Optional[pulumi.Input[builtins.int]] = None,
                  __props__=None):
@@ -1595,12 +1685,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
+            __props__.__dict__["opc_dry_run"] = opc_dry_run
             __props__.__dict__["scan_listener_port_non_tls"] = scan_listener_port_non_tls
             __props__.__dict__["scan_listener_port_tls"] = scan_listener_port_tls
             __props__.__dict__["security_attributes"] = security_attributes
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["time_updated"] = time_updated
             __props__.__dict__["total_container_databases"] = total_container_databases
             __props__.__dict__["autonomous_data_storage_percentage"] = None
@@ -1634,6 +1726,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             __props__.__dict__["reserved_cpus"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_database_ssl_certificate_expires"] = None
             __props__.__dict__["time_ords_certificate_expires"] = None
@@ -1689,6 +1782,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             ocpu_count: Optional[pulumi.Input[builtins.float]] = None,
             ocpus_lowest_scaled_value: Optional[pulumi.Input[builtins.int]] = None,
+            opc_dry_run: Optional[pulumi.Input[builtins.bool]] = None,
             provisionable_autonomous_container_databases: Optional[pulumi.Input[builtins.int]] = None,
             provisioned_autonomous_container_databases: Optional[pulumi.Input[builtins.int]] = None,
             provisioned_cpus: Optional[pulumi.Input[builtins.float]] = None,
@@ -1700,6 +1794,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
             shape: Optional[pulumi.Input[builtins.str]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[builtins.str]] = None,
+            subscription_id: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_database_ssl_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
             time_ords_certificate_expires: Optional[pulumi.Input[builtins.str]] = None,
@@ -1757,6 +1853,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[builtins.float] ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param pulumi.Input[builtins.int] ocpus_lowest_scaled_value: The lowest value to which ocpus can be scaled down.
+        :param pulumi.Input[builtins.bool] opc_dry_run: (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
         :param pulumi.Input[builtins.int] provisionable_autonomous_container_databases: The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[builtins.int] provisioned_autonomous_container_databases: The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
         :param pulumi.Input[builtins.float] provisioned_cpus: The number of CPUs provisioned in an Autonomous VM Cluster.
@@ -1770,6 +1867,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param pulumi.Input[builtins.str] state: The current state of the cloud Autonomous VM cluster.
         :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
+        :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_created: The date and time that the cloud Autonomous VM cluster was created.
         :param pulumi.Input[builtins.str] time_database_ssl_certificate_expires: The date and time of Database SSL certificate expiration.
         :param pulumi.Input[builtins.str] time_ords_certificate_expires: The date and time of ORDS certificate expiration.
@@ -1825,6 +1924,7 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ocpu_count"] = ocpu_count
         __props__.__dict__["ocpus_lowest_scaled_value"] = ocpus_lowest_scaled_value
+        __props__.__dict__["opc_dry_run"] = opc_dry_run
         __props__.__dict__["provisionable_autonomous_container_databases"] = provisionable_autonomous_container_databases
         __props__.__dict__["provisioned_autonomous_container_databases"] = provisioned_autonomous_container_databases
         __props__.__dict__["provisioned_cpus"] = provisioned_cpus
@@ -1836,6 +1936,8 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_database_ssl_certificate_expires"] = time_database_ssl_certificate_expires
         __props__.__dict__["time_ords_certificate_expires"] = time_ords_certificate_expires
@@ -2169,6 +2271,14 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "ocpus_lowest_scaled_value")
 
     @property
+    @pulumi.getter(name="opcDryRun")
+    def opc_dry_run(self) -> pulumi.Output[builtins.bool]:
+        """
+        (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        """
+        return pulumi.get(self, "opc_dry_run")
+
+    @property
     @pulumi.getter(name="provisionableAutonomousContainerDatabases")
     def provisionable_autonomous_container_databases(self) -> pulumi.Output[builtins.int]:
         """
@@ -2257,6 +2367,22 @@ class CloudAutonomousVmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeCreated")

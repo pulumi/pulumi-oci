@@ -55,6 +55,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// Encrypt data details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupEncryptDataResult> EncryptDatas;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -136,6 +140,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetMysqlBackupsBackupEncryptDataResult> encryptDatas,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
@@ -177,6 +183,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
+            EncryptDatas = encryptDatas;
             FreeformTags = freeformTags;
             Id = id;
             ImmediateSourceBackupId = immediateSourceBackupId;

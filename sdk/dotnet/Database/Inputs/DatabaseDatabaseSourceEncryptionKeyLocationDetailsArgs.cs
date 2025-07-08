@@ -29,7 +29,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// Use 'EXTERNAL' for creating a new database or migrate database key with External HSM.
+        /// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         /// </summary>
         [Input("providerType", required: true)]
         public Input<string> ProviderType { get; set; } = null!;

@@ -15,6 +15,7 @@ import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCurrentPlacement;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemCustomerContact;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDataStorage;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemDeletionPolicy;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemEndpoint;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemHeatWaveCluster;
 import com.pulumi.oci.Mysql.outputs.MysqlDbSystemMaintenance;
@@ -54,6 +55,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemCustomerContactArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDataStorageArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemDeletionPolicyArgs;
+ * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemEncryptDataArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemMaintenanceArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemReadEndpointArgs;
  * import com.pulumi.oci.Mysql.inputs.MysqlDbSystemRestArgs;
@@ -115,6 +117,10 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .description(mysqlDbSystemDescription)
  *             .displayName(mysqlDbSystemDisplayName)
+ *             .encryptData(MysqlDbSystemEncryptDataArgs.builder()
+ *                 .keyGenerationType(mysqlDbSystemEncryptDataKeyGenerationType)
+ *                 .keyId(testKey.id())
+ *                 .build())
  *             .faultDomain(mysqlDbSystemFaultDomain)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .hostnameLabel(mysqlDbSystemHostnameLabel)
@@ -444,6 +450,20 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * (Updatable) Encrypt data details.
+     * 
+     */
+    @Export(name="encryptData", refs={MysqlDbSystemEncryptData.class}, tree="[0]")
+    private Output<MysqlDbSystemEncryptData> encryptData;
+
+    /**
+     * @return (Updatable) Encrypt data details.
+     * 
+     */
+    public Output<MysqlDbSystemEncryptData> encryptData() {
+        return this.encryptData;
     }
     /**
      * The network endpoints available for this DB System.

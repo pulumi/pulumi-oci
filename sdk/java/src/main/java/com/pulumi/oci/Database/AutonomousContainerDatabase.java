@@ -525,6 +525,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.kmsKeyId;
     }
     /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * 
+     */
+    @Export(name="kmsKeyVersionId", refs={String.class}, tree="[0]")
+    private Output<String> kmsKeyVersionId;
+
+    /**
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * 
+     */
+    public Output<String> kmsKeyVersionId() {
+        return this.kmsKeyVersionId;
+    }
+    /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
@@ -969,6 +983,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<Optional<Integer>> switchoverTrigger() {
         return Codegen.optional(this.switchoverTrigger);
+    }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The date and time the Autonomous Container Database was created.

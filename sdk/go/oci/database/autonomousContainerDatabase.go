@@ -94,6 +94,8 @@ type AutonomousContainerDatabase struct {
 	KeyVersionId pulumi.StringPtrOutput `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	KmsKeyVersionId pulumi.StringOutput `pulumi:"kmsKeyVersionId"`
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
 	LargestProvisionableAutonomousDatabaseInCpus pulumi.Float64Output `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -163,6 +165,8 @@ type AutonomousContainerDatabase struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
 	SwitchoverTrigger pulumi.IntPtrOutput `pulumi:"switchoverTrigger"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
@@ -283,6 +287,8 @@ type autonomousContainerDatabaseState struct {
 	KeyVersionId *string `pulumi:"keyVersionId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
 	LargestProvisionableAutonomousDatabaseInCpus *float64 `pulumi:"largestProvisionableAutonomousDatabaseInCpus"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -352,6 +358,8 @@ type autonomousContainerDatabaseState struct {
 	State *string `pulumi:"state"`
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
 	SwitchoverTrigger *int `pulumi:"switchoverTrigger"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
@@ -437,6 +445,8 @@ type AutonomousContainerDatabaseState struct {
 	KeyVersionId pulumi.StringPtrInput
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	KmsKeyVersionId pulumi.StringPtrInput
 	// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
 	LargestProvisionableAutonomousDatabaseInCpus pulumi.Float64PtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -506,6 +516,8 @@ type AutonomousContainerDatabaseState struct {
 	State pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
 	SwitchoverTrigger pulumi.IntPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time the Autonomous Container Database was created.
 	TimeCreated pulumi.StringPtrInput
 	// The timestamp of last successful backup. Here NULL value represents either there are no successful backups or backups are not configured for this Autonomous Container Database.
@@ -971,6 +983,11 @@ func (o AutonomousContainerDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+func (o AutonomousContainerDatabaseOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
 // The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
 func (o AutonomousContainerDatabaseOutput) LargestProvisionableAutonomousDatabaseInCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output {
@@ -1150,6 +1167,11 @@ func (o AutonomousContainerDatabaseOutput) State() pulumi.StringOutput {
 // (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
 func (o AutonomousContainerDatabaseOutput) SwitchoverTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.IntPtrOutput { return v.SwitchoverTrigger }).(pulumi.IntPtrOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o AutonomousContainerDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Autonomous Container Database was created.

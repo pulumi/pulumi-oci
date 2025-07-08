@@ -81,6 +81,8 @@ type Replica struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas ReplicaEncryptDataArrayOutput `pulumi:"encryptDatas"`
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -160,6 +162,8 @@ type replicaState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// Encrypt data details.
+	EncryptDatas []ReplicaEncryptData `pulumi:"encryptDatas"`
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -207,6 +211,8 @@ type ReplicaState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
+	// Encrypt data details.
+	EncryptDatas ReplicaEncryptDataArrayInput
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -398,6 +404,11 @@ func (o ReplicaOutput) Description() pulumi.StringOutput {
 // (Updatable) The user-friendly name for the read replica. It does not have to be unique.
 func (o ReplicaOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Encrypt data details.
+func (o ReplicaOutput) EncryptDatas() ReplicaEncryptDataArrayOutput {
+	return o.ApplyT(func(v *Replica) ReplicaEncryptDataArrayOutput { return v.EncryptDatas }).(ReplicaEncryptDataArrayOutput)
 }
 
 // The name of the Fault Domain the read replica is located in.

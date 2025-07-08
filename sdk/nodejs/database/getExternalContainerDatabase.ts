@@ -113,6 +113,10 @@ export interface GetExternalContainerDatabaseResult {
      */
     readonly state: string;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    readonly systemTags: {[key: string]: string};
+    /**
      * The date and time the database was created.
      */
     readonly timeCreated: string;

@@ -260,6 +260,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// </summary>
+        public readonly string KmsKeyVersionId;
+        /// <summary>
         /// The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
         /// </summary>
         public readonly double LargestProvisionableAutonomousDatabaseInCpus;
@@ -351,6 +355,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string State;
         public readonly int SwitchoverTrigger;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time the Autonomous Container Database was created.
         /// </summary>
@@ -456,6 +464,8 @@ namespace Pulumi.Oci.Database
 
             string kmsKeyId,
 
+            string kmsKeyVersionId,
+
             double largestProvisionableAutonomousDatabaseInCpus,
 
             string lastMaintenanceRunId,
@@ -520,6 +530,8 @@ namespace Pulumi.Oci.Database
 
             int switchoverTrigger,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeOfLastBackup,
@@ -571,6 +583,7 @@ namespace Pulumi.Oci.Database
             KeyStoreWalletName = keyStoreWalletName;
             KeyVersionId = keyVersionId;
             KmsKeyId = kmsKeyId;
+            KmsKeyVersionId = kmsKeyVersionId;
             LargestProvisionableAutonomousDatabaseInCpus = largestProvisionableAutonomousDatabaseInCpus;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LifecycleDetails = lifecycleDetails;
@@ -603,6 +616,7 @@ namespace Pulumi.Oci.Database
             StandbyMaintenanceBufferInDays = standbyMaintenanceBufferInDays;
             State = state;
             SwitchoverTrigger = switchoverTrigger;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeOfLastBackup = timeOfLastBackup;
             TimeSnapshotStandbyRevert = timeSnapshotStandbyRevert;

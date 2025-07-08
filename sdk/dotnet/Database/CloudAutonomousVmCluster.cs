@@ -71,9 +71,11 @@ namespace Pulumi.Oci.Database
     ///         },
     ///         MemoryPerOracleComputeUnitInGbs = cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs,
     ///         NsgIds = cloudAutonomousVmClusterNsgIds,
+    ///         OpcDryRun = cloudAutonomousVmClusterOpcDryRun,
     ///         ScanListenerPortNonTls = cloudAutonomousVmClusterScanListenerPortNonTls,
     ///         ScanListenerPortTls = cloudAutonomousVmClusterScanListenerPortTls,
     ///         SecurityAttributes = cloudAutonomousVmClusterSecurityAttributes,
+    ///         SubscriptionId = testSubscription.Id,
     ///         TotalContainerDatabases = cloudAutonomousVmClusterTotalContainerDatabases,
     ///     });
     /// 
@@ -335,6 +337,12 @@ namespace Pulumi.Oci.Database
         public Output<int> OcpusLowestScaledValue { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        /// </summary>
+        [Output("opcDryRun")]
+        public Output<bool> OpcDryRun { get; private set; } = null!;
+
+        /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
         [Output("provisionableAutonomousContainerDatabases")]
@@ -401,6 +409,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.
@@ -617,6 +637,12 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        /// </summary>
+        [Input("opcDryRun")]
+        public Input<bool>? OpcDryRun { get; set; }
+
+        /// <summary>
         /// The SCAN Listener Non TLS port. Default is 1521.
         /// </summary>
         [Input("scanListenerPortNonTls")]
@@ -645,6 +671,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
         /// The last date and time that the cloud Autonomous VM cluster was updated.
@@ -943,6 +975,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? OcpusLowestScaledValue { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+        /// </summary>
+        [Input("opcDryRun")]
+        public Input<bool>? OpcDryRun { get; set; }
+
+        /// <summary>
         /// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
         /// </summary>
         [Input("provisionableAutonomousContainerDatabases")]
@@ -1015,6 +1053,24 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The date and time that the cloud Autonomous VM cluster was created.

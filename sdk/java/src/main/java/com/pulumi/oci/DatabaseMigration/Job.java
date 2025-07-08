@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseMigration.JobArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobState;
+import com.pulumi.oci.DatabaseMigration.outputs.JobCollectTracesData;
 import com.pulumi.oci.DatabaseMigration.outputs.JobParameterFileVersion;
 import com.pulumi.oci.DatabaseMigration.outputs.JobProgress;
 import com.pulumi.oci.DatabaseMigration.outputs.JobUnsupportedObject;
@@ -34,6 +35,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DatabaseMigration/job:Job")
 public class Job extends com.pulumi.resources.CustomResource {
+    /**
+     * Information regarding the DB trace and alert log collection
+     * 
+     */
+    @Export(name="collectTracesDatas", refs={List.class,JobCollectTracesData.class}, tree="[0,1]")
+    private Output<List<JobCollectTracesData>> collectTracesDatas;
+
+    /**
+     * @return Information regarding the DB trace and alert log collection
+     * 
+     */
+    public Output<List<JobCollectTracesData>> collectTracesDatas() {
+        return this.collectTracesDatas;
+    }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 

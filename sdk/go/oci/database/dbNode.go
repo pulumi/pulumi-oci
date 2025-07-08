@@ -71,6 +71,8 @@ type DbNode struct {
 	SoftwareStorageSizeInGb pulumi.IntOutput `pulumi:"softwareStorageSizeInGb"`
 	// The current state of the database node.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the database node was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// End date and time of maintenance window.
@@ -163,6 +165,8 @@ type dbNodeState struct {
 	SoftwareStorageSizeInGb *int `pulumi:"softwareStorageSizeInGb"`
 	// The current state of the database node.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the database node was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// End date and time of maintenance window.
@@ -223,6 +227,8 @@ type DbNodeState struct {
 	SoftwareStorageSizeInGb pulumi.IntPtrInput
 	// The current state of the database node.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time that the database node was created.
 	TimeCreated pulumi.StringPtrInput
 	// End date and time of maintenance window.
@@ -459,6 +465,11 @@ func (o DbNodeOutput) SoftwareStorageSizeInGb() pulumi.IntOutput {
 // The current state of the database node.
 func (o DbNodeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o DbNodeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the database node was created.

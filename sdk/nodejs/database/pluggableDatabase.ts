@@ -141,6 +141,10 @@ export class PluggableDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The existing TDE wallet password of the CDB.
      */
     public readonly tdeWalletPassword!: pulumi.Output<string>;
@@ -184,6 +188,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["shouldCreatePdbBackup"] = state ? state.shouldCreatePdbBackup : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = state ? state.shouldPdbAdminAccountBeLocked : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["tdeWalletPassword"] = state ? state.tdeWalletPassword : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
@@ -217,6 +222,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["pluggableDatabaseManagementConfigs"] = undefined /*out*/;
             resourceInputs["refreshableCloneConfigs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -321,6 +327,10 @@ export interface PluggableDatabaseState {
      * The current state of the pluggable database.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The existing TDE wallet password of the CDB.
      */

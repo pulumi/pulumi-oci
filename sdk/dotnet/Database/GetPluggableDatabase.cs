@@ -189,6 +189,10 @@ namespace Pulumi.Oci.Database
         /// The current state of the pluggable database.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TdeWalletPassword;
         /// <summary>
         /// The date and time the pluggable database was created.
@@ -245,6 +249,8 @@ namespace Pulumi.Oci.Database
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string tdeWalletPassword,
 
             string timeCreated)
@@ -273,6 +279,7 @@ namespace Pulumi.Oci.Database
             ShouldCreatePdbBackup = shouldCreatePdbBackup;
             ShouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             State = state;
+            SystemTags = systemTags;
             TdeWalletPassword = tdeWalletPassword;
             TimeCreated = timeCreated;
         }

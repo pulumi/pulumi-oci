@@ -25,6 +25,18 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ApiaccesscontrolPrivilegedApiControl{}
 	case "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest":
 		r = &ApiaccesscontrolPrivilegedApiRequest{}
+	case "oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery":
+		r = &DbmulticloudMultiCloudResourceDiscovery{}
+	case "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer":
+		r = &DbmulticloudOracleDbAzureBlobContainer{}
+	case "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount":
+		r = &DbmulticloudOracleDbAzureBlobMount{}
+	case "oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector":
+		r = &DbmulticloudOracleDbAzureConnector{}
+	case "oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault":
+		r = &DbmulticloudOracleDbAzureVault{}
+	case "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation":
+		r = &DbmulticloudOracleDbAzureVaultAssociation{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +58,36 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/apiaccesscontrolPrivilegedApiRequest",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudMultiCloudResourceDiscovery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAzureBlobContainer",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAzureBlobMount",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAzureConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAzureVault",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAzureVaultAssociation",
 		&module{version},
 	)
 }

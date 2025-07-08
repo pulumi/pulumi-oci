@@ -540,6 +540,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * 
+     */
+    @Import(name="kmsKeyVersionId")
+    private @Nullable Output<String> kmsKeyVersionId;
+
+    /**
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * 
+     */
+    public Optional<Output<String>> kmsKeyVersionId() {
+        return Optional.ofNullable(this.kmsKeyVersionId);
+    }
+
+    /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      * 
      */
@@ -1018,6 +1033,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The date and time the Autonomous Container Database was created.
      * 
      */
@@ -1160,6 +1190,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.keyStoreWalletName = $.keyStoreWalletName;
         this.keyVersionId = $.keyVersionId;
         this.kmsKeyId = $.kmsKeyId;
+        this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.largestProvisionableAutonomousDatabaseInCpus = $.largestProvisionableAutonomousDatabaseInCpus;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -1192,6 +1223,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.standbyMaintenanceBufferInDays = $.standbyMaintenanceBufferInDays;
         this.state = $.state;
         this.switchoverTrigger = $.switchoverTrigger;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeOfLastBackup = $.timeOfLastBackup;
         this.timeSnapshotStandbyRevert = $.timeSnapshotStandbyRevert;
@@ -1981,6 +2013,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         }
 
         /**
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyVersionId(@Nullable Output<String> kmsKeyVersionId) {
+            $.kmsKeyVersionId = kmsKeyVersionId;
+            return this;
+        }
+
+        /**
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            return kmsKeyVersionId(Output.of(kmsKeyVersionId));
+        }
+
+        /**
          * @param largestProvisionableAutonomousDatabaseInCpus The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
          * 
          * @return builder
@@ -2680,6 +2733,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder switchoverTrigger(Integer switchoverTrigger) {
             return switchoverTrigger(Output.of(switchoverTrigger));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

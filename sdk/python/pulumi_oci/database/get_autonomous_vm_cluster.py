@@ -28,7 +28,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_percentage=None, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, compute_model=None, cpu_core_count_per_node=None, cpu_percentage=None, cpus_enabled=None, cpus_lowest_scaled_value=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, exadata_storage_in_tbs_lowest_scaled_value=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, max_acds_lowest_scaled_value=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, node_count=None, non_provisionable_autonomous_container_databases=None, ocpus_enabled=None, provisionable_autonomous_container_databases=None, provisioned_autonomous_container_databases=None, provisioned_cpus=None, reclaimable_cpus=None, reserved_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, system_tags=None, time_created=None, time_database_ssl_certificate_expires=None, time_ords_certificate_expires=None, time_zone=None, total_autonomous_data_storage_in_tbs=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_percentage and not isinstance(autonomous_data_storage_percentage, float):
             raise TypeError("Expected argument 'autonomous_data_storage_percentage' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_percentage", autonomous_data_storage_percentage)
@@ -164,6 +164,9 @@ class GetAutonomousVmClusterResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -534,6 +537,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -638,6 +649,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             scan_listener_port_non_tls=self.scan_listener_port_non_tls,
             scan_listener_port_tls=self.scan_listener_port_tls,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_database_ssl_certificate_expires=self.time_database_ssl_certificate_expires,
             time_ords_certificate_expires=self.time_ords_certificate_expires,
@@ -717,6 +729,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[builtins.str] =
         scan_listener_port_non_tls=pulumi.get(__ret__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__ret__, 'scan_listener_port_tls'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_database_ssl_certificate_expires=pulumi.get(__ret__, 'time_database_ssl_certificate_expires'),
         time_ords_certificate_expires=pulumi.get(__ret__, 'time_ords_certificate_expires'),
@@ -793,6 +806,7 @@ def get_autonomous_vm_cluster_output(autonomous_vm_cluster_id: Optional[pulumi.I
         scan_listener_port_non_tls=pulumi.get(__response__, 'scan_listener_port_non_tls'),
         scan_listener_port_tls=pulumi.get(__response__, 'scan_listener_port_tls'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_database_ssl_certificate_expires=pulumi.get(__response__, 'time_database_ssl_certificate_expires'),
         time_ords_certificate_expires=pulumi.get(__response__, 'time_ords_certificate_expires'),

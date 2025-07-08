@@ -551,6 +551,21 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+     * 
+     */
+    @Import(name="tdeKeyStoreType")
+    private @Nullable Output<String> tdeKeyStoreType;
+
+    /**
+     * @return Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+     * 
+     */
+    public Optional<Output<String>> tdeKeyStoreType() {
+        return Optional.ofNullable(this.tdeKeyStoreType);
+    }
+
+    /**
      * The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
      */
@@ -623,6 +638,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.subnetId = $.subnetId;
         this.subscriptionId = $.subscriptionId;
         this.systemVersion = $.systemVersion;
+        this.tdeKeyStoreType = $.tdeKeyStoreType;
         this.timeZone = $.timeZone;
         this.vmClusterType = $.vmClusterType;
     }
@@ -1420,6 +1436,27 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder systemVersion(String systemVersion) {
             return systemVersion(Output.of(systemVersion));
+        }
+
+        /**
+         * @param tdeKeyStoreType Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(@Nullable Output<String> tdeKeyStoreType) {
+            $.tdeKeyStoreType = tdeKeyStoreType;
+            return this;
+        }
+
+        /**
+         * @param tdeKeyStoreType Use &#39;AZURE&#39; for installing azure encryption RPMS. Use &#39;OCI&#39; to install oracle managed encryption RPMS. Use &#39;NONE&#39; to uninstall encryption RPMS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tdeKeyStoreType(String tdeKeyStoreType) {
+            return tdeKeyStoreType(Output.of(tdeKeyStoreType));
         }
 
         /**

@@ -153,6 +153,8 @@ type VmCluster struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
 	StorageManagementType pulumi.StringOutput `pulumi:"storageManagementType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion pulumi.StringOutput `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
@@ -276,6 +278,8 @@ type vmClusterState struct {
 	State *string `pulumi:"state"`
 	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
 	StorageManagementType *string `pulumi:"storageManagementType"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
 	// The date and time that the VM cluster was created.
@@ -349,6 +353,8 @@ type VmClusterState struct {
 	State pulumi.StringPtrInput
 	// Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
 	StorageManagementType pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
 	// The date and time that the VM cluster was created.
@@ -711,6 +717,11 @@ func (o VmClusterOutput) State() pulumi.StringOutput {
 // Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
 func (o VmClusterOutput) StorageManagementType() pulumi.StringOutput {
 	return o.ApplyT(func(v *VmCluster) pulumi.StringOutput { return v.StorageManagementType }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o VmClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VmCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Operating system version of the image.

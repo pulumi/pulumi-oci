@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DatabaseMigration.inputs.JobCollectTracesDataArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobParameterFileVersionArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobProgressArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.JobUnsupportedObjectArgs;
@@ -20,6 +21,21 @@ import javax.annotation.Nullable;
 public final class JobState extends com.pulumi.resources.ResourceArgs {
 
     public static final JobState Empty = new JobState();
+
+    /**
+     * Information regarding the DB trace and alert log collection
+     * 
+     */
+    @Import(name="collectTracesDatas")
+    private @Nullable Output<List<JobCollectTracesDataArgs>> collectTracesDatas;
+
+    /**
+     * @return Information regarding the DB trace and alert log collection
+     * 
+     */
+    public Optional<Output<List<JobCollectTracesDataArgs>>> collectTracesDatas() {
+        return Optional.ofNullable(this.collectTracesDatas);
+    }
 
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -255,6 +271,7 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     private JobState() {}
 
     private JobState(JobState $) {
+        this.collectTracesDatas = $.collectTracesDatas;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
@@ -288,6 +305,37 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
 
         public Builder(JobState defaults) {
             $ = new JobState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param collectTracesDatas Information regarding the DB trace and alert log collection
+         * 
+         * @return builder
+         * 
+         */
+        public Builder collectTracesDatas(@Nullable Output<List<JobCollectTracesDataArgs>> collectTracesDatas) {
+            $.collectTracesDatas = collectTracesDatas;
+            return this;
+        }
+
+        /**
+         * @param collectTracesDatas Information regarding the DB trace and alert log collection
+         * 
+         * @return builder
+         * 
+         */
+        public Builder collectTracesDatas(List<JobCollectTracesDataArgs> collectTracesDatas) {
+            return collectTracesDatas(Output.of(collectTracesDatas));
+        }
+
+        /**
+         * @param collectTracesDatas Information regarding the DB trace and alert log collection
+         * 
+         * @return builder
+         * 
+         */
+        public Builder collectTracesDatas(JobCollectTracesDataArgs... collectTracesDatas) {
+            return collectTracesDatas(List.of(collectTracesDatas));
         }
 
         /**

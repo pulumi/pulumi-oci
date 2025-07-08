@@ -28,7 +28,7 @@ class GetExternalContainerDatabaseResult:
     """
     A collection of values returned by getExternalContainerDatabase.
     """
-    def __init__(__self__, character_set=None, compartment_id=None, database_configuration=None, database_edition=None, database_management_configs=None, database_version=None, db_id=None, db_packs=None, db_unique_name=None, defined_tags=None, display_name=None, external_container_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, ncharacter_set=None, stack_monitoring_configs=None, state=None, time_created=None, time_zone=None):
+    def __init__(__self__, character_set=None, compartment_id=None, database_configuration=None, database_edition=None, database_management_configs=None, database_version=None, db_id=None, db_packs=None, db_unique_name=None, defined_tags=None, display_name=None, external_container_database_id=None, freeform_tags=None, id=None, lifecycle_details=None, ncharacter_set=None, stack_monitoring_configs=None, state=None, system_tags=None, time_created=None, time_zone=None):
         if character_set and not isinstance(character_set, str):
             raise TypeError("Expected argument 'character_set' to be a str")
         pulumi.set(__self__, "character_set", character_set)
@@ -83,6 +83,9 @@ class GetExternalContainerDatabaseResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -232,6 +235,14 @@ class GetExternalContainerDatabaseResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -272,6 +283,7 @@ class AwaitableGetExternalContainerDatabaseResult(GetExternalContainerDatabaseRe
             ncharacter_set=self.ncharacter_set,
             stack_monitoring_configs=self.stack_monitoring_configs,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_zone=self.time_zone)
 
@@ -319,6 +331,7 @@ def get_external_container_database(external_container_database_id: Optional[bui
         ncharacter_set=pulumi.get(__ret__, 'ncharacter_set'),
         stack_monitoring_configs=pulumi.get(__ret__, 'stack_monitoring_configs'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'))
 def get_external_container_database_output(external_container_database_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -363,5 +376,6 @@ def get_external_container_database_output(external_container_database_id: Optio
         ncharacter_set=pulumi.get(__response__, 'ncharacter_set'),
         stack_monitoring_configs=pulumi.get(__response__, 'stack_monitoring_configs'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone')))

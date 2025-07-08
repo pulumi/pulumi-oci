@@ -40,6 +40,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotDataStorageArgsDict',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgs',
     'MysqlBackupDbSystemSnapshotDeletionPolicyArgsDict',
+    'MysqlBackupDbSystemSnapshotEncryptDataArgs',
+    'MysqlBackupDbSystemSnapshotEncryptDataArgsDict',
     'MysqlBackupDbSystemSnapshotEndpointArgs',
     'MysqlBackupDbSystemSnapshotEndpointArgsDict',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
@@ -52,6 +54,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotSecureConnectionArgsDict',
     'MysqlBackupDbSystemSnapshotSummaryArgs',
     'MysqlBackupDbSystemSnapshotSummaryArgsDict',
+    'MysqlBackupEncryptDataArgs',
+    'MysqlBackupEncryptDataArgsDict',
     'MysqlBackupSourceDetailsArgs',
     'MysqlBackupSourceDetailsArgsDict',
     'MysqlConfigurationInitVariablesArgs',
@@ -84,6 +88,8 @@ __all__ = [
     'MysqlDbSystemDataStorageArgsDict',
     'MysqlDbSystemDeletionPolicyArgs',
     'MysqlDbSystemDeletionPolicyArgsDict',
+    'MysqlDbSystemEncryptDataArgs',
+    'MysqlDbSystemEncryptDataArgsDict',
     'MysqlDbSystemEndpointArgs',
     'MysqlDbSystemEndpointArgsDict',
     'MysqlDbSystemHeatWaveClusterArgs',
@@ -100,6 +106,8 @@ __all__ = [
     'MysqlDbSystemSecureConnectionsArgsDict',
     'MysqlDbSystemSourceArgs',
     'MysqlDbSystemSourceArgsDict',
+    'ReplicaEncryptDataArgs',
+    'ReplicaEncryptDataArgsDict',
     'ReplicaReplicaOverridesArgs',
     'ReplicaReplicaOverridesArgsDict',
     'ReplicaSecureConnectionArgs',
@@ -803,6 +811,10 @@ if not MYPY:
         """
         (Updatable) A user-supplied display name for the backup.
         """
+        encrypt_datas: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgsDict']]]]
+        """
+        Encrypt data details.
+        """
         endpoints: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgsDict']]]]
         """
         The network endpoints available for this DB System.
@@ -894,6 +906,7 @@ class MysqlBackupDbSystemSnapshotArgs:
                  deletion_policies: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
+                 encrypt_datas: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgs']]]] = None,
                  endpoints: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgs']]]] = None,
                  fault_domain: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
@@ -926,6 +939,7 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotDeletionPolicyArgs']]] deletion_policies: The Deletion policy for the DB System.
         :param pulumi.Input[builtins.str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-supplied display name for the backup.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgs']]] encrypt_datas: Encrypt data details.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEndpointArgs']]] endpoints: The network endpoints available for this DB System.
         :param pulumi.Input[builtins.str] fault_domain: The name of the Fault Domain the DB System is located in.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -971,6 +985,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if encrypt_datas is not None:
+            pulumi.set(__self__, "encrypt_datas", encrypt_datas)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
         if fault_domain is not None:
@@ -1163,6 +1179,18 @@ class MysqlBackupDbSystemSnapshotArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="encryptDatas")
+    def encrypt_datas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgs']]]]:
+        """
+        Encrypt data details.
+        """
+        return pulumi.get(self, "encrypt_datas")
+
+    @encrypt_datas.setter
+    def encrypt_datas(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotEncryptDataArgs']]]]):
+        pulumi.set(self, "encrypt_datas", value)
 
     @property
     @pulumi.getter
@@ -1822,6 +1850,58 @@ class MysqlBackupDbSystemSnapshotDeletionPolicyArgs:
 
 
 if not MYPY:
+    class MysqlBackupDbSystemSnapshotEncryptDataArgsDict(TypedDict):
+        key_generation_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the key to use.
+        """
+elif False:
+    MysqlBackupDbSystemSnapshotEncryptDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotEncryptDataArgs:
+    def __init__(__self__, *,
+                 key_generation_type: Optional[pulumi.Input[builtins.str]] = None,
+                 key_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key_generation_type: Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        :param pulumi.Input[builtins.str] key_id: The OCID of the key to use.
+        """
+        if key_generation_type is not None:
+            pulumi.set(__self__, "key_generation_type", key_generation_type)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+
+    @property
+    @pulumi.getter(name="keyGenerationType")
+    def key_generation_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        return pulumi.get(self, "key_generation_type")
+
+    @key_generation_type.setter
+    def key_generation_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_generation_type", value)
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the key to use.
+        """
+        return pulumi.get(self, "key_id")
+
+    @key_id.setter
+    def key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_id", value)
+
+
+if not MYPY:
     class MysqlBackupDbSystemSnapshotEndpointArgsDict(TypedDict):
         hostname: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -2311,6 +2391,57 @@ class MysqlBackupDbSystemSnapshotSummaryArgs:
     @region.setter
     def region(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "region", value)
+
+
+if not MYPY:
+    class MysqlBackupEncryptDataArgsDict(TypedDict):
+        key_generation_type: pulumi.Input[builtins.str]
+        """
+        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the key to use.
+        """
+elif False:
+    MysqlBackupEncryptDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupEncryptDataArgs:
+    def __init__(__self__, *,
+                 key_generation_type: pulumi.Input[builtins.str],
+                 key_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key_generation_type: Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        :param pulumi.Input[builtins.str] key_id: The OCID of the key to use.
+        """
+        pulumi.set(__self__, "key_generation_type", key_generation_type)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+
+    @property
+    @pulumi.getter(name="keyGenerationType")
+    def key_generation_type(self) -> pulumi.Input[builtins.str]:
+        """
+        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        return pulumi.get(self, "key_generation_type")
+
+    @key_generation_type.setter
+    def key_generation_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "key_generation_type", value)
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the key to use.
+        """
+        return pulumi.get(self, "key_id")
+
+    @key_id.setter
+    def key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_id", value)
 
 
 if not MYPY:
@@ -6757,6 +6888,57 @@ class MysqlDbSystemDeletionPolicyArgs:
 
 
 if not MYPY:
+    class MysqlDbSystemEncryptDataArgsDict(TypedDict):
+        key_generation_type: pulumi.Input[builtins.str]
+        """
+        (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) The OCID of the key to use.
+        """
+elif False:
+    MysqlDbSystemEncryptDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlDbSystemEncryptDataArgs:
+    def __init__(__self__, *,
+                 key_generation_type: pulumi.Input[builtins.str],
+                 key_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key_generation_type: (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        :param pulumi.Input[builtins.str] key_id: (Updatable) The OCID of the key to use.
+        """
+        pulumi.set(__self__, "key_generation_type", key_generation_type)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+
+    @property
+    @pulumi.getter(name="keyGenerationType")
+    def key_generation_type(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        return pulumi.get(self, "key_generation_type")
+
+    @key_generation_type.setter
+    def key_generation_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "key_generation_type", value)
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) The OCID of the key to use.
+        """
+        return pulumi.get(self, "key_id")
+
+    @key_id.setter
+    def key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_id", value)
+
+
+if not MYPY:
     class MysqlDbSystemEndpointArgsDict(TypedDict):
         hostname: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -7505,6 +7687,58 @@ class MysqlDbSystemSourceArgs:
     @source_url.setter
     def source_url(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "source_url", value)
+
+
+if not MYPY:
+    class ReplicaEncryptDataArgsDict(TypedDict):
+        key_generation_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        key_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The OCID of the key to use.
+        """
+elif False:
+    ReplicaEncryptDataArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ReplicaEncryptDataArgs:
+    def __init__(__self__, *,
+                 key_generation_type: Optional[pulumi.Input[builtins.str]] = None,
+                 key_id: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] key_generation_type: Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        :param pulumi.Input[builtins.str] key_id: The OCID of the key to use.
+        """
+        if key_generation_type is not None:
+            pulumi.set(__self__, "key_generation_type", key_generation_type)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+
+    @property
+    @pulumi.getter(name="keyGenerationType")
+    def key_generation_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
+        """
+        return pulumi.get(self, "key_generation_type")
+
+    @key_generation_type.setter
+    def key_generation_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_generation_type", value)
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The OCID of the key to use.
+        """
+        return pulumi.get(self, "key_id")
+
+    @key_id.setter
+    def key_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "key_id", value)
 
 
 if not MYPY:

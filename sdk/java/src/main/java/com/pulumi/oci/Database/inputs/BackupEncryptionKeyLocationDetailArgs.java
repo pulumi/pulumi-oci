@@ -16,6 +16,21 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     public static final BackupEncryptionKeyLocationDetailArgs Empty = new BackupEncryptionKeyLocationDetailArgs();
 
     /**
+     * The key OCID of a registered Azure key.
+     * 
+     */
+    @Import(name="azureEncryptionKeyId")
+    private @Nullable Output<String> azureEncryptionKeyId;
+
+    /**
+     * @return The key OCID of a registered Azure key.
+     * 
+     */
+    public Optional<Output<String>> azureEncryptionKeyId() {
+        return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+
+    /**
      * Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
@@ -31,14 +46,14 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     }
 
     /**
-     * Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     @Import(name="providerType")
     private @Nullable Output<String> providerType;
 
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     public Optional<Output<String>> providerType() {
@@ -48,6 +63,7 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     private BackupEncryptionKeyLocationDetailArgs() {}
 
     private BackupEncryptionKeyLocationDetailArgs(BackupEncryptionKeyLocationDetailArgs $) {
+        this.azureEncryptionKeyId = $.azureEncryptionKeyId;
         this.hsmPassword = $.hsmPassword;
         this.providerType = $.providerType;
     }
@@ -68,6 +84,27 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
 
         public Builder(BackupEncryptionKeyLocationDetailArgs defaults) {
             $ = new BackupEncryptionKeyLocationDetailArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param azureEncryptionKeyId The key OCID of a registered Azure key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureEncryptionKeyId(@Nullable Output<String> azureEncryptionKeyId) {
+            $.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param azureEncryptionKeyId The key OCID of a registered Azure key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
+            return azureEncryptionKeyId(Output.of(azureEncryptionKeyId));
         }
 
         /**
@@ -92,7 +129,7 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
          * 
          * @return builder
          * 
@@ -103,7 +140,7 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
         }
 
         /**
-         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+         * @param providerType Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
          * 
          * @return builder
          * 

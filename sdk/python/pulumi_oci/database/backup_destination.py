@@ -196,6 +196,7 @@ class _BackupDestinationState:
                  nfs_server_export: Optional[pulumi.Input[builtins.str]] = None,
                  nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_at_which_storage_details_are_updated: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  total_storage_size_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
@@ -217,6 +218,7 @@ class _BackupDestinationState:
         :param pulumi.Input[builtins.str] nfs_server_export: Specifies the directory on which to mount the file system
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.
         :param pulumi.Input[builtins.str] state: The current lifecycle state of the backup destination.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_at_which_storage_details_are_updated: The time when the total storage size and the utilized storage size of the backup destination are updated.
         :param pulumi.Input[builtins.str] time_created: The date and time the backup destination was created.
         :param pulumi.Input[builtins.int] total_storage_size_in_gbs: The total storage size of the backup destination in GBs, rounded to the nearest integer.
@@ -257,6 +259,8 @@ class _BackupDestinationState:
             pulumi.set(__self__, "nfs_servers", nfs_servers)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_at_which_storage_details_are_updated is not None:
             pulumi.set(__self__, "time_at_which_storage_details_are_updated", time_at_which_storage_details_are_updated)
         if time_created is not None:
@@ -426,6 +430,18 @@ class _BackupDestinationState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @property
     @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")
@@ -672,6 +688,7 @@ class BackupDestination(pulumi.CustomResource):
             __props__.__dict__["nfs_server_export"] = None
             __props__.__dict__["nfs_servers"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_at_which_storage_details_are_updated"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["total_storage_size_in_gbs"] = None
@@ -699,6 +716,7 @@ class BackupDestination(pulumi.CustomResource):
             nfs_server_export: Optional[pulumi.Input[builtins.str]] = None,
             nfs_servers: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_at_which_storage_details_are_updated: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             total_storage_size_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
@@ -725,6 +743,7 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] nfs_server_export: Specifies the directory on which to mount the file system
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.
         :param pulumi.Input[builtins.str] state: The current lifecycle state of the backup destination.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] time_at_which_storage_details_are_updated: The time when the total storage size and the utilized storage size of the backup destination are updated.
         :param pulumi.Input[builtins.str] time_created: The date and time the backup destination was created.
         :param pulumi.Input[builtins.int] total_storage_size_in_gbs: The total storage size of the backup destination in GBs, rounded to the nearest integer.
@@ -753,6 +772,7 @@ class BackupDestination(pulumi.CustomResource):
         __props__.__dict__["nfs_server_export"] = nfs_server_export
         __props__.__dict__["nfs_servers"] = nfs_servers
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_at_which_storage_details_are_updated"] = time_at_which_storage_details_are_updated
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["total_storage_size_in_gbs"] = total_storage_size_in_gbs
@@ -865,6 +885,14 @@ class BackupDestination(pulumi.CustomResource):
         The current lifecycle state of the backup destination.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
 
     @property
     @pulumi.getter(name="timeAtWhichStorageDetailsAreUpdated")

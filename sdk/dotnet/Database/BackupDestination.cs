@@ -139,6 +139,12 @@ namespace Pulumi.Oci.Database
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// The time when the total storage size and the utilized storage size of the backup destination are updated.
         /// </summary>
         [Output("timeAtWhichStorageDetailsAreUpdated")]
@@ -409,6 +415,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time when the total storage size and the utilized storage size of the backup destination are updated.

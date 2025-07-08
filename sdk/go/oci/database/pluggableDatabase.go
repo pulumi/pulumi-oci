@@ -76,6 +76,8 @@ type PluggableDatabase struct {
 	ShouldPdbAdminAccountBeLocked pulumi.BoolOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The existing TDE wallet password of the CDB.
 	TdeWalletPassword pulumi.StringOutput `pulumi:"tdeWalletPassword"`
 	// The date and time the pluggable database was created.
@@ -181,6 +183,8 @@ type pluggableDatabaseState struct {
 	ShouldPdbAdminAccountBeLocked *bool `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The existing TDE wallet password of the CDB.
 	TdeWalletPassword *string `pulumi:"tdeWalletPassword"`
 	// The date and time the pluggable database was created.
@@ -236,6 +240,8 @@ type PluggableDatabaseState struct {
 	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrInput
 	// The current state of the pluggable database.
 	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The existing TDE wallet password of the CDB.
 	TdeWalletPassword pulumi.StringPtrInput
 	// The date and time the pluggable database was created.
@@ -524,6 +530,11 @@ func (o PluggableDatabaseOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolOutp
 // The current state of the pluggable database.
 func (o PluggableDatabaseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabase) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o PluggableDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabase) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The existing TDE wallet password of the CDB.

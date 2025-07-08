@@ -170,6 +170,10 @@ export class MaintenanceRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The target software version for the database server patching operation.
      */
     public /*out*/ readonly targetDbServerVersion!: pulumi.Output<string>;
@@ -244,6 +248,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["peerMaintenanceRunId"] = state ? state.peerMaintenanceRunId : undefined;
             resourceInputs["peerMaintenanceRunIds"] = state ? state.peerMaintenanceRunIds : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["targetDbServerVersion"] = state ? state.targetDbServerVersion : undefined;
             resourceInputs["targetResourceId"] = state ? state.targetResourceId : undefined;
             resourceInputs["targetResourceType"] = state ? state.targetResourceType : undefined;
@@ -290,6 +295,7 @@ export class MaintenanceRun extends pulumi.CustomResource {
             resourceInputs["peerMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["peerMaintenanceRunIds"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetDbServerVersion"] = undefined /*out*/;
             resourceInputs["targetResourceType"] = undefined /*out*/;
             resourceInputs["targetStorageServerVersion"] = undefined /*out*/;
@@ -408,6 +414,10 @@ export interface MaintenanceRunState {
      * The current state of the maintenance run. For Autonomous Database Serverless instances, valid states are IN_PROGRESS, SUCCEEDED, and FAILED.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The target software version for the database server patching operation.
      */

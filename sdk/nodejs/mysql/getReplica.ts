@@ -72,6 +72,10 @@ export interface GetReplicaResult {
      */
     readonly displayName: string;
     /**
+     * Encrypt data details.
+     */
+    readonly encryptDatas: outputs.Mysql.GetReplicaEncryptData[];
+    /**
      * The name of the Fault Domain the read replica is located in.
      */
     readonly faultDomain: string;

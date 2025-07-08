@@ -116,6 +116,11 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the database was created.
      * 
      */
@@ -268,6 +273,13 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the database was created.
      * 
      */
@@ -311,6 +323,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
         private String sourceId;
         private List<GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig> stackMonitoringConfigs;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeZone;
         public Builder() {}
@@ -336,6 +349,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
     	      this.sourceId = defaults.sourceId;
     	      this.stackMonitoringConfigs = defaults.stackMonitoringConfigs;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
         }
@@ -510,6 +524,14 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetExternalPluggableDatabasesExternalPluggableDatabase", "timeCreated");
@@ -547,6 +569,7 @@ public final class GetExternalPluggableDatabasesExternalPluggableDatabase {
             _resultValue.sourceId = sourceId;
             _resultValue.stackMonitoringConfigs = stackMonitoringConfigs;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             return _resultValue;

@@ -12,17 +12,29 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackupEncryptionKeyLocationDetail {
     /**
+     * @return The key OCID of a registered Azure key.
+     * 
+     */
+    private @Nullable String azureEncryptionKeyId;
+    /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
     private @Nullable String hsmPassword;
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     private @Nullable String providerType;
 
     private BackupEncryptionKeyLocationDetail() {}
+    /**
+     * @return The key OCID of a registered Azure key.
+     * 
+     */
+    public Optional<String> azureEncryptionKeyId() {
+        return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
     /**
      * @return Provide the HSM password as you would in RDBMS for External HSM.
      * 
@@ -31,7 +43,7 @@ public final class BackupEncryptionKeyLocationDetail {
         return Optional.ofNullable(this.hsmPassword);
     }
     /**
-     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrate database key with External HSM.
+     * @return Use &#39;EXTERNAL&#39; for creating a new database or migrating a database key to an External HSM. Use &#39;AZURE&#39; for creating a new database or migrating a database key to Azure.
      * 
      */
     public Optional<String> providerType() {
@@ -47,15 +59,23 @@ public final class BackupEncryptionKeyLocationDetail {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String azureEncryptionKeyId;
         private @Nullable String hsmPassword;
         private @Nullable String providerType;
         public Builder() {}
         public Builder(BackupEncryptionKeyLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
     	      this.providerType = defaults.providerType;
         }
 
+        @CustomType.Setter
+        public Builder azureEncryptionKeyId(@Nullable String azureEncryptionKeyId) {
+
+            this.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
         @CustomType.Setter
         public Builder hsmPassword(@Nullable String hsmPassword) {
 
@@ -70,6 +90,7 @@ public final class BackupEncryptionKeyLocationDetail {
         }
         public BackupEncryptionKeyLocationDetail build() {
             final var _resultValue = new BackupEncryptionKeyLocationDetail();
+            _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;
             _resultValue.providerType = providerType;
             return _resultValue;

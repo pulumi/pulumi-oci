@@ -28,7 +28,7 @@ class GetDbHomeResult:
     """
     A collection of values returned by getDbHome.
     """
-    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, id=None, is_desupported_version=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, time_created=None, vm_cluster_id=None):
+    def __init__(__self__, compartment_id=None, database_software_image_id=None, databases=None, db_home_id=None, db_home_location=None, db_system_id=None, db_version=None, defined_tags=None, display_name=None, enable_database_delete=None, freeform_tags=None, id=None, is_desupported_version=None, is_unified_auditing_enabled=None, kms_key_id=None, kms_key_version_id=None, last_patch_history_entry_id=None, lifecycle_details=None, source=None, state=None, system_tags=None, time_created=None, vm_cluster_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -89,6 +89,9 @@ class GetDbHomeResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -239,6 +242,14 @@ class GetDbHomeResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -281,6 +292,7 @@ class AwaitableGetDbHomeResult(GetDbHomeResult):
             lifecycle_details=self.lifecycle_details,
             source=self.source,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             vm_cluster_id=self.vm_cluster_id)
 
@@ -330,6 +342,7 @@ def get_db_home(db_home_id: Optional[builtins.str] = None,
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         source=pulumi.get(__ret__, 'source'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         vm_cluster_id=pulumi.get(__ret__, 'vm_cluster_id'))
 def get_db_home_output(db_home_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -376,5 +389,6 @@ def get_db_home_output(db_home_id: Optional[pulumi.Input[builtins.str]] = None,
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         source=pulumi.get(__response__, 'source'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         vm_cluster_id=pulumi.get(__response__, 'vm_cluster_id')))

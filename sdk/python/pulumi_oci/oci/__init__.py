@@ -8,6 +8,12 @@ import typing
 # Export this package's modules as members:
 from .apiaccesscontrol_privileged_api_control import *
 from .apiaccesscontrol_privileged_api_request import *
+from .dbmulticloud_multi_cloud_resource_discovery import *
+from .dbmulticloud_oracle_db_azure_blob_container import *
+from .dbmulticloud_oracle_db_azure_blob_mount import *
+from .dbmulticloud_oracle_db_azure_connector import *
+from .dbmulticloud_oracle_db_azure_vault import *
+from .dbmulticloud_oracle_db_azure_vault_association import *
 from .get_apiaccesscontrol_api_metadata import *
 from .get_apiaccesscontrol_api_metadata_by_entity_types import *
 from .get_apiaccesscontrol_api_metadatas import *
@@ -15,6 +21,20 @@ from .get_apiaccesscontrol_privileged_api_control import *
 from .get_apiaccesscontrol_privileged_api_controls import *
 from .get_apiaccesscontrol_privileged_api_request import *
 from .get_apiaccesscontrol_privileged_api_requests import *
+from .get_dbmulticloud_multi_cloud_resource_discoveries import *
+from .get_dbmulticloud_multi_cloud_resource_discovery import *
+from .get_dbmulticloud_oracle_db_azure_blob_container import *
+from .get_dbmulticloud_oracle_db_azure_blob_containers import *
+from .get_dbmulticloud_oracle_db_azure_blob_mount import *
+from .get_dbmulticloud_oracle_db_azure_blob_mounts import *
+from .get_dbmulticloud_oracle_db_azure_connector import *
+from .get_dbmulticloud_oracle_db_azure_connectors import *
+from .get_dbmulticloud_oracle_db_azure_key import *
+from .get_dbmulticloud_oracle_db_azure_keys import *
+from .get_dbmulticloud_oracle_db_azure_vault import *
+from .get_dbmulticloud_oracle_db_azure_vault_association import *
+from .get_dbmulticloud_oracle_db_azure_vault_associations import *
+from .get_dbmulticloud_oracle_db_azure_vaults import *
 from .get_wlms_managed_instance import *
 from .get_wlms_managed_instance_scan_results import *
 from .get_wlms_managed_instance_server import *

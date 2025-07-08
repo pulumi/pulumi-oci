@@ -162,6 +162,11 @@ public final class GetVmClusterResult {
      */
     private String storageManagementType;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return Operating system version of the image.
      * 
      */
@@ -395,6 +400,13 @@ public final class GetVmClusterResult {
         return this.storageManagementType;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return Operating system version of the image.
      * 
      */
@@ -473,6 +485,7 @@ public final class GetVmClusterResult {
         private List<String> sshPublicKeys;
         private String state;
         private String storageManagementType;
+        private Map<String,String> systemTags;
         private String systemVersion;
         private String timeCreated;
         private String timeZone;
@@ -513,6 +526,7 @@ public final class GetVmClusterResult {
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
     	      this.storageManagementType = defaults.storageManagementType;
+    	      this.systemTags = defaults.systemTags;
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -785,6 +799,14 @@ public final class GetVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetVmClusterResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemVersion(String systemVersion) {
             if (systemVersion == null) {
               throw new MissingRequiredPropertyException("GetVmClusterResult", "systemVersion");
@@ -865,6 +887,7 @@ public final class GetVmClusterResult {
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
             _resultValue.storageManagementType = storageManagementType;
+            _resultValue.systemTags = systemTags;
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;

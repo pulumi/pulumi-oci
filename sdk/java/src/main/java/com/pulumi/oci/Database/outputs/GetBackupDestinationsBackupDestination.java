@@ -86,6 +86,11 @@ public final class GetBackupDestinationsBackupDestination {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
      * 
      */
@@ -216,6 +221,13 @@ public final class GetBackupDestinationsBackupDestination {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The time when the total storage size and the utilized storage size of the backup destination are updated.
      * 
      */
@@ -281,6 +293,7 @@ public final class GetBackupDestinationsBackupDestination {
         private String nfsServerExport;
         private List<String> nfsServers;
         private String state;
+        private Map<String,String> systemTags;
         private String timeAtWhichStorageDetailsAreUpdated;
         private String timeCreated;
         private Integer totalStorageSizeInGbs;
@@ -304,6 +317,7 @@ public final class GetBackupDestinationsBackupDestination {
     	      this.nfsServerExport = defaults.nfsServerExport;
     	      this.nfsServers = defaults.nfsServers;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeAtWhichStorageDetailsAreUpdated = defaults.timeAtWhichStorageDetailsAreUpdated;
     	      this.timeCreated = defaults.timeCreated;
     	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
@@ -434,6 +448,14 @@ public final class GetBackupDestinationsBackupDestination {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeAtWhichStorageDetailsAreUpdated(String timeAtWhichStorageDetailsAreUpdated) {
             if (timeAtWhichStorageDetailsAreUpdated == null) {
               throw new MissingRequiredPropertyException("GetBackupDestinationsBackupDestination", "timeAtWhichStorageDetailsAreUpdated");
@@ -500,6 +522,7 @@ public final class GetBackupDestinationsBackupDestination {
             _resultValue.nfsServerExport = nfsServerExport;
             _resultValue.nfsServers = nfsServers;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
             _resultValue.timeCreated = timeCreated;
             _resultValue.totalStorageSizeInGbs = totalStorageSizeInGbs;

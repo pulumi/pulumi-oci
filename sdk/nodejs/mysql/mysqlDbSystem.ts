@@ -66,6 +66,10 @@ import * as utilities from "../utilities";
  *     }],
  *     description: mysqlDbSystemDescription,
  *     displayName: mysqlDbSystemDisplayName,
+ *     encryptData: {
+ *         keyGenerationType: mysqlDbSystemEncryptDataKeyGenerationType,
+ *         keyId: testKey.id,
+ *     },
  *     faultDomain: mysqlDbSystemFaultDomain,
  *     freeformTags: {
  *         "bar-key": "value",
@@ -221,6 +225,10 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
+     * (Updatable) Encrypt data details.
+     */
+    public readonly encryptData!: pulumi.Output<outputs.Mysql.MysqlDbSystemEncryptData>;
+    /**
      * The network endpoints available for this DB System.
      */
     public /*out*/ readonly endpoints!: pulumi.Output<outputs.Mysql.MysqlDbSystemEndpoint[]>;
@@ -371,6 +379,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["deletionPolicies"] = state ? state.deletionPolicies : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["encryptData"] = state ? state.encryptData : undefined;
             resourceInputs["endpoints"] = state ? state.endpoints : undefined;
             resourceInputs["faultDomain"] = state ? state.faultDomain : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -428,6 +437,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["deletionPolicies"] = args ? args.deletionPolicies : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
+            resourceInputs["encryptData"] = args ? args.encryptData : undefined;
             resourceInputs["faultDomain"] = args ? args.faultDomain : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["hostnameLabel"] = args ? args.hostnameLabel : undefined;
@@ -552,6 +562,10 @@ export interface MysqlDbSystemState {
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Encrypt data details.
+     */
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlDbSystemEncryptData>;
     /**
      * The network endpoints available for this DB System.
      */
@@ -752,6 +766,10 @@ export interface MysqlDbSystemArgs {
      * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * (Updatable) Encrypt data details.
+     */
+    encryptData?: pulumi.Input<inputs.Mysql.MysqlDbSystemEncryptData>;
     /**
      * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
      *

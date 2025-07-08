@@ -98,6 +98,11 @@ public final class GetPluggableDatabasesPluggableDatabase {
      * 
      */
     private String state;
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
     private String tdeWalletPassword;
     /**
      * @return The date and time the pluggable database was created.
@@ -231,6 +236,13 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public String state() {
         return this.state;
     }
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
     public String tdeWalletPassword() {
         return this.tdeWalletPassword;
     }
@@ -274,6 +286,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
         private Boolean shouldCreatePdbBackup;
         private Boolean shouldPdbAdminAccountBeLocked;
         private String state;
+        private Map<String,String> systemTags;
         private String tdeWalletPassword;
         private String timeCreated;
         public Builder() {}
@@ -302,6 +315,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
     	      this.shouldCreatePdbBackup = defaults.shouldCreatePdbBackup;
     	      this.shouldPdbAdminAccountBeLocked = defaults.shouldPdbAdminAccountBeLocked;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -506,6 +520,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabase", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             if (tdeWalletPassword == null) {
               throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabase", "tdeWalletPassword");
@@ -546,6 +568,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
             _resultValue.shouldCreatePdbBackup = shouldCreatePdbBackup;
             _resultValue.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

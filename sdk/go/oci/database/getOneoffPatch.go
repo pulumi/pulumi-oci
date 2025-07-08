@@ -84,6 +84,8 @@ type LookupOneoffPatchResult struct {
 	SizeInKbs float64 `pulumi:"sizeInKbs"`
 	// The current state of the one-off patch.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time one-off patch was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time until which the one-off patch will be available for download.
@@ -192,6 +194,11 @@ func (o LookupOneoffPatchResultOutput) SizeInKbs() pulumi.Float64Output {
 // The current state of the one-off patch.
 func (o LookupOneoffPatchResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOneoffPatchResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupOneoffPatchResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time one-off patch was created.

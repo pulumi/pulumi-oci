@@ -93,6 +93,8 @@ type LookupExternalContainerDatabaseResult struct {
 	StackMonitoringConfigs []GetExternalContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
 	// The current state of the Oracle Cloud Infrastructure external database resource.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the database was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
@@ -224,6 +226,11 @@ func (o LookupExternalContainerDatabaseResultOutput) StackMonitoringConfigs() Ge
 // The current state of the Oracle Cloud Infrastructure external database resource.
 func (o LookupExternalContainerDatabaseResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupExternalContainerDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalContainerDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the database was created.

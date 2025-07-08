@@ -117,6 +117,10 @@ export class OneoffPatch extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time one-off patch was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -154,6 +158,7 @@ export class OneoffPatch extends pulumi.CustomResource {
             resourceInputs["sha256sum"] = state ? state.sha256sum : undefined;
             resourceInputs["sizeInKbs"] = state ? state.sizeInKbs : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeOfExpiration"] = state ? state.timeOfExpiration : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -183,6 +188,7 @@ export class OneoffPatch extends pulumi.CustomResource {
             resourceInputs["sha256sum"] = undefined /*out*/;
             resourceInputs["sizeInKbs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeOfExpiration"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -248,6 +254,10 @@ export interface OneoffPatchState {
      * The current state of the one-off patch.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time one-off patch was created.
      */

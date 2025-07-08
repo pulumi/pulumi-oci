@@ -101,6 +101,8 @@ type LookupDbNodeResult struct {
 	SoftwareStorageSizeInGb int `pulumi:"softwareStorageSizeInGb"`
 	// The current state of the database node.
 	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the database node was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// End date and time of maintenance window.
@@ -256,6 +258,11 @@ func (o LookupDbNodeResultOutput) SoftwareStorageSizeInGb() pulumi.IntOutput {
 // The current state of the database node.
 func (o LookupDbNodeResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o LookupDbNodeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbNodeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the database node was created.

@@ -27,7 +27,7 @@ class GetDbNodeResult:
     """
     A collection of values returned by getDbNode.
     """
-    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
+    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_ipv6id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, host_ipv6id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, system_tags=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
         if additional_details and not isinstance(additional_details, str):
             raise TypeError("Expected argument 'additional_details' to be a str")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -94,6 +94,9 @@ class GetDbNodeResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -287,6 +290,14 @@ class GetDbNodeResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> builtins.str:
         """
@@ -363,6 +374,7 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
             memory_size_in_gbs=self.memory_size_in_gbs,
             software_storage_size_in_gb=self.software_storage_size_in_gb,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_maintenance_window_end=self.time_maintenance_window_end,
             time_maintenance_window_start=self.time_maintenance_window_start,
@@ -418,6 +430,7 @@ def get_db_node(db_node_id: Optional[builtins.str] = None,
         memory_size_in_gbs=pulumi.get(__ret__, 'memory_size_in_gbs'),
         software_storage_size_in_gb=pulumi.get(__ret__, 'software_storage_size_in_gb'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_maintenance_window_end=pulumi.get(__ret__, 'time_maintenance_window_end'),
         time_maintenance_window_start=pulumi.get(__ret__, 'time_maintenance_window_start'),
@@ -470,6 +483,7 @@ def get_db_node_output(db_node_id: Optional[pulumi.Input[builtins.str]] = None,
         memory_size_in_gbs=pulumi.get(__response__, 'memory_size_in_gbs'),
         software_storage_size_in_gb=pulumi.get(__response__, 'software_storage_size_in_gb'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_maintenance_window_end=pulumi.get(__response__, 'time_maintenance_window_end'),
         time_maintenance_window_start=pulumi.get(__response__, 'time_maintenance_window_start'),

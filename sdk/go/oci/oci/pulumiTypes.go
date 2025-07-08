@@ -367,6 +367,281 @@ func (o ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayOutput) 
 	}).(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListOutput)
 }
 
+type DbmulticloudMultiCloudResourceDiscoveryResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id *string `pulumi:"id"`
+	// Discovered Resource Location.
+	Location *string `pulumi:"location"`
+	// Discovered Resource Name.
+	Name *string `pulumi:"name"`
+	// Discovered Resource's properties.
+	Properties map[string]string `pulumi:"properties"`
+	// Discovered Resource Group Name.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// Discovered Resource Type.
+	Type *string `pulumi:"type"`
+}
+
+// DbmulticloudMultiCloudResourceDiscoveryResourceInput is an input type that accepts DbmulticloudMultiCloudResourceDiscoveryResourceArgs and DbmulticloudMultiCloudResourceDiscoveryResourceOutput values.
+// You can construct a concrete instance of `DbmulticloudMultiCloudResourceDiscoveryResourceInput` via:
+//
+//	DbmulticloudMultiCloudResourceDiscoveryResourceArgs{...}
+type DbmulticloudMultiCloudResourceDiscoveryResourceInput interface {
+	pulumi.Input
+
+	ToDbmulticloudMultiCloudResourceDiscoveryResourceOutput() DbmulticloudMultiCloudResourceDiscoveryResourceOutput
+	ToDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(context.Context) DbmulticloudMultiCloudResourceDiscoveryResourceOutput
+}
+
+type DbmulticloudMultiCloudResourceDiscoveryResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Discovered Resource Location.
+	Location pulumi.StringPtrInput `pulumi:"location"`
+	// Discovered Resource Name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Discovered Resource's properties.
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// Discovered Resource Group Name.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// Discovered Resource Type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DbmulticloudMultiCloudResourceDiscoveryResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (i DbmulticloudMultiCloudResourceDiscoveryResourceArgs) ToDbmulticloudMultiCloudResourceDiscoveryResourceOutput() DbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return i.ToDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudMultiCloudResourceDiscoveryResourceArgs) ToDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(ctx context.Context) DbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudMultiCloudResourceDiscoveryResourceOutput)
+}
+
+// DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput is an input type that accepts DbmulticloudMultiCloudResourceDiscoveryResourceArray and DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput values.
+// You can construct a concrete instance of `DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput` via:
+//
+//	DbmulticloudMultiCloudResourceDiscoveryResourceArray{ DbmulticloudMultiCloudResourceDiscoveryResourceArgs{...} }
+type DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput interface {
+	pulumi.Input
+
+	ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput() DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput
+	ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(context.Context) DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput
+}
+
+type DbmulticloudMultiCloudResourceDiscoveryResourceArray []DbmulticloudMultiCloudResourceDiscoveryResourceInput
+
+func (DbmulticloudMultiCloudResourceDiscoveryResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (i DbmulticloudMultiCloudResourceDiscoveryResourceArray) ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput() DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return i.ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudMultiCloudResourceDiscoveryResourceArray) ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(ctx context.Context) DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput)
+}
+
+type DbmulticloudMultiCloudResourceDiscoveryResourceOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudMultiCloudResourceDiscoveryResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) ToDbmulticloudMultiCloudResourceDiscoveryResourceOutput() DbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return o
+}
+
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) ToDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(ctx context.Context) DbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudMultiCloudResourceDiscoveryResource) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Discovered Resource Location.
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) Location() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudMultiCloudResourceDiscoveryResource) *string { return v.Location }).(pulumi.StringPtrOutput)
+}
+
+// Discovered Resource Name.
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudMultiCloudResourceDiscoveryResource) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Discovered Resource's properties.
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DbmulticloudMultiCloudResourceDiscoveryResource) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+// Discovered Resource Group Name.
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudMultiCloudResourceDiscoveryResource) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
+}
+
+// Discovered Resource Type.
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudMultiCloudResourceDiscoveryResource) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput() DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return o
+}
+
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) ToDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(ctx context.Context) DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return o
+}
+
+func (o DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) Index(i pulumi.IntInput) DbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudMultiCloudResourceDiscoveryResource {
+		return vs[0].([]DbmulticloudMultiCloudResourceDiscoveryResource)[vs[1].(int)]
+	}).(DbmulticloudMultiCloudResourceDiscoveryResourceOutput)
+}
+
+type DbmulticloudOracleDbAzureConnectorArcAgentNode struct {
+	// Current Arc Agent Version installed on this node of VM Cluster.
+	CurrentArcAgentVersion *string `pulumi:"currentArcAgentVersion"`
+	// Host ID.
+	HostId *string `pulumi:"hostId"`
+	// Host Name or Azure Arc Agent Name.
+	HostName *string `pulumi:"hostName"`
+	// The current status of the Azure Arc Agent Resource.
+	Status *string `pulumi:"status"`
+	// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeLastChecked *string `pulumi:"timeLastChecked"`
+}
+
+// DbmulticloudOracleDbAzureConnectorArcAgentNodeInput is an input type that accepts DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs and DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAzureConnectorArcAgentNodeInput` via:
+//
+//	DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{...}
+type DbmulticloudOracleDbAzureConnectorArcAgentNodeInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput() DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput
+	ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(context.Context) DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput
+}
+
+type DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs struct {
+	// Current Arc Agent Version installed on this node of VM Cluster.
+	CurrentArcAgentVersion pulumi.StringPtrInput `pulumi:"currentArcAgentVersion"`
+	// Host ID.
+	HostId pulumi.StringPtrInput `pulumi:"hostId"`
+	// Host Name or Azure Arc Agent Name.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
+	// The current status of the Azure Arc Agent Resource.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeLastChecked pulumi.StringPtrInput `pulumi:"timeLastChecked"`
+}
+
+func (DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput() DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return i.ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(ctx context.Context) DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput)
+}
+
+// DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput is an input type that accepts DbmulticloudOracleDbAzureConnectorArcAgentNodeArray and DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput` via:
+//
+//	DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{ DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{...} }
+type DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput() DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput
+	ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(context.Context) DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput
+}
+
+type DbmulticloudOracleDbAzureConnectorArcAgentNodeArray []DbmulticloudOracleDbAzureConnectorArcAgentNodeInput
+
+func (DbmulticloudOracleDbAzureConnectorArcAgentNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAzureConnectorArcAgentNodeArray) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput() DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return i.ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAzureConnectorArcAgentNodeArray) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput)
+}
+
+type DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput() DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(ctx context.Context) DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return o
+}
+
+// Current Arc Agent Version installed on this node of VM Cluster.
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) CurrentArcAgentVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAzureConnectorArcAgentNode) *string { return v.CurrentArcAgentVersion }).(pulumi.StringPtrOutput)
+}
+
+// Host ID.
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) HostId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAzureConnectorArcAgentNode) *string { return v.HostId }).(pulumi.StringPtrOutput)
+}
+
+// Host Name or Azure Arc Agent Name.
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAzureConnectorArcAgentNode) *string { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// The current status of the Azure Arc Agent Resource.
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAzureConnectorArcAgentNode) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) TimeLastChecked() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAzureConnectorArcAgentNode) *string { return v.TimeLastChecked }).(pulumi.StringPtrOutput)
+}
+
+type DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput() DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) ToDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) Index(i pulumi.IntInput) DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudOracleDbAzureConnectorArcAgentNode {
+		return vs[0].([]DbmulticloudOracleDbAzureConnectorArcAgentNode)[vs[1].(int)]
+	}).(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput)
+}
+
 type GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollection struct {
 	// List of apiMetadataByEntityTypeSummary.
 	Items []GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItem `pulumi:"items"`
@@ -3233,6 +3508,3727 @@ func (o GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionIt
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationList {
 		return vs[0].([]GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationList)[vs[1].(int)]
 	}).(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilter struct {
+	// Discovered Resource Name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesFilterInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs and GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesFilterInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs{...}
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput() GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs struct {
+	// Discovered Resource Name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput() GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput)
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray and GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray{ GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs{...} }
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray []GetDbmulticloudMultiCloudResourceDiscoveriesFilterInput
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput() GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput {
+	return o
+}
+
+// Discovered Resource Name.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudMultiCloudResourceDiscoveriesFilter {
+		return vs[0].([]GetDbmulticloudMultiCloudResourceDiscoveriesFilter)[vs[1].(int)]
+	}).(GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection struct {
+	Items []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs and GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs{...}
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs struct {
+	Items GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput)
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray and GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray{ GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs{...} }
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionInput
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput) Items() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection) []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection {
+		return vs[0].([]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Display Name of the Multi Cloud Discovery Resource.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id string `pulumi:"id"`
+	// Description of the latest modification of the Multi Cloud Discovery Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
+	// The type of Multi Cloud Resource.
+	ResourceType string `pulumi:"resourceType"`
+	// List of All Discovered resources.
+	Resources []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource `pulumi:"resources"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs and GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs{...}
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Display Name of the Multi Cloud Discovery Resource.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Description of the latest modification of the Multi Cloud Discovery Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+	OracleDbConnectorId pulumi.StringInput `pulumi:"oracleDbConnectorId"`
+	// The type of Multi Cloud Resource.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// List of All Discovered resources.
+	Resources GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayInput `pulumi:"resources"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray and GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray{ GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs{...} }
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemInput
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput {
+	return o
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Display Name of the Multi Cloud Discovery Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Description of the latest modification of the Multi Cloud Discovery Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) OracleDbConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.OracleDbConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The type of Multi Cloud Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.ResourceType
+	}).(pulumi.StringOutput)
+}
+
+// List of All Discovered resources.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) Resources() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource {
+		return v.Resources
+	}).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id string `pulumi:"id"`
+	// Discovered Resource Location.
+	Location string `pulumi:"location"`
+	// Discovered Resource Name.
+	Name string `pulumi:"name"`
+	// Discovered Resource's properties.
+	Properties map[string]string `pulumi:"properties"`
+	// Discovered Resource Group Name.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Discovered Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs and GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs{...}
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Discovered Resource Location.
+	Location pulumi.StringInput `pulumi:"location"`
+	// Discovered Resource Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Discovered Resource's properties.
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// Discovered Resource Group Name.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Discovered Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput)
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray and GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray{ GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs{...} }
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray []GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceInput
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Discovered Resource Location.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource) string {
+		return v.Location
+	}).(pulumi.StringOutput)
+}
+
+// Discovered Resource Name.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Discovered Resource's properties.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource) map[string]string {
+		return v.Properties
+	}).(pulumi.StringMapOutput)
+}
+
+// Discovered Resource Group Name.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// Discovered Resource Type.
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource {
+		return vs[0].([]GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource)[vs[1].(int)]
+	}).(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveryResource struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id string `pulumi:"id"`
+	// Discovered Resource Location.
+	Location string `pulumi:"location"`
+	// Discovered Resource Name.
+	Name string `pulumi:"name"`
+	// Discovered Resource's properties.
+	Properties map[string]string `pulumi:"properties"`
+	// Discovered Resource Group Name.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Discovered Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveryResourceInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs and GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveryResourceInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs{...}
+type GetDbmulticloudMultiCloudResourceDiscoveryResourceInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutput() GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Discovered Resource Location.
+	Location pulumi.StringInput `pulumi:"location"`
+	// Discovered Resource Name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Discovered Resource's properties.
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// Discovered Resource Group Name.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Discovered Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutput() GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput)
+}
+
+// GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayInput is an input type that accepts GetDbmulticloudMultiCloudResourceDiscoveryResourceArray and GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayInput` via:
+//
+//	GetDbmulticloudMultiCloudResourceDiscoveryResourceArray{ GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs{...} }
+type GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput
+	ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(context.Context) GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveryResourceArray []GetDbmulticloudMultiCloudResourceDiscoveryResourceInput
+
+func (GetDbmulticloudMultiCloudResourceDiscoveryResourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveryResourceArray) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return i.ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudMultiCloudResourceDiscoveryResourceArray) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutput() GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveryResource) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Discovered Resource Location.
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveryResource) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// Discovered Resource Name.
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveryResource) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Discovered Resource's properties.
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveryResource) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+// Discovered Resource Group Name.
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveryResource) string { return v.ResourceGroup }).(pulumi.StringOutput)
+}
+
+// Discovered Resource Type.
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveryResource) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudMultiCloudResourceDiscoveryResource)(nil)).Elem()
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput() GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) ToGetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutputWithContext(ctx context.Context) GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudMultiCloudResourceDiscoveryResource {
+		return vs[0].([]GetDbmulticloudMultiCloudResourceDiscoveryResource)[vs[1].(int)]
+	}).(GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAzureBlobContainersFilterInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobContainersFilterArgs and GetDbmulticloudOracleDbAzureBlobContainersFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobContainersFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobContainersFilterArgs{...}
+type GetDbmulticloudOracleDbAzureBlobContainersFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutput() GetDbmulticloudOracleDbAzureBlobContainersFilterOutput
+	ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobContainersFilterOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAzureBlobContainersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersFilterArgs) ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutput() GetDbmulticloudOracleDbAzureBlobContainersFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersFilterArgs) ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobContainersFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAzureBlobContainersFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobContainersFilterArray and GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobContainersFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobContainersFilterArray{ GetDbmulticloudOracleDbAzureBlobContainersFilterArgs{...} }
+type GetDbmulticloudOracleDbAzureBlobContainersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput
+	ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersFilterArray []GetDbmulticloudOracleDbAzureBlobContainersFilterInput
+
+func (GetDbmulticloudOracleDbAzureBlobContainersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobContainersFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersFilterArray) ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersFilterArray) ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobContainersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterOutput) ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutput() GetDbmulticloudOracleDbAzureBlobContainersFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterOutput) ToGetDbmulticloudOracleDbAzureBlobContainersFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobContainersFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput) ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput) ToGetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureBlobContainersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureBlobContainersFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAzureBlobContainersFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureBlobContainersFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs and GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray and GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray{ GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray []GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput) Items() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection) []GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem struct {
+	// A filter to return Azure Blob Containers.
+	AzureStorageAccountName string `pulumi:"azureStorageAccountName"`
+	// A filter to return Azure Blob containers.
+	AzureStorageContainerName string `pulumi:"azureStorageContainerName"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Azure Containers.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	Id string `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// Private endpoint DNS Alias.
+	PrivateEndpointDnsAlias string `pulumi:"privateEndpointDnsAlias"`
+	// Private endpoint IP.
+	PrivateEndpointIpAddress string `pulumi:"privateEndpointIpAddress"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs and GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs struct {
+	// A filter to return Azure Blob Containers.
+	AzureStorageAccountName pulumi.StringInput `pulumi:"azureStorageAccountName"`
+	// A filter to return Azure Blob containers.
+	AzureStorageContainerName pulumi.StringInput `pulumi:"azureStorageContainerName"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Azure Containers.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// Private endpoint DNS Alias.
+	PrivateEndpointDnsAlias pulumi.StringInput `pulumi:"privateEndpointDnsAlias"`
+	// Private endpoint IP.
+	PrivateEndpointIpAddress pulumi.StringInput `pulumi:"privateEndpointIpAddress"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray and GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray{ GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray []GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput {
+	return o
+}
+
+// A filter to return Azure Blob Containers.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) AzureStorageAccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.AzureStorageAccountName
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Azure Blob containers.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) AzureStorageContainerName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.AzureStorageContainerName
+	}).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Azure Containers.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// Private endpoint DNS Alias.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) PrivateEndpointDnsAlias() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.PrivateEndpointDnsAlias
+	}).(pulumi.StringOutput)
+}
+
+// Private endpoint IP.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) PrivateEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.PrivateEndpointIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAzureBlobMountsFilterInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobMountsFilterArgs and GetDbmulticloudOracleDbAzureBlobMountsFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobMountsFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobMountsFilterArgs{...}
+type GetDbmulticloudOracleDbAzureBlobMountsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutput() GetDbmulticloudOracleDbAzureBlobMountsFilterOutput
+	ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobMountsFilterOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAzureBlobMountsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsFilterArgs) ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutput() GetDbmulticloudOracleDbAzureBlobMountsFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsFilterArgs) ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobMountsFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAzureBlobMountsFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobMountsFilterArray and GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobMountsFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobMountsFilterArray{ GetDbmulticloudOracleDbAzureBlobMountsFilterArgs{...} }
+type GetDbmulticloudOracleDbAzureBlobMountsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput
+	ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsFilterArray []GetDbmulticloudOracleDbAzureBlobMountsFilterInput
+
+func (GetDbmulticloudOracleDbAzureBlobMountsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobMountsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsFilterArray) ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsFilterArray) ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobMountsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterOutput) ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutput() GetDbmulticloudOracleDbAzureBlobMountsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterOutput) ToGetDbmulticloudOracleDbAzureBlobMountsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobMountsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureBlobMountsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureBlobMountsFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAzureBlobMountsFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureBlobMountsFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs and GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray and GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray{ GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray []GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput) Items() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection) []GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID for the new Oracle DB Azure Blob Mount resource.
+	Id string `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// Azure Container mount path.
+	MountPath string `pulumi:"mountPath"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	OracleDbAzureBlobContainerId string `pulumi:"oracleDbAzureBlobContainerId"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	OracleDbAzureConnectorId string `pulumi:"oracleDbAzureConnectorId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs and GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID for the new Oracle DB Azure Blob Mount resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// Azure Container mount path.
+	MountPath pulumi.StringInput `pulumi:"mountPath"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	OracleDbAzureBlobContainerId pulumi.StringInput `pulumi:"oracleDbAzureBlobContainerId"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	OracleDbAzureConnectorId pulumi.StringInput `pulumi:"oracleDbAzureConnectorId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray and GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray{ GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray []GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput {
+	return o
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Oracle DB Azure Blob Mount Resources.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID for the new Oracle DB Azure Blob Mount resource.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// Azure Container mount path.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) MountPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.MountPath
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Azure Blob Mount Resources.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) OracleDbAzureBlobContainerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.OracleDbAzureBlobContainerId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Azure Blob Mount Resources.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) OracleDbAzureConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.OracleDbAzureConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNode struct {
+	// Current Arc Agent Version installed on this node of VM Cluster.
+	CurrentArcAgentVersion string `pulumi:"currentArcAgentVersion"`
+	// Host ID.
+	HostId string `pulumi:"hostId"`
+	// Host Name or Azure Arc Agent Name.
+	HostName string `pulumi:"hostName"`
+	// The current status of the Azure Arc Agent Resource.
+	Status string `pulumi:"status"`
+	// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeLastChecked string `pulumi:"timeLastChecked"`
+}
+
+// GetDbmulticloudOracleDbAzureConnectorArcAgentNodeInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs and GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorArcAgentNodeInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{...}
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNodeInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput() GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput
+	ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs struct {
+	// Current Arc Agent Version installed on this node of VM Cluster.
+	CurrentArcAgentVersion pulumi.StringInput `pulumi:"currentArcAgentVersion"`
+	// Host ID.
+	HostId pulumi.StringInput `pulumi:"hostId"`
+	// Host Name or Azure Arc Agent Name.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The current status of the Azure Arc Agent Resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeLastChecked pulumi.StringInput `pulumi:"timeLastChecked"`
+}
+
+func (GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput() GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput)
+}
+
+// GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray and GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray{ GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{...} }
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput() GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput
+	ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray []GetDbmulticloudOracleDbAzureConnectorArcAgentNodeInput
+
+func (GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput() GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput() GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return o
+}
+
+// Current Arc Agent Version installed on this node of VM Cluster.
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) CurrentArcAgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorArcAgentNode) string { return v.CurrentArcAgentVersion }).(pulumi.StringOutput)
+}
+
+// Host ID.
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) HostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorArcAgentNode) string { return v.HostId }).(pulumi.StringOutput)
+}
+
+// Host Name or Azure Arc Agent Name.
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorArcAgentNode) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// The current status of the Azure Arc Agent Resource.
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorArcAgentNode) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput) TimeLastChecked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorArcAgentNode) string { return v.TimeLastChecked }).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorArcAgentNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput() GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureConnectorArcAgentNode {
+		return vs[0].([]GetDbmulticloudOracleDbAzureConnectorArcAgentNode)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsFilterInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsFilterArgs and GetDbmulticloudOracleDbAzureConnectorsFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsFilterArgs{...}
+type GetDbmulticloudOracleDbAzureConnectorsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsFilterOutput() GetDbmulticloudOracleDbAzureConnectorsFilterOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsFilterOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAzureConnectorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsFilterArgs) ToGetDbmulticloudOracleDbAzureConnectorsFilterOutput() GetDbmulticloudOracleDbAzureConnectorsFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsFilterArgs) ToGetDbmulticloudOracleDbAzureConnectorsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsFilterArray and GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsFilterArray{ GetDbmulticloudOracleDbAzureConnectorsFilterArgs{...} }
+type GetDbmulticloudOracleDbAzureConnectorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput() GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsFilterArray []GetDbmulticloudOracleDbAzureConnectorsFilterInput
+
+func (GetDbmulticloudOracleDbAzureConnectorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsFilterArray) ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput() GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsFilterArray) ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterOutput) ToGetDbmulticloudOracleDbAzureConnectorsFilterOutput() GetDbmulticloudOracleDbAzureConnectorsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterOutput) ToGetDbmulticloudOracleDbAzureConnectorsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput() GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureConnectorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureConnectorsFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAzureConnectorsFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureConnectorsFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs and GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray and GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray{ GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput) Items() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection) []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem struct {
+	// Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+	AccessToken string `pulumi:"accessToken"`
+	// List of All VMs where Arc Agent is Install under VMCluster.
+	ArcAgentNodes []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode `pulumi:"arcAgentNodes"`
+	// Azure Identity Mechanism.
+	AzureIdentityMechanism string `pulumi:"azureIdentityMechanism"`
+	// Azure Resource Group Name.
+	AzureResourceGroup string `pulumi:"azureResourceGroup"`
+	// Azure Subscription ID.
+	AzureSubscriptionId string `pulumi:"azureSubscriptionId"`
+	// Azure Tenant ID.
+	AzureTenantId string `pulumi:"azureTenantId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+	DbClusterResourceId string `pulumi:"dbClusterResourceId"`
+	// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+	DisplayName string `pulumi:"displayName"`
+	// The ID of the Oracle DB Azure Connector resource.
+	Id string `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Connector Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs and GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs struct {
+	// Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+	AccessToken pulumi.StringInput `pulumi:"accessToken"`
+	// List of All VMs where Arc Agent is Install under VMCluster.
+	ArcAgentNodes GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayInput `pulumi:"arcAgentNodes"`
+	// Azure Identity Mechanism.
+	AzureIdentityMechanism pulumi.StringInput `pulumi:"azureIdentityMechanism"`
+	// Azure Resource Group Name.
+	AzureResourceGroup pulumi.StringInput `pulumi:"azureResourceGroup"`
+	// Azure Subscription ID.
+	AzureSubscriptionId pulumi.StringInput `pulumi:"azureSubscriptionId"`
+	// Azure Tenant ID.
+	AzureTenantId pulumi.StringInput `pulumi:"azureTenantId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+	DbClusterResourceId pulumi.StringInput `pulumi:"dbClusterResourceId"`
+	// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The ID of the Oracle DB Azure Connector resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Connector Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray and GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray{ GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput {
+	return o
+}
+
+// Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) AccessToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.AccessToken
+	}).(pulumi.StringOutput)
+}
+
+// List of All VMs where Arc Agent is Install under VMCluster.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) ArcAgentNodes() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode {
+		return v.ArcAgentNodes
+	}).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput)
+}
+
+// Azure Identity Mechanism.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) AzureIdentityMechanism() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.AzureIdentityMechanism
+	}).(pulumi.StringOutput)
+}
+
+// Azure Resource Group Name.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) AzureResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.AzureResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// Azure Subscription ID.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) AzureSubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.AzureSubscriptionId
+	}).(pulumi.StringOutput)
+}
+
+// Azure Tenant ID.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) AzureTenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.AzureTenantId
+	}).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) DbClusterResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.DbClusterResourceId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The ID of the Oracle DB Azure Connector resource.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// Description of the latest modification of the Oracle DB Azure Connector Resource.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode struct {
+	// Current Arc Agent Version installed on this node of VM Cluster.
+	CurrentArcAgentVersion string `pulumi:"currentArcAgentVersion"`
+	// Host ID.
+	HostId string `pulumi:"hostId"`
+	// Host Name or Azure Arc Agent Name.
+	HostName string `pulumi:"hostName"`
+	// The current status of the Azure Arc Agent Resource.
+	Status string `pulumi:"status"`
+	// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeLastChecked string `pulumi:"timeLastChecked"`
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs and GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs{...}
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs struct {
+	// Current Arc Agent Version installed on this node of VM Cluster.
+	CurrentArcAgentVersion pulumi.StringInput `pulumi:"currentArcAgentVersion"`
+	// Host ID.
+	HostId pulumi.StringInput `pulumi:"hostId"`
+	// Host Name or Azure Arc Agent Name.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// The current status of the Azure Arc Agent Resource.
+	Status pulumi.StringInput `pulumi:"status"`
+	// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeLastChecked pulumi.StringInput `pulumi:"timeLastChecked"`
+}
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput)
+}
+
+// GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray and GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray{ GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs{...} }
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput
+	ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeInput
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput {
+	return o
+}
+
+// Current Arc Agent Version installed on this node of VM Cluster.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) CurrentArcAgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode) string {
+		return v.CurrentArcAgentVersion
+	}).(pulumi.StringOutput)
+}
+
+// Host ID.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) HostId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode) string {
+		return v.HostId
+	}).(pulumi.StringOutput)
+}
+
+// Host Name or Azure Arc Agent Name.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode) string {
+		return v.HostName
+	}).(pulumi.StringOutput)
+}
+
+// The current status of the Azure Arc Agent Resource.
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode) string {
+		return v.Status
+	}).(pulumi.StringOutput)
+}
+
+// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput) TimeLastChecked() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode) string {
+		return v.TimeLastChecked
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput() GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput) ToGetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode {
+		return vs[0].([]GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNode)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAzureKeysFilterInput is an input type that accepts GetDbmulticloudOracleDbAzureKeysFilterArgs and GetDbmulticloudOracleDbAzureKeysFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureKeysFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAzureKeysFilterArgs{...}
+type GetDbmulticloudOracleDbAzureKeysFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureKeysFilterOutput() GetDbmulticloudOracleDbAzureKeysFilterOutput
+	ToGetDbmulticloudOracleDbAzureKeysFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureKeysFilterOutput
+}
+
+type GetDbmulticloudOracleDbAzureKeysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAzureKeysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysFilterArgs) ToGetDbmulticloudOracleDbAzureKeysFilterOutput() GetDbmulticloudOracleDbAzureKeysFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAzureKeysFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysFilterArgs) ToGetDbmulticloudOracleDbAzureKeysFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureKeysFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAzureKeysFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureKeysFilterArray and GetDbmulticloudOracleDbAzureKeysFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureKeysFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureKeysFilterArray{ GetDbmulticloudOracleDbAzureKeysFilterArgs{...} }
+type GetDbmulticloudOracleDbAzureKeysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutput() GetDbmulticloudOracleDbAzureKeysFilterArrayOutput
+	ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureKeysFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureKeysFilterArray []GetDbmulticloudOracleDbAzureKeysFilterInput
+
+func (GetDbmulticloudOracleDbAzureKeysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureKeysFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysFilterArray) ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutput() GetDbmulticloudOracleDbAzureKeysFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysFilterArray) ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureKeysFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureKeysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterOutput) ToGetDbmulticloudOracleDbAzureKeysFilterOutput() GetDbmulticloudOracleDbAzureKeysFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterOutput) ToGetDbmulticloudOracleDbAzureKeysFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureKeysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureKeysFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterArrayOutput) ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutput() GetDbmulticloudOracleDbAzureKeysFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterArrayOutput) ToGetDbmulticloudOracleDbAzureKeysFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureKeysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureKeysFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAzureKeysFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureKeysFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs and GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray and GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray{ GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray []GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput) Items() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection) []GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem struct {
+	// The Azure ID of the Azure Key, Azure Key URL.
+	AzureKeyId string `pulumi:"azureKeyId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Azure Vault Keys.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+	Id string `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// A filter to return Oracle DB Azure Vault Resources.
+	OracleDbAzureVaultId string `pulumi:"oracleDbAzureVaultId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs and GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs struct {
+	// The Azure ID of the Azure Key, Azure Key URL.
+	AzureKeyId pulumi.StringInput `pulumi:"azureKeyId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Azure Vault Keys.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// A filter to return Oracle DB Azure Vault Resources.
+	OracleDbAzureVaultId pulumi.StringInput `pulumi:"oracleDbAzureVaultId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray and GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray{ GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray []GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput {
+	return o
+}
+
+// The Azure ID of the Azure Key, Azure Key URL.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) AzureKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.AzureKeyId
+	}).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Azure Vault Keys.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Azure Vault Resources.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) OracleDbAzureVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.OracleDbAzureVaultId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAzureVaultAssociationsFilterInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs and GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultAssociationsFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs{...}
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput() GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput() GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray and GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray{ GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs{...} }
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray []GetDbmulticloudOracleDbAzureVaultAssociationsFilterInput
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultAssociationsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput() GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultAssociationsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureVaultAssociationsFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAzureVaultAssociationsFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs and GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray and GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray{ GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray []GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput) Items() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection) []GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Azure Vault Association.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+	Id string `pulumi:"id"`
+	// The Associated Resources are accessible or not.
+	IsResourceAccessible bool `pulumi:"isResourceAccessible"`
+	// Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	OracleDbAzureConnectorId string `pulumi:"oracleDbAzureConnectorId"`
+	// A filter to return Oracle DB Azure Vault Resources.
+	OracleDbAzureVaultId string `pulumi:"oracleDbAzureVaultId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs and GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Azure Vault Association.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The Associated Resources are accessible or not.
+	IsResourceAccessible pulumi.BoolInput `pulumi:"isResourceAccessible"`
+	// Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// A filter to return Oracle DB Azure Blob Mount Resources.
+	OracleDbAzureConnectorId pulumi.StringInput `pulumi:"oracleDbAzureConnectorId"`
+	// A filter to return Oracle DB Azure Vault Resources.
+	OracleDbAzureVaultId pulumi.StringInput `pulumi:"oracleDbAzureVaultId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray and GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray{ GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray []GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput {
+	return o
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Azure Vault Association.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+// The Associated Resources are accessible or not.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) IsResourceAccessible() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) bool {
+		return v.IsResourceAccessible
+	}).(pulumi.BoolOutput)
+}
+
+// Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Azure Blob Mount Resources.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) OracleDbAzureConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.OracleDbAzureConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Oracle DB Azure Vault Resources.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) OracleDbAzureVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.OracleDbAzureVaultId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAzureVaultsFilterInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultsFilterArgs and GetDbmulticloudOracleDbAzureVaultsFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultsFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultsFilterArgs{...}
+type GetDbmulticloudOracleDbAzureVaultsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultsFilterOutput() GetDbmulticloudOracleDbAzureVaultsFilterOutput
+	ToGetDbmulticloudOracleDbAzureVaultsFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultsFilterOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAzureVaultsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsFilterArgs) ToGetDbmulticloudOracleDbAzureVaultsFilterOutput() GetDbmulticloudOracleDbAzureVaultsFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsFilterArgs) ToGetDbmulticloudOracleDbAzureVaultsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultsFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAzureVaultsFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultsFilterArray and GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultsFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultsFilterArray{ GetDbmulticloudOracleDbAzureVaultsFilterArgs{...} }
+type GetDbmulticloudOracleDbAzureVaultsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutput() GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput
+	ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultsFilterArray []GetDbmulticloudOracleDbAzureVaultsFilterInput
+
+func (GetDbmulticloudOracleDbAzureVaultsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsFilterArray) ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutput() GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsFilterArray) ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterOutput) ToGetDbmulticloudOracleDbAzureVaultsFilterOutput() GetDbmulticloudOracleDbAzureVaultsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterOutput) ToGetDbmulticloudOracleDbAzureVaultsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutput() GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput) ToGetDbmulticloudOracleDbAzureVaultsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureVaultsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureVaultsFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAzureVaultsFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureVaultsFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection struct {
+	Items []GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs and GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs{...}
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray and GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray{ GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs{...} }
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray []GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionInput
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput) Items() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection) []GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem struct {
+	// Azure Vault Id.
+	AzureVaultId string `pulumi:"azureVaultId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Azure Vaults.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+	Id string `pulumi:"id"`
+	// Description of the latest modification of the DB Azure Vault Resource.
+	LastModification string `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// Vault Resource Location.
+	Location string `pulumi:"location"`
+	// A filter to return Azure Vaults.
+	OracleDbAzureResourceGroup string `pulumi:"oracleDbAzureResourceGroup"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
+	// Resource's properties.
+	Properties map[string]string `pulumi:"properties"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Vault Resource Type.
+	Type string `pulumi:"type"`
+}
+
+// GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs and GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs struct {
+	// Azure Vault Id.
+	AzureVaultId pulumi.StringInput `pulumi:"azureVaultId"`
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Azure Vaults.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Description of the latest modification of the DB Azure Vault Resource.
+	LastModification pulumi.StringInput `pulumi:"lastModification"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// Vault Resource Location.
+	Location pulumi.StringInput `pulumi:"location"`
+	// A filter to return Azure Vaults.
+	OracleDbAzureResourceGroup pulumi.StringInput `pulumi:"oracleDbAzureResourceGroup"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	OracleDbConnectorId pulumi.StringInput `pulumi:"oracleDbConnectorId"`
+	// Resource's properties.
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Vault Resource Type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray and GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray{ GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray []GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemInput
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput {
+	return o
+}
+
+// Azure Vault Id.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) AzureVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.AzureVaultId
+	}).(pulumi.StringOutput)
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Azure Vaults.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Description of the latest modification of the DB Azure Vault Resource.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) LastModification() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.LastModification
+	}).(pulumi.StringOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// Vault Resource Location.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) Location() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.Location
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return Azure Vaults.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) OracleDbAzureResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.OracleDbAzureResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) OracleDbConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.OracleDbConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// Resource's properties.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) map[string]string {
+		return v.Properties
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Vault Resource Type.
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput() GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput)
 }
 
 type GetWlmsManagedInstanceConfiguration struct {
@@ -8188,6 +12184,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestApproverDetailArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestApproverDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionInput)(nil)).Elem(), GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArrayInput)(nil)).Elem(), GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemInput)(nil)).Elem(), GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemArgs{})
@@ -8226,6 +12226,56 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArrayInput)(nil)).Elem(), GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesFilterInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveryResourceInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveryResourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), GetDbmulticloudMultiCloudResourceDiscoveryResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobMountsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobMountsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorArcAgentNodeInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureKeysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureKeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultAssociationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceConfigurationInput)(nil)).Elem(), GetWlmsManagedInstanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceConfigurationArrayInput)(nil)).Elem(), GetWlmsManagedInstanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceScanResultsFilterInput)(nil)).Elem(), GetWlmsManagedInstanceScanResultsFilterArgs{})
@@ -8310,6 +12360,10 @@ func init() {
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestApproverDetailArrayOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArrayOutput{})
+	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceOutput{})
+	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemOutput{})
@@ -8348,6 +12402,56 @@ func init() {
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemApproverDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolPrivilegedApiRequestsPrivilegedApiRequestCollectionItemPrivilegedOperationListArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveryResourceOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobMountsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobMountsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorArcAgentNodeOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureKeysFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureKeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultAssociationsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultAssociationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceScanResultsFilterOutput{})

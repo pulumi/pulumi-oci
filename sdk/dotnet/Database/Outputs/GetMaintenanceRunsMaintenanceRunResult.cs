@@ -115,6 +115,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// The target software version for the database server patching operation.
         /// </summary>
         public readonly string TargetDbServerVersion;
@@ -201,6 +205,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string targetDbServerVersion,
 
             string targetResourceId,
@@ -243,6 +249,7 @@ namespace Pulumi.Oci.Database.Outputs
             PeerMaintenanceRunId = peerMaintenanceRunId;
             PeerMaintenanceRunIds = peerMaintenanceRunIds;
             State = state;
+            SystemTags = systemTags;
             TargetDbServerVersion = targetDbServerVersion;
             TargetResourceId = targetResourceId;
             TargetResourceType = targetResourceType;

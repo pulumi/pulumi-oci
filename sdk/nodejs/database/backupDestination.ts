@@ -128,6 +128,10 @@ export class BackupDestination extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The time when the total storage size and the utilized storage size of the backup destination are updated.
      */
     public /*out*/ readonly timeAtWhichStorageDetailsAreUpdated!: pulumi.Output<string>;
@@ -182,6 +186,7 @@ export class BackupDestination extends pulumi.CustomResource {
             resourceInputs["nfsServerExport"] = state ? state.nfsServerExport : undefined;
             resourceInputs["nfsServers"] = state ? state.nfsServers : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeAtWhichStorageDetailsAreUpdated"] = state ? state.timeAtWhichStorageDetailsAreUpdated : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["totalStorageSizeInGbs"] = state ? state.totalStorageSizeInGbs : undefined;
@@ -214,6 +219,7 @@ export class BackupDestination extends pulumi.CustomResource {
             resourceInputs["nfsServerExport"] = undefined /*out*/;
             resourceInputs["nfsServers"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeAtWhichStorageDetailsAreUpdated"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["totalStorageSizeInGbs"] = undefined /*out*/;
@@ -282,6 +288,10 @@ export interface BackupDestinationState {
      * The current lifecycle state of the backup destination.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time when the total storage size and the utilized storage size of the backup destination are updated.
      */

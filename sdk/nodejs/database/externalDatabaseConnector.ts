@@ -132,6 +132,10 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the `connectionStatus` of this external connector was last updated.
      */
     public /*out*/ readonly timeConnectionStatusLastUpdated!: pulumi.Output<string>;
@@ -165,6 +169,7 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeConnectionStatusLastUpdated"] = state ? state.timeConnectionStatusLastUpdated : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
@@ -196,6 +201,7 @@ export class ExternalDatabaseConnector extends pulumi.CustomResource {
             resourceInputs["connectionStatus"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeConnectionStatusLastUpdated"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -260,6 +266,10 @@ export interface ExternalDatabaseConnectorState {
      * The current lifecycle state of the external database connector resource.
      */
     state?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the `connectionStatus` of this external connector was last updated.
      */

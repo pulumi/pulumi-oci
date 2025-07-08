@@ -182,6 +182,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly kmsKeyId!: pulumi.Output<string>;
     /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     */
+    public /*out*/ readonly kmsKeyVersionId!: pulumi.Output<string>;
+    /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      */
     public /*out*/ readonly largestProvisionableAutonomousDatabaseInCpus!: pulumi.Output<number>;
@@ -311,6 +315,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public readonly switchoverTrigger!: pulumi.Output<number | undefined>;
     /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * The date and time the Autonomous Container Database was created.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
@@ -387,6 +395,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["keyStoreWalletName"] = state ? state.keyStoreWalletName : undefined;
             resourceInputs["keyVersionId"] = state ? state.keyVersionId : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
+            resourceInputs["kmsKeyVersionId"] = state ? state.kmsKeyVersionId : undefined;
             resourceInputs["largestProvisionableAutonomousDatabaseInCpus"] = state ? state.largestProvisionableAutonomousDatabaseInCpus : undefined;
             resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
@@ -419,6 +428,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["standbyMaintenanceBufferInDays"] = state ? state.standbyMaintenanceBufferInDays : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["switchoverTrigger"] = state ? state.switchoverTrigger : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeOfLastBackup"] = state ? state.timeOfLastBackup : undefined;
             resourceInputs["timeSnapshotStandbyRevert"] = state ? state.timeSnapshotStandbyRevert : undefined;
@@ -489,6 +499,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["isMultipleStandby"] = undefined /*out*/;
             resourceInputs["keyHistoryEntries"] = undefined /*out*/;
             resourceInputs["keyStoreWalletName"] = undefined /*out*/;
+            resourceInputs["kmsKeyVersionId"] = undefined /*out*/;
             resourceInputs["largestProvisionableAutonomousDatabaseInCpus"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -504,6 +515,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["reservedCpus"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeOfLastBackup"] = undefined /*out*/;
             resourceInputs["timeSnapshotStandbyRevert"] = undefined /*out*/;
@@ -653,6 +665,10 @@ export interface AutonomousContainerDatabaseState {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     */
+    kmsKeyVersionId?: pulumi.Input<string>;
+    /**
      * The largest Autonomous Database (CPU) that can be created in a new Autonomous Container Database.
      */
     largestProvisionableAutonomousDatabaseInCpus?: pulumi.Input<number>;
@@ -781,6 +797,10 @@ export interface AutonomousContainerDatabaseState {
      * (Updatable) An optional property when incremented triggers Switchover. Could be set to any integer value.
      */
     switchoverTrigger?: pulumi.Input<number>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the Autonomous Container Database was created.
      */

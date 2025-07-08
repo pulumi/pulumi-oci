@@ -56,6 +56,7 @@ class CloudVmClusterArgs:
                  security_attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  system_version: Optional[pulumi.Input[builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[builtins.str]] = None):
         """
@@ -105,6 +106,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] security_attributes: (Updatable) Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[builtins.str] system_version: Operating system version of the image.
+        :param pulumi.Input[builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
@@ -171,6 +173,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "subscription_id", subscription_id)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
+        if tde_key_store_type is not None:
+            pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
         if vm_cluster_type is not None:
@@ -594,6 +598,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "system_version", value)
 
     @property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "tde_key_store_type", value)
+
+    @property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -656,6 +672,7 @@ class _CloudVmClusterState:
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
                  listener_port: Optional[pulumi.Input[builtins.str]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
+                 multi_cloud_identity_connector_configs: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterMultiCloudIdentityConnectorConfigArgs']]]] = None,
                  node_count: Optional[pulumi.Input[builtins.int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[builtins.float]] = None,
@@ -675,6 +692,7 @@ class _CloudVmClusterState:
                  subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  system_version: Optional[pulumi.Input[builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[builtins.str]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -724,6 +742,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] listener_port: The port number configured for the listener on the cloud VM cluster.
         :param pulumi.Input[builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterMultiCloudIdentityConnectorConfigArgs']]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[builtins.int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -744,6 +763,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] system_version: Operating system version of the image.
+        :param pulumi.Input[builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[builtins.str] time_created: The date and time that the cloud VM cluster was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -817,6 +837,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "listener_port", listener_port)
         if memory_size_in_gbs is not None:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if multi_cloud_identity_connector_configs is not None:
+            pulumi.set(__self__, "multi_cloud_identity_connector_configs", multi_cloud_identity_connector_configs)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
@@ -855,6 +877,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "system_tags", system_tags)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
+        if tde_key_store_type is not None:
+            pulumi.set(__self__, "tde_key_store_type", tde_key_store_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
@@ -1249,6 +1273,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "memory_size_in_gbs", value)
 
     @property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterMultiCloudIdentityConnectorConfigArgs']]]]:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @multi_cloud_identity_connector_configs.setter
+    def multi_cloud_identity_connector_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterMultiCloudIdentityConnectorConfigArgs']]]]):
+        pulumi.set(self, "multi_cloud_identity_connector_configs", value)
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[builtins.int]]:
         """
@@ -1478,6 +1514,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "system_version", value)
 
     @property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+        """
+        return pulumi.get(self, "tde_key_store_type")
+
+    @tde_key_store_type.setter
+    def tde_key_store_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "tde_key_store_type", value)
+
+    @property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[builtins.str]]:
         """
@@ -1594,6 +1642,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  system_version: Optional[pulumi.Input[builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -1721,6 +1770,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[builtins.str] system_version: Operating system version of the image.
+        :param pulumi.Input[builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[builtins.str] vm_cluster_type: The vmcluster type for the VM cluster/Cloud VM cluster.
                
@@ -1860,6 +1910,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  subnet_id: Optional[pulumi.Input[builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[builtins.str]] = None,
                  system_version: Optional[pulumi.Input[builtins.str]] = None,
+                 tde_key_store_type: Optional[pulumi.Input[builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
@@ -1923,6 +1974,7 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["system_version"] = system_version
+            __props__.__dict__["tde_key_store_type"] = tde_key_store_type
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["vm_cluster_type"] = vm_cluster_type
             __props__.__dict__["availability_domain"] = None
@@ -1932,6 +1984,7 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["last_update_history_entry_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["listener_port"] = None
+            __props__.__dict__["multi_cloud_identity_connector_configs"] = None
             __props__.__dict__["node_count"] = None
             __props__.__dict__["scan_dns_name"] = None
             __props__.__dict__["scan_dns_record_id"] = None
@@ -1986,6 +2039,7 @@ class CloudVmCluster(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
             listener_port: Optional[pulumi.Input[builtins.str]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[builtins.int]] = None,
+            multi_cloud_identity_connector_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]]] = None,
             node_count: Optional[pulumi.Input[builtins.int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             ocpu_count: Optional[pulumi.Input[builtins.float]] = None,
@@ -2005,6 +2059,7 @@ class CloudVmCluster(pulumi.CustomResource):
             subscription_id: Optional[pulumi.Input[builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             system_version: Optional[pulumi.Input[builtins.str]] = None,
+            tde_key_store_type: Optional[pulumi.Input[builtins.str]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
             time_zone: Optional[pulumi.Input[builtins.str]] = None,
             vip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
@@ -2059,6 +2114,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[builtins.str] listener_port: The port number configured for the listener on the cloud VM cluster.
         :param pulumi.Input[builtins.int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterMultiCloudIdentityConnectorConfigArgs', 'CloudVmClusterMultiCloudIdentityConnectorConfigArgsDict']]]] multi_cloud_identity_connector_configs: Details of the multi cloud identity connectors of the VM cluster.
         :param pulumi.Input[builtins.int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -2079,6 +2135,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[builtins.str] system_version: Operating system version of the image.
+        :param pulumi.Input[builtins.str] tde_key_store_type: Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
         :param pulumi.Input[builtins.str] time_created: The date and time that the cloud VM cluster was created.
         :param pulumi.Input[builtins.str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) IPv4 addresses associated with the cloud VM cluster. The Cluster Ready Services (CRS) creates and maintains one VIP IPv4 address for each node in the Exadata Cloud Service instance to enable failover. If one node fails, the VIP is reassigned to another active node in the cluster.
@@ -2125,6 +2182,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["listener_port"] = listener_port
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
+        __props__.__dict__["multi_cloud_identity_connector_configs"] = multi_cloud_identity_connector_configs
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ocpu_count"] = ocpu_count
@@ -2144,6 +2202,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["system_version"] = system_version
+        __props__.__dict__["tde_key_store_type"] = tde_key_store_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["vip_ids"] = vip_ids
@@ -2409,6 +2468,14 @@ class CloudVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "memory_size_in_gbs")
 
     @property
+    @pulumi.getter(name="multiCloudIdentityConnectorConfigs")
+    def multi_cloud_identity_connector_configs(self) -> pulumi.Output[Sequence['outputs.CloudVmClusterMultiCloudIdentityConnectorConfig']]:
+        """
+        Details of the multi cloud identity connectors of the VM cluster.
+        """
+        return pulumi.get(self, "multi_cloud_identity_connector_configs")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[builtins.int]:
         """
@@ -2560,6 +2627,14 @@ class CloudVmCluster(pulumi.CustomResource):
         Operating system version of the image.
         """
         return pulumi.get(self, "system_version")
+
+    @property
+    @pulumi.getter(name="tdeKeyStoreType")
+    def tde_key_store_type(self) -> pulumi.Output[builtins.str]:
+        """
+        Use 'AZURE' for installing azure encryption RPMS. Use 'OCI' to install oracle managed encryption RPMS. Use 'NONE' to uninstall encryption RPMS.
+        """
+        return pulumi.get(self, "tde_key_store_type")
 
     @property
     @pulumi.getter(name="timeCreated")

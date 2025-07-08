@@ -216,6 +216,130 @@ func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngre
 	}).(ConnectionIngressIpOutput)
 }
 
+type JobCollectTracesData struct {
+	// Name of the bucket containing the log file.
+	Bucket *string `pulumi:"bucket"`
+	// Status of trace collection process.
+	CollectTracesState *string `pulumi:"collectTracesState"`
+	// Object Storage namespace.
+	Namespace *string `pulumi:"namespace"`
+	// Name of the object (regular expression is allowed)
+	Object *string `pulumi:"object"`
+}
+
+// JobCollectTracesDataInput is an input type that accepts JobCollectTracesDataArgs and JobCollectTracesDataOutput values.
+// You can construct a concrete instance of `JobCollectTracesDataInput` via:
+//
+//	JobCollectTracesDataArgs{...}
+type JobCollectTracesDataInput interface {
+	pulumi.Input
+
+	ToJobCollectTracesDataOutput() JobCollectTracesDataOutput
+	ToJobCollectTracesDataOutputWithContext(context.Context) JobCollectTracesDataOutput
+}
+
+type JobCollectTracesDataArgs struct {
+	// Name of the bucket containing the log file.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// Status of trace collection process.
+	CollectTracesState pulumi.StringPtrInput `pulumi:"collectTracesState"`
+	// Object Storage namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Name of the object (regular expression is allowed)
+	Object pulumi.StringPtrInput `pulumi:"object"`
+}
+
+func (JobCollectTracesDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobCollectTracesData)(nil)).Elem()
+}
+
+func (i JobCollectTracesDataArgs) ToJobCollectTracesDataOutput() JobCollectTracesDataOutput {
+	return i.ToJobCollectTracesDataOutputWithContext(context.Background())
+}
+
+func (i JobCollectTracesDataArgs) ToJobCollectTracesDataOutputWithContext(ctx context.Context) JobCollectTracesDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobCollectTracesDataOutput)
+}
+
+// JobCollectTracesDataArrayInput is an input type that accepts JobCollectTracesDataArray and JobCollectTracesDataArrayOutput values.
+// You can construct a concrete instance of `JobCollectTracesDataArrayInput` via:
+//
+//	JobCollectTracesDataArray{ JobCollectTracesDataArgs{...} }
+type JobCollectTracesDataArrayInput interface {
+	pulumi.Input
+
+	ToJobCollectTracesDataArrayOutput() JobCollectTracesDataArrayOutput
+	ToJobCollectTracesDataArrayOutputWithContext(context.Context) JobCollectTracesDataArrayOutput
+}
+
+type JobCollectTracesDataArray []JobCollectTracesDataInput
+
+func (JobCollectTracesDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobCollectTracesData)(nil)).Elem()
+}
+
+func (i JobCollectTracesDataArray) ToJobCollectTracesDataArrayOutput() JobCollectTracesDataArrayOutput {
+	return i.ToJobCollectTracesDataArrayOutputWithContext(context.Background())
+}
+
+func (i JobCollectTracesDataArray) ToJobCollectTracesDataArrayOutputWithContext(ctx context.Context) JobCollectTracesDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(JobCollectTracesDataArrayOutput)
+}
+
+type JobCollectTracesDataOutput struct{ *pulumi.OutputState }
+
+func (JobCollectTracesDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*JobCollectTracesData)(nil)).Elem()
+}
+
+func (o JobCollectTracesDataOutput) ToJobCollectTracesDataOutput() JobCollectTracesDataOutput {
+	return o
+}
+
+func (o JobCollectTracesDataOutput) ToJobCollectTracesDataOutputWithContext(ctx context.Context) JobCollectTracesDataOutput {
+	return o
+}
+
+// Name of the bucket containing the log file.
+func (o JobCollectTracesDataOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobCollectTracesData) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// Status of trace collection process.
+func (o JobCollectTracesDataOutput) CollectTracesState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobCollectTracesData) *string { return v.CollectTracesState }).(pulumi.StringPtrOutput)
+}
+
+// Object Storage namespace.
+func (o JobCollectTracesDataOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobCollectTracesData) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Name of the object (regular expression is allowed)
+func (o JobCollectTracesDataOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v JobCollectTracesData) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+type JobCollectTracesDataArrayOutput struct{ *pulumi.OutputState }
+
+func (JobCollectTracesDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]JobCollectTracesData)(nil)).Elem()
+}
+
+func (o JobCollectTracesDataArrayOutput) ToJobCollectTracesDataArrayOutput() JobCollectTracesDataArrayOutput {
+	return o
+}
+
+func (o JobCollectTracesDataArrayOutput) ToJobCollectTracesDataArrayOutputWithContext(ctx context.Context) JobCollectTracesDataArrayOutput {
+	return o
+}
+
+func (o JobCollectTracesDataArrayOutput) Index(i pulumi.IntInput) JobCollectTracesDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) JobCollectTracesData {
+		return vs[0].([]JobCollectTracesData)[vs[1].(int)]
+	}).(JobCollectTracesDataOutput)
+}
+
 type JobParameterFileVersion struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -11994,6 +12118,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeArrayInput)(nil)).Elem(), ConnectionAdditionalAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpInput)(nil)).Elem(), ConnectionIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobCollectTracesDataInput)(nil)).Elem(), JobCollectTracesDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*JobCollectTracesDataArrayInput)(nil)).Elem(), JobCollectTracesDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobParameterFileVersionInput)(nil)).Elem(), JobParameterFileVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobParameterFileVersionArrayInput)(nil)).Elem(), JobParameterFileVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressInput)(nil)).Elem(), JobProgressArgs{})
@@ -12168,6 +12294,8 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionAdditionalAttributeArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(JobCollectTracesDataOutput{})
+	pulumi.RegisterOutputType(JobCollectTracesDataArrayOutput{})
 	pulumi.RegisterOutputType(JobParameterFileVersionOutput{})
 	pulumi.RegisterOutputType(JobParameterFileVersionArrayOutput{})
 	pulumi.RegisterOutputType(JobProgressOutput{})

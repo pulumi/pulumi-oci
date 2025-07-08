@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.ReplicaArgs;
 import com.pulumi.oci.Mysql.inputs.ReplicaState;
+import com.pulumi.oci.Mysql.outputs.ReplicaEncryptData;
 import com.pulumi.oci.Mysql.outputs.ReplicaReplicaOverrides;
 import com.pulumi.oci.Mysql.outputs.ReplicaSecureConnection;
 import com.pulumi.oci.Utilities;
@@ -179,6 +180,20 @@ public class Replica extends com.pulumi.resources.CustomResource {
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * Encrypt data details.
+     * 
+     */
+    @Export(name="encryptDatas", refs={List.class,ReplicaEncryptData.class}, tree="[0,1]")
+    private Output<List<ReplicaEncryptData>> encryptDatas;
+
+    /**
+     * @return Encrypt data details.
+     * 
+     */
+    public Output<List<ReplicaEncryptData>> encryptDatas() {
+        return this.encryptDatas;
     }
     /**
      * The name of the Fault Domain the read replica is located in.

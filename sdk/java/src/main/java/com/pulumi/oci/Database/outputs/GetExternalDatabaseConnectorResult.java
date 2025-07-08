@@ -81,6 +81,11 @@ public final class GetExternalDatabaseConnectorResult {
      */
     private String state;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the `connectionStatus` of this external connector was last updated.
      * 
      */
@@ -187,6 +192,13 @@ public final class GetExternalDatabaseConnectorResult {
         return this.state;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the `connectionStatus` of this external connector was last updated.
      * 
      */
@@ -224,6 +236,7 @@ public final class GetExternalDatabaseConnectorResult {
         private String id;
         private String lifecycleDetails;
         private String state;
+        private Map<String,String> systemTags;
         private String timeConnectionStatusLastUpdated;
         private String timeCreated;
         public Builder() {}
@@ -243,6 +256,7 @@ public final class GetExternalDatabaseConnectorResult {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeConnectionStatusLastUpdated = defaults.timeConnectionStatusLastUpdated;
     	      this.timeCreated = defaults.timeCreated;
         }
@@ -366,6 +380,14 @@ public final class GetExternalDatabaseConnectorResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeConnectionStatusLastUpdated(String timeConnectionStatusLastUpdated) {
             if (timeConnectionStatusLastUpdated == null) {
               throw new MissingRequiredPropertyException("GetExternalDatabaseConnectorResult", "timeConnectionStatusLastUpdated");
@@ -397,6 +419,7 @@ public final class GetExternalDatabaseConnectorResult {
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeConnectionStatusLastUpdated = timeConnectionStatusLastUpdated;
             _resultValue.timeCreated = timeCreated;
             return _resultValue;

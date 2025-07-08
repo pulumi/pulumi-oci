@@ -22,6 +22,10 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict',
+    'DbmulticloudMultiCloudResourceDiscoveryResourceArgs',
+    'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
+    'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs',
+    'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
     'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs',
     'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict',
     'GetApiaccesscontrolApiMetadatasFilterArgs',
@@ -30,6 +34,20 @@ __all__ = [
     'GetApiaccesscontrolPrivilegedApiControlsFilterArgsDict',
     'GetApiaccesscontrolPrivilegedApiRequestsFilterArgs',
     'GetApiaccesscontrolPrivilegedApiRequestsFilterArgsDict',
+    'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs',
+    'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict',
+    'GetDbmulticloudOracleDbAzureBlobContainersFilterArgs',
+    'GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict',
+    'GetDbmulticloudOracleDbAzureBlobMountsFilterArgs',
+    'GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict',
+    'GetDbmulticloudOracleDbAzureConnectorsFilterArgs',
+    'GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict',
+    'GetDbmulticloudOracleDbAzureKeysFilterArgs',
+    'GetDbmulticloudOracleDbAzureKeysFilterArgsDict',
+    'GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs',
+    'GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict',
+    'GetDbmulticloudOracleDbAzureVaultsFilterArgs',
+    'GetDbmulticloudOracleDbAzureVaultsFilterArgsDict',
     'GetWlmsManagedInstanceScanResultsFilterArgs',
     'GetWlmsManagedInstanceScanResultsFilterArgsDict',
     'GetWlmsManagedInstanceServerInstalledPatchesFilterArgs',
@@ -291,6 +309,250 @@ class ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs:
 
 
 if not MYPY:
+    class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        """
+        location: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Discovered Resource Location.
+        """
+        name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Discovered Resource Name.
+        """
+        properties: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]
+        """
+        Discovered Resource's properties.
+        """
+        resource_group: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Discovered Resource Group Name.
+        """
+        type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Discovered Resource Type.
+        """
+elif False:
+    DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbmulticloudMultiCloudResourceDiscoveryResourceArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[builtins.str]] = None,
+                 location: Optional[pulumi.Input[builtins.str]] = None,
+                 name: Optional[pulumi.Input[builtins.str]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 resource_group: Optional[pulumi.Input[builtins.str]] = None,
+                 type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param pulumi.Input[builtins.str] location: Discovered Resource Location.
+        :param pulumi.Input[builtins.str] name: Discovered Resource Name.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] properties: Discovered Resource's properties.
+        :param pulumi.Input[builtins.str] resource_group: Discovered Resource Group Name.
+        :param pulumi.Input[builtins.str] type: Discovered Resource Type.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if location is not None:
+            pulumi.set(__self__, "location", location)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def location(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Discovered Resource Location.
+        """
+        return pulumi.get(self, "location")
+
+    @location.setter
+    def location(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "location", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Discovered Resource Name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        Discovered Resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @properties.setter
+    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "properties", value)
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Discovered Resource Group Name.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "resource_group", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Discovered Resource Type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+if not MYPY:
+    class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict(TypedDict):
+        current_arc_agent_version: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Current Arc Agent Version installed on this node of VM Cluster.
+        """
+        host_id: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Host ID.
+        """
+        host_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        Host Name or Azure Arc Agent Name.
+        """
+        status: NotRequired[pulumi.Input[builtins.str]]
+        """
+        The current status of the Azure Arc Agent Resource.
+        """
+        time_last_checked: NotRequired[pulumi.Input[builtins.str]]
+        """
+        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+elif False:
+    DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
+    def __init__(__self__, *,
+                 current_arc_agent_version: Optional[pulumi.Input[builtins.str]] = None,
+                 host_id: Optional[pulumi.Input[builtins.str]] = None,
+                 host_name: Optional[pulumi.Input[builtins.str]] = None,
+                 status: Optional[pulumi.Input[builtins.str]] = None,
+                 time_last_checked: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param pulumi.Input[builtins.str] host_id: Host ID.
+        :param pulumi.Input[builtins.str] host_name: Host Name or Azure Arc Agent Name.
+        :param pulumi.Input[builtins.str] status: The current status of the Azure Arc Agent Resource.
+        :param pulumi.Input[builtins.str] time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        if current_arc_agent_version is not None:
+            pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_checked is not None:
+            pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @property
+    @pulumi.getter(name="currentArcAgentVersion")
+    def current_arc_agent_version(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Current Arc Agent Version installed on this node of VM Cluster.
+        """
+        return pulumi.get(self, "current_arc_agent_version")
+
+    @current_arc_agent_version.setter
+    def current_arc_agent_version(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "current_arc_agent_version", value)
+
+    @property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @host_id.setter
+    def host_id(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "host_id", value)
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        Host Name or Azure Arc Agent Name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "host_name", value)
+
+    @property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        The current status of the Azure Arc Agent Resource.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+    @time_last_checked.setter
+    def time_last_checked(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "time_last_checked", value)
+
+
+if not MYPY:
     class GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict(TypedDict):
         name: builtins.str
         values: Sequence[builtins.str]
@@ -441,6 +703,344 @@ elif False:
 
 @pulumi.input_type
 class GetApiaccesscontrolPrivilegedApiRequestsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict(TypedDict):
+        name: builtins.str
+        """
+        Discovered Resource Name.
+        """
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: Discovered Resource Name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        Discovered Resource Name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAzureBlobContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAzureBlobContainersFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAzureBlobMountsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAzureBlobMountsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAzureConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAzureConnectorsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAzureKeysFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAzureKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAzureKeysFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbAzureVaultsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbAzureVaultsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAzureVaultsFilterArgs:
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],

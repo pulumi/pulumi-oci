@@ -273,6 +273,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     private String storageServerVersion;
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return The date and time the Exadata infrastructure was created.
      * 
      */
@@ -641,6 +646,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         return this.storageServerVersion;
     }
     /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The date and time the Exadata infrastructure was created.
      * 
      */
@@ -716,6 +728,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private Integer storageCount;
         private String storageServerType;
         private String storageServerVersion;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeZone;
         public Builder() {}
@@ -773,6 +786,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.storageCount = defaults.storageCount;
     	      this.storageServerType = defaults.storageServerType;
     	      this.storageServerVersion = defaults.storageServerVersion;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
         }
@@ -1215,6 +1229,14 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetExadataInfrastructuresExadataInfrastructure", "timeCreated");
@@ -1284,6 +1306,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             _resultValue.storageCount = storageCount;
             _resultValue.storageServerType = storageServerType;
             _resultValue.storageServerVersion = storageServerVersion;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             return _resultValue;

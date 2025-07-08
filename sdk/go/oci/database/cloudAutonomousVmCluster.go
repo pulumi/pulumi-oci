@@ -70,9 +70,11 @@ import (
 //				},
 //				MemoryPerOracleComputeUnitInGbs: pulumi.Any(cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs),
 //				NsgIds:                          pulumi.Any(cloudAutonomousVmClusterNsgIds),
+//				OpcDryRun:                       pulumi.Any(cloudAutonomousVmClusterOpcDryRun),
 //				ScanListenerPortNonTls:          pulumi.Any(cloudAutonomousVmClusterScanListenerPortNonTls),
 //				ScanListenerPortTls:             pulumi.Any(cloudAutonomousVmClusterScanListenerPortTls),
 //				SecurityAttributes:              pulumi.Any(cloudAutonomousVmClusterSecurityAttributes),
+//				SubscriptionId:                  pulumi.Any(testSubscription.Id),
 //				TotalContainerDatabases:         pulumi.Any(cloudAutonomousVmClusterTotalContainerDatabases),
 //			})
 //			if err != nil {
@@ -177,6 +179,8 @@ type CloudAutonomousVmCluster struct {
 	OcpuCount pulumi.Float64Output `pulumi:"ocpuCount"`
 	// The lowest value to which ocpus can be scaled down.
 	OcpusLowestScaledValue pulumi.IntOutput `pulumi:"ocpusLowestScaledValue"`
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+	OpcDryRun pulumi.BoolOutput `pulumi:"opcDryRun"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases pulumi.IntOutput `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -201,6 +205,10 @@ type CloudAutonomousVmCluster struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -345,6 +353,8 @@ type cloudAutonomousVmClusterState struct {
 	OcpuCount *float64 `pulumi:"ocpuCount"`
 	// The lowest value to which ocpus can be scaled down.
 	OcpusLowestScaledValue *int `pulumi:"ocpusLowestScaledValue"`
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+	OpcDryRun *bool `pulumi:"opcDryRun"`
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases *int `pulumi:"provisionableAutonomousContainerDatabases"`
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -369,6 +379,10 @@ type cloudAutonomousVmClusterState struct {
 	State *string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId *string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId *string `pulumi:"subscriptionId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of Database SSL certificate expiration.
@@ -472,6 +486,8 @@ type CloudAutonomousVmClusterState struct {
 	OcpuCount pulumi.Float64PtrInput
 	// The lowest value to which ocpus can be scaled down.
 	OcpusLowestScaledValue pulumi.IntPtrInput
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+	OpcDryRun pulumi.BoolPtrInput
 	// The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 	ProvisionableAutonomousContainerDatabases pulumi.IntPtrInput
 	// The number of provisioned Autonomous Container Databases in an Autonomous VM Cluster.
@@ -496,6 +512,10 @@ type CloudAutonomousVmClusterState struct {
 	State pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput
 	// The date and time that the cloud Autonomous VM cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time of Database SSL certificate expiration.
@@ -555,6 +575,8 @@ type cloudAutonomousVmClusterArgs struct {
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+	OpcDryRun *bool `pulumi:"opcDryRun"`
 	// The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls *int `pulumi:"scanListenerPortNonTls"`
 	// The SCAN Listener TLS port. Default is 2484.
@@ -563,6 +585,8 @@ type cloudAutonomousVmClusterArgs struct {
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
@@ -609,6 +633,8 @@ type CloudAutonomousVmClusterArgs struct {
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+	OpcDryRun pulumi.BoolPtrInput
 	// The SCAN Listener Non TLS port. Default is 1521.
 	ScanListenerPortNonTls pulumi.IntPtrInput
 	// The SCAN Listener TLS port. Default is 2484.
@@ -617,6 +643,8 @@ type CloudAutonomousVmClusterArgs struct {
 	SecurityAttributes pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 	SubnetId pulumi.StringInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringPtrInput
 	// The last date and time that the cloud Autonomous VM cluster was updated.
 	TimeUpdated pulumi.StringPtrInput
 	// (Updatable) The total number of Autonomous Container Databases that can be created.
@@ -924,6 +952,11 @@ func (o CloudAutonomousVmClusterOutput) OcpusLowestScaledValue() pulumi.IntOutpu
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.OcpusLowestScaledValue }).(pulumi.IntOutput)
 }
 
+// (Updatable) Indicates that the request is a dry run, if set to "true". A dry run request does not actually  creating or updating a resource and is used only to perform validation on the submitted data.
+func (o CloudAutonomousVmClusterOutput) OpcDryRun() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.BoolOutput { return v.OpcDryRun }).(pulumi.BoolOutput)
+}
+
 // The number of provisionable Autonomous Container Databases in an Autonomous VM Cluster.
 func (o CloudAutonomousVmClusterOutput) ProvisionableAutonomousContainerDatabases() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.IntOutput { return v.ProvisionableAutonomousContainerDatabases }).(pulumi.IntOutput)
@@ -979,6 +1012,16 @@ func (o CloudAutonomousVmClusterOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
 func (o CloudAutonomousVmClusterOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o CloudAutonomousVmClusterOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o CloudAutonomousVmClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the cloud Autonomous VM cluster was created.

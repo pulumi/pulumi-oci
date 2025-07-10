@@ -12,9 +12,13 @@ from .bds_instance import *
 from .bds_instance_api_key import *
 from .bds_instance_identity_configuration import *
 from .bds_instance_metastore_config import *
+from .bds_instance_node_backup import *
+from .bds_instance_node_backup_configuration import *
+from .bds_instance_node_replace_configuration import *
 from .bds_instance_operation_certificate_managements_management import *
 from .bds_instance_os_patch_action import *
 from .bds_instance_patch_action import *
+from .bds_instance_replace_node_action import *
 from .bds_instance_resource_principal_configuration import *
 from .bds_instance_software_update_action import *
 from .get_auto_scaling_configuration import *
@@ -29,6 +33,12 @@ from .get_bds_instance_identity_configurations import *
 from .get_bds_instance_list_os_patches import *
 from .get_bds_instance_metastore_config import *
 from .get_bds_instance_metastore_configs import *
+from .get_bds_instance_node_backup import *
+from .get_bds_instance_node_backup_configuration import *
+from .get_bds_instance_node_backup_configurations import *
+from .get_bds_instance_node_backups import *
+from .get_bds_instance_node_replace_configuration import *
+from .get_bds_instance_node_replace_configurations import *
 from .get_bds_instance_patch_histories import *
 from .get_bds_instance_patches import *
 from .get_bds_instance_resource_principal_configuration import *

@@ -30,6 +30,11 @@ export type AgentKnowledgeBase = import("./agentKnowledgeBase").AgentKnowledgeBa
 export const AgentKnowledgeBase: typeof import("./agentKnowledgeBase").AgentKnowledgeBase = null as any;
 utilities.lazyLoad(exports, ["AgentKnowledgeBase"], () => require("./agentKnowledgeBase"));
 
+export { AgentToolArgs, AgentToolState } from "./agentTool";
+export type AgentTool = import("./agentTool").AgentTool;
+export const AgentTool: typeof import("./agentTool").AgentTool = null as any;
+utilities.lazyLoad(exports, ["AgentTool"], () => require("./agentTool"));
+
 export { DedicatedAiClusterArgs, DedicatedAiClusterState } from "./dedicatedAiCluster";
 export type DedicatedAiCluster = import("./dedicatedAiCluster").DedicatedAiCluster;
 export const DedicatedAiCluster: typeof import("./dedicatedAiCluster").DedicatedAiCluster = null as any;
@@ -95,6 +100,16 @@ export const getAgentKnowledgeBases: typeof import("./getAgentKnowledgeBases").g
 export const getAgentKnowledgeBasesOutput: typeof import("./getAgentKnowledgeBases").getAgentKnowledgeBasesOutput = null as any;
 utilities.lazyLoad(exports, ["getAgentKnowledgeBases","getAgentKnowledgeBasesOutput"], () => require("./getAgentKnowledgeBases"));
 
+export { GetAgentToolArgs, GetAgentToolResult, GetAgentToolOutputArgs } from "./getAgentTool";
+export const getAgentTool: typeof import("./getAgentTool").getAgentTool = null as any;
+export const getAgentToolOutput: typeof import("./getAgentTool").getAgentToolOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentTool","getAgentToolOutput"], () => require("./getAgentTool"));
+
+export { GetAgentToolsArgs, GetAgentToolsResult, GetAgentToolsOutputArgs } from "./getAgentTools";
+export const getAgentTools: typeof import("./getAgentTools").getAgentTools = null as any;
+export const getAgentToolsOutput: typeof import("./getAgentTools").getAgentToolsOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentTools","getAgentToolsOutput"], () => require("./getAgentTools"));
+
 export { GetDedicatedAiClusterArgs, GetDedicatedAiClusterResult, GetDedicatedAiClusterOutputArgs } from "./getDedicatedAiCluster";
 export const getDedicatedAiCluster: typeof import("./getDedicatedAiCluster").getDedicatedAiCluster = null as any;
 export const getDedicatedAiClusterOutput: typeof import("./getDedicatedAiCluster").getDedicatedAiClusterOutput = null as any;
@@ -145,6 +160,8 @@ const _module = {
                 return new AgentDataSource(name, <any>undefined, { urn })
             case "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase":
                 return new AgentKnowledgeBase(name, <any>undefined, { urn })
+            case "oci:GenerativeAi/agentTool:AgentTool":
+                return new AgentTool(name, <any>undefined, { urn })
             case "oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster":
                 return new DedicatedAiCluster(name, <any>undefined, { urn })
             case "oci:GenerativeAi/endpoint:Endpoint":
@@ -161,6 +178,7 @@ pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentAgentEndpoint", 
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentDataIngestionJob", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentDataSource", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentKnowledgeBase", _module)
+pulumi.runtime.registerResourceModule("oci", "GenerativeAi/agentTool", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/dedicatedAiCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/endpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "GenerativeAi/model", _module)

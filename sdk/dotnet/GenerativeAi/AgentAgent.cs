@@ -12,8 +12,6 @@ namespace Pulumi.Oci.GenerativeAi
     /// <summary>
     /// This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
     /// 
-    /// **CreateAgent**
-    /// 
     /// Creates an agent.
     /// 
     /// ## Example Usage
@@ -40,6 +38,13 @@ namespace Pulumi.Oci.GenerativeAi
     ///             { "Department", "Finance" },
     ///         },
     ///         KnowledgeBaseIds = agentKnowledgeBaseIds,
+    ///         LlmConfig = new Oci.GenerativeAi.Inputs.AgentAgentLlmConfigArgs
+    ///         {
+    ///             RoutingLlmCustomization = new Oci.GenerativeAi.Inputs.AgentAgentLlmConfigRoutingLlmCustomizationArgs
+    ///             {
+    ///                 Instruction = agentLlmConfigRoutingLlmCustomizationInstruction,
+    ///             },
+    ///         },
     ///         WelcomeMessage = agentWelcomeMessage,
     ///     });
     /// 
@@ -88,7 +93,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        /// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         /// </summary>
         [Output("knowledgeBaseIds")]
         public Output<ImmutableArray<string>> KnowledgeBaseIds { get; private set; } = null!;
@@ -98,6 +103,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Configuration to Agent LLM.
+        /// </summary>
+        [Output("llmConfig")]
+        public Output<Outputs.AgentAgentLlmConfig> LlmConfig { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the agent.
@@ -225,13 +236,19 @@ namespace Pulumi.Oci.GenerativeAi
         private InputList<string>? _knowledgeBaseIds;
 
         /// <summary>
-        /// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        /// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         /// </summary>
         public InputList<string> KnowledgeBaseIds
         {
             get => _knowledgeBaseIds ?? (_knowledgeBaseIds = new InputList<string>());
             set => _knowledgeBaseIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) Configuration to Agent LLM.
+        /// </summary>
+        [Input("llmConfig")]
+        public Input<Inputs.AgentAgentLlmConfigArgs>? LlmConfig { get; set; }
 
         /// <summary>
         /// (Updatable) Details about purpose and responsibility of the agent
@@ -297,7 +314,7 @@ namespace Pulumi.Oci.GenerativeAi
         private InputList<string>? _knowledgeBaseIds;
 
         /// <summary>
-        /// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        /// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         /// </summary>
         public InputList<string> KnowledgeBaseIds
         {
@@ -310,6 +327,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Configuration to Agent LLM.
+        /// </summary>
+        [Input("llmConfig")]
+        public Input<Inputs.AgentAgentLlmConfigGetArgs>? LlmConfig { get; set; }
 
         /// <summary>
         /// The current state of the agent.

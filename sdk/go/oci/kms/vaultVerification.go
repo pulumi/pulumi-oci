@@ -49,12 +49,15 @@ import (
 type VaultVerification struct {
 	pulumi.CustomResourceState
 
+	CryptoEndpoint     pulumi.StringOutput `pulumi:"cryptoEndpoint"`
+	ManagementEndpoint pulumi.StringOutput `pulumi:"managementEndpoint"`
 	// (Updatable) The region to be created replica to. When updated,
 	// replica will be deleted from old region, and created to updated region.
 	ReplicaRegion        pulumi.StringOutput                         `pulumi:"replicaRegion"`
 	ReplicaVaultMetadata VaultVerificationReplicaVaultMetadataOutput `pulumi:"replicaVaultMetadata"`
 	// The OCID of the primary vault to create replica from.
-	VaultId pulumi.StringOutput `pulumi:"vaultId"`
+	VaultId            pulumi.StringOutput `pulumi:"vaultId"`
+	VaultReplicaStatus pulumi.StringOutput `pulumi:"vaultReplicaStatus"`
 }
 
 // NewVaultVerification registers a new resource with the given unique name, arguments, and options.
@@ -93,21 +96,27 @@ func GetVaultVerification(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VaultVerification resources.
 type vaultVerificationState struct {
+	CryptoEndpoint     *string `pulumi:"cryptoEndpoint"`
+	ManagementEndpoint *string `pulumi:"managementEndpoint"`
 	// (Updatable) The region to be created replica to. When updated,
 	// replica will be deleted from old region, and created to updated region.
 	ReplicaRegion        *string                                `pulumi:"replicaRegion"`
 	ReplicaVaultMetadata *VaultVerificationReplicaVaultMetadata `pulumi:"replicaVaultMetadata"`
 	// The OCID of the primary vault to create replica from.
-	VaultId *string `pulumi:"vaultId"`
+	VaultId            *string `pulumi:"vaultId"`
+	VaultReplicaStatus *string `pulumi:"vaultReplicaStatus"`
 }
 
 type VaultVerificationState struct {
+	CryptoEndpoint     pulumi.StringPtrInput
+	ManagementEndpoint pulumi.StringPtrInput
 	// (Updatable) The region to be created replica to. When updated,
 	// replica will be deleted from old region, and created to updated region.
 	ReplicaRegion        pulumi.StringPtrInput
 	ReplicaVaultMetadata VaultVerificationReplicaVaultMetadataPtrInput
 	// The OCID of the primary vault to create replica from.
-	VaultId pulumi.StringPtrInput
+	VaultId            pulumi.StringPtrInput
+	VaultReplicaStatus pulumi.StringPtrInput
 }
 
 func (VaultVerificationState) ElementType() reflect.Type {
@@ -220,6 +229,14 @@ func (o VaultVerificationOutput) ToVaultVerificationOutputWithContext(ctx contex
 	return o
 }
 
+func (o VaultVerificationOutput) CryptoEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v *VaultVerification) pulumi.StringOutput { return v.CryptoEndpoint }).(pulumi.StringOutput)
+}
+
+func (o VaultVerificationOutput) ManagementEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v *VaultVerification) pulumi.StringOutput { return v.ManagementEndpoint }).(pulumi.StringOutput)
+}
+
 // (Updatable) The region to be created replica to. When updated,
 // replica will be deleted from old region, and created to updated region.
 func (o VaultVerificationOutput) ReplicaRegion() pulumi.StringOutput {
@@ -233,6 +250,10 @@ func (o VaultVerificationOutput) ReplicaVaultMetadata() VaultVerificationReplica
 // The OCID of the primary vault to create replica from.
 func (o VaultVerificationOutput) VaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VaultVerification) pulumi.StringOutput { return v.VaultId }).(pulumi.StringOutput)
+}
+
+func (o VaultVerificationOutput) VaultReplicaStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *VaultVerification) pulumi.StringOutput { return v.VaultReplicaStatus }).(pulumi.StringOutput)
 }
 
 type VaultVerificationArrayOutput struct{ *pulumi.OutputState }

@@ -169,6 +169,1129 @@ func (o AgentAgentEndpointContentModerationConfigPtrOutput) ShouldEnableOnOutput
 	}).(pulumi.BoolPtrOutput)
 }
 
+type AgentAgentEndpointGuardrailConfig struct {
+	// (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfig *AgentAgentEndpointGuardrailConfigContentModerationConfig `pulumi:"contentModerationConfig"`
+	// (Updatable) The configuration details for Personally Identifiable Information.
+	PersonallyIdentifiableInformationConfig *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig `pulumi:"personallyIdentifiableInformationConfig"`
+	// (Updatable) The configuration details for Prompt Injection.
+	PromptInjectionConfig *AgentAgentEndpointGuardrailConfigPromptInjectionConfig `pulumi:"promptInjectionConfig"`
+}
+
+// AgentAgentEndpointGuardrailConfigInput is an input type that accepts AgentAgentEndpointGuardrailConfigArgs and AgentAgentEndpointGuardrailConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigInput` via:
+//
+//	AgentAgentEndpointGuardrailConfigArgs{...}
+type AgentAgentEndpointGuardrailConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigOutput() AgentAgentEndpointGuardrailConfigOutput
+	ToAgentAgentEndpointGuardrailConfigOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigOutput
+}
+
+type AgentAgentEndpointGuardrailConfigArgs struct {
+	// (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfig AgentAgentEndpointGuardrailConfigContentModerationConfigPtrInput `pulumi:"contentModerationConfig"`
+	// (Updatable) The configuration details for Personally Identifiable Information.
+	PersonallyIdentifiableInformationConfig AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrInput `pulumi:"personallyIdentifiableInformationConfig"`
+	// (Updatable) The configuration details for Prompt Injection.
+	PromptInjectionConfig AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrInput `pulumi:"promptInjectionConfig"`
+}
+
+func (AgentAgentEndpointGuardrailConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointGuardrailConfigArgs) ToAgentAgentEndpointGuardrailConfigOutput() AgentAgentEndpointGuardrailConfigOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigArgs) ToAgentAgentEndpointGuardrailConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigOutput)
+}
+
+func (i AgentAgentEndpointGuardrailConfigArgs) ToAgentAgentEndpointGuardrailConfigPtrOutput() AgentAgentEndpointGuardrailConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigArgs) ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigOutput).ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointGuardrailConfigPtrInput is an input type that accepts AgentAgentEndpointGuardrailConfigArgs, AgentAgentEndpointGuardrailConfigPtr and AgentAgentEndpointGuardrailConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigPtrInput` via:
+//
+//	        AgentAgentEndpointGuardrailConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointGuardrailConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigPtrOutput() AgentAgentEndpointGuardrailConfigPtrOutput
+	ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigPtrOutput
+}
+
+type agentAgentEndpointGuardrailConfigPtrType AgentAgentEndpointGuardrailConfigArgs
+
+func AgentAgentEndpointGuardrailConfigPtr(v *AgentAgentEndpointGuardrailConfigArgs) AgentAgentEndpointGuardrailConfigPtrInput {
+	return (*agentAgentEndpointGuardrailConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointGuardrailConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointGuardrailConfigPtrType) ToAgentAgentEndpointGuardrailConfigPtrOutput() AgentAgentEndpointGuardrailConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointGuardrailConfigPtrType) ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigOutput) ToAgentAgentEndpointGuardrailConfigOutput() AgentAgentEndpointGuardrailConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigOutput) ToAgentAgentEndpointGuardrailConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigOutput) ToAgentAgentEndpointGuardrailConfigPtrOutput() AgentAgentEndpointGuardrailConfigPtrOutput {
+	return o.ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointGuardrailConfigOutput) ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfig {
+		return &v
+	}).(AgentAgentEndpointGuardrailConfigPtrOutput)
+}
+
+// (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+func (o AgentAgentEndpointGuardrailConfigOutput) ContentModerationConfig() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfigContentModerationConfig {
+		return v.ContentModerationConfig
+	}).(AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput)
+}
+
+// (Updatable) The configuration details for Personally Identifiable Information.
+func (o AgentAgentEndpointGuardrailConfigOutput) PersonallyIdentifiableInformationConfig() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+		return v.PersonallyIdentifiableInformationConfig
+	}).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput)
+}
+
+// (Updatable) The configuration details for Prompt Injection.
+func (o AgentAgentEndpointGuardrailConfigOutput) PromptInjectionConfig() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+		return v.PromptInjectionConfig
+	}).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigPtrOutput() AgentAgentEndpointGuardrailConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPtrOutput) Elem() AgentAgentEndpointGuardrailConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfig) AgentAgentEndpointGuardrailConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointGuardrailConfig
+		return ret
+	}).(AgentAgentEndpointGuardrailConfigOutput)
+}
+
+// (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+func (o AgentAgentEndpointGuardrailConfigPtrOutput) ContentModerationConfig() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfigContentModerationConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ContentModerationConfig
+	}).(AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput)
+}
+
+// (Updatable) The configuration details for Personally Identifiable Information.
+func (o AgentAgentEndpointGuardrailConfigPtrOutput) PersonallyIdentifiableInformationConfig() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+		if v == nil {
+			return nil
+		}
+		return v.PersonallyIdentifiableInformationConfig
+	}).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput)
+}
+
+// (Updatable) The configuration details for Prompt Injection.
+func (o AgentAgentEndpointGuardrailConfigPtrOutput) PromptInjectionConfig() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfig) *AgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+		if v == nil {
+			return nil
+		}
+		return v.PromptInjectionConfig
+	}).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigContentModerationConfig struct {
+	// (Updatable) An input guardrail mode for content moderation.
+	InputGuardrailMode *string `pulumi:"inputGuardrailMode"`
+	// (Updatable) An output guardrail mode for content moderation.
+	OutputGuardrailMode *string `pulumi:"outputGuardrailMode"`
+}
+
+// AgentAgentEndpointGuardrailConfigContentModerationConfigInput is an input type that accepts AgentAgentEndpointGuardrailConfigContentModerationConfigArgs and AgentAgentEndpointGuardrailConfigContentModerationConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigContentModerationConfigInput` via:
+//
+//	AgentAgentEndpointGuardrailConfigContentModerationConfigArgs{...}
+type AgentAgentEndpointGuardrailConfigContentModerationConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigOutput
+	ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigOutput
+}
+
+type AgentAgentEndpointGuardrailConfigContentModerationConfigArgs struct {
+	// (Updatable) An input guardrail mode for content moderation.
+	InputGuardrailMode pulumi.StringPtrInput `pulumi:"inputGuardrailMode"`
+	// (Updatable) An output guardrail mode for content moderation.
+	OutputGuardrailMode pulumi.StringPtrInput `pulumi:"outputGuardrailMode"`
+}
+
+func (AgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigContentModerationConfigOutput)
+}
+
+func (i AgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigContentModerationConfigOutput).ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointGuardrailConfigContentModerationConfigPtrInput is an input type that accepts AgentAgentEndpointGuardrailConfigContentModerationConfigArgs, AgentAgentEndpointGuardrailConfigContentModerationConfigPtr and AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigContentModerationConfigPtrInput` via:
+//
+//	        AgentAgentEndpointGuardrailConfigContentModerationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointGuardrailConfigContentModerationConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput
+	ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput
+}
+
+type agentAgentEndpointGuardrailConfigContentModerationConfigPtrType AgentAgentEndpointGuardrailConfigContentModerationConfigArgs
+
+func AgentAgentEndpointGuardrailConfigContentModerationConfigPtr(v *AgentAgentEndpointGuardrailConfigContentModerationConfigArgs) AgentAgentEndpointGuardrailConfigContentModerationConfigPtrInput {
+	return (*agentAgentEndpointGuardrailConfigContentModerationConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointGuardrailConfigContentModerationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointGuardrailConfigContentModerationConfigPtrType) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointGuardrailConfigContentModerationConfigPtrType) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigContentModerationConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ToAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return o.ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointGuardrailConfigContentModerationConfig) *AgentAgentEndpointGuardrailConfigContentModerationConfig {
+		return &v
+	}).(AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput)
+}
+
+// (Updatable) An input guardrail mode for content moderation.
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) InputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfigContentModerationConfig) *string { return v.InputGuardrailMode }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An output guardrail mode for content moderation.
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigOutput) OutputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfigContentModerationConfig) *string { return v.OutputGuardrailMode }).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput() AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput) Elem() AgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigContentModerationConfig) AgentAgentEndpointGuardrailConfigContentModerationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointGuardrailConfigContentModerationConfig
+		return ret
+	}).(AgentAgentEndpointGuardrailConfigContentModerationConfigOutput)
+}
+
+// (Updatable) An input guardrail mode for content moderation.
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput) InputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigContentModerationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An output guardrail mode for content moderation.
+func (o AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput) OutputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigContentModerationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OutputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig struct {
+	// (Updatable) An input guardrail mode for personally identifiable information.
+	InputGuardrailMode *string `pulumi:"inputGuardrailMode"`
+	// (Updatable) An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode *string `pulumi:"outputGuardrailMode"`
+}
+
+// AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput is an input type that accepts AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs and AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput` via:
+//
+//	AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{...}
+type AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput
+	ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput
+}
+
+type AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs struct {
+	// (Updatable) An input guardrail mode for personally identifiable information.
+	InputGuardrailMode pulumi.StringPtrInput `pulumi:"inputGuardrailMode"`
+	// (Updatable) An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode pulumi.StringPtrInput `pulumi:"outputGuardrailMode"`
+}
+
+func (AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput)
+}
+
+func (i AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput).ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrInput is an input type that accepts AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs, AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtr and AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrInput` via:
+//
+//	        AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput
+	ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput
+}
+
+type agentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrType AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs
+
+func AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtr(v *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrInput {
+	return (*agentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrType) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrType) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return o.ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+		return &v
+	}).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput)
+}
+
+// (Updatable) An input guardrail mode for personally identifiable information.
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) InputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) *string {
+		return v.InputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An output guardrail mode for personally identifiable information.
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) OutputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) *string {
+		return v.OutputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput) Elem() AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig
+		return ret
+	}).(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput)
+}
+
+// (Updatable) An input guardrail mode for personally identifiable information.
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput) InputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An output guardrail mode for personally identifiable information.
+func (o AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput) OutputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OutputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPromptInjectionConfig struct {
+	// (Updatable) An input guardrail mode for prompt injection.
+	InputGuardrailMode *string `pulumi:"inputGuardrailMode"`
+}
+
+// AgentAgentEndpointGuardrailConfigPromptInjectionConfigInput is an input type that accepts AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs and AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigPromptInjectionConfigInput` via:
+//
+//	AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{...}
+type AgentAgentEndpointGuardrailConfigPromptInjectionConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput
+	ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput
+}
+
+type AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs struct {
+	// (Updatable) An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringPtrInput `pulumi:"inputGuardrailMode"`
+}
+
+func (AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput)
+}
+
+func (i AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput).ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrInput is an input type that accepts AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs, AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtr and AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrInput` via:
+//
+//	        AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput
+	ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput
+}
+
+type agentAgentEndpointGuardrailConfigPromptInjectionConfigPtrType AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs
+
+func AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtr(v *AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrInput {
+	return (*agentAgentEndpointGuardrailConfigPromptInjectionConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointGuardrailConfigPromptInjectionConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointGuardrailConfigPromptInjectionConfigPtrType) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return i.ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointGuardrailConfigPromptInjectionConfigPtrType) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return o.ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointGuardrailConfigPromptInjectionConfig) *AgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+		return &v
+	}).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput)
+}
+
+// (Updatable) An input guardrail mode for prompt injection.
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) InputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointGuardrailConfigPromptInjectionConfig) *string { return v.InputGuardrailMode }).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput() AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput) ToAgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput) Elem() AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigPromptInjectionConfig) AgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointGuardrailConfigPromptInjectionConfig
+		return ret
+	}).(AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput)
+}
+
+// (Updatable) An input guardrail mode for prompt injection.
+func (o AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput) InputGuardrailMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointGuardrailConfigPromptInjectionConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InputGuardrailMode
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointHumanInputConfig struct {
+	// (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+	ShouldEnableHumanInput bool `pulumi:"shouldEnableHumanInput"`
+}
+
+// AgentAgentEndpointHumanInputConfigInput is an input type that accepts AgentAgentEndpointHumanInputConfigArgs and AgentAgentEndpointHumanInputConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointHumanInputConfigInput` via:
+//
+//	AgentAgentEndpointHumanInputConfigArgs{...}
+type AgentAgentEndpointHumanInputConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointHumanInputConfigOutput() AgentAgentEndpointHumanInputConfigOutput
+	ToAgentAgentEndpointHumanInputConfigOutputWithContext(context.Context) AgentAgentEndpointHumanInputConfigOutput
+}
+
+type AgentAgentEndpointHumanInputConfigArgs struct {
+	// (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+	ShouldEnableHumanInput pulumi.BoolInput `pulumi:"shouldEnableHumanInput"`
+}
+
+func (AgentAgentEndpointHumanInputConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointHumanInputConfigArgs) ToAgentAgentEndpointHumanInputConfigOutput() AgentAgentEndpointHumanInputConfigOutput {
+	return i.ToAgentAgentEndpointHumanInputConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointHumanInputConfigArgs) ToAgentAgentEndpointHumanInputConfigOutputWithContext(ctx context.Context) AgentAgentEndpointHumanInputConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointHumanInputConfigOutput)
+}
+
+func (i AgentAgentEndpointHumanInputConfigArgs) ToAgentAgentEndpointHumanInputConfigPtrOutput() AgentAgentEndpointHumanInputConfigPtrOutput {
+	return i.ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointHumanInputConfigArgs) ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointHumanInputConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointHumanInputConfigOutput).ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointHumanInputConfigPtrInput is an input type that accepts AgentAgentEndpointHumanInputConfigArgs, AgentAgentEndpointHumanInputConfigPtr and AgentAgentEndpointHumanInputConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointHumanInputConfigPtrInput` via:
+//
+//	        AgentAgentEndpointHumanInputConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointHumanInputConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointHumanInputConfigPtrOutput() AgentAgentEndpointHumanInputConfigPtrOutput
+	ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(context.Context) AgentAgentEndpointHumanInputConfigPtrOutput
+}
+
+type agentAgentEndpointHumanInputConfigPtrType AgentAgentEndpointHumanInputConfigArgs
+
+func AgentAgentEndpointHumanInputConfigPtr(v *AgentAgentEndpointHumanInputConfigArgs) AgentAgentEndpointHumanInputConfigPtrInput {
+	return (*agentAgentEndpointHumanInputConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointHumanInputConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointHumanInputConfigPtrType) ToAgentAgentEndpointHumanInputConfigPtrOutput() AgentAgentEndpointHumanInputConfigPtrOutput {
+	return i.ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointHumanInputConfigPtrType) ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointHumanInputConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointHumanInputConfigPtrOutput)
+}
+
+type AgentAgentEndpointHumanInputConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointHumanInputConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointHumanInputConfigOutput) ToAgentAgentEndpointHumanInputConfigOutput() AgentAgentEndpointHumanInputConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointHumanInputConfigOutput) ToAgentAgentEndpointHumanInputConfigOutputWithContext(ctx context.Context) AgentAgentEndpointHumanInputConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointHumanInputConfigOutput) ToAgentAgentEndpointHumanInputConfigPtrOutput() AgentAgentEndpointHumanInputConfigPtrOutput {
+	return o.ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointHumanInputConfigOutput) ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointHumanInputConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointHumanInputConfig) *AgentAgentEndpointHumanInputConfig {
+		return &v
+	}).(AgentAgentEndpointHumanInputConfigPtrOutput)
+}
+
+// (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+func (o AgentAgentEndpointHumanInputConfigOutput) ShouldEnableHumanInput() pulumi.BoolOutput {
+	return o.ApplyT(func(v AgentAgentEndpointHumanInputConfig) bool { return v.ShouldEnableHumanInput }).(pulumi.BoolOutput)
+}
+
+type AgentAgentEndpointHumanInputConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointHumanInputConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointHumanInputConfigPtrOutput) ToAgentAgentEndpointHumanInputConfigPtrOutput() AgentAgentEndpointHumanInputConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointHumanInputConfigPtrOutput) ToAgentAgentEndpointHumanInputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointHumanInputConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointHumanInputConfigPtrOutput) Elem() AgentAgentEndpointHumanInputConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointHumanInputConfig) AgentAgentEndpointHumanInputConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointHumanInputConfig
+		return ret
+	}).(AgentAgentEndpointHumanInputConfigOutput)
+}
+
+// (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+func (o AgentAgentEndpointHumanInputConfigPtrOutput) ShouldEnableHumanInput() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointHumanInputConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return &v.ShouldEnableHumanInput
+	}).(pulumi.BoolPtrOutput)
+}
+
+type AgentAgentEndpointOutputConfig struct {
+	// (Updatable) Location of the output.
+	OutputLocation AgentAgentEndpointOutputConfigOutputLocation `pulumi:"outputLocation"`
+	// (Updatable) Retention duration of the output data.
+	RetentionPeriodInMinutes *int `pulumi:"retentionPeriodInMinutes"`
+}
+
+// AgentAgentEndpointOutputConfigInput is an input type that accepts AgentAgentEndpointOutputConfigArgs and AgentAgentEndpointOutputConfigOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointOutputConfigInput` via:
+//
+//	AgentAgentEndpointOutputConfigArgs{...}
+type AgentAgentEndpointOutputConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointOutputConfigOutput() AgentAgentEndpointOutputConfigOutput
+	ToAgentAgentEndpointOutputConfigOutputWithContext(context.Context) AgentAgentEndpointOutputConfigOutput
+}
+
+type AgentAgentEndpointOutputConfigArgs struct {
+	// (Updatable) Location of the output.
+	OutputLocation AgentAgentEndpointOutputConfigOutputLocationInput `pulumi:"outputLocation"`
+	// (Updatable) Retention duration of the output data.
+	RetentionPeriodInMinutes pulumi.IntPtrInput `pulumi:"retentionPeriodInMinutes"`
+}
+
+func (AgentAgentEndpointOutputConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointOutputConfigArgs) ToAgentAgentEndpointOutputConfigOutput() AgentAgentEndpointOutputConfigOutput {
+	return i.ToAgentAgentEndpointOutputConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointOutputConfigArgs) ToAgentAgentEndpointOutputConfigOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointOutputConfigOutput)
+}
+
+func (i AgentAgentEndpointOutputConfigArgs) ToAgentAgentEndpointOutputConfigPtrOutput() AgentAgentEndpointOutputConfigPtrOutput {
+	return i.ToAgentAgentEndpointOutputConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointOutputConfigArgs) ToAgentAgentEndpointOutputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointOutputConfigOutput).ToAgentAgentEndpointOutputConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointOutputConfigPtrInput is an input type that accepts AgentAgentEndpointOutputConfigArgs, AgentAgentEndpointOutputConfigPtr and AgentAgentEndpointOutputConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointOutputConfigPtrInput` via:
+//
+//	        AgentAgentEndpointOutputConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointOutputConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointOutputConfigPtrOutput() AgentAgentEndpointOutputConfigPtrOutput
+	ToAgentAgentEndpointOutputConfigPtrOutputWithContext(context.Context) AgentAgentEndpointOutputConfigPtrOutput
+}
+
+type agentAgentEndpointOutputConfigPtrType AgentAgentEndpointOutputConfigArgs
+
+func AgentAgentEndpointOutputConfigPtr(v *AgentAgentEndpointOutputConfigArgs) AgentAgentEndpointOutputConfigPtrInput {
+	return (*agentAgentEndpointOutputConfigPtrType)(v)
+}
+
+func (*agentAgentEndpointOutputConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointOutputConfigPtrType) ToAgentAgentEndpointOutputConfigPtrOutput() AgentAgentEndpointOutputConfigPtrOutput {
+	return i.ToAgentAgentEndpointOutputConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointOutputConfigPtrType) ToAgentAgentEndpointOutputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointOutputConfigPtrOutput)
+}
+
+type AgentAgentEndpointOutputConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointOutputConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointOutputConfigOutput) ToAgentAgentEndpointOutputConfigOutput() AgentAgentEndpointOutputConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigOutput) ToAgentAgentEndpointOutputConfigOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigOutput) ToAgentAgentEndpointOutputConfigPtrOutput() AgentAgentEndpointOutputConfigPtrOutput {
+	return o.ToAgentAgentEndpointOutputConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointOutputConfigOutput) ToAgentAgentEndpointOutputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointOutputConfig) *AgentAgentEndpointOutputConfig {
+		return &v
+	}).(AgentAgentEndpointOutputConfigPtrOutput)
+}
+
+// (Updatable) Location of the output.
+func (o AgentAgentEndpointOutputConfigOutput) OutputLocation() AgentAgentEndpointOutputConfigOutputLocationOutput {
+	return o.ApplyT(func(v AgentAgentEndpointOutputConfig) AgentAgentEndpointOutputConfigOutputLocation {
+		return v.OutputLocation
+	}).(AgentAgentEndpointOutputConfigOutputLocationOutput)
+}
+
+// (Updatable) Retention duration of the output data.
+func (o AgentAgentEndpointOutputConfigOutput) RetentionPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointOutputConfig) *int { return v.RetentionPeriodInMinutes }).(pulumi.IntPtrOutput)
+}
+
+type AgentAgentEndpointOutputConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointOutputConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointOutputConfigPtrOutput) ToAgentAgentEndpointOutputConfigPtrOutput() AgentAgentEndpointOutputConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigPtrOutput) ToAgentAgentEndpointOutputConfigPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigPtrOutput) Elem() AgentAgentEndpointOutputConfigOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfig) AgentAgentEndpointOutputConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointOutputConfig
+		return ret
+	}).(AgentAgentEndpointOutputConfigOutput)
+}
+
+// (Updatable) Location of the output.
+func (o AgentAgentEndpointOutputConfigPtrOutput) OutputLocation() AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfig) *AgentAgentEndpointOutputConfigOutputLocation {
+		if v == nil {
+			return nil
+		}
+		return &v.OutputLocation
+	}).(AgentAgentEndpointOutputConfigOutputLocationPtrOutput)
+}
+
+// (Updatable) Retention duration of the output data.
+func (o AgentAgentEndpointOutputConfigPtrOutput) RetentionPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RetentionPeriodInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+type AgentAgentEndpointOutputConfigOutputLocation struct {
+	// (Updatable) The name of the bucket.
+	Bucket string `pulumi:"bucket"`
+	// (Updatable) The namespace of the object storage.
+	Namespace string `pulumi:"namespace"`
+	// (Updatable) Type of OutputLocation.
+	OutputLocationType string `pulumi:"outputLocationType"`
+	// (Updatable) The prefix of the object storage.
+	Prefix *string `pulumi:"prefix"`
+}
+
+// AgentAgentEndpointOutputConfigOutputLocationInput is an input type that accepts AgentAgentEndpointOutputConfigOutputLocationArgs and AgentAgentEndpointOutputConfigOutputLocationOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointOutputConfigOutputLocationInput` via:
+//
+//	AgentAgentEndpointOutputConfigOutputLocationArgs{...}
+type AgentAgentEndpointOutputConfigOutputLocationInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointOutputConfigOutputLocationOutput() AgentAgentEndpointOutputConfigOutputLocationOutput
+	ToAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(context.Context) AgentAgentEndpointOutputConfigOutputLocationOutput
+}
+
+type AgentAgentEndpointOutputConfigOutputLocationArgs struct {
+	// (Updatable) The name of the bucket.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// (Updatable) The namespace of the object storage.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// (Updatable) Type of OutputLocation.
+	OutputLocationType pulumi.StringInput `pulumi:"outputLocationType"`
+	// (Updatable) The prefix of the object storage.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (AgentAgentEndpointOutputConfigOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (i AgentAgentEndpointOutputConfigOutputLocationArgs) ToAgentAgentEndpointOutputConfigOutputLocationOutput() AgentAgentEndpointOutputConfigOutputLocationOutput {
+	return i.ToAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointOutputConfigOutputLocationArgs) ToAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointOutputConfigOutputLocationOutput)
+}
+
+func (i AgentAgentEndpointOutputConfigOutputLocationArgs) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutput() AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return i.ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentEndpointOutputConfigOutputLocationArgs) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointOutputConfigOutputLocationOutput).ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(ctx)
+}
+
+// AgentAgentEndpointOutputConfigOutputLocationPtrInput is an input type that accepts AgentAgentEndpointOutputConfigOutputLocationArgs, AgentAgentEndpointOutputConfigOutputLocationPtr and AgentAgentEndpointOutputConfigOutputLocationPtrOutput values.
+// You can construct a concrete instance of `AgentAgentEndpointOutputConfigOutputLocationPtrInput` via:
+//
+//	        AgentAgentEndpointOutputConfigOutputLocationArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentEndpointOutputConfigOutputLocationPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentEndpointOutputConfigOutputLocationPtrOutput() AgentAgentEndpointOutputConfigOutputLocationPtrOutput
+	ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(context.Context) AgentAgentEndpointOutputConfigOutputLocationPtrOutput
+}
+
+type agentAgentEndpointOutputConfigOutputLocationPtrType AgentAgentEndpointOutputConfigOutputLocationArgs
+
+func AgentAgentEndpointOutputConfigOutputLocationPtr(v *AgentAgentEndpointOutputConfigOutputLocationArgs) AgentAgentEndpointOutputConfigOutputLocationPtrInput {
+	return (*agentAgentEndpointOutputConfigOutputLocationPtrType)(v)
+}
+
+func (*agentAgentEndpointOutputConfigOutputLocationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (i *agentAgentEndpointOutputConfigOutputLocationPtrType) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutput() AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return i.ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentEndpointOutputConfigOutputLocationPtrType) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentEndpointOutputConfigOutputLocationPtrOutput)
+}
+
+type AgentAgentEndpointOutputConfigOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointOutputConfigOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) ToAgentAgentEndpointOutputConfigOutputLocationOutput() AgentAgentEndpointOutputConfigOutputLocationOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) ToAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutputLocationOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutput() AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return o.ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentEndpointOutputConfigOutputLocation) *AgentAgentEndpointOutputConfigOutputLocation {
+		return &v
+	}).(AgentAgentEndpointOutputConfigOutputLocationPtrOutput)
+}
+
+// (Updatable) The name of the bucket.
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentAgentEndpointOutputConfigOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// (Updatable) The namespace of the object storage.
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentAgentEndpointOutputConfigOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of OutputLocation.
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) OutputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentAgentEndpointOutputConfigOutputLocation) string { return v.OutputLocationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The prefix of the object storage.
+func (o AgentAgentEndpointOutputConfigOutputLocationOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentEndpointOutputConfigOutputLocation) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentEndpointOutputConfigOutputLocationPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentEndpointOutputConfigOutputLocationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutput() AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) ToAgentAgentEndpointOutputConfigOutputLocationPtrOutputWithContext(ctx context.Context) AgentAgentEndpointOutputConfigOutputLocationPtrOutput {
+	return o
+}
+
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) Elem() AgentAgentEndpointOutputConfigOutputLocationOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfigOutputLocation) AgentAgentEndpointOutputConfigOutputLocation {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentEndpointOutputConfigOutputLocation
+		return ret
+	}).(AgentAgentEndpointOutputConfigOutputLocationOutput)
+}
+
+// (Updatable) The name of the bucket.
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfigOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace of the object storage.
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfigOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of OutputLocation.
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) OutputLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfigOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OutputLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of the object storage.
+func (o AgentAgentEndpointOutputConfigOutputLocationPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentEndpointOutputConfigOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
 type AgentAgentEndpointSessionConfig struct {
 	// (Updatable) The session will become inactive after this timeout.
 	IdleTimeoutInSeconds *int `pulumi:"idleTimeoutInSeconds"`
@@ -304,6 +1427,282 @@ func (o AgentAgentEndpointSessionConfigPtrOutput) IdleTimeoutInSeconds() pulumi.
 		}
 		return v.IdleTimeoutInSeconds
 	}).(pulumi.IntPtrOutput)
+}
+
+type AgentAgentLlmConfig struct {
+	// (Updatable) Configuration to customize LLM.
+	RoutingLlmCustomization *AgentAgentLlmConfigRoutingLlmCustomization `pulumi:"routingLlmCustomization"`
+}
+
+// AgentAgentLlmConfigInput is an input type that accepts AgentAgentLlmConfigArgs and AgentAgentLlmConfigOutput values.
+// You can construct a concrete instance of `AgentAgentLlmConfigInput` via:
+//
+//	AgentAgentLlmConfigArgs{...}
+type AgentAgentLlmConfigInput interface {
+	pulumi.Input
+
+	ToAgentAgentLlmConfigOutput() AgentAgentLlmConfigOutput
+	ToAgentAgentLlmConfigOutputWithContext(context.Context) AgentAgentLlmConfigOutput
+}
+
+type AgentAgentLlmConfigArgs struct {
+	// (Updatable) Configuration to customize LLM.
+	RoutingLlmCustomization AgentAgentLlmConfigRoutingLlmCustomizationPtrInput `pulumi:"routingLlmCustomization"`
+}
+
+func (AgentAgentLlmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (i AgentAgentLlmConfigArgs) ToAgentAgentLlmConfigOutput() AgentAgentLlmConfigOutput {
+	return i.ToAgentAgentLlmConfigOutputWithContext(context.Background())
+}
+
+func (i AgentAgentLlmConfigArgs) ToAgentAgentLlmConfigOutputWithContext(ctx context.Context) AgentAgentLlmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentLlmConfigOutput)
+}
+
+func (i AgentAgentLlmConfigArgs) ToAgentAgentLlmConfigPtrOutput() AgentAgentLlmConfigPtrOutput {
+	return i.ToAgentAgentLlmConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentLlmConfigArgs) ToAgentAgentLlmConfigPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentLlmConfigOutput).ToAgentAgentLlmConfigPtrOutputWithContext(ctx)
+}
+
+// AgentAgentLlmConfigPtrInput is an input type that accepts AgentAgentLlmConfigArgs, AgentAgentLlmConfigPtr and AgentAgentLlmConfigPtrOutput values.
+// You can construct a concrete instance of `AgentAgentLlmConfigPtrInput` via:
+//
+//	        AgentAgentLlmConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentLlmConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentLlmConfigPtrOutput() AgentAgentLlmConfigPtrOutput
+	ToAgentAgentLlmConfigPtrOutputWithContext(context.Context) AgentAgentLlmConfigPtrOutput
+}
+
+type agentAgentLlmConfigPtrType AgentAgentLlmConfigArgs
+
+func AgentAgentLlmConfigPtr(v *AgentAgentLlmConfigArgs) AgentAgentLlmConfigPtrInput {
+	return (*agentAgentLlmConfigPtrType)(v)
+}
+
+func (*agentAgentLlmConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (i *agentAgentLlmConfigPtrType) ToAgentAgentLlmConfigPtrOutput() AgentAgentLlmConfigPtrOutput {
+	return i.ToAgentAgentLlmConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentLlmConfigPtrType) ToAgentAgentLlmConfigPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentLlmConfigPtrOutput)
+}
+
+type AgentAgentLlmConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentLlmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (o AgentAgentLlmConfigOutput) ToAgentAgentLlmConfigOutput() AgentAgentLlmConfigOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigOutput) ToAgentAgentLlmConfigOutputWithContext(ctx context.Context) AgentAgentLlmConfigOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigOutput) ToAgentAgentLlmConfigPtrOutput() AgentAgentLlmConfigPtrOutput {
+	return o.ToAgentAgentLlmConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentLlmConfigOutput) ToAgentAgentLlmConfigPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentLlmConfig) *AgentAgentLlmConfig {
+		return &v
+	}).(AgentAgentLlmConfigPtrOutput)
+}
+
+// (Updatable) Configuration to customize LLM.
+func (o AgentAgentLlmConfigOutput) RoutingLlmCustomization() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return o.ApplyT(func(v AgentAgentLlmConfig) *AgentAgentLlmConfigRoutingLlmCustomization {
+		return v.RoutingLlmCustomization
+	}).(AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput)
+}
+
+type AgentAgentLlmConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentLlmConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (o AgentAgentLlmConfigPtrOutput) ToAgentAgentLlmConfigPtrOutput() AgentAgentLlmConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigPtrOutput) ToAgentAgentLlmConfigPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigPtrOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigPtrOutput) Elem() AgentAgentLlmConfigOutput {
+	return o.ApplyT(func(v *AgentAgentLlmConfig) AgentAgentLlmConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentLlmConfig
+		return ret
+	}).(AgentAgentLlmConfigOutput)
+}
+
+// (Updatable) Configuration to customize LLM.
+func (o AgentAgentLlmConfigPtrOutput) RoutingLlmCustomization() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return o.ApplyT(func(v *AgentAgentLlmConfig) *AgentAgentLlmConfigRoutingLlmCustomization {
+		if v == nil {
+			return nil
+		}
+		return v.RoutingLlmCustomization
+	}).(AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput)
+}
+
+type AgentAgentLlmConfigRoutingLlmCustomization struct {
+	// (Updatable) If specified, the default instruction is replaced with provided instruction.
+	Instruction *string `pulumi:"instruction"`
+}
+
+// AgentAgentLlmConfigRoutingLlmCustomizationInput is an input type that accepts AgentAgentLlmConfigRoutingLlmCustomizationArgs and AgentAgentLlmConfigRoutingLlmCustomizationOutput values.
+// You can construct a concrete instance of `AgentAgentLlmConfigRoutingLlmCustomizationInput` via:
+//
+//	AgentAgentLlmConfigRoutingLlmCustomizationArgs{...}
+type AgentAgentLlmConfigRoutingLlmCustomizationInput interface {
+	pulumi.Input
+
+	ToAgentAgentLlmConfigRoutingLlmCustomizationOutput() AgentAgentLlmConfigRoutingLlmCustomizationOutput
+	ToAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(context.Context) AgentAgentLlmConfigRoutingLlmCustomizationOutput
+}
+
+type AgentAgentLlmConfigRoutingLlmCustomizationArgs struct {
+	// (Updatable) If specified, the default instruction is replaced with provided instruction.
+	Instruction pulumi.StringPtrInput `pulumi:"instruction"`
+}
+
+func (AgentAgentLlmConfigRoutingLlmCustomizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (i AgentAgentLlmConfigRoutingLlmCustomizationArgs) ToAgentAgentLlmConfigRoutingLlmCustomizationOutput() AgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return i.ToAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(context.Background())
+}
+
+func (i AgentAgentLlmConfigRoutingLlmCustomizationArgs) ToAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(ctx context.Context) AgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentLlmConfigRoutingLlmCustomizationOutput)
+}
+
+func (i AgentAgentLlmConfigRoutingLlmCustomizationArgs) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutput() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return i.ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(context.Background())
+}
+
+func (i AgentAgentLlmConfigRoutingLlmCustomizationArgs) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentLlmConfigRoutingLlmCustomizationOutput).ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(ctx)
+}
+
+// AgentAgentLlmConfigRoutingLlmCustomizationPtrInput is an input type that accepts AgentAgentLlmConfigRoutingLlmCustomizationArgs, AgentAgentLlmConfigRoutingLlmCustomizationPtr and AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput values.
+// You can construct a concrete instance of `AgentAgentLlmConfigRoutingLlmCustomizationPtrInput` via:
+//
+//	        AgentAgentLlmConfigRoutingLlmCustomizationArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentAgentLlmConfigRoutingLlmCustomizationPtrInput interface {
+	pulumi.Input
+
+	ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutput() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput
+	ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(context.Context) AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput
+}
+
+type agentAgentLlmConfigRoutingLlmCustomizationPtrType AgentAgentLlmConfigRoutingLlmCustomizationArgs
+
+func AgentAgentLlmConfigRoutingLlmCustomizationPtr(v *AgentAgentLlmConfigRoutingLlmCustomizationArgs) AgentAgentLlmConfigRoutingLlmCustomizationPtrInput {
+	return (*agentAgentLlmConfigRoutingLlmCustomizationPtrType)(v)
+}
+
+func (*agentAgentLlmConfigRoutingLlmCustomizationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (i *agentAgentLlmConfigRoutingLlmCustomizationPtrType) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutput() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return i.ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(context.Background())
+}
+
+func (i *agentAgentLlmConfigRoutingLlmCustomizationPtrType) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput)
+}
+
+type AgentAgentLlmConfigRoutingLlmCustomizationOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentLlmConfigRoutingLlmCustomizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationOutput) ToAgentAgentLlmConfigRoutingLlmCustomizationOutput() AgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationOutput) ToAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(ctx context.Context) AgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationOutput) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutput() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return o.ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(context.Background())
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationOutput) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentAgentLlmConfigRoutingLlmCustomization) *AgentAgentLlmConfigRoutingLlmCustomization {
+		return &v
+	}).(AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput)
+}
+
+// (Updatable) If specified, the default instruction is replaced with provided instruction.
+func (o AgentAgentLlmConfigRoutingLlmCustomizationOutput) Instruction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentAgentLlmConfigRoutingLlmCustomization) *string { return v.Instruction }).(pulumi.StringPtrOutput)
+}
+
+type AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutput() AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput) ToAgentAgentLlmConfigRoutingLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput {
+	return o
+}
+
+func (o AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput) Elem() AgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return o.ApplyT(func(v *AgentAgentLlmConfigRoutingLlmCustomization) AgentAgentLlmConfigRoutingLlmCustomization {
+		if v != nil {
+			return *v
+		}
+		var ret AgentAgentLlmConfigRoutingLlmCustomization
+		return ret
+	}).(AgentAgentLlmConfigRoutingLlmCustomizationOutput)
+}
+
+// (Updatable) If specified, the default instruction is replaced with provided instruction.
+func (o AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput) Instruction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentAgentLlmConfigRoutingLlmCustomization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Instruction
+	}).(pulumi.StringPtrOutput)
 }
 
 type AgentDataIngestionJobDataIngestionJobStatistic struct {
@@ -1779,6 +3178,1612 @@ func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) VaultSecretId() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
+type AgentToolToolConfig struct {
+	// (Updatable) The connection type for Databases.
+	DatabaseConnection *AgentToolToolConfigDatabaseConnection `pulumi:"databaseConnection"`
+	// (Updatable) The input location definition.
+	DatabaseSchema *AgentToolToolConfigDatabaseSchema `pulumi:"databaseSchema"`
+	// (Updatable) Dialect to be used for SQL generation.
+	Dialect *string `pulumi:"dialect"`
+	// (Updatable) Details of Function for Function calling tool.
+	Function *AgentToolToolConfigFunction `pulumi:"function"`
+	// (Updatable) Configuration to customize LLM.
+	GenerationLlmCustomization *AgentToolToolConfigGenerationLlmCustomization `pulumi:"generationLlmCustomization"`
+	// (Updatable) The input location definition.
+	IclExamples *AgentToolToolConfigIclExamples `pulumi:"iclExamples"`
+	// (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+	KnowledgeBaseConfigs []AgentToolToolConfigKnowledgeBaseConfig `pulumi:"knowledgeBaseConfigs"`
+	// (Updatable) Size of the model.
+	ModelSize *string `pulumi:"modelSize"`
+	// (Updatable) To enable/disable self correction.
+	ShouldEnableSelfCorrection *bool `pulumi:"shouldEnableSelfCorrection"`
+	// (Updatable) To enable/disable SQL execution.
+	ShouldEnableSqlExecution *bool `pulumi:"shouldEnableSqlExecution"`
+	// (Updatable) The input location definition.
+	TableAndColumnDescription *AgentToolToolConfigTableAndColumnDescription `pulumi:"tableAndColumnDescription"`
+	// (Updatable) The type of the Tool config. The allowed values are:
+	// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+	// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+	// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ToolConfigType string `pulumi:"toolConfigType"`
+}
+
+// AgentToolToolConfigInput is an input type that accepts AgentToolToolConfigArgs and AgentToolToolConfigOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigInput` via:
+//
+//	AgentToolToolConfigArgs{...}
+type AgentToolToolConfigInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigOutput() AgentToolToolConfigOutput
+	ToAgentToolToolConfigOutputWithContext(context.Context) AgentToolToolConfigOutput
+}
+
+type AgentToolToolConfigArgs struct {
+	// (Updatable) The connection type for Databases.
+	DatabaseConnection AgentToolToolConfigDatabaseConnectionPtrInput `pulumi:"databaseConnection"`
+	// (Updatable) The input location definition.
+	DatabaseSchema AgentToolToolConfigDatabaseSchemaPtrInput `pulumi:"databaseSchema"`
+	// (Updatable) Dialect to be used for SQL generation.
+	Dialect pulumi.StringPtrInput `pulumi:"dialect"`
+	// (Updatable) Details of Function for Function calling tool.
+	Function AgentToolToolConfigFunctionPtrInput `pulumi:"function"`
+	// (Updatable) Configuration to customize LLM.
+	GenerationLlmCustomization AgentToolToolConfigGenerationLlmCustomizationPtrInput `pulumi:"generationLlmCustomization"`
+	// (Updatable) The input location definition.
+	IclExamples AgentToolToolConfigIclExamplesPtrInput `pulumi:"iclExamples"`
+	// (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+	KnowledgeBaseConfigs AgentToolToolConfigKnowledgeBaseConfigArrayInput `pulumi:"knowledgeBaseConfigs"`
+	// (Updatable) Size of the model.
+	ModelSize pulumi.StringPtrInput `pulumi:"modelSize"`
+	// (Updatable) To enable/disable self correction.
+	ShouldEnableSelfCorrection pulumi.BoolPtrInput `pulumi:"shouldEnableSelfCorrection"`
+	// (Updatable) To enable/disable SQL execution.
+	ShouldEnableSqlExecution pulumi.BoolPtrInput `pulumi:"shouldEnableSqlExecution"`
+	// (Updatable) The input location definition.
+	TableAndColumnDescription AgentToolToolConfigTableAndColumnDescriptionPtrInput `pulumi:"tableAndColumnDescription"`
+	// (Updatable) The type of the Tool config. The allowed values are:
+	// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+	// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+	// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ToolConfigType pulumi.StringInput `pulumi:"toolConfigType"`
+}
+
+func (AgentToolToolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfig)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigArgs) ToAgentToolToolConfigOutput() AgentToolToolConfigOutput {
+	return i.ToAgentToolToolConfigOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigArgs) ToAgentToolToolConfigOutputWithContext(ctx context.Context) AgentToolToolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigOutput)
+}
+
+func (i AgentToolToolConfigArgs) ToAgentToolToolConfigPtrOutput() AgentToolToolConfigPtrOutput {
+	return i.ToAgentToolToolConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigArgs) ToAgentToolToolConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigOutput).ToAgentToolToolConfigPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigPtrInput is an input type that accepts AgentToolToolConfigArgs, AgentToolToolConfigPtr and AgentToolToolConfigPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigPtrInput` via:
+//
+//	        AgentToolToolConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigPtrOutput() AgentToolToolConfigPtrOutput
+	ToAgentToolToolConfigPtrOutputWithContext(context.Context) AgentToolToolConfigPtrOutput
+}
+
+type agentToolToolConfigPtrType AgentToolToolConfigArgs
+
+func AgentToolToolConfigPtr(v *AgentToolToolConfigArgs) AgentToolToolConfigPtrInput {
+	return (*agentToolToolConfigPtrType)(v)
+}
+
+func (*agentToolToolConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfig)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigPtrType) ToAgentToolToolConfigPtrOutput() AgentToolToolConfigPtrOutput {
+	return i.ToAgentToolToolConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigPtrType) ToAgentToolToolConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigPtrOutput)
+}
+
+type AgentToolToolConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigOutput) ToAgentToolToolConfigOutput() AgentToolToolConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigOutput) ToAgentToolToolConfigOutputWithContext(ctx context.Context) AgentToolToolConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigOutput) ToAgentToolToolConfigPtrOutput() AgentToolToolConfigPtrOutput {
+	return o.ToAgentToolToolConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigOutput) ToAgentToolToolConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfig) *AgentToolToolConfig {
+		return &v
+	}).(AgentToolToolConfigPtrOutput)
+}
+
+// (Updatable) The connection type for Databases.
+func (o AgentToolToolConfigOutput) DatabaseConnection() AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigDatabaseConnection { return v.DatabaseConnection }).(AgentToolToolConfigDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) The input location definition.
+func (o AgentToolToolConfigOutput) DatabaseSchema() AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigDatabaseSchema { return v.DatabaseSchema }).(AgentToolToolConfigDatabaseSchemaPtrOutput)
+}
+
+// (Updatable) Dialect to be used for SQL generation.
+func (o AgentToolToolConfigOutput) Dialect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *string { return v.Dialect }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details of Function for Function calling tool.
+func (o AgentToolToolConfigOutput) Function() AgentToolToolConfigFunctionPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigFunction { return v.Function }).(AgentToolToolConfigFunctionPtrOutput)
+}
+
+// (Updatable) Configuration to customize LLM.
+func (o AgentToolToolConfigOutput) GenerationLlmCustomization() AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigGenerationLlmCustomization {
+		return v.GenerationLlmCustomization
+	}).(AgentToolToolConfigGenerationLlmCustomizationPtrOutput)
+}
+
+// (Updatable) The input location definition.
+func (o AgentToolToolConfigOutput) IclExamples() AgentToolToolConfigIclExamplesPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigIclExamples { return v.IclExamples }).(AgentToolToolConfigIclExamplesPtrOutput)
+}
+
+// (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+func (o AgentToolToolConfigOutput) KnowledgeBaseConfigs() AgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) []AgentToolToolConfigKnowledgeBaseConfig { return v.KnowledgeBaseConfigs }).(AgentToolToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+// (Updatable) Size of the model.
+func (o AgentToolToolConfigOutput) ModelSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *string { return v.ModelSize }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) To enable/disable self correction.
+func (o AgentToolToolConfigOutput) ShouldEnableSelfCorrection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *bool { return v.ShouldEnableSelfCorrection }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) To enable/disable SQL execution.
+func (o AgentToolToolConfigOutput) ShouldEnableSqlExecution() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *bool { return v.ShouldEnableSqlExecution }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The input location definition.
+func (o AgentToolToolConfigOutput) TableAndColumnDescription() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigTableAndColumnDescription {
+		return v.TableAndColumnDescription
+	}).(AgentToolToolConfigTableAndColumnDescriptionPtrOutput)
+}
+
+// (Updatable) The type of the Tool config. The allowed values are:
+// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AgentToolToolConfigOutput) ToolConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) string { return v.ToolConfigType }).(pulumi.StringOutput)
+}
+
+type AgentToolToolConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigPtrOutput) ToAgentToolToolConfigPtrOutput() AgentToolToolConfigPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigPtrOutput) ToAgentToolToolConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigPtrOutput) Elem() AgentToolToolConfigOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) AgentToolToolConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfig
+		return ret
+	}).(AgentToolToolConfigOutput)
+}
+
+// (Updatable) The connection type for Databases.
+func (o AgentToolToolConfigPtrOutput) DatabaseConnection() AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigDatabaseConnection {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseConnection
+	}).(AgentToolToolConfigDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) The input location definition.
+func (o AgentToolToolConfigPtrOutput) DatabaseSchema() AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigDatabaseSchema {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseSchema
+	}).(AgentToolToolConfigDatabaseSchemaPtrOutput)
+}
+
+// (Updatable) Dialect to be used for SQL generation.
+func (o AgentToolToolConfigPtrOutput) Dialect() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Dialect
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details of Function for Function calling tool.
+func (o AgentToolToolConfigPtrOutput) Function() AgentToolToolConfigFunctionPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigFunction {
+		if v == nil {
+			return nil
+		}
+		return v.Function
+	}).(AgentToolToolConfigFunctionPtrOutput)
+}
+
+// (Updatable) Configuration to customize LLM.
+func (o AgentToolToolConfigPtrOutput) GenerationLlmCustomization() AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigGenerationLlmCustomization {
+		if v == nil {
+			return nil
+		}
+		return v.GenerationLlmCustomization
+	}).(AgentToolToolConfigGenerationLlmCustomizationPtrOutput)
+}
+
+// (Updatable) The input location definition.
+func (o AgentToolToolConfigPtrOutput) IclExamples() AgentToolToolConfigIclExamplesPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigIclExamples {
+		if v == nil {
+			return nil
+		}
+		return v.IclExamples
+	}).(AgentToolToolConfigIclExamplesPtrOutput)
+}
+
+// (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+func (o AgentToolToolConfigPtrOutput) KnowledgeBaseConfigs() AgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) []AgentToolToolConfigKnowledgeBaseConfig {
+		if v == nil {
+			return nil
+		}
+		return v.KnowledgeBaseConfigs
+	}).(AgentToolToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+// (Updatable) Size of the model.
+func (o AgentToolToolConfigPtrOutput) ModelSize() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModelSize
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) To enable/disable self correction.
+func (o AgentToolToolConfigPtrOutput) ShouldEnableSelfCorrection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldEnableSelfCorrection
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) To enable/disable SQL execution.
+func (o AgentToolToolConfigPtrOutput) ShouldEnableSqlExecution() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldEnableSqlExecution
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The input location definition.
+func (o AgentToolToolConfigPtrOutput) TableAndColumnDescription() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigTableAndColumnDescription {
+		if v == nil {
+			return nil
+		}
+		return v.TableAndColumnDescription
+	}).(AgentToolToolConfigTableAndColumnDescriptionPtrOutput)
+}
+
+// (Updatable) The type of the Tool config. The allowed values are:
+// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AgentToolToolConfigPtrOutput) ToolConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ToolConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigDatabaseConnection struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// (Updatable) The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType string `pulumi:"connectionType"`
+}
+
+// AgentToolToolConfigDatabaseConnectionInput is an input type that accepts AgentToolToolConfigDatabaseConnectionArgs and AgentToolToolConfigDatabaseConnectionOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigDatabaseConnectionInput` via:
+//
+//	AgentToolToolConfigDatabaseConnectionArgs{...}
+type AgentToolToolConfigDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigDatabaseConnectionOutput() AgentToolToolConfigDatabaseConnectionOutput
+	ToAgentToolToolConfigDatabaseConnectionOutputWithContext(context.Context) AgentToolToolConfigDatabaseConnectionOutput
+}
+
+type AgentToolToolConfigDatabaseConnectionArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// (Updatable) The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+}
+
+func (AgentToolToolConfigDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigDatabaseConnectionArgs) ToAgentToolToolConfigDatabaseConnectionOutput() AgentToolToolConfigDatabaseConnectionOutput {
+	return i.ToAgentToolToolConfigDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigDatabaseConnectionArgs) ToAgentToolToolConfigDatabaseConnectionOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigDatabaseConnectionOutput)
+}
+
+func (i AgentToolToolConfigDatabaseConnectionArgs) ToAgentToolToolConfigDatabaseConnectionPtrOutput() AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return i.ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigDatabaseConnectionArgs) ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigDatabaseConnectionOutput).ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigDatabaseConnectionPtrInput is an input type that accepts AgentToolToolConfigDatabaseConnectionArgs, AgentToolToolConfigDatabaseConnectionPtr and AgentToolToolConfigDatabaseConnectionPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigDatabaseConnectionPtrInput` via:
+//
+//	        AgentToolToolConfigDatabaseConnectionArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigDatabaseConnectionPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigDatabaseConnectionPtrOutput() AgentToolToolConfigDatabaseConnectionPtrOutput
+	ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(context.Context) AgentToolToolConfigDatabaseConnectionPtrOutput
+}
+
+type agentToolToolConfigDatabaseConnectionPtrType AgentToolToolConfigDatabaseConnectionArgs
+
+func AgentToolToolConfigDatabaseConnectionPtr(v *AgentToolToolConfigDatabaseConnectionArgs) AgentToolToolConfigDatabaseConnectionPtrInput {
+	return (*agentToolToolConfigDatabaseConnectionPtrType)(v)
+}
+
+func (*agentToolToolConfigDatabaseConnectionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigDatabaseConnectionPtrType) ToAgentToolToolConfigDatabaseConnectionPtrOutput() AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return i.ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigDatabaseConnectionPtrType) ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigDatabaseConnectionPtrOutput)
+}
+
+type AgentToolToolConfigDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigDatabaseConnectionOutput) ToAgentToolToolConfigDatabaseConnectionOutput() AgentToolToolConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseConnectionOutput) ToAgentToolToolConfigDatabaseConnectionOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseConnectionOutput) ToAgentToolToolConfigDatabaseConnectionPtrOutput() AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return o.ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigDatabaseConnectionOutput) ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigDatabaseConnection) *AgentToolToolConfigDatabaseConnection {
+		return &v
+	}).(AgentToolToolConfigDatabaseConnectionPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o AgentToolToolConfigDatabaseConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o AgentToolToolConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+type AgentToolToolConfigDatabaseConnectionPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigDatabaseConnectionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigDatabaseConnectionPtrOutput) ToAgentToolToolConfigDatabaseConnectionPtrOutput() AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseConnectionPtrOutput) ToAgentToolToolConfigDatabaseConnectionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseConnectionPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseConnectionPtrOutput) Elem() AgentToolToolConfigDatabaseConnectionOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseConnection) AgentToolToolConfigDatabaseConnection {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigDatabaseConnection
+		return ret
+	}).(AgentToolToolConfigDatabaseConnectionOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o AgentToolToolConfigDatabaseConnectionPtrOutput) ConnectionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o AgentToolToolConfigDatabaseConnectionPtrOutput) ConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseConnection) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ConnectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigDatabaseSchema struct {
+	// (Updatable) The bucket name of an object.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content *string `pulumi:"content"`
+	// (Updatable) Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// (Updatable) The namespace name of an object.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The prefix of file object(s) or folder prefix.
+	Prefix *string `pulumi:"prefix"`
+}
+
+// AgentToolToolConfigDatabaseSchemaInput is an input type that accepts AgentToolToolConfigDatabaseSchemaArgs and AgentToolToolConfigDatabaseSchemaOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigDatabaseSchemaInput` via:
+//
+//	AgentToolToolConfigDatabaseSchemaArgs{...}
+type AgentToolToolConfigDatabaseSchemaInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigDatabaseSchemaOutput() AgentToolToolConfigDatabaseSchemaOutput
+	ToAgentToolToolConfigDatabaseSchemaOutputWithContext(context.Context) AgentToolToolConfigDatabaseSchemaOutput
+}
+
+type AgentToolToolConfigDatabaseSchemaArgs struct {
+	// (Updatable) The bucket name of an object.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// (Updatable) The namespace name of an object.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (AgentToolToolConfigDatabaseSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigDatabaseSchemaArgs) ToAgentToolToolConfigDatabaseSchemaOutput() AgentToolToolConfigDatabaseSchemaOutput {
+	return i.ToAgentToolToolConfigDatabaseSchemaOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigDatabaseSchemaArgs) ToAgentToolToolConfigDatabaseSchemaOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigDatabaseSchemaOutput)
+}
+
+func (i AgentToolToolConfigDatabaseSchemaArgs) ToAgentToolToolConfigDatabaseSchemaPtrOutput() AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return i.ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigDatabaseSchemaArgs) ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigDatabaseSchemaOutput).ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigDatabaseSchemaPtrInput is an input type that accepts AgentToolToolConfigDatabaseSchemaArgs, AgentToolToolConfigDatabaseSchemaPtr and AgentToolToolConfigDatabaseSchemaPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigDatabaseSchemaPtrInput` via:
+//
+//	        AgentToolToolConfigDatabaseSchemaArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigDatabaseSchemaPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigDatabaseSchemaPtrOutput() AgentToolToolConfigDatabaseSchemaPtrOutput
+	ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(context.Context) AgentToolToolConfigDatabaseSchemaPtrOutput
+}
+
+type agentToolToolConfigDatabaseSchemaPtrType AgentToolToolConfigDatabaseSchemaArgs
+
+func AgentToolToolConfigDatabaseSchemaPtr(v *AgentToolToolConfigDatabaseSchemaArgs) AgentToolToolConfigDatabaseSchemaPtrInput {
+	return (*agentToolToolConfigDatabaseSchemaPtrType)(v)
+}
+
+func (*agentToolToolConfigDatabaseSchemaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigDatabaseSchemaPtrType) ToAgentToolToolConfigDatabaseSchemaPtrOutput() AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return i.ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigDatabaseSchemaPtrType) ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigDatabaseSchemaPtrOutput)
+}
+
+type AgentToolToolConfigDatabaseSchemaOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigDatabaseSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigDatabaseSchemaOutput) ToAgentToolToolConfigDatabaseSchemaOutput() AgentToolToolConfigDatabaseSchemaOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseSchemaOutput) ToAgentToolToolConfigDatabaseSchemaOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseSchemaOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseSchemaOutput) ToAgentToolToolConfigDatabaseSchemaPtrOutput() AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return o.ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigDatabaseSchemaOutput) ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigDatabaseSchema) *AgentToolToolConfigDatabaseSchema {
+		return &v
+	}).(AgentToolToolConfigDatabaseSchemaPtrOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigDatabaseSchemaOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseSchema) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigDatabaseSchemaOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseSchema) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o AgentToolToolConfigDatabaseSchemaOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseSchema) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigDatabaseSchemaOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseSchema) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of file object(s) or folder prefix.
+func (o AgentToolToolConfigDatabaseSchemaOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigDatabaseSchema) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigDatabaseSchemaPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigDatabaseSchemaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) ToAgentToolToolConfigDatabaseSchemaPtrOutput() AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) ToAgentToolToolConfigDatabaseSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigDatabaseSchemaPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) Elem() AgentToolToolConfigDatabaseSchemaOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseSchema) AgentToolToolConfigDatabaseSchema {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigDatabaseSchema
+		return ret
+	}).(AgentToolToolConfigDatabaseSchemaOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) InputLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InputLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of file object(s) or folder prefix.
+func (o AgentToolToolConfigDatabaseSchemaPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigDatabaseSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigFunction struct {
+	// (Updatable) A description of the function.
+	Description *string `pulumi:"description"`
+	// (Updatable) The name of the function to invoke.
+	Name *string `pulumi:"name"`
+	// (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+	Parameters map[string]string `pulumi:"parameters"`
+}
+
+// AgentToolToolConfigFunctionInput is an input type that accepts AgentToolToolConfigFunctionArgs and AgentToolToolConfigFunctionOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigFunctionInput` via:
+//
+//	AgentToolToolConfigFunctionArgs{...}
+type AgentToolToolConfigFunctionInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigFunctionOutput() AgentToolToolConfigFunctionOutput
+	ToAgentToolToolConfigFunctionOutputWithContext(context.Context) AgentToolToolConfigFunctionOutput
+}
+
+type AgentToolToolConfigFunctionArgs struct {
+	// (Updatable) A description of the function.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) The name of the function to invoke.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
+}
+
+func (AgentToolToolConfigFunctionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigFunctionArgs) ToAgentToolToolConfigFunctionOutput() AgentToolToolConfigFunctionOutput {
+	return i.ToAgentToolToolConfigFunctionOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigFunctionArgs) ToAgentToolToolConfigFunctionOutputWithContext(ctx context.Context) AgentToolToolConfigFunctionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigFunctionOutput)
+}
+
+func (i AgentToolToolConfigFunctionArgs) ToAgentToolToolConfigFunctionPtrOutput() AgentToolToolConfigFunctionPtrOutput {
+	return i.ToAgentToolToolConfigFunctionPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigFunctionArgs) ToAgentToolToolConfigFunctionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigFunctionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigFunctionOutput).ToAgentToolToolConfigFunctionPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigFunctionPtrInput is an input type that accepts AgentToolToolConfigFunctionArgs, AgentToolToolConfigFunctionPtr and AgentToolToolConfigFunctionPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigFunctionPtrInput` via:
+//
+//	        AgentToolToolConfigFunctionArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigFunctionPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigFunctionPtrOutput() AgentToolToolConfigFunctionPtrOutput
+	ToAgentToolToolConfigFunctionPtrOutputWithContext(context.Context) AgentToolToolConfigFunctionPtrOutput
+}
+
+type agentToolToolConfigFunctionPtrType AgentToolToolConfigFunctionArgs
+
+func AgentToolToolConfigFunctionPtr(v *AgentToolToolConfigFunctionArgs) AgentToolToolConfigFunctionPtrInput {
+	return (*agentToolToolConfigFunctionPtrType)(v)
+}
+
+func (*agentToolToolConfigFunctionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigFunctionPtrType) ToAgentToolToolConfigFunctionPtrOutput() AgentToolToolConfigFunctionPtrOutput {
+	return i.ToAgentToolToolConfigFunctionPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigFunctionPtrType) ToAgentToolToolConfigFunctionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigFunctionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigFunctionPtrOutput)
+}
+
+type AgentToolToolConfigFunctionOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigFunctionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigFunctionOutput) ToAgentToolToolConfigFunctionOutput() AgentToolToolConfigFunctionOutput {
+	return o
+}
+
+func (o AgentToolToolConfigFunctionOutput) ToAgentToolToolConfigFunctionOutputWithContext(ctx context.Context) AgentToolToolConfigFunctionOutput {
+	return o
+}
+
+func (o AgentToolToolConfigFunctionOutput) ToAgentToolToolConfigFunctionPtrOutput() AgentToolToolConfigFunctionPtrOutput {
+	return o.ToAgentToolToolConfigFunctionPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigFunctionOutput) ToAgentToolToolConfigFunctionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigFunctionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigFunction) *AgentToolToolConfigFunction {
+		return &v
+	}).(AgentToolToolConfigFunctionPtrOutput)
+}
+
+// (Updatable) A description of the function.
+func (o AgentToolToolConfigFunctionOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigFunction) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the function to invoke.
+func (o AgentToolToolConfigFunctionOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigFunction) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+func (o AgentToolToolConfigFunctionOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v AgentToolToolConfigFunction) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
+}
+
+type AgentToolToolConfigFunctionPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigFunctionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigFunctionPtrOutput) ToAgentToolToolConfigFunctionPtrOutput() AgentToolToolConfigFunctionPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigFunctionPtrOutput) ToAgentToolToolConfigFunctionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigFunctionPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigFunctionPtrOutput) Elem() AgentToolToolConfigFunctionOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigFunction) AgentToolToolConfigFunction {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigFunction
+		return ret
+	}).(AgentToolToolConfigFunctionOutput)
+}
+
+// (Updatable) A description of the function.
+func (o AgentToolToolConfigFunctionPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigFunction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the function to invoke.
+func (o AgentToolToolConfigFunctionPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigFunction) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+func (o AgentToolToolConfigFunctionPtrOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigFunction) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Parameters
+	}).(pulumi.StringMapOutput)
+}
+
+type AgentToolToolConfigGenerationLlmCustomization struct {
+	// (Updatable) If specified, the default instruction is replaced with provided instruction.
+	Instruction *string `pulumi:"instruction"`
+}
+
+// AgentToolToolConfigGenerationLlmCustomizationInput is an input type that accepts AgentToolToolConfigGenerationLlmCustomizationArgs and AgentToolToolConfigGenerationLlmCustomizationOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigGenerationLlmCustomizationInput` via:
+//
+//	AgentToolToolConfigGenerationLlmCustomizationArgs{...}
+type AgentToolToolConfigGenerationLlmCustomizationInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigGenerationLlmCustomizationOutput() AgentToolToolConfigGenerationLlmCustomizationOutput
+	ToAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(context.Context) AgentToolToolConfigGenerationLlmCustomizationOutput
+}
+
+type AgentToolToolConfigGenerationLlmCustomizationArgs struct {
+	// (Updatable) If specified, the default instruction is replaced with provided instruction.
+	Instruction pulumi.StringPtrInput `pulumi:"instruction"`
+}
+
+func (AgentToolToolConfigGenerationLlmCustomizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigGenerationLlmCustomizationArgs) ToAgentToolToolConfigGenerationLlmCustomizationOutput() AgentToolToolConfigGenerationLlmCustomizationOutput {
+	return i.ToAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigGenerationLlmCustomizationArgs) ToAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(ctx context.Context) AgentToolToolConfigGenerationLlmCustomizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigGenerationLlmCustomizationOutput)
+}
+
+func (i AgentToolToolConfigGenerationLlmCustomizationArgs) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutput() AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return i.ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigGenerationLlmCustomizationArgs) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigGenerationLlmCustomizationOutput).ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigGenerationLlmCustomizationPtrInput is an input type that accepts AgentToolToolConfigGenerationLlmCustomizationArgs, AgentToolToolConfigGenerationLlmCustomizationPtr and AgentToolToolConfigGenerationLlmCustomizationPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigGenerationLlmCustomizationPtrInput` via:
+//
+//	        AgentToolToolConfigGenerationLlmCustomizationArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigGenerationLlmCustomizationPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigGenerationLlmCustomizationPtrOutput() AgentToolToolConfigGenerationLlmCustomizationPtrOutput
+	ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(context.Context) AgentToolToolConfigGenerationLlmCustomizationPtrOutput
+}
+
+type agentToolToolConfigGenerationLlmCustomizationPtrType AgentToolToolConfigGenerationLlmCustomizationArgs
+
+func AgentToolToolConfigGenerationLlmCustomizationPtr(v *AgentToolToolConfigGenerationLlmCustomizationArgs) AgentToolToolConfigGenerationLlmCustomizationPtrInput {
+	return (*agentToolToolConfigGenerationLlmCustomizationPtrType)(v)
+}
+
+func (*agentToolToolConfigGenerationLlmCustomizationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigGenerationLlmCustomizationPtrType) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutput() AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return i.ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigGenerationLlmCustomizationPtrType) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigGenerationLlmCustomizationPtrOutput)
+}
+
+type AgentToolToolConfigGenerationLlmCustomizationOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigGenerationLlmCustomizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationOutput) ToAgentToolToolConfigGenerationLlmCustomizationOutput() AgentToolToolConfigGenerationLlmCustomizationOutput {
+	return o
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationOutput) ToAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(ctx context.Context) AgentToolToolConfigGenerationLlmCustomizationOutput {
+	return o
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationOutput) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutput() AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return o.ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationOutput) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigGenerationLlmCustomization) *AgentToolToolConfigGenerationLlmCustomization {
+		return &v
+	}).(AgentToolToolConfigGenerationLlmCustomizationPtrOutput)
+}
+
+// (Updatable) If specified, the default instruction is replaced with provided instruction.
+func (o AgentToolToolConfigGenerationLlmCustomizationOutput) Instruction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigGenerationLlmCustomization) *string { return v.Instruction }).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigGenerationLlmCustomizationPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigGenerationLlmCustomizationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationPtrOutput) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutput() AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationPtrOutput) ToAgentToolToolConfigGenerationLlmCustomizationPtrOutputWithContext(ctx context.Context) AgentToolToolConfigGenerationLlmCustomizationPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigGenerationLlmCustomizationPtrOutput) Elem() AgentToolToolConfigGenerationLlmCustomizationOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigGenerationLlmCustomization) AgentToolToolConfigGenerationLlmCustomization {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigGenerationLlmCustomization
+		return ret
+	}).(AgentToolToolConfigGenerationLlmCustomizationOutput)
+}
+
+// (Updatable) If specified, the default instruction is replaced with provided instruction.
+func (o AgentToolToolConfigGenerationLlmCustomizationPtrOutput) Instruction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigGenerationLlmCustomization) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Instruction
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigIclExamples struct {
+	// (Updatable) The bucket name of an object.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content *string `pulumi:"content"`
+	// (Updatable) Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// (Updatable) The namespace name of an object.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The prefix of file object(s) or folder prefix.
+	Prefix *string `pulumi:"prefix"`
+}
+
+// AgentToolToolConfigIclExamplesInput is an input type that accepts AgentToolToolConfigIclExamplesArgs and AgentToolToolConfigIclExamplesOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigIclExamplesInput` via:
+//
+//	AgentToolToolConfigIclExamplesArgs{...}
+type AgentToolToolConfigIclExamplesInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigIclExamplesOutput() AgentToolToolConfigIclExamplesOutput
+	ToAgentToolToolConfigIclExamplesOutputWithContext(context.Context) AgentToolToolConfigIclExamplesOutput
+}
+
+type AgentToolToolConfigIclExamplesArgs struct {
+	// (Updatable) The bucket name of an object.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// (Updatable) The namespace name of an object.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (AgentToolToolConfigIclExamplesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigIclExamples)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigIclExamplesArgs) ToAgentToolToolConfigIclExamplesOutput() AgentToolToolConfigIclExamplesOutput {
+	return i.ToAgentToolToolConfigIclExamplesOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigIclExamplesArgs) ToAgentToolToolConfigIclExamplesOutputWithContext(ctx context.Context) AgentToolToolConfigIclExamplesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigIclExamplesOutput)
+}
+
+func (i AgentToolToolConfigIclExamplesArgs) ToAgentToolToolConfigIclExamplesPtrOutput() AgentToolToolConfigIclExamplesPtrOutput {
+	return i.ToAgentToolToolConfigIclExamplesPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigIclExamplesArgs) ToAgentToolToolConfigIclExamplesPtrOutputWithContext(ctx context.Context) AgentToolToolConfigIclExamplesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigIclExamplesOutput).ToAgentToolToolConfigIclExamplesPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigIclExamplesPtrInput is an input type that accepts AgentToolToolConfigIclExamplesArgs, AgentToolToolConfigIclExamplesPtr and AgentToolToolConfigIclExamplesPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigIclExamplesPtrInput` via:
+//
+//	        AgentToolToolConfigIclExamplesArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigIclExamplesPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigIclExamplesPtrOutput() AgentToolToolConfigIclExamplesPtrOutput
+	ToAgentToolToolConfigIclExamplesPtrOutputWithContext(context.Context) AgentToolToolConfigIclExamplesPtrOutput
+}
+
+type agentToolToolConfigIclExamplesPtrType AgentToolToolConfigIclExamplesArgs
+
+func AgentToolToolConfigIclExamplesPtr(v *AgentToolToolConfigIclExamplesArgs) AgentToolToolConfigIclExamplesPtrInput {
+	return (*agentToolToolConfigIclExamplesPtrType)(v)
+}
+
+func (*agentToolToolConfigIclExamplesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigIclExamples)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigIclExamplesPtrType) ToAgentToolToolConfigIclExamplesPtrOutput() AgentToolToolConfigIclExamplesPtrOutput {
+	return i.ToAgentToolToolConfigIclExamplesPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigIclExamplesPtrType) ToAgentToolToolConfigIclExamplesPtrOutputWithContext(ctx context.Context) AgentToolToolConfigIclExamplesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigIclExamplesPtrOutput)
+}
+
+type AgentToolToolConfigIclExamplesOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigIclExamplesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigIclExamples)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigIclExamplesOutput) ToAgentToolToolConfigIclExamplesOutput() AgentToolToolConfigIclExamplesOutput {
+	return o
+}
+
+func (o AgentToolToolConfigIclExamplesOutput) ToAgentToolToolConfigIclExamplesOutputWithContext(ctx context.Context) AgentToolToolConfigIclExamplesOutput {
+	return o
+}
+
+func (o AgentToolToolConfigIclExamplesOutput) ToAgentToolToolConfigIclExamplesPtrOutput() AgentToolToolConfigIclExamplesPtrOutput {
+	return o.ToAgentToolToolConfigIclExamplesPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigIclExamplesOutput) ToAgentToolToolConfigIclExamplesPtrOutputWithContext(ctx context.Context) AgentToolToolConfigIclExamplesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigIclExamples) *AgentToolToolConfigIclExamples {
+		return &v
+	}).(AgentToolToolConfigIclExamplesPtrOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigIclExamplesOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigIclExamples) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigIclExamplesOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigIclExamples) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o AgentToolToolConfigIclExamplesOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigIclExamples) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigIclExamplesOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigIclExamples) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of file object(s) or folder prefix.
+func (o AgentToolToolConfigIclExamplesOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigIclExamples) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigIclExamplesPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigIclExamplesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigIclExamples)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigIclExamplesPtrOutput) ToAgentToolToolConfigIclExamplesPtrOutput() AgentToolToolConfigIclExamplesPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigIclExamplesPtrOutput) ToAgentToolToolConfigIclExamplesPtrOutputWithContext(ctx context.Context) AgentToolToolConfigIclExamplesPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigIclExamplesPtrOutput) Elem() AgentToolToolConfigIclExamplesOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigIclExamples) AgentToolToolConfigIclExamples {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigIclExamples
+		return ret
+	}).(AgentToolToolConfigIclExamplesOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigIclExamplesPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigIclExamples) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigIclExamplesPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigIclExamples) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o AgentToolToolConfigIclExamplesPtrOutput) InputLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigIclExamples) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InputLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigIclExamplesPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigIclExamples) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of file object(s) or folder prefix.
+func (o AgentToolToolConfigIclExamplesPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigIclExamples) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigKnowledgeBaseConfig struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+	KnowledgeBaseId *string `pulumi:"knowledgeBaseId"`
+}
+
+// AgentToolToolConfigKnowledgeBaseConfigInput is an input type that accepts AgentToolToolConfigKnowledgeBaseConfigArgs and AgentToolToolConfigKnowledgeBaseConfigOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigKnowledgeBaseConfigInput` via:
+//
+//	AgentToolToolConfigKnowledgeBaseConfigArgs{...}
+type AgentToolToolConfigKnowledgeBaseConfigInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigKnowledgeBaseConfigOutput() AgentToolToolConfigKnowledgeBaseConfigOutput
+	ToAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(context.Context) AgentToolToolConfigKnowledgeBaseConfigOutput
+}
+
+type AgentToolToolConfigKnowledgeBaseConfigArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+	KnowledgeBaseId pulumi.StringPtrInput `pulumi:"knowledgeBaseId"`
+}
+
+func (AgentToolToolConfigKnowledgeBaseConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigKnowledgeBaseConfigArgs) ToAgentToolToolConfigKnowledgeBaseConfigOutput() AgentToolToolConfigKnowledgeBaseConfigOutput {
+	return i.ToAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigKnowledgeBaseConfigArgs) ToAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(ctx context.Context) AgentToolToolConfigKnowledgeBaseConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigKnowledgeBaseConfigOutput)
+}
+
+// AgentToolToolConfigKnowledgeBaseConfigArrayInput is an input type that accepts AgentToolToolConfigKnowledgeBaseConfigArray and AgentToolToolConfigKnowledgeBaseConfigArrayOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigKnowledgeBaseConfigArrayInput` via:
+//
+//	AgentToolToolConfigKnowledgeBaseConfigArray{ AgentToolToolConfigKnowledgeBaseConfigArgs{...} }
+type AgentToolToolConfigKnowledgeBaseConfigArrayInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigKnowledgeBaseConfigArrayOutput() AgentToolToolConfigKnowledgeBaseConfigArrayOutput
+	ToAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(context.Context) AgentToolToolConfigKnowledgeBaseConfigArrayOutput
+}
+
+type AgentToolToolConfigKnowledgeBaseConfigArray []AgentToolToolConfigKnowledgeBaseConfigInput
+
+func (AgentToolToolConfigKnowledgeBaseConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigKnowledgeBaseConfigArray) ToAgentToolToolConfigKnowledgeBaseConfigArrayOutput() AgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return i.ToAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigKnowledgeBaseConfigArray) ToAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(ctx context.Context) AgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+type AgentToolToolConfigKnowledgeBaseConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigKnowledgeBaseConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigKnowledgeBaseConfigOutput) ToAgentToolToolConfigKnowledgeBaseConfigOutput() AgentToolToolConfigKnowledgeBaseConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigKnowledgeBaseConfigOutput) ToAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(ctx context.Context) AgentToolToolConfigKnowledgeBaseConfigOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+func (o AgentToolToolConfigKnowledgeBaseConfigOutput) KnowledgeBaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigKnowledgeBaseConfig) *string { return v.KnowledgeBaseId }).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigKnowledgeBaseConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigKnowledgeBaseConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigKnowledgeBaseConfigArrayOutput) ToAgentToolToolConfigKnowledgeBaseConfigArrayOutput() AgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o
+}
+
+func (o AgentToolToolConfigKnowledgeBaseConfigArrayOutput) ToAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(ctx context.Context) AgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o
+}
+
+func (o AgentToolToolConfigKnowledgeBaseConfigArrayOutput) Index(i pulumi.IntInput) AgentToolToolConfigKnowledgeBaseConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentToolToolConfigKnowledgeBaseConfig {
+		return vs[0].([]AgentToolToolConfigKnowledgeBaseConfig)[vs[1].(int)]
+	}).(AgentToolToolConfigKnowledgeBaseConfigOutput)
+}
+
+type AgentToolToolConfigTableAndColumnDescription struct {
+	// (Updatable) The bucket name of an object.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content *string `pulumi:"content"`
+	// (Updatable) Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// (Updatable) The namespace name of an object.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The prefix of file object(s) or folder prefix.
+	Prefix *string `pulumi:"prefix"`
+}
+
+// AgentToolToolConfigTableAndColumnDescriptionInput is an input type that accepts AgentToolToolConfigTableAndColumnDescriptionArgs and AgentToolToolConfigTableAndColumnDescriptionOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigTableAndColumnDescriptionInput` via:
+//
+//	AgentToolToolConfigTableAndColumnDescriptionArgs{...}
+type AgentToolToolConfigTableAndColumnDescriptionInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigTableAndColumnDescriptionOutput() AgentToolToolConfigTableAndColumnDescriptionOutput
+	ToAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(context.Context) AgentToolToolConfigTableAndColumnDescriptionOutput
+}
+
+type AgentToolToolConfigTableAndColumnDescriptionArgs struct {
+	// (Updatable) The bucket name of an object.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// (Updatable) The namespace name of an object.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
+}
+
+func (AgentToolToolConfigTableAndColumnDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigTableAndColumnDescriptionArgs) ToAgentToolToolConfigTableAndColumnDescriptionOutput() AgentToolToolConfigTableAndColumnDescriptionOutput {
+	return i.ToAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigTableAndColumnDescriptionArgs) ToAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(ctx context.Context) AgentToolToolConfigTableAndColumnDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigTableAndColumnDescriptionOutput)
+}
+
+func (i AgentToolToolConfigTableAndColumnDescriptionArgs) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutput() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return i.ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigTableAndColumnDescriptionArgs) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigTableAndColumnDescriptionOutput).ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigTableAndColumnDescriptionPtrInput is an input type that accepts AgentToolToolConfigTableAndColumnDescriptionArgs, AgentToolToolConfigTableAndColumnDescriptionPtr and AgentToolToolConfigTableAndColumnDescriptionPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigTableAndColumnDescriptionPtrInput` via:
+//
+//	        AgentToolToolConfigTableAndColumnDescriptionArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigTableAndColumnDescriptionPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigTableAndColumnDescriptionPtrOutput() AgentToolToolConfigTableAndColumnDescriptionPtrOutput
+	ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(context.Context) AgentToolToolConfigTableAndColumnDescriptionPtrOutput
+}
+
+type agentToolToolConfigTableAndColumnDescriptionPtrType AgentToolToolConfigTableAndColumnDescriptionArgs
+
+func AgentToolToolConfigTableAndColumnDescriptionPtr(v *AgentToolToolConfigTableAndColumnDescriptionArgs) AgentToolToolConfigTableAndColumnDescriptionPtrInput {
+	return (*agentToolToolConfigTableAndColumnDescriptionPtrType)(v)
+}
+
+func (*agentToolToolConfigTableAndColumnDescriptionPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigTableAndColumnDescriptionPtrType) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutput() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return i.ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigTableAndColumnDescriptionPtrType) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigTableAndColumnDescriptionPtrOutput)
+}
+
+type AgentToolToolConfigTableAndColumnDescriptionOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigTableAndColumnDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) ToAgentToolToolConfigTableAndColumnDescriptionOutput() AgentToolToolConfigTableAndColumnDescriptionOutput {
+	return o
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) ToAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(ctx context.Context) AgentToolToolConfigTableAndColumnDescriptionOutput {
+	return o
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutput() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return o.ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigTableAndColumnDescription) *AgentToolToolConfigTableAndColumnDescription {
+		return &v
+	}).(AgentToolToolConfigTableAndColumnDescriptionPtrOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigTableAndColumnDescription) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigTableAndColumnDescription) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigTableAndColumnDescription) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigTableAndColumnDescription) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of file object(s) or folder prefix.
+func (o AgentToolToolConfigTableAndColumnDescriptionOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigTableAndColumnDescription) *string { return v.Prefix }).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigTableAndColumnDescriptionPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigTableAndColumnDescriptionPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutput() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) ToAgentToolToolConfigTableAndColumnDescriptionPtrOutputWithContext(ctx context.Context) AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) Elem() AgentToolToolConfigTableAndColumnDescriptionOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigTableAndColumnDescription) AgentToolToolConfigTableAndColumnDescription {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigTableAndColumnDescription
+		return ret
+	}).(AgentToolToolConfigTableAndColumnDescriptionOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigTableAndColumnDescription) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigTableAndColumnDescription) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) InputLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigTableAndColumnDescription) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.InputLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigTableAndColumnDescription) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The prefix of file object(s) or folder prefix.
+func (o AgentToolToolConfigTableAndColumnDescriptionPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigTableAndColumnDescription) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
 type DedicatedAiClusterCapacity struct {
 	// The type of the dedicated AI cluster capacity.
 	CapacityType *string `pulumi:"capacityType"`
@@ -2964,6 +5969,773 @@ func (o GetAgentAgentEndpointContentModerationConfigArrayOutput) Index(i pulumi.
 	}).(GetAgentAgentEndpointContentModerationConfigOutput)
 }
 
+type GetAgentAgentEndpointGuardrailConfig struct {
+	// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfigs []GetAgentAgentEndpointGuardrailConfigContentModerationConfig `pulumi:"contentModerationConfigs"`
+	// The configuration details for Personally Identifiable Information.
+	PersonallyIdentifiableInformationConfigs []GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig `pulumi:"personallyIdentifiableInformationConfigs"`
+	// The configuration details for Prompt Injection.
+	PromptInjectionConfigs []GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig `pulumi:"promptInjectionConfigs"`
+}
+
+// GetAgentAgentEndpointGuardrailConfigInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigArgs and GetAgentAgentEndpointGuardrailConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigArgs{...}
+type GetAgentAgentEndpointGuardrailConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigOutput() GetAgentAgentEndpointGuardrailConfigOutput
+	ToGetAgentAgentEndpointGuardrailConfigOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigArgs struct {
+	// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfigs GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayInput `pulumi:"contentModerationConfigs"`
+	// The configuration details for Personally Identifiable Information.
+	PersonallyIdentifiableInformationConfigs GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput `pulumi:"personallyIdentifiableInformationConfigs"`
+	// The configuration details for Prompt Injection.
+	PromptInjectionConfigs GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayInput `pulumi:"promptInjectionConfigs"`
+}
+
+func (GetAgentAgentEndpointGuardrailConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigArgs) ToGetAgentAgentEndpointGuardrailConfigOutput() GetAgentAgentEndpointGuardrailConfigOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigArgs) ToGetAgentAgentEndpointGuardrailConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigOutput)
+}
+
+// GetAgentAgentEndpointGuardrailConfigArrayInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigArray and GetAgentAgentEndpointGuardrailConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigArray{ GetAgentAgentEndpointGuardrailConfigArgs{...} }
+type GetAgentAgentEndpointGuardrailConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigArrayOutput
+	ToGetAgentAgentEndpointGuardrailConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigArrayOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigArray []GetAgentAgentEndpointGuardrailConfigInput
+
+func (GetAgentAgentEndpointGuardrailConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigArray) ToGetAgentAgentEndpointGuardrailConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigArray) ToGetAgentAgentEndpointGuardrailConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigOutput) ToGetAgentAgentEndpointGuardrailConfigOutput() GetAgentAgentEndpointGuardrailConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigOutput) ToGetAgentAgentEndpointGuardrailConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigOutput {
+	return o
+}
+
+// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+func (o GetAgentAgentEndpointGuardrailConfigOutput) ContentModerationConfigs() GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfig) []GetAgentAgentEndpointGuardrailConfigContentModerationConfig {
+		return v.ContentModerationConfigs
+	}).(GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput)
+}
+
+// The configuration details for Personally Identifiable Information.
+func (o GetAgentAgentEndpointGuardrailConfigOutput) PersonallyIdentifiableInformationConfigs() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfig) []GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+		return v.PersonallyIdentifiableInformationConfigs
+	}).(GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput)
+}
+
+// The configuration details for Prompt Injection.
+func (o GetAgentAgentEndpointGuardrailConfigOutput) PromptInjectionConfigs() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfig) []GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+		return v.PromptInjectionConfigs
+	}).(GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointGuardrailConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointGuardrailConfig {
+		return vs[0].([]GetAgentAgentEndpointGuardrailConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointGuardrailConfigOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfig struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode string `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode string `pulumi:"outputGuardrailMode"`
+}
+
+// GetAgentAgentEndpointGuardrailConfigContentModerationConfigInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs and GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigContentModerationConfigInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs{...}
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput() GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput
+	ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringInput `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode pulumi.StringInput `pulumi:"outputGuardrailMode"`
+}
+
+func (GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput() GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput)
+}
+
+// GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray and GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray{ GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs{...} }
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput
+	ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray []GetAgentAgentEndpointGuardrailConfigContentModerationConfigInput
+
+func (GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput() GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return o
+}
+
+// An input guardrail mode for prompt injection.
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput) InputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfigContentModerationConfig) string {
+		return v.InputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+// An output guardrail mode for personally identifiable information.
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput) OutputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfigContentModerationConfig) string {
+		return v.OutputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointGuardrailConfigContentModerationConfig {
+		return vs[0].([]GetAgentAgentEndpointGuardrailConfigContentModerationConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode string `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode string `pulumi:"outputGuardrailMode"`
+}
+
+// GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs and GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{...}
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput
+	ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringInput `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode pulumi.StringInput `pulumi:"outputGuardrailMode"`
+}
+
+func (GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput)
+}
+
+// GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray and GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray{ GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{...} }
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput
+	ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray []GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput
+
+func (GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o
+}
+
+// An input guardrail mode for prompt injection.
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) InputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) string {
+		return v.InputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+// An output guardrail mode for personally identifiable information.
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput) OutputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig) string {
+		return v.OutputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+		return vs[0].([]GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode string `pulumi:"inputGuardrailMode"`
+}
+
+// GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs and GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{...}
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput
+	ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringInput `pulumi:"inputGuardrailMode"`
+}
+
+func (GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput)
+}
+
+// GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayInput is an input type that accepts GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray and GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray{ GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{...} }
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput
+	ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput
+}
+
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray []GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigInput
+
+func (GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return o
+}
+
+// An input guardrail mode for prompt injection.
+func (o GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput) InputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig) string { return v.InputGuardrailMode }).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput() GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput) ToGetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+		return vs[0].([]GetAgentAgentEndpointGuardrailConfigPromptInjectionConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput)
+}
+
+type GetAgentAgentEndpointHumanInputConfig struct {
+	// The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+	ShouldEnableHumanInput bool `pulumi:"shouldEnableHumanInput"`
+}
+
+// GetAgentAgentEndpointHumanInputConfigInput is an input type that accepts GetAgentAgentEndpointHumanInputConfigArgs and GetAgentAgentEndpointHumanInputConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointHumanInputConfigInput` via:
+//
+//	GetAgentAgentEndpointHumanInputConfigArgs{...}
+type GetAgentAgentEndpointHumanInputConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointHumanInputConfigOutput() GetAgentAgentEndpointHumanInputConfigOutput
+	ToGetAgentAgentEndpointHumanInputConfigOutputWithContext(context.Context) GetAgentAgentEndpointHumanInputConfigOutput
+}
+
+type GetAgentAgentEndpointHumanInputConfigArgs struct {
+	// The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+	ShouldEnableHumanInput pulumi.BoolInput `pulumi:"shouldEnableHumanInput"`
+}
+
+func (GetAgentAgentEndpointHumanInputConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointHumanInputConfigArgs) ToGetAgentAgentEndpointHumanInputConfigOutput() GetAgentAgentEndpointHumanInputConfigOutput {
+	return i.ToGetAgentAgentEndpointHumanInputConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointHumanInputConfigArgs) ToGetAgentAgentEndpointHumanInputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointHumanInputConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointHumanInputConfigOutput)
+}
+
+// GetAgentAgentEndpointHumanInputConfigArrayInput is an input type that accepts GetAgentAgentEndpointHumanInputConfigArray and GetAgentAgentEndpointHumanInputConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointHumanInputConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointHumanInputConfigArray{ GetAgentAgentEndpointHumanInputConfigArgs{...} }
+type GetAgentAgentEndpointHumanInputConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointHumanInputConfigArrayOutput() GetAgentAgentEndpointHumanInputConfigArrayOutput
+	ToGetAgentAgentEndpointHumanInputConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointHumanInputConfigArrayOutput
+}
+
+type GetAgentAgentEndpointHumanInputConfigArray []GetAgentAgentEndpointHumanInputConfigInput
+
+func (GetAgentAgentEndpointHumanInputConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointHumanInputConfigArray) ToGetAgentAgentEndpointHumanInputConfigArrayOutput() GetAgentAgentEndpointHumanInputConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointHumanInputConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointHumanInputConfigArray) ToGetAgentAgentEndpointHumanInputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointHumanInputConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointHumanInputConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointHumanInputConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointHumanInputConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointHumanInputConfigOutput) ToGetAgentAgentEndpointHumanInputConfigOutput() GetAgentAgentEndpointHumanInputConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointHumanInputConfigOutput) ToGetAgentAgentEndpointHumanInputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointHumanInputConfigOutput {
+	return o
+}
+
+// The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+func (o GetAgentAgentEndpointHumanInputConfigOutput) ShouldEnableHumanInput() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointHumanInputConfig) bool { return v.ShouldEnableHumanInput }).(pulumi.BoolOutput)
+}
+
+type GetAgentAgentEndpointHumanInputConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointHumanInputConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointHumanInputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointHumanInputConfigArrayOutput) ToGetAgentAgentEndpointHumanInputConfigArrayOutput() GetAgentAgentEndpointHumanInputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointHumanInputConfigArrayOutput) ToGetAgentAgentEndpointHumanInputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointHumanInputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointHumanInputConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointHumanInputConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointHumanInputConfig {
+		return vs[0].([]GetAgentAgentEndpointHumanInputConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointHumanInputConfigOutput)
+}
+
+type GetAgentAgentEndpointOutputConfig struct {
+	// Location of the output.
+	OutputLocations []GetAgentAgentEndpointOutputConfigOutputLocation `pulumi:"outputLocations"`
+	// Retention duration of the output data.
+	RetentionPeriodInMinutes int `pulumi:"retentionPeriodInMinutes"`
+}
+
+// GetAgentAgentEndpointOutputConfigInput is an input type that accepts GetAgentAgentEndpointOutputConfigArgs and GetAgentAgentEndpointOutputConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointOutputConfigInput` via:
+//
+//	GetAgentAgentEndpointOutputConfigArgs{...}
+type GetAgentAgentEndpointOutputConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointOutputConfigOutput() GetAgentAgentEndpointOutputConfigOutput
+	ToGetAgentAgentEndpointOutputConfigOutputWithContext(context.Context) GetAgentAgentEndpointOutputConfigOutput
+}
+
+type GetAgentAgentEndpointOutputConfigArgs struct {
+	// Location of the output.
+	OutputLocations GetAgentAgentEndpointOutputConfigOutputLocationArrayInput `pulumi:"outputLocations"`
+	// Retention duration of the output data.
+	RetentionPeriodInMinutes pulumi.IntInput `pulumi:"retentionPeriodInMinutes"`
+}
+
+func (GetAgentAgentEndpointOutputConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointOutputConfigArgs) ToGetAgentAgentEndpointOutputConfigOutput() GetAgentAgentEndpointOutputConfigOutput {
+	return i.ToGetAgentAgentEndpointOutputConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointOutputConfigArgs) ToGetAgentAgentEndpointOutputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointOutputConfigOutput)
+}
+
+// GetAgentAgentEndpointOutputConfigArrayInput is an input type that accepts GetAgentAgentEndpointOutputConfigArray and GetAgentAgentEndpointOutputConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointOutputConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointOutputConfigArray{ GetAgentAgentEndpointOutputConfigArgs{...} }
+type GetAgentAgentEndpointOutputConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointOutputConfigArrayOutput() GetAgentAgentEndpointOutputConfigArrayOutput
+	ToGetAgentAgentEndpointOutputConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointOutputConfigArrayOutput
+}
+
+type GetAgentAgentEndpointOutputConfigArray []GetAgentAgentEndpointOutputConfigInput
+
+func (GetAgentAgentEndpointOutputConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointOutputConfigArray) ToGetAgentAgentEndpointOutputConfigArrayOutput() GetAgentAgentEndpointOutputConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointOutputConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointOutputConfigArray) ToGetAgentAgentEndpointOutputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointOutputConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointOutputConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointOutputConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutput) ToGetAgentAgentEndpointOutputConfigOutput() GetAgentAgentEndpointOutputConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutput) ToGetAgentAgentEndpointOutputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigOutput {
+	return o
+}
+
+// Location of the output.
+func (o GetAgentAgentEndpointOutputConfigOutput) OutputLocations() GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointOutputConfig) []GetAgentAgentEndpointOutputConfigOutputLocation {
+		return v.OutputLocations
+	}).(GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput)
+}
+
+// Retention duration of the output data.
+func (o GetAgentAgentEndpointOutputConfigOutput) RetentionPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointOutputConfig) int { return v.RetentionPeriodInMinutes }).(pulumi.IntOutput)
+}
+
+type GetAgentAgentEndpointOutputConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointOutputConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointOutputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointOutputConfigArrayOutput) ToGetAgentAgentEndpointOutputConfigArrayOutput() GetAgentAgentEndpointOutputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointOutputConfigArrayOutput) ToGetAgentAgentEndpointOutputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointOutputConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointOutputConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointOutputConfig {
+		return vs[0].([]GetAgentAgentEndpointOutputConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointOutputConfigOutput)
+}
+
+type GetAgentAgentEndpointOutputConfigOutputLocation struct {
+	// The name of the bucket.
+	Bucket string `pulumi:"bucket"`
+	// The namespace of the object storage.
+	Namespace string `pulumi:"namespace"`
+	// Type of OutputLocation.
+	OutputLocationType string `pulumi:"outputLocationType"`
+	// The prefix of the object storage.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentAgentEndpointOutputConfigOutputLocationInput is an input type that accepts GetAgentAgentEndpointOutputConfigOutputLocationArgs and GetAgentAgentEndpointOutputConfigOutputLocationOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointOutputConfigOutputLocationInput` via:
+//
+//	GetAgentAgentEndpointOutputConfigOutputLocationArgs{...}
+type GetAgentAgentEndpointOutputConfigOutputLocationInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointOutputConfigOutputLocationOutput() GetAgentAgentEndpointOutputConfigOutputLocationOutput
+	ToGetAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(context.Context) GetAgentAgentEndpointOutputConfigOutputLocationOutput
+}
+
+type GetAgentAgentEndpointOutputConfigOutputLocationArgs struct {
+	// The name of the bucket.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The namespace of the object storage.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Type of OutputLocation.
+	OutputLocationType pulumi.StringInput `pulumi:"outputLocationType"`
+	// The prefix of the object storage.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentAgentEndpointOutputConfigOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointOutputConfigOutputLocationArgs) ToGetAgentAgentEndpointOutputConfigOutputLocationOutput() GetAgentAgentEndpointOutputConfigOutputLocationOutput {
+	return i.ToGetAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointOutputConfigOutputLocationArgs) ToGetAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointOutputConfigOutputLocationOutput)
+}
+
+// GetAgentAgentEndpointOutputConfigOutputLocationArrayInput is an input type that accepts GetAgentAgentEndpointOutputConfigOutputLocationArray and GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointOutputConfigOutputLocationArrayInput` via:
+//
+//	GetAgentAgentEndpointOutputConfigOutputLocationArray{ GetAgentAgentEndpointOutputConfigOutputLocationArgs{...} }
+type GetAgentAgentEndpointOutputConfigOutputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutput() GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput
+	ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutputWithContext(context.Context) GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput
+}
+
+type GetAgentAgentEndpointOutputConfigOutputLocationArray []GetAgentAgentEndpointOutputConfigOutputLocationInput
+
+func (GetAgentAgentEndpointOutputConfigOutputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointOutputConfigOutputLocationArray) ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutput() GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput {
+	return i.ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointOutputConfigOutputLocationArray) ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput)
+}
+
+type GetAgentAgentEndpointOutputConfigOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointOutputConfigOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutputLocationOutput) ToGetAgentAgentEndpointOutputConfigOutputLocationOutput() GetAgentAgentEndpointOutputConfigOutputLocationOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutputLocationOutput) ToGetAgentAgentEndpointOutputConfigOutputLocationOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigOutputLocationOutput {
+	return o
+}
+
+// The name of the bucket.
+func (o GetAgentAgentEndpointOutputConfigOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointOutputConfigOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The namespace of the object storage.
+func (o GetAgentAgentEndpointOutputConfigOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointOutputConfigOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Type of OutputLocation.
+func (o GetAgentAgentEndpointOutputConfigOutputLocationOutput) OutputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointOutputConfigOutputLocation) string { return v.OutputLocationType }).(pulumi.StringOutput)
+}
+
+// The prefix of the object storage.
+func (o GetAgentAgentEndpointOutputConfigOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointOutputConfigOutputLocation) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput) ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutput() GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput) ToGetAgentAgentEndpointOutputConfigOutputLocationArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointOutputConfigOutputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointOutputConfigOutputLocation {
+		return vs[0].([]GetAgentAgentEndpointOutputConfigOutputLocation)[vs[1].(int)]
+	}).(GetAgentAgentEndpointOutputConfigOutputLocationOutput)
+}
+
 type GetAgentAgentEndpointSessionConfig struct {
 	// The session will become inactive after this timeout.
 	IdleTimeoutInSeconds int `pulumi:"idleTimeoutInSeconds"`
@@ -3172,14 +6944,24 @@ type GetAgentAgentEndpointsAgentEndpointCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The configuration details about whether to apply the guardrail checks to input and output.
+	GuardrailConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig `pulumi:"guardrailConfigs"`
+	// Human Input Configuration for an AgentEndpoint.
+	HumanInputConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig `pulumi:"humanInputConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 	Id string `pulumi:"id"`
 	// A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// **SessionConfig**
+	// Key-value pairs to allow additional configurations.
+	Metadata map[string]string `pulumi:"metadata"`
+	// Configuration to store results generated by agent.
+	OutputConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig `pulumi:"outputConfigs"`
+	// Session Configuration on AgentEndpoint.
 	SessionConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig `pulumi:"sessionConfigs"`
 	// Whether to show citations in the chat result.
 	ShouldEnableCitation bool `pulumi:"shouldEnableCitation"`
+	// Whether to enable multi-language for chat.
+	ShouldEnableMultiLanguage bool `pulumi:"shouldEnableMultiLanguage"`
 	// Whether or not to enable Session-based chat.
 	ShouldEnableSession bool `pulumi:"shouldEnableSession"`
 	// Whether to show traces in the chat result.
@@ -3220,14 +7002,24 @@ type GetAgentAgentEndpointsAgentEndpointCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The configuration details about whether to apply the guardrail checks to input and output.
+	GuardrailConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayInput `pulumi:"guardrailConfigs"`
+	// Human Input Configuration for an AgentEndpoint.
+	HumanInputConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayInput `pulumi:"humanInputConfigs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// **SessionConfig**
+	// Key-value pairs to allow additional configurations.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// Configuration to store results generated by agent.
+	OutputConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayInput `pulumi:"outputConfigs"`
+	// Session Configuration on AgentEndpoint.
 	SessionConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput `pulumi:"sessionConfigs"`
 	// Whether to show citations in the chat result.
 	ShouldEnableCitation pulumi.BoolInput `pulumi:"shouldEnableCitation"`
+	// Whether to enable multi-language for chat.
+	ShouldEnableMultiLanguage pulumi.BoolInput `pulumi:"shouldEnableMultiLanguage"`
 	// Whether or not to enable Session-based chat.
 	ShouldEnableSession pulumi.BoolInput `pulumi:"shouldEnableSession"`
 	// Whether to show traces in the chat result.
@@ -3330,6 +7122,20 @@ func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) FreeformTags() 
 	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// The configuration details about whether to apply the guardrail checks to input and output.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) GuardrailConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig {
+		return v.GuardrailConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput)
+}
+
+// Human Input Configuration for an AgentEndpoint.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) HumanInputConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) []GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig {
+		return v.HumanInputConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
@@ -3340,7 +7146,19 @@ func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) LifecycleDetail
 	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// **SessionConfig**
+// Key-value pairs to allow additional configurations.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// Configuration to store results generated by agent.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) OutputConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) []GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig {
+		return v.OutputConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput)
+}
+
+// Session Configuration on AgentEndpoint.
 func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) SessionConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput {
 	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) []GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig {
 		return v.SessionConfigs
@@ -3350,6 +7168,11 @@ func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) SessionConfigs(
 // Whether to show citations in the chat result.
 func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ShouldEnableCitation() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) bool { return v.ShouldEnableCitation }).(pulumi.BoolOutput)
+}
+
+// Whether to enable multi-language for chat.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutput) ShouldEnableMultiLanguage() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItem) bool { return v.ShouldEnableMultiLanguage }).(pulumi.BoolOutput)
 }
 
 // Whether or not to enable Session-based chat.
@@ -3510,6 +7333,787 @@ func (o GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig {
 		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfig)[vs[1].(int)]
 	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig struct {
+	// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig `pulumi:"contentModerationConfigs"`
+	// The configuration details for Personally Identifiable Information.
+	PersonallyIdentifiableInformationConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig `pulumi:"personallyIdentifiableInformationConfigs"`
+	// The configuration details for Prompt Injection.
+	PromptInjectionConfigs []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig `pulumi:"promptInjectionConfigs"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs struct {
+	// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+	ContentModerationConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayInput `pulumi:"contentModerationConfigs"`
+	// The configuration details for Personally Identifiable Information.
+	PersonallyIdentifiableInformationConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput `pulumi:"personallyIdentifiableInformationConfigs"`
+	// The configuration details for Prompt Injection.
+	PromptInjectionConfigs GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayInput `pulumi:"promptInjectionConfigs"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput {
+	return o
+}
+
+// The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput) ContentModerationConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig) []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig {
+		return v.ContentModerationConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput)
+}
+
+// The configuration details for Personally Identifiable Information.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput) PersonallyIdentifiableInformationConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig) []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig {
+		return v.PersonallyIdentifiableInformationConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput)
+}
+
+// The configuration details for Prompt Injection.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput) PromptInjectionConfigs() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig) []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig {
+		return v.PromptInjectionConfigs
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode string `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode string `pulumi:"outputGuardrailMode"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringInput `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode pulumi.StringInput `pulumi:"outputGuardrailMode"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput {
+	return o
+}
+
+// An input guardrail mode for prompt injection.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput) InputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig) string {
+		return v.InputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+// An output guardrail mode for personally identifiable information.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput) OutputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig) string {
+		return v.OutputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode string `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode string `pulumi:"outputGuardrailMode"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringInput `pulumi:"inputGuardrailMode"`
+	// An output guardrail mode for personally identifiable information.
+	OutputGuardrailMode pulumi.StringInput `pulumi:"outputGuardrailMode"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return o
+}
+
+// An input guardrail mode for prompt injection.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput) InputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig) string {
+		return v.InputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+// An output guardrail mode for personally identifiable information.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput) OutputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig) string {
+		return v.OutputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode string `pulumi:"inputGuardrailMode"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs struct {
+	// An input guardrail mode for prompt injection.
+	InputGuardrailMode pulumi.StringInput `pulumi:"inputGuardrailMode"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput {
+	return o
+}
+
+// An input guardrail mode for prompt injection.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput) InputGuardrailMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig) string {
+		return v.InputGuardrailMode
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig struct {
+	// The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+	ShouldEnableHumanInput bool `pulumi:"shouldEnableHumanInput"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs struct {
+	// The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+	ShouldEnableHumanInput pulumi.BoolInput `pulumi:"shouldEnableHumanInput"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput {
+	return o
+}
+
+// The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput) ShouldEnableHumanInput() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig) bool {
+		return v.ShouldEnableHumanInput
+	}).(pulumi.BoolOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig struct {
+	// Location of the output.
+	OutputLocations []GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation `pulumi:"outputLocations"`
+	// Retention duration of the output data.
+	RetentionPeriodInMinutes int `pulumi:"retentionPeriodInMinutes"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs struct {
+	// Location of the output.
+	OutputLocations GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayInput `pulumi:"outputLocations"`
+	// Retention duration of the output data.
+	RetentionPeriodInMinutes pulumi.IntInput `pulumi:"retentionPeriodInMinutes"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray and GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray []GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput {
+	return o
+}
+
+// Location of the output.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput) OutputLocations() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig) []GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation {
+		return v.OutputLocations
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput)
+}
+
+// Retention duration of the output data.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput) RetentionPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig) int {
+		return v.RetentionPeriodInMinutes
+	}).(pulumi.IntOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfig)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation struct {
+	// The name of the bucket.
+	Bucket string `pulumi:"bucket"`
+	// The namespace of the object storage.
+	Namespace string `pulumi:"namespace"`
+	// Type of OutputLocation.
+	OutputLocationType string `pulumi:"outputLocationType"`
+	// The prefix of the object storage.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs and GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs{...}
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs struct {
+	// The name of the bucket.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The namespace of the object storage.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Type of OutputLocation.
+	OutputLocationType pulumi.StringInput `pulumi:"outputLocationType"`
+	// The prefix of the object storage.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput)
+}
+
+// GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayInput is an input type that accepts GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray and GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayInput` via:
+//
+//	GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray{ GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs{...} }
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput
+	ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutputWithContext(context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray []GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationInput
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput {
+	return i.ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput {
+	return o
+}
+
+// The name of the bucket.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// The namespace of the object storage.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Type of OutputLocation.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) OutputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation) string {
+		return v.OutputLocationType
+	}).(pulumi.StringOutput)
+}
+
+// The prefix of the object storage.
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation) string {
+		return v.Prefix
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation)(nil)).Elem()
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput() GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput) ToGetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutputWithContext(ctx context.Context) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput) Index(i pulumi.IntInput) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation {
+		return vs[0].([]GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocation)[vs[1].(int)]
+	}).(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput)
 }
 
 type GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfig struct {
@@ -3717,6 +8321,202 @@ func (o GetAgentAgentEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetAge
 	}).(GetAgentAgentEndpointsFilterOutput)
 }
 
+type GetAgentAgentLlmConfig struct {
+	// Configuration to customize LLM.
+	RoutingLlmCustomizations []GetAgentAgentLlmConfigRoutingLlmCustomization `pulumi:"routingLlmCustomizations"`
+}
+
+// GetAgentAgentLlmConfigInput is an input type that accepts GetAgentAgentLlmConfigArgs and GetAgentAgentLlmConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentLlmConfigInput` via:
+//
+//	GetAgentAgentLlmConfigArgs{...}
+type GetAgentAgentLlmConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentLlmConfigOutput() GetAgentAgentLlmConfigOutput
+	ToGetAgentAgentLlmConfigOutputWithContext(context.Context) GetAgentAgentLlmConfigOutput
+}
+
+type GetAgentAgentLlmConfigArgs struct {
+	// Configuration to customize LLM.
+	RoutingLlmCustomizations GetAgentAgentLlmConfigRoutingLlmCustomizationArrayInput `pulumi:"routingLlmCustomizations"`
+}
+
+func (GetAgentAgentLlmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentLlmConfigArgs) ToGetAgentAgentLlmConfigOutput() GetAgentAgentLlmConfigOutput {
+	return i.ToGetAgentAgentLlmConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentLlmConfigArgs) ToGetAgentAgentLlmConfigOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentLlmConfigOutput)
+}
+
+// GetAgentAgentLlmConfigArrayInput is an input type that accepts GetAgentAgentLlmConfigArray and GetAgentAgentLlmConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentLlmConfigArrayInput` via:
+//
+//	GetAgentAgentLlmConfigArray{ GetAgentAgentLlmConfigArgs{...} }
+type GetAgentAgentLlmConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentLlmConfigArrayOutput() GetAgentAgentLlmConfigArrayOutput
+	ToGetAgentAgentLlmConfigArrayOutputWithContext(context.Context) GetAgentAgentLlmConfigArrayOutput
+}
+
+type GetAgentAgentLlmConfigArray []GetAgentAgentLlmConfigInput
+
+func (GetAgentAgentLlmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentLlmConfigArray) ToGetAgentAgentLlmConfigArrayOutput() GetAgentAgentLlmConfigArrayOutput {
+	return i.ToGetAgentAgentLlmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentLlmConfigArray) ToGetAgentAgentLlmConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentLlmConfigArrayOutput)
+}
+
+type GetAgentAgentLlmConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentLlmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentLlmConfigOutput) ToGetAgentAgentLlmConfigOutput() GetAgentAgentLlmConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentLlmConfigOutput) ToGetAgentAgentLlmConfigOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigOutput {
+	return o
+}
+
+// Configuration to customize LLM.
+func (o GetAgentAgentLlmConfigOutput) RoutingLlmCustomizations() GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentLlmConfig) []GetAgentAgentLlmConfigRoutingLlmCustomization {
+		return v.RoutingLlmCustomizations
+	}).(GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput)
+}
+
+type GetAgentAgentLlmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentLlmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentLlmConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentLlmConfigArrayOutput) ToGetAgentAgentLlmConfigArrayOutput() GetAgentAgentLlmConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentLlmConfigArrayOutput) ToGetAgentAgentLlmConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentLlmConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentLlmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentLlmConfig {
+		return vs[0].([]GetAgentAgentLlmConfig)[vs[1].(int)]
+	}).(GetAgentAgentLlmConfigOutput)
+}
+
+type GetAgentAgentLlmConfigRoutingLlmCustomization struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction string `pulumi:"instruction"`
+}
+
+// GetAgentAgentLlmConfigRoutingLlmCustomizationInput is an input type that accepts GetAgentAgentLlmConfigRoutingLlmCustomizationArgs and GetAgentAgentLlmConfigRoutingLlmCustomizationOutput values.
+// You can construct a concrete instance of `GetAgentAgentLlmConfigRoutingLlmCustomizationInput` via:
+//
+//	GetAgentAgentLlmConfigRoutingLlmCustomizationArgs{...}
+type GetAgentAgentLlmConfigRoutingLlmCustomizationInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutput() GetAgentAgentLlmConfigRoutingLlmCustomizationOutput
+	ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(context.Context) GetAgentAgentLlmConfigRoutingLlmCustomizationOutput
+}
+
+type GetAgentAgentLlmConfigRoutingLlmCustomizationArgs struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction pulumi.StringInput `pulumi:"instruction"`
+}
+
+func (GetAgentAgentLlmConfigRoutingLlmCustomizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentAgentLlmConfigRoutingLlmCustomizationArgs) ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutput() GetAgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return i.ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentLlmConfigRoutingLlmCustomizationArgs) ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentLlmConfigRoutingLlmCustomizationOutput)
+}
+
+// GetAgentAgentLlmConfigRoutingLlmCustomizationArrayInput is an input type that accepts GetAgentAgentLlmConfigRoutingLlmCustomizationArray and GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentLlmConfigRoutingLlmCustomizationArrayInput` via:
+//
+//	GetAgentAgentLlmConfigRoutingLlmCustomizationArray{ GetAgentAgentLlmConfigRoutingLlmCustomizationArgs{...} }
+type GetAgentAgentLlmConfigRoutingLlmCustomizationArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput() GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput
+	ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutputWithContext(context.Context) GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput
+}
+
+type GetAgentAgentLlmConfigRoutingLlmCustomizationArray []GetAgentAgentLlmConfigRoutingLlmCustomizationInput
+
+func (GetAgentAgentLlmConfigRoutingLlmCustomizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentAgentLlmConfigRoutingLlmCustomizationArray) ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput() GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput {
+	return i.ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentLlmConfigRoutingLlmCustomizationArray) ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput)
+}
+
+type GetAgentAgentLlmConfigRoutingLlmCustomizationOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentLlmConfigRoutingLlmCustomizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentAgentLlmConfigRoutingLlmCustomizationOutput) ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutput() GetAgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return o
+}
+
+func (o GetAgentAgentLlmConfigRoutingLlmCustomizationOutput) ToGetAgentAgentLlmConfigRoutingLlmCustomizationOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return o
+}
+
+// If specified, the default instruction is replaced with provided instruction.
+func (o GetAgentAgentLlmConfigRoutingLlmCustomizationOutput) Instruction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentLlmConfigRoutingLlmCustomization) string { return v.Instruction }).(pulumi.StringOutput)
+}
+
+type GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput) ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput() GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput) ToGetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput) Index(i pulumi.IntInput) GetAgentAgentLlmConfigRoutingLlmCustomizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentLlmConfigRoutingLlmCustomization {
+		return vs[0].([]GetAgentAgentLlmConfigRoutingLlmCustomization)[vs[1].(int)]
+	}).(GetAgentAgentLlmConfigRoutingLlmCustomizationOutput)
+}
+
 type GetAgentAgentsAgentCollection struct {
 	Items []GetAgentAgentsAgentCollectionItem `pulumi:"items"`
 }
@@ -3824,10 +8624,12 @@ type GetAgentAgentsAgentCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
 	Id string `pulumi:"id"`
-	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds []string `pulumi:"knowledgeBaseIds"`
 	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Configuration to Agent LLM.
+	LlmConfigs []GetAgentAgentsAgentCollectionItemLlmConfig `pulumi:"llmConfigs"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3864,10 +8666,12 @@ type GetAgentAgentsAgentCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
 	Id pulumi.StringInput `pulumi:"id"`
-	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds pulumi.StringArrayInput `pulumi:"knowledgeBaseIds"`
 	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Configuration to Agent LLM.
+	LlmConfigs GetAgentAgentsAgentCollectionItemLlmConfigArrayInput `pulumi:"llmConfigs"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3961,7 +8765,7 @@ func (o GetAgentAgentsAgentCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 func (o GetAgentAgentsAgentCollectionItemOutput) KnowledgeBaseIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) []string { return v.KnowledgeBaseIds }).(pulumi.StringArrayOutput)
 }
@@ -3969,6 +8773,13 @@ func (o GetAgentAgentsAgentCollectionItemOutput) KnowledgeBaseIds() pulumi.Strin
 // A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o GetAgentAgentsAgentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Configuration to Agent LLM.
+func (o GetAgentAgentsAgentCollectionItemOutput) LlmConfigs() GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItem) []GetAgentAgentsAgentCollectionItemLlmConfig {
+		return v.LlmConfigs
+	}).(GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -4014,6 +8825,202 @@ func (o GetAgentAgentsAgentCollectionItemArrayOutput) Index(i pulumi.IntInput) G
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentsAgentCollectionItem {
 		return vs[0].([]GetAgentAgentsAgentCollectionItem)[vs[1].(int)]
 	}).(GetAgentAgentsAgentCollectionItemOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfig struct {
+	// Configuration to customize LLM.
+	RoutingLlmCustomizations []GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization `pulumi:"routingLlmCustomizations"`
+}
+
+// GetAgentAgentsAgentCollectionItemLlmConfigInput is an input type that accepts GetAgentAgentsAgentCollectionItemLlmConfigArgs and GetAgentAgentsAgentCollectionItemLlmConfigOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionItemLlmConfigInput` via:
+//
+//	GetAgentAgentsAgentCollectionItemLlmConfigArgs{...}
+type GetAgentAgentsAgentCollectionItemLlmConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionItemLlmConfigOutput() GetAgentAgentsAgentCollectionItemLlmConfigOutput
+	ToGetAgentAgentsAgentCollectionItemLlmConfigOutputWithContext(context.Context) GetAgentAgentsAgentCollectionItemLlmConfigOutput
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigArgs struct {
+	// Configuration to customize LLM.
+	RoutingLlmCustomizations GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayInput `pulumi:"routingLlmCustomizations"`
+}
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigArgs) ToGetAgentAgentsAgentCollectionItemLlmConfigOutput() GetAgentAgentsAgentCollectionItemLlmConfigOutput {
+	return i.ToGetAgentAgentsAgentCollectionItemLlmConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigArgs) ToGetAgentAgentsAgentCollectionItemLlmConfigOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionItemLlmConfigOutput)
+}
+
+// GetAgentAgentsAgentCollectionItemLlmConfigArrayInput is an input type that accepts GetAgentAgentsAgentCollectionItemLlmConfigArray and GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionItemLlmConfigArrayInput` via:
+//
+//	GetAgentAgentsAgentCollectionItemLlmConfigArray{ GetAgentAgentsAgentCollectionItemLlmConfigArgs{...} }
+type GetAgentAgentsAgentCollectionItemLlmConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutput() GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput
+	ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutputWithContext(context.Context) GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigArray []GetAgentAgentsAgentCollectionItemLlmConfigInput
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollectionItemLlmConfig)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigArray) ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutput() GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput {
+	return i.ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigArray) ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigOutput() GetAgentAgentsAgentCollectionItemLlmConfigOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigOutput {
+	return o
+}
+
+// Configuration to customize LLM.
+func (o GetAgentAgentsAgentCollectionItemLlmConfigOutput) RoutingLlmCustomizations() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItemLlmConfig) []GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization {
+		return v.RoutingLlmCustomizations
+	}).(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollectionItemLlmConfig)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutput() GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput) Index(i pulumi.IntInput) GetAgentAgentsAgentCollectionItemLlmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentsAgentCollectionItemLlmConfig {
+		return vs[0].([]GetAgentAgentsAgentCollectionItemLlmConfig)[vs[1].(int)]
+	}).(GetAgentAgentsAgentCollectionItemLlmConfigOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction string `pulumi:"instruction"`
+}
+
+// GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationInput is an input type that accepts GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs and GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationInput` via:
+//
+//	GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs{...}
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput
+	ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutputWithContext(context.Context) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction pulumi.StringInput `pulumi:"instruction"`
+}
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput {
+	return i.ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput)
+}
+
+// GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayInput is an input type that accepts GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray and GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput values.
+// You can construct a concrete instance of `GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayInput` via:
+//
+//	GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray{ GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs{...} }
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput
+	ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutputWithContext(context.Context) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray []GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationInput
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput {
+	return i.ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput {
+	return o
+}
+
+// If specified, the default instruction is replaced with provided instruction.
+func (o GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput) Instruction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization) string { return v.Instruction }).(pulumi.StringOutput)
+}
+
+type GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput() GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput) ToGetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput) Index(i pulumi.IntInput) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization {
+		return vs[0].([]GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomization)[vs[1].(int)]
+	}).(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput)
 }
 
 type GetAgentAgentsFilter struct {
@@ -5112,6 +10119,8 @@ type GetAgentDataSourcesDataSourceCollectionItem struct {
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Key-value pairs to allow additional configurations.
+	Metadata map[string]string `pulumi:"metadata"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5152,6 +10161,8 @@ type GetAgentDataSourcesDataSourceCollectionItemArgs struct {
 	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Key-value pairs to allow additional configurations.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5258,6 +10269,11 @@ func (o GetAgentDataSourcesDataSourceCollectionItemOutput) KnowledgeBaseId() pul
 // A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o GetAgentDataSourcesDataSourceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Key-value pairs to allow additional configurations.
+func (o GetAgentDataSourcesDataSourceCollectionItemOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -7553,6 +12569,2522 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail {
 		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail)[vs[1].(int)]
 	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput)
+}
+
+type GetAgentToolToolConfig struct {
+	// The connection type for Databases.
+	DatabaseConnections []GetAgentToolToolConfigDatabaseConnection `pulumi:"databaseConnections"`
+	// The input location definition.
+	DatabaseSchemas []GetAgentToolToolConfigDatabaseSchema `pulumi:"databaseSchemas"`
+	// Dialect to be used for SQL generation.
+	Dialect string `pulumi:"dialect"`
+	// Details of Function for Function calling tool.
+	Functions []GetAgentToolToolConfigFunction `pulumi:"functions"`
+	// Configuration to customize LLM.
+	GenerationLlmCustomizations []GetAgentToolToolConfigGenerationLlmCustomization `pulumi:"generationLlmCustomizations"`
+	// The input location definition.
+	IclExamples []GetAgentToolToolConfigIclExample `pulumi:"iclExamples"`
+	// The KnowledgeBase configurations that this RAG Tool uses
+	KnowledgeBaseConfigs []GetAgentToolToolConfigKnowledgeBaseConfig `pulumi:"knowledgeBaseConfigs"`
+	// Size of the model.
+	ModelSize string `pulumi:"modelSize"`
+	// To enable/disable self correction.
+	ShouldEnableSelfCorrection bool `pulumi:"shouldEnableSelfCorrection"`
+	// To enable/disable SQL execution.
+	ShouldEnableSqlExecution bool `pulumi:"shouldEnableSqlExecution"`
+	// The input location definition.
+	TableAndColumnDescriptions []GetAgentToolToolConfigTableAndColumnDescription `pulumi:"tableAndColumnDescriptions"`
+	// The type of the Tool config. The allowed values are:
+	// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+	// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+	// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+	ToolConfigType string `pulumi:"toolConfigType"`
+}
+
+// GetAgentToolToolConfigInput is an input type that accepts GetAgentToolToolConfigArgs and GetAgentToolToolConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigInput` via:
+//
+//	GetAgentToolToolConfigArgs{...}
+type GetAgentToolToolConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigOutput() GetAgentToolToolConfigOutput
+	ToGetAgentToolToolConfigOutputWithContext(context.Context) GetAgentToolToolConfigOutput
+}
+
+type GetAgentToolToolConfigArgs struct {
+	// The connection type for Databases.
+	DatabaseConnections GetAgentToolToolConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
+	// The input location definition.
+	DatabaseSchemas GetAgentToolToolConfigDatabaseSchemaArrayInput `pulumi:"databaseSchemas"`
+	// Dialect to be used for SQL generation.
+	Dialect pulumi.StringInput `pulumi:"dialect"`
+	// Details of Function for Function calling tool.
+	Functions GetAgentToolToolConfigFunctionArrayInput `pulumi:"functions"`
+	// Configuration to customize LLM.
+	GenerationLlmCustomizations GetAgentToolToolConfigGenerationLlmCustomizationArrayInput `pulumi:"generationLlmCustomizations"`
+	// The input location definition.
+	IclExamples GetAgentToolToolConfigIclExampleArrayInput `pulumi:"iclExamples"`
+	// The KnowledgeBase configurations that this RAG Tool uses
+	KnowledgeBaseConfigs GetAgentToolToolConfigKnowledgeBaseConfigArrayInput `pulumi:"knowledgeBaseConfigs"`
+	// Size of the model.
+	ModelSize pulumi.StringInput `pulumi:"modelSize"`
+	// To enable/disable self correction.
+	ShouldEnableSelfCorrection pulumi.BoolInput `pulumi:"shouldEnableSelfCorrection"`
+	// To enable/disable SQL execution.
+	ShouldEnableSqlExecution pulumi.BoolInput `pulumi:"shouldEnableSqlExecution"`
+	// The input location definition.
+	TableAndColumnDescriptions GetAgentToolToolConfigTableAndColumnDescriptionArrayInput `pulumi:"tableAndColumnDescriptions"`
+	// The type of the Tool config. The allowed values are:
+	// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+	// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+	// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+	ToolConfigType pulumi.StringInput `pulumi:"toolConfigType"`
+}
+
+func (GetAgentToolToolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigArgs) ToGetAgentToolToolConfigOutput() GetAgentToolToolConfigOutput {
+	return i.ToGetAgentToolToolConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigArgs) ToGetAgentToolToolConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigOutput)
+}
+
+// GetAgentToolToolConfigArrayInput is an input type that accepts GetAgentToolToolConfigArray and GetAgentToolToolConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigArrayInput` via:
+//
+//	GetAgentToolToolConfigArray{ GetAgentToolToolConfigArgs{...} }
+type GetAgentToolToolConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigArrayOutput() GetAgentToolToolConfigArrayOutput
+	ToGetAgentToolToolConfigArrayOutputWithContext(context.Context) GetAgentToolToolConfigArrayOutput
+}
+
+type GetAgentToolToolConfigArray []GetAgentToolToolConfigInput
+
+func (GetAgentToolToolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigArray) ToGetAgentToolToolConfigArrayOutput() GetAgentToolToolConfigArrayOutput {
+	return i.ToGetAgentToolToolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigArray) ToGetAgentToolToolConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigArrayOutput)
+}
+
+type GetAgentToolToolConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigOutput) ToGetAgentToolToolConfigOutput() GetAgentToolToolConfigOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigOutput) ToGetAgentToolToolConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigOutput {
+	return o
+}
+
+// The connection type for Databases.
+func (o GetAgentToolToolConfigOutput) DatabaseConnections() GetAgentToolToolConfigDatabaseConnectionArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigDatabaseConnection {
+		return v.DatabaseConnections
+	}).(GetAgentToolToolConfigDatabaseConnectionArrayOutput)
+}
+
+// The input location definition.
+func (o GetAgentToolToolConfigOutput) DatabaseSchemas() GetAgentToolToolConfigDatabaseSchemaArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigDatabaseSchema { return v.DatabaseSchemas }).(GetAgentToolToolConfigDatabaseSchemaArrayOutput)
+}
+
+// Dialect to be used for SQL generation.
+func (o GetAgentToolToolConfigOutput) Dialect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) string { return v.Dialect }).(pulumi.StringOutput)
+}
+
+// Details of Function for Function calling tool.
+func (o GetAgentToolToolConfigOutput) Functions() GetAgentToolToolConfigFunctionArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigFunction { return v.Functions }).(GetAgentToolToolConfigFunctionArrayOutput)
+}
+
+// Configuration to customize LLM.
+func (o GetAgentToolToolConfigOutput) GenerationLlmCustomizations() GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigGenerationLlmCustomization {
+		return v.GenerationLlmCustomizations
+	}).(GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput)
+}
+
+// The input location definition.
+func (o GetAgentToolToolConfigOutput) IclExamples() GetAgentToolToolConfigIclExampleArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigIclExample { return v.IclExamples }).(GetAgentToolToolConfigIclExampleArrayOutput)
+}
+
+// The KnowledgeBase configurations that this RAG Tool uses
+func (o GetAgentToolToolConfigOutput) KnowledgeBaseConfigs() GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigKnowledgeBaseConfig {
+		return v.KnowledgeBaseConfigs
+	}).(GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+// Size of the model.
+func (o GetAgentToolToolConfigOutput) ModelSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) string { return v.ModelSize }).(pulumi.StringOutput)
+}
+
+// To enable/disable self correction.
+func (o GetAgentToolToolConfigOutput) ShouldEnableSelfCorrection() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) bool { return v.ShouldEnableSelfCorrection }).(pulumi.BoolOutput)
+}
+
+// To enable/disable SQL execution.
+func (o GetAgentToolToolConfigOutput) ShouldEnableSqlExecution() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) bool { return v.ShouldEnableSqlExecution }).(pulumi.BoolOutput)
+}
+
+// The input location definition.
+func (o GetAgentToolToolConfigOutput) TableAndColumnDescriptions() GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigTableAndColumnDescription {
+		return v.TableAndColumnDescriptions
+	}).(GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput)
+}
+
+// The type of the Tool config. The allowed values are:
+// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+func (o GetAgentToolToolConfigOutput) ToolConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) string { return v.ToolConfigType }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigArrayOutput) ToGetAgentToolToolConfigArrayOutput() GetAgentToolToolConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigArrayOutput) ToGetAgentToolToolConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfig {
+		return vs[0].([]GetAgentToolToolConfig)[vs[1].(int)]
+	}).(GetAgentToolToolConfigOutput)
+}
+
+type GetAgentToolToolConfigDatabaseConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType string `pulumi:"connectionType"`
+}
+
+// GetAgentToolToolConfigDatabaseConnectionInput is an input type that accepts GetAgentToolToolConfigDatabaseConnectionArgs and GetAgentToolToolConfigDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigDatabaseConnectionInput` via:
+//
+//	GetAgentToolToolConfigDatabaseConnectionArgs{...}
+type GetAgentToolToolConfigDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigDatabaseConnectionOutput() GetAgentToolToolConfigDatabaseConnectionOutput
+	ToGetAgentToolToolConfigDatabaseConnectionOutputWithContext(context.Context) GetAgentToolToolConfigDatabaseConnectionOutput
+}
+
+type GetAgentToolToolConfigDatabaseConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+}
+
+func (GetAgentToolToolConfigDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigDatabaseConnectionArgs) ToGetAgentToolToolConfigDatabaseConnectionOutput() GetAgentToolToolConfigDatabaseConnectionOutput {
+	return i.ToGetAgentToolToolConfigDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigDatabaseConnectionArgs) ToGetAgentToolToolConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigDatabaseConnectionOutput)
+}
+
+// GetAgentToolToolConfigDatabaseConnectionArrayInput is an input type that accepts GetAgentToolToolConfigDatabaseConnectionArray and GetAgentToolToolConfigDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigDatabaseConnectionArrayInput` via:
+//
+//	GetAgentToolToolConfigDatabaseConnectionArray{ GetAgentToolToolConfigDatabaseConnectionArgs{...} }
+type GetAgentToolToolConfigDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigDatabaseConnectionArrayOutput() GetAgentToolToolConfigDatabaseConnectionArrayOutput
+	ToGetAgentToolToolConfigDatabaseConnectionArrayOutputWithContext(context.Context) GetAgentToolToolConfigDatabaseConnectionArrayOutput
+}
+
+type GetAgentToolToolConfigDatabaseConnectionArray []GetAgentToolToolConfigDatabaseConnectionInput
+
+func (GetAgentToolToolConfigDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigDatabaseConnectionArray) ToGetAgentToolToolConfigDatabaseConnectionArrayOutput() GetAgentToolToolConfigDatabaseConnectionArrayOutput {
+	return i.ToGetAgentToolToolConfigDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigDatabaseConnectionArray) ToGetAgentToolToolConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigDatabaseConnectionArrayOutput)
+}
+
+type GetAgentToolToolConfigDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigDatabaseConnectionOutput) ToGetAgentToolToolConfigDatabaseConnectionOutput() GetAgentToolToolConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigDatabaseConnectionOutput) ToGetAgentToolToolConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o GetAgentToolToolConfigDatabaseConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o GetAgentToolToolConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigDatabaseConnectionArrayOutput) ToGetAgentToolToolConfigDatabaseConnectionArrayOutput() GetAgentToolToolConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigDatabaseConnectionArrayOutput) ToGetAgentToolToolConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigDatabaseConnection {
+		return vs[0].([]GetAgentToolToolConfigDatabaseConnection)[vs[1].(int)]
+	}).(GetAgentToolToolConfigDatabaseConnectionOutput)
+}
+
+type GetAgentToolToolConfigDatabaseSchema struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentToolToolConfigDatabaseSchemaInput is an input type that accepts GetAgentToolToolConfigDatabaseSchemaArgs and GetAgentToolToolConfigDatabaseSchemaOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigDatabaseSchemaInput` via:
+//
+//	GetAgentToolToolConfigDatabaseSchemaArgs{...}
+type GetAgentToolToolConfigDatabaseSchemaInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigDatabaseSchemaOutput() GetAgentToolToolConfigDatabaseSchemaOutput
+	ToGetAgentToolToolConfigDatabaseSchemaOutputWithContext(context.Context) GetAgentToolToolConfigDatabaseSchemaOutput
+}
+
+type GetAgentToolToolConfigDatabaseSchemaArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentToolToolConfigDatabaseSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigDatabaseSchemaArgs) ToGetAgentToolToolConfigDatabaseSchemaOutput() GetAgentToolToolConfigDatabaseSchemaOutput {
+	return i.ToGetAgentToolToolConfigDatabaseSchemaOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigDatabaseSchemaArgs) ToGetAgentToolToolConfigDatabaseSchemaOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigDatabaseSchemaOutput)
+}
+
+// GetAgentToolToolConfigDatabaseSchemaArrayInput is an input type that accepts GetAgentToolToolConfigDatabaseSchemaArray and GetAgentToolToolConfigDatabaseSchemaArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigDatabaseSchemaArrayInput` via:
+//
+//	GetAgentToolToolConfigDatabaseSchemaArray{ GetAgentToolToolConfigDatabaseSchemaArgs{...} }
+type GetAgentToolToolConfigDatabaseSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigDatabaseSchemaArrayOutput() GetAgentToolToolConfigDatabaseSchemaArrayOutput
+	ToGetAgentToolToolConfigDatabaseSchemaArrayOutputWithContext(context.Context) GetAgentToolToolConfigDatabaseSchemaArrayOutput
+}
+
+type GetAgentToolToolConfigDatabaseSchemaArray []GetAgentToolToolConfigDatabaseSchemaInput
+
+func (GetAgentToolToolConfigDatabaseSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigDatabaseSchemaArray) ToGetAgentToolToolConfigDatabaseSchemaArrayOutput() GetAgentToolToolConfigDatabaseSchemaArrayOutput {
+	return i.ToGetAgentToolToolConfigDatabaseSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigDatabaseSchemaArray) ToGetAgentToolToolConfigDatabaseSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigDatabaseSchemaArrayOutput)
+}
+
+type GetAgentToolToolConfigDatabaseSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigDatabaseSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) ToGetAgentToolToolConfigDatabaseSchemaOutput() GetAgentToolToolConfigDatabaseSchemaOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) ToGetAgentToolToolConfigDatabaseSchemaOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseSchemaOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseSchema) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseSchema) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseSchema) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseSchema) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix of file object(s) or folder prefix.
+func (o GetAgentToolToolConfigDatabaseSchemaOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigDatabaseSchema) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigDatabaseSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigDatabaseSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigDatabaseSchemaArrayOutput) ToGetAgentToolToolConfigDatabaseSchemaArrayOutput() GetAgentToolToolConfigDatabaseSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigDatabaseSchemaArrayOutput) ToGetAgentToolToolConfigDatabaseSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigDatabaseSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigDatabaseSchemaArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigDatabaseSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigDatabaseSchema {
+		return vs[0].([]GetAgentToolToolConfigDatabaseSchema)[vs[1].(int)]
+	}).(GetAgentToolToolConfigDatabaseSchemaOutput)
+}
+
+type GetAgentToolToolConfigFunction struct {
+	// A description of the function.
+	Description string `pulumi:"description"`
+	// The name of the function to invoke.
+	Name string `pulumi:"name"`
+	// The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+	Parameters map[string]string `pulumi:"parameters"`
+}
+
+// GetAgentToolToolConfigFunctionInput is an input type that accepts GetAgentToolToolConfigFunctionArgs and GetAgentToolToolConfigFunctionOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigFunctionInput` via:
+//
+//	GetAgentToolToolConfigFunctionArgs{...}
+type GetAgentToolToolConfigFunctionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigFunctionOutput() GetAgentToolToolConfigFunctionOutput
+	ToGetAgentToolToolConfigFunctionOutputWithContext(context.Context) GetAgentToolToolConfigFunctionOutput
+}
+
+type GetAgentToolToolConfigFunctionArgs struct {
+	// A description of the function.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the function to invoke.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
+}
+
+func (GetAgentToolToolConfigFunctionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigFunctionArgs) ToGetAgentToolToolConfigFunctionOutput() GetAgentToolToolConfigFunctionOutput {
+	return i.ToGetAgentToolToolConfigFunctionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigFunctionArgs) ToGetAgentToolToolConfigFunctionOutputWithContext(ctx context.Context) GetAgentToolToolConfigFunctionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigFunctionOutput)
+}
+
+// GetAgentToolToolConfigFunctionArrayInput is an input type that accepts GetAgentToolToolConfigFunctionArray and GetAgentToolToolConfigFunctionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigFunctionArrayInput` via:
+//
+//	GetAgentToolToolConfigFunctionArray{ GetAgentToolToolConfigFunctionArgs{...} }
+type GetAgentToolToolConfigFunctionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigFunctionArrayOutput() GetAgentToolToolConfigFunctionArrayOutput
+	ToGetAgentToolToolConfigFunctionArrayOutputWithContext(context.Context) GetAgentToolToolConfigFunctionArrayOutput
+}
+
+type GetAgentToolToolConfigFunctionArray []GetAgentToolToolConfigFunctionInput
+
+func (GetAgentToolToolConfigFunctionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigFunctionArray) ToGetAgentToolToolConfigFunctionArrayOutput() GetAgentToolToolConfigFunctionArrayOutput {
+	return i.ToGetAgentToolToolConfigFunctionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigFunctionArray) ToGetAgentToolToolConfigFunctionArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigFunctionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigFunctionArrayOutput)
+}
+
+type GetAgentToolToolConfigFunctionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigFunctionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigFunctionOutput) ToGetAgentToolToolConfigFunctionOutput() GetAgentToolToolConfigFunctionOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigFunctionOutput) ToGetAgentToolToolConfigFunctionOutputWithContext(ctx context.Context) GetAgentToolToolConfigFunctionOutput {
+	return o
+}
+
+// A description of the function.
+func (o GetAgentToolToolConfigFunctionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigFunction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the function to invoke.
+func (o GetAgentToolToolConfigFunctionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigFunction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+func (o GetAgentToolToolConfigFunctionOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigFunction) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
+}
+
+type GetAgentToolToolConfigFunctionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigFunctionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigFunction)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigFunctionArrayOutput) ToGetAgentToolToolConfigFunctionArrayOutput() GetAgentToolToolConfigFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigFunctionArrayOutput) ToGetAgentToolToolConfigFunctionArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigFunctionArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigFunctionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigFunction {
+		return vs[0].([]GetAgentToolToolConfigFunction)[vs[1].(int)]
+	}).(GetAgentToolToolConfigFunctionOutput)
+}
+
+type GetAgentToolToolConfigGenerationLlmCustomization struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction string `pulumi:"instruction"`
+}
+
+// GetAgentToolToolConfigGenerationLlmCustomizationInput is an input type that accepts GetAgentToolToolConfigGenerationLlmCustomizationArgs and GetAgentToolToolConfigGenerationLlmCustomizationOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigGenerationLlmCustomizationInput` via:
+//
+//	GetAgentToolToolConfigGenerationLlmCustomizationArgs{...}
+type GetAgentToolToolConfigGenerationLlmCustomizationInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigGenerationLlmCustomizationOutput() GetAgentToolToolConfigGenerationLlmCustomizationOutput
+	ToGetAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(context.Context) GetAgentToolToolConfigGenerationLlmCustomizationOutput
+}
+
+type GetAgentToolToolConfigGenerationLlmCustomizationArgs struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction pulumi.StringInput `pulumi:"instruction"`
+}
+
+func (GetAgentToolToolConfigGenerationLlmCustomizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigGenerationLlmCustomizationArgs) ToGetAgentToolToolConfigGenerationLlmCustomizationOutput() GetAgentToolToolConfigGenerationLlmCustomizationOutput {
+	return i.ToGetAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigGenerationLlmCustomizationArgs) ToGetAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(ctx context.Context) GetAgentToolToolConfigGenerationLlmCustomizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigGenerationLlmCustomizationOutput)
+}
+
+// GetAgentToolToolConfigGenerationLlmCustomizationArrayInput is an input type that accepts GetAgentToolToolConfigGenerationLlmCustomizationArray and GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigGenerationLlmCustomizationArrayInput` via:
+//
+//	GetAgentToolToolConfigGenerationLlmCustomizationArray{ GetAgentToolToolConfigGenerationLlmCustomizationArgs{...} }
+type GetAgentToolToolConfigGenerationLlmCustomizationArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutput() GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput
+	ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutputWithContext(context.Context) GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput
+}
+
+type GetAgentToolToolConfigGenerationLlmCustomizationArray []GetAgentToolToolConfigGenerationLlmCustomizationInput
+
+func (GetAgentToolToolConfigGenerationLlmCustomizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigGenerationLlmCustomizationArray) ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutput() GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput {
+	return i.ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigGenerationLlmCustomizationArray) ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput)
+}
+
+type GetAgentToolToolConfigGenerationLlmCustomizationOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigGenerationLlmCustomizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigGenerationLlmCustomizationOutput) ToGetAgentToolToolConfigGenerationLlmCustomizationOutput() GetAgentToolToolConfigGenerationLlmCustomizationOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigGenerationLlmCustomizationOutput) ToGetAgentToolToolConfigGenerationLlmCustomizationOutputWithContext(ctx context.Context) GetAgentToolToolConfigGenerationLlmCustomizationOutput {
+	return o
+}
+
+// If specified, the default instruction is replaced with provided instruction.
+func (o GetAgentToolToolConfigGenerationLlmCustomizationOutput) Instruction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigGenerationLlmCustomization) string { return v.Instruction }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput) ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutput() GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput) ToGetAgentToolToolConfigGenerationLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigGenerationLlmCustomizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigGenerationLlmCustomization {
+		return vs[0].([]GetAgentToolToolConfigGenerationLlmCustomization)[vs[1].(int)]
+	}).(GetAgentToolToolConfigGenerationLlmCustomizationOutput)
+}
+
+type GetAgentToolToolConfigIclExample struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentToolToolConfigIclExampleInput is an input type that accepts GetAgentToolToolConfigIclExampleArgs and GetAgentToolToolConfigIclExampleOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigIclExampleInput` via:
+//
+//	GetAgentToolToolConfigIclExampleArgs{...}
+type GetAgentToolToolConfigIclExampleInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigIclExampleOutput() GetAgentToolToolConfigIclExampleOutput
+	ToGetAgentToolToolConfigIclExampleOutputWithContext(context.Context) GetAgentToolToolConfigIclExampleOutput
+}
+
+type GetAgentToolToolConfigIclExampleArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentToolToolConfigIclExampleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigIclExample)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigIclExampleArgs) ToGetAgentToolToolConfigIclExampleOutput() GetAgentToolToolConfigIclExampleOutput {
+	return i.ToGetAgentToolToolConfigIclExampleOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigIclExampleArgs) ToGetAgentToolToolConfigIclExampleOutputWithContext(ctx context.Context) GetAgentToolToolConfigIclExampleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigIclExampleOutput)
+}
+
+// GetAgentToolToolConfigIclExampleArrayInput is an input type that accepts GetAgentToolToolConfigIclExampleArray and GetAgentToolToolConfigIclExampleArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigIclExampleArrayInput` via:
+//
+//	GetAgentToolToolConfigIclExampleArray{ GetAgentToolToolConfigIclExampleArgs{...} }
+type GetAgentToolToolConfigIclExampleArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigIclExampleArrayOutput() GetAgentToolToolConfigIclExampleArrayOutput
+	ToGetAgentToolToolConfigIclExampleArrayOutputWithContext(context.Context) GetAgentToolToolConfigIclExampleArrayOutput
+}
+
+type GetAgentToolToolConfigIclExampleArray []GetAgentToolToolConfigIclExampleInput
+
+func (GetAgentToolToolConfigIclExampleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigIclExample)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigIclExampleArray) ToGetAgentToolToolConfigIclExampleArrayOutput() GetAgentToolToolConfigIclExampleArrayOutput {
+	return i.ToGetAgentToolToolConfigIclExampleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigIclExampleArray) ToGetAgentToolToolConfigIclExampleArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigIclExampleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigIclExampleArrayOutput)
+}
+
+type GetAgentToolToolConfigIclExampleOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigIclExampleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigIclExample)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigIclExampleOutput) ToGetAgentToolToolConfigIclExampleOutput() GetAgentToolToolConfigIclExampleOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigIclExampleOutput) ToGetAgentToolToolConfigIclExampleOutputWithContext(ctx context.Context) GetAgentToolToolConfigIclExampleOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentToolToolConfigIclExampleOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigIclExample) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolToolConfigIclExampleOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigIclExample) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o GetAgentToolToolConfigIclExampleOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigIclExample) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolToolConfigIclExampleOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigIclExample) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix of file object(s) or folder prefix.
+func (o GetAgentToolToolConfigIclExampleOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigIclExample) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigIclExampleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigIclExampleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigIclExample)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigIclExampleArrayOutput) ToGetAgentToolToolConfigIclExampleArrayOutput() GetAgentToolToolConfigIclExampleArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigIclExampleArrayOutput) ToGetAgentToolToolConfigIclExampleArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigIclExampleArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigIclExampleArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigIclExampleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigIclExample {
+		return vs[0].([]GetAgentToolToolConfigIclExample)[vs[1].(int)]
+	}).(GetAgentToolToolConfigIclExampleOutput)
+}
+
+type GetAgentToolToolConfigKnowledgeBaseConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+}
+
+// GetAgentToolToolConfigKnowledgeBaseConfigInput is an input type that accepts GetAgentToolToolConfigKnowledgeBaseConfigArgs and GetAgentToolToolConfigKnowledgeBaseConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigKnowledgeBaseConfigInput` via:
+//
+//	GetAgentToolToolConfigKnowledgeBaseConfigArgs{...}
+type GetAgentToolToolConfigKnowledgeBaseConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigKnowledgeBaseConfigOutput() GetAgentToolToolConfigKnowledgeBaseConfigOutput
+	ToGetAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(context.Context) GetAgentToolToolConfigKnowledgeBaseConfigOutput
+}
+
+type GetAgentToolToolConfigKnowledgeBaseConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
+}
+
+func (GetAgentToolToolConfigKnowledgeBaseConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigKnowledgeBaseConfigArgs) ToGetAgentToolToolConfigKnowledgeBaseConfigOutput() GetAgentToolToolConfigKnowledgeBaseConfigOutput {
+	return i.ToGetAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigKnowledgeBaseConfigArgs) ToGetAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigKnowledgeBaseConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigKnowledgeBaseConfigOutput)
+}
+
+// GetAgentToolToolConfigKnowledgeBaseConfigArrayInput is an input type that accepts GetAgentToolToolConfigKnowledgeBaseConfigArray and GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigKnowledgeBaseConfigArrayInput` via:
+//
+//	GetAgentToolToolConfigKnowledgeBaseConfigArray{ GetAgentToolToolConfigKnowledgeBaseConfigArgs{...} }
+type GetAgentToolToolConfigKnowledgeBaseConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutput() GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput
+	ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(context.Context) GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput
+}
+
+type GetAgentToolToolConfigKnowledgeBaseConfigArray []GetAgentToolToolConfigKnowledgeBaseConfigInput
+
+func (GetAgentToolToolConfigKnowledgeBaseConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigKnowledgeBaseConfigArray) ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutput() GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return i.ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigKnowledgeBaseConfigArray) ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+type GetAgentToolToolConfigKnowledgeBaseConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigKnowledgeBaseConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigKnowledgeBaseConfigOutput) ToGetAgentToolToolConfigKnowledgeBaseConfigOutput() GetAgentToolToolConfigKnowledgeBaseConfigOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigKnowledgeBaseConfigOutput) ToGetAgentToolToolConfigKnowledgeBaseConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigKnowledgeBaseConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+func (o GetAgentToolToolConfigKnowledgeBaseConfigOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigKnowledgeBaseConfig) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput) ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutput() GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput) ToGetAgentToolToolConfigKnowledgeBaseConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigKnowledgeBaseConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigKnowledgeBaseConfig {
+		return vs[0].([]GetAgentToolToolConfigKnowledgeBaseConfig)[vs[1].(int)]
+	}).(GetAgentToolToolConfigKnowledgeBaseConfigOutput)
+}
+
+type GetAgentToolToolConfigTableAndColumnDescription struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentToolToolConfigTableAndColumnDescriptionInput is an input type that accepts GetAgentToolToolConfigTableAndColumnDescriptionArgs and GetAgentToolToolConfigTableAndColumnDescriptionOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigTableAndColumnDescriptionInput` via:
+//
+//	GetAgentToolToolConfigTableAndColumnDescriptionArgs{...}
+type GetAgentToolToolConfigTableAndColumnDescriptionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigTableAndColumnDescriptionOutput() GetAgentToolToolConfigTableAndColumnDescriptionOutput
+	ToGetAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(context.Context) GetAgentToolToolConfigTableAndColumnDescriptionOutput
+}
+
+type GetAgentToolToolConfigTableAndColumnDescriptionArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentToolToolConfigTableAndColumnDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigTableAndColumnDescriptionArgs) ToGetAgentToolToolConfigTableAndColumnDescriptionOutput() GetAgentToolToolConfigTableAndColumnDescriptionOutput {
+	return i.ToGetAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigTableAndColumnDescriptionArgs) ToGetAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(ctx context.Context) GetAgentToolToolConfigTableAndColumnDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigTableAndColumnDescriptionOutput)
+}
+
+// GetAgentToolToolConfigTableAndColumnDescriptionArrayInput is an input type that accepts GetAgentToolToolConfigTableAndColumnDescriptionArray and GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigTableAndColumnDescriptionArrayInput` via:
+//
+//	GetAgentToolToolConfigTableAndColumnDescriptionArray{ GetAgentToolToolConfigTableAndColumnDescriptionArgs{...} }
+type GetAgentToolToolConfigTableAndColumnDescriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutput() GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput
+	ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutputWithContext(context.Context) GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput
+}
+
+type GetAgentToolToolConfigTableAndColumnDescriptionArray []GetAgentToolToolConfigTableAndColumnDescriptionInput
+
+func (GetAgentToolToolConfigTableAndColumnDescriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigTableAndColumnDescriptionArray) ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutput() GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput {
+	return i.ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigTableAndColumnDescriptionArray) ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput)
+}
+
+type GetAgentToolToolConfigTableAndColumnDescriptionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigTableAndColumnDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) ToGetAgentToolToolConfigTableAndColumnDescriptionOutput() GetAgentToolToolConfigTableAndColumnDescriptionOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) ToGetAgentToolToolConfigTableAndColumnDescriptionOutputWithContext(ctx context.Context) GetAgentToolToolConfigTableAndColumnDescriptionOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigTableAndColumnDescription) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigTableAndColumnDescription) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigTableAndColumnDescription) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigTableAndColumnDescription) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix of file object(s) or folder prefix.
+func (o GetAgentToolToolConfigTableAndColumnDescriptionOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigTableAndColumnDescription) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput) ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutput() GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput) ToGetAgentToolToolConfigTableAndColumnDescriptionArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigTableAndColumnDescriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigTableAndColumnDescription {
+		return vs[0].([]GetAgentToolToolConfigTableAndColumnDescription)[vs[1].(int)]
+	}).(GetAgentToolToolConfigTableAndColumnDescriptionOutput)
+}
+
+type GetAgentToolsFilter struct {
+	// The name of the function to invoke.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetAgentToolsFilterInput is an input type that accepts GetAgentToolsFilterArgs and GetAgentToolsFilterOutput values.
+// You can construct a concrete instance of `GetAgentToolsFilterInput` via:
+//
+//	GetAgentToolsFilterArgs{...}
+type GetAgentToolsFilterInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsFilterOutput() GetAgentToolsFilterOutput
+	ToGetAgentToolsFilterOutputWithContext(context.Context) GetAgentToolsFilterOutput
+}
+
+type GetAgentToolsFilterArgs struct {
+	// The name of the function to invoke.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetAgentToolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsFilter)(nil)).Elem()
+}
+
+func (i GetAgentToolsFilterArgs) ToGetAgentToolsFilterOutput() GetAgentToolsFilterOutput {
+	return i.ToGetAgentToolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsFilterArgs) ToGetAgentToolsFilterOutputWithContext(ctx context.Context) GetAgentToolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsFilterOutput)
+}
+
+// GetAgentToolsFilterArrayInput is an input type that accepts GetAgentToolsFilterArray and GetAgentToolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsFilterArrayInput` via:
+//
+//	GetAgentToolsFilterArray{ GetAgentToolsFilterArgs{...} }
+type GetAgentToolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsFilterArrayOutput() GetAgentToolsFilterArrayOutput
+	ToGetAgentToolsFilterArrayOutputWithContext(context.Context) GetAgentToolsFilterArrayOutput
+}
+
+type GetAgentToolsFilterArray []GetAgentToolsFilterInput
+
+func (GetAgentToolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsFilter)(nil)).Elem()
+}
+
+func (i GetAgentToolsFilterArray) ToGetAgentToolsFilterArrayOutput() GetAgentToolsFilterArrayOutput {
+	return i.ToGetAgentToolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsFilterArray) ToGetAgentToolsFilterArrayOutputWithContext(ctx context.Context) GetAgentToolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsFilterArrayOutput)
+}
+
+type GetAgentToolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsFilter)(nil)).Elem()
+}
+
+func (o GetAgentToolsFilterOutput) ToGetAgentToolsFilterOutput() GetAgentToolsFilterOutput {
+	return o
+}
+
+func (o GetAgentToolsFilterOutput) ToGetAgentToolsFilterOutputWithContext(ctx context.Context) GetAgentToolsFilterOutput {
+	return o
+}
+
+// The name of the function to invoke.
+func (o GetAgentToolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetAgentToolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetAgentToolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetAgentToolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetAgentToolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsFilter)(nil)).Elem()
+}
+
+func (o GetAgentToolsFilterArrayOutput) ToGetAgentToolsFilterArrayOutput() GetAgentToolsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsFilterArrayOutput) ToGetAgentToolsFilterArrayOutputWithContext(ctx context.Context) GetAgentToolsFilterArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsFilterArrayOutput) Index(i pulumi.IntInput) GetAgentToolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsFilter {
+		return vs[0].([]GetAgentToolsFilter)[vs[1].(int)]
+	}).(GetAgentToolsFilterOutput)
+}
+
+type GetAgentToolsToolCollection struct {
+	Items []GetAgentToolsToolCollectionItem `pulumi:"items"`
+}
+
+// GetAgentToolsToolCollectionInput is an input type that accepts GetAgentToolsToolCollectionArgs and GetAgentToolsToolCollectionOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionInput` via:
+//
+//	GetAgentToolsToolCollectionArgs{...}
+type GetAgentToolsToolCollectionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionOutput() GetAgentToolsToolCollectionOutput
+	ToGetAgentToolsToolCollectionOutputWithContext(context.Context) GetAgentToolsToolCollectionOutput
+}
+
+type GetAgentToolsToolCollectionArgs struct {
+	Items GetAgentToolsToolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetAgentToolsToolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollection)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionArgs) ToGetAgentToolsToolCollectionOutput() GetAgentToolsToolCollectionOutput {
+	return i.ToGetAgentToolsToolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionArgs) ToGetAgentToolsToolCollectionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionOutput)
+}
+
+// GetAgentToolsToolCollectionArrayInput is an input type that accepts GetAgentToolsToolCollectionArray and GetAgentToolsToolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionArrayInput` via:
+//
+//	GetAgentToolsToolCollectionArray{ GetAgentToolsToolCollectionArgs{...} }
+type GetAgentToolsToolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionArrayOutput() GetAgentToolsToolCollectionArrayOutput
+	ToGetAgentToolsToolCollectionArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionArrayOutput
+}
+
+type GetAgentToolsToolCollectionArray []GetAgentToolsToolCollectionInput
+
+func (GetAgentToolsToolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollection)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionArray) ToGetAgentToolsToolCollectionArrayOutput() GetAgentToolsToolCollectionArrayOutput {
+	return i.ToGetAgentToolsToolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionArray) ToGetAgentToolsToolCollectionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionArrayOutput)
+}
+
+type GetAgentToolsToolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollection)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionOutput) ToGetAgentToolsToolCollectionOutput() GetAgentToolsToolCollectionOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionOutput) ToGetAgentToolsToolCollectionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionOutput) Items() GetAgentToolsToolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollection) []GetAgentToolsToolCollectionItem { return v.Items }).(GetAgentToolsToolCollectionItemArrayOutput)
+}
+
+type GetAgentToolsToolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollection)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionArrayOutput) ToGetAgentToolsToolCollectionArrayOutput() GetAgentToolsToolCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionArrayOutput) ToGetAgentToolsToolCollectionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollection {
+		return vs[0].([]GetAgentToolsToolCollection)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionOutput)
+}
+
+type GetAgentToolsToolCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+	AgentId string `pulumi:"agentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the function.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Tool.
+	Id string `pulumi:"id"`
+	// Key-value pairs to allow additional configurations.
+	Metadata map[string]string `pulumi:"metadata"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Tool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Tool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The configuration and type of Tool.
+	ToolConfigs []GetAgentToolsToolCollectionItemToolConfig `pulumi:"toolConfigs"`
+}
+
+// GetAgentToolsToolCollectionItemInput is an input type that accepts GetAgentToolsToolCollectionItemArgs and GetAgentToolsToolCollectionItemOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemInput` via:
+//
+//	GetAgentToolsToolCollectionItemArgs{...}
+type GetAgentToolsToolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemOutput() GetAgentToolsToolCollectionItemOutput
+	ToGetAgentToolsToolCollectionItemOutputWithContext(context.Context) GetAgentToolsToolCollectionItemOutput
+}
+
+type GetAgentToolsToolCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+	AgentId pulumi.StringInput `pulumi:"agentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the function.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Tool.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Key-value pairs to allow additional configurations.
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Tool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Tool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The configuration and type of Tool.
+	ToolConfigs GetAgentToolsToolCollectionItemToolConfigArrayInput `pulumi:"toolConfigs"`
+}
+
+func (GetAgentToolsToolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemArgs) ToGetAgentToolsToolCollectionItemOutput() GetAgentToolsToolCollectionItemOutput {
+	return i.ToGetAgentToolsToolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemArgs) ToGetAgentToolsToolCollectionItemOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemOutput)
+}
+
+// GetAgentToolsToolCollectionItemArrayInput is an input type that accepts GetAgentToolsToolCollectionItemArray and GetAgentToolsToolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemArray{ GetAgentToolsToolCollectionItemArgs{...} }
+type GetAgentToolsToolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemArrayOutput() GetAgentToolsToolCollectionItemArrayOutput
+	ToGetAgentToolsToolCollectionItemArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemArray []GetAgentToolsToolCollectionItemInput
+
+func (GetAgentToolsToolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItem)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemArray) ToGetAgentToolsToolCollectionItemArrayOutput() GetAgentToolsToolCollectionItemArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemArray) ToGetAgentToolsToolCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemOutput) ToGetAgentToolsToolCollectionItemOutput() GetAgentToolsToolCollectionItemOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemOutput) ToGetAgentToolsToolCollectionItemOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+func (o GetAgentToolsToolCollectionItemOutput) AgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.AgentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetAgentToolsToolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetAgentToolsToolCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A description of the function.
+func (o GetAgentToolsToolCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetAgentToolsToolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetAgentToolsToolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Tool.
+func (o GetAgentToolsToolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Key-value pairs to allow additional configurations.
+func (o GetAgentToolsToolCollectionItemOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetAgentToolsToolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetAgentToolsToolCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Tool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentToolsToolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Tool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetAgentToolsToolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The configuration and type of Tool.
+func (o GetAgentToolsToolCollectionItemOutput) ToolConfigs() GetAgentToolsToolCollectionItemToolConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItem) []GetAgentToolsToolCollectionItemToolConfig {
+		return v.ToolConfigs
+	}).(GetAgentToolsToolCollectionItemToolConfigArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItem)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemArrayOutput) ToGetAgentToolsToolCollectionItemArrayOutput() GetAgentToolsToolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemArrayOutput) ToGetAgentToolsToolCollectionItemArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItem {
+		return vs[0].([]GetAgentToolsToolCollectionItem)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfig struct {
+	// The connection type for Databases.
+	DatabaseConnections []GetAgentToolsToolCollectionItemToolConfigDatabaseConnection `pulumi:"databaseConnections"`
+	// The input location definition.
+	DatabaseSchemas []GetAgentToolsToolCollectionItemToolConfigDatabaseSchema `pulumi:"databaseSchemas"`
+	// Dialect to be used for SQL generation.
+	Dialect string `pulumi:"dialect"`
+	// Details of Function for Function calling tool.
+	Functions []GetAgentToolsToolCollectionItemToolConfigFunction `pulumi:"functions"`
+	// Configuration to customize LLM.
+	GenerationLlmCustomizations []GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization `pulumi:"generationLlmCustomizations"`
+	// The input location definition.
+	IclExamples []GetAgentToolsToolCollectionItemToolConfigIclExample `pulumi:"iclExamples"`
+	// The KnowledgeBase configurations that this RAG Tool uses
+	KnowledgeBaseConfigs []GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig `pulumi:"knowledgeBaseConfigs"`
+	// Size of the model.
+	ModelSize string `pulumi:"modelSize"`
+	// To enable/disable self correction.
+	ShouldEnableSelfCorrection bool `pulumi:"shouldEnableSelfCorrection"`
+	// To enable/disable SQL execution.
+	ShouldEnableSqlExecution bool `pulumi:"shouldEnableSqlExecution"`
+	// The input location definition.
+	TableAndColumnDescriptions []GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription `pulumi:"tableAndColumnDescriptions"`
+	// The type of the Tool config. The allowed values are:
+	// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+	// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+	// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+	ToolConfigType string `pulumi:"toolConfigType"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigArgs and GetAgentToolsToolCollectionItemToolConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigOutput() GetAgentToolsToolCollectionItemToolConfigOutput
+	ToGetAgentToolsToolCollectionItemToolConfigOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigArgs struct {
+	// The connection type for Databases.
+	DatabaseConnections GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
+	// The input location definition.
+	DatabaseSchemas GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayInput `pulumi:"databaseSchemas"`
+	// Dialect to be used for SQL generation.
+	Dialect pulumi.StringInput `pulumi:"dialect"`
+	// Details of Function for Function calling tool.
+	Functions GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput `pulumi:"functions"`
+	// Configuration to customize LLM.
+	GenerationLlmCustomizations GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput `pulumi:"generationLlmCustomizations"`
+	// The input location definition.
+	IclExamples GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput `pulumi:"iclExamples"`
+	// The KnowledgeBase configurations that this RAG Tool uses
+	KnowledgeBaseConfigs GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayInput `pulumi:"knowledgeBaseConfigs"`
+	// Size of the model.
+	ModelSize pulumi.StringInput `pulumi:"modelSize"`
+	// To enable/disable self correction.
+	ShouldEnableSelfCorrection pulumi.BoolInput `pulumi:"shouldEnableSelfCorrection"`
+	// To enable/disable SQL execution.
+	ShouldEnableSqlExecution pulumi.BoolInput `pulumi:"shouldEnableSqlExecution"`
+	// The input location definition.
+	TableAndColumnDescriptions GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput `pulumi:"tableAndColumnDescriptions"`
+	// The type of the Tool config. The allowed values are:
+	// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+	// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+	// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+	ToolConfigType pulumi.StringInput `pulumi:"toolConfigType"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigOutput() GetAgentToolsToolCollectionItemToolConfigOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigArray and GetAgentToolsToolCollectionItemToolConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigArray{ GetAgentToolsToolCollectionItemToolConfigArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigArray []GetAgentToolsToolCollectionItemToolConfigInput
+
+func (GetAgentToolsToolCollectionItemToolConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigArray) ToGetAgentToolsToolCollectionItemToolConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigArray) ToGetAgentToolsToolCollectionItemToolConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigOutput() GetAgentToolsToolCollectionItemToolConfigOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigOutput {
+	return o
+}
+
+// The connection type for Databases.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) DatabaseConnections() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigDatabaseConnection {
+		return v.DatabaseConnections
+	}).(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput)
+}
+
+// The input location definition.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) DatabaseSchemas() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigDatabaseSchema {
+		return v.DatabaseSchemas
+	}).(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput)
+}
+
+// Dialect to be used for SQL generation.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) Dialect() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) string { return v.Dialect }).(pulumi.StringOutput)
+}
+
+// Details of Function for Function calling tool.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) Functions() GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigFunction {
+		return v.Functions
+	}).(GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput)
+}
+
+// Configuration to customize LLM.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) GenerationLlmCustomizations() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization {
+		return v.GenerationLlmCustomizations
+	}).(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput)
+}
+
+// The input location definition.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) IclExamples() GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigIclExample {
+		return v.IclExamples
+	}).(GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput)
+}
+
+// The KnowledgeBase configurations that this RAG Tool uses
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) KnowledgeBaseConfigs() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig {
+		return v.KnowledgeBaseConfigs
+	}).(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+// Size of the model.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ModelSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) string { return v.ModelSize }).(pulumi.StringOutput)
+}
+
+// To enable/disable self correction.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ShouldEnableSelfCorrection() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) bool { return v.ShouldEnableSelfCorrection }).(pulumi.BoolOutput)
+}
+
+// To enable/disable SQL execution.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ShouldEnableSqlExecution() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) bool { return v.ShouldEnableSqlExecution }).(pulumi.BoolOutput)
+}
+
+// The input location definition.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) TableAndColumnDescriptions() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription {
+		return v.TableAndColumnDescriptions
+	}).(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput)
+}
+
+// The type of the Tool config. The allowed values are:
+// * `SQL_TOOL_CONFIG`: The config for sql Tool.
+// * `RAG_TOOL_CONFIG`: The config for rag Tool.
+// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ToolConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) string { return v.ToolConfigType }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfig {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfig)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnection struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType string `pulumi:"connectionType"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs and GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// The type of Database connection. The allowed values are:
+	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray and GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray{ GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray []GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionInput
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The type of Database connection. The allowed values are:
+// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigDatabaseConnection)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigDatabaseConnection {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigDatabaseConnection)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchema struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs and GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray and GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray{ GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray []GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaInput
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseSchema) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseSchema) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseSchema) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseSchema) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix of file object(s) or folder prefix.
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigDatabaseSchema) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigDatabaseSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput() GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigDatabaseSchema {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigDatabaseSchema)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigFunction struct {
+	// A description of the function.
+	Description string `pulumi:"description"`
+	// The name of the function to invoke.
+	Name string `pulumi:"name"`
+	// The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+	Parameters map[string]string `pulumi:"parameters"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigFunctionInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigFunctionArgs and GetAgentToolsToolCollectionItemToolConfigFunctionOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigFunctionInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigFunctionArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigFunctionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigFunctionOutput() GetAgentToolsToolCollectionItemToolConfigFunctionOutput
+	ToGetAgentToolsToolCollectionItemToolConfigFunctionOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigFunctionOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigFunctionArgs struct {
+	// A description of the function.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The name of the function to invoke.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigFunctionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigFunction)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigFunctionArgs) ToGetAgentToolsToolCollectionItemToolConfigFunctionOutput() GetAgentToolsToolCollectionItemToolConfigFunctionOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigFunctionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigFunctionArgs) ToGetAgentToolsToolCollectionItemToolConfigFunctionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigFunctionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigFunctionOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigFunctionArray and GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigFunctionArray{ GetAgentToolsToolCollectionItemToolConfigFunctionArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput() GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigFunctionArray []GetAgentToolsToolCollectionItemToolConfigFunctionInput
+
+func (GetAgentToolsToolCollectionItemToolConfigFunctionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigFunction)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigFunctionArray) ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput() GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigFunctionArray) ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigFunctionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigFunctionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigFunction)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionOutput) ToGetAgentToolsToolCollectionItemToolConfigFunctionOutput() GetAgentToolsToolCollectionItemToolConfigFunctionOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionOutput) ToGetAgentToolsToolCollectionItemToolConfigFunctionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigFunctionOutput {
+	return o
+}
+
+// A description of the function.
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigFunction) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The name of the function to invoke.
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigFunction) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigFunction) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigFunction)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput() GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigFunctionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigFunctionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigFunction {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigFunction)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigFunctionOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction string `pulumi:"instruction"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs and GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput
+	ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs struct {
+	// If specified, the default instruction is replaced with provided instruction.
+	Instruction pulumi.StringInput `pulumi:"instruction"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray and GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray{ GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray []GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationInput
+
+func (GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput {
+	return o
+}
+
+// If specified, the default instruction is replaced with provided instruction.
+func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput) Instruction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization) string {
+		return v.Instruction
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput() GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigIclExample struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigIclExampleInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigIclExampleArgs and GetAgentToolsToolCollectionItemToolConfigIclExampleOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigIclExampleInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigIclExampleArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigIclExampleInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutput() GetAgentToolsToolCollectionItemToolConfigIclExampleOutput
+	ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigIclExampleOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigIclExampleArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigIclExampleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigIclExample)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigIclExampleArgs) ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutput() GetAgentToolsToolCollectionItemToolConfigIclExampleOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigIclExampleArgs) ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigIclExampleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigIclExampleOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigIclExampleArray and GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigIclExampleArray{ GetAgentToolsToolCollectionItemToolConfigIclExampleArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput() GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigIclExampleArray []GetAgentToolsToolCollectionItemToolConfigIclExampleInput
+
+func (GetAgentToolsToolCollectionItemToolConfigIclExampleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigIclExample)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigIclExampleArray) ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput() GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigIclExampleArray) ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigIclExampleOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigIclExample)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutput() GetAgentToolsToolCollectionItemToolConfigIclExampleOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) ToGetAgentToolsToolCollectionItemToolConfigIclExampleOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigIclExampleOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigIclExample) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigIclExample) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigIclExample) string { return v.InputLocationType }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigIclExample) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix of file object(s) or folder prefix.
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigIclExample) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigIclExample)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput() GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigIclExampleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigIclExample {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigIclExample)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigIclExampleOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs and GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput
+	ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray and GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray{ GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray []GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigInput
+
+func (GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+func (o GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfig)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription struct {
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType string `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs and GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput
+	ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs struct {
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// Type of InputLocation. The allowed values are:
+	// * `INLINE`: The input location is inline.
+	// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+	InputLocationType pulumi.StringInput `pulumi:"inputLocationType"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The prefix of file object(s) or folder prefix.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray and GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray{ GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray []GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionInput
+
+func (GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput {
+	return o
+}
+
+// The bucket name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// Type of InputLocation. The allowed values are:
+// * `INLINE`: The input location is inline.
+// * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) InputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription) string {
+		return v.InputLocationType
+	}).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The prefix of file object(s) or folder prefix.
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput() GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput)
 }
 
 type GetDedicatedAiClusterCapacity struct {
@@ -10310,8 +17842,26 @@ func (o GetModelsModelCollectionItemModelMetricArrayOutput) Index(i pulumi.IntIn
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointContentModerationConfigInput)(nil)).Elem(), AgentAgentEndpointContentModerationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointContentModerationConfigPtrInput)(nil)).Elem(), AgentAgentEndpointContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPtrInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigContentModerationConfigInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigContentModerationConfigPtrInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPromptInjectionConfigInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrInput)(nil)).Elem(), AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointHumanInputConfigInput)(nil)).Elem(), AgentAgentEndpointHumanInputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointHumanInputConfigPtrInput)(nil)).Elem(), AgentAgentEndpointHumanInputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointOutputConfigInput)(nil)).Elem(), AgentAgentEndpointOutputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointOutputConfigPtrInput)(nil)).Elem(), AgentAgentEndpointOutputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointOutputConfigOutputLocationInput)(nil)).Elem(), AgentAgentEndpointOutputConfigOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointOutputConfigOutputLocationPtrInput)(nil)).Elem(), AgentAgentEndpointOutputConfigOutputLocationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointSessionConfigInput)(nil)).Elem(), AgentAgentEndpointSessionConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentEndpointSessionConfigPtrInput)(nil)).Elem(), AgentAgentEndpointSessionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentLlmConfigInput)(nil)).Elem(), AgentAgentLlmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentLlmConfigPtrInput)(nil)).Elem(), AgentAgentLlmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentLlmConfigRoutingLlmCustomizationInput)(nil)).Elem(), AgentAgentLlmConfigRoutingLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentLlmConfigRoutingLlmCustomizationPtrInput)(nil)).Elem(), AgentAgentLlmConfigRoutingLlmCustomizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatisticInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobStatisticArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatisticArrayInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigInput)(nil)).Elem(), AgentDataSourceDataSourceConfigArgs{})
@@ -10330,6 +17880,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigIndexSchemaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetailInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigSecretDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetailPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigSecretDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigInput)(nil)).Elem(), AgentToolToolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigPtrInput)(nil)).Elem(), AgentToolToolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseConnectionInput)(nil)).Elem(), AgentToolToolConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseConnectionPtrInput)(nil)).Elem(), AgentToolToolConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseSchemaInput)(nil)).Elem(), AgentToolToolConfigDatabaseSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseSchemaPtrInput)(nil)).Elem(), AgentToolToolConfigDatabaseSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigFunctionInput)(nil)).Elem(), AgentToolToolConfigFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigFunctionPtrInput)(nil)).Elem(), AgentToolToolConfigFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigGenerationLlmCustomizationInput)(nil)).Elem(), AgentToolToolConfigGenerationLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigGenerationLlmCustomizationPtrInput)(nil)).Elem(), AgentToolToolConfigGenerationLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigIclExamplesInput)(nil)).Elem(), AgentToolToolConfigIclExamplesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigIclExamplesPtrInput)(nil)).Elem(), AgentToolToolConfigIclExamplesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigKnowledgeBaseConfigInput)(nil)).Elem(), AgentToolToolConfigKnowledgeBaseConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigKnowledgeBaseConfigArrayInput)(nil)).Elem(), AgentToolToolConfigKnowledgeBaseConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigTableAndColumnDescriptionInput)(nil)).Elem(), AgentToolToolConfigTableAndColumnDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigTableAndColumnDescriptionPtrInput)(nil)).Elem(), AgentToolToolConfigTableAndColumnDescriptionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedAiClusterCapacityInput)(nil)).Elem(), DedicatedAiClusterCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedAiClusterCapacityArrayInput)(nil)).Elem(), DedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointContentModerationConfigInput)(nil)).Elem(), EndpointContentModerationConfigArgs{})
@@ -10344,6 +17910,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelMetricArrayInput)(nil)).Elem(), ModelModelMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointContentModerationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointContentModerationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigContentModerationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointHumanInputConfigInput)(nil)).Elem(), GetAgentAgentEndpointHumanInputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointHumanInputConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointHumanInputConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointOutputConfigInput)(nil)).Elem(), GetAgentAgentEndpointOutputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointOutputConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointOutputConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointOutputConfigOutputLocationInput)(nil)).Elem(), GetAgentAgentEndpointOutputConfigOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointOutputConfigOutputLocationArrayInput)(nil)).Elem(), GetAgentAgentEndpointOutputConfigOutputLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointSessionConfigInput)(nil)).Elem(), GetAgentAgentEndpointSessionConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointSessionConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointSessionConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionArgs{})
@@ -10352,14 +17932,36 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayInput)(nil)).Elem(), GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsFilterInput)(nil)).Elem(), GetAgentAgentEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentEndpointsFilterArrayInput)(nil)).Elem(), GetAgentAgentEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentLlmConfigInput)(nil)).Elem(), GetAgentAgentLlmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentLlmConfigArrayInput)(nil)).Elem(), GetAgentAgentLlmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentLlmConfigRoutingLlmCustomizationInput)(nil)).Elem(), GetAgentAgentLlmConfigRoutingLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentLlmConfigRoutingLlmCustomizationArrayInput)(nil)).Elem(), GetAgentAgentLlmConfigRoutingLlmCustomizationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionInput)(nil)).Elem(), GetAgentAgentsAgentCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionArrayInput)(nil)).Elem(), GetAgentAgentsAgentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemArrayInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfigInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemLlmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfigArrayInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemLlmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayInput)(nil)).Elem(), GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsFilterInput)(nil)).Elem(), GetAgentAgentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsFilterArrayInput)(nil)).Elem(), GetAgentAgentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatisticInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobStatisticArgs{})
@@ -10416,6 +18018,44 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigInput)(nil)).Elem(), GetAgentToolToolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigArrayInput)(nil)).Elem(), GetAgentToolToolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseConnectionInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseConnectionArrayInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseSchemaInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseSchemaArrayInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigFunctionInput)(nil)).Elem(), GetAgentToolToolConfigFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigFunctionArrayInput)(nil)).Elem(), GetAgentToolToolConfigFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigGenerationLlmCustomizationInput)(nil)).Elem(), GetAgentToolToolConfigGenerationLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigGenerationLlmCustomizationArrayInput)(nil)).Elem(), GetAgentToolToolConfigGenerationLlmCustomizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigIclExampleInput)(nil)).Elem(), GetAgentToolToolConfigIclExampleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigIclExampleArrayInput)(nil)).Elem(), GetAgentToolToolConfigIclExampleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigKnowledgeBaseConfigInput)(nil)).Elem(), GetAgentToolToolConfigKnowledgeBaseConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigKnowledgeBaseConfigArrayInput)(nil)).Elem(), GetAgentToolToolConfigKnowledgeBaseConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigTableAndColumnDescriptionInput)(nil)).Elem(), GetAgentToolToolConfigTableAndColumnDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigTableAndColumnDescriptionArrayInput)(nil)).Elem(), GetAgentToolToolConfigTableAndColumnDescriptionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsFilterInput)(nil)).Elem(), GetAgentToolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsFilterArrayInput)(nil)).Elem(), GetAgentToolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionInput)(nil)).Elem(), GetAgentToolsToolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemInput)(nil)).Elem(), GetAgentToolsToolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigFunctionInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigFunctionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigFunctionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigIclExampleInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigIclExampleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigIclExampleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityArrayInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClustersDedicatedAiClusterCollectionInput)(nil)).Elem(), GetDedicatedAiClustersDedicatedAiClusterCollectionArgs{})
@@ -10460,8 +18100,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelMetricArrayInput)(nil)).Elem(), GetModelsModelCollectionItemModelMetricArray{})
 	pulumi.RegisterOutputType(AgentAgentEndpointContentModerationConfigOutput{})
 	pulumi.RegisterOutputType(AgentAgentEndpointContentModerationConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigContentModerationConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigContentModerationConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointGuardrailConfigPromptInjectionConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointHumanInputConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointHumanInputConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointOutputConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointOutputConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointOutputConfigOutputLocationOutput{})
+	pulumi.RegisterOutputType(AgentAgentEndpointOutputConfigOutputLocationPtrOutput{})
 	pulumi.RegisterOutputType(AgentAgentEndpointSessionConfigOutput{})
 	pulumi.RegisterOutputType(AgentAgentEndpointSessionConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentLlmConfigOutput{})
+	pulumi.RegisterOutputType(AgentAgentLlmConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentAgentLlmConfigRoutingLlmCustomizationOutput{})
+	pulumi.RegisterOutputType(AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput{})
 	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobStatisticOutput{})
 	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobStatisticArrayOutput{})
 	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigOutput{})
@@ -10480,6 +18138,22 @@ func init() {
 	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput{})
 	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigSecretDetailOutput{})
 	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseConnectionPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseSchemaOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseSchemaPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigFunctionOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigFunctionPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigGenerationLlmCustomizationOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigGenerationLlmCustomizationPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigIclExamplesOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigIclExamplesPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigKnowledgeBaseConfigOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigKnowledgeBaseConfigArrayOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigTableAndColumnDescriptionOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigTableAndColumnDescriptionPtrOutput{})
 	pulumi.RegisterOutputType(DedicatedAiClusterCapacityOutput{})
 	pulumi.RegisterOutputType(DedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(EndpointContentModerationConfigOutput{})
@@ -10494,6 +18168,20 @@ func init() {
 	pulumi.RegisterOutputType(ModelModelMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointContentModerationConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointContentModerationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigContentModerationConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigContentModerationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointHumanInputConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointHumanInputConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointOutputConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointOutputConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointOutputConfigOutputLocationOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointOutputConfigOutputLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointSessionConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointSessionConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionOutput{})
@@ -10502,14 +18190,36 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentLlmConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentLlmConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentLlmConfigRoutingLlmCustomizationOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentLlmConfigRoutingLlmCustomizationArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemLlmConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemLlmConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationOutput{})
+	pulumi.RegisterOutputType(GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentsFilterOutput{})
 	pulumi.RegisterOutputType(GetAgentAgentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobStatisticOutput{})
@@ -10566,6 +18276,44 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseSchemaOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigFunctionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigFunctionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigGenerationLlmCustomizationOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigIclExampleOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigIclExampleArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigKnowledgeBaseConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigKnowledgeBaseConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigTableAndColumnDescriptionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigTableAndColumnDescriptionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsFilterOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigFunctionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigIclExampleOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClustersDedicatedAiClusterCollectionOutput{})

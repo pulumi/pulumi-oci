@@ -55,6 +55,8 @@ export class VaultVerification extends pulumi.CustomResource {
         return obj['__pulumiType'] === VaultVerification.__pulumiType;
     }
 
+    public /*out*/ readonly cryptoEndpoint!: pulumi.Output<string>;
+    public /*out*/ readonly managementEndpoint!: pulumi.Output<string>;
     /**
      * (Updatable) The region to be created replica to. When updated,
      * replica will be deleted from old region, and created to updated region.
@@ -65,6 +67,7 @@ export class VaultVerification extends pulumi.CustomResource {
      * The OCID of the primary vault to create replica from.
      */
     public readonly vaultId!: pulumi.Output<string>;
+    public /*out*/ readonly vaultReplicaStatus!: pulumi.Output<string>;
 
     /**
      * Create a VaultVerification resource with the given unique name, arguments, and options.
@@ -79,9 +82,12 @@ export class VaultVerification extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as VaultVerificationState | undefined;
+            resourceInputs["cryptoEndpoint"] = state ? state.cryptoEndpoint : undefined;
+            resourceInputs["managementEndpoint"] = state ? state.managementEndpoint : undefined;
             resourceInputs["replicaRegion"] = state ? state.replicaRegion : undefined;
             resourceInputs["replicaVaultMetadata"] = state ? state.replicaVaultMetadata : undefined;
             resourceInputs["vaultId"] = state ? state.vaultId : undefined;
+            resourceInputs["vaultReplicaStatus"] = state ? state.vaultReplicaStatus : undefined;
         } else {
             const args = argsOrState as VaultVerificationArgs | undefined;
             if ((!args || args.replicaRegion === undefined) && !opts.urn) {
@@ -93,6 +99,9 @@ export class VaultVerification extends pulumi.CustomResource {
             resourceInputs["replicaRegion"] = args ? args.replicaRegion : undefined;
             resourceInputs["replicaVaultMetadata"] = args ? args.replicaVaultMetadata : undefined;
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
+            resourceInputs["cryptoEndpoint"] = undefined /*out*/;
+            resourceInputs["managementEndpoint"] = undefined /*out*/;
+            resourceInputs["vaultReplicaStatus"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(VaultVerification.__pulumiType, name, resourceInputs, opts);
@@ -103,6 +112,8 @@ export class VaultVerification extends pulumi.CustomResource {
  * Input properties used for looking up and filtering VaultVerification resources.
  */
 export interface VaultVerificationState {
+    cryptoEndpoint?: pulumi.Input<string>;
+    managementEndpoint?: pulumi.Input<string>;
     /**
      * (Updatable) The region to be created replica to. When updated,
      * replica will be deleted from old region, and created to updated region.
@@ -113,6 +124,7 @@ export interface VaultVerificationState {
      * The OCID of the primary vault to create replica from.
      */
     vaultId?: pulumi.Input<string>;
+    vaultReplicaStatus?: pulumi.Input<string>;
 }
 
 /**

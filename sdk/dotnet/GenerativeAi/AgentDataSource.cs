@@ -53,6 +53,7 @@ namespace Pulumi.Oci.GenerativeAi
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Metadata = dataSourceMetadata,
     ///     });
     /// 
     /// });
@@ -109,10 +110,6 @@ namespace Pulumi.Oci.GenerativeAi
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("knowledgeBaseId")]
         public Output<string> KnowledgeBaseId { get; private set; } = null!;
@@ -122,6 +119,16 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Key-value pairs to allow additional configurations.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("metadata")]
+        public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the data source.
@@ -245,13 +252,25 @@ namespace Pulumi.Oci.GenerativeAi
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+        /// </summary>
+        [Input("knowledgeBaseId", required: true)]
+        public Input<string> KnowledgeBaseId { get; set; } = null!;
+
+        [Input("metadata")]
+        private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// (Updatable) Key-value pairs to allow additional configurations.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("knowledgeBaseId", required: true)]
-        public Input<string> KnowledgeBaseId { get; set; } = null!;
+        public InputMap<string> Metadata
+        {
+            get => _metadata ?? (_metadata = new InputMap<string>());
+            set => _metadata = value;
+        }
 
         public AgentDataSourceArgs()
         {
@@ -313,10 +332,6 @@ namespace Pulumi.Oci.GenerativeAi
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("knowledgeBaseId")]
         public Input<string>? KnowledgeBaseId { get; set; }
@@ -326,6 +341,22 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("metadata")]
+        private InputMap<string>? _metadata;
+
+        /// <summary>
+        /// (Updatable) Key-value pairs to allow additional configurations.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        public InputMap<string> Metadata
+        {
+            get => _metadata ?? (_metadata = new InputMap<string>());
+            set => _metadata = value;
+        }
 
         /// <summary>
         /// The current state of the data source.

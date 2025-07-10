@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GenerativeAi.AgentAgentArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentState;
+import com.pulumi.oci.GenerativeAi.outputs.AgentAgentLlmConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -17,8 +18,6 @@ import javax.annotation.Nullable;
 
 /**
  * This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- * 
- * **CreateAgent**
  * 
  * Creates an agent.
  * 
@@ -34,6 +33,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.GenerativeAi.AgentAgent;
  * import com.pulumi.oci.GenerativeAi.AgentAgentArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigRoutingLlmCustomizationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -54,6 +55,11 @@ import javax.annotation.Nullable;
  *             .displayName(agentDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .knowledgeBaseIds(agentKnowledgeBaseIds)
+ *             .llmConfig(AgentAgentLlmConfigArgs.builder()
+ *                 .routingLlmCustomization(AgentAgentLlmConfigRoutingLlmCustomizationArgs.builder()
+ *                     .instruction(agentLlmConfigRoutingLlmCustomizationInstruction)
+ *                     .build())
+ *                 .build())
  *             .welcomeMessage(agentWelcomeMessage)
  *             .build());
  * 
@@ -145,14 +151,14 @@ public class AgentAgent extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * 
      */
     @Export(name="knowledgeBaseIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> knowledgeBaseIds;
 
     /**
-     * @return (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * @return (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * 
      */
     public Output<List<String>> knowledgeBaseIds() {
@@ -171,6 +177,20 @@ public class AgentAgent extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Configuration to Agent LLM.
+     * 
+     */
+    @Export(name="llmConfig", refs={AgentAgentLlmConfig.class}, tree="[0]")
+    private Output<AgentAgentLlmConfig> llmConfig;
+
+    /**
+     * @return (Updatable) Configuration to Agent LLM.
+     * 
+     */
+    public Output<AgentAgentLlmConfig> llmConfig() {
+        return this.llmConfig;
     }
     /**
      * The current state of the agent.

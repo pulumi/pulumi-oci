@@ -60,6 +60,9 @@ __all__ = [
     'BdsInstanceNetworkConfig',
     'BdsInstanceNode',
     'BdsInstanceNodeAttachedBlockVolume',
+    'BdsInstanceNodeBackupConfigurationLevelTypeDetails',
+    'BdsInstanceNodeBackupLevelTypeDetails',
+    'BdsInstanceNodeReplaceConfigurationLevelTypeDetails',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetail',
     'BdsInstanceOsPatchActionPatchingConfigs',
     'BdsInstancePatchActionPatchingConfig',
@@ -146,6 +149,16 @@ __all__ = [
     'GetBdsInstanceNetworkConfigResult',
     'GetBdsInstanceNodeResult',
     'GetBdsInstanceNodeAttachedBlockVolumeResult',
+    'GetBdsInstanceNodeBackupConfigurationLevelTypeDetailResult',
+    'GetBdsInstanceNodeBackupConfigurationsFilterResult',
+    'GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationResult',
+    'GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailResult',
+    'GetBdsInstanceNodeBackupsFilterResult',
+    'GetBdsInstanceNodeBackupsNodeBackupResult',
+    'GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailResult',
+    'GetBdsInstanceNodeReplaceConfigurationsFilterResult',
+    'GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult',
+    'GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailResult',
     'GetBdsInstancePatchHistoriesFilterResult',
     'GetBdsInstancePatchHistoriesPatchHistoryResult',
     'GetBdsInstancePatchesFilterResult',
@@ -3462,6 +3475,203 @@ class BdsInstanceNodeAttachedBlockVolume(dict):
         The size of the volume in GBs.
         """
         return pulumi.get(self, "volume_size_in_gbs")
+
+
+@pulumi.output_type
+class BdsInstanceNodeBackupConfigurationLevelTypeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "levelType":
+            suggest = "level_type"
+        elif key == "nodeHostName":
+            suggest = "node_host_name"
+        elif key == "nodeType":
+            suggest = "node_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceNodeBackupConfigurationLevelTypeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceNodeBackupConfigurationLevelTypeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceNodeBackupConfigurationLevelTypeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: Optional[builtins.str] = None,
+                 node_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str level_type: (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.str node_host_name: (Updatable) Host name of the node to create backup configuration.
+        :param builtins.str node_type: (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        if node_host_name is not None:
+            pulumi.set(__self__, "node_host_name", node_host_name)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+        """
+        return pulumi.get(self, "node_type")
+
+
+@pulumi.output_type
+class BdsInstanceNodeBackupLevelTypeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "levelType":
+            suggest = "level_type"
+        elif key == "nodeHostName":
+            suggest = "node_host_name"
+        elif key == "nodeType":
+            suggest = "node_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceNodeBackupLevelTypeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceNodeBackupLevelTypeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceNodeBackupLevelTypeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: Optional[builtins.str] = None,
+                 node_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str level_type: Type of level used to trigger the creation of a new node backup.
+        :param builtins.str node_host_name: (Updatable) Host name of the node to create backup.
+        :param builtins.str node_type: (Updatable) Type of the node or nodes of the node backup which are going to be created.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        if node_host_name is not None:
+            pulumi.set(__self__, "node_host_name", node_host_name)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        Type of level used to trigger the creation of a new node backup.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Host name of the node to create backup.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Type of the node or nodes of the node backup which are going to be created.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "node_type")
+
+
+@pulumi.output_type
+class BdsInstanceNodeReplaceConfigurationLevelTypeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "levelType":
+            suggest = "level_type"
+        elif key == "nodeHostName":
+            suggest = "node_host_name"
+        elif key == "nodeType":
+            suggest = "node_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceNodeReplaceConfigurationLevelTypeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceNodeReplaceConfigurationLevelTypeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceNodeReplaceConfigurationLevelTypeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: Optional[builtins.str] = None,
+                 node_type: Optional[builtins.str] = None):
+        """
+        :param builtins.str level_type: (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+        :param builtins.str node_host_name: (Updatable) Host name of the node to create backup configuration.
+        :param builtins.str node_type: (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        if node_host_name is not None:
+            pulumi.set(__self__, "node_host_name", node_host_name)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        return pulumi.get(self, "node_type")
 
 
 @pulumi.output_type
@@ -7734,6 +7944,594 @@ class GetBdsInstanceNodeAttachedBlockVolumeResult(dict):
         The size of the volume in GBs.
         """
         return pulumi.get(self, "volume_size_in_gbs")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeBackupConfigurationLevelTypeDetailResult(dict):
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: builtins.str,
+                 node_type: builtins.str):
+        """
+        :param builtins.str level_type: Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.str node_host_name: Host name of the node to create backup configuration.
+        :param builtins.str node_type: Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        pulumi.set(__self__, "node_host_name", node_host_name)
+        pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> builtins.str:
+        """
+        Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        return pulumi.get(self, "node_type")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeBackupConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationResult(dict):
+    def __init__(__self__, *,
+                 backup_type: builtins.str,
+                 bds_instance_id: builtins.str,
+                 display_name: builtins.str,
+                 id: builtins.str,
+                 level_type_details: Sequence['outputs.GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailResult'],
+                 number_of_backups_to_retain: builtins.int,
+                 schedule: builtins.str,
+                 state: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str,
+                 timezone: builtins.str):
+        """
+        :param builtins.str backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+        :param builtins.str bds_instance_id: The OCID of the cluster.
+        :param builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param builtins.str id: The unique identifier for the NodeBackupConfiguration.
+        :param Sequence['GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs'] level_type_details: Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.int number_of_backups_to_retain: Number of backup copies to retain.
+        :param builtins.str schedule: Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+        :param builtins.str state: The state of the NodeBackupConfiguration configuration.
+        :param builtins.str time_created: The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+        :param builtins.str time_updated: The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+        :param builtins.str timezone: The time zone of the execution schedule, in IANA time zone database name format
+        """
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "level_type_details", level_type_details)
+        pulumi.set(__self__, "number_of_backups_to_retain", number_of_backups_to_retain)
+        pulumi.set(__self__, "schedule", schedule)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "timezone", timezone)
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> builtins.str:
+        """
+        Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> builtins.str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The unique identifier for the NodeBackupConfiguration.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="levelTypeDetails")
+    def level_type_details(self) -> Sequence['outputs.GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailResult']:
+        """
+        Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type_details")
+
+    @property
+    @pulumi.getter(name="numberOfBackupsToRetain")
+    def number_of_backups_to_retain(self) -> builtins.int:
+        """
+        Number of backup copies to retain.
+        """
+        return pulumi.get(self, "number_of_backups_to_retain")
+
+    @property
+    @pulumi.getter
+    def schedule(self) -> builtins.str:
+        """
+        Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+        """
+        return pulumi.get(self, "schedule")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The state of the NodeBackupConfiguration configuration.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> builtins.str:
+        """
+        The time zone of the execution schedule, in IANA time zone database name format
+        """
+        return pulumi.get(self, "timezone")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailResult(dict):
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: builtins.str,
+                 node_type: builtins.str):
+        """
+        :param builtins.str level_type: Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.str node_host_name: Host name of the node to create backup configuration.
+        :param builtins.str node_type: Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        pulumi.set(__self__, "node_host_name", node_host_name)
+        pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> builtins.str:
+        """
+        Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        return pulumi.get(self, "node_type")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeBackupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeBackupsNodeBackupResult(dict):
+    def __init__(__self__, *,
+                 backup_trigger_type: builtins.str,
+                 backup_type: builtins.str,
+                 display_name: builtins.str,
+                 id: builtins.str,
+                 node_backup_config_id: builtins.str,
+                 node_host_name: builtins.str,
+                 node_instance_id: builtins.str,
+                 state: builtins.str,
+                 time_created: builtins.str):
+        """
+        :param builtins.str backup_trigger_type: type based on how backup action was initiated.
+        :param builtins.str backup_type: Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+        :param builtins.str display_name: The display name belonged to the node backup.
+        :param builtins.str id: The id of the node backup.
+        :param builtins.str node_backup_config_id: The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+        :param builtins.str node_host_name: The node host name belonged to a node that has a node backup.
+        :param builtins.str node_instance_id: The instance OCID of the node, which is the resource from which the node backup was acquired.
+        :param builtins.str state: The state of the Node's Backup.
+        :param builtins.str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "backup_trigger_type", backup_trigger_type)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "node_backup_config_id", node_backup_config_id)
+        pulumi.set(__self__, "node_host_name", node_host_name)
+        pulumi.set(__self__, "node_instance_id", node_instance_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="backupTriggerType")
+    def backup_trigger_type(self) -> builtins.str:
+        """
+        type based on how backup action was initiated.
+        """
+        return pulumi.get(self, "backup_trigger_type")
+
+    @property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> builtins.str:
+        """
+        Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        The display name belonged to the node backup.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The id of the node backup.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="nodeBackupConfigId")
+    def node_backup_config_id(self) -> builtins.str:
+        """
+        The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+        """
+        return pulumi.get(self, "node_backup_config_id")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> builtins.str:
+        """
+        The node host name belonged to a node that has a node backup.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeInstanceId")
+    def node_instance_id(self) -> builtins.str:
+        """
+        The instance OCID of the node, which is the resource from which the node backup was acquired.
+        """
+        return pulumi.get(self, "node_instance_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The state of the Node's Backup.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailResult(dict):
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: builtins.str,
+                 node_type: builtins.str):
+        """
+        :param builtins.str level_type: Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.str node_host_name: Host name of the node to create backup configuration.
+        :param builtins.str node_type: Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        pulumi.set(__self__, "node_host_name", node_host_name)
+        pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> builtins.str:
+        """
+        Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        return pulumi.get(self, "node_type")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeReplaceConfigurationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 bds_instance_id: builtins.str,
+                 cluster_admin_password: builtins.str,
+                 display_name: builtins.str,
+                 duration_in_minutes: builtins.int,
+                 id: builtins.str,
+                 level_type_details: Sequence['outputs.GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailResult'],
+                 metric_type: builtins.str,
+                 state: builtins.str,
+                 time_created: builtins.str,
+                 time_updated: builtins.str):
+        """
+        :param builtins.str bds_instance_id: The OCID of the cluster.
+        :param builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param builtins.int duration_in_minutes: This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
+        :param builtins.str id: The unique identifier for the NodeReplaceConfiguration.
+        :param Sequence['GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs'] level_type_details: Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.str metric_type: Type of compute instance health metric to use for node replacement
+        :param builtins.str state: The state of the NodeReplaceConfiguration.
+        :param builtins.str time_created: The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
+        :param builtins.str time_updated: The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "bds_instance_id", bds_instance_id)
+        pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "duration_in_minutes", duration_in_minutes)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "level_type_details", level_type_details)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="bdsInstanceId")
+    def bds_instance_id(self) -> builtins.str:
+        """
+        The OCID of the cluster.
+        """
+        return pulumi.get(self, "bds_instance_id")
+
+    @property
+    @pulumi.getter(name="clusterAdminPassword")
+    def cluster_admin_password(self) -> builtins.str:
+        return pulumi.get(self, "cluster_admin_password")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="durationInMinutes")
+    def duration_in_minutes(self) -> builtins.int:
+        """
+        This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
+        """
+        return pulumi.get(self, "duration_in_minutes")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The unique identifier for the NodeReplaceConfiguration.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="levelTypeDetails")
+    def level_type_details(self) -> Sequence['outputs.GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailResult']:
+        """
+        Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type_details")
+
+    @property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> builtins.str:
+        """
+        Type of compute instance health metric to use for node replacement
+        """
+        return pulumi.get(self, "metric_type")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        The state of the NodeReplaceConfiguration.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailResult(dict):
+    def __init__(__self__, *,
+                 level_type: builtins.str,
+                 node_host_name: builtins.str,
+                 node_type: builtins.str):
+        """
+        :param builtins.str level_type: Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param builtins.str node_host_name: Host name of the node to create backup configuration.
+        :param builtins.str node_type: Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        pulumi.set(__self__, "node_host_name", node_host_name)
+        pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> builtins.str:
+        """
+        Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type")
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> builtins.str:
+        """
+        Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> builtins.str:
+        """
+        Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        return pulumi.get(self, "node_type")
 
 
 @pulumi.output_type

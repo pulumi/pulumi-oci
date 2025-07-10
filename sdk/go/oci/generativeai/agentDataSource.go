@@ -53,6 +53,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Metadata: pulumi.Any(dataSourceMetadata),
 //			})
 //			if err != nil {
 //				return err
@@ -88,12 +89,14 @@ type AgentDataSource struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	KnowledgeBaseId pulumi.StringOutput `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Key-value pairs to allow additional configurations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// The current state of the data source.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -158,12 +161,14 @@ type agentDataSourceState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	KnowledgeBaseId *string `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Key-value pairs to allow additional configurations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Metadata map[string]string `pulumi:"metadata"`
 	// The current state of the data source.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -190,12 +195,14 @@ type AgentDataSourceState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	KnowledgeBaseId pulumi.StringPtrInput
 	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Key-value pairs to allow additional configurations.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	Metadata pulumi.StringMapInput
 	// The current state of the data source.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -226,10 +233,12 @@ type agentDataSourceArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	// (Updatable) Key-value pairs to allow additional configurations.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
+	Metadata map[string]string `pulumi:"metadata"`
 }
 
 // The set of arguments for constructing a AgentDataSource resource.
@@ -249,10 +258,12 @@ type AgentDataSourceArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+	KnowledgeBaseId pulumi.StringInput
+	// (Updatable) Key-value pairs to allow additional configurations.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	KnowledgeBaseId pulumi.StringInput
+	Metadata pulumi.StringMapInput
 }
 
 func (AgentDataSourceArgs) ElementType() reflect.Type {
@@ -375,9 +386,6 @@ func (o AgentDataSourceOutput) FreeformTags() pulumi.StringMapOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AgentDataSourceOutput) KnowledgeBaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentDataSource) pulumi.StringOutput { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
@@ -385,6 +393,14 @@ func (o AgentDataSourceOutput) KnowledgeBaseId() pulumi.StringOutput {
 // A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o AgentDataSourceOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentDataSource) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) Key-value pairs to allow additional configurations.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o AgentDataSourceOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AgentDataSource) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The current state of the data source.

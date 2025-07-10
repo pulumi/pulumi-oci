@@ -1109,6 +1109,8 @@ class SubscriptionSubscription(dict):
             suggest = "currency_code"
         elif key == "gsiOrgCode":
             suggest = "gsi_org_code"
+        elif key == "isCorporateConversionAllowed":
+            suggest = "is_corporate_conversion_allowed"
         elif key == "isIntentToPay":
             suggest = "is_intent_to_pay"
         elif key == "languageCode":
@@ -1157,6 +1159,7 @@ class SubscriptionSubscription(dict):
                  currency_code: Optional[builtins.str] = None,
                  gsi_org_code: Optional[builtins.str] = None,
                  id: Optional[builtins.str] = None,
+                 is_corporate_conversion_allowed: Optional[builtins.bool] = None,
                  is_intent_to_pay: Optional[builtins.bool] = None,
                  language_code: Optional[builtins.str] = None,
                  organization_id: Optional[builtins.str] = None,
@@ -1179,6 +1182,7 @@ class SubscriptionSubscription(dict):
         :param builtins.str currency_code: (Updatable) Currency code
         :param builtins.str gsi_org_code: (Updatable) GSI Subscription external code.
         :param builtins.str id: (Updatable) Subscription id identifier (OCID).
+        :param builtins.bool is_corporate_conversion_allowed: (Updatable) Corporate conversion allowed status
         :param builtins.bool is_intent_to_pay: (Updatable) Payment intension.
         :param builtins.str language_code: (Updatable) Language short code (en, de, hu, etc)
         :param builtins.str organization_id: (Updatable) GSI organization external identifier.
@@ -1207,6 +1211,8 @@ class SubscriptionSubscription(dict):
             pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_corporate_conversion_allowed is not None:
+            pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         if is_intent_to_pay is not None:
             pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
@@ -1291,6 +1297,14 @@ class SubscriptionSubscription(dict):
         (Updatable) Subscription id identifier (OCID).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @property
     @pulumi.getter(name="isIntentToPay")
@@ -4813,6 +4827,7 @@ class GetSubscriptionSubscriptionResult(dict):
                  currency_code: builtins.str,
                  gsi_org_code: builtins.str,
                  id: builtins.str,
+                 is_corporate_conversion_allowed: builtins.bool,
                  is_intent_to_pay: builtins.bool,
                  language_code: builtins.str,
                  organization_id: builtins.str,
@@ -4835,6 +4850,7 @@ class GetSubscriptionSubscriptionResult(dict):
         :param builtins.str currency_code: Currency code
         :param builtins.str gsi_org_code: GSI Subscription external code.
         :param builtins.str id: Subscription id identifier (OCID).
+        :param builtins.bool is_corporate_conversion_allowed: Corporate conversion allowed status
         :param builtins.bool is_intent_to_pay: Payment intension.
         :param builtins.str language_code: Language short code (en, de, hu, etc)
         :param builtins.str organization_id: GSI organization external identifier.
@@ -4857,6 +4873,7 @@ class GetSubscriptionSubscriptionResult(dict):
         pulumi.set(__self__, "currency_code", currency_code)
         pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         pulumi.set(__self__, "language_code", language_code)
         pulumi.set(__self__, "organization_id", organization_id)
@@ -4920,6 +4937,14 @@ class GetSubscriptionSubscriptionResult(dict):
         Subscription id identifier (OCID).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> builtins.bool:
+        """
+        Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @property
     @pulumi.getter(name="isIntentToPay")
@@ -5695,6 +5720,7 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
                  email: builtins.str,
                  gsi_org_code: builtins.str,
                  id: builtins.str,
+                 is_corporate_conversion_allowed: builtins.bool,
                  is_intent_to_pay: builtins.bool,
                  language_code: builtins.str,
                  organization_id: builtins.str,
@@ -5721,6 +5747,7 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
         :param builtins.str currency_code: Currency code
         :param builtins.str gsi_org_code: GSI Subscription external code.
         :param builtins.str id: Subscription id identifier (OCID).
+        :param builtins.bool is_corporate_conversion_allowed: Corporate conversion allowed status
         :param builtins.bool is_intent_to_pay: Payment intension.
         :param builtins.str language_code: Language short code (en, de, hu, etc)
         :param builtins.str organization_id: GSI organization external identifier.
@@ -5746,6 +5773,7 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
         pulumi.set(__self__, "email", email)
         pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         pulumi.set(__self__, "language_code", language_code)
         pulumi.set(__self__, "organization_id", organization_id)
@@ -5825,6 +5853,14 @@ class GetSubscriptionsSubscriptionCollectionItemResult(dict):
         Subscription id identifier (OCID).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> builtins.bool:
+        """
+        Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @property
     @pulumi.getter(name="isIntentToPay")
@@ -6442,6 +6478,7 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
                  currency_code: builtins.str,
                  gsi_org_code: builtins.str,
                  id: builtins.str,
+                 is_corporate_conversion_allowed: builtins.bool,
                  is_intent_to_pay: builtins.bool,
                  language_code: builtins.str,
                  organization_id: builtins.str,
@@ -6464,6 +6501,7 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
         :param builtins.str currency_code: Currency code
         :param builtins.str gsi_org_code: GSI Subscription external code.
         :param builtins.str id: Subscription id identifier (OCID).
+        :param builtins.bool is_corporate_conversion_allowed: Corporate conversion allowed status
         :param builtins.bool is_intent_to_pay: Payment intension.
         :param builtins.str language_code: Language short code (en, de, hu, etc)
         :param builtins.str organization_id: GSI organization external identifier.
@@ -6486,6 +6524,7 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
         pulumi.set(__self__, "currency_code", currency_code)
         pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         pulumi.set(__self__, "language_code", language_code)
         pulumi.set(__self__, "organization_id", organization_id)
@@ -6549,6 +6588,14 @@ class GetSubscriptionsSubscriptionCollectionItemSubscriptionResult(dict):
         Subscription id identifier (OCID).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> builtins.bool:
+        """
+        Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @property
     @pulumi.getter(name="isIntentToPay")

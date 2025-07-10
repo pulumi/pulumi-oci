@@ -31,6 +31,18 @@ import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceMetastoreConfigsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationPlainArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
+import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchHistoriesPlainArgs;
 import com.pulumi.oci.BigDataService.inputs.GetBdsInstancePatchesArgs;
@@ -57,6 +69,12 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceIdentityConfiguration
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceListOsPatchesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMetastoreConfigsResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeBackupConfigurationResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeBackupConfigurationsResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeBackupResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeBackupsResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeReplaceConfigurationResult;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeReplaceConfigurationsResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchHistoriesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancePatchesResult;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceResourcePrincipalConfigurationResult;
@@ -2654,6 +2672,1376 @@ public final class BigDataServiceFunctions {
      */
     public static CompletableFuture<GetBdsInstanceMetastoreConfigsResult> getBdsInstanceMetastoreConfigsPlain(GetBdsInstanceMetastoreConfigsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceMetastoreConfigs:getBdsInstanceMetastoreConfigs", TypeShape.of(GetBdsInstanceMetastoreConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of NodeBackup identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackup = BigDataServiceFunctions.getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupId(testBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupResult> getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs args) {
+        return getBdsInstanceNodeBackup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of NodeBackup identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackup = BigDataServiceFunctions.getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupId(testBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupResult> getBdsInstanceNodeBackupPlain(GetBdsInstanceNodeBackupPlainArgs args) {
+        return getBdsInstanceNodeBackupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of NodeBackup identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackup = BigDataServiceFunctions.getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupId(testBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupResult> getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackup:getBdsInstanceNodeBackup", TypeShape.of(GetBdsInstanceNodeBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of NodeBackup identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackup = BigDataServiceFunctions.getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupId(testBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupResult> getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackup:getBdsInstanceNodeBackup", TypeShape.of(GetBdsInstanceNodeBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of NodeBackup identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackup = BigDataServiceFunctions.getBdsInstanceNodeBackup(GetBdsInstanceNodeBackupArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupId(testBackup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupResult> getBdsInstanceNodeBackupPlain(GetBdsInstanceNodeBackupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceNodeBackup:getBdsInstanceNodeBackup", TypeShape.of(GetBdsInstanceNodeBackupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfiguration = BigDataServiceFunctions.getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupConfigurationResult> getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs args) {
+        return getBdsInstanceNodeBackupConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfiguration = BigDataServiceFunctions.getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupConfigurationResult> getBdsInstanceNodeBackupConfigurationPlain(GetBdsInstanceNodeBackupConfigurationPlainArgs args) {
+        return getBdsInstanceNodeBackupConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfiguration = BigDataServiceFunctions.getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupConfigurationResult> getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackupConfiguration:getBdsInstanceNodeBackupConfiguration", TypeShape.of(GetBdsInstanceNodeBackupConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfiguration = BigDataServiceFunctions.getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupConfigurationResult> getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackupConfiguration:getBdsInstanceNodeBackupConfiguration", TypeShape.of(GetBdsInstanceNodeBackupConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Backup Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the NodeBackupConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfiguration = BigDataServiceFunctions.getBdsInstanceNodeBackupConfiguration(GetBdsInstanceNodeBackupConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeBackupConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupConfigurationResult> getBdsInstanceNodeBackupConfigurationPlain(GetBdsInstanceNodeBackupConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceNodeBackupConfiguration:getBdsInstanceNodeBackupConfiguration", TypeShape.of(GetBdsInstanceNodeBackupConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backup Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeBackupConfigurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfigurations = BigDataServiceFunctions.getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupConfigurationDisplayName)
+     *             .state(bdsInstanceNodeBackupConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupConfigurationsResult> getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs args) {
+        return getBdsInstanceNodeBackupConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backup Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeBackupConfigurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfigurations = BigDataServiceFunctions.getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupConfigurationDisplayName)
+     *             .state(bdsInstanceNodeBackupConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupConfigurationsResult> getBdsInstanceNodeBackupConfigurationsPlain(GetBdsInstanceNodeBackupConfigurationsPlainArgs args) {
+        return getBdsInstanceNodeBackupConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backup Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeBackupConfigurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfigurations = BigDataServiceFunctions.getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupConfigurationDisplayName)
+     *             .state(bdsInstanceNodeBackupConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupConfigurationsResult> getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackupConfigurations:getBdsInstanceNodeBackupConfigurations", TypeShape.of(GetBdsInstanceNodeBackupConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backup Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeBackupConfigurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfigurations = BigDataServiceFunctions.getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupConfigurationDisplayName)
+     *             .state(bdsInstanceNodeBackupConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupConfigurationsResult> getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackupConfigurations:getBdsInstanceNodeBackupConfigurations", TypeShape.of(GetBdsInstanceNodeBackupConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backup Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeBackupConfigurations.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackupConfigurations = BigDataServiceFunctions.getBdsInstanceNodeBackupConfigurations(GetBdsInstanceNodeBackupConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupConfigurationDisplayName)
+     *             .state(bdsInstanceNodeBackupConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupConfigurationsResult> getBdsInstanceNodeBackupConfigurationsPlain(GetBdsInstanceNodeBackupConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceNodeBackupConfigurations:getBdsInstanceNodeBackupConfigurations", TypeShape.of(GetBdsInstanceNodeBackupConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the node Backups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackups = BigDataServiceFunctions.getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupDisplayName)
+     *             .nodeHostName(bdsInstanceNodeBackupNodeHostName)
+     *             .state(bdsInstanceNodeBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupsResult> getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs args) {
+        return getBdsInstanceNodeBackups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the node Backups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackups = BigDataServiceFunctions.getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupDisplayName)
+     *             .nodeHostName(bdsInstanceNodeBackupNodeHostName)
+     *             .state(bdsInstanceNodeBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupsResult> getBdsInstanceNodeBackupsPlain(GetBdsInstanceNodeBackupsPlainArgs args) {
+        return getBdsInstanceNodeBackupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the node Backups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackups = BigDataServiceFunctions.getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupDisplayName)
+     *             .nodeHostName(bdsInstanceNodeBackupNodeHostName)
+     *             .state(bdsInstanceNodeBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupsResult> getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackups:getBdsInstanceNodeBackups", TypeShape.of(GetBdsInstanceNodeBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the node Backups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackups = BigDataServiceFunctions.getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupDisplayName)
+     *             .nodeHostName(bdsInstanceNodeBackupNodeHostName)
+     *             .state(bdsInstanceNodeBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeBackupsResult> getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeBackups:getBdsInstanceNodeBackups", TypeShape.of(GetBdsInstanceNodeBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the node Backups.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeBackupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeBackups = BigDataServiceFunctions.getBdsInstanceNodeBackups(GetBdsInstanceNodeBackupsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeBackupDisplayName)
+     *             .nodeHostName(bdsInstanceNodeBackupNodeHostName)
+     *             .state(bdsInstanceNodeBackupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeBackupsResult> getBdsInstanceNodeBackupsPlain(GetBdsInstanceNodeBackupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceNodeBackups:getBdsInstanceNodeBackups", TypeShape.of(GetBdsInstanceNodeBackupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfiguration = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeReplaceConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeReplaceConfigurationResult> getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs args) {
+        return getBdsInstanceNodeReplaceConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfiguration = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeReplaceConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeReplaceConfigurationResult> getBdsInstanceNodeReplaceConfigurationPlain(GetBdsInstanceNodeReplaceConfigurationPlainArgs args) {
+        return getBdsInstanceNodeReplaceConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfiguration = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeReplaceConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeReplaceConfigurationResult> getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeReplaceConfiguration:getBdsInstanceNodeReplaceConfiguration", TypeShape.of(GetBdsInstanceNodeReplaceConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfiguration = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeReplaceConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeReplaceConfigurationResult> getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeReplaceConfiguration:getBdsInstanceNodeReplaceConfiguration", TypeShape.of(GetBdsInstanceNodeReplaceConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Bds Instance Node Replace Configuration resource in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns details of the nodeReplaceConfiguration identified by the given ID.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfiguration = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfiguration(GetBdsInstanceNodeReplaceConfigurationArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .nodeReplaceConfigurationId(testConfiguration.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeReplaceConfigurationResult> getBdsInstanceNodeReplaceConfigurationPlain(GetBdsInstanceNodeReplaceConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceNodeReplaceConfiguration:getBdsInstanceNodeReplaceConfiguration", TypeShape.of(GetBdsInstanceNodeReplaceConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Replace Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeReplaceConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfigurations = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
+     *             .state(bdsInstanceNodeReplaceConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeReplaceConfigurationsResult> getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs args) {
+        return getBdsInstanceNodeReplaceConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Replace Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeReplaceConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfigurations = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
+     *             .state(bdsInstanceNodeReplaceConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeReplaceConfigurationsResult> getBdsInstanceNodeReplaceConfigurationsPlain(GetBdsInstanceNodeReplaceConfigurationsPlainArgs args) {
+        return getBdsInstanceNodeReplaceConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Replace Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeReplaceConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfigurations = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
+     *             .state(bdsInstanceNodeReplaceConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeReplaceConfigurationsResult> getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeReplaceConfigurations:getBdsInstanceNodeReplaceConfigurations", TypeShape.of(GetBdsInstanceNodeReplaceConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Replace Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeReplaceConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfigurations = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
+     *             .state(bdsInstanceNodeReplaceConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetBdsInstanceNodeReplaceConfigurationsResult> getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:BigDataService/getBdsInstanceNodeReplaceConfigurations:getBdsInstanceNodeReplaceConfigurations", TypeShape.of(GetBdsInstanceNodeReplaceConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Bds Instance Node Replace Configurations in Oracle Cloud Infrastructure Big Data Service service.
+     * 
+     * Returns information about the NodeReplaceConfiguration.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.BigDataService.BigDataServiceFunctions;
+     * import com.pulumi.oci.BigDataService.inputs.GetBdsInstanceNodeReplaceConfigurationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBdsInstanceNodeReplaceConfigurations = BigDataServiceFunctions.getBdsInstanceNodeReplaceConfigurations(GetBdsInstanceNodeReplaceConfigurationsArgs.builder()
+     *             .bdsInstanceId(testBdsInstance.id())
+     *             .displayName(bdsInstanceNodeReplaceConfigurationDisplayName)
+     *             .state(bdsInstanceNodeReplaceConfigurationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetBdsInstanceNodeReplaceConfigurationsResult> getBdsInstanceNodeReplaceConfigurationsPlain(GetBdsInstanceNodeReplaceConfigurationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:BigDataService/getBdsInstanceNodeReplaceConfigurations:getBdsInstanceNodeReplaceConfigurations", TypeShape.of(GetBdsInstanceNodeReplaceConfigurationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.

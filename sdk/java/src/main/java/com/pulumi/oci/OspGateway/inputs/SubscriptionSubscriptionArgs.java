@@ -113,6 +113,21 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) Corporate conversion allowed status
+     * 
+     */
+    @Import(name="isCorporateConversionAllowed")
+    private @Nullable Output<Boolean> isCorporateConversionAllowed;
+
+    /**
+     * @return (Updatable) Corporate conversion allowed status
+     * 
+     */
+    public Optional<Output<Boolean>> isCorporateConversionAllowed() {
+        return Optional.ofNullable(this.isCorporateConversionAllowed);
+    }
+
+    /**
      * (Updatable) Payment intension.
      * 
      */
@@ -346,6 +361,7 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
         this.currencyCode = $.currencyCode;
         this.gsiOrgCode = $.gsiOrgCode;
         this.id = $.id;
+        this.isCorporateConversionAllowed = $.isCorporateConversionAllowed;
         this.isIntentToPay = $.isIntentToPay;
         this.languageCode = $.languageCode;
         this.organizationId = $.organizationId;
@@ -515,6 +531,27 @@ public final class SubscriptionSubscriptionArgs extends com.pulumi.resources.Res
          */
         public Builder id(String id) {
             return id(Output.of(id));
+        }
+
+        /**
+         * @param isCorporateConversionAllowed (Updatable) Corporate conversion allowed status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCorporateConversionAllowed(@Nullable Output<Boolean> isCorporateConversionAllowed) {
+            $.isCorporateConversionAllowed = isCorporateConversionAllowed;
+            return this;
+        }
+
+        /**
+         * @param isCorporateConversionAllowed (Updatable) Corporate conversion allowed status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCorporateConversionAllowed(Boolean isCorporateConversionAllowed) {
+            return isCorporateConversionAllowed(Output.of(isCorporateConversionAllowed));
         }
 
         /**

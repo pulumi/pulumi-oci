@@ -1472,6 +1472,10 @@ if not MYPY:
         """
         (Updatable) Subscription id identifier (OCID).
         """
+        is_corporate_conversion_allowed: NotRequired[pulumi.Input[builtins.bool]]
+        """
+        (Updatable) Corporate conversion allowed status
+        """
         is_intent_to_pay: NotRequired[pulumi.Input[builtins.bool]]
         """
         (Updatable) Payment intension.
@@ -1541,6 +1545,7 @@ class SubscriptionSubscriptionArgs:
                  currency_code: Optional[pulumi.Input[builtins.str]] = None,
                  gsi_org_code: Optional[pulumi.Input[builtins.str]] = None,
                  id: Optional[pulumi.Input[builtins.str]] = None,
+                 is_corporate_conversion_allowed: Optional[pulumi.Input[builtins.bool]] = None,
                  is_intent_to_pay: Optional[pulumi.Input[builtins.bool]] = None,
                  language_code: Optional[pulumi.Input[builtins.str]] = None,
                  organization_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -1563,6 +1568,7 @@ class SubscriptionSubscriptionArgs:
         :param pulumi.Input[builtins.str] currency_code: (Updatable) Currency code
         :param pulumi.Input[builtins.str] gsi_org_code: (Updatable) GSI Subscription external code.
         :param pulumi.Input[builtins.str] id: (Updatable) Subscription id identifier (OCID).
+        :param pulumi.Input[builtins.bool] is_corporate_conversion_allowed: (Updatable) Corporate conversion allowed status
         :param pulumi.Input[builtins.bool] is_intent_to_pay: (Updatable) Payment intension.
         :param pulumi.Input[builtins.str] language_code: (Updatable) Language short code (en, de, hu, etc)
         :param pulumi.Input[builtins.str] organization_id: (Updatable) GSI organization external identifier.
@@ -1591,6 +1597,8 @@ class SubscriptionSubscriptionArgs:
             pulumi.set(__self__, "gsi_org_code", gsi_org_code)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if is_corporate_conversion_allowed is not None:
+            pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         if is_intent_to_pay is not None:
             pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
@@ -1703,6 +1711,18 @@ class SubscriptionSubscriptionArgs:
     @id.setter
     def id(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        (Updatable) Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
+
+    @is_corporate_conversion_allowed.setter
+    def is_corporate_conversion_allowed(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_corporate_conversion_allowed", value)
 
     @property
     @pulumi.getter(name="isIntentToPay")

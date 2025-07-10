@@ -16,6 +16,20 @@ public final class VaultVerificationState extends com.pulumi.resources.ResourceA
 
     public static final VaultVerificationState Empty = new VaultVerificationState();
 
+    @Import(name="cryptoEndpoint")
+    private @Nullable Output<String> cryptoEndpoint;
+
+    public Optional<Output<String>> cryptoEndpoint() {
+        return Optional.ofNullable(this.cryptoEndpoint);
+    }
+
+    @Import(name="managementEndpoint")
+    private @Nullable Output<String> managementEndpoint;
+
+    public Optional<Output<String>> managementEndpoint() {
+        return Optional.ofNullable(this.managementEndpoint);
+    }
+
     /**
      * (Updatable) The region to be created replica to. When updated,
      * replica will be deleted from old region, and created to updated region.
@@ -55,12 +69,22 @@ public final class VaultVerificationState extends com.pulumi.resources.ResourceA
         return Optional.ofNullable(this.vaultId);
     }
 
+    @Import(name="vaultReplicaStatus")
+    private @Nullable Output<String> vaultReplicaStatus;
+
+    public Optional<Output<String>> vaultReplicaStatus() {
+        return Optional.ofNullable(this.vaultReplicaStatus);
+    }
+
     private VaultVerificationState() {}
 
     private VaultVerificationState(VaultVerificationState $) {
+        this.cryptoEndpoint = $.cryptoEndpoint;
+        this.managementEndpoint = $.managementEndpoint;
         this.replicaRegion = $.replicaRegion;
         this.replicaVaultMetadata = $.replicaVaultMetadata;
         this.vaultId = $.vaultId;
+        this.vaultReplicaStatus = $.vaultReplicaStatus;
     }
 
     public static Builder builder() {
@@ -79,6 +103,24 @@ public final class VaultVerificationState extends com.pulumi.resources.ResourceA
 
         public Builder(VaultVerificationState defaults) {
             $ = new VaultVerificationState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder cryptoEndpoint(@Nullable Output<String> cryptoEndpoint) {
+            $.cryptoEndpoint = cryptoEndpoint;
+            return this;
+        }
+
+        public Builder cryptoEndpoint(String cryptoEndpoint) {
+            return cryptoEndpoint(Output.of(cryptoEndpoint));
+        }
+
+        public Builder managementEndpoint(@Nullable Output<String> managementEndpoint) {
+            $.managementEndpoint = managementEndpoint;
+            return this;
+        }
+
+        public Builder managementEndpoint(String managementEndpoint) {
+            return managementEndpoint(Output.of(managementEndpoint));
         }
 
         /**
@@ -132,6 +174,15 @@ public final class VaultVerificationState extends com.pulumi.resources.ResourceA
          */
         public Builder vaultId(String vaultId) {
             return vaultId(Output.of(vaultId));
+        }
+
+        public Builder vaultReplicaStatus(@Nullable Output<String> vaultReplicaStatus) {
+            $.vaultReplicaStatus = vaultReplicaStatus;
+            return this;
+        }
+
+        public Builder vaultReplicaStatus(String vaultReplicaStatus) {
+            return vaultReplicaStatus(Output.of(vaultReplicaStatus));
         }
 
         public VaultVerificationState build() {

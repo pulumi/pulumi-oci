@@ -79,6 +79,8 @@ type LookupAgentDataSourceResult struct {
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Key-value pairs to allow additional configurations.
+	Metadata map[string]string `pulumi:"metadata"`
 	// The current state of the data source.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -170,6 +172,11 @@ func (o LookupAgentDataSourceResultOutput) KnowledgeBaseId() pulumi.StringOutput
 // A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o LookupAgentDataSourceResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentDataSourceResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Key-value pairs to allow additional configurations.
+func (o LookupAgentDataSourceResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentDataSourceResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The current state of the data source.

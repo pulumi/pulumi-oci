@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     metadata: dataSourceMetadata,
  * });
  * ```
  *
@@ -105,16 +106,20 @@ export class AgentDataSource extends pulumi.CustomResource {
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly knowledgeBaseId!: pulumi.Output<string>;
     /**
      * A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * (Updatable) Key-value pairs to allow additional configurations.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly metadata!: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the data source.
      */
@@ -153,6 +158,7 @@ export class AgentDataSource extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["knowledgeBaseId"] = state ? state.knowledgeBaseId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -175,6 +181,7 @@ export class AgentDataSource extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["knowledgeBaseId"] = args ? args.knowledgeBaseId : undefined;
+            resourceInputs["metadata"] = args ? args.metadata : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -218,16 +225,20 @@ export interface AgentDataSourceState {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     knowledgeBaseId?: pulumi.Input<string>;
     /**
      * A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Key-value pairs to allow additional configurations.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the data source.
      */
@@ -278,10 +289,14 @@ export interface AgentDataSourceArgs {
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+     */
+    knowledgeBaseId: pulumi.Input<string>;
+    /**
+     * (Updatable) Key-value pairs to allow additional configurations.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    knowledgeBaseId: pulumi.Input<string>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

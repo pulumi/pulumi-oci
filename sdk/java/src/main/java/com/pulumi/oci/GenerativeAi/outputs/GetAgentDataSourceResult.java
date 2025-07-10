@@ -60,6 +60,11 @@ public final class GetAgentDataSourceResult {
      */
     private String lifecycleDetails;
     /**
+     * @return Key-value pairs to allow additional configurations.
+     * 
+     */
+    private Map<String,String> metadata;
+    /**
      * @return The current state of the data source.
      * 
      */
@@ -148,6 +153,13 @@ public final class GetAgentDataSourceResult {
         return this.lifecycleDetails;
     }
     /**
+     * @return Key-value pairs to allow additional configurations.
+     * 
+     */
+    public Map<String,String> metadata() {
+        return this.metadata;
+    }
+    /**
      * @return The current state of the data source.
      * 
      */
@@ -195,6 +207,7 @@ public final class GetAgentDataSourceResult {
         private String id;
         private String knowledgeBaseId;
         private String lifecycleDetails;
+        private Map<String,String> metadata;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -212,6 +225,7 @@ public final class GetAgentDataSourceResult {
     	      this.id = defaults.id;
     	      this.knowledgeBaseId = defaults.knowledgeBaseId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.metadata = defaults.metadata;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -302,6 +316,14 @@ public final class GetAgentDataSourceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder metadata(Map<String,String> metadata) {
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataSourceResult", "metadata");
+            }
+            this.metadata = metadata;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAgentDataSourceResult", "state");
@@ -345,6 +367,7 @@ public final class GetAgentDataSourceResult {
             _resultValue.id = id;
             _resultValue.knowledgeBaseId = knowledgeBaseId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.metadata = metadata;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

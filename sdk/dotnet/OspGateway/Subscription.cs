@@ -68,6 +68,12 @@ namespace Pulumi.Oci.OspGateway
         public Output<string> GsiOrgCode { get; private set; } = null!;
 
         /// <summary>
+        /// Corporate conversion allowed status
+        /// </summary>
+        [Output("isCorporateConversionAllowed")]
+        public Output<bool> IsCorporateConversionAllowed { get; private set; } = null!;
+
+        /// <summary>
         /// Payment intension.
         /// </summary>
         [Output("isIntentToPay")]
@@ -314,6 +320,12 @@ namespace Pulumi.Oci.OspGateway
         /// </summary>
         [Input("gsiOrgCode")]
         public Input<string>? GsiOrgCode { get; set; }
+
+        /// <summary>
+        /// Corporate conversion allowed status
+        /// </summary>
+        [Input("isCorporateConversionAllowed")]
+        public Input<bool>? IsCorporateConversionAllowed { get; set; }
 
         /// <summary>
         /// Payment intension.

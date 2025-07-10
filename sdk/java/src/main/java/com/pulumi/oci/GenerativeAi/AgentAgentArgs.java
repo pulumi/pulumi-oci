@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GenerativeAi.inputs.AgentAgentLlmConfigArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -94,18 +95,33 @@ public final class AgentAgentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * 
      */
     @Import(name="knowledgeBaseIds")
     private @Nullable Output<List<String>> knowledgeBaseIds;
 
     /**
-     * @return (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * @return (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * 
      */
     public Optional<Output<List<String>>> knowledgeBaseIds() {
         return Optional.ofNullable(this.knowledgeBaseIds);
+    }
+
+    /**
+     * (Updatable) Configuration to Agent LLM.
+     * 
+     */
+    @Import(name="llmConfig")
+    private @Nullable Output<AgentAgentLlmConfigArgs> llmConfig;
+
+    /**
+     * @return (Updatable) Configuration to Agent LLM.
+     * 
+     */
+    public Optional<Output<AgentAgentLlmConfigArgs>> llmConfig() {
+        return Optional.ofNullable(this.llmConfig);
     }
 
     /**
@@ -138,6 +154,7 @@ public final class AgentAgentArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.knowledgeBaseIds = $.knowledgeBaseIds;
+        this.llmConfig = $.llmConfig;
         this.welcomeMessage = $.welcomeMessage;
     }
 
@@ -265,7 +282,7 @@ public final class AgentAgentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param knowledgeBaseIds (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+         * @param knowledgeBaseIds (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
          * 
          * @return builder
          * 
@@ -276,7 +293,7 @@ public final class AgentAgentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param knowledgeBaseIds (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+         * @param knowledgeBaseIds (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
          * 
          * @return builder
          * 
@@ -286,13 +303,34 @@ public final class AgentAgentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param knowledgeBaseIds (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+         * @param knowledgeBaseIds (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
          * 
          * @return builder
          * 
          */
         public Builder knowledgeBaseIds(String... knowledgeBaseIds) {
             return knowledgeBaseIds(List.of(knowledgeBaseIds));
+        }
+
+        /**
+         * @param llmConfig (Updatable) Configuration to Agent LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder llmConfig(@Nullable Output<AgentAgentLlmConfigArgs> llmConfig) {
+            $.llmConfig = llmConfig;
+            return this;
+        }
+
+        /**
+         * @param llmConfig (Updatable) Configuration to Agent LLM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder llmConfig(AgentAgentLlmConfigArgs llmConfig) {
+            return llmConfig(Output.of(llmConfig));
         }
 
         /**

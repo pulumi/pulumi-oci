@@ -30,6 +30,10 @@ import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBaseArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasePlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetAgentKnowledgeBasesPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
@@ -53,6 +57,8 @@ import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataSourceResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataSourcesResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBaseResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBasesResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClustersResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
@@ -296,8 +302,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetAgentEndpoint**
-     * 
      * Gets information about an endpoint.
      * 
      * ## Example Usage
@@ -341,8 +345,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **GetAgentEndpoint**
      * 
      * Gets information about an endpoint.
      * 
@@ -388,8 +390,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetAgentEndpoint**
-     * 
      * Gets information about an endpoint.
      * 
      * ## Example Usage
@@ -433,8 +433,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **GetAgentEndpoint**
      * 
      * Gets information about an endpoint.
      * 
@@ -480,8 +478,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **GetAgentEndpoint**
-     * 
      * Gets information about an endpoint.
      * 
      * ## Example Usage
@@ -525,8 +521,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListAgentEndpoints**
      * 
      * Gets a list of endpoints.
      * 
@@ -575,8 +569,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListAgentEndpoints**
-     * 
      * Gets a list of endpoints.
      * 
      * ## Example Usage
@@ -623,8 +615,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListAgentEndpoints**
      * 
      * Gets a list of endpoints.
      * 
@@ -673,8 +663,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListAgentEndpoints**
-     * 
      * Gets a list of endpoints.
      * 
      * ## Example Usage
@@ -721,8 +709,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListAgentEndpoints**
      * 
      * Gets a list of endpoints.
      * 
@@ -771,8 +757,6 @@ public final class GenerativeAiFunctions {
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
      * 
-     * **ListAgentEndpoints**
-     * 
      * Gets a list of endpoints.
      * 
      * ## Example Usage
@@ -819,8 +803,6 @@ public final class GenerativeAiFunctions {
     }
     /**
      * This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
-     * 
-     * **ListAgentEndpoints**
      * 
      * Gets a list of endpoints.
      * 
@@ -3143,6 +3125,555 @@ public final class GenerativeAiFunctions {
      */
     public static CompletableFuture<GetAgentKnowledgeBasesResult> getAgentKnowledgeBasesPlain(GetAgentKnowledgeBasesPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentKnowledgeBases:getAgentKnowledgeBases", TypeShape.of(GetAgentKnowledgeBasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a tool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
+     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolResult> getAgentTool(GetAgentToolArgs args) {
+        return getAgentTool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a tool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
+     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentToolResult> getAgentToolPlain(GetAgentToolPlainArgs args) {
+        return getAgentToolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a tool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
+     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolResult> getAgentTool(GetAgentToolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentTool:getAgentTool", TypeShape.of(GetAgentToolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a tool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
+     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolResult> getAgentTool(GetAgentToolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentTool:getAgentTool", TypeShape.of(GetAgentToolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets information about a tool.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTool = GenerativeAiFunctions.getAgentTool(GetAgentToolArgs.builder()
+     *             .toolId(testToolOciGenerativeAiAgentTool.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentToolResult> getAgentToolPlain(GetAgentToolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentTool:getAgentTool", TypeShape.of(GetAgentToolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolsResult> getAgentTools() {
+        return getAgentTools(GetAgentToolsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentToolsResult> getAgentToolsPlain() {
+        return getAgentToolsPlain(GetAgentToolsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolsResult> getAgentTools(GetAgentToolsArgs args) {
+        return getAgentTools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentToolsResult> getAgentToolsPlain(GetAgentToolsPlainArgs args) {
+        return getAgentToolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolsResult> getAgentTools(GetAgentToolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentTools:getAgentTools", TypeShape.of(GetAgentToolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAgentToolsResult> getAgentTools(GetAgentToolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getAgentTools:getAgentTools", TypeShape.of(GetAgentToolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Tools in Oracle Cloud Infrastructure Generative Ai Agent service.
+     * 
+     * Gets a list of tools.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetAgentToolsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTools = GenerativeAiFunctions.getAgentTools(GetAgentToolsArgs.builder()
+     *             .agentId(testAgent.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(toolDisplayName)
+     *             .state(toolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAgentToolsResult> getAgentToolsPlain(GetAgentToolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getAgentTools:getAgentTools", TypeShape.of(GetAgentToolsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.

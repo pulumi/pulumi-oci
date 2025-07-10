@@ -5,6 +5,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentAgentsAgentCollectionItemLlmConfig;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +44,7 @@ public final class GetAgentAgentsAgentCollectionItem {
      */
     private String id;
     /**
-     * @return List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * @return List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * 
      */
     private List<String> knowledgeBaseIds;
@@ -52,6 +53,11 @@ public final class GetAgentAgentsAgentCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Configuration to Agent LLM.
+     * 
+     */
+    private List<GetAgentAgentsAgentCollectionItemLlmConfig> llmConfigs;
     /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
@@ -122,7 +128,7 @@ public final class GetAgentAgentsAgentCollectionItem {
         return this.id;
     }
     /**
-     * @return List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * @return List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      * 
      */
     public List<String> knowledgeBaseIds() {
@@ -134,6 +140,13 @@ public final class GetAgentAgentsAgentCollectionItem {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Configuration to Agent LLM.
+     * 
+     */
+    public List<GetAgentAgentsAgentCollectionItemLlmConfig> llmConfigs() {
+        return this.llmConfigs;
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -188,6 +201,7 @@ public final class GetAgentAgentsAgentCollectionItem {
         private String id;
         private List<String> knowledgeBaseIds;
         private String lifecycleDetails;
+        private List<GetAgentAgentsAgentCollectionItemLlmConfig> llmConfigs;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -204,6 +218,7 @@ public final class GetAgentAgentsAgentCollectionItem {
     	      this.id = defaults.id;
     	      this.knowledgeBaseIds = defaults.knowledgeBaseIds;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.llmConfigs = defaults.llmConfigs;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -279,6 +294,17 @@ public final class GetAgentAgentsAgentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder llmConfigs(List<GetAgentAgentsAgentCollectionItemLlmConfig> llmConfigs) {
+            if (llmConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAgentAgentsAgentCollectionItem", "llmConfigs");
+            }
+            this.llmConfigs = llmConfigs;
+            return this;
+        }
+        public Builder llmConfigs(GetAgentAgentsAgentCollectionItemLlmConfig... llmConfigs) {
+            return llmConfigs(List.of(llmConfigs));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAgentAgentsAgentCollectionItem", "state");
@@ -328,6 +354,7 @@ public final class GetAgentAgentsAgentCollectionItem {
             _resultValue.id = id;
             _resultValue.knowledgeBaseIds = knowledgeBaseIds;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.llmConfigs = llmConfigs;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

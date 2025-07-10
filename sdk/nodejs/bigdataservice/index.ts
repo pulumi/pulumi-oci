@@ -35,6 +35,21 @@ export type BdsInstanceMetastoreConfig = import("./bdsInstanceMetastoreConfig").
 export const BdsInstanceMetastoreConfig: typeof import("./bdsInstanceMetastoreConfig").BdsInstanceMetastoreConfig = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceMetastoreConfig"], () => require("./bdsInstanceMetastoreConfig"));
 
+export { BdsInstanceNodeBackupArgs, BdsInstanceNodeBackupState } from "./bdsInstanceNodeBackup";
+export type BdsInstanceNodeBackup = import("./bdsInstanceNodeBackup").BdsInstanceNodeBackup;
+export const BdsInstanceNodeBackup: typeof import("./bdsInstanceNodeBackup").BdsInstanceNodeBackup = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceNodeBackup"], () => require("./bdsInstanceNodeBackup"));
+
+export { BdsInstanceNodeBackupConfigurationArgs, BdsInstanceNodeBackupConfigurationState } from "./bdsInstanceNodeBackupConfiguration";
+export type BdsInstanceNodeBackupConfiguration = import("./bdsInstanceNodeBackupConfiguration").BdsInstanceNodeBackupConfiguration;
+export const BdsInstanceNodeBackupConfiguration: typeof import("./bdsInstanceNodeBackupConfiguration").BdsInstanceNodeBackupConfiguration = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceNodeBackupConfiguration"], () => require("./bdsInstanceNodeBackupConfiguration"));
+
+export { BdsInstanceNodeReplaceConfigurationArgs, BdsInstanceNodeReplaceConfigurationState } from "./bdsInstanceNodeReplaceConfiguration";
+export type BdsInstanceNodeReplaceConfiguration = import("./bdsInstanceNodeReplaceConfiguration").BdsInstanceNodeReplaceConfiguration;
+export const BdsInstanceNodeReplaceConfiguration: typeof import("./bdsInstanceNodeReplaceConfiguration").BdsInstanceNodeReplaceConfiguration = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceNodeReplaceConfiguration"], () => require("./bdsInstanceNodeReplaceConfiguration"));
+
 export { BdsInstanceOperationCertificateManagementsManagementArgs, BdsInstanceOperationCertificateManagementsManagementState } from "./bdsInstanceOperationCertificateManagementsManagement";
 export type BdsInstanceOperationCertificateManagementsManagement = import("./bdsInstanceOperationCertificateManagementsManagement").BdsInstanceOperationCertificateManagementsManagement;
 export const BdsInstanceOperationCertificateManagementsManagement: typeof import("./bdsInstanceOperationCertificateManagementsManagement").BdsInstanceOperationCertificateManagementsManagement = null as any;
@@ -49,6 +64,11 @@ export { BdsInstancePatchActionArgs, BdsInstancePatchActionState } from "./bdsIn
 export type BdsInstancePatchAction = import("./bdsInstancePatchAction").BdsInstancePatchAction;
 export const BdsInstancePatchAction: typeof import("./bdsInstancePatchAction").BdsInstancePatchAction = null as any;
 utilities.lazyLoad(exports, ["BdsInstancePatchAction"], () => require("./bdsInstancePatchAction"));
+
+export { BdsInstanceReplaceNodeActionArgs, BdsInstanceReplaceNodeActionState } from "./bdsInstanceReplaceNodeAction";
+export type BdsInstanceReplaceNodeAction = import("./bdsInstanceReplaceNodeAction").BdsInstanceReplaceNodeAction;
+export const BdsInstanceReplaceNodeAction: typeof import("./bdsInstanceReplaceNodeAction").BdsInstanceReplaceNodeAction = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceReplaceNodeAction"], () => require("./bdsInstanceReplaceNodeAction"));
 
 export { BdsInstanceResourcePrincipalConfigurationArgs, BdsInstanceResourcePrincipalConfigurationState } from "./bdsInstanceResourcePrincipalConfiguration";
 export type BdsInstanceResourcePrincipalConfiguration = import("./bdsInstanceResourcePrincipalConfiguration").BdsInstanceResourcePrincipalConfiguration;
@@ -120,6 +140,36 @@ export const getBdsInstanceMetastoreConfigs: typeof import("./getBdsInstanceMeta
 export const getBdsInstanceMetastoreConfigsOutput: typeof import("./getBdsInstanceMetastoreConfigs").getBdsInstanceMetastoreConfigsOutput = null as any;
 utilities.lazyLoad(exports, ["getBdsInstanceMetastoreConfigs","getBdsInstanceMetastoreConfigsOutput"], () => require("./getBdsInstanceMetastoreConfigs"));
 
+export { GetBdsInstanceNodeBackupArgs, GetBdsInstanceNodeBackupResult, GetBdsInstanceNodeBackupOutputArgs } from "./getBdsInstanceNodeBackup";
+export const getBdsInstanceNodeBackup: typeof import("./getBdsInstanceNodeBackup").getBdsInstanceNodeBackup = null as any;
+export const getBdsInstanceNodeBackupOutput: typeof import("./getBdsInstanceNodeBackup").getBdsInstanceNodeBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceNodeBackup","getBdsInstanceNodeBackupOutput"], () => require("./getBdsInstanceNodeBackup"));
+
+export { GetBdsInstanceNodeBackupConfigurationArgs, GetBdsInstanceNodeBackupConfigurationResult, GetBdsInstanceNodeBackupConfigurationOutputArgs } from "./getBdsInstanceNodeBackupConfiguration";
+export const getBdsInstanceNodeBackupConfiguration: typeof import("./getBdsInstanceNodeBackupConfiguration").getBdsInstanceNodeBackupConfiguration = null as any;
+export const getBdsInstanceNodeBackupConfigurationOutput: typeof import("./getBdsInstanceNodeBackupConfiguration").getBdsInstanceNodeBackupConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceNodeBackupConfiguration","getBdsInstanceNodeBackupConfigurationOutput"], () => require("./getBdsInstanceNodeBackupConfiguration"));
+
+export { GetBdsInstanceNodeBackupConfigurationsArgs, GetBdsInstanceNodeBackupConfigurationsResult, GetBdsInstanceNodeBackupConfigurationsOutputArgs } from "./getBdsInstanceNodeBackupConfigurations";
+export const getBdsInstanceNodeBackupConfigurations: typeof import("./getBdsInstanceNodeBackupConfigurations").getBdsInstanceNodeBackupConfigurations = null as any;
+export const getBdsInstanceNodeBackupConfigurationsOutput: typeof import("./getBdsInstanceNodeBackupConfigurations").getBdsInstanceNodeBackupConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceNodeBackupConfigurations","getBdsInstanceNodeBackupConfigurationsOutput"], () => require("./getBdsInstanceNodeBackupConfigurations"));
+
+export { GetBdsInstanceNodeBackupsArgs, GetBdsInstanceNodeBackupsResult, GetBdsInstanceNodeBackupsOutputArgs } from "./getBdsInstanceNodeBackups";
+export const getBdsInstanceNodeBackups: typeof import("./getBdsInstanceNodeBackups").getBdsInstanceNodeBackups = null as any;
+export const getBdsInstanceNodeBackupsOutput: typeof import("./getBdsInstanceNodeBackups").getBdsInstanceNodeBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceNodeBackups","getBdsInstanceNodeBackupsOutput"], () => require("./getBdsInstanceNodeBackups"));
+
+export { GetBdsInstanceNodeReplaceConfigurationArgs, GetBdsInstanceNodeReplaceConfigurationResult, GetBdsInstanceNodeReplaceConfigurationOutputArgs } from "./getBdsInstanceNodeReplaceConfiguration";
+export const getBdsInstanceNodeReplaceConfiguration: typeof import("./getBdsInstanceNodeReplaceConfiguration").getBdsInstanceNodeReplaceConfiguration = null as any;
+export const getBdsInstanceNodeReplaceConfigurationOutput: typeof import("./getBdsInstanceNodeReplaceConfiguration").getBdsInstanceNodeReplaceConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceNodeReplaceConfiguration","getBdsInstanceNodeReplaceConfigurationOutput"], () => require("./getBdsInstanceNodeReplaceConfiguration"));
+
+export { GetBdsInstanceNodeReplaceConfigurationsArgs, GetBdsInstanceNodeReplaceConfigurationsResult, GetBdsInstanceNodeReplaceConfigurationsOutputArgs } from "./getBdsInstanceNodeReplaceConfigurations";
+export const getBdsInstanceNodeReplaceConfigurations: typeof import("./getBdsInstanceNodeReplaceConfigurations").getBdsInstanceNodeReplaceConfigurations = null as any;
+export const getBdsInstanceNodeReplaceConfigurationsOutput: typeof import("./getBdsInstanceNodeReplaceConfigurations").getBdsInstanceNodeReplaceConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBdsInstanceNodeReplaceConfigurations","getBdsInstanceNodeReplaceConfigurationsOutput"], () => require("./getBdsInstanceNodeReplaceConfigurations"));
+
 export { GetBdsInstancePatchHistoriesArgs, GetBdsInstancePatchHistoriesResult, GetBdsInstancePatchHistoriesOutputArgs } from "./getBdsInstancePatchHistories";
 export const getBdsInstancePatchHistories: typeof import("./getBdsInstancePatchHistories").getBdsInstancePatchHistories = null as any;
 export const getBdsInstancePatchHistoriesOutput: typeof import("./getBdsInstancePatchHistories").getBdsInstancePatchHistoriesOutput = null as any;
@@ -172,12 +222,20 @@ const _module = {
                 return new BdsInstanceIdentityConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
                 return new BdsInstanceMetastoreConfig(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceNodeBackup:BdsInstanceNodeBackup":
+                return new BdsInstanceNodeBackup(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceNodeBackupConfiguration:BdsInstanceNodeBackupConfiguration":
+                return new BdsInstanceNodeBackupConfiguration(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration":
+                return new BdsInstanceNodeReplaceConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement":
                 return new BdsInstanceOperationCertificateManagementsManagement(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction":
                 return new BdsInstanceOsPatchAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
                 return new BdsInstancePatchAction(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceReplaceNodeAction:BdsInstanceReplaceNodeAction":
+                return new BdsInstanceReplaceNodeAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration":
                 return new BdsInstanceResourcePrincipalConfiguration(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction":
@@ -193,8 +251,12 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _modu
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceIdentityConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastoreConfig", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceNodeBackup", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceNodeBackupConfiguration", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceNodeReplaceConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOperationCertificateManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOsPatchAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstancePatchAction", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceReplaceNodeAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceResourcePrincipalConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceSoftwareUpdateAction", _module)

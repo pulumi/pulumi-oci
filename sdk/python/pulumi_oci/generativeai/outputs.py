@@ -18,7 +18,16 @@ from . import outputs
 
 __all__ = [
     'AgentAgentEndpointContentModerationConfig',
+    'AgentAgentEndpointGuardrailConfig',
+    'AgentAgentEndpointGuardrailConfigContentModerationConfig',
+    'AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig',
+    'AgentAgentEndpointGuardrailConfigPromptInjectionConfig',
+    'AgentAgentEndpointHumanInputConfig',
+    'AgentAgentEndpointOutputConfig',
+    'AgentAgentEndpointOutputConfigOutputLocation',
     'AgentAgentEndpointSessionConfig',
+    'AgentAgentLlmConfig',
+    'AgentAgentLlmConfigRoutingLlmCustomization',
     'AgentDataIngestionJobDataIngestionJobStatistic',
     'AgentDataSourceDataSourceConfig',
     'AgentDataSourceDataSourceConfigObjectStoragePrefix',
@@ -28,6 +37,14 @@ __all__ = [
     'AgentKnowledgeBaseIndexConfigIndex',
     'AgentKnowledgeBaseIndexConfigIndexSchema',
     'AgentKnowledgeBaseIndexConfigSecretDetail',
+    'AgentToolToolConfig',
+    'AgentToolToolConfigDatabaseConnection',
+    'AgentToolToolConfigDatabaseSchema',
+    'AgentToolToolConfigFunction',
+    'AgentToolToolConfigGenerationLlmCustomization',
+    'AgentToolToolConfigIclExamples',
+    'AgentToolToolConfigKnowledgeBaseConfig',
+    'AgentToolToolConfigTableAndColumnDescription',
     'DedicatedAiClusterCapacity',
     'EndpointContentModerationConfig',
     'ModelFineTuneDetails',
@@ -35,14 +52,32 @@ __all__ = [
     'ModelFineTuneDetailsTrainingDataset',
     'ModelModelMetric',
     'GetAgentAgentEndpointContentModerationConfigResult',
+    'GetAgentAgentEndpointGuardrailConfigResult',
+    'GetAgentAgentEndpointGuardrailConfigContentModerationConfigResult',
+    'GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigResult',
+    'GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigResult',
+    'GetAgentAgentEndpointHumanInputConfigResult',
+    'GetAgentAgentEndpointOutputConfigResult',
+    'GetAgentAgentEndpointOutputConfigOutputLocationResult',
     'GetAgentAgentEndpointSessionConfigResult',
     'GetAgentAgentEndpointsAgentEndpointCollectionResult',
     'GetAgentAgentEndpointsAgentEndpointCollectionItemResult',
     'GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigResult',
+    'GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationResult',
     'GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult',
     'GetAgentAgentEndpointsFilterResult',
+    'GetAgentAgentLlmConfigResult',
+    'GetAgentAgentLlmConfigRoutingLlmCustomizationResult',
     'GetAgentAgentsAgentCollectionResult',
     'GetAgentAgentsAgentCollectionItemResult',
+    'GetAgentAgentsAgentCollectionItemLlmConfigResult',
+    'GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult',
     'GetAgentAgentsFilterResult',
     'GetAgentDataIngestionJobDataIngestionJobStatisticResult',
     'GetAgentDataIngestionJobsDataIngestionJobCollectionResult',
@@ -71,6 +106,25 @@ __all__ = [
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult',
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult',
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult',
+    'GetAgentToolToolConfigResult',
+    'GetAgentToolToolConfigDatabaseConnectionResult',
+    'GetAgentToolToolConfigDatabaseSchemaResult',
+    'GetAgentToolToolConfigFunctionResult',
+    'GetAgentToolToolConfigGenerationLlmCustomizationResult',
+    'GetAgentToolToolConfigIclExampleResult',
+    'GetAgentToolToolConfigKnowledgeBaseConfigResult',
+    'GetAgentToolToolConfigTableAndColumnDescriptionResult',
+    'GetAgentToolsFilterResult',
+    'GetAgentToolsToolCollectionResult',
+    'GetAgentToolsToolCollectionItemResult',
+    'GetAgentToolsToolCollectionItemToolConfigResult',
+    'GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult',
+    'GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult',
+    'GetAgentToolsToolCollectionItemToolConfigFunctionResult',
+    'GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult',
+    'GetAgentToolsToolCollectionItemToolConfigIclExampleResult',
+    'GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigResult',
+    'GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult',
     'GetDedicatedAiClusterCapacityResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult',
@@ -145,6 +199,359 @@ class AgentAgentEndpointContentModerationConfig(dict):
 
 
 @pulumi.output_type
+class AgentAgentEndpointGuardrailConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contentModerationConfig":
+            suggest = "content_moderation_config"
+        elif key == "personallyIdentifiableInformationConfig":
+            suggest = "personally_identifiable_information_config"
+        elif key == "promptInjectionConfig":
+            suggest = "prompt_injection_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointGuardrailConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointGuardrailConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointGuardrailConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 content_moderation_config: Optional['outputs.AgentAgentEndpointGuardrailConfigContentModerationConfig'] = None,
+                 personally_identifiable_information_config: Optional['outputs.AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig'] = None,
+                 prompt_injection_config: Optional['outputs.AgentAgentEndpointGuardrailConfigPromptInjectionConfig'] = None):
+        """
+        :param 'AgentAgentEndpointGuardrailConfigContentModerationConfigArgs' content_moderation_config: (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        :param 'AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs' personally_identifiable_information_config: (Updatable) The configuration details for Personally Identifiable Information.
+        :param 'AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs' prompt_injection_config: (Updatable) The configuration details for Prompt Injection.
+        """
+        if content_moderation_config is not None:
+            pulumi.set(__self__, "content_moderation_config", content_moderation_config)
+        if personally_identifiable_information_config is not None:
+            pulumi.set(__self__, "personally_identifiable_information_config", personally_identifiable_information_config)
+        if prompt_injection_config is not None:
+            pulumi.set(__self__, "prompt_injection_config", prompt_injection_config)
+
+    @property
+    @pulumi.getter(name="contentModerationConfig")
+    def content_moderation_config(self) -> Optional['outputs.AgentAgentEndpointGuardrailConfigContentModerationConfig']:
+        """
+        (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        """
+        return pulumi.get(self, "content_moderation_config")
+
+    @property
+    @pulumi.getter(name="personallyIdentifiableInformationConfig")
+    def personally_identifiable_information_config(self) -> Optional['outputs.AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig']:
+        """
+        (Updatable) The configuration details for Personally Identifiable Information.
+        """
+        return pulumi.get(self, "personally_identifiable_information_config")
+
+    @property
+    @pulumi.getter(name="promptInjectionConfig")
+    def prompt_injection_config(self) -> Optional['outputs.AgentAgentEndpointGuardrailConfigPromptInjectionConfig']:
+        """
+        (Updatable) The configuration details for Prompt Injection.
+        """
+        return pulumi.get(self, "prompt_injection_config")
+
+
+@pulumi.output_type
+class AgentAgentEndpointGuardrailConfigContentModerationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputGuardrailMode":
+            suggest = "input_guardrail_mode"
+        elif key == "outputGuardrailMode":
+            suggest = "output_guardrail_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointGuardrailConfigContentModerationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointGuardrailConfigContentModerationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointGuardrailConfigContentModerationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_guardrail_mode: Optional[builtins.str] = None,
+                 output_guardrail_mode: Optional[builtins.str] = None):
+        """
+        :param builtins.str input_guardrail_mode: (Updatable) An input guardrail mode for content moderation.
+        :param builtins.str output_guardrail_mode: (Updatable) An output guardrail mode for content moderation.
+        """
+        if input_guardrail_mode is not None:
+            pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+        if output_guardrail_mode is not None:
+            pulumi.set(__self__, "output_guardrail_mode", output_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> Optional[builtins.str]:
+        """
+        (Updatable) An input guardrail mode for content moderation.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+    @property
+    @pulumi.getter(name="outputGuardrailMode")
+    def output_guardrail_mode(self) -> Optional[builtins.str]:
+        """
+        (Updatable) An output guardrail mode for content moderation.
+        """
+        return pulumi.get(self, "output_guardrail_mode")
+
+
+@pulumi.output_type
+class AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputGuardrailMode":
+            suggest = "input_guardrail_mode"
+        elif key == "outputGuardrailMode":
+            suggest = "output_guardrail_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_guardrail_mode: Optional[builtins.str] = None,
+                 output_guardrail_mode: Optional[builtins.str] = None):
+        """
+        :param builtins.str input_guardrail_mode: (Updatable) An input guardrail mode for personally identifiable information.
+        :param builtins.str output_guardrail_mode: (Updatable) An output guardrail mode for personally identifiable information.
+        """
+        if input_guardrail_mode is not None:
+            pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+        if output_guardrail_mode is not None:
+            pulumi.set(__self__, "output_guardrail_mode", output_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> Optional[builtins.str]:
+        """
+        (Updatable) An input guardrail mode for personally identifiable information.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+    @property
+    @pulumi.getter(name="outputGuardrailMode")
+    def output_guardrail_mode(self) -> Optional[builtins.str]:
+        """
+        (Updatable) An output guardrail mode for personally identifiable information.
+        """
+        return pulumi.get(self, "output_guardrail_mode")
+
+
+@pulumi.output_type
+class AgentAgentEndpointGuardrailConfigPromptInjectionConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputGuardrailMode":
+            suggest = "input_guardrail_mode"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointGuardrailConfigPromptInjectionConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointGuardrailConfigPromptInjectionConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointGuardrailConfigPromptInjectionConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_guardrail_mode: Optional[builtins.str] = None):
+        """
+        :param builtins.str input_guardrail_mode: (Updatable) An input guardrail mode for prompt injection.
+        """
+        if input_guardrail_mode is not None:
+            pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> Optional[builtins.str]:
+        """
+        (Updatable) An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+
+@pulumi.output_type
+class AgentAgentEndpointHumanInputConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "shouldEnableHumanInput":
+            suggest = "should_enable_human_input"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointHumanInputConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointHumanInputConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointHumanInputConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 should_enable_human_input: builtins.bool):
+        """
+        :param builtins.bool should_enable_human_input: (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+        """
+        pulumi.set(__self__, "should_enable_human_input", should_enable_human_input)
+
+    @property
+    @pulumi.getter(name="shouldEnableHumanInput")
+    def should_enable_human_input(self) -> builtins.bool:
+        """
+        (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+        """
+        return pulumi.get(self, "should_enable_human_input")
+
+
+@pulumi.output_type
+class AgentAgentEndpointOutputConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "outputLocation":
+            suggest = "output_location"
+        elif key == "retentionPeriodInMinutes":
+            suggest = "retention_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointOutputConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointOutputConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointOutputConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 output_location: 'outputs.AgentAgentEndpointOutputConfigOutputLocation',
+                 retention_period_in_minutes: Optional[builtins.int] = None):
+        """
+        :param 'AgentAgentEndpointOutputConfigOutputLocationArgs' output_location: (Updatable) Location of the output.
+        :param builtins.int retention_period_in_minutes: (Updatable) Retention duration of the output data.
+        """
+        pulumi.set(__self__, "output_location", output_location)
+        if retention_period_in_minutes is not None:
+            pulumi.set(__self__, "retention_period_in_minutes", retention_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="outputLocation")
+    def output_location(self) -> 'outputs.AgentAgentEndpointOutputConfigOutputLocation':
+        """
+        (Updatable) Location of the output.
+        """
+        return pulumi.get(self, "output_location")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInMinutes")
+    def retention_period_in_minutes(self) -> Optional[builtins.int]:
+        """
+        (Updatable) Retention duration of the output data.
+        """
+        return pulumi.get(self, "retention_period_in_minutes")
+
+
+@pulumi.output_type
+class AgentAgentEndpointOutputConfigOutputLocation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "outputLocationType":
+            suggest = "output_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentEndpointOutputConfigOutputLocation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentEndpointOutputConfigOutputLocation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentEndpointOutputConfigOutputLocation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 namespace: builtins.str,
+                 output_location_type: builtins.str,
+                 prefix: Optional[builtins.str] = None):
+        """
+        :param builtins.str bucket: (Updatable) The name of the bucket.
+        :param builtins.str namespace: (Updatable) The namespace of the object storage.
+        :param builtins.str output_location_type: (Updatable) Type of OutputLocation.
+        :param builtins.str prefix: (Updatable) The prefix of the object storage.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "output_location_type", output_location_type)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        (Updatable) The name of the bucket.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        (Updatable) The namespace of the object storage.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="outputLocationType")
+    def output_location_type(self) -> builtins.str:
+        """
+        (Updatable) Type of OutputLocation.
+        """
+        return pulumi.get(self, "output_location_type")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The prefix of the object storage.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
 class AgentAgentEndpointSessionConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -178,6 +585,61 @@ class AgentAgentEndpointSessionConfig(dict):
         (Updatable) The session will become inactive after this timeout.
         """
         return pulumi.get(self, "idle_timeout_in_seconds")
+
+
+@pulumi.output_type
+class AgentAgentLlmConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "routingLlmCustomization":
+            suggest = "routing_llm_customization"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentAgentLlmConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentAgentLlmConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentAgentLlmConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 routing_llm_customization: Optional['outputs.AgentAgentLlmConfigRoutingLlmCustomization'] = None):
+        """
+        :param 'AgentAgentLlmConfigRoutingLlmCustomizationArgs' routing_llm_customization: (Updatable) Configuration to customize LLM.
+        """
+        if routing_llm_customization is not None:
+            pulumi.set(__self__, "routing_llm_customization", routing_llm_customization)
+
+    @property
+    @pulumi.getter(name="routingLlmCustomization")
+    def routing_llm_customization(self) -> Optional['outputs.AgentAgentLlmConfigRoutingLlmCustomization']:
+        """
+        (Updatable) Configuration to customize LLM.
+        """
+        return pulumi.get(self, "routing_llm_customization")
+
+
+@pulumi.output_type
+class AgentAgentLlmConfigRoutingLlmCustomization(dict):
+    def __init__(__self__, *,
+                 instruction: Optional[builtins.str] = None):
+        """
+        :param builtins.str instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
+        """
+        if instruction is not None:
+            pulumi.set(__self__, "instruction", instruction)
+
+    @property
+    @pulumi.getter
+    def instruction(self) -> Optional[builtins.str]:
+        """
+        (Updatable) If specified, the default instruction is replaced with provided instruction.
+        """
+        return pulumi.get(self, "instruction")
 
 
 @pulumi.output_type
@@ -749,6 +1211,614 @@ class AgentKnowledgeBaseIndexConfigSecretDetail(dict):
 
 
 @pulumi.output_type
+class AgentToolToolConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "toolConfigType":
+            suggest = "tool_config_type"
+        elif key == "databaseConnection":
+            suggest = "database_connection"
+        elif key == "databaseSchema":
+            suggest = "database_schema"
+        elif key == "generationLlmCustomization":
+            suggest = "generation_llm_customization"
+        elif key == "iclExamples":
+            suggest = "icl_examples"
+        elif key == "knowledgeBaseConfigs":
+            suggest = "knowledge_base_configs"
+        elif key == "modelSize":
+            suggest = "model_size"
+        elif key == "shouldEnableSelfCorrection":
+            suggest = "should_enable_self_correction"
+        elif key == "shouldEnableSqlExecution":
+            suggest = "should_enable_sql_execution"
+        elif key == "tableAndColumnDescription":
+            suggest = "table_and_column_description"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 tool_config_type: builtins.str,
+                 database_connection: Optional['outputs.AgentToolToolConfigDatabaseConnection'] = None,
+                 database_schema: Optional['outputs.AgentToolToolConfigDatabaseSchema'] = None,
+                 dialect: Optional[builtins.str] = None,
+                 function: Optional['outputs.AgentToolToolConfigFunction'] = None,
+                 generation_llm_customization: Optional['outputs.AgentToolToolConfigGenerationLlmCustomization'] = None,
+                 icl_examples: Optional['outputs.AgentToolToolConfigIclExamples'] = None,
+                 knowledge_base_configs: Optional[Sequence['outputs.AgentToolToolConfigKnowledgeBaseConfig']] = None,
+                 model_size: Optional[builtins.str] = None,
+                 should_enable_self_correction: Optional[builtins.bool] = None,
+                 should_enable_sql_execution: Optional[builtins.bool] = None,
+                 table_and_column_description: Optional['outputs.AgentToolToolConfigTableAndColumnDescription'] = None):
+        """
+        :param builtins.str tool_config_type: (Updatable) The type of the Tool config. The allowed values are:
+               * `SQL_TOOL_CONFIG`: The config for sql Tool.
+               * `RAG_TOOL_CONFIG`: The config for rag Tool.
+               * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param 'AgentToolToolConfigDatabaseConnectionArgs' database_connection: (Updatable) The connection type for Databases.
+        :param 'AgentToolToolConfigDatabaseSchemaArgs' database_schema: (Updatable) The input location definition.
+        :param builtins.str dialect: (Updatable) Dialect to be used for SQL generation.
+        :param 'AgentToolToolConfigFunctionArgs' function: (Updatable) Details of Function for Function calling tool.
+        :param 'AgentToolToolConfigGenerationLlmCustomizationArgs' generation_llm_customization: (Updatable) Configuration to customize LLM.
+        :param 'AgentToolToolConfigIclExamplesArgs' icl_examples: (Updatable) The input location definition.
+        :param Sequence['AgentToolToolConfigKnowledgeBaseConfigArgs'] knowledge_base_configs: (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+        :param builtins.str model_size: (Updatable) Size of the model.
+        :param builtins.bool should_enable_self_correction: (Updatable) To enable/disable self correction.
+        :param builtins.bool should_enable_sql_execution: (Updatable) To enable/disable SQL execution.
+        :param 'AgentToolToolConfigTableAndColumnDescriptionArgs' table_and_column_description: (Updatable) The input location definition.
+        """
+        pulumi.set(__self__, "tool_config_type", tool_config_type)
+        if database_connection is not None:
+            pulumi.set(__self__, "database_connection", database_connection)
+        if database_schema is not None:
+            pulumi.set(__self__, "database_schema", database_schema)
+        if dialect is not None:
+            pulumi.set(__self__, "dialect", dialect)
+        if function is not None:
+            pulumi.set(__self__, "function", function)
+        if generation_llm_customization is not None:
+            pulumi.set(__self__, "generation_llm_customization", generation_llm_customization)
+        if icl_examples is not None:
+            pulumi.set(__self__, "icl_examples", icl_examples)
+        if knowledge_base_configs is not None:
+            pulumi.set(__self__, "knowledge_base_configs", knowledge_base_configs)
+        if model_size is not None:
+            pulumi.set(__self__, "model_size", model_size)
+        if should_enable_self_correction is not None:
+            pulumi.set(__self__, "should_enable_self_correction", should_enable_self_correction)
+        if should_enable_sql_execution is not None:
+            pulumi.set(__self__, "should_enable_sql_execution", should_enable_sql_execution)
+        if table_and_column_description is not None:
+            pulumi.set(__self__, "table_and_column_description", table_and_column_description)
+
+    @property
+    @pulumi.getter(name="toolConfigType")
+    def tool_config_type(self) -> builtins.str:
+        """
+        (Updatable) The type of the Tool config. The allowed values are:
+        * `SQL_TOOL_CONFIG`: The config for sql Tool.
+        * `RAG_TOOL_CONFIG`: The config for rag Tool.
+        * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "tool_config_type")
+
+    @property
+    @pulumi.getter(name="databaseConnection")
+    def database_connection(self) -> Optional['outputs.AgentToolToolConfigDatabaseConnection']:
+        """
+        (Updatable) The connection type for Databases.
+        """
+        return pulumi.get(self, "database_connection")
+
+    @property
+    @pulumi.getter(name="databaseSchema")
+    def database_schema(self) -> Optional['outputs.AgentToolToolConfigDatabaseSchema']:
+        """
+        (Updatable) The input location definition.
+        """
+        return pulumi.get(self, "database_schema")
+
+    @property
+    @pulumi.getter
+    def dialect(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Dialect to be used for SQL generation.
+        """
+        return pulumi.get(self, "dialect")
+
+    @property
+    @pulumi.getter
+    def function(self) -> Optional['outputs.AgentToolToolConfigFunction']:
+        """
+        (Updatable) Details of Function for Function calling tool.
+        """
+        return pulumi.get(self, "function")
+
+    @property
+    @pulumi.getter(name="generationLlmCustomization")
+    def generation_llm_customization(self) -> Optional['outputs.AgentToolToolConfigGenerationLlmCustomization']:
+        """
+        (Updatable) Configuration to customize LLM.
+        """
+        return pulumi.get(self, "generation_llm_customization")
+
+    @property
+    @pulumi.getter(name="iclExamples")
+    def icl_examples(self) -> Optional['outputs.AgentToolToolConfigIclExamples']:
+        """
+        (Updatable) The input location definition.
+        """
+        return pulumi.get(self, "icl_examples")
+
+    @property
+    @pulumi.getter(name="knowledgeBaseConfigs")
+    def knowledge_base_configs(self) -> Optional[Sequence['outputs.AgentToolToolConfigKnowledgeBaseConfig']]:
+        """
+        (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+        """
+        return pulumi.get(self, "knowledge_base_configs")
+
+    @property
+    @pulumi.getter(name="modelSize")
+    def model_size(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Size of the model.
+        """
+        return pulumi.get(self, "model_size")
+
+    @property
+    @pulumi.getter(name="shouldEnableSelfCorrection")
+    def should_enable_self_correction(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) To enable/disable self correction.
+        """
+        return pulumi.get(self, "should_enable_self_correction")
+
+    @property
+    @pulumi.getter(name="shouldEnableSqlExecution")
+    def should_enable_sql_execution(self) -> Optional[builtins.bool]:
+        """
+        (Updatable) To enable/disable SQL execution.
+        """
+        return pulumi.get(self, "should_enable_sql_execution")
+
+    @property
+    @pulumi.getter(name="tableAndColumnDescription")
+    def table_and_column_description(self) -> Optional['outputs.AgentToolToolConfigTableAndColumnDescription']:
+        """
+        (Updatable) The input location definition.
+        """
+        return pulumi.get(self, "table_and_column_description")
+
+
+@pulumi.output_type
+class AgentToolToolConfigDatabaseConnection(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectionId":
+            suggest = "connection_id"
+        elif key == "connectionType":
+            suggest = "connection_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigDatabaseConnection. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigDatabaseConnection.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigDatabaseConnection.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connection_id: builtins.str,
+                 connection_type: builtins.str):
+        """
+        :param builtins.str connection_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        :param builtins.str connection_type: (Updatable) The type of Database connection. The allowed values are:
+               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> builtins.str:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> builtins.str:
+        """
+        (Updatable) The type of Database connection. The allowed values are:
+        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+
+@pulumi.output_type
+class AgentToolToolConfigDatabaseSchema(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputLocationType":
+            suggest = "input_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigDatabaseSchema. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigDatabaseSchema.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigDatabaseSchema.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_location_type: builtins.str,
+                 bucket: Optional[builtins.str] = None,
+                 content: Optional[builtins.str] = None,
+                 namespace: Optional[builtins.str] = None,
+                 prefix: Optional[builtins.str] = None):
+        """
+        :param builtins.str input_location_type: (Updatable) Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str bucket: (Updatable) The bucket name of an object.
+        :param builtins.str content: (Updatable) Inline content as input.
+        :param builtins.str namespace: (Updatable) The namespace name of an object.
+        :param builtins.str prefix: (Updatable) The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        (Updatable) Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class AgentToolToolConfigFunction(dict):
+    def __init__(__self__, *,
+                 description: Optional[builtins.str] = None,
+                 name: Optional[builtins.str] = None,
+                 parameters: Optional[Mapping[str, builtins.str]] = None):
+        """
+        :param builtins.str description: (Updatable) A description of the function.
+        :param builtins.str name: (Updatable) The name of the function to invoke.
+        :param Mapping[str, builtins.str] parameters: (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def description(self) -> Optional[builtins.str]:
+        """
+        (Updatable) A description of the function.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The name of the function to invoke.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Optional[Mapping[str, builtins.str]]:
+        """
+        (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        """
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class AgentToolToolConfigGenerationLlmCustomization(dict):
+    def __init__(__self__, *,
+                 instruction: Optional[builtins.str] = None):
+        """
+        :param builtins.str instruction: (Updatable) If specified, the default instruction is replaced with provided instruction.
+        """
+        if instruction is not None:
+            pulumi.set(__self__, "instruction", instruction)
+
+    @property
+    @pulumi.getter
+    def instruction(self) -> Optional[builtins.str]:
+        """
+        (Updatable) If specified, the default instruction is replaced with provided instruction.
+        """
+        return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
+class AgentToolToolConfigIclExamples(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputLocationType":
+            suggest = "input_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigIclExamples. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigIclExamples.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigIclExamples.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_location_type: builtins.str,
+                 bucket: Optional[builtins.str] = None,
+                 content: Optional[builtins.str] = None,
+                 namespace: Optional[builtins.str] = None,
+                 prefix: Optional[builtins.str] = None):
+        """
+        :param builtins.str input_location_type: (Updatable) Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str bucket: (Updatable) The bucket name of an object.
+        :param builtins.str content: (Updatable) Inline content as input.
+        :param builtins.str namespace: (Updatable) The namespace name of an object.
+        :param builtins.str prefix: (Updatable) The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        (Updatable) Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class AgentToolToolConfigKnowledgeBaseConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "knowledgeBaseId":
+            suggest = "knowledge_base_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigKnowledgeBaseConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigKnowledgeBaseConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigKnowledgeBaseConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 knowledge_base_id: Optional[builtins.str] = None):
+        """
+        :param builtins.str knowledge_base_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+        """
+        if knowledge_base_id is not None:
+            pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+
+    @property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+        """
+        return pulumi.get(self, "knowledge_base_id")
+
+
+@pulumi.output_type
+class AgentToolToolConfigTableAndColumnDescription(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inputLocationType":
+            suggest = "input_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigTableAndColumnDescription. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigTableAndColumnDescription.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigTableAndColumnDescription.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 input_location_type: builtins.str,
+                 bucket: Optional[builtins.str] = None,
+                 content: Optional[builtins.str] = None,
+                 namespace: Optional[builtins.str] = None,
+                 prefix: Optional[builtins.str] = None):
+        """
+        :param builtins.str input_location_type: (Updatable) Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str bucket: (Updatable) The bucket name of an object.
+        :param builtins.str content: (Updatable) Inline content as input.
+        :param builtins.str namespace: (Updatable) The namespace name of an object.
+        :param builtins.str prefix: (Updatable) The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if prefix is not None:
+            pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        (Updatable) Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> Optional[builtins.str]:
+        """
+        (Updatable) Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> Optional[builtins.str]:
+        """
+        (Updatable) The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
 class DedicatedAiClusterCapacity(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1254,6 +2324,220 @@ class GetAgentAgentEndpointContentModerationConfigResult(dict):
 
 
 @pulumi.output_type
+class GetAgentAgentEndpointGuardrailConfigResult(dict):
+    def __init__(__self__, *,
+                 content_moderation_configs: Sequence['outputs.GetAgentAgentEndpointGuardrailConfigContentModerationConfigResult'],
+                 personally_identifiable_information_configs: Sequence['outputs.GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigResult'],
+                 prompt_injection_configs: Sequence['outputs.GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigResult']):
+        """
+        :param Sequence['GetAgentAgentEndpointGuardrailConfigContentModerationConfigArgs'] content_moderation_configs: The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        :param Sequence['GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs'] personally_identifiable_information_configs: The configuration details for Personally Identifiable Information.
+        :param Sequence['GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs'] prompt_injection_configs: The configuration details for Prompt Injection.
+        """
+        pulumi.set(__self__, "content_moderation_configs", content_moderation_configs)
+        pulumi.set(__self__, "personally_identifiable_information_configs", personally_identifiable_information_configs)
+        pulumi.set(__self__, "prompt_injection_configs", prompt_injection_configs)
+
+    @property
+    @pulumi.getter(name="contentModerationConfigs")
+    def content_moderation_configs(self) -> Sequence['outputs.GetAgentAgentEndpointGuardrailConfigContentModerationConfigResult']:
+        """
+        The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        """
+        return pulumi.get(self, "content_moderation_configs")
+
+    @property
+    @pulumi.getter(name="personallyIdentifiableInformationConfigs")
+    def personally_identifiable_information_configs(self) -> Sequence['outputs.GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigResult']:
+        """
+        The configuration details for Personally Identifiable Information.
+        """
+        return pulumi.get(self, "personally_identifiable_information_configs")
+
+    @property
+    @pulumi.getter(name="promptInjectionConfigs")
+    def prompt_injection_configs(self) -> Sequence['outputs.GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigResult']:
+        """
+        The configuration details for Prompt Injection.
+        """
+        return pulumi.get(self, "prompt_injection_configs")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointGuardrailConfigContentModerationConfigResult(dict):
+    def __init__(__self__, *,
+                 input_guardrail_mode: builtins.str,
+                 output_guardrail_mode: builtins.str):
+        """
+        :param builtins.str input_guardrail_mode: An input guardrail mode for prompt injection.
+        :param builtins.str output_guardrail_mode: An output guardrail mode for personally identifiable information.
+        """
+        pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+        pulumi.set(__self__, "output_guardrail_mode", output_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> builtins.str:
+        """
+        An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+    @property
+    @pulumi.getter(name="outputGuardrailMode")
+    def output_guardrail_mode(self) -> builtins.str:
+        """
+        An output guardrail mode for personally identifiable information.
+        """
+        return pulumi.get(self, "output_guardrail_mode")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigResult(dict):
+    def __init__(__self__, *,
+                 input_guardrail_mode: builtins.str,
+                 output_guardrail_mode: builtins.str):
+        """
+        :param builtins.str input_guardrail_mode: An input guardrail mode for prompt injection.
+        :param builtins.str output_guardrail_mode: An output guardrail mode for personally identifiable information.
+        """
+        pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+        pulumi.set(__self__, "output_guardrail_mode", output_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> builtins.str:
+        """
+        An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+    @property
+    @pulumi.getter(name="outputGuardrailMode")
+    def output_guardrail_mode(self) -> builtins.str:
+        """
+        An output guardrail mode for personally identifiable information.
+        """
+        return pulumi.get(self, "output_guardrail_mode")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointGuardrailConfigPromptInjectionConfigResult(dict):
+    def __init__(__self__, *,
+                 input_guardrail_mode: builtins.str):
+        """
+        :param builtins.str input_guardrail_mode: An input guardrail mode for prompt injection.
+        """
+        pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> builtins.str:
+        """
+        An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointHumanInputConfigResult(dict):
+    def __init__(__self__, *,
+                 should_enable_human_input: builtins.bool):
+        """
+        :param builtins.bool should_enable_human_input: The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+        """
+        pulumi.set(__self__, "should_enable_human_input", should_enable_human_input)
+
+    @property
+    @pulumi.getter(name="shouldEnableHumanInput")
+    def should_enable_human_input(self) -> builtins.bool:
+        """
+        The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+        """
+        return pulumi.get(self, "should_enable_human_input")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointOutputConfigResult(dict):
+    def __init__(__self__, *,
+                 output_locations: Sequence['outputs.GetAgentAgentEndpointOutputConfigOutputLocationResult'],
+                 retention_period_in_minutes: builtins.int):
+        """
+        :param Sequence['GetAgentAgentEndpointOutputConfigOutputLocationArgs'] output_locations: Location of the output.
+        :param builtins.int retention_period_in_minutes: Retention duration of the output data.
+        """
+        pulumi.set(__self__, "output_locations", output_locations)
+        pulumi.set(__self__, "retention_period_in_minutes", retention_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="outputLocations")
+    def output_locations(self) -> Sequence['outputs.GetAgentAgentEndpointOutputConfigOutputLocationResult']:
+        """
+        Location of the output.
+        """
+        return pulumi.get(self, "output_locations")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInMinutes")
+    def retention_period_in_minutes(self) -> builtins.int:
+        """
+        Retention duration of the output data.
+        """
+        return pulumi.get(self, "retention_period_in_minutes")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointOutputConfigOutputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 namespace: builtins.str,
+                 output_location_type: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The name of the bucket.
+        :param builtins.str namespace: The namespace of the object storage.
+        :param builtins.str output_location_type: Type of OutputLocation.
+        :param builtins.str prefix: The prefix of the object storage.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "output_location_type", output_location_type)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The name of the bucket.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace of the object storage.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="outputLocationType")
+    def output_location_type(self) -> builtins.str:
+        """
+        Type of OutputLocation.
+        """
+        return pulumi.get(self, "output_location_type")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of the object storage.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
 class GetAgentAgentEndpointSessionConfigResult(dict):
     def __init__(__self__, *,
                  idle_timeout_in_seconds: builtins.int):
@@ -1293,10 +2577,15 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
                  description: builtins.str,
                  display_name: builtins.str,
                  freeform_tags: Mapping[str, builtins.str],
+                 guardrail_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigResult'],
+                 human_input_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigResult'],
                  id: builtins.str,
                  lifecycle_details: builtins.str,
+                 metadata: Mapping[str, builtins.str],
+                 output_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigResult'],
                  session_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult'],
                  should_enable_citation: builtins.bool,
+                 should_enable_multi_language: builtins.bool,
                  should_enable_session: builtins.bool,
                  should_enable_trace: builtins.bool,
                  state: builtins.str,
@@ -1311,10 +2600,15 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
         :param builtins.str description: An optional description of the endpoint.
         :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigArgs'] guardrail_configs: The configuration details about whether to apply the guardrail checks to input and output.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigArgs'] human_input_configs: Human Input Configuration for an AgentEndpoint.
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
         :param builtins.str lifecycle_details: A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs'] session_configs: **SessionConfig**
+        :param Mapping[str, builtins.str] metadata: Key-value pairs to allow additional configurations.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigArgs'] output_configs: Configuration to store results generated by agent.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigArgs'] session_configs: Session Configuration on AgentEndpoint.
         :param builtins.bool should_enable_citation: Whether to show citations in the chat result.
+        :param builtins.bool should_enable_multi_language: Whether to enable multi-language for chat.
         :param builtins.bool should_enable_session: Whether or not to enable Session-based chat.
         :param builtins.bool should_enable_trace: Whether to show traces in the chat result.
         :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -1329,10 +2623,15 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "guardrail_configs", guardrail_configs)
+        pulumi.set(__self__, "human_input_configs", human_input_configs)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "output_configs", output_configs)
         pulumi.set(__self__, "session_configs", session_configs)
         pulumi.set(__self__, "should_enable_citation", should_enable_citation)
+        pulumi.set(__self__, "should_enable_multi_language", should_enable_multi_language)
         pulumi.set(__self__, "should_enable_session", should_enable_session)
         pulumi.set(__self__, "should_enable_trace", should_enable_trace)
         pulumi.set(__self__, "state", state)
@@ -1397,6 +2696,22 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="guardrailConfigs")
+    def guardrail_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigResult']:
+        """
+        The configuration details about whether to apply the guardrail checks to input and output.
+        """
+        return pulumi.get(self, "guardrail_configs")
+
+    @property
+    @pulumi.getter(name="humanInputConfigs")
+    def human_input_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigResult']:
+        """
+        Human Input Configuration for an AgentEndpoint.
+        """
+        return pulumi.get(self, "human_input_configs")
+
+    @property
     @pulumi.getter
     def id(self) -> builtins.str:
         """
@@ -1413,10 +2728,26 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, builtins.str]:
+        """
+        Key-value pairs to allow additional configurations.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="outputConfigs")
+    def output_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigResult']:
+        """
+        Configuration to store results generated by agent.
+        """
+        return pulumi.get(self, "output_configs")
+
+    @property
     @pulumi.getter(name="sessionConfigs")
     def session_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult']:
         """
-        **SessionConfig**
+        Session Configuration on AgentEndpoint.
         """
         return pulumi.get(self, "session_configs")
 
@@ -1427,6 +2758,14 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemResult(dict):
         Whether to show citations in the chat result.
         """
         return pulumi.get(self, "should_enable_citation")
+
+    @property
+    @pulumi.getter(name="shouldEnableMultiLanguage")
+    def should_enable_multi_language(self) -> builtins.bool:
+        """
+        Whether to enable multi-language for chat.
+        """
+        return pulumi.get(self, "should_enable_multi_language")
 
     @property
     @pulumi.getter(name="shouldEnableSession")
@@ -1507,6 +2846,220 @@ class GetAgentAgentEndpointsAgentEndpointCollectionItemContentModerationConfigRe
 
 
 @pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigResult(dict):
+    def __init__(__self__, *,
+                 content_moderation_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigResult'],
+                 personally_identifiable_information_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigResult'],
+                 prompt_injection_configs: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigResult']):
+        """
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigArgs'] content_moderation_configs: The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigArgs'] personally_identifiable_information_configs: The configuration details for Personally Identifiable Information.
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigArgs'] prompt_injection_configs: The configuration details for Prompt Injection.
+        """
+        pulumi.set(__self__, "content_moderation_configs", content_moderation_configs)
+        pulumi.set(__self__, "personally_identifiable_information_configs", personally_identifiable_information_configs)
+        pulumi.set(__self__, "prompt_injection_configs", prompt_injection_configs)
+
+    @property
+    @pulumi.getter(name="contentModerationConfigs")
+    def content_moderation_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigResult']:
+        """
+        The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+        """
+        return pulumi.get(self, "content_moderation_configs")
+
+    @property
+    @pulumi.getter(name="personallyIdentifiableInformationConfigs")
+    def personally_identifiable_information_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigResult']:
+        """
+        The configuration details for Personally Identifiable Information.
+        """
+        return pulumi.get(self, "personally_identifiable_information_configs")
+
+    @property
+    @pulumi.getter(name="promptInjectionConfigs")
+    def prompt_injection_configs(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigResult']:
+        """
+        The configuration details for Prompt Injection.
+        """
+        return pulumi.get(self, "prompt_injection_configs")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigContentModerationConfigResult(dict):
+    def __init__(__self__, *,
+                 input_guardrail_mode: builtins.str,
+                 output_guardrail_mode: builtins.str):
+        """
+        :param builtins.str input_guardrail_mode: An input guardrail mode for prompt injection.
+        :param builtins.str output_guardrail_mode: An output guardrail mode for personally identifiable information.
+        """
+        pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+        pulumi.set(__self__, "output_guardrail_mode", output_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> builtins.str:
+        """
+        An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+    @property
+    @pulumi.getter(name="outputGuardrailMode")
+    def output_guardrail_mode(self) -> builtins.str:
+        """
+        An output guardrail mode for personally identifiable information.
+        """
+        return pulumi.get(self, "output_guardrail_mode")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPersonallyIdentifiableInformationConfigResult(dict):
+    def __init__(__self__, *,
+                 input_guardrail_mode: builtins.str,
+                 output_guardrail_mode: builtins.str):
+        """
+        :param builtins.str input_guardrail_mode: An input guardrail mode for prompt injection.
+        :param builtins.str output_guardrail_mode: An output guardrail mode for personally identifiable information.
+        """
+        pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+        pulumi.set(__self__, "output_guardrail_mode", output_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> builtins.str:
+        """
+        An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+    @property
+    @pulumi.getter(name="outputGuardrailMode")
+    def output_guardrail_mode(self) -> builtins.str:
+        """
+        An output guardrail mode for personally identifiable information.
+        """
+        return pulumi.get(self, "output_guardrail_mode")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemGuardrailConfigPromptInjectionConfigResult(dict):
+    def __init__(__self__, *,
+                 input_guardrail_mode: builtins.str):
+        """
+        :param builtins.str input_guardrail_mode: An input guardrail mode for prompt injection.
+        """
+        pulumi.set(__self__, "input_guardrail_mode", input_guardrail_mode)
+
+    @property
+    @pulumi.getter(name="inputGuardrailMode")
+    def input_guardrail_mode(self) -> builtins.str:
+        """
+        An input guardrail mode for prompt injection.
+        """
+        return pulumi.get(self, "input_guardrail_mode")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemHumanInputConfigResult(dict):
+    def __init__(__self__, *,
+                 should_enable_human_input: builtins.bool):
+        """
+        :param builtins.bool should_enable_human_input: The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+        """
+        pulumi.set(__self__, "should_enable_human_input", should_enable_human_input)
+
+    @property
+    @pulumi.getter(name="shouldEnableHumanInput")
+    def should_enable_human_input(self) -> builtins.bool:
+        """
+        The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+        """
+        return pulumi.get(self, "should_enable_human_input")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigResult(dict):
+    def __init__(__self__, *,
+                 output_locations: Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationResult'],
+                 retention_period_in_minutes: builtins.int):
+        """
+        :param Sequence['GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationArgs'] output_locations: Location of the output.
+        :param builtins.int retention_period_in_minutes: Retention duration of the output data.
+        """
+        pulumi.set(__self__, "output_locations", output_locations)
+        pulumi.set(__self__, "retention_period_in_minutes", retention_period_in_minutes)
+
+    @property
+    @pulumi.getter(name="outputLocations")
+    def output_locations(self) -> Sequence['outputs.GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationResult']:
+        """
+        Location of the output.
+        """
+        return pulumi.get(self, "output_locations")
+
+    @property
+    @pulumi.getter(name="retentionPeriodInMinutes")
+    def retention_period_in_minutes(self) -> builtins.int:
+        """
+        Retention duration of the output data.
+        """
+        return pulumi.get(self, "retention_period_in_minutes")
+
+
+@pulumi.output_type
+class GetAgentAgentEndpointsAgentEndpointCollectionItemOutputConfigOutputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 namespace: builtins.str,
+                 output_location_type: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The name of the bucket.
+        :param builtins.str namespace: The namespace of the object storage.
+        :param builtins.str output_location_type: Type of OutputLocation.
+        :param builtins.str prefix: The prefix of the object storage.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "output_location_type", output_location_type)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The name of the bucket.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace of the object storage.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="outputLocationType")
+    def output_location_type(self) -> builtins.str:
+        """
+        Type of OutputLocation.
+        """
+        return pulumi.get(self, "output_location_type")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of the object storage.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
 class GetAgentAgentEndpointsAgentEndpointCollectionItemSessionConfigResult(dict):
     def __init__(__self__, *,
                  idle_timeout_in_seconds: builtins.int):
@@ -1552,6 +3105,42 @@ class GetAgentAgentEndpointsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetAgentAgentLlmConfigResult(dict):
+    def __init__(__self__, *,
+                 routing_llm_customizations: Sequence['outputs.GetAgentAgentLlmConfigRoutingLlmCustomizationResult']):
+        """
+        :param Sequence['GetAgentAgentLlmConfigRoutingLlmCustomizationArgs'] routing_llm_customizations: Configuration to customize LLM.
+        """
+        pulumi.set(__self__, "routing_llm_customizations", routing_llm_customizations)
+
+    @property
+    @pulumi.getter(name="routingLlmCustomizations")
+    def routing_llm_customizations(self) -> Sequence['outputs.GetAgentAgentLlmConfigRoutingLlmCustomizationResult']:
+        """
+        Configuration to customize LLM.
+        """
+        return pulumi.get(self, "routing_llm_customizations")
+
+
+@pulumi.output_type
+class GetAgentAgentLlmConfigRoutingLlmCustomizationResult(dict):
+    def __init__(__self__, *,
+                 instruction: builtins.str):
+        """
+        :param builtins.str instruction: If specified, the default instruction is replaced with provided instruction.
+        """
+        pulumi.set(__self__, "instruction", instruction)
+
+    @property
+    @pulumi.getter
+    def instruction(self) -> builtins.str:
+        """
+        If specified, the default instruction is replaced with provided instruction.
+        """
+        return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
 class GetAgentAgentsAgentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAgentAgentsAgentCollectionItemResult']):
@@ -1574,6 +3163,7 @@ class GetAgentAgentsAgentCollectionItemResult(dict):
                  id: builtins.str,
                  knowledge_base_ids: Sequence[builtins.str],
                  lifecycle_details: builtins.str,
+                 llm_configs: Sequence['outputs.GetAgentAgentsAgentCollectionItemLlmConfigResult'],
                  state: builtins.str,
                  system_tags: Mapping[str, builtins.str],
                  time_created: builtins.str,
@@ -1586,8 +3176,9 @@ class GetAgentAgentsAgentCollectionItemResult(dict):
         :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
-        :param Sequence[builtins.str] knowledge_base_ids: List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        :param Sequence[builtins.str] knowledge_base_ids: List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         :param builtins.str lifecycle_details: A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param Sequence['GetAgentAgentsAgentCollectionItemLlmConfigArgs'] llm_configs: Configuration to Agent LLM.
         :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param builtins.str time_created: The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -1602,6 +3193,7 @@ class GetAgentAgentsAgentCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "knowledge_base_ids", knowledge_base_ids)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "llm_configs", llm_configs)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -1660,7 +3252,7 @@ class GetAgentAgentsAgentCollectionItemResult(dict):
     @pulumi.getter(name="knowledgeBaseIds")
     def knowledge_base_ids(self) -> Sequence[builtins.str]:
         """
-        List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         """
         return pulumi.get(self, "knowledge_base_ids")
 
@@ -1671,6 +3263,14 @@ class GetAgentAgentsAgentCollectionItemResult(dict):
         A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="llmConfigs")
+    def llm_configs(self) -> Sequence['outputs.GetAgentAgentsAgentCollectionItemLlmConfigResult']:
+        """
+        Configuration to Agent LLM.
+        """
+        return pulumi.get(self, "llm_configs")
 
     @property
     @pulumi.getter
@@ -1711,6 +3311,42 @@ class GetAgentAgentsAgentCollectionItemResult(dict):
         Details about purpose and responsibility of the agent
         """
         return pulumi.get(self, "welcome_message")
+
+
+@pulumi.output_type
+class GetAgentAgentsAgentCollectionItemLlmConfigResult(dict):
+    def __init__(__self__, *,
+                 routing_llm_customizations: Sequence['outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult']):
+        """
+        :param Sequence['GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationArgs'] routing_llm_customizations: Configuration to customize LLM.
+        """
+        pulumi.set(__self__, "routing_llm_customizations", routing_llm_customizations)
+
+    @property
+    @pulumi.getter(name="routingLlmCustomizations")
+    def routing_llm_customizations(self) -> Sequence['outputs.GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult']:
+        """
+        Configuration to customize LLM.
+        """
+        return pulumi.get(self, "routing_llm_customizations")
+
+
+@pulumi.output_type
+class GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult(dict):
+    def __init__(__self__, *,
+                 instruction: builtins.str):
+        """
+        :param builtins.str instruction: If specified, the default instruction is replaced with provided instruction.
+        """
+        pulumi.set(__self__, "instruction", instruction)
+
+    @property
+    @pulumi.getter
+    def instruction(self) -> builtins.str:
+        """
+        If specified, the default instruction is replaced with provided instruction.
+        """
+        return pulumi.get(self, "instruction")
 
 
 @pulumi.output_type
@@ -2104,6 +3740,7 @@ class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
                  id: builtins.str,
                  knowledge_base_id: builtins.str,
                  lifecycle_details: builtins.str,
+                 metadata: Mapping[str, builtins.str],
                  state: builtins.str,
                  system_tags: Mapping[str, builtins.str],
                  time_created: builtins.str,
@@ -2118,6 +3755,7 @@ class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
         :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
         :param builtins.str knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
         :param builtins.str lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param Mapping[str, builtins.str] metadata: Key-value pairs to allow additional configurations.
         :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param builtins.str time_created: The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -2132,6 +3770,7 @@ class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "metadata", metadata)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -2208,6 +3847,14 @@ class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
         A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, builtins.str]:
+        """
+        Key-value pairs to allow additional configurations.
+        """
+        return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter
@@ -3092,6 +4739,1101 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailRe
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
         """
         return pulumi.get(self, "vault_secret_id")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigResult(dict):
+    def __init__(__self__, *,
+                 database_connections: Sequence['outputs.GetAgentToolToolConfigDatabaseConnectionResult'],
+                 database_schemas: Sequence['outputs.GetAgentToolToolConfigDatabaseSchemaResult'],
+                 dialect: builtins.str,
+                 functions: Sequence['outputs.GetAgentToolToolConfigFunctionResult'],
+                 generation_llm_customizations: Sequence['outputs.GetAgentToolToolConfigGenerationLlmCustomizationResult'],
+                 icl_examples: Sequence['outputs.GetAgentToolToolConfigIclExampleResult'],
+                 knowledge_base_configs: Sequence['outputs.GetAgentToolToolConfigKnowledgeBaseConfigResult'],
+                 model_size: builtins.str,
+                 should_enable_self_correction: builtins.bool,
+                 should_enable_sql_execution: builtins.bool,
+                 table_and_column_descriptions: Sequence['outputs.GetAgentToolToolConfigTableAndColumnDescriptionResult'],
+                 tool_config_type: builtins.str):
+        """
+        :param Sequence['GetAgentToolToolConfigDatabaseConnectionArgs'] database_connections: The connection type for Databases.
+        :param Sequence['GetAgentToolToolConfigDatabaseSchemaArgs'] database_schemas: The input location definition.
+        :param builtins.str dialect: Dialect to be used for SQL generation.
+        :param Sequence['GetAgentToolToolConfigFunctionArgs'] functions: Details of Function for Function calling tool.
+        :param Sequence['GetAgentToolToolConfigGenerationLlmCustomizationArgs'] generation_llm_customizations: Configuration to customize LLM.
+        :param Sequence['GetAgentToolToolConfigIclExampleArgs'] icl_examples: The input location definition.
+        :param Sequence['GetAgentToolToolConfigKnowledgeBaseConfigArgs'] knowledge_base_configs: The KnowledgeBase configurations that this RAG Tool uses
+        :param builtins.str model_size: Size of the model.
+        :param builtins.bool should_enable_self_correction: To enable/disable self correction.
+        :param builtins.bool should_enable_sql_execution: To enable/disable SQL execution.
+        :param Sequence['GetAgentToolToolConfigTableAndColumnDescriptionArgs'] table_and_column_descriptions: The input location definition.
+        :param builtins.str tool_config_type: The type of the Tool config. The allowed values are:
+               * `SQL_TOOL_CONFIG`: The config for sql Tool.
+               * `RAG_TOOL_CONFIG`: The config for rag Tool.
+               * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+        """
+        pulumi.set(__self__, "database_connections", database_connections)
+        pulumi.set(__self__, "database_schemas", database_schemas)
+        pulumi.set(__self__, "dialect", dialect)
+        pulumi.set(__self__, "functions", functions)
+        pulumi.set(__self__, "generation_llm_customizations", generation_llm_customizations)
+        pulumi.set(__self__, "icl_examples", icl_examples)
+        pulumi.set(__self__, "knowledge_base_configs", knowledge_base_configs)
+        pulumi.set(__self__, "model_size", model_size)
+        pulumi.set(__self__, "should_enable_self_correction", should_enable_self_correction)
+        pulumi.set(__self__, "should_enable_sql_execution", should_enable_sql_execution)
+        pulumi.set(__self__, "table_and_column_descriptions", table_and_column_descriptions)
+        pulumi.set(__self__, "tool_config_type", tool_config_type)
+
+    @property
+    @pulumi.getter(name="databaseConnections")
+    def database_connections(self) -> Sequence['outputs.GetAgentToolToolConfigDatabaseConnectionResult']:
+        """
+        The connection type for Databases.
+        """
+        return pulumi.get(self, "database_connections")
+
+    @property
+    @pulumi.getter(name="databaseSchemas")
+    def database_schemas(self) -> Sequence['outputs.GetAgentToolToolConfigDatabaseSchemaResult']:
+        """
+        The input location definition.
+        """
+        return pulumi.get(self, "database_schemas")
+
+    @property
+    @pulumi.getter
+    def dialect(self) -> builtins.str:
+        """
+        Dialect to be used for SQL generation.
+        """
+        return pulumi.get(self, "dialect")
+
+    @property
+    @pulumi.getter
+    def functions(self) -> Sequence['outputs.GetAgentToolToolConfigFunctionResult']:
+        """
+        Details of Function for Function calling tool.
+        """
+        return pulumi.get(self, "functions")
+
+    @property
+    @pulumi.getter(name="generationLlmCustomizations")
+    def generation_llm_customizations(self) -> Sequence['outputs.GetAgentToolToolConfigGenerationLlmCustomizationResult']:
+        """
+        Configuration to customize LLM.
+        """
+        return pulumi.get(self, "generation_llm_customizations")
+
+    @property
+    @pulumi.getter(name="iclExamples")
+    def icl_examples(self) -> Sequence['outputs.GetAgentToolToolConfigIclExampleResult']:
+        """
+        The input location definition.
+        """
+        return pulumi.get(self, "icl_examples")
+
+    @property
+    @pulumi.getter(name="knowledgeBaseConfigs")
+    def knowledge_base_configs(self) -> Sequence['outputs.GetAgentToolToolConfigKnowledgeBaseConfigResult']:
+        """
+        The KnowledgeBase configurations that this RAG Tool uses
+        """
+        return pulumi.get(self, "knowledge_base_configs")
+
+    @property
+    @pulumi.getter(name="modelSize")
+    def model_size(self) -> builtins.str:
+        """
+        Size of the model.
+        """
+        return pulumi.get(self, "model_size")
+
+    @property
+    @pulumi.getter(name="shouldEnableSelfCorrection")
+    def should_enable_self_correction(self) -> builtins.bool:
+        """
+        To enable/disable self correction.
+        """
+        return pulumi.get(self, "should_enable_self_correction")
+
+    @property
+    @pulumi.getter(name="shouldEnableSqlExecution")
+    def should_enable_sql_execution(self) -> builtins.bool:
+        """
+        To enable/disable SQL execution.
+        """
+        return pulumi.get(self, "should_enable_sql_execution")
+
+    @property
+    @pulumi.getter(name="tableAndColumnDescriptions")
+    def table_and_column_descriptions(self) -> Sequence['outputs.GetAgentToolToolConfigTableAndColumnDescriptionResult']:
+        """
+        The input location definition.
+        """
+        return pulumi.get(self, "table_and_column_descriptions")
+
+    @property
+    @pulumi.getter(name="toolConfigType")
+    def tool_config_type(self) -> builtins.str:
+        """
+        The type of the Tool config. The allowed values are:
+        * `SQL_TOOL_CONFIG`: The config for sql Tool.
+        * `RAG_TOOL_CONFIG`: The config for rag Tool.
+        * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+        """
+        return pulumi.get(self, "tool_config_type")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: builtins.str,
+                 connection_type: builtins.str):
+        """
+        :param builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        :param builtins.str connection_type: The type of Database connection. The allowed values are:
+               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> builtins.str:
+        """
+        The type of Database connection. The allowed values are:
+        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigDatabaseSchemaResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 content: builtins.str,
+                 input_location_type: builtins.str,
+                 namespace: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The bucket name of an object.
+        :param builtins.str content: Inline content as input.
+        :param builtins.str input_location_type: Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str namespace: The namespace name of an object.
+        :param builtins.str prefix: The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigFunctionResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 name: builtins.str,
+                 parameters: Mapping[str, builtins.str]):
+        """
+        :param builtins.str description: A description of the function.
+        :param builtins.str name: The name of the function to invoke.
+        :param Mapping[str, builtins.str] parameters: The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        A description of the function.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The name of the function to invoke.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Mapping[str, builtins.str]:
+        """
+        The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        """
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigGenerationLlmCustomizationResult(dict):
+    def __init__(__self__, *,
+                 instruction: builtins.str):
+        """
+        :param builtins.str instruction: If specified, the default instruction is replaced with provided instruction.
+        """
+        pulumi.set(__self__, "instruction", instruction)
+
+    @property
+    @pulumi.getter
+    def instruction(self) -> builtins.str:
+        """
+        If specified, the default instruction is replaced with provided instruction.
+        """
+        return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigIclExampleResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 content: builtins.str,
+                 input_location_type: builtins.str,
+                 namespace: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The bucket name of an object.
+        :param builtins.str content: Inline content as input.
+        :param builtins.str input_location_type: Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str namespace: The namespace name of an object.
+        :param builtins.str prefix: The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigKnowledgeBaseConfigResult(dict):
+    def __init__(__self__, *,
+                 knowledge_base_id: builtins.str):
+        """
+        :param builtins.str knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+        """
+        pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+
+    @property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+        """
+        return pulumi.get(self, "knowledge_base_id")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigTableAndColumnDescriptionResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 content: builtins.str,
+                 input_location_type: builtins.str,
+                 namespace: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The bucket name of an object.
+        :param builtins.str content: Inline content as input.
+        :param builtins.str input_location_type: Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str namespace: The namespace name of an object.
+        :param builtins.str prefix: The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentToolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        """
+        :param builtins.str name: The name of the function to invoke.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The name of the function to invoke.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAgentToolsToolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_id: builtins.str,
+                 compartment_id: builtins.str,
+                 defined_tags: Mapping[str, builtins.str],
+                 description: builtins.str,
+                 display_name: builtins.str,
+                 freeform_tags: Mapping[str, builtins.str],
+                 id: builtins.str,
+                 metadata: Mapping[str, builtins.str],
+                 state: builtins.str,
+                 system_tags: Mapping[str, builtins.str],
+                 time_created: builtins.str,
+                 time_updated: builtins.str,
+                 tool_configs: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigResult']):
+        """
+        :param builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+        :param builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param builtins.str description: A description of the function.
+        :param builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Tool.
+        :param Mapping[str, builtins.str] metadata: Key-value pairs to allow additional configurations.
+        :param builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param builtins.str time_created: The date and time the Tool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param builtins.str time_updated: The date and time the Tool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigArgs'] tool_configs: The configuration and type of Tool.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "tool_configs", tool_configs)
+
+    @property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        A description of the function.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Tool.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, builtins.str]:
+        """
+        Key-value pairs to allow additional configurations.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
+    def state(self) -> builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> builtins.str:
+        """
+        The date and time the Tool was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> builtins.str:
+        """
+        The date and time the Tool was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="toolConfigs")
+    def tool_configs(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigResult']:
+        """
+        The configuration and type of Tool.
+        """
+        return pulumi.get(self, "tool_configs")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigResult(dict):
+    def __init__(__self__, *,
+                 database_connections: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult'],
+                 database_schemas: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult'],
+                 dialect: builtins.str,
+                 functions: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigFunctionResult'],
+                 generation_llm_customizations: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult'],
+                 icl_examples: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigIclExampleResult'],
+                 knowledge_base_configs: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigResult'],
+                 model_size: builtins.str,
+                 should_enable_self_correction: builtins.bool,
+                 should_enable_sql_execution: builtins.bool,
+                 table_and_column_descriptions: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult'],
+                 tool_config_type: builtins.str):
+        """
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs'] database_connections: The connection type for Databases.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs'] database_schemas: The input location definition.
+        :param builtins.str dialect: Dialect to be used for SQL generation.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigFunctionArgs'] functions: Details of Function for Function calling tool.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs'] generation_llm_customizations: Configuration to customize LLM.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigIclExampleArgs'] icl_examples: The input location definition.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs'] knowledge_base_configs: The KnowledgeBase configurations that this RAG Tool uses
+        :param builtins.str model_size: Size of the model.
+        :param builtins.bool should_enable_self_correction: To enable/disable self correction.
+        :param builtins.bool should_enable_sql_execution: To enable/disable SQL execution.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs'] table_and_column_descriptions: The input location definition.
+        :param builtins.str tool_config_type: The type of the Tool config. The allowed values are:
+               * `SQL_TOOL_CONFIG`: The config for sql Tool.
+               * `RAG_TOOL_CONFIG`: The config for rag Tool.
+               * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+        """
+        pulumi.set(__self__, "database_connections", database_connections)
+        pulumi.set(__self__, "database_schemas", database_schemas)
+        pulumi.set(__self__, "dialect", dialect)
+        pulumi.set(__self__, "functions", functions)
+        pulumi.set(__self__, "generation_llm_customizations", generation_llm_customizations)
+        pulumi.set(__self__, "icl_examples", icl_examples)
+        pulumi.set(__self__, "knowledge_base_configs", knowledge_base_configs)
+        pulumi.set(__self__, "model_size", model_size)
+        pulumi.set(__self__, "should_enable_self_correction", should_enable_self_correction)
+        pulumi.set(__self__, "should_enable_sql_execution", should_enable_sql_execution)
+        pulumi.set(__self__, "table_and_column_descriptions", table_and_column_descriptions)
+        pulumi.set(__self__, "tool_config_type", tool_config_type)
+
+    @property
+    @pulumi.getter(name="databaseConnections")
+    def database_connections(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult']:
+        """
+        The connection type for Databases.
+        """
+        return pulumi.get(self, "database_connections")
+
+    @property
+    @pulumi.getter(name="databaseSchemas")
+    def database_schemas(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult']:
+        """
+        The input location definition.
+        """
+        return pulumi.get(self, "database_schemas")
+
+    @property
+    @pulumi.getter
+    def dialect(self) -> builtins.str:
+        """
+        Dialect to be used for SQL generation.
+        """
+        return pulumi.get(self, "dialect")
+
+    @property
+    @pulumi.getter
+    def functions(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigFunctionResult']:
+        """
+        Details of Function for Function calling tool.
+        """
+        return pulumi.get(self, "functions")
+
+    @property
+    @pulumi.getter(name="generationLlmCustomizations")
+    def generation_llm_customizations(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult']:
+        """
+        Configuration to customize LLM.
+        """
+        return pulumi.get(self, "generation_llm_customizations")
+
+    @property
+    @pulumi.getter(name="iclExamples")
+    def icl_examples(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigIclExampleResult']:
+        """
+        The input location definition.
+        """
+        return pulumi.get(self, "icl_examples")
+
+    @property
+    @pulumi.getter(name="knowledgeBaseConfigs")
+    def knowledge_base_configs(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigResult']:
+        """
+        The KnowledgeBase configurations that this RAG Tool uses
+        """
+        return pulumi.get(self, "knowledge_base_configs")
+
+    @property
+    @pulumi.getter(name="modelSize")
+    def model_size(self) -> builtins.str:
+        """
+        Size of the model.
+        """
+        return pulumi.get(self, "model_size")
+
+    @property
+    @pulumi.getter(name="shouldEnableSelfCorrection")
+    def should_enable_self_correction(self) -> builtins.bool:
+        """
+        To enable/disable self correction.
+        """
+        return pulumi.get(self, "should_enable_self_correction")
+
+    @property
+    @pulumi.getter(name="shouldEnableSqlExecution")
+    def should_enable_sql_execution(self) -> builtins.bool:
+        """
+        To enable/disable SQL execution.
+        """
+        return pulumi.get(self, "should_enable_sql_execution")
+
+    @property
+    @pulumi.getter(name="tableAndColumnDescriptions")
+    def table_and_column_descriptions(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult']:
+        """
+        The input location definition.
+        """
+        return pulumi.get(self, "table_and_column_descriptions")
+
+    @property
+    @pulumi.getter(name="toolConfigType")
+    def tool_config_type(self) -> builtins.str:
+        """
+        The type of the Tool config. The allowed values are:
+        * `SQL_TOOL_CONFIG`: The config for sql Tool.
+        * `RAG_TOOL_CONFIG`: The config for rag Tool.
+        * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+        """
+        return pulumi.get(self, "tool_config_type")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult(dict):
+    def __init__(__self__, *,
+                 connection_id: builtins.str,
+                 connection_type: builtins.str):
+        """
+        :param builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        :param builtins.str connection_type: The type of Database connection. The allowed values are:
+               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "connection_type", connection_type)
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> builtins.str:
+        """
+        The type of Database connection. The allowed values are:
+        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        """
+        return pulumi.get(self, "connection_type")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 content: builtins.str,
+                 input_location_type: builtins.str,
+                 namespace: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The bucket name of an object.
+        :param builtins.str content: Inline content as input.
+        :param builtins.str input_location_type: Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str namespace: The namespace name of an object.
+        :param builtins.str prefix: The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigFunctionResult(dict):
+    def __init__(__self__, *,
+                 description: builtins.str,
+                 name: builtins.str,
+                 parameters: Mapping[str, builtins.str]):
+        """
+        :param builtins.str description: A description of the function.
+        :param builtins.str name: The name of the function to invoke.
+        :param Mapping[str, builtins.str] parameters: The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        """
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "parameters", parameters)
+
+    @property
+    @pulumi.getter
+    def description(self) -> builtins.str:
+        """
+        A description of the function.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        """
+        The name of the function to invoke.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def parameters(self) -> Mapping[str, builtins.str]:
+        """
+        The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+        """
+        return pulumi.get(self, "parameters")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult(dict):
+    def __init__(__self__, *,
+                 instruction: builtins.str):
+        """
+        :param builtins.str instruction: If specified, the default instruction is replaced with provided instruction.
+        """
+        pulumi.set(__self__, "instruction", instruction)
+
+    @property
+    @pulumi.getter
+    def instruction(self) -> builtins.str:
+        """
+        If specified, the default instruction is replaced with provided instruction.
+        """
+        return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigIclExampleResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 content: builtins.str,
+                 input_location_type: builtins.str,
+                 namespace: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The bucket name of an object.
+        :param builtins.str content: Inline content as input.
+        :param builtins.str input_location_type: Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str namespace: The namespace name of an object.
+        :param builtins.str prefix: The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigResult(dict):
+    def __init__(__self__, *,
+                 knowledge_base_id: builtins.str):
+        """
+        :param builtins.str knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+        """
+        pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
+
+    @property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+        """
+        return pulumi.get(self, "knowledge_base_id")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult(dict):
+    def __init__(__self__, *,
+                 bucket: builtins.str,
+                 content: builtins.str,
+                 input_location_type: builtins.str,
+                 namespace: builtins.str,
+                 prefix: builtins.str):
+        """
+        :param builtins.str bucket: The bucket name of an object.
+        :param builtins.str content: Inline content as input.
+        :param builtins.str input_location_type: Type of InputLocation. The allowed values are:
+               * `INLINE`: The input location is inline.
+               * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        :param builtins.str namespace: The namespace name of an object.
+        :param builtins.str prefix: The prefix of file object(s) or folder prefix.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "input_location_type", input_location_type)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter
+    def content(self) -> builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @property
+    @pulumi.getter(name="inputLocationType")
+    def input_location_type(self) -> builtins.str:
+        """
+        Type of InputLocation. The allowed values are:
+        * `INLINE`: The input location is inline.
+        * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+        """
+        return pulumi.get(self, "input_location_type")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def prefix(self) -> builtins.str:
+        """
+        The prefix of file object(s) or folder prefix.
+        """
+        return pulumi.get(self, "prefix")
 
 
 @pulumi.output_type

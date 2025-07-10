@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -69,13 +71,17 @@ export interface GetAgentAgentResult {
      */
     readonly id: string;
     /**
-     * List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      */
     readonly knowledgeBaseIds: string[];
     /**
      * A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Configuration to Agent LLM.
+     */
+    readonly llmConfigs: outputs.GenerativeAi.GetAgentAgentLlmConfig[];
     /**
      * The current state of the agent.
      */

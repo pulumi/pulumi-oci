@@ -7077,6 +7077,543 @@ func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) 
 	}).(BdsInstanceNodeAttachedBlockVolumeOutput)
 }
 
+type BdsInstanceNodeBackupConfigurationLevelTypeDetails struct {
+	// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType string `pulumi:"levelType"`
+	// (Updatable) Host name of the node to create backup configuration.
+	NodeHostName *string `pulumi:"nodeHostName"`
+	// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+	NodeType *string `pulumi:"nodeType"`
+}
+
+// BdsInstanceNodeBackupConfigurationLevelTypeDetailsInput is an input type that accepts BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs and BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput values.
+// You can construct a concrete instance of `BdsInstanceNodeBackupConfigurationLevelTypeDetailsInput` via:
+//
+//	BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs{...}
+type BdsInstanceNodeBackupConfigurationLevelTypeDetailsInput interface {
+	pulumi.Input
+
+	ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput
+	ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutputWithContext(context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput
+}
+
+type BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs struct {
+	// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// (Updatable) Host name of the node to create backup configuration.
+	NodeHostName pulumi.StringPtrInput `pulumi:"nodeHostName"`
+	// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+}
+
+func (BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceNodeBackupConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (i BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput {
+	return i.ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutputWithContext(ctx context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput)
+}
+
+func (i BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return i.ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput).ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrInput is an input type that accepts BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs, BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtr and BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrInput` via:
+//
+//	        BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput
+	ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput
+}
+
+type bdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrType BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs
+
+func BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtr(v *BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs) BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrInput {
+	return (*bdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrType)(v)
+}
+
+func (*bdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceNodeBackupConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (i *bdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrType) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return i.ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrType) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput)
+}
+
+type BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceNodeBackupConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsOutputWithContext(ctx context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return o.ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceNodeBackupConfigurationLevelTypeDetails) *BdsInstanceNodeBackupConfigurationLevelTypeDetails {
+		return &v
+	}).(BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput)
+}
+
+// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceNodeBackupConfigurationLevelTypeDetails) string { return v.LevelType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Host name of the node to create backup configuration.
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) NodeHostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNodeBackupConfigurationLevelTypeDetails) *string { return v.NodeHostName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNodeBackupConfigurationLevelTypeDetails) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceNodeBackupConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) ToBdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) Elem() BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupConfigurationLevelTypeDetails) BdsInstanceNodeBackupConfigurationLevelTypeDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceNodeBackupConfigurationLevelTypeDetails
+		return ret
+	}).(BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput)
+}
+
+// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) LevelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupConfigurationLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LevelType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Host name of the node to create backup configuration.
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) NodeHostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupConfigurationLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeHostName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+func (o BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupConfigurationLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceNodeBackupLevelTypeDetails struct {
+	// Type of level used to trigger the creation of a new node backup.
+	LevelType string `pulumi:"levelType"`
+	// (Updatable) Host name of the node to create backup.
+	NodeHostName *string `pulumi:"nodeHostName"`
+	// (Updatable) Type of the node or nodes of the node backup which are going to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	NodeType *string `pulumi:"nodeType"`
+}
+
+// BdsInstanceNodeBackupLevelTypeDetailsInput is an input type that accepts BdsInstanceNodeBackupLevelTypeDetailsArgs and BdsInstanceNodeBackupLevelTypeDetailsOutput values.
+// You can construct a concrete instance of `BdsInstanceNodeBackupLevelTypeDetailsInput` via:
+//
+//	BdsInstanceNodeBackupLevelTypeDetailsArgs{...}
+type BdsInstanceNodeBackupLevelTypeDetailsInput interface {
+	pulumi.Input
+
+	ToBdsInstanceNodeBackupLevelTypeDetailsOutput() BdsInstanceNodeBackupLevelTypeDetailsOutput
+	ToBdsInstanceNodeBackupLevelTypeDetailsOutputWithContext(context.Context) BdsInstanceNodeBackupLevelTypeDetailsOutput
+}
+
+type BdsInstanceNodeBackupLevelTypeDetailsArgs struct {
+	// Type of level used to trigger the creation of a new node backup.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// (Updatable) Host name of the node to create backup.
+	NodeHostName pulumi.StringPtrInput `pulumi:"nodeHostName"`
+	// (Updatable) Type of the node or nodes of the node backup which are going to be created.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+}
+
+func (BdsInstanceNodeBackupLevelTypeDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceNodeBackupLevelTypeDetails)(nil)).Elem()
+}
+
+func (i BdsInstanceNodeBackupLevelTypeDetailsArgs) ToBdsInstanceNodeBackupLevelTypeDetailsOutput() BdsInstanceNodeBackupLevelTypeDetailsOutput {
+	return i.ToBdsInstanceNodeBackupLevelTypeDetailsOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceNodeBackupLevelTypeDetailsArgs) ToBdsInstanceNodeBackupLevelTypeDetailsOutputWithContext(ctx context.Context) BdsInstanceNodeBackupLevelTypeDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeBackupLevelTypeDetailsOutput)
+}
+
+func (i BdsInstanceNodeBackupLevelTypeDetailsArgs) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return i.ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceNodeBackupLevelTypeDetailsArgs) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeBackupLevelTypeDetailsOutput).ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceNodeBackupLevelTypeDetailsPtrInput is an input type that accepts BdsInstanceNodeBackupLevelTypeDetailsArgs, BdsInstanceNodeBackupLevelTypeDetailsPtr and BdsInstanceNodeBackupLevelTypeDetailsPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceNodeBackupLevelTypeDetailsPtrInput` via:
+//
+//	        BdsInstanceNodeBackupLevelTypeDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceNodeBackupLevelTypeDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupLevelTypeDetailsPtrOutput
+	ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(context.Context) BdsInstanceNodeBackupLevelTypeDetailsPtrOutput
+}
+
+type bdsInstanceNodeBackupLevelTypeDetailsPtrType BdsInstanceNodeBackupLevelTypeDetailsArgs
+
+func BdsInstanceNodeBackupLevelTypeDetailsPtr(v *BdsInstanceNodeBackupLevelTypeDetailsArgs) BdsInstanceNodeBackupLevelTypeDetailsPtrInput {
+	return (*bdsInstanceNodeBackupLevelTypeDetailsPtrType)(v)
+}
+
+func (*bdsInstanceNodeBackupLevelTypeDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceNodeBackupLevelTypeDetails)(nil)).Elem()
+}
+
+func (i *bdsInstanceNodeBackupLevelTypeDetailsPtrType) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return i.ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceNodeBackupLevelTypeDetailsPtrType) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeBackupLevelTypeDetailsPtrOutput)
+}
+
+type BdsInstanceNodeBackupLevelTypeDetailsOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceNodeBackupLevelTypeDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceNodeBackupLevelTypeDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) ToBdsInstanceNodeBackupLevelTypeDetailsOutput() BdsInstanceNodeBackupLevelTypeDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) ToBdsInstanceNodeBackupLevelTypeDetailsOutputWithContext(ctx context.Context) BdsInstanceNodeBackupLevelTypeDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return o.ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceNodeBackupLevelTypeDetails) *BdsInstanceNodeBackupLevelTypeDetails {
+		return &v
+	}).(BdsInstanceNodeBackupLevelTypeDetailsPtrOutput)
+}
+
+// Type of level used to trigger the creation of a new node backup.
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceNodeBackupLevelTypeDetails) string { return v.LevelType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Host name of the node to create backup.
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) NodeHostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNodeBackupLevelTypeDetails) *string { return v.NodeHostName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the node or nodes of the node backup which are going to be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BdsInstanceNodeBackupLevelTypeDetailsOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNodeBackupLevelTypeDetails) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceNodeBackupLevelTypeDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceNodeBackupLevelTypeDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutput() BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) ToBdsInstanceNodeBackupLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeBackupLevelTypeDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) Elem() BdsInstanceNodeBackupLevelTypeDetailsOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupLevelTypeDetails) BdsInstanceNodeBackupLevelTypeDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceNodeBackupLevelTypeDetails
+		return ret
+	}).(BdsInstanceNodeBackupLevelTypeDetailsOutput)
+}
+
+// Type of level used to trigger the creation of a new node backup.
+func (o BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) LevelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LevelType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Host name of the node to create backup.
+func (o BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) NodeHostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeHostName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the node or nodes of the node backup which are going to be created.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o BdsInstanceNodeBackupLevelTypeDetailsPtrOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeBackupLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceNodeReplaceConfigurationLevelTypeDetails struct {
+	// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+	LevelType string `pulumi:"levelType"`
+	// (Updatable) Host name of the node to create backup configuration.
+	NodeHostName *string `pulumi:"nodeHostName"`
+	// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType *string `pulumi:"nodeType"`
+}
+
+// BdsInstanceNodeReplaceConfigurationLevelTypeDetailsInput is an input type that accepts BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs and BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput values.
+// You can construct a concrete instance of `BdsInstanceNodeReplaceConfigurationLevelTypeDetailsInput` via:
+//
+//	BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs{...}
+type BdsInstanceNodeReplaceConfigurationLevelTypeDetailsInput interface {
+	pulumi.Input
+
+	ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput
+	ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutputWithContext(context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput
+}
+
+type BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs struct {
+	// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// (Updatable) Host name of the node to create backup configuration.
+	NodeHostName pulumi.StringPtrInput `pulumi:"nodeHostName"`
+	// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType pulumi.StringPtrInput `pulumi:"nodeType"`
+}
+
+func (BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceNodeReplaceConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (i BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput {
+	return i.ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutputWithContext(ctx context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput)
+}
+
+func (i BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return i.ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput).ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrInput is an input type that accepts BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs, BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtr and BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrInput` via:
+//
+//	        BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput
+	ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput
+}
+
+type bdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrType BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs
+
+func BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtr(v *BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrInput {
+	return (*bdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrType)(v)
+}
+
+func (*bdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceNodeReplaceConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (i *bdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrType) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return i.ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrType) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput)
+}
+
+type BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceNodeReplaceConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutputWithContext(ctx context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput {
+	return o
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return o.ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceNodeReplaceConfigurationLevelTypeDetails) *BdsInstanceNodeReplaceConfigurationLevelTypeDetails {
+		return &v
+	}).(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput)
+}
+
+// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceNodeReplaceConfigurationLevelTypeDetails) string { return v.LevelType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Host name of the node to create backup configuration.
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) NodeHostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNodeReplaceConfigurationLevelTypeDetails) *string { return v.NodeHostName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNodeReplaceConfigurationLevelTypeDetails) *string { return v.NodeType }).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceNodeReplaceConfigurationLevelTypeDetails)(nil)).Elem()
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) ToBdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutputWithContext(ctx context.Context) BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput {
+	return o
+}
+
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) Elem() BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeReplaceConfigurationLevelTypeDetails) BdsInstanceNodeReplaceConfigurationLevelTypeDetails {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceNodeReplaceConfigurationLevelTypeDetails
+		return ret
+	}).(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput)
+}
+
+// (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) LevelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeReplaceConfigurationLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LevelType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Host name of the node to create backup configuration.
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) NodeHostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeReplaceConfigurationLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeHostName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+func (o BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput) NodeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceNodeReplaceConfigurationLevelTypeDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NodeType
+	}).(pulumi.StringPtrOutput)
+}
+
 type BdsInstanceOperationCertificateManagementsManagementHostCertDetail struct {
 	// Certificate value in string format
 	Certificate *string `pulumi:"certificate"`
@@ -18253,6 +18790,1337 @@ func (o GetBdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInpu
 	}).(GetBdsInstanceNodeAttachedBlockVolumeOutput)
 }
 
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetail struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType string `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName string `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType string `pulumi:"nodeType"`
+}
+
+// GetBdsInstanceNodeBackupConfigurationLevelTypeDetailInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs and GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationLevelTypeDetailInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs{...}
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput
+	ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName pulumi.StringInput `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+}
+
+func (GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput)
+}
+
+// GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray and GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray{ GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs{...} }
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput
+	ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray []GetBdsInstanceNodeBackupConfigurationLevelTypeDetailInput
+
+func (GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationLevelTypeDetail) string { return v.LevelType }).(pulumi.StringOutput)
+}
+
+// Host name of the node to create backup configuration.
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput) NodeHostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationLevelTypeDetail) string { return v.NodeHostName }).(pulumi.StringOutput)
+}
+
+// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationLevelTypeDetail) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeBackupConfigurationLevelTypeDetail {
+		return vs[0].([]GetBdsInstanceNodeBackupConfigurationLevelTypeDetail)[vs[1].(int)]
+	}).(GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceNodeBackupConfigurationsFilterInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationsFilterArgs and GetBdsInstanceNodeBackupConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationsFilterInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationsFilterArgs{...}
+type GetBdsInstanceNodeBackupConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationsFilterOutput() GetBdsInstanceNodeBackupConfigurationsFilterOutput
+	ToGetBdsInstanceNodeBackupConfigurationsFilterOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationsFilterOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceNodeBackupConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsFilterArgs) ToGetBdsInstanceNodeBackupConfigurationsFilterOutput() GetBdsInstanceNodeBackupConfigurationsFilterOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsFilterArgs) ToGetBdsInstanceNodeBackupConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationsFilterOutput)
+}
+
+// GetBdsInstanceNodeBackupConfigurationsFilterArrayInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationsFilterArray and GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationsFilterArrayInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationsFilterArray{ GetBdsInstanceNodeBackupConfigurationsFilterArgs{...} }
+type GetBdsInstanceNodeBackupConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutput() GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput
+	ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationsFilterArray []GetBdsInstanceNodeBackupConfigurationsFilterInput
+
+func (GetBdsInstanceNodeBackupConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsFilterArray) ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutput() GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsFilterArray) ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterOutput) ToGetBdsInstanceNodeBackupConfigurationsFilterOutput() GetBdsInstanceNodeBackupConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterOutput) ToGetBdsInstanceNodeBackupConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput) ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutput() GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput) ToGetBdsInstanceNodeBackupConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeBackupConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeBackupConfigurationsFilter {
+		return vs[0].([]GetBdsInstanceNodeBackupConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceNodeBackupConfigurationsFilterOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration struct {
+	// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+	BackupType string `pulumi:"backupType"`
+	// The OCID of the cluster.
+	BdsInstanceId string `pulumi:"bdsInstanceId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// The unique identifier for the NodeBackupConfiguration.
+	Id string `pulumi:"id"`
+	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelTypeDetails []GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail `pulumi:"levelTypeDetails"`
+	// Number of backup copies to retain.
+	NumberOfBackupsToRetain int `pulumi:"numberOfBackupsToRetain"`
+	// Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+	Schedule string `pulumi:"schedule"`
+	// The state of the NodeBackupConfiguration configuration.
+	State string `pulumi:"state"`
+	// The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The time zone of the execution schedule, in IANA time zone database name format
+	Timezone string `pulumi:"timezone"`
+}
+
+// GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs and GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs{...}
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs struct {
+	// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// The OCID of the cluster.
+	BdsInstanceId pulumi.StringInput `pulumi:"bdsInstanceId"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The unique identifier for the NodeBackupConfiguration.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelTypeDetails GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayInput `pulumi:"levelTypeDetails"`
+	// Number of backup copies to retain.
+	NumberOfBackupsToRetain pulumi.IntInput `pulumi:"numberOfBackupsToRetain"`
+	// Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+	Schedule pulumi.StringInput `pulumi:"schedule"`
+	// The state of the NodeBackupConfiguration configuration.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The time zone of the execution schedule, in IANA time zone database name format
+	Timezone pulumi.StringInput `pulumi:"timezone"`
+}
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput)
+}
+
+// GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray and GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray{ GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs{...} }
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray []GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationInput
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput {
+	return o
+}
+
+// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.BdsInstanceId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The unique identifier for the NodeBackupConfiguration.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) LevelTypeDetails() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) []GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail {
+		return v.LevelTypeDetails
+	}).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput)
+}
+
+// Number of backup copies to retain.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) NumberOfBackupsToRetain() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) int {
+		return v.NumberOfBackupsToRetain
+	}).(pulumi.IntOutput)
+}
+
+// Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) Schedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.Schedule }).(pulumi.StringOutput)
+}
+
+// The state of the NodeBackupConfiguration configuration.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The time zone of the execution schedule, in IANA time zone database name format
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration) string { return v.Timezone }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration {
+		return vs[0].([]GetBdsInstanceNodeBackupConfigurationsNodeBackupConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType string `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName string `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType string `pulumi:"nodeType"`
+}
+
+// GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs and GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs{...}
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName pulumi.StringInput `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+}
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput)
+}
+
+// GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayInput is an input type that accepts GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray and GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayInput` via:
+//
+//	GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray{ GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs{...} }
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput
+	ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray []GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailInput
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return i.ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail) string {
+		return v.LevelType
+	}).(pulumi.StringOutput)
+}
+
+// Host name of the node to create backup configuration.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput) NodeHostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail) string {
+		return v.NodeHostName
+	}).(pulumi.StringOutput)
+}
+
+// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail) string {
+		return v.NodeType
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail {
+		return vs[0].([]GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetail)[vs[1].(int)]
+	}).(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput)
+}
+
+type GetBdsInstanceNodeBackupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceNodeBackupsFilterInput is an input type that accepts GetBdsInstanceNodeBackupsFilterArgs and GetBdsInstanceNodeBackupsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupsFilterInput` via:
+//
+//	GetBdsInstanceNodeBackupsFilterArgs{...}
+type GetBdsInstanceNodeBackupsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupsFilterOutput() GetBdsInstanceNodeBackupsFilterOutput
+	ToGetBdsInstanceNodeBackupsFilterOutputWithContext(context.Context) GetBdsInstanceNodeBackupsFilterOutput
+}
+
+type GetBdsInstanceNodeBackupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceNodeBackupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupsFilterArgs) ToGetBdsInstanceNodeBackupsFilterOutput() GetBdsInstanceNodeBackupsFilterOutput {
+	return i.ToGetBdsInstanceNodeBackupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupsFilterArgs) ToGetBdsInstanceNodeBackupsFilterOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupsFilterOutput)
+}
+
+// GetBdsInstanceNodeBackupsFilterArrayInput is an input type that accepts GetBdsInstanceNodeBackupsFilterArray and GetBdsInstanceNodeBackupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupsFilterArrayInput` via:
+//
+//	GetBdsInstanceNodeBackupsFilterArray{ GetBdsInstanceNodeBackupsFilterArgs{...} }
+type GetBdsInstanceNodeBackupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupsFilterArrayOutput() GetBdsInstanceNodeBackupsFilterArrayOutput
+	ToGetBdsInstanceNodeBackupsFilterArrayOutputWithContext(context.Context) GetBdsInstanceNodeBackupsFilterArrayOutput
+}
+
+type GetBdsInstanceNodeBackupsFilterArray []GetBdsInstanceNodeBackupsFilterInput
+
+func (GetBdsInstanceNodeBackupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupsFilterArray) ToGetBdsInstanceNodeBackupsFilterArrayOutput() GetBdsInstanceNodeBackupsFilterArrayOutput {
+	return i.ToGetBdsInstanceNodeBackupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupsFilterArray) ToGetBdsInstanceNodeBackupsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupsFilterArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupsFilterOutput) ToGetBdsInstanceNodeBackupsFilterOutput() GetBdsInstanceNodeBackupsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsFilterOutput) ToGetBdsInstanceNodeBackupsFilterOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceNodeBackupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceNodeBackupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupsFilterArrayOutput) ToGetBdsInstanceNodeBackupsFilterArrayOutput() GetBdsInstanceNodeBackupsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsFilterArrayOutput) ToGetBdsInstanceNodeBackupsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeBackupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeBackupsFilter {
+		return vs[0].([]GetBdsInstanceNodeBackupsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceNodeBackupsFilterOutput)
+}
+
+type GetBdsInstanceNodeBackupsNodeBackup struct {
+	// type based on how backup action was initiated.
+	BackupTriggerType string `pulumi:"backupTriggerType"`
+	// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+	BackupType string `pulumi:"backupType"`
+	// The display name belonged to the node backup.
+	DisplayName string `pulumi:"displayName"`
+	// The id of the node backup.
+	Id string `pulumi:"id"`
+	// The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+	NodeBackupConfigId string `pulumi:"nodeBackupConfigId"`
+	// The node host name belonged to a node that has a node backup.
+	NodeHostName string `pulumi:"nodeHostName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	NodeInstanceId string `pulumi:"nodeInstanceId"`
+	// The state of the Node's Backup.
+	State string `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetBdsInstanceNodeBackupsNodeBackupInput is an input type that accepts GetBdsInstanceNodeBackupsNodeBackupArgs and GetBdsInstanceNodeBackupsNodeBackupOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupsNodeBackupInput` via:
+//
+//	GetBdsInstanceNodeBackupsNodeBackupArgs{...}
+type GetBdsInstanceNodeBackupsNodeBackupInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupsNodeBackupOutput() GetBdsInstanceNodeBackupsNodeBackupOutput
+	ToGetBdsInstanceNodeBackupsNodeBackupOutputWithContext(context.Context) GetBdsInstanceNodeBackupsNodeBackupOutput
+}
+
+type GetBdsInstanceNodeBackupsNodeBackupArgs struct {
+	// type based on how backup action was initiated.
+	BackupTriggerType pulumi.StringInput `pulumi:"backupTriggerType"`
+	// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+	BackupType pulumi.StringInput `pulumi:"backupType"`
+	// The display name belonged to the node backup.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The id of the node backup.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+	NodeBackupConfigId pulumi.StringInput `pulumi:"nodeBackupConfigId"`
+	// The node host name belonged to a node that has a node backup.
+	NodeHostName pulumi.StringInput `pulumi:"nodeHostName"`
+	// The instance OCID of the node, which is the resource from which the node backup was acquired.
+	NodeInstanceId pulumi.StringInput `pulumi:"nodeInstanceId"`
+	// The state of the Node's Backup.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetBdsInstanceNodeBackupsNodeBackupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupsNodeBackup)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupsNodeBackupArgs) ToGetBdsInstanceNodeBackupsNodeBackupOutput() GetBdsInstanceNodeBackupsNodeBackupOutput {
+	return i.ToGetBdsInstanceNodeBackupsNodeBackupOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupsNodeBackupArgs) ToGetBdsInstanceNodeBackupsNodeBackupOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsNodeBackupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupsNodeBackupOutput)
+}
+
+// GetBdsInstanceNodeBackupsNodeBackupArrayInput is an input type that accepts GetBdsInstanceNodeBackupsNodeBackupArray and GetBdsInstanceNodeBackupsNodeBackupArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeBackupsNodeBackupArrayInput` via:
+//
+//	GetBdsInstanceNodeBackupsNodeBackupArray{ GetBdsInstanceNodeBackupsNodeBackupArgs{...} }
+type GetBdsInstanceNodeBackupsNodeBackupArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeBackupsNodeBackupArrayOutput() GetBdsInstanceNodeBackupsNodeBackupArrayOutput
+	ToGetBdsInstanceNodeBackupsNodeBackupArrayOutputWithContext(context.Context) GetBdsInstanceNodeBackupsNodeBackupArrayOutput
+}
+
+type GetBdsInstanceNodeBackupsNodeBackupArray []GetBdsInstanceNodeBackupsNodeBackupInput
+
+func (GetBdsInstanceNodeBackupsNodeBackupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupsNodeBackup)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeBackupsNodeBackupArray) ToGetBdsInstanceNodeBackupsNodeBackupArrayOutput() GetBdsInstanceNodeBackupsNodeBackupArrayOutput {
+	return i.ToGetBdsInstanceNodeBackupsNodeBackupArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeBackupsNodeBackupArray) ToGetBdsInstanceNodeBackupsNodeBackupArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsNodeBackupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeBackupsNodeBackupArrayOutput)
+}
+
+type GetBdsInstanceNodeBackupsNodeBackupOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupsNodeBackupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeBackupsNodeBackup)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) ToGetBdsInstanceNodeBackupsNodeBackupOutput() GetBdsInstanceNodeBackupsNodeBackupOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) ToGetBdsInstanceNodeBackupsNodeBackupOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsNodeBackupOutput {
+	return o
+}
+
+// type based on how backup action was initiated.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) BackupTriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.BackupTriggerType }).(pulumi.StringOutput)
+}
+
+// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) BackupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// The display name belonged to the node backup.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The id of the node backup.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) NodeBackupConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.NodeBackupConfigId }).(pulumi.StringOutput)
+}
+
+// The node host name belonged to a node that has a node backup.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) NodeHostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.NodeHostName }).(pulumi.StringOutput)
+}
+
+// The instance OCID of the node, which is the resource from which the node backup was acquired.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) NodeInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.NodeInstanceId }).(pulumi.StringOutput)
+}
+
+// The state of the Node's Backup.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceNodeBackupsNodeBackupOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeBackupsNodeBackup) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeBackupsNodeBackupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeBackupsNodeBackupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeBackupsNodeBackup)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeBackupsNodeBackupArrayOutput) ToGetBdsInstanceNodeBackupsNodeBackupArrayOutput() GetBdsInstanceNodeBackupsNodeBackupArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsNodeBackupArrayOutput) ToGetBdsInstanceNodeBackupsNodeBackupArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeBackupsNodeBackupArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeBackupsNodeBackupArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeBackupsNodeBackupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeBackupsNodeBackup {
+		return vs[0].([]GetBdsInstanceNodeBackupsNodeBackup)[vs[1].(int)]
+	}).(GetBdsInstanceNodeBackupsNodeBackupOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType string `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName string `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType string `pulumi:"nodeType"`
+}
+
+// GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs and GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs{...}
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput
+	ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName pulumi.StringInput `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+}
+
+func (GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput)
+}
+
+// GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray and GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray{ GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs{...} }
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput
+	ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray []GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailInput
+
+func (GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail) string { return v.LevelType }).(pulumi.StringOutput)
+}
+
+// Host name of the node to create backup configuration.
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput) NodeHostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail) string { return v.NodeHostName }).(pulumi.StringOutput)
+}
+
+// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail) string { return v.NodeType }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail {
+		return vs[0].([]GetBdsInstanceNodeReplaceConfigurationLevelTypeDetail)[vs[1].(int)]
+	}).(GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetBdsInstanceNodeReplaceConfigurationsFilterInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationsFilterArgs and GetBdsInstanceNodeReplaceConfigurationsFilterOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationsFilterInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationsFilterArgs{...}
+type GetBdsInstanceNodeReplaceConfigurationsFilterInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationsFilterOutput() GetBdsInstanceNodeReplaceConfigurationsFilterOutput
+	ToGetBdsInstanceNodeReplaceConfigurationsFilterOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationsFilterOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetBdsInstanceNodeReplaceConfigurationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsFilterArgs) ToGetBdsInstanceNodeReplaceConfigurationsFilterOutput() GetBdsInstanceNodeReplaceConfigurationsFilterOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsFilterArgs) ToGetBdsInstanceNodeReplaceConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationsFilterOutput)
+}
+
+// GetBdsInstanceNodeReplaceConfigurationsFilterArrayInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationsFilterArray and GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationsFilterArrayInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationsFilterArray{ GetBdsInstanceNodeReplaceConfigurationsFilterArgs{...} }
+type GetBdsInstanceNodeReplaceConfigurationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput() GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput
+	ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsFilterArray []GetBdsInstanceNodeReplaceConfigurationsFilterInput
+
+func (GetBdsInstanceNodeReplaceConfigurationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationsFilter)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsFilterArray) ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput() GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsFilterArray) ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterOutput) ToGetBdsInstanceNodeReplaceConfigurationsFilterOutput() GetBdsInstanceNodeReplaceConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterOutput) ToGetBdsInstanceNodeReplaceConfigurationsFilterOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsFilterOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationsFilter)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput() GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationsFilterArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeReplaceConfigurationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeReplaceConfigurationsFilter {
+		return vs[0].([]GetBdsInstanceNodeReplaceConfigurationsFilter)[vs[1].(int)]
+	}).(GetBdsInstanceNodeReplaceConfigurationsFilterOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration struct {
+	// The OCID of the cluster.
+	BdsInstanceId        string `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
+	DurationInMinutes int `pulumi:"durationInMinutes"`
+	// The unique identifier for the NodeReplaceConfiguration.
+	Id string `pulumi:"id"`
+	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelTypeDetails []GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail `pulumi:"levelTypeDetails"`
+	// Type of compute instance health metric to use for node replacement
+	MetricType string `pulumi:"metricType"`
+	// The state of the NodeReplaceConfiguration.
+	State string `pulumi:"state"`
+	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs and GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs{...}
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs struct {
+	// The OCID of the cluster.
+	BdsInstanceId        pulumi.StringInput `pulumi:"bdsInstanceId"`
+	ClusterAdminPassword pulumi.StringInput `pulumi:"clusterAdminPassword"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
+	DurationInMinutes pulumi.IntInput `pulumi:"durationInMinutes"`
+	// The unique identifier for the NodeReplaceConfiguration.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelTypeDetails GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayInput `pulumi:"levelTypeDetails"`
+	// Type of compute instance health metric to use for node replacement
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// The state of the NodeReplaceConfiguration.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput)
+}
+
+// GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray and GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray{ GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs{...} }
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray []GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationInput
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput {
+	return o
+}
+
+// The OCID of the cluster.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) BdsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.BdsInstanceId }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) ClusterAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string {
+		return v.ClusterAdminPassword
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// This value is the minimum period of time to wait for metric emission before triggering node replacement. The value is in minutes.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) DurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) int {
+		return v.DurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The unique identifier for the NodeReplaceConfiguration.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Details of the type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) LevelTypeDetails() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) []GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail {
+		return v.LevelTypeDetails
+	}).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput)
+}
+
+// Type of compute instance health metric to use for node replacement
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) MetricType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// The state of the NodeReplaceConfiguration.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the NodeReplaceConfiguration was created, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the NodeReplaceConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration {
+		return vs[0].([]GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfiguration)[vs[1].(int)]
+	}).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType string `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName string `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType string `pulumi:"nodeType"`
+}
+
+// GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs and GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs{...}
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs struct {
+	// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+	LevelType pulumi.StringInput `pulumi:"levelType"`
+	// Host name of the node to create backup configuration.
+	NodeHostName pulumi.StringInput `pulumi:"nodeHostName"`
+	// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+	NodeType pulumi.StringInput `pulumi:"nodeType"`
+}
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput)
+}
+
+// GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayInput is an input type that accepts GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray and GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayInput` via:
+//
+//	GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray{ GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs{...} }
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput
+	ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray []GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailInput
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return i.ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput {
+	return o
+}
+
+// Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput) LevelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail) string {
+		return v.LevelType
+	}).(pulumi.StringOutput)
+}
+
+// Host name of the node to create backup configuration.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput) NodeHostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail) string {
+		return v.NodeHostName
+	}).(pulumi.StringOutput)
+}
+
+// Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput) NodeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail) string {
+		return v.NodeType
+	}).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail)(nil)).Elem()
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput() GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput) ToGetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutputWithContext(ctx context.Context) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail {
+		return vs[0].([]GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetail)[vs[1].(int)]
+	}).(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput)
+}
+
 type GetBdsInstancePatchHistoriesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -23418,6 +25286,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeArrayInput)(nil)).Elem(), BdsInstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeBackupConfigurationLevelTypeDetailsInput)(nil)).Elem(), BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrInput)(nil)).Elem(), BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeBackupLevelTypeDetailsInput)(nil)).Elem(), BdsInstanceNodeBackupLevelTypeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeBackupLevelTypeDetailsPtrInput)(nil)).Elem(), BdsInstanceNodeBackupLevelTypeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeReplaceConfigurationLevelTypeDetailsInput)(nil)).Elem(), BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrInput)(nil)).Elem(), BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigsInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigsArgs{})
@@ -23590,6 +25464,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeArrayInput)(nil)).Elem(), GetBdsInstanceNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeAttachedBlockVolumeInput)(nil)).Elem(), GetBdsInstanceNodeAttachedBlockVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), GetBdsInstanceNodeAttachedBlockVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationLevelTypeDetailInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayInput)(nil)).Elem(), GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupsFilterInput)(nil)).Elem(), GetBdsInstanceNodeBackupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupsFilterArrayInput)(nil)).Elem(), GetBdsInstanceNodeBackupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupsNodeBackupInput)(nil)).Elem(), GetBdsInstanceNodeBackupsNodeBackupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeBackupsNodeBackupArrayInput)(nil)).Elem(), GetBdsInstanceNodeBackupsNodeBackupArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsFilterInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsFilterArrayInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayInput)(nil)).Elem(), GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancePatchHistoriesFilterInput)(nil)).Elem(), GetBdsInstancePatchHistoriesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancePatchHistoriesFilterArrayInput)(nil)).Elem(), GetBdsInstancePatchHistoriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancePatchHistoriesPatchHistoryInput)(nil)).Elem(), GetBdsInstancePatchHistoriesPatchHistoryArgs{})
@@ -23750,6 +25644,12 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceNodeBackupConfigurationLevelTypeDetailsOutput{})
+	pulumi.RegisterOutputType(BdsInstanceNodeBackupConfigurationLevelTypeDetailsPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceNodeBackupLevelTypeDetailsOutput{})
+	pulumi.RegisterOutputType(BdsInstanceNodeBackupLevelTypeDetailsPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsOutput{})
+	pulumi.RegisterOutputType(BdsInstanceNodeReplaceConfigurationLevelTypeDetailsPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigsOutput{})
@@ -23922,6 +25822,26 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceNodeAttachedBlockVolumeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceNodeAttachedBlockVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationLevelTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationLevelTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupConfigurationsNodeBackupConfigurationLevelTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupsNodeBackupOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeBackupsNodeBackupArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationLevelTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationsFilterOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceNodeReplaceConfigurationsNodeReplaceConfigurationLevelTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancePatchHistoriesFilterOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancePatchHistoriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancePatchHistoriesPatchHistoryOutput{})

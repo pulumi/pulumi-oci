@@ -135,6 +135,20 @@ public class Subscription extends com.pulumi.resources.CustomResource {
         return this.gsiOrgCode;
     }
     /**
+     * Corporate conversion allowed status
+     * 
+     */
+    @Export(name="isCorporateConversionAllowed", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isCorporateConversionAllowed;
+
+    /**
+     * @return Corporate conversion allowed status
+     * 
+     */
+    public Output<Boolean> isCorporateConversionAllowed() {
+        return this.isCorporateConversionAllowed;
+    }
+    /**
      * Payment intension.
      * 
      */

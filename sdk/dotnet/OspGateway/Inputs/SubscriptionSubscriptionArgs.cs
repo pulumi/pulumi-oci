@@ -55,6 +55,12 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// (Updatable) Corporate conversion allowed status
+        /// </summary>
+        [Input("isCorporateConversionAllowed")]
+        public Input<bool>? IsCorporateConversionAllowed { get; set; }
+
+        /// <summary>
         /// (Updatable) Payment intension.
         /// </summary>
         [Input("isIntentToPay")]

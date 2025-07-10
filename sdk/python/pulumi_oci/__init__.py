@@ -805,6 +805,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceNodeBackup",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceNodeBackup:BdsInstanceNodeBackup": "BdsInstanceNodeBackup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceNodeBackupConfiguration",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceNodeBackupConfiguration:BdsInstanceNodeBackupConfiguration": "BdsInstanceNodeBackupConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceNodeReplaceConfiguration",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration": "BdsInstanceNodeReplaceConfiguration"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsInstanceOperationCertificateManagementsManagement",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
@@ -825,6 +849,14 @@ _utilities.register(
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {
    "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction": "BdsInstancePatchAction"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceReplaceNodeAction",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceReplaceNodeAction:BdsInstanceReplaceNodeAction": "BdsInstanceReplaceNodeAction"
   }
  },
  {
@@ -4201,6 +4233,14 @@ _utilities.register(
   "fqn": "pulumi_oci.generativeai",
   "classes": {
    "oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase": "AgentKnowledgeBase"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "GenerativeAi/agentTool",
+  "fqn": "pulumi_oci.generativeai",
+  "classes": {
+   "oci:GenerativeAi/agentTool:AgentTool": "AgentTool"
   }
  },
  {

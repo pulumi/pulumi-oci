@@ -130,8 +130,6 @@ def get_agent_agent_endpoints(agent_id: Optional[builtins.str] = None,
     """
     This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-    **ListAgentEndpoints**
-
     Gets a list of endpoints.
 
     ## Example Usage
@@ -177,8 +175,6 @@ def get_agent_agent_endpoints_output(agent_id: Optional[pulumi.Input[Optional[bu
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentEndpointsResult]:
     """
     This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **ListAgentEndpoints**
 
     Gets a list of endpoints.
 

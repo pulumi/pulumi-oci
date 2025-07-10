@@ -40,6 +40,8 @@ type Subscription struct {
 	Email pulumi.StringOutput `pulumi:"email"`
 	// GSI Subscription external code.
 	GsiOrgCode pulumi.StringOutput `pulumi:"gsiOrgCode"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed pulumi.BoolOutput `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay pulumi.BoolOutput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -140,6 +142,8 @@ type subscriptionState struct {
 	Email *string `pulumi:"email"`
 	// GSI Subscription external code.
 	GsiOrgCode *string `pulumi:"gsiOrgCode"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed *bool `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -196,6 +200,8 @@ type SubscriptionState struct {
 	Email pulumi.StringPtrInput
 	// GSI Subscription external code.
 	GsiOrgCode pulumi.StringPtrInput
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed pulumi.BoolPtrInput
 	// Payment intension.
 	IsIntentToPay pulumi.BoolPtrInput
 	// Language short code (en, de, hu, etc)
@@ -394,6 +400,11 @@ func (o SubscriptionOutput) Email() pulumi.StringOutput {
 // GSI Subscription external code.
 func (o SubscriptionOutput) GsiOrgCode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscription) pulumi.StringOutput { return v.GsiOrgCode }).(pulumi.StringOutput)
+}
+
+// Corporate conversion allowed status
+func (o SubscriptionOutput) IsCorporateConversionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Subscription) pulumi.BoolOutput { return v.IsCorporateConversionAllowed }).(pulumi.BoolOutput)
 }
 
 // Payment intension.

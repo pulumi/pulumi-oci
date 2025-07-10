@@ -50,6 +50,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Key-value pairs to allow additional configurations.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         public readonly string State;
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string lifecycleDetails,
 
+            ImmutableDictionary<string, string> metadata,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -103,6 +109,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             Id = id;
             KnowledgeBaseId = knowledgeBaseId;
             LifecycleDetails = lifecycleDetails;
+            Metadata = metadata;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

@@ -158,13 +158,17 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        /// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         /// </summary>
         public readonly ImmutableArray<string> KnowledgeBaseIds;
         /// <summary>
         /// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Configuration to Agent LLM.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentAgentLlmConfigResult> LlmConfigs;
         /// <summary>
         /// The current state of the agent.
         /// </summary>
@@ -206,6 +210,8 @@ namespace Pulumi.Oci.GenerativeAi
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetAgentAgentLlmConfigResult> llmConfigs,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -225,6 +231,7 @@ namespace Pulumi.Oci.GenerativeAi
             Id = id;
             KnowledgeBaseIds = knowledgeBaseIds;
             LifecycleDetails = lifecycleDetails;
+            LlmConfigs = llmConfigs;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

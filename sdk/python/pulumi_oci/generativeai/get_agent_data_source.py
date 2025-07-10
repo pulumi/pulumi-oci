@@ -28,7 +28,7 @@ class GetAgentDataSourceResult:
     """
     A collection of values returned by getAgentDataSource.
     """
-    def __init__(__self__, compartment_id=None, data_source_configs=None, data_source_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, knowledge_base_id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, data_source_configs=None, data_source_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, knowledge_base_id=None, lifecycle_details=None, metadata=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -59,6 +59,9 @@ class GetAgentDataSourceResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if metadata and not isinstance(metadata, dict):
+            raise TypeError("Expected argument 'metadata' to be a dict")
+        pulumi.set(__self__, "metadata", metadata)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -151,6 +154,14 @@ class GetAgentDataSourceResult:
 
     @property
     @pulumi.getter
+    def metadata(self) -> Mapping[str, builtins.str]:
+        """
+        Key-value pairs to allow additional configurations.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter
     def state(self) -> builtins.str:
         """
         The current state of the data source.
@@ -198,6 +209,7 @@ class AwaitableGetAgentDataSourceResult(GetAgentDataSourceResult):
             id=self.id,
             knowledge_base_id=self.knowledge_base_id,
             lifecycle_details=self.lifecycle_details,
+            metadata=self.metadata,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -241,6 +253,7 @@ def get_agent_data_source(data_source_id: Optional[builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         knowledge_base_id=pulumi.get(__ret__, 'knowledge_base_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        metadata=pulumi.get(__ret__, 'metadata'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -281,6 +294,7 @@ def get_agent_data_source_output(data_source_id: Optional[pulumi.Input[builtins.
         id=pulumi.get(__response__, 'id'),
         knowledge_base_id=pulumi.get(__response__, 'knowledge_base_id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        metadata=pulumi.get(__response__, 'metadata'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

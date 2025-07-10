@@ -28,7 +28,7 @@ class GetSubscriptionResult:
     """
     A collection of values returned by getSubscription.
     """
-    def __init__(__self__, account_type=None, bill_to_cust_account_id=None, billing_addresses=None, compartment_id=None, currency_code=None, email=None, gsi_org_code=None, id=None, is_intent_to_pay=None, language_code=None, organization_id=None, osp_home_region=None, payment_gateways=None, payment_options=None, plan_type=None, ship_to_cust_acct_role_id=None, ship_to_cust_acct_site_id=None, subscription_id=None, subscription_plan_number=None, subscriptions=None, tax_infos=None, time_personal_to_corporate_conv=None, time_plan_upgrade=None, time_start=None, upgrade_state=None, upgrade_state_details=None):
+    def __init__(__self__, account_type=None, bill_to_cust_account_id=None, billing_addresses=None, compartment_id=None, currency_code=None, email=None, gsi_org_code=None, id=None, is_corporate_conversion_allowed=None, is_intent_to_pay=None, language_code=None, organization_id=None, osp_home_region=None, payment_gateways=None, payment_options=None, plan_type=None, ship_to_cust_acct_role_id=None, ship_to_cust_acct_site_id=None, subscription_id=None, subscription_plan_number=None, subscriptions=None, tax_infos=None, time_personal_to_corporate_conv=None, time_plan_upgrade=None, time_start=None, upgrade_state=None, upgrade_state_details=None):
         if account_type and not isinstance(account_type, str):
             raise TypeError("Expected argument 'account_type' to be a str")
         pulumi.set(__self__, "account_type", account_type)
@@ -53,6 +53,9 @@ class GetSubscriptionResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_corporate_conversion_allowed and not isinstance(is_corporate_conversion_allowed, bool):
+            raise TypeError("Expected argument 'is_corporate_conversion_allowed' to be a bool")
+        pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         if is_intent_to_pay and not isinstance(is_intent_to_pay, bool):
             raise TypeError("Expected argument 'is_intent_to_pay' to be a bool")
         pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
@@ -165,6 +168,14 @@ class GetSubscriptionResult:
         Subscription id identifier (OCID).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> builtins.bool:
+        """
+        Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @property
     @pulumi.getter(name="isIntentToPay")
@@ -316,6 +327,7 @@ class AwaitableGetSubscriptionResult(GetSubscriptionResult):
             email=self.email,
             gsi_org_code=self.gsi_org_code,
             id=self.id,
+            is_corporate_conversion_allowed=self.is_corporate_conversion_allowed,
             is_intent_to_pay=self.is_intent_to_pay,
             language_code=self.language_code,
             organization_id=self.organization_id,
@@ -377,6 +389,7 @@ def get_subscription(compartment_id: Optional[builtins.str] = None,
         email=pulumi.get(__ret__, 'email'),
         gsi_org_code=pulumi.get(__ret__, 'gsi_org_code'),
         id=pulumi.get(__ret__, 'id'),
+        is_corporate_conversion_allowed=pulumi.get(__ret__, 'is_corporate_conversion_allowed'),
         is_intent_to_pay=pulumi.get(__ret__, 'is_intent_to_pay'),
         language_code=pulumi.get(__ret__, 'language_code'),
         organization_id=pulumi.get(__ret__, 'organization_id'),
@@ -435,6 +448,7 @@ def get_subscription_output(compartment_id: Optional[pulumi.Input[builtins.str]]
         email=pulumi.get(__response__, 'email'),
         gsi_org_code=pulumi.get(__response__, 'gsi_org_code'),
         id=pulumi.get(__response__, 'id'),
+        is_corporate_conversion_allowed=pulumi.get(__response__, 'is_corporate_conversion_allowed'),
         is_intent_to_pay=pulumi.get(__response__, 'is_intent_to_pay'),
         language_code=pulumi.get(__response__, 'language_code'),
         organization_id=pulumi.get(__response__, 'organization_id'),

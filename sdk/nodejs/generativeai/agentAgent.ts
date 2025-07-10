@@ -2,12 +2,12 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * **CreateAgent**
  *
  * Creates an agent.
  *
@@ -28,6 +28,11 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     knowledgeBaseIds: agentKnowledgeBaseIds,
+ *     llmConfig: {
+ *         routingLlmCustomization: {
+ *             instruction: agentLlmConfigRoutingLlmCustomizationInstruction,
+ *         },
+ *     },
  *     welcomeMessage: agentWelcomeMessage,
  * });
  * ```
@@ -89,13 +94,17 @@ export class AgentAgent extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      */
     public readonly knowledgeBaseIds!: pulumi.Output<string[]>;
     /**
      * A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * (Updatable) Configuration to Agent LLM.
+     */
+    public readonly llmConfig!: pulumi.Output<outputs.GenerativeAi.AgentAgentLlmConfig>;
     /**
      * The current state of the agent.
      */
@@ -141,6 +150,7 @@ export class AgentAgent extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["knowledgeBaseIds"] = state ? state.knowledgeBaseIds : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["llmConfig"] = state ? state.llmConfig : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -157,6 +167,7 @@ export class AgentAgent extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["knowledgeBaseIds"] = args ? args.knowledgeBaseIds : undefined;
+            resourceInputs["llmConfig"] = args ? args.llmConfig : undefined;
             resourceInputs["welcomeMessage"] = args ? args.welcomeMessage : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -194,13 +205,17 @@ export interface AgentAgentState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      */
     knowledgeBaseIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * (Updatable) Configuration to Agent LLM.
+     */
+    llmConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentLlmConfig>;
     /**
      * The current state of the agent.
      */
@@ -252,9 +267,13 @@ export interface AgentAgentArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+     * (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
      */
     knowledgeBaseIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Configuration to Agent LLM.
+     */
+    llmConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentLlmConfig>;
     /**
      * (Updatable) Details about purpose and responsibility of the agent
      *

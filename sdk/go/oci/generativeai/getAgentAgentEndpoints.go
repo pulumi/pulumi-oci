@@ -13,8 +13,6 @@ import (
 
 // This data source provides the list of Agent Endpoints in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **ListAgentEndpoints**
-//
 // Gets a list of endpoints.
 //
 // ## Example Usage

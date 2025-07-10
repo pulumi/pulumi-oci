@@ -59,6 +59,11 @@ public final class GetAgentDataSourcesDataSourceCollectionItem {
      */
     private String lifecycleDetails;
     /**
+     * @return Key-value pairs to allow additional configurations.
+     * 
+     */
+    private Map<String,String> metadata;
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -144,6 +149,13 @@ public final class GetAgentDataSourcesDataSourceCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return Key-value pairs to allow additional configurations.
+     * 
+     */
+    public Map<String,String> metadata() {
+        return this.metadata;
+    }
+    /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -190,6 +202,7 @@ public final class GetAgentDataSourcesDataSourceCollectionItem {
         private String id;
         private String knowledgeBaseId;
         private String lifecycleDetails;
+        private Map<String,String> metadata;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -206,6 +219,7 @@ public final class GetAgentDataSourcesDataSourceCollectionItem {
     	      this.id = defaults.id;
     	      this.knowledgeBaseId = defaults.knowledgeBaseId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.metadata = defaults.metadata;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -288,6 +302,14 @@ public final class GetAgentDataSourcesDataSourceCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder metadata(Map<String,String> metadata) {
+            if (metadata == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataSourcesDataSourceCollectionItem", "metadata");
+            }
+            this.metadata = metadata;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetAgentDataSourcesDataSourceCollectionItem", "state");
@@ -330,6 +352,7 @@ public final class GetAgentDataSourcesDataSourceCollectionItem {
             _resultValue.id = id;
             _resultValue.knowledgeBaseId = knowledgeBaseId;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.metadata = metadata;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

@@ -40,6 +40,12 @@ namespace Pulumi.Oci.Kms
     [OciResourceType("oci:Kms/vaultVerification:VaultVerification")]
     public partial class VaultVerification : global::Pulumi.CustomResource
     {
+        [Output("cryptoEndpoint")]
+        public Output<string> CryptoEndpoint { get; private set; } = null!;
+
+        [Output("managementEndpoint")]
+        public Output<string> ManagementEndpoint { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The region to be created replica to. When updated,
         /// replica will be deleted from old region, and created to updated region.
@@ -55,6 +61,9 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         [Output("vaultId")]
         public Output<string> VaultId { get; private set; } = null!;
+
+        [Output("vaultReplicaStatus")]
+        public Output<string> VaultReplicaStatus { get; private set; } = null!;
 
 
         /// <summary>
@@ -126,6 +135,12 @@ namespace Pulumi.Oci.Kms
 
     public sealed class VaultVerificationState : global::Pulumi.ResourceArgs
     {
+        [Input("cryptoEndpoint")]
+        public Input<string>? CryptoEndpoint { get; set; }
+
+        [Input("managementEndpoint")]
+        public Input<string>? ManagementEndpoint { get; set; }
+
         /// <summary>
         /// (Updatable) The region to be created replica to. When updated,
         /// replica will be deleted from old region, and created to updated region.
@@ -141,6 +156,9 @@ namespace Pulumi.Oci.Kms
         /// </summary>
         [Input("vaultId")]
         public Input<string>? VaultId { get; set; }
+
+        [Input("vaultReplicaStatus")]
+        public Input<string>? VaultReplicaStatus { get; set; }
 
         public VaultVerificationState()
         {

@@ -11,6 +11,7 @@ from .agent_agent_endpoint import *
 from .agent_data_ingestion_job import *
 from .agent_data_source import *
 from .agent_knowledge_base import *
+from .agent_tool import *
 from .dedicated_ai_cluster import *
 from .endpoint import *
 from .get_agent_agent import *
@@ -24,6 +25,8 @@ from .get_agent_data_source import *
 from .get_agent_data_sources import *
 from .get_agent_knowledge_base import *
 from .get_agent_knowledge_bases import *
+from .get_agent_tool import *
+from .get_agent_tools import *
 from .get_dedicated_ai_cluster import *
 from .get_dedicated_ai_clusters import *
 from .get_endpoint import *

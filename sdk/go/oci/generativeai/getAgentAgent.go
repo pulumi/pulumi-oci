@@ -73,10 +73,12 @@ type LookupAgentAgentResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent.
 	Id string `pulumi:"id"`
-	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds []string `pulumi:"knowledgeBaseIds"`
 	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Configuration to Agent LLM.
+	LlmConfigs []GetAgentAgentLlmConfig `pulumi:"llmConfigs"`
 	// The current state of the agent.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -157,7 +159,7 @@ func (o LookupAgentAgentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentAgentResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+// List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 func (o LookupAgentAgentResultOutput) KnowledgeBaseIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupAgentAgentResult) []string { return v.KnowledgeBaseIds }).(pulumi.StringArrayOutput)
 }
@@ -165,6 +167,11 @@ func (o LookupAgentAgentResultOutput) KnowledgeBaseIds() pulumi.StringArrayOutpu
 // A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o LookupAgentAgentResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentAgentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Configuration to Agent LLM.
+func (o LookupAgentAgentResultOutput) LlmConfigs() GetAgentAgentLlmConfigArrayOutput {
+	return o.ApplyT(func(v LookupAgentAgentResult) []GetAgentAgentLlmConfig { return v.LlmConfigs }).(GetAgentAgentLlmConfigArrayOutput)
 }
 
 // The current state of the agent.

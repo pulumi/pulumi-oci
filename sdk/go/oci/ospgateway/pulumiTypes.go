@@ -1071,6 +1071,8 @@ type SubscriptionSubscription struct {
 	GsiOrgCode *string `pulumi:"gsiOrgCode"`
 	// (Updatable) Subscription id identifier (OCID).
 	Id *string `pulumi:"id"`
+	// (Updatable) Corporate conversion allowed status
+	IsCorporateConversionAllowed *bool `pulumi:"isCorporateConversionAllowed"`
 	// (Updatable) Payment intension.
 	IsIntentToPay *bool `pulumi:"isIntentToPay"`
 	// (Updatable) Language short code (en, de, hu, etc)
@@ -1127,6 +1129,8 @@ type SubscriptionSubscriptionArgs struct {
 	GsiOrgCode pulumi.StringPtrInput `pulumi:"gsiOrgCode"`
 	// (Updatable) Subscription id identifier (OCID).
 	Id pulumi.StringPtrInput `pulumi:"id"`
+	// (Updatable) Corporate conversion allowed status
+	IsCorporateConversionAllowed pulumi.BoolPtrInput `pulumi:"isCorporateConversionAllowed"`
 	// (Updatable) Payment intension.
 	IsIntentToPay pulumi.BoolPtrInput `pulumi:"isIntentToPay"`
 	// (Updatable) Language short code (en, de, hu, etc)
@@ -1264,6 +1268,11 @@ func (o SubscriptionSubscriptionOutput) GsiOrgCode() pulumi.StringPtrOutput {
 // (Updatable) Subscription id identifier (OCID).
 func (o SubscriptionSubscriptionOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscription) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Corporate conversion allowed status
+func (o SubscriptionSubscriptionOutput) IsCorporateConversionAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SubscriptionSubscription) *bool { return v.IsCorporateConversionAllowed }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Payment intension.
@@ -1423,6 +1432,16 @@ func (o SubscriptionSubscriptionPtrOutput) Id() pulumi.StringPtrOutput {
 		}
 		return v.Id
 	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Corporate conversion allowed status
+func (o SubscriptionSubscriptionPtrOutput) IsCorporateConversionAllowed() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SubscriptionSubscription) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsCorporateConversionAllowed
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) Payment intension.
@@ -7667,6 +7686,8 @@ type GetSubscriptionSubscription struct {
 	GsiOrgCode string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id string `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed bool `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -7723,6 +7744,8 @@ type GetSubscriptionSubscriptionArgs struct {
 	GsiOrgCode pulumi.StringInput `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id pulumi.StringInput `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed pulumi.BoolInput `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -7836,6 +7859,11 @@ func (o GetSubscriptionSubscriptionOutput) GsiOrgCode() pulumi.StringOutput {
 // Subscription id identifier (OCID).
 func (o GetSubscriptionSubscriptionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionSubscription) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Corporate conversion allowed status
+func (o GetSubscriptionSubscriptionOutput) IsCorporateConversionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubscriptionSubscription) bool { return v.IsCorporateConversionAllowed }).(pulumi.BoolOutput)
 }
 
 // Payment intension.
@@ -9144,6 +9172,8 @@ type GetSubscriptionsSubscriptionCollectionItem struct {
 	GsiOrgCode string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id string `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed bool `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -9207,6 +9237,8 @@ type GetSubscriptionsSubscriptionCollectionItemArgs struct {
 	GsiOrgCode pulumi.StringInput `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id pulumi.StringInput `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed pulumi.BoolInput `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -9333,6 +9365,11 @@ func (o GetSubscriptionsSubscriptionCollectionItemOutput) GsiOrgCode() pulumi.St
 // Subscription id identifier (OCID).
 func (o GetSubscriptionsSubscriptionCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Corporate conversion allowed status
+func (o GetSubscriptionsSubscriptionCollectionItemOutput) IsCorporateConversionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItem) bool { return v.IsCorporateConversionAllowed }).(pulumi.BoolOutput)
 }
 
 // Payment intension.
@@ -10182,6 +10219,8 @@ type GetSubscriptionsSubscriptionCollectionItemSubscription struct {
 	GsiOrgCode string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id string `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed bool `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -10238,6 +10277,8 @@ type GetSubscriptionsSubscriptionCollectionItemSubscriptionArgs struct {
 	GsiOrgCode pulumi.StringInput `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id pulumi.StringInput `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed pulumi.BoolInput `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay pulumi.BoolInput `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -10351,6 +10392,13 @@ func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) GsiOrgCode
 // Subscription id identifier (OCID).
 func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Corporate conversion allowed status
+func (o GetSubscriptionsSubscriptionCollectionItemSubscriptionOutput) IsCorporateConversionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscriptionCollectionItemSubscription) bool {
+		return v.IsCorporateConversionAllowed
+	}).(pulumi.BoolOutput)
 }
 
 // Payment intension.

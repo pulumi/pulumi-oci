@@ -115,9 +115,6 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="knowledgeBaseId", required=true)
     private Output<String> knowledgeBaseId;
@@ -125,12 +122,30 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
      * 
+     */
+    public Output<String> knowledgeBaseId() {
+        return this.knowledgeBaseId;
+    }
+
+    /**
+     * (Updatable) Key-value pairs to allow additional configurations.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> knowledgeBaseId() {
-        return this.knowledgeBaseId;
+    @Import(name="metadata")
+    private @Nullable Output<Map<String,String>> metadata;
+
+    /**
+     * @return (Updatable) Key-value pairs to allow additional configurations.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,String>>> metadata() {
+        return Optional.ofNullable(this.metadata);
     }
 
     private AgentDataSourceArgs() {}
@@ -143,6 +158,7 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.knowledgeBaseId = $.knowledgeBaseId;
+        this.metadata = $.metadata;
     }
 
     public static Builder builder() {
@@ -296,9 +312,6 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param knowledgeBaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -310,14 +323,38 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
         /**
          * @param knowledgeBaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
          * 
+         * @return builder
+         * 
+         */
+        public Builder knowledgeBaseId(String knowledgeBaseId) {
+            return knowledgeBaseId(Output.of(knowledgeBaseId));
+        }
+
+        /**
+         * @param metadata (Updatable) Key-value pairs to allow additional configurations.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder knowledgeBaseId(String knowledgeBaseId) {
-            return knowledgeBaseId(Output.of(knowledgeBaseId));
+        public Builder metadata(@Nullable Output<Map<String,String>> metadata) {
+            $.metadata = metadata;
+            return this;
+        }
+
+        /**
+         * @param metadata (Updatable) Key-value pairs to allow additional configurations.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder metadata(Map<String,String> metadata) {
+            return metadata(Output.of(metadata));
         }
 
         public AgentDataSourceArgs build() {

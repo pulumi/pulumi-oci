@@ -82,6 +82,10 @@ export interface GetSubscriptionResult {
      */
     readonly id: string;
     /**
+     * Corporate conversion allowed status
+     */
+    readonly isCorporateConversionAllowed: boolean;
+    /**
      * Payment intension.
      */
     readonly isIntentToPay: boolean;

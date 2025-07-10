@@ -5609,6 +5609,55 @@ export namespace BigDataService {
         volumeSizeInGbs?: pulumi.Input<string>;
     }
 
+    export interface BdsInstanceNodeBackupConfigurationLevelTypeDetails {
+        /**
+         * (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+         */
+        levelType: pulumi.Input<string>;
+        /**
+         * (Updatable) Host name of the node to create backup configuration.
+         */
+        nodeHostName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+         */
+        nodeType?: pulumi.Input<string>;
+    }
+
+    export interface BdsInstanceNodeBackupLevelTypeDetails {
+        /**
+         * Type of level used to trigger the creation of a new node backup.
+         */
+        levelType: pulumi.Input<string>;
+        /**
+         * (Updatable) Host name of the node to create backup.
+         */
+        nodeHostName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the node or nodes of the node backup which are going to be created.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        nodeType?: pulumi.Input<string>;
+    }
+
+    export interface BdsInstanceNodeReplaceConfigurationLevelTypeDetails {
+        /**
+         * (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+         */
+        levelType: pulumi.Input<string>;
+        /**
+         * (Updatable) Host name of the node to create backup configuration.
+         */
+        nodeHostName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+         */
+        nodeType?: pulumi.Input<string>;
+    }
+
     export interface BdsInstanceOperationCertificateManagementsManagementHostCertDetail {
         /**
          * Certificate value in string format
@@ -5845,6 +5894,42 @@ export namespace BigDataService {
     }
 
     export interface GetBdsInstanceMetastoreConfigsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceNodeBackupConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceNodeBackupConfigurationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceNodeBackupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceNodeBackupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetBdsInstanceNodeReplaceConfigurationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetBdsInstanceNodeReplaceConfigurationsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -42287,11 +42372,106 @@ export namespace GenerativeAi {
         shouldEnableOnOutput?: pulumi.Input<boolean>;
     }
 
+    export interface AgentAgentEndpointGuardrailConfig {
+        /**
+         * (Updatable) The configuration details about whether to apply the content moderation feature to input and output. Content moderation removes toxic and biased content from responses. It is recommended to use content moderation.
+         */
+        contentModerationConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfigContentModerationConfig>;
+        /**
+         * (Updatable) The configuration details for Personally Identifiable Information.
+         */
+        personallyIdentifiableInformationConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig>;
+        /**
+         * (Updatable) The configuration details for Prompt Injection.
+         */
+        promptInjectionConfig?: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointGuardrailConfigPromptInjectionConfig>;
+    }
+
+    export interface AgentAgentEndpointGuardrailConfigContentModerationConfig {
+        /**
+         * (Updatable) An input guardrail mode for content moderation.
+         */
+        inputGuardrailMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) An output guardrail mode for content moderation.
+         */
+        outputGuardrailMode?: pulumi.Input<string>;
+    }
+
+    export interface AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfig {
+        /**
+         * (Updatable) An input guardrail mode for personally identifiable information.
+         */
+        inputGuardrailMode?: pulumi.Input<string>;
+        /**
+         * (Updatable) An output guardrail mode for personally identifiable information.
+         */
+        outputGuardrailMode?: pulumi.Input<string>;
+    }
+
+    export interface AgentAgentEndpointGuardrailConfigPromptInjectionConfig {
+        /**
+         * (Updatable) An input guardrail mode for prompt injection.
+         */
+        inputGuardrailMode?: pulumi.Input<string>;
+    }
+
+    export interface AgentAgentEndpointHumanInputConfig {
+        /**
+         * (Updatable) The Agent will request for human input for disambiguation or additional information gathering if this is enabled.
+         */
+        shouldEnableHumanInput: pulumi.Input<boolean>;
+    }
+
+    export interface AgentAgentEndpointOutputConfig {
+        /**
+         * (Updatable) Location of the output.
+         */
+        outputLocation: pulumi.Input<inputs.GenerativeAi.AgentAgentEndpointOutputConfigOutputLocation>;
+        /**
+         * (Updatable) Retention duration of the output data.
+         */
+        retentionPeriodInMinutes?: pulumi.Input<number>;
+    }
+
+    export interface AgentAgentEndpointOutputConfigOutputLocation {
+        /**
+         * (Updatable) The name of the bucket.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace of the object storage.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of OutputLocation.
+         */
+        outputLocationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The prefix of the object storage.
+         */
+        prefix?: pulumi.Input<string>;
+    }
+
     export interface AgentAgentEndpointSessionConfig {
         /**
          * (Updatable) The session will become inactive after this timeout.
          */
         idleTimeoutInSeconds?: pulumi.Input<number>;
+    }
+
+    export interface AgentAgentLlmConfig {
+        /**
+         * (Updatable) Configuration to customize LLM.
+         */
+        routingLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentAgentLlmConfigRoutingLlmCustomization>;
+    }
+
+    export interface AgentAgentLlmConfigRoutingLlmCustomization {
+        /**
+         * (Updatable) If specified, the default instruction is replaced with provided instruction.
+         */
+        instruction?: pulumi.Input<string>;
     }
 
     export interface AgentDataIngestionJobDataIngestionJobStatistic {
@@ -42454,6 +42634,180 @@ export namespace GenerativeAi {
         vaultSecretId: pulumi.Input<string>;
     }
 
+    export interface AgentToolToolConfig {
+        /**
+         * (Updatable) The connection type for Databases.
+         */
+        databaseConnection?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigDatabaseConnection>;
+        /**
+         * (Updatable) The input location definition.
+         */
+        databaseSchema?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigDatabaseSchema>;
+        /**
+         * (Updatable) Dialect to be used for SQL generation.
+         */
+        dialect?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details of Function for Function calling tool.
+         */
+        function?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigFunction>;
+        /**
+         * (Updatable) Configuration to customize LLM.
+         */
+        generationLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigGenerationLlmCustomization>;
+        /**
+         * (Updatable) The input location definition.
+         */
+        iclExamples?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigIclExamples>;
+        /**
+         * (Updatable) The KnowledgeBase configurations that this RAG Tool uses
+         */
+        knowledgeBaseConfigs?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigKnowledgeBaseConfig>[]>;
+        /**
+         * (Updatable) Size of the model.
+         */
+        modelSize?: pulumi.Input<string>;
+        /**
+         * (Updatable) To enable/disable self correction.
+         */
+        shouldEnableSelfCorrection?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) To enable/disable SQL execution.
+         */
+        shouldEnableSqlExecution?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The input location definition.
+         */
+        tableAndColumnDescription?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigTableAndColumnDescription>;
+        /**
+         * (Updatable) The type of the Tool config. The allowed values are:
+         * * `SQL_TOOL_CONFIG`: The config for sql Tool.
+         * * `RAG_TOOL_CONFIG`: The config for rag Tool.
+         * * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        toolConfigType: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigDatabaseConnection {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
+         */
+        connectionId: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of Database connection. The allowed values are:
+         * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+         */
+        connectionType: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigDatabaseSchema {
+        /**
+         * (Updatable) The bucket name of an object.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Inline content as input.
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of InputLocation. The allowed values are:
+         * * `INLINE`: The input location is inline.
+         * * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+         */
+        inputLocationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace name of an object.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The prefix of file object(s) or folder prefix.
+         */
+        prefix?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigFunction {
+        /**
+         * (Updatable) A description of the function.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the function to invoke.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The parameters the function accepts, defined using a JSON Schema object.  Refer to the guide for examples and the JSON Schema documentation for details on the format.
+         */
+        parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface AgentToolToolConfigGenerationLlmCustomization {
+        /**
+         * (Updatable) If specified, the default instruction is replaced with provided instruction.
+         */
+        instruction?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigIclExamples {
+        /**
+         * (Updatable) The bucket name of an object.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Inline content as input.
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of InputLocation. The allowed values are:
+         * * `INLINE`: The input location is inline.
+         * * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+         */
+        inputLocationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace name of an object.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The prefix of file object(s) or folder prefix.
+         */
+        prefix?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigKnowledgeBaseConfig {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBase this RAG Tool uses
+         */
+        knowledgeBaseId?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigTableAndColumnDescription {
+        /**
+         * (Updatable) The bucket name of an object.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Inline content as input.
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of InputLocation. The allowed values are:
+         * * `INLINE`: The input location is inline.
+         * * `OBJECT_STORAGE_PREFIX`: The input location is object storage.
+         */
+        inputLocationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace name of an object.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The prefix of file object(s) or folder prefix.
+         */
+        prefix?: pulumi.Input<string>;
+    }
+
     export interface DedicatedAiClusterCapacity {
         /**
          * The type of the dedicated AI cluster capacity.
@@ -42536,6 +42890,24 @@ export namespace GenerativeAi {
     export interface GetAgentKnowledgeBasesFilterArgs {
         /**
          * The index name in opensearch.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAgentToolsFilter {
+        /**
+         * The name of the function to invoke.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAgentToolsFilterArgs {
+        /**
+         * The name of the function to invoke.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -83866,6 +84238,10 @@ export namespace OspGateway {
          * (Updatable) Subscription id identifier (OCID).
          */
         id?: pulumi.Input<string>;
+        /**
+         * (Updatable) Corporate conversion allowed status
+         */
+        isCorporateConversionAllowed?: pulumi.Input<boolean>;
         /**
          * (Updatable) Payment intension.
          */

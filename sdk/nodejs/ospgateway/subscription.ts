@@ -76,6 +76,10 @@ export class Subscription extends pulumi.CustomResource {
      */
     public /*out*/ readonly gsiOrgCode!: pulumi.Output<string>;
     /**
+     * Corporate conversion allowed status
+     */
+    public /*out*/ readonly isCorporateConversionAllowed!: pulumi.Output<boolean>;
+    /**
      * Payment intension.
      */
     public /*out*/ readonly isIntentToPay!: pulumi.Output<boolean>;
@@ -172,6 +176,7 @@ export class Subscription extends pulumi.CustomResource {
             resourceInputs["currencyCode"] = state ? state.currencyCode : undefined;
             resourceInputs["email"] = state ? state.email : undefined;
             resourceInputs["gsiOrgCode"] = state ? state.gsiOrgCode : undefined;
+            resourceInputs["isCorporateConversionAllowed"] = state ? state.isCorporateConversionAllowed : undefined;
             resourceInputs["isIntentToPay"] = state ? state.isIntentToPay : undefined;
             resourceInputs["languageCode"] = state ? state.languageCode : undefined;
             resourceInputs["organizationId"] = state ? state.organizationId : undefined;
@@ -217,6 +222,7 @@ export class Subscription extends pulumi.CustomResource {
             resourceInputs["billingAddresses"] = undefined /*out*/;
             resourceInputs["currencyCode"] = undefined /*out*/;
             resourceInputs["gsiOrgCode"] = undefined /*out*/;
+            resourceInputs["isCorporateConversionAllowed"] = undefined /*out*/;
             resourceInputs["isIntentToPay"] = undefined /*out*/;
             resourceInputs["languageCode"] = undefined /*out*/;
             resourceInputs["organizationId"] = undefined /*out*/;
@@ -270,6 +276,10 @@ export interface SubscriptionState {
      * GSI Subscription external code.
      */
     gsiOrgCode?: pulumi.Input<string>;
+    /**
+     * Corporate conversion allowed status
+     */
+    isCorporateConversionAllowed?: pulumi.Input<boolean>;
     /**
      * Payment intension.
      */

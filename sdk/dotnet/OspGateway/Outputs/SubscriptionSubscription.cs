@@ -38,6 +38,10 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// (Updatable) Corporate conversion allowed status
+        /// </summary>
+        public readonly bool? IsCorporateConversionAllowed;
+        /// <summary>
         /// (Updatable) Payment intension.
         /// </summary>
         public readonly bool? IsIntentToPay;
@@ -112,6 +116,8 @@ namespace Pulumi.Oci.OspGateway.Outputs
 
             string? id,
 
+            bool? isCorporateConversionAllowed,
+
             bool? isIntentToPay,
 
             string? languageCode,
@@ -148,6 +154,7 @@ namespace Pulumi.Oci.OspGateway.Outputs
             CurrencyCode = currencyCode;
             GsiOrgCode = gsiOrgCode;
             Id = id;
+            IsCorporateConversionAllowed = isCorporateConversionAllowed;
             IsIntentToPay = isIntentToPay;
             LanguageCode = languageCode;
             OrganizationId = organizationId;

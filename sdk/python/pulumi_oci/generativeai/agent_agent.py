@@ -14,6 +14,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['AgentAgentArgs', 'AgentAgent']
 
@@ -26,6 +28,7 @@ class AgentAgentArgs:
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 llm_config: Optional[pulumi.Input['AgentAgentLlmConfigArgs']] = None,
                  welcome_message: Optional[pulumi.Input[builtins.str]] = None):
         """
         The set of arguments for constructing a AgentAgent resource.
@@ -34,7 +37,8 @@ class AgentAgentArgs:
         :param pulumi.Input[builtins.str] description: (Updatable) Description about the agent.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
+        :param pulumi.Input['AgentAgentLlmConfigArgs'] llm_config: (Updatable) Configuration to Agent LLM.
         :param pulumi.Input[builtins.str] welcome_message: (Updatable) Details about purpose and responsibility of the agent
                
                
@@ -52,6 +56,8 @@ class AgentAgentArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if knowledge_base_ids is not None:
             pulumi.set(__self__, "knowledge_base_ids", knowledge_base_ids)
+        if llm_config is not None:
+            pulumi.set(__self__, "llm_config", llm_config)
         if welcome_message is not None:
             pulumi.set(__self__, "welcome_message", welcome_message)
 
@@ -119,13 +125,25 @@ class AgentAgentArgs:
     @pulumi.getter(name="knowledgeBaseIds")
     def knowledge_base_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         """
         return pulumi.get(self, "knowledge_base_ids")
 
     @knowledge_base_ids.setter
     def knowledge_base_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "knowledge_base_ids", value)
+
+    @property
+    @pulumi.getter(name="llmConfig")
+    def llm_config(self) -> Optional[pulumi.Input['AgentAgentLlmConfigArgs']]:
+        """
+        (Updatable) Configuration to Agent LLM.
+        """
+        return pulumi.get(self, "llm_config")
+
+    @llm_config.setter
+    def llm_config(self, value: Optional[pulumi.Input['AgentAgentLlmConfigArgs']]):
+        pulumi.set(self, "llm_config", value)
 
     @property
     @pulumi.getter(name="welcomeMessage")
@@ -154,6 +172,7 @@ class _AgentAgentState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
+                 llm_config: Optional[pulumi.Input['AgentAgentLlmConfigArgs']] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
@@ -166,8 +185,9 @@ class _AgentAgentState:
         :param pulumi.Input[builtins.str] description: (Updatable) Description about the agent.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         :param pulumi.Input[builtins.str] lifecycle_details: A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input['AgentAgentLlmConfigArgs'] llm_config: (Updatable) Configuration to Agent LLM.
         :param pulumi.Input[builtins.str] state: The current state of the agent.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.str] time_created: The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -192,6 +212,8 @@ class _AgentAgentState:
             pulumi.set(__self__, "knowledge_base_ids", knowledge_base_ids)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if llm_config is not None:
+            pulumi.set(__self__, "llm_config", llm_config)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -267,7 +289,7 @@ class _AgentAgentState:
     @pulumi.getter(name="knowledgeBaseIds")
     def knowledge_base_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]]:
         """
-        (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         """
         return pulumi.get(self, "knowledge_base_ids")
 
@@ -286,6 +308,18 @@ class _AgentAgentState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="llmConfig")
+    def llm_config(self) -> Optional[pulumi.Input['AgentAgentLlmConfigArgs']]:
+        """
+        (Updatable) Configuration to Agent LLM.
+        """
+        return pulumi.get(self, "llm_config")
+
+    @llm_config.setter
+    def llm_config(self, value: Optional[pulumi.Input['AgentAgentLlmConfigArgs']]):
+        pulumi.set(self, "llm_config", value)
 
     @property
     @pulumi.getter
@@ -364,12 +398,11 @@ class AgentAgent(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 llm_config: Optional[pulumi.Input[Union['AgentAgentLlmConfigArgs', 'AgentAgentLlmConfigArgsDict']]] = None,
                  welcome_message: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        **CreateAgent**
 
         Creates an agent.
 
@@ -390,6 +423,11 @@ class AgentAgent(pulumi.CustomResource):
                 "Department": "Finance",
             },
             knowledge_base_ids=agent_knowledge_base_ids,
+            llm_config={
+                "routing_llm_customization": {
+                    "instruction": agent_llm_config_routing_llm_customization_instruction,
+                },
+            },
             welcome_message=agent_welcome_message)
         ```
 
@@ -408,7 +446,8 @@ class AgentAgent(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: (Updatable) Description about the agent.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
+        :param pulumi.Input[Union['AgentAgentLlmConfigArgs', 'AgentAgentLlmConfigArgsDict']] llm_config: (Updatable) Configuration to Agent LLM.
         :param pulumi.Input[builtins.str] welcome_message: (Updatable) Details about purpose and responsibility of the agent
                
                
@@ -423,8 +462,6 @@ class AgentAgent(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        **CreateAgent**
 
         Creates an agent.
 
@@ -445,6 +482,11 @@ class AgentAgent(pulumi.CustomResource):
                 "Department": "Finance",
             },
             knowledge_base_ids=agent_knowledge_base_ids,
+            llm_config={
+                "routing_llm_customization": {
+                    "instruction": agent_llm_config_routing_llm_customization_instruction,
+                },
+            },
             welcome_message=agent_welcome_message)
         ```
 
@@ -477,6 +519,7 @@ class AgentAgent(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
+                 llm_config: Optional[pulumi.Input[Union['AgentAgentLlmConfigArgs', 'AgentAgentLlmConfigArgsDict']]] = None,
                  welcome_message: Optional[pulumi.Input[builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -495,6 +538,7 @@ class AgentAgent(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["knowledge_base_ids"] = knowledge_base_ids
+            __props__.__dict__["llm_config"] = llm_config
             __props__.__dict__["welcome_message"] = welcome_message
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
@@ -518,6 +562,7 @@ class AgentAgent(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             knowledge_base_ids: Optional[pulumi.Input[Sequence[pulumi.Input[builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
+            llm_config: Optional[pulumi.Input[Union['AgentAgentLlmConfigArgs', 'AgentAgentLlmConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
@@ -535,8 +580,9 @@ class AgentAgent(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] description: (Updatable) Description about the agent.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        :param pulumi.Input[Sequence[pulumi.Input[builtins.str]]] knowledge_base_ids: (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         :param pulumi.Input[builtins.str] lifecycle_details: A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input[Union['AgentAgentLlmConfigArgs', 'AgentAgentLlmConfigArgsDict']] llm_config: (Updatable) Configuration to Agent LLM.
         :param pulumi.Input[builtins.str] state: The current state of the agent.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.str] time_created: The date and time the agent was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -558,6 +604,7 @@ class AgentAgent(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["knowledge_base_ids"] = knowledge_base_ids
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["llm_config"] = llm_config
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -609,7 +656,7 @@ class AgentAgent(pulumi.CustomResource):
     @pulumi.getter(name="knowledgeBaseIds")
     def knowledge_base_ids(self) -> pulumi.Output[Sequence[builtins.str]]:
         """
-        (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         """
         return pulumi.get(self, "knowledge_base_ids")
 
@@ -620,6 +667,14 @@ class AgentAgent(pulumi.CustomResource):
         A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="llmConfig")
+    def llm_config(self) -> pulumi.Output['outputs.AgentAgentLlmConfig']:
+        """
+        (Updatable) Configuration to Agent LLM.
+        """
+        return pulumi.get(self, "llm_config")
 
     @property
     @pulumi.getter

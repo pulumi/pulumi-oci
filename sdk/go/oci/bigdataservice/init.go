@@ -33,12 +33,20 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &BdsInstanceIdentityConfiguration{}
 	case "oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig":
 		r = &BdsInstanceMetastoreConfig{}
+	case "oci:BigDataService/bdsInstanceNodeBackup:BdsInstanceNodeBackup":
+		r = &BdsInstanceNodeBackup{}
+	case "oci:BigDataService/bdsInstanceNodeBackupConfiguration:BdsInstanceNodeBackupConfiguration":
+		r = &BdsInstanceNodeBackupConfiguration{}
+	case "oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration":
+		r = &BdsInstanceNodeReplaceConfiguration{}
 	case "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement":
 		r = &BdsInstanceOperationCertificateManagementsManagement{}
 	case "oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction":
 		r = &BdsInstanceOsPatchAction{}
 	case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
 		r = &BdsInstancePatchAction{}
+	case "oci:BigDataService/bdsInstanceReplaceNodeAction:BdsInstanceReplaceNodeAction":
+		r = &BdsInstanceReplaceNodeAction{}
 	case "oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration":
 		r = &BdsInstanceResourcePrincipalConfiguration{}
 	case "oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction":
@@ -88,6 +96,21 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"BigDataService/bdsInstanceNodeBackup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstanceNodeBackupConfiguration",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstanceNodeReplaceConfiguration",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"BigDataService/bdsInstanceOperationCertificateManagementsManagement",
 		&module{version},
 	)
@@ -99,6 +122,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"BigDataService/bdsInstancePatchAction",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"BigDataService/bdsInstanceReplaceNodeAction",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

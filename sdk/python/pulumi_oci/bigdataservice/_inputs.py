@@ -102,6 +102,12 @@ __all__ = [
     'BdsInstanceNodeArgsDict',
     'BdsInstanceNodeAttachedBlockVolumeArgs',
     'BdsInstanceNodeAttachedBlockVolumeArgsDict',
+    'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs',
+    'BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict',
+    'BdsInstanceNodeBackupLevelTypeDetailsArgs',
+    'BdsInstanceNodeBackupLevelTypeDetailsArgsDict',
+    'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs',
+    'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict',
     'BdsInstanceOsPatchActionPatchingConfigsArgs',
@@ -134,6 +140,12 @@ __all__ = [
     'GetBdsInstanceListOsPatchesFilterArgsDict',
     'GetBdsInstanceMetastoreConfigsFilterArgs',
     'GetBdsInstanceMetastoreConfigsFilterArgsDict',
+    'GetBdsInstanceNodeBackupConfigurationsFilterArgs',
+    'GetBdsInstanceNodeBackupConfigurationsFilterArgsDict',
+    'GetBdsInstanceNodeBackupsFilterArgs',
+    'GetBdsInstanceNodeBackupsFilterArgsDict',
+    'GetBdsInstanceNodeReplaceConfigurationsFilterArgs',
+    'GetBdsInstanceNodeReplaceConfigurationsFilterArgsDict',
     'GetBdsInstancePatchHistoriesFilterArgs',
     'GetBdsInstancePatchHistoriesFilterArgsDict',
     'GetBdsInstancePatchesFilterArgs',
@@ -4163,6 +4175,231 @@ class BdsInstanceNodeAttachedBlockVolumeArgs:
 
 
 if not MYPY:
+    class BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict(TypedDict):
+        level_type: pulumi.Input[builtins.str]
+        """
+        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        node_host_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Host name of the node to create backup configuration.
+        """
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+        """
+elif False:
+    BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs:
+    def __init__(__self__, *,
+                 level_type: pulumi.Input[builtins.str],
+                 node_host_name: Optional[pulumi.Input[builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] level_type: (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        :param pulumi.Input[builtins.str] node_host_name: (Updatable) Host name of the node to create backup configuration.
+        :param pulumi.Input[builtins.str] node_type: (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        if node_host_name is not None:
+            pulumi.set(__self__, "node_host_name", node_host_name)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration.
+        """
+        return pulumi.get(self, "level_type")
+
+    @level_type.setter
+    def level_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "level_type", value)
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @node_host_name.setter
+    def node_host_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_host_name", value)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created. Accepted values are MASTER and UTILITY.
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+
+if not MYPY:
+    class BdsInstanceNodeBackupLevelTypeDetailsArgsDict(TypedDict):
+        level_type: pulumi.Input[builtins.str]
+        """
+        Type of level used to trigger the creation of a new node backup.
+        """
+        node_host_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Host name of the node to create backup.
+        """
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Type of the node or nodes of the node backup which are going to be created.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    BdsInstanceNodeBackupLevelTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceNodeBackupLevelTypeDetailsArgs:
+    def __init__(__self__, *,
+                 level_type: pulumi.Input[builtins.str],
+                 node_host_name: Optional[pulumi.Input[builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] level_type: Type of level used to trigger the creation of a new node backup.
+        :param pulumi.Input[builtins.str] node_host_name: (Updatable) Host name of the node to create backup.
+        :param pulumi.Input[builtins.str] node_type: (Updatable) Type of the node or nodes of the node backup which are going to be created.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        if node_host_name is not None:
+            pulumi.set(__self__, "node_host_name", node_host_name)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> pulumi.Input[builtins.str]:
+        """
+        Type of level used to trigger the creation of a new node backup.
+        """
+        return pulumi.get(self, "level_type")
+
+    @level_type.setter
+    def level_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "level_type", value)
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Host name of the node to create backup.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @node_host_name.setter
+    def node_host_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_host_name", value)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Type of the node or nodes of the node backup which are going to be created.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+
+if not MYPY:
+    class BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict(TypedDict):
+        level_type: pulumi.Input[builtins.str]
+        """
+        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+        """
+        node_host_name: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Host name of the node to create backup configuration.
+        """
+        node_type: NotRequired[pulumi.Input[builtins.str]]
+        """
+        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+elif False:
+    BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs:
+    def __init__(__self__, *,
+                 level_type: pulumi.Input[builtins.str],
+                 node_host_name: Optional[pulumi.Input[builtins.str]] = None,
+                 node_type: Optional[pulumi.Input[builtins.str]] = None):
+        """
+        :param pulumi.Input[builtins.str] level_type: (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+        :param pulumi.Input[builtins.str] node_host_name: (Updatable) Host name of the node to create backup configuration.
+        :param pulumi.Input[builtins.str] node_type: (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        pulumi.set(__self__, "level_type", level_type)
+        if node_host_name is not None:
+            pulumi.set(__self__, "node_host_name", node_host_name)
+        if node_type is not None:
+            pulumi.set(__self__, "node_type", node_type)
+
+    @property
+    @pulumi.getter(name="levelType")
+    def level_type(self) -> pulumi.Input[builtins.str]:
+        """
+        (Updatable) Type of level used to trigger the creation of a new node backup configuration or node replacement configuration. Accepted values are NODE_LEVEL and NODE_TYPE_LEVEL.
+        """
+        return pulumi.get(self, "level_type")
+
+    @level_type.setter
+    def level_type(self, value: pulumi.Input[builtins.str]):
+        pulumi.set(self, "level_type", value)
+
+    @property
+    @pulumi.getter(name="nodeHostName")
+    def node_host_name(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Host name of the node to create backup configuration.
+        """
+        return pulumi.get(self, "node_host_name")
+
+    @node_host_name.setter
+    def node_host_name(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_host_name", value)
+
+    @property
+    @pulumi.getter(name="nodeType")
+    def node_type(self) -> Optional[pulumi.Input[builtins.str]]:
+        """
+        (Updatable) Type of the node or nodes of the node backup configuration or node replacement configuration which are going to be created.
+        """
+        return pulumi.get(self, "node_type")
+
+    @node_type.setter
+    def node_type(self, value: Optional[pulumi.Input[builtins.str]]):
+        pulumi.set(self, "node_type", value)
+
+
+if not MYPY:
     class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict(TypedDict):
         certificate: NotRequired[pulumi.Input[builtins.str]]
         """
@@ -5218,6 +5455,147 @@ elif False:
 
 @pulumi.input_type
 class GetBdsInstanceMetastoreConfigsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBdsInstanceNodeBackupConfigurationsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetBdsInstanceNodeBackupConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBdsInstanceNodeBackupConfigurationsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBdsInstanceNodeBackupsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetBdsInstanceNodeBackupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBdsInstanceNodeBackupsFilterArgs:
+    def __init__(__self__, *,
+                 name: builtins.str,
+                 values: Sequence[builtins.str],
+                 regex: Optional[builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: builtins.str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetBdsInstanceNodeReplaceConfigurationsFilterArgsDict(TypedDict):
+        name: builtins.str
+        values: Sequence[builtins.str]
+        regex: NotRequired[builtins.bool]
+elif False:
+    GetBdsInstanceNodeReplaceConfigurationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetBdsInstanceNodeReplaceConfigurationsFilterArgs:
     def __init__(__self__, *,
                  name: builtins.str,
                  values: Sequence[builtins.str],

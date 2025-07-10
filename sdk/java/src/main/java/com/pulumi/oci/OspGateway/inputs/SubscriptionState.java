@@ -128,6 +128,21 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Corporate conversion allowed status
+     * 
+     */
+    @Import(name="isCorporateConversionAllowed")
+    private @Nullable Output<Boolean> isCorporateConversionAllowed;
+
+    /**
+     * @return Corporate conversion allowed status
+     * 
+     */
+    public Optional<Output<Boolean>> isCorporateConversionAllowed() {
+        return Optional.ofNullable(this.isCorporateConversionAllowed);
+    }
+
+    /**
      * Payment intension.
      * 
      */
@@ -413,6 +428,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         this.currencyCode = $.currencyCode;
         this.email = $.email;
         this.gsiOrgCode = $.gsiOrgCode;
+        this.isCorporateConversionAllowed = $.isCorporateConversionAllowed;
         this.isIntentToPay = $.isIntentToPay;
         this.languageCode = $.languageCode;
         this.organizationId = $.organizationId;
@@ -606,6 +622,27 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder gsiOrgCode(String gsiOrgCode) {
             return gsiOrgCode(Output.of(gsiOrgCode));
+        }
+
+        /**
+         * @param isCorporateConversionAllowed Corporate conversion allowed status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCorporateConversionAllowed(@Nullable Output<Boolean> isCorporateConversionAllowed) {
+            $.isCorporateConversionAllowed = isCorporateConversionAllowed;
+            return this;
+        }
+
+        /**
+         * @param isCorporateConversionAllowed Corporate conversion allowed status
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCorporateConversionAllowed(Boolean isCorporateConversionAllowed) {
+            return isCorporateConversionAllowed(Output.of(isCorporateConversionAllowed));
         }
 
         /**

@@ -54,6 +54,11 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
      */
     private String id;
     /**
+     * @return Corporate conversion allowed status
+     * 
+     */
+    private Boolean isCorporateConversionAllowed;
+    /**
      * @return Payment intension.
      * 
      */
@@ -188,6 +193,13 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Corporate conversion allowed status
+     * 
+     */
+    public Boolean isCorporateConversionAllowed() {
+        return this.isCorporateConversionAllowed;
     }
     /**
      * @return Payment intension.
@@ -325,6 +337,7 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
         private String email;
         private String gsiOrgCode;
         private String id;
+        private Boolean isCorporateConversionAllowed;
         private Boolean isIntentToPay;
         private String languageCode;
         private String organizationId;
@@ -354,6 +367,7 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
     	      this.email = defaults.email;
     	      this.gsiOrgCode = defaults.gsiOrgCode;
     	      this.id = defaults.id;
+    	      this.isCorporateConversionAllowed = defaults.isCorporateConversionAllowed;
     	      this.isIntentToPay = defaults.isIntentToPay;
     	      this.languageCode = defaults.languageCode;
     	      this.organizationId = defaults.organizationId;
@@ -439,6 +453,14 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
               throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItem", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCorporateConversionAllowed(Boolean isCorporateConversionAllowed) {
+            if (isCorporateConversionAllowed == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItem", "isCorporateConversionAllowed");
+            }
+            this.isCorporateConversionAllowed = isCorporateConversionAllowed;
             return this;
         }
         @CustomType.Setter
@@ -607,6 +629,7 @@ public final class GetSubscriptionsSubscriptionCollectionItem {
             _resultValue.email = email;
             _resultValue.gsiOrgCode = gsiOrgCode;
             _resultValue.id = id;
+            _resultValue.isCorporateConversionAllowed = isCorporateConversionAllowed;
             _resultValue.isIntentToPay = isIntentToPay;
             _resultValue.languageCode = languageCode;
             _resultValue.organizationId = organizationId;

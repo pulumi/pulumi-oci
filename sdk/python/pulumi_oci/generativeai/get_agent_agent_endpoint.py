@@ -28,7 +28,7 @@ class GetAgentAgentEndpointResult:
     """
     A collection of values returned by getAgentAgentEndpoint.
     """
-    def __init__(__self__, agent_endpoint_id=None, agent_id=None, compartment_id=None, content_moderation_configs=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, session_configs=None, should_enable_citation=None, should_enable_session=None, should_enable_trace=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, agent_endpoint_id=None, agent_id=None, compartment_id=None, content_moderation_configs=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, guardrail_configs=None, human_input_configs=None, id=None, lifecycle_details=None, metadata=None, output_configs=None, session_configs=None, should_enable_citation=None, should_enable_multi_language=None, should_enable_session=None, should_enable_trace=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if agent_endpoint_id and not isinstance(agent_endpoint_id, str):
             raise TypeError("Expected argument 'agent_endpoint_id' to be a str")
         pulumi.set(__self__, "agent_endpoint_id", agent_endpoint_id)
@@ -53,18 +53,33 @@ class GetAgentAgentEndpointResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if guardrail_configs and not isinstance(guardrail_configs, list):
+            raise TypeError("Expected argument 'guardrail_configs' to be a list")
+        pulumi.set(__self__, "guardrail_configs", guardrail_configs)
+        if human_input_configs and not isinstance(human_input_configs, list):
+            raise TypeError("Expected argument 'human_input_configs' to be a list")
+        pulumi.set(__self__, "human_input_configs", human_input_configs)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if metadata and not isinstance(metadata, dict):
+            raise TypeError("Expected argument 'metadata' to be a dict")
+        pulumi.set(__self__, "metadata", metadata)
+        if output_configs and not isinstance(output_configs, list):
+            raise TypeError("Expected argument 'output_configs' to be a list")
+        pulumi.set(__self__, "output_configs", output_configs)
         if session_configs and not isinstance(session_configs, list):
             raise TypeError("Expected argument 'session_configs' to be a list")
         pulumi.set(__self__, "session_configs", session_configs)
         if should_enable_citation and not isinstance(should_enable_citation, bool):
             raise TypeError("Expected argument 'should_enable_citation' to be a bool")
         pulumi.set(__self__, "should_enable_citation", should_enable_citation)
+        if should_enable_multi_language and not isinstance(should_enable_multi_language, bool):
+            raise TypeError("Expected argument 'should_enable_multi_language' to be a bool")
+        pulumi.set(__self__, "should_enable_multi_language", should_enable_multi_language)
         if should_enable_session and not isinstance(should_enable_session, bool):
             raise TypeError("Expected argument 'should_enable_session' to be a bool")
         pulumi.set(__self__, "should_enable_session", should_enable_session)
@@ -146,6 +161,22 @@ class GetAgentAgentEndpointResult:
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="guardrailConfigs")
+    def guardrail_configs(self) -> Sequence['outputs.GetAgentAgentEndpointGuardrailConfigResult']:
+        """
+        The configuration details about whether to apply the guardrail checks to input and output.
+        """
+        return pulumi.get(self, "guardrail_configs")
+
+    @property
+    @pulumi.getter(name="humanInputConfigs")
+    def human_input_configs(self) -> Sequence['outputs.GetAgentAgentEndpointHumanInputConfigResult']:
+        """
+        Human Input Configuration for an AgentEndpoint.
+        """
+        return pulumi.get(self, "human_input_configs")
+
+    @property
     @pulumi.getter
     def id(self) -> builtins.str:
         """
@@ -162,10 +193,26 @@ class GetAgentAgentEndpointResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def metadata(self) -> Mapping[str, builtins.str]:
+        """
+        Key-value pairs to allow additional configurations.
+        """
+        return pulumi.get(self, "metadata")
+
+    @property
+    @pulumi.getter(name="outputConfigs")
+    def output_configs(self) -> Sequence['outputs.GetAgentAgentEndpointOutputConfigResult']:
+        """
+        Configuration to store results generated by agent.
+        """
+        return pulumi.get(self, "output_configs")
+
+    @property
     @pulumi.getter(name="sessionConfigs")
     def session_configs(self) -> Sequence['outputs.GetAgentAgentEndpointSessionConfigResult']:
         """
-        **SessionConfig**
+        Session Configuration on AgentEndpoint.
         """
         return pulumi.get(self, "session_configs")
 
@@ -176,6 +223,14 @@ class GetAgentAgentEndpointResult:
         Whether to show citations in the chat result.
         """
         return pulumi.get(self, "should_enable_citation")
+
+    @property
+    @pulumi.getter(name="shouldEnableMultiLanguage")
+    def should_enable_multi_language(self) -> builtins.bool:
+        """
+        Whether to enable multi-language for chat.
+        """
+        return pulumi.get(self, "should_enable_multi_language")
 
     @property
     @pulumi.getter(name="shouldEnableSession")
@@ -240,10 +295,15 @@ class AwaitableGetAgentAgentEndpointResult(GetAgentAgentEndpointResult):
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
+            guardrail_configs=self.guardrail_configs,
+            human_input_configs=self.human_input_configs,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            metadata=self.metadata,
+            output_configs=self.output_configs,
             session_configs=self.session_configs,
             should_enable_citation=self.should_enable_citation,
+            should_enable_multi_language=self.should_enable_multi_language,
             should_enable_session=self.should_enable_session,
             should_enable_trace=self.should_enable_trace,
             state=self.state,
@@ -256,8 +316,6 @@ def get_agent_agent_endpoint(agent_endpoint_id: Optional[builtins.str] = None,
                              opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetAgentAgentEndpointResult:
     """
     This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **GetAgentEndpoint**
 
     Gets information about an endpoint.
 
@@ -287,10 +345,15 @@ def get_agent_agent_endpoint(agent_endpoint_id: Optional[builtins.str] = None,
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        guardrail_configs=pulumi.get(__ret__, 'guardrail_configs'),
+        human_input_configs=pulumi.get(__ret__, 'human_input_configs'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        metadata=pulumi.get(__ret__, 'metadata'),
+        output_configs=pulumi.get(__ret__, 'output_configs'),
         session_configs=pulumi.get(__ret__, 'session_configs'),
         should_enable_citation=pulumi.get(__ret__, 'should_enable_citation'),
+        should_enable_multi_language=pulumi.get(__ret__, 'should_enable_multi_language'),
         should_enable_session=pulumi.get(__ret__, 'should_enable_session'),
         should_enable_trace=pulumi.get(__ret__, 'should_enable_trace'),
         state=pulumi.get(__ret__, 'state'),
@@ -301,8 +364,6 @@ def get_agent_agent_endpoint_output(agent_endpoint_id: Optional[pulumi.Input[bui
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentAgentEndpointResult]:
     """
     This data source provides details about a specific Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **GetAgentEndpoint**
 
     Gets information about an endpoint.
 
@@ -331,10 +392,15 @@ def get_agent_agent_endpoint_output(agent_endpoint_id: Optional[pulumi.Input[bui
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        guardrail_configs=pulumi.get(__response__, 'guardrail_configs'),
+        human_input_configs=pulumi.get(__response__, 'human_input_configs'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        metadata=pulumi.get(__response__, 'metadata'),
+        output_configs=pulumi.get(__response__, 'output_configs'),
         session_configs=pulumi.get(__response__, 'session_configs'),
         should_enable_citation=pulumi.get(__response__, 'should_enable_citation'),
+        should_enable_multi_language=pulumi.get(__response__, 'should_enable_multi_language'),
         should_enable_session=pulumi.get(__response__, 'should_enable_session'),
         should_enable_trace=pulumi.get(__response__, 'should_enable_trace'),
         state=pulumi.get(__response__, 'state'),

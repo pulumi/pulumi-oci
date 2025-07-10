@@ -170,6 +170,10 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Key-value pairs to allow additional configurations.
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> Metadata;
+        /// <summary>
         /// The current state of the data source.
         /// </summary>
         public readonly string State;
@@ -208,6 +212,8 @@ namespace Pulumi.Oci.GenerativeAi
 
             string lifecycleDetails,
 
+            ImmutableDictionary<string, string> metadata,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -226,6 +232,7 @@ namespace Pulumi.Oci.GenerativeAi
             Id = id;
             KnowledgeBaseId = knowledgeBaseId;
             LifecycleDetails = lifecycleDetails;
+            Metadata = metadata;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

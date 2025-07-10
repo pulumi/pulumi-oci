@@ -47,6 +47,11 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscription {
      */
     private String id;
     /**
+     * @return Corporate conversion allowed status
+     * 
+     */
+    private Boolean isCorporateConversionAllowed;
+    /**
      * @return Payment intension.
      * 
      */
@@ -164,6 +169,13 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscription {
      */
     public String id() {
         return this.id;
+    }
+    /**
+     * @return Corporate conversion allowed status
+     * 
+     */
+    public Boolean isCorporateConversionAllowed() {
+        return this.isCorporateConversionAllowed;
     }
     /**
      * @return Payment intension.
@@ -286,6 +298,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscription {
         private String currencyCode;
         private String gsiOrgCode;
         private String id;
+        private Boolean isCorporateConversionAllowed;
         private Boolean isIntentToPay;
         private String languageCode;
         private String organizationId;
@@ -310,6 +323,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscription {
     	      this.currencyCode = defaults.currencyCode;
     	      this.gsiOrgCode = defaults.gsiOrgCode;
     	      this.id = defaults.id;
+    	      this.isCorporateConversionAllowed = defaults.isCorporateConversionAllowed;
     	      this.isIntentToPay = defaults.isIntentToPay;
     	      this.languageCode = defaults.languageCode;
     	      this.organizationId = defaults.organizationId;
@@ -376,6 +390,14 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscription {
               throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemSubscription", "id");
             }
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCorporateConversionAllowed(Boolean isCorporateConversionAllowed) {
+            if (isCorporateConversionAllowed == null) {
+              throw new MissingRequiredPropertyException("GetSubscriptionsSubscriptionCollectionItemSubscription", "isCorporateConversionAllowed");
+            }
+            this.isCorporateConversionAllowed = isCorporateConversionAllowed;
             return this;
         }
         @CustomType.Setter
@@ -515,6 +537,7 @@ public final class GetSubscriptionsSubscriptionCollectionItemSubscription {
             _resultValue.currencyCode = currencyCode;
             _resultValue.gsiOrgCode = gsiOrgCode;
             _resultValue.id = id;
+            _resultValue.isCorporateConversionAllowed = isCorporateConversionAllowed;
             _resultValue.isIntentToPay = isIntentToPay;
             _resultValue.languageCode = languageCode;
             _resultValue.organizationId = organizationId;

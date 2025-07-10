@@ -14,8 +14,6 @@ import (
 
 // This resource provides the Agent resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **CreateAgent**
-//
 // Creates an agent.
 //
 // ## Example Usage
@@ -43,7 +41,12 @@ import (
 //					"Department": pulumi.String("Finance"),
 //				},
 //				KnowledgeBaseIds: pulumi.Any(agentKnowledgeBaseIds),
-//				WelcomeMessage:   pulumi.Any(agentWelcomeMessage),
+//				LlmConfig: &generativeai.AgentAgentLlmConfigArgs{
+//					RoutingLlmCustomization: &generativeai.AgentAgentLlmConfigRoutingLlmCustomizationArgs{
+//						Instruction: pulumi.Any(agentLlmConfigRoutingLlmCustomizationInstruction),
+//					},
+//				},
+//				WelcomeMessage: pulumi.Any(agentWelcomeMessage),
 //			})
 //			if err != nil {
 //				return err
@@ -74,10 +77,12 @@ type AgentAgent struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds pulumi.StringArrayOutput `pulumi:"knowledgeBaseIds"`
 	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) Configuration to Agent LLM.
+	LlmConfig AgentAgentLlmConfigOutput `pulumi:"llmConfig"`
 	// The current state of the agent.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -136,10 +141,12 @@ type agentAgentState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds []string `pulumi:"knowledgeBaseIds"`
 	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) Configuration to Agent LLM.
+	LlmConfig *AgentAgentLlmConfig `pulumi:"llmConfig"`
 	// The current state of the agent.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -166,10 +173,12 @@ type AgentAgentState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds pulumi.StringArrayInput
 	// A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) Configuration to Agent LLM.
+	LlmConfig AgentAgentLlmConfigPtrInput
 	// The current state of the agent.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -200,8 +209,10 @@ type agentAgentArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds []string `pulumi:"knowledgeBaseIds"`
+	// (Updatable) Configuration to Agent LLM.
+	LlmConfig *AgentAgentLlmConfig `pulumi:"llmConfig"`
 	// (Updatable) Details about purpose and responsibility of the agent
 	//
 	// ** IMPORTANT **
@@ -221,8 +232,10 @@ type AgentAgentArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+	// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 	KnowledgeBaseIds pulumi.StringArrayInput
+	// (Updatable) Configuration to Agent LLM.
+	LlmConfig AgentAgentLlmConfigPtrInput
 	// (Updatable) Details about purpose and responsibility of the agent
 	//
 	// ** IMPORTANT **
@@ -342,7 +355,7 @@ func (o AgentAgentOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AgentAgent) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+// (Updatable) List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
 func (o AgentAgentOutput) KnowledgeBaseIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AgentAgent) pulumi.StringArrayOutput { return v.KnowledgeBaseIds }).(pulumi.StringArrayOutput)
 }
@@ -350,6 +363,11 @@ func (o AgentAgentOutput) KnowledgeBaseIds() pulumi.StringArrayOutput {
 // A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 func (o AgentAgentOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentAgent) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// (Updatable) Configuration to Agent LLM.
+func (o AgentAgentOutput) LlmConfig() AgentAgentLlmConfigOutput {
+	return o.ApplyT(func(v *AgentAgent) AgentAgentLlmConfigOutput { return v.LlmConfig }).(AgentAgentLlmConfigOutput)
 }
 
 // The current state of the agent.

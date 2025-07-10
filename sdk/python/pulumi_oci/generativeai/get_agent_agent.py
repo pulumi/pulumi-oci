@@ -14,6 +14,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetAgentAgentResult',
@@ -27,7 +28,7 @@ class GetAgentAgentResult:
     """
     A collection of values returned by getAgentAgent.
     """
-    def __init__(__self__, agent_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, knowledge_base_ids=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None, welcome_message=None):
+    def __init__(__self__, agent_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, knowledge_base_ids=None, lifecycle_details=None, llm_configs=None, state=None, system_tags=None, time_created=None, time_updated=None, welcome_message=None):
         if agent_id and not isinstance(agent_id, str):
             raise TypeError("Expected argument 'agent_id' to be a str")
         pulumi.set(__self__, "agent_id", agent_id)
@@ -55,6 +56,9 @@ class GetAgentAgentResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if llm_configs and not isinstance(llm_configs, list):
+            raise TypeError("Expected argument 'llm_configs' to be a list")
+        pulumi.set(__self__, "llm_configs", llm_configs)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -128,7 +132,7 @@ class GetAgentAgentResult:
     @pulumi.getter(name="knowledgeBaseIds")
     def knowledge_base_ids(self) -> Sequence[builtins.str]:
         """
-        List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent.
+        List of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledgeBases associated with agent. This field is deprecated and will be removed after March 26 2026.
         """
         return pulumi.get(self, "knowledge_base_ids")
 
@@ -139,6 +143,14 @@ class GetAgentAgentResult:
         A message that describes the current state of the agent in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="llmConfigs")
+    def llm_configs(self) -> Sequence['outputs.GetAgentAgentLlmConfigResult']:
+        """
+        Configuration to Agent LLM.
+        """
+        return pulumi.get(self, "llm_configs")
 
     @property
     @pulumi.getter
@@ -196,6 +208,7 @@ class AwaitableGetAgentAgentResult(GetAgentAgentResult):
             id=self.id,
             knowledge_base_ids=self.knowledge_base_ids,
             lifecycle_details=self.lifecycle_details,
+            llm_configs=self.llm_configs,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -239,6 +252,7 @@ def get_agent_agent(agent_id: Optional[builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         knowledge_base_ids=pulumi.get(__ret__, 'knowledge_base_ids'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        llm_configs=pulumi.get(__ret__, 'llm_configs'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -279,6 +293,7 @@ def get_agent_agent_output(agent_id: Optional[pulumi.Input[builtins.str]] = None
         id=pulumi.get(__response__, 'id'),
         knowledge_base_ids=pulumi.get(__response__, 'knowledge_base_ids'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        llm_configs=pulumi.get(__response__, 'llm_configs'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

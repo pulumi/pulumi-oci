@@ -63,6 +63,7 @@ import javax.annotation.Nullable;
  *             .description(dataSourceDescription)
  *             .displayName(dataSourceDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .metadata(dataSourceMetadata)
  *             .build());
  * 
  *     }
@@ -173,18 +174,12 @@ public class AgentDataSource extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="knowledgeBaseId", refs={String.class}, tree="[0]")
     private Output<String> knowledgeBaseId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> knowledgeBaseId() {
@@ -203,6 +198,26 @@ public class AgentDataSource extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * (Updatable) Key-value pairs to allow additional configurations.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="metadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> metadata;
+
+    /**
+     * @return (Updatable) Key-value pairs to allow additional configurations.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Map<String,String>> metadata() {
+        return this.metadata;
     }
     /**
      * The current state of the data source.

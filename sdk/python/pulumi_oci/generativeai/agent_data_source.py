@@ -28,7 +28,8 @@ class AgentDataSourceArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  description: Optional[pulumi.Input[builtins.str]] = None,
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None):
         """
         The set of arguments for constructing a AgentDataSource resource.
         :param pulumi.Input[builtins.str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
@@ -36,14 +37,15 @@ class AgentDataSourceArgs:
                
                The details of data source.
         :param pulumi.Input[builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[builtins.str] description: (Updatable) A description of the data source.
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_source_config", data_source_config)
@@ -56,6 +58,8 @@ class AgentDataSourceArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -88,10 +92,6 @@ class AgentDataSourceArgs:
     def knowledge_base_id(self) -> pulumi.Input[builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "knowledge_base_id")
 
@@ -147,6 +147,22 @@ class AgentDataSourceArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Key-value pairs to allow additional configurations.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
 
 @pulumi.input_type
 class _AgentDataSourceState:
@@ -159,6 +175,7 @@ class _AgentDataSourceState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_id: Optional[pulumi.Input[builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  state: Optional[pulumi.Input[builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[builtins.str]] = None,
@@ -174,11 +191,12 @@ class _AgentDataSourceState:
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+        :param pulumi.Input[builtins.str] lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[builtins.str] lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[builtins.str] state: The current state of the data source.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.str] time_created: The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -200,6 +218,8 @@ class _AgentDataSourceState:
             pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -288,10 +308,6 @@ class _AgentDataSourceState:
     def knowledge_base_id(self) -> Optional[pulumi.Input[builtins.str]]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "knowledge_base_id")
 
@@ -310,6 +326,22 @@ class _AgentDataSourceState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]:
+        """
+        (Updatable) Key-value pairs to allow additional configurations.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
 
     @property
     @pulumi.getter
@@ -373,6 +405,7 @@ class AgentDataSource(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_id: Optional[pulumi.Input[builtins.str]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
@@ -405,7 +438,8 @@ class AgentDataSource(pulumi.CustomResource):
             display_name=data_source_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            metadata=data_source_metadata)
         ```
 
         ## Import
@@ -427,6 +461,7 @@ class AgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
                
                
                ** IMPORTANT **
@@ -469,7 +504,8 @@ class AgentDataSource(pulumi.CustomResource):
             display_name=data_source_display_name,
             freeform_tags={
                 "Department": "Finance",
-            })
+            },
+            metadata=data_source_metadata)
         ```
 
         ## Import
@@ -502,6 +538,7 @@ class AgentDataSource(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  knowledge_base_id: Optional[pulumi.Input[builtins.str]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -524,6 +561,7 @@ class AgentDataSource(pulumi.CustomResource):
             if knowledge_base_id is None and not opts.urn:
                 raise TypeError("Missing required property 'knowledge_base_id'")
             __props__.__dict__["knowledge_base_id"] = knowledge_base_id
+            __props__.__dict__["metadata"] = metadata
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -547,6 +585,7 @@ class AgentDataSource(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             knowledge_base_id: Optional[pulumi.Input[builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[builtins.str]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             state: Optional[pulumi.Input[builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[builtins.str]] = None,
@@ -567,11 +606,12 @@ class AgentDataSource(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[builtins.str] knowledge_base_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
+        :param pulumi.Input[builtins.str] lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] metadata: (Updatable) Key-value pairs to allow additional configurations.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[builtins.str] lifecycle_details: A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[builtins.str] state: The current state of the data source.
         :param pulumi.Input[Mapping[str, pulumi.Input[builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[builtins.str] time_created: The date and time the data source was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -589,6 +629,7 @@ class AgentDataSource(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["knowledge_base_id"] = knowledge_base_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["metadata"] = metadata
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -650,10 +691,6 @@ class AgentDataSource(pulumi.CustomResource):
     def knowledge_base_id(self) -> pulumi.Output[builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent KnowledgeBase.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "knowledge_base_id")
 
@@ -664,6 +701,18 @@ class AgentDataSource(pulumi.CustomResource):
         A message that describes the current state of the data source in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Output[Mapping[str, builtins.str]]:
+        """
+        (Updatable) Key-value pairs to allow additional configurations.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "metadata")
 
     @property
     @pulumi.getter

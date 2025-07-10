@@ -49,6 +49,11 @@ public final class SubscriptionSubscription {
      */
     private @Nullable String id;
     /**
+     * @return (Updatable) Corporate conversion allowed status
+     * 
+     */
+    private @Nullable Boolean isCorporateConversionAllowed;
+    /**
      * @return (Updatable) Payment intension.
      * 
      */
@@ -166,6 +171,13 @@ public final class SubscriptionSubscription {
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
+    }
+    /**
+     * @return (Updatable) Corporate conversion allowed status
+     * 
+     */
+    public Optional<Boolean> isCorporateConversionAllowed() {
+        return Optional.ofNullable(this.isCorporateConversionAllowed);
     }
     /**
      * @return (Updatable) Payment intension.
@@ -288,6 +300,7 @@ public final class SubscriptionSubscription {
         private @Nullable String currencyCode;
         private @Nullable String gsiOrgCode;
         private @Nullable String id;
+        private @Nullable Boolean isCorporateConversionAllowed;
         private @Nullable Boolean isIntentToPay;
         private @Nullable String languageCode;
         private @Nullable String organizationId;
@@ -312,6 +325,7 @@ public final class SubscriptionSubscription {
     	      this.currencyCode = defaults.currencyCode;
     	      this.gsiOrgCode = defaults.gsiOrgCode;
     	      this.id = defaults.id;
+    	      this.isCorporateConversionAllowed = defaults.isCorporateConversionAllowed;
     	      this.isIntentToPay = defaults.isIntentToPay;
     	      this.languageCode = defaults.languageCode;
     	      this.organizationId = defaults.organizationId;
@@ -366,6 +380,12 @@ public final class SubscriptionSubscription {
         public Builder id(@Nullable String id) {
 
             this.id = id;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isCorporateConversionAllowed(@Nullable Boolean isCorporateConversionAllowed) {
+
+            this.isCorporateConversionAllowed = isCorporateConversionAllowed;
             return this;
         }
         @CustomType.Setter
@@ -471,6 +491,7 @@ public final class SubscriptionSubscription {
             _resultValue.currencyCode = currencyCode;
             _resultValue.gsiOrgCode = gsiOrgCode;
             _resultValue.id = id;
+            _resultValue.isCorporateConversionAllowed = isCorporateConversionAllowed;
             _resultValue.isIntentToPay = isIntentToPay;
             _resultValue.languageCode = languageCode;
             _resultValue.organizationId = organizationId;

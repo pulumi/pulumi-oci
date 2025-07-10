@@ -10,6 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GenerativeAi.AgentAgentEndpointArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointState;
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointContentModerationConfig;
+import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointGuardrailConfig;
+import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointHumanInputConfig;
+import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointOutputConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentAgentEndpointSessionConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -19,8 +22,6 @@ import javax.annotation.Nullable;
 
 /**
  * This resource provides the Agent Endpoint resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- * 
- * **CreateAgentEndpoint**
  * 
  * Creates an endpoint.
  * 
@@ -37,6 +38,13 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GenerativeAi.AgentAgentEndpoint;
  * import com.pulumi.oci.GenerativeAi.AgentAgentEndpointArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointContentModerationConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointGuardrailConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointGuardrailConfigContentModerationConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointHumanInputConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointOutputConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointOutputConfigOutputLocationArgs;
  * import com.pulumi.oci.GenerativeAi.inputs.AgentAgentEndpointSessionConfigArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -62,10 +70,37 @@ import javax.annotation.Nullable;
  *             .description(agentEndpointDescription)
  *             .displayName(agentEndpointDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .guardrailConfig(AgentAgentEndpointGuardrailConfigArgs.builder()
+ *                 .contentModerationConfig(AgentAgentEndpointGuardrailConfigContentModerationConfigArgs.builder()
+ *                     .inputGuardrailMode(agentEndpointGuardrailConfigContentModerationConfigInputGuardrailMode)
+ *                     .outputGuardrailMode(agentEndpointGuardrailConfigContentModerationConfigOutputGuardrailMode)
+ *                     .build())
+ *                 .personallyIdentifiableInformationConfig(AgentAgentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigArgs.builder()
+ *                     .inputGuardrailMode(agentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigInputGuardrailMode)
+ *                     .outputGuardrailMode(agentEndpointGuardrailConfigPersonallyIdentifiableInformationConfigOutputGuardrailMode)
+ *                     .build())
+ *                 .promptInjectionConfig(AgentAgentEndpointGuardrailConfigPromptInjectionConfigArgs.builder()
+ *                     .inputGuardrailMode(agentEndpointGuardrailConfigPromptInjectionConfigInputGuardrailMode)
+ *                     .build())
+ *                 .build())
+ *             .humanInputConfig(AgentAgentEndpointHumanInputConfigArgs.builder()
+ *                 .shouldEnableHumanInput(agentEndpointHumanInputConfigShouldEnableHumanInput)
+ *                 .build())
+ *             .metadata(agentEndpointMetadata)
+ *             .outputConfig(AgentAgentEndpointOutputConfigArgs.builder()
+ *                 .outputLocation(AgentAgentEndpointOutputConfigOutputLocationArgs.builder()
+ *                     .bucket(agentEndpointOutputConfigOutputLocationBucket)
+ *                     .namespace(agentEndpointOutputConfigOutputLocationNamespace)
+ *                     .outputLocationType(agentEndpointOutputConfigOutputLocationOutputLocationType)
+ *                     .prefix(agentEndpointOutputConfigOutputLocationPrefix)
+ *                     .build())
+ *                 .retentionPeriodInMinutes(agentEndpointOutputConfigRetentionPeriodInMinutes)
+ *                 .build())
  *             .sessionConfig(AgentAgentEndpointSessionConfigArgs.builder()
  *                 .idleTimeoutInSeconds(agentEndpointSessionConfigIdleTimeoutInSeconds)
  *                 .build())
  *             .shouldEnableCitation(agentEndpointShouldEnableCitation)
+ *             .shouldEnableMultiLanguage(agentEndpointShouldEnableMultiLanguage)
  *             .shouldEnableSession(agentEndpointShouldEnableSession)
  *             .shouldEnableTrace(agentEndpointShouldEnableTrace)
  *             .build());
@@ -186,6 +221,34 @@ public class AgentAgentEndpoint extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
+     * 
+     */
+    @Export(name="guardrailConfig", refs={AgentAgentEndpointGuardrailConfig.class}, tree="[0]")
+    private Output<AgentAgentEndpointGuardrailConfig> guardrailConfig;
+
+    /**
+     * @return (Updatable) The configuration details about whether to apply the guardrail checks to input and output.
+     * 
+     */
+    public Output<AgentAgentEndpointGuardrailConfig> guardrailConfig() {
+        return this.guardrailConfig;
+    }
+    /**
+     * (Updatable) Human Input Configuration for an AgentEndpoint.
+     * 
+     */
+    @Export(name="humanInputConfig", refs={AgentAgentEndpointHumanInputConfig.class}, tree="[0]")
+    private Output<AgentAgentEndpointHumanInputConfig> humanInputConfig;
+
+    /**
+     * @return (Updatable) Human Input Configuration for an AgentEndpoint.
+     * 
+     */
+    public Output<AgentAgentEndpointHumanInputConfig> humanInputConfig() {
+        return this.humanInputConfig;
+    }
+    /**
      * A message that describes the current state of the endpoint in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
      */
@@ -200,18 +263,42 @@ public class AgentAgentEndpoint extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) **SessionConfig**
+     * (Updatable) Key-value pairs to allow additional configurations.
      * 
-     * Session Configuration on AgentEndpoint.
+     */
+    @Export(name="metadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> metadata;
+
+    /**
+     * @return (Updatable) Key-value pairs to allow additional configurations.
+     * 
+     */
+    public Output<Map<String,String>> metadata() {
+        return this.metadata;
+    }
+    /**
+     * (Updatable) Configuration to store results generated by agent.
+     * 
+     */
+    @Export(name="outputConfig", refs={AgentAgentEndpointOutputConfig.class}, tree="[0]")
+    private Output<AgentAgentEndpointOutputConfig> outputConfig;
+
+    /**
+     * @return (Updatable) Configuration to store results generated by agent.
+     * 
+     */
+    public Output<AgentAgentEndpointOutputConfig> outputConfig() {
+        return this.outputConfig;
+    }
+    /**
+     * (Updatable) Session Configuration on AgentEndpoint.
      * 
      */
     @Export(name="sessionConfig", refs={AgentAgentEndpointSessionConfig.class}, tree="[0]")
     private Output<AgentAgentEndpointSessionConfig> sessionConfig;
 
     /**
-     * @return (Updatable) **SessionConfig**
-     * 
-     * Session Configuration on AgentEndpoint.
+     * @return (Updatable) Session Configuration on AgentEndpoint.
      * 
      */
     public Output<AgentAgentEndpointSessionConfig> sessionConfig() {
@@ -230,6 +317,20 @@ public class AgentAgentEndpoint extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> shouldEnableCitation() {
         return this.shouldEnableCitation;
+    }
+    /**
+     * (Updatable) Whether to enable multi-language for chat.
+     * 
+     */
+    @Export(name="shouldEnableMultiLanguage", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> shouldEnableMultiLanguage;
+
+    /**
+     * @return (Updatable) Whether to enable multi-language for chat.
+     * 
+     */
+    public Output<Boolean> shouldEnableMultiLanguage() {
+        return this.shouldEnableMultiLanguage;
     }
     /**
      * Whether or not to enable Session-based chat.

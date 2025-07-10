@@ -78,6 +78,8 @@ type LookupSubscriptionResult struct {
 	GsiOrgCode string `pulumi:"gsiOrgCode"`
 	// Subscription id identifier (OCID).
 	Id string `pulumi:"id"`
+	// Corporate conversion allowed status
+	IsCorporateConversionAllowed bool `pulumi:"isCorporateConversionAllowed"`
 	// Payment intension.
 	IsIntentToPay bool `pulumi:"isIntentToPay"`
 	// Language short code (en, de, hu, etc)
@@ -187,6 +189,11 @@ func (o LookupSubscriptionResultOutput) GsiOrgCode() pulumi.StringOutput {
 // Subscription id identifier (OCID).
 func (o LookupSubscriptionResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriptionResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Corporate conversion allowed status
+func (o LookupSubscriptionResultOutput) IsCorporateConversionAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) bool { return v.IsCorporateConversionAllowed }).(pulumi.BoolOutput)
 }
 
 // Payment intension.

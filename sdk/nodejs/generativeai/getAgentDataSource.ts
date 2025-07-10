@@ -83,6 +83,10 @@ export interface GetAgentDataSourceResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Key-value pairs to allow additional configurations.
+     */
+    readonly metadata: {[key: string]: string};
+    /**
      * The current state of the data source.
      */
     readonly state: string;

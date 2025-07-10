@@ -120,6 +120,7 @@ class _SubscriptionState:
                  currency_code: Optional[pulumi.Input[builtins.str]] = None,
                  email: Optional[pulumi.Input[builtins.str]] = None,
                  gsi_org_code: Optional[pulumi.Input[builtins.str]] = None,
+                 is_corporate_conversion_allowed: Optional[pulumi.Input[builtins.bool]] = None,
                  is_intent_to_pay: Optional[pulumi.Input[builtins.bool]] = None,
                  language_code: Optional[pulumi.Input[builtins.str]] = None,
                  organization_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -147,6 +148,7 @@ class _SubscriptionState:
         :param pulumi.Input[builtins.str] currency_code: Currency code
         :param pulumi.Input[builtins.str] email: (Updatable) User email
         :param pulumi.Input[builtins.str] gsi_org_code: GSI Subscription external code.
+        :param pulumi.Input[builtins.bool] is_corporate_conversion_allowed: Corporate conversion allowed status
         :param pulumi.Input[builtins.bool] is_intent_to_pay: Payment intension.
         :param pulumi.Input[builtins.str] language_code: Language short code (en, de, hu, etc)
         :param pulumi.Input[builtins.str] organization_id: GSI organization external identifier.
@@ -184,6 +186,8 @@ class _SubscriptionState:
             pulumi.set(__self__, "email", email)
         if gsi_org_code is not None:
             pulumi.set(__self__, "gsi_org_code", gsi_org_code)
+        if is_corporate_conversion_allowed is not None:
+            pulumi.set(__self__, "is_corporate_conversion_allowed", is_corporate_conversion_allowed)
         if is_intent_to_pay is not None:
             pulumi.set(__self__, "is_intent_to_pay", is_intent_to_pay)
         if language_code is not None:
@@ -304,6 +308,18 @@ class _SubscriptionState:
     @gsi_org_code.setter
     def gsi_org_code(self, value: Optional[pulumi.Input[builtins.str]]):
         pulumi.set(self, "gsi_org_code", value)
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> Optional[pulumi.Input[builtins.bool]]:
+        """
+        Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
+
+    @is_corporate_conversion_allowed.setter
+    def is_corporate_conversion_allowed(self, value: Optional[pulumi.Input[builtins.bool]]):
+        pulumi.set(self, "is_corporate_conversion_allowed", value)
 
     @property
     @pulumi.getter(name="isIntentToPay")
@@ -631,6 +647,7 @@ class Subscription(pulumi.CustomResource):
             __props__.__dict__["billing_addresses"] = None
             __props__.__dict__["currency_code"] = None
             __props__.__dict__["gsi_org_code"] = None
+            __props__.__dict__["is_corporate_conversion_allowed"] = None
             __props__.__dict__["is_intent_to_pay"] = None
             __props__.__dict__["language_code"] = None
             __props__.__dict__["organization_id"] = None
@@ -663,6 +680,7 @@ class Subscription(pulumi.CustomResource):
             currency_code: Optional[pulumi.Input[builtins.str]] = None,
             email: Optional[pulumi.Input[builtins.str]] = None,
             gsi_org_code: Optional[pulumi.Input[builtins.str]] = None,
+            is_corporate_conversion_allowed: Optional[pulumi.Input[builtins.bool]] = None,
             is_intent_to_pay: Optional[pulumi.Input[builtins.bool]] = None,
             language_code: Optional[pulumi.Input[builtins.str]] = None,
             organization_id: Optional[pulumi.Input[builtins.str]] = None,
@@ -695,6 +713,7 @@ class Subscription(pulumi.CustomResource):
         :param pulumi.Input[builtins.str] currency_code: Currency code
         :param pulumi.Input[builtins.str] email: (Updatable) User email
         :param pulumi.Input[builtins.str] gsi_org_code: GSI Subscription external code.
+        :param pulumi.Input[builtins.bool] is_corporate_conversion_allowed: Corporate conversion allowed status
         :param pulumi.Input[builtins.bool] is_intent_to_pay: Payment intension.
         :param pulumi.Input[builtins.str] language_code: Language short code (en, de, hu, etc)
         :param pulumi.Input[builtins.str] organization_id: GSI organization external identifier.
@@ -729,6 +748,7 @@ class Subscription(pulumi.CustomResource):
         __props__.__dict__["currency_code"] = currency_code
         __props__.__dict__["email"] = email
         __props__.__dict__["gsi_org_code"] = gsi_org_code
+        __props__.__dict__["is_corporate_conversion_allowed"] = is_corporate_conversion_allowed
         __props__.__dict__["is_intent_to_pay"] = is_intent_to_pay
         __props__.__dict__["language_code"] = language_code
         __props__.__dict__["organization_id"] = organization_id
@@ -804,6 +824,14 @@ class Subscription(pulumi.CustomResource):
         GSI Subscription external code.
         """
         return pulumi.get(self, "gsi_org_code")
+
+    @property
+    @pulumi.getter(name="isCorporateConversionAllowed")
+    def is_corporate_conversion_allowed(self) -> pulumi.Output[builtins.bool]:
+        """
+        Corporate conversion allowed status
+        """
+        return pulumi.get(self, "is_corporate_conversion_allowed")
 
     @property
     @pulumi.getter(name="isIntentToPay")

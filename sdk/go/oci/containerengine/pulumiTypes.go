@@ -8743,7 +8743,7 @@ type GetAddonsAddon struct {
 	// The time the cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// selected addon version, or null indicates autoUpdate
-	Version string `pulumi:"version"`
+	Version *string `pulumi:"version"`
 }
 
 // GetAddonsAddonInput is an input type that accepts GetAddonsAddonArgs and GetAddonsAddonOutput values.
@@ -8775,7 +8775,7 @@ type GetAddonsAddonArgs struct {
 	// The time the cluster was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// selected addon version, or null indicates autoUpdate
-	Version pulumi.StringInput `pulumi:"version"`
+	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
 func (GetAddonsAddonArgs) ElementType() reflect.Type {
@@ -8873,8 +8873,8 @@ func (o GetAddonsAddonOutput) TimeCreated() pulumi.StringOutput {
 }
 
 // selected addon version, or null indicates autoUpdate
-func (o GetAddonsAddonOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetAddonsAddon) string { return v.Version }).(pulumi.StringOutput)
+func (o GetAddonsAddonOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAddonsAddon) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type GetAddonsAddonArrayOutput struct{ *pulumi.OutputState }

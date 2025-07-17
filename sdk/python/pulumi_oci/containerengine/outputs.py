@@ -4347,8 +4347,8 @@ class GetAddonsAddonResult(dict):
                  remove_addon_resources_on_delete: builtins.bool,
                  state: builtins.str,
                  time_created: builtins.str,
-                 version: builtins.str,
-                 override_existing: Optional[builtins.bool] = None):
+                 override_existing: Optional[builtins.bool] = None,
+                 version: Optional[builtins.str] = None):
         """
         :param Sequence['GetAddonsAddonAddonErrorArgs'] addon_errors: The error info of the addon.
         :param builtins.str addon_name: The name of the addon.
@@ -4367,9 +4367,10 @@ class GetAddonsAddonResult(dict):
         pulumi.set(__self__, "remove_addon_resources_on_delete", remove_addon_resources_on_delete)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "version", version)
         if override_existing is not None:
             pulumi.set(__self__, "override_existing", override_existing)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
 
     @property
     @pulumi.getter(name="addonErrors")
@@ -4433,17 +4434,17 @@ class GetAddonsAddonResult(dict):
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="overrideExisting")
+    def override_existing(self) -> Optional[builtins.bool]:
+        return pulumi.get(self, "override_existing")
+
+    @property
     @pulumi.getter
-    def version(self) -> builtins.str:
+    def version(self) -> Optional[builtins.str]:
         """
         selected addon version, or null indicates autoUpdate
         """
         return pulumi.get(self, "version")
-
-    @property
-    @pulumi.getter(name="overrideExisting")
-    def override_existing(self) -> Optional[builtins.bool]:
-        return pulumi.get(self, "override_existing")
 
 
 @pulumi.output_type

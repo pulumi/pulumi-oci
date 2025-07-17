@@ -57,7 +57,7 @@ public final class GetAddonsAddon {
      * @return selected addon version, or null indicates autoUpdate
      * 
      */
-    private String version;
+    private @Nullable String version;
 
     private GetAddonsAddon() {}
     /**
@@ -119,8 +119,8 @@ public final class GetAddonsAddon {
      * @return selected addon version, or null indicates autoUpdate
      * 
      */
-    public String version() {
-        return this.version;
+    public Optional<String> version() {
+        return Optional.ofNullable(this.version);
     }
 
     public static Builder builder() {
@@ -141,7 +141,7 @@ public final class GetAddonsAddon {
         private Boolean removeAddonResourcesOnDelete;
         private String state;
         private String timeCreated;
-        private String version;
+        private @Nullable String version;
         public Builder() {}
         public Builder(GetAddonsAddon defaults) {
     	      Objects.requireNonNull(defaults);
@@ -234,10 +234,8 @@ public final class GetAddonsAddon {
             return this;
         }
         @CustomType.Setter
-        public Builder version(String version) {
-            if (version == null) {
-              throw new MissingRequiredPropertyException("GetAddonsAddon", "version");
-            }
+        public Builder version(@Nullable String version) {
+
             this.version = version;
             return this;
         }

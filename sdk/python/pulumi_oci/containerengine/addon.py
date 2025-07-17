@@ -540,7 +540,7 @@ class Addon(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def version(self) -> pulumi.Output[builtins.str]:
+    def version(self) -> pulumi.Output[Optional[builtins.str]]:
         """
         (Updatable) The version of addon to be installed.
 

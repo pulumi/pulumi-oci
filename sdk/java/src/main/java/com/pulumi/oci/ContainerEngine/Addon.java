@@ -168,7 +168,7 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="version", refs={String.class}, tree="[0]")
-    private Output<String> version;
+    private Output</* @Nullable */ String> version;
 
     /**
      * @return (Updatable) The version of addon to be installed.
@@ -177,8 +177,8 @@ public class Addon extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> version() {
-        return this.version;
+    public Output<Optional<String>> version() {
+        return Codegen.optional(this.version);
     }
 
     /**

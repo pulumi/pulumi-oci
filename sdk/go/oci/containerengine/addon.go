@@ -48,7 +48,7 @@ type Addon struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	Version pulumi.StringOutput `pulumi:"version"`
+	Version pulumi.StringPtrOutput `pulumi:"version"`
 }
 
 // NewAddon registers a new resource with the given unique name, arguments, and options.
@@ -318,8 +318,8 @@ func (o AddonOutput) TimeCreated() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AddonOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v *Addon) pulumi.StringOutput { return v.Version }).(pulumi.StringOutput)
+func (o AddonOutput) Version() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Addon) pulumi.StringPtrOutput { return v.Version }).(pulumi.StringPtrOutput)
 }
 
 type AddonArrayOutput struct{ *pulumi.OutputState }

@@ -46,7 +46,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// selected addon version, or null indicates autoUpdate
         /// </summary>
-        public readonly string Version;
+        public readonly string? Version;
 
         [OutputConstructor]
         private GetAddonsAddonResult(
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string timeCreated,
 
-            string version)
+            string? version)
         {
             AddonErrors = addonErrors;
             AddonName = addonName;

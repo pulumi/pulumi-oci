@@ -84,7 +84,8 @@ type GetAutonomousDatabasesArgs struct {
 	// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
 	IsRefreshableClone *bool `pulumi:"isRefreshableClone"`
 	// Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-	IsResourcePoolLeader     *bool   `pulumi:"isResourcePoolLeader"`
+	IsResourcePoolLeader *bool `pulumi:"isResourcePoolLeader"`
+	// A filter to return only resources that not match the given lifecycle state.
 	LifecycleStateNotEqualTo *string `pulumi:"lifecycleStateNotEqualTo"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
 	ResourcePoolLeaderId *string `pulumi:"resourcePoolLeaderId"`
@@ -94,9 +95,10 @@ type GetAutonomousDatabasesArgs struct {
 
 // A collection of values returned by getAutonomousDatabases.
 type GetAutonomousDatabasesResult struct {
-	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	AutonomousContainerDatabaseId *string                                    `pulumi:"autonomousContainerDatabaseId"`
-	AutonomousDatabases           []GetAutonomousDatabasesAutonomousDatabase `pulumi:"autonomousDatabases"`
+	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+	AutonomousContainerDatabaseId *string `pulumi:"autonomousContainerDatabaseId"`
+	// The list of autonomous_databases.
+	AutonomousDatabases []GetAutonomousDatabasesAutonomousDatabase `pulumi:"autonomousDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A valid Oracle Database version for Autonomous Database.
@@ -159,7 +161,8 @@ type GetAutonomousDatabasesOutputArgs struct {
 	// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
 	IsRefreshableClone pulumi.BoolPtrInput `pulumi:"isRefreshableClone"`
 	// Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
-	IsResourcePoolLeader     pulumi.BoolPtrInput   `pulumi:"isResourcePoolLeader"`
+	IsResourcePoolLeader pulumi.BoolPtrInput `pulumi:"isResourcePoolLeader"`
+	// A filter to return only resources that not match the given lifecycle state.
 	LifecycleStateNotEqualTo pulumi.StringPtrInput `pulumi:"lifecycleStateNotEqualTo"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
 	ResourcePoolLeaderId pulumi.StringPtrInput `pulumi:"resourcePoolLeaderId"`
@@ -186,11 +189,12 @@ func (o GetAutonomousDatabasesResultOutput) ToGetAutonomousDatabasesResultOutput
 	return o
 }
 
-// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
 func (o GetAutonomousDatabasesResultOutput) AutonomousContainerDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) *string { return v.AutonomousContainerDatabaseId }).(pulumi.StringPtrOutput)
 }
 
+// The list of autonomous_databases.
 func (o GetAutonomousDatabasesResultOutput) AutonomousDatabases() GetAutonomousDatabasesAutonomousDatabaseArrayOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesResult) []GetAutonomousDatabasesAutonomousDatabase {
 		return v.AutonomousDatabases

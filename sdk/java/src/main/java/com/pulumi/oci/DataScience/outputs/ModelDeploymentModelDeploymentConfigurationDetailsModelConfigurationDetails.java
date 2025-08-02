@@ -4,7 +4,6 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy;
 import java.lang.Integer;
@@ -21,10 +20,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      */
     private @Nullable Integer bandwidthMbps;
     /**
-     * @return (Updatable) The model deployment instance configuration
+     * @return (Updatable) The model deployment instance configuration.
      * 
      */
-    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
     /**
      * @return (Updatable) The maximum network bandwidth for the model deployment.
      * 
@@ -34,7 +33,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The OCID of the model you want to deploy.
      * 
      */
-    private String modelId;
+    private @Nullable String modelId;
     /**
      * @return (Updatable) The scaling policy to apply to each model of the deployment.
      * 
@@ -50,11 +49,11 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         return Optional.ofNullable(this.bandwidthMbps);
     }
     /**
-     * @return (Updatable) The model deployment instance configuration
+     * @return (Updatable) The model deployment instance configuration.
      * 
      */
-    public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration() {
-        return this.instanceConfiguration;
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration> instanceConfiguration() {
+        return Optional.ofNullable(this.instanceConfiguration);
     }
     /**
      * @return (Updatable) The maximum network bandwidth for the model deployment.
@@ -67,8 +66,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The OCID of the model you want to deploy.
      * 
      */
-    public String modelId() {
-        return this.modelId;
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
     /**
      * @return (Updatable) The scaling policy to apply to each model of the deployment.
@@ -88,9 +87,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Integer bandwidthMbps;
-        private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration;
         private @Nullable Integer maximumBandwidthMbps;
-        private String modelId;
+        private @Nullable String modelId;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy scalingPolicy;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails defaults) {
@@ -109,10 +108,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             return this;
         }
         @CustomType.Setter
-        public Builder instanceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration) {
-            if (instanceConfiguration == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails", "instanceConfiguration");
-            }
+        public Builder instanceConfiguration(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration) {
+
             this.instanceConfiguration = instanceConfiguration;
             return this;
         }
@@ -123,10 +120,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
             return this;
         }
         @CustomType.Setter
-        public Builder modelId(String modelId) {
-            if (modelId == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails", "modelId");
-            }
+        public Builder modelId(@Nullable String modelId) {
+
             this.modelId = modelId;
             return this;
         }

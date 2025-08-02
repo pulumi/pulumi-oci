@@ -43,6 +43,10 @@ namespace Pulumi.Oci.Vault.Outputs
         /// </summary>
         public readonly bool IsAutoGenerationEnabled;
         /// <summary>
+        /// A Boolean value that indicates whether the secret is a source or replica secret.
+        /// </summary>
+        public readonly bool IsReplica;
+        /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         public readonly string KeyId;
@@ -62,6 +66,10 @@ namespace Pulumi.Oci.Vault.Outputs
         /// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
         public readonly string NextRotationTime;
+        /// <summary>
+        /// Defines the configuration that enables cross-region secret replication.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecretsSecretReplicationConfigResult> ReplicationConfigs;
         /// <summary>
         /// Defines the frequency of the rotation and the information about the target system
         /// </summary>
@@ -83,6 +91,10 @@ namespace Pulumi.Oci.Vault.Outputs
         /// A list of rules that control how the secret is used and managed.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecretsSecretSecretRuleResult> SecretRules;
+        /// <summary>
+        /// Details for the source that the source secret has.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecretsSecretSourceRegionInformationResult> SourceRegionInformations;
         /// <summary>
         /// A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
@@ -122,6 +134,8 @@ namespace Pulumi.Oci.Vault.Outputs
 
             bool isAutoGenerationEnabled,
 
+            bool isReplica,
+
             string keyId,
 
             string lastRotationTime,
@@ -131,6 +145,8 @@ namespace Pulumi.Oci.Vault.Outputs
             ImmutableDictionary<string, string> metadata,
 
             string nextRotationTime,
+
+            ImmutableArray<Outputs.GetSecretsSecretReplicationConfigResult> replicationConfigs,
 
             ImmutableArray<Outputs.GetSecretsSecretRotationConfigResult> rotationConfigs,
 
@@ -143,6 +159,8 @@ namespace Pulumi.Oci.Vault.Outputs
             string secretName,
 
             ImmutableArray<Outputs.GetSecretsSecretSecretRuleResult> secretRules,
+
+            ImmutableArray<Outputs.GetSecretsSecretSourceRegionInformationResult> sourceRegionInformations,
 
             string state,
 
@@ -162,17 +180,20 @@ namespace Pulumi.Oci.Vault.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsAutoGenerationEnabled = isAutoGenerationEnabled;
+            IsReplica = isReplica;
             KeyId = keyId;
             LastRotationTime = lastRotationTime;
             LifecycleDetails = lifecycleDetails;
             Metadata = metadata;
             NextRotationTime = nextRotationTime;
+            ReplicationConfigs = replicationConfigs;
             RotationConfigs = rotationConfigs;
             RotationStatus = rotationStatus;
             SecretContents = secretContents;
             SecretGenerationContexts = secretGenerationContexts;
             SecretName = secretName;
             SecretRules = secretRules;
+            SourceRegionInformations = sourceRegionInformations;
             State = state;
             TimeCreated = timeCreated;
             TimeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;

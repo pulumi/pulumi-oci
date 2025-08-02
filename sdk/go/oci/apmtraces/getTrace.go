@@ -58,9 +58,9 @@ func GetTrace(ctx *pulumi.Context, args *GetTraceArgs, opts ...pulumi.InvokeOpti
 type GetTraceArgs struct {
 	// The APM Domain ID for the intended request.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+	// Include traces that have a minTraceStartTime equal to or greater than this value.
 	TimeTraceStartedGreaterThanOrEqualTo *string `pulumi:"timeTraceStartedGreaterThanOrEqualTo"`
-	// Include traces that have a `minTraceStartTime` less than this value.
+	// Include traces that have a minTraceStartTime less than this value.
 	TimeTraceStartedLessThan *string `pulumi:"timeTraceStartedLessThan"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey string `pulumi:"traceKey"`
@@ -131,9 +131,9 @@ func GetTraceOutput(ctx *pulumi.Context, args GetTraceOutputArgs, opts ...pulumi
 type GetTraceOutputArgs struct {
 	// The APM Domain ID for the intended request.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+	// Include traces that have a minTraceStartTime equal to or greater than this value.
 	TimeTraceStartedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeTraceStartedGreaterThanOrEqualTo"`
-	// Include traces that have a `minTraceStartTime` less than this value.
+	// Include traces that have a minTraceStartTime less than this value.
 	TimeTraceStartedLessThan pulumi.StringPtrInput `pulumi:"timeTraceStartedLessThan"`
 	// Unique Application Performance Monitoring trace identifier (traceId).
 	TraceKey pulumi.StringInput `pulumi:"traceKey"`

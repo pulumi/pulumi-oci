@@ -27,6 +27,8 @@ __all__ = [
     'ManagementAgentManagementAgentPropertyArgsDict',
     'ManagementAgentPluginListArgs',
     'ManagementAgentPluginListArgsDict',
+    'NamedCredentialPropertyArgs',
+    'NamedCredentialPropertyArgsDict',
     'GetManagementAgentAvailableHistoriesFilterArgs',
     'GetManagementAgentAvailableHistoriesFilterArgsDict',
     'GetManagementAgentDataSourcesFilterArgs',
@@ -39,6 +41,8 @@ __all__ = [
     'GetManagementAgentPluginsFilterArgsDict',
     'GetManagementAgentsFilterArgs',
     'GetManagementAgentsFilterArgsDict',
+    'GetNamedCredentialsFilterArgs',
+    'GetNamedCredentialsFilterArgsDict',
 ]
 
 MYPY = False
@@ -834,6 +838,75 @@ class ManagementAgentPluginListArgs:
 
 
 if not MYPY:
+    class NamedCredentialPropertyArgsDict(TypedDict):
+        name: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Name of the property
+        """
+        value: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Value of the property
+        """
+        value_category: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+elif False:
+    NamedCredentialPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class NamedCredentialPropertyArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str],
+                 value_category: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: (Updatable) Name of the property
+        :param pulumi.Input[_builtins.str] value: (Updatable) Value of the property
+        :param pulumi.Input[_builtins.str] value_category: (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_category", value_category)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Value of the property
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueCategory")
+    def value_category(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        return pulumi.get(self, "value_category")
+
+    @value_category.setter
+    def value_category(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value_category", value)
+
+
+if not MYPY:
     class GetManagementAgentAvailableHistoriesFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -1142,6 +1215,62 @@ class GetManagementAgentsFilterArgs:
         """
         Values of the property
         """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetNamedCredentialsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        Filter list for these name items.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetNamedCredentialsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetNamedCredentialsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Filter list for these name items.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Filter list for these name items.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "values")
 
     @values.setter

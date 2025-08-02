@@ -13,6 +13,419 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail struct {
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword string `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	ProviderType string `pulumi:"providerType"`
+}
+
+// GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput is an input type that accepts GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs and GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput` via:
+//
+//	GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs{...}
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput() GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput
+	ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput
+}
+
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs struct {
+	// Provide the HSM password as you would in RDBMS for External HSM.
+	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
+	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+	ProviderType pulumi.StringInput `pulumi:"providerType"`
+}
+
+func (GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput() GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return i.ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput)
+}
+
+// GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput is an input type that accepts GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray and GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray{ GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs{...} }
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput() GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput
+	ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput
+}
+
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray []GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput
+
+func (GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput() GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput() GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return o
+}
+
+// Provide the HSM password as you would in RDBMS for External HSM.
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) HsmPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.HsmPassword }).(pulumi.StringOutput)
+}
+
+// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ProviderType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.ProviderType }).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput() GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail {
+		return vs[0].([]GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput)
+}
+
+type GetDatabasesDatabaseDbBackupConfig struct {
+	// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+	AutoBackupEnabled bool `pulumi:"autoBackupEnabled"`
+	// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoBackupWindow string `pulumi:"autoBackupWindow"`
+	// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+	AutoFullBackupDay string `pulumi:"autoFullBackupDay"`
+	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoFullBackupWindow string `pulumi:"autoFullBackupWindow"`
+	// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+	BackupDeletionPolicy string `pulumi:"backupDeletionPolicy"`
+	// Backup destination details.
+	BackupDestinationDetails []GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail `pulumi:"backupDestinationDetails"`
+	// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+	RecoveryWindowInDays int `pulumi:"recoveryWindowInDays"`
+	// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+	RunImmediateFullBackup bool `pulumi:"runImmediateFullBackup"`
+}
+
+// GetDatabasesDatabaseDbBackupConfigInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigArgs and GetDatabasesDatabaseDbBackupConfigOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigInput` via:
+//
+//	GetDatabasesDatabaseDbBackupConfigArgs{...}
+type GetDatabasesDatabaseDbBackupConfigInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDbBackupConfigOutput() GetDatabasesDatabaseDbBackupConfigOutput
+	ToGetDatabasesDatabaseDbBackupConfigOutputWithContext(context.Context) GetDatabasesDatabaseDbBackupConfigOutput
+}
+
+type GetDatabasesDatabaseDbBackupConfigArgs struct {
+	// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+	AutoBackupEnabled pulumi.BoolInput `pulumi:"autoBackupEnabled"`
+	// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoBackupWindow pulumi.StringInput `pulumi:"autoBackupWindow"`
+	// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+	AutoFullBackupDay pulumi.StringInput `pulumi:"autoFullBackupDay"`
+	// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+	AutoFullBackupWindow pulumi.StringInput `pulumi:"autoFullBackupWindow"`
+	// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+	BackupDeletionPolicy pulumi.StringInput `pulumi:"backupDeletionPolicy"`
+	// Backup destination details.
+	BackupDestinationDetails GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput `pulumi:"backupDestinationDetails"`
+	// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+	RecoveryWindowInDays pulumi.IntInput `pulumi:"recoveryWindowInDays"`
+	// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+	RunImmediateFullBackup pulumi.BoolInput `pulumi:"runImmediateFullBackup"`
+}
+
+func (GetDatabasesDatabaseDbBackupConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigArgs) ToGetDatabasesDatabaseDbBackupConfigOutput() GetDatabasesDatabaseDbBackupConfigOutput {
+	return i.ToGetDatabasesDatabaseDbBackupConfigOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigArgs) ToGetDatabasesDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDbBackupConfigOutput)
+}
+
+// GetDatabasesDatabaseDbBackupConfigArrayInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigArray and GetDatabasesDatabaseDbBackupConfigArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigArrayInput` via:
+//
+//	GetDatabasesDatabaseDbBackupConfigArray{ GetDatabasesDatabaseDbBackupConfigArgs{...} }
+type GetDatabasesDatabaseDbBackupConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDbBackupConfigArrayOutput() GetDatabasesDatabaseDbBackupConfigArrayOutput
+	ToGetDatabasesDatabaseDbBackupConfigArrayOutputWithContext(context.Context) GetDatabasesDatabaseDbBackupConfigArrayOutput
+}
+
+type GetDatabasesDatabaseDbBackupConfigArray []GetDatabasesDatabaseDbBackupConfigInput
+
+func (GetDatabasesDatabaseDbBackupConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigArray) ToGetDatabasesDatabaseDbBackupConfigArrayOutput() GetDatabasesDatabaseDbBackupConfigArrayOutput {
+	return i.ToGetDatabasesDatabaseDbBackupConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigArray) ToGetDatabasesDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDbBackupConfigArrayOutput)
+}
+
+type GetDatabasesDatabaseDbBackupConfigOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDbBackupConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigOutput) ToGetDatabasesDatabaseDbBackupConfigOutput() GetDatabasesDatabaseDbBackupConfigOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigOutput) ToGetDatabasesDatabaseDbBackupConfigOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigOutput {
+	return o
+}
+
+// If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
+func (o GetDatabasesDatabaseDbBackupConfigOutput) AutoBackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) bool { return v.AutoBackupEnabled }).(pulumi.BoolOutput)
+}
+
+// Time window selected for initiating automatic backup for the database system. There are twelve available two-hour time windows. If no option is selected, a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+func (o GetDatabasesDatabaseDbBackupConfigOutput) AutoBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) string { return v.AutoBackupWindow }).(pulumi.StringOutput)
+}
+
+// Day of the week the full backup should be applied on the database system. If no option is selected, the value is null and we will default to Sunday.
+func (o GetDatabasesDatabaseDbBackupConfigOutput) AutoFullBackupDay() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) string { return v.AutoFullBackupDay }).(pulumi.StringOutput)
+}
+
+// Time window selected for initiating full backup for the database system. There are twelve available two-hour time windows. If no option is selected, the value is null and a start time between 12:00 AM to 7:00 AM in the region of the database is automatically chosen. For example, if the user selects SLOT_TWO from the enum list, the automatic backup job will start in between 2:00 AM (inclusive) to 4:00 AM (exclusive).  Example: `SLOT_TWO`
+func (o GetDatabasesDatabaseDbBackupConfigOutput) AutoFullBackupWindow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) string { return v.AutoFullBackupWindow }).(pulumi.StringOutput)
+}
+
+// This defines when the backups will be deleted. - IMMEDIATE option keep the backup for predefined time i.e 72 hours and then delete permanently... - RETAIN will keep the backups as per the policy defined for database backups.
+func (o GetDatabasesDatabaseDbBackupConfigOutput) BackupDeletionPolicy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) string { return v.BackupDeletionPolicy }).(pulumi.StringOutput)
+}
+
+// Backup destination details.
+func (o GetDatabasesDatabaseDbBackupConfigOutput) BackupDestinationDetails() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) []GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
+		return v.BackupDestinationDetails
+	}).(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+// Number of days between the current and the earliest point of recoverability covered by automatic backups. This value applies to automatic backups only. After a new automatic backup has been created, Oracle removes old automatic backups that are created before the window. When the value is updated, it is applied to all existing automatic backups.
+func (o GetDatabasesDatabaseDbBackupConfigOutput) RecoveryWindowInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) int { return v.RecoveryWindowInDays }).(pulumi.IntOutput)
+}
+
+// If set to true, configures automatic full backups in the local region (the region of the DB system) for the first backup run immediately.
+func (o GetDatabasesDatabaseDbBackupConfigOutput) RunImmediateFullBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfig) bool { return v.RunImmediateFullBackup }).(pulumi.BoolOutput)
+}
+
+type GetDatabasesDatabaseDbBackupConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDbBackupConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDbBackupConfig)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigArrayOutput) ToGetDatabasesDatabaseDbBackupConfigArrayOutput() GetDatabasesDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigArrayOutput) ToGetDatabasesDatabaseDbBackupConfigArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDbBackupConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDbBackupConfig {
+		return vs[0].([]GetDatabasesDatabaseDbBackupConfig)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDbBackupConfigOutput)
+}
+
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+	DbrsPolicyId string `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	Id string `pulumi:"id"`
+	// Indicates whether the backup destination is cross-region or local region.
+	IsRemote bool `pulumi:"isRemote"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.
+	RemoteRegion string `pulumi:"remoteRegion"`
+	// Type of the database backup destination.
+	Type        string `pulumi:"type"`
+	VpcPassword string `pulumi:"vpcPassword"`
+	VpcUser     string `pulumi:"vpcUser"`
+}
+
+// GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs and GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput` via:
+//
+//	GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{...}
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput
+	ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Context) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput
+}
+
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+	DbrsPolicyId pulumi.StringInput `pulumi:"dbrsPolicyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the backup destination is cross-region or local region.
+	IsRemote pulumi.BoolInput `pulumi:"isRemote"`
+	// The name of the remote region where the remote automatic incremental backups will be stored.
+	RemoteRegion pulumi.StringInput `pulumi:"remoteRegion"`
+	// Type of the database backup destination.
+	Type        pulumi.StringInput `pulumi:"type"`
+	VpcPassword pulumi.StringInput `pulumi:"vpcPassword"`
+	VpcUser     pulumi.StringInput `pulumi:"vpcUser"`
+}
+
+func (GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return i.ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
+// GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput is an input type that accepts GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray and GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput` via:
+//
+//	GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray{ GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{...} }
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+	ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Context) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput
+}
+
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray []GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput
+
+func (GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return i.ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput)
+}
+
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) DbrsPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.DbrsPolicyId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the backup destination is cross-region or local region.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) IsRemote() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) bool { return v.IsRemote }).(pulumi.BoolOutput)
+}
+
+// The name of the remote region where the remote automatic incremental backups will be stored.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) RemoteRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.RemoteRegion }).(pulumi.StringOutput)
+}
+
+// Type of the database backup destination.
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcPassword }).(pulumi.StringOutput)
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput) VpcUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail) string { return v.VpcUser }).(pulumi.StringOutput)
+}
+
+type GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail)(nil)).Elem()
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput() GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) ToGetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutputWithContext(ctx context.Context) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput {
+	return o
+}
+
+func (o GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput) Index(i pulumi.IntInput) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail {
+		return vs[0].([]GetDatabasesDatabaseDbBackupConfigBackupDestinationDetail)[vs[1].(int)]
+	}).(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput)
+}
+
 type GetDatabasesFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -21260,6 +21673,8 @@ func (o GetGiVersionsGiVersionArrayOutput) Index(i pulumi.IntInput) GetGiVersion
 type GetKeyStoreAssociatedDatabase struct {
 	// The name of the database that is associated with the key store.
 	DbName string `pulumi:"dbName"`
+	// The unique name of the database that is associated with the key store.
+	DbUniqueName string `pulumi:"dbUniqueName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id string `pulumi:"id"`
 }
@@ -21278,6 +21693,8 @@ type GetKeyStoreAssociatedDatabaseInput interface {
 type GetKeyStoreAssociatedDatabaseArgs struct {
 	// The name of the database that is associated with the key store.
 	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The unique name of the database that is associated with the key store.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id pulumi.StringInput `pulumi:"id"`
 }
@@ -21336,6 +21753,11 @@ func (o GetKeyStoreAssociatedDatabaseOutput) ToGetKeyStoreAssociatedDatabaseOutp
 // The name of the database that is associated with the key store.
 func (o GetKeyStoreAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoreAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The unique name of the database that is associated with the key store.
+func (o GetKeyStoreAssociatedDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -21798,6 +22220,8 @@ func (o GetKeyStoresKeyStoreArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKe
 type GetKeyStoresKeyStoreAssociatedDatabase struct {
 	// The name of the database that is associated with the key store.
 	DbName string `pulumi:"dbName"`
+	// The unique name of the database that is associated with the key store.
+	DbUniqueName string `pulumi:"dbUniqueName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id string `pulumi:"id"`
 }
@@ -21816,6 +22240,8 @@ type GetKeyStoresKeyStoreAssociatedDatabaseInput interface {
 type GetKeyStoresKeyStoreAssociatedDatabaseArgs struct {
 	// The name of the database that is associated with the key store.
 	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The unique name of the database that is associated with the key store.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id pulumi.StringInput `pulumi:"id"`
 }
@@ -21874,6 +22300,11 @@ func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) ToGetKeyStoresKeyStoreAsso
 // The name of the database that is associated with the key store.
 func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The unique name of the database that is associated with the key store.
+func (o GetKeyStoresKeyStoreAssociatedDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStoreAssociatedDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -34103,6 +34534,12 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigArrayInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayInput)(nil)).Elem(), GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesFilterInput)(nil)).Elem(), GetDatabasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasesFilterArrayInput)(nil)).Elem(), GetDatabasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbHomeDatabaseInput)(nil)).Elem(), GetDbHomeDatabaseArgs{})
@@ -34587,6 +35024,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailOutput{})
+	pulumi.RegisterOutputType(GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasesFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDbHomeDatabaseOutput{})

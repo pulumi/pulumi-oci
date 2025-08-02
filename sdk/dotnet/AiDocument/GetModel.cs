@@ -124,7 +124,7 @@ namespace Pulumi.Oci.AiDocument
     public sealed class GetModelResult
     {
         /// <summary>
-        /// The compartment identifier.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -152,6 +152,10 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Number of replicas required for this model.
+        /// </summary>
+        public readonly int InferenceUnits;
+        /// <summary>
         /// Set to true when the model is created by using multiple key value extraction models.
         /// </summary>
         public readonly bool IsComposedModel;
@@ -164,9 +168,17 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
+        /// The document language for model training, abbreviated according to the BCP 47 syntax.
+        /// </summary>
+        public readonly string Language;
+        /// <summary>
         /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelLockResult> Locks;
         /// <summary>
         /// The maximum model training time in hours, expressed as a decimal fraction.
         /// </summary>
@@ -179,6 +191,15 @@ namespace Pulumi.Oci.AiDocument
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         /// </summary>
         public readonly string ModelId;
+        /// <summary>
+        /// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        /// * `RECEIPT`
+        /// * `INVOICE`
+        /// * `PASSPORT`
+        /// * `DRIVER_LICENSE`
+        /// * `HEALTH_INSURANCE_ID`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelModelSubTypeResult> ModelSubTypes;
         /// <summary>
         /// The type of the Document model.
         /// </summary>
@@ -244,19 +265,27 @@ namespace Pulumi.Oci.AiDocument
 
             string id,
 
+            int inferenceUnits,
+
             bool isComposedModel,
 
             bool isQuickMode,
 
             ImmutableArray<string> labels,
 
+            string language,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetModelLockResult> locks,
 
             double maxTrainingTimeInHours,
 
             ImmutableArray<Outputs.GetModelMetricResult> metrics,
 
             string modelId,
+
+            ImmutableArray<Outputs.GetModelModelSubTypeResult> modelSubTypes,
 
             string modelType,
 
@@ -289,13 +318,17 @@ namespace Pulumi.Oci.AiDocument
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InferenceUnits = inferenceUnits;
             IsComposedModel = isComposedModel;
             IsQuickMode = isQuickMode;
             Labels = labels;
+            Language = language;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             MaxTrainingTimeInHours = maxTrainingTimeInHours;
             Metrics = metrics;
             ModelId = modelId;
+            ModelSubTypes = modelSubTypes;
             ModelType = modelType;
             ModelVersion = modelVersion;
             ProjectId = projectId;

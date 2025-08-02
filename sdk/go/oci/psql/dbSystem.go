@@ -162,7 +162,7 @@ type DbSystem struct {
 	PatchOperations DbSystemPatchOperationArrayOutput `pulumi:"patchOperations"`
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringOutput `pulumi:"shape"`
-	// The source used to restore the database system.
+	// The source of the database system.
 	Source DbSystemSourceOutput `pulumi:"source"`
 	// The current state of the database system.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -269,7 +269,7 @@ type dbSystemState struct {
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape *string `pulumi:"shape"`
-	// The source used to restore the database system.
+	// The source of the database system.
 	Source *DbSystemSource `pulumi:"source"`
 	// The current state of the database system.
 	State *string `pulumi:"state"`
@@ -329,7 +329,7 @@ type DbSystemState struct {
 	PatchOperations DbSystemPatchOperationArrayInput
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringPtrInput
-	// The source used to restore the database system.
+	// The source of the database system.
 	Source DbSystemSourcePtrInput
 	// The current state of the database system.
 	State pulumi.StringPtrInput
@@ -387,7 +387,7 @@ type dbSystemArgs struct {
 	PatchOperations []DbSystemPatchOperation `pulumi:"patchOperations"`
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// The source used to restore the database system.
+	// The source of the database system.
 	Source *DbSystemSource `pulumi:"source"`
 	// (Updatable) Storage details of the database system.
 	StorageDetails DbSystemStorageDetails `pulumi:"storageDetails"`
@@ -434,7 +434,7 @@ type DbSystemArgs struct {
 	PatchOperations DbSystemPatchOperationArrayInput
 	// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput
-	// The source used to restore the database system.
+	// The source of the database system.
 	Source DbSystemSourcePtrInput
 	// (Updatable) Storage details of the database system.
 	StorageDetails DbSystemStorageDetailsInput
@@ -632,7 +632,7 @@ func (o DbSystemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The source used to restore the database system.
+// The source of the database system.
 func (o DbSystemOutput) Source() DbSystemSourceOutput {
 	return o.ApplyT(func(v *DbSystem) DbSystemSourceOutput { return v.Source }).(DbSystemSourceOutput)
 }

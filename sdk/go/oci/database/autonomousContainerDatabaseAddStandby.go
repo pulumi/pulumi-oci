@@ -152,6 +152,8 @@ type AutonomousContainerDatabaseAddStandby struct {
 	NetServicesArchitecture pulumi.StringOutput `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
+	// The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName pulumi.StringOutput `pulumi:"okvEndPointGroupName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId pulumi.StringOutput `pulumi:"patchId"`
 	// Database patch model preference.
@@ -315,6 +317,8 @@ type autonomousContainerDatabaseAddStandbyState struct {
 	NetServicesArchitecture *string `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
+	// The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName *string `pulumi:"okvEndPointGroupName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId *string `pulumi:"patchId"`
 	// Database patch model preference.
@@ -446,6 +450,8 @@ type AutonomousContainerDatabaseAddStandbyState struct {
 	NetServicesArchitecture pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
+	// The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId pulumi.StringPtrInput
 	// Database patch model preference.
@@ -861,6 +867,11 @@ func (o AutonomousContainerDatabaseAddStandbyOutput) NetServicesArchitecture() p
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o AutonomousContainerDatabaseAddStandbyOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The OKV End Point Group name for the Autonomous Container Database.
+func (o AutonomousContainerDatabaseAddStandbyOutput) OkvEndPointGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabaseAddStandby) pulumi.StringOutput { return v.OkvEndPointGroupName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.

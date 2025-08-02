@@ -301,6 +301,12 @@ namespace Pulumi.Oci.Database
         public Output<string> NextMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
+        /// The OKV End Point Group name for the Autonomous Container Database.
+        /// </summary>
+        [Output("okvEndPointGroupName")]
+        public Output<string> OkvEndPointGroupName { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         /// </summary>
         [Output("patchId")]
@@ -850,6 +856,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("nextMaintenanceRunId")]
         public Input<string>? NextMaintenanceRunId { get; set; }
+
+        /// <summary>
+        /// The OKV End Point Group name for the Autonomous Container Database.
+        /// </summary>
+        [Input("okvEndPointGroupName")]
+        public Input<string>? OkvEndPointGroupName { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.

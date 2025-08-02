@@ -4,7 +4,6 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails;
 import java.lang.String;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The shape used to launch the model deployment instances.
      * 
      */
-    private String instanceShapeName;
+    private @Nullable String instanceShapeName;
     /**
      * @return (Updatable) Details for the model-deployment instance shape configuration.
      * 
@@ -39,8 +38,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * @return (Updatable) The shape used to launch the model deployment instances.
      * 
      */
-    public String instanceShapeName() {
-        return this.instanceShapeName;
+    public Optional<String> instanceShapeName() {
+        return Optional.ofNullable(this.instanceShapeName);
     }
     /**
      * @return (Updatable) Details for the model-deployment instance shape configuration.
@@ -73,7 +72,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     }
     @CustomType.Builder
     public static final class Builder {
-        private String instanceShapeName;
+        private @Nullable String instanceShapeName;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
         private @Nullable String privateEndpointId;
         private @Nullable String subnetId;
@@ -87,10 +86,8 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         @CustomType.Setter
-        public Builder instanceShapeName(String instanceShapeName) {
-            if (instanceShapeName == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration", "instanceShapeName");
-            }
+        public Builder instanceShapeName(@Nullable String instanceShapeName) {
+
             this.instanceShapeName = instanceShapeName;
             return this;
         }

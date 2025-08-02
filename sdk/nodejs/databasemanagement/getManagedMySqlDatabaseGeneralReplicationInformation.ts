@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves general information regarding replication of a specific MySQL server.
+ * Retrieves general information regarding the replication of a specific MySQL server.
  *
  * ## Example Usage
  *
@@ -50,7 +50,7 @@ export interface GetManagedMySqlDatabaseGeneralReplicationInformationResult {
      */
     readonly binaryLogFormat: string;
     /**
-     * Status of binary logging on this server.
+     * The status of binary logging on this server.
      */
     readonly binaryLogging: string;
     /**
@@ -62,7 +62,7 @@ export interface GetManagedMySqlDatabaseGeneralReplicationInformationResult {
      */
     readonly fetchStatusSummary: string;
     /**
-     * Global Transaction Identifier (GTID) mode of this server.
+     * The Global Transaction Identifier (GTID) mode of this server.
      */
     readonly gtidMode: string;
     /**
@@ -82,7 +82,7 @@ export interface GetManagedMySqlDatabaseGeneralReplicationInformationResult {
      */
     readonly inboundReplicationsCount: number;
     /**
-     * The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+     * The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
      */
     readonly instanceType: string;
     /**
@@ -118,7 +118,7 @@ export interface GetManagedMySqlDatabaseGeneralReplicationInformationResult {
 /**
  * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves general information regarding replication of a specific MySQL server.
+ * Retrieves general information regarding the replication of a specific MySQL server.
  *
  * ## Example Usage
  *

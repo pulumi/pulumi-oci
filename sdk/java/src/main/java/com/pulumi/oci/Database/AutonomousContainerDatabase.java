@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseState;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetail;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseBackupDestinationPropertiesList;
+import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguard;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseDataguardGroupMember;
 import com.pulumi.oci.Database.outputs.AutonomousContainerDatabaseKeyHistoryEntry;
@@ -195,6 +196,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> computeModel() {
         return this.computeModel;
+    }
+    /**
+     * (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     * 
+     */
+    @Export(name="customerContacts", refs={List.class,AutonomousContainerDatabaseCustomerContact.class}, tree="[0,1]")
+    private Output<List<AutonomousContainerDatabaseCustomerContact>> customerContacts;
+
+    /**
+     * @return (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     * 
+     */
+    public Output<List<AutonomousContainerDatabaseCustomerContact>> customerContacts() {
+        return this.customerContacts;
     }
     /**
      * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -663,6 +678,20 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
      */
     public Output<String> nextMaintenanceRunId() {
         return this.nextMaintenanceRunId;
+    }
+    /**
+     * (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    @Export(name="okvEndPointGroupName", refs={String.class}, tree="[0]")
+    private Output<String> okvEndPointGroupName;
+
+    /**
+     * @return (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    public Output<String> okvEndPointGroupName() {
+        return this.okvEndPointGroupName;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.

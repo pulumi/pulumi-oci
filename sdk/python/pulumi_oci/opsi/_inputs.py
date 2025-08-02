@@ -25,6 +25,14 @@ __all__ = [
     'DatabaseInsightCredentialDetailsArgsDict',
     'ExadataInsightMemberVmClusterDetailArgs',
     'ExadataInsightMemberVmClusterDetailArgsDict',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs',
+    'ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict',
     'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs',
@@ -81,7 +89,11 @@ if not MYPY:
         """
         credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -103,12 +115,14 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
                  credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  user_name: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] credential_type: Credential type.
-        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        :param pulumi.Input[_builtins.str] named_credential_id: The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         :param pulumi.Input[_builtins.str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[_builtins.str] role: database user role.
         :param pulumi.Input[_builtins.str] user_name: database user name.
@@ -116,6 +130,8 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
@@ -139,13 +155,25 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
     def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
@@ -352,11 +380,15 @@ if not MYPY:
     class DatabaseInsightCredentialDetailsArgsDict(TypedDict):
         credential_type: pulumi.Input[_builtins.str]
         """
-        Credential type.
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         """
         credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
+        """
+        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
         """
         password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -382,13 +414,15 @@ class DatabaseInsightCredentialDetailsArgs:
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
                  credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] credential_type: Credential type.
-        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
+        :param pulumi.Input[_builtins.str] named_credential_id: The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
         :param pulumi.Input[_builtins.str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[_builtins.str] role: database user role.
         :param pulumi.Input[_builtins.str] user_name: database user name.
@@ -397,6 +431,8 @@ class DatabaseInsightCredentialDetailsArgs:
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
@@ -410,7 +446,7 @@ class DatabaseInsightCredentialDetailsArgs:
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Credential type.
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         """
         return pulumi.get(self, "credential_type")
 
@@ -422,13 +458,25 @@ class DatabaseInsightCredentialDetailsArgs:
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        Credential source name that had been added in Management Agent wallet. This value is only required when credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
     def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in the Management Agent to connect the Autonomous Database.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
@@ -489,6 +537,10 @@ if not MYPY:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
         """
+        member_autonomous_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict']]]]
+        """
+        The autonomous databases that belong to the Autonomous VM Cluster
+        """
         member_database_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict']]]]
         """
         The databases that belong to the VM Cluster
@@ -513,6 +565,7 @@ class ExadataInsightMemberVmClusterDetailArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dbm_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 member_autonomous_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]] = None,
                  member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
                  opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -520,6 +573,7 @@ class ExadataInsightMemberVmClusterDetailArgs:
         """
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]] member_autonomous_details: The autonomous databases that belong to the Autonomous VM Cluster
         :param pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]] member_database_details: The databases that belong to the VM Cluster
         :param pulumi.Input[_builtins.str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param pulumi.Input[_builtins.str] vm_cluster_type: Exadata VMCluster type
@@ -529,6 +583,8 @@ class ExadataInsightMemberVmClusterDetailArgs:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if dbm_private_endpoint_id is not None:
             pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if member_autonomous_details is not None:
+            pulumi.set(__self__, "member_autonomous_details", member_autonomous_details)
         if member_database_details is not None:
             pulumi.set(__self__, "member_database_details", member_database_details)
         if opsi_private_endpoint_id is not None:
@@ -561,6 +617,18 @@ class ExadataInsightMemberVmClusterDetailArgs:
     @dbm_private_endpoint_id.setter
     def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "dbm_private_endpoint_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="memberAutonomousDetails")
+    def member_autonomous_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]:
+        """
+        The autonomous databases that belong to the Autonomous VM Cluster
+        """
+        return pulumi.get(self, "member_autonomous_details")
+
+    @member_autonomous_details.setter
+    def member_autonomous_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs']]]]):
+        pulumi.set(self, "member_autonomous_details", value)
 
     @_builtins.property
     @pulumi.getter(name="memberDatabaseDetails")
@@ -612,6 +680,692 @@ class ExadataInsightMemberVmClusterDetailArgs:
 
 
 if not MYPY:
+    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict(TypedDict):
+        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Compartment Identifier of database
+        """
+        connection_credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict']]
+        """
+        User credential details to connect to the database.
+        """
+        connection_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict']]
+        """
+        Connection details to connect to the database. HostName, protocol, and port should be specified.
+        """
+        credential_details: NotRequired[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict']]
+        """
+        User credential details to connect to the database.
+        """
+        database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        """
+        database_resource_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Oracle Cloud Infrastructure database resource type
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        deployment_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Database Deployment Type
+        """
+        entity_source: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Source of the database entity.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        is_advanced_features_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Flag is to identify if advanced features for autonomous database is enabled or not
+        """
+        management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        """
+        opsi_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+elif False:
+    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 connection_credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']] = None,
+                 connection_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']] = None,
+                 credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']] = None,
+                 database_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 database_resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deployment_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 entity_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_advanced_features_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
+        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database.
+        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs'] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
+        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
+        :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        :param pulumi.Input[_builtins.str] database_resource_type: Oracle Cloud Infrastructure database resource type
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] deployment_type: Database Deployment Type
+        :param pulumi.Input[_builtins.str] entity_source: Source of the database entity.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_advanced_features_enabled: Flag is to identify if advanced features for autonomous database is enabled or not
+        :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        :param pulumi.Input[_builtins.str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connection_credential_details is not None:
+            pulumi.set(__self__, "connection_credential_details", connection_credential_details)
+        if connection_details is not None:
+            pulumi.set(__self__, "connection_details", connection_details)
+        if credential_details is not None:
+            pulumi.set(__self__, "credential_details", credential_details)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_resource_type is not None:
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_advanced_features_enabled is not None:
+            pulumi.set(__self__, "is_advanced_features_enabled", is_advanced_features_enabled)
+        if management_agent_id is not None:
+            pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Compartment Identifier of database
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentialDetails")
+    def connection_credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]:
+        """
+        User credential details to connect to the database.
+        """
+        return pulumi.get(self, "connection_credential_details")
+
+    @connection_credential_details.setter
+    def connection_credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs']]):
+        pulumi.set(self, "connection_credential_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionDetails")
+    def connection_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]:
+        """
+        Connection details to connect to the database. HostName, protocol, and port should be specified.
+        """
+        return pulumi.get(self, "connection_details")
+
+    @connection_details.setter
+    def connection_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs']]):
+        pulumi.set(self, "connection_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialDetails")
+    def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]:
+        """
+        User credential details to connect to the database.
+        """
+        return pulumi.get(self, "credential_details")
+
+    @credential_details.setter
+    def credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs']]):
+        pulumi.set(self, "credential_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+        """
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "database_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseResourceType")
+    def database_resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Oracle Cloud Infrastructure database resource type
+        """
+        return pulumi.get(self, "database_resource_type")
+
+    @database_resource_type.setter
+    def database_resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "database_resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Database Deployment Type
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @deployment_type.setter
+    def deployment_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "deployment_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source of the database entity.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @entity_source.setter
+    def entity_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "entity_source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAdvancedFeaturesEnabled")
+    def is_advanced_features_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Flag is to identify if advanced features for autonomous database is enabled or not
+        """
+        return pulumi.get(self, "is_advanced_features_enabled")
+
+    @is_advanced_features_enabled.setter
+    def is_advanced_features_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_advanced_features_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @management_agent_id.setter
+    def management_agent_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "management_agent_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        """
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @opsi_private_endpoint_id.setter
+    def opsi_private_endpoint_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "opsi_private_endpoint_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+
+if not MYPY:
+    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict(TypedDict):
+        credential_type: pulumi.Input[_builtins.str]
+        """
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        """
+        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
+        role: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        database user role.
+        """
+        user_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        database user name.
+        """
+        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
+elif False:
+    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[_builtins.str],
+                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        :param pulumi.Input[_builtins.str] named_credential_id: The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        :param pulumi.Input[_builtins.str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        :param pulumi.Input[_builtins.str] role: database user role.
+        :param pulumi.Input[_builtins.str] user_name: database user name.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "credential_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialSourceName")
+    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        return pulumi.get(self, "credential_source_name")
+
+    @credential_source_name.setter
+    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "credential_source_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        database user role.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        database user name.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "user_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
+        return pulumi.get(self, "wallet_secret_id")
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "wallet_secret_id", value)
+
+
+if not MYPY:
+    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict(TypedDict):
+        host_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Name of the listener host that will be used to create the connect string to the database.
+        """
+        port: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Listener port number used for connection requests.
+        """
+        protocol: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Protocol used for connection requests.
+        """
+        service_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Database service name used for connection requests.
+        """
+elif False:
+    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs:
+    def __init__(__self__, *,
+                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 port: Optional[pulumi.Input[_builtins.int]] = None,
+                 protocol: Optional[pulumi.Input[_builtins.str]] = None,
+                 service_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] host_name: Name of the listener host that will be used to create the connect string to the database.
+        :param pulumi.Input[_builtins.int] port: Listener port number used for connection requests.
+        :param pulumi.Input[_builtins.str] protocol: Protocol used for connection requests.
+        :param pulumi.Input[_builtins.str] service_name: Database service name used for connection requests.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Name of the listener host that will be used to create the connect string to the database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Listener port number used for connection requests.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "port", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Protocol used for connection requests.
+        """
+        return pulumi.get(self, "protocol")
+
+    @protocol.setter
+    def protocol(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "protocol", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Database service name used for connection requests.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "service_name", value)
+
+
+if not MYPY:
+    class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict(TypedDict):
+        credential_type: pulumi.Input[_builtins.str]
+        """
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        """
+        credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
+        role: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        database user role.
+        """
+        user_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        database user name.
+        """
+        wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
+elif False:
+    ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[_builtins.str],
+                 credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 role: Optional[pulumi.Input[_builtins.str]] = None,
+                 user_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        :param pulumi.Input[_builtins.str] named_credential_id: The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        :param pulumi.Input[_builtins.str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        :param pulumi.Input[_builtins.str] role: database user role.
+        :param pulumi.Input[_builtins.str] user_name: database user name.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+        if wallet_secret_id is not None:
+            pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "credential_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialSourceName")
+    def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        return pulumi.get(self, "credential_source_name")
+
+    @credential_source_name.setter
+    def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "credential_source_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        database user role.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        database user name.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "user_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="walletSecretId")
+    def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
+        return pulumi.get(self, "wallet_secret_id")
+
+    @wallet_secret_id.setter
+    def wallet_secret_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "wallet_secret_id", value)
+
+
+if not MYPY:
     class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgsDict(TypedDict):
         compartment_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -638,9 +1392,12 @@ if not MYPY:
         Oracle Cloud Infrastructure database resource type
         """
         dbm_private_endpoint_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        """
         defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         deployment_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -648,11 +1405,11 @@ if not MYPY:
         """
         entity_source: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) Source of the Exadata system.
+        Source of the database entity.
         """
         freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         management_agent_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -663,6 +1420,9 @@ if not MYPY:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         """
         service_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Database service name used for connection requests.
+        """
         system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -695,12 +1455,14 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
         :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[_builtins.str] database_resource_type: Oracle Cloud Infrastructure database resource type
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] deployment_type: Database Deployment Type (EXACS will be supported in the future)
-        :param pulumi.Input[_builtins.str] entity_source: (Updatable) Source of the Exadata system.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] entity_source: Source of the database entity.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         :param pulumi.Input[_builtins.str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        :param pulumi.Input[_builtins.str] service_name: Database service name used for connection requests.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if compartment_id is not None:
@@ -809,6 +1571,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @_builtins.property
     @pulumi.getter(name="dbmPrivateEndpointId")
     def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+        """
         return pulumi.get(self, "dbm_private_endpoint_id")
 
     @dbm_private_endpoint_id.setter
@@ -819,7 +1584,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -843,7 +1608,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="entitySource")
     def entity_source(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Source of the Exadata system.
+        Source of the database entity.
         """
         return pulumi.get(self, "entity_source")
 
@@ -855,7 +1620,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -890,6 +1655,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @_builtins.property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Database service name used for connection requests.
+        """
         return pulumi.get(self, "service_name")
 
     @service_name.setter
@@ -913,11 +1681,15 @@ if not MYPY:
     class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgsDict(TypedDict):
         credential_type: pulumi.Input[_builtins.str]
         """
-        Credential type.
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         """
         credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         """
         password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -943,13 +1715,15 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
                  credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] credential_type: Credential type.
-        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        :param pulumi.Input[_builtins.str] named_credential_id: The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
         :param pulumi.Input[_builtins.str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[_builtins.str] role: database user role.
         :param pulumi.Input[_builtins.str] user_name: database user name.
@@ -958,6 +1732,8 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
@@ -971,7 +1747,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[_builtins.str]:
         """
-        Credential type.
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
         """
         return pulumi.get(self, "credential_type")
 
@@ -983,13 +1759,25 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentia
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
     def credential_source_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "credential_source_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "named_credential_id", value)
 
     @_builtins.property
     @pulumi.getter(name="passwordSecretId")
@@ -1207,11 +1995,33 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsHo
 if not MYPY:
     class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict(TypedDict):
         credential_type: pulumi.Input[_builtins.str]
+        """
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        """
         credential_source_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
+        named_credential_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
         password_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
         role: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        database user role.
+        """
         user_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        database user name.
+        """
         wallet_secret_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
 elif False:
     ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1220,13 +2030,25 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     def __init__(__self__, *,
                  credential_type: pulumi.Input[_builtins.str],
                  credential_source_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 named_credential_id: Optional[pulumi.Input[_builtins.str]] = None,
                  password_secret_id: Optional[pulumi.Input[_builtins.str]] = None,
                  role: Optional[pulumi.Input[_builtins.str]] = None,
                  user_name: Optional[pulumi.Input[_builtins.str]] = None,
                  wallet_secret_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] credential_type: CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        :param pulumi.Input[_builtins.str] credential_source_name: Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        :param pulumi.Input[_builtins.str] named_credential_id: The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        :param pulumi.Input[_builtins.str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        :param pulumi.Input[_builtins.str] role: database user role.
+        :param pulumi.Input[_builtins.str] user_name: database user name.
+        :param pulumi.Input[_builtins.str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
         if password_secret_id is not None:
             pulumi.set(__self__, "password_secret_id", password_secret_id)
         if role is not None:
@@ -1239,6 +2061,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @_builtins.property
     @pulumi.getter(name="credentialType")
     def credential_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        """
         return pulumi.get(self, "credential_type")
 
     @credential_type.setter
@@ -1248,6 +2073,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @_builtins.property
     @pulumi.getter(name="credentialSourceName")
     def credential_source_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        """
         return pulumi.get(self, "credential_source_name")
 
     @credential_source_name.setter
@@ -1255,8 +2083,23 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
         pulumi.set(self, "credential_source_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @named_credential_id.setter
+    def named_credential_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "named_credential_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        """
         return pulumi.get(self, "password_secret_id")
 
     @password_secret_id.setter
@@ -1266,6 +2109,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @_builtins.property
     @pulumi.getter
     def role(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        database user role.
+        """
         return pulumi.get(self, "role")
 
     @role.setter
@@ -1275,6 +2121,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @_builtins.property
     @pulumi.getter(name="userName")
     def user_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        database user name.
+        """
         return pulumi.get(self, "user_name")
 
     @user_name.setter
@@ -1284,6 +2133,9 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsAr
     @_builtins.property
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        """
         return pulumi.get(self, "wallet_secret_id")
 
     @wallet_secret_id.setter

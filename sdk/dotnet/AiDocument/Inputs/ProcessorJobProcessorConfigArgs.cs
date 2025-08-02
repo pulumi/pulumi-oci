@@ -43,6 +43,24 @@ namespace Pulumi.Oci.AiDocument.Inputs
         public Input<string>? Language { get; set; }
 
         /// <summary>
+        /// Unique identifier custom model OCID that should be used for inference.
+        /// </summary>
+        [Input("modelId")]
+        public Input<string>? ModelId { get; set; }
+
+        [Input("normalizationFields")]
+        private InputList<Inputs.ProcessorJobProcessorConfigNormalizationFieldArgs>? _normalizationFields;
+
+        /// <summary>
+        /// A string-to-object map where the key is the normalization field and the object contains information about the field.
+        /// </summary>
+        public InputList<Inputs.ProcessorJobProcessorConfigNormalizationFieldArgs> NormalizationFields
+        {
+            get => _normalizationFields ?? (_normalizationFields = new InputList<Inputs.ProcessorJobProcessorConfigNormalizationFieldArgs>());
+            set => _normalizationFields = value;
+        }
+
+        /// <summary>
         /// The type of the processor.
         /// 
         /// 

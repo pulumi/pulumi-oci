@@ -12,8 +12,58 @@ namespace Pulumi.Oci.Autoscaling.Inputs
 
     public sealed class AutoScalingConfigurationPolicyRuleMetricArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The OCID of the compartment containing the metrics.
+        /// </summary>
+        [Input("metricCompartmentId")]
+        public Input<string>? MetricCompartmentId { get; set; }
+
+        /// <summary>
+        /// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+        /// 
+        /// The following values are supported:
+        /// * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+        /// * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+        /// </summary>
+        [Input("metricSource")]
+        public Input<string>? MetricSource { get; set; }
+
         [Input("metricType")]
         public Input<string>? MetricType { get; set; }
+
+        /// <summary>
+        /// The namespace for the query.
+        /// </summary>
+        [Input("namespace")]
+        public Input<string>? Namespace { get; set; }
+
+        /// <summary>
+        /// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        /// 
+        /// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        /// </summary>
+        [Input("pendingDuration")]
+        public Input<string>? PendingDuration { get; set; }
+
+        /// <summary>
+        /// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        /// 
+        /// Example of threshold alarm:
+        /// 
+        /// -----
+        /// 
+        /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
+        /// 
+        /// -----
+        /// </summary>
+        [Input("query")]
+        public Input<string>? Query { get; set; }
+
+        /// <summary>
+        /// The resource group for the query.
+        /// </summary>
+        [Input("resourceGroup")]
+        public Input<string>? ResourceGroup { get; set; }
 
         [Input("threshold")]
         public Input<Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs>? Threshold { get; set; }

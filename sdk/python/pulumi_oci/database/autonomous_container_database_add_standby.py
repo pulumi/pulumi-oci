@@ -251,6 +251,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_id: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_model: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
@@ -315,6 +316,7 @@ class _AutonomousContainerDatabaseAddStandbyState:
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param pulumi.Input[_builtins.str] okv_end_point_group_name: The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param pulumi.Input[_builtins.str] patch_model: Database patch model preference.
         :param pulumi.Input['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs'] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
@@ -422,6 +424,8 @@ class _AutonomousContainerDatabaseAddStandbyState:
             pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+        if okv_end_point_group_name is not None:
+            pulumi.set(__self__, "okv_end_point_group_name", okv_end_point_group_name)
         if patch_id is not None:
             pulumi.set(__self__, "patch_id", patch_id)
         if patch_model is not None:
@@ -937,6 +941,18 @@ class _AutonomousContainerDatabaseAddStandbyState:
         pulumi.set(self, "next_maintenance_run_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="okvEndPointGroupName")
+    def okv_end_point_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OKV End Point Group name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "okv_end_point_group_name")
+
+    @okv_end_point_group_name.setter
+    def okv_end_point_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_end_point_group_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="patchId")
     def patch_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1443,6 +1459,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = None
             __props__.__dict__["net_services_architecture"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
+            __props__.__dict__["okv_end_point_group_name"] = None
             __props__.__dict__["patch_id"] = None
             __props__.__dict__["patch_model"] = None
             __props__.__dict__["provisionable_cpuses"] = None
@@ -1508,6 +1525,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+            okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
             patch_id: Optional[pulumi.Input[_builtins.str]] = None,
             patch_model: Optional[pulumi.Input[_builtins.str]] = None,
             peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
@@ -1577,6 +1595,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param pulumi.Input[_builtins.str] okv_end_point_group_name: The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param pulumi.Input[_builtins.str] patch_model: Database patch model preference.
         :param pulumi.Input[Union['AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigArgsDict']] peer_autonomous_container_database_backup_config: Backup options for the standby Autonomous Container Database.
@@ -1649,6 +1668,7 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["net_services_architecture"] = net_services_architecture
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
+        __props__.__dict__["okv_end_point_group_name"] = okv_end_point_group_name
         __props__.__dict__["patch_id"] = patch_id
         __props__.__dict__["patch_model"] = patch_model
         __props__.__dict__["peer_autonomous_container_database_backup_config"] = peer_autonomous_container_database_backup_config
@@ -1983,6 +2003,14 @@ class AutonomousContainerDatabaseAddStandby(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
+
+    @_builtins.property
+    @pulumi.getter(name="okvEndPointGroupName")
+    def okv_end_point_group_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OKV End Point Group name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "okv_end_point_group_name")
 
     @_builtins.property
     @pulumi.getter(name="patchId")

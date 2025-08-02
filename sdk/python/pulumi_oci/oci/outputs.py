@@ -16,11 +16,20 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ApiPlatformApiPlatformInstanceIdcsApp',
+    'ApiPlatformApiPlatformInstanceUri',
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList',
     'ApiaccesscontrolPrivilegedApiRequestApproverDetail',
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
+    'GetApiPlatformApiPlatformInstanceIdcsAppResult',
+    'GetApiPlatformApiPlatformInstanceUriResult',
+    'GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionResult',
+    'GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemResult',
+    'GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppResult',
+    'GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriResult',
+    'GetApiPlatformApiPlatformInstancesFilterResult',
     'GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionResult',
     'GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemResult',
     'GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemApiMetadataResult',
@@ -105,6 +114,75 @@ __all__ = [
     'GetWlmsWlsDomainsWlsDomainCollectionItemResult',
     'GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationResult',
 ]
+
+@pulumi.output_type
+class ApiPlatformApiPlatformInstanceIdcsApp(dict):
+    def __init__(__self__, *,
+                 url: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str url: IDCS URL of the app
+        """
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> Optional[_builtins.str]:
+        """
+        IDCS URL of the app
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class ApiPlatformApiPlatformInstanceUri(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "developersPortalUri":
+            suggest = "developers_portal_uri"
+        elif key == "managementPortalUri":
+            suggest = "management_portal_uri"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ApiPlatformApiPlatformInstanceUri. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ApiPlatformApiPlatformInstanceUri.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ApiPlatformApiPlatformInstanceUri.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 developers_portal_uri: Optional[_builtins.str] = None,
+                 management_portal_uri: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str developers_portal_uri: Developer's Portal URI of the instance (/developers)
+        :param _builtins.str management_portal_uri: Management Portal URI of the instance (/apiplatform)
+        """
+        if developers_portal_uri is not None:
+            pulumi.set(__self__, "developers_portal_uri", developers_portal_uri)
+        if management_portal_uri is not None:
+            pulumi.set(__self__, "management_portal_uri", management_portal_uri)
+
+    @_builtins.property
+    @pulumi.getter(name="developersPortalUri")
+    def developers_portal_uri(self) -> Optional[_builtins.str]:
+        """
+        Developer's Portal URI of the instance (/developers)
+        """
+        return pulumi.get(self, "developers_portal_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="managementPortalUri")
+    def management_portal_uri(self) -> Optional[_builtins.str]:
+        """
+        Management Portal URI of the instance (/apiplatform)
+        """
+        return pulumi.get(self, "management_portal_uri")
+
 
 @pulumi.output_type
 class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList(dict):
@@ -494,6 +572,295 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
         time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstanceIdcsAppResult(dict):
+    def __init__(__self__, *,
+                 url: _builtins.str):
+        """
+        :param _builtins.str url: IDCS URL of the app
+        """
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        IDCS URL of the app
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstanceUriResult(dict):
+    def __init__(__self__, *,
+                 developers_portal_uri: _builtins.str,
+                 management_portal_uri: _builtins.str):
+        """
+        :param _builtins.str developers_portal_uri: Developer's Portal URI of the instance (/developers)
+        :param _builtins.str management_portal_uri: Management Portal URI of the instance (/apiplatform)
+        """
+        pulumi.set(__self__, "developers_portal_uri", developers_portal_uri)
+        pulumi.set(__self__, "management_portal_uri", management_portal_uri)
+
+    @_builtins.property
+    @pulumi.getter(name="developersPortalUri")
+    def developers_portal_uri(self) -> _builtins.str:
+        """
+        Developer's Portal URI of the instance (/developers)
+        """
+        return pulumi.get(self, "developers_portal_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="managementPortalUri")
+    def management_portal_uri(self) -> _builtins.str:
+        """
+        Management Portal URI of the instance (/apiplatform)
+        """
+        return pulumi.get(self, "management_portal_uri")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 idcs_apps: Sequence['outputs.GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppResult'],
+                 lifecycle_details: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 uris: Sequence['outputs.GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriResult']):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: User-provided changeable and non-unique description of the instance
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance
+        :param Sequence['GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs'] idcs_apps: IDCS app associated with the instance, that can be used to manage the roles of the users
+        :param _builtins.str lifecycle_details: A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
+        :param _builtins.str name: A filter to return only resources that match the given name exactly
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+        :param Sequence['GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs'] uris: Service URIs pertaining to the instance
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "idcs_apps", idcs_apps)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "uris", uris)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        User-provided changeable and non-unique description of the instance
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="idcsApps")
+    def idcs_apps(self) -> Sequence['outputs.GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppResult']:
+        """
+        IDCS app associated with the instance, that can be used to manage the roles of the users
+        """
+        return pulumi.get(self, "idcs_apps")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name exactly
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def uris(self) -> Sequence['outputs.GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriResult']:
+        """
+        Service URIs pertaining to the instance
+        """
+        return pulumi.get(self, "uris")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppResult(dict):
+    def __init__(__self__, *,
+                 url: _builtins.str):
+        """
+        :param _builtins.str url: IDCS URL of the app
+        """
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        IDCS URL of the app
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriResult(dict):
+    def __init__(__self__, *,
+                 developers_portal_uri: _builtins.str,
+                 management_portal_uri: _builtins.str):
+        """
+        :param _builtins.str developers_portal_uri: Developer's Portal URI of the instance (/developers)
+        :param _builtins.str management_portal_uri: Management Portal URI of the instance (/apiplatform)
+        """
+        pulumi.set(__self__, "developers_portal_uri", developers_portal_uri)
+        pulumi.set(__self__, "management_portal_uri", management_portal_uri)
+
+    @_builtins.property
+    @pulumi.getter(name="developersPortalUri")
+    def developers_portal_uri(self) -> _builtins.str:
+        """
+        Developer's Portal URI of the instance (/developers)
+        """
+        return pulumi.get(self, "developers_portal_uri")
+
+    @_builtins.property
+    @pulumi.getter(name="managementPortalUri")
+    def management_portal_uri(self) -> _builtins.str:
+        """
+        Management Portal URI of the instance (/apiplatform)
+        """
+        return pulumi.get(self, "management_portal_uri")
+
+
+@pulumi.output_type
+class GetApiPlatformApiPlatformInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the given name exactly
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name exactly
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

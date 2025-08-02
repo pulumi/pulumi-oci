@@ -115,7 +115,7 @@ public final class GetDbSystemResult {
      */
     private String shape;
     /**
-     * @return The source used to restore the database system.
+     * @return The source of the database system.
      * 
      */
     private List<GetDbSystemSource> sources;
@@ -289,7 +289,7 @@ public final class GetDbSystemResult {
         return this.shape;
     }
     /**
-     * @return The source used to restore the database system.
+     * @return The source of the database system.
      * 
      */
     public List<GetDbSystemSource> sources() {

@@ -21,6 +21,46 @@ __all__ = [
     'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails',
     'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials',
     'AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString',
+    'CloudAsmServicedDatabase',
+    'CloudClusterNetworkConfiguration',
+    'CloudClusterScanConfiguration',
+    'CloudClusterVipConfiguration',
+    'CloudDbSystemConnectorConnectionInfo',
+    'CloudDbSystemConnectorConnectionInfoConnectionCredential',
+    'CloudDbSystemConnectorConnectionInfoConnectionString',
+    'CloudDbSystemDatabaseManagementConfig',
+    'CloudDbSystemDiscoveryDiscoveredComponent',
+    'CloudDbSystemDiscoveryDiscoveredComponentAsmInstance',
+    'CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent',
+    'CloudDbSystemDiscoveryDiscoveredComponentClusterInstance',
+    'CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector',
+    'CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo',
+    'CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential',
+    'CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString',
+    'CloudDbSystemDiscoveryDiscoveredComponentConnector',
+    'CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo',
+    'CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential',
+    'CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString',
+    'CloudDbSystemDiscoveryDiscoveredComponentDbInstance',
+    'CloudDbSystemDiscoveryDiscoveredComponentEndpoint',
+    'CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration',
+    'CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase',
+    'CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector',
+    'CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo',
+    'CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential',
+    'CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString',
+    'CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration',
+    'CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration',
+    'CloudDbSystemDiscoveryPatchOperation',
+    'CloudDbSystemDiscoveryPatchOperationValue',
+    'CloudDbSystemDiscoveryPatchOperationValueConnector',
+    'CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo',
+    'CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials',
+    'CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString',
+    'CloudDbSystemStackMonitoringConfig',
+    'CloudListenerEndpoint',
+    'CloudListenerServicedAsm',
+    'CloudListenerServicedDatabase',
     'DatabaseDbmFeaturesManagementFeatureDetails',
     'DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails',
     'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails',
@@ -49,6 +89,7 @@ __all__ = [
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential',
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString',
     'ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredential',
+    'ExternalDbSystemDiscoveryDiscoveredComponentDbInstance',
     'ExternalDbSystemDiscoveryDiscoveredComponentEndpoint',
     'ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration',
     'ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase',
@@ -99,6 +140,137 @@ __all__ = [
     'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails',
     'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials',
     'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString',
+    'GetCloudAsmConfigurationInitParameterResult',
+    'GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionResult',
+    'GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionItemResult',
+    'GetCloudAsmDiskGroupsFilterResult',
+    'GetCloudAsmInstancesCloudAsmInstanceCollectionResult',
+    'GetCloudAsmInstancesCloudAsmInstanceCollectionItemResult',
+    'GetCloudAsmInstancesFilterResult',
+    'GetCloudAsmServicedDatabaseResult',
+    'GetCloudAsmUsersCloudAsmUserCollectionResult',
+    'GetCloudAsmUsersCloudAsmUserCollectionItemResult',
+    'GetCloudAsmUsersFilterResult',
+    'GetCloudAsmsCloudAsmCollectionResult',
+    'GetCloudAsmsCloudAsmCollectionItemResult',
+    'GetCloudAsmsCloudAsmCollectionItemServicedDatabaseResult',
+    'GetCloudAsmsFilterResult',
+    'GetCloudClusterInstancesCloudClusterInstanceCollectionResult',
+    'GetCloudClusterInstancesCloudClusterInstanceCollectionItemResult',
+    'GetCloudClusterInstancesFilterResult',
+    'GetCloudClusterNetworkConfigurationResult',
+    'GetCloudClusterScanConfigurationResult',
+    'GetCloudClusterVipConfigurationResult',
+    'GetCloudClustersCloudClusterCollectionResult',
+    'GetCloudClustersCloudClusterCollectionItemResult',
+    'GetCloudClustersCloudClusterCollectionItemNetworkConfigurationResult',
+    'GetCloudClustersCloudClusterCollectionItemScanConfigurationResult',
+    'GetCloudClustersCloudClusterCollectionItemVipConfigurationResult',
+    'GetCloudClustersFilterResult',
+    'GetCloudDatabasesCloudDatabaseCollectionResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbManagementConfigResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigConnectorDetailResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringResult',
+    'GetCloudDatabasesCloudDatabaseCollectionItemInstanceDetailResult',
+    'GetCloudDatabasesFilterResult',
+    'GetCloudDbHomesCloudDbHomeCollectionResult',
+    'GetCloudDbHomesCloudDbHomeCollectionItemResult',
+    'GetCloudDbHomesFilterResult',
+    'GetCloudDbNodesCloudDbNodeCollectionResult',
+    'GetCloudDbNodesCloudDbNodeCollectionItemResult',
+    'GetCloudDbNodesFilterResult',
+    'GetCloudDbSystemConnectorConnectionInfoResult',
+    'GetCloudDbSystemConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionResult',
+    'GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemResult',
+    'GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoResult',
+    'GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemConnectorsFilterResult',
+    'GetCloudDbSystemDatabaseManagementConfigResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveriesFilterResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentConnectorResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentDbInstanceResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentEndpointResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentScanConfigurationResult',
+    'GetCloudDbSystemDiscoveryDiscoveredComponentVipConfigurationResult',
+    'GetCloudDbSystemDiscoveryPatchOperationResult',
+    'GetCloudDbSystemDiscoveryPatchOperationValueResult',
+    'GetCloudDbSystemDiscoveryPatchOperationValueConnectorResult',
+    'GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult',
+    'GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult',
+    'GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult',
+    'GetCloudDbSystemStackMonitoringConfigResult',
+    'GetCloudDbSystemsCloudDbSystemCollectionResult',
+    'GetCloudDbSystemsCloudDbSystemCollectionItemResult',
+    'GetCloudDbSystemsCloudDbSystemCollectionItemDatabaseManagementConfigResult',
+    'GetCloudDbSystemsCloudDbSystemCollectionItemStackMonitoringConfigResult',
+    'GetCloudDbSystemsFilterResult',
+    'GetCloudListenerEndpointResult',
+    'GetCloudListenerServicedAsmResult',
+    'GetCloudListenerServicedDatabaseResult',
+    'GetCloudListenerServicesCloudListenerServiceCollectionResult',
+    'GetCloudListenerServicesCloudListenerServiceCollectionItemResult',
+    'GetCloudListenerServicesFilterResult',
+    'GetCloudListenersCloudListenerCollectionResult',
+    'GetCloudListenersCloudListenerCollectionItemResult',
+    'GetCloudListenersCloudListenerCollectionItemEndpointResult',
+    'GetCloudListenersCloudListenerCollectionItemServicedAsmResult',
+    'GetCloudListenersCloudListenerCollectionItemServicedDatabaseResult',
+    'GetCloudListenersFilterResult',
     'GetDbManagementPrivateEndpointAssociatedDatabaseItemResult',
     'GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionResult',
     'GetDbManagementPrivateEndpointAssociatedDatabasesAssociatedDatabaseCollectionItemResult',
@@ -179,6 +351,7 @@ __all__ = [
     'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult',
     'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult',
     'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoDatabaseCredentialResult',
+    'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult',
     'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult',
     'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult',
     'GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult',
@@ -210,6 +383,7 @@ __all__ = [
     'GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult',
     'GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult',
     'GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabaseCredentialResult',
+    'GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceResult',
     'GetExternalDbSystemDiscoveryDiscoveredComponentEndpointResult',
     'GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult',
     'GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult',
@@ -847,6 +1021,3998 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDat
 
 
 @pulumi.output_type
+class CloudAsmServicedDatabase(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "databaseSubType":
+            suggest = "database_sub_type"
+        elif key == "databaseType":
+            suggest = "database_type"
+        elif key == "dbUniqueName":
+            suggest = "db_unique_name"
+        elif key == "dbaasId":
+            suggest = "dbaas_id"
+        elif key == "diskGroups":
+            suggest = "disk_groups"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "isManaged":
+            suggest = "is_managed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudAsmServicedDatabase. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudAsmServicedDatabase.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudAsmServicedDatabase.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 database_sub_type: Optional[_builtins.str] = None,
+                 database_type: Optional[_builtins.str] = None,
+                 db_unique_name: Optional[_builtins.str] = None,
+                 dbaas_id: Optional[_builtins.str] = None,
+                 disk_groups: Optional[Sequence[_builtins.str]] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 is_managed: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str db_unique_name: The unique name of the cloud database.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param Sequence[_builtins.str] disk_groups: The list of ASM disk groups used by the database.
+        :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_sub_type is not None:
+            pulumi.set(__self__, "database_sub_type", database_sub_type)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if dbaas_id is not None:
+            pulumi.set(__self__, "dbaas_id", dbaas_id)
+        if disk_groups is not None:
+            pulumi.set(__self__, "disk_groups", disk_groups)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_managed is not None:
+            pulumi.set(__self__, "is_managed", is_managed)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> Optional[_builtins.str]:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[_builtins.str]:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[_builtins.str]:
+        """
+        The unique name of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="diskGroups")
+    def disk_groups(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of ASM disk groups used by the database.
+        """
+        return pulumi.get(self, "disk_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
+class CloudClusterNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkNumber":
+            suggest = "network_number"
+        elif key == "networkType":
+            suggest = "network_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudClusterNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudClusterNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudClusterNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_number: Optional[_builtins.int] = None,
+                 network_type: Optional[_builtins.str] = None,
+                 subnet: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str network_type: The network type.
+        :param _builtins.str subnet: The subnet for the network.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet is not None:
+            pulumi.set(__self__, "subnet", subnet)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[_builtins.int]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[_builtins.str]:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> Optional[_builtins.str]:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+
+@pulumi.output_type
+class CloudClusterScanConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkNumber":
+            suggest = "network_number"
+        elif key == "scanName":
+            suggest = "scan_name"
+        elif key == "scanPort":
+            suggest = "scan_port"
+        elif key == "scanProtocol":
+            suggest = "scan_protocol"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudClusterScanConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudClusterScanConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudClusterScanConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_number: Optional[_builtins.int] = None,
+                 scan_name: Optional[_builtins.str] = None,
+                 scan_port: Optional[_builtins.int] = None,
+                 scan_protocol: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str scan_name: The name of the SCAN listener.
+        :param _builtins.int scan_port: The port number of the SCAN listener.
+        :param _builtins.str scan_protocol: The protocol of the SCAN listener.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if scan_name is not None:
+            pulumi.set(__self__, "scan_name", scan_name)
+        if scan_port is not None:
+            pulumi.set(__self__, "scan_port", scan_port)
+        if scan_protocol is not None:
+            pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[_builtins.int]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> Optional[_builtins.int]:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @_builtins.property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+
+@pulumi.output_type
+class CloudClusterVipConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkNumber":
+            suggest = "network_number"
+        elif key == "nodeName":
+            suggest = "node_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudClusterVipConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudClusterVipConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudClusterVipConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[_builtins.str] = None,
+                 network_number: Optional[_builtins.int] = None,
+                 node_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str address: The VIP name or IP address.
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> Optional[_builtins.str]:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[_builtins.int]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+
+@pulumi.output_type
+class CloudDbSystemConnectorConnectionInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "componentType":
+            suggest = "component_type"
+        elif key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionStrings":
+            suggest = "connection_strings"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemConnectorConnectionInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemConnectorConnectionInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemConnectorConnectionInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Optional[Sequence['outputs.CloudDbSystemConnectorConnectionInfoConnectionCredential']] = None,
+                 connection_strings: Optional[Sequence['outputs.CloudDbSystemConnectorConnectionInfoConnectionString']] = None):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['CloudDbSystemConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['CloudDbSystemConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[Sequence['outputs.CloudDbSystemConnectorConnectionInfoConnectionCredential']]:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[Sequence['outputs.CloudDbSystemConnectorConnectionInfoConnectionString']]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class CloudDbSystemConnectorConnectionInfoConnectionCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialName":
+            suggest = "credential_name"
+        elif key == "credentialType":
+            suggest = "credential_type"
+        elif key == "namedCredentialId":
+            suggest = "named_credential_id"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemConnectorConnectionInfoConnectionCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_name: Optional[_builtins.str] = None,
+                 credential_type: Optional[_builtins.str] = None,
+                 named_credential_id: Optional[_builtins.str] = None,
+                 password_secret_id: Optional[_builtins.str] = None,
+                 role: Optional[_builtins.str] = None,
+                 ssl_secret_id: Optional[_builtins.str] = None,
+                 user_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[_builtins.str]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[_builtins.str]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[_builtins.str]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class CloudDbSystemConnectorConnectionInfoConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostName":
+            suggest = "host_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemConnectorConnectionInfoConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_name: Optional[_builtins.str] = None,
+                 hosts: Optional[Sequence[_builtins.str]] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 service: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> Optional[_builtins.str]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class CloudDbSystemDatabaseManagementConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnabled":
+            suggest = "is_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDatabaseManagementConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDatabaseManagementConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDatabaseManagementConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[_builtins.str]:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "adrHomeDirectory":
+            suggest = "adr_home_directory"
+        elif key == "asmInstances":
+            suggest = "asm_instances"
+        elif key == "associatedComponents":
+            suggest = "associated_components"
+        elif key == "canEnableAllCurrentPdbs":
+            suggest = "can_enable_all_current_pdbs"
+        elif key == "clusterId":
+            suggest = "cluster_id"
+        elif key == "clusterInstances":
+            suggest = "cluster_instances"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "componentId":
+            suggest = "component_id"
+        elif key == "componentName":
+            suggest = "component_name"
+        elif key == "componentType":
+            suggest = "component_type"
+        elif key == "containerDatabaseId":
+            suggest = "container_database_id"
+        elif key == "cpuCoreCount":
+            suggest = "cpu_core_count"
+        elif key == "crsBaseDirectory":
+            suggest = "crs_base_directory"
+        elif key == "dbEdition":
+            suggest = "db_edition"
+        elif key == "dbId":
+            suggest = "db_id"
+        elif key == "dbInstances":
+            suggest = "db_instances"
+        elif key == "dbNodeName":
+            suggest = "db_node_name"
+        elif key == "dbPacks":
+            suggest = "db_packs"
+        elif key == "dbRole":
+            suggest = "db_role"
+        elif key == "dbType":
+            suggest = "db_type"
+        elif key == "dbUniqueName":
+            suggest = "db_unique_name"
+        elif key == "dbVersion":
+            suggest = "db_version"
+        elif key == "dbaasId":
+            suggest = "dbaas_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "gridHome":
+            suggest = "grid_home"
+        elif key == "homeDirectory":
+            suggest = "home_directory"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "instanceName":
+            suggest = "instance_name"
+        elif key == "isAutoEnablePluggableDatabase":
+            suggest = "is_auto_enable_pluggable_database"
+        elif key == "isCluster":
+            suggest = "is_cluster"
+        elif key == "isFlexCluster":
+            suggest = "is_flex_cluster"
+        elif key == "isFlexEnabled":
+            suggest = "is_flex_enabled"
+        elif key == "isSelectedForMonitoring":
+            suggest = "is_selected_for_monitoring"
+        elif key == "listenerAlias":
+            suggest = "listener_alias"
+        elif key == "listenerType":
+            suggest = "listener_type"
+        elif key == "logDirectory":
+            suggest = "log_directory"
+        elif key == "memorySizeInGbs":
+            suggest = "memory_size_in_gbs"
+        elif key == "networkConfigurations":
+            suggest = "network_configurations"
+        elif key == "nodeName":
+            suggest = "node_name"
+        elif key == "nodeRole":
+            suggest = "node_role"
+        elif key == "ocrFileLocation":
+            suggest = "ocr_file_location"
+        elif key == "oracleHome":
+            suggest = "oracle_home"
+        elif key == "pluggableDatabases":
+            suggest = "pluggable_databases"
+        elif key == "resourceId":
+            suggest = "resource_id"
+        elif key == "scanConfigurations":
+            suggest = "scan_configurations"
+        elif key == "traceDirectory":
+            suggest = "trace_directory"
+        elif key == "vipConfigurations":
+            suggest = "vip_configurations"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[_builtins.str] = None,
+                 asm_instances: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentAsmInstance']] = None,
+                 associated_components: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent']] = None,
+                 can_enable_all_current_pdbs: Optional[_builtins.bool] = None,
+                 cluster_id: Optional[_builtins.str] = None,
+                 cluster_instances: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstance']] = None,
+                 compartment_id: Optional[_builtins.str] = None,
+                 component_id: Optional[_builtins.str] = None,
+                 component_name: Optional[_builtins.str] = None,
+                 component_type: Optional[_builtins.str] = None,
+                 connectors: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnector']] = None,
+                 container_database_id: Optional[_builtins.str] = None,
+                 cpu_core_count: Optional[_builtins.float] = None,
+                 crs_base_directory: Optional[_builtins.str] = None,
+                 db_edition: Optional[_builtins.str] = None,
+                 db_id: Optional[_builtins.str] = None,
+                 db_instances: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentDbInstance']] = None,
+                 db_node_name: Optional[_builtins.str] = None,
+                 db_packs: Optional[_builtins.str] = None,
+                 db_role: Optional[_builtins.str] = None,
+                 db_type: Optional[_builtins.str] = None,
+                 db_unique_name: Optional[_builtins.str] = None,
+                 db_version: Optional[_builtins.str] = None,
+                 dbaas_id: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 endpoints: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentEndpoint']] = None,
+                 grid_home: Optional[_builtins.str] = None,
+                 guid: Optional[_builtins.str] = None,
+                 home_directory: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 instance_name: Optional[_builtins.str] = None,
+                 is_auto_enable_pluggable_database: Optional[_builtins.bool] = None,
+                 is_cluster: Optional[_builtins.bool] = None,
+                 is_flex_cluster: Optional[_builtins.bool] = None,
+                 is_flex_enabled: Optional[_builtins.bool] = None,
+                 is_selected_for_monitoring: Optional[_builtins.bool] = None,
+                 listener_alias: Optional[_builtins.str] = None,
+                 listener_type: Optional[_builtins.str] = None,
+                 log_directory: Optional[_builtins.str] = None,
+                 memory_size_in_gbs: Optional[_builtins.float] = None,
+                 network_configurations: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration']] = None,
+                 node_name: Optional[_builtins.str] = None,
+                 node_role: Optional[_builtins.str] = None,
+                 ocr_file_location: Optional[_builtins.str] = None,
+                 oracle_home: Optional[_builtins.str] = None,
+                 pluggable_databases: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase']] = None,
+                 resource_id: Optional[_builtins.str] = None,
+                 scan_configurations: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration']] = None,
+                 status: Optional[_builtins.str] = None,
+                 trace_directory: Optional[_builtins.str] = None,
+                 version: Optional[_builtins.str] = None,
+                 vip_configurations: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration']] = None):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of asm instances for the cloud Asm.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
+        :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs'] cluster_instances: The list of cluster instances for the cloud cluster.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+        :param _builtins.str component_id: The identifier of the discovered DB system component.
+        :param _builtins.str component_name: The name of the discovered DB system component.
+        :param _builtins.str component_type: The component type.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param _builtins.float cpu_core_count: The number of CPU cores available on the DB node.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str db_edition: The Oracle Database edition.
+        :param _builtins.str db_id: The Oracle Database ID.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs'] db_instances: The list of database instances.
+        :param _builtins.str db_node_name: The name of the DB node.
+        :param _builtins.str db_packs: The database packs licensed for the cloud Oracle Database.
+        :param _builtins.str db_role: The role of the Oracle Database in Oracle Data Guard configuration.
+        :param _builtins.str db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
+        :param _builtins.str db_version: The Oracle Database version.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
+        :param _builtins.str guid: The unique identifier of the PDB.
+        :param _builtins.str home_directory: The location of the DB home.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        :param _builtins.bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
+        :param _builtins.bool is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
+        :param _builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
+        :param _builtins.bool is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        :param _builtins.str listener_alias: The listener alias.
+        :param _builtins.str listener_type: The type of listener.
+        :param _builtins.str log_directory: The destination directory of the listener log file.
+        :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the cloud cluster.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str node_role: The role of the cluster node.
+        :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs'] pluggable_databases: The list of Pluggable Databases.
+        :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        :param _builtins.str status: The state of the discovered DB system component.
+        :param _builtins.str trace_directory: The destination directory of the listener trace file.
+        :param _builtins.str version: The version of Oracle Clusterware running in the cluster.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs'] vip_configurations: The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if asm_instances is not None:
+            pulumi.set(__self__, "asm_instances", asm_instances)
+        if associated_components is not None:
+            pulumi.set(__self__, "associated_components", associated_components)
+        if can_enable_all_current_pdbs is not None:
+            pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if cluster_instances is not None:
+            pulumi.set(__self__, "cluster_instances", cluster_instances)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if component_id is not None:
+            pulumi.set(__self__, "component_id", component_id)
+        if component_name is not None:
+            pulumi.set(__self__, "component_name", component_name)
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connectors is not None:
+            pulumi.set(__self__, "connectors", connectors)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if cpu_core_count is not None:
+            pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        if crs_base_directory is not None:
+            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        if db_edition is not None:
+            pulumi.set(__self__, "db_edition", db_edition)
+        if db_id is not None:
+            pulumi.set(__self__, "db_id", db_id)
+        if db_instances is not None:
+            pulumi.set(__self__, "db_instances", db_instances)
+        if db_node_name is not None:
+            pulumi.set(__self__, "db_node_name", db_node_name)
+        if db_packs is not None:
+            pulumi.set(__self__, "db_packs", db_packs)
+        if db_role is not None:
+            pulumi.set(__self__, "db_role", db_role)
+        if db_type is not None:
+            pulumi.set(__self__, "db_type", db_type)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if db_version is not None:
+            pulumi.set(__self__, "db_version", db_version)
+        if dbaas_id is not None:
+            pulumi.set(__self__, "dbaas_id", dbaas_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if endpoints is not None:
+            pulumi.set(__self__, "endpoints", endpoints)
+        if grid_home is not None:
+            pulumi.set(__self__, "grid_home", grid_home)
+        if guid is not None:
+            pulumi.set(__self__, "guid", guid)
+        if home_directory is not None:
+            pulumi.set(__self__, "home_directory", home_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if is_auto_enable_pluggable_database is not None:
+            pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        if is_cluster is not None:
+            pulumi.set(__self__, "is_cluster", is_cluster)
+        if is_flex_cluster is not None:
+            pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
+        if is_flex_enabled is not None:
+            pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+        if is_selected_for_monitoring is not None:
+            pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+        if listener_alias is not None:
+            pulumi.set(__self__, "listener_alias", listener_alias)
+        if listener_type is not None:
+            pulumi.set(__self__, "listener_type", listener_type)
+        if log_directory is not None:
+            pulumi.set(__self__, "log_directory", log_directory)
+        if memory_size_in_gbs is not None:
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if network_configurations is not None:
+            pulumi.set(__self__, "network_configurations", network_configurations)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+        if node_role is not None:
+            pulumi.set(__self__, "node_role", node_role)
+        if ocr_file_location is not None:
+            pulumi.set(__self__, "ocr_file_location", ocr_file_location)
+        if oracle_home is not None:
+            pulumi.set(__self__, "oracle_home", oracle_home)
+        if pluggable_databases is not None:
+            pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if scan_configurations is not None:
+            pulumi.set(__self__, "scan_configurations", scan_configurations)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if trace_directory is not None:
+            pulumi.set(__self__, "trace_directory", trace_directory)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if vip_configurations is not None:
+            pulumi.set(__self__, "vip_configurations", vip_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[_builtins.str]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="asmInstances")
+    def asm_instances(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentAsmInstance']]:
+        """
+        The list of asm instances for the cloud Asm.
+        """
+        return pulumi.get(self, "asm_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedComponents")
+    def associated_components(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent']]:
+        """
+        The list of associated components.
+        """
+        return pulumi.get(self, "associated_components")
+
+    @_builtins.property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterInstances")
+    def cluster_instances(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstance']]:
+        """
+        The list of cluster instances for the cloud cluster.
+        """
+        return pulumi.get(self, "cluster_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> Optional[_builtins.str]:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[_builtins.str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnector']]:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> Optional[_builtins.float]:
+        """
+        The number of CPU cores available on the DB node.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> Optional[_builtins.str]:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="dbEdition")
+    def db_edition(self) -> Optional[_builtins.str]:
+        """
+        The Oracle Database edition.
+        """
+        return pulumi.get(self, "db_edition")
+
+    @_builtins.property
+    @pulumi.getter(name="dbId")
+    def db_id(self) -> Optional[_builtins.str]:
+        """
+        The Oracle Database ID.
+        """
+        return pulumi.get(self, "db_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbInstances")
+    def db_instances(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentDbInstance']]:
+        """
+        The list of database instances.
+        """
+        return pulumi.get(self, "db_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeName")
+    def db_node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the DB node.
+        """
+        return pulumi.get(self, "db_node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbPacks")
+    def db_packs(self) -> Optional[_builtins.str]:
+        """
+        The database packs licensed for the cloud Oracle Database.
+        """
+        return pulumi.get(self, "db_packs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbRole")
+    def db_role(self) -> Optional[_builtins.str]:
+        """
+        The role of the Oracle Database in Oracle Data Guard configuration.
+        """
+        return pulumi.get(self, "db_role")
+
+    @_builtins.property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> Optional[_builtins.str]:
+        """
+        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        """
+        return pulumi.get(self, "db_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[_builtins.str]:
+        """
+        The `DB_UNIQUE_NAME` of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> Optional[_builtins.str]:
+        """
+        The Oracle Database version.
+        """
+        return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentEndpoint']]:
+        """
+        The list of protocol addresses the listener is configured to listen on.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> Optional[_builtins.str]:
+        """
+        The directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @_builtins.property
+    @pulumi.getter
+    def guid(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+    @_builtins.property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> Optional[_builtins.str]:
+        """
+        The location of the DB home.
+        """
+        return pulumi.get(self, "home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @_builtins.property
+    @pulumi.getter(name="isCluster")
+    def is_cluster(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the Oracle Database is part of a cluster.
+        """
+        return pulumi.get(self, "is_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexCluster")
+    def is_flex_cluster(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the cluster is an Oracle Flex Cluster or not.
+        """
+        return pulumi.get(self, "is_flex_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexEnabled")
+    def is_flex_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether Oracle Flex ASM is enabled or not.
+        """
+        return pulumi.get(self, "is_flex_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerAlias")
+    def listener_alias(self) -> Optional[_builtins.str]:
+        """
+        The listener alias.
+        """
+        return pulumi.get(self, "listener_alias")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerType")
+    def listener_type(self) -> Optional[_builtins.str]:
+        """
+        The type of listener.
+        """
+        return pulumi.get(self, "listener_type")
+
+    @_builtins.property
+    @pulumi.getter(name="logDirectory")
+    def log_directory(self) -> Optional[_builtins.str]:
+        """
+        The destination directory of the listener log file.
+        """
+        return pulumi.get(self, "log_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The total memory in gigabytes (GB) on the DB node.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration']]:
+        """
+        The list of network address configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> Optional[_builtins.str]:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+    @_builtins.property
+    @pulumi.getter(name="ocrFileLocation")
+    def ocr_file_location(self) -> Optional[_builtins.str]:
+        """
+        The location of the Oracle Cluster Registry (OCR) file.
+        """
+        return pulumi.get(self, "ocr_file_location")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> Optional[_builtins.str]:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
+
+    @_builtins.property
+    @pulumi.getter(name="pluggableDatabases")
+    def pluggable_databases(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase']]:
+        """
+        The list of Pluggable Databases.
+        """
+        return pulumi.get(self, "pluggable_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="scanConfigurations")
+    def scan_configurations(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration']]:
+        """
+        The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "scan_configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The state of the discovered DB system component.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="traceDirectory")
+    def trace_directory(self) -> Optional[_builtins.str]:
+        """
+        The destination directory of the listener trace file.
+        """
+        return pulumi.get(self, "trace_directory")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> Optional[_builtins.str]:
+        """
+        The version of Oracle Clusterware running in the cluster.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="vipConfigurations")
+    def vip_configurations(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration']]:
+        """
+        The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "vip_configurations")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentAsmInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "adrHomeDirectory":
+            suggest = "adr_home_directory"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "instanceName":
+            suggest = "instance_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentAsmInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentAsmInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentAsmInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 instance_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[_builtins.str]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "associationType":
+            suggest = "association_type"
+        elif key == "componentId":
+            suggest = "component_id"
+        elif key == "componentType":
+            suggest = "component_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentAssociatedComponent.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 association_type: Optional[_builtins.str] = None,
+                 component_id: Optional[_builtins.str] = None,
+                 component_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str association_type: The association type.
+        :param _builtins.str component_id: The identifier of the discovered DB system component.
+        :param _builtins.str component_type: The component type.
+        """
+        if association_type is not None:
+            pulumi.set(__self__, "association_type", association_type)
+        if component_id is not None:
+            pulumi.set(__self__, "component_id", component_id)
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+
+    @_builtins.property
+    @pulumi.getter(name="associationType")
+    def association_type(self) -> Optional[_builtins.str]:
+        """
+        The association type.
+        """
+        return pulumi.get(self, "association_type")
+
+    @_builtins.property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> Optional[_builtins.str]:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[_builtins.str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "adrHomeDirectory":
+            suggest = "adr_home_directory"
+        elif key == "clusterId":
+            suggest = "cluster_id"
+        elif key == "crsBaseDirectory":
+            suggest = "crs_base_directory"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "nodeRole":
+            suggest = "node_role"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentClusterInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[_builtins.str] = None,
+                 cluster_id: Optional[_builtins.str] = None,
+                 connectors: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector']] = None,
+                 crs_base_directory: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 node_role: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str node_role: The role of the cluster node.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if cluster_id is not None:
+            pulumi.set(__self__, "cluster_id", cluster_id)
+        if connectors is not None:
+            pulumi.set(__self__, "connectors", connectors)
+        if crs_base_directory is not None:
+            pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if node_role is not None:
+            pulumi.set(__self__, "node_role", node_role)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[_builtins.str]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector']]:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> Optional[_builtins.str]:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> Optional[_builtins.str]:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "agentId":
+            suggest = "agent_id"
+        elif key == "connectionFailureMessage":
+            suggest = "connection_failure_message"
+        elif key == "connectionInfos":
+            suggest = "connection_infos"
+        elif key == "connectionStatus":
+            suggest = "connection_status"
+        elif key == "connectorType":
+            suggest = "connector_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "timeConnectionStatusLastUpdated":
+            suggest = "time_connection_status_last_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 agent_id: Optional[_builtins.str] = None,
+                 connection_failure_message: Optional[_builtins.str] = None,
+                 connection_infos: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo']] = None,
+                 connection_status: Optional[_builtins.str] = None,
+                 connector_type: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 time_connection_status_last_updated: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_failure_message is not None:
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        if connection_infos is not None:
+            pulumi.set(__self__, "connection_infos", connection_infos)
+        if connection_status is not None:
+            pulumi.set(__self__, "connection_status", connection_status)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if time_connection_status_last_updated is not None:
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> Optional[_builtins.str]:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo']]:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> Optional[_builtins.str]:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[_builtins.str]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> Optional[_builtins.str]:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "componentType":
+            suggest = "component_type"
+        elif key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionStrings":
+            suggest = "connection_strings"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 component_type: Optional[_builtins.str] = None,
+                 connection_credentials: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential']] = None,
+                 connection_strings: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString']] = None):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[_builtins.str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential']]:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString']]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialName":
+            suggest = "credential_name"
+        elif key == "credentialType":
+            suggest = "credential_type"
+        elif key == "namedCredentialId":
+            suggest = "named_credential_id"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_name: Optional[_builtins.str] = None,
+                 credential_type: Optional[_builtins.str] = None,
+                 named_credential_id: Optional[_builtins.str] = None,
+                 password_secret_id: Optional[_builtins.str] = None,
+                 role: Optional[_builtins.str] = None,
+                 ssl_secret_id: Optional[_builtins.str] = None,
+                 user_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[_builtins.str]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[_builtins.str]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[_builtins.str]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostName":
+            suggest = "host_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_name: Optional[_builtins.str] = None,
+                 hosts: Optional[Sequence[_builtins.str]] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 service: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> Optional[_builtins.str]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "agentId":
+            suggest = "agent_id"
+        elif key == "connectionFailureMessage":
+            suggest = "connection_failure_message"
+        elif key == "connectionInfos":
+            suggest = "connection_infos"
+        elif key == "connectionStatus":
+            suggest = "connection_status"
+        elif key == "connectorType":
+            suggest = "connector_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "timeConnectionStatusLastUpdated":
+            suggest = "time_connection_status_last_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 agent_id: Optional[_builtins.str] = None,
+                 connection_failure_message: Optional[_builtins.str] = None,
+                 connection_infos: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo']] = None,
+                 connection_status: Optional[_builtins.str] = None,
+                 connector_type: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 time_connection_status_last_updated: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_failure_message is not None:
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        if connection_infos is not None:
+            pulumi.set(__self__, "connection_infos", connection_infos)
+        if connection_status is not None:
+            pulumi.set(__self__, "connection_status", connection_status)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if time_connection_status_last_updated is not None:
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> Optional[_builtins.str]:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo']]:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> Optional[_builtins.str]:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[_builtins.str]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> Optional[_builtins.str]:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "componentType":
+            suggest = "component_type"
+        elif key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionStrings":
+            suggest = "connection_strings"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 component_type: Optional[_builtins.str] = None,
+                 connection_credentials: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential']] = None,
+                 connection_strings: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString']] = None):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[_builtins.str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential']]:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString']]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialName":
+            suggest = "credential_name"
+        elif key == "credentialType":
+            suggest = "credential_type"
+        elif key == "namedCredentialId":
+            suggest = "named_credential_id"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_name: Optional[_builtins.str] = None,
+                 credential_type: Optional[_builtins.str] = None,
+                 named_credential_id: Optional[_builtins.str] = None,
+                 password_secret_id: Optional[_builtins.str] = None,
+                 role: Optional[_builtins.str] = None,
+                 ssl_secret_id: Optional[_builtins.str] = None,
+                 user_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[_builtins.str]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[_builtins.str]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[_builtins.str]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostName":
+            suggest = "host_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_name: Optional[_builtins.str] = None,
+                 hosts: Optional[Sequence[_builtins.str]] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 service: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> Optional[_builtins.str]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentDbInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "adrHomeDirectory":
+            suggest = "adr_home_directory"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "instanceName":
+            suggest = "instance_name"
+        elif key == "nodeName":
+            suggest = "node_name"
+        elif key == "oracleHome":
+            suggest = "oracle_home"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentDbInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentDbInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentDbInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 instance_name: Optional[_builtins.str] = None,
+                 node_name: Optional[_builtins.str] = None,
+                 oracle_home: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+        if oracle_home is not None:
+            pulumi.set(__self__, "oracle_home", oracle_home)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[_builtins.str]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> Optional[_builtins.str]:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentEndpoint(dict):
+    def __init__(__self__, *,
+                 host: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 services: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str host: The host name or IP address.
+        :param _builtins.str key: The unique name of the service.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param Sequence[_builtins.str] services: The list of services registered with the listener.
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> Optional[_builtins.str]:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkNumber":
+            suggest = "network_number"
+        elif key == "networkType":
+            suggest = "network_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_number: Optional[_builtins.int] = None,
+                 network_type: Optional[_builtins.str] = None,
+                 subnet: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str network_type: The network type.
+        :param _builtins.str subnet: The subnet for the network.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if network_type is not None:
+            pulumi.set(__self__, "network_type", network_type)
+        if subnet is not None:
+            pulumi.set(__self__, "subnet", subnet)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[_builtins.int]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> Optional[_builtins.str]:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> Optional[_builtins.str]:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "containerDatabaseId":
+            suggest = "container_database_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabase.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 connectors: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector']] = None,
+                 container_database_id: Optional[_builtins.str] = None,
+                 guid: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param _builtins.str guid: The unique identifier of the PDB.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connectors is not None:
+            pulumi.set(__self__, "connectors", connectors)
+        if container_database_id is not None:
+            pulumi.set(__self__, "container_database_id", container_database_id)
+        if guid is not None:
+            pulumi.set(__self__, "guid", guid)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector']]:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def guid(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "agentId":
+            suggest = "agent_id"
+        elif key == "connectionFailureMessage":
+            suggest = "connection_failure_message"
+        elif key == "connectionInfos":
+            suggest = "connection_infos"
+        elif key == "connectionStatus":
+            suggest = "connection_status"
+        elif key == "connectorType":
+            suggest = "connector_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "timeConnectionStatusLastUpdated":
+            suggest = "time_connection_status_last_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 agent_id: Optional[_builtins.str] = None,
+                 connection_failure_message: Optional[_builtins.str] = None,
+                 connection_infos: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo']] = None,
+                 connection_status: Optional[_builtins.str] = None,
+                 connector_type: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 time_connection_status_last_updated: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_failure_message is not None:
+            pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        if connection_infos is not None:
+            pulumi.set(__self__, "connection_infos", connection_infos)
+        if connection_status is not None:
+            pulumi.set(__self__, "connection_status", connection_status)
+        if connector_type is not None:
+            pulumi.set(__self__, "connector_type", connector_type)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if time_connection_status_last_updated is not None:
+            pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> Optional[_builtins.str]:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo']]:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> Optional[_builtins.str]:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> Optional[_builtins.str]:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> Optional[_builtins.str]:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "componentType":
+            suggest = "component_type"
+        elif key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionStrings":
+            suggest = "connection_strings"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 component_type: Optional[_builtins.str] = None,
+                 connection_credentials: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential']] = None,
+                 connection_strings: Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString']] = None):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        if component_type is not None:
+            pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_strings is not None:
+            pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> Optional[_builtins.str]:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential']]:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Optional[Sequence['outputs.CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString']]:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialName":
+            suggest = "credential_name"
+        elif key == "credentialType":
+            suggest = "credential_type"
+        elif key == "namedCredentialId":
+            suggest = "named_credential_id"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredential.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_name: Optional[_builtins.str] = None,
+                 credential_type: Optional[_builtins.str] = None,
+                 named_credential_id: Optional[_builtins.str] = None,
+                 password_secret_id: Optional[_builtins.str] = None,
+                 role: Optional[_builtins.str] = None,
+                 ssl_secret_id: Optional[_builtins.str] = None,
+                 user_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if credential_type is not None:
+            pulumi.set(__self__, "credential_type", credential_type)
+        if named_credential_id is not None:
+            pulumi.set(__self__, "named_credential_id", named_credential_id)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> Optional[_builtins.str]:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[_builtins.str]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[_builtins.str]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostName":
+            suggest = "host_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_name: Optional[_builtins.str] = None,
+                 hosts: Optional[Sequence[_builtins.str]] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 service: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> Optional[_builtins.str]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkNumber":
+            suggest = "network_number"
+        elif key == "scanName":
+            suggest = "scan_name"
+        elif key == "scanPort":
+            suggest = "scan_port"
+        elif key == "scanProtocol":
+            suggest = "scan_protocol"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentScanConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 network_number: Optional[_builtins.int] = None,
+                 scan_name: Optional[_builtins.str] = None,
+                 scan_port: Optional[_builtins.int] = None,
+                 scan_protocol: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str scan_name: The name of the SCAN listener.
+        :param _builtins.int scan_port: The port number of the SCAN listener.
+        :param _builtins.str scan_protocol: The protocol of the SCAN listener.
+        """
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if scan_name is not None:
+            pulumi.set(__self__, "scan_name", scan_name)
+        if scan_port is not None:
+            pulumi.set(__self__, "scan_port", scan_port)
+        if scan_protocol is not None:
+            pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[_builtins.int]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> Optional[_builtins.int]:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @_builtins.property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "networkNumber":
+            suggest = "network_number"
+        elif key == "nodeName":
+            suggest = "node_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryDiscoveredComponentVipConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 address: Optional[_builtins.str] = None,
+                 network_number: Optional[_builtins.int] = None,
+                 node_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str address: The VIP name or IP address.
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        """
+        if address is not None:
+            pulumi.set(__self__, "address", address)
+        if network_number is not None:
+            pulumi.set(__self__, "network_number", network_number)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> Optional[_builtins.str]:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> Optional[_builtins.int]:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryPatchOperation(dict):
+    def __init__(__self__, *,
+                 operation: _builtins.str,
+                 selection: _builtins.str,
+                 value: Optional['outputs.CloudDbSystemDiscoveryPatchOperationValue'] = None):
+        """
+        :param _builtins.str operation: (Updatable) The operation can be one of these values: `MERGE`
+        :param _builtins.str selection: (Updatable)
+        :param 'CloudDbSystemDiscoveryPatchOperationValueArgs' value: (Updatable) 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> _builtins.str:
+        """
+        (Updatable) The operation can be one of these values: `MERGE`
+        """
+        return pulumi.get(self, "operation")
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> _builtins.str:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional['outputs.CloudDbSystemDiscoveryPatchOperationValue']:
+        """
+        (Updatable) 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryPatchOperationValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "isSelectedForMonitoring":
+            suggest = "is_selected_for_monitoring"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryPatchOperationValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 connector: Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnector'] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 is_selected_for_monitoring: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+        :param 'CloudDbSystemDiscoveryPatchOperationValueConnectorArgs' connector: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.bool is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if connector is not None:
+            pulumi.set(__self__, "connector", connector)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if is_selected_for_monitoring is not None:
+            pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connector(self) -> Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnector']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connector")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryPatchOperationValueConnector(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "connectorType":
+            suggest = "connector_type"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "agentId":
+            suggest = "agent_id"
+        elif key == "connectionInfo":
+            suggest = "connection_info"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryPatchOperationValueConnector. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnector.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnector.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 agent_id: Optional[_builtins.str] = None,
+                 connection_info: Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo'] = None):
+        """
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        :param 'CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs' connection_info: The connection details required to connect to a cloud DB system component.
+        """
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        if agent_id is not None:
+            pulumi.set(__self__, "agent_id", agent_id)
+        if connection_info is not None:
+            pulumi.set(__self__, "connection_info", connection_info)
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        (Updatable) The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfo")
+    def connection_info(self) -> Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_info")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "componentType":
+            suggest = "component_type"
+        elif key == "connectionCredentials":
+            suggest = "connection_credentials"
+        elif key == "connectionString":
+            suggest = "connection_string"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials'] = None,
+                 connection_string: Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString'] = None):
+        """
+        :param _builtins.str component_type: The component type.
+        :param 'CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialsArgs' connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param 'CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs' connection_string: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        if connection_credentials is not None:
+            pulumi.set(__self__, "connection_credentials", connection_credentials)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional['outputs.CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialType":
+            suggest = "credential_type"
+        elif key == "credentialName":
+            suggest = "credential_name"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_type: _builtins.str,
+                 credential_name: Optional[_builtins.str] = None,
+                 password_secret_id: Optional[_builtins.str] = None,
+                 role: Optional[_builtins.str] = None,
+                 ssl_secret_id: Optional[_builtins.str] = None,
+                 user_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_type", credential_type)
+        if credential_name is not None:
+            pulumi.set(__self__, "credential_name", credential_name)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> Optional[_builtins.str]:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[_builtins.str]:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostName":
+            suggest = "host_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_name: Optional[_builtins.str] = None,
+                 hosts: Optional[Sequence[_builtins.str]] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 service: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if service is not None:
+            pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> Optional[_builtins.str]:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class CloudDbSystemStackMonitoringConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isEnabled":
+            suggest = "is_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudDbSystemStackMonitoringConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudDbSystemStackMonitoringConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudDbSystemStackMonitoringConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[_builtins.str]:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class CloudListenerEndpoint(dict):
+    def __init__(__self__, *,
+                 host: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 port: Optional[_builtins.int] = None,
+                 protocol: Optional[_builtins.str] = None,
+                 services: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str host: The host name or IP address.
+        :param _builtins.str key: The unique name of the service.
+        :param _builtins.int port: The port number.
+        :param _builtins.str protocol: The listener protocol.
+        :param Sequence[_builtins.str] services: The list of services registered with the listener.
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if protocol is not None:
+            pulumi.set(__self__, "protocol", protocol)
+        if services is not None:
+            pulumi.set(__self__, "services", services)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> Optional[_builtins.str]:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> Optional[_builtins.int]:
+        """
+        The port number.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> Optional[_builtins.str]:
+        """
+        The listener protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+
+@pulumi.output_type
+class CloudListenerServicedAsm(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudListenerServicedAsm. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudListenerServicedAsm.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudListenerServicedAsm.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class CloudListenerServicedDatabase(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "databaseSubType":
+            suggest = "database_sub_type"
+        elif key == "databaseType":
+            suggest = "database_type"
+        elif key == "dbUniqueName":
+            suggest = "db_unique_name"
+        elif key == "dbaasId":
+            suggest = "dbaas_id"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "isManaged":
+            suggest = "is_managed"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudListenerServicedDatabase. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudListenerServicedDatabase.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudListenerServicedDatabase.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 database_sub_type: Optional[_builtins.str] = None,
+                 database_type: Optional[_builtins.str] = None,
+                 db_unique_name: Optional[_builtins.str] = None,
+                 dbaas_id: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 id: Optional[_builtins.str] = None,
+                 is_managed: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str db_unique_name: The unique name of the cloud database.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if database_sub_type is not None:
+            pulumi.set(__self__, "database_sub_type", database_sub_type)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if dbaas_id is not None:
+            pulumi.set(__self__, "dbaas_id", dbaas_id)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_managed is not None:
+            pulumi.set(__self__, "is_managed", is_managed)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> Optional[_builtins.str]:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[_builtins.str]:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[_builtins.str]:
+        """
+        The unique name of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> Optional[_builtins.bool]:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
 class DatabaseDbmFeaturesManagementFeatureDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -886,7 +5052,7 @@ class DatabaseDbmFeaturesManagementFeatureDetails(dict):
         :param 'DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
         :param 'DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs' database_connection_details: The connection details required to connect to the database.
         :param _builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        :param _builtins.str management_type: The management type for the database.
+        :param _builtins.str management_type: The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         """
         pulumi.set(__self__, "feature", feature)
         if can_enable_all_current_pdbs is not None:
@@ -944,7 +5110,7 @@ class DatabaseDbmFeaturesManagementFeatureDetails(dict):
     @pulumi.getter(name="managementType")
     def management_type(self) -> Optional[_builtins.str]:
         """
-        The management type for the database.
+        The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         """
         return pulumi.get(self, "management_type")
 
@@ -2064,6 +6230,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             suggest = "db_edition"
         elif key == "dbId":
             suggest = "db_id"
+        elif key == "dbInstances":
+            suggest = "db_instances"
         elif key == "dbNodeName":
             suggest = "db_node_name"
         elif key == "dbPacks":
@@ -2106,6 +6274,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             suggest = "memory_size_in_gbs"
         elif key == "networkConfigurations":
             suggest = "network_configurations"
+        elif key == "nodeName":
+            suggest = "node_name"
         elif key == "nodeRole":
             suggest = "node_role"
         elif key == "ocrFileLocation":
@@ -2151,6 +6321,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
                  crs_base_directory: Optional[_builtins.str] = None,
                  db_edition: Optional[_builtins.str] = None,
                  db_id: Optional[_builtins.str] = None,
+                 db_instances: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstance']] = None,
                  db_node_name: Optional[_builtins.str] = None,
                  db_packs: Optional[_builtins.str] = None,
                  db_role: Optional[_builtins.str] = None,
@@ -2174,6 +6345,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
                  log_directory: Optional[_builtins.str] = None,
                  memory_size_in_gbs: Optional[_builtins.float] = None,
                  network_configurations: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration']] = None,
+                 node_name: Optional[_builtins.str] = None,
                  node_role: Optional[_builtins.str] = None,
                  ocr_file_location: Optional[_builtins.str] = None,
                  oracle_home: Optional[_builtins.str] = None,
@@ -2185,7 +6357,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
                  version: Optional[_builtins.str] = None,
                  vip_configurations: Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentVipConfiguration']] = None):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
         :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
@@ -2199,6 +6371,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
         :param _builtins.str db_edition: The Oracle Database edition.
         :param _builtins.str db_id: The Oracle Database ID.
+        :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs'] db_instances: The list of database instances.
         :param _builtins.str db_node_name: The name of the DB node.
         :param _builtins.str db_packs: The database packs licensed for the external Oracle Database.
         :param _builtins.str db_role: The role of the Oracle Database in Oracle Data Guard configuration.
@@ -2222,9 +6395,10 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         :param _builtins.str log_directory: The destination directory of the listener log file.
         :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
         :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the external cluster.
+        :param _builtins.str node_name: The name of the node with the VIP.
         :param _builtins.str node_role: The role of the cluster node.
         :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
-        :param _builtins.str oracle_home: The Oracle home location of the listener.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
         :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs'] pluggable_databases: The list of Pluggable Databases.
         :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
@@ -2265,6 +6439,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             pulumi.set(__self__, "db_edition", db_edition)
         if db_id is not None:
             pulumi.set(__self__, "db_id", db_id)
+        if db_instances is not None:
+            pulumi.set(__self__, "db_instances", db_instances)
         if db_node_name is not None:
             pulumi.set(__self__, "db_node_name", db_node_name)
         if db_packs is not None:
@@ -2311,6 +6487,8 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if network_configurations is not None:
             pulumi.set(__self__, "network_configurations", network_configurations)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
         if node_role is not None:
             pulumi.set(__self__, "node_role", node_role)
         if ocr_file_location is not None:
@@ -2336,7 +6514,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[_builtins.str]:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -2453,6 +6631,14 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         The Oracle Database ID.
         """
         return pulumi.get(self, "db_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbInstances")
+    def db_instances(self) -> Optional[Sequence['outputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstance']]:
+        """
+        The list of database instances.
+        """
+        return pulumi.get(self, "db_instances")
 
     @_builtins.property
     @pulumi.getter(name="dbNodeName")
@@ -2639,6 +6825,14 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
         return pulumi.get(self, "network_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> Optional[_builtins.str]:
         """
@@ -2658,7 +6852,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponent(dict):
     @pulumi.getter(name="oracleHome")
     def oracle_home(self) -> Optional[_builtins.str]:
         """
-        The Oracle home location of the listener.
+        The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
@@ -2747,7 +6941,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance(dict):
                  host_name: Optional[_builtins.str] = None,
                  instance_name: Optional[_builtins.str] = None):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param _builtins.str instance_name: The name of the ASM instance.
         """
@@ -2762,7 +6956,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance(dict):
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[_builtins.str]:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -2882,7 +7076,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance(dict):
                  host_name: Optional[_builtins.str] = None,
                  node_role: Optional[_builtins.str] = None):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
         :param Sequence['ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs'] connectors: The connector details used to connect to the external DB system component.
         :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
@@ -2906,7 +7100,7 @@ class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance(dict):
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> Optional[_builtins.str]:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -3949,6 +8143,98 @@ class ExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoDatabas
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class ExternalDbSystemDiscoveryDiscoveredComponentDbInstance(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "adrHomeDirectory":
+            suggest = "adr_home_directory"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "instanceName":
+            suggest = "instance_name"
+        elif key == "nodeName":
+            suggest = "node_name"
+        elif key == "oracleHome":
+            suggest = "oracle_home"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExternalDbSystemDiscoveryDiscoveredComponentDbInstance. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExternalDbSystemDiscoveryDiscoveredComponentDbInstance.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExternalDbSystemDiscoveryDiscoveredComponentDbInstance.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 adr_home_directory: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 instance_name: Optional[_builtins.str] = None,
+                 node_name: Optional[_builtins.str] = None,
+                 oracle_home: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        """
+        if adr_home_directory is not None:
+            pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if node_name is not None:
+            pulumi.set(__self__, "node_name", node_name)
+        if oracle_home is not None:
+            pulumi.set(__self__, "oracle_home", oracle_home)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> Optional[_builtins.str]:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> Optional[_builtins.str]:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> Optional[_builtins.str]:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
 
 
 @pulumi.output_type
@@ -8379,7 +12665,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict
         :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs' connector_details: The connector details required to connect to an Oracle cloud database.
         :param 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs' database_connection_details: The connection details required to connect to the database.
         :param _builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
-        :param _builtins.str management_type: The management type for the database.
+        :param _builtins.str management_type: The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         """
         pulumi.set(__self__, "feature", feature)
         if can_enable_all_current_pdbs is not None:
@@ -8437,7 +12723,7 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails(dict
     @pulumi.getter(name="managementType")
     def management_type(self) -> Optional[_builtins.str]:
         """
-        The management type for the database.
+        The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         """
         return pulumi.get(self, "management_type")
 
@@ -8772,6 +13058,9379 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsDatab
         The service name of the database.
         """
         return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudAsmConfigurationInitParameterResult(dict):
+    def __init__(__self__, *,
+                 asm_instance_display_name: _builtins.str,
+                 asm_instance_id: _builtins.str,
+                 auto_mount_disk_groups: Sequence[_builtins.str],
+                 disk_discovery_path: _builtins.str,
+                 preferred_read_failure_groups: Sequence[_builtins.str],
+                 rebalance_power: _builtins.int):
+        """
+        :param _builtins.str asm_instance_display_name: The user-friendly name for the ASM instance. The name does not have to be unique.
+        :param _builtins.str asm_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM instance.
+        :param Sequence[_builtins.str] auto_mount_disk_groups: The list of disk group names that an ASM instance mounts at startup or when the `ALTER DISKGROUP ALL MOUNT` statement is issued.
+        :param _builtins.str disk_discovery_path: An operating system-dependent value used to limit the set of disks considered for discovery.
+        :param Sequence[_builtins.str] preferred_read_failure_groups: The list of failure groups that contain preferred read disks.
+        :param _builtins.int rebalance_power: The maximum power on an ASM instance for disk rebalancing.
+        """
+        pulumi.set(__self__, "asm_instance_display_name", asm_instance_display_name)
+        pulumi.set(__self__, "asm_instance_id", asm_instance_id)
+        pulumi.set(__self__, "auto_mount_disk_groups", auto_mount_disk_groups)
+        pulumi.set(__self__, "disk_discovery_path", disk_discovery_path)
+        pulumi.set(__self__, "preferred_read_failure_groups", preferred_read_failure_groups)
+        pulumi.set(__self__, "rebalance_power", rebalance_power)
+
+    @_builtins.property
+    @pulumi.getter(name="asmInstanceDisplayName")
+    def asm_instance_display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the ASM instance. The name does not have to be unique.
+        """
+        return pulumi.get(self, "asm_instance_display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="asmInstanceId")
+    def asm_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM instance.
+        """
+        return pulumi.get(self, "asm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="autoMountDiskGroups")
+    def auto_mount_disk_groups(self) -> Sequence[_builtins.str]:
+        """
+        The list of disk group names that an ASM instance mounts at startup or when the `ALTER DISKGROUP ALL MOUNT` statement is issued.
+        """
+        return pulumi.get(self, "auto_mount_disk_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="diskDiscoveryPath")
+    def disk_discovery_path(self) -> _builtins.str:
+        """
+        An operating system-dependent value used to limit the set of disks considered for discovery.
+        """
+        return pulumi.get(self, "disk_discovery_path")
+
+    @_builtins.property
+    @pulumi.getter(name="preferredReadFailureGroups")
+    def preferred_read_failure_groups(self) -> Sequence[_builtins.str]:
+        """
+        The list of failure groups that contain preferred read disks.
+        """
+        return pulumi.get(self, "preferred_read_failure_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="rebalancePower")
+    def rebalance_power(self) -> _builtins.int:
+        """
+        The maximum power on an ASM instance for disk rebalancing.
+        """
+        return pulumi.get(self, "rebalance_power")
+
+
+@pulumi.output_type
+class GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionItemResult']):
+        """
+        :param Sequence['GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionItemArgs'] items: An array of cloud ASM disk groups.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionItemResult']:
+        """
+        An array of cloud ASM disk groups.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudAsmDiskGroupsCloudAsmDiskGroupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 databases: Sequence[_builtins.str],
+                 dismounting_instance_count: _builtins.int,
+                 is_sparse: _builtins.bool,
+                 mounting_instance_count: _builtins.int,
+                 name: _builtins.str,
+                 redundancy_type: _builtins.str,
+                 total_size_in_mbs: _builtins.str,
+                 used_percent: _builtins.float,
+                 used_size_in_mbs: _builtins.str):
+        """
+        :param Sequence[_builtins.str] databases: The unique names of the databases using the disk group.
+        :param _builtins.int dismounting_instance_count: The number of ASM instances that have the disk group in dismounted state.
+        :param _builtins.bool is_sparse: Indicates whether the disk group is a sparse disk group or not.
+        :param _builtins.int mounting_instance_count: The number of ASM instances that have the disk group in mounted state.
+        :param _builtins.str name: The name of the ASM disk group.
+        :param _builtins.str redundancy_type: The redundancy type of the disk group.
+        :param _builtins.str total_size_in_mbs: The total capacity of the disk group (in megabytes).
+        :param _builtins.float used_percent: The percentage of used space in the disk group.
+        :param _builtins.str used_size_in_mbs: The used capacity of the disk group (in megabytes).
+        """
+        pulumi.set(__self__, "databases", databases)
+        pulumi.set(__self__, "dismounting_instance_count", dismounting_instance_count)
+        pulumi.set(__self__, "is_sparse", is_sparse)
+        pulumi.set(__self__, "mounting_instance_count", mounting_instance_count)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "redundancy_type", redundancy_type)
+        pulumi.set(__self__, "total_size_in_mbs", total_size_in_mbs)
+        pulumi.set(__self__, "used_percent", used_percent)
+        pulumi.set(__self__, "used_size_in_mbs", used_size_in_mbs)
+
+    @_builtins.property
+    @pulumi.getter
+    def databases(self) -> Sequence[_builtins.str]:
+        """
+        The unique names of the databases using the disk group.
+        """
+        return pulumi.get(self, "databases")
+
+    @_builtins.property
+    @pulumi.getter(name="dismountingInstanceCount")
+    def dismounting_instance_count(self) -> _builtins.int:
+        """
+        The number of ASM instances that have the disk group in dismounted state.
+        """
+        return pulumi.get(self, "dismounting_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="isSparse")
+    def is_sparse(self) -> _builtins.bool:
+        """
+        Indicates whether the disk group is a sparse disk group or not.
+        """
+        return pulumi.get(self, "is_sparse")
+
+    @_builtins.property
+    @pulumi.getter(name="mountingInstanceCount")
+    def mounting_instance_count(self) -> _builtins.int:
+        """
+        The number of ASM instances that have the disk group in mounted state.
+        """
+        return pulumi.get(self, "mounting_instance_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the ASM disk group.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="redundancyType")
+    def redundancy_type(self) -> _builtins.str:
+        """
+        The redundancy type of the disk group.
+        """
+        return pulumi.get(self, "redundancy_type")
+
+    @_builtins.property
+    @pulumi.getter(name="totalSizeInMbs")
+    def total_size_in_mbs(self) -> _builtins.str:
+        """
+        The total capacity of the disk group (in megabytes).
+        """
+        return pulumi.get(self, "total_size_in_mbs")
+
+    @_builtins.property
+    @pulumi.getter(name="usedPercent")
+    def used_percent(self) -> _builtins.float:
+        """
+        The percentage of used space in the disk group.
+        """
+        return pulumi.get(self, "used_percent")
+
+    @_builtins.property
+    @pulumi.getter(name="usedSizeInMbs")
+    def used_size_in_mbs(self) -> _builtins.str:
+        """
+        The used capacity of the disk group (in megabytes).
+        """
+        return pulumi.get(self, "used_size_in_mbs")
+
+
+@pulumi.output_type
+class GetCloudAsmDiskGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the ASM disk group.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the ASM disk group.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudAsmInstancesCloudAsmInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudAsmInstancesCloudAsmInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudAsmInstancesCloudAsmInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudAsmInstancesCloudAsmInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 cloud_asm_id: _builtins.str,
+                 cloud_asm_instance_id: _builtins.str,
+                 cloud_db_node_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 host_name: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
+        :param _builtins.str cloud_asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
+        :param _builtins.str cloud_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node on which the ASM instance is running.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the ASM instance is a part of.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud ASM instance.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str host_name: The name of the host on which the ASM instance is running.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM instance.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str state: The current lifecycle state of the cloud ASM instance.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud ASM instance was created.
+        :param _builtins.str time_updated: The date and time the cloud ASM instance was last updated.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "cloud_asm_id", cloud_asm_id)
+        pulumi.set(__self__, "cloud_asm_instance_id", cloud_asm_instance_id)
+        pulumi.set(__self__, "cloud_db_node_id", cloud_db_node_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAsmId")
+    def cloud_asm_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
+        """
+        return pulumi.get(self, "cloud_asm_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAsmInstanceId")
+    def cloud_asm_instance_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_asm_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbNodeId")
+    def cloud_db_node_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node on which the ASM instance is running.
+        """
+        return pulumi.get(self, "cloud_db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the ASM instance is a part of.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud ASM instance.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The name of the host on which the ASM instance is running.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM instance.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud ASM instance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud ASM instance was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud ASM instance was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudAsmInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudAsmServicedDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 database_sub_type: _builtins.str,
+                 database_type: _builtins.str,
+                 db_unique_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 disk_groups: Sequence[_builtins.str],
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_managed: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str db_unique_name: The unique name of the cloud database.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param Sequence[_builtins.str] disk_groups: The list of ASM disk groups used by the database.
+        :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_sub_type", database_sub_type)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "disk_groups", disk_groups)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_managed", is_managed)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> _builtins.str:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The unique name of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="diskGroups")
+    def disk_groups(self) -> Sequence[_builtins.str]:
+        """
+        The list of ASM disk groups used by the database.
+        """
+        return pulumi.get(self, "disk_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> _builtins.bool:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
+class GetCloudAsmUsersCloudAsmUserCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudAsmUsersCloudAsmUserCollectionItemResult']):
+        """
+        :param Sequence['GetCloudAsmUsersCloudAsmUserCollectionItemArgs'] items: An array of cloud ASM users.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudAsmUsersCloudAsmUserCollectionItemResult']:
+        """
+        An array of cloud ASM users.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudAsmUsersCloudAsmUserCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 asm_id: _builtins.str,
+                 name: _builtins.str,
+                 privileges: Sequence[_builtins.str]):
+        """
+        :param _builtins.str asm_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
+        :param _builtins.str name: The name of the ASM user.
+        :param Sequence[_builtins.str] privileges: The list of privileges of the ASM user.
+        """
+        pulumi.set(__self__, "asm_id", asm_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "privileges", privileges)
+
+    @_builtins.property
+    @pulumi.getter(name="asmId")
+    def asm_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
+        """
+        return pulumi.get(self, "asm_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the ASM user.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def privileges(self) -> Sequence[_builtins.str]:
+        """
+        The list of privileges of the ASM user.
+        """
+        return pulumi.get(self, "privileges")
+
+
+@pulumi.output_type
+class GetCloudAsmUsersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the ASM user.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the ASM user.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudAsmsCloudAsmCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudAsmsCloudAsmCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudAsmsCloudAsmCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudAsmsCloudAsmCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, _builtins.str],
+                 cloud_asm_id: _builtins.str,
+                 cloud_connector_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 grid_home: _builtins.str,
+                 id: _builtins.str,
+                 is_cluster: _builtins.bool,
+                 is_flex_enabled: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 serviced_databases: Sequence['outputs.GetCloudAsmsCloudAsmCollectionItemServicedDatabaseResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] additional_details: The additional details of the cloud ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param _builtins.str cloud_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud ASM.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str grid_home: The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_cluster: Indicates whether the ASM is a cluster ASM or not.
+        :param _builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetCloudAsmsCloudAsmCollectionItemServicedDatabaseArgs'] serviced_databases: The list of databases that are serviced by the ASM.
+        :param _builtins.str state: The current lifecycle state of the cloud ASM.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud ASM was created.
+        :param _builtins.str time_updated: The date and time the cloud ASM was last updated.
+        :param _builtins.str version: The ASM version.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "cloud_asm_id", cloud_asm_id)
+        pulumi.set(__self__, "cloud_connector_id", cloud_connector_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "grid_home", grid_home)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_cluster", is_cluster)
+        pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "serviced_databases", serviced_databases)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, _builtins.str]:
+        """
+        The additional details of the cloud ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudAsmId")
+    def cloud_asm_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_asm_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudConnectorId")
+    def cloud_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        """
+        return pulumi.get(self, "cloud_connector_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud ASM.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> _builtins.str:
+        """
+        The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isCluster")
+    def is_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the ASM is a cluster ASM or not.
+        """
+        return pulumi.get(self, "is_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexEnabled")
+    def is_flex_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Oracle Flex ASM is enabled or not.
+        """
+        return pulumi.get(self, "is_flex_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="servicedDatabases")
+    def serviced_databases(self) -> Sequence['outputs.GetCloudAsmsCloudAsmCollectionItemServicedDatabaseResult']:
+        """
+        The list of databases that are serviced by the ASM.
+        """
+        return pulumi.get(self, "serviced_databases")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud ASM.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud ASM was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud ASM was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The ASM version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCloudAsmsCloudAsmCollectionItemServicedDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 database_sub_type: _builtins.str,
+                 database_type: _builtins.str,
+                 db_unique_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 disk_groups: Sequence[_builtins.str],
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_managed: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str db_unique_name: The unique name of the cloud database.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param Sequence[_builtins.str] disk_groups: The list of ASM disk groups used by the database.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_sub_type", database_sub_type)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "disk_groups", disk_groups)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_managed", is_managed)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> _builtins.str:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The unique name of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="diskGroups")
+    def disk_groups(self) -> Sequence[_builtins.str]:
+        """
+        The list of ASM disk groups used by the database.
+        """
+        return pulumi.get(self, "disk_groups")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> _builtins.bool:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
+class GetCloudAsmsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudClusterInstancesCloudClusterInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudClusterInstancesCloudClusterInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudClusterInstancesCloudClusterInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudClusterInstancesCloudClusterInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 cloud_cluster_id: _builtins.str,
+                 cloud_cluster_instance_id: _builtins.str,
+                 cloud_connector_id: _builtins.str,
+                 cloud_db_node_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 crs_base_directory: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 host_name: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 node_role: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str cloud_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
+        :param _builtins.str cloud_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        :param _builtins.str cloud_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the cluster instance is a part of.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud cluster instance.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str host_name: The name of the host on which the cluster instance is running.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster instance.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str node_role: The role of the cluster node.
+        :param _builtins.str state: The current lifecycle state of the cloud cluster instance.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud cluster instance was created.
+        :param _builtins.str time_updated: The date and time the cloud cluster instance was last updated.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "cloud_cluster_id", cloud_cluster_id)
+        pulumi.set(__self__, "cloud_cluster_instance_id", cloud_cluster_instance_id)
+        pulumi.set(__self__, "cloud_connector_id", cloud_connector_id)
+        pulumi.set(__self__, "cloud_db_node_id", cloud_db_node_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "node_role", node_role)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudClusterId")
+    def cloud_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
+        """
+        return pulumi.get(self, "cloud_cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudClusterInstanceId")
+    def cloud_cluster_instance_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_cluster_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudConnectorId")
+    def cloud_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        """
+        return pulumi.get(self, "cloud_connector_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbNodeId")
+    def cloud_db_node_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
+        """
+        return pulumi.get(self, "cloud_db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system that the cluster instance is a part of.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud cluster instance.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> _builtins.str:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The name of the host on which the cluster instance is running.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster instance.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> _builtins.str:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud cluster instance.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud cluster instance was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud cluster instance was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudClusterInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudClusterNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 network_type: _builtins.str,
+                 subnet: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str network_type: The network type.
+        :param _builtins.str subnet: The subnet for the network.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet", subnet)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> _builtins.str:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+
+@pulumi.output_type
+class GetCloudClusterScanConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 scan_name: _builtins.str,
+                 scan_port: _builtins.int,
+                 scan_protocol: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str scan_name: The name of the SCAN listener.
+        :param _builtins.int scan_port: The port number of the SCAN listener.
+        :param _builtins.str scan_protocol: The protocol of the SCAN listener.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "scan_name", scan_name)
+        pulumi.set(__self__, "scan_port", scan_port)
+        pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> _builtins.str:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> _builtins.int:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @_builtins.property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> _builtins.str:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+
+@pulumi.output_type
+class GetCloudClusterVipConfigurationResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 network_number: _builtins.int,
+                 node_name: _builtins.str):
+        """
+        :param _builtins.str address: The VIP name or IP address.
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "node_name", node_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+
+@pulumi.output_type
+class GetCloudClustersCloudClusterCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudClustersCloudClusterCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudClustersCloudClusterCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudClustersCloudClusterCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, _builtins.str],
+                 cloud_cluster_id: _builtins.str,
+                 cloud_connector_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 grid_home: _builtins.str,
+                 id: _builtins.str,
+                 is_flex_cluster: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 network_configurations: Sequence['outputs.GetCloudClustersCloudClusterCollectionItemNetworkConfigurationResult'],
+                 ocr_file_location: _builtins.str,
+                 scan_configurations: Sequence['outputs.GetCloudClustersCloudClusterCollectionItemScanConfigurationResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 version: _builtins.str,
+                 vip_configurations: Sequence['outputs.GetCloudClustersCloudClusterCollectionItemVipConfigurationResult']):
+        """
+        :param Mapping[str, _builtins.str] additional_details: The additional details of the cloud cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param _builtins.str cloud_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud cluster.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
+        :param _builtins.bool is_flex_cluster: Indicates whether the cluster is Oracle Flex Cluster or not.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetCloudClustersCloudClusterCollectionItemNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the cloud cluster.
+        :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR).
+        :param Sequence['GetCloudClustersCloudClusterCollectionItemScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        :param _builtins.str state: The current lifecycle state of the cloud cluster.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud cluster was created.
+        :param _builtins.str time_updated: The date and time the cloud cluster was last updated.
+        :param _builtins.str version: The cluster version.
+        :param Sequence['GetCloudClustersCloudClusterCollectionItemVipConfigurationArgs'] vip_configurations: The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "cloud_cluster_id", cloud_cluster_id)
+        pulumi.set(__self__, "cloud_connector_id", cloud_connector_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "grid_home", grid_home)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "ocr_file_location", ocr_file_location)
+        pulumi.set(__self__, "scan_configurations", scan_configurations)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "vip_configurations", vip_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, _builtins.str]:
+        """
+        The additional details of the cloud cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudClusterId")
+    def cloud_cluster_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudConnectorId")
+    def cloud_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        """
+        return pulumi.get(self, "cloud_connector_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud cluster.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) in DBaas service.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> _builtins.str:
+        """
+        The directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexCluster")
+    def is_flex_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the cluster is Oracle Flex Cluster or not.
+        """
+        return pulumi.get(self, "is_flex_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetCloudClustersCloudClusterCollectionItemNetworkConfigurationResult']:
+        """
+        The list of network address configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="ocrFileLocation")
+    def ocr_file_location(self) -> _builtins.str:
+        """
+        The location of the Oracle Cluster Registry (OCR).
+        """
+        return pulumi.get(self, "ocr_file_location")
+
+    @_builtins.property
+    @pulumi.getter(name="scanConfigurations")
+    def scan_configurations(self) -> Sequence['outputs.GetCloudClustersCloudClusterCollectionItemScanConfigurationResult']:
+        """
+        The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "scan_configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud cluster.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud cluster was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud cluster was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The cluster version.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="vipConfigurations")
+    def vip_configurations(self) -> Sequence['outputs.GetCloudClustersCloudClusterCollectionItemVipConfigurationResult']:
+        """
+        The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "vip_configurations")
+
+
+@pulumi.output_type
+class GetCloudClustersCloudClusterCollectionItemNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 network_type: _builtins.str,
+                 subnet: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str network_type: The network type.
+        :param _builtins.str subnet: The subnet for the network.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet", subnet)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> _builtins.str:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+
+@pulumi.output_type
+class GetCloudClustersCloudClusterCollectionItemScanConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 scan_name: _builtins.str,
+                 scan_port: _builtins.int,
+                 scan_protocol: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str scan_name: The name of the SCAN listener.
+        :param _builtins.int scan_port: The port number of the SCAN listener.
+        :param _builtins.str scan_protocol: The protocol of the SCAN listener.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "scan_name", scan_name)
+        pulumi.set(__self__, "scan_port", scan_port)
+        pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> _builtins.str:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> _builtins.int:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @_builtins.property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> _builtins.str:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+
+@pulumi.output_type
+class GetCloudClustersCloudClusterCollectionItemVipConfigurationResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 network_number: _builtins.int,
+                 node_name: _builtins.str):
+        """
+        :param _builtins.str address: The VIP name or IP address.
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "node_name", node_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+
+@pulumi.output_type
+class GetCloudClustersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemResult']):
+        """
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemArgs'] items: An array of cloud databases.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemResult']:
+        """
+        An array of cloud databases.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 cloud_db_home_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 database_platform_name: _builtins.str,
+                 database_sub_type: _builtins.str,
+                 database_type: _builtins.str,
+                 database_version: _builtins.str,
+                 db_management_configs: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbManagementConfigResult'],
+                 db_system_infos: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult'],
+                 db_unique_name: _builtins.str,
+                 dbmgmt_feature_configs: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigResult'],
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 instance_details: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemInstanceDetailResult'],
+                 parent_container_database_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str cloud_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str database_platform_name: The operating system of database.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str database_version: The Oracle database version.
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbManagementConfigArgs'] db_management_configs: The configuration details of Database Management for a cloud DB system.
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoArgs'] db_system_infos: The basic information about a cloud DB system.
+        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the external database.
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigArgs'] dbmgmt_feature_configs: The list of feature configurations
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemInstanceDetailArgs'] instance_details: The list of database instances if the database is a RAC database.
+        :param _builtins.str parent_container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
+        :param _builtins.str state: The current lifecycle state of the external database resource.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the external DB system was created.
+        """
+        pulumi.set(__self__, "cloud_db_home_id", cloud_db_home_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_platform_name", database_platform_name)
+        pulumi.set(__self__, "database_sub_type", database_sub_type)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "database_version", database_version)
+        pulumi.set(__self__, "db_management_configs", db_management_configs)
+        pulumi.set(__self__, "db_system_infos", db_system_infos)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "dbmgmt_feature_configs", dbmgmt_feature_configs)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "instance_details", instance_details)
+        pulumi.set(__self__, "parent_container_database_id", parent_container_database_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbHomeId")
+    def cloud_db_home_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB home.
+        """
+        return pulumi.get(self, "cloud_db_home_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databasePlatformName")
+    def database_platform_name(self) -> _builtins.str:
+        """
+        The operating system of database.
+        """
+        return pulumi.get(self, "database_platform_name")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> _builtins.str:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or Non-container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseVersion")
+    def database_version(self) -> _builtins.str:
+        """
+        The Oracle database version.
+        """
+        return pulumi.get(self, "database_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbManagementConfigs")
+    def db_management_configs(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbManagementConfigResult']:
+        """
+        The configuration details of Database Management for a cloud DB system.
+        """
+        return pulumi.get(self, "db_management_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemInfos")
+    def db_system_infos(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult']:
+        """
+        The basic information about a cloud DB system.
+        """
+        return pulumi.get(self, "db_system_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The `DB_UNIQUE_NAME` of the external database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbmgmtFeatureConfigs")
+    def dbmgmt_feature_configs(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigResult']:
+        """
+        The list of feature configurations
+        """
+        return pulumi.get(self, "dbmgmt_feature_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceDetails")
+    def instance_details(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemInstanceDetailResult']:
+        """
+        The list of database instances if the database is a RAC database.
+        """
+        return pulumi.get(self, "instance_details")
+
+    @_builtins.property
+    @pulumi.getter(name="parentContainerDatabaseId")
+    def parent_container_database_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Container Database (CDB) if this is a Pluggable Database (PDB).
+        """
+        return pulumi.get(self, "parent_container_database_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the external database resource.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the external DB system was created.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbManagementConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbSystemInfoResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigResult(dict):
+    def __init__(__self__, *,
+                 connector_details: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigConnectorDetailResult'],
+                 database_connection_details: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailResult'],
+                 feature: _builtins.str,
+                 feature_status: _builtins.str,
+                 license_model: _builtins.str):
+        """
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigConnectorDetailArgs'] connector_details: The connector details required to connect to an Oracle cloud database.
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailArgs'] database_connection_details: The connection details required to connect to the database.
+        :param _builtins.str feature: The name of the Database Management feature.
+        :param _builtins.str feature_status: The list of statuses for Database Management features.
+        :param _builtins.str license_model: The Oracle license model that applies to the external database.
+        """
+        pulumi.set(__self__, "connector_details", connector_details)
+        pulumi.set(__self__, "database_connection_details", database_connection_details)
+        pulumi.set(__self__, "feature", feature)
+        pulumi.set(__self__, "feature_status", feature_status)
+        pulumi.set(__self__, "license_model", license_model)
+
+    @_builtins.property
+    @pulumi.getter(name="connectorDetails")
+    def connector_details(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigConnectorDetailResult']:
+        """
+        The connector details required to connect to an Oracle cloud database.
+        """
+        return pulumi.get(self, "connector_details")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConnectionDetails")
+    def database_connection_details(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailResult']:
+        """
+        The connection details required to connect to the database.
+        """
+        return pulumi.get(self, "database_connection_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def feature(self) -> _builtins.str:
+        """
+        The name of the Database Management feature.
+        """
+        return pulumi.get(self, "feature")
+
+    @_builtins.property
+    @pulumi.getter(name="featureStatus")
+    def feature_status(self) -> _builtins.str:
+        """
+        The list of statuses for Database Management features.
+        """
+        return pulumi.get(self, "feature_status")
+
+    @_builtins.property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> _builtins.str:
+        """
+        The Oracle license model that applies to the external database.
+        """
+        return pulumi.get(self, "license_model")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigConnectorDetailResult(dict):
+    def __init__(__self__, *,
+                 connector_type: _builtins.str,
+                 database_connector_id: _builtins.str,
+                 management_agent_id: _builtins.str,
+                 private_end_point_id: _builtins.str):
+        """
+        :param _builtins.str connector_type: The list of supported connection types:
+               * PE: Private endpoint
+               * MACS: Management agent
+               * EXTERNAL: External database connector
+               * DIRECT: Direct connection
+        :param _builtins.str database_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        :param _builtins.str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        :param _builtins.str private_end_point_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "database_connector_id", database_connector_id)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "private_end_point_id", private_end_point_id)
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The list of supported connection types:
+        * PE: Private endpoint
+        * MACS: Management agent
+        * EXTERNAL: External database connector
+        * DIRECT: Direct connection
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseConnectorId")
+    def database_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database connector.
+        """
+        return pulumi.get(self, "database_connector_id")
+
+    @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndPointId")
+    def private_end_point_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private endpoint.
+        """
+        return pulumi.get(self, "private_end_point_id")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailResult(dict):
+    def __init__(__self__, *,
+                 connection_credentials: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringResult']):
+        """
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringArgs'] connection_strings: The details of the Oracle Database connection string.
+        """
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialResult']:
+        """
+        The credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringResult']:
+        """
+        The details of the Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the database.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the database.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the database.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the database.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the database.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemDbmgmtFeatureConfigDatabaseConnectionDetailConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 connection_type: _builtins.str,
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str connection_type: The list of supported connection types:
+               * BASIC: Basic connection details
+        :param _builtins.int port: The port number used to connect to the database.
+        :param _builtins.str protocol: The protocol used to connect to the database.
+        :param _builtins.str service: The service name of the database.
+        """
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> _builtins.str:
+        """
+        The list of supported connection types:
+        * BASIC: Basic connection details
+        """
+        return pulumi.get(self, "connection_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port number used to connect to the database.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the database.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the database.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDatabasesCloudDatabaseCollectionItemInstanceDetailResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 instance_number: _builtins.int):
+        """
+        :param _builtins.str host_name: The name of the host machine.
+        :param _builtins.str instance_name: The name of the database instance.
+        :param _builtins.int instance_number: The instance number of the database instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "instance_number", instance_number)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The name of the host machine.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the database instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceNumber")
+    def instance_number(self) -> _builtins.int:
+        """
+        The instance number of the database instance.
+        """
+        return pulumi.get(self, "instance_number")
+
+
+@pulumi.output_type
+class GetCloudDatabasesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudDbHomesCloudDbHomeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudDbHomesCloudDbHomeCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudDbHomesCloudDbHomeCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudDbHomesCloudDbHomeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, _builtins.str],
+                 cloud_db_home_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 home_directory: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] additional_details: The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud DB home.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home in DBaas service.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str home_directory: The location of the DB home.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str state: The current lifecycle state of the cloud DB home.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud DB home was created.
+        :param _builtins.str time_updated: The date and time the cloud DB home was last updated.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "cloud_db_home_id", cloud_db_home_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "home_directory", home_directory)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, _builtins.str]:
+        """
+        The additional details of the DB home defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbHomeId")
+    def cloud_db_home_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_db_home_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud DB home.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home in DBaas service.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> _builtins.str:
+        """
+        The location of the DB home.
+        """
+        return pulumi.get(self, "home_directory")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud DB home.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud DB home was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud DB home was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudDbHomesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudDbNodesCloudDbNodeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudDbNodesCloudDbNodeCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudDbNodesCloudDbNodeCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudDbNodesCloudDbNodeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, _builtins.str],
+                 cloud_connector_id: _builtins.str,
+                 cloud_db_node_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 cpu_core_count: _builtins.float,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 domain_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 host_name: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 memory_size_in_gbs: _builtins.float,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] additional_details: The additional details of the cloud DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param _builtins.str cloud_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud DB node.
+        :param _builtins.float cpu_core_count: The number of CPU cores available on the DB node.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node in DBaas service.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str domain_name: Name of the domain.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str host_name: The host name for the DB node.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
+        :param _builtins.str state: The current lifecycle state of the cloud DB node.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud DB node was created.
+        :param _builtins.str time_updated: The date and time the cloud DB node was last updated.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "cloud_connector_id", cloud_connector_id)
+        pulumi.set(__self__, "cloud_db_node_id", cloud_db_node_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, _builtins.str]:
+        """
+        The additional details of the cloud DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudConnectorId")
+    def cloud_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        """
+        return pulumi.get(self, "cloud_connector_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbNodeId")
+    def cloud_db_node_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud DB node.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> _builtins.float:
+        """
+        The number of CPU cores available on the DB node.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node in DBaas service.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> _builtins.str:
+        """
+        Name of the domain.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name for the DB node.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> _builtins.float:
+        """
+        The total memory in gigabytes (GB) on the DB node.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud DB node.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud DB node was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud DB node was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudDbNodesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_connection_status_last_updated: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system connector.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str state: The current lifecycle state of the cloud DB system connector.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        :param _builtins.str time_created: The date and time the cloud DB system connector was created.
+        :param _builtins.str time_updated: The date and time the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system connector.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud DB system connector.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud DB system connector was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorsCloudDbSystemConnectorCollectionItemConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemConnectorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDatabaseManagementConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 cloud_db_system_discovery_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 dbaas_parent_infrastructure_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 deployment_type: _builtins.str,
+                 discovered_components: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentResult'],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 grid_home: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 patch_operations: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationResult'],
+                 resource_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str dbaas_parent_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str deployment_type: The deployment type of cloud dbsystem.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentArgs'] discovered_components: The list of DB system components that were found in the DB system discovery.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system discovery.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        :param _builtins.str state: The current lifecycle state of the cloud DB system discovery resource.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud DB system discovery was created.
+        :param _builtins.str time_updated: The date and time the cloud DB system discovery was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "cloud_db_system_discovery_id", cloud_db_system_discovery_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "dbaas_parent_infrastructure_id", dbaas_parent_infrastructure_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "discovered_components", discovered_components)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "grid_home", grid_home)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "patch_operations", patch_operations)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemDiscoveryId")
+    def cloud_db_system_discovery_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_db_system_discovery_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasParentInfrastructureId")
+    def dbaas_parent_infrastructure_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent cloud DB Infrastructure. For VM Dbsystems , it will be the DBSystem Id. For ExaCS and ExaCC,  it will be the cloudVmClusterId and vmClusterId respectively.
+        """
+        return pulumi.get(self, "dbaas_parent_infrastructure_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> _builtins.str:
+        """
+        The deployment type of cloud dbsystem.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveredComponents")
+    def discovered_components(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentResult']:
+        """
+        The list of DB system components that were found in the DB system discovery.
+        """
+        return pulumi.get(self, "discovered_components")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> _builtins.str:
+        """
+        The directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system discovery.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="patchOperations")
+    def patch_operations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationResult']:
+        return pulumi.get(self, "patch_operations")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud DB system discovery resource.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud DB system discovery was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud DB system discovery was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 asm_instances: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult'],
+                 associated_components: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult'],
+                 can_enable_all_current_pdbs: _builtins.bool,
+                 cluster_id: _builtins.str,
+                 cluster_instances: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult'],
+                 compartment_id: _builtins.str,
+                 component_id: _builtins.str,
+                 component_name: _builtins.str,
+                 component_type: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorResult'],
+                 container_database_id: _builtins.str,
+                 cpu_core_count: _builtins.float,
+                 crs_base_directory: _builtins.str,
+                 db_edition: _builtins.str,
+                 db_id: _builtins.str,
+                 db_instances: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult'],
+                 db_node_name: _builtins.str,
+                 db_packs: _builtins.str,
+                 db_role: _builtins.str,
+                 db_type: _builtins.str,
+                 db_unique_name: _builtins.str,
+                 db_version: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 display_name: _builtins.str,
+                 endpoints: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult'],
+                 grid_home: _builtins.str,
+                 guid: _builtins.str,
+                 home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 is_auto_enable_pluggable_database: _builtins.bool,
+                 is_cluster: _builtins.bool,
+                 is_flex_cluster: _builtins.bool,
+                 is_flex_enabled: _builtins.bool,
+                 is_selected_for_monitoring: _builtins.bool,
+                 listener_alias: _builtins.str,
+                 listener_type: _builtins.str,
+                 log_directory: _builtins.str,
+                 memory_size_in_gbs: _builtins.float,
+                 network_configurations: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult'],
+                 node_name: _builtins.str,
+                 node_role: _builtins.str,
+                 ocr_file_location: _builtins.str,
+                 oracle_home: _builtins.str,
+                 pluggable_databases: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult'],
+                 resource_id: _builtins.str,
+                 scan_configurations: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationResult'],
+                 status: _builtins.str,
+                 trace_directory: _builtins.str,
+                 version: _builtins.str,
+                 vip_configurations: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult']):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of asm instances for the cloud Asm.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
+        :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceArgs'] cluster_instances: The list of cluster instances for the cloud cluster.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_id: The identifier of the discovered DB system component.
+        :param _builtins.str component_name: The name of the discovered DB system component.
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param _builtins.float cpu_core_count: The number of CPU cores available on the DB node.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str db_edition: The Oracle Database edition.
+        :param _builtins.str db_id: The Oracle Database ID.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceArgs'] db_instances: The list of database instances.
+        :param _builtins.str db_node_name: The name of the DB node.
+        :param _builtins.str db_packs: The database packs licensed for the cloud Oracle Database.
+        :param _builtins.str db_role: The role of the Oracle Database in Oracle Data Guard configuration.
+        :param _builtins.str db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
+        :param _builtins.str db_version: The Oracle Database version.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
+        :param _builtins.str guid: The unique identifier of the PDB.
+        :param _builtins.str home_directory: The location of the DB home.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        :param _builtins.bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
+        :param _builtins.bool is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
+        :param _builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
+        :param _builtins.bool is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        :param _builtins.str listener_alias: The listener alias.
+        :param _builtins.str listener_type: The type of listener.
+        :param _builtins.str log_directory: The destination directory of the listener log file.
+        :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the cloud cluster.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str node_role: The role of the cluster node.
+        :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseArgs'] pluggable_databases: The list of Pluggable Databases.
+        :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        :param _builtins.str status: The state of the discovered DB system component.
+        :param _builtins.str trace_directory: The destination directory of the listener trace file.
+        :param _builtins.str version: The version of Oracle Clusterware running in the cluster.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationArgs'] vip_configurations: The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "asm_instances", asm_instances)
+        pulumi.set(__self__, "associated_components", associated_components)
+        pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "cluster_instances", cluster_instances)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_id", component_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "container_database_id", container_database_id)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        pulumi.set(__self__, "db_edition", db_edition)
+        pulumi.set(__self__, "db_id", db_id)
+        pulumi.set(__self__, "db_instances", db_instances)
+        pulumi.set(__self__, "db_node_name", db_node_name)
+        pulumi.set(__self__, "db_packs", db_packs)
+        pulumi.set(__self__, "db_role", db_role)
+        pulumi.set(__self__, "db_type", db_type)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoints", endpoints)
+        pulumi.set(__self__, "grid_home", grid_home)
+        pulumi.set(__self__, "guid", guid)
+        pulumi.set(__self__, "home_directory", home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        pulumi.set(__self__, "is_cluster", is_cluster)
+        pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
+        pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+        pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+        pulumi.set(__self__, "listener_alias", listener_alias)
+        pulumi.set(__self__, "listener_type", listener_type)
+        pulumi.set(__self__, "log_directory", log_directory)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "node_role", node_role)
+        pulumi.set(__self__, "ocr_file_location", ocr_file_location)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+        pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "scan_configurations", scan_configurations)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "trace_directory", trace_directory)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "vip_configurations", vip_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="asmInstances")
+    def asm_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult']:
+        """
+        The list of asm instances for the cloud Asm.
+        """
+        return pulumi.get(self, "asm_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedComponents")
+    def associated_components(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult']:
+        """
+        The list of associated components.
+        """
+        return pulumi.get(self, "associated_components")
+
+    @_builtins.property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> _builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterInstances")
+    def cluster_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult']:
+        """
+        The list of cluster instances for the cloud cluster.
+        """
+        return pulumi.get(self, "cluster_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> _builtins.str:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> _builtins.str:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> _builtins.float:
+        """
+        The number of CPU cores available on the DB node.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> _builtins.str:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="dbEdition")
+    def db_edition(self) -> _builtins.str:
+        """
+        The Oracle Database edition.
+        """
+        return pulumi.get(self, "db_edition")
+
+    @_builtins.property
+    @pulumi.getter(name="dbId")
+    def db_id(self) -> _builtins.str:
+        """
+        The Oracle Database ID.
+        """
+        return pulumi.get(self, "db_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbInstances")
+    def db_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult']:
+        """
+        The list of database instances.
+        """
+        return pulumi.get(self, "db_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeName")
+    def db_node_name(self) -> _builtins.str:
+        """
+        The name of the DB node.
+        """
+        return pulumi.get(self, "db_node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbPacks")
+    def db_packs(self) -> _builtins.str:
+        """
+        The database packs licensed for the cloud Oracle Database.
+        """
+        return pulumi.get(self, "db_packs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbRole")
+    def db_role(self) -> _builtins.str:
+        """
+        The role of the Oracle Database in Oracle Data Guard configuration.
+        """
+        return pulumi.get(self, "db_role")
+
+    @_builtins.property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        """
+        return pulumi.get(self, "db_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The `DB_UNIQUE_NAME` of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> _builtins.str:
+        """
+        The Oracle Database version.
+        """
+        return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult']:
+        """
+        The list of protocol addresses the listener is configured to listen on.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> _builtins.str:
+        """
+        The directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @_builtins.property
+    @pulumi.getter
+    def guid(self) -> _builtins.str:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+    @_builtins.property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> _builtins.str:
+        """
+        The location of the DB home.
+        """
+        return pulumi.get(self, "home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> _builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @_builtins.property
+    @pulumi.getter(name="isCluster")
+    def is_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the Oracle Database is part of a cluster.
+        """
+        return pulumi.get(self, "is_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexCluster")
+    def is_flex_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the cluster is an Oracle Flex Cluster or not.
+        """
+        return pulumi.get(self, "is_flex_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexEnabled")
+    def is_flex_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Oracle Flex ASM is enabled or not.
+        """
+        return pulumi.get(self, "is_flex_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> _builtins.bool:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerAlias")
+    def listener_alias(self) -> _builtins.str:
+        """
+        The listener alias.
+        """
+        return pulumi.get(self, "listener_alias")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerType")
+    def listener_type(self) -> _builtins.str:
+        """
+        The type of listener.
+        """
+        return pulumi.get(self, "listener_type")
+
+    @_builtins.property
+    @pulumi.getter(name="logDirectory")
+    def log_directory(self) -> _builtins.str:
+        """
+        The destination directory of the listener log file.
+        """
+        return pulumi.get(self, "log_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> _builtins.float:
+        """
+        The total memory in gigabytes (GB) on the DB node.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult']:
+        """
+        The list of network address configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> _builtins.str:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+    @_builtins.property
+    @pulumi.getter(name="ocrFileLocation")
+    def ocr_file_location(self) -> _builtins.str:
+        """
+        The location of the Oracle Cluster Registry (OCR) file.
+        """
+        return pulumi.get(self, "ocr_file_location")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
+
+    @_builtins.property
+    @pulumi.getter(name="pluggableDatabases")
+    def pluggable_databases(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult']:
+        """
+        The list of Pluggable Databases.
+        """
+        return pulumi.get(self, "pluggable_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="scanConfigurations")
+    def scan_configurations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationResult']:
+        """
+        The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "scan_configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The state of the discovered DB system component.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="traceDirectory")
+    def trace_directory(self) -> _builtins.str:
+        """
+        The destination directory of the listener trace file.
+        """
+        return pulumi.get(self, "trace_directory")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of Oracle Clusterware running in the cluster.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="vipConfigurations")
+    def vip_configurations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult']:
+        """
+        The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "vip_configurations")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAsmInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentResult(dict):
+    def __init__(__self__, *,
+                 association_type: _builtins.str,
+                 component_id: _builtins.str,
+                 component_type: _builtins.str):
+        """
+        :param _builtins.str association_type: The association type.
+        :param _builtins.str component_id: The identifier of the discovered DB system component.
+        :param _builtins.str component_type: The component type.
+        """
+        pulumi.set(__self__, "association_type", association_type)
+        pulumi.set(__self__, "component_id", component_id)
+        pulumi.set(__self__, "component_type", component_type)
+
+    @_builtins.property
+    @pulumi.getter(name="associationType")
+    def association_type(self) -> _builtins.str:
+        """
+        The association type.
+        """
+        return pulumi.get(self, "association_type")
+
+    @_builtins.property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> _builtins.str:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 cluster_id: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorResult'],
+                 crs_base_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 node_role: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str node_role: The role of the cluster node.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "node_role", node_role)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> _builtins.str:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> _builtins.str:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 time_connection_status_last_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 time_connection_status_last_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 node_name: _builtins.str,
+                 oracle_home: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentEndpointResult(dict):
+    def __init__(__self__, *,
+                 host: _builtins.str,
+                 key: _builtins.str,
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 services: Sequence[_builtins.str]):
+        """
+        :param _builtins.str host: The host name or IP address.
+        :param _builtins.str key: The unique name of the service.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param Sequence[_builtins.str] services: The list of services registered with the listener.
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "services", services)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> _builtins.str:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Sequence[_builtins.str]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 network_type: _builtins.str,
+                 subnet: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str network_type: The network type.
+        :param _builtins.str subnet: The subnet for the network.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet", subnet)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> _builtins.str:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult'],
+                 container_database_id: _builtins.str,
+                 guid: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param _builtins.str guid: The unique identifier of the PDB.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "container_database_id", container_database_id)
+        pulumi.set(__self__, "guid", guid)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> _builtins.str:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def guid(self) -> _builtins.str:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 time_connection_status_last_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 scan_name: _builtins.str,
+                 scan_port: _builtins.int,
+                 scan_protocol: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str scan_name: The name of the SCAN listener.
+        :param _builtins.int scan_port: The port number of the SCAN listener.
+        :param _builtins.str scan_protocol: The protocol of the SCAN listener.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "scan_name", scan_name)
+        pulumi.set(__self__, "scan_port", scan_port)
+        pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> _builtins.str:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> _builtins.int:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @_builtins.property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> _builtins.str:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 network_number: _builtins.int,
+                 node_name: _builtins.str):
+        """
+        :param _builtins.str address: The VIP name or IP address.
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "node_name", node_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationResult(dict):
+    def __init__(__self__, *,
+                 operation: _builtins.str,
+                 selection: _builtins.str,
+                 values: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueResult']):
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> _builtins.str:
+        return pulumi.get(self, "operation")
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> _builtins.str:
+        return pulumi.get(self, "selection")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueResult']:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult'],
+                 display_name: _builtins.str,
+                 is_selected_for_monitoring: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.bool is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> _builtins.bool:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult'],
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesCloudDbSystemDiscoveryCollectionItemPatchOperationValueConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 asm_instances: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceResult'],
+                 associated_components: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult'],
+                 can_enable_all_current_pdbs: _builtins.bool,
+                 cluster_id: _builtins.str,
+                 cluster_instances: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceResult'],
+                 compartment_id: _builtins.str,
+                 component_id: _builtins.str,
+                 component_name: _builtins.str,
+                 component_type: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorResult'],
+                 container_database_id: _builtins.str,
+                 cpu_core_count: _builtins.float,
+                 crs_base_directory: _builtins.str,
+                 db_edition: _builtins.str,
+                 db_id: _builtins.str,
+                 db_instances: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentDbInstanceResult'],
+                 db_node_name: _builtins.str,
+                 db_packs: _builtins.str,
+                 db_role: _builtins.str,
+                 db_type: _builtins.str,
+                 db_unique_name: _builtins.str,
+                 db_version: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 display_name: _builtins.str,
+                 endpoints: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentEndpointResult'],
+                 grid_home: _builtins.str,
+                 guid: _builtins.str,
+                 home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 is_auto_enable_pluggable_database: _builtins.bool,
+                 is_cluster: _builtins.bool,
+                 is_flex_cluster: _builtins.bool,
+                 is_flex_enabled: _builtins.bool,
+                 is_selected_for_monitoring: _builtins.bool,
+                 listener_alias: _builtins.str,
+                 listener_type: _builtins.str,
+                 log_directory: _builtins.str,
+                 memory_size_in_gbs: _builtins.float,
+                 network_configurations: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult'],
+                 node_name: _builtins.str,
+                 node_role: _builtins.str,
+                 ocr_file_location: _builtins.str,
+                 oracle_home: _builtins.str,
+                 pluggable_databases: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult'],
+                 resource_id: _builtins.str,
+                 scan_configurations: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentScanConfigurationResult'],
+                 status: _builtins.str,
+                 trace_directory: _builtins.str,
+                 version: _builtins.str,
+                 vip_configurations: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentVipConfigurationResult']):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs'] asm_instances: The list of asm instances for the cloud Asm.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
+        :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs'] cluster_instances: The list of cluster instances for the cloud cluster.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_id: The identifier of the discovered DB system component.
+        :param _builtins.str component_name: The name of the discovered DB system component.
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param _builtins.float cpu_core_count: The number of CPU cores available on the DB node.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str db_edition: The Oracle Database edition.
+        :param _builtins.str db_id: The Oracle Database ID.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentDbInstanceArgs'] db_instances: The list of database instances.
+        :param _builtins.str db_node_name: The name of the DB node.
+        :param _builtins.str db_packs: The database packs licensed for the cloud Oracle Database.
+        :param _builtins.str db_role: The role of the Oracle Database in Oracle Data Guard configuration.
+        :param _builtins.str db_type: The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        :param _builtins.str db_unique_name: The `DB_UNIQUE_NAME` of the cloud database.
+        :param _builtins.str db_version: The Oracle Database version.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param _builtins.str grid_home: The directory in which Oracle Grid Infrastructure is installed.
+        :param _builtins.str guid: The unique identifier of the PDB.
+        :param _builtins.str home_directory: The location of the DB home.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.bool is_auto_enable_pluggable_database: Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        :param _builtins.bool is_cluster: Indicates whether the Oracle Database is part of a cluster.
+        :param _builtins.bool is_flex_cluster: Indicates whether the cluster is an Oracle Flex Cluster or not.
+        :param _builtins.bool is_flex_enabled: Indicates whether Oracle Flex ASM is enabled or not.
+        :param _builtins.bool is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        :param _builtins.str listener_alias: The listener alias.
+        :param _builtins.str listener_type: The type of listener.
+        :param _builtins.str log_directory: The destination directory of the listener log file.
+        :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the cloud cluster.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str node_role: The role of the cluster node.
+        :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs'] pluggable_databases: The list of Pluggable Databases.
+        :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        :param _builtins.str status: The state of the discovered DB system component.
+        :param _builtins.str trace_directory: The destination directory of the listener trace file.
+        :param _builtins.str version: The version of Oracle Clusterware running in the cluster.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentVipConfigurationArgs'] vip_configurations: The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "asm_instances", asm_instances)
+        pulumi.set(__self__, "associated_components", associated_components)
+        pulumi.set(__self__, "can_enable_all_current_pdbs", can_enable_all_current_pdbs)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "cluster_instances", cluster_instances)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_id", component_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "container_database_id", container_database_id)
+        pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        pulumi.set(__self__, "db_edition", db_edition)
+        pulumi.set(__self__, "db_id", db_id)
+        pulumi.set(__self__, "db_instances", db_instances)
+        pulumi.set(__self__, "db_node_name", db_node_name)
+        pulumi.set(__self__, "db_packs", db_packs)
+        pulumi.set(__self__, "db_role", db_role)
+        pulumi.set(__self__, "db_type", db_type)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoints", endpoints)
+        pulumi.set(__self__, "grid_home", grid_home)
+        pulumi.set(__self__, "guid", guid)
+        pulumi.set(__self__, "home_directory", home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "is_auto_enable_pluggable_database", is_auto_enable_pluggable_database)
+        pulumi.set(__self__, "is_cluster", is_cluster)
+        pulumi.set(__self__, "is_flex_cluster", is_flex_cluster)
+        pulumi.set(__self__, "is_flex_enabled", is_flex_enabled)
+        pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+        pulumi.set(__self__, "listener_alias", listener_alias)
+        pulumi.set(__self__, "listener_type", listener_type)
+        pulumi.set(__self__, "log_directory", log_directory)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "node_role", node_role)
+        pulumi.set(__self__, "ocr_file_location", ocr_file_location)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+        pulumi.set(__self__, "pluggable_databases", pluggable_databases)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "scan_configurations", scan_configurations)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "trace_directory", trace_directory)
+        pulumi.set(__self__, "version", version)
+        pulumi.set(__self__, "vip_configurations", vip_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="asmInstances")
+    def asm_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceResult']:
+        """
+        The list of asm instances for the cloud Asm.
+        """
+        return pulumi.get(self, "asm_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="associatedComponents")
+    def associated_components(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult']:
+        """
+        The list of associated components.
+        """
+        return pulumi.get(self, "associated_components")
+
+    @_builtins.property
+    @pulumi.getter(name="canEnableAllCurrentPdbs")
+    def can_enable_all_current_pdbs(self) -> _builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
+        """
+        return pulumi.get(self, "can_enable_all_current_pdbs")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterInstances")
+    def cluster_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceResult']:
+        """
+        The list of cluster instances for the cloud cluster.
+        """
+        return pulumi.get(self, "cluster_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> _builtins.str:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> _builtins.str:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cpuCoreCount")
+    def cpu_core_count(self) -> _builtins.float:
+        """
+        The number of CPU cores available on the DB node.
+        """
+        return pulumi.get(self, "cpu_core_count")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> _builtins.str:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="dbEdition")
+    def db_edition(self) -> _builtins.str:
+        """
+        The Oracle Database edition.
+        """
+        return pulumi.get(self, "db_edition")
+
+    @_builtins.property
+    @pulumi.getter(name="dbId")
+    def db_id(self) -> _builtins.str:
+        """
+        The Oracle Database ID.
+        """
+        return pulumi.get(self, "db_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbInstances")
+    def db_instances(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentDbInstanceResult']:
+        """
+        The list of database instances.
+        """
+        return pulumi.get(self, "db_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="dbNodeName")
+    def db_node_name(self) -> _builtins.str:
+        """
+        The name of the DB node.
+        """
+        return pulumi.get(self, "db_node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbPacks")
+    def db_packs(self) -> _builtins.str:
+        """
+        The database packs licensed for the cloud Oracle Database.
+        """
+        return pulumi.get(self, "db_packs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbRole")
+    def db_role(self) -> _builtins.str:
+        """
+        The role of the Oracle Database in Oracle Data Guard configuration.
+        """
+        return pulumi.get(self, "db_role")
+
+    @_builtins.property
+    @pulumi.getter(name="dbType")
+    def db_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, or a Non-container Database.
+        """
+        return pulumi.get(self, "db_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The `DB_UNIQUE_NAME` of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbVersion")
+    def db_version(self) -> _builtins.str:
+        """
+        The Oracle Database version.
+        """
+        return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentEndpointResult']:
+        """
+        The list of protocol addresses the listener is configured to listen on.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="gridHome")
+    def grid_home(self) -> _builtins.str:
+        """
+        The directory in which Oracle Grid Infrastructure is installed.
+        """
+        return pulumi.get(self, "grid_home")
+
+    @_builtins.property
+    @pulumi.getter
+    def guid(self) -> _builtins.str:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+    @_builtins.property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> _builtins.str:
+        """
+        The location of the DB home.
+        """
+        return pulumi.get(self, "home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoEnablePluggableDatabase")
+    def is_auto_enable_pluggable_database(self) -> _builtins.bool:
+        """
+        Indicates whether Diagnostics & Management should be enabled automatically for all the pluggable databases in the container database.
+        """
+        return pulumi.get(self, "is_auto_enable_pluggable_database")
+
+    @_builtins.property
+    @pulumi.getter(name="isCluster")
+    def is_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the Oracle Database is part of a cluster.
+        """
+        return pulumi.get(self, "is_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexCluster")
+    def is_flex_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the cluster is an Oracle Flex Cluster or not.
+        """
+        return pulumi.get(self, "is_flex_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="isFlexEnabled")
+    def is_flex_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether Oracle Flex ASM is enabled or not.
+        """
+        return pulumi.get(self, "is_flex_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> _builtins.bool:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerAlias")
+    def listener_alias(self) -> _builtins.str:
+        """
+        The listener alias.
+        """
+        return pulumi.get(self, "listener_alias")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerType")
+    def listener_type(self) -> _builtins.str:
+        """
+        The type of listener.
+        """
+        return pulumi.get(self, "listener_type")
+
+    @_builtins.property
+    @pulumi.getter(name="logDirectory")
+    def log_directory(self) -> _builtins.str:
+        """
+        The destination directory of the listener log file.
+        """
+        return pulumi.get(self, "log_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> _builtins.float:
+        """
+        The total memory in gigabytes (GB) on the DB node.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="networkConfigurations")
+    def network_configurations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult']:
+        """
+        The list of network address configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> _builtins.str:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+    @_builtins.property
+    @pulumi.getter(name="ocrFileLocation")
+    def ocr_file_location(self) -> _builtins.str:
+        """
+        The location of the Oracle Cluster Registry (OCR) file.
+        """
+        return pulumi.get(self, "ocr_file_location")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
+
+    @_builtins.property
+    @pulumi.getter(name="pluggableDatabases")
+    def pluggable_databases(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult']:
+        """
+        The list of Pluggable Databases.
+        """
+        return pulumi.get(self, "pluggable_databases")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="scanConfigurations")
+    def scan_configurations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentScanConfigurationResult']:
+        """
+        The list of Single Client Access Name (SCAN) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "scan_configurations")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The state of the discovered DB system component.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="traceDirectory")
+    def trace_directory(self) -> _builtins.str:
+        """
+        The destination directory of the listener trace file.
+        """
+        return pulumi.get(self, "trace_directory")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The version of Oracle Clusterware running in the cluster.
+        """
+        return pulumi.get(self, "version")
+
+    @_builtins.property
+    @pulumi.getter(name="vipConfigurations")
+    def vip_configurations(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentVipConfigurationResult']:
+        """
+        The list of Virtual IP (VIP) configurations of the cloud cluster.
+        """
+        return pulumi.get(self, "vip_configurations")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentAsmInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentAssociatedComponentResult(dict):
+    def __init__(__self__, *,
+                 association_type: _builtins.str,
+                 component_id: _builtins.str,
+                 component_type: _builtins.str):
+        """
+        :param _builtins.str association_type: The association type.
+        :param _builtins.str component_id: The identifier of the discovered DB system component.
+        :param _builtins.str component_type: The component type.
+        """
+        pulumi.set(__self__, "association_type", association_type)
+        pulumi.set(__self__, "component_id", component_id)
+        pulumi.set(__self__, "component_type", component_type)
+
+    @_builtins.property
+    @pulumi.getter(name="associationType")
+    def association_type(self) -> _builtins.str:
+        """
+        The association type.
+        """
+        return pulumi.get(self, "association_type")
+
+    @_builtins.property
+    @pulumi.getter(name="componentId")
+    def component_id(self) -> _builtins.str:
+        """
+        The identifier of the discovered DB system component.
+        """
+        return pulumi.get(self, "component_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 cluster_id: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult'],
+                 crs_base_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 node_role: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str node_role: The role of the cluster node.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "crs_base_directory", crs_base_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "node_role", node_role)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        The unique identifier of the Oracle cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="crsBaseDirectory")
+    def crs_base_directory(self) -> _builtins.str:
+        """
+        The Oracle base location of Cluster Ready Services (CRS).
+        """
+        return pulumi.get(self, "crs_base_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeRole")
+    def node_role(self) -> _builtins.str:
+        """
+        The role of the cluster node.
+        """
+        return pulumi.get(self, "node_role")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 time_connection_status_last_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 time_connection_status_last_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentDbInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 node_name: _builtins.str,
+                 oracle_home: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentEndpointResult(dict):
+    def __init__(__self__, *,
+                 host: _builtins.str,
+                 key: _builtins.str,
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 services: Sequence[_builtins.str]):
+        """
+        :param _builtins.str host: The host name or IP address.
+        :param _builtins.str key: The unique name of the service.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param Sequence[_builtins.str] services: The list of services registered with the listener.
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "services", services)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> _builtins.str:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Sequence[_builtins.str]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 network_type: _builtins.str,
+                 subnet: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str network_type: The network type.
+        :param _builtins.str subnet: The subnet for the network.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "network_type", network_type)
+        pulumi.set(__self__, "subnet", subnet)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="networkType")
+    def network_type(self) -> _builtins.str:
+        """
+        The network type.
+        """
+        return pulumi.get(self, "network_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def subnet(self) -> _builtins.str:
+        """
+        The subnet for the network.
+        """
+        return pulumi.get(self, "subnet")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult'],
+                 container_database_id: _builtins.str,
+                 guid: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str container_database_id: The unique identifier of the parent Container Database (CDB).
+        :param _builtins.str guid: The unique identifier of the PDB.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "container_database_id", container_database_id)
+        pulumi.set(__self__, "guid", guid)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="containerDatabaseId")
+    def container_database_id(self) -> _builtins.str:
+        """
+        The unique identifier of the parent Container Database (CDB).
+        """
+        return pulumi.get(self, "container_database_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def guid(self) -> _builtins.str:
+        """
+        The unique identifier of the PDB.
+        """
+        return pulumi.get(self, "guid")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_failure_message: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult'],
+                 connection_status: _builtins.str,
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str,
+                 time_connection_status_last_updated: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param _builtins.str connection_failure_message: The error message indicating the reason for connection failure or `null` if the connection was successful.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connection_status: The status of connectivity to the cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.str time_connection_status_last_updated: The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_failure_message", connection_failure_message)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connection_status", connection_status)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "time_connection_status_last_updated", time_connection_status_last_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionFailureMessage")
+    def connection_failure_message(self) -> _builtins.str:
+        """
+        The error message indicating the reason for connection failure or `null` if the connection was successful.
+        """
+        return pulumi.get(self, "connection_failure_message")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStatus")
+    def connection_status(self) -> _builtins.str:
+        """
+        The status of connectivity to the cloud DB system component.
+        """
+        return pulumi.get(self, "connection_status")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeConnectionStatusLastUpdated")
+    def time_connection_status_last_updated(self) -> _builtins.str:
+        """
+        The date and time the connectionStatus of the cloud DB system connector was last updated.
+        """
+        return pulumi.get(self, "time_connection_status_last_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 named_credential_id: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str named_credential_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "named_credential_id", named_credential_id)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="namedCredentialId")
+    def named_credential_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credential where the database password metadata is stored.
+        """
+        return pulumi.get(self, "named_credential_id")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentPluggableDatabaseConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentScanConfigurationResult(dict):
+    def __init__(__self__, *,
+                 network_number: _builtins.int,
+                 scan_name: _builtins.str,
+                 scan_port: _builtins.int,
+                 scan_protocol: _builtins.str):
+        """
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str scan_name: The name of the SCAN listener.
+        :param _builtins.int scan_port: The port number of the SCAN listener.
+        :param _builtins.str scan_protocol: The protocol of the SCAN listener.
+        """
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "scan_name", scan_name)
+        pulumi.set(__self__, "scan_port", scan_port)
+        pulumi.set(__self__, "scan_protocol", scan_protocol)
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="scanName")
+    def scan_name(self) -> _builtins.str:
+        """
+        The name of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scanPort")
+    def scan_port(self) -> _builtins.int:
+        """
+        The port number of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_port")
+
+    @_builtins.property
+    @pulumi.getter(name="scanProtocol")
+    def scan_protocol(self) -> _builtins.str:
+        """
+        The protocol of the SCAN listener.
+        """
+        return pulumi.get(self, "scan_protocol")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryDiscoveredComponentVipConfigurationResult(dict):
+    def __init__(__self__, *,
+                 address: _builtins.str,
+                 network_number: _builtins.int,
+                 node_name: _builtins.str):
+        """
+        :param _builtins.str address: The VIP name or IP address.
+        :param _builtins.int network_number: The network number from which VIPs are obtained.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        """
+        pulumi.set(__self__, "address", address)
+        pulumi.set(__self__, "network_number", network_number)
+        pulumi.set(__self__, "node_name", node_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def address(self) -> _builtins.str:
+        """
+        The VIP name or IP address.
+        """
+        return pulumi.get(self, "address")
+
+    @_builtins.property
+    @pulumi.getter(name="networkNumber")
+    def network_number(self) -> _builtins.int:
+        """
+        The network number from which VIPs are obtained.
+        """
+        return pulumi.get(self, "network_number")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryPatchOperationResult(dict):
+    def __init__(__self__, *,
+                 operation: _builtins.str,
+                 selection: _builtins.str,
+                 values: Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueResult']):
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> _builtins.str:
+        return pulumi.get(self, "operation")
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> _builtins.str:
+        return pulumi.get(self, "selection")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueResult']:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryPatchOperationValueResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 connectors: Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorResult'],
+                 display_name: _builtins.str,
+                 is_selected_for_monitoring: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetCloudDbSystemDiscoveryPatchOperationValueConnectorArgs'] connectors: The connector details used to connect to the cloud DB system component.
+        :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
+        :param _builtins.bool is_selected_for_monitoring: Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connectors", connectors)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_selected_for_monitoring", is_selected_for_monitoring)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def connectors(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorResult']:
+        """
+        The connector details used to connect to the cloud DB system component.
+        """
+        return pulumi.get(self, "connectors")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isSelectedForMonitoring")
+    def is_selected_for_monitoring(self) -> _builtins.bool:
+        """
+        Indicates whether the DB system component should be provisioned as an Oracle Cloud Infrastructure resource or not.
+        """
+        return pulumi.get(self, "is_selected_for_monitoring")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryPatchOperationValueConnectorResult(dict):
+    def __init__(__self__, *,
+                 agent_id: _builtins.str,
+                 connection_infos: Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult'],
+                 connector_type: _builtins.str,
+                 display_name: _builtins.str):
+        """
+        :param _builtins.str agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        :param Sequence['GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoArgs'] connection_infos: The connection details required to connect to a cloud DB system component.
+        :param _builtins.str connector_type: The type of connector.
+        :param _builtins.str display_name: The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        pulumi.set(__self__, "agent_id", agent_id)
+        pulumi.set(__self__, "connection_infos", connection_infos)
+        pulumi.set(__self__, "connector_type", connector_type)
+        pulumi.set(__self__, "display_name", display_name)
+
+    @_builtins.property
+    @pulumi.getter(name="agentId")
+    def agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
+        """
+        return pulumi.get(self, "agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionInfos")
+    def connection_infos(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult']:
+        """
+        The connection details required to connect to a cloud DB system component.
+        """
+        return pulumi.get(self, "connection_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="connectorType")
+    def connector_type(self) -> _builtins.str:
+        """
+        The type of connector.
+        """
+        return pulumi.get(self, "connector_type")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the DB system. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoResult(dict):
+    def __init__(__self__, *,
+                 component_type: _builtins.str,
+                 connection_credentials: Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult'],
+                 connection_strings: Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult']):
+        """
+        :param _builtins.str component_type: The component type.
+        :param Sequence['GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialArgs'] connection_credentials: The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        :param Sequence['GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringArgs'] connection_strings: The Oracle Database connection string.
+        """
+        pulumi.set(__self__, "component_type", component_type)
+        pulumi.set(__self__, "connection_credentials", connection_credentials)
+        pulumi.set(__self__, "connection_strings", connection_strings)
+
+    @_builtins.property
+    @pulumi.getter(name="componentType")
+    def component_type(self) -> _builtins.str:
+        """
+        The component type.
+        """
+        return pulumi.get(self, "component_type")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionCredentials")
+    def connection_credentials(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult']:
+        """
+        The credentials used to connect to the Cloud ASM instance. Currently only the `DETAILS` type is supported for creating MACS connector credentials.
+        """
+        return pulumi.get(self, "connection_credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="connectionStrings")
+    def connection_strings(self) -> Sequence['outputs.GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult']:
+        """
+        The Oracle Database connection string.
+        """
+        return pulumi.get(self, "connection_strings")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionCredentialResult(dict):
+    def __init__(__self__, *,
+                 credential_name: _builtins.str,
+                 credential_type: _builtins.str,
+                 password_secret_id: _builtins.str,
+                 role: _builtins.str,
+                 ssl_secret_id: _builtins.str,
+                 user_name: _builtins.str):
+        """
+        :param _builtins.str credential_name: The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        :param _builtins.str credential_type: The type of credential used to connect to the ASM instance.
+        :param _builtins.str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        :param _builtins.str role: The role of the user connecting to the ASM instance.
+        :param _builtins.str ssl_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        :param _builtins.str user_name: The user name used to connect to the ASM instance.
+        """
+        pulumi.set(__self__, "credential_name", credential_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @_builtins.property
+    @pulumi.getter(name="credentialName")
+    def credential_name(self) -> _builtins.str:
+        """
+        The name of the credential information that used to connect to the DB system resource. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+        """
+        return pulumi.get(self, "credential_name")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> _builtins.str:
+        """
+        The type of credential used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "credential_type")
+
+    @_builtins.property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> _builtins.str:
+        """
+        The role of the user connecting to the ASM instance.
+        """
+        return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the SSL keystore and truststore details.
+        """
+        return pulumi.get(self, "ssl_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> _builtins.str:
+        """
+        The user name used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class GetCloudDbSystemDiscoveryPatchOperationValueConnectorConnectionInfoConnectionStringResult(dict):
+    def __init__(__self__, *,
+                 host_name: _builtins.str,
+                 hosts: Sequence[_builtins.str],
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 service: _builtins.str):
+        """
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param Sequence[_builtins.str] hosts: The list of host names of the ASM instances.
+        :param _builtins.int port: The port used to connect to the ASM instance.
+        :param _builtins.str protocol: The protocol used to connect to the ASM instance.
+        :param _builtins.str service: The service name of the ASM instance.
+        """
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "hosts", hosts)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "service", service)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> Sequence[_builtins.str]:
+        """
+        The list of host names of the ASM instances.
+        """
+        return pulumi.get(self, "hosts")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The protocol used to connect to the ASM instance.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def service(self) -> _builtins.str:
+        """
+        The service name of the ASM instance.
+        """
+        return pulumi.get(self, "service")
+
+
+@pulumi.output_type
+class GetCloudDbSystemStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetCloudDbSystemsCloudDbSystemCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudDbSystemsCloudDbSystemCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudDbSystemsCloudDbSystemCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudDbSystemsCloudDbSystemCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 database_management_configs: Sequence['outputs.GetCloudDbSystemsCloudDbSystemCollectionItemDatabaseManagementConfigResult'],
+                 db_system_discovery_id: _builtins.str,
+                 dbaas_parent_infrastructure_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 deployment_type: _builtins.str,
+                 discovery_agent_id: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 home_directory: _builtins.str,
+                 id: _builtins.str,
+                 is_cluster: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 stack_monitoring_configs: Sequence['outputs.GetCloudDbSystemsCloudDbSystemCollectionItemStackMonitoringConfigResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Sequence['GetCloudDbSystemsCloudDbSystemCollectionItemDatabaseManagementConfigArgs'] database_management_configs: The configuration details of Database Management for a cloud DB system.
+        :param _builtins.str db_system_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
+        :param _builtins.str dbaas_parent_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dbaas parent infrastructure of the cloud DB system.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str deployment_type: A filter to return cloud DB systems of the specified deployment type.
+        :param _builtins.str discovery_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str home_directory: The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.bool is_cluster: Indicates whether the DB system is a cluster DB system or not.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetCloudDbSystemsCloudDbSystemCollectionItemStackMonitoringConfigArgs'] stack_monitoring_configs: The configuration details of Stack Monitoring for a cloud DB system.
+        :param _builtins.str state: The lifecycle state of a resource.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud DB system was created.
+        :param _builtins.str time_updated: The date and time the cloud DB system was last updated.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_management_configs", database_management_configs)
+        pulumi.set(__self__, "db_system_discovery_id", db_system_discovery_id)
+        pulumi.set(__self__, "dbaas_parent_infrastructure_id", dbaas_parent_infrastructure_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "discovery_agent_id", discovery_agent_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "home_directory", home_directory)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_cluster", is_cluster)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "stack_monitoring_configs", stack_monitoring_configs)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseManagementConfigs")
+    def database_management_configs(self) -> Sequence['outputs.GetCloudDbSystemsCloudDbSystemCollectionItemDatabaseManagementConfigResult']:
+        """
+        The configuration details of Database Management for a cloud DB system.
+        """
+        return pulumi.get(self, "database_management_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="dbSystemDiscoveryId")
+    def db_system_discovery_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system discovery.
+        """
+        return pulumi.get(self, "db_system_discovery_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasParentInfrastructureId")
+    def dbaas_parent_infrastructure_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dbaas parent infrastructure of the cloud DB system.
+        """
+        return pulumi.get(self, "dbaas_parent_infrastructure_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> _builtins.str:
+        """
+        A filter to return cloud DB systems of the specified deployment type.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryAgentId")
+    def discovery_agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used during the discovery of the DB system.
+        """
+        return pulumi.get(self, "discovery_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="homeDirectory")
+    def home_directory(self) -> _builtins.str:
+        """
+        The Oracle Grid home directory in case of cluster-based DB system and Oracle home directory in case of single instance-based DB system.
+        """
+        return pulumi.get(self, "home_directory")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isCluster")
+    def is_cluster(self) -> _builtins.bool:
+        """
+        Indicates whether the DB system is a cluster DB system or not.
+        """
+        return pulumi.get(self, "is_cluster")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="stackMonitoringConfigs")
+    def stack_monitoring_configs(self) -> Sequence['outputs.GetCloudDbSystemsCloudDbSystemCollectionItemStackMonitoringConfigResult']:
+        """
+        The configuration details of Stack Monitoring for a cloud DB system.
+        """
+        return pulumi.get(self, "stack_monitoring_configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The lifecycle state of a resource.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud DB system was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud DB system was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetCloudDbSystemsCloudDbSystemCollectionItemDatabaseManagementConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetCloudDbSystemsCloudDbSystemCollectionItemStackMonitoringConfigResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: _builtins.bool,
+                 metadata: _builtins.str):
+        """
+        :param _builtins.bool is_enabled: The status of the associated service.
+        :param _builtins.str metadata: The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "metadata", metadata)
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        The status of the associated service.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        The associated service-specific inputs in JSON string format, which Database Management can identify.
+        """
+        return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetCloudDbSystemsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudListenerEndpointResult(dict):
+    def __init__(__self__, *,
+                 host: _builtins.str,
+                 key: _builtins.str,
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 services: Sequence[_builtins.str]):
+        """
+        :param _builtins.str host: The host name or IP address.
+        :param _builtins.str key: The unique name of the service.
+        :param _builtins.int port: The port number.
+        :param _builtins.str protocol: The listener protocol.
+        :param Sequence[_builtins.str] services: The list of services registered with the listener.
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "services", services)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> _builtins.str:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port number.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The listener protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Sequence[_builtins.str]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+
+@pulumi.output_type
+class GetCloudListenerServicedAsmResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetCloudListenerServicedDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 database_sub_type: _builtins.str,
+                 database_type: _builtins.str,
+                 db_unique_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_managed: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str db_unique_name: The unique name of the cloud database.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str display_name: The user-friendly name for the database. The name does not have to be unique.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_sub_type", database_sub_type)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_managed", is_managed)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud database resides.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> _builtins.str:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The unique name of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The user-friendly name for the database. The name does not have to be unique.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> _builtins.bool:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
+class GetCloudListenerServicesCloudListenerServiceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudListenerServicesCloudListenerServiceCollectionItemResult']):
+        """
+        :param Sequence['GetCloudListenerServicesCloudListenerServiceCollectionItemArgs'] items: An array of cloud listener services.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudListenerServicesCloudListenerServiceCollectionItemResult']:
+        """
+        An array of cloud listener services.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudListenerServicesCloudListenerServiceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 listener_id: _builtins.str,
+                 managed_database_id: _builtins.str,
+                 name: _builtins.str):
+        """
+        :param _builtins.str listener_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
+        :param _builtins.str managed_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+        :param _builtins.str name: The name of the service.
+        """
+        pulumi.set(__self__, "listener_id", listener_id)
+        pulumi.set(__self__, "managed_database_id", managed_database_id)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="listenerId")
+    def listener_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud listener.
+        """
+        return pulumi.get(self, "listener_id")
+
+    @_builtins.property
+    @pulumi.getter(name="managedDatabaseId")
+    def managed_database_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+        """
+        return pulumi.get(self, "managed_database_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the service.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudListenerServicesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The name of the service.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the service.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetCloudListenersCloudListenerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetCloudListenersCloudListenerCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetCloudListenersCloudListenerCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetCloudListenersCloudListenerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 additional_details: Mapping[str, _builtins.str],
+                 adr_home_directory: _builtins.str,
+                 cloud_connector_id: _builtins.str,
+                 cloud_db_home_id: _builtins.str,
+                 cloud_db_node_id: _builtins.str,
+                 cloud_db_system_id: _builtins.str,
+                 cloud_listener_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 component_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 endpoints: Sequence['outputs.GetCloudListenersCloudListenerCollectionItemEndpointResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 host_name: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 listener_alias: _builtins.str,
+                 listener_ora_location: _builtins.str,
+                 listener_type: _builtins.str,
+                 log_directory: _builtins.str,
+                 oracle_home: _builtins.str,
+                 serviced_asms: Sequence['outputs.GetCloudListenersCloudListenerCollectionItemServicedAsmResult'],
+                 serviced_databases: Sequence['outputs.GetCloudListenersCloudListenerCollectionItemServicedDatabaseResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 trace_directory: _builtins.str,
+                 version: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] additional_details: The additional details of the cloud listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        :param _builtins.str adr_home_directory: The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
+        :param _builtins.str cloud_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        :param _builtins.str cloud_db_home_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
+        :param _builtins.str cloud_db_node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
+        :param _builtins.str cloud_db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str component_name: The name of the cloud listener.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param Sequence['GetCloudListenersCloudListenerCollectionItemEndpointArgs'] endpoints: The list of protocol addresses the listener is configured to listen on.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str host_name: The name of the host on which the cloud listener is running.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
+        :param _builtins.str listener_alias: The listener alias.
+        :param _builtins.str listener_ora_location: The location of the listener configuration file listener.ora.
+        :param _builtins.str listener_type: The type of listener.
+        :param _builtins.str log_directory: The destination directory of the listener log file.
+        :param _builtins.str oracle_home: The Oracle home location of the listener.
+        :param Sequence['GetCloudListenersCloudListenerCollectionItemServicedAsmArgs'] serviced_asms: The list of ASMs that are serviced by the listener.
+        :param Sequence['GetCloudListenersCloudListenerCollectionItemServicedDatabaseArgs'] serviced_databases: The list of databases that are serviced by the listener.
+        :param _builtins.str state: The current lifecycle state of the cloud listener.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the cloud listener was created.
+        :param _builtins.str time_updated: The date and time the cloud listener was last updated.
+        :param _builtins.str trace_directory: The destination directory of the listener trace file.
+        :param _builtins.str version: The listener version.
+        """
+        pulumi.set(__self__, "additional_details", additional_details)
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "cloud_connector_id", cloud_connector_id)
+        pulumi.set(__self__, "cloud_db_home_id", cloud_db_home_id)
+        pulumi.set(__self__, "cloud_db_node_id", cloud_db_node_id)
+        pulumi.set(__self__, "cloud_db_system_id", cloud_db_system_id)
+        pulumi.set(__self__, "cloud_listener_id", cloud_listener_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "component_name", component_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoints", endpoints)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "listener_alias", listener_alias)
+        pulumi.set(__self__, "listener_ora_location", listener_ora_location)
+        pulumi.set(__self__, "listener_type", listener_type)
+        pulumi.set(__self__, "log_directory", log_directory)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+        pulumi.set(__self__, "serviced_asms", serviced_asms)
+        pulumi.set(__self__, "serviced_databases", serviced_databases)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trace_directory", trace_directory)
+        pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalDetails")
+    def additional_details(self) -> Mapping[str, _builtins.str]:
+        """
+        The additional details of the cloud listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "additional_details")
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudConnectorId")
+    def cloud_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
+        """
+        return pulumi.get(self, "cloud_connector_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbHomeId")
+    def cloud_db_home_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB home.
+        """
+        return pulumi.get(self, "cloud_db_home_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbNodeId")
+    def cloud_db_node_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB node.
+        """
+        return pulumi.get(self, "cloud_db_node_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudDbSystemId")
+    def cloud_db_system_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
+        """
+        return pulumi.get(self, "cloud_db_system_id")
+
+    @_builtins.property
+    @pulumi.getter(name="cloudListenerId")
+    def cloud_listener_id(self) -> _builtins.str:
+        return pulumi.get(self, "cloud_listener_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="componentName")
+    def component_name(self) -> _builtins.str:
+        """
+        The name of the cloud listener.
+        """
+        return pulumi.get(self, "component_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoints(self) -> Sequence['outputs.GetCloudListenersCloudListenerCollectionItemEndpointResult']:
+        """
+        The list of protocol addresses the listener is configured to listen on.
+        """
+        return pulumi.get(self, "endpoints")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The name of the host on which the cloud listener is running.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerAlias")
+    def listener_alias(self) -> _builtins.str:
+        """
+        The listener alias.
+        """
+        return pulumi.get(self, "listener_alias")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerOraLocation")
+    def listener_ora_location(self) -> _builtins.str:
+        """
+        The location of the listener configuration file listener.ora.
+        """
+        return pulumi.get(self, "listener_ora_location")
+
+    @_builtins.property
+    @pulumi.getter(name="listenerType")
+    def listener_type(self) -> _builtins.str:
+        """
+        The type of listener.
+        """
+        return pulumi.get(self, "listener_type")
+
+    @_builtins.property
+    @pulumi.getter(name="logDirectory")
+    def log_directory(self) -> _builtins.str:
+        """
+        The destination directory of the listener log file.
+        """
+        return pulumi.get(self, "log_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the listener.
+        """
+        return pulumi.get(self, "oracle_home")
+
+    @_builtins.property
+    @pulumi.getter(name="servicedAsms")
+    def serviced_asms(self) -> Sequence['outputs.GetCloudListenersCloudListenerCollectionItemServicedAsmResult']:
+        """
+        The list of ASMs that are serviced by the listener.
+        """
+        return pulumi.get(self, "serviced_asms")
+
+    @_builtins.property
+    @pulumi.getter(name="servicedDatabases")
+    def serviced_databases(self) -> Sequence['outputs.GetCloudListenersCloudListenerCollectionItemServicedDatabaseResult']:
+        """
+        The list of databases that are serviced by the listener.
+        """
+        return pulumi.get(self, "serviced_databases")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the cloud listener.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the cloud listener was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the cloud listener was last updated.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="traceDirectory")
+    def trace_directory(self) -> _builtins.str:
+        """
+        The destination directory of the listener trace file.
+        """
+        return pulumi.get(self, "trace_directory")
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> _builtins.str:
+        """
+        The listener version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetCloudListenersCloudListenerCollectionItemEndpointResult(dict):
+    def __init__(__self__, *,
+                 host: _builtins.str,
+                 key: _builtins.str,
+                 port: _builtins.int,
+                 protocol: _builtins.str,
+                 services: Sequence[_builtins.str]):
+        """
+        :param _builtins.str host: The host name or IP address.
+        :param _builtins.str key: The unique name of the service.
+        :param _builtins.int port: The port number.
+        :param _builtins.str protocol: The listener protocol.
+        :param Sequence[_builtins.str] services: The list of services registered with the listener.
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "services", services)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> _builtins.str:
+        """
+        The host name or IP address.
+        """
+        return pulumi.get(self, "host")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique name of the service.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> _builtins.int:
+        """
+        The port number.
+        """
+        return pulumi.get(self, "port")
+
+    @_builtins.property
+    @pulumi.getter
+    def protocol(self) -> _builtins.str:
+        """
+        The listener protocol.
+        """
+        return pulumi.get(self, "protocol")
+
+    @_builtins.property
+    @pulumi.getter
+    def services(self) -> Sequence[_builtins.str]:
+        """
+        The list of services registered with the listener.
+        """
+        return pulumi.get(self, "services")
+
+
+@pulumi.output_type
+class GetCloudListenersCloudListenerCollectionItemServicedAsmResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetCloudListenersCloudListenerCollectionItemServicedDatabaseResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 database_sub_type: _builtins.str,
+                 database_type: _builtins.str,
+                 db_unique_name: _builtins.str,
+                 dbaas_id: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 is_managed: _builtins.bool):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str database_sub_type: The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        :param _builtins.str database_type: The type of Oracle Database installation.
+        :param _builtins.str db_unique_name: The unique name of the cloud database.
+        :param _builtins.str dbaas_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        :param _builtins.str display_name: A filter to only return the resources that match the entire display name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        :param _builtins.bool is_managed: Indicates whether the database is a Managed Database or not.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_sub_type", database_sub_type)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "db_unique_name", db_unique_name)
+        pulumi.set(__self__, "dbaas_id", dbaas_id)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_managed", is_managed)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseSubType")
+    def database_sub_type(self) -> _builtins.str:
+        """
+        The subtype of Oracle Database. Indicates whether the database is a Container Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+        """
+        return pulumi.get(self, "database_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> _builtins.str:
+        """
+        The type of Oracle Database installation.
+        """
+        return pulumi.get(self, "database_type")
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> _builtins.str:
+        """
+        The unique name of the cloud database.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @_builtins.property
+    @pulumi.getter(name="dbaasId")
+    def dbaas_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Dbaas Oracle Cloud Infrastructure resource matching the discovered DB system component.
+        """
+        return pulumi.get(self, "dbaas_id")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to only return the resources that match the entire display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isManaged")
+    def is_managed(self) -> _builtins.bool:
+        """
+        Indicates whether the database is a Managed Database or not.
+        """
+        return pulumi.get(self, "is_managed")
+
+
+@pulumi.output_type
+class GetCloudListenersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type
@@ -13126,6 +26785,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  crs_base_directory: _builtins.str,
                  db_edition: _builtins.str,
                  db_id: _builtins.str,
+                 db_instances: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult'],
                  db_node_name: _builtins.str,
                  db_packs: _builtins.str,
                  db_role: _builtins.str,
@@ -13149,6 +26809,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  log_directory: _builtins.str,
                  memory_size_in_gbs: _builtins.float,
                  network_configurations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationResult'],
+                 node_name: _builtins.str,
                  node_role: _builtins.str,
                  ocr_file_location: _builtins.str,
                  oracle_home: _builtins.str,
@@ -13160,7 +26821,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  version: _builtins.str,
                  vip_configurations: Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentVipConfigurationResult']):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
         :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
@@ -13174,6 +26835,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
         :param _builtins.str db_edition: The Oracle Database edition.
         :param _builtins.str db_id: The Oracle Database ID.
+        :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceArgs'] db_instances: The list of database instances.
         :param _builtins.str db_node_name: The name of the DB node.
         :param _builtins.str db_packs: The database packs licensed for the external Oracle Database.
         :param _builtins.str db_role: The role of the Oracle Database in Oracle Data Guard configuration.
@@ -13197,9 +26859,10 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         :param _builtins.str log_directory: The destination directory of the listener log file.
         :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the external cluster.
+        :param _builtins.str node_name: The name of the node with the VIP.
         :param _builtins.str node_role: The role of the cluster node.
         :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
-        :param _builtins.str oracle_home: The Oracle home location of the listener.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabaseArgs'] pluggable_databases: The list of Pluggable Databases.
         :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
@@ -13224,6 +26887,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         pulumi.set(__self__, "crs_base_directory", crs_base_directory)
         pulumi.set(__self__, "db_edition", db_edition)
         pulumi.set(__self__, "db_id", db_id)
+        pulumi.set(__self__, "db_instances", db_instances)
         pulumi.set(__self__, "db_node_name", db_node_name)
         pulumi.set(__self__, "db_packs", db_packs)
         pulumi.set(__self__, "db_role", db_role)
@@ -13247,6 +26911,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         pulumi.set(__self__, "log_directory", log_directory)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "node_name", node_name)
         pulumi.set(__self__, "node_role", node_role)
         pulumi.set(__self__, "ocr_file_location", ocr_file_location)
         pulumi.set(__self__, "oracle_home", oracle_home)
@@ -13262,7 +26927,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> _builtins.str:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -13379,6 +27044,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         The Oracle Database ID.
         """
         return pulumi.get(self, "db_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbInstances")
+    def db_instances(self) -> Sequence['outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult']:
+        """
+        The list of database instances.
+        """
+        return pulumi.get(self, "db_instances")
 
     @_builtins.property
     @pulumi.getter(name="dbNodeName")
@@ -13565,6 +27238,14 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         return pulumi.get(self, "network_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> _builtins.str:
         """
@@ -13584,7 +27265,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @pulumi.getter(name="oracleHome")
     def oracle_home(self) -> _builtins.str:
         """
-        The Oracle home location of the listener.
+        The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
@@ -13652,7 +27333,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  host_name: _builtins.str,
                  instance_name: _builtins.str):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param _builtins.str instance_name: The name of the ASM instance.
         """
@@ -13664,7 +27345,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> _builtins.str:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -13735,7 +27416,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
                  host_name: _builtins.str,
                  node_role: _builtins.str):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
         :param Sequence['GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstanceConnectorArgs'] connectors: The connector details used to connect to the external DB system component.
         :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
@@ -13753,7 +27434,7 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> _builtins.str:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -14504,6 +28185,68 @@ class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDisco
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 node_name: _builtins.str,
+                 oracle_home: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
 
 
 @pulumi.output_type
@@ -15453,6 +29196,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
                  crs_base_directory: _builtins.str,
                  db_edition: _builtins.str,
                  db_id: _builtins.str,
+                 db_instances: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceResult'],
                  db_node_name: _builtins.str,
                  db_packs: _builtins.str,
                  db_role: _builtins.str,
@@ -15476,6 +29220,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
                  log_directory: _builtins.str,
                  memory_size_in_gbs: _builtins.float,
                  network_configurations: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult'],
+                 node_name: _builtins.str,
                  node_role: _builtins.str,
                  ocr_file_location: _builtins.str,
                  oracle_home: _builtins.str,
@@ -15487,7 +29232,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
                  version: _builtins.str,
                  vip_configurations: Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentVipConfigurationResult']):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs'] associated_components: The list of associated components.
         :param _builtins.bool can_enable_all_current_pdbs: Indicates whether Diagnostics & Management should be enabled for all the current pluggable databases in the container database.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
@@ -15501,6 +29246,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
         :param _builtins.str db_edition: The Oracle Database edition.
         :param _builtins.str db_id: The Oracle Database ID.
+        :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs'] db_instances: The list of database instances.
         :param _builtins.str db_node_name: The name of the DB node.
         :param _builtins.str db_packs: The database packs licensed for the external Oracle Database.
         :param _builtins.str db_role: The role of the Oracle Database in Oracle Data Guard configuration.
@@ -15524,9 +29270,10 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         :param _builtins.str log_directory: The destination directory of the listener log file.
         :param _builtins.float memory_size_in_gbs: The total memory in gigabytes (GB) on the DB node.
         :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs'] network_configurations: The list of network address configurations of the external cluster.
+        :param _builtins.str node_name: The name of the node with the VIP.
         :param _builtins.str node_role: The role of the cluster node.
         :param _builtins.str ocr_file_location: The location of the Oracle Cluster Registry (OCR) file.
-        :param _builtins.str oracle_home: The Oracle home location of the listener.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
         :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs'] pluggable_databases: The list of Pluggable Databases.
         :param _builtins.str resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing Oracle Cloud Infrastructure resource matching the discovered DB system.
         :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentScanConfigurationArgs'] scan_configurations: The list of Single Client Access Name (SCAN) configurations of the external cluster.
@@ -15551,6 +29298,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         pulumi.set(__self__, "crs_base_directory", crs_base_directory)
         pulumi.set(__self__, "db_edition", db_edition)
         pulumi.set(__self__, "db_id", db_id)
+        pulumi.set(__self__, "db_instances", db_instances)
         pulumi.set(__self__, "db_node_name", db_node_name)
         pulumi.set(__self__, "db_packs", db_packs)
         pulumi.set(__self__, "db_role", db_role)
@@ -15574,6 +29322,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         pulumi.set(__self__, "log_directory", log_directory)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "network_configurations", network_configurations)
+        pulumi.set(__self__, "node_name", node_name)
         pulumi.set(__self__, "node_role", node_role)
         pulumi.set(__self__, "ocr_file_location", ocr_file_location)
         pulumi.set(__self__, "oracle_home", oracle_home)
@@ -15589,7 +29338,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> _builtins.str:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -15706,6 +29455,14 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         The Oracle Database ID.
         """
         return pulumi.get(self, "db_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dbInstances")
+    def db_instances(self) -> Sequence['outputs.GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceResult']:
+        """
+        The list of database instances.
+        """
+        return pulumi.get(self, "db_instances")
 
     @_builtins.property
     @pulumi.getter(name="dbNodeName")
@@ -15892,6 +29649,14 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
         return pulumi.get(self, "network_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
     @pulumi.getter(name="nodeRole")
     def node_role(self) -> _builtins.str:
         """
@@ -15911,7 +29676,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentResult(dict):
     @pulumi.getter(name="oracleHome")
     def oracle_home(self) -> _builtins.str:
         """
-        The Oracle home location of the listener.
+        The Oracle home location of the DB instance.
         """
         return pulumi.get(self, "oracle_home")
 
@@ -15979,7 +29744,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult(dict):
                  host_name: _builtins.str,
                  instance_name: _builtins.str):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
         :param _builtins.str instance_name: The name of the ASM instance.
         """
@@ -15991,7 +29756,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult(dict):
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> _builtins.str:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -16062,7 +29827,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult(dict)
                  host_name: _builtins.str,
                  node_role: _builtins.str):
         """
-        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         :param _builtins.str cluster_id: The unique identifier of the Oracle cluster.
         :param Sequence['GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceConnectorArgs'] connectors: The connector details used to connect to the external DB system component.
         :param _builtins.str crs_base_directory: The Oracle base location of Cluster Ready Services (CRS).
@@ -16080,7 +29845,7 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceResult(dict)
     @pulumi.getter(name="adrHomeDirectory")
     def adr_home_directory(self) -> _builtins.str:
         """
-        The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         """
         return pulumi.get(self, "adr_home_directory")
 
@@ -16831,6 +30596,68 @@ class GetExternalDbSystemDiscoveryDiscoveredComponentConnectorConnectionInfoData
         The user to connect to the database.
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceResult(dict):
+    def __init__(__self__, *,
+                 adr_home_directory: _builtins.str,
+                 host_name: _builtins.str,
+                 instance_name: _builtins.str,
+                 node_name: _builtins.str,
+                 oracle_home: _builtins.str):
+        """
+        :param _builtins.str adr_home_directory: The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        :param _builtins.str host_name: The host name of the database or the SCAN name in case of a RAC database.
+        :param _builtins.str instance_name: The name of the ASM instance.
+        :param _builtins.str node_name: The name of the node with the VIP.
+        :param _builtins.str oracle_home: The Oracle home location of the DB instance.
+        """
+        pulumi.set(__self__, "adr_home_directory", adr_home_directory)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "instance_name", instance_name)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "oracle_home", oracle_home)
+
+    @_builtins.property
+    @pulumi.getter(name="adrHomeDirectory")
+    def adr_home_directory(self) -> _builtins.str:
+        """
+        The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
+        """
+        return pulumi.get(self, "adr_home_directory")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        The host name of the database or the SCAN name in case of a RAC database.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> _builtins.str:
+        """
+        The name of the ASM instance.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node with the VIP.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleHome")
+    def oracle_home(self) -> _builtins.str:
+        """
+        The Oracle home location of the DB instance.
+        """
+        return pulumi.get(self, "oracle_home")
 
 
 @pulumi.output_type
@@ -30593,7 +44420,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
         :param _builtins.str member_state: The state of this server as a group replication member.
         :param _builtins.str single_primary_mode: Indicates if the replication group is running in single-primary mode.
         :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryArgs'] status_summaries: High availability status summary of a MySQL server.
-        :param _builtins.str transactions_in_gtid_executed: Number of transactions that were replicated within the cluster.
+        :param _builtins.str transactions_in_gtid_executed: The number of transactions that were replicated within the cluster.
         :param _builtins.str view_id: The current view identifier for this group.
         """
         pulumi.set(__self__, "flow_control", flow_control)
@@ -30675,7 +44502,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="transactionsInGtidExecuted")
     def transactions_in_gtid_executed(self) -> _builtins.str:
         """
-        Number of transactions that were replicated within the cluster.
+        The number of transactions that were replicated within the cluster.
         """
         return pulumi.get(self, "transactions_in_gtid_executed")
 
@@ -30697,8 +44524,8 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
                  member_state: _builtins.str,
                  member_uuid: _builtins.str):
         """
-        :param _builtins.str member_host: The host name of the group member which clients use to connect to it.
-        :param _builtins.int member_port: The port number of the group member which clients to connect to it.
+        :param _builtins.str member_host: The host name of the group member that clients use to connect to it.
+        :param _builtins.int member_port: The port number of the group member that clients use to connect to it.
         :param _builtins.str member_role: The role of this server as a group replication member.
         :param _builtins.str member_state: The state of this server as a group replication member.
         :param _builtins.str member_uuid: The Universally Unique Identifier (UUID) of the member server.
@@ -30713,7 +44540,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="memberHost")
     def member_host(self) -> _builtins.str:
         """
-        The host name of the group member which clients use to connect to it.
+        The host name of the group member that clients use to connect to it.
         """
         return pulumi.get(self, "member_host")
 
@@ -30721,7 +44548,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="memberPort")
     def member_port(self) -> _builtins.int:
         """
-        The port number of the group member which clients to connect to it.
+        The port number of the group member that clients use to connect to it.
         """
         return pulumi.get(self, "member_port")
 
@@ -30785,8 +44612,8 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
                  apply_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult'],
                  channel_name: _builtins.str):
         """
-        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArgs'] apply_errors: Error from apply operation of a MySQL server replication channel.
-        :param _builtins.str channel_name: The name of the replication channel
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorArgs'] apply_errors: Error from the apply operation of a MySQL server replication channel.
+        :param _builtins.str channel_name: The name of the replication channel.
         """
         pulumi.set(__self__, "apply_errors", apply_errors)
         pulumi.set(__self__, "channel_name", channel_name)
@@ -30795,7 +44622,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="applyErrors")
     def apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult']:
         """
-        Error from apply operation of a MySQL server replication channel.
+        Error from the apply operation of a MySQL server replication channel.
         """
         return pulumi.get(self, "apply_errors")
 
@@ -30803,7 +44630,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="channelName")
     def channel_name(self) -> _builtins.str:
         """
-        The name of the replication channel
+        The name of the replication channel.
         """
         return pulumi.get(self, "channel_name")
 
@@ -30905,8 +44732,8 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
                  channel_name: _builtins.str,
                  fetch_errors: Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult']):
         """
-        :param _builtins.str channel_name: The name of the replication channel
-        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArgs'] fetch_errors: Error from fetch operation of a MySQL server replication channel.
+        :param _builtins.str channel_name: The name of the replication channel.
+        :param Sequence['GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorArgs'] fetch_errors: Error from the fetch operation of a MySQL server replication channel.
         """
         pulumi.set(__self__, "channel_name", channel_name)
         pulumi.set(__self__, "fetch_errors", fetch_errors)
@@ -30915,7 +44742,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="channelName")
     def channel_name(self) -> _builtins.str:
         """
-        The name of the replication channel
+        The name of the replication channel.
         """
         return pulumi.get(self, "channel_name")
 
@@ -30923,7 +44750,7 @@ class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvai
     @pulumi.getter(name="fetchErrors")
     def fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult']:
         """
-        Error from fetch operation of a MySQL server replication channel.
+        Error from the fetch operation of a MySQL server replication channel.
         """
         return pulumi.get(self, "fetch_errors")
 
@@ -31092,15 +44919,15 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
                  transactions_received: _builtins.str):
         """
         :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterArgs'] applier_filters: A list of MySqlReplicationApplierFilter records.
-        :param _builtins.float apply_delay: Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
-        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArgs'] apply_errors: Error from apply operation of a MySQL server replication channel.
+        :param _builtins.float apply_delay: The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorArgs'] apply_errors: Error from the apply operation of a MySQL server replication channel.
         :param _builtins.str apply_status: The current status of apply operations.
         :param _builtins.int busy_workers: The number of workers currently busy applying transactions from the source server.
         :param _builtins.str channel_name: The name of the replication channel.
         :param _builtins.str desired_delay_seconds: The desired number of seconds that the replica must lag the source.
-        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArgs'] fetch_errors: Error from fetch operation of a MySQL server replication channel.
+        :param Sequence['GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorArgs'] fetch_errors: Error from the fetch operation of a MySQL server replication channel.
         :param _builtins.str fetch_status: The current status of fetch operations.
-        :param _builtins.str gtid_assignment: Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        :param _builtins.str gtid_assignment: Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
         :param _builtins.str relay_log_storage_space_used: The total size in bytes of all the existing relay log files pertaining to this channel.
         :param _builtins.str remaining_delay_seconds: If the replica is waiting for the desired delay seconds to pass since the source applied an event, this field contains the number of delay seconds remaining.
         :param _builtins.str retrieved_gtid_set: The set of global transaction IDs corresponding to all transactions received by this replica from the source server. Empty if GTIDs are not in use.
@@ -31143,7 +44970,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="applyDelay")
     def apply_delay(self) -> _builtins.float:
         """
-        Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+        The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
         """
         return pulumi.get(self, "apply_delay")
 
@@ -31151,7 +44978,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="applyErrors")
     def apply_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult']:
         """
-        Error from apply operation of a MySQL server replication channel.
+        Error from the apply operation of a MySQL server replication channel.
         """
         return pulumi.get(self, "apply_errors")
 
@@ -31191,7 +45018,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="fetchErrors")
     def fetch_errors(self) -> Sequence['outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult']:
         """
-        Error from fetch operation of a MySQL server replication channel.
+        Error from the fetch operation of a MySQL server replication channel.
         """
         return pulumi.get(self, "fetch_errors")
 
@@ -31207,7 +45034,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="gtidAssignment")
     def gtid_assignment(self) -> _builtins.str:
         """
-        Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
         """
         return pulumi.get(self, "gtid_assignment")
 
@@ -31290,7 +45117,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
                  filter_name: _builtins.str,
                  filter_rule: _builtins.str):
         """
-        :param _builtins.str filter_name: Type of replication filter that has been configured for the replication channel.
+        :param _builtins.str filter_name: The type of replication filter that has been configured for the replication channel.
         :param _builtins.str filter_rule: The rules configured for the replication filter type.
         """
         pulumi.set(__self__, "filter_name", filter_name)
@@ -31300,7 +45127,7 @@ class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundRepli
     @pulumi.getter(name="filterName")
     def filter_name(self) -> _builtins.str:
         """
-        Type of replication filter that has been configured for the replication channel.
+        The type of replication filter that has been configured for the replication channel.
         """
         return pulumi.get(self, "filter_name")
 
@@ -31478,7 +45305,7 @@ class GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundRep
                  outbound_replications_count: _builtins.int):
         """
         :param Sequence['GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemArgs'] items: The list of ManagedMySqlDatabaseOutboundReplicationSummary records.
-        :param _builtins.int outbound_replications_count: The number of outbound replications from this server.
+        :param _builtins.int outbound_replications_count: The number of outbound replications from the MySQL server.
         """
         pulumi.set(__self__, "items", items)
         pulumi.set(__self__, "outbound_replications_count", outbound_replications_count)
@@ -31495,7 +45322,7 @@ class GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundRep
     @pulumi.getter(name="outboundReplicationsCount")
     def outbound_replications_count(self) -> _builtins.int:
         """
-        The number of outbound replications from this server.
+        The number of outbound replications from the MySQL server.
         """
         return pulumi.get(self, "outbound_replications_count")
 

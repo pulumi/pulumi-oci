@@ -128,6 +128,10 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public readonly ImmutableArray<string> CompatibleShapes;
+        /// <summary>
         /// The type of configuration. Either user-created or a default configuration.
         /// </summary>
         public readonly string ConfigType;
@@ -141,6 +145,10 @@ namespace Pulumi.Oci.Psql
         /// Version of the PostgreSQL database.
         /// </summary>
         public readonly string DbVersion;
+        /// <summary>
+        /// The Default configuration used for this configuration.
+        /// </summary>
+        public readonly string DefaultConfigId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -178,7 +186,7 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the configuration.
         /// </summary>
         public readonly string Shape;
         /// <summary>
@@ -198,6 +206,8 @@ namespace Pulumi.Oci.Psql
         private GetConfigurationResult(
             string compartmentId,
 
+            ImmutableArray<string> compatibleShapes,
+
             string configType,
 
             ImmutableArray<Outputs.GetConfigurationConfigurationDetailResult> configurationDetails,
@@ -207,6 +217,8 @@ namespace Pulumi.Oci.Psql
             ImmutableArray<Outputs.GetConfigurationDbConfigurationOverrideResult> dbConfigurationOverrides,
 
             string dbVersion,
+
+            string defaultConfigId,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -235,11 +247,13 @@ namespace Pulumi.Oci.Psql
             string timeCreated)
         {
             CompartmentId = compartmentId;
+            CompatibleShapes = compatibleShapes;
             ConfigType = configType;
             ConfigurationDetails = configurationDetails;
             ConfigurationId = configurationId;
             DbConfigurationOverrides = dbConfigurationOverrides;
             DbVersion = dbVersion;
+            DefaultConfigId = defaultConfigId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

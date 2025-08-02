@@ -110,18 +110,12 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="toleratingResponseTime")
     private @Nullable Output<Integer> toleratingResponseTime;
 
     /**
      * @return (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> toleratingResponseTime() {
@@ -287,9 +281,6 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param toleratingResponseTime (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -300,9 +291,6 @@ public final class ConfigRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param toleratingResponseTime (Updatable) The maximum response time in milliseconds that is considered &#34;tolerable&#34; for the end user. A response time beyond this threshold is considered &#34;frustrating&#34;. This value cannot be lower than &#34;satisfiedResponseTime&#34;.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

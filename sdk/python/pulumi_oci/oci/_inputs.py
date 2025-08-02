@@ -15,6 +15,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ApiPlatformApiPlatformInstanceIdcsAppArgs',
+    'ApiPlatformApiPlatformInstanceIdcsAppArgsDict',
+    'ApiPlatformApiPlatformInstanceUriArgs',
+    'ApiPlatformApiPlatformInstanceUriArgsDict',
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs',
     'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict',
     'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs',
@@ -25,6 +29,8 @@ __all__ = [
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
+    'GetApiPlatformApiPlatformInstancesFilterArgs',
+    'GetApiPlatformApiPlatformInstancesFilterArgsDict',
     'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgs',
     'GetApiaccesscontrolApiMetadataByEntityTypesFilterArgsDict',
     'GetApiaccesscontrolApiMetadatasFilterArgs',
@@ -72,6 +78,90 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class ApiPlatformApiPlatformInstanceIdcsAppArgsDict(TypedDict):
+        url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        IDCS URL of the app
+        """
+elif False:
+    ApiPlatformApiPlatformInstanceIdcsAppArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ApiPlatformApiPlatformInstanceIdcsAppArgs:
+    def __init__(__self__, *,
+                 url: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] url: IDCS URL of the app
+        """
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        IDCS URL of the app
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+if not MYPY:
+    class ApiPlatformApiPlatformInstanceUriArgsDict(TypedDict):
+        developers_portal_uri: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Developer's Portal URI of the instance (/developers)
+        """
+        management_portal_uri: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Management Portal URI of the instance (/apiplatform)
+        """
+elif False:
+    ApiPlatformApiPlatformInstanceUriArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ApiPlatformApiPlatformInstanceUriArgs:
+    def __init__(__self__, *,
+                 developers_portal_uri: Optional[pulumi.Input[_builtins.str]] = None,
+                 management_portal_uri: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] developers_portal_uri: Developer's Portal URI of the instance (/developers)
+        :param pulumi.Input[_builtins.str] management_portal_uri: Management Portal URI of the instance (/apiplatform)
+        """
+        if developers_portal_uri is not None:
+            pulumi.set(__self__, "developers_portal_uri", developers_portal_uri)
+        if management_portal_uri is not None:
+            pulumi.set(__self__, "management_portal_uri", management_portal_uri)
+
+    @_builtins.property
+    @pulumi.getter(name="developersPortalUri")
+    def developers_portal_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Developer's Portal URI of the instance (/developers)
+        """
+        return pulumi.get(self, "developers_portal_uri")
+
+    @developers_portal_uri.setter
+    def developers_portal_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "developers_portal_uri", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managementPortalUri")
+    def management_portal_uri(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Management Portal URI of the instance (/apiplatform)
+        """
+        return pulumi.get(self, "management_portal_uri")
+
+    @management_portal_uri.setter
+    def management_portal_uri(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "management_portal_uri", value)
+
 
 if not MYPY:
     class ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict(TypedDict):
@@ -549,6 +639,62 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
     @time_last_checked.setter
     def time_last_checked(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_last_checked", value)
+
+
+if not MYPY:
+    class GetApiPlatformApiPlatformInstancesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        A filter to return only resources that match the given name exactly
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetApiPlatformApiPlatformInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetApiPlatformApiPlatformInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the given name exactly
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given name exactly
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

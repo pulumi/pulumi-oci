@@ -23,6 +23,30 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement":
 		r = &AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement{}
+	case "oci:DatabaseManagement/cloudAsm:CloudAsm":
+		r = &CloudAsm{}
+	case "oci:DatabaseManagement/cloudAsmInstance:CloudAsmInstance":
+		r = &CloudAsmInstance{}
+	case "oci:DatabaseManagement/cloudCluster:CloudCluster":
+		r = &CloudCluster{}
+	case "oci:DatabaseManagement/cloudClusterInstance:CloudClusterInstance":
+		r = &CloudClusterInstance{}
+	case "oci:DatabaseManagement/cloudDbHome:CloudDbHome":
+		r = &CloudDbHome{}
+	case "oci:DatabaseManagement/cloudDbNode:CloudDbNode":
+		r = &CloudDbNode{}
+	case "oci:DatabaseManagement/cloudDbSystem:CloudDbSystem":
+		r = &CloudDbSystem{}
+	case "oci:DatabaseManagement/cloudDbSystemCloudDatabaseManagementsManagement:CloudDbSystemCloudDatabaseManagementsManagement":
+		r = &CloudDbSystemCloudDatabaseManagementsManagement{}
+	case "oci:DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement:CloudDbSystemCloudStackMonitoringsManagement":
+		r = &CloudDbSystemCloudStackMonitoringsManagement{}
+	case "oci:DatabaseManagement/cloudDbSystemConnector:CloudDbSystemConnector":
+		r = &CloudDbSystemConnector{}
+	case "oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery":
+		r = &CloudDbSystemDiscovery{}
+	case "oci:DatabaseManagement/cloudListener:CloudListener":
+		r = &CloudListener{}
 	case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
 		r = &DatabaseDbmFeaturesManagement{}
 	case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
@@ -101,6 +125,66 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudAsm",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudAsmInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudClusterInstance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbHome",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbNode",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbSystem",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbSystemCloudDatabaseManagementsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbSystemConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudDbSystemDiscovery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseManagement/cloudListener",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

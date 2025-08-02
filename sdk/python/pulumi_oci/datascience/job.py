@@ -672,6 +672,7 @@ class Job(pulumi.CustomResource):
                 "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
                 "shape_name": test_shape["name"],
                 "job_shape_config_details": {
+                    "cpu_baseline": job_job_infrastructure_configuration_details_job_shape_config_details_cpu_baseline,
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                 },
@@ -772,6 +773,7 @@ class Job(pulumi.CustomResource):
                 "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
                 "shape_name": test_shape["name"],
                 "job_shape_config_details": {
+                    "cpu_baseline": job_job_infrastructure_configuration_details_job_shape_config_details_cpu_baseline,
                     "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
                     "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
                 },

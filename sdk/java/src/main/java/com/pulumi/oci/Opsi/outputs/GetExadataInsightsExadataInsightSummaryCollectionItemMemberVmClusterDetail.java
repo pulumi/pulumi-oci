@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetail;
 import com.pulumi.oci.Opsi.outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail;
 import java.lang.String;
 import java.util.List;
@@ -18,6 +19,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
      */
     private String compartmentId;
     private String dbmPrivateEndpointId;
+    private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails;
     private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
     private String opsiPrivateEndpointId;
     private String vmClusterType;
@@ -33,6 +35,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     }
     public String dbmPrivateEndpointId() {
         return this.dbmPrivateEndpointId;
+    }
+    public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails() {
+        return this.memberAutonomousDetails;
     }
     public List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails() {
         return this.memberDatabaseDetails;
@@ -58,6 +63,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     public static final class Builder {
         private String compartmentId;
         private String dbmPrivateEndpointId;
+        private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails;
         private List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
         private String opsiPrivateEndpointId;
         private String vmClusterType;
@@ -67,6 +73,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
+    	      this.memberAutonomousDetails = defaults.memberAutonomousDetails;
     	      this.memberDatabaseDetails = defaults.memberDatabaseDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.vmClusterType = defaults.vmClusterType;
@@ -88,6 +95,17 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             }
             this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder memberAutonomousDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails) {
+            if (memberAutonomousDetails == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail", "memberAutonomousDetails");
+            }
+            this.memberAutonomousDetails = memberAutonomousDetails;
+            return this;
+        }
+        public Builder memberAutonomousDetails(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberAutonomousDetail... memberAutonomousDetails) {
+            return memberAutonomousDetails(List.of(memberAutonomousDetails));
         }
         @CustomType.Setter
         public Builder memberDatabaseDetails(List<GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails) {
@@ -128,6 +146,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail();
             _resultValue.compartmentId = compartmentId;
             _resultValue.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            _resultValue.memberAutonomousDetails = memberAutonomousDetails;
             _resultValue.memberDatabaseDetails = memberDatabaseDetails;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.vmClusterType = vmClusterType;

@@ -19,13 +19,14 @@ import * as utilities from "../utilities";
  *
  * const testExadataInsight = new oci.opsi.ExadataInsight("test_exadata_insight", {
  *     compartmentId: compartmentId,
- *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
- *     enterpriseManagerEntityIdentifier: exadataInsightEnterpriseManagerEntityIdentifier,
- *     enterpriseManagerIdentifier: exadataInsightEnterpriseManagerIdentifier,
  *     entitySource: exadataInsightEntitySource,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
+ *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
+ *     enterpriseManagerEntityIdentifier: exadataInsightEnterpriseManagerEntityIdentifier,
+ *     enterpriseManagerIdentifier: exadataInsightEnterpriseManagerIdentifier,
+ *     exadataInfraId: testExadataInfra.id,
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
@@ -33,11 +34,49 @@ import * as utilities from "../utilities";
  *     memberVmClusterDetails: [{
  *         compartmentId: compartmentId,
  *         dbmPrivateEndpointId: testPrivateEndpoint.id,
+ *         memberAutonomousDetails: [{
+ *             compartmentId: compartmentId,
+ *             connectionCredentialDetails: {
+ *                 credentialType: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsCredentialType,
+ *                 credentialSourceName: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsCredentialSourceName,
+ *                 namedCredentialId: testNamedCredential.id,
+ *                 passwordSecretId: testSecret.id,
+ *                 role: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsRole,
+ *                 userName: testUser.name,
+ *                 walletSecretId: testSecret.id,
+ *             },
+ *             connectionDetails: {
+ *                 hostName: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsHostName,
+ *                 port: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort,
+ *                 protocol: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsProtocol,
+ *                 serviceName: testService.name,
+ *             },
+ *             credentialDetails: {
+ *                 credentialType: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsCredentialType,
+ *                 credentialSourceName: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsCredentialSourceName,
+ *                 namedCredentialId: testNamedCredential.id,
+ *                 passwordSecretId: testSecret.id,
+ *                 role: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsRole,
+ *                 userName: testUser.name,
+ *                 walletSecretId: testSecret.id,
+ *             },
+ *             databaseId: testDatabase.id,
+ *             databaseResourceType: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDatabaseResourceType,
+ *             definedTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDefinedTags,
+ *             deploymentType: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDeploymentType,
+ *             entitySource: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsEntitySource,
+ *             freeformTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsFreeformTags,
+ *             isAdvancedFeaturesEnabled: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled,
+ *             managementAgentId: testManagementAgent.id,
+ *             opsiPrivateEndpointId: testPrivateEndpoint.id,
+ *             systemTags: exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsSystemTags,
+ *         }],
  *         memberDatabaseDetails: [{
  *             compartmentId: compartmentId,
  *             connectionCredentialDetails: {
  *                 credentialType: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType,
  *                 credentialSourceName: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName,
+ *                 namedCredentialId: testNamedCredential.id,
  *                 passwordSecretId: testSecret.id,
  *                 role: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole,
  *                 userName: testUser.name,
@@ -56,6 +95,7 @@ import * as utilities from "../utilities";
  *             credentialDetails: {
  *                 credentialType: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialType,
  *                 credentialSourceName: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialSourceName,
+ *                 namedCredentialId: testNamedCredential.id,
  *                 passwordSecretId: testSecret.id,
  *                 role: exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsRole,
  *                 userName: testUser.name,

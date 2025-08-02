@@ -110,6 +110,139 @@ func (o ModelComponentModelArrayOutput) Index(i pulumi.IntInput) ModelComponentM
 	}).(ModelComponentModelOutput)
 }
 
+type ModelLock struct {
+	// (Updatable) The compartment identifier.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the model was created, as an RFC3339 datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// ModelLockInput is an input type that accepts ModelLockArgs and ModelLockOutput values.
+// You can construct a concrete instance of `ModelLockInput` via:
+//
+//	ModelLockArgs{...}
+type ModelLockInput interface {
+	pulumi.Input
+
+	ToModelLockOutput() ModelLockOutput
+	ToModelLockOutputWithContext(context.Context) ModelLockOutput
+}
+
+type ModelLockArgs struct {
+	// (Updatable) The compartment identifier.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the model was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ModelLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelLock)(nil)).Elem()
+}
+
+func (i ModelLockArgs) ToModelLockOutput() ModelLockOutput {
+	return i.ToModelLockOutputWithContext(context.Background())
+}
+
+func (i ModelLockArgs) ToModelLockOutputWithContext(ctx context.Context) ModelLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelLockOutput)
+}
+
+// ModelLockArrayInput is an input type that accepts ModelLockArray and ModelLockArrayOutput values.
+// You can construct a concrete instance of `ModelLockArrayInput` via:
+//
+//	ModelLockArray{ ModelLockArgs{...} }
+type ModelLockArrayInput interface {
+	pulumi.Input
+
+	ToModelLockArrayOutput() ModelLockArrayOutput
+	ToModelLockArrayOutputWithContext(context.Context) ModelLockArrayOutput
+}
+
+type ModelLockArray []ModelLockInput
+
+func (ModelLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelLock)(nil)).Elem()
+}
+
+func (i ModelLockArray) ToModelLockArrayOutput() ModelLockArrayOutput {
+	return i.ToModelLockArrayOutputWithContext(context.Background())
+}
+
+func (i ModelLockArray) ToModelLockArrayOutputWithContext(ctx context.Context) ModelLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelLockArrayOutput)
+}
+
+type ModelLockOutput struct{ *pulumi.OutputState }
+
+func (ModelLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelLock)(nil)).Elem()
+}
+
+func (o ModelLockOutput) ToModelLockOutput() ModelLockOutput {
+	return o
+}
+
+func (o ModelLockOutput) ToModelLockOutputWithContext(ctx context.Context) ModelLockOutput {
+	return o
+}
+
+// (Updatable) The compartment identifier.
+func (o ModelLockOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelLock) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o ModelLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o ModelLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the model was created, as an RFC3339 datetime string.
+func (o ModelLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o ModelLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ModelLockArrayOutput struct{ *pulumi.OutputState }
+
+func (ModelLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ModelLock)(nil)).Elem()
+}
+
+func (o ModelLockArrayOutput) ToModelLockArrayOutput() ModelLockArrayOutput {
+	return o
+}
+
+func (o ModelLockArrayOutput) ToModelLockArrayOutputWithContext(ctx context.Context) ModelLockArrayOutput {
+	return o
+}
+
+func (o ModelLockArrayOutput) Index(i pulumi.IntInput) ModelLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ModelLock {
+		return vs[0].([]ModelLock)[vs[1].(int)]
+	}).(ModelLockOutput)
+}
+
 type ModelMetric struct {
 	// Summary of count of samples used during model training.
 	DatasetSummaries []ModelMetricDatasetSummary `pulumi:"datasetSummaries"`
@@ -858,6 +991,190 @@ func (o ModelMetricOverallMetricsReportConfidenceEntryArrayOutput) Index(i pulum
 	}).(ModelMetricOverallMetricsReportConfidenceEntryOutput)
 }
 
+type ModelModelSubType struct {
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubType string `pulumi:"modelSubType"`
+	// Sub type model based on the model type. The allowed values are:
+	// * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+	// * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+	ModelType string `pulumi:"modelType"`
+}
+
+// ModelModelSubTypeInput is an input type that accepts ModelModelSubTypeArgs and ModelModelSubTypeOutput values.
+// You can construct a concrete instance of `ModelModelSubTypeInput` via:
+//
+//	ModelModelSubTypeArgs{...}
+type ModelModelSubTypeInput interface {
+	pulumi.Input
+
+	ToModelModelSubTypeOutput() ModelModelSubTypeOutput
+	ToModelModelSubTypeOutputWithContext(context.Context) ModelModelSubTypeOutput
+}
+
+type ModelModelSubTypeArgs struct {
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubType pulumi.StringInput `pulumi:"modelSubType"`
+	// Sub type model based on the model type. The allowed values are:
+	// * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+	// * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+}
+
+func (ModelModelSubTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelModelSubType)(nil)).Elem()
+}
+
+func (i ModelModelSubTypeArgs) ToModelModelSubTypeOutput() ModelModelSubTypeOutput {
+	return i.ToModelModelSubTypeOutputWithContext(context.Background())
+}
+
+func (i ModelModelSubTypeArgs) ToModelModelSubTypeOutputWithContext(ctx context.Context) ModelModelSubTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelModelSubTypeOutput)
+}
+
+func (i ModelModelSubTypeArgs) ToModelModelSubTypePtrOutput() ModelModelSubTypePtrOutput {
+	return i.ToModelModelSubTypePtrOutputWithContext(context.Background())
+}
+
+func (i ModelModelSubTypeArgs) ToModelModelSubTypePtrOutputWithContext(ctx context.Context) ModelModelSubTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelModelSubTypeOutput).ToModelModelSubTypePtrOutputWithContext(ctx)
+}
+
+// ModelModelSubTypePtrInput is an input type that accepts ModelModelSubTypeArgs, ModelModelSubTypePtr and ModelModelSubTypePtrOutput values.
+// You can construct a concrete instance of `ModelModelSubTypePtrInput` via:
+//
+//	        ModelModelSubTypeArgs{...}
+//
+//	or:
+//
+//	        nil
+type ModelModelSubTypePtrInput interface {
+	pulumi.Input
+
+	ToModelModelSubTypePtrOutput() ModelModelSubTypePtrOutput
+	ToModelModelSubTypePtrOutputWithContext(context.Context) ModelModelSubTypePtrOutput
+}
+
+type modelModelSubTypePtrType ModelModelSubTypeArgs
+
+func ModelModelSubTypePtr(v *ModelModelSubTypeArgs) ModelModelSubTypePtrInput {
+	return (*modelModelSubTypePtrType)(v)
+}
+
+func (*modelModelSubTypePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelModelSubType)(nil)).Elem()
+}
+
+func (i *modelModelSubTypePtrType) ToModelModelSubTypePtrOutput() ModelModelSubTypePtrOutput {
+	return i.ToModelModelSubTypePtrOutputWithContext(context.Background())
+}
+
+func (i *modelModelSubTypePtrType) ToModelModelSubTypePtrOutputWithContext(ctx context.Context) ModelModelSubTypePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ModelModelSubTypePtrOutput)
+}
+
+type ModelModelSubTypeOutput struct{ *pulumi.OutputState }
+
+func (ModelModelSubTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ModelModelSubType)(nil)).Elem()
+}
+
+func (o ModelModelSubTypeOutput) ToModelModelSubTypeOutput() ModelModelSubTypeOutput {
+	return o
+}
+
+func (o ModelModelSubTypeOutput) ToModelModelSubTypeOutputWithContext(ctx context.Context) ModelModelSubTypeOutput {
+	return o
+}
+
+func (o ModelModelSubTypeOutput) ToModelModelSubTypePtrOutput() ModelModelSubTypePtrOutput {
+	return o.ToModelModelSubTypePtrOutputWithContext(context.Background())
+}
+
+func (o ModelModelSubTypeOutput) ToModelModelSubTypePtrOutputWithContext(ctx context.Context) ModelModelSubTypePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ModelModelSubType) *ModelModelSubType {
+		return &v
+	}).(ModelModelSubTypePtrOutput)
+}
+
+// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+// * `RECEIPT`
+// * `INVOICE`
+// * `PASSPORT`
+// * `DRIVER_LICENSE`
+// * `HEALTH_INSURANCE_ID`
+func (o ModelModelSubTypeOutput) ModelSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelModelSubType) string { return v.ModelSubType }).(pulumi.StringOutput)
+}
+
+// Sub type model based on the model type. The allowed values are:
+// * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+// * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+func (o ModelModelSubTypeOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v ModelModelSubType) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+type ModelModelSubTypePtrOutput struct{ *pulumi.OutputState }
+
+func (ModelModelSubTypePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ModelModelSubType)(nil)).Elem()
+}
+
+func (o ModelModelSubTypePtrOutput) ToModelModelSubTypePtrOutput() ModelModelSubTypePtrOutput {
+	return o
+}
+
+func (o ModelModelSubTypePtrOutput) ToModelModelSubTypePtrOutputWithContext(ctx context.Context) ModelModelSubTypePtrOutput {
+	return o
+}
+
+func (o ModelModelSubTypePtrOutput) Elem() ModelModelSubTypeOutput {
+	return o.ApplyT(func(v *ModelModelSubType) ModelModelSubType {
+		if v != nil {
+			return *v
+		}
+		var ret ModelModelSubType
+		return ret
+	}).(ModelModelSubTypeOutput)
+}
+
+// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+// * `RECEIPT`
+// * `INVOICE`
+// * `PASSPORT`
+// * `DRIVER_LICENSE`
+// * `HEALTH_INSURANCE_ID`
+func (o ModelModelSubTypePtrOutput) ModelSubType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelModelSubType) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ModelSubType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Sub type model based on the model type. The allowed values are:
+// * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+// * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+func (o ModelModelSubTypePtrOutput) ModelType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelModelSubType) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ModelType
+	}).(pulumi.StringPtrOutput)
+}
+
 type ModelTestingDataset struct {
 	// The name of the Object Storage bucket that contains the input data file.
 	Bucket *string `pulumi:"bucket"`
@@ -1514,6 +1831,8 @@ type ProcessorJobInputLocation struct {
 	Data *string `pulumi:"data"`
 	// The list of ObjectLocations.
 	ObjectLocations []ProcessorJobInputLocationObjectLocation `pulumi:"objectLocations"`
+	// The page ranges to be analysed.
+	PageRanges []string `pulumi:"pageRanges"`
 	// The type of input location. The allowed values are:
 	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -1536,6 +1855,8 @@ type ProcessorJobInputLocationArgs struct {
 	Data pulumi.StringPtrInput `pulumi:"data"`
 	// The list of ObjectLocations.
 	ObjectLocations ProcessorJobInputLocationObjectLocationArrayInput `pulumi:"objectLocations"`
+	// The page ranges to be analysed.
+	PageRanges pulumi.StringArrayInput `pulumi:"pageRanges"`
 	// The type of input location. The allowed values are:
 	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -1629,6 +1950,11 @@ func (o ProcessorJobInputLocationOutput) ObjectLocations() ProcessorJobInputLoca
 	return o.ApplyT(func(v ProcessorJobInputLocation) []ProcessorJobInputLocationObjectLocation { return v.ObjectLocations }).(ProcessorJobInputLocationObjectLocationArrayOutput)
 }
 
+// The page ranges to be analysed.
+func (o ProcessorJobInputLocationOutput) PageRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ProcessorJobInputLocation) []string { return v.PageRanges }).(pulumi.StringArrayOutput)
+}
+
 // The type of input location. The allowed values are:
 // * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 // * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -1680,6 +2006,16 @@ func (o ProcessorJobInputLocationPtrOutput) ObjectLocations() ProcessorJobInputL
 	}).(ProcessorJobInputLocationObjectLocationArrayOutput)
 }
 
+// The page ranges to be analysed.
+func (o ProcessorJobInputLocationPtrOutput) PageRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ProcessorJobInputLocation) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PageRanges
+	}).(pulumi.StringArrayOutput)
+}
+
 // The type of input location. The allowed values are:
 // * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 // * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -1699,6 +2035,8 @@ type ProcessorJobInputLocationObjectLocation struct {
 	Namespace *string `pulumi:"namespace"`
 	// The Object Storage object name.
 	Object *string `pulumi:"object"`
+	// The page ranges to be analysed.
+	PageRanges []string `pulumi:"pageRanges"`
 }
 
 // ProcessorJobInputLocationObjectLocationInput is an input type that accepts ProcessorJobInputLocationObjectLocationArgs and ProcessorJobInputLocationObjectLocationOutput values.
@@ -1719,6 +2057,8 @@ type ProcessorJobInputLocationObjectLocationArgs struct {
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The Object Storage object name.
 	Object pulumi.StringPtrInput `pulumi:"object"`
+	// The page ranges to be analysed.
+	PageRanges pulumi.StringArrayInput `pulumi:"pageRanges"`
 }
 
 func (ProcessorJobInputLocationObjectLocationArgs) ElementType() reflect.Type {
@@ -1785,6 +2125,11 @@ func (o ProcessorJobInputLocationObjectLocationOutput) Namespace() pulumi.String
 // The Object Storage object name.
 func (o ProcessorJobInputLocationObjectLocationOutput) Object() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProcessorJobInputLocationObjectLocation) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+// The page ranges to be analysed.
+func (o ProcessorJobInputLocationObjectLocationOutput) PageRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ProcessorJobInputLocationObjectLocation) []string { return v.PageRanges }).(pulumi.StringArrayOutput)
 }
 
 type ProcessorJobInputLocationObjectLocationArrayOutput struct{ *pulumi.OutputState }
@@ -1991,6 +2336,10 @@ type ProcessorJobProcessorConfig struct {
 	IsZipOutputEnabled *bool `pulumi:"isZipOutputEnabled"`
 	// The document language, abbreviated according to the BCP 47 Language-Tag syntax.
 	Language *string `pulumi:"language"`
+	// Unique identifier custom model OCID that should be used for inference.
+	ModelId *string `pulumi:"modelId"`
+	// A string-to-object map where the key is the normalization field and the object contains information about the field.
+	NormalizationFields []ProcessorJobProcessorConfigNormalizationField `pulumi:"normalizationFields"`
 	// The type of the processor.
 	//
 	// ** IMPORTANT **
@@ -2018,6 +2367,10 @@ type ProcessorJobProcessorConfigArgs struct {
 	IsZipOutputEnabled pulumi.BoolPtrInput `pulumi:"isZipOutputEnabled"`
 	// The document language, abbreviated according to the BCP 47 Language-Tag syntax.
 	Language pulumi.StringPtrInput `pulumi:"language"`
+	// Unique identifier custom model OCID that should be used for inference.
+	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+	// A string-to-object map where the key is the normalization field and the object contains information about the field.
+	NormalizationFields ProcessorJobProcessorConfigNormalizationFieldArrayInput `pulumi:"normalizationFields"`
 	// The type of the processor.
 	//
 	// ** IMPORTANT **
@@ -2122,6 +2475,18 @@ func (o ProcessorJobProcessorConfigOutput) Language() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProcessorJobProcessorConfig) *string { return v.Language }).(pulumi.StringPtrOutput)
 }
 
+// Unique identifier custom model OCID that should be used for inference.
+func (o ProcessorJobProcessorConfigOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessorJobProcessorConfig) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+// A string-to-object map where the key is the normalization field and the object contains information about the field.
+func (o ProcessorJobProcessorConfigOutput) NormalizationFields() ProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o.ApplyT(func(v ProcessorJobProcessorConfig) []ProcessorJobProcessorConfigNormalizationField {
+		return v.NormalizationFields
+	}).(ProcessorJobProcessorConfigNormalizationFieldArrayOutput)
+}
+
 // The type of the processor.
 //
 // ** IMPORTANT **
@@ -2194,6 +2559,26 @@ func (o ProcessorJobProcessorConfigPtrOutput) Language() pulumi.StringPtrOutput 
 	}).(pulumi.StringPtrOutput)
 }
 
+// Unique identifier custom model OCID that should be used for inference.
+func (o ProcessorJobProcessorConfigPtrOutput) ModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ProcessorJobProcessorConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModelId
+	}).(pulumi.StringPtrOutput)
+}
+
+// A string-to-object map where the key is the normalization field and the object contains information about the field.
+func (o ProcessorJobProcessorConfigPtrOutput) NormalizationFields() ProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o.ApplyT(func(v *ProcessorJobProcessorConfig) []ProcessorJobProcessorConfigNormalizationField {
+		if v == nil {
+			return nil
+		}
+		return v.NormalizationFields
+	}).(ProcessorJobProcessorConfigNormalizationFieldArrayOutput)
+}
+
 // The type of the processor.
 //
 // ** IMPORTANT **
@@ -2214,13 +2599,16 @@ type ProcessorJobProcessorConfigFeature struct {
 	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
 	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
 	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+	// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 	FeatureType string `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf *bool `pulumi:"generateSearchablePdf"`
 	// The maximum number of results to return.
 	MaxResults *int `pulumi:"maxResults"`
-	// The custom model ID.
+	// Unique identifier custom model OCID that should be used for inference.
 	ModelId *string `pulumi:"modelId"`
+	// Whether checkbox detection feature is enabled or disabled.
+	SelectionMarkDetection *bool `pulumi:"selectionMarkDetection"`
 	// The custom model tenancy ID when modelId represents aliasName.
 	TenancyId *string `pulumi:"tenancyId"`
 }
@@ -2243,13 +2631,16 @@ type ProcessorJobProcessorConfigFeatureArgs struct {
 	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
 	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
 	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+	// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 	FeatureType pulumi.StringInput `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf pulumi.BoolPtrInput `pulumi:"generateSearchablePdf"`
 	// The maximum number of results to return.
 	MaxResults pulumi.IntPtrInput `pulumi:"maxResults"`
-	// The custom model ID.
+	// Unique identifier custom model OCID that should be used for inference.
 	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
+	// Whether checkbox detection feature is enabled or disabled.
+	SelectionMarkDetection pulumi.BoolPtrInput `pulumi:"selectionMarkDetection"`
 	// The custom model tenancy ID when modelId represents aliasName.
 	TenancyId pulumi.StringPtrInput `pulumi:"tenancyId"`
 }
@@ -2311,6 +2702,7 @@ func (o ProcessorJobProcessorConfigFeatureOutput) ToProcessorJobProcessorConfigF
 // * `TABLE_EXTRACTION`: Detect and extract data in tables.
 // * `KEY_VALUE_EXTRACTION`: Extract form fields.
 // * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 func (o ProcessorJobProcessorConfigFeatureOutput) FeatureType() pulumi.StringOutput {
 	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) string { return v.FeatureType }).(pulumi.StringOutput)
 }
@@ -2325,9 +2717,14 @@ func (o ProcessorJobProcessorConfigFeatureOutput) MaxResults() pulumi.IntPtrOutp
 	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) *int { return v.MaxResults }).(pulumi.IntPtrOutput)
 }
 
-// The custom model ID.
+// Unique identifier custom model OCID that should be used for inference.
 func (o ProcessorJobProcessorConfigFeatureOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) *string { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+// Whether checkbox detection feature is enabled or disabled.
+func (o ProcessorJobProcessorConfigFeatureOutput) SelectionMarkDetection() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ProcessorJobProcessorConfigFeature) *bool { return v.SelectionMarkDetection }).(pulumi.BoolPtrOutput)
 }
 
 // The custom model tenancy ID when modelId represents aliasName.
@@ -2353,6 +2750,335 @@ func (o ProcessorJobProcessorConfigFeatureArrayOutput) Index(i pulumi.IntInput) 
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProcessorJobProcessorConfigFeature {
 		return vs[0].([]ProcessorJobProcessorConfigFeature)[vs[1].(int)]
 	}).(ProcessorJobProcessorConfigFeatureOutput)
+}
+
+type ProcessorJobProcessorConfigNormalizationField struct {
+	// A wrapped map.
+	Maps []ProcessorJobProcessorConfigNormalizationFieldMap `pulumi:"maps"`
+}
+
+// ProcessorJobProcessorConfigNormalizationFieldInput is an input type that accepts ProcessorJobProcessorConfigNormalizationFieldArgs and ProcessorJobProcessorConfigNormalizationFieldOutput values.
+// You can construct a concrete instance of `ProcessorJobProcessorConfigNormalizationFieldInput` via:
+//
+//	ProcessorJobProcessorConfigNormalizationFieldArgs{...}
+type ProcessorJobProcessorConfigNormalizationFieldInput interface {
+	pulumi.Input
+
+	ToProcessorJobProcessorConfigNormalizationFieldOutput() ProcessorJobProcessorConfigNormalizationFieldOutput
+	ToProcessorJobProcessorConfigNormalizationFieldOutputWithContext(context.Context) ProcessorJobProcessorConfigNormalizationFieldOutput
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldArgs struct {
+	// A wrapped map.
+	Maps ProcessorJobProcessorConfigNormalizationFieldMapArrayInput `pulumi:"maps"`
+}
+
+func (ProcessorJobProcessorConfigNormalizationFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldArgs) ToProcessorJobProcessorConfigNormalizationFieldOutput() ProcessorJobProcessorConfigNormalizationFieldOutput {
+	return i.ToProcessorJobProcessorConfigNormalizationFieldOutputWithContext(context.Background())
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldArgs) ToProcessorJobProcessorConfigNormalizationFieldOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigNormalizationFieldOutput)
+}
+
+// ProcessorJobProcessorConfigNormalizationFieldArrayInput is an input type that accepts ProcessorJobProcessorConfigNormalizationFieldArray and ProcessorJobProcessorConfigNormalizationFieldArrayOutput values.
+// You can construct a concrete instance of `ProcessorJobProcessorConfigNormalizationFieldArrayInput` via:
+//
+//	ProcessorJobProcessorConfigNormalizationFieldArray{ ProcessorJobProcessorConfigNormalizationFieldArgs{...} }
+type ProcessorJobProcessorConfigNormalizationFieldArrayInput interface {
+	pulumi.Input
+
+	ToProcessorJobProcessorConfigNormalizationFieldArrayOutput() ProcessorJobProcessorConfigNormalizationFieldArrayOutput
+	ToProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(context.Context) ProcessorJobProcessorConfigNormalizationFieldArrayOutput
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldArray []ProcessorJobProcessorConfigNormalizationFieldInput
+
+func (ProcessorJobProcessorConfigNormalizationFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldArray) ToProcessorJobProcessorConfigNormalizationFieldArrayOutput() ProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return i.ToProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(context.Background())
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldArray) ToProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigNormalizationFieldArrayOutput)
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldOutput struct{ *pulumi.OutputState }
+
+func (ProcessorJobProcessorConfigNormalizationFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldOutput) ToProcessorJobProcessorConfigNormalizationFieldOutput() ProcessorJobProcessorConfigNormalizationFieldOutput {
+	return o
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldOutput) ToProcessorJobProcessorConfigNormalizationFieldOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldOutput {
+	return o
+}
+
+// A wrapped map.
+func (o ProcessorJobProcessorConfigNormalizationFieldOutput) Maps() ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return o.ApplyT(func(v ProcessorJobProcessorConfigNormalizationField) []ProcessorJobProcessorConfigNormalizationFieldMap {
+		return v.Maps
+	}).(ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput)
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (ProcessorJobProcessorConfigNormalizationFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldArrayOutput) ToProcessorJobProcessorConfigNormalizationFieldArrayOutput() ProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldArrayOutput) ToProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldArrayOutput) Index(i pulumi.IntInput) ProcessorJobProcessorConfigNormalizationFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProcessorJobProcessorConfigNormalizationField {
+		return vs[0].([]ProcessorJobProcessorConfigNormalizationField)[vs[1].(int)]
+	}).(ProcessorJobProcessorConfigNormalizationFieldOutput)
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldMap struct {
+	// A string mapping to the normalization type.
+	NormalizationType *string `pulumi:"normalizationType"`
+}
+
+// ProcessorJobProcessorConfigNormalizationFieldMapInput is an input type that accepts ProcessorJobProcessorConfigNormalizationFieldMap and ProcessorJobProcessorConfigNormalizationFieldMapOutput values.
+// You can construct a concrete instance of `ProcessorJobProcessorConfigNormalizationFieldMapInput` via:
+//
+//	ProcessorJobProcessorConfigNormalizationFieldMap{ "key": ProcessorJobProcessorConfigNormalizationFieldArgs{...} }
+type ProcessorJobProcessorConfigNormalizationFieldMapInput interface {
+	pulumi.Input
+
+	ToProcessorJobProcessorConfigNormalizationFieldMapOutput() ProcessorJobProcessorConfigNormalizationFieldMapOutput
+	ToProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(context.Context) ProcessorJobProcessorConfigNormalizationFieldMapOutput
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldMapArgs struct {
+	// A string mapping to the normalization type.
+	NormalizationType pulumi.StringPtrInput `pulumi:"normalizationType"`
+}
+
+func (ProcessorJobProcessorConfigNormalizationFieldMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldMapArgs) ToProcessorJobProcessorConfigNormalizationFieldMapOutput() ProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return i.ToProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(context.Background())
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldMapArgs) ToProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigNormalizationFieldMapOutput)
+}
+
+// ProcessorJobProcessorConfigNormalizationFieldMapArrayInput is an input type that accepts ProcessorJobProcessorConfigNormalizationFieldMapArray and ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput values.
+// You can construct a concrete instance of `ProcessorJobProcessorConfigNormalizationFieldMapArrayInput` via:
+//
+//	ProcessorJobProcessorConfigNormalizationFieldMapArray{ ProcessorJobProcessorConfigNormalizationFieldMapArgs{...} }
+type ProcessorJobProcessorConfigNormalizationFieldMapArrayInput interface {
+	pulumi.Input
+
+	ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutput() ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput
+	ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(context.Context) ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldMapArray []ProcessorJobProcessorConfigNormalizationFieldMapInput
+
+func (ProcessorJobProcessorConfigNormalizationFieldMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldMapArray) ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutput() ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return i.ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(context.Background())
+}
+
+func (i ProcessorJobProcessorConfigNormalizationFieldMapArray) ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput)
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldMapOutput struct{ *pulumi.OutputState }
+
+func (ProcessorJobProcessorConfigNormalizationFieldMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldMapOutput) ToProcessorJobProcessorConfigNormalizationFieldMapOutput() ProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return o
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldMapOutput) ToProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return o
+}
+
+// A string mapping to the normalization type.
+func (o ProcessorJobProcessorConfigNormalizationFieldMapOutput) NormalizationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProcessorJobProcessorConfigNormalizationFieldMap) *string { return v.NormalizationType }).(pulumi.StringPtrOutput)
+}
+
+type ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput struct{ *pulumi.OutputState }
+
+func (ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutput() ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return o
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) ToProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(ctx context.Context) ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return o
+}
+
+func (o ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) Index(i pulumi.IntInput) ProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProcessorJobProcessorConfigNormalizationFieldMap {
+		return vs[0].([]ProcessorJobProcessorConfigNormalizationFieldMap)[vs[1].(int)]
+	}).(ProcessorJobProcessorConfigNormalizationFieldMapOutput)
+}
+
+type ProjectLock struct {
+	// (Updatable) The compartment identifier.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// When the project was created, as an RFC3339 datetime string.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// ProjectLockInput is an input type that accepts ProjectLockArgs and ProjectLockOutput values.
+// You can construct a concrete instance of `ProjectLockInput` via:
+//
+//	ProjectLockArgs{...}
+type ProjectLockInput interface {
+	pulumi.Input
+
+	ToProjectLockOutput() ProjectLockOutput
+	ToProjectLockOutputWithContext(context.Context) ProjectLockOutput
+}
+
+type ProjectLockArgs struct {
+	// (Updatable) The compartment identifier.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// When the project was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ProjectLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLock)(nil)).Elem()
+}
+
+func (i ProjectLockArgs) ToProjectLockOutput() ProjectLockOutput {
+	return i.ToProjectLockOutputWithContext(context.Background())
+}
+
+func (i ProjectLockArgs) ToProjectLockOutputWithContext(ctx context.Context) ProjectLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLockOutput)
+}
+
+// ProjectLockArrayInput is an input type that accepts ProjectLockArray and ProjectLockArrayOutput values.
+// You can construct a concrete instance of `ProjectLockArrayInput` via:
+//
+//	ProjectLockArray{ ProjectLockArgs{...} }
+type ProjectLockArrayInput interface {
+	pulumi.Input
+
+	ToProjectLockArrayOutput() ProjectLockArrayOutput
+	ToProjectLockArrayOutputWithContext(context.Context) ProjectLockArrayOutput
+}
+
+type ProjectLockArray []ProjectLockInput
+
+func (ProjectLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectLock)(nil)).Elem()
+}
+
+func (i ProjectLockArray) ToProjectLockArrayOutput() ProjectLockArrayOutput {
+	return i.ToProjectLockArrayOutputWithContext(context.Background())
+}
+
+func (i ProjectLockArray) ToProjectLockArrayOutputWithContext(ctx context.Context) ProjectLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ProjectLockArrayOutput)
+}
+
+type ProjectLockOutput struct{ *pulumi.OutputState }
+
+func (ProjectLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ProjectLock)(nil)).Elem()
+}
+
+func (o ProjectLockOutput) ToProjectLockOutput() ProjectLockOutput {
+	return o
+}
+
+func (o ProjectLockOutput) ToProjectLockOutputWithContext(ctx context.Context) ProjectLockOutput {
+	return o
+}
+
+// (Updatable) The compartment identifier.
+func (o ProjectLockOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectLock) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o ProjectLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o ProjectLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// When the project was created, as an RFC3339 datetime string.
+func (o ProjectLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ProjectLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o ProjectLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ProjectLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ProjectLockArrayOutput struct{ *pulumi.OutputState }
+
+func (ProjectLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ProjectLock)(nil)).Elem()
+}
+
+func (o ProjectLockArrayOutput) ToProjectLockArrayOutput() ProjectLockArrayOutput {
+	return o
+}
+
+func (o ProjectLockArrayOutput) ToProjectLockArrayOutputWithContext(ctx context.Context) ProjectLockArrayOutput {
+	return o
+}
+
+func (o ProjectLockArrayOutput) Index(i pulumi.IntInput) ProjectLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ProjectLock {
+		return vs[0].([]ProjectLock)[vs[1].(int)]
+	}).(ProjectLockOutput)
 }
 
 type GetModelComponentModel struct {
@@ -2450,6 +3176,139 @@ func (o GetModelComponentModelArrayOutput) Index(i pulumi.IntInput) GetModelComp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelComponentModel {
 		return vs[0].([]GetModelComponentModel)[vs[1].(int)]
 	}).(GetModelComponentModelOutput)
+}
+
+type GetModelLock struct {
+	// The lock compartment ID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// When the model was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetModelLockInput is an input type that accepts GetModelLockArgs and GetModelLockOutput values.
+// You can construct a concrete instance of `GetModelLockInput` via:
+//
+//	GetModelLockArgs{...}
+type GetModelLockInput interface {
+	pulumi.Input
+
+	ToGetModelLockOutput() GetModelLockOutput
+	ToGetModelLockOutputWithContext(context.Context) GetModelLockOutput
+}
+
+type GetModelLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// When the model was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetModelLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelLock)(nil)).Elem()
+}
+
+func (i GetModelLockArgs) ToGetModelLockOutput() GetModelLockOutput {
+	return i.ToGetModelLockOutputWithContext(context.Background())
+}
+
+func (i GetModelLockArgs) ToGetModelLockOutputWithContext(ctx context.Context) GetModelLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelLockOutput)
+}
+
+// GetModelLockArrayInput is an input type that accepts GetModelLockArray and GetModelLockArrayOutput values.
+// You can construct a concrete instance of `GetModelLockArrayInput` via:
+//
+//	GetModelLockArray{ GetModelLockArgs{...} }
+type GetModelLockArrayInput interface {
+	pulumi.Input
+
+	ToGetModelLockArrayOutput() GetModelLockArrayOutput
+	ToGetModelLockArrayOutputWithContext(context.Context) GetModelLockArrayOutput
+}
+
+type GetModelLockArray []GetModelLockInput
+
+func (GetModelLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelLock)(nil)).Elem()
+}
+
+func (i GetModelLockArray) ToGetModelLockArrayOutput() GetModelLockArrayOutput {
+	return i.ToGetModelLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelLockArray) ToGetModelLockArrayOutputWithContext(ctx context.Context) GetModelLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelLockArrayOutput)
+}
+
+type GetModelLockOutput struct{ *pulumi.OutputState }
+
+func (GetModelLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelLock)(nil)).Elem()
+}
+
+func (o GetModelLockOutput) ToGetModelLockOutput() GetModelLockOutput {
+	return o
+}
+
+func (o GetModelLockOutput) ToGetModelLockOutputWithContext(ctx context.Context) GetModelLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o GetModelLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetModelLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetModelLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// When the model was created, as an RFC3339 datetime string.
+func (o GetModelLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetModelLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetModelLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelLock)(nil)).Elem()
+}
+
+func (o GetModelLockArrayOutput) ToGetModelLockArrayOutput() GetModelLockArrayOutput {
+	return o
+}
+
+func (o GetModelLockArrayOutput) ToGetModelLockArrayOutputWithContext(ctx context.Context) GetModelLockArrayOutput {
+	return o
+}
+
+func (o GetModelLockArrayOutput) Index(i pulumi.IntInput) GetModelLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelLock {
+		return vs[0].([]GetModelLock)[vs[1].(int)]
+	}).(GetModelLockOutput)
 }
 
 type GetModelMetric struct {
@@ -3200,6 +4059,127 @@ func (o GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput) Index(i pu
 	}).(GetModelMetricOverallMetricsReportConfidenceEntryOutput)
 }
 
+type GetModelModelSubType struct {
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubType string `pulumi:"modelSubType"`
+	// The type of the Document model.
+	ModelType string `pulumi:"modelType"`
+}
+
+// GetModelModelSubTypeInput is an input type that accepts GetModelModelSubTypeArgs and GetModelModelSubTypeOutput values.
+// You can construct a concrete instance of `GetModelModelSubTypeInput` via:
+//
+//	GetModelModelSubTypeArgs{...}
+type GetModelModelSubTypeInput interface {
+	pulumi.Input
+
+	ToGetModelModelSubTypeOutput() GetModelModelSubTypeOutput
+	ToGetModelModelSubTypeOutputWithContext(context.Context) GetModelModelSubTypeOutput
+}
+
+type GetModelModelSubTypeArgs struct {
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubType pulumi.StringInput `pulumi:"modelSubType"`
+	// The type of the Document model.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+}
+
+func (GetModelModelSubTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelModelSubType)(nil)).Elem()
+}
+
+func (i GetModelModelSubTypeArgs) ToGetModelModelSubTypeOutput() GetModelModelSubTypeOutput {
+	return i.ToGetModelModelSubTypeOutputWithContext(context.Background())
+}
+
+func (i GetModelModelSubTypeArgs) ToGetModelModelSubTypeOutputWithContext(ctx context.Context) GetModelModelSubTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelModelSubTypeOutput)
+}
+
+// GetModelModelSubTypeArrayInput is an input type that accepts GetModelModelSubTypeArray and GetModelModelSubTypeArrayOutput values.
+// You can construct a concrete instance of `GetModelModelSubTypeArrayInput` via:
+//
+//	GetModelModelSubTypeArray{ GetModelModelSubTypeArgs{...} }
+type GetModelModelSubTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetModelModelSubTypeArrayOutput() GetModelModelSubTypeArrayOutput
+	ToGetModelModelSubTypeArrayOutputWithContext(context.Context) GetModelModelSubTypeArrayOutput
+}
+
+type GetModelModelSubTypeArray []GetModelModelSubTypeInput
+
+func (GetModelModelSubTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelModelSubType)(nil)).Elem()
+}
+
+func (i GetModelModelSubTypeArray) ToGetModelModelSubTypeArrayOutput() GetModelModelSubTypeArrayOutput {
+	return i.ToGetModelModelSubTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelModelSubTypeArray) ToGetModelModelSubTypeArrayOutputWithContext(ctx context.Context) GetModelModelSubTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelModelSubTypeArrayOutput)
+}
+
+type GetModelModelSubTypeOutput struct{ *pulumi.OutputState }
+
+func (GetModelModelSubTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelModelSubType)(nil)).Elem()
+}
+
+func (o GetModelModelSubTypeOutput) ToGetModelModelSubTypeOutput() GetModelModelSubTypeOutput {
+	return o
+}
+
+func (o GetModelModelSubTypeOutput) ToGetModelModelSubTypeOutputWithContext(ctx context.Context) GetModelModelSubTypeOutput {
+	return o
+}
+
+// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+// * `RECEIPT`
+// * `INVOICE`
+// * `PASSPORT`
+// * `DRIVER_LICENSE`
+// * `HEALTH_INSURANCE_ID`
+func (o GetModelModelSubTypeOutput) ModelSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelModelSubType) string { return v.ModelSubType }).(pulumi.StringOutput)
+}
+
+// The type of the Document model.
+func (o GetModelModelSubTypeOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelModelSubType) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+type GetModelModelSubTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelModelSubTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelModelSubType)(nil)).Elem()
+}
+
+func (o GetModelModelSubTypeArrayOutput) ToGetModelModelSubTypeArrayOutput() GetModelModelSubTypeArrayOutput {
+	return o
+}
+
+func (o GetModelModelSubTypeArrayOutput) ToGetModelModelSubTypeArrayOutputWithContext(ctx context.Context) GetModelModelSubTypeArrayOutput {
+	return o
+}
+
+func (o GetModelModelSubTypeArrayOutput) Index(i pulumi.IntInput) GetModelModelSubTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelModelSubType {
+		return vs[0].([]GetModelModelSubType)[vs[1].(int)]
+	}).(GetModelModelSubTypeOutput)
+}
+
 type GetModelTestingDataset struct {
 	// The name of the Object Storage bucket that contains the input data file.
 	Bucket string `pulumi:"bucket"`
@@ -3814,20 +4794,33 @@ type GetModelsModelCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The filter to find the model with the given identifier.
 	Id string `pulumi:"id"`
+	// Number of replicas required for this model.
+	InferenceUnits int `pulumi:"inferenceUnits"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels []string `pulumi:"labels"`
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language string `pulumi:"language"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetModelsModelCollectionItemLock `pulumi:"locks"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []GetModelsModelCollectionItemMetric `pulumi:"metrics"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId string `pulumi:"modelId"`
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubTypes []GetModelsModelCollectionItemModelSubType `pulumi:"modelSubTypes"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The version of the model.
@@ -3880,20 +4873,33 @@ type GetModelsModelCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The filter to find the model with the given identifier.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Number of replicas required for this model.
+	InferenceUnits pulumi.IntInput `pulumi:"inferenceUnits"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel pulumi.BoolInput `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolInput `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language pulumi.StringInput `pulumi:"language"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetModelsModelCollectionItemLockArrayInput `pulumi:"locks"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours pulumi.Float64Input `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics GetModelsModelCollectionItemMetricArrayInput `pulumi:"metrics"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubTypes GetModelsModelCollectionItemModelSubTypeArrayInput `pulumi:"modelSubTypes"`
 	// The type of the Document model.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The version of the model.
@@ -4008,6 +5014,11 @@ func (o GetModelsModelCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Number of replicas required for this model.
+func (o GetModelsModelCollectionItemOutput) InferenceUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) int { return v.InferenceUnits }).(pulumi.IntOutput)
+}
+
 // Set to true when the model is created by using multiple key value extraction models.
 func (o GetModelsModelCollectionItemOutput) IsComposedModel() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) bool { return v.IsComposedModel }).(pulumi.BoolOutput)
@@ -4023,9 +5034,19 @@ func (o GetModelsModelCollectionItemOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
+// The document language for model training, abbreviated according to the BCP 47 syntax.
+func (o GetModelsModelCollectionItemOutput) Language() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Language }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail, that can provide actionable information if training failed.
 func (o GetModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetModelsModelCollectionItemOutput) Locks() GetModelsModelCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemLock { return v.Locks }).(GetModelsModelCollectionItemLockArrayOutput)
 }
 
 // The maximum model training time in hours, expressed as a decimal fraction.
@@ -4041,6 +5062,18 @@ func (o GetModelsModelCollectionItemOutput) Metrics() GetModelsModelCollectionIt
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 func (o GetModelsModelCollectionItemOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+// * `RECEIPT`
+// * `INVOICE`
+// * `PASSPORT`
+// * `DRIVER_LICENSE`
+// * `HEALTH_INSURANCE_ID`
+func (o GetModelsModelCollectionItemOutput) ModelSubTypes() GetModelsModelCollectionItemModelSubTypeArrayOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemModelSubType {
+		return v.ModelSubTypes
+	}).(GetModelsModelCollectionItemModelSubTypeArrayOutput)
 }
 
 // The type of the Document model.
@@ -4224,6 +5257,139 @@ func (o GetModelsModelCollectionItemComponentModelArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItemComponentModel {
 		return vs[0].([]GetModelsModelCollectionItemComponentModel)[vs[1].(int)]
 	}).(GetModelsModelCollectionItemComponentModelOutput)
+}
+
+type GetModelsModelCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// When the model was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetModelsModelCollectionItemLockInput is an input type that accepts GetModelsModelCollectionItemLockArgs and GetModelsModelCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetModelsModelCollectionItemLockInput` via:
+//
+//	GetModelsModelCollectionItemLockArgs{...}
+type GetModelsModelCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetModelsModelCollectionItemLockOutput() GetModelsModelCollectionItemLockOutput
+	ToGetModelsModelCollectionItemLockOutputWithContext(context.Context) GetModelsModelCollectionItemLockOutput
+}
+
+type GetModelsModelCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// When the model was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetModelsModelCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetModelsModelCollectionItemLockArgs) ToGetModelsModelCollectionItemLockOutput() GetModelsModelCollectionItemLockOutput {
+	return i.ToGetModelsModelCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelCollectionItemLockArgs) ToGetModelsModelCollectionItemLockOutputWithContext(ctx context.Context) GetModelsModelCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemLockOutput)
+}
+
+// GetModelsModelCollectionItemLockArrayInput is an input type that accepts GetModelsModelCollectionItemLockArray and GetModelsModelCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelCollectionItemLockArrayInput` via:
+//
+//	GetModelsModelCollectionItemLockArray{ GetModelsModelCollectionItemLockArgs{...} }
+type GetModelsModelCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelCollectionItemLockArrayOutput() GetModelsModelCollectionItemLockArrayOutput
+	ToGetModelsModelCollectionItemLockArrayOutputWithContext(context.Context) GetModelsModelCollectionItemLockArrayOutput
+}
+
+type GetModelsModelCollectionItemLockArray []GetModelsModelCollectionItemLockInput
+
+func (GetModelsModelCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetModelsModelCollectionItemLockArray) ToGetModelsModelCollectionItemLockArrayOutput() GetModelsModelCollectionItemLockArrayOutput {
+	return i.ToGetModelsModelCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelCollectionItemLockArray) ToGetModelsModelCollectionItemLockArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemLockArrayOutput)
+}
+
+type GetModelsModelCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetModelsModelCollectionItemLockOutput) ToGetModelsModelCollectionItemLockOutput() GetModelsModelCollectionItemLockOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemLockOutput) ToGetModelsModelCollectionItemLockOutputWithContext(ctx context.Context) GetModelsModelCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetModelsModelCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetModelsModelCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetModelsModelCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// When the model was created, as an RFC3339 datetime string.
+func (o GetModelsModelCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetModelsModelCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetModelsModelCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetModelsModelCollectionItemLockArrayOutput) ToGetModelsModelCollectionItemLockArrayOutput() GetModelsModelCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemLockArrayOutput) ToGetModelsModelCollectionItemLockArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItemLock {
+		return vs[0].([]GetModelsModelCollectionItemLock)[vs[1].(int)]
+	}).(GetModelsModelCollectionItemLockOutput)
 }
 
 type GetModelsModelCollectionItemMetric struct {
@@ -4992,6 +6158,127 @@ func (o GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArr
 	}).(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput)
 }
 
+type GetModelsModelCollectionItemModelSubType struct {
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubType string `pulumi:"modelSubType"`
+	// The type of the Document model.
+	ModelType string `pulumi:"modelType"`
+}
+
+// GetModelsModelCollectionItemModelSubTypeInput is an input type that accepts GetModelsModelCollectionItemModelSubTypeArgs and GetModelsModelCollectionItemModelSubTypeOutput values.
+// You can construct a concrete instance of `GetModelsModelCollectionItemModelSubTypeInput` via:
+//
+//	GetModelsModelCollectionItemModelSubTypeArgs{...}
+type GetModelsModelCollectionItemModelSubTypeInput interface {
+	pulumi.Input
+
+	ToGetModelsModelCollectionItemModelSubTypeOutput() GetModelsModelCollectionItemModelSubTypeOutput
+	ToGetModelsModelCollectionItemModelSubTypeOutputWithContext(context.Context) GetModelsModelCollectionItemModelSubTypeOutput
+}
+
+type GetModelsModelCollectionItemModelSubTypeArgs struct {
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubType pulumi.StringInput `pulumi:"modelSubType"`
+	// The type of the Document model.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+}
+
+func (GetModelsModelCollectionItemModelSubTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelCollectionItemModelSubType)(nil)).Elem()
+}
+
+func (i GetModelsModelCollectionItemModelSubTypeArgs) ToGetModelsModelCollectionItemModelSubTypeOutput() GetModelsModelCollectionItemModelSubTypeOutput {
+	return i.ToGetModelsModelCollectionItemModelSubTypeOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelCollectionItemModelSubTypeArgs) ToGetModelsModelCollectionItemModelSubTypeOutputWithContext(ctx context.Context) GetModelsModelCollectionItemModelSubTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemModelSubTypeOutput)
+}
+
+// GetModelsModelCollectionItemModelSubTypeArrayInput is an input type that accepts GetModelsModelCollectionItemModelSubTypeArray and GetModelsModelCollectionItemModelSubTypeArrayOutput values.
+// You can construct a concrete instance of `GetModelsModelCollectionItemModelSubTypeArrayInput` via:
+//
+//	GetModelsModelCollectionItemModelSubTypeArray{ GetModelsModelCollectionItemModelSubTypeArgs{...} }
+type GetModelsModelCollectionItemModelSubTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetModelsModelCollectionItemModelSubTypeArrayOutput() GetModelsModelCollectionItemModelSubTypeArrayOutput
+	ToGetModelsModelCollectionItemModelSubTypeArrayOutputWithContext(context.Context) GetModelsModelCollectionItemModelSubTypeArrayOutput
+}
+
+type GetModelsModelCollectionItemModelSubTypeArray []GetModelsModelCollectionItemModelSubTypeInput
+
+func (GetModelsModelCollectionItemModelSubTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelCollectionItemModelSubType)(nil)).Elem()
+}
+
+func (i GetModelsModelCollectionItemModelSubTypeArray) ToGetModelsModelCollectionItemModelSubTypeArrayOutput() GetModelsModelCollectionItemModelSubTypeArrayOutput {
+	return i.ToGetModelsModelCollectionItemModelSubTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelsModelCollectionItemModelSubTypeArray) ToGetModelsModelCollectionItemModelSubTypeArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemModelSubTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelsModelCollectionItemModelSubTypeArrayOutput)
+}
+
+type GetModelsModelCollectionItemModelSubTypeOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelCollectionItemModelSubTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelsModelCollectionItemModelSubType)(nil)).Elem()
+}
+
+func (o GetModelsModelCollectionItemModelSubTypeOutput) ToGetModelsModelCollectionItemModelSubTypeOutput() GetModelsModelCollectionItemModelSubTypeOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemModelSubTypeOutput) ToGetModelsModelCollectionItemModelSubTypeOutputWithContext(ctx context.Context) GetModelsModelCollectionItemModelSubTypeOutput {
+	return o
+}
+
+// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+// * `RECEIPT`
+// * `INVOICE`
+// * `PASSPORT`
+// * `DRIVER_LICENSE`
+// * `HEALTH_INSURANCE_ID`
+func (o GetModelsModelCollectionItemModelSubTypeOutput) ModelSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemModelSubType) string { return v.ModelSubType }).(pulumi.StringOutput)
+}
+
+// The type of the Document model.
+func (o GetModelsModelCollectionItemModelSubTypeOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItemModelSubType) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+type GetModelsModelCollectionItemModelSubTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelsModelCollectionItemModelSubTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelsModelCollectionItemModelSubType)(nil)).Elem()
+}
+
+func (o GetModelsModelCollectionItemModelSubTypeArrayOutput) ToGetModelsModelCollectionItemModelSubTypeArrayOutput() GetModelsModelCollectionItemModelSubTypeArrayOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemModelSubTypeArrayOutput) ToGetModelsModelCollectionItemModelSubTypeArrayOutputWithContext(ctx context.Context) GetModelsModelCollectionItemModelSubTypeArrayOutput {
+	return o
+}
+
+func (o GetModelsModelCollectionItemModelSubTypeArrayOutput) Index(i pulumi.IntInput) GetModelsModelCollectionItemModelSubTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelsModelCollectionItemModelSubType {
+		return vs[0].([]GetModelsModelCollectionItemModelSubType)[vs[1].(int)]
+	}).(GetModelsModelCollectionItemModelSubTypeOutput)
+}
+
 type GetModelsModelCollectionItemTestingDataset struct {
 	// The name of the Object Storage bucket that contains the input data file.
 	Bucket string `pulumi:"bucket"`
@@ -5396,6 +6683,8 @@ type GetProcessorJobInputLocation struct {
 	Data string `pulumi:"data"`
 	// The list of ObjectLocations.
 	ObjectLocations []GetProcessorJobInputLocationObjectLocation `pulumi:"objectLocations"`
+	// The page ranges to be analysed.
+	PageRanges []string `pulumi:"pageRanges"`
 	// The type of input location. The allowed values are:
 	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -5418,6 +6707,8 @@ type GetProcessorJobInputLocationArgs struct {
 	Data pulumi.StringInput `pulumi:"data"`
 	// The list of ObjectLocations.
 	ObjectLocations GetProcessorJobInputLocationObjectLocationArrayInput `pulumi:"objectLocations"`
+	// The page ranges to be analysed.
+	PageRanges pulumi.StringArrayInput `pulumi:"pageRanges"`
 	// The type of input location. The allowed values are:
 	// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 	// * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -5487,6 +6778,11 @@ func (o GetProcessorJobInputLocationOutput) ObjectLocations() GetProcessorJobInp
 	}).(GetProcessorJobInputLocationObjectLocationArrayOutput)
 }
 
+// The page ranges to be analysed.
+func (o GetProcessorJobInputLocationOutput) PageRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProcessorJobInputLocation) []string { return v.PageRanges }).(pulumi.StringArrayOutput)
+}
+
 // The type of input location. The allowed values are:
 // * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
 // * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -5521,6 +6817,8 @@ type GetProcessorJobInputLocationObjectLocation struct {
 	Namespace string `pulumi:"namespace"`
 	// The Object Storage object name.
 	Object string `pulumi:"object"`
+	// The page ranges to be analysed.
+	PageRanges []string `pulumi:"pageRanges"`
 }
 
 // GetProcessorJobInputLocationObjectLocationInput is an input type that accepts GetProcessorJobInputLocationObjectLocationArgs and GetProcessorJobInputLocationObjectLocationOutput values.
@@ -5541,6 +6839,8 @@ type GetProcessorJobInputLocationObjectLocationArgs struct {
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The Object Storage object name.
 	Object pulumi.StringInput `pulumi:"object"`
+	// The page ranges to be analysed.
+	PageRanges pulumi.StringArrayInput `pulumi:"pageRanges"`
 }
 
 func (GetProcessorJobInputLocationObjectLocationArgs) ElementType() reflect.Type {
@@ -5607,6 +6907,11 @@ func (o GetProcessorJobInputLocationObjectLocationOutput) Namespace() pulumi.Str
 // The Object Storage object name.
 func (o GetProcessorJobInputLocationObjectLocationOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobInputLocationObjectLocation) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The page ranges to be analysed.
+func (o GetProcessorJobInputLocationObjectLocationOutput) PageRanges() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetProcessorJobInputLocationObjectLocation) []string { return v.PageRanges }).(pulumi.StringArrayOutput)
 }
 
 type GetProcessorJobInputLocationObjectLocationArrayOutput struct{ *pulumi.OutputState }
@@ -5753,6 +7058,10 @@ type GetProcessorJobProcessorConfig struct {
 	IsZipOutputEnabled bool `pulumi:"isZipOutputEnabled"`
 	// The document language, abbreviated according to the BCP 47 Language-Tag syntax.
 	Language string `pulumi:"language"`
+	// Unique identifier custom model OCID that should be used for inference.
+	ModelId string `pulumi:"modelId"`
+	// A string-to-object map where the key is the normalization field and the object contains information about the field.
+	NormalizationFields []GetProcessorJobProcessorConfigNormalizationField `pulumi:"normalizationFields"`
 	// The type of the processor.
 	ProcessorType string `pulumi:"processorType"`
 }
@@ -5777,6 +7086,10 @@ type GetProcessorJobProcessorConfigArgs struct {
 	IsZipOutputEnabled pulumi.BoolInput `pulumi:"isZipOutputEnabled"`
 	// The document language, abbreviated according to the BCP 47 Language-Tag syntax.
 	Language pulumi.StringInput `pulumi:"language"`
+	// Unique identifier custom model OCID that should be used for inference.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// A string-to-object map where the key is the normalization field and the object contains information about the field.
+	NormalizationFields GetProcessorJobProcessorConfigNormalizationFieldArrayInput `pulumi:"normalizationFields"`
 	// The type of the processor.
 	ProcessorType pulumi.StringInput `pulumi:"processorType"`
 }
@@ -5852,6 +7165,18 @@ func (o GetProcessorJobProcessorConfigOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfig) string { return v.Language }).(pulumi.StringOutput)
 }
 
+// Unique identifier custom model OCID that should be used for inference.
+func (o GetProcessorJobProcessorConfigOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessorJobProcessorConfig) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// A string-to-object map where the key is the normalization field and the object contains information about the field.
+func (o GetProcessorJobProcessorConfigOutput) NormalizationFields() GetProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o.ApplyT(func(v GetProcessorJobProcessorConfig) []GetProcessorJobProcessorConfigNormalizationField {
+		return v.NormalizationFields
+	}).(GetProcessorJobProcessorConfigNormalizationFieldArrayOutput)
+}
+
 // The type of the processor.
 func (o GetProcessorJobProcessorConfigOutput) ProcessorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfig) string { return v.ProcessorType }).(pulumi.StringOutput)
@@ -5884,13 +7209,16 @@ type GetProcessorJobProcessorConfigFeature struct {
 	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
 	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
 	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+	// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 	FeatureType string `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf bool `pulumi:"generateSearchablePdf"`
 	// The maximum number of results to return.
 	MaxResults int `pulumi:"maxResults"`
-	// The custom model ID.
+	// Unique identifier custom model OCID that should be used for inference.
 	ModelId string `pulumi:"modelId"`
+	// Whether checkbox detection feature is enabled or disabled.
+	SelectionMarkDetection bool `pulumi:"selectionMarkDetection"`
 	// The custom model tenancy ID when modelId represents aliasName.
 	TenancyId string `pulumi:"tenancyId"`
 }
@@ -5913,13 +7241,16 @@ type GetProcessorJobProcessorConfigFeatureArgs struct {
 	// * `TABLE_EXTRACTION`: Detect and extract data in tables.
 	// * `KEY_VALUE_EXTRACTION`: Extract form fields.
 	// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+	// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 	FeatureType pulumi.StringInput `pulumi:"featureType"`
 	// Whether or not to generate a searchable PDF file.
 	GenerateSearchablePdf pulumi.BoolInput `pulumi:"generateSearchablePdf"`
 	// The maximum number of results to return.
 	MaxResults pulumi.IntInput `pulumi:"maxResults"`
-	// The custom model ID.
+	// Unique identifier custom model OCID that should be used for inference.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// Whether checkbox detection feature is enabled or disabled.
+	SelectionMarkDetection pulumi.BoolInput `pulumi:"selectionMarkDetection"`
 	// The custom model tenancy ID when modelId represents aliasName.
 	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 }
@@ -5981,6 +7312,7 @@ func (o GetProcessorJobProcessorConfigFeatureOutput) ToGetProcessorJobProcessorC
 // * `TABLE_EXTRACTION`: Detect and extract data in tables.
 // * `KEY_VALUE_EXTRACTION`: Extract form fields.
 // * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
 func (o GetProcessorJobProcessorConfigFeatureOutput) FeatureType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) string { return v.FeatureType }).(pulumi.StringOutput)
 }
@@ -5995,9 +7327,14 @@ func (o GetProcessorJobProcessorConfigFeatureOutput) MaxResults() pulumi.IntOutp
 	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) int { return v.MaxResults }).(pulumi.IntOutput)
 }
 
-// The custom model ID.
+// Unique identifier custom model OCID that should be used for inference.
 func (o GetProcessorJobProcessorConfigFeatureOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// Whether checkbox detection feature is enabled or disabled.
+func (o GetProcessorJobProcessorConfigFeatureOutput) SelectionMarkDetection() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetProcessorJobProcessorConfigFeature) bool { return v.SelectionMarkDetection }).(pulumi.BoolOutput)
 }
 
 // The custom model tenancy ID when modelId represents aliasName.
@@ -6023,6 +7360,335 @@ func (o GetProcessorJobProcessorConfigFeatureArrayOutput) Index(i pulumi.IntInpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessorJobProcessorConfigFeature {
 		return vs[0].([]GetProcessorJobProcessorConfigFeature)[vs[1].(int)]
 	}).(GetProcessorJobProcessorConfigFeatureOutput)
+}
+
+type GetProcessorJobProcessorConfigNormalizationField struct {
+	// A wrapped map.
+	Maps []GetProcessorJobProcessorConfigNormalizationFieldMap `pulumi:"maps"`
+}
+
+// GetProcessorJobProcessorConfigNormalizationFieldInput is an input type that accepts GetProcessorJobProcessorConfigNormalizationFieldArgs and GetProcessorJobProcessorConfigNormalizationFieldOutput values.
+// You can construct a concrete instance of `GetProcessorJobProcessorConfigNormalizationFieldInput` via:
+//
+//	GetProcessorJobProcessorConfigNormalizationFieldArgs{...}
+type GetProcessorJobProcessorConfigNormalizationFieldInput interface {
+	pulumi.Input
+
+	ToGetProcessorJobProcessorConfigNormalizationFieldOutput() GetProcessorJobProcessorConfigNormalizationFieldOutput
+	ToGetProcessorJobProcessorConfigNormalizationFieldOutputWithContext(context.Context) GetProcessorJobProcessorConfigNormalizationFieldOutput
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldArgs struct {
+	// A wrapped map.
+	Maps GetProcessorJobProcessorConfigNormalizationFieldMapArrayInput `pulumi:"maps"`
+}
+
+func (GetProcessorJobProcessorConfigNormalizationFieldArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldArgs) ToGetProcessorJobProcessorConfigNormalizationFieldOutput() GetProcessorJobProcessorConfigNormalizationFieldOutput {
+	return i.ToGetProcessorJobProcessorConfigNormalizationFieldOutputWithContext(context.Background())
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldArgs) ToGetProcessorJobProcessorConfigNormalizationFieldOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigNormalizationFieldOutput)
+}
+
+// GetProcessorJobProcessorConfigNormalizationFieldArrayInput is an input type that accepts GetProcessorJobProcessorConfigNormalizationFieldArray and GetProcessorJobProcessorConfigNormalizationFieldArrayOutput values.
+// You can construct a concrete instance of `GetProcessorJobProcessorConfigNormalizationFieldArrayInput` via:
+//
+//	GetProcessorJobProcessorConfigNormalizationFieldArray{ GetProcessorJobProcessorConfigNormalizationFieldArgs{...} }
+type GetProcessorJobProcessorConfigNormalizationFieldArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutput() GetProcessorJobProcessorConfigNormalizationFieldArrayOutput
+	ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(context.Context) GetProcessorJobProcessorConfigNormalizationFieldArrayOutput
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldArray []GetProcessorJobProcessorConfigNormalizationFieldInput
+
+func (GetProcessorJobProcessorConfigNormalizationFieldArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldArray) ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutput() GetProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return i.ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldArray) ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigNormalizationFieldArrayOutput)
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldOutput struct{ *pulumi.OutputState }
+
+func (GetProcessorJobProcessorConfigNormalizationFieldOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldOutput) ToGetProcessorJobProcessorConfigNormalizationFieldOutput() GetProcessorJobProcessorConfigNormalizationFieldOutput {
+	return o
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldOutput) ToGetProcessorJobProcessorConfigNormalizationFieldOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldOutput {
+	return o
+}
+
+// A wrapped map.
+func (o GetProcessorJobProcessorConfigNormalizationFieldOutput) Maps() GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return o.ApplyT(func(v GetProcessorJobProcessorConfigNormalizationField) []GetProcessorJobProcessorConfigNormalizationFieldMap {
+		return v.Maps
+	}).(GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput)
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessorJobProcessorConfigNormalizationFieldArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessorJobProcessorConfigNormalizationField)(nil)).Elem()
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldArrayOutput) ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutput() GetProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldArrayOutput) ToGetProcessorJobProcessorConfigNormalizationFieldArrayOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldArrayOutput {
+	return o
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldArrayOutput) Index(i pulumi.IntInput) GetProcessorJobProcessorConfigNormalizationFieldOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessorJobProcessorConfigNormalizationField {
+		return vs[0].([]GetProcessorJobProcessorConfigNormalizationField)[vs[1].(int)]
+	}).(GetProcessorJobProcessorConfigNormalizationFieldOutput)
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldMap struct {
+	// A string mapping to the normalization type.
+	NormalizationType string `pulumi:"normalizationType"`
+}
+
+// GetProcessorJobProcessorConfigNormalizationFieldMapInput is an input type that accepts GetProcessorJobProcessorConfigNormalizationFieldMap and GetProcessorJobProcessorConfigNormalizationFieldMapOutput values.
+// You can construct a concrete instance of `GetProcessorJobProcessorConfigNormalizationFieldMapInput` via:
+//
+//	GetProcessorJobProcessorConfigNormalizationFieldMap{ "key": GetProcessorJobProcessorConfigNormalizationFieldArgs{...} }
+type GetProcessorJobProcessorConfigNormalizationFieldMapInput interface {
+	pulumi.Input
+
+	ToGetProcessorJobProcessorConfigNormalizationFieldMapOutput() GetProcessorJobProcessorConfigNormalizationFieldMapOutput
+	ToGetProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(context.Context) GetProcessorJobProcessorConfigNormalizationFieldMapOutput
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldMapArgs struct {
+	// A string mapping to the normalization type.
+	NormalizationType pulumi.StringInput `pulumi:"normalizationType"`
+}
+
+func (GetProcessorJobProcessorConfigNormalizationFieldMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldMapArgs) ToGetProcessorJobProcessorConfigNormalizationFieldMapOutput() GetProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return i.ToGetProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(context.Background())
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldMapArgs) ToGetProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigNormalizationFieldMapOutput)
+}
+
+// GetProcessorJobProcessorConfigNormalizationFieldMapArrayInput is an input type that accepts GetProcessorJobProcessorConfigNormalizationFieldMapArray and GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput values.
+// You can construct a concrete instance of `GetProcessorJobProcessorConfigNormalizationFieldMapArrayInput` via:
+//
+//	GetProcessorJobProcessorConfigNormalizationFieldMapArray{ GetProcessorJobProcessorConfigNormalizationFieldMapArgs{...} }
+type GetProcessorJobProcessorConfigNormalizationFieldMapArrayInput interface {
+	pulumi.Input
+
+	ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput() GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput
+	ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(context.Context) GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldMapArray []GetProcessorJobProcessorConfigNormalizationFieldMapInput
+
+func (GetProcessorJobProcessorConfigNormalizationFieldMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldMapArray) ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput() GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return i.ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetProcessorJobProcessorConfigNormalizationFieldMapArray) ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput)
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldMapOutput struct{ *pulumi.OutputState }
+
+func (GetProcessorJobProcessorConfigNormalizationFieldMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldMapOutput) ToGetProcessorJobProcessorConfigNormalizationFieldMapOutput() GetProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return o
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldMapOutput) ToGetProcessorJobProcessorConfigNormalizationFieldMapOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return o
+}
+
+// A string mapping to the normalization type.
+func (o GetProcessorJobProcessorConfigNormalizationFieldMapOutput) NormalizationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProcessorJobProcessorConfigNormalizationFieldMap) string { return v.NormalizationType }).(pulumi.StringOutput)
+}
+
+type GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProcessorJobProcessorConfigNormalizationFieldMap)(nil)).Elem()
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput() GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return o
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) ToGetProcessorJobProcessorConfigNormalizationFieldMapArrayOutputWithContext(ctx context.Context) GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput {
+	return o
+}
+
+func (o GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput) Index(i pulumi.IntInput) GetProcessorJobProcessorConfigNormalizationFieldMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProcessorJobProcessorConfigNormalizationFieldMap {
+		return vs[0].([]GetProcessorJobProcessorConfigNormalizationFieldMap)[vs[1].(int)]
+	}).(GetProcessorJobProcessorConfigNormalizationFieldMapOutput)
+}
+
+type GetProjectLock struct {
+	// The lock compartment ID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// When the project was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetProjectLockInput is an input type that accepts GetProjectLockArgs and GetProjectLockOutput values.
+// You can construct a concrete instance of `GetProjectLockInput` via:
+//
+//	GetProjectLockArgs{...}
+type GetProjectLockInput interface {
+	pulumi.Input
+
+	ToGetProjectLockOutput() GetProjectLockOutput
+	ToGetProjectLockOutputWithContext(context.Context) GetProjectLockOutput
+}
+
+type GetProjectLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// When the project was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetProjectLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLock)(nil)).Elem()
+}
+
+func (i GetProjectLockArgs) ToGetProjectLockOutput() GetProjectLockOutput {
+	return i.ToGetProjectLockOutputWithContext(context.Background())
+}
+
+func (i GetProjectLockArgs) ToGetProjectLockOutputWithContext(ctx context.Context) GetProjectLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLockOutput)
+}
+
+// GetProjectLockArrayInput is an input type that accepts GetProjectLockArray and GetProjectLockArrayOutput values.
+// You can construct a concrete instance of `GetProjectLockArrayInput` via:
+//
+//	GetProjectLockArray{ GetProjectLockArgs{...} }
+type GetProjectLockArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectLockArrayOutput() GetProjectLockArrayOutput
+	ToGetProjectLockArrayOutputWithContext(context.Context) GetProjectLockArrayOutput
+}
+
+type GetProjectLockArray []GetProjectLockInput
+
+func (GetProjectLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLock)(nil)).Elem()
+}
+
+func (i GetProjectLockArray) ToGetProjectLockArrayOutput() GetProjectLockArrayOutput {
+	return i.ToGetProjectLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectLockArray) ToGetProjectLockArrayOutputWithContext(ctx context.Context) GetProjectLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectLockArrayOutput)
+}
+
+type GetProjectLockOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectLock)(nil)).Elem()
+}
+
+func (o GetProjectLockOutput) ToGetProjectLockOutput() GetProjectLockOutput {
+	return o
+}
+
+func (o GetProjectLockOutput) ToGetProjectLockOutputWithContext(ctx context.Context) GetProjectLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o GetProjectLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetProjectLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetProjectLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// When the project was created, as an RFC3339 datetime string.
+func (o GetProjectLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetProjectLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetProjectLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectLock)(nil)).Elem()
+}
+
+func (o GetProjectLockArrayOutput) ToGetProjectLockArrayOutput() GetProjectLockArrayOutput {
+	return o
+}
+
+func (o GetProjectLockArrayOutput) ToGetProjectLockArrayOutputWithContext(ctx context.Context) GetProjectLockArrayOutput {
+	return o
+}
+
+func (o GetProjectLockArrayOutput) Index(i pulumi.IntInput) GetProjectLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectLock {
+		return vs[0].([]GetProjectLock)[vs[1].(int)]
+	}).(GetProjectLockOutput)
 }
 
 type GetProjectsFilter struct {
@@ -6240,6 +7906,8 @@ type GetProjectsProjectCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetProjectsProjectCollectionItemLock `pulumi:"locks"`
 	// The filter to match projects with the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -6276,6 +7944,8 @@ type GetProjectsProjectCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetProjectsProjectCollectionItemLockArrayInput `pulumi:"locks"`
 	// The filter to match projects with the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -6372,6 +8042,11 @@ func (o GetProjectsProjectCollectionItemOutput) LifecycleDetails() pulumi.String
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetProjectsProjectCollectionItemOutput) Locks() GetProjectsProjectCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) []GetProjectsProjectCollectionItemLock { return v.Locks }).(GetProjectsProjectCollectionItemLockArrayOutput)
+}
+
 // The filter to match projects with the given lifecycleState.
 func (o GetProjectsProjectCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.State }).(pulumi.StringOutput)
@@ -6412,9 +8087,144 @@ func (o GetProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetProjectsProjectCollectionItemOutput)
 }
 
+type GetProjectsProjectCollectionItemLock struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// When the project was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetProjectsProjectCollectionItemLockInput is an input type that accepts GetProjectsProjectCollectionItemLockArgs and GetProjectsProjectCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetProjectsProjectCollectionItemLockInput` via:
+//
+//	GetProjectsProjectCollectionItemLockArgs{...}
+type GetProjectsProjectCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetProjectsProjectCollectionItemLockOutput() GetProjectsProjectCollectionItemLockOutput
+	ToGetProjectsProjectCollectionItemLockOutputWithContext(context.Context) GetProjectsProjectCollectionItemLockOutput
+}
+
+type GetProjectsProjectCollectionItemLockArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// When the project was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetProjectsProjectCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsProjectCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetProjectsProjectCollectionItemLockArgs) ToGetProjectsProjectCollectionItemLockOutput() GetProjectsProjectCollectionItemLockOutput {
+	return i.ToGetProjectsProjectCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetProjectsProjectCollectionItemLockArgs) ToGetProjectsProjectCollectionItemLockOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionItemLockOutput)
+}
+
+// GetProjectsProjectCollectionItemLockArrayInput is an input type that accepts GetProjectsProjectCollectionItemLockArray and GetProjectsProjectCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetProjectsProjectCollectionItemLockArrayInput` via:
+//
+//	GetProjectsProjectCollectionItemLockArray{ GetProjectsProjectCollectionItemLockArgs{...} }
+type GetProjectsProjectCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetProjectsProjectCollectionItemLockArrayOutput() GetProjectsProjectCollectionItemLockArrayOutput
+	ToGetProjectsProjectCollectionItemLockArrayOutputWithContext(context.Context) GetProjectsProjectCollectionItemLockArrayOutput
+}
+
+type GetProjectsProjectCollectionItemLockArray []GetProjectsProjectCollectionItemLockInput
+
+func (GetProjectsProjectCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsProjectCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetProjectsProjectCollectionItemLockArray) ToGetProjectsProjectCollectionItemLockArrayOutput() GetProjectsProjectCollectionItemLockArrayOutput {
+	return i.ToGetProjectsProjectCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetProjectsProjectCollectionItemLockArray) ToGetProjectsProjectCollectionItemLockArrayOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetProjectsProjectCollectionItemLockArrayOutput)
+}
+
+type GetProjectsProjectCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsProjectCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetProjectsProjectCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetProjectsProjectCollectionItemLockOutput) ToGetProjectsProjectCollectionItemLockOutput() GetProjectsProjectCollectionItemLockOutput {
+	return o
+}
+
+func (o GetProjectsProjectCollectionItemLockOutput) ToGetProjectsProjectCollectionItemLockOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemLockOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetProjectsProjectCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetProjectsProjectCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetProjectsProjectCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// When the project was created, as an RFC3339 datetime string.
+func (o GetProjectsProjectCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetProjectsProjectCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetProjectsProjectCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetProjectsProjectCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetProjectsProjectCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetProjectsProjectCollectionItemLockArrayOutput) ToGetProjectsProjectCollectionItemLockArrayOutput() GetProjectsProjectCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetProjectsProjectCollectionItemLockArrayOutput) ToGetProjectsProjectCollectionItemLockArrayOutputWithContext(ctx context.Context) GetProjectsProjectCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetProjectsProjectCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetProjectsProjectCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetProjectsProjectCollectionItemLock {
+		return vs[0].([]GetProjectsProjectCollectionItemLock)[vs[1].(int)]
+	}).(GetProjectsProjectCollectionItemLockOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelComponentModelInput)(nil)).Elem(), ModelComponentModelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelComponentModelArrayInput)(nil)).Elem(), ModelComponentModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelLockInput)(nil)).Elem(), ModelLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelLockArrayInput)(nil)).Elem(), ModelLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricInput)(nil)).Elem(), ModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricArrayInput)(nil)).Elem(), ModelMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricDatasetSummaryInput)(nil)).Elem(), ModelMetricDatasetSummaryArgs{})
@@ -6427,6 +8237,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricOverallMetricsReportArrayInput)(nil)).Elem(), ModelMetricOverallMetricsReportArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricOverallMetricsReportConfidenceEntryInput)(nil)).Elem(), ModelMetricOverallMetricsReportConfidenceEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelMetricOverallMetricsReportConfidenceEntryArrayInput)(nil)).Elem(), ModelMetricOverallMetricsReportConfidenceEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelSubTypeInput)(nil)).Elem(), ModelModelSubTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ModelModelSubTypePtrInput)(nil)).Elem(), ModelModelSubTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelTestingDatasetInput)(nil)).Elem(), ModelTestingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelTestingDatasetPtrInput)(nil)).Elem(), ModelTestingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelTrainingDatasetInput)(nil)).Elem(), ModelTrainingDatasetArgs{})
@@ -6443,8 +8255,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigPtrInput)(nil)).Elem(), ProcessorJobProcessorConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigFeatureInput)(nil)).Elem(), ProcessorJobProcessorConfigFeatureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigFeatureArrayInput)(nil)).Elem(), ProcessorJobProcessorConfigFeatureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationFieldInput)(nil)).Elem(), ProcessorJobProcessorConfigNormalizationFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationFieldArrayInput)(nil)).Elem(), ProcessorJobProcessorConfigNormalizationFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationFieldMapInput)(nil)).Elem(), ProcessorJobProcessorConfigNormalizationFieldMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProcessorJobProcessorConfigNormalizationFieldMapArrayInput)(nil)).Elem(), ProcessorJobProcessorConfigNormalizationFieldMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLockInput)(nil)).Elem(), ProjectLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ProjectLockArrayInput)(nil)).Elem(), ProjectLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelComponentModelInput)(nil)).Elem(), GetModelComponentModelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelComponentModelArrayInput)(nil)).Elem(), GetModelComponentModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelLockInput)(nil)).Elem(), GetModelLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelLockArrayInput)(nil)).Elem(), GetModelLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricInput)(nil)).Elem(), GetModelMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricArrayInput)(nil)).Elem(), GetModelMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricDatasetSummaryInput)(nil)).Elem(), GetModelMetricDatasetSummaryArgs{})
@@ -6457,6 +8277,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricOverallMetricsReportArrayInput)(nil)).Elem(), GetModelMetricOverallMetricsReportArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricOverallMetricsReportConfidenceEntryInput)(nil)).Elem(), GetModelMetricOverallMetricsReportConfidenceEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelMetricOverallMetricsReportConfidenceEntryArrayInput)(nil)).Elem(), GetModelMetricOverallMetricsReportConfidenceEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelModelSubTypeInput)(nil)).Elem(), GetModelModelSubTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelModelSubTypeArrayInput)(nil)).Elem(), GetModelModelSubTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelTestingDatasetInput)(nil)).Elem(), GetModelTestingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelTestingDatasetArrayInput)(nil)).Elem(), GetModelTestingDatasetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelTrainingDatasetInput)(nil)).Elem(), GetModelTrainingDatasetArgs{})
@@ -6471,6 +8293,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemArrayInput)(nil)).Elem(), GetModelsModelCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemComponentModelInput)(nil)).Elem(), GetModelsModelCollectionItemComponentModelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemComponentModelArrayInput)(nil)).Elem(), GetModelsModelCollectionItemComponentModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemLockInput)(nil)).Elem(), GetModelsModelCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemLockArrayInput)(nil)).Elem(), GetModelsModelCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricInput)(nil)).Elem(), GetModelsModelCollectionItemMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricArrayInput)(nil)).Elem(), GetModelsModelCollectionItemMetricArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricDatasetSummaryInput)(nil)).Elem(), GetModelsModelCollectionItemMetricDatasetSummaryArgs{})
@@ -6483,6 +8307,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricOverallMetricsReportArrayInput)(nil)).Elem(), GetModelsModelCollectionItemMetricOverallMetricsReportArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryInput)(nil)).Elem(), GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayInput)(nil)).Elem(), GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelSubTypeInput)(nil)).Elem(), GetModelsModelCollectionItemModelSubTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemModelSubTypeArrayInput)(nil)).Elem(), GetModelsModelCollectionItemModelSubTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemTestingDatasetInput)(nil)).Elem(), GetModelsModelCollectionItemTestingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemTestingDatasetArrayInput)(nil)).Elem(), GetModelsModelCollectionItemTestingDatasetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelsModelCollectionItemTrainingDatasetInput)(nil)).Elem(), GetModelsModelCollectionItemTrainingDatasetArgs{})
@@ -6499,14 +8325,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigArrayInput)(nil)).Elem(), GetProcessorJobProcessorConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigFeatureInput)(nil)).Elem(), GetProcessorJobProcessorConfigFeatureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigFeatureArrayInput)(nil)).Elem(), GetProcessorJobProcessorConfigFeatureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationFieldInput)(nil)).Elem(), GetProcessorJobProcessorConfigNormalizationFieldArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationFieldArrayInput)(nil)).Elem(), GetProcessorJobProcessorConfigNormalizationFieldArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationFieldMapInput)(nil)).Elem(), GetProcessorJobProcessorConfigNormalizationFieldMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProcessorJobProcessorConfigNormalizationFieldMapArrayInput)(nil)).Elem(), GetProcessorJobProcessorConfigNormalizationFieldMapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLockInput)(nil)).Elem(), GetProjectLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectLockArrayInput)(nil)).Elem(), GetProjectLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterInput)(nil)).Elem(), GetProjectsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsFilterArrayInput)(nil)).Elem(), GetProjectsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionInput)(nil)).Elem(), GetProjectsProjectCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionArrayInput)(nil)).Elem(), GetProjectsProjectCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemInput)(nil)).Elem(), GetProjectsProjectCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemLockInput)(nil)).Elem(), GetProjectsProjectCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemLockArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemLockArray{})
 	pulumi.RegisterOutputType(ModelComponentModelOutput{})
 	pulumi.RegisterOutputType(ModelComponentModelArrayOutput{})
+	pulumi.RegisterOutputType(ModelLockOutput{})
+	pulumi.RegisterOutputType(ModelLockArrayOutput{})
 	pulumi.RegisterOutputType(ModelMetricOutput{})
 	pulumi.RegisterOutputType(ModelMetricArrayOutput{})
 	pulumi.RegisterOutputType(ModelMetricDatasetSummaryOutput{})
@@ -6519,6 +8355,8 @@ func init() {
 	pulumi.RegisterOutputType(ModelMetricOverallMetricsReportArrayOutput{})
 	pulumi.RegisterOutputType(ModelMetricOverallMetricsReportConfidenceEntryOutput{})
 	pulumi.RegisterOutputType(ModelMetricOverallMetricsReportConfidenceEntryArrayOutput{})
+	pulumi.RegisterOutputType(ModelModelSubTypeOutput{})
+	pulumi.RegisterOutputType(ModelModelSubTypePtrOutput{})
 	pulumi.RegisterOutputType(ModelTestingDatasetOutput{})
 	pulumi.RegisterOutputType(ModelTestingDatasetPtrOutput{})
 	pulumi.RegisterOutputType(ModelTrainingDatasetOutput{})
@@ -6535,8 +8373,16 @@ func init() {
 	pulumi.RegisterOutputType(ProcessorJobProcessorConfigPtrOutput{})
 	pulumi.RegisterOutputType(ProcessorJobProcessorConfigFeatureOutput{})
 	pulumi.RegisterOutputType(ProcessorJobProcessorConfigFeatureArrayOutput{})
+	pulumi.RegisterOutputType(ProcessorJobProcessorConfigNormalizationFieldOutput{})
+	pulumi.RegisterOutputType(ProcessorJobProcessorConfigNormalizationFieldArrayOutput{})
+	pulumi.RegisterOutputType(ProcessorJobProcessorConfigNormalizationFieldMapOutput{})
+	pulumi.RegisterOutputType(ProcessorJobProcessorConfigNormalizationFieldMapArrayOutput{})
+	pulumi.RegisterOutputType(ProjectLockOutput{})
+	pulumi.RegisterOutputType(ProjectLockArrayOutput{})
 	pulumi.RegisterOutputType(GetModelComponentModelOutput{})
 	pulumi.RegisterOutputType(GetModelComponentModelArrayOutput{})
+	pulumi.RegisterOutputType(GetModelLockOutput{})
+	pulumi.RegisterOutputType(GetModelLockArrayOutput{})
 	pulumi.RegisterOutputType(GetModelMetricOutput{})
 	pulumi.RegisterOutputType(GetModelMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetModelMetricDatasetSummaryOutput{})
@@ -6549,6 +8395,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelMetricOverallMetricsReportArrayOutput{})
 	pulumi.RegisterOutputType(GetModelMetricOverallMetricsReportConfidenceEntryOutput{})
 	pulumi.RegisterOutputType(GetModelMetricOverallMetricsReportConfidenceEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetModelModelSubTypeOutput{})
+	pulumi.RegisterOutputType(GetModelModelSubTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetModelTestingDatasetOutput{})
 	pulumi.RegisterOutputType(GetModelTestingDatasetArrayOutput{})
 	pulumi.RegisterOutputType(GetModelTrainingDatasetOutput{})
@@ -6563,6 +8411,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemComponentModelOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemComponentModelArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetModelsModelCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricDatasetSummaryOutput{})
@@ -6575,6 +8425,8 @@ func init() {
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricOverallMetricsReportArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetModelsModelCollectionItemModelSubTypeOutput{})
+	pulumi.RegisterOutputType(GetModelsModelCollectionItemModelSubTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemTestingDatasetOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemTestingDatasetArrayOutput{})
 	pulumi.RegisterOutputType(GetModelsModelCollectionItemTrainingDatasetOutput{})
@@ -6591,10 +8443,18 @@ func init() {
 	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigFeatureOutput{})
 	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigFeatureArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigNormalizationFieldOutput{})
+	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigNormalizationFieldArrayOutput{})
+	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigNormalizationFieldMapOutput{})
+	pulumi.RegisterOutputType(GetProcessorJobProcessorConfigNormalizationFieldMapArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectLockOutput{})
+	pulumi.RegisterOutputType(GetProjectLockArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterOutput{})
 	pulumi.RegisterOutputType(GetProjectsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemLockArrayOutput{})
 }

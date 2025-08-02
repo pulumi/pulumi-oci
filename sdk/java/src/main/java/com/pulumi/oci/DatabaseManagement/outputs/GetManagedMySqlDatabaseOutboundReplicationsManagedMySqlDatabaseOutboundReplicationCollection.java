@@ -18,7 +18,7 @@ public final class GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDataba
      */
     private List<GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItem> items;
     /**
-     * @return The number of outbound replications from this server.
+     * @return The number of outbound replications from the MySQL server.
      * 
      */
     private Integer outboundReplicationsCount;
@@ -32,7 +32,7 @@ public final class GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDataba
         return this.items;
     }
     /**
-     * @return The number of outbound replications from this server.
+     * @return The number of outbound replications from the MySQL server.
      * 
      */
     public Integer outboundReplicationsCount() {

@@ -47,6 +47,8 @@ type AutonomousContainerDatabase struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
+	// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+	CustomerContacts AutonomousContainerDatabaseCustomerContactArrayOutput `pulumi:"customerContacts"`
 	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
 	// Array of Dg associations.
@@ -114,6 +116,8 @@ type AutonomousContainerDatabase struct {
 	NetServicesArchitecture pulumi.StringOutput `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
+	// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName pulumi.StringOutput `pulumi:"okvEndPointGroupName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId pulumi.StringOutput `pulumi:"patchId"`
 	// (Updatable) Database Patch model preference.
@@ -240,6 +244,8 @@ type autonomousContainerDatabaseState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel *string `pulumi:"computeModel"`
+	// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+	CustomerContacts []AutonomousContainerDatabaseCustomerContact `pulumi:"customerContacts"`
 	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// Array of Dg associations.
@@ -307,6 +313,8 @@ type autonomousContainerDatabaseState struct {
 	NetServicesArchitecture *string `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
+	// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName *string `pulumi:"okvEndPointGroupName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId *string `pulumi:"patchId"`
 	// (Updatable) Database Patch model preference.
@@ -398,6 +406,8 @@ type AutonomousContainerDatabaseState struct {
 	CompartmentId pulumi.StringPtrInput
 	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 	ComputeModel pulumi.StringPtrInput
+	// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+	CustomerContacts AutonomousContainerDatabaseCustomerContactArrayInput
 	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// Array of Dg associations.
@@ -465,6 +475,8 @@ type AutonomousContainerDatabaseState struct {
 	NetServicesArchitecture pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
+	// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId pulumi.StringPtrInput
 	// (Updatable) Database Patch model preference.
@@ -550,6 +562,8 @@ type autonomousContainerDatabaseArgs struct {
 	CloudAutonomousVmClusterId *string `pulumi:"cloudAutonomousVmClusterId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+	CustomerContacts []AutonomousContainerDatabaseCustomerContact `pulumi:"customerContacts"`
 	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -585,6 +599,8 @@ type autonomousContainerDatabaseArgs struct {
 	MaintenanceWindowDetails *AutonomousContainerDatabaseMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
 	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 	NetServicesArchitecture *string `pulumi:"netServicesArchitecture"`
+	// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName *string `pulumi:"okvEndPointGroupName"`
 	// (Updatable) Database Patch model preference.
 	PatchModel                                  string                                                                  `pulumi:"patchModel"`
 	PeerAutonomousContainerDatabaseBackupConfig *AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig `pulumi:"peerAutonomousContainerDatabaseBackupConfig"`
@@ -637,6 +653,8 @@ type AutonomousContainerDatabaseArgs struct {
 	CloudAutonomousVmClusterId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+	CustomerContacts AutonomousContainerDatabaseCustomerContactArrayInput
 	// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
@@ -672,6 +690,8 @@ type AutonomousContainerDatabaseArgs struct {
 	MaintenanceWindowDetails AutonomousContainerDatabaseMaintenanceWindowDetailsPtrInput
 	// Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
 	NetServicesArchitecture pulumi.StringPtrInput
+	// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName pulumi.StringPtrInput
 	// (Updatable) Database Patch model preference.
 	PatchModel                                  pulumi.StringInput
 	PeerAutonomousContainerDatabaseBackupConfig AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigPtrInput
@@ -858,6 +878,13 @@ func (o AutonomousContainerDatabaseOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
 }
 
+// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+func (o AutonomousContainerDatabaseOutput) CustomerContacts() AutonomousContainerDatabaseCustomerContactArrayOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) AutonomousContainerDatabaseCustomerContactArrayOutput {
+		return v.CustomerContacts
+	}).(AutonomousContainerDatabaseCustomerContactArrayOutput)
+}
+
 // The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o AutonomousContainerDatabaseOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
@@ -1037,6 +1064,11 @@ func (o AutonomousContainerDatabaseOutput) NetServicesArchitecture() pulumi.Stri
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o AutonomousContainerDatabaseOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+func (o AutonomousContainerDatabaseOutput) OkvEndPointGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.OkvEndPointGroupName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.

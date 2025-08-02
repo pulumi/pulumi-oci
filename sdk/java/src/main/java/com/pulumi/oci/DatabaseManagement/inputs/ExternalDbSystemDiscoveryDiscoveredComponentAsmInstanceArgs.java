@@ -16,14 +16,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs e
     public static final ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs Empty = new ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs();
 
     /**
-     * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     @Import(name="adrHomeDirectory")
     private @Nullable Output<String> adrHomeDirectory;
 
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     public Optional<Output<String>> adrHomeDirectory() {
@@ -87,7 +87,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs e
         }
 
         /**
-         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceArgs e
         }
 
         /**
-         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
          * 
          * @return builder
          * 

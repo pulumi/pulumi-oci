@@ -27,7 +27,7 @@ class GetSecretResult:
     """
     A collection of values returned by getSecret.
     """
-    def __init__(__self__, compartment_id=None, current_version_number=None, defined_tags=None, description=None, enable_auto_generation=None, freeform_tags=None, id=None, is_auto_generation_enabled=None, key_id=None, last_rotation_time=None, lifecycle_details=None, metadata=None, next_rotation_time=None, rotation_configs=None, rotation_status=None, secret_contents=None, secret_generation_contexts=None, secret_id=None, secret_name=None, secret_rules=None, state=None, time_created=None, time_of_current_version_expiry=None, time_of_deletion=None, vault_id=None):
+    def __init__(__self__, compartment_id=None, current_version_number=None, defined_tags=None, description=None, enable_auto_generation=None, freeform_tags=None, id=None, is_auto_generation_enabled=None, is_replica=None, key_id=None, last_rotation_time=None, lifecycle_details=None, metadata=None, next_rotation_time=None, replication_configs=None, rotation_configs=None, rotation_status=None, secret_contents=None, secret_generation_contexts=None, secret_id=None, secret_name=None, secret_rules=None, source_region_informations=None, state=None, time_created=None, time_of_current_version_expiry=None, time_of_deletion=None, vault_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +52,9 @@ class GetSecretResult:
         if is_auto_generation_enabled and not isinstance(is_auto_generation_enabled, bool):
             raise TypeError("Expected argument 'is_auto_generation_enabled' to be a bool")
         pulumi.set(__self__, "is_auto_generation_enabled", is_auto_generation_enabled)
+        if is_replica and not isinstance(is_replica, bool):
+            raise TypeError("Expected argument 'is_replica' to be a bool")
+        pulumi.set(__self__, "is_replica", is_replica)
         if key_id and not isinstance(key_id, str):
             raise TypeError("Expected argument 'key_id' to be a str")
         pulumi.set(__self__, "key_id", key_id)
@@ -67,6 +70,9 @@ class GetSecretResult:
         if next_rotation_time and not isinstance(next_rotation_time, str):
             raise TypeError("Expected argument 'next_rotation_time' to be a str")
         pulumi.set(__self__, "next_rotation_time", next_rotation_time)
+        if replication_configs and not isinstance(replication_configs, list):
+            raise TypeError("Expected argument 'replication_configs' to be a list")
+        pulumi.set(__self__, "replication_configs", replication_configs)
         if rotation_configs and not isinstance(rotation_configs, list):
             raise TypeError("Expected argument 'rotation_configs' to be a list")
         pulumi.set(__self__, "rotation_configs", rotation_configs)
@@ -88,6 +94,9 @@ class GetSecretResult:
         if secret_rules and not isinstance(secret_rules, list):
             raise TypeError("Expected argument 'secret_rules' to be a list")
         pulumi.set(__self__, "secret_rules", secret_rules)
+        if source_region_informations and not isinstance(source_region_informations, list):
+            raise TypeError("Expected argument 'source_region_informations' to be a list")
+        pulumi.set(__self__, "source_region_informations", source_region_informations)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -166,6 +175,14 @@ class GetSecretResult:
         return pulumi.get(self, "is_auto_generation_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isReplica")
+    def is_replica(self) -> _builtins.bool:
+        """
+        A Boolean value that indicates whether the secret is a source or replica secret.
+        """
+        return pulumi.get(self, "is_replica")
+
+    @_builtins.property
     @pulumi.getter(name="keyId")
     def key_id(self) -> _builtins.str:
         """
@@ -204,6 +221,14 @@ class GetSecretResult:
         A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "next_rotation_time")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationConfigs")
+    def replication_configs(self) -> Sequence['outputs.GetSecretReplicationConfigResult']:
+        """
+        Defines the configuration that enables cross-region secret replication.
+        """
+        return pulumi.get(self, "replication_configs")
 
     @_builtins.property
     @pulumi.getter(name="rotationConfigs")
@@ -254,6 +279,14 @@ class GetSecretResult:
         A list of rules that control how the secret is used and managed.
         """
         return pulumi.get(self, "secret_rules")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRegionInformations")
+    def source_region_informations(self) -> Sequence['outputs.GetSecretSourceRegionInformationResult']:
+        """
+        Details for the source that the source secret has.
+        """
+        return pulumi.get(self, "source_region_informations")
 
     @_builtins.property
     @pulumi.getter
@@ -310,11 +343,13 @@ class AwaitableGetSecretResult(GetSecretResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_auto_generation_enabled=self.is_auto_generation_enabled,
+            is_replica=self.is_replica,
             key_id=self.key_id,
             last_rotation_time=self.last_rotation_time,
             lifecycle_details=self.lifecycle_details,
             metadata=self.metadata,
             next_rotation_time=self.next_rotation_time,
+            replication_configs=self.replication_configs,
             rotation_configs=self.rotation_configs,
             rotation_status=self.rotation_status,
             secret_contents=self.secret_contents,
@@ -322,6 +357,7 @@ class AwaitableGetSecretResult(GetSecretResult):
             secret_id=self.secret_id,
             secret_name=self.secret_name,
             secret_rules=self.secret_rules,
+            source_region_informations=self.source_region_informations,
             state=self.state,
             time_created=self.time_created,
             time_of_current_version_expiry=self.time_of_current_version_expiry,
@@ -362,11 +398,13 @@ def get_secret(secret_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_auto_generation_enabled=pulumi.get(__ret__, 'is_auto_generation_enabled'),
+        is_replica=pulumi.get(__ret__, 'is_replica'),
         key_id=pulumi.get(__ret__, 'key_id'),
         last_rotation_time=pulumi.get(__ret__, 'last_rotation_time'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         metadata=pulumi.get(__ret__, 'metadata'),
         next_rotation_time=pulumi.get(__ret__, 'next_rotation_time'),
+        replication_configs=pulumi.get(__ret__, 'replication_configs'),
         rotation_configs=pulumi.get(__ret__, 'rotation_configs'),
         rotation_status=pulumi.get(__ret__, 'rotation_status'),
         secret_contents=pulumi.get(__ret__, 'secret_contents'),
@@ -374,6 +412,7 @@ def get_secret(secret_id: Optional[_builtins.str] = None,
         secret_id=pulumi.get(__ret__, 'secret_id'),
         secret_name=pulumi.get(__ret__, 'secret_name'),
         secret_rules=pulumi.get(__ret__, 'secret_rules'),
+        source_region_informations=pulumi.get(__ret__, 'source_region_informations'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_of_current_version_expiry=pulumi.get(__ret__, 'time_of_current_version_expiry'),
@@ -411,11 +450,13 @@ def get_secret_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_auto_generation_enabled=pulumi.get(__response__, 'is_auto_generation_enabled'),
+        is_replica=pulumi.get(__response__, 'is_replica'),
         key_id=pulumi.get(__response__, 'key_id'),
         last_rotation_time=pulumi.get(__response__, 'last_rotation_time'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         metadata=pulumi.get(__response__, 'metadata'),
         next_rotation_time=pulumi.get(__response__, 'next_rotation_time'),
+        replication_configs=pulumi.get(__response__, 'replication_configs'),
         rotation_configs=pulumi.get(__response__, 'rotation_configs'),
         rotation_status=pulumi.get(__response__, 'rotation_status'),
         secret_contents=pulumi.get(__response__, 'secret_contents'),
@@ -423,6 +464,7 @@ def get_secret_output(secret_id: Optional[pulumi.Input[_builtins.str]] = None,
         secret_id=pulumi.get(__response__, 'secret_id'),
         secret_name=pulumi.get(__response__, 'secret_name'),
         secret_rules=pulumi.get(__response__, 'secret_rules'),
+        source_region_informations=pulumi.get(__response__, 'source_region_informations'),
         state=pulumi.get(__response__, 'state'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_of_current_version_expiry=pulumi.get(__response__, 'time_of_current_version_expiry'),

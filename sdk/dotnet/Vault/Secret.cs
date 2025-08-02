@@ -68,6 +68,12 @@ namespace Pulumi.Oci.Vault
         public Output<bool> IsAutoGenerationEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// A Boolean value that indicates whether the secret is a source or replica secret.
+        /// </summary>
+        [Output("isReplica")]
+        public Output<bool> IsReplica { get; private set; } = null!;
+
+        /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         [Output("keyId")]
@@ -96,6 +102,12 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Output("nextRotationTime")]
         public Output<string> NextRotationTime { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Defines the configuration that enables cross-region secret replication.
+        /// </summary>
+        [Output("replicationConfig")]
+        public Output<Outputs.SecretReplicationConfig?> ReplicationConfig { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -132,6 +144,12 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Output("secretRules")]
         public Output<ImmutableArray<Outputs.SecretSecretRule>> SecretRules { get; private set; } = null!;
+
+        /// <summary>
+        /// Details for the source that the source secret has.
+        /// </summary>
+        [Output("sourceRegionInformations")]
+        public Output<ImmutableArray<Outputs.SecretSourceRegionInformation>> SourceRegionInformations { get; private set; } = null!;
 
         /// <summary>
         /// The current lifecycle state of the secret.
@@ -274,6 +292,12 @@ namespace Pulumi.Oci.Vault
         }
 
         /// <summary>
+        /// (Updatable) Defines the configuration that enables cross-region secret replication.
+        /// </summary>
+        [Input("replicationConfig")]
+        public Input<Inputs.SecretReplicationConfigArgs>? ReplicationConfig { get; set; }
+
+        /// <summary>
         /// (Updatable) Defines the frequency of the rotation and the information about the target system
         /// </summary>
         [Input("rotationConfig")]
@@ -382,6 +406,12 @@ namespace Pulumi.Oci.Vault
         public Input<bool>? IsAutoGenerationEnabled { get; set; }
 
         /// <summary>
+        /// A Boolean value that indicates whether the secret is a source or replica secret.
+        /// </summary>
+        [Input("isReplica")]
+        public Input<bool>? IsReplica { get; set; }
+
+        /// <summary>
         /// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         /// </summary>
         [Input("keyId")]
@@ -416,6 +446,12 @@ namespace Pulumi.Oci.Vault
         /// </summary>
         [Input("nextRotationTime")]
         public Input<string>? NextRotationTime { get; set; }
+
+        /// <summary>
+        /// (Updatable) Defines the configuration that enables cross-region secret replication.
+        /// </summary>
+        [Input("replicationConfig")]
+        public Input<Inputs.SecretReplicationConfigGetArgs>? ReplicationConfig { get; set; }
 
         /// <summary>
         /// (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -457,6 +493,18 @@ namespace Pulumi.Oci.Vault
         {
             get => _secretRules ?? (_secretRules = new InputList<Inputs.SecretSecretRuleGetArgs>());
             set => _secretRules = value;
+        }
+
+        [Input("sourceRegionInformations")]
+        private InputList<Inputs.SecretSourceRegionInformationGetArgs>? _sourceRegionInformations;
+
+        /// <summary>
+        /// Details for the source that the source secret has.
+        /// </summary>
+        public InputList<Inputs.SecretSourceRegionInformationGetArgs> SourceRegionInformations
+        {
+            get => _sourceRegionInformations ?? (_sourceRegionInformations = new InputList<Inputs.SecretSourceRegionInformationGetArgs>());
+            set => _sourceRegionInformations = value;
         }
 
         /// <summary>

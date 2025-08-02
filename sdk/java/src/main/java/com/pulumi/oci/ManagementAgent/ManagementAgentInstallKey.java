@@ -13,6 +13,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
@@ -127,6 +128,20 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
         return this.currentKeyInstallCount;
     }
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * (Updatable) Management Agent install Key Name
      * 
      */
@@ -139,6 +154,20 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
@@ -195,6 +224,20 @@ public class ManagementAgentInstallKey extends com.pulumi.resources.CustomResour
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string

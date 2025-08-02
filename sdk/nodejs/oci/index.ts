@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ApiPlatformApiPlatformInstanceArgs, ApiPlatformApiPlatformInstanceState } from "./apiPlatformApiPlatformInstance";
+export type ApiPlatformApiPlatformInstance = import("./apiPlatformApiPlatformInstance").ApiPlatformApiPlatformInstance;
+export const ApiPlatformApiPlatformInstance: typeof import("./apiPlatformApiPlatformInstance").ApiPlatformApiPlatformInstance = null as any;
+utilities.lazyLoad(exports, ["ApiPlatformApiPlatformInstance"], () => require("./apiPlatformApiPlatformInstance"));
+
 export { ApiaccesscontrolPrivilegedApiControlArgs, ApiaccesscontrolPrivilegedApiControlState } from "./apiaccesscontrolPrivilegedApiControl";
 export type ApiaccesscontrolPrivilegedApiControl = import("./apiaccesscontrolPrivilegedApiControl").ApiaccesscontrolPrivilegedApiControl;
 export const ApiaccesscontrolPrivilegedApiControl: typeof import("./apiaccesscontrolPrivilegedApiControl").ApiaccesscontrolPrivilegedApiControl = null as any;
@@ -44,6 +49,16 @@ export { DbmulticloudOracleDbAzureVaultAssociationArgs, DbmulticloudOracleDbAzur
 export type DbmulticloudOracleDbAzureVaultAssociation = import("./dbmulticloudOracleDbAzureVaultAssociation").DbmulticloudOracleDbAzureVaultAssociation;
 export const DbmulticloudOracleDbAzureVaultAssociation: typeof import("./dbmulticloudOracleDbAzureVaultAssociation").DbmulticloudOracleDbAzureVaultAssociation = null as any;
 utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureVaultAssociation"], () => require("./dbmulticloudOracleDbAzureVaultAssociation"));
+
+export { GetApiPlatformApiPlatformInstanceArgs, GetApiPlatformApiPlatformInstanceResult, GetApiPlatformApiPlatformInstanceOutputArgs } from "./getApiPlatformApiPlatformInstance";
+export const getApiPlatformApiPlatformInstance: typeof import("./getApiPlatformApiPlatformInstance").getApiPlatformApiPlatformInstance = null as any;
+export const getApiPlatformApiPlatformInstanceOutput: typeof import("./getApiPlatformApiPlatformInstance").getApiPlatformApiPlatformInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getApiPlatformApiPlatformInstance","getApiPlatformApiPlatformInstanceOutput"], () => require("./getApiPlatformApiPlatformInstance"));
+
+export { GetApiPlatformApiPlatformInstancesArgs, GetApiPlatformApiPlatformInstancesResult, GetApiPlatformApiPlatformInstancesOutputArgs } from "./getApiPlatformApiPlatformInstances";
+export const getApiPlatformApiPlatformInstances: typeof import("./getApiPlatformApiPlatformInstances").getApiPlatformApiPlatformInstances = null as any;
+export const getApiPlatformApiPlatformInstancesOutput: typeof import("./getApiPlatformApiPlatformInstances").getApiPlatformApiPlatformInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getApiPlatformApiPlatformInstances","getApiPlatformApiPlatformInstancesOutput"], () => require("./getApiPlatformApiPlatformInstances"));
 
 export { GetApiaccesscontrolApiMetadataArgs, GetApiaccesscontrolApiMetadataResult, GetApiaccesscontrolApiMetadataOutputArgs } from "./getApiaccesscontrolApiMetadata";
 export const getApiaccesscontrolApiMetadata: typeof import("./getApiaccesscontrolApiMetadata").getApiaccesscontrolApiMetadata = null as any;
@@ -240,6 +255,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance":
+                return new ApiPlatformApiPlatformInstance(name, <any>undefined, { urn })
             case "oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl":
                 return new ApiaccesscontrolPrivilegedApiControl(name, <any>undefined, { urn })
             case "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest":
@@ -261,6 +278,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "oci/apiPlatformApiPlatformInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiControl", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/apiaccesscontrolPrivilegedApiRequest", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)

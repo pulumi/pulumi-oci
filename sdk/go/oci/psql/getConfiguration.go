@@ -60,6 +60,8 @@ type LookupConfigurationArgs struct {
 type LookupConfigurationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// The type of configuration. Either user-created or a default configuration.
 	ConfigType string `pulumi:"configType"`
 	// List of configuration details.
@@ -68,6 +70,8 @@ type LookupConfigurationResult struct {
 	DbConfigurationOverrides []GetConfigurationDbConfigurationOverride `pulumi:"dbConfigurationOverrides"`
 	// Version of the PostgreSQL database.
 	DbVersion string `pulumi:"dbVersion"`
+	// The Default configuration used for this configuration.
+	DefaultConfigId string `pulumi:"defaultConfigId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description for the configuration.
@@ -86,7 +90,7 @@ type LookupConfigurationResult struct {
 	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the configuration.
 	Shape string `pulumi:"shape"`
 	// The current state of the configuration.
 	State string `pulumi:"state"`
@@ -135,6 +139,11 @@ func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Indicates the collection of compatible shapes for this configuration.
+func (o LookupConfigurationResultOutput) CompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) []string { return v.CompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
 // The type of configuration. Either user-created or a default configuration.
 func (o LookupConfigurationResultOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.ConfigType }).(pulumi.StringOutput)
@@ -158,6 +167,11 @@ func (o LookupConfigurationResultOutput) DbConfigurationOverrides() GetConfigura
 // Version of the PostgreSQL database.
 func (o LookupConfigurationResultOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The Default configuration used for this configuration.
+func (o LookupConfigurationResultOutput) DefaultConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) string { return v.DefaultConfigId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -205,7 +219,7 @@ func (o LookupConfigurationResultOutput) LifecycleDetails() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+// The name of the shape for the configuration.
 func (o LookupConfigurationResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigurationResult) string { return v.Shape }).(pulumi.StringOutput)
 }

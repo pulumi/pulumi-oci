@@ -168,6 +168,10 @@ namespace Pulumi.Oci.Database
         /// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         /// </summary>
         public readonly string ComputeModel;
+        /// <summary>
+        /// Customer Contacts. Setting this to an empty list removes all customer contacts.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousContainerDatabaseCustomerContactResult> CustomerContacts;
         public readonly string DatabaseSoftwareImageId;
         /// <summary>
         /// Array of Dg associations.
@@ -297,6 +301,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string NextMaintenanceRunId;
         /// <summary>
+        /// The OKV End Point Group name for the Autonomous Container Database.
+        /// </summary>
+        public readonly string OkvEndPointGroupName;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         /// </summary>
         public readonly string PatchId;
@@ -414,6 +422,8 @@ namespace Pulumi.Oci.Database
 
             string computeModel,
 
+            ImmutableArray<Outputs.GetAutonomousContainerDatabaseCustomerContactResult> customerContacts,
+
             string databaseSoftwareImageId,
 
             ImmutableArray<Outputs.GetAutonomousContainerDatabaseDataguardGroupMemberResult> dataguardGroupMembers,
@@ -483,6 +493,8 @@ namespace Pulumi.Oci.Database
             string netServicesArchitecture,
 
             string nextMaintenanceRunId,
+
+            string okvEndPointGroupName,
 
             string patchId,
 
@@ -558,6 +570,7 @@ namespace Pulumi.Oci.Database
             CloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             CompartmentId = compartmentId;
             ComputeModel = computeModel;
+            CustomerContacts = customerContacts;
             DatabaseSoftwareImageId = databaseSoftwareImageId;
             DataguardGroupMembers = dataguardGroupMembers;
             Dataguards = dataguards;
@@ -593,6 +606,7 @@ namespace Pulumi.Oci.Database
             MemoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             NetServicesArchitecture = netServicesArchitecture;
             NextMaintenanceRunId = nextMaintenanceRunId;
+            OkvEndPointGroupName = okvEndPointGroupName;
             PatchId = patchId;
             PatchModel = patchModel;
             PeerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;

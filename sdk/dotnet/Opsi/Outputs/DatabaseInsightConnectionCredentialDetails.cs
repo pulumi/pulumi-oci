@@ -14,13 +14,17 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class DatabaseInsightConnectionCredentialDetails
     {
         /// <summary>
-        /// Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+        /// Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
         /// </summary>
         public readonly string? CredentialSourceName;
         /// <summary>
         /// Credential type.
         /// </summary>
         public readonly string CredentialType;
+        /// <summary>
+        /// The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        /// </summary>
+        public readonly string? NamedCredentialId;
         /// <summary>
         /// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         /// </summary>
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string credentialType,
 
+            string? namedCredentialId,
+
             string? passwordSecretId,
 
             string? role,
@@ -48,6 +54,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
+            NamedCredentialId = namedCredentialId;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;

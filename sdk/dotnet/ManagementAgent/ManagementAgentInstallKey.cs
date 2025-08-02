@@ -72,10 +72,22 @@ namespace Pulumi.Oci.ManagementAgent
         public Output<int> CurrentKeyInstallCount { get; private set; } = null!;
 
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        [Output("definedTags")]
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Management Agent install Key Name
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        [Output("freeformTags")]
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// If set to true, the install key has no expiration date or usage limit. Defaults to false
@@ -100,6 +112,12 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time when Management Agent install Key was created. An RFC3339 formatted date time string
@@ -235,11 +253,35 @@ namespace Pulumi.Oci.ManagementAgent
         [Input("currentKeyInstallCount")]
         public Input<int>? CurrentKeyInstallCount { get; set; }
 
+        [Input("definedTags")]
+        private InputMap<string>? _definedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) Management Agent install Key Name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("freeformTags")]
+        private InputMap<string>? _freeformTags;
+
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        public InputMap<string> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// If set to true, the install key has no expiration date or usage limit. Defaults to false
@@ -264,6 +306,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time when Management Agent install Key was created. An RFC3339 formatted date time string

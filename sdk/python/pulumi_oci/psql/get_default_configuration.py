@@ -27,7 +27,10 @@ class GetDefaultConfigurationResult:
     """
     A collection of values returned by getDefaultConfiguration.
     """
-    def __init__(__self__, configuration_details=None, db_version=None, default_configuration_id=None, description=None, display_name=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, is_flexible=None, lifecycle_details=None, shape=None, state=None, time_created=None):
+    def __init__(__self__, compatible_shapes=None, configuration_details=None, db_version=None, default_configuration_id=None, description=None, display_name=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, is_flexible=None, lifecycle_details=None, shape=None, state=None, time_created=None):
+        if compatible_shapes and not isinstance(compatible_shapes, list):
+            raise TypeError("Expected argument 'compatible_shapes' to be a list")
+        pulumi.set(__self__, "compatible_shapes", compatible_shapes)
         if configuration_details and not isinstance(configuration_details, list):
             raise TypeError("Expected argument 'configuration_details' to be a list")
         pulumi.set(__self__, "configuration_details", configuration_details)
@@ -67,6 +70,14 @@ class GetDefaultConfigurationResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> Sequence[_builtins.str]:
+        """
+        Indicates the collection of compatible shapes for this configuration.
+        """
+        return pulumi.get(self, "compatible_shapes")
 
     @_builtins.property
     @pulumi.getter(name="configurationDetails")
@@ -149,7 +160,7 @@ class GetDefaultConfigurationResult:
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the configuration.
         """
         return pulumi.get(self, "shape")
 
@@ -176,6 +187,7 @@ class AwaitableGetDefaultConfigurationResult(GetDefaultConfigurationResult):
         if False:
             yield self
         return GetDefaultConfigurationResult(
+            compatible_shapes=self.compatible_shapes,
             configuration_details=self.configuration_details,
             db_version=self.db_version,
             default_configuration_id=self.default_configuration_id,
@@ -191,7 +203,9 @@ class AwaitableGetDefaultConfigurationResult(GetDefaultConfigurationResult):
             time_created=self.time_created)
 
 
-def get_default_configuration(default_configuration_id: Optional[_builtins.str] = None,
+def get_default_configuration(compatible_shapes: Optional[Sequence[_builtins.str]] = None,
+                              default_configuration_id: Optional[_builtins.str] = None,
+                              shape: Optional[_builtins.str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDefaultConfigurationResult:
     """
     This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
@@ -208,14 +222,19 @@ def get_default_configuration(default_configuration_id: Optional[_builtins.str] 
     ```
 
 
+    :param Sequence[_builtins.str] compatible_shapes: Indicates the collection of compatible shapes for this configuration.
     :param _builtins.str default_configuration_id: A unique identifier for the configuration.
+    :param _builtins.str shape: The name of the shape for the configuration.
     """
     __args__ = dict()
+    __args__['compatibleShapes'] = compatible_shapes
     __args__['defaultConfigurationId'] = default_configuration_id
+    __args__['shape'] = shape
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Psql/getDefaultConfiguration:getDefaultConfiguration', __args__, opts=opts, typ=GetDefaultConfigurationResult).value
 
     return AwaitableGetDefaultConfigurationResult(
+        compatible_shapes=pulumi.get(__ret__, 'compatible_shapes'),
         configuration_details=pulumi.get(__ret__, 'configuration_details'),
         db_version=pulumi.get(__ret__, 'db_version'),
         default_configuration_id=pulumi.get(__ret__, 'default_configuration_id'),
@@ -229,7 +248,9 @@ def get_default_configuration(default_configuration_id: Optional[_builtins.str] 
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))
-def get_default_configuration_output(default_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+def get_default_configuration_output(compatible_shapes: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                                     default_configuration_id: Optional[pulumi.Input[_builtins.str]] = None,
+                                     shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefaultConfigurationResult]:
     """
     This data source provides details about a specific Default Configuration resource in Oracle Cloud Infrastructure Psql service.
@@ -246,13 +267,18 @@ def get_default_configuration_output(default_configuration_id: Optional[pulumi.I
     ```
 
 
+    :param Sequence[_builtins.str] compatible_shapes: Indicates the collection of compatible shapes for this configuration.
     :param _builtins.str default_configuration_id: A unique identifier for the configuration.
+    :param _builtins.str shape: The name of the shape for the configuration.
     """
     __args__ = dict()
+    __args__['compatibleShapes'] = compatible_shapes
     __args__['defaultConfigurationId'] = default_configuration_id
+    __args__['shape'] = shape
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDefaultConfiguration:getDefaultConfiguration', __args__, opts=opts, typ=GetDefaultConfigurationResult)
     return __ret__.apply(lambda __response__: GetDefaultConfigurationResult(
+        compatible_shapes=pulumi.get(__response__, 'compatible_shapes'),
         configuration_details=pulumi.get(__response__, 'configuration_details'),
         db_version=pulumi.get(__response__, 'db_version'),
         default_configuration_id=pulumi.get(__response__, 'default_configuration_id'),

@@ -6,7 +6,9 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -24,10 +26,20 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
      */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
     /**
+     * @return The infrastructure configuration details.
+     * 
+     */
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail> infrastructureConfigurationDetails;
+    /**
      * @return The model configuration details.
      * 
      */
     private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
+    /**
+     * @return The model group configuration details.
+     * 
+     */
+    private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetail> modelGroupConfigurationDetails;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail() {}
     /**
@@ -45,11 +57,25 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         return this.environmentConfigurationDetails;
     }
     /**
+     * @return The infrastructure configuration details.
+     * 
+     */
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail> infrastructureConfigurationDetails() {
+        return this.infrastructureConfigurationDetails;
+    }
+    /**
      * @return The model configuration details.
      * 
      */
     public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails() {
         return this.modelConfigurationDetails;
+    }
+    /**
+     * @return The model group configuration details.
+     * 
+     */
+    public List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetail> modelGroupConfigurationDetails() {
+        return this.modelGroupConfigurationDetails;
     }
 
     public static Builder builder() {
@@ -63,13 +89,17 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     public static final class Builder {
         private String deploymentType;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail> environmentConfigurationDetails;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail> infrastructureConfigurationDetails;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails;
+        private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetail> modelGroupConfigurationDetails;
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentType = defaults.deploymentType;
     	      this.environmentConfigurationDetails = defaults.environmentConfigurationDetails;
+    	      this.infrastructureConfigurationDetails = defaults.infrastructureConfigurationDetails;
     	      this.modelConfigurationDetails = defaults.modelConfigurationDetails;
+    	      this.modelGroupConfigurationDetails = defaults.modelGroupConfigurationDetails;
         }
 
         @CustomType.Setter
@@ -92,6 +122,17 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
             return environmentConfigurationDetails(List.of(environmentConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder infrastructureConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail> infrastructureConfigurationDetails) {
+            if (infrastructureConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail", "infrastructureConfigurationDetails");
+            }
+            this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+            return this;
+        }
+        public Builder infrastructureConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetail... infrastructureConfigurationDetails) {
+            return infrastructureConfigurationDetails(List.of(infrastructureConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder modelConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail> modelConfigurationDetails) {
             if (modelConfigurationDetails == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail", "modelConfigurationDetails");
@@ -102,11 +143,24 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         public Builder modelConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail... modelConfigurationDetails) {
             return modelConfigurationDetails(List.of(modelConfigurationDetails));
         }
+        @CustomType.Setter
+        public Builder modelGroupConfigurationDetails(List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetail> modelGroupConfigurationDetails) {
+            if (modelGroupConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail", "modelGroupConfigurationDetails");
+            }
+            this.modelGroupConfigurationDetails = modelGroupConfigurationDetails;
+            return this;
+        }
+        public Builder modelGroupConfigurationDetails(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetail... modelGroupConfigurationDetails) {
+            return modelGroupConfigurationDetails(List.of(modelGroupConfigurationDetails));
+        }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail build() {
             final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail();
             _resultValue.deploymentType = deploymentType;
             _resultValue.environmentConfigurationDetails = environmentConfigurationDetails;
+            _resultValue.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
             _resultValue.modelConfigurationDetails = modelConfigurationDetails;
+            _resultValue.modelGroupConfigurationDetails = modelGroupConfigurationDetails;
             return _resultValue;
         }
     }

@@ -60,11 +60,13 @@ import * as utilities from "../utilities";
  *             configuration: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
  *             driverShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
  *             driverShapeConfigDetails: {
+ *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
  *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
  *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
  *             },
  *             executorShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
  *             executorShapeConfigDetails: {
+ *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
  *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
  *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
  *             },

@@ -10,6 +10,66 @@ export type AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = import("
 export const AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement: typeof import("./autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement").AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = null as any;
 utilities.lazyLoad(exports, ["AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"], () => require("./autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"));
 
+export { CloudAsmArgs, CloudAsmState } from "./cloudAsm";
+export type CloudAsm = import("./cloudAsm").CloudAsm;
+export const CloudAsm: typeof import("./cloudAsm").CloudAsm = null as any;
+utilities.lazyLoad(exports, ["CloudAsm"], () => require("./cloudAsm"));
+
+export { CloudAsmInstanceArgs, CloudAsmInstanceState } from "./cloudAsmInstance";
+export type CloudAsmInstance = import("./cloudAsmInstance").CloudAsmInstance;
+export const CloudAsmInstance: typeof import("./cloudAsmInstance").CloudAsmInstance = null as any;
+utilities.lazyLoad(exports, ["CloudAsmInstance"], () => require("./cloudAsmInstance"));
+
+export { CloudClusterArgs, CloudClusterState } from "./cloudCluster";
+export type CloudCluster = import("./cloudCluster").CloudCluster;
+export const CloudCluster: typeof import("./cloudCluster").CloudCluster = null as any;
+utilities.lazyLoad(exports, ["CloudCluster"], () => require("./cloudCluster"));
+
+export { CloudClusterInstanceArgs, CloudClusterInstanceState } from "./cloudClusterInstance";
+export type CloudClusterInstance = import("./cloudClusterInstance").CloudClusterInstance;
+export const CloudClusterInstance: typeof import("./cloudClusterInstance").CloudClusterInstance = null as any;
+utilities.lazyLoad(exports, ["CloudClusterInstance"], () => require("./cloudClusterInstance"));
+
+export { CloudDbHomeArgs, CloudDbHomeState } from "./cloudDbHome";
+export type CloudDbHome = import("./cloudDbHome").CloudDbHome;
+export const CloudDbHome: typeof import("./cloudDbHome").CloudDbHome = null as any;
+utilities.lazyLoad(exports, ["CloudDbHome"], () => require("./cloudDbHome"));
+
+export { CloudDbNodeArgs, CloudDbNodeState } from "./cloudDbNode";
+export type CloudDbNode = import("./cloudDbNode").CloudDbNode;
+export const CloudDbNode: typeof import("./cloudDbNode").CloudDbNode = null as any;
+utilities.lazyLoad(exports, ["CloudDbNode"], () => require("./cloudDbNode"));
+
+export { CloudDbSystemArgs, CloudDbSystemState } from "./cloudDbSystem";
+export type CloudDbSystem = import("./cloudDbSystem").CloudDbSystem;
+export const CloudDbSystem: typeof import("./cloudDbSystem").CloudDbSystem = null as any;
+utilities.lazyLoad(exports, ["CloudDbSystem"], () => require("./cloudDbSystem"));
+
+export { CloudDbSystemCloudDatabaseManagementsManagementArgs, CloudDbSystemCloudDatabaseManagementsManagementState } from "./cloudDbSystemCloudDatabaseManagementsManagement";
+export type CloudDbSystemCloudDatabaseManagementsManagement = import("./cloudDbSystemCloudDatabaseManagementsManagement").CloudDbSystemCloudDatabaseManagementsManagement;
+export const CloudDbSystemCloudDatabaseManagementsManagement: typeof import("./cloudDbSystemCloudDatabaseManagementsManagement").CloudDbSystemCloudDatabaseManagementsManagement = null as any;
+utilities.lazyLoad(exports, ["CloudDbSystemCloudDatabaseManagementsManagement"], () => require("./cloudDbSystemCloudDatabaseManagementsManagement"));
+
+export { CloudDbSystemCloudStackMonitoringsManagementArgs, CloudDbSystemCloudStackMonitoringsManagementState } from "./cloudDbSystemCloudStackMonitoringsManagement";
+export type CloudDbSystemCloudStackMonitoringsManagement = import("./cloudDbSystemCloudStackMonitoringsManagement").CloudDbSystemCloudStackMonitoringsManagement;
+export const CloudDbSystemCloudStackMonitoringsManagement: typeof import("./cloudDbSystemCloudStackMonitoringsManagement").CloudDbSystemCloudStackMonitoringsManagement = null as any;
+utilities.lazyLoad(exports, ["CloudDbSystemCloudStackMonitoringsManagement"], () => require("./cloudDbSystemCloudStackMonitoringsManagement"));
+
+export { CloudDbSystemConnectorArgs, CloudDbSystemConnectorState } from "./cloudDbSystemConnector";
+export type CloudDbSystemConnector = import("./cloudDbSystemConnector").CloudDbSystemConnector;
+export const CloudDbSystemConnector: typeof import("./cloudDbSystemConnector").CloudDbSystemConnector = null as any;
+utilities.lazyLoad(exports, ["CloudDbSystemConnector"], () => require("./cloudDbSystemConnector"));
+
+export { CloudDbSystemDiscoveryArgs, CloudDbSystemDiscoveryState } from "./cloudDbSystemDiscovery";
+export type CloudDbSystemDiscovery = import("./cloudDbSystemDiscovery").CloudDbSystemDiscovery;
+export const CloudDbSystemDiscovery: typeof import("./cloudDbSystemDiscovery").CloudDbSystemDiscovery = null as any;
+utilities.lazyLoad(exports, ["CloudDbSystemDiscovery"], () => require("./cloudDbSystemDiscovery"));
+
+export { CloudListenerArgs, CloudListenerState } from "./cloudListener";
+export type CloudListener = import("./cloudListener").CloudListener;
+export const CloudListener: typeof import("./cloudListener").CloudListener = null as any;
+utilities.lazyLoad(exports, ["CloudListener"], () => require("./cloudListener"));
+
 export { DatabaseDbmFeaturesManagementArgs, DatabaseDbmFeaturesManagementState } from "./databaseDbmFeaturesManagement";
 export type DatabaseDbmFeaturesManagement = import("./databaseDbmFeaturesManagement").DatabaseDbmFeaturesManagement;
 export const DatabaseDbmFeaturesManagement: typeof import("./databaseDbmFeaturesManagement").DatabaseDbmFeaturesManagement = null as any;
@@ -134,6 +194,131 @@ export { ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs, Ex
 export type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = import("./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement").ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement;
 export const ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement: typeof import("./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement").ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement = null as any;
 utilities.lazyLoad(exports, ["ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement"], () => require("./externalpluggabledatabaseExternalPluggableDbmFeaturesManagement"));
+
+export { GetCloudAsmArgs, GetCloudAsmResult, GetCloudAsmOutputArgs } from "./getCloudAsm";
+export const getCloudAsm: typeof import("./getCloudAsm").getCloudAsm = null as any;
+export const getCloudAsmOutput: typeof import("./getCloudAsm").getCloudAsmOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsm","getCloudAsmOutput"], () => require("./getCloudAsm"));
+
+export { GetCloudAsmConfigurationArgs, GetCloudAsmConfigurationResult, GetCloudAsmConfigurationOutputArgs } from "./getCloudAsmConfiguration";
+export const getCloudAsmConfiguration: typeof import("./getCloudAsmConfiguration").getCloudAsmConfiguration = null as any;
+export const getCloudAsmConfigurationOutput: typeof import("./getCloudAsmConfiguration").getCloudAsmConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsmConfiguration","getCloudAsmConfigurationOutput"], () => require("./getCloudAsmConfiguration"));
+
+export { GetCloudAsmDiskGroupsArgs, GetCloudAsmDiskGroupsResult, GetCloudAsmDiskGroupsOutputArgs } from "./getCloudAsmDiskGroups";
+export const getCloudAsmDiskGroups: typeof import("./getCloudAsmDiskGroups").getCloudAsmDiskGroups = null as any;
+export const getCloudAsmDiskGroupsOutput: typeof import("./getCloudAsmDiskGroups").getCloudAsmDiskGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsmDiskGroups","getCloudAsmDiskGroupsOutput"], () => require("./getCloudAsmDiskGroups"));
+
+export { GetCloudAsmInstanceArgs, GetCloudAsmInstanceResult, GetCloudAsmInstanceOutputArgs } from "./getCloudAsmInstance";
+export const getCloudAsmInstance: typeof import("./getCloudAsmInstance").getCloudAsmInstance = null as any;
+export const getCloudAsmInstanceOutput: typeof import("./getCloudAsmInstance").getCloudAsmInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsmInstance","getCloudAsmInstanceOutput"], () => require("./getCloudAsmInstance"));
+
+export { GetCloudAsmInstancesArgs, GetCloudAsmInstancesResult, GetCloudAsmInstancesOutputArgs } from "./getCloudAsmInstances";
+export const getCloudAsmInstances: typeof import("./getCloudAsmInstances").getCloudAsmInstances = null as any;
+export const getCloudAsmInstancesOutput: typeof import("./getCloudAsmInstances").getCloudAsmInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsmInstances","getCloudAsmInstancesOutput"], () => require("./getCloudAsmInstances"));
+
+export { GetCloudAsmUsersArgs, GetCloudAsmUsersResult, GetCloudAsmUsersOutputArgs } from "./getCloudAsmUsers";
+export const getCloudAsmUsers: typeof import("./getCloudAsmUsers").getCloudAsmUsers = null as any;
+export const getCloudAsmUsersOutput: typeof import("./getCloudAsmUsers").getCloudAsmUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsmUsers","getCloudAsmUsersOutput"], () => require("./getCloudAsmUsers"));
+
+export { GetCloudAsmsArgs, GetCloudAsmsResult, GetCloudAsmsOutputArgs } from "./getCloudAsms";
+export const getCloudAsms: typeof import("./getCloudAsms").getCloudAsms = null as any;
+export const getCloudAsmsOutput: typeof import("./getCloudAsms").getCloudAsmsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAsms","getCloudAsmsOutput"], () => require("./getCloudAsms"));
+
+export { GetCloudClusterArgs, GetCloudClusterResult, GetCloudClusterOutputArgs } from "./getCloudCluster";
+export const getCloudCluster: typeof import("./getCloudCluster").getCloudCluster = null as any;
+export const getCloudClusterOutput: typeof import("./getCloudCluster").getCloudClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudCluster","getCloudClusterOutput"], () => require("./getCloudCluster"));
+
+export { GetCloudClusterInstanceArgs, GetCloudClusterInstanceResult, GetCloudClusterInstanceOutputArgs } from "./getCloudClusterInstance";
+export const getCloudClusterInstance: typeof import("./getCloudClusterInstance").getCloudClusterInstance = null as any;
+export const getCloudClusterInstanceOutput: typeof import("./getCloudClusterInstance").getCloudClusterInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudClusterInstance","getCloudClusterInstanceOutput"], () => require("./getCloudClusterInstance"));
+
+export { GetCloudClusterInstancesArgs, GetCloudClusterInstancesResult, GetCloudClusterInstancesOutputArgs } from "./getCloudClusterInstances";
+export const getCloudClusterInstances: typeof import("./getCloudClusterInstances").getCloudClusterInstances = null as any;
+export const getCloudClusterInstancesOutput: typeof import("./getCloudClusterInstances").getCloudClusterInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudClusterInstances","getCloudClusterInstancesOutput"], () => require("./getCloudClusterInstances"));
+
+export { GetCloudClustersArgs, GetCloudClustersResult, GetCloudClustersOutputArgs } from "./getCloudClusters";
+export const getCloudClusters: typeof import("./getCloudClusters").getCloudClusters = null as any;
+export const getCloudClustersOutput: typeof import("./getCloudClusters").getCloudClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudClusters","getCloudClustersOutput"], () => require("./getCloudClusters"));
+
+export { GetCloudDatabasesArgs, GetCloudDatabasesResult, GetCloudDatabasesOutputArgs } from "./getCloudDatabases";
+export const getCloudDatabases: typeof import("./getCloudDatabases").getCloudDatabases = null as any;
+export const getCloudDatabasesOutput: typeof import("./getCloudDatabases").getCloudDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDatabases","getCloudDatabasesOutput"], () => require("./getCloudDatabases"));
+
+export { GetCloudDbHomeArgs, GetCloudDbHomeResult, GetCloudDbHomeOutputArgs } from "./getCloudDbHome";
+export const getCloudDbHome: typeof import("./getCloudDbHome").getCloudDbHome = null as any;
+export const getCloudDbHomeOutput: typeof import("./getCloudDbHome").getCloudDbHomeOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbHome","getCloudDbHomeOutput"], () => require("./getCloudDbHome"));
+
+export { GetCloudDbHomesArgs, GetCloudDbHomesResult, GetCloudDbHomesOutputArgs } from "./getCloudDbHomes";
+export const getCloudDbHomes: typeof import("./getCloudDbHomes").getCloudDbHomes = null as any;
+export const getCloudDbHomesOutput: typeof import("./getCloudDbHomes").getCloudDbHomesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbHomes","getCloudDbHomesOutput"], () => require("./getCloudDbHomes"));
+
+export { GetCloudDbNodeArgs, GetCloudDbNodeResult, GetCloudDbNodeOutputArgs } from "./getCloudDbNode";
+export const getCloudDbNode: typeof import("./getCloudDbNode").getCloudDbNode = null as any;
+export const getCloudDbNodeOutput: typeof import("./getCloudDbNode").getCloudDbNodeOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbNode","getCloudDbNodeOutput"], () => require("./getCloudDbNode"));
+
+export { GetCloudDbNodesArgs, GetCloudDbNodesResult, GetCloudDbNodesOutputArgs } from "./getCloudDbNodes";
+export const getCloudDbNodes: typeof import("./getCloudDbNodes").getCloudDbNodes = null as any;
+export const getCloudDbNodesOutput: typeof import("./getCloudDbNodes").getCloudDbNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbNodes","getCloudDbNodesOutput"], () => require("./getCloudDbNodes"));
+
+export { GetCloudDbSystemArgs, GetCloudDbSystemResult, GetCloudDbSystemOutputArgs } from "./getCloudDbSystem";
+export const getCloudDbSystem: typeof import("./getCloudDbSystem").getCloudDbSystem = null as any;
+export const getCloudDbSystemOutput: typeof import("./getCloudDbSystem").getCloudDbSystemOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbSystem","getCloudDbSystemOutput"], () => require("./getCloudDbSystem"));
+
+export { GetCloudDbSystemConnectorArgs, GetCloudDbSystemConnectorResult, GetCloudDbSystemConnectorOutputArgs } from "./getCloudDbSystemConnector";
+export const getCloudDbSystemConnector: typeof import("./getCloudDbSystemConnector").getCloudDbSystemConnector = null as any;
+export const getCloudDbSystemConnectorOutput: typeof import("./getCloudDbSystemConnector").getCloudDbSystemConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbSystemConnector","getCloudDbSystemConnectorOutput"], () => require("./getCloudDbSystemConnector"));
+
+export { GetCloudDbSystemConnectorsArgs, GetCloudDbSystemConnectorsResult, GetCloudDbSystemConnectorsOutputArgs } from "./getCloudDbSystemConnectors";
+export const getCloudDbSystemConnectors: typeof import("./getCloudDbSystemConnectors").getCloudDbSystemConnectors = null as any;
+export const getCloudDbSystemConnectorsOutput: typeof import("./getCloudDbSystemConnectors").getCloudDbSystemConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbSystemConnectors","getCloudDbSystemConnectorsOutput"], () => require("./getCloudDbSystemConnectors"));
+
+export { GetCloudDbSystemDiscoveriesArgs, GetCloudDbSystemDiscoveriesResult, GetCloudDbSystemDiscoveriesOutputArgs } from "./getCloudDbSystemDiscoveries";
+export const getCloudDbSystemDiscoveries: typeof import("./getCloudDbSystemDiscoveries").getCloudDbSystemDiscoveries = null as any;
+export const getCloudDbSystemDiscoveriesOutput: typeof import("./getCloudDbSystemDiscoveries").getCloudDbSystemDiscoveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbSystemDiscoveries","getCloudDbSystemDiscoveriesOutput"], () => require("./getCloudDbSystemDiscoveries"));
+
+export { GetCloudDbSystemDiscoveryArgs, GetCloudDbSystemDiscoveryResult, GetCloudDbSystemDiscoveryOutputArgs } from "./getCloudDbSystemDiscovery";
+export const getCloudDbSystemDiscovery: typeof import("./getCloudDbSystemDiscovery").getCloudDbSystemDiscovery = null as any;
+export const getCloudDbSystemDiscoveryOutput: typeof import("./getCloudDbSystemDiscovery").getCloudDbSystemDiscoveryOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbSystemDiscovery","getCloudDbSystemDiscoveryOutput"], () => require("./getCloudDbSystemDiscovery"));
+
+export { GetCloudDbSystemsArgs, GetCloudDbSystemsResult, GetCloudDbSystemsOutputArgs } from "./getCloudDbSystems";
+export const getCloudDbSystems: typeof import("./getCloudDbSystems").getCloudDbSystems = null as any;
+export const getCloudDbSystemsOutput: typeof import("./getCloudDbSystems").getCloudDbSystemsOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudDbSystems","getCloudDbSystemsOutput"], () => require("./getCloudDbSystems"));
+
+export { GetCloudListenerArgs, GetCloudListenerResult, GetCloudListenerOutputArgs } from "./getCloudListener";
+export const getCloudListener: typeof import("./getCloudListener").getCloudListener = null as any;
+export const getCloudListenerOutput: typeof import("./getCloudListener").getCloudListenerOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudListener","getCloudListenerOutput"], () => require("./getCloudListener"));
+
+export { GetCloudListenerServicesArgs, GetCloudListenerServicesResult, GetCloudListenerServicesOutputArgs } from "./getCloudListenerServices";
+export const getCloudListenerServices: typeof import("./getCloudListenerServices").getCloudListenerServices = null as any;
+export const getCloudListenerServicesOutput: typeof import("./getCloudListenerServices").getCloudListenerServicesOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudListenerServices","getCloudListenerServicesOutput"], () => require("./getCloudListenerServices"));
+
+export { GetCloudListenersArgs, GetCloudListenersResult, GetCloudListenersOutputArgs } from "./getCloudListeners";
+export const getCloudListeners: typeof import("./getCloudListeners").getCloudListeners = null as any;
+export const getCloudListenersOutput: typeof import("./getCloudListeners").getCloudListenersOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudListeners","getCloudListenersOutput"], () => require("./getCloudListeners"));
 
 export { GetDbManagementPrivateEndpointArgs, GetDbManagementPrivateEndpointResult, GetDbManagementPrivateEndpointOutputArgs } from "./getDbManagementPrivateEndpoint";
 export const getDbManagementPrivateEndpoint: typeof import("./getDbManagementPrivateEndpoint").getDbManagementPrivateEndpoint = null as any;
@@ -727,6 +912,30 @@ const _module = {
         switch (type) {
             case "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement":
                 return new AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudAsm:CloudAsm":
+                return new CloudAsm(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudAsmInstance:CloudAsmInstance":
+                return new CloudAsmInstance(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudCluster:CloudCluster":
+                return new CloudCluster(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudClusterInstance:CloudClusterInstance":
+                return new CloudClusterInstance(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbHome:CloudDbHome":
+                return new CloudDbHome(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbNode:CloudDbNode":
+                return new CloudDbNode(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbSystem:CloudDbSystem":
+                return new CloudDbSystem(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbSystemCloudDatabaseManagementsManagement:CloudDbSystemCloudDatabaseManagementsManagement":
+                return new CloudDbSystemCloudDatabaseManagementsManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement:CloudDbSystemCloudStackMonitoringsManagement":
+                return new CloudDbSystemCloudStackMonitoringsManagement(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbSystemConnector:CloudDbSystemConnector":
+                return new CloudDbSystemConnector(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery":
+                return new CloudDbSystemDiscovery(name, <any>undefined, { urn })
+            case "oci:DatabaseManagement/cloudListener:CloudListener":
+                return new CloudListener(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement":
                 return new DatabaseDbmFeaturesManagement(name, <any>undefined, { urn })
             case "oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint":
@@ -795,6 +1004,18 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudAsm", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudAsmInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudClusterInstance", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbHome", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbNode", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemCloudDatabaseManagementsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudDbSystemDiscovery", _module)
+pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/cloudListener", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/databaseDbmFeaturesManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/dbManagementPrivateEndpoint", _module)
 pulumi.runtime.registerResourceModule("oci", "DatabaseManagement/externalAsm", _module)

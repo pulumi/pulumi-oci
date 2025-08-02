@@ -47,7 +47,7 @@ public final class GetAutoScalingConfigurationPolicy {
      */
     private String policyType;
     /**
-     * @return An action that can be executed against a resource.
+     * @return An action to run on a resource, such as stopping or starting an instance pool.
      * 
      */
     private List<GetAutoScalingConfigurationPolicyResourceAction> resourceActions;
@@ -102,7 +102,7 @@ public final class GetAutoScalingConfigurationPolicy {
         return this.policyType;
     }
     /**
-     * @return An action that can be executed against a resource.
+     * @return An action to run on a resource, such as stopping or starting an instance pool.
      * 
      */
     public List<GetAutoScalingConfigurationPolicyResourceAction> resourceActions() {

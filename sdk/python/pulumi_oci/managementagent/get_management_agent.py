@@ -27,7 +27,7 @@ class GetManagementAgentResult:
     """
     A collection of values returned by getManagementAgent.
     """
-    def __init__(__self__, availability_status=None, compartment_id=None, data_source_lists=None, data_source_summary_lists=None, defined_tags=None, deploy_plugins_ids=None, display_name=None, freeform_tags=None, host=None, host_id=None, id=None, install_key_id=None, install_path=None, install_type=None, is_agent_auto_upgradable=None, is_customer_deployed=None, lifecycle_details=None, managed_agent_id=None, management_agent_id=None, management_agent_properties=None, platform_name=None, platform_type=None, platform_version=None, plugin_lists=None, resource_artifact_version=None, state=None, time_created=None, time_last_heartbeat=None, time_updated=None, version=None):
+    def __init__(__self__, availability_status=None, compartment_id=None, data_source_lists=None, data_source_summary_lists=None, defined_tags=None, deploy_plugins_ids=None, display_name=None, freeform_tags=None, host=None, host_id=None, id=None, install_key_id=None, install_path=None, install_type=None, is_agent_auto_upgradable=None, is_customer_deployed=None, latest_supported_version=None, lifecycle_details=None, managed_agent_id=None, management_agent_id=None, management_agent_properties=None, platform_name=None, platform_type=None, platform_version=None, plugin_lists=None, resource_artifact_version=None, state=None, system_tags=None, time_created=None, time_last_heartbeat=None, time_updated=None, version=None):
         if availability_status and not isinstance(availability_status, str):
             raise TypeError("Expected argument 'availability_status' to be a str")
         pulumi.set(__self__, "availability_status", availability_status)
@@ -76,6 +76,9 @@ class GetManagementAgentResult:
         if is_customer_deployed and not isinstance(is_customer_deployed, bool):
             raise TypeError("Expected argument 'is_customer_deployed' to be a bool")
         pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
+        if latest_supported_version and not isinstance(latest_supported_version, str):
+            raise TypeError("Expected argument 'latest_supported_version' to be a str")
+        pulumi.set(__self__, "latest_supported_version", latest_supported_version)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -106,6 +109,9 @@ class GetManagementAgentResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -242,6 +248,11 @@ class GetManagementAgentResult:
         return pulumi.get(self, "is_customer_deployed")
 
     @_builtins.property
+    @pulumi.getter(name="latestSupportedVersion")
+    def latest_supported_version(self) -> _builtins.str:
+        return pulumi.get(self, "latest_supported_version")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -316,6 +327,14 @@ class GetManagementAgentResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -370,6 +389,7 @@ class AwaitableGetManagementAgentResult(GetManagementAgentResult):
             install_type=self.install_type,
             is_agent_auto_upgradable=self.is_agent_auto_upgradable,
             is_customer_deployed=self.is_customer_deployed,
+            latest_supported_version=self.latest_supported_version,
             lifecycle_details=self.lifecycle_details,
             managed_agent_id=self.managed_agent_id,
             management_agent_id=self.management_agent_id,
@@ -380,6 +400,7 @@ class AwaitableGetManagementAgentResult(GetManagementAgentResult):
             plugin_lists=self.plugin_lists,
             resource_artifact_version=self.resource_artifact_version,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_last_heartbeat=self.time_last_heartbeat,
             time_updated=self.time_updated,
@@ -427,6 +448,7 @@ def get_management_agent(management_agent_id: Optional[_builtins.str] = None,
         install_type=pulumi.get(__ret__, 'install_type'),
         is_agent_auto_upgradable=pulumi.get(__ret__, 'is_agent_auto_upgradable'),
         is_customer_deployed=pulumi.get(__ret__, 'is_customer_deployed'),
+        latest_supported_version=pulumi.get(__ret__, 'latest_supported_version'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         managed_agent_id=pulumi.get(__ret__, 'managed_agent_id'),
         management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
@@ -437,6 +459,7 @@ def get_management_agent(management_agent_id: Optional[_builtins.str] = None,
         plugin_lists=pulumi.get(__ret__, 'plugin_lists'),
         resource_artifact_version=pulumi.get(__ret__, 'resource_artifact_version'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_last_heartbeat=pulumi.get(__ret__, 'time_last_heartbeat'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
@@ -481,6 +504,7 @@ def get_management_agent_output(management_agent_id: Optional[pulumi.Input[_buil
         install_type=pulumi.get(__response__, 'install_type'),
         is_agent_auto_upgradable=pulumi.get(__response__, 'is_agent_auto_upgradable'),
         is_customer_deployed=pulumi.get(__response__, 'is_customer_deployed'),
+        latest_supported_version=pulumi.get(__response__, 'latest_supported_version'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         managed_agent_id=pulumi.get(__response__, 'managed_agent_id'),
         management_agent_id=pulumi.get(__response__, 'management_agent_id'),
@@ -491,6 +515,7 @@ def get_management_agent_output(management_agent_id: Optional[pulumi.Input[_buil
         plugin_lists=pulumi.get(__response__, 'plugin_lists'),
         resource_artifact_version=pulumi.get(__response__, 'resource_artifact_version'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_last_heartbeat=pulumi.get(__response__, 'time_last_heartbeat'),
         time_updated=pulumi.get(__response__, 'time_updated'),

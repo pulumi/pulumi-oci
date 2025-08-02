@@ -89,6 +89,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly computeModel!: pulumi.Output<string>;
     /**
+     * (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     */
+    public readonly customerContacts!: pulumi.Output<outputs.Database.AutonomousContainerDatabaseCustomerContact[]>;
+    /**
      * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public readonly databaseSoftwareImageId!: pulumi.Output<string>;
@@ -221,6 +225,10 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
+    /**
+     * (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     */
+    public readonly okvEndPointGroupName!: pulumi.Output<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */
@@ -371,6 +379,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["cloudAutonomousVmClusterId"] = state ? state.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeModel"] = state ? state.computeModel : undefined;
+            resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
             resourceInputs["databaseSoftwareImageId"] = state ? state.databaseSoftwareImageId : undefined;
             resourceInputs["dataguardGroupMembers"] = state ? state.dataguardGroupMembers : undefined;
             resourceInputs["dataguards"] = state ? state.dataguards : undefined;
@@ -405,6 +414,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["netServicesArchitecture"] = state ? state.netServicesArchitecture : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
+            resourceInputs["okvEndPointGroupName"] = state ? state.okvEndPointGroupName : undefined;
             resourceInputs["patchId"] = state ? state.patchId : undefined;
             resourceInputs["patchModel"] = state ? state.patchModel : undefined;
             resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = state ? state.peerAutonomousContainerDatabaseBackupConfig : undefined;
@@ -450,6 +460,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["backupConfig"] = args ? args.backupConfig : undefined;
             resourceInputs["cloudAutonomousVmClusterId"] = args ? args.cloudAutonomousVmClusterId : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["customerContacts"] = args ? args.customerContacts : undefined;
             resourceInputs["databaseSoftwareImageId"] = args ? args.databaseSoftwareImageId : undefined;
             resourceInputs["dbName"] = args ? args.dbName : undefined;
             resourceInputs["dbSplitThreshold"] = args ? args.dbSplitThreshold : undefined;
@@ -468,6 +479,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
             resourceInputs["netServicesArchitecture"] = args ? args.netServicesArchitecture : undefined;
+            resourceInputs["okvEndPointGroupName"] = args ? args.okvEndPointGroupName : undefined;
             resourceInputs["patchModel"] = args ? args.patchModel : undefined;
             resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = args ? args.peerAutonomousContainerDatabaseBackupConfig : undefined;
             resourceInputs["peerAutonomousContainerDatabaseCompartmentId"] = args ? args.peerAutonomousContainerDatabaseCompartmentId : undefined;
@@ -571,6 +583,10 @@ export interface AutonomousContainerDatabaseState {
      * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     computeModel?: pulumi.Input<string>;
+    /**
+     * (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     */
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseCustomerContact>[]>;
     /**
      * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -704,6 +720,10 @@ export interface AutonomousContainerDatabaseState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     */
+    okvEndPointGroupName?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */
@@ -857,6 +877,10 @@ export interface AutonomousContainerDatabaseArgs {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     */
+    customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousContainerDatabaseCustomerContact>[]>;
+    /**
      * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
@@ -925,6 +949,10 @@ export interface AutonomousContainerDatabaseArgs {
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
      */
     netServicesArchitecture?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     */
+    okvEndPointGroupName?: pulumi.Input<string>;
     /**
      * (Updatable) Database Patch model preference.
      */

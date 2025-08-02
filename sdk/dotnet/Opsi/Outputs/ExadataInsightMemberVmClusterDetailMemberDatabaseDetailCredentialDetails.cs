@@ -13,11 +13,33 @@ namespace Pulumi.Oci.Opsi.Outputs
     [OutputType]
     public sealed class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
     {
+        /// <summary>
+        /// Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+        /// </summary>
         public readonly string? CredentialSourceName;
+        /// <summary>
+        /// CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+        /// </summary>
         public readonly string CredentialType;
+        /// <summary>
+        /// The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+        /// </summary>
+        public readonly string? NamedCredentialId;
+        /// <summary>
+        /// The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+        /// </summary>
         public readonly string? PasswordSecretId;
+        /// <summary>
+        /// database user role.
+        /// </summary>
         public readonly string? Role;
+        /// <summary>
+        /// database user name.
+        /// </summary>
         public readonly string? UserName;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+        /// </summary>
         public readonly string? WalletSecretId;
 
         [OutputConstructor]
@@ -25,6 +47,8 @@ namespace Pulumi.Oci.Opsi.Outputs
             string? credentialSourceName,
 
             string credentialType,
+
+            string? namedCredentialId,
 
             string? passwordSecretId,
 
@@ -36,6 +60,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
+            NamedCredentialId = namedCredentialId;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;

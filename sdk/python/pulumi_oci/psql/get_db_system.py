@@ -289,7 +289,7 @@ class GetDbSystemResult:
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetDbSystemSourceResult']:
         """
-        The source used to restore the database system.
+        The source of the database system.
         """
         return pulumi.get(self, "sources")
 

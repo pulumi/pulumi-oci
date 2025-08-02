@@ -22,14 +22,14 @@ public final class AutoScalingConfigurationPolicyResourceActionArgs extends com.
     }
 
     /**
-     * The type of resource action.
+     * The category of action to run on the resource.
      * 
      */
     @Import(name="actionType", required=true)
     private Output<String> actionType;
 
     /**
-     * @return The type of resource action.
+     * @return The category of action to run on the resource.
      * 
      */
     public Output<String> actionType() {
@@ -71,7 +71,7 @@ public final class AutoScalingConfigurationPolicyResourceActionArgs extends com.
         }
 
         /**
-         * @param actionType The type of resource action.
+         * @param actionType The category of action to run on the resource.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AutoScalingConfigurationPolicyResourceActionArgs extends com.
         }
 
         /**
-         * @param actionType The type of resource action.
+         * @param actionType The category of action to run on the resource.
          * 
          * @return builder
          * 

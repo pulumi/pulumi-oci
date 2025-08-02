@@ -300,6 +300,7 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private Boolean isDevTier;
+    private Boolean isDisableDbVersionUpgradeSchedule;
     /**
      * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
      * 
@@ -346,6 +347,7 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private Boolean isReplicateAutomaticBackups;
+    private Boolean isScheduleDbVersionUpgradeToEarliest;
     /**
      * @deprecated
      * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
@@ -629,6 +631,16 @@ public final class GetAutonomousDatabaseResult {
      */
     private String timeDisasterRecoveryRoleChanged;
     /**
+     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    private String timeEarliestAvailableDbVersionUpgrade;
+    /**
+     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    private String timeLatestAvailableDbVersionUpgrade;
+    /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
@@ -683,6 +695,11 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private String timeReclamationOfFreeAutonomousDatabase;
+    /**
+     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * 
+     */
+    private String timeScheduledDbVersionUpgrade;
     /**
      * @return The date and time the Autonomous Database was most recently undeleted.
      * 
@@ -1105,6 +1122,9 @@ public final class GetAutonomousDatabaseResult {
     public Boolean isDevTier() {
         return this.isDevTier;
     }
+    public Boolean isDisableDbVersionUpgradeSchedule() {
+        return this.isDisableDbVersionUpgradeSchedule;
+    }
     /**
      * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
      * 
@@ -1170,6 +1190,9 @@ public final class GetAutonomousDatabaseResult {
      */
     public Boolean isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
+    }
+    public Boolean isScheduleDbVersionUpgradeToEarliest() {
+        return this.isScheduleDbVersionUpgradeToEarliest;
     }
     /**
      * @deprecated
@@ -1578,6 +1601,20 @@ public final class GetAutonomousDatabaseResult {
         return this.timeDisasterRecoveryRoleChanged;
     }
     /**
+     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    public String timeEarliestAvailableDbVersionUpgrade() {
+        return this.timeEarliestAvailableDbVersionUpgrade;
+    }
+    /**
+     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    public String timeLatestAvailableDbVersionUpgrade() {
+        return this.timeLatestAvailableDbVersionUpgrade;
+    }
+    /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
      */
@@ -1653,6 +1690,13 @@ public final class GetAutonomousDatabaseResult {
      */
     public String timeReclamationOfFreeAutonomousDatabase() {
         return this.timeReclamationOfFreeAutonomousDatabase;
+    }
+    /**
+     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * 
+     */
+    public String timeScheduledDbVersionUpgrade() {
+        return this.timeScheduledDbVersionUpgrade;
     }
     /**
      * @return The date and time the Autonomous Database was most recently undeleted.
@@ -1776,6 +1820,7 @@ public final class GetAutonomousDatabaseResult {
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isDevTier;
+        private Boolean isDisableDbVersionUpgradeSchedule;
         private Boolean isDisconnectPeer;
         private Boolean isFreeTier;
         private Boolean isLocalDataGuardEnabled;
@@ -1786,6 +1831,7 @@ public final class GetAutonomousDatabaseResult {
         private Boolean isRefreshableClone;
         private Boolean isRemoteDataGuardEnabled;
         private Boolean isReplicateAutomaticBackups;
+        private Boolean isScheduleDbVersionUpgradeToEarliest;
         private Boolean isShrinkOnly;
         private List<GetAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
@@ -1848,6 +1894,8 @@ public final class GetAutonomousDatabaseResult {
         private String timeDataGuardRoleChanged;
         private String timeDeletionOfFreeAutonomousDatabase;
         private String timeDisasterRecoveryRoleChanged;
+        private String timeEarliestAvailableDbVersionUpgrade;
+        private String timeLatestAvailableDbVersionUpgrade;
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
         private String timeMaintenanceEnd;
@@ -1859,6 +1907,7 @@ public final class GetAutonomousDatabaseResult {
         private String timeOfLastSwitchover;
         private String timeOfNextRefresh;
         private String timeReclamationOfFreeAutonomousDatabase;
+        private String timeScheduledDbVersionUpgrade;
         private String timeUndeleted;
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
@@ -1928,6 +1977,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isDevTier = defaults.isDevTier;
+    	      this.isDisableDbVersionUpgradeSchedule = defaults.isDisableDbVersionUpgradeSchedule;
     	      this.isDisconnectPeer = defaults.isDisconnectPeer;
     	      this.isFreeTier = defaults.isFreeTier;
     	      this.isLocalDataGuardEnabled = defaults.isLocalDataGuardEnabled;
@@ -1938,6 +1988,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.isRefreshableClone = defaults.isRefreshableClone;
     	      this.isRemoteDataGuardEnabled = defaults.isRemoteDataGuardEnabled;
     	      this.isReplicateAutomaticBackups = defaults.isReplicateAutomaticBackups;
+    	      this.isScheduleDbVersionUpgradeToEarliest = defaults.isScheduleDbVersionUpgradeToEarliest;
     	      this.isShrinkOnly = defaults.isShrinkOnly;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
@@ -2000,6 +2051,8 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDeletionOfFreeAutonomousDatabase = defaults.timeDeletionOfFreeAutonomousDatabase;
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
+    	      this.timeEarliestAvailableDbVersionUpgrade = defaults.timeEarliestAvailableDbVersionUpgrade;
+    	      this.timeLatestAvailableDbVersionUpgrade = defaults.timeLatestAvailableDbVersionUpgrade;
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
     	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
@@ -2011,6 +2064,7 @@ public final class GetAutonomousDatabaseResult {
     	      this.timeOfLastSwitchover = defaults.timeOfLastSwitchover;
     	      this.timeOfNextRefresh = defaults.timeOfNextRefresh;
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
+    	      this.timeScheduledDbVersionUpgrade = defaults.timeScheduledDbVersionUpgrade;
     	      this.timeUndeleted = defaults.timeUndeleted;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
@@ -2509,6 +2563,14 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isDisableDbVersionUpgradeSchedule(Boolean isDisableDbVersionUpgradeSchedule) {
+            if (isDisableDbVersionUpgradeSchedule == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isDisableDbVersionUpgradeSchedule");
+            }
+            this.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isDisconnectPeer(Boolean isDisconnectPeer) {
             if (isDisconnectPeer == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isDisconnectPeer");
@@ -2586,6 +2648,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isReplicateAutomaticBackups");
             }
             this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isScheduleDbVersionUpgradeToEarliest(Boolean isScheduleDbVersionUpgradeToEarliest) {
+            if (isScheduleDbVersionUpgradeToEarliest == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "isScheduleDbVersionUpgradeToEarliest");
+            }
+            this.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             return this;
         }
         @CustomType.Setter
@@ -3124,6 +3194,22 @@ public final class GetAutonomousDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeEarliestAvailableDbVersionUpgrade(String timeEarliestAvailableDbVersionUpgrade) {
+            if (timeEarliestAvailableDbVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeEarliestAvailableDbVersionUpgrade");
+            }
+            this.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLatestAvailableDbVersionUpgrade(String timeLatestAvailableDbVersionUpgrade) {
+            if (timeLatestAvailableDbVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeLatestAvailableDbVersionUpgrade");
+            }
+            this.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeLocalDataGuardEnabled(String timeLocalDataGuardEnabled) {
             if (timeLocalDataGuardEnabled == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeLocalDataGuardEnabled");
@@ -3209,6 +3295,14 @@ public final class GetAutonomousDatabaseResult {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeReclamationOfFreeAutonomousDatabase");
             }
             this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduledDbVersionUpgrade(String timeScheduledDbVersionUpgrade) {
+            if (timeScheduledDbVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "timeScheduledDbVersionUpgrade");
+            }
+            this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             return this;
         }
         @CustomType.Setter
@@ -3345,6 +3439,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
             _resultValue.isDevTier = isDevTier;
+            _resultValue.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
             _resultValue.isDisconnectPeer = isDisconnectPeer;
             _resultValue.isFreeTier = isFreeTier;
             _resultValue.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
@@ -3355,6 +3450,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.isRefreshableClone = isRefreshableClone;
             _resultValue.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             _resultValue.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            _resultValue.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             _resultValue.isShrinkOnly = isShrinkOnly;
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;
@@ -3417,6 +3513,8 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             _resultValue.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            _resultValue.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            _resultValue.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             _resultValue.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
             _resultValue.timeMaintenanceEnd = timeMaintenanceEnd;
@@ -3428,6 +3526,7 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.timeOfLastSwitchover = timeOfLastSwitchover;
             _resultValue.timeOfNextRefresh = timeOfNextRefresh;
             _resultValue.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            _resultValue.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             _resultValue.timeUndeleted = timeUndeleted;
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             _resultValue.timestamp = timestamp;

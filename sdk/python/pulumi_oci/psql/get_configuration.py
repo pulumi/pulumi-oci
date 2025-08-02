@@ -27,10 +27,13 @@ class GetConfigurationResult:
     """
     A collection of values returned by getConfiguration.
     """
-    def __init__(__self__, compartment_id=None, config_type=None, configuration_details=None, configuration_id=None, db_configuration_overrides=None, db_version=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, is_flexible=None, lifecycle_details=None, shape=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, compartment_id=None, compatible_shapes=None, config_type=None, configuration_details=None, configuration_id=None, db_configuration_overrides=None, db_version=None, default_config_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, is_flexible=None, lifecycle_details=None, shape=None, state=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compatible_shapes and not isinstance(compatible_shapes, list):
+            raise TypeError("Expected argument 'compatible_shapes' to be a list")
+        pulumi.set(__self__, "compatible_shapes", compatible_shapes)
         if config_type and not isinstance(config_type, str):
             raise TypeError("Expected argument 'config_type' to be a str")
         pulumi.set(__self__, "config_type", config_type)
@@ -46,6 +49,9 @@ class GetConfigurationResult:
         if db_version and not isinstance(db_version, str):
             raise TypeError("Expected argument 'db_version' to be a str")
         pulumi.set(__self__, "db_version", db_version)
+        if default_config_id and not isinstance(default_config_id, str):
+            raise TypeError("Expected argument 'default_config_id' to be a str")
+        pulumi.set(__self__, "default_config_id", default_config_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -95,6 +101,14 @@ class GetConfigurationResult:
         return pulumi.get(self, "compartment_id")
 
     @_builtins.property
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> Sequence[_builtins.str]:
+        """
+        Indicates the collection of compatible shapes for this configuration.
+        """
+        return pulumi.get(self, "compatible_shapes")
+
+    @_builtins.property
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
@@ -127,6 +141,14 @@ class GetConfigurationResult:
         Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigId")
+    def default_config_id(self) -> _builtins.str:
+        """
+        The Default configuration used for this configuration.
+        """
+        return pulumi.get(self, "default_config_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -204,7 +226,7 @@ class GetConfigurationResult:
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the configuration.
         """
         return pulumi.get(self, "shape")
 
@@ -240,11 +262,13 @@ class AwaitableGetConfigurationResult(GetConfigurationResult):
             yield self
         return GetConfigurationResult(
             compartment_id=self.compartment_id,
+            compatible_shapes=self.compatible_shapes,
             config_type=self.config_type,
             configuration_details=self.configuration_details,
             configuration_id=self.configuration_id,
             db_configuration_overrides=self.db_configuration_overrides,
             db_version=self.db_version,
+            default_config_id=self.default_config_id,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -286,11 +310,13 @@ def get_configuration(configuration_id: Optional[_builtins.str] = None,
 
     return AwaitableGetConfigurationResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        compatible_shapes=pulumi.get(__ret__, 'compatible_shapes'),
         config_type=pulumi.get(__ret__, 'config_type'),
         configuration_details=pulumi.get(__ret__, 'configuration_details'),
         configuration_id=pulumi.get(__ret__, 'configuration_id'),
         db_configuration_overrides=pulumi.get(__ret__, 'db_configuration_overrides'),
         db_version=pulumi.get(__ret__, 'db_version'),
+        default_config_id=pulumi.get(__ret__, 'default_config_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -329,11 +355,13 @@ def get_configuration_output(configuration_id: Optional[pulumi.Input[_builtins.s
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getConfiguration:getConfiguration', __args__, opts=opts, typ=GetConfigurationResult)
     return __ret__.apply(lambda __response__: GetConfigurationResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        compatible_shapes=pulumi.get(__response__, 'compatible_shapes'),
         config_type=pulumi.get(__response__, 'config_type'),
         configuration_details=pulumi.get(__response__, 'configuration_details'),
         configuration_id=pulumi.get(__response__, 'configuration_id'),
         db_configuration_overrides=pulumi.get(__response__, 'db_configuration_overrides'),
         db_version=pulumi.get(__response__, 'db_version'),
+        default_config_id=pulumi.get(__response__, 'default_config_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),

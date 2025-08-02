@@ -61,10 +61,16 @@ type LookupConfigArgs struct {
 
 // A collection of values returned by getConfig.
 type LookupConfigResult struct {
-	ApmDomainId string `pulumi:"apmDomainId"`
-	ConfigId    string `pulumi:"configId"`
+	// The version of the referenced agent bundle.
+	AgentVersion string `pulumi:"agentVersion"`
+	ApmDomainId  string `pulumi:"apmDomainId"`
+	// The directory owned by runAsUser.
+	AttachInstallDir string `pulumi:"attachInstallDir"`
+	ConfigId         string `pulumi:"configId"`
 	// The type of configuration item.
 	ConfigType string `pulumi:"configType"`
+	// Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Configs []GetConfigConfig `pulumi:"configs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -89,14 +95,28 @@ type LookupConfigResult struct {
 	Id string `pulumi:"id"`
 	// The list of configuration items that reference the span filter.
 	InUseBies []GetConfigInUseBy `pulumi:"inUseBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+	MatchAgentsWithAttributeKeys []string `pulumi:"matchAgentsWithAttributeKeys"`
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue string `pulumi:"matchAgentsWithAttributeValue"`
 	// The list of metrics in this group.
 	Metrics []GetConfigMetric `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace string `pulumi:"namespace"`
 	OpcDryRun string `pulumi:"opcDryRun"`
 	// The options are stored here as JSON.
-	Options string          `pulumi:"options"`
-	Rules   []GetConfigRule `pulumi:"rules"`
+	Options string `pulumi:"options"`
+	// Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides []GetConfigOverride `pulumi:"overrides"`
+	// Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters []string        `pulumi:"processFilters"`
+	Rules          []GetConfigRule `pulumi:"rules"`
+	// The OS user that should be used to discover Java processes.
+	RunAsUser string `pulumi:"runAsUser"`
+	// The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	ServiceName string `pulumi:"serviceName"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -141,8 +161,18 @@ func (o LookupConfigResultOutput) ToLookupConfigResultOutputWithContext(ctx cont
 	return o
 }
 
+// The version of the referenced agent bundle.
+func (o LookupConfigResultOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
 func (o LookupConfigResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
+}
+
+// The directory owned by runAsUser.
+func (o LookupConfigResultOutput) AttachInstallDir() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.AttachInstallDir }).(pulumi.StringOutput)
 }
 
 func (o LookupConfigResultOutput) ConfigId() pulumi.StringOutput {
@@ -152,6 +182,11 @@ func (o LookupConfigResultOutput) ConfigId() pulumi.StringOutput {
 // The type of configuration item.
 func (o LookupConfigResultOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+func (o LookupConfigResultOutput) Configs() GetConfigConfigArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []GetConfigConfig { return v.Configs }).(GetConfigConfigArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
@@ -214,6 +249,21 @@ func (o LookupConfigResultOutput) InUseBies() GetConfigInUseByArrayOutput {
 	return o.ApplyT(func(v LookupConfigResult) []GetConfigInUseBy { return v.InUseBies }).(GetConfigInUseByArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+func (o LookupConfigResultOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+func (o LookupConfigResultOutput) MatchAgentsWithAttributeKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []string { return v.MatchAgentsWithAttributeKeys }).(pulumi.StringArrayOutput)
+}
+
+// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+func (o LookupConfigResultOutput) MatchAgentsWithAttributeValue() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.MatchAgentsWithAttributeValue }).(pulumi.StringOutput)
+}
+
 // The list of metrics in this group.
 func (o LookupConfigResultOutput) Metrics() GetConfigMetricArrayOutput {
 	return o.ApplyT(func(v LookupConfigResult) []GetConfigMetric { return v.Metrics }).(GetConfigMetricArrayOutput)
@@ -233,8 +283,28 @@ func (o LookupConfigResultOutput) Options() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConfigResult) string { return v.Options }).(pulumi.StringOutput)
 }
 
+// Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+func (o LookupConfigResultOutput) Overrides() GetConfigOverrideArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []GetConfigOverride { return v.Overrides }).(GetConfigOverrideArrayOutput)
+}
+
+// Filter patterns used to discover active Java processes for provisioning the APM Agent.
+func (o LookupConfigResultOutput) ProcessFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupConfigResult) []string { return v.ProcessFilters }).(pulumi.StringArrayOutput)
+}
+
 func (o LookupConfigResultOutput) Rules() GetConfigRuleArrayOutput {
 	return o.ApplyT(func(v LookupConfigResult) []GetConfigRule { return v.Rules }).(GetConfigRuleArrayOutput)
+}
+
+// The OS user that should be used to discover Java processes.
+func (o LookupConfigResultOutput) RunAsUser() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.RunAsUser }).(pulumi.StringOutput)
+}
+
+// The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+func (o LookupConfigResultOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConfigResult) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`

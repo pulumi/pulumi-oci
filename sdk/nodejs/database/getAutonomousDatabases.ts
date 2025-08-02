@@ -99,6 +99,9 @@ export interface GetAutonomousDatabasesArgs {
      * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
      */
     isResourcePoolLeader?: boolean;
+    /**
+     * A filter to return only resources that not match the given lifecycle state.
+     */
     lifecycleStateNotEqualTo?: string;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
@@ -115,9 +118,12 @@ export interface GetAutonomousDatabasesArgs {
  */
 export interface GetAutonomousDatabasesResult {
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      */
     readonly autonomousContainerDatabaseId?: string;
+    /**
+     * The list of autonomous_databases.
+     */
     readonly autonomousDatabases: outputs.Database.GetAutonomousDatabasesAutonomousDatabase[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -264,6 +270,9 @@ export interface GetAutonomousDatabasesOutputArgs {
      * Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
      */
     isResourcePoolLeader?: pulumi.Input<boolean>;
+    /**
+     * A filter to return only resources that not match the given lifecycle state.
+     */
     lifecycleStateNotEqualTo?: pulumi.Input<string>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.

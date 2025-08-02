@@ -53,7 +53,7 @@ export interface GetConfigsArgs {
      */
     apmDomainId: string;
     /**
-     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      */
     configType?: string;
     /**
@@ -161,7 +161,7 @@ export interface GetConfigsOutputArgs {
      */
     apmDomainId: pulumi.Input<string>;
     /**
-     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      */
     configType?: pulumi.Input<string>;
     /**

@@ -33,9 +33,17 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
         return Optional.ofNullable(this.action);
     }
 
+    /**
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     public Output<String> displayName() {
         return this.displayName;
     }
@@ -55,17 +63,9 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
         return Optional.ofNullable(this.id);
     }
 
-    /**
-     * Metric and threshold details for triggering an autoscaling action.
-     * 
-     */
     @Import(name="metric")
     private @Nullable Output<AutoScalingConfigurationPolicyRuleMetricArgs> metric;
 
-    /**
-     * @return Metric and threshold details for triggering an autoscaling action.
-     * 
-     */
     public Optional<Output<AutoScalingConfigurationPolicyRuleMetricArgs>> metric() {
         return Optional.ofNullable(this.metric);
     }
@@ -118,11 +118,23 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
             return action(Output.of(action));
         }
 
+        /**
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(Output<String> displayName) {
             $.displayName = displayName;
             return this;
         }
 
+        /**
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
         }
@@ -148,23 +160,11 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
             return id(Output.of(id));
         }
 
-        /**
-         * @param metric Metric and threshold details for triggering an autoscaling action.
-         * 
-         * @return builder
-         * 
-         */
         public Builder metric(@Nullable Output<AutoScalingConfigurationPolicyRuleMetricArgs> metric) {
             $.metric = metric;
             return this;
         }
 
-        /**
-         * @param metric Metric and threshold details for triggering an autoscaling action.
-         * 
-         * @return builder
-         * 
-         */
         public Builder metric(AutoScalingConfigurationPolicyRuleMetricArgs metric) {
             return metric(Output.of(metric));
         }

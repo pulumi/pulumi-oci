@@ -48,7 +48,13 @@ import * as utilities from "../utilities";
  *             },
  *             displayName: autoScalingConfigurationPoliciesRulesDisplayName,
  *             metric: {
+ *                 metricCompartmentId: testCompartment.id,
+ *                 metricSource: autoScalingConfigurationPoliciesRulesMetricMetricSource,
  *                 metricType: autoScalingConfigurationPoliciesRulesMetricMetricType,
+ *                 namespace: autoScalingConfigurationPoliciesRulesMetricNamespace,
+ *                 pendingDuration: autoScalingConfigurationPoliciesRulesMetricPendingDuration,
+ *                 query: autoScalingConfigurationPoliciesRulesMetricQuery,
+ *                 resourceGroup: autoScalingConfigurationPoliciesRulesMetricResourceGroup,
  *                 threshold: {
  *                     operator: autoScalingConfigurationPoliciesRulesMetricThresholdOperator,
  *                     value: autoScalingConfigurationPoliciesRulesMetricThresholdValue,

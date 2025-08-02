@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *         jobInfrastructureType: jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
  *         shapeName: testShape.name,
  *         jobShapeConfigDetails: {
+ *             cpuBaseline: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
  *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
  *         },

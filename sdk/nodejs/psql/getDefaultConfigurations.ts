@@ -21,6 +21,8 @@ import * as utilities from "../utilities";
  *     configurationId: testConfiguration.id,
  *     dbVersion: defaultConfigurationDbVersion,
  *     displayName: defaultConfigurationDisplayName,
+ *     instanceMemorySizeInGbs: defaultConfigurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: defaultConfigurationInstanceOcpuCount,
  *     shape: defaultConfigurationShape,
  *     state: defaultConfigurationState,
  * });
@@ -34,6 +36,8 @@ export function getDefaultConfigurations(args?: GetDefaultConfigurationsArgs, op
         "dbVersion": args.dbVersion,
         "displayName": args.displayName,
         "filters": args.filters,
+        "instanceMemorySizeInGbs": args.instanceMemorySizeInGbs,
+        "instanceOcpuCount": args.instanceOcpuCount,
         "shape": args.shape,
         "state": args.state,
     }, opts);
@@ -57,7 +61,15 @@ export interface GetDefaultConfigurationsArgs {
     displayName?: string;
     filters?: inputs.Psql.GetDefaultConfigurationsFilter[];
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The instance memory size in GBs for the configuration.
+     */
+    instanceMemorySizeInGbs?: number;
+    /**
+     * The instance ocpu count for the configuration.
+     */
+    instanceOcpuCount?: number;
+    /**
+     * The compute name of the shape for the configuration.
      */
     shape?: string;
     /**
@@ -89,9 +101,17 @@ export interface GetDefaultConfigurationsResult {
      */
     readonly id: string;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * Memory size in gigabytes with 1GB increment.
      */
-    readonly shape?: string;
+    readonly instanceMemorySizeInGbs?: number;
+    /**
+     * CPU core count.
+     */
+    readonly instanceOcpuCount?: number;
+    /**
+     * The name of the shape for the configuration.
+     */
+    readonly shape: string;
     /**
      * The current state of the configuration.
      */
@@ -112,6 +132,8 @@ export interface GetDefaultConfigurationsResult {
  *     configurationId: testConfiguration.id,
  *     dbVersion: defaultConfigurationDbVersion,
  *     displayName: defaultConfigurationDisplayName,
+ *     instanceMemorySizeInGbs: defaultConfigurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: defaultConfigurationInstanceOcpuCount,
  *     shape: defaultConfigurationShape,
  *     state: defaultConfigurationState,
  * });
@@ -125,6 +147,8 @@ export function getDefaultConfigurationsOutput(args?: GetDefaultConfigurationsOu
         "dbVersion": args.dbVersion,
         "displayName": args.displayName,
         "filters": args.filters,
+        "instanceMemorySizeInGbs": args.instanceMemorySizeInGbs,
+        "instanceOcpuCount": args.instanceOcpuCount,
         "shape": args.shape,
         "state": args.state,
     }, opts);
@@ -148,7 +172,15 @@ export interface GetDefaultConfigurationsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetDefaultConfigurationsFilterArgs>[]>;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The instance memory size in GBs for the configuration.
+     */
+    instanceMemorySizeInGbs?: pulumi.Input<number>;
+    /**
+     * The instance ocpu count for the configuration.
+     */
+    instanceOcpuCount?: pulumi.Input<number>;
+    /**
+     * The compute name of the shape for the configuration.
      */
     shape?: pulumi.Input<string>;
     /**

@@ -408,7 +408,13 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                     },
                     "display_name": auto_scaling_configuration_policies_rules_display_name,
                     "metric": {
+                        "metric_compartment_id": test_compartment["id"],
+                        "metric_source": auto_scaling_configuration_policies_rules_metric_metric_source,
                         "metric_type": auto_scaling_configuration_policies_rules_metric_metric_type,
+                        "namespace": auto_scaling_configuration_policies_rules_metric_namespace,
+                        "pending_duration": auto_scaling_configuration_policies_rules_metric_pending_duration,
+                        "query": auto_scaling_configuration_policies_rules_metric_query,
+                        "resource_group": auto_scaling_configuration_policies_rules_metric_resource_group,
                         "threshold": {
                             "operator": auto_scaling_configuration_policies_rules_metric_threshold_operator,
                             "value": auto_scaling_configuration_policies_rules_metric_threshold_value,
@@ -498,7 +504,13 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                     },
                     "display_name": auto_scaling_configuration_policies_rules_display_name,
                     "metric": {
+                        "metric_compartment_id": test_compartment["id"],
+                        "metric_source": auto_scaling_configuration_policies_rules_metric_metric_source,
                         "metric_type": auto_scaling_configuration_policies_rules_metric_metric_type,
+                        "namespace": auto_scaling_configuration_policies_rules_metric_namespace,
+                        "pending_duration": auto_scaling_configuration_policies_rules_metric_pending_duration,
+                        "query": auto_scaling_configuration_policies_rules_metric_query,
+                        "resource_group": auto_scaling_configuration_policies_rules_metric_resource_group,
                         "threshold": {
                             "operator": auto_scaling_configuration_policies_rules_metric_threshold_operator,
                             "value": auto_scaling_configuration_policies_rules_metric_threshold_value,

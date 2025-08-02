@@ -10,6 +10,7 @@ import com.pulumi.oci.Psql.inputs.ConfigurationDbConfigurationOverridesArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -33,6 +34,21 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * (Updatable) Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    @Import(name="compatibleShapes")
+    private @Nullable Output<List<String>> compatibleShapes;
+
+    /**
+     * @return (Updatable) Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public Optional<Output<List<String>>> compatibleShapes() {
+        return Optional.ofNullable(this.compatibleShapes);
     }
 
     /**
@@ -179,18 +195,22 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration.
+     * 
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      * 
      */
-    @Import(name="shape", required=true)
-    private Output<String> shape;
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
 
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
+     * 
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      * 
      */
-    public Output<String> shape() {
-        return this.shape;
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
     }
 
     /**
@@ -218,6 +238,7 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
     private ConfigurationArgs(ConfigurationArgs $) {
         this.compartmentId = $.compartmentId;
+        this.compatibleShapes = $.compatibleShapes;
         this.dbConfigurationOverrides = $.dbConfigurationOverrides;
         this.dbVersion = $.dbVersion;
         this.definedTags = $.definedTags;
@@ -268,6 +289,37 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param compatibleShapes (Updatable) Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(@Nullable Output<List<String>> compatibleShapes) {
+            $.compatibleShapes = compatibleShapes;
+            return this;
+        }
+
+        /**
+         * @param compatibleShapes (Updatable) Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(List<String> compatibleShapes) {
+            return compatibleShapes(Output.of(compatibleShapes));
+        }
+
+        /**
+         * @param compatibleShapes (Updatable) Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(String... compatibleShapes) {
+            return compatibleShapes(List.of(compatibleShapes));
         }
 
         /**
@@ -468,18 +520,22 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param shape The name of the shape for the configuration.
+         * 
+         * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
          * 
          * @return builder
          * 
          */
-        public Builder shape(Output<String> shape) {
+        public Builder shape(@Nullable Output<String> shape) {
             $.shape = shape;
             return this;
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param shape The name of the shape for the configuration.
+         * 
+         * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
          * 
          * @return builder
          * 
@@ -527,9 +583,6 @@ public final class ConfigurationArgs extends com.pulumi.resources.ResourceArgs {
             }
             if ($.displayName == null) {
                 throw new MissingRequiredPropertyException("ConfigurationArgs", "displayName");
-            }
-            if ($.shape == null) {
-                throw new MissingRequiredPropertyException("ConfigurationArgs", "shape");
             }
             return $;
         }

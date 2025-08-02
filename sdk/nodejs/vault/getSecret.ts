@@ -73,6 +73,10 @@ export interface GetSecretResult {
      */
     readonly isAutoGenerationEnabled: boolean;
     /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     */
+    readonly isReplica: boolean;
+    /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     readonly keyId: string;
@@ -92,6 +96,10 @@ export interface GetSecretResult {
      * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
     readonly nextRotationTime: string;
+    /**
+     * Defines the configuration that enables cross-region secret replication.
+     */
+    readonly replicationConfigs: outputs.Vault.GetSecretReplicationConfig[];
     /**
      * Defines the frequency of the rotation and the information about the target system
      */
@@ -114,6 +122,10 @@ export interface GetSecretResult {
      * A list of rules that control how the secret is used and managed.
      */
     readonly secretRules: outputs.Vault.GetSecretSecretRule[];
+    /**
+     * Details for the source that the source secret has.
+     */
+    readonly sourceRegionInformations: outputs.Vault.GetSecretSourceRegionInformation[];
     /**
      * The current lifecycle state of the secret.
      */

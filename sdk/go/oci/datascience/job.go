@@ -43,6 +43,7 @@ import (
 //					JobInfrastructureType: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobInfrastructureType),
 //					ShapeName:             pulumi.Any(testShape.Name),
 //					JobShapeConfigDetails: &datascience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
+//						CpuBaseline: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline),
 //						MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
 //					},

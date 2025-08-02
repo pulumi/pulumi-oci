@@ -29,7 +29,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
      */
     private String id;
     /**
-     * @return Metric and threshold details for triggering an autoscaling action.
+     * @return Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
      * 
      */
     private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics;
@@ -57,7 +57,7 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         return this.id;
     }
     /**
-     * @return Metric and threshold details for triggering an autoscaling action.
+     * @return Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
      * 
      */
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric> metrics() {

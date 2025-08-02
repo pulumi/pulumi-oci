@@ -16,6 +16,11 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
      */
     private String dbName;
     /**
+     * @return The unique name of the database that is associated with the key store.
+     * 
+     */
+    private String dbUniqueName;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
@@ -28,6 +33,13 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
      */
     public String dbName() {
         return this.dbName;
+    }
+    /**
+     * @return The unique name of the database that is associated with the key store.
+     * 
+     */
+    public String dbUniqueName() {
+        return this.dbUniqueName;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -47,11 +59,13 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
     @CustomType.Builder
     public static final class Builder {
         private String dbName;
+        private String dbUniqueName;
         private String id;
         public Builder() {}
         public Builder(GetKeyStoresKeyStoreAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
+    	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.id = defaults.id;
         }
 
@@ -61,6 +75,14 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
               throw new MissingRequiredPropertyException("GetKeyStoresKeyStoreAssociatedDatabase", "dbName");
             }
             this.dbName = dbName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbUniqueName(String dbUniqueName) {
+            if (dbUniqueName == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoresKeyStoreAssociatedDatabase", "dbUniqueName");
+            }
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +96,7 @@ public final class GetKeyStoresKeyStoreAssociatedDatabase {
         public GetKeyStoresKeyStoreAssociatedDatabase build() {
             final var _resultValue = new GetKeyStoresKeyStoreAssociatedDatabase();
             _resultValue.dbName = dbName;
+            _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.id = id;
             return _resultValue;
         }

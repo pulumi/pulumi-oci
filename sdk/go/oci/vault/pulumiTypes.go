@@ -13,6 +13,279 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type SecretReplicationConfig struct {
+	// (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+	IsWriteForwardEnabled *bool `pulumi:"isWriteForwardEnabled"`
+	// (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+	ReplicationTargets []SecretReplicationConfigReplicationTarget `pulumi:"replicationTargets"`
+}
+
+// SecretReplicationConfigInput is an input type that accepts SecretReplicationConfigArgs and SecretReplicationConfigOutput values.
+// You can construct a concrete instance of `SecretReplicationConfigInput` via:
+//
+//	SecretReplicationConfigArgs{...}
+type SecretReplicationConfigInput interface {
+	pulumi.Input
+
+	ToSecretReplicationConfigOutput() SecretReplicationConfigOutput
+	ToSecretReplicationConfigOutputWithContext(context.Context) SecretReplicationConfigOutput
+}
+
+type SecretReplicationConfigArgs struct {
+	// (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+	IsWriteForwardEnabled pulumi.BoolPtrInput `pulumi:"isWriteForwardEnabled"`
+	// (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+	ReplicationTargets SecretReplicationConfigReplicationTargetArrayInput `pulumi:"replicationTargets"`
+}
+
+func (SecretReplicationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretReplicationConfig)(nil)).Elem()
+}
+
+func (i SecretReplicationConfigArgs) ToSecretReplicationConfigOutput() SecretReplicationConfigOutput {
+	return i.ToSecretReplicationConfigOutputWithContext(context.Background())
+}
+
+func (i SecretReplicationConfigArgs) ToSecretReplicationConfigOutputWithContext(ctx context.Context) SecretReplicationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretReplicationConfigOutput)
+}
+
+func (i SecretReplicationConfigArgs) ToSecretReplicationConfigPtrOutput() SecretReplicationConfigPtrOutput {
+	return i.ToSecretReplicationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i SecretReplicationConfigArgs) ToSecretReplicationConfigPtrOutputWithContext(ctx context.Context) SecretReplicationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretReplicationConfigOutput).ToSecretReplicationConfigPtrOutputWithContext(ctx)
+}
+
+// SecretReplicationConfigPtrInput is an input type that accepts SecretReplicationConfigArgs, SecretReplicationConfigPtr and SecretReplicationConfigPtrOutput values.
+// You can construct a concrete instance of `SecretReplicationConfigPtrInput` via:
+//
+//	        SecretReplicationConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type SecretReplicationConfigPtrInput interface {
+	pulumi.Input
+
+	ToSecretReplicationConfigPtrOutput() SecretReplicationConfigPtrOutput
+	ToSecretReplicationConfigPtrOutputWithContext(context.Context) SecretReplicationConfigPtrOutput
+}
+
+type secretReplicationConfigPtrType SecretReplicationConfigArgs
+
+func SecretReplicationConfigPtr(v *SecretReplicationConfigArgs) SecretReplicationConfigPtrInput {
+	return (*secretReplicationConfigPtrType)(v)
+}
+
+func (*secretReplicationConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretReplicationConfig)(nil)).Elem()
+}
+
+func (i *secretReplicationConfigPtrType) ToSecretReplicationConfigPtrOutput() SecretReplicationConfigPtrOutput {
+	return i.ToSecretReplicationConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *secretReplicationConfigPtrType) ToSecretReplicationConfigPtrOutputWithContext(ctx context.Context) SecretReplicationConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretReplicationConfigPtrOutput)
+}
+
+type SecretReplicationConfigOutput struct{ *pulumi.OutputState }
+
+func (SecretReplicationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretReplicationConfig)(nil)).Elem()
+}
+
+func (o SecretReplicationConfigOutput) ToSecretReplicationConfigOutput() SecretReplicationConfigOutput {
+	return o
+}
+
+func (o SecretReplicationConfigOutput) ToSecretReplicationConfigOutputWithContext(ctx context.Context) SecretReplicationConfigOutput {
+	return o
+}
+
+func (o SecretReplicationConfigOutput) ToSecretReplicationConfigPtrOutput() SecretReplicationConfigPtrOutput {
+	return o.ToSecretReplicationConfigPtrOutputWithContext(context.Background())
+}
+
+func (o SecretReplicationConfigOutput) ToSecretReplicationConfigPtrOutputWithContext(ctx context.Context) SecretReplicationConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretReplicationConfig) *SecretReplicationConfig {
+		return &v
+	}).(SecretReplicationConfigPtrOutput)
+}
+
+// (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+func (o SecretReplicationConfigOutput) IsWriteForwardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v SecretReplicationConfig) *bool { return v.IsWriteForwardEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+func (o SecretReplicationConfigOutput) ReplicationTargets() SecretReplicationConfigReplicationTargetArrayOutput {
+	return o.ApplyT(func(v SecretReplicationConfig) []SecretReplicationConfigReplicationTarget {
+		return v.ReplicationTargets
+	}).(SecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type SecretReplicationConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (SecretReplicationConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretReplicationConfig)(nil)).Elem()
+}
+
+func (o SecretReplicationConfigPtrOutput) ToSecretReplicationConfigPtrOutput() SecretReplicationConfigPtrOutput {
+	return o
+}
+
+func (o SecretReplicationConfigPtrOutput) ToSecretReplicationConfigPtrOutputWithContext(ctx context.Context) SecretReplicationConfigPtrOutput {
+	return o
+}
+
+func (o SecretReplicationConfigPtrOutput) Elem() SecretReplicationConfigOutput {
+	return o.ApplyT(func(v *SecretReplicationConfig) SecretReplicationConfig {
+		if v != nil {
+			return *v
+		}
+		var ret SecretReplicationConfig
+		return ret
+	}).(SecretReplicationConfigOutput)
+}
+
+// (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+func (o SecretReplicationConfigPtrOutput) IsWriteForwardEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SecretReplicationConfig) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsWriteForwardEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+func (o SecretReplicationConfigPtrOutput) ReplicationTargets() SecretReplicationConfigReplicationTargetArrayOutput {
+	return o.ApplyT(func(v *SecretReplicationConfig) []SecretReplicationConfigReplicationTarget {
+		if v == nil {
+			return nil
+		}
+		return v.ReplicationTargets
+	}).(SecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type SecretReplicationConfigReplicationTarget struct {
+	// (Updatable) The OCID of the target region KMS key.
+	TargetKeyId string `pulumi:"targetKeyId"`
+	// (Updatable) The name of the target's region.
+	TargetRegion string `pulumi:"targetRegion"`
+	// (Updatable) The OCID of the target region's Vault.
+	TargetVaultId string `pulumi:"targetVaultId"`
+}
+
+// SecretReplicationConfigReplicationTargetInput is an input type that accepts SecretReplicationConfigReplicationTargetArgs and SecretReplicationConfigReplicationTargetOutput values.
+// You can construct a concrete instance of `SecretReplicationConfigReplicationTargetInput` via:
+//
+//	SecretReplicationConfigReplicationTargetArgs{...}
+type SecretReplicationConfigReplicationTargetInput interface {
+	pulumi.Input
+
+	ToSecretReplicationConfigReplicationTargetOutput() SecretReplicationConfigReplicationTargetOutput
+	ToSecretReplicationConfigReplicationTargetOutputWithContext(context.Context) SecretReplicationConfigReplicationTargetOutput
+}
+
+type SecretReplicationConfigReplicationTargetArgs struct {
+	// (Updatable) The OCID of the target region KMS key.
+	TargetKeyId pulumi.StringInput `pulumi:"targetKeyId"`
+	// (Updatable) The name of the target's region.
+	TargetRegion pulumi.StringInput `pulumi:"targetRegion"`
+	// (Updatable) The OCID of the target region's Vault.
+	TargetVaultId pulumi.StringInput `pulumi:"targetVaultId"`
+}
+
+func (SecretReplicationConfigReplicationTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (i SecretReplicationConfigReplicationTargetArgs) ToSecretReplicationConfigReplicationTargetOutput() SecretReplicationConfigReplicationTargetOutput {
+	return i.ToSecretReplicationConfigReplicationTargetOutputWithContext(context.Background())
+}
+
+func (i SecretReplicationConfigReplicationTargetArgs) ToSecretReplicationConfigReplicationTargetOutputWithContext(ctx context.Context) SecretReplicationConfigReplicationTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretReplicationConfigReplicationTargetOutput)
+}
+
+// SecretReplicationConfigReplicationTargetArrayInput is an input type that accepts SecretReplicationConfigReplicationTargetArray and SecretReplicationConfigReplicationTargetArrayOutput values.
+// You can construct a concrete instance of `SecretReplicationConfigReplicationTargetArrayInput` via:
+//
+//	SecretReplicationConfigReplicationTargetArray{ SecretReplicationConfigReplicationTargetArgs{...} }
+type SecretReplicationConfigReplicationTargetArrayInput interface {
+	pulumi.Input
+
+	ToSecretReplicationConfigReplicationTargetArrayOutput() SecretReplicationConfigReplicationTargetArrayOutput
+	ToSecretReplicationConfigReplicationTargetArrayOutputWithContext(context.Context) SecretReplicationConfigReplicationTargetArrayOutput
+}
+
+type SecretReplicationConfigReplicationTargetArray []SecretReplicationConfigReplicationTargetInput
+
+func (SecretReplicationConfigReplicationTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (i SecretReplicationConfigReplicationTargetArray) ToSecretReplicationConfigReplicationTargetArrayOutput() SecretReplicationConfigReplicationTargetArrayOutput {
+	return i.ToSecretReplicationConfigReplicationTargetArrayOutputWithContext(context.Background())
+}
+
+func (i SecretReplicationConfigReplicationTargetArray) ToSecretReplicationConfigReplicationTargetArrayOutputWithContext(ctx context.Context) SecretReplicationConfigReplicationTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type SecretReplicationConfigReplicationTargetOutput struct{ *pulumi.OutputState }
+
+func (SecretReplicationConfigReplicationTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (o SecretReplicationConfigReplicationTargetOutput) ToSecretReplicationConfigReplicationTargetOutput() SecretReplicationConfigReplicationTargetOutput {
+	return o
+}
+
+func (o SecretReplicationConfigReplicationTargetOutput) ToSecretReplicationConfigReplicationTargetOutputWithContext(ctx context.Context) SecretReplicationConfigReplicationTargetOutput {
+	return o
+}
+
+// (Updatable) The OCID of the target region KMS key.
+func (o SecretReplicationConfigReplicationTargetOutput) TargetKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v SecretReplicationConfigReplicationTarget) string { return v.TargetKeyId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the target's region.
+func (o SecretReplicationConfigReplicationTargetOutput) TargetRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v SecretReplicationConfigReplicationTarget) string { return v.TargetRegion }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the target region's Vault.
+func (o SecretReplicationConfigReplicationTargetOutput) TargetVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v SecretReplicationConfigReplicationTarget) string { return v.TargetVaultId }).(pulumi.StringOutput)
+}
+
+type SecretReplicationConfigReplicationTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (SecretReplicationConfigReplicationTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (o SecretReplicationConfigReplicationTargetArrayOutput) ToSecretReplicationConfigReplicationTargetArrayOutput() SecretReplicationConfigReplicationTargetArrayOutput {
+	return o
+}
+
+func (o SecretReplicationConfigReplicationTargetArrayOutput) ToSecretReplicationConfigReplicationTargetArrayOutputWithContext(ctx context.Context) SecretReplicationConfigReplicationTargetArrayOutput {
+	return o
+}
+
+func (o SecretReplicationConfigReplicationTargetArrayOutput) Index(i pulumi.IntInput) SecretReplicationConfigReplicationTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecretReplicationConfigReplicationTarget {
+		return vs[0].([]SecretReplicationConfigReplicationTarget)[vs[1].(int)]
+	}).(SecretReplicationConfigReplicationTargetOutput)
+}
+
 type SecretRotationConfig struct {
 	// (Updatable) Enables auto rotation, when set to true rotationInterval must be set.
 	IsScheduledRotationEnabled *bool `pulumi:"isScheduledRotationEnabled"`
@@ -884,6 +1157,344 @@ func (o SecretSecretRuleArrayOutput) Index(i pulumi.IntInput) SecretSecretRuleOu
 	}).(SecretSecretRuleOutput)
 }
 
+type SecretSourceRegionInformation struct {
+	// The OCID of the source region KMS key.
+	SourceKeyId *string `pulumi:"sourceKeyId"`
+	// The name of the source's region.
+	SourceRegion *string `pulumi:"sourceRegion"`
+	// The OCID of the source region's Vault.
+	SourceVaultId *string `pulumi:"sourceVaultId"`
+}
+
+// SecretSourceRegionInformationInput is an input type that accepts SecretSourceRegionInformationArgs and SecretSourceRegionInformationOutput values.
+// You can construct a concrete instance of `SecretSourceRegionInformationInput` via:
+//
+//	SecretSourceRegionInformationArgs{...}
+type SecretSourceRegionInformationInput interface {
+	pulumi.Input
+
+	ToSecretSourceRegionInformationOutput() SecretSourceRegionInformationOutput
+	ToSecretSourceRegionInformationOutputWithContext(context.Context) SecretSourceRegionInformationOutput
+}
+
+type SecretSourceRegionInformationArgs struct {
+	// The OCID of the source region KMS key.
+	SourceKeyId pulumi.StringPtrInput `pulumi:"sourceKeyId"`
+	// The name of the source's region.
+	SourceRegion pulumi.StringPtrInput `pulumi:"sourceRegion"`
+	// The OCID of the source region's Vault.
+	SourceVaultId pulumi.StringPtrInput `pulumi:"sourceVaultId"`
+}
+
+func (SecretSourceRegionInformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (i SecretSourceRegionInformationArgs) ToSecretSourceRegionInformationOutput() SecretSourceRegionInformationOutput {
+	return i.ToSecretSourceRegionInformationOutputWithContext(context.Background())
+}
+
+func (i SecretSourceRegionInformationArgs) ToSecretSourceRegionInformationOutputWithContext(ctx context.Context) SecretSourceRegionInformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSourceRegionInformationOutput)
+}
+
+// SecretSourceRegionInformationArrayInput is an input type that accepts SecretSourceRegionInformationArray and SecretSourceRegionInformationArrayOutput values.
+// You can construct a concrete instance of `SecretSourceRegionInformationArrayInput` via:
+//
+//	SecretSourceRegionInformationArray{ SecretSourceRegionInformationArgs{...} }
+type SecretSourceRegionInformationArrayInput interface {
+	pulumi.Input
+
+	ToSecretSourceRegionInformationArrayOutput() SecretSourceRegionInformationArrayOutput
+	ToSecretSourceRegionInformationArrayOutputWithContext(context.Context) SecretSourceRegionInformationArrayOutput
+}
+
+type SecretSourceRegionInformationArray []SecretSourceRegionInformationInput
+
+func (SecretSourceRegionInformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (i SecretSourceRegionInformationArray) ToSecretSourceRegionInformationArrayOutput() SecretSourceRegionInformationArrayOutput {
+	return i.ToSecretSourceRegionInformationArrayOutputWithContext(context.Background())
+}
+
+func (i SecretSourceRegionInformationArray) ToSecretSourceRegionInformationArrayOutputWithContext(ctx context.Context) SecretSourceRegionInformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSourceRegionInformationArrayOutput)
+}
+
+type SecretSourceRegionInformationOutput struct{ *pulumi.OutputState }
+
+func (SecretSourceRegionInformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (o SecretSourceRegionInformationOutput) ToSecretSourceRegionInformationOutput() SecretSourceRegionInformationOutput {
+	return o
+}
+
+func (o SecretSourceRegionInformationOutput) ToSecretSourceRegionInformationOutputWithContext(ctx context.Context) SecretSourceRegionInformationOutput {
+	return o
+}
+
+// The OCID of the source region KMS key.
+func (o SecretSourceRegionInformationOutput) SourceKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSourceRegionInformation) *string { return v.SourceKeyId }).(pulumi.StringPtrOutput)
+}
+
+// The name of the source's region.
+func (o SecretSourceRegionInformationOutput) SourceRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSourceRegionInformation) *string { return v.SourceRegion }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the source region's Vault.
+func (o SecretSourceRegionInformationOutput) SourceVaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSourceRegionInformation) *string { return v.SourceVaultId }).(pulumi.StringPtrOutput)
+}
+
+type SecretSourceRegionInformationArrayOutput struct{ *pulumi.OutputState }
+
+func (SecretSourceRegionInformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (o SecretSourceRegionInformationArrayOutput) ToSecretSourceRegionInformationArrayOutput() SecretSourceRegionInformationArrayOutput {
+	return o
+}
+
+func (o SecretSourceRegionInformationArrayOutput) ToSecretSourceRegionInformationArrayOutputWithContext(ctx context.Context) SecretSourceRegionInformationArrayOutput {
+	return o
+}
+
+func (o SecretSourceRegionInformationArrayOutput) Index(i pulumi.IntInput) SecretSourceRegionInformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecretSourceRegionInformation {
+		return vs[0].([]SecretSourceRegionInformation)[vs[1].(int)]
+	}).(SecretSourceRegionInformationOutput)
+}
+
+type GetSecretReplicationConfig struct {
+	// (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+	IsWriteForwardEnabled bool `pulumi:"isWriteForwardEnabled"`
+	// List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+	ReplicationTargets []GetSecretReplicationConfigReplicationTarget `pulumi:"replicationTargets"`
+}
+
+// GetSecretReplicationConfigInput is an input type that accepts GetSecretReplicationConfigArgs and GetSecretReplicationConfigOutput values.
+// You can construct a concrete instance of `GetSecretReplicationConfigInput` via:
+//
+//	GetSecretReplicationConfigArgs{...}
+type GetSecretReplicationConfigInput interface {
+	pulumi.Input
+
+	ToGetSecretReplicationConfigOutput() GetSecretReplicationConfigOutput
+	ToGetSecretReplicationConfigOutputWithContext(context.Context) GetSecretReplicationConfigOutput
+}
+
+type GetSecretReplicationConfigArgs struct {
+	// (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+	IsWriteForwardEnabled pulumi.BoolInput `pulumi:"isWriteForwardEnabled"`
+	// List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+	ReplicationTargets GetSecretReplicationConfigReplicationTargetArrayInput `pulumi:"replicationTargets"`
+}
+
+func (GetSecretReplicationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretReplicationConfig)(nil)).Elem()
+}
+
+func (i GetSecretReplicationConfigArgs) ToGetSecretReplicationConfigOutput() GetSecretReplicationConfigOutput {
+	return i.ToGetSecretReplicationConfigOutputWithContext(context.Background())
+}
+
+func (i GetSecretReplicationConfigArgs) ToGetSecretReplicationConfigOutputWithContext(ctx context.Context) GetSecretReplicationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretReplicationConfigOutput)
+}
+
+// GetSecretReplicationConfigArrayInput is an input type that accepts GetSecretReplicationConfigArray and GetSecretReplicationConfigArrayOutput values.
+// You can construct a concrete instance of `GetSecretReplicationConfigArrayInput` via:
+//
+//	GetSecretReplicationConfigArray{ GetSecretReplicationConfigArgs{...} }
+type GetSecretReplicationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretReplicationConfigArrayOutput() GetSecretReplicationConfigArrayOutput
+	ToGetSecretReplicationConfigArrayOutputWithContext(context.Context) GetSecretReplicationConfigArrayOutput
+}
+
+type GetSecretReplicationConfigArray []GetSecretReplicationConfigInput
+
+func (GetSecretReplicationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretReplicationConfig)(nil)).Elem()
+}
+
+func (i GetSecretReplicationConfigArray) ToGetSecretReplicationConfigArrayOutput() GetSecretReplicationConfigArrayOutput {
+	return i.ToGetSecretReplicationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretReplicationConfigArray) ToGetSecretReplicationConfigArrayOutputWithContext(ctx context.Context) GetSecretReplicationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretReplicationConfigArrayOutput)
+}
+
+type GetSecretReplicationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSecretReplicationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretReplicationConfig)(nil)).Elem()
+}
+
+func (o GetSecretReplicationConfigOutput) ToGetSecretReplicationConfigOutput() GetSecretReplicationConfigOutput {
+	return o
+}
+
+func (o GetSecretReplicationConfigOutput) ToGetSecretReplicationConfigOutputWithContext(ctx context.Context) GetSecretReplicationConfigOutput {
+	return o
+}
+
+// (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+func (o GetSecretReplicationConfigOutput) IsWriteForwardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretReplicationConfig) bool { return v.IsWriteForwardEnabled }).(pulumi.BoolOutput)
+}
+
+// List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+func (o GetSecretReplicationConfigOutput) ReplicationTargets() GetSecretReplicationConfigReplicationTargetArrayOutput {
+	return o.ApplyT(func(v GetSecretReplicationConfig) []GetSecretReplicationConfigReplicationTarget {
+		return v.ReplicationTargets
+	}).(GetSecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type GetSecretReplicationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretReplicationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretReplicationConfig)(nil)).Elem()
+}
+
+func (o GetSecretReplicationConfigArrayOutput) ToGetSecretReplicationConfigArrayOutput() GetSecretReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretReplicationConfigArrayOutput) ToGetSecretReplicationConfigArrayOutputWithContext(ctx context.Context) GetSecretReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretReplicationConfigArrayOutput) Index(i pulumi.IntInput) GetSecretReplicationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretReplicationConfig {
+		return vs[0].([]GetSecretReplicationConfig)[vs[1].(int)]
+	}).(GetSecretReplicationConfigOutput)
+}
+
+type GetSecretReplicationConfigReplicationTarget struct {
+	// The OCID of the target region KMS key.
+	TargetKeyId string `pulumi:"targetKeyId"`
+	// The name of the target's region.
+	TargetRegion string `pulumi:"targetRegion"`
+	// The OCID of the target region's Vault.
+	TargetVaultId string `pulumi:"targetVaultId"`
+}
+
+// GetSecretReplicationConfigReplicationTargetInput is an input type that accepts GetSecretReplicationConfigReplicationTargetArgs and GetSecretReplicationConfigReplicationTargetOutput values.
+// You can construct a concrete instance of `GetSecretReplicationConfigReplicationTargetInput` via:
+//
+//	GetSecretReplicationConfigReplicationTargetArgs{...}
+type GetSecretReplicationConfigReplicationTargetInput interface {
+	pulumi.Input
+
+	ToGetSecretReplicationConfigReplicationTargetOutput() GetSecretReplicationConfigReplicationTargetOutput
+	ToGetSecretReplicationConfigReplicationTargetOutputWithContext(context.Context) GetSecretReplicationConfigReplicationTargetOutput
+}
+
+type GetSecretReplicationConfigReplicationTargetArgs struct {
+	// The OCID of the target region KMS key.
+	TargetKeyId pulumi.StringInput `pulumi:"targetKeyId"`
+	// The name of the target's region.
+	TargetRegion pulumi.StringInput `pulumi:"targetRegion"`
+	// The OCID of the target region's Vault.
+	TargetVaultId pulumi.StringInput `pulumi:"targetVaultId"`
+}
+
+func (GetSecretReplicationConfigReplicationTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (i GetSecretReplicationConfigReplicationTargetArgs) ToGetSecretReplicationConfigReplicationTargetOutput() GetSecretReplicationConfigReplicationTargetOutput {
+	return i.ToGetSecretReplicationConfigReplicationTargetOutputWithContext(context.Background())
+}
+
+func (i GetSecretReplicationConfigReplicationTargetArgs) ToGetSecretReplicationConfigReplicationTargetOutputWithContext(ctx context.Context) GetSecretReplicationConfigReplicationTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretReplicationConfigReplicationTargetOutput)
+}
+
+// GetSecretReplicationConfigReplicationTargetArrayInput is an input type that accepts GetSecretReplicationConfigReplicationTargetArray and GetSecretReplicationConfigReplicationTargetArrayOutput values.
+// You can construct a concrete instance of `GetSecretReplicationConfigReplicationTargetArrayInput` via:
+//
+//	GetSecretReplicationConfigReplicationTargetArray{ GetSecretReplicationConfigReplicationTargetArgs{...} }
+type GetSecretReplicationConfigReplicationTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretReplicationConfigReplicationTargetArrayOutput() GetSecretReplicationConfigReplicationTargetArrayOutput
+	ToGetSecretReplicationConfigReplicationTargetArrayOutputWithContext(context.Context) GetSecretReplicationConfigReplicationTargetArrayOutput
+}
+
+type GetSecretReplicationConfigReplicationTargetArray []GetSecretReplicationConfigReplicationTargetInput
+
+func (GetSecretReplicationConfigReplicationTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (i GetSecretReplicationConfigReplicationTargetArray) ToGetSecretReplicationConfigReplicationTargetArrayOutput() GetSecretReplicationConfigReplicationTargetArrayOutput {
+	return i.ToGetSecretReplicationConfigReplicationTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretReplicationConfigReplicationTargetArray) ToGetSecretReplicationConfigReplicationTargetArrayOutputWithContext(ctx context.Context) GetSecretReplicationConfigReplicationTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type GetSecretReplicationConfigReplicationTargetOutput struct{ *pulumi.OutputState }
+
+func (GetSecretReplicationConfigReplicationTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (o GetSecretReplicationConfigReplicationTargetOutput) ToGetSecretReplicationConfigReplicationTargetOutput() GetSecretReplicationConfigReplicationTargetOutput {
+	return o
+}
+
+func (o GetSecretReplicationConfigReplicationTargetOutput) ToGetSecretReplicationConfigReplicationTargetOutputWithContext(ctx context.Context) GetSecretReplicationConfigReplicationTargetOutput {
+	return o
+}
+
+// The OCID of the target region KMS key.
+func (o GetSecretReplicationConfigReplicationTargetOutput) TargetKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretReplicationConfigReplicationTarget) string { return v.TargetKeyId }).(pulumi.StringOutput)
+}
+
+// The name of the target's region.
+func (o GetSecretReplicationConfigReplicationTargetOutput) TargetRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretReplicationConfigReplicationTarget) string { return v.TargetRegion }).(pulumi.StringOutput)
+}
+
+// The OCID of the target region's Vault.
+func (o GetSecretReplicationConfigReplicationTargetOutput) TargetVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretReplicationConfigReplicationTarget) string { return v.TargetVaultId }).(pulumi.StringOutput)
+}
+
+type GetSecretReplicationConfigReplicationTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretReplicationConfigReplicationTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (o GetSecretReplicationConfigReplicationTargetArrayOutput) ToGetSecretReplicationConfigReplicationTargetArrayOutput() GetSecretReplicationConfigReplicationTargetArrayOutput {
+	return o
+}
+
+func (o GetSecretReplicationConfigReplicationTargetArrayOutput) ToGetSecretReplicationConfigReplicationTargetArrayOutputWithContext(ctx context.Context) GetSecretReplicationConfigReplicationTargetArrayOutput {
+	return o
+}
+
+func (o GetSecretReplicationConfigReplicationTargetArrayOutput) Index(i pulumi.IntInput) GetSecretReplicationConfigReplicationTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretReplicationConfigReplicationTarget {
+		return vs[0].([]GetSecretReplicationConfigReplicationTarget)[vs[1].(int)]
+	}).(GetSecretReplicationConfigReplicationTargetOutput)
+}
+
 type GetSecretRotationConfig struct {
 	// Enables auto rotation, when set to true rotationInterval must be set.
 	IsScheduledRotationEnabled bool `pulumi:"isScheduledRotationEnabled"`
@@ -1485,6 +2096,121 @@ func (o GetSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecretSecret
 	}).(GetSecretSecretRuleOutput)
 }
 
+type GetSecretSourceRegionInformation struct {
+	// The OCID of the source region KMS key.
+	SourceKeyId string `pulumi:"sourceKeyId"`
+	// The name of the source's region.
+	SourceRegion string `pulumi:"sourceRegion"`
+	// The OCID of the source region's Vault.
+	SourceVaultId string `pulumi:"sourceVaultId"`
+}
+
+// GetSecretSourceRegionInformationInput is an input type that accepts GetSecretSourceRegionInformationArgs and GetSecretSourceRegionInformationOutput values.
+// You can construct a concrete instance of `GetSecretSourceRegionInformationInput` via:
+//
+//	GetSecretSourceRegionInformationArgs{...}
+type GetSecretSourceRegionInformationInput interface {
+	pulumi.Input
+
+	ToGetSecretSourceRegionInformationOutput() GetSecretSourceRegionInformationOutput
+	ToGetSecretSourceRegionInformationOutputWithContext(context.Context) GetSecretSourceRegionInformationOutput
+}
+
+type GetSecretSourceRegionInformationArgs struct {
+	// The OCID of the source region KMS key.
+	SourceKeyId pulumi.StringInput `pulumi:"sourceKeyId"`
+	// The name of the source's region.
+	SourceRegion pulumi.StringInput `pulumi:"sourceRegion"`
+	// The OCID of the source region's Vault.
+	SourceVaultId pulumi.StringInput `pulumi:"sourceVaultId"`
+}
+
+func (GetSecretSourceRegionInformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (i GetSecretSourceRegionInformationArgs) ToGetSecretSourceRegionInformationOutput() GetSecretSourceRegionInformationOutput {
+	return i.ToGetSecretSourceRegionInformationOutputWithContext(context.Background())
+}
+
+func (i GetSecretSourceRegionInformationArgs) ToGetSecretSourceRegionInformationOutputWithContext(ctx context.Context) GetSecretSourceRegionInformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSourceRegionInformationOutput)
+}
+
+// GetSecretSourceRegionInformationArrayInput is an input type that accepts GetSecretSourceRegionInformationArray and GetSecretSourceRegionInformationArrayOutput values.
+// You can construct a concrete instance of `GetSecretSourceRegionInformationArrayInput` via:
+//
+//	GetSecretSourceRegionInformationArray{ GetSecretSourceRegionInformationArgs{...} }
+type GetSecretSourceRegionInformationArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretSourceRegionInformationArrayOutput() GetSecretSourceRegionInformationArrayOutput
+	ToGetSecretSourceRegionInformationArrayOutputWithContext(context.Context) GetSecretSourceRegionInformationArrayOutput
+}
+
+type GetSecretSourceRegionInformationArray []GetSecretSourceRegionInformationInput
+
+func (GetSecretSourceRegionInformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (i GetSecretSourceRegionInformationArray) ToGetSecretSourceRegionInformationArrayOutput() GetSecretSourceRegionInformationArrayOutput {
+	return i.ToGetSecretSourceRegionInformationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretSourceRegionInformationArray) ToGetSecretSourceRegionInformationArrayOutputWithContext(ctx context.Context) GetSecretSourceRegionInformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSourceRegionInformationArrayOutput)
+}
+
+type GetSecretSourceRegionInformationOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSourceRegionInformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (o GetSecretSourceRegionInformationOutput) ToGetSecretSourceRegionInformationOutput() GetSecretSourceRegionInformationOutput {
+	return o
+}
+
+func (o GetSecretSourceRegionInformationOutput) ToGetSecretSourceRegionInformationOutputWithContext(ctx context.Context) GetSecretSourceRegionInformationOutput {
+	return o
+}
+
+// The OCID of the source region KMS key.
+func (o GetSecretSourceRegionInformationOutput) SourceKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSourceRegionInformation) string { return v.SourceKeyId }).(pulumi.StringOutput)
+}
+
+// The name of the source's region.
+func (o GetSecretSourceRegionInformationOutput) SourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSourceRegionInformation) string { return v.SourceRegion }).(pulumi.StringOutput)
+}
+
+// The OCID of the source region's Vault.
+func (o GetSecretSourceRegionInformationOutput) SourceVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSourceRegionInformation) string { return v.SourceVaultId }).(pulumi.StringOutput)
+}
+
+type GetSecretSourceRegionInformationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSourceRegionInformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (o GetSecretSourceRegionInformationArrayOutput) ToGetSecretSourceRegionInformationArrayOutput() GetSecretSourceRegionInformationArrayOutput {
+	return o
+}
+
+func (o GetSecretSourceRegionInformationArrayOutput) ToGetSecretSourceRegionInformationArrayOutputWithContext(ctx context.Context) GetSecretSourceRegionInformationArrayOutput {
+	return o
+}
+
+func (o GetSecretSourceRegionInformationArrayOutput) Index(i pulumi.IntInput) GetSecretSourceRegionInformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretSourceRegionInformation {
+		return vs[0].([]GetSecretSourceRegionInformation)[vs[1].(int)]
+	}).(GetSecretSourceRegionInformationOutput)
+}
+
 type GetSecretsFilter struct {
 	// The secret name.
 	Name   string   `pulumi:"name"`
@@ -1610,6 +2336,8 @@ type GetSecretsSecret struct {
 	Id string `pulumi:"id"`
 	// The value of this flag determines whether or not secret content will be generated automatically.
 	IsAutoGenerationEnabled bool `pulumi:"isAutoGenerationEnabled"`
+	// A Boolean value that indicates whether the secret is a source or replica secret.
+	IsReplica bool `pulumi:"isReplica"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1620,6 +2348,8 @@ type GetSecretsSecret struct {
 	Metadata map[string]string `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime string `pulumi:"nextRotationTime"`
+	// Defines the configuration that enables cross-region secret replication.
+	ReplicationConfigs []GetSecretsSecretReplicationConfig `pulumi:"replicationConfigs"`
 	// Defines the frequency of the rotation and the information about the target system
 	RotationConfigs []GetSecretsSecretRotationConfig `pulumi:"rotationConfigs"`
 	// Additional information about the status of the secret rotation
@@ -1631,6 +2361,8 @@ type GetSecretsSecret struct {
 	SecretName string `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
 	SecretRules []GetSecretsSecretSecretRule `pulumi:"secretRules"`
+	// Details for the source that the source secret has.
+	SourceRegionInformations []GetSecretsSecretSourceRegionInformation `pulumi:"sourceRegionInformations"`
 	// A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1670,6 +2402,8 @@ type GetSecretsSecretArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The value of this flag determines whether or not secret content will be generated automatically.
 	IsAutoGenerationEnabled pulumi.BoolInput `pulumi:"isAutoGenerationEnabled"`
+	// A Boolean value that indicates whether the secret is a source or replica secret.
+	IsReplica pulumi.BoolInput `pulumi:"isReplica"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringInput `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1680,6 +2414,8 @@ type GetSecretsSecretArgs struct {
 	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime pulumi.StringInput `pulumi:"nextRotationTime"`
+	// Defines the configuration that enables cross-region secret replication.
+	ReplicationConfigs GetSecretsSecretReplicationConfigArrayInput `pulumi:"replicationConfigs"`
 	// Defines the frequency of the rotation and the information about the target system
 	RotationConfigs GetSecretsSecretRotationConfigArrayInput `pulumi:"rotationConfigs"`
 	// Additional information about the status of the secret rotation
@@ -1691,6 +2427,8 @@ type GetSecretsSecretArgs struct {
 	SecretName pulumi.StringInput `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
 	SecretRules GetSecretsSecretSecretRuleArrayInput `pulumi:"secretRules"`
+	// Details for the source that the source secret has.
+	SourceRegionInformations GetSecretsSecretSourceRegionInformationArrayInput `pulumi:"sourceRegionInformations"`
 	// A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -1793,6 +2531,11 @@ func (o GetSecretsSecretOutput) IsAutoGenerationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSecretsSecret) bool { return v.IsAutoGenerationEnabled }).(pulumi.BoolOutput)
 }
 
+// A Boolean value that indicates whether the secret is a source or replica secret.
+func (o GetSecretsSecretOutput) IsReplica() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretsSecret) bool { return v.IsReplica }).(pulumi.BoolOutput)
+}
+
 // The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 func (o GetSecretsSecretOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecret) string { return v.KeyId }).(pulumi.StringOutput)
@@ -1816,6 +2559,11 @@ func (o GetSecretsSecretOutput) Metadata() pulumi.StringMapOutput {
 // A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o GetSecretsSecretOutput) NextRotationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecretsSecret) string { return v.NextRotationTime }).(pulumi.StringOutput)
+}
+
+// Defines the configuration that enables cross-region secret replication.
+func (o GetSecretsSecretOutput) ReplicationConfigs() GetSecretsSecretReplicationConfigArrayOutput {
+	return o.ApplyT(func(v GetSecretsSecret) []GetSecretsSecretReplicationConfig { return v.ReplicationConfigs }).(GetSecretsSecretReplicationConfigArrayOutput)
 }
 
 // Defines the frequency of the rotation and the information about the target system
@@ -1845,6 +2593,11 @@ func (o GetSecretsSecretOutput) SecretName() pulumi.StringOutput {
 // A list of rules that control how the secret is used and managed.
 func (o GetSecretsSecretOutput) SecretRules() GetSecretsSecretSecretRuleArrayOutput {
 	return o.ApplyT(func(v GetSecretsSecret) []GetSecretsSecretSecretRule { return v.SecretRules }).(GetSecretsSecretSecretRuleArrayOutput)
+}
+
+// Details for the source that the source secret has.
+func (o GetSecretsSecretOutput) SourceRegionInformations() GetSecretsSecretSourceRegionInformationArrayOutput {
+	return o.ApplyT(func(v GetSecretsSecret) []GetSecretsSecretSourceRegionInformation { return v.SourceRegionInformations }).(GetSecretsSecretSourceRegionInformationArrayOutput)
 }
 
 // A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -1890,6 +2643,229 @@ func (o GetSecretsSecretArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecret {
 		return vs[0].([]GetSecretsSecret)[vs[1].(int)]
 	}).(GetSecretsSecretOutput)
+}
+
+type GetSecretsSecretReplicationConfig struct {
+	// (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+	IsWriteForwardEnabled bool `pulumi:"isWriteForwardEnabled"`
+	// List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+	ReplicationTargets []GetSecretsSecretReplicationConfigReplicationTarget `pulumi:"replicationTargets"`
+}
+
+// GetSecretsSecretReplicationConfigInput is an input type that accepts GetSecretsSecretReplicationConfigArgs and GetSecretsSecretReplicationConfigOutput values.
+// You can construct a concrete instance of `GetSecretsSecretReplicationConfigInput` via:
+//
+//	GetSecretsSecretReplicationConfigArgs{...}
+type GetSecretsSecretReplicationConfigInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretReplicationConfigOutput() GetSecretsSecretReplicationConfigOutput
+	ToGetSecretsSecretReplicationConfigOutputWithContext(context.Context) GetSecretsSecretReplicationConfigOutput
+}
+
+type GetSecretsSecretReplicationConfigArgs struct {
+	// (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+	IsWriteForwardEnabled pulumi.BoolInput `pulumi:"isWriteForwardEnabled"`
+	// List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+	ReplicationTargets GetSecretsSecretReplicationConfigReplicationTargetArrayInput `pulumi:"replicationTargets"`
+}
+
+func (GetSecretsSecretReplicationConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretReplicationConfig)(nil)).Elem()
+}
+
+func (i GetSecretsSecretReplicationConfigArgs) ToGetSecretsSecretReplicationConfigOutput() GetSecretsSecretReplicationConfigOutput {
+	return i.ToGetSecretsSecretReplicationConfigOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretReplicationConfigArgs) ToGetSecretsSecretReplicationConfigOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretReplicationConfigOutput)
+}
+
+// GetSecretsSecretReplicationConfigArrayInput is an input type that accepts GetSecretsSecretReplicationConfigArray and GetSecretsSecretReplicationConfigArrayOutput values.
+// You can construct a concrete instance of `GetSecretsSecretReplicationConfigArrayInput` via:
+//
+//	GetSecretsSecretReplicationConfigArray{ GetSecretsSecretReplicationConfigArgs{...} }
+type GetSecretsSecretReplicationConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretReplicationConfigArrayOutput() GetSecretsSecretReplicationConfigArrayOutput
+	ToGetSecretsSecretReplicationConfigArrayOutputWithContext(context.Context) GetSecretsSecretReplicationConfigArrayOutput
+}
+
+type GetSecretsSecretReplicationConfigArray []GetSecretsSecretReplicationConfigInput
+
+func (GetSecretsSecretReplicationConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretReplicationConfig)(nil)).Elem()
+}
+
+func (i GetSecretsSecretReplicationConfigArray) ToGetSecretsSecretReplicationConfigArrayOutput() GetSecretsSecretReplicationConfigArrayOutput {
+	return i.ToGetSecretsSecretReplicationConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretReplicationConfigArray) ToGetSecretsSecretReplicationConfigArrayOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretReplicationConfigArrayOutput)
+}
+
+type GetSecretsSecretReplicationConfigOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretReplicationConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretReplicationConfig)(nil)).Elem()
+}
+
+func (o GetSecretsSecretReplicationConfigOutput) ToGetSecretsSecretReplicationConfigOutput() GetSecretsSecretReplicationConfigOutput {
+	return o
+}
+
+func (o GetSecretsSecretReplicationConfigOutput) ToGetSecretsSecretReplicationConfigOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigOutput {
+	return o
+}
+
+// (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+func (o GetSecretsSecretReplicationConfigOutput) IsWriteForwardEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSecretsSecretReplicationConfig) bool { return v.IsWriteForwardEnabled }).(pulumi.BoolOutput)
+}
+
+// List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+func (o GetSecretsSecretReplicationConfigOutput) ReplicationTargets() GetSecretsSecretReplicationConfigReplicationTargetArrayOutput {
+	return o.ApplyT(func(v GetSecretsSecretReplicationConfig) []GetSecretsSecretReplicationConfigReplicationTarget {
+		return v.ReplicationTargets
+	}).(GetSecretsSecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type GetSecretsSecretReplicationConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretReplicationConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretReplicationConfig)(nil)).Elem()
+}
+
+func (o GetSecretsSecretReplicationConfigArrayOutput) ToGetSecretsSecretReplicationConfigArrayOutput() GetSecretsSecretReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretReplicationConfigArrayOutput) ToGetSecretsSecretReplicationConfigArrayOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretReplicationConfigArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretReplicationConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretReplicationConfig {
+		return vs[0].([]GetSecretsSecretReplicationConfig)[vs[1].(int)]
+	}).(GetSecretsSecretReplicationConfigOutput)
+}
+
+type GetSecretsSecretReplicationConfigReplicationTarget struct {
+	// The OCID of the target region KMS key.
+	TargetKeyId string `pulumi:"targetKeyId"`
+	// The name of the target's region.
+	TargetRegion string `pulumi:"targetRegion"`
+	// The OCID of the target region's Vault.
+	TargetVaultId string `pulumi:"targetVaultId"`
+}
+
+// GetSecretsSecretReplicationConfigReplicationTargetInput is an input type that accepts GetSecretsSecretReplicationConfigReplicationTargetArgs and GetSecretsSecretReplicationConfigReplicationTargetOutput values.
+// You can construct a concrete instance of `GetSecretsSecretReplicationConfigReplicationTargetInput` via:
+//
+//	GetSecretsSecretReplicationConfigReplicationTargetArgs{...}
+type GetSecretsSecretReplicationConfigReplicationTargetInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretReplicationConfigReplicationTargetOutput() GetSecretsSecretReplicationConfigReplicationTargetOutput
+	ToGetSecretsSecretReplicationConfigReplicationTargetOutputWithContext(context.Context) GetSecretsSecretReplicationConfigReplicationTargetOutput
+}
+
+type GetSecretsSecretReplicationConfigReplicationTargetArgs struct {
+	// The OCID of the target region KMS key.
+	TargetKeyId pulumi.StringInput `pulumi:"targetKeyId"`
+	// The name of the target's region.
+	TargetRegion pulumi.StringInput `pulumi:"targetRegion"`
+	// The OCID of the target region's Vault.
+	TargetVaultId pulumi.StringInput `pulumi:"targetVaultId"`
+}
+
+func (GetSecretsSecretReplicationConfigReplicationTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (i GetSecretsSecretReplicationConfigReplicationTargetArgs) ToGetSecretsSecretReplicationConfigReplicationTargetOutput() GetSecretsSecretReplicationConfigReplicationTargetOutput {
+	return i.ToGetSecretsSecretReplicationConfigReplicationTargetOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretReplicationConfigReplicationTargetArgs) ToGetSecretsSecretReplicationConfigReplicationTargetOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigReplicationTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretReplicationConfigReplicationTargetOutput)
+}
+
+// GetSecretsSecretReplicationConfigReplicationTargetArrayInput is an input type that accepts GetSecretsSecretReplicationConfigReplicationTargetArray and GetSecretsSecretReplicationConfigReplicationTargetArrayOutput values.
+// You can construct a concrete instance of `GetSecretsSecretReplicationConfigReplicationTargetArrayInput` via:
+//
+//	GetSecretsSecretReplicationConfigReplicationTargetArray{ GetSecretsSecretReplicationConfigReplicationTargetArgs{...} }
+type GetSecretsSecretReplicationConfigReplicationTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutput() GetSecretsSecretReplicationConfigReplicationTargetArrayOutput
+	ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutputWithContext(context.Context) GetSecretsSecretReplicationConfigReplicationTargetArrayOutput
+}
+
+type GetSecretsSecretReplicationConfigReplicationTargetArray []GetSecretsSecretReplicationConfigReplicationTargetInput
+
+func (GetSecretsSecretReplicationConfigReplicationTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (i GetSecretsSecretReplicationConfigReplicationTargetArray) ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutput() GetSecretsSecretReplicationConfigReplicationTargetArrayOutput {
+	return i.ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretReplicationConfigReplicationTargetArray) ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigReplicationTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretReplicationConfigReplicationTargetArrayOutput)
+}
+
+type GetSecretsSecretReplicationConfigReplicationTargetOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretReplicationConfigReplicationTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (o GetSecretsSecretReplicationConfigReplicationTargetOutput) ToGetSecretsSecretReplicationConfigReplicationTargetOutput() GetSecretsSecretReplicationConfigReplicationTargetOutput {
+	return o
+}
+
+func (o GetSecretsSecretReplicationConfigReplicationTargetOutput) ToGetSecretsSecretReplicationConfigReplicationTargetOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigReplicationTargetOutput {
+	return o
+}
+
+// The OCID of the target region KMS key.
+func (o GetSecretsSecretReplicationConfigReplicationTargetOutput) TargetKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretReplicationConfigReplicationTarget) string { return v.TargetKeyId }).(pulumi.StringOutput)
+}
+
+// The name of the target's region.
+func (o GetSecretsSecretReplicationConfigReplicationTargetOutput) TargetRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretReplicationConfigReplicationTarget) string { return v.TargetRegion }).(pulumi.StringOutput)
+}
+
+// The OCID of the target region's Vault.
+func (o GetSecretsSecretReplicationConfigReplicationTargetOutput) TargetVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretReplicationConfigReplicationTarget) string { return v.TargetVaultId }).(pulumi.StringOutput)
+}
+
+type GetSecretsSecretReplicationConfigReplicationTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretReplicationConfigReplicationTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretReplicationConfigReplicationTarget)(nil)).Elem()
+}
+
+func (o GetSecretsSecretReplicationConfigReplicationTargetArrayOutput) ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutput() GetSecretsSecretReplicationConfigReplicationTargetArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretReplicationConfigReplicationTargetArrayOutput) ToGetSecretsSecretReplicationConfigReplicationTargetArrayOutputWithContext(ctx context.Context) GetSecretsSecretReplicationConfigReplicationTargetArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretReplicationConfigReplicationTargetArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretReplicationConfigReplicationTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretReplicationConfigReplicationTarget {
+		return vs[0].([]GetSecretsSecretReplicationConfigReplicationTarget)[vs[1].(int)]
+	}).(GetSecretsSecretReplicationConfigReplicationTargetOutput)
 }
 
 type GetSecretsSecretRotationConfig struct {
@@ -2496,7 +3472,126 @@ func (o GetSecretsSecretSecretRuleArrayOutput) Index(i pulumi.IntInput) GetSecre
 	}).(GetSecretsSecretSecretRuleOutput)
 }
 
+type GetSecretsSecretSourceRegionInformation struct {
+	// The OCID of the source region KMS key.
+	SourceKeyId string `pulumi:"sourceKeyId"`
+	// The name of the source's region.
+	SourceRegion string `pulumi:"sourceRegion"`
+	// The OCID of the source region's Vault.
+	SourceVaultId string `pulumi:"sourceVaultId"`
+}
+
+// GetSecretsSecretSourceRegionInformationInput is an input type that accepts GetSecretsSecretSourceRegionInformationArgs and GetSecretsSecretSourceRegionInformationOutput values.
+// You can construct a concrete instance of `GetSecretsSecretSourceRegionInformationInput` via:
+//
+//	GetSecretsSecretSourceRegionInformationArgs{...}
+type GetSecretsSecretSourceRegionInformationInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretSourceRegionInformationOutput() GetSecretsSecretSourceRegionInformationOutput
+	ToGetSecretsSecretSourceRegionInformationOutputWithContext(context.Context) GetSecretsSecretSourceRegionInformationOutput
+}
+
+type GetSecretsSecretSourceRegionInformationArgs struct {
+	// The OCID of the source region KMS key.
+	SourceKeyId pulumi.StringInput `pulumi:"sourceKeyId"`
+	// The name of the source's region.
+	SourceRegion pulumi.StringInput `pulumi:"sourceRegion"`
+	// The OCID of the source region's Vault.
+	SourceVaultId pulumi.StringInput `pulumi:"sourceVaultId"`
+}
+
+func (GetSecretsSecretSourceRegionInformationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (i GetSecretsSecretSourceRegionInformationArgs) ToGetSecretsSecretSourceRegionInformationOutput() GetSecretsSecretSourceRegionInformationOutput {
+	return i.ToGetSecretsSecretSourceRegionInformationOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretSourceRegionInformationArgs) ToGetSecretsSecretSourceRegionInformationOutputWithContext(ctx context.Context) GetSecretsSecretSourceRegionInformationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSourceRegionInformationOutput)
+}
+
+// GetSecretsSecretSourceRegionInformationArrayInput is an input type that accepts GetSecretsSecretSourceRegionInformationArray and GetSecretsSecretSourceRegionInformationArrayOutput values.
+// You can construct a concrete instance of `GetSecretsSecretSourceRegionInformationArrayInput` via:
+//
+//	GetSecretsSecretSourceRegionInformationArray{ GetSecretsSecretSourceRegionInformationArgs{...} }
+type GetSecretsSecretSourceRegionInformationArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretsSecretSourceRegionInformationArrayOutput() GetSecretsSecretSourceRegionInformationArrayOutput
+	ToGetSecretsSecretSourceRegionInformationArrayOutputWithContext(context.Context) GetSecretsSecretSourceRegionInformationArrayOutput
+}
+
+type GetSecretsSecretSourceRegionInformationArray []GetSecretsSecretSourceRegionInformationInput
+
+func (GetSecretsSecretSourceRegionInformationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (i GetSecretsSecretSourceRegionInformationArray) ToGetSecretsSecretSourceRegionInformationArrayOutput() GetSecretsSecretSourceRegionInformationArrayOutput {
+	return i.ToGetSecretsSecretSourceRegionInformationArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretsSecretSourceRegionInformationArray) ToGetSecretsSecretSourceRegionInformationArrayOutputWithContext(ctx context.Context) GetSecretsSecretSourceRegionInformationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretsSecretSourceRegionInformationArrayOutput)
+}
+
+type GetSecretsSecretSourceRegionInformationOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretSourceRegionInformationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretsSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (o GetSecretsSecretSourceRegionInformationOutput) ToGetSecretsSecretSourceRegionInformationOutput() GetSecretsSecretSourceRegionInformationOutput {
+	return o
+}
+
+func (o GetSecretsSecretSourceRegionInformationOutput) ToGetSecretsSecretSourceRegionInformationOutputWithContext(ctx context.Context) GetSecretsSecretSourceRegionInformationOutput {
+	return o
+}
+
+// The OCID of the source region KMS key.
+func (o GetSecretsSecretSourceRegionInformationOutput) SourceKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretSourceRegionInformation) string { return v.SourceKeyId }).(pulumi.StringOutput)
+}
+
+// The name of the source's region.
+func (o GetSecretsSecretSourceRegionInformationOutput) SourceRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretSourceRegionInformation) string { return v.SourceRegion }).(pulumi.StringOutput)
+}
+
+// The OCID of the source region's Vault.
+func (o GetSecretsSecretSourceRegionInformationOutput) SourceVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretsSecretSourceRegionInformation) string { return v.SourceVaultId }).(pulumi.StringOutput)
+}
+
+type GetSecretsSecretSourceRegionInformationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretsSecretSourceRegionInformationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretsSecretSourceRegionInformation)(nil)).Elem()
+}
+
+func (o GetSecretsSecretSourceRegionInformationArrayOutput) ToGetSecretsSecretSourceRegionInformationArrayOutput() GetSecretsSecretSourceRegionInformationArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretSourceRegionInformationArrayOutput) ToGetSecretsSecretSourceRegionInformationArrayOutputWithContext(ctx context.Context) GetSecretsSecretSourceRegionInformationArrayOutput {
+	return o
+}
+
+func (o GetSecretsSecretSourceRegionInformationArrayOutput) Index(i pulumi.IntInput) GetSecretsSecretSourceRegionInformationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretsSecretSourceRegionInformation {
+		return vs[0].([]GetSecretsSecretSourceRegionInformation)[vs[1].(int)]
+	}).(GetSecretsSecretSourceRegionInformationOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretReplicationConfigInput)(nil)).Elem(), SecretReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretReplicationConfigPtrInput)(nil)).Elem(), SecretReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretReplicationConfigReplicationTargetInput)(nil)).Elem(), SecretReplicationConfigReplicationTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretReplicationConfigReplicationTargetArrayInput)(nil)).Elem(), SecretReplicationConfigReplicationTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigInput)(nil)).Elem(), SecretRotationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigPtrInput)(nil)).Elem(), SecretRotationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretRotationConfigTargetSystemDetailsInput)(nil)).Elem(), SecretRotationConfigTargetSystemDetailsArgs{})
@@ -2507,6 +3602,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretGenerationContextPtrInput)(nil)).Elem(), SecretSecretGenerationContextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRuleInput)(nil)).Elem(), SecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRuleArrayInput)(nil)).Elem(), SecretSecretRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSourceRegionInformationInput)(nil)).Elem(), SecretSourceRegionInformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSourceRegionInformationArrayInput)(nil)).Elem(), SecretSourceRegionInformationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretReplicationConfigInput)(nil)).Elem(), GetSecretReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretReplicationConfigArrayInput)(nil)).Elem(), GetSecretReplicationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretReplicationConfigReplicationTargetInput)(nil)).Elem(), GetSecretReplicationConfigReplicationTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretReplicationConfigReplicationTargetArrayInput)(nil)).Elem(), GetSecretReplicationConfigReplicationTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigInput)(nil)).Elem(), GetSecretRotationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigArrayInput)(nil)).Elem(), GetSecretRotationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretRotationConfigTargetSystemDetailInput)(nil)).Elem(), GetSecretRotationConfigTargetSystemDetailArgs{})
@@ -2517,10 +3618,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretGenerationContextArrayInput)(nil)).Elem(), GetSecretSecretGenerationContextArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRuleInput)(nil)).Elem(), GetSecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRuleArrayInput)(nil)).Elem(), GetSecretSecretRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSourceRegionInformationInput)(nil)).Elem(), GetSecretSourceRegionInformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSourceRegionInformationArrayInput)(nil)).Elem(), GetSecretSourceRegionInformationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsFilterInput)(nil)).Elem(), GetSecretsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsFilterArrayInput)(nil)).Elem(), GetSecretsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretInput)(nil)).Elem(), GetSecretsSecretArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretArrayInput)(nil)).Elem(), GetSecretsSecretArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretReplicationConfigInput)(nil)).Elem(), GetSecretsSecretReplicationConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretReplicationConfigArrayInput)(nil)).Elem(), GetSecretsSecretReplicationConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretReplicationConfigReplicationTargetInput)(nil)).Elem(), GetSecretsSecretReplicationConfigReplicationTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretReplicationConfigReplicationTargetArrayInput)(nil)).Elem(), GetSecretsSecretReplicationConfigReplicationTargetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigInput)(nil)).Elem(), GetSecretsSecretRotationConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigArrayInput)(nil)).Elem(), GetSecretsSecretRotationConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretRotationConfigTargetSystemDetailInput)(nil)).Elem(), GetSecretsSecretRotationConfigTargetSystemDetailArgs{})
@@ -2531,6 +3638,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretGenerationContextArrayInput)(nil)).Elem(), GetSecretsSecretSecretGenerationContextArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretRuleInput)(nil)).Elem(), GetSecretsSecretSecretRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSecretRuleArrayInput)(nil)).Elem(), GetSecretsSecretSecretRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSourceRegionInformationInput)(nil)).Elem(), GetSecretsSecretSourceRegionInformationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretsSecretSourceRegionInformationArrayInput)(nil)).Elem(), GetSecretsSecretSourceRegionInformationArray{})
+	pulumi.RegisterOutputType(SecretReplicationConfigOutput{})
+	pulumi.RegisterOutputType(SecretReplicationConfigPtrOutput{})
+	pulumi.RegisterOutputType(SecretReplicationConfigReplicationTargetOutput{})
+	pulumi.RegisterOutputType(SecretReplicationConfigReplicationTargetArrayOutput{})
 	pulumi.RegisterOutputType(SecretRotationConfigOutput{})
 	pulumi.RegisterOutputType(SecretRotationConfigPtrOutput{})
 	pulumi.RegisterOutputType(SecretRotationConfigTargetSystemDetailsOutput{})
@@ -2541,6 +3654,12 @@ func init() {
 	pulumi.RegisterOutputType(SecretSecretGenerationContextPtrOutput{})
 	pulumi.RegisterOutputType(SecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(SecretSecretRuleArrayOutput{})
+	pulumi.RegisterOutputType(SecretSourceRegionInformationOutput{})
+	pulumi.RegisterOutputType(SecretSourceRegionInformationArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretReplicationConfigOutput{})
+	pulumi.RegisterOutputType(GetSecretReplicationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretReplicationConfigReplicationTargetOutput{})
+	pulumi.RegisterOutputType(GetSecretReplicationConfigReplicationTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretRotationConfigOutput{})
 	pulumi.RegisterOutputType(GetSecretRotationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretRotationConfigTargetSystemDetailOutput{})
@@ -2551,10 +3670,16 @@ func init() {
 	pulumi.RegisterOutputType(GetSecretSecretGenerationContextArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(GetSecretSecretRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretSourceRegionInformationOutput{})
+	pulumi.RegisterOutputType(GetSecretSourceRegionInformationArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsFilterOutput{})
 	pulumi.RegisterOutputType(GetSecretsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretReplicationConfigOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretReplicationConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretReplicationConfigReplicationTargetOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretReplicationConfigReplicationTargetArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretRotationConfigTargetSystemDetailOutput{})
@@ -2565,4 +3690,6 @@ func init() {
 	pulumi.RegisterOutputType(GetSecretsSecretSecretGenerationContextArrayOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretRuleOutput{})
 	pulumi.RegisterOutputType(GetSecretsSecretSecretRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretSourceRegionInformationOutput{})
+	pulumi.RegisterOutputType(GetSecretsSecretSourceRegionInformationArrayOutput{})
 }

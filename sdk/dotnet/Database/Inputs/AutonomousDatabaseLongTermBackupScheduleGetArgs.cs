@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseLongTermBackupScheduleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        /// Indicates if the resource pool should be deleted for the Autonomous Database.
         /// </summary>
         [Input("isDisabled")]
         public Input<bool>? IsDisabled { get; set; }

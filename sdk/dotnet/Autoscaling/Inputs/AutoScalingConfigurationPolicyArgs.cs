@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public Input<string> PolicyType { get; set; } = null!;
 
         /// <summary>
-        /// An action that can be executed against a resource.
+        /// An action to run on a resource, such as stopping or starting an instance pool.
         /// </summary>
         [Input("resourceAction")]
         public Input<Inputs.AutoScalingConfigurationPolicyResourceActionArgs>? ResourceAction { get; set; }

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorResult
     {
         /// <summary>
-        /// The name of the replication channel
+        /// The name of the replication channel.
         /// </summary>
         public readonly string ChannelName;
         /// <summary>
-        /// Error from fetch operation of a MySQL server replication channel.
+        /// Error from the fetch operation of a MySQL server replication channel.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchErrorResult> FetchErrors;
 

@@ -65,7 +65,7 @@ export interface GetProjectsArgs {
  */
 export interface GetProjectsResult {
     /**
-     * The compartment identifier.
+     * The lock compartment ID.
      */
     readonly compartmentId?: string;
     /**

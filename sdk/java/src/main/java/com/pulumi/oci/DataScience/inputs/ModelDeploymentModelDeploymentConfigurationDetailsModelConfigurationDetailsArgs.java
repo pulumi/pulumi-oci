@@ -5,7 +5,6 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs;
 import java.lang.Integer;
@@ -35,18 +34,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     }
 
     /**
-     * (Updatable) The model deployment instance configuration
+     * (Updatable) The model deployment instance configuration.
      * 
      */
-    @Import(name="instanceConfiguration", required=true)
-    private Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration;
+    @Import(name="instanceConfiguration")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration;
 
     /**
-     * @return (Updatable) The model deployment instance configuration
+     * @return (Updatable) The model deployment instance configuration.
      * 
      */
-    public Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration() {
-        return this.instanceConfiguration;
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs>> instanceConfiguration() {
+        return Optional.ofNullable(this.instanceConfiguration);
     }
 
     /**
@@ -68,15 +67,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * (Updatable) The OCID of the model you want to deploy.
      * 
      */
-    @Import(name="modelId", required=true)
-    private Output<String> modelId;
+    @Import(name="modelId")
+    private @Nullable Output<String> modelId;
 
     /**
      * @return (Updatable) The OCID of the model you want to deploy.
      * 
      */
-    public Output<String> modelId() {
-        return this.modelId;
+    public Optional<Output<String>> modelId() {
+        return Optional.ofNullable(this.modelId);
     }
 
     /**
@@ -144,18 +143,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param instanceConfiguration (Updatable) The model deployment instance configuration
+         * @param instanceConfiguration (Updatable) The model deployment instance configuration.
          * 
          * @return builder
          * 
          */
-        public Builder instanceConfiguration(Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration) {
+        public Builder instanceConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs> instanceConfiguration) {
             $.instanceConfiguration = instanceConfiguration;
             return this;
         }
 
         /**
-         * @param instanceConfiguration (Updatable) The model deployment instance configuration
+         * @param instanceConfiguration (Updatable) The model deployment instance configuration.
          * 
          * @return builder
          * 
@@ -191,7 +190,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          * @return builder
          * 
          */
-        public Builder modelId(Output<String> modelId) {
+        public Builder modelId(@Nullable Output<String> modelId) {
             $.modelId = modelId;
             return this;
         }
@@ -228,12 +227,6 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs build() {
-            if ($.instanceConfiguration == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs", "instanceConfiguration");
-            }
-            if ($.modelId == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs", "modelId");
-            }
             return $;
         }
     }

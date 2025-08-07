@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Psql
     ///         },
     ///         DbVersion = configurationDbVersion,
     ///         DisplayName = configurationDisplayName,
-    ///         Shape = configurationShape,
+    ///         CompatibleShapes = configurationCompatibleShapes,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -53,6 +53,7 @@ namespace Pulumi.Oci.Psql
     ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
     ///         InstanceOcpuCount = configurationInstanceOcpuCount,
     ///         IsFlexible = configurationIsFlexible,
+    ///         Shape = configurationShape,
     ///         SystemTags = configurationSystemTags,
     ///     });
     /// 
@@ -77,6 +78,12 @@ namespace Pulumi.Oci.Psql
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        [Output("compatibleShapes")]
+        public Output<ImmutableArray<string>> CompatibleShapes { get; private set; } = null!;
+
+        /// <summary>
         /// The type of configuration. Either user-created or a default configuration.
         /// </summary>
         [Output("configType")]
@@ -99,6 +106,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// The Default configuration used for this configuration.
+        /// </summary>
+        [Output("defaultConfigId")]
+        public Output<string> DefaultConfigId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -153,7 +166,9 @@ namespace Pulumi.Oci.Psql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the configuration. 
+        /// 
+        /// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
@@ -232,6 +247,18 @@ namespace Pulumi.Oci.Psql
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("compatibleShapes")]
+        private InputList<string>? _compatibleShapes;
+
+        /// <summary>
+        /// (Updatable) Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public InputList<string> CompatibleShapes
+        {
+            get => _compatibleShapes ?? (_compatibleShapes = new InputList<string>());
+            set => _compatibleShapes = value;
+        }
+
         /// <summary>
         /// Configuration overrides for a PostgreSQL instance.
         /// </summary>
@@ -303,10 +330,12 @@ namespace Pulumi.Oci.Psql
         public Input<bool>? IsFlexible { get; set; }
 
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the configuration. 
+        /// 
+        /// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         /// </summary>
-        [Input("shape", required: true)]
-        public Input<string> Shape { get; set; } = null!;
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
@@ -338,6 +367,18 @@ namespace Pulumi.Oci.Psql
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("compatibleShapes")]
+        private InputList<string>? _compatibleShapes;
+
+        /// <summary>
+        /// (Updatable) Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public InputList<string> CompatibleShapes
+        {
+            get => _compatibleShapes ?? (_compatibleShapes = new InputList<string>());
+            set => _compatibleShapes = value;
+        }
+
         /// <summary>
         /// The type of configuration. Either user-created or a default configuration.
         /// </summary>
@@ -367,6 +408,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
+
+        /// <summary>
+        /// The Default configuration used for this configuration.
+        /// </summary>
+        [Input("defaultConfigId")]
+        public Input<string>? DefaultConfigId { get; set; }
 
         [Input("definedTags")]
         private InputMap<string>? _definedTags;
@@ -433,7 +480,9 @@ namespace Pulumi.Oci.Psql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the configuration. 
+        /// 
+        /// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

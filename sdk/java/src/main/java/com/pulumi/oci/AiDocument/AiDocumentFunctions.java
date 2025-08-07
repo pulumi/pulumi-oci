@@ -10,6 +10,8 @@ import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.AiDocument.inputs.GetModelArgs;
 import com.pulumi.oci.AiDocument.inputs.GetModelPlainArgs;
+import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
+import com.pulumi.oci.AiDocument.inputs.GetModelTypePlainArgs;
 import com.pulumi.oci.AiDocument.inputs.GetModelsArgs;
 import com.pulumi.oci.AiDocument.inputs.GetModelsPlainArgs;
 import com.pulumi.oci.AiDocument.inputs.GetProcessorJobArgs;
@@ -19,6 +21,7 @@ import com.pulumi.oci.AiDocument.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.AiDocument.inputs.GetProjectsArgs;
 import com.pulumi.oci.AiDocument.inputs.GetProjectsPlainArgs;
 import com.pulumi.oci.AiDocument.outputs.GetModelResult;
+import com.pulumi.oci.AiDocument.outputs.GetModelTypeResult;
 import com.pulumi.oci.AiDocument.outputs.GetModelsResult;
 import com.pulumi.oci.AiDocument.outputs.GetProcessorJobResult;
 import com.pulumi.oci.AiDocument.outputs.GetProjectResult;
@@ -246,6 +249,236 @@ public final class AiDocumentFunctions {
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiDocument/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Gets model capabilities
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelType = AiDocumentFunctions.getModelType(GetModelTypeArgs.builder()
+     *             .modelType(modelTypeModelType)
+     *             .compartmentId(compartmentId)
+     *             .modelSubType(modelTypeModelSubType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelTypeResult> getModelType(GetModelTypeArgs args) {
+        return getModelType(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Gets model capabilities
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelType = AiDocumentFunctions.getModelType(GetModelTypeArgs.builder()
+     *             .modelType(modelTypeModelType)
+     *             .compartmentId(compartmentId)
+     *             .modelSubType(modelTypeModelSubType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelTypeResult> getModelTypePlain(GetModelTypePlainArgs args) {
+        return getModelTypePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Gets model capabilities
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelType = AiDocumentFunctions.getModelType(GetModelTypeArgs.builder()
+     *             .modelType(modelTypeModelType)
+     *             .compartmentId(compartmentId)
+     *             .modelSubType(modelTypeModelSubType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelTypeResult> getModelType(GetModelTypeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getModelType:getModelType", TypeShape.of(GetModelTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Gets model capabilities
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelType = AiDocumentFunctions.getModelType(GetModelTypeArgs.builder()
+     *             .modelType(modelTypeModelType)
+     *             .compartmentId(compartmentId)
+     *             .modelSubType(modelTypeModelSubType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelTypeResult> getModelType(GetModelTypeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiDocument/getModelType:getModelType", TypeShape.of(GetModelTypeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Type resource in Oracle Cloud Infrastructure Ai Document service.
+     * 
+     * Gets model capabilities
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiDocument.AiDocumentFunctions;
+     * import com.pulumi.oci.AiDocument.inputs.GetModelTypeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelType = AiDocumentFunctions.getModelType(GetModelTypeArgs.builder()
+     *             .modelType(modelTypeModelType)
+     *             .compartmentId(compartmentId)
+     *             .modelSubType(modelTypeModelSubType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelTypeResult> getModelTypePlain(GetModelTypePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiDocument/getModelType:getModelType", TypeShape.of(GetModelTypeResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Document service.

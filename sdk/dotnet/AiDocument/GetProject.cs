@@ -124,7 +124,7 @@ namespace Pulumi.Oci.AiDocument
     public sealed class GetProjectResult
     {
         /// <summary>
-        /// The compartment identifier.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -151,6 +151,10 @@ namespace Pulumi.Oci.AiDocument
         /// A message describing the current state in more detail, that can provide actionable information if creation failed.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectLockResult> Locks;
         public readonly string ProjectId;
         /// <summary>
         /// The current state of the project.
@@ -185,6 +189,8 @@ namespace Pulumi.Oci.AiDocument
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetProjectLockResult> locks,
+
             string projectId,
 
             string state,
@@ -202,6 +208,7 @@ namespace Pulumi.Oci.AiDocument
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             ProjectId = projectId;
             State = state;
             SystemTags = systemTags;

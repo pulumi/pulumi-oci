@@ -30,6 +30,18 @@ namespace Pulumi.Oci.AiDocument.Inputs
             set => _objectLocations = value;
         }
 
+        [Input("pageRanges")]
+        private InputList<string>? _pageRanges;
+
+        /// <summary>
+        /// The page ranges to be analysed.
+        /// </summary>
+        public InputList<string> PageRanges
+        {
+            get => _pageRanges ?? (_pageRanges = new InputList<string>());
+            set => _pageRanges = value;
+        }
+
         /// <summary>
         /// The type of input location. The allowed values are:
         /// * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.

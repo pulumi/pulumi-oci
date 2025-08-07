@@ -182,7 +182,7 @@ type AutoScalingConfigurationPolicy struct {
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The type of autoscaling policy.
 	PolicyType string `pulumi:"policyType"`
-	// An action that can be executed against a resource.
+	// An action to run on a resource, such as stopping or starting an instance pool.
 	ResourceAction *AutoScalingConfigurationPolicyResourceAction `pulumi:"resourceAction"`
 	Rules          []AutoScalingConfigurationPolicyRule          `pulumi:"rules"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -213,7 +213,7 @@ type AutoScalingConfigurationPolicyArgs struct {
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The type of autoscaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
-	// An action that can be executed against a resource.
+	// An action to run on a resource, such as stopping or starting an instance pool.
 	ResourceAction AutoScalingConfigurationPolicyResourceActionPtrInput `pulumi:"resourceAction"`
 	Rules          AutoScalingConfigurationPolicyRuleArrayInput         `pulumi:"rules"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -303,7 +303,7 @@ func (o AutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
 
-// An action that can be executed against a resource.
+// An action to run on a resource, such as stopping or starting an instance pool.
 func (o AutoScalingConfigurationPolicyOutput) ResourceAction() AutoScalingConfigurationPolicyResourceActionPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicy) *AutoScalingConfigurationPolicyResourceAction {
 		return v.ResourceAction
@@ -747,7 +747,7 @@ func (o AutoScalingConfigurationPolicyExecutionSchedulePtrOutput) Type() pulumi.
 
 type AutoScalingConfigurationPolicyResourceAction struct {
 	Action string `pulumi:"action"`
-	// The type of resource action.
+	// The category of action to run on the resource.
 	ActionType string `pulumi:"actionType"`
 }
 
@@ -764,7 +764,7 @@ type AutoScalingConfigurationPolicyResourceActionInput interface {
 
 type AutoScalingConfigurationPolicyResourceActionArgs struct {
 	Action pulumi.StringInput `pulumi:"action"`
-	// The type of resource action.
+	// The category of action to run on the resource.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
 }
 
@@ -849,7 +849,7 @@ func (o AutoScalingConfigurationPolicyResourceActionOutput) Action() pulumi.Stri
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyResourceAction) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// The type of resource action.
+// The category of action to run on the resource.
 func (o AutoScalingConfigurationPolicyResourceActionOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyResourceAction) string { return v.ActionType }).(pulumi.StringOutput)
 }
@@ -887,7 +887,7 @@ func (o AutoScalingConfigurationPolicyResourceActionPtrOutput) Action() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// The type of resource action.
+// The category of action to run on the resource.
 func (o AutoScalingConfigurationPolicyResourceActionPtrOutput) ActionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyResourceAction) *string {
 		if v == nil {
@@ -899,11 +899,11 @@ func (o AutoScalingConfigurationPolicyResourceActionPtrOutput) ActionType() pulu
 
 type AutoScalingConfigurationPolicyRule struct {
 	// The action to take when autoscaling is triggered.
-	Action      *AutoScalingConfigurationPolicyRuleAction `pulumi:"action"`
-	DisplayName string                                    `pulumi:"displayName"`
+	Action *AutoScalingConfigurationPolicyRuleAction `pulumi:"action"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName string `pulumi:"displayName"`
 	// ID of the condition that is assigned after creation.
-	Id *string `pulumi:"id"`
-	// Metric and threshold details for triggering an autoscaling action.
+	Id     *string                                   `pulumi:"id"`
 	Metric *AutoScalingConfigurationPolicyRuleMetric `pulumi:"metric"`
 }
 
@@ -920,11 +920,11 @@ type AutoScalingConfigurationPolicyRuleInput interface {
 
 type AutoScalingConfigurationPolicyRuleArgs struct {
 	// The action to take when autoscaling is triggered.
-	Action      AutoScalingConfigurationPolicyRuleActionPtrInput `pulumi:"action"`
-	DisplayName pulumi.StringInput                               `pulumi:"displayName"`
+	Action AutoScalingConfigurationPolicyRuleActionPtrInput `pulumi:"action"`
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// ID of the condition that is assigned after creation.
-	Id pulumi.StringPtrInput `pulumi:"id"`
-	// Metric and threshold details for triggering an autoscaling action.
+	Id     pulumi.StringPtrInput                            `pulumi:"id"`
 	Metric AutoScalingConfigurationPolicyRuleMetricPtrInput `pulumi:"metric"`
 }
 
@@ -984,6 +984,7 @@ func (o AutoScalingConfigurationPolicyRuleOutput) Action() AutoScalingConfigurat
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) *AutoScalingConfigurationPolicyRuleAction { return v.Action }).(AutoScalingConfigurationPolicyRuleActionPtrOutput)
 }
 
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o AutoScalingConfigurationPolicyRuleOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -993,7 +994,6 @@ func (o AutoScalingConfigurationPolicyRuleOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// Metric and threshold details for triggering an autoscaling action.
 func (o AutoScalingConfigurationPolicyRuleOutput) Metric() AutoScalingConfigurationPolicyRuleMetricPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRule) *AutoScalingConfigurationPolicyRuleMetric { return v.Metric }).(AutoScalingConfigurationPolicyRuleMetricPtrOutput)
 }
@@ -1175,8 +1175,34 @@ func (o AutoScalingConfigurationPolicyRuleActionPtrOutput) Value() pulumi.IntPtr
 }
 
 type AutoScalingConfigurationPolicyRuleMetric struct {
-	MetricType *string                                            `pulumi:"metricType"`
-	Threshold  *AutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"threshold"`
+	// The OCID of the compartment containing the metrics.
+	MetricCompartmentId *string `pulumi:"metricCompartmentId"`
+	// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+	//
+	// The following values are supported:
+	// * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+	// * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+	MetricSource *string `pulumi:"metricSource"`
+	MetricType   *string `pulumi:"metricType"`
+	// The namespace for the query.
+	Namespace *string `pulumi:"namespace"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+	PendingDuration *string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+	//
+	// ***
+	Query *string `pulumi:"query"`
+	// The resource group for the query.
+	ResourceGroup *string                                            `pulumi:"resourceGroup"`
+	Threshold     *AutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"threshold"`
 }
 
 // AutoScalingConfigurationPolicyRuleMetricInput is an input type that accepts AutoScalingConfigurationPolicyRuleMetricArgs and AutoScalingConfigurationPolicyRuleMetricOutput values.
@@ -1191,8 +1217,34 @@ type AutoScalingConfigurationPolicyRuleMetricInput interface {
 }
 
 type AutoScalingConfigurationPolicyRuleMetricArgs struct {
-	MetricType pulumi.StringPtrInput                                     `pulumi:"metricType"`
-	Threshold  AutoScalingConfigurationPolicyRuleMetricThresholdPtrInput `pulumi:"threshold"`
+	// The OCID of the compartment containing the metrics.
+	MetricCompartmentId pulumi.StringPtrInput `pulumi:"metricCompartmentId"`
+	// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+	//
+	// The following values are supported:
+	// * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+	// * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+	MetricSource pulumi.StringPtrInput `pulumi:"metricSource"`
+	MetricType   pulumi.StringPtrInput `pulumi:"metricType"`
+	// The namespace for the query.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	//
+	// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+	PendingDuration pulumi.StringPtrInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	//
+	// Example of threshold alarm:
+	//
+	// ***
+	//
+	// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+	//
+	// ***
+	Query pulumi.StringPtrInput `pulumi:"query"`
+	// The resource group for the query.
+	ResourceGroup pulumi.StringPtrInput                                     `pulumi:"resourceGroup"`
+	Threshold     AutoScalingConfigurationPolicyRuleMetricThresholdPtrInput `pulumi:"threshold"`
 }
 
 func (AutoScalingConfigurationPolicyRuleMetricArgs) ElementType() reflect.Type {
@@ -1272,8 +1324,52 @@ func (o AutoScalingConfigurationPolicyRuleMetricOutput) ToAutoScalingConfigurati
 	}).(AutoScalingConfigurationPolicyRuleMetricPtrOutput)
 }
 
+// The OCID of the compartment containing the metrics.
+func (o AutoScalingConfigurationPolicyRuleMetricOutput) MetricCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.MetricCompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+//
+// The following values are supported:
+// * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+// * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+func (o AutoScalingConfigurationPolicyRuleMetricOutput) MetricSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.MetricSource }).(pulumi.StringPtrOutput)
+}
+
 func (o AutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.MetricType }).(pulumi.StringPtrOutput)
+}
+
+// The namespace for the query.
+func (o AutoScalingConfigurationPolicyRuleMetricOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+//
+// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+func (o AutoScalingConfigurationPolicyRuleMetricOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.PendingDuration }).(pulumi.StringPtrOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+//
+// Example of threshold alarm:
+//
+// ***
+//
+// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+//
+// ***
+func (o AutoScalingConfigurationPolicyRuleMetricOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.Query }).(pulumi.StringPtrOutput)
+}
+
+// The resource group for the query.
+func (o AutoScalingConfigurationPolicyRuleMetricOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutoScalingConfigurationPolicyRuleMetric) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
 func (o AutoScalingConfigurationPolicyRuleMetricOutput) Threshold() AutoScalingConfigurationPolicyRuleMetricThresholdPtrOutput {
@@ -1306,12 +1402,86 @@ func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) Elem() AutoScalingCon
 	}).(AutoScalingConfigurationPolicyRuleMetricOutput)
 }
 
+// The OCID of the compartment containing the metrics.
+func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) MetricCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricCompartmentId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+//
+// The following values are supported:
+// * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+// * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) MetricSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.MetricSource
+	}).(pulumi.StringPtrOutput)
+}
+
 func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) MetricType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
 		if v == nil {
 			return nil
 		}
 		return v.MetricType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The namespace for the query.
+func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+//
+// The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) PendingDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PendingDuration
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+//
+// Example of threshold alarm:
+//
+// ***
+//
+// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+//
+// ***
+func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Query
+	}).(pulumi.StringPtrOutput)
+}
+
+// The resource group for the query.
+func (o AutoScalingConfigurationPolicyRuleMetricPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AutoScalingConfigurationPolicyRuleMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -1603,7 +1773,7 @@ type GetAutoScalingConfigurationPolicy struct {
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The type of autoscaling policy.
 	PolicyType string `pulumi:"policyType"`
-	// An action that can be executed against a resource.
+	// An action to run on a resource, such as stopping or starting an instance pool.
 	ResourceActions []GetAutoScalingConfigurationPolicyResourceAction `pulumi:"resourceActions"`
 	Rules           []GetAutoScalingConfigurationPolicyRule           `pulumi:"rules"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -1634,7 +1804,7 @@ type GetAutoScalingConfigurationPolicyArgs struct {
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The type of autoscaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
-	// An action that can be executed against a resource.
+	// An action to run on a resource, such as stopping or starting an instance pool.
 	ResourceActions GetAutoScalingConfigurationPolicyResourceActionArrayInput `pulumi:"resourceActions"`
 	Rules           GetAutoScalingConfigurationPolicyRuleArrayInput           `pulumi:"rules"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -1726,7 +1896,7 @@ func (o GetAutoScalingConfigurationPolicyOutput) PolicyType() pulumi.StringOutpu
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
 
-// An action that can be executed against a resource.
+// An action to run on a resource, such as stopping or starting an instance pool.
 func (o GetAutoScalingConfigurationPolicyOutput) ResourceActions() GetAutoScalingConfigurationPolicyResourceActionArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicy) []GetAutoScalingConfigurationPolicyResourceAction {
 		return v.ResourceActions
@@ -1995,7 +2165,7 @@ func (o GetAutoScalingConfigurationPolicyExecutionScheduleArrayOutput) Index(i p
 type GetAutoScalingConfigurationPolicyResourceAction struct {
 	// The action to take when autoscaling is triggered.
 	Action string `pulumi:"action"`
-	// The type of resource action.
+	// The category of action to run on the resource.
 	ActionType string `pulumi:"actionType"`
 }
 
@@ -2013,7 +2183,7 @@ type GetAutoScalingConfigurationPolicyResourceActionInput interface {
 type GetAutoScalingConfigurationPolicyResourceActionArgs struct {
 	// The action to take when autoscaling is triggered.
 	Action pulumi.StringInput `pulumi:"action"`
-	// The type of resource action.
+	// The category of action to run on the resource.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
 }
 
@@ -2073,7 +2243,7 @@ func (o GetAutoScalingConfigurationPolicyResourceActionOutput) Action() pulumi.S
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyResourceAction) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// The type of resource action.
+// The category of action to run on the resource.
 func (o GetAutoScalingConfigurationPolicyResourceActionOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyResourceAction) string { return v.ActionType }).(pulumi.StringOutput)
 }
@@ -2104,8 +2274,7 @@ type GetAutoScalingConfigurationPolicyRule struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// ID of the condition that is assigned after creation.
-	Id string `pulumi:"id"`
-	// Metric and threshold details for triggering an autoscaling action.
+	Id      string                                        `pulumi:"id"`
 	Metrics []GetAutoScalingConfigurationPolicyRuleMetric `pulumi:"metrics"`
 }
 
@@ -2126,8 +2295,7 @@ type GetAutoScalingConfigurationPolicyRuleArgs struct {
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// ID of the condition that is assigned after creation.
-	Id pulumi.StringInput `pulumi:"id"`
-	// Metric and threshold details for triggering an autoscaling action.
+	Id      pulumi.StringInput                                    `pulumi:"id"`
 	Metrics GetAutoScalingConfigurationPolicyRuleMetricArrayInput `pulumi:"metrics"`
 }
 
@@ -2199,7 +2367,6 @@ func (o GetAutoScalingConfigurationPolicyRuleOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRule) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Metric and threshold details for triggering an autoscaling action.
 func (o GetAutoScalingConfigurationPolicyRuleOutput) Metrics() GetAutoScalingConfigurationPolicyRuleMetricArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRule) []GetAutoScalingConfigurationPolicyRuleMetric {
 		return v.Metrics
@@ -2330,8 +2497,21 @@ func (o GetAutoScalingConfigurationPolicyRuleActionArrayOutput) Index(i pulumi.I
 }
 
 type GetAutoScalingConfigurationPolicyRuleMetric struct {
-	MetricType string                                                 `pulumi:"metricType"`
-	Thresholds []GetAutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"thresholds"`
+	// The OCID of the compartment containing the metrics.
+	MetricCompartmentId string `pulumi:"metricCompartmentId"`
+	// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+	MetricSource string `pulumi:"metricSource"`
+	// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
+	MetricType string `pulumi:"metricType"`
+	// The namespace for the query.
+	Namespace string `pulumi:"namespace"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query string `pulumi:"query"`
+	// The resource group for the query.
+	ResourceGroup string                                                 `pulumi:"resourceGroup"`
+	Thresholds    []GetAutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"thresholds"`
 }
 
 // GetAutoScalingConfigurationPolicyRuleMetricInput is an input type that accepts GetAutoScalingConfigurationPolicyRuleMetricArgs and GetAutoScalingConfigurationPolicyRuleMetricOutput values.
@@ -2346,8 +2526,21 @@ type GetAutoScalingConfigurationPolicyRuleMetricInput interface {
 }
 
 type GetAutoScalingConfigurationPolicyRuleMetricArgs struct {
-	MetricType pulumi.StringInput                                             `pulumi:"metricType"`
-	Thresholds GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput `pulumi:"thresholds"`
+	// The OCID of the compartment containing the metrics.
+	MetricCompartmentId pulumi.StringInput `pulumi:"metricCompartmentId"`
+	// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+	MetricSource pulumi.StringInput `pulumi:"metricSource"`
+	// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
+	MetricType pulumi.StringInput `pulumi:"metricType"`
+	// The namespace for the query.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query pulumi.StringInput `pulumi:"query"`
+	// The resource group for the query.
+	ResourceGroup pulumi.StringInput                                             `pulumi:"resourceGroup"`
+	Thresholds    GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput `pulumi:"thresholds"`
 }
 
 func (GetAutoScalingConfigurationPolicyRuleMetricArgs) ElementType() reflect.Type {
@@ -2401,8 +2594,39 @@ func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) ToGetAutoScalingConfi
 	return o
 }
 
+// The OCID of the compartment containing the metrics.
+func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) MetricCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.MetricCompartmentId }).(pulumi.StringOutput)
+}
+
+// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) MetricSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.MetricSource }).(pulumi.StringOutput)
+}
+
+// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
 func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.MetricType }).(pulumi.StringOutput)
+}
+
+// The namespace for the query.
+func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.PendingDuration }).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// The resource group for the query.
+func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationPolicyRuleMetric) string { return v.ResourceGroup }).(pulumi.StringOutput)
 }
 
 func (o GetAutoScalingConfigurationPolicyRuleMetricOutput) Thresholds() GetAutoScalingConfigurationPolicyRuleMetricThresholdArrayOutput {
@@ -2853,7 +3077,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicy struct {
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The type of autoscaling policy.
 	PolicyType string `pulumi:"policyType"`
-	// An action that can be executed against a resource.
+	// An action to run on a resource, such as stopping or starting an instance pool.
 	ResourceActions []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction `pulumi:"resourceActions"`
 	Rules           []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule           `pulumi:"rules"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -2884,7 +3108,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyArgs struct {
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The type of autoscaling policy.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
-	// An action that can be executed against a resource.
+	// An action to run on a resource, such as stopping or starting an instance pool.
 	ResourceActions GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArrayInput `pulumi:"resourceActions"`
 	Rules           GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArrayInput           `pulumi:"rules"`
 	// The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -2976,7 +3200,7 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) Policy
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
 
-// An action that can be executed against a resource.
+// An action to run on a resource, such as stopping or starting an instance pool.
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyOutput) ResourceActions() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicy) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction {
 		return v.ResourceActions
@@ -3253,7 +3477,7 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyExecutionSched
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction struct {
 	// The action to take when autoscaling is triggered.
 	Action string `pulumi:"action"`
-	// The type of resource action.
+	// The category of action to run on the resource.
 	ActionType string `pulumi:"actionType"`
 }
 
@@ -3271,7 +3495,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionInp
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionArgs struct {
 	// The action to take when autoscaling is triggered.
 	Action pulumi.StringInput `pulumi:"action"`
-	// The type of resource action.
+	// The category of action to run on the resource.
 	ActionType pulumi.StringInput `pulumi:"actionType"`
 }
 
@@ -3333,7 +3557,7 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction
 	}).(pulumi.StringOutput)
 }
 
-// The type of resource action.
+// The category of action to run on the resource.
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceActionOutput) ActionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyResourceAction) string {
 		return v.ActionType
@@ -3367,7 +3591,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule struct {
 	DisplayName string `pulumi:"displayName"`
 	// ID of the condition that is assigned after creation.
 	Id string `pulumi:"id"`
-	// Metric and threshold details for triggering an autoscaling action.
+	// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
 	Metrics []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric `pulumi:"metrics"`
 }
 
@@ -3389,7 +3613,7 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// ID of the condition that is assigned after creation.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Metric and threshold details for triggering an autoscaling action.
+	// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
 	Metrics GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayInput `pulumi:"metrics"`
 }
 
@@ -3461,7 +3685,7 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) Id
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Metric and threshold details for triggering an autoscaling action.
+// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleOutput) Metrics() GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArrayOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRule) []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric {
 		return v.Metrics
@@ -3592,8 +3816,20 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleActionArra
 }
 
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric struct {
-	MetricType string                                                                          `pulumi:"metricType"`
-	Thresholds []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"thresholds"`
+	// The OCID of the compartment containing the metrics.
+	MetricCompartmentId string `pulumi:"metricCompartmentId"`
+	// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+	MetricSource string `pulumi:"metricSource"`
+	MetricType   string `pulumi:"metricType"`
+	// The namespace for the query.
+	Namespace string `pulumi:"namespace"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration string `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query string `pulumi:"query"`
+	// The resource group for the query.
+	ResourceGroup string                                                                          `pulumi:"resourceGroup"`
+	Thresholds    []GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold `pulumi:"thresholds"`
 }
 
 // GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricInput is an input type that accepts GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs and GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput values.
@@ -3608,8 +3844,20 @@ type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricInput i
 }
 
 type GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs struct {
-	MetricType pulumi.StringInput                                                                      `pulumi:"metricType"`
-	Thresholds GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput `pulumi:"thresholds"`
+	// The OCID of the compartment containing the metrics.
+	MetricCompartmentId pulumi.StringInput `pulumi:"metricCompartmentId"`
+	// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+	MetricSource pulumi.StringInput `pulumi:"metricSource"`
+	MetricType   pulumi.StringInput `pulumi:"metricType"`
+	// The namespace for the query.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+	PendingDuration pulumi.StringInput `pulumi:"pendingDuration"`
+	// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+	Query pulumi.StringInput `pulumi:"query"`
+	// The resource group for the query.
+	ResourceGroup pulumi.StringInput                                                                      `pulumi:"resourceGroup"`
+	Thresholds    GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThresholdArrayInput `pulumi:"thresholds"`
 }
 
 func (GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricArgs) ElementType() reflect.Type {
@@ -3663,9 +3911,49 @@ func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutp
 	return o
 }
 
+// The OCID of the compartment containing the metrics.
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) MetricCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string {
+		return v.MetricCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Source of the metric data for creating the alarm used to trigger autoscaling actions.
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) MetricSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string {
+		return v.MetricSource
+	}).(pulumi.StringOutput)
+}
+
 func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) MetricType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string {
 		return v.MetricType
+	}).(pulumi.StringOutput)
+}
+
+// The namespace for the query.
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) PendingDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string {
+		return v.PendingDuration
+	}).(pulumi.StringOutput)
+}
+
+// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string { return v.Query }).(pulumi.StringOutput)
+}
+
+// The resource group for the query.
+func (o GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric) string {
+		return v.ResourceGroup
 	}).(pulumi.StringOutput)
 }
 

@@ -656,11 +656,13 @@ class PipelineRun(pulumi.CustomResource):
                     "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
                     "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
                     "driver_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
                     },
                     "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
                     "executor_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
                     },
@@ -758,11 +760,13 @@ class PipelineRun(pulumi.CustomResource):
                     "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
                     "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
                     "driver_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
                     },
                     "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
                     "executor_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
                     },

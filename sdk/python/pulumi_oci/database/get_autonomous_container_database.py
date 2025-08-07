@@ -27,7 +27,7 @@ class GetAutonomousContainerDatabaseResult:
     """
     A collection of values returned by getAutonomousContainerDatabase.
     """
-    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_backup_id=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_version_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, source=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, system_tags=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
+    def __init__(__self__, associated_backup_configuration_details=None, autonomous_container_database_backup_id=None, autonomous_container_database_id=None, autonomous_exadata_infrastructure_id=None, autonomous_vm_cluster_id=None, availability_domain=None, available_cpus=None, backup_configs=None, backup_destination_properties_lists=None, cloud_autonomous_vm_cluster_id=None, compartment_id=None, compute_model=None, customer_contacts=None, database_software_image_id=None, dataguard_group_members=None, dataguards=None, db_name=None, db_split_threshold=None, db_unique_name=None, db_version=None, defined_tags=None, display_name=None, distribution_affinity=None, dst_file_version=None, failover_trigger=None, fast_start_fail_over_lag_limit_in_seconds=None, freeform_tags=None, id=None, infrastructure_type=None, is_automatic_failover_enabled=None, is_data_guard_enabled=None, is_dst_file_update_enabled=None, is_multiple_standby=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_version_id=None, largest_provisionable_autonomous_database_in_cpus=None, last_maintenance_run_id=None, lifecycle_details=None, list_one_off_patches=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, net_services_architecture=None, next_maintenance_run_id=None, okv_end_point_group_name=None, patch_id=None, patch_model=None, peer_autonomous_container_database_backup_configs=None, peer_autonomous_container_database_compartment_id=None, peer_autonomous_container_database_display_name=None, peer_autonomous_exadata_infrastructure_id=None, peer_autonomous_vm_cluster_id=None, peer_cloud_autonomous_vm_cluster_id=None, peer_db_unique_name=None, protection_mode=None, provisionable_cpuses=None, provisioned_cpus=None, reclaimable_cpus=None, recovery_appliance_details=None, reinstate_trigger=None, reserved_cpus=None, role=None, rotate_key_trigger=None, service_level_agreement_type=None, source=None, standby_maintenance_buffer_in_days=None, state=None, switchover_trigger=None, system_tags=None, time_created=None, time_of_last_backup=None, time_snapshot_standby_revert=None, total_cpus=None, vault_id=None, version_preference=None, vm_failover_reservation=None):
         if associated_backup_configuration_details and not isinstance(associated_backup_configuration_details, list):
             raise TypeError("Expected argument 'associated_backup_configuration_details' to be a list")
         pulumi.set(__self__, "associated_backup_configuration_details", associated_backup_configuration_details)
@@ -64,6 +64,9 @@ class GetAutonomousContainerDatabaseResult:
         if compute_model and not isinstance(compute_model, str):
             raise TypeError("Expected argument 'compute_model' to be a str")
         pulumi.set(__self__, "compute_model", compute_model)
+        if customer_contacts and not isinstance(customer_contacts, list):
+            raise TypeError("Expected argument 'customer_contacts' to be a list")
+        pulumi.set(__self__, "customer_contacts", customer_contacts)
         if database_software_image_id and not isinstance(database_software_image_id, str):
             raise TypeError("Expected argument 'database_software_image_id' to be a str")
         pulumi.set(__self__, "database_software_image_id", database_software_image_id)
@@ -169,6 +172,9 @@ class GetAutonomousContainerDatabaseResult:
         if next_maintenance_run_id and not isinstance(next_maintenance_run_id, str):
             raise TypeError("Expected argument 'next_maintenance_run_id' to be a str")
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+        if okv_end_point_group_name and not isinstance(okv_end_point_group_name, str):
+            raise TypeError("Expected argument 'okv_end_point_group_name' to be a str")
+        pulumi.set(__self__, "okv_end_point_group_name", okv_end_point_group_name)
         if patch_id and not isinstance(patch_id, str):
             raise TypeError("Expected argument 'patch_id' to be a str")
         pulumi.set(__self__, "patch_id", patch_id)
@@ -355,6 +361,14 @@ class GetAutonomousContainerDatabaseResult:
         The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
+
+    @_builtins.property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Sequence['outputs.GetAutonomousContainerDatabaseCustomerContactResult']:
+        """
+        Customer Contacts. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "customer_contacts")
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -625,6 +639,14 @@ class GetAutonomousContainerDatabaseResult:
         return pulumi.get(self, "next_maintenance_run_id")
 
     @_builtins.property
+    @pulumi.getter(name="okvEndPointGroupName")
+    def okv_end_point_group_name(self) -> _builtins.str:
+        """
+        The OKV End Point Group name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "okv_end_point_group_name")
+
+    @_builtins.property
     @pulumi.getter(name="patchId")
     def patch_id(self) -> _builtins.str:
         """
@@ -858,6 +880,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             cloud_autonomous_vm_cluster_id=self.cloud_autonomous_vm_cluster_id,
             compartment_id=self.compartment_id,
             compute_model=self.compute_model,
+            customer_contacts=self.customer_contacts,
             database_software_image_id=self.database_software_image_id,
             dataguard_group_members=self.dataguard_group_members,
             dataguards=self.dataguards,
@@ -893,6 +916,7 @@ class AwaitableGetAutonomousContainerDatabaseResult(GetAutonomousContainerDataba
             memory_per_oracle_compute_unit_in_gbs=self.memory_per_oracle_compute_unit_in_gbs,
             net_services_architecture=self.net_services_architecture,
             next_maintenance_run_id=self.next_maintenance_run_id,
+            okv_end_point_group_name=self.okv_end_point_group_name,
             patch_id=self.patch_id,
             patch_model=self.patch_model,
             peer_autonomous_container_database_backup_configs=self.peer_autonomous_container_database_backup_configs,
@@ -963,6 +987,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         cloud_autonomous_vm_cluster_id=pulumi.get(__ret__, 'cloud_autonomous_vm_cluster_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_model=pulumi.get(__ret__, 'compute_model'),
+        customer_contacts=pulumi.get(__ret__, 'customer_contacts'),
         database_software_image_id=pulumi.get(__ret__, 'database_software_image_id'),
         dataguard_group_members=pulumi.get(__ret__, 'dataguard_group_members'),
         dataguards=pulumi.get(__ret__, 'dataguards'),
@@ -998,6 +1023,7 @@ def get_autonomous_container_database(autonomous_container_database_id: Optional
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__ret__, 'memory_per_oracle_compute_unit_in_gbs'),
         net_services_architecture=pulumi.get(__ret__, 'net_services_architecture'),
         next_maintenance_run_id=pulumi.get(__ret__, 'next_maintenance_run_id'),
+        okv_end_point_group_name=pulumi.get(__ret__, 'okv_end_point_group_name'),
         patch_id=pulumi.get(__ret__, 'patch_id'),
         patch_model=pulumi.get(__ret__, 'patch_model'),
         peer_autonomous_container_database_backup_configs=pulumi.get(__ret__, 'peer_autonomous_container_database_backup_configs'),
@@ -1065,6 +1091,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         cloud_autonomous_vm_cluster_id=pulumi.get(__response__, 'cloud_autonomous_vm_cluster_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_model=pulumi.get(__response__, 'compute_model'),
+        customer_contacts=pulumi.get(__response__, 'customer_contacts'),
         database_software_image_id=pulumi.get(__response__, 'database_software_image_id'),
         dataguard_group_members=pulumi.get(__response__, 'dataguard_group_members'),
         dataguards=pulumi.get(__response__, 'dataguards'),
@@ -1100,6 +1127,7 @@ def get_autonomous_container_database_output(autonomous_container_database_id: O
         memory_per_oracle_compute_unit_in_gbs=pulumi.get(__response__, 'memory_per_oracle_compute_unit_in_gbs'),
         net_services_architecture=pulumi.get(__response__, 'net_services_architecture'),
         next_maintenance_run_id=pulumi.get(__response__, 'next_maintenance_run_id'),
+        okv_end_point_group_name=pulumi.get(__response__, 'okv_end_point_group_name'),
         patch_id=pulumi.get(__response__, 'patch_id'),
         patch_model=pulumi.get(__response__, 'patch_model'),
         peer_autonomous_container_database_backup_configs=pulumi.get(__response__, 'peer_autonomous_container_database_backup_configs'),

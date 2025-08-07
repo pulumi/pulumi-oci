@@ -11,7 +11,6 @@ import { Provider } from "./provider";
 
 // Export sub-modules:
 import * as adm from "./adm";
-import * as aianomalydetection from "./aianomalydetection";
 import * as aidocument from "./aidocument";
 import * as ailanguage from "./ailanguage";
 import * as aivision from "./aivision";
@@ -138,7 +137,6 @@ import * as zpr from "./zpr";
 
 export {
     adm,
-    aianomalydetection,
     aidocument,
     ailanguage,
     aivision,

@@ -31,6 +31,7 @@ import * as utilities from "../utilities";
  *         shape: notebookSessionNotebookSessionConfigDetailsShape,
  *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs,
  *         notebookSessionShapeConfigDetails: {
+ *             cpuBaseline: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
  *             ocpus: notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOcpus,
  *         },
@@ -42,6 +43,7 @@ import * as utilities from "../utilities";
  *         subnetId: testSubnet.id,
  *         blockStorageSizeInGbs: notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs,
  *         notebookSessionShapeConfigDetails: {
+ *             cpuBaseline: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
  *             memoryInGbs: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
  *             ocpus: notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOcpus,
  *         },

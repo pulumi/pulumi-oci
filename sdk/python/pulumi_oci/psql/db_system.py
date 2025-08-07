@@ -61,7 +61,7 @@ class DbSystemArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemInstancesDetailArgs']]] instances_details: Details of database instances nodes to be created. This parameter is optional. If specified, its size must match `instanceCount`.
         :param pulumi.Input['DbSystemManagementPolicyArgs'] management_policy: (Updatable) PostgreSQL database system management policy update details.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
-        :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
+        :param pulumi.Input['DbSystemSourceArgs'] source: The source of the database system.
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
                
                
@@ -323,7 +323,7 @@ class DbSystemArgs:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['DbSystemSourceArgs']]:
         """
-        The source used to restore the database system.
+        The source of the database system.
         """
         return pulumi.get(self, "source")
 
@@ -400,7 +400,7 @@ class _DbSystemState:
         :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input['DbSystemPatchOperationArgs']]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
-        :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
+        :param pulumi.Input['DbSystemSourceArgs'] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: The current state of the database system.
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -711,7 +711,7 @@ class _DbSystemState:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['DbSystemSourceArgs']]:
         """
-        The source used to restore the database system.
+        The source of the database system.
         """
         return pulumi.get(self, "source")
 
@@ -931,7 +931,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
-        :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source used to restore the database system.
+        :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source of the database system.
         :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
                
@@ -1181,7 +1181,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['DbSystemNetworkDetailsArgs', 'DbSystemNetworkDetailsArgsDict']] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DbSystemPatchOperationArgs', 'DbSystemPatchOperationArgsDict']]]] patch_operations: (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
-        :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source used to restore the database system.
+        :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: The current state of the database system.
         :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1390,7 +1390,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter
     def source(self) -> pulumi.Output['outputs.DbSystemSource']:
         """
-        The source used to restore the database system.
+        The source of the database system.
         """
         return pulumi.get(self, "source")
 

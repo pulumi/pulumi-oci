@@ -27,14 +27,15 @@ namespace Pulumi.Oci.Opsi
     ///     var testExadataInsight = new Oci.Opsi.ExadataInsight("test_exadata_insight", new()
     ///     {
     ///         CompartmentId = compartmentId,
-    ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
-    ///         EnterpriseManagerEntityIdentifier = exadataInsightEnterpriseManagerEntityIdentifier,
-    ///         EnterpriseManagerIdentifier = exadataInsightEnterpriseManagerIdentifier,
     ///         EntitySource = exadataInsightEntitySource,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
     ///         },
+    ///         EnterpriseManagerBridgeId = testEnterpriseManagerBridge.Id,
+    ///         EnterpriseManagerEntityIdentifier = exadataInsightEnterpriseManagerEntityIdentifier,
+    ///         EnterpriseManagerIdentifier = exadataInsightEnterpriseManagerIdentifier,
+    ///         ExadataInfraId = testExadataInfra.Id,
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
@@ -46,6 +47,50 @@ namespace Pulumi.Oci.Opsi
     ///             {
     ///                 CompartmentId = compartmentId,
     ///                 DbmPrivateEndpointId = testPrivateEndpoint.Id,
+    ///                 MemberAutonomousDetails = new[]
+    ///                 {
+    ///                     new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs
+    ///                     {
+    ///                         CompartmentId = compartmentId,
+    ///                         ConnectionCredentialDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs
+    ///                         {
+    ///                             CredentialType = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsCredentialType,
+    ///                             CredentialSourceName = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsCredentialSourceName,
+    ///                             NamedCredentialId = testNamedCredential.Id,
+    ///                             PasswordSecretId = testSecret.Id,
+    ///                             Role = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsRole,
+    ///                             UserName = testUser.Name,
+    ///                             WalletSecretId = testSecret.Id,
+    ///                         },
+    ///                         ConnectionDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs
+    ///                         {
+    ///                             HostName = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsHostName,
+    ///                             Port = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort,
+    ///                             Protocol = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsProtocol,
+    ///                             ServiceName = testService.Name,
+    ///                         },
+    ///                         CredentialDetails = new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs
+    ///                         {
+    ///                             CredentialType = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsCredentialType,
+    ///                             CredentialSourceName = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsCredentialSourceName,
+    ///                             NamedCredentialId = testNamedCredential.Id,
+    ///                             PasswordSecretId = testSecret.Id,
+    ///                             Role = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsRole,
+    ///                             UserName = testUser.Name,
+    ///                             WalletSecretId = testSecret.Id,
+    ///                         },
+    ///                         DatabaseId = testDatabase.Id,
+    ///                         DatabaseResourceType = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDatabaseResourceType,
+    ///                         DefinedTags = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDefinedTags,
+    ///                         DeploymentType = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDeploymentType,
+    ///                         EntitySource = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsEntitySource,
+    ///                         FreeformTags = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsFreeformTags,
+    ///                         IsAdvancedFeaturesEnabled = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled,
+    ///                         ManagementAgentId = testManagementAgent.Id,
+    ///                         OpsiPrivateEndpointId = testPrivateEndpoint.Id,
+    ///                         SystemTags = exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsSystemTags,
+    ///                     },
+    ///                 },
     ///                 MemberDatabaseDetails = new[]
     ///                 {
     ///                     new Oci.Opsi.Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs
@@ -55,6 +100,7 @@ namespace Pulumi.Oci.Opsi
     ///                         {
     ///                             CredentialType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType,
     ///                             CredentialSourceName = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName,
+    ///                             NamedCredentialId = testNamedCredential.Id,
     ///                             PasswordSecretId = testSecret.Id,
     ///                             Role = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole,
     ///                             UserName = testUser.Name,
@@ -79,6 +125,7 @@ namespace Pulumi.Oci.Opsi
     ///                         {
     ///                             CredentialType = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialType,
     ///                             CredentialSourceName = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialSourceName,
+    ///                             NamedCredentialId = testNamedCredential.Id,
     ///                             PasswordSecretId = testSecret.Id,
     ///                             Role = exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsRole,
     ///                             UserName = testUser.Name,

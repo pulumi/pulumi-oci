@@ -71,7 +71,7 @@ export interface GetModelsArgs {
  */
 export interface GetModelsResult {
     /**
-     * The compartment identifier.
+     * The lock compartment ID.
      */
     readonly compartmentId?: string;
     /**

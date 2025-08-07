@@ -18,9 +18,9 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int? BandwidthMbps;
         /// <summary>
-        /// (Updatable) The model deployment instance configuration
+        /// (Updatable) The model deployment instance configuration.
         /// </summary>
-        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration InstanceConfiguration;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration? InstanceConfiguration;
         /// <summary>
         /// (Updatable) The maximum network bandwidth for the model deployment.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// (Updatable) The OCID of the model you want to deploy.
         /// </summary>
-        public readonly string ModelId;
+        public readonly string? ModelId;
         /// <summary>
         /// (Updatable) The scaling policy to apply to each model of the deployment.
         /// </summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.DataScience.Outputs
         private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails(
             int? bandwidthMbps,
 
-            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration instanceConfiguration,
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration? instanceConfiguration,
 
             int? maximumBandwidthMbps,
 
-            string modelId,
+            string? modelId,
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy? scalingPolicy)
         {

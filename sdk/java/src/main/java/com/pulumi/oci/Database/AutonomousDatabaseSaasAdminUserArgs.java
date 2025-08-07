@@ -63,14 +63,14 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
     }
 
     /**
-     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if &#34;secret_id&#34; is not present.
+     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if &#34;secret_id&#34; is not present.
+     * @return A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      * 
      */
     public Optional<Output<String>> password() {
@@ -78,14 +78,14 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if &#34;password&#34; is not present.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     @Import(name="secretId")
     private @Nullable Output<String> secretId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if &#34;password&#34; is not present.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     public Optional<Output<String>> secretId() {
@@ -95,9 +95,6 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="secretVersionNumber")
     private @Nullable Output<Integer> secretVersionNumber;
@@ -105,17 +102,28 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
     /**
      * @return The version of the vault secret. If no version is specified, the latest version will be used.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Integer>> secretVersionNumber() {
         return Optional.ofNullable(this.secretVersionNumber);
     }
 
+    /**
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Import(name="timeSaasAdminUserEnabled")
     private @Nullable Output<String> timeSaasAdminUserEnabled;
 
+    /**
+     * @return The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Optional<Output<String>> timeSaasAdminUserEnabled() {
         return Optional.ofNullable(this.timeSaasAdminUserEnabled);
     }
@@ -214,7 +222,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         /**
-         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if &#34;secret_id&#34; is not present.
+         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
          * 
          * @return builder
          * 
@@ -225,7 +233,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         /**
-         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if &#34;secret_id&#34; is not present.
+         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
          * 
          * @return builder
          * 
@@ -235,7 +243,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         /**
-         * @param secretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if &#34;password&#34; is not present.
+         * @param secretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * 
          * @return builder
          * 
@@ -246,7 +254,7 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         }
 
         /**
-         * @param secretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if &#34;password&#34; is not present.
+         * @param secretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * 
          * @return builder
          * 
@@ -257,9 +265,6 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
 
         /**
          * @param secretVersionNumber The version of the vault secret. If no version is specified, the latest version will be used.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -272,9 +277,6 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
         /**
          * @param secretVersionNumber The version of the vault secret. If no version is specified, the latest version will be used.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -282,11 +284,29 @@ public final class AutonomousDatabaseSaasAdminUserArgs extends com.pulumi.resour
             return secretVersionNumber(Output.of(secretVersionNumber));
         }
 
+        /**
+         * @param timeSaasAdminUserEnabled The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeSaasAdminUserEnabled(@Nullable Output<String> timeSaasAdminUserEnabled) {
             $.timeSaasAdminUserEnabled = timeSaasAdminUserEnabled;
             return this;
         }
 
+        /**
+         * @param timeSaasAdminUserEnabled The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
         public Builder timeSaasAdminUserEnabled(String timeSaasAdminUserEnabled) {
             return timeSaasAdminUserEnabled(Output.of(timeSaasAdminUserEnabled));
         }

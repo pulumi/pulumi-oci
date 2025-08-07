@@ -25,6 +25,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
      * * `TABLE_EXTRACTION`: Detect and extract data in tables.
      * * `KEY_VALUE_EXTRACTION`: Extract form fields.
      * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+     * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
      * 
      */
     @Import(name="featureType", required=true)
@@ -37,6 +38,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
      * * `TABLE_EXTRACTION`: Detect and extract data in tables.
      * * `KEY_VALUE_EXTRACTION`: Extract form fields.
      * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+     * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
      * 
      */
     public Output<String> featureType() {
@@ -74,18 +76,33 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
     }
 
     /**
-     * The custom model ID.
+     * Unique identifier custom model OCID that should be used for inference.
      * 
      */
     @Import(name="modelId")
     private @Nullable Output<String> modelId;
 
     /**
-     * @return The custom model ID.
+     * @return Unique identifier custom model OCID that should be used for inference.
      * 
      */
     public Optional<Output<String>> modelId() {
         return Optional.ofNullable(this.modelId);
+    }
+
+    /**
+     * Whether checkbox detection feature is enabled or disabled.
+     * 
+     */
+    @Import(name="selectionMarkDetection")
+    private @Nullable Output<Boolean> selectionMarkDetection;
+
+    /**
+     * @return Whether checkbox detection feature is enabled or disabled.
+     * 
+     */
+    public Optional<Output<Boolean>> selectionMarkDetection() {
+        return Optional.ofNullable(this.selectionMarkDetection);
     }
 
     /**
@@ -110,6 +127,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
         this.generateSearchablePdf = $.generateSearchablePdf;
         this.maxResults = $.maxResults;
         this.modelId = $.modelId;
+        this.selectionMarkDetection = $.selectionMarkDetection;
         this.tenancyId = $.tenancyId;
     }
 
@@ -138,6 +156,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
          * * `TABLE_EXTRACTION`: Detect and extract data in tables.
          * * `KEY_VALUE_EXTRACTION`: Extract form fields.
          * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+         * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
          * 
          * @return builder
          * 
@@ -154,6 +173,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
          * * `TABLE_EXTRACTION`: Detect and extract data in tables.
          * * `KEY_VALUE_EXTRACTION`: Extract form fields.
          * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+         * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
          * 
          * @return builder
          * 
@@ -205,7 +225,7 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
         }
 
         /**
-         * @param modelId The custom model ID.
+         * @param modelId Unique identifier custom model OCID that should be used for inference.
          * 
          * @return builder
          * 
@@ -216,13 +236,34 @@ public final class ProcessorJobProcessorConfigFeatureArgs extends com.pulumi.res
         }
 
         /**
-         * @param modelId The custom model ID.
+         * @param modelId Unique identifier custom model OCID that should be used for inference.
          * 
          * @return builder
          * 
          */
         public Builder modelId(String modelId) {
             return modelId(Output.of(modelId));
+        }
+
+        /**
+         * @param selectionMarkDetection Whether checkbox detection feature is enabled or disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder selectionMarkDetection(@Nullable Output<Boolean> selectionMarkDetection) {
+            $.selectionMarkDetection = selectionMarkDetection;
+            return this;
+        }
+
+        /**
+         * @param selectionMarkDetection Whether checkbox detection feature is enabled or disabled.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder selectionMarkDetection(Boolean selectionMarkDetection) {
+            return selectionMarkDetection(Output.of(selectionMarkDetection));
         }
 
         /**

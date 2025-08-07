@@ -24,6 +24,18 @@ namespace Pulumi.Oci.Opsi.Inputs
         [Input("dbmPrivateEndpointId")]
         public Input<string>? DbmPrivateEndpointId { get; set; }
 
+        [Input("memberAutonomousDetails")]
+        private InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs>? _memberAutonomousDetails;
+
+        /// <summary>
+        /// The autonomous databases that belong to the Autonomous VM Cluster
+        /// </summary>
+        public InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs> MemberAutonomousDetails
+        {
+            get => _memberAutonomousDetails ?? (_memberAutonomousDetails = new InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs>());
+            set => _memberAutonomousDetails = value;
+        }
+
         [Input("memberDatabaseDetails")]
         private InputList<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs>? _memberDatabaseDetails;
 

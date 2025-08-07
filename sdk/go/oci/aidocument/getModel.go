@@ -58,7 +58,7 @@ type LookupModelArgs struct {
 
 // A collection of values returned by getModel.
 type LookupModelResult struct {
-	// The compartment identifier.
+	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
 	ComponentModels []GetModelComponentModel `pulumi:"componentModels"`
@@ -72,20 +72,33 @@ type LookupModelResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier that is immutable after creation.
 	Id string `pulumi:"id"`
+	// Number of replicas required for this model.
+	InferenceUnits int `pulumi:"inferenceUnits"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels []string `pulumi:"labels"`
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language string `pulumi:"language"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetModelLock `pulumi:"locks"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []GetModelMetric `pulumi:"metrics"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 	ModelId string `pulumi:"modelId"`
+	// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+	// * `RECEIPT`
+	// * `INVOICE`
+	// * `PASSPORT`
+	// * `DRIVER_LICENSE`
+	// * `HEALTH_INSURANCE_ID`
+	ModelSubTypes []GetModelModelSubType `pulumi:"modelSubTypes"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The version of the model.
@@ -146,7 +159,7 @@ func (o LookupModelResultOutput) ToLookupModelResultOutputWithContext(ctx contex
 	return o
 }
 
-// The compartment identifier.
+// The lock compartment ID.
 func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -181,6 +194,11 @@ func (o LookupModelResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Number of replicas required for this model.
+func (o LookupModelResultOutput) InferenceUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupModelResult) int { return v.InferenceUnits }).(pulumi.IntOutput)
+}
+
 // Set to true when the model is created by using multiple key value extraction models.
 func (o LookupModelResultOutput) IsComposedModel() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupModelResult) bool { return v.IsComposedModel }).(pulumi.BoolOutput)
@@ -196,9 +214,19 @@ func (o LookupModelResultOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupModelResult) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
+// The document language for model training, abbreviated according to the BCP 47 syntax.
+func (o LookupModelResultOutput) Language() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupModelResult) string { return v.Language }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail, that can provide actionable information if training failed.
 func (o LookupModelResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupModelResultOutput) Locks() GetModelLockArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelLock { return v.Locks }).(GetModelLockArrayOutput)
 }
 
 // The maximum model training time in hours, expressed as a decimal fraction.
@@ -214,6 +242,16 @@ func (o LookupModelResultOutput) Metrics() GetModelMetricArrayOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
 func (o LookupModelResultOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+// * `RECEIPT`
+// * `INVOICE`
+// * `PASSPORT`
+// * `DRIVER_LICENSE`
+// * `HEALTH_INSURANCE_ID`
+func (o LookupModelResultOutput) ModelSubTypes() GetModelModelSubTypeArrayOutput {
+	return o.ApplyT(func(v LookupModelResult) []GetModelModelSubType { return v.ModelSubTypes }).(GetModelModelSubTypeArrayOutput)
 }
 
 // The type of the Document model.

@@ -17,6 +17,11 @@ public final class KeyStoreAssociatedDatabase {
      */
     private @Nullable String dbName;
     /**
+     * @return The unique name of the database that is associated with the key store.
+     * 
+     */
+    private @Nullable String dbUniqueName;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
@@ -29,6 +34,13 @@ public final class KeyStoreAssociatedDatabase {
      */
     public Optional<String> dbName() {
         return Optional.ofNullable(this.dbName);
+    }
+    /**
+     * @return The unique name of the database that is associated with the key store.
+     * 
+     */
+    public Optional<String> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -48,11 +60,13 @@ public final class KeyStoreAssociatedDatabase {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String dbName;
+        private @Nullable String dbUniqueName;
         private @Nullable String id;
         public Builder() {}
         public Builder(KeyStoreAssociatedDatabase defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.dbName = defaults.dbName;
+    	      this.dbUniqueName = defaults.dbUniqueName;
     	      this.id = defaults.id;
         }
 
@@ -60,6 +74,12 @@ public final class KeyStoreAssociatedDatabase {
         public Builder dbName(@Nullable String dbName) {
 
             this.dbName = dbName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbUniqueName(@Nullable String dbUniqueName) {
+
+            this.dbUniqueName = dbUniqueName;
             return this;
         }
         @CustomType.Setter
@@ -71,6 +91,7 @@ public final class KeyStoreAssociatedDatabase {
         public KeyStoreAssociatedDatabase build() {
             final var _resultValue = new KeyStoreAssociatedDatabase();
             _resultValue.dbName = dbName;
+            _resultValue.dbUniqueName = dbUniqueName;
             _resultValue.id = id;
             return _resultValue;
         }

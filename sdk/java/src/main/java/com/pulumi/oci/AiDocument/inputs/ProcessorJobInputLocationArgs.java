@@ -49,6 +49,21 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
     }
 
     /**
+     * The page ranges to be analysed.
+     * 
+     */
+    @Import(name="pageRanges")
+    private @Nullable Output<List<String>> pageRanges;
+
+    /**
+     * @return The page ranges to be analysed.
+     * 
+     */
+    public Optional<Output<List<String>>> pageRanges() {
+        return Optional.ofNullable(this.pageRanges);
+    }
+
+    /**
      * The type of input location. The allowed values are:
      * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
      * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -72,6 +87,7 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
     private ProcessorJobInputLocationArgs(ProcessorJobInputLocationArgs $) {
         this.data = $.data;
         this.objectLocations = $.objectLocations;
+        this.pageRanges = $.pageRanges;
         this.sourceType = $.sourceType;
     }
 
@@ -143,6 +159,37 @@ public final class ProcessorJobInputLocationArgs extends com.pulumi.resources.Re
          */
         public Builder objectLocations(ProcessorJobInputLocationObjectLocationArgs... objectLocations) {
             return objectLocations(List.of(objectLocations));
+        }
+
+        /**
+         * @param pageRanges The page ranges to be analysed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pageRanges(@Nullable Output<List<String>> pageRanges) {
+            $.pageRanges = pageRanges;
+            return this;
+        }
+
+        /**
+         * @param pageRanges The page ranges to be analysed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pageRanges(List<String> pageRanges) {
+            return pageRanges(Output.of(pageRanges));
+        }
+
+        /**
+         * @param pageRanges The page ranges to be analysed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pageRanges(String... pageRanges) {
+            return pageRanges(List.of(pageRanges));
         }
 
         /**

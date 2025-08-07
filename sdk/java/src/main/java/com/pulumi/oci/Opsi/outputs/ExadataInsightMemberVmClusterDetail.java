@@ -4,6 +4,7 @@
 package com.pulumi.oci.Opsi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetail;
 import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail;
 import java.lang.String;
 import java.util.List;
@@ -23,6 +24,11 @@ public final class ExadataInsightMemberVmClusterDetail {
      * 
      */
     private @Nullable String dbmPrivateEndpointId;
+    /**
+     * @return The autonomous databases that belong to the Autonomous VM Cluster
+     * 
+     */
+    private @Nullable List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails;
     /**
      * @return The databases that belong to the VM Cluster
      * 
@@ -58,6 +64,13 @@ public final class ExadataInsightMemberVmClusterDetail {
      */
     public Optional<String> dbmPrivateEndpointId() {
         return Optional.ofNullable(this.dbmPrivateEndpointId);
+    }
+    /**
+     * @return The autonomous databases that belong to the Autonomous VM Cluster
+     * 
+     */
+    public List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails() {
+        return this.memberAutonomousDetails == null ? List.of() : this.memberAutonomousDetails;
     }
     /**
      * @return The databases that belong to the VM Cluster
@@ -99,6 +112,7 @@ public final class ExadataInsightMemberVmClusterDetail {
     public static final class Builder {
         private @Nullable String compartmentId;
         private @Nullable String dbmPrivateEndpointId;
+        private @Nullable List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails;
         private @Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails;
         private @Nullable String opsiPrivateEndpointId;
         private @Nullable String vmClusterType;
@@ -108,6 +122,7 @@ public final class ExadataInsightMemberVmClusterDetail {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.dbmPrivateEndpointId = defaults.dbmPrivateEndpointId;
+    	      this.memberAutonomousDetails = defaults.memberAutonomousDetails;
     	      this.memberDatabaseDetails = defaults.memberDatabaseDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.vmClusterType = defaults.vmClusterType;
@@ -125,6 +140,15 @@ public final class ExadataInsightMemberVmClusterDetail {
 
             this.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder memberAutonomousDetails(@Nullable List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails) {
+
+            this.memberAutonomousDetails = memberAutonomousDetails;
+            return this;
+        }
+        public Builder memberAutonomousDetails(ExadataInsightMemberVmClusterDetailMemberAutonomousDetail... memberAutonomousDetails) {
+            return memberAutonomousDetails(List.of(memberAutonomousDetails));
         }
         @CustomType.Setter
         public Builder memberDatabaseDetails(@Nullable List<ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails) {
@@ -157,6 +181,7 @@ public final class ExadataInsightMemberVmClusterDetail {
             final var _resultValue = new ExadataInsightMemberVmClusterDetail();
             _resultValue.compartmentId = compartmentId;
             _resultValue.dbmPrivateEndpointId = dbmPrivateEndpointId;
+            _resultValue.memberAutonomousDetails = memberAutonomousDetails;
             _resultValue.memberDatabaseDetails = memberDatabaseDetails;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.vmClusterType = vmClusterType;

@@ -50,6 +50,11 @@ export const getManagementAgentInstallKeys: typeof import("./getManagementAgentI
 export const getManagementAgentInstallKeysOutput: typeof import("./getManagementAgentInstallKeys").getManagementAgentInstallKeysOutput = null as any;
 utilities.lazyLoad(exports, ["getManagementAgentInstallKeys","getManagementAgentInstallKeysOutput"], () => require("./getManagementAgentInstallKeys"));
 
+export { GetManagementAgentNamedCredentialsMetadataArgs, GetManagementAgentNamedCredentialsMetadataResult, GetManagementAgentNamedCredentialsMetadataOutputArgs } from "./getManagementAgentNamedCredentialsMetadata";
+export const getManagementAgentNamedCredentialsMetadata: typeof import("./getManagementAgentNamedCredentialsMetadata").getManagementAgentNamedCredentialsMetadata = null as any;
+export const getManagementAgentNamedCredentialsMetadataOutput: typeof import("./getManagementAgentNamedCredentialsMetadata").getManagementAgentNamedCredentialsMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentNamedCredentialsMetadata","getManagementAgentNamedCredentialsMetadataOutput"], () => require("./getManagementAgentNamedCredentialsMetadata"));
+
 export { GetManagementAgentPluginCountArgs, GetManagementAgentPluginCountResult, GetManagementAgentPluginCountOutputArgs } from "./getManagementAgentPluginCount";
 export const getManagementAgentPluginCount: typeof import("./getManagementAgentPluginCount").getManagementAgentPluginCount = null as any;
 export const getManagementAgentPluginCountOutput: typeof import("./getManagementAgentPluginCount").getManagementAgentPluginCountOutput = null as any;
@@ -64,6 +69,16 @@ export { GetManagementAgentsArgs, GetManagementAgentsResult, GetManagementAgents
 export const getManagementAgents: typeof import("./getManagementAgents").getManagementAgents = null as any;
 export const getManagementAgentsOutput: typeof import("./getManagementAgents").getManagementAgentsOutput = null as any;
 utilities.lazyLoad(exports, ["getManagementAgents","getManagementAgentsOutput"], () => require("./getManagementAgents"));
+
+export { GetNamedCredentialArgs, GetNamedCredentialResult, GetNamedCredentialOutputArgs } from "./getNamedCredential";
+export const getNamedCredential: typeof import("./getNamedCredential").getNamedCredential = null as any;
+export const getNamedCredentialOutput: typeof import("./getNamedCredential").getNamedCredentialOutput = null as any;
+utilities.lazyLoad(exports, ["getNamedCredential","getNamedCredentialOutput"], () => require("./getNamedCredential"));
+
+export { GetNamedCredentialsArgs, GetNamedCredentialsResult, GetNamedCredentialsOutputArgs } from "./getNamedCredentials";
+export const getNamedCredentials: typeof import("./getNamedCredentials").getNamedCredentials = null as any;
+export const getNamedCredentialsOutput: typeof import("./getNamedCredentials").getNamedCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getNamedCredentials","getNamedCredentialsOutput"], () => require("./getNamedCredentials"));
 
 export { ManagementAgentArgs, ManagementAgentState } from "./managementAgent";
 export type ManagementAgent = import("./managementAgent").ManagementAgent;
@@ -80,6 +95,11 @@ export type ManagementAgentInstallKey = import("./managementAgentInstallKey").Ma
 export const ManagementAgentInstallKey: typeof import("./managementAgentInstallKey").ManagementAgentInstallKey = null as any;
 utilities.lazyLoad(exports, ["ManagementAgentInstallKey"], () => require("./managementAgentInstallKey"));
 
+export { NamedCredentialArgs, NamedCredentialState } from "./namedCredential";
+export type NamedCredential = import("./namedCredential").NamedCredential;
+export const NamedCredential: typeof import("./namedCredential").NamedCredential = null as any;
+utilities.lazyLoad(exports, ["NamedCredential"], () => require("./namedCredential"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -91,6 +111,8 @@ const _module = {
                 return new ManagementAgentDataSource(name, <any>undefined, { urn })
             case "oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey":
                 return new ManagementAgentInstallKey(name, <any>undefined, { urn })
+            case "oci:ManagementAgent/namedCredential:NamedCredential":
+                return new NamedCredential(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -99,3 +121,4 @@ const _module = {
 pulumi.runtime.registerResourceModule("oci", "ManagementAgent/managementAgent", _module)
 pulumi.runtime.registerResourceModule("oci", "ManagementAgent/managementAgentDataSource", _module)
 pulumi.runtime.registerResourceModule("oci", "ManagementAgent/managementAgentInstallKey", _module)
+pulumi.runtime.registerResourceModule("oci", "ManagementAgent/namedCredential", _module)

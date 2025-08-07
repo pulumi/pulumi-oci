@@ -71,6 +71,8 @@ type Project struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks ProjectLockArrayOutput `pulumi:"locks"`
 	// The current state of the project.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -129,6 +131,8 @@ type projectState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []ProjectLock `pulumi:"locks"`
 	// The current state of the project.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -155,6 +159,8 @@ type ProjectState struct {
 	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks ProjectLockArrayInput
 	// The current state of the project.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -183,6 +189,8 @@ type projectArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Locks associated with this resource.
+	Locks []ProjectLock `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a Project resource.
@@ -200,6 +208,8 @@ type ProjectArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.StringMapInput
+	// Locks associated with this resource.
+	Locks ProjectLockArrayInput
 }
 
 func (ProjectArgs) ElementType() reflect.Type {
@@ -320,6 +330,11 @@ func (o ProjectOutput) FreeformTags() pulumi.StringMapOutput {
 // A message describing the current state in more detail, that can provide actionable information if creation failed.
 func (o ProjectOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o ProjectOutput) Locks() ProjectLockArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectLockArrayOutput { return v.Locks }).(ProjectLockArrayOutput)
 }
 
 // The current state of the project.

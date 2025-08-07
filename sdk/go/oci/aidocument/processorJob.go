@@ -37,11 +37,13 @@ import (
 //					Data:       pulumi.Any(processorJobInputLocationData),
 //					ObjectLocations: aidocument.ProcessorJobInputLocationObjectLocationArray{
 //						&aidocument.ProcessorJobInputLocationObjectLocationArgs{
-//							Bucket:    pulumi.Any(processorJobInputLocationObjectLocationsBucket),
-//							Namespace: pulumi.Any(processorJobInputLocationObjectLocationsNamespace),
-//							Object:    pulumi.Any(processorJobInputLocationObjectLocationsObject),
+//							Bucket:     pulumi.Any(processorJobInputLocationObjectLocationsBucket),
+//							Namespace:  pulumi.Any(processorJobInputLocationObjectLocationsNamespace),
+//							Object:     pulumi.Any(processorJobInputLocationObjectLocationsObject),
+//							PageRanges: pulumi.Any(processorJobInputLocationObjectLocationsPageRange),
 //						},
 //					},
+//					PageRanges: pulumi.Any(processorJobInputLocationPageRange),
 //				},
 //				OutputLocation: &aidocument.ProcessorJobOutputLocationArgs{
 //					Bucket:    pulumi.Any(processorJobOutputLocationBucket),
@@ -49,19 +51,30 @@ import (
 //					Prefix:    pulumi.Any(processorJobOutputLocationPrefix),
 //				},
 //				ProcessorConfig: &aidocument.ProcessorJobProcessorConfigArgs{
+//					ProcessorType: pulumi.Any(processorJobProcessorConfigProcessorType),
+//					DocumentType:  pulumi.Any(processorJobProcessorConfigDocumentType),
 //					Features: aidocument.ProcessorJobProcessorConfigFeatureArray{
 //						&aidocument.ProcessorJobProcessorConfigFeatureArgs{
-//							FeatureType:           pulumi.Any(processorJobProcessorConfigFeaturesFeatureType),
-//							GenerateSearchablePdf: pulumi.Any(processorJobProcessorConfigFeaturesGenerateSearchablePdf),
-//							MaxResults:            pulumi.Any(processorJobProcessorConfigFeaturesMaxResults),
-//							ModelId:               pulumi.Any(testModel.Id),
-//							TenancyId:             pulumi.Any(testTenancy.Id),
+//							FeatureType:            pulumi.Any(processorJobProcessorConfigFeaturesFeatureType),
+//							GenerateSearchablePdf:  pulumi.Any(processorJobProcessorConfigFeaturesGenerateSearchablePdf),
+//							MaxResults:             pulumi.Any(processorJobProcessorConfigFeaturesMaxResults),
+//							ModelId:                pulumi.Any(testModel.Id),
+//							SelectionMarkDetection: pulumi.Any(processorJobProcessorConfigFeaturesSelectionMarkDetection),
+//							TenancyId:              pulumi.Any(testTenancy.Id),
 //						},
 //					},
-//					ProcessorType:      pulumi.Any(processorJobProcessorConfigProcessorType),
-//					DocumentType:       pulumi.Any(processorJobProcessorConfigDocumentType),
 //					IsZipOutputEnabled: pulumi.Any(processorJobProcessorConfigIsZipOutputEnabled),
 //					Language:           pulumi.Any(processorJobProcessorConfigLanguage),
+//					ModelId:            pulumi.Any(testModel.Id),
+//					NormalizationFields: aidocument.ProcessorJobProcessorConfigNormalizationFieldArray{
+//						&aidocument.ProcessorJobProcessorConfigNormalizationFieldArgs{
+//							Maps: aidocument.ProcessorJobProcessorConfigNormalizationFieldMapArray{
+//								&aidocument.ProcessorJobProcessorConfigNormalizationFieldMapArgs{
+//									NormalizationType: pulumi.Any(processorJobProcessorConfigNormalizationFieldsMapNormalizationType),
+//								},
+//							},
+//						},
+//					},
 //				},
 //				DisplayName: pulumi.Any(processorJobDisplayName),
 //			})

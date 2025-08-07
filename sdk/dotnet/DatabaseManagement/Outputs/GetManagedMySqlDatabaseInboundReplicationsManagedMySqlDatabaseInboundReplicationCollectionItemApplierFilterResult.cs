@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterResult
     {
         /// <summary>
-        /// Type of replication filter that has been configured for the replication channel.
+        /// The type of replication filter that has been configured for the replication channel.
         /// </summary>
         public readonly string FilterName;
         /// <summary>

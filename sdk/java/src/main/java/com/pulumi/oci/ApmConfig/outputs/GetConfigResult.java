@@ -5,9 +5,11 @@ package com.pulumi.oci.ApmConfig.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApmConfig.outputs.GetConfigConfig;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigDimension;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigInUseBy;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigMetric;
+import com.pulumi.oci.ApmConfig.outputs.GetConfigOverride;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigRule;
 import java.lang.String;
 import java.util.List;
@@ -16,13 +18,28 @@ import java.util.Objects;
 
 @CustomType
 public final class GetConfigResult {
+    /**
+     * @return The version of the referenced agent bundle.
+     * 
+     */
+    private String agentVersion;
     private String apmDomainId;
+    /**
+     * @return The directory owned by runAsUser.
+     * 
+     */
+    private String attachInstallDir;
     private String configId;
     /**
      * @return The type of configuration item.
      * 
      */
     private String configType;
+    /**
+     * @return Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+     * 
+     */
+    private List<GetConfigConfig> configs;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      * 
@@ -84,6 +101,21 @@ public final class GetConfigResult {
      */
     private List<GetConfigInUseBy> inUseBies;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     * 
+     */
+    private String managementAgentId;
+    /**
+     * @return The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     * 
+     */
+    private List<String> matchAgentsWithAttributeKeys;
+    /**
+     * @return The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     * 
+     */
+    private String matchAgentsWithAttributeValue;
+    /**
      * @return The list of metrics in this group.
      * 
      */
@@ -99,7 +131,27 @@ public final class GetConfigResult {
      * 
      */
     private String options;
+    /**
+     * @return Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     * 
+     */
+    private List<GetConfigOverride> overrides;
+    /**
+     * @return Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     * 
+     */
+    private List<String> processFilters;
     private List<GetConfigRule> rules;
+    /**
+     * @return The OS user that should be used to discover Java processes.
+     * 
+     */
+    private String runAsUser;
+    /**
+     * @return The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     * 
+     */
+    private String serviceName;
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      * 
@@ -117,8 +169,22 @@ public final class GetConfigResult {
     private String updatedBy;
 
     private GetConfigResult() {}
+    /**
+     * @return The version of the referenced agent bundle.
+     * 
+     */
+    public String agentVersion() {
+        return this.agentVersion;
+    }
     public String apmDomainId() {
         return this.apmDomainId;
+    }
+    /**
+     * @return The directory owned by runAsUser.
+     * 
+     */
+    public String attachInstallDir() {
+        return this.attachInstallDir;
     }
     public String configId() {
         return this.configId;
@@ -129,6 +195,13 @@ public final class GetConfigResult {
      */
     public String configType() {
         return this.configType;
+    }
+    /**
+     * @return Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+     * 
+     */
+    public List<GetConfigConfig> configs() {
+        return this.configs;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
@@ -215,6 +288,27 @@ public final class GetConfigResult {
         return this.inUseBies;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     * 
+     */
+    public String managementAgentId() {
+        return this.managementAgentId;
+    }
+    /**
+     * @return The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     * 
+     */
+    public List<String> matchAgentsWithAttributeKeys() {
+        return this.matchAgentsWithAttributeKeys;
+    }
+    /**
+     * @return The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     * 
+     */
+    public String matchAgentsWithAttributeValue() {
+        return this.matchAgentsWithAttributeValue;
+    }
+    /**
      * @return The list of metrics in this group.
      * 
      */
@@ -238,8 +332,36 @@ public final class GetConfigResult {
     public String options() {
         return this.options;
     }
+    /**
+     * @return Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     * 
+     */
+    public List<GetConfigOverride> overrides() {
+        return this.overrides;
+    }
+    /**
+     * @return Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     * 
+     */
+    public List<String> processFilters() {
+        return this.processFilters;
+    }
     public List<GetConfigRule> rules() {
         return this.rules;
+    }
+    /**
+     * @return The OS user that should be used to discover Java processes.
+     * 
+     */
+    public String runAsUser() {
+        return this.runAsUser;
+    }
+    /**
+     * @return The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     * 
+     */
+    public String serviceName() {
+        return this.serviceName;
     }
     /**
      * @return The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -272,9 +394,12 @@ public final class GetConfigResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String agentVersion;
         private String apmDomainId;
+        private String attachInstallDir;
         private String configId;
         private String configType;
+        private List<GetConfigConfig> configs;
         private String createdBy;
         private Map<String,String> definedTags;
         private String description;
@@ -287,20 +412,30 @@ public final class GetConfigResult {
         private String group;
         private String id;
         private List<GetConfigInUseBy> inUseBies;
+        private String managementAgentId;
+        private List<String> matchAgentsWithAttributeKeys;
+        private String matchAgentsWithAttributeValue;
         private List<GetConfigMetric> metrics;
         private String namespace;
         private String opcDryRun;
         private String options;
+        private List<GetConfigOverride> overrides;
+        private List<String> processFilters;
         private List<GetConfigRule> rules;
+        private String runAsUser;
+        private String serviceName;
         private String timeCreated;
         private String timeUpdated;
         private String updatedBy;
         public Builder() {}
         public Builder(GetConfigResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.agentVersion = defaults.agentVersion;
     	      this.apmDomainId = defaults.apmDomainId;
+    	      this.attachInstallDir = defaults.attachInstallDir;
     	      this.configId = defaults.configId;
     	      this.configType = defaults.configType;
+    	      this.configs = defaults.configs;
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -313,22 +448,45 @@ public final class GetConfigResult {
     	      this.group = defaults.group;
     	      this.id = defaults.id;
     	      this.inUseBies = defaults.inUseBies;
+    	      this.managementAgentId = defaults.managementAgentId;
+    	      this.matchAgentsWithAttributeKeys = defaults.matchAgentsWithAttributeKeys;
+    	      this.matchAgentsWithAttributeValue = defaults.matchAgentsWithAttributeValue;
     	      this.metrics = defaults.metrics;
     	      this.namespace = defaults.namespace;
     	      this.opcDryRun = defaults.opcDryRun;
     	      this.options = defaults.options;
+    	      this.overrides = defaults.overrides;
+    	      this.processFilters = defaults.processFilters;
     	      this.rules = defaults.rules;
+    	      this.runAsUser = defaults.runAsUser;
+    	      this.serviceName = defaults.serviceName;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.updatedBy = defaults.updatedBy;
         }
 
         @CustomType.Setter
+        public Builder agentVersion(String agentVersion) {
+            if (agentVersion == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "agentVersion");
+            }
+            this.agentVersion = agentVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder apmDomainId(String apmDomainId) {
             if (apmDomainId == null) {
               throw new MissingRequiredPropertyException("GetConfigResult", "apmDomainId");
             }
             this.apmDomainId = apmDomainId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder attachInstallDir(String attachInstallDir) {
+            if (attachInstallDir == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "attachInstallDir");
+            }
+            this.attachInstallDir = attachInstallDir;
             return this;
         }
         @CustomType.Setter
@@ -346,6 +504,17 @@ public final class GetConfigResult {
             }
             this.configType = configType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder configs(List<GetConfigConfig> configs) {
+            if (configs == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "configs");
+            }
+            this.configs = configs;
+            return this;
+        }
+        public Builder configs(GetConfigConfig... configs) {
+            return configs(List.of(configs));
         }
         @CustomType.Setter
         public Builder createdBy(String createdBy) {
@@ -450,6 +619,33 @@ public final class GetConfigResult {
             return inUseBies(List.of(inUseBies));
         }
         @CustomType.Setter
+        public Builder managementAgentId(String managementAgentId) {
+            if (managementAgentId == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "managementAgentId");
+            }
+            this.managementAgentId = managementAgentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder matchAgentsWithAttributeKeys(List<String> matchAgentsWithAttributeKeys) {
+            if (matchAgentsWithAttributeKeys == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "matchAgentsWithAttributeKeys");
+            }
+            this.matchAgentsWithAttributeKeys = matchAgentsWithAttributeKeys;
+            return this;
+        }
+        public Builder matchAgentsWithAttributeKeys(String... matchAgentsWithAttributeKeys) {
+            return matchAgentsWithAttributeKeys(List.of(matchAgentsWithAttributeKeys));
+        }
+        @CustomType.Setter
+        public Builder matchAgentsWithAttributeValue(String matchAgentsWithAttributeValue) {
+            if (matchAgentsWithAttributeValue == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "matchAgentsWithAttributeValue");
+            }
+            this.matchAgentsWithAttributeValue = matchAgentsWithAttributeValue;
+            return this;
+        }
+        @CustomType.Setter
         public Builder metrics(List<GetConfigMetric> metrics) {
             if (metrics == null) {
               throw new MissingRequiredPropertyException("GetConfigResult", "metrics");
@@ -485,6 +681,28 @@ public final class GetConfigResult {
             return this;
         }
         @CustomType.Setter
+        public Builder overrides(List<GetConfigOverride> overrides) {
+            if (overrides == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "overrides");
+            }
+            this.overrides = overrides;
+            return this;
+        }
+        public Builder overrides(GetConfigOverride... overrides) {
+            return overrides(List.of(overrides));
+        }
+        @CustomType.Setter
+        public Builder processFilters(List<String> processFilters) {
+            if (processFilters == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "processFilters");
+            }
+            this.processFilters = processFilters;
+            return this;
+        }
+        public Builder processFilters(String... processFilters) {
+            return processFilters(List.of(processFilters));
+        }
+        @CustomType.Setter
         public Builder rules(List<GetConfigRule> rules) {
             if (rules == null) {
               throw new MissingRequiredPropertyException("GetConfigResult", "rules");
@@ -494,6 +712,22 @@ public final class GetConfigResult {
         }
         public Builder rules(GetConfigRule... rules) {
             return rules(List.of(rules));
+        }
+        @CustomType.Setter
+        public Builder runAsUser(String runAsUser) {
+            if (runAsUser == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "runAsUser");
+            }
+            this.runAsUser = runAsUser;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder serviceName(String serviceName) {
+            if (serviceName == null) {
+              throw new MissingRequiredPropertyException("GetConfigResult", "serviceName");
+            }
+            this.serviceName = serviceName;
+            return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
@@ -521,9 +755,12 @@ public final class GetConfigResult {
         }
         public GetConfigResult build() {
             final var _resultValue = new GetConfigResult();
+            _resultValue.agentVersion = agentVersion;
             _resultValue.apmDomainId = apmDomainId;
+            _resultValue.attachInstallDir = attachInstallDir;
             _resultValue.configId = configId;
             _resultValue.configType = configType;
+            _resultValue.configs = configs;
             _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
@@ -536,11 +773,18 @@ public final class GetConfigResult {
             _resultValue.group = group;
             _resultValue.id = id;
             _resultValue.inUseBies = inUseBies;
+            _resultValue.managementAgentId = managementAgentId;
+            _resultValue.matchAgentsWithAttributeKeys = matchAgentsWithAttributeKeys;
+            _resultValue.matchAgentsWithAttributeValue = matchAgentsWithAttributeValue;
             _resultValue.metrics = metrics;
             _resultValue.namespace = namespace;
             _resultValue.opcDryRun = opcDryRun;
             _resultValue.options = options;
+            _resultValue.overrides = overrides;
+            _resultValue.processFilters = processFilters;
             _resultValue.rules = rules;
+            _resultValue.runAsUser = runAsUser;
+            _resultValue.serviceName = serviceName;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.updatedBy = updatedBy;

@@ -20,22 +20,34 @@ __all__ = ['ManagementDashboardsImportArgs', 'ManagementDashboardsImport']
 class ManagementDashboardsImportArgs:
     def __init__(__self__, *,
                  import_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_details_file: Optional[pulumi.Input[_builtins.str]] = None):
+                 import_details_file: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_dashboard_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_same_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_saved_search_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a ManagementDashboardsImport resource.
-        :param pulumi.Input[_builtins.str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
+        :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if import_details is not None:
             pulumi.set(__self__, "import_details", import_details)
         if import_details_file is not None:
             pulumi.set(__self__, "import_details_file", import_details_file)
+        if override_dashboard_compartment_ocid is not None:
+            pulumi.set(__self__, "override_dashboard_compartment_ocid", override_dashboard_compartment_ocid)
+        if override_same_name is not None:
+            pulumi.set(__self__, "override_same_name", override_same_name)
+        if override_saved_search_compartment_ocid is not None:
+            pulumi.set(__self__, "override_saved_search_compartment_ocid", override_saved_search_compartment_ocid)
 
     @_builtins.property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        """
         return pulumi.get(self, "import_details")
 
     @import_details.setter
@@ -50,28 +62,80 @@ class ManagementDashboardsImportArgs:
     @import_details_file.setter
     def import_details_file(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "import_details_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideDashboardCompartmentOcid")
+    def override_dashboard_compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        """
+        return pulumi.get(self, "override_dashboard_compartment_ocid")
+
+    @override_dashboard_compartment_ocid.setter
+    def override_dashboard_compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "override_dashboard_compartment_ocid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideSameName")
+    def override_same_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        """
+        return pulumi.get(self, "override_same_name")
+
+    @override_same_name.setter
+    def override_same_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "override_same_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideSavedSearchCompartmentOcid")
+    def override_saved_search_compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "override_saved_search_compartment_ocid")
+
+    @override_saved_search_compartment_ocid.setter
+    def override_saved_search_compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "override_saved_search_compartment_ocid", value)
 
 
 @pulumi.input_type
 class _ManagementDashboardsImportState:
     def __init__(__self__, *,
                  import_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 import_details_file: Optional[pulumi.Input[_builtins.str]] = None):
+                 import_details_file: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_dashboard_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_same_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_saved_search_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ManagementDashboardsImport resources.
-        :param pulumi.Input[_builtins.str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
+        :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if import_details is not None:
             pulumi.set(__self__, "import_details", import_details)
         if import_details_file is not None:
             pulumi.set(__self__, "import_details_file", import_details_file)
+        if override_dashboard_compartment_ocid is not None:
+            pulumi.set(__self__, "override_dashboard_compartment_ocid", override_dashboard_compartment_ocid)
+        if override_same_name is not None:
+            pulumi.set(__self__, "override_same_name", override_same_name)
+        if override_saved_search_compartment_ocid is not None:
+            pulumi.set(__self__, "override_saved_search_compartment_ocid", override_saved_search_compartment_ocid)
 
     @_builtins.property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> Optional[pulumi.Input[_builtins.str]]:
-        """
-        Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        """
         return pulumi.get(self, "import_details")
 
     @import_details.setter
@@ -86,6 +150,46 @@ class _ManagementDashboardsImportState:
     @import_details_file.setter
     def import_details_file(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "import_details_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideDashboardCompartmentOcid")
+    def override_dashboard_compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        """
+        return pulumi.get(self, "override_dashboard_compartment_ocid")
+
+    @override_dashboard_compartment_ocid.setter
+    def override_dashboard_compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "override_dashboard_compartment_ocid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideSameName")
+    def override_same_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        """
+        return pulumi.get(self, "override_same_name")
+
+    @override_same_name.setter
+    def override_same_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "override_same_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideSavedSearchCompartmentOcid")
+    def override_saved_search_compartment_ocid(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "override_saved_search_compartment_ocid")
+
+    @override_saved_search_compartment_ocid.setter
+    def override_saved_search_compartment_ocid(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "override_saved_search_compartment_ocid", value)
 
 
 @pulumi.type_token("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport")
@@ -96,6 +200,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  import_details: Optional[pulumi.Input[_builtins.str]] = None,
                  import_details_file: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_dashboard_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_same_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_saved_search_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Management Dashboards Import resource in Oracle Cloud Infrastructure Management Dashboard service.
@@ -114,8 +221,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_management_dashboards_import = oci.managementdashboard.ManagementDashboardsImport("test_management_dashboards_import",
-            import_details=sample_import_details,
-            import_details_file=sample_import_details_file_path)
+            override_dashboard_compartment_ocid=management_dashboards_import_override_dashboard_compartment_ocid,
+            override_same_name=management_dashboards_import_override_same_name,
+            override_saved_search_compartment_ocid=management_dashboards_import_override_saved_search_compartment_ocid)
         ```
 
         ## Import
@@ -128,7 +236,13 @@ class ManagementDashboardsImport(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
+        :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -153,8 +267,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_management_dashboards_import = oci.managementdashboard.ManagementDashboardsImport("test_management_dashboards_import",
-            import_details=sample_import_details,
-            import_details_file=sample_import_details_file_path)
+            override_dashboard_compartment_ocid=management_dashboards_import_override_dashboard_compartment_ocid,
+            override_same_name=management_dashboards_import_override_same_name,
+            override_saved_search_compartment_ocid=management_dashboards_import_override_saved_search_compartment_ocid)
         ```
 
         ## Import
@@ -182,6 +297,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  import_details: Optional[pulumi.Input[_builtins.str]] = None,
                  import_details_file: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_dashboard_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_same_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_saved_search_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -193,6 +311,9 @@ class ManagementDashboardsImport(pulumi.CustomResource):
 
             __props__.__dict__["import_details"] = import_details
             __props__.__dict__["import_details_file"] = import_details_file
+            __props__.__dict__["override_dashboard_compartment_ocid"] = override_dashboard_compartment_ocid
+            __props__.__dict__["override_same_name"] = override_same_name
+            __props__.__dict__["override_saved_search_compartment_ocid"] = override_saved_search_compartment_ocid
         super(ManagementDashboardsImport, __self__).__init__(
             'oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport',
             resource_name,
@@ -204,7 +325,10 @@ class ManagementDashboardsImport(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             import_details: Optional[pulumi.Input[_builtins.str]] = None,
-            import_details_file: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementDashboardsImport':
+            import_details_file: Optional[pulumi.Input[_builtins.str]] = None,
+            override_dashboard_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None,
+            override_same_name: Optional[pulumi.Input[_builtins.str]] = None,
+            override_saved_search_compartment_ocid: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementDashboardsImport':
         """
         Get an existing ManagementDashboardsImport resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -212,7 +336,13 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] import_details: Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
+        :param pulumi.Input[_builtins.str] override_dashboard_compartment_ocid: If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        :param pulumi.Input[_builtins.str] override_same_name: By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        :param pulumi.Input[_builtins.str] override_saved_search_compartment_ocid: If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -220,18 +350,46 @@ class ManagementDashboardsImport(pulumi.CustomResource):
 
         __props__.__dict__["import_details"] = import_details
         __props__.__dict__["import_details_file"] = import_details_file
+        __props__.__dict__["override_dashboard_compartment_ocid"] = override_dashboard_compartment_ocid
+        __props__.__dict__["override_same_name"] = override_same_name
+        __props__.__dict__["override_saved_search_compartment_ocid"] = override_saved_search_compartment_ocid
         return ManagementDashboardsImport(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> pulumi.Output[Optional[_builtins.str]]:
-        """
-        Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        """
         return pulumi.get(self, "import_details")
 
     @_builtins.property
     @pulumi.getter(name="importDetailsFile")
     def import_details_file(self) -> pulumi.Output[Optional[_builtins.str]]:
         return pulumi.get(self, "import_details_file")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideDashboardCompartmentOcid")
+    def override_dashboard_compartment_ocid(self) -> pulumi.Output[_builtins.str]:
+        """
+        If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        """
+        return pulumi.get(self, "override_dashboard_compartment_ocid")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideSameName")
+    def override_same_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        """
+        return pulumi.get(self, "override_same_name")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideSavedSearchCompartmentOcid")
+    def override_saved_search_compartment_ocid(self) -> pulumi.Output[_builtins.str]:
+        """
+        If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "override_saved_search_compartment_ocid")
 

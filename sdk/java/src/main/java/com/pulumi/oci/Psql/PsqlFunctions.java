@@ -871,6 +871,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -921,6 +923,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -971,6 +975,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -1021,6 +1027,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -1071,6 +1079,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -1121,6 +1131,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -1171,6 +1183,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
+     *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(configurationInstanceOcpuCount)
      *             .shape(configurationShape)
      *             .state(configurationState)
      *             .build());
@@ -2433,6 +2447,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());
@@ -2481,6 +2497,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());
@@ -2529,6 +2547,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());
@@ -2577,6 +2597,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());
@@ -2625,6 +2647,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());
@@ -2673,6 +2697,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());
@@ -2721,6 +2747,8 @@ public final class PsqlFunctions {
      *             .configurationId(testConfiguration.id())
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
+     *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
+     *             .instanceOcpuCount(defaultConfigurationInstanceOcpuCount)
      *             .shape(defaultConfigurationShape)
      *             .state(defaultConfigurationState)
      *             .build());

@@ -41,6 +41,7 @@ namespace Pulumi.Oci.DataScience
     ///             ShapeName = testShape.Name,
     ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
     ///             {
+    ///                 CpuBaseline = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
     ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
     ///             },

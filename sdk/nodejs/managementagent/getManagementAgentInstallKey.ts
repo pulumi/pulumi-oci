@@ -58,9 +58,17 @@ export interface GetManagementAgentInstallKeyResult {
      */
     readonly currentKeyInstallCount: number;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    readonly definedTags: {[key: string]: string};
+    /**
      * Management Agent Install Key Name
      */
     readonly displayName: string;
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    readonly freeformTags: {[key: string]: string};
     /**
      * Agent install Key identifier
      */
@@ -82,6 +90,10 @@ export interface GetManagementAgentInstallKeyResult {
      * Status of Key
      */
     readonly state: string;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */

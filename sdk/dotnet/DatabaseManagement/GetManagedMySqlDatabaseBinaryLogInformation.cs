@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves information pertaining to binary log of a specific MySQL server.
+        /// Retrieves information pertaining to the binary log of a specific MySQL server.
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves information pertaining to binary log of a specific MySQL server.
+        /// Retrieves information pertaining to the binary log of a specific MySQL server.
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves information pertaining to binary log of a specific MySQL server.
+        /// Retrieves information pertaining to the binary log of a specific MySQL server.
         /// 
         /// 
         /// ## Example Usage
@@ -127,15 +127,15 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class GetManagedMySqlDatabaseBinaryLogInformationResult
     {
         /// <summary>
-        /// Indicates whether compression is enabled for transactions written to binary log files on this server.
+        /// Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
         /// </summary>
         public readonly string BinaryLogCompression;
         /// <summary>
-        /// The compression ratio for binary log expressed as a percentage.
+        /// The compression ratio for the binary log, expressed as a percentage.
         /// </summary>
         public readonly int BinaryLogCompressionPercent;
         /// <summary>
-        /// The binary logging format used by this server.
+        /// The binary logging format used by the MySQL server.
         /// </summary>
         public readonly string BinaryLogFormat;
         /// <summary>
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string BinaryLogPosition;
         /// <summary>
-        /// Status of binary logging on this server.
+        /// The status of binary logging on the MySQL server.
         /// </summary>
         public readonly string BinaryLogging;
         /// <summary>

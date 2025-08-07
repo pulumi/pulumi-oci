@@ -188,7 +188,7 @@ namespace Pulumi.Oci.AiDocument
     public sealed class GetProjectsResult
     {
         /// <summary>
-        /// The compartment identifier.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

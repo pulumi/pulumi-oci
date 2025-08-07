@@ -61,7 +61,7 @@ func GetConfigs(ctx *pulumi.Context, args *GetConfigsArgs, opts ...pulumi.Invoke
 type GetConfigsArgs struct {
 	// The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 	ConfigType *string `pulumi:"configType"`
 	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
 	DefinedTagEquals []string `pulumi:"definedTagEquals"`
@@ -111,7 +111,7 @@ func GetConfigsOutput(ctx *pulumi.Context, args GetConfigsOutputArgs, opts ...pu
 type GetConfigsOutputArgs struct {
 	// The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
 	// A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned. Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
 	DefinedTagEquals pulumi.StringArrayInput `pulumi:"definedTagEquals"`

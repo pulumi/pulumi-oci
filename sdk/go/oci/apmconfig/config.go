@@ -31,9 +31,19 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := apmconfig.NewConfig(ctx, "test_config", &apmconfig.ConfigArgs{
-//				ApmDomainId: pulumi.Any(testApmDomain.Id),
-//				ConfigType:  pulumi.Any(configConfigType),
-//				DisplayName: pulumi.Any(configDisplayName),
+//				ApmDomainId:      pulumi.Any(testApmDomain.Id),
+//				ConfigType:       pulumi.Any(configConfigType),
+//				AgentVersion:     pulumi.Any(configAgentVersion),
+//				AttachInstallDir: pulumi.Any(configAttachInstallDir),
+//				Config: &apmconfig.ConfigConfigArgs{
+//					ConfigMaps: apmconfig.ConfigConfigConfigMapArray{
+//						&apmconfig.ConfigConfigConfigMapArgs{
+//							FileName:    pulumi.Any(configConfigConfigMapFileName),
+//							Body:        pulumi.Any(configConfigConfigMapBody),
+//							ContentType: pulumi.Any(configConfigConfigMapContentType),
+//						},
+//					},
+//				},
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -44,12 +54,15 @@ import (
 //						ValueSource: pulumi.Any(configDimensionsValueSource),
 //					},
 //				},
-//				FilterId:   pulumi.Any(testFilter.Id),
-//				FilterText: pulumi.Any(configFilterText),
+//				DisplayName: pulumi.Any(configDisplayName),
+//				FilterId:    pulumi.Any(testFilter.Id),
+//				FilterText:  pulumi.Any(configFilterText),
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				Group: pulumi.Any(configGroup),
+//				Group:                         pulumi.Any(configGroup),
+//				ManagementAgentId:             pulumi.Any(testManagementAgent.Id),
+//				MatchAgentsWithAttributeValue: pulumi.Any(configMatchAgentsWithAttributeValue),
 //				Metrics: apmconfig.ConfigMetricArray{
 //					&apmconfig.ConfigMetricArgs{
 //						Description: pulumi.Any(configMetricsDescription),
@@ -61,6 +74,15 @@ import (
 //				Namespace: pulumi.Any(configNamespace),
 //				OpcDryRun: pulumi.Any(configOpcDryRun),
 //				Options:   pulumi.Any(configOptions),
+//				Overrides: &apmconfig.ConfigOverridesArgs{
+//					OverrideLists: apmconfig.ConfigOverridesOverrideListArray{
+//						&apmconfig.ConfigOverridesOverrideListArgs{
+//							AgentFilter: pulumi.Any(configOverridesOverrideListAgentFilter),
+//							OverrideMap: pulumi.Any(configOverridesOverrideListOverrideMap),
+//						},
+//					},
+//				},
+//				ProcessFilters: pulumi.Any(configProcessFilter),
 //				Rules: apmconfig.ConfigRuleArray{
 //					&apmconfig.ConfigRuleArgs{
 //						DisplayName:            pulumi.Any(configRulesDisplayName),
@@ -72,6 +94,8 @@ import (
 //						ToleratingResponseTime: pulumi.Any(configRulesToleratingResponseTime),
 //					},
 //				},
+//				RunAsUser:   pulumi.Any(configRunAsUser),
+//				ServiceName: pulumi.Any(testService.Name),
 //			})
 //			if err != nil {
 //				return err
@@ -92,8 +116,14 @@ import (
 type Config struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) The version of the referenced agent bundle.
+	AgentVersion pulumi.StringOutput `pulumi:"agentVersion"`
 	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
+	// (Updatable) The directory owned by runAsUser.
+	AttachInstallDir pulumi.StringOutput `pulumi:"attachInstallDir"`
+	// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Config ConfigConfigOutput `pulumi:"config"`
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
@@ -118,6 +148,12 @@ type Config struct {
 	Group pulumi.StringOutput `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
 	InUseBies ConfigInUseByArrayOutput `pulumi:"inUseBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
+	// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+	MatchAgentsWithAttributeKeys pulumi.StringArrayOutput `pulumi:"matchAgentsWithAttributeKeys"`
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue pulumi.StringOutput `pulumi:"matchAgentsWithAttributeValue"`
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayOutput `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -126,8 +162,19 @@ type Config struct {
 	OpcDryRun pulumi.StringOutput `pulumi:"opcDryRun"`
 	// (Updatable) The options are stored here as JSON.
 	Options pulumi.StringOutput `pulumi:"options"`
+	// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides ConfigOverridesOutput `pulumi:"overrides"`
+	// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters pulumi.StringArrayOutput `pulumi:"processFilters"`
 	// (Updatable)
 	Rules ConfigRuleArrayOutput `pulumi:"rules"`
+	// (Updatable) The OS user that should be used to discover Java processes.
+	RunAsUser pulumi.StringOutput `pulumi:"runAsUser"`
+	// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceName pulumi.StringOutput `pulumi:"serviceName"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -148,9 +195,6 @@ func NewConfig(ctx *pulumi.Context,
 	}
 	if args.ConfigType == nil {
 		return nil, errors.New("invalid value for required argument 'ConfigType'")
-	}
-	if args.DisplayName == nil {
-		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Config
@@ -175,8 +219,14 @@ func GetConfig(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Config resources.
 type configState struct {
+	// (Updatable) The version of the referenced agent bundle.
+	AgentVersion *string `pulumi:"agentVersion"`
 	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId *string `pulumi:"apmDomainId"`
+	// (Updatable) The directory owned by runAsUser.
+	AttachInstallDir *string `pulumi:"attachInstallDir"`
+	// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Config *ConfigConfig `pulumi:"config"`
 	// (Updatable) The type of configuration item.
 	ConfigType *string `pulumi:"configType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
@@ -201,6 +251,12 @@ type configState struct {
 	Group *string `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
 	InUseBies []ConfigInUseBy `pulumi:"inUseBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId *string `pulumi:"managementAgentId"`
+	// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+	MatchAgentsWithAttributeKeys []string `pulumi:"matchAgentsWithAttributeKeys"`
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue *string `pulumi:"matchAgentsWithAttributeValue"`
 	// (Updatable) The list of metrics in this group.
 	Metrics []ConfigMetric `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -209,8 +265,19 @@ type configState struct {
 	OpcDryRun *string `pulumi:"opcDryRun"`
 	// (Updatable) The options are stored here as JSON.
 	Options *string `pulumi:"options"`
+	// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides *ConfigOverrides `pulumi:"overrides"`
+	// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters []string `pulumi:"processFilters"`
 	// (Updatable)
 	Rules []ConfigRule `pulumi:"rules"`
+	// (Updatable) The OS user that should be used to discover Java processes.
+	RunAsUser *string `pulumi:"runAsUser"`
+	// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceName *string `pulumi:"serviceName"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -220,8 +287,14 @@ type configState struct {
 }
 
 type ConfigState struct {
+	// (Updatable) The version of the referenced agent bundle.
+	AgentVersion pulumi.StringPtrInput
 	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringPtrInput
+	// (Updatable) The directory owned by runAsUser.
+	AttachInstallDir pulumi.StringPtrInput
+	// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Config ConfigConfigPtrInput
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
@@ -246,6 +319,12 @@ type ConfigState struct {
 	Group pulumi.StringPtrInput
 	// The list of configuration items that reference the span filter.
 	InUseBies ConfigInUseByArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId pulumi.StringPtrInput
+	// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+	MatchAgentsWithAttributeKeys pulumi.StringArrayInput
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue pulumi.StringPtrInput
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayInput
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -254,8 +333,19 @@ type ConfigState struct {
 	OpcDryRun pulumi.StringPtrInput
 	// (Updatable) The options are stored here as JSON.
 	Options pulumi.StringPtrInput
+	// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides ConfigOverridesPtrInput
+	// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters pulumi.StringArrayInput
 	// (Updatable)
 	Rules ConfigRuleArrayInput
+	// (Updatable) The OS user that should be used to discover Java processes.
+	RunAsUser pulumi.StringPtrInput
+	// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceName pulumi.StringPtrInput
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -269,8 +359,14 @@ func (ConfigState) ElementType() reflect.Type {
 }
 
 type configArgs struct {
+	// (Updatable) The version of the referenced agent bundle.
+	AgentVersion *string `pulumi:"agentVersion"`
 	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// (Updatable) The directory owned by runAsUser.
+	AttachInstallDir *string `pulumi:"attachInstallDir"`
+	// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Config *ConfigConfig `pulumi:"config"`
 	// (Updatable) The type of configuration item.
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -280,7 +376,7 @@ type configArgs struct {
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions []ConfigDimension `pulumi:"dimensions"`
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId *string `pulumi:"filterId"`
 	// (Updatable) The string that defines the Span Filter expression.
@@ -291,6 +387,10 @@ type configArgs struct {
 	Group *string `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
 	InUseBies []ConfigInUseBy `pulumi:"inUseBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId *string `pulumi:"managementAgentId"`
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue *string `pulumi:"matchAgentsWithAttributeValue"`
 	// (Updatable) The list of metrics in this group.
 	Metrics []ConfigMetric `pulumi:"metrics"`
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -299,14 +399,31 @@ type configArgs struct {
 	OpcDryRun *string `pulumi:"opcDryRun"`
 	// (Updatable) The options are stored here as JSON.
 	Options *string `pulumi:"options"`
+	// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides *ConfigOverrides `pulumi:"overrides"`
+	// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters []string `pulumi:"processFilters"`
 	// (Updatable)
 	Rules []ConfigRule `pulumi:"rules"`
+	// (Updatable) The OS user that should be used to discover Java processes.
+	RunAsUser *string `pulumi:"runAsUser"`
+	// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceName *string `pulumi:"serviceName"`
 }
 
 // The set of arguments for constructing a Config resource.
 type ConfigArgs struct {
+	// (Updatable) The version of the referenced agent bundle.
+	AgentVersion pulumi.StringPtrInput
 	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput
+	// (Updatable) The directory owned by runAsUser.
+	AttachInstallDir pulumi.StringPtrInput
+	// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Config ConfigConfigPtrInput
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -316,7 +433,7 @@ type ConfigArgs struct {
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
 	Dimensions ConfigDimensionArrayInput
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
-	DisplayName pulumi.StringInput
+	DisplayName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
 	FilterId pulumi.StringPtrInput
 	// (Updatable) The string that defines the Span Filter expression.
@@ -327,6 +444,10 @@ type ConfigArgs struct {
 	Group pulumi.StringPtrInput
 	// The list of configuration items that reference the span filter.
 	InUseBies ConfigInUseByArrayInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId pulumi.StringPtrInput
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue pulumi.StringPtrInput
 	// (Updatable) The list of metrics in this group.
 	Metrics ConfigMetricArrayInput
 	// (Updatable) The namespace to which the metrics are published. It must be one of several predefined namespaces.
@@ -335,8 +456,19 @@ type ConfigArgs struct {
 	OpcDryRun pulumi.StringPtrInput
 	// (Updatable) The options are stored here as JSON.
 	Options pulumi.StringPtrInput
+	// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides ConfigOverridesPtrInput
+	// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters pulumi.StringArrayInput
 	// (Updatable)
 	Rules ConfigRuleArrayInput
+	// (Updatable) The OS user that should be used to discover Java processes.
+	RunAsUser pulumi.StringPtrInput
+	// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ServiceName pulumi.StringPtrInput
 }
 
 func (ConfigArgs) ElementType() reflect.Type {
@@ -426,9 +558,24 @@ func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutpu
 	return o
 }
 
+// (Updatable) The version of the referenced agent bundle.
+func (o ConfigOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
 // (Updatable) The APM Domain ID the request is intended for.
 func (o ConfigOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ApmDomainId }).(pulumi.StringOutput)
+}
+
+// (Updatable) The directory owned by runAsUser.
+func (o ConfigOutput) AttachInstallDir() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.AttachInstallDir }).(pulumi.StringOutput)
+}
+
+// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+func (o ConfigOutput) Config() ConfigConfigOutput {
+	return o.ApplyT(func(v *Config) ConfigConfigOutput { return v.Config }).(ConfigConfigOutput)
 }
 
 // (Updatable) The type of configuration item.
@@ -491,6 +638,21 @@ func (o ConfigOutput) InUseBies() ConfigInUseByArrayOutput {
 	return o.ApplyT(func(v *Config) ConfigInUseByArrayOutput { return v.InUseBies }).(ConfigInUseByArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+func (o ConfigOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+func (o ConfigOutput) MatchAgentsWithAttributeKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringArrayOutput { return v.MatchAgentsWithAttributeKeys }).(pulumi.StringArrayOutput)
+}
+
+// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+func (o ConfigOutput) MatchAgentsWithAttributeValue() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.MatchAgentsWithAttributeValue }).(pulumi.StringOutput)
+}
+
 // (Updatable) The list of metrics in this group.
 func (o ConfigOutput) Metrics() ConfigMetricArrayOutput {
 	return o.ApplyT(func(v *Config) ConfigMetricArrayOutput { return v.Metrics }).(ConfigMetricArrayOutput)
@@ -511,9 +673,32 @@ func (o ConfigOutput) Options() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Options }).(pulumi.StringOutput)
 }
 
+// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+func (o ConfigOutput) Overrides() ConfigOverridesOutput {
+	return o.ApplyT(func(v *Config) ConfigOverridesOutput { return v.Overrides }).(ConfigOverridesOutput)
+}
+
+// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+func (o ConfigOutput) ProcessFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringArrayOutput { return v.ProcessFilters }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable)
 func (o ConfigOutput) Rules() ConfigRuleArrayOutput {
 	return o.ApplyT(func(v *Config) ConfigRuleArrayOutput { return v.Rules }).(ConfigRuleArrayOutput)
+}
+
+// (Updatable) The OS user that should be used to discover Java processes.
+func (o ConfigOutput) RunAsUser() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.RunAsUser }).(pulumi.StringOutput)
+}
+
+// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ConfigOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ServiceName }).(pulumi.StringOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`

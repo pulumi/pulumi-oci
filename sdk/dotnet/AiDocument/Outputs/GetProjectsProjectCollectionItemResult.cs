@@ -42,6 +42,10 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectsProjectCollectionItemLockResult> Locks;
+        /// <summary>
         /// The filter to match projects with the given lifecycleState.
         /// </summary>
         public readonly string State;
@@ -74,6 +78,8 @@ namespace Pulumi.Oci.AiDocument.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetProjectsProjectCollectionItemLockResult> locks,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -89,6 +95,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

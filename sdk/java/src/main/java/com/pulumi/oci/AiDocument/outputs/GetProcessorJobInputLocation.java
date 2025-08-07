@@ -23,6 +23,11 @@ public final class GetProcessorJobInputLocation {
      */
     private List<GetProcessorJobInputLocationObjectLocation> objectLocations;
     /**
+     * @return The page ranges to be analysed.
+     * 
+     */
+    private List<String> pageRanges;
+    /**
      * @return The type of input location. The allowed values are:
      * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
      * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -46,6 +51,13 @@ public final class GetProcessorJobInputLocation {
         return this.objectLocations;
     }
     /**
+     * @return The page ranges to be analysed.
+     * 
+     */
+    public List<String> pageRanges() {
+        return this.pageRanges;
+    }
+    /**
      * @return The type of input location. The allowed values are:
      * * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
      * * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
@@ -66,12 +78,14 @@ public final class GetProcessorJobInputLocation {
     public static final class Builder {
         private String data;
         private List<GetProcessorJobInputLocationObjectLocation> objectLocations;
+        private List<String> pageRanges;
         private String sourceType;
         public Builder() {}
         public Builder(GetProcessorJobInputLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.data = defaults.data;
     	      this.objectLocations = defaults.objectLocations;
+    	      this.pageRanges = defaults.pageRanges;
     	      this.sourceType = defaults.sourceType;
         }
 
@@ -95,6 +109,17 @@ public final class GetProcessorJobInputLocation {
             return objectLocations(List.of(objectLocations));
         }
         @CustomType.Setter
+        public Builder pageRanges(List<String> pageRanges) {
+            if (pageRanges == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobInputLocation", "pageRanges");
+            }
+            this.pageRanges = pageRanges;
+            return this;
+        }
+        public Builder pageRanges(String... pageRanges) {
+            return pageRanges(List.of(pageRanges));
+        }
+        @CustomType.Setter
         public Builder sourceType(String sourceType) {
             if (sourceType == null) {
               throw new MissingRequiredPropertyException("GetProcessorJobInputLocation", "sourceType");
@@ -106,6 +131,7 @@ public final class GetProcessorJobInputLocation {
             final var _resultValue = new GetProcessorJobInputLocation();
             _resultValue.data = data;
             _resultValue.objectLocations = objectLocations;
+            _resultValue.pageRanges = pageRanges;
             _resultValue.sourceType = sourceType;
             return _resultValue;
         }

@@ -74,11 +74,13 @@ import (
 //							Configuration: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration),
 //							DriverShape:   pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape),
 //							DriverShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{
+//								CpuBaseline: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline),
 //								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs),
 //								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus),
 //							},
 //							ExecutorShape: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape),
 //							ExecutorShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{
+//								CpuBaseline: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline),
 //								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs),
 //								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus),
 //							},

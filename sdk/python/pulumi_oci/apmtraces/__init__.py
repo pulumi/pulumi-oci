@@ -6,9 +6,14 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_attribute_auto_activate_status import *
+from .get_log import *
 from .get_query_quick_picks import *
+from .get_scheduled_queries import *
+from .get_scheduled_query import *
 from .get_trace import *
 from .get_trace_aggregated_snapshot_data import *
 from .get_trace_snapshot_data import *
+from .scheduled_query import *
 from ._inputs import *
 from . import outputs

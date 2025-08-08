@@ -111,6 +111,7 @@ export class ManagementAgent extends pulumi.CustomResource {
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
     public /*out*/ readonly isCustomerDeployed!: pulumi.Output<boolean>;
+    public /*out*/ readonly latestSupportedVersion!: pulumi.Output<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -147,6 +148,10 @@ export class ManagementAgent extends pulumi.CustomResource {
      * The current state of managementAgent
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      */
@@ -192,6 +197,7 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["installType"] = state ? state.installType : undefined;
             resourceInputs["isAgentAutoUpgradable"] = state ? state.isAgentAutoUpgradable : undefined;
             resourceInputs["isCustomerDeployed"] = state ? state.isCustomerDeployed : undefined;
+            resourceInputs["latestSupportedVersion"] = state ? state.latestSupportedVersion : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["managedAgentId"] = state ? state.managedAgentId : undefined;
             resourceInputs["managementAgentProperties"] = state ? state.managementAgentProperties : undefined;
@@ -201,6 +207,7 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["pluginLists"] = state ? state.pluginLists : undefined;
             resourceInputs["resourceArtifactVersion"] = state ? state.resourceArtifactVersion : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeLastHeartbeat"] = state ? state.timeLastHeartbeat : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -226,6 +233,7 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["installType"] = undefined /*out*/;
             resourceInputs["isAgentAutoUpgradable"] = undefined /*out*/;
             resourceInputs["isCustomerDeployed"] = undefined /*out*/;
+            resourceInputs["latestSupportedVersion"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["managementAgentProperties"] = undefined /*out*/;
             resourceInputs["platformName"] = undefined /*out*/;
@@ -234,6 +242,7 @@ export class ManagementAgent extends pulumi.CustomResource {
             resourceInputs["pluginLists"] = undefined /*out*/;
             resourceInputs["resourceArtifactVersion"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeLastHeartbeat"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -302,6 +311,7 @@ export interface ManagementAgentState {
      * true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
      */
     isCustomerDeployed?: pulumi.Input<boolean>;
+    latestSupportedVersion?: pulumi.Input<string>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
@@ -338,6 +348,10 @@ export interface ManagementAgentState {
      * The current state of managementAgent
      */
     state?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      */

@@ -40,9 +40,9 @@ import (
 //						},
 //					},
 //				},
-//				DbVersion:   pulumi.Any(configurationDbVersion),
-//				DisplayName: pulumi.Any(configurationDisplayName),
-//				Shape:       pulumi.Any(configurationShape),
+//				DbVersion:        pulumi.Any(configurationDbVersion),
+//				DisplayName:      pulumi.Any(configurationDisplayName),
+//				CompatibleShapes: pulumi.Any(configurationCompatibleShapes),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -53,6 +53,7 @@ import (
 //				InstanceMemorySizeInGbs: pulumi.Any(configurationInstanceMemorySizeInGbs),
 //				InstanceOcpuCount:       pulumi.Any(configurationInstanceOcpuCount),
 //				IsFlexible:              pulumi.Any(configurationIsFlexible),
+//				Shape:                   pulumi.Any(configurationShape),
 //				SystemTags:              pulumi.Any(configurationSystemTags),
 //			})
 //			if err != nil {
@@ -76,6 +77,8 @@ type Configuration struct {
 
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes pulumi.StringArrayOutput `pulumi:"compatibleShapes"`
 	// The type of configuration. Either user-created or a default configuration.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// List of configuration details.
@@ -84,6 +87,8 @@ type Configuration struct {
 	DbConfigurationOverrides ConfigurationDbConfigurationOverridesOutput `pulumi:"dbConfigurationOverrides"`
 	// Version of the PostgreSQL database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
+	// The Default configuration used for this configuration.
+	DefaultConfigId pulumi.StringOutput `pulumi:"defaultConfigId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Details about the configuration set.
@@ -104,7 +109,9 @@ type Configuration struct {
 	IsFlexible pulumi.BoolOutput `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the configuration.
+	//
+	// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// The current state of the configuration.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -136,9 +143,6 @@ func NewConfiguration(ctx *pulumi.Context,
 	if args.DisplayName == nil {
 		return nil, errors.New("invalid value for required argument 'DisplayName'")
 	}
-	if args.Shape == nil {
-		return nil, errors.New("invalid value for required argument 'Shape'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource Configuration
 	err := ctx.RegisterResource("oci:Psql/configuration:Configuration", name, args, &resource, opts...)
@@ -164,6 +168,8 @@ func GetConfiguration(ctx *pulumi.Context,
 type configurationState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// The type of configuration. Either user-created or a default configuration.
 	ConfigType *string `pulumi:"configType"`
 	// List of configuration details.
@@ -172,6 +178,8 @@ type configurationState struct {
 	DbConfigurationOverrides *ConfigurationDbConfigurationOverrides `pulumi:"dbConfigurationOverrides"`
 	// Version of the PostgreSQL database.
 	DbVersion *string `pulumi:"dbVersion"`
+	// The Default configuration used for this configuration.
+	DefaultConfigId *string `pulumi:"defaultConfigId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details about the configuration set.
@@ -192,7 +200,9 @@ type configurationState struct {
 	IsFlexible *bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the configuration.
+	//
+	// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
 	Shape *string `pulumi:"shape"`
 	// The current state of the configuration.
 	State *string `pulumi:"state"`
@@ -208,6 +218,8 @@ type configurationState struct {
 type ConfigurationState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes pulumi.StringArrayInput
 	// The type of configuration. Either user-created or a default configuration.
 	ConfigType pulumi.StringPtrInput
 	// List of configuration details.
@@ -216,6 +228,8 @@ type ConfigurationState struct {
 	DbConfigurationOverrides ConfigurationDbConfigurationOverridesPtrInput
 	// Version of the PostgreSQL database.
 	DbVersion pulumi.StringPtrInput
+	// The Default configuration used for this configuration.
+	DefaultConfigId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details about the configuration set.
@@ -236,7 +250,9 @@ type ConfigurationState struct {
 	IsFlexible pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the configuration.
+	//
+	// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
 	Shape pulumi.StringPtrInput
 	// The current state of the configuration.
 	State pulumi.StringPtrInput
@@ -256,6 +272,8 @@ func (ConfigurationState) ElementType() reflect.Type {
 type configurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// Configuration overrides for a PostgreSQL instance.
 	DbConfigurationOverrides ConfigurationDbConfigurationOverrides `pulumi:"dbConfigurationOverrides"`
 	// Version of the PostgreSQL database.
@@ -278,8 +296,10 @@ type configurationArgs struct {
 	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
 	// Whether the configuration supports flexible shapes.
 	IsFlexible *bool `pulumi:"isFlexible"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
-	Shape string `pulumi:"shape"`
+	// The name of the shape for the configuration.
+	//
+	// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
+	Shape *string `pulumi:"shape"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	//
 	// ** IMPORTANT **
@@ -291,6 +311,8 @@ type configurationArgs struct {
 type ConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
 	CompartmentId pulumi.StringInput
+	// (Updatable) Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes pulumi.StringArrayInput
 	// Configuration overrides for a PostgreSQL instance.
 	DbConfigurationOverrides ConfigurationDbConfigurationOverridesInput
 	// Version of the PostgreSQL database.
@@ -313,8 +335,10 @@ type ConfigurationArgs struct {
 	InstanceOcpuCount pulumi.IntPtrInput
 	// Whether the configuration supports flexible shapes.
 	IsFlexible pulumi.BoolPtrInput
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
-	Shape pulumi.StringInput
+	// The name of the shape for the configuration.
+	//
+	// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
+	Shape pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	//
 	// ** IMPORTANT **
@@ -414,6 +438,11 @@ func (o ConfigurationOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Indicates the collection of compatible shapes for this configuration.
+func (o ConfigurationOutput) CompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringArrayOutput { return v.CompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
 // The type of configuration. Either user-created or a default configuration.
 func (o ConfigurationOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
@@ -432,6 +461,11 @@ func (o ConfigurationOutput) DbConfigurationOverrides() ConfigurationDbConfigura
 // Version of the PostgreSQL database.
 func (o ConfigurationOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The Default configuration used for this configuration.
+func (o ConfigurationOutput) DefaultConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.DefaultConfigId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -478,7 +512,9 @@ func (o ConfigurationOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+// The name of the shape for the configuration.
+//
+// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
 func (o ConfigurationOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *Configuration) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }

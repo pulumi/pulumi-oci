@@ -71,6 +71,7 @@ import javax.annotation.Nullable;
  *                 .jobInfrastructureType(jobJobInfrastructureConfigurationDetailsJobInfrastructureType)
  *                 .shapeName(testShape.name())
  *                 .jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
+ *                     .cpuBaseline(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline)
  *                     .memoryInGbs(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
  *                     .ocpus(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
  *                     .build())

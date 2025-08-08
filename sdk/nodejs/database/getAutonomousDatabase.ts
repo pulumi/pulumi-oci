@@ -260,6 +260,7 @@ export interface GetAutonomousDatabaseResult {
      * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
      */
     readonly isDevTier: boolean;
+    readonly isDisableDbVersionUpgradeSchedule: boolean;
     /**
      * If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
      */
@@ -297,6 +298,7 @@ export interface GetAutonomousDatabaseResult {
      * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      */
     readonly isReplicateAutomaticBackups: boolean;
+    readonly isScheduleDbVersionUpgradeToEarliest: boolean;
     /**
      * @deprecated The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
      */
@@ -524,6 +526,14 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly timeDisasterRecoveryRoleChanged: string;
     /**
+     * The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     */
+    readonly timeEarliestAvailableDbVersionUpgrade: string;
+    /**
+     * The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     */
+    readonly timeLatestAvailableDbVersionUpgrade: string;
+    /**
      * The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      */
     readonly timeLocalDataGuardEnabled: string;
@@ -567,6 +577,10 @@ export interface GetAutonomousDatabaseResult {
      * The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
      */
     readonly timeReclamationOfFreeAutonomousDatabase: string;
+    /**
+     * The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     */
+    readonly timeScheduledDbVersionUpgrade: string;
     /**
      * The date and time the Autonomous Database was most recently undeleted.
      */

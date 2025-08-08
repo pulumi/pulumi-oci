@@ -15,17 +15,9 @@ public final class ManagementDashboardsImportArgs extends com.pulumi.resources.R
 
     public static final ManagementDashboardsImportArgs Empty = new ManagementDashboardsImportArgs();
 
-    /**
-     * Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-     * 
-     */
     @Import(name="importDetails")
     private @Nullable Output<String> importDetails;
 
-    /**
-     * @return Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-     * 
-     */
     public Optional<Output<String>> importDetails() {
         return Optional.ofNullable(this.importDetails);
     }
@@ -37,11 +29,65 @@ public final class ManagementDashboardsImportArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.importDetailsFile);
     }
 
+    /**
+     * If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     */
+    @Import(name="overrideDashboardCompartmentOcid")
+    private @Nullable Output<String> overrideDashboardCompartmentOcid;
+
+    /**
+     * @return If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     */
+    public Optional<Output<String>> overrideDashboardCompartmentOcid() {
+        return Optional.ofNullable(this.overrideDashboardCompartmentOcid);
+    }
+
+    /**
+     * By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+     * 
+     */
+    @Import(name="overrideSameName")
+    private @Nullable Output<String> overrideSameName;
+
+    /**
+     * @return By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+     * 
+     */
+    public Optional<Output<String>> overrideSameName() {
+        return Optional.ofNullable(this.overrideSameName);
+    }
+
+    /**
+     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="overrideSavedSearchCompartmentOcid")
+    private @Nullable Output<String> overrideSavedSearchCompartmentOcid;
+
+    /**
+     * @return If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> overrideSavedSearchCompartmentOcid() {
+        return Optional.ofNullable(this.overrideSavedSearchCompartmentOcid);
+    }
+
     private ManagementDashboardsImportArgs() {}
 
     private ManagementDashboardsImportArgs(ManagementDashboardsImportArgs $) {
         this.importDetails = $.importDetails;
         this.importDetailsFile = $.importDetailsFile;
+        this.overrideDashboardCompartmentOcid = $.overrideDashboardCompartmentOcid;
+        this.overrideSameName = $.overrideSameName;
+        this.overrideSavedSearchCompartmentOcid = $.overrideSavedSearchCompartmentOcid;
     }
 
     public static Builder builder() {
@@ -62,23 +108,11 @@ public final class ManagementDashboardsImportArgs extends com.pulumi.resources.R
             $ = new ManagementDashboardsImportArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param importDetails Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-         * 
-         * @return builder
-         * 
-         */
         public Builder importDetails(@Nullable Output<String> importDetails) {
             $.importDetails = importDetails;
             return this;
         }
 
-        /**
-         * @param importDetails Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-         * 
-         * @return builder
-         * 
-         */
         public Builder importDetails(String importDetails) {
             return importDetails(Output.of(importDetails));
         }
@@ -90,6 +124,75 @@ public final class ManagementDashboardsImportArgs extends com.pulumi.resources.R
 
         public Builder importDetailsFile(String importDetailsFile) {
             return importDetailsFile(Output.of(importDetailsFile));
+        }
+
+        /**
+         * @param overrideDashboardCompartmentOcid If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideDashboardCompartmentOcid(@Nullable Output<String> overrideDashboardCompartmentOcid) {
+            $.overrideDashboardCompartmentOcid = overrideDashboardCompartmentOcid;
+            return this;
+        }
+
+        /**
+         * @param overrideDashboardCompartmentOcid If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideDashboardCompartmentOcid(String overrideDashboardCompartmentOcid) {
+            return overrideDashboardCompartmentOcid(Output.of(overrideDashboardCompartmentOcid));
+        }
+
+        /**
+         * @param overrideSameName By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideSameName(@Nullable Output<String> overrideSameName) {
+            $.overrideSameName = overrideSameName;
+            return this;
+        }
+
+        /**
+         * @param overrideSameName By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideSameName(String overrideSameName) {
+            return overrideSameName(Output.of(overrideSameName));
+        }
+
+        /**
+         * @param overrideSavedSearchCompartmentOcid If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideSavedSearchCompartmentOcid(@Nullable Output<String> overrideSavedSearchCompartmentOcid) {
+            $.overrideSavedSearchCompartmentOcid = overrideSavedSearchCompartmentOcid;
+            return this;
+        }
+
+        /**
+         * @param overrideSavedSearchCompartmentOcid If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrideSavedSearchCompartmentOcid(String overrideSavedSearchCompartmentOcid) {
+            return overrideSavedSearchCompartmentOcid(Output.of(overrideSavedSearchCompartmentOcid));
         }
 
         public ManagementDashboardsImportArgs build() {

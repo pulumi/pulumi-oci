@@ -79,12 +79,14 @@ namespace Pulumi.Oci.DataScience
     ///                     DriverShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
     ///                     DriverShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs
     ///                     {
+    ///                         CpuBaseline = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
     ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
     ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
     ///                     },
     ///                     ExecutorShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
     ///                     ExecutorShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs
     ///                     {
+    ///                         CpuBaseline = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
     ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
     ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
     ///                     },

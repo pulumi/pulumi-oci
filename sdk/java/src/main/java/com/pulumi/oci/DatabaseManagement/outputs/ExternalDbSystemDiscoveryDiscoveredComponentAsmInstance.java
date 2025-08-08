@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     private @Nullable String adrHomeDirectory;
@@ -29,7 +29,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
 
     private ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance() {}
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     public Optional<String> adrHomeDirectory() {

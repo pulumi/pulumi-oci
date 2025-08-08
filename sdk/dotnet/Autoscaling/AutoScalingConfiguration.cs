@@ -68,7 +68,13 @@ namespace Pulumi.Oci.Autoscaling
     ///                         DisplayName = autoScalingConfigurationPoliciesRulesDisplayName,
     ///                         Metric = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricArgs
     ///                         {
+    ///                             MetricCompartmentId = testCompartment.Id,
+    ///                             MetricSource = autoScalingConfigurationPoliciesRulesMetricMetricSource,
     ///                             MetricType = autoScalingConfigurationPoliciesRulesMetricMetricType,
+    ///                             Namespace = autoScalingConfigurationPoliciesRulesMetricNamespace,
+    ///                             PendingDuration = autoScalingConfigurationPoliciesRulesMetricPendingDuration,
+    ///                             Query = autoScalingConfigurationPoliciesRulesMetricQuery,
+    ///                             ResourceGroup = autoScalingConfigurationPoliciesRulesMetricResourceGroup,
     ///                             Threshold = new Oci.Autoscaling.Inputs.AutoScalingConfigurationPolicyRuleMetricThresholdArgs
     ///                             {
     ///                                 Operator = autoScalingConfigurationPoliciesRulesMetricThresholdOperator,

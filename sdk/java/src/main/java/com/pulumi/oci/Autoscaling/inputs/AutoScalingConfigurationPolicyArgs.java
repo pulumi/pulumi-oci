@@ -113,14 +113,14 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
     }
 
     /**
-     * An action that can be executed against a resource.
+     * An action to run on a resource, such as stopping or starting an instance pool.
      * 
      */
     @Import(name="resourceAction")
     private @Nullable Output<AutoScalingConfigurationPolicyResourceActionArgs> resourceAction;
 
     /**
-     * @return An action that can be executed against a resource.
+     * @return An action to run on a resource, such as stopping or starting an instance pool.
      * 
      */
     public Optional<Output<AutoScalingConfigurationPolicyResourceActionArgs>> resourceAction() {
@@ -308,7 +308,7 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceAction An action that can be executed against a resource.
+         * @param resourceAction An action to run on a resource, such as stopping or starting an instance pool.
          * 
          * @return builder
          * 
@@ -319,7 +319,7 @@ public final class AutoScalingConfigurationPolicyArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param resourceAction An action that can be executed against a resource.
+         * @param resourceAction An action to run on a resource, such as stopping or starting an instance pool.
          * 
          * @return builder
          * 

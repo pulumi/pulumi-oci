@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryResult> StatusSummaries;
         /// <summary>
-        /// Number of transactions that were replicated within the cluster.
+        /// The number of transactions that were replicated within the cluster.
         /// </summary>
         public readonly string TransactionsInGtidExecuted;
         /// <summary>

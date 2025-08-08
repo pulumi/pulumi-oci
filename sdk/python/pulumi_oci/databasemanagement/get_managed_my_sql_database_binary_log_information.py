@@ -56,7 +56,7 @@ class GetManagedMySqlDatabaseBinaryLogInformationResult:
     @pulumi.getter(name="binaryLogCompression")
     def binary_log_compression(self) -> _builtins.str:
         """
-        Indicates whether compression is enabled for transactions written to binary log files on this server.
+        Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
         """
         return pulumi.get(self, "binary_log_compression")
 
@@ -64,7 +64,7 @@ class GetManagedMySqlDatabaseBinaryLogInformationResult:
     @pulumi.getter(name="binaryLogCompressionPercent")
     def binary_log_compression_percent(self) -> _builtins.int:
         """
-        The compression ratio for binary log expressed as a percentage.
+        The compression ratio for the binary log, expressed as a percentage.
         """
         return pulumi.get(self, "binary_log_compression_percent")
 
@@ -72,7 +72,7 @@ class GetManagedMySqlDatabaseBinaryLogInformationResult:
     @pulumi.getter(name="binaryLogFormat")
     def binary_log_format(self) -> _builtins.str:
         """
-        The binary logging format used by this server.
+        The binary logging format used by the MySQL server.
         """
         return pulumi.get(self, "binary_log_format")
 
@@ -96,7 +96,7 @@ class GetManagedMySqlDatabaseBinaryLogInformationResult:
     @pulumi.getter(name="binaryLogging")
     def binary_logging(self) -> _builtins.str:
         """
-        Status of binary logging on this server.
+        The status of binary logging on the MySQL server.
         """
         return pulumi.get(self, "binary_logging")
 
@@ -135,7 +135,7 @@ def get_managed_my_sql_database_binary_log_information(managed_my_sql_database_i
     """
     This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves information pertaining to binary log of a specific MySQL server.
+    Retrieves information pertaining to the binary log of a specific MySQL server.
 
     ## Example Usage
 
@@ -168,7 +168,7 @@ def get_managed_my_sql_database_binary_log_information_output(managed_my_sql_dat
     """
     This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves information pertaining to binary log of a specific MySQL server.
+    Retrieves information pertaining to the binary log of a specific MySQL server.
 
     ## Example Usage
 

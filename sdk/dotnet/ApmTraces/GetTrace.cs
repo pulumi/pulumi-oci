@@ -115,13 +115,13 @@ namespace Pulumi.Oci.ApmTraces
         public string ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+        /// Include traces that have a minTraceStartTime equal to or greater than this value.
         /// </summary>
         [Input("timeTraceStartedGreaterThanOrEqualTo")]
         public string? TimeTraceStartedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// Include traces that have a `minTraceStartTime` less than this value.
+        /// Include traces that have a minTraceStartTime less than this value.
         /// </summary>
         [Input("timeTraceStartedLessThan")]
         public string? TimeTraceStartedLessThan { get; set; }
@@ -153,13 +153,13 @@ namespace Pulumi.Oci.ApmTraces
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// Include traces that have a `minTraceStartTime` equal to or greater than this value.
+        /// Include traces that have a minTraceStartTime equal to or greater than this value.
         /// </summary>
         [Input("timeTraceStartedGreaterThanOrEqualTo")]
         public Input<string>? TimeTraceStartedGreaterThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// Include traces that have a `minTraceStartTime` less than this value.
+        /// Include traces that have a minTraceStartTime less than this value.
         /// </summary>
         [Input("timeTraceStartedLessThan")]
         public Input<string>? TimeTraceStartedLessThan { get; set; }

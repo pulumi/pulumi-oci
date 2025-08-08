@@ -6,10 +6,16 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail {
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    private String cpuBaseline;
     /**
      * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
@@ -22,6 +28,13 @@ public final class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail
     private Double ocpus;
 
     private GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail() {}
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    public String cpuBaseline() {
+        return this.cpuBaseline;
+    }
     /**
      * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
@@ -46,15 +59,25 @@ public final class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail
     }
     @CustomType.Builder
     public static final class Builder {
+        private String cpuBaseline;
         private Double memoryInGbs;
         private Double ocpus;
         public Builder() {}
         public Builder(GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cpuBaseline = defaults.cpuBaseline;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
+        public Builder cpuBaseline(String cpuBaseline) {
+            if (cpuBaseline == null) {
+              throw new MissingRequiredPropertyException("GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail", "cpuBaseline");
+            }
+            this.cpuBaseline = cpuBaseline;
+            return this;
+        }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             if (memoryInGbs == null) {
@@ -73,6 +96,7 @@ public final class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetail
         }
         public GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail build() {
             final var _resultValue = new GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetail();
+            _resultValue.cpuBaseline = cpuBaseline;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
             return _resultValue;

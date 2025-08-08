@@ -200,6 +200,9 @@ namespace Pulumi.Oci.Database
         [Input("isResourcePoolLeader")]
         public bool? IsResourcePoolLeader { get; set; }
 
+        /// <summary>
+        /// A filter to return only resources that not match the given lifecycle state.
+        /// </summary>
         [Input("lifecycleStateNotEqualTo")]
         public string? LifecycleStateNotEqualTo { get; set; }
 
@@ -291,6 +294,9 @@ namespace Pulumi.Oci.Database
         [Input("isResourcePoolLeader")]
         public Input<bool>? IsResourcePoolLeader { get; set; }
 
+        /// <summary>
+        /// A filter to return only resources that not match the given lifecycle state.
+        /// </summary>
         [Input("lifecycleStateNotEqualTo")]
         public Input<string>? LifecycleStateNotEqualTo { get; set; }
 
@@ -317,9 +323,12 @@ namespace Pulumi.Oci.Database
     public sealed class GetAutonomousDatabasesResult
     {
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         public readonly string? AutonomousContainerDatabaseId;
+        /// <summary>
+        /// The list of autonomous_databases.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseResult> AutonomousDatabases;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

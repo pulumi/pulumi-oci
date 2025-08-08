@@ -19,6 +19,7 @@ public final class GetProcessorJobProcessorConfigFeature {
      * * `TABLE_EXTRACTION`: Detect and extract data in tables.
      * * `KEY_VALUE_EXTRACTION`: Extract form fields.
      * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+     * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
      * 
      */
     private String featureType;
@@ -33,10 +34,15 @@ public final class GetProcessorJobProcessorConfigFeature {
      */
     private Integer maxResults;
     /**
-     * @return The custom model ID.
+     * @return Unique identifier custom model OCID that should be used for inference.
      * 
      */
     private String modelId;
+    /**
+     * @return Whether checkbox detection feature is enabled or disabled.
+     * 
+     */
+    private Boolean selectionMarkDetection;
     /**
      * @return The custom model tenancy ID when modelId represents aliasName.
      * 
@@ -51,6 +57,7 @@ public final class GetProcessorJobProcessorConfigFeature {
      * * `TABLE_EXTRACTION`: Detect and extract data in tables.
      * * `KEY_VALUE_EXTRACTION`: Extract form fields.
      * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+     * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
      * 
      */
     public String featureType() {
@@ -71,11 +78,18 @@ public final class GetProcessorJobProcessorConfigFeature {
         return this.maxResults;
     }
     /**
-     * @return The custom model ID.
+     * @return Unique identifier custom model OCID that should be used for inference.
      * 
      */
     public String modelId() {
         return this.modelId;
+    }
+    /**
+     * @return Whether checkbox detection feature is enabled or disabled.
+     * 
+     */
+    public Boolean selectionMarkDetection() {
+        return this.selectionMarkDetection;
     }
     /**
      * @return The custom model tenancy ID when modelId represents aliasName.
@@ -98,6 +112,7 @@ public final class GetProcessorJobProcessorConfigFeature {
         private Boolean generateSearchablePdf;
         private Integer maxResults;
         private String modelId;
+        private Boolean selectionMarkDetection;
         private String tenancyId;
         public Builder() {}
         public Builder(GetProcessorJobProcessorConfigFeature defaults) {
@@ -106,6 +121,7 @@ public final class GetProcessorJobProcessorConfigFeature {
     	      this.generateSearchablePdf = defaults.generateSearchablePdf;
     	      this.maxResults = defaults.maxResults;
     	      this.modelId = defaults.modelId;
+    	      this.selectionMarkDetection = defaults.selectionMarkDetection;
     	      this.tenancyId = defaults.tenancyId;
         }
 
@@ -142,6 +158,14 @@ public final class GetProcessorJobProcessorConfigFeature {
             return this;
         }
         @CustomType.Setter
+        public Builder selectionMarkDetection(Boolean selectionMarkDetection) {
+            if (selectionMarkDetection == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfigFeature", "selectionMarkDetection");
+            }
+            this.selectionMarkDetection = selectionMarkDetection;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tenancyId(String tenancyId) {
             if (tenancyId == null) {
               throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfigFeature", "tenancyId");
@@ -155,6 +179,7 @@ public final class GetProcessorJobProcessorConfigFeature {
             _resultValue.generateSearchablePdf = generateSearchablePdf;
             _resultValue.maxResults = maxResults;
             _resultValue.modelId = modelId;
+            _resultValue.selectionMarkDetection = selectionMarkDetection;
             _resultValue.tenancyId = tenancyId;
             return _resultValue;
         }

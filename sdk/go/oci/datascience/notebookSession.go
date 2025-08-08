@@ -44,6 +44,7 @@ import (
 //					Shape:                 pulumi.Any(notebookSessionNotebookSessionConfigDetailsShape),
 //					BlockStorageSizeInGbs: pulumi.Any(notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs),
 //					NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs{
+//						CpuBaseline: pulumi.Any(notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsCpuBaseline),
 //						MemoryInGbs: pulumi.Any(notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOcpus),
 //					},
@@ -55,6 +56,7 @@ import (
 //					SubnetId:              pulumi.Any(testSubnet.Id),
 //					BlockStorageSizeInGbs: pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs),
 //					NotebookSessionShapeConfigDetails: &datascience.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs{
+//						CpuBaseline: pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsCpuBaseline),
 //						MemoryInGbs: pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOcpus),
 //					},

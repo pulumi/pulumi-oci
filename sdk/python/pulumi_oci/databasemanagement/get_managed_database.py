@@ -317,7 +317,7 @@ def get_managed_database(database_platform_name: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
 
-    Gets the details for the Managed Database specified by managedDatabaseId.
+    Gets the details of the Managed Database specified by managedDatabaseId.
 
     ## Example Usage
 
@@ -368,7 +368,7 @@ def get_managed_database_output(database_platform_name: Optional[pulumi.Input[Op
     """
     This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
 
-    Gets the details for the Managed Database specified by managedDatabaseId.
+    Gets the details of the Managed Database specified by managedDatabaseId.
 
     ## Example Usage
 

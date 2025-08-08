@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItem {
     /**
-     * @return The host name of the group member which clients use to connect to it.
+     * @return The host name of the group member that clients use to connect to it.
      * 
      */
     private String memberHost;
     /**
-     * @return The port number of the group member which clients to connect to it.
+     * @return The port number of the group member that clients use to connect to it.
      * 
      */
     private Integer memberPort;
@@ -39,14 +39,14 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
 
     private GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItem() {}
     /**
-     * @return The host name of the group member which clients use to connect to it.
+     * @return The host name of the group member that clients use to connect to it.
      * 
      */
     public String memberHost() {
         return this.memberHost;
     }
     /**
-     * @return The port number of the group member which clients to connect to it.
+     * @return The port number of the group member that clients use to connect to it.
      * 
      */
     public Integer memberPort() {

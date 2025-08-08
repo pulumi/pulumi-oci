@@ -40,6 +40,8 @@ type Secret struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The value of this flag determines whether or not secret content will be generated automatically.
 	IsAutoGenerationEnabled pulumi.BoolOutput `pulumi:"isAutoGenerationEnabled"`
+	// A Boolean value that indicates whether the secret is a source or replica secret.
+	IsReplica pulumi.BoolOutput `pulumi:"isReplica"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -50,6 +52,8 @@ type Secret struct {
 	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime pulumi.StringOutput `pulumi:"nextRotationTime"`
+	// (Updatable) Defines the configuration that enables cross-region secret replication.
+	ReplicationConfig SecretReplicationConfigPtrOutput `pulumi:"replicationConfig"`
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig SecretRotationConfigOutput `pulumi:"rotationConfig"`
 	// Additional information about the status of the secret rotation
@@ -62,6 +66,8 @@ type Secret struct {
 	SecretName pulumi.StringOutput `pulumi:"secretName"`
 	// (Updatable) A list of rules to control how the secret is used and managed.
 	SecretRules SecretSecretRuleArrayOutput `pulumi:"secretRules"`
+	// Details for the source that the source secret has.
+	SourceRegionInformations SecretSourceRegionInformationArrayOutput `pulumi:"sourceRegionInformations"`
 	// The current lifecycle state of the secret.
 	State pulumi.StringOutput `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -133,6 +139,8 @@ type secretState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The value of this flag determines whether or not secret content will be generated automatically.
 	IsAutoGenerationEnabled *bool `pulumi:"isAutoGenerationEnabled"`
+	// A Boolean value that indicates whether the secret is a source or replica secret.
+	IsReplica *bool `pulumi:"isReplica"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId *string `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -143,6 +151,8 @@ type secretState struct {
 	Metadata map[string]string `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime *string `pulumi:"nextRotationTime"`
+	// (Updatable) Defines the configuration that enables cross-region secret replication.
+	ReplicationConfig *SecretReplicationConfig `pulumi:"replicationConfig"`
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig *SecretRotationConfig `pulumi:"rotationConfig"`
 	// Additional information about the status of the secret rotation
@@ -155,6 +165,8 @@ type secretState struct {
 	SecretName *string `pulumi:"secretName"`
 	// (Updatable) A list of rules to control how the secret is used and managed.
 	SecretRules []SecretSecretRule `pulumi:"secretRules"`
+	// Details for the source that the source secret has.
+	SourceRegionInformations []SecretSourceRegionInformation `pulumi:"sourceRegionInformations"`
 	// The current lifecycle state of the secret.
 	State *string `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -185,6 +197,8 @@ type SecretState struct {
 	FreeformTags pulumi.StringMapInput
 	// The value of this flag determines whether or not secret content will be generated automatically.
 	IsAutoGenerationEnabled pulumi.BoolPtrInput
+	// A Boolean value that indicates whether the secret is a source or replica secret.
+	IsReplica pulumi.BoolPtrInput
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringPtrInput
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -195,6 +209,8 @@ type SecretState struct {
 	Metadata pulumi.StringMapInput
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime pulumi.StringPtrInput
+	// (Updatable) Defines the configuration that enables cross-region secret replication.
+	ReplicationConfig SecretReplicationConfigPtrInput
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig SecretRotationConfigPtrInput
 	// Additional information about the status of the secret rotation
@@ -207,6 +223,8 @@ type SecretState struct {
 	SecretName pulumi.StringPtrInput
 	// (Updatable) A list of rules to control how the secret is used and managed.
 	SecretRules SecretSecretRuleArrayInput
+	// Details for the source that the source secret has.
+	SourceRegionInformations SecretSourceRegionInformationArrayInput
 	// The current lifecycle state of the secret.
 	State pulumi.StringPtrInput
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -241,6 +259,8 @@ type secretArgs struct {
 	KeyId string `pulumi:"keyId"`
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 	Metadata map[string]string `pulumi:"metadata"`
+	// (Updatable) Defines the configuration that enables cross-region secret replication.
+	ReplicationConfig *SecretReplicationConfig `pulumi:"replicationConfig"`
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig *SecretRotationConfig `pulumi:"rotationConfig"`
 	// (Updatable) The content of the secret and metadata to help identify it.
@@ -274,6 +294,8 @@ type SecretArgs struct {
 	KeyId pulumi.StringInput
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
 	Metadata pulumi.StringMapInput
+	// (Updatable) Defines the configuration that enables cross-region secret replication.
+	ReplicationConfig SecretReplicationConfigPtrInput
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig SecretRotationConfigPtrInput
 	// (Updatable) The content of the secret and metadata to help identify it.
@@ -413,6 +435,11 @@ func (o SecretOutput) IsAutoGenerationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Secret) pulumi.BoolOutput { return v.IsAutoGenerationEnabled }).(pulumi.BoolOutput)
 }
 
+// A Boolean value that indicates whether the secret is a source or replica secret.
+func (o SecretOutput) IsReplica() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Secret) pulumi.BoolOutput { return v.IsReplica }).(pulumi.BoolOutput)
+}
+
 // The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 func (o SecretOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.KeyId }).(pulumi.StringOutput)
@@ -436,6 +463,11 @@ func (o SecretOutput) Metadata() pulumi.StringMapOutput {
 // A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o SecretOutput) NextRotationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.NextRotationTime }).(pulumi.StringOutput)
+}
+
+// (Updatable) Defines the configuration that enables cross-region secret replication.
+func (o SecretOutput) ReplicationConfig() SecretReplicationConfigPtrOutput {
+	return o.ApplyT(func(v *Secret) SecretReplicationConfigPtrOutput { return v.ReplicationConfig }).(SecretReplicationConfigPtrOutput)
 }
 
 // (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -466,6 +498,11 @@ func (o SecretOutput) SecretName() pulumi.StringOutput {
 // (Updatable) A list of rules to control how the secret is used and managed.
 func (o SecretOutput) SecretRules() SecretSecretRuleArrayOutput {
 	return o.ApplyT(func(v *Secret) SecretSecretRuleArrayOutput { return v.SecretRules }).(SecretSecretRuleArrayOutput)
+}
+
+// Details for the source that the source secret has.
+func (o SecretOutput) SourceRegionInformations() SecretSourceRegionInformationArrayOutput {
+	return o.ApplyT(func(v *Secret) SecretSourceRegionInformationArrayOutput { return v.SourceRegionInformations }).(SecretSourceRegionInformationArrayOutput)
 }
 
 // The current lifecycle state of the secret.

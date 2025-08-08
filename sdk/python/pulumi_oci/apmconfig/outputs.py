@@ -16,22 +16,132 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ConfigConfig',
+    'ConfigConfigConfigMap',
     'ConfigDimension',
     'ConfigInUseBy',
     'ConfigMetric',
+    'ConfigOverrides',
+    'ConfigOverridesOverrideList',
     'ConfigRule',
+    'GetConfigConfigResult',
+    'GetConfigConfigConfigMapResult',
     'GetConfigDimensionResult',
     'GetConfigInUseByResult',
     'GetConfigMetricResult',
+    'GetConfigOverrideResult',
+    'GetConfigOverrideOverrideListResult',
     'GetConfigRuleResult',
     'GetConfigsConfigCollectionResult',
     'GetConfigsConfigCollectionItemResult',
+    'GetConfigsConfigCollectionItemConfigResult',
+    'GetConfigsConfigCollectionItemConfigConfigMapResult',
     'GetConfigsConfigCollectionItemDimensionResult',
     'GetConfigsConfigCollectionItemInUseByResult',
     'GetConfigsConfigCollectionItemMetricResult',
+    'GetConfigsConfigCollectionItemOverrideResult',
+    'GetConfigsConfigCollectionItemOverrideOverrideListResult',
     'GetConfigsConfigCollectionItemRuleResult',
     'GetConfigsFilterResult',
 ]
+
+@pulumi.output_type
+class ConfigConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configMaps":
+            suggest = "config_maps"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_maps: Optional[Sequence['outputs.ConfigConfigConfigMap']] = None):
+        """
+        :param Sequence['ConfigConfigConfigMapArgs'] config_maps: (Updatable) Map of an agent configuration file.
+        """
+        if config_maps is not None:
+            pulumi.set(__self__, "config_maps", config_maps)
+
+    @_builtins.property
+    @pulumi.getter(name="configMaps")
+    def config_maps(self) -> Optional[Sequence['outputs.ConfigConfigConfigMap']]:
+        """
+        (Updatable) Map of an agent configuration file.
+        """
+        return pulumi.get(self, "config_maps")
+
+
+@pulumi.output_type
+class ConfigConfigConfigMap(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contentType":
+            suggest = "content_type"
+        elif key == "fileName":
+            suggest = "file_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigConfigMap. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigConfigMap.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigConfigMap.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 body: Optional[_builtins.str] = None,
+                 content_type: Optional[_builtins.str] = None,
+                 file_name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str body: The Base64 encoded agent configuration file.
+        :param _builtins.str content_type: (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        :param _builtins.str file_name: (Updatable) An agent configuration file name.
+        """
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def body(self) -> Optional[_builtins.str]:
+        """
+        The Base64 encoded agent configuration file.
+        """
+        return pulumi.get(self, "body")
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        """
+        return pulumi.get(self, "content_type")
+
+    @_builtins.property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) An agent configuration file name.
+        """
+        return pulumi.get(self, "file_name")
+
 
 @pulumi.output_type
 class ConfigDimension(dict):
@@ -230,6 +340,92 @@ class ConfigMetric(dict):
 
 
 @pulumi.output_type
+class ConfigOverrides(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overrideLists":
+            suggest = "override_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigOverrides. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigOverrides.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigOverrides.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 override_lists: Optional[Sequence['outputs.ConfigOverridesOverrideList']] = None):
+        """
+        :param Sequence['ConfigOverridesOverrideListArgs'] override_lists: (Updatable)
+        """
+        if override_lists is not None:
+            pulumi.set(__self__, "override_lists", override_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideLists")
+    def override_lists(self) -> Optional[Sequence['outputs.ConfigOverridesOverrideList']]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "override_lists")
+
+
+@pulumi.output_type
+class ConfigOverridesOverrideList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "agentFilter":
+            suggest = "agent_filter"
+        elif key == "overrideMap":
+            suggest = "override_map"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigOverridesOverrideList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigOverridesOverrideList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigOverridesOverrideList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 agent_filter: Optional[_builtins.str] = None,
+                 override_map: Optional[Mapping[str, _builtins.str]] = None):
+        """
+        :param _builtins.str agent_filter: (Updatable) The string that defines the Agent Filter expression.
+        :param Mapping[str, _builtins.str] override_map: (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        if agent_filter is not None:
+            pulumi.set(__self__, "agent_filter", agent_filter)
+        if override_map is not None:
+            pulumi.set(__self__, "override_map", override_map)
+
+    @_builtins.property
+    @pulumi.getter(name="agentFilter")
+    def agent_filter(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The string that defines the Agent Filter expression.
+        """
+        return pulumi.get(self, "agent_filter")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideMap")
+    def override_map(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        return pulumi.get(self, "override_map")
+
+
+@pulumi.output_type
 class ConfigRule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -273,11 +469,7 @@ class ConfigRule(dict):
         :param _builtins.bool is_enabled: (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         :param _builtins.int priority: (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
         :param _builtins.int satisfied_response_time: (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        :param _builtins.int tolerating_response_time: (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.int tolerating_response_time: (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -346,13 +538,67 @@ class ConfigRule(dict):
     @pulumi.getter(name="toleratingResponseTime")
     def tolerating_response_time(self) -> Optional[_builtins.int]:
         """
-        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         return pulumi.get(self, "tolerating_response_time")
+
+
+@pulumi.output_type
+class GetConfigConfigResult(dict):
+    def __init__(__self__, *,
+                 config_maps: Sequence['outputs.GetConfigConfigConfigMapResult']):
+        """
+        :param Sequence['GetConfigConfigConfigMapArgs'] config_maps: Map of an agent configuration file.
+        """
+        pulumi.set(__self__, "config_maps", config_maps)
+
+    @_builtins.property
+    @pulumi.getter(name="configMaps")
+    def config_maps(self) -> Sequence['outputs.GetConfigConfigConfigMapResult']:
+        """
+        Map of an agent configuration file.
+        """
+        return pulumi.get(self, "config_maps")
+
+
+@pulumi.output_type
+class GetConfigConfigConfigMapResult(dict):
+    def __init__(__self__, *,
+                 body: _builtins.str,
+                 content_type: _builtins.str,
+                 file_name: _builtins.str):
+        """
+        :param _builtins.str body: The Base64 encoded agent configuration file.
+        :param _builtins.str content_type: The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        :param _builtins.str file_name: An agent configuration file name.
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "file_name", file_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def body(self) -> _builtins.str:
+        """
+        The Base64 encoded agent configuration file.
+        """
+        return pulumi.get(self, "body")
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> _builtins.str:
+        """
+        The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        """
+        return pulumi.get(self, "content_type")
+
+    @_builtins.property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> _builtins.str:
+        """
+        An agent configuration file name.
+        """
+        return pulumi.get(self, "file_name")
 
 
 @pulumi.output_type
@@ -487,6 +733,47 @@ class GetConfigMetricResult(dict):
 
 
 @pulumi.output_type
+class GetConfigOverrideResult(dict):
+    def __init__(__self__, *,
+                 override_lists: Sequence['outputs.GetConfigOverrideOverrideListResult']):
+        pulumi.set(__self__, "override_lists", override_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideLists")
+    def override_lists(self) -> Sequence['outputs.GetConfigOverrideOverrideListResult']:
+        return pulumi.get(self, "override_lists")
+
+
+@pulumi.output_type
+class GetConfigOverrideOverrideListResult(dict):
+    def __init__(__self__, *,
+                 agent_filter: _builtins.str,
+                 override_map: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str agent_filter: The string that defines the Agent Filter expression.
+        :param Mapping[str, _builtins.str] override_map: A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        pulumi.set(__self__, "agent_filter", agent_filter)
+        pulumi.set(__self__, "override_map", override_map)
+
+    @_builtins.property
+    @pulumi.getter(name="agentFilter")
+    def agent_filter(self) -> _builtins.str:
+        """
+        The string that defines the Agent Filter expression.
+        """
+        return pulumi.get(self, "agent_filter")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideMap")
+    def override_map(self) -> Mapping[str, _builtins.str]:
+        """
+        A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        return pulumi.get(self, "override_map")
+
+
+@pulumi.output_type
 class GetConfigRuleResult(dict):
     def __init__(__self__, *,
                  display_name: _builtins.str,
@@ -585,8 +872,11 @@ class GetConfigsConfigCollectionResult(dict):
 @pulumi.output_type
 class GetConfigsConfigCollectionItemResult(dict):
     def __init__(__self__, *,
+                 agent_version: _builtins.str,
                  apm_domain_id: _builtins.str,
+                 attach_install_dir: _builtins.str,
                  config_type: _builtins.str,
+                 configs: Sequence['outputs.GetConfigsConfigCollectionItemConfigResult'],
                  created_by: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
@@ -599,17 +889,27 @@ class GetConfigsConfigCollectionItemResult(dict):
                  group: _builtins.str,
                  id: _builtins.str,
                  in_use_bies: Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult'],
+                 management_agent_id: _builtins.str,
+                 match_agents_with_attribute_keys: Sequence[_builtins.str],
+                 match_agents_with_attribute_value: _builtins.str,
                  metrics: Sequence['outputs.GetConfigsConfigCollectionItemMetricResult'],
                  namespace: _builtins.str,
                  opc_dry_run: _builtins.str,
                  options: _builtins.str,
+                 overrides: Sequence['outputs.GetConfigsConfigCollectionItemOverrideResult'],
+                 process_filters: Sequence[_builtins.str],
                  rules: Sequence['outputs.GetConfigsConfigCollectionItemRuleResult'],
+                 run_as_user: _builtins.str,
+                 service_name: _builtins.str,
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  updated_by: _builtins.str):
         """
+        :param _builtins.str agent_version: The version of the referenced agent bundle.
         :param _builtins.str apm_domain_id: The APM Domain ID the request is intended for.
-        :param _builtins.str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        :param _builtins.str attach_install_dir: The directory owned by runAsUser.
+        :param _builtins.str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
+        :param Sequence['GetConfigsConfigCollectionItemConfigArgs'] configs: Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         :param _builtins.str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A description of the metric.
@@ -622,15 +922,25 @@ class GetConfigsConfigCollectionItemResult(dict):
         :param _builtins.str group: A string that specifies the group that an OPTIONS item belongs to.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param Sequence['GetConfigsConfigCollectionItemInUseByArgs'] in_use_bies: The list of configuration items that reference the span filter.
+        :param _builtins.str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+        :param Sequence[_builtins.str] match_agents_with_attribute_keys: The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+        :param _builtins.str match_agents_with_attribute_value: The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
         :param Sequence['GetConfigsConfigCollectionItemMetricArgs'] metrics: The list of metrics in this group.
         :param _builtins.str namespace: The namespace to which the metrics are published. It must be one of several predefined namespaces.
         :param _builtins.str options: The options are stored here as JSON.
+        :param Sequence['GetConfigsConfigCollectionItemOverrideArgs'] overrides: Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        :param Sequence[_builtins.str] process_filters: Filter patterns used to discover active Java processes for provisioning the APM Agent.
+        :param _builtins.str run_as_user: The OS user that should be used to discover Java processes.
+        :param _builtins.str service_name: The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
         :param _builtins.str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param _builtins.str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param _builtins.str updated_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
+        pulumi.set(__self__, "agent_version", agent_version)
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "attach_install_dir", attach_install_dir)
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "configs", configs)
         pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -643,14 +953,29 @@ class GetConfigsConfigCollectionItemResult(dict):
         pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "in_use_bies", in_use_bies)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "match_agents_with_attribute_keys", match_agents_with_attribute_keys)
+        pulumi.set(__self__, "match_agents_with_attribute_value", match_agents_with_attribute_value)
         pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "opc_dry_run", opc_dry_run)
         pulumi.set(__self__, "options", options)
+        pulumi.set(__self__, "overrides", overrides)
+        pulumi.set(__self__, "process_filters", process_filters)
         pulumi.set(__self__, "rules", rules)
+        pulumi.set(__self__, "run_as_user", run_as_user)
+        pulumi.set(__self__, "service_name", service_name)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "updated_by", updated_by)
+
+    @_builtins.property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> _builtins.str:
+        """
+        The version of the referenced agent bundle.
+        """
+        return pulumi.get(self, "agent_version")
 
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
@@ -661,12 +986,28 @@ class GetConfigsConfigCollectionItemResult(dict):
         return pulumi.get(self, "apm_domain_id")
 
     @_builtins.property
+    @pulumi.getter(name="attachInstallDir")
+    def attach_install_dir(self) -> _builtins.str:
+        """
+        The directory owned by runAsUser.
+        """
+        return pulumi.get(self, "attach_install_dir")
+
+    @_builtins.property
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
         """
         return pulumi.get(self, "config_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> Sequence['outputs.GetConfigsConfigCollectionItemConfigResult']:
+        """
+        Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        """
+        return pulumi.get(self, "configs")
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
@@ -765,6 +1106,30 @@ class GetConfigsConfigCollectionItemResult(dict):
         return pulumi.get(self, "in_use_bies")
 
     @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="matchAgentsWithAttributeKeys")
+    def match_agents_with_attribute_keys(self) -> Sequence[_builtins.str]:
+        """
+        The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+        """
+        return pulumi.get(self, "match_agents_with_attribute_keys")
+
+    @_builtins.property
+    @pulumi.getter(name="matchAgentsWithAttributeValue")
+    def match_agents_with_attribute_value(self) -> _builtins.str:
+        """
+        The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+        """
+        return pulumi.get(self, "match_agents_with_attribute_value")
+
+    @_builtins.property
     @pulumi.getter
     def metrics(self) -> Sequence['outputs.GetConfigsConfigCollectionItemMetricResult']:
         """
@@ -795,8 +1160,40 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetConfigsConfigCollectionItemOverrideResult']:
+        """
+        Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        """
+        return pulumi.get(self, "overrides")
+
+    @_builtins.property
+    @pulumi.getter(name="processFilters")
+    def process_filters(self) -> Sequence[_builtins.str]:
+        """
+        Filter patterns used to discover active Java processes for provisioning the APM Agent.
+        """
+        return pulumi.get(self, "process_filters")
+
+    @_builtins.property
+    @pulumi.getter
     def rules(self) -> Sequence['outputs.GetConfigsConfigCollectionItemRuleResult']:
         return pulumi.get(self, "rules")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> _builtins.str:
+        """
+        The OS user that should be used to discover Java processes.
+        """
+        return pulumi.get(self, "run_as_user")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        """
+        The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+        """
+        return pulumi.get(self, "service_name")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -821,6 +1218,64 @@ class GetConfigsConfigCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         """
         return pulumi.get(self, "updated_by")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemConfigResult(dict):
+    def __init__(__self__, *,
+                 config_maps: Sequence['outputs.GetConfigsConfigCollectionItemConfigConfigMapResult']):
+        """
+        :param Sequence['GetConfigsConfigCollectionItemConfigConfigMapArgs'] config_maps: Map of an agent configuration file.
+        """
+        pulumi.set(__self__, "config_maps", config_maps)
+
+    @_builtins.property
+    @pulumi.getter(name="configMaps")
+    def config_maps(self) -> Sequence['outputs.GetConfigsConfigCollectionItemConfigConfigMapResult']:
+        """
+        Map of an agent configuration file.
+        """
+        return pulumi.get(self, "config_maps")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemConfigConfigMapResult(dict):
+    def __init__(__self__, *,
+                 body: _builtins.str,
+                 content_type: _builtins.str,
+                 file_name: _builtins.str):
+        """
+        :param _builtins.str body: The Base64 encoded agent configuration file.
+        :param _builtins.str content_type: The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        :param _builtins.str file_name: An agent configuration file name.
+        """
+        pulumi.set(__self__, "body", body)
+        pulumi.set(__self__, "content_type", content_type)
+        pulumi.set(__self__, "file_name", file_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def body(self) -> _builtins.str:
+        """
+        The Base64 encoded agent configuration file.
+        """
+        return pulumi.get(self, "body")
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> _builtins.str:
+        """
+        The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        """
+        return pulumi.get(self, "content_type")
+
+    @_builtins.property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> _builtins.str:
+        """
+        An agent configuration file name.
+        """
+        return pulumi.get(self, "file_name")
 
 
 @pulumi.output_type
@@ -860,7 +1315,7 @@ class GetConfigsConfigCollectionItemInUseByResult(dict):
                  id: _builtins.str,
                  options_group: _builtins.str):
         """
-        :param _builtins.str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        :param _builtins.str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
         :param _builtins.str display_name: A filter to return resources that match the given display name.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param _builtins.str options_group: A filter to return OPTIONS resources that match the given group.
@@ -874,7 +1329,7 @@ class GetConfigsConfigCollectionItemInUseByResult(dict):
     @pulumi.getter(name="configType")
     def config_type(self) -> _builtins.str:
         """
-        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
         """
         return pulumi.get(self, "config_type")
 
@@ -952,6 +1407,47 @@ class GetConfigsConfigCollectionItemMetricResult(dict):
         This must not be set.
         """
         return pulumi.get(self, "value_source")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemOverrideResult(dict):
+    def __init__(__self__, *,
+                 override_lists: Sequence['outputs.GetConfigsConfigCollectionItemOverrideOverrideListResult']):
+        pulumi.set(__self__, "override_lists", override_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideLists")
+    def override_lists(self) -> Sequence['outputs.GetConfigsConfigCollectionItemOverrideOverrideListResult']:
+        return pulumi.get(self, "override_lists")
+
+
+@pulumi.output_type
+class GetConfigsConfigCollectionItemOverrideOverrideListResult(dict):
+    def __init__(__self__, *,
+                 agent_filter: _builtins.str,
+                 override_map: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str agent_filter: The string that defines the Agent Filter expression.
+        :param Mapping[str, _builtins.str] override_map: A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        pulumi.set(__self__, "agent_filter", agent_filter)
+        pulumi.set(__self__, "override_map", override_map)
+
+    @_builtins.property
+    @pulumi.getter(name="agentFilter")
+    def agent_filter(self) -> _builtins.str:
+        """
+        The string that defines the Agent Filter expression.
+        """
+        return pulumi.get(self, "agent_filter")
+
+    @_builtins.property
+    @pulumi.getter(name="overrideMap")
+    def override_map(self) -> Mapping[str, _builtins.str]:
+        """
+        A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        return pulumi.get(self, "override_map")
 
 
 @pulumi.output_type

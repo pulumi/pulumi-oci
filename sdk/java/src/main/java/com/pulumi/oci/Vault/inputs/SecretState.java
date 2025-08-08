@@ -5,10 +5,12 @@ package com.pulumi.oci.Vault.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Vault.inputs.SecretReplicationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretRotationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretGenerationContextArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretRuleArgs;
+import com.pulumi.oci.Vault.inputs.SecretSourceRegionInformationArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -128,6 +130,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     * 
+     */
+    @Import(name="isReplica")
+    private @Nullable Output<Boolean> isReplica;
+
+    /**
+     * @return A Boolean value that indicates whether the secret is a source or replica secret.
+     * 
+     */
+    public Optional<Output<Boolean>> isReplica() {
+        return Optional.ofNullable(this.isReplica);
+    }
+
+    /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
@@ -200,6 +217,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> nextRotationTime() {
         return Optional.ofNullable(this.nextRotationTime);
+    }
+
+    /**
+     * (Updatable) Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    @Import(name="replicationConfig")
+    private @Nullable Output<SecretReplicationConfigArgs> replicationConfig;
+
+    /**
+     * @return (Updatable) Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    public Optional<Output<SecretReplicationConfigArgs>> replicationConfig() {
+        return Optional.ofNullable(this.replicationConfig);
     }
 
     /**
@@ -293,6 +325,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Details for the source that the source secret has.
+     * 
+     */
+    @Import(name="sourceRegionInformations")
+    private @Nullable Output<List<SecretSourceRegionInformationArgs>> sourceRegionInformations;
+
+    /**
+     * @return Details for the source that the source secret has.
+     * 
+     */
+    public Optional<Output<List<SecretSourceRegionInformationArgs>>> sourceRegionInformations() {
+        return Optional.ofNullable(this.sourceRegionInformations);
+    }
+
+    /**
      * The current lifecycle state of the secret.
      * 
      */
@@ -383,17 +430,20 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         this.enableAutoGeneration = $.enableAutoGeneration;
         this.freeformTags = $.freeformTags;
         this.isAutoGenerationEnabled = $.isAutoGenerationEnabled;
+        this.isReplica = $.isReplica;
         this.keyId = $.keyId;
         this.lastRotationTime = $.lastRotationTime;
         this.lifecycleDetails = $.lifecycleDetails;
         this.metadata = $.metadata;
         this.nextRotationTime = $.nextRotationTime;
+        this.replicationConfig = $.replicationConfig;
         this.rotationConfig = $.rotationConfig;
         this.rotationStatus = $.rotationStatus;
         this.secretContent = $.secretContent;
         this.secretGenerationContext = $.secretGenerationContext;
         this.secretName = $.secretName;
         this.secretRules = $.secretRules;
+        this.sourceRegionInformations = $.sourceRegionInformations;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
         this.timeOfCurrentVersionExpiry = $.timeOfCurrentVersionExpiry;
@@ -567,6 +617,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isReplica A Boolean value that indicates whether the secret is a source or replica secret.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReplica(@Nullable Output<Boolean> isReplica) {
+            $.isReplica = isReplica;
+            return this;
+        }
+
+        /**
+         * @param isReplica A Boolean value that indicates whether the secret is a source or replica secret.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isReplica(Boolean isReplica) {
+            return isReplica(Output.of(isReplica));
+        }
+
+        /**
          * @param keyId The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
          * 
          * @return builder
@@ -669,6 +740,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nextRotationTime(String nextRotationTime) {
             return nextRotationTime(Output.of(nextRotationTime));
+        }
+
+        /**
+         * @param replicationConfig (Updatable) Defines the configuration that enables cross-region secret replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationConfig(@Nullable Output<SecretReplicationConfigArgs> replicationConfig) {
+            $.replicationConfig = replicationConfig;
+            return this;
+        }
+
+        /**
+         * @param replicationConfig (Updatable) Defines the configuration that enables cross-region secret replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationConfig(SecretReplicationConfigArgs replicationConfig) {
+            return replicationConfig(Output.of(replicationConfig));
         }
 
         /**
@@ -805,6 +897,37 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretRules(SecretSecretRuleArgs... secretRules) {
             return secretRules(List.of(secretRules));
+        }
+
+        /**
+         * @param sourceRegionInformations Details for the source that the source secret has.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceRegionInformations(@Nullable Output<List<SecretSourceRegionInformationArgs>> sourceRegionInformations) {
+            $.sourceRegionInformations = sourceRegionInformations;
+            return this;
+        }
+
+        /**
+         * @param sourceRegionInformations Details for the source that the source secret has.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceRegionInformations(List<SecretSourceRegionInformationArgs> sourceRegionInformations) {
+            return sourceRegionInformations(Output.of(sourceRegionInformations));
+        }
+
+        /**
+         * @param sourceRegionInformations Details for the source that the source secret has.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceRegionInformations(SecretSourceRegionInformationArgs... sourceRegionInformations) {
+            return sourceRegionInformations(List.of(sourceRegionInformations));
         }
 
         /**

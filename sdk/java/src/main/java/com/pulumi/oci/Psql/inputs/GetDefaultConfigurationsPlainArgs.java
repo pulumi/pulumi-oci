@@ -5,6 +5,7 @@ package com.pulumi.oci.Psql.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -69,14 +70,44 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
     }
 
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The instance memory size in GBs for the configuration.
+     * 
+     */
+    @Import(name="instanceMemorySizeInGbs")
+    private @Nullable Integer instanceMemorySizeInGbs;
+
+    /**
+     * @return The instance memory size in GBs for the configuration.
+     * 
+     */
+    public Optional<Integer> instanceMemorySizeInGbs() {
+        return Optional.ofNullable(this.instanceMemorySizeInGbs);
+    }
+
+    /**
+     * The instance ocpu count for the configuration.
+     * 
+     */
+    @Import(name="instanceOcpuCount")
+    private @Nullable Integer instanceOcpuCount;
+
+    /**
+     * @return The instance ocpu count for the configuration.
+     * 
+     */
+    public Optional<Integer> instanceOcpuCount() {
+        return Optional.ofNullable(this.instanceOcpuCount);
+    }
+
+    /**
+     * The compute name of the shape for the configuration.
      * 
      */
     @Import(name="shape")
     private @Nullable String shape;
 
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The compute name of the shape for the configuration.
      * 
      */
     public Optional<String> shape() {
@@ -105,6 +136,8 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
         this.dbVersion = $.dbVersion;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.instanceMemorySizeInGbs = $.instanceMemorySizeInGbs;
+        this.instanceOcpuCount = $.instanceOcpuCount;
         this.shape = $.shape;
         this.state = $.state;
     }
@@ -170,7 +203,29 @@ public final class GetDefaultConfigurationsPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param instanceMemorySizeInGbs The instance memory size in GBs for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceMemorySizeInGbs(@Nullable Integer instanceMemorySizeInGbs) {
+            $.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param instanceOcpuCount The instance ocpu count for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceOcpuCount(@Nullable Integer instanceOcpuCount) {
+            $.instanceOcpuCount = instanceOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param shape The compute name of the shape for the configuration.
          * 
          * @return builder
          * 

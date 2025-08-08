@@ -28,7 +28,20 @@ namespace Pulumi.Oci.ApmConfig
     ///     {
     ///         ApmDomainId = testApmDomain.Id,
     ///         ConfigType = configConfigType,
-    ///         DisplayName = configDisplayName,
+    ///         AgentVersion = configAgentVersion,
+    ///         AttachInstallDir = configAttachInstallDir,
+    ///         Config = new Oci.ApmConfig.Inputs.ConfigConfigArgs
+    ///         {
+    ///             ConfigMaps = new[]
+    ///             {
+    ///                 new Oci.ApmConfig.Inputs.ConfigConfigConfigMapArgs
+    ///                 {
+    ///                     FileName = configConfigConfigMapFileName,
+    ///                     Body = configConfigConfigMapBody,
+    ///                     ContentType = configConfigConfigMapContentType,
+    ///                 },
+    ///             },
+    ///         },
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -42,6 +55,7 @@ namespace Pulumi.Oci.ApmConfig
     ///                 ValueSource = configDimensionsValueSource,
     ///             },
     ///         },
+    ///         DisplayName = configDisplayName,
     ///         FilterId = testFilter.Id,
     ///         FilterText = configFilterText,
     ///         FreeformTags = 
@@ -49,6 +63,8 @@ namespace Pulumi.Oci.ApmConfig
     ///             { "bar-key", "value" },
     ///         },
     ///         Group = configGroup,
+    ///         ManagementAgentId = testManagementAgent.Id,
+    ///         MatchAgentsWithAttributeValue = configMatchAgentsWithAttributeValue,
     ///         Metrics = new[]
     ///         {
     ///             new Oci.ApmConfig.Inputs.ConfigMetricArgs
@@ -62,6 +78,18 @@ namespace Pulumi.Oci.ApmConfig
     ///         Namespace = configNamespace,
     ///         OpcDryRun = configOpcDryRun,
     ///         Options = configOptions,
+    ///         Overrides = new Oci.ApmConfig.Inputs.ConfigOverridesArgs
+    ///         {
+    ///             OverrideLists = new[]
+    ///             {
+    ///                 new Oci.ApmConfig.Inputs.ConfigOverridesOverrideListArgs
+    ///                 {
+    ///                     AgentFilter = configOverridesOverrideListAgentFilter,
+    ///                     OverrideMap = configOverridesOverrideListOverrideMap,
+    ///                 },
+    ///             },
+    ///         },
+    ///         ProcessFilters = configProcessFilter,
     ///         Rules = new[]
     ///         {
     ///             new Oci.ApmConfig.Inputs.ConfigRuleArgs
@@ -75,6 +103,8 @@ namespace Pulumi.Oci.ApmConfig
     ///                 ToleratingResponseTime = configRulesToleratingResponseTime,
     ///             },
     ///         },
+    ///         RunAsUser = configRunAsUser,
+    ///         ServiceName = testService.Name,
     ///     });
     /// 
     /// });
@@ -92,10 +122,28 @@ namespace Pulumi.Oci.ApmConfig
     public partial class Config : global::Pulumi.CustomResource
     {
         /// <summary>
+        /// (Updatable) The version of the referenced agent bundle.
+        /// </summary>
+        [Output("agentVersion")]
+        public Output<string> AgentVersion { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The APM Domain ID the request is intended for.
         /// </summary>
         [Output("apmDomainId")]
         public Output<string> ApmDomainId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The directory owned by runAsUser.
+        /// </summary>
+        [Output("attachInstallDir")]
+        public Output<string> AttachInstallDir { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        /// </summary>
+        [Output("config")]
+        public Output<Outputs.ConfigConfig> Config { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of configuration item.
@@ -170,6 +218,24 @@ namespace Pulumi.Oci.ApmConfig
         public Output<ImmutableArray<Outputs.ConfigInUseBy>> InUseBies { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+        /// </summary>
+        [Output("managementAgentId")]
+        public Output<string> ManagementAgentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+        /// </summary>
+        [Output("matchAgentsWithAttributeKeys")]
+        public Output<ImmutableArray<string>> MatchAgentsWithAttributeKeys { get; private set; } = null!;
+
+        /// <summary>
+        /// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+        /// </summary>
+        [Output("matchAgentsWithAttributeValue")]
+        public Output<string> MatchAgentsWithAttributeValue { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The list of metrics in this group.
         /// </summary>
         [Output("metrics")]
@@ -194,10 +260,38 @@ namespace Pulumi.Oci.ApmConfig
         public Output<string> Options { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        /// </summary>
+        [Output("overrides")]
+        public Output<Outputs.ConfigOverrides> Overrides { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+        /// </summary>
+        [Output("processFilters")]
+        public Output<ImmutableArray<string>> ProcessFilters { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable)
         /// </summary>
         [Output("rules")]
         public Output<ImmutableArray<Outputs.ConfigRule>> Rules { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OS user that should be used to discover Java processes.
+        /// </summary>
+        [Output("runAsUser")]
+        public Output<string> RunAsUser { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("serviceName")]
+        public Output<string> ServiceName { get; private set; } = null!;
 
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -264,10 +358,28 @@ namespace Pulumi.Oci.ApmConfig
     public sealed class ConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The version of the referenced agent bundle.
+        /// </summary>
+        [Input("agentVersion")]
+        public Input<string>? AgentVersion { get; set; }
+
+        /// <summary>
         /// (Updatable) The APM Domain ID the request is intended for.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The directory owned by runAsUser.
+        /// </summary>
+        [Input("attachInstallDir")]
+        public Input<string>? AttachInstallDir { get; set; }
+
+        /// <summary>
+        /// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        /// </summary>
+        [Input("config")]
+        public Input<Inputs.ConfigConfigArgs>? Config { get; set; }
 
         /// <summary>
         /// (Updatable) The type of configuration item.
@@ -308,8 +420,8 @@ namespace Pulumi.Oci.ApmConfig
         /// <summary>
         /// (Updatable) The name by which a configuration entity is displayed to the end user.
         /// </summary>
-        [Input("displayName", required: true)]
-        public Input<string> DisplayName { get; set; } = null!;
+        [Input("displayName")]
+        public Input<string>? DisplayName { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
@@ -353,6 +465,18 @@ namespace Pulumi.Oci.ApmConfig
             set => _inUseBies = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+        /// </summary>
+        [Input("managementAgentId")]
+        public Input<string>? ManagementAgentId { get; set; }
+
+        /// <summary>
+        /// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+        /// </summary>
+        [Input("matchAgentsWithAttributeValue")]
+        public Input<string>? MatchAgentsWithAttributeValue { get; set; }
+
         [Input("metrics")]
         private InputList<Inputs.ConfigMetricArgs>? _metrics;
 
@@ -383,6 +507,24 @@ namespace Pulumi.Oci.ApmConfig
         [Input("options")]
         public Input<string>? Options { get; set; }
 
+        /// <summary>
+        /// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        /// </summary>
+        [Input("overrides")]
+        public Input<Inputs.ConfigOverridesArgs>? Overrides { get; set; }
+
+        [Input("processFilters")]
+        private InputList<string>? _processFilters;
+
+        /// <summary>
+        /// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+        /// </summary>
+        public InputList<string> ProcessFilters
+        {
+            get => _processFilters ?? (_processFilters = new InputList<string>());
+            set => _processFilters = value;
+        }
+
         [Input("rules")]
         private InputList<Inputs.ConfigRuleArgs>? _rules;
 
@@ -395,6 +537,22 @@ namespace Pulumi.Oci.ApmConfig
             set => _rules = value;
         }
 
+        /// <summary>
+        /// (Updatable) The OS user that should be used to discover Java processes.
+        /// </summary>
+        [Input("runAsUser")]
+        public Input<string>? RunAsUser { get; set; }
+
+        /// <summary>
+        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("serviceName")]
+        public Input<string>? ServiceName { get; set; }
+
         public ConfigArgs()
         {
         }
@@ -404,10 +562,28 @@ namespace Pulumi.Oci.ApmConfig
     public sealed class ConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The version of the referenced agent bundle.
+        /// </summary>
+        [Input("agentVersion")]
+        public Input<string>? AgentVersion { get; set; }
+
+        /// <summary>
         /// (Updatable) The APM Domain ID the request is intended for.
         /// </summary>
         [Input("apmDomainId")]
         public Input<string>? ApmDomainId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The directory owned by runAsUser.
+        /// </summary>
+        [Input("attachInstallDir")]
+        public Input<string>? AttachInstallDir { get; set; }
+
+        /// <summary>
+        /// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        /// </summary>
+        [Input("config")]
+        public Input<Inputs.ConfigConfigGetArgs>? Config { get; set; }
 
         /// <summary>
         /// (Updatable) The type of configuration item.
@@ -505,6 +681,30 @@ namespace Pulumi.Oci.ApmConfig
             set => _inUseBies = value;
         }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+        /// </summary>
+        [Input("managementAgentId")]
+        public Input<string>? ManagementAgentId { get; set; }
+
+        [Input("matchAgentsWithAttributeKeys")]
+        private InputList<string>? _matchAgentsWithAttributeKeys;
+
+        /// <summary>
+        /// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+        /// </summary>
+        public InputList<string> MatchAgentsWithAttributeKeys
+        {
+            get => _matchAgentsWithAttributeKeys ?? (_matchAgentsWithAttributeKeys = new InputList<string>());
+            set => _matchAgentsWithAttributeKeys = value;
+        }
+
+        /// <summary>
+        /// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+        /// </summary>
+        [Input("matchAgentsWithAttributeValue")]
+        public Input<string>? MatchAgentsWithAttributeValue { get; set; }
+
         [Input("metrics")]
         private InputList<Inputs.ConfigMetricGetArgs>? _metrics;
 
@@ -535,6 +735,24 @@ namespace Pulumi.Oci.ApmConfig
         [Input("options")]
         public Input<string>? Options { get; set; }
 
+        /// <summary>
+        /// (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        /// </summary>
+        [Input("overrides")]
+        public Input<Inputs.ConfigOverridesGetArgs>? Overrides { get; set; }
+
+        [Input("processFilters")]
+        private InputList<string>? _processFilters;
+
+        /// <summary>
+        /// (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+        /// </summary>
+        public InputList<string> ProcessFilters
+        {
+            get => _processFilters ?? (_processFilters = new InputList<string>());
+            set => _processFilters = value;
+        }
+
         [Input("rules")]
         private InputList<Inputs.ConfigRuleGetArgs>? _rules;
 
@@ -546,6 +764,22 @@ namespace Pulumi.Oci.ApmConfig
             get => _rules ?? (_rules = new InputList<Inputs.ConfigRuleGetArgs>());
             set => _rules = value;
         }
+
+        /// <summary>
+        /// (Updatable) The OS user that should be used to discover Java processes.
+        /// </summary>
+        [Input("runAsUser")]
+        public Input<string>? RunAsUser { get; set; }
+
+        /// <summary>
+        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("serviceName")]
+        public Input<string>? ServiceName { get; set; }
 
         /// <summary>
         /// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`

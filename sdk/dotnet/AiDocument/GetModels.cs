@@ -203,7 +203,7 @@ namespace Pulumi.Oci.AiDocument
     public sealed class GetModelsResult
     {
         /// <summary>
-        /// The compartment identifier.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

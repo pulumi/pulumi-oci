@@ -11,15 +11,20 @@ import java.util.Objects;
 @CustomType
 public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail {
     /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
      * 
      */
     private String credentialSourceName;
     /**
-     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database. CREDENTIALS_BY_NAMED_CREDS is supplied by Management Agent service to connect for Macs Managed Cloud Database or Autonomous Database.
      * 
      */
     private String credentialType;
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    private String namedCredentialId;
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
@@ -38,18 +43,25 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
 
     private GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail() {}
     /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for the others.
      * 
      */
     public String credentialSourceName() {
         return this.credentialSourceName;
     }
     /**
-     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database. CREDENTIALS_BY_NAMED_CREDS is supplied by Management Agent service to connect for Macs Managed Cloud Database or Autonomous Database.
      * 
      */
     public String credentialType() {
         return this.credentialType;
+    }
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    public String namedCredentialId() {
+        return this.namedCredentialId;
     }
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
@@ -84,6 +96,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
     public static final class Builder {
         private String credentialSourceName;
         private String credentialType;
+        private String namedCredentialId;
         private String passwordSecretId;
         private String role;
         private String userName;
@@ -92,6 +105,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
     	      Objects.requireNonNull(defaults);
     	      this.credentialSourceName = defaults.credentialSourceName;
     	      this.credentialType = defaults.credentialType;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
@@ -111,6 +125,14 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail", "credentialType");
             }
             this.credentialType = credentialType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(String namedCredentialId) {
+            if (namedCredentialId == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail", "namedCredentialId");
+            }
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -141,6 +163,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCr
             final var _resultValue = new GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail();
             _resultValue.credentialSourceName = credentialSourceName;
             _resultValue.credentialType = credentialType;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.userName = userName;

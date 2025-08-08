@@ -13,6 +13,209 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ApiPlatformApiPlatformInstanceIdcsApp struct {
+	// IDCS URL of the app
+	Url *string `pulumi:"url"`
+}
+
+// ApiPlatformApiPlatformInstanceIdcsAppInput is an input type that accepts ApiPlatformApiPlatformInstanceIdcsAppArgs and ApiPlatformApiPlatformInstanceIdcsAppOutput values.
+// You can construct a concrete instance of `ApiPlatformApiPlatformInstanceIdcsAppInput` via:
+//
+//	ApiPlatformApiPlatformInstanceIdcsAppArgs{...}
+type ApiPlatformApiPlatformInstanceIdcsAppInput interface {
+	pulumi.Input
+
+	ToApiPlatformApiPlatformInstanceIdcsAppOutput() ApiPlatformApiPlatformInstanceIdcsAppOutput
+	ToApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(context.Context) ApiPlatformApiPlatformInstanceIdcsAppOutput
+}
+
+type ApiPlatformApiPlatformInstanceIdcsAppArgs struct {
+	// IDCS URL of the app
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (ApiPlatformApiPlatformInstanceIdcsAppArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (i ApiPlatformApiPlatformInstanceIdcsAppArgs) ToApiPlatformApiPlatformInstanceIdcsAppOutput() ApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return i.ToApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(context.Background())
+}
+
+func (i ApiPlatformApiPlatformInstanceIdcsAppArgs) ToApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApiPlatformApiPlatformInstanceIdcsAppOutput)
+}
+
+// ApiPlatformApiPlatformInstanceIdcsAppArrayInput is an input type that accepts ApiPlatformApiPlatformInstanceIdcsAppArray and ApiPlatformApiPlatformInstanceIdcsAppArrayOutput values.
+// You can construct a concrete instance of `ApiPlatformApiPlatformInstanceIdcsAppArrayInput` via:
+//
+//	ApiPlatformApiPlatformInstanceIdcsAppArray{ ApiPlatformApiPlatformInstanceIdcsAppArgs{...} }
+type ApiPlatformApiPlatformInstanceIdcsAppArrayInput interface {
+	pulumi.Input
+
+	ToApiPlatformApiPlatformInstanceIdcsAppArrayOutput() ApiPlatformApiPlatformInstanceIdcsAppArrayOutput
+	ToApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(context.Context) ApiPlatformApiPlatformInstanceIdcsAppArrayOutput
+}
+
+type ApiPlatformApiPlatformInstanceIdcsAppArray []ApiPlatformApiPlatformInstanceIdcsAppInput
+
+func (ApiPlatformApiPlatformInstanceIdcsAppArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (i ApiPlatformApiPlatformInstanceIdcsAppArray) ToApiPlatformApiPlatformInstanceIdcsAppArrayOutput() ApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return i.ToApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(context.Background())
+}
+
+func (i ApiPlatformApiPlatformInstanceIdcsAppArray) ToApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApiPlatformApiPlatformInstanceIdcsAppArrayOutput)
+}
+
+type ApiPlatformApiPlatformInstanceIdcsAppOutput struct{ *pulumi.OutputState }
+
+func (ApiPlatformApiPlatformInstanceIdcsAppOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (o ApiPlatformApiPlatformInstanceIdcsAppOutput) ToApiPlatformApiPlatformInstanceIdcsAppOutput() ApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return o
+}
+
+func (o ApiPlatformApiPlatformInstanceIdcsAppOutput) ToApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return o
+}
+
+// IDCS URL of the app
+func (o ApiPlatformApiPlatformInstanceIdcsAppOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApiPlatformApiPlatformInstanceIdcsApp) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type ApiPlatformApiPlatformInstanceIdcsAppArrayOutput struct{ *pulumi.OutputState }
+
+func (ApiPlatformApiPlatformInstanceIdcsAppArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (o ApiPlatformApiPlatformInstanceIdcsAppArrayOutput) ToApiPlatformApiPlatformInstanceIdcsAppArrayOutput() ApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return o
+}
+
+func (o ApiPlatformApiPlatformInstanceIdcsAppArrayOutput) ToApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return o
+}
+
+func (o ApiPlatformApiPlatformInstanceIdcsAppArrayOutput) Index(i pulumi.IntInput) ApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ApiPlatformApiPlatformInstanceIdcsApp {
+		return vs[0].([]ApiPlatformApiPlatformInstanceIdcsApp)[vs[1].(int)]
+	}).(ApiPlatformApiPlatformInstanceIdcsAppOutput)
+}
+
+type ApiPlatformApiPlatformInstanceUri struct {
+	// Developer's Portal URI of the instance (/developers)
+	DevelopersPortalUri *string `pulumi:"developersPortalUri"`
+	// Management Portal URI of the instance (/apiplatform)
+	ManagementPortalUri *string `pulumi:"managementPortalUri"`
+}
+
+// ApiPlatformApiPlatformInstanceUriInput is an input type that accepts ApiPlatformApiPlatformInstanceUriArgs and ApiPlatformApiPlatformInstanceUriOutput values.
+// You can construct a concrete instance of `ApiPlatformApiPlatformInstanceUriInput` via:
+//
+//	ApiPlatformApiPlatformInstanceUriArgs{...}
+type ApiPlatformApiPlatformInstanceUriInput interface {
+	pulumi.Input
+
+	ToApiPlatformApiPlatformInstanceUriOutput() ApiPlatformApiPlatformInstanceUriOutput
+	ToApiPlatformApiPlatformInstanceUriOutputWithContext(context.Context) ApiPlatformApiPlatformInstanceUriOutput
+}
+
+type ApiPlatformApiPlatformInstanceUriArgs struct {
+	// Developer's Portal URI of the instance (/developers)
+	DevelopersPortalUri pulumi.StringPtrInput `pulumi:"developersPortalUri"`
+	// Management Portal URI of the instance (/apiplatform)
+	ManagementPortalUri pulumi.StringPtrInput `pulumi:"managementPortalUri"`
+}
+
+func (ApiPlatformApiPlatformInstanceUriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (i ApiPlatformApiPlatformInstanceUriArgs) ToApiPlatformApiPlatformInstanceUriOutput() ApiPlatformApiPlatformInstanceUriOutput {
+	return i.ToApiPlatformApiPlatformInstanceUriOutputWithContext(context.Background())
+}
+
+func (i ApiPlatformApiPlatformInstanceUriArgs) ToApiPlatformApiPlatformInstanceUriOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceUriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApiPlatformApiPlatformInstanceUriOutput)
+}
+
+// ApiPlatformApiPlatformInstanceUriArrayInput is an input type that accepts ApiPlatformApiPlatformInstanceUriArray and ApiPlatformApiPlatformInstanceUriArrayOutput values.
+// You can construct a concrete instance of `ApiPlatformApiPlatformInstanceUriArrayInput` via:
+//
+//	ApiPlatformApiPlatformInstanceUriArray{ ApiPlatformApiPlatformInstanceUriArgs{...} }
+type ApiPlatformApiPlatformInstanceUriArrayInput interface {
+	pulumi.Input
+
+	ToApiPlatformApiPlatformInstanceUriArrayOutput() ApiPlatformApiPlatformInstanceUriArrayOutput
+	ToApiPlatformApiPlatformInstanceUriArrayOutputWithContext(context.Context) ApiPlatformApiPlatformInstanceUriArrayOutput
+}
+
+type ApiPlatformApiPlatformInstanceUriArray []ApiPlatformApiPlatformInstanceUriInput
+
+func (ApiPlatformApiPlatformInstanceUriArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (i ApiPlatformApiPlatformInstanceUriArray) ToApiPlatformApiPlatformInstanceUriArrayOutput() ApiPlatformApiPlatformInstanceUriArrayOutput {
+	return i.ToApiPlatformApiPlatformInstanceUriArrayOutputWithContext(context.Background())
+}
+
+func (i ApiPlatformApiPlatformInstanceUriArray) ToApiPlatformApiPlatformInstanceUriArrayOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceUriArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ApiPlatformApiPlatformInstanceUriArrayOutput)
+}
+
+type ApiPlatformApiPlatformInstanceUriOutput struct{ *pulumi.OutputState }
+
+func (ApiPlatformApiPlatformInstanceUriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (o ApiPlatformApiPlatformInstanceUriOutput) ToApiPlatformApiPlatformInstanceUriOutput() ApiPlatformApiPlatformInstanceUriOutput {
+	return o
+}
+
+func (o ApiPlatformApiPlatformInstanceUriOutput) ToApiPlatformApiPlatformInstanceUriOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceUriOutput {
+	return o
+}
+
+// Developer's Portal URI of the instance (/developers)
+func (o ApiPlatformApiPlatformInstanceUriOutput) DevelopersPortalUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApiPlatformApiPlatformInstanceUri) *string { return v.DevelopersPortalUri }).(pulumi.StringPtrOutput)
+}
+
+// Management Portal URI of the instance (/apiplatform)
+func (o ApiPlatformApiPlatformInstanceUriOutput) ManagementPortalUri() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ApiPlatformApiPlatformInstanceUri) *string { return v.ManagementPortalUri }).(pulumi.StringPtrOutput)
+}
+
+type ApiPlatformApiPlatformInstanceUriArrayOutput struct{ *pulumi.OutputState }
+
+func (ApiPlatformApiPlatformInstanceUriArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (o ApiPlatformApiPlatformInstanceUriArrayOutput) ToApiPlatformApiPlatformInstanceUriArrayOutput() ApiPlatformApiPlatformInstanceUriArrayOutput {
+	return o
+}
+
+func (o ApiPlatformApiPlatformInstanceUriArrayOutput) ToApiPlatformApiPlatformInstanceUriArrayOutputWithContext(ctx context.Context) ApiPlatformApiPlatformInstanceUriArrayOutput {
+	return o
+}
+
+func (o ApiPlatformApiPlatformInstanceUriArrayOutput) Index(i pulumi.IntInput) ApiPlatformApiPlatformInstanceUriOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ApiPlatformApiPlatformInstanceUri {
+		return vs[0].([]ApiPlatformApiPlatformInstanceUri)[vs[1].(int)]
+	}).(ApiPlatformApiPlatformInstanceUriOutput)
+}
+
 type ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList struct {
 	// (Updatable) name of the api which needs to be protected.
 	ApiName string `pulumi:"apiName"`
@@ -640,6 +843,848 @@ func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudOracleDbAzureConnectorArcAgentNode {
 		return vs[0].([]DbmulticloudOracleDbAzureConnectorArcAgentNode)[vs[1].(int)]
 	}).(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput)
+}
+
+type GetApiPlatformApiPlatformInstanceIdcsApp struct {
+	// IDCS URL of the app
+	Url string `pulumi:"url"`
+}
+
+// GetApiPlatformApiPlatformInstanceIdcsAppInput is an input type that accepts GetApiPlatformApiPlatformInstanceIdcsAppArgs and GetApiPlatformApiPlatformInstanceIdcsAppOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstanceIdcsAppInput` via:
+//
+//	GetApiPlatformApiPlatformInstanceIdcsAppArgs{...}
+type GetApiPlatformApiPlatformInstanceIdcsAppInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstanceIdcsAppOutput() GetApiPlatformApiPlatformInstanceIdcsAppOutput
+	ToGetApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(context.Context) GetApiPlatformApiPlatformInstanceIdcsAppOutput
+}
+
+type GetApiPlatformApiPlatformInstanceIdcsAppArgs struct {
+	// IDCS URL of the app
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetApiPlatformApiPlatformInstanceIdcsAppArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstanceIdcsAppArgs) ToGetApiPlatformApiPlatformInstanceIdcsAppOutput() GetApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return i.ToGetApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstanceIdcsAppArgs) ToGetApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstanceIdcsAppOutput)
+}
+
+// GetApiPlatformApiPlatformInstanceIdcsAppArrayInput is an input type that accepts GetApiPlatformApiPlatformInstanceIdcsAppArray and GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstanceIdcsAppArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstanceIdcsAppArray{ GetApiPlatformApiPlatformInstanceIdcsAppArgs{...} }
+type GetApiPlatformApiPlatformInstanceIdcsAppArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutput() GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput
+	ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstanceIdcsAppArray []GetApiPlatformApiPlatformInstanceIdcsAppInput
+
+func (GetApiPlatformApiPlatformInstanceIdcsAppArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstanceIdcsAppArray) ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutput() GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstanceIdcsAppArray) ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstanceIdcsAppOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstanceIdcsAppOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstanceIdcsAppOutput) ToGetApiPlatformApiPlatformInstanceIdcsAppOutput() GetApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstanceIdcsAppOutput) ToGetApiPlatformApiPlatformInstanceIdcsAppOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return o
+}
+
+// IDCS URL of the app
+func (o GetApiPlatformApiPlatformInstanceIdcsAppOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstanceIdcsApp) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstanceIdcsApp)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput) ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutput() GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput) ToGetApiPlatformApiPlatformInstanceIdcsAppArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstanceIdcsAppOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstanceIdcsApp {
+		return vs[0].([]GetApiPlatformApiPlatformInstanceIdcsApp)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstanceIdcsAppOutput)
+}
+
+type GetApiPlatformApiPlatformInstanceUri struct {
+	// Developer's Portal URI of the instance (/developers)
+	DevelopersPortalUri string `pulumi:"developersPortalUri"`
+	// Management Portal URI of the instance (/apiplatform)
+	ManagementPortalUri string `pulumi:"managementPortalUri"`
+}
+
+// GetApiPlatformApiPlatformInstanceUriInput is an input type that accepts GetApiPlatformApiPlatformInstanceUriArgs and GetApiPlatformApiPlatformInstanceUriOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstanceUriInput` via:
+//
+//	GetApiPlatformApiPlatformInstanceUriArgs{...}
+type GetApiPlatformApiPlatformInstanceUriInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstanceUriOutput() GetApiPlatformApiPlatformInstanceUriOutput
+	ToGetApiPlatformApiPlatformInstanceUriOutputWithContext(context.Context) GetApiPlatformApiPlatformInstanceUriOutput
+}
+
+type GetApiPlatformApiPlatformInstanceUriArgs struct {
+	// Developer's Portal URI of the instance (/developers)
+	DevelopersPortalUri pulumi.StringInput `pulumi:"developersPortalUri"`
+	// Management Portal URI of the instance (/apiplatform)
+	ManagementPortalUri pulumi.StringInput `pulumi:"managementPortalUri"`
+}
+
+func (GetApiPlatformApiPlatformInstanceUriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstanceUriArgs) ToGetApiPlatformApiPlatformInstanceUriOutput() GetApiPlatformApiPlatformInstanceUriOutput {
+	return i.ToGetApiPlatformApiPlatformInstanceUriOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstanceUriArgs) ToGetApiPlatformApiPlatformInstanceUriOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceUriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstanceUriOutput)
+}
+
+// GetApiPlatformApiPlatformInstanceUriArrayInput is an input type that accepts GetApiPlatformApiPlatformInstanceUriArray and GetApiPlatformApiPlatformInstanceUriArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstanceUriArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstanceUriArray{ GetApiPlatformApiPlatformInstanceUriArgs{...} }
+type GetApiPlatformApiPlatformInstanceUriArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstanceUriArrayOutput() GetApiPlatformApiPlatformInstanceUriArrayOutput
+	ToGetApiPlatformApiPlatformInstanceUriArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstanceUriArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstanceUriArray []GetApiPlatformApiPlatformInstanceUriInput
+
+func (GetApiPlatformApiPlatformInstanceUriArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstanceUriArray) ToGetApiPlatformApiPlatformInstanceUriArrayOutput() GetApiPlatformApiPlatformInstanceUriArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstanceUriArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstanceUriArray) ToGetApiPlatformApiPlatformInstanceUriArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceUriArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstanceUriArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstanceUriOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstanceUriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstanceUriOutput) ToGetApiPlatformApiPlatformInstanceUriOutput() GetApiPlatformApiPlatformInstanceUriOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstanceUriOutput) ToGetApiPlatformApiPlatformInstanceUriOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceUriOutput {
+	return o
+}
+
+// Developer's Portal URI of the instance (/developers)
+func (o GetApiPlatformApiPlatformInstanceUriOutput) DevelopersPortalUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstanceUri) string { return v.DevelopersPortalUri }).(pulumi.StringOutput)
+}
+
+// Management Portal URI of the instance (/apiplatform)
+func (o GetApiPlatformApiPlatformInstanceUriOutput) ManagementPortalUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstanceUri) string { return v.ManagementPortalUri }).(pulumi.StringOutput)
+}
+
+type GetApiPlatformApiPlatformInstanceUriArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstanceUriArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstanceUri)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstanceUriArrayOutput) ToGetApiPlatformApiPlatformInstanceUriArrayOutput() GetApiPlatformApiPlatformInstanceUriArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstanceUriArrayOutput) ToGetApiPlatformApiPlatformInstanceUriArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstanceUriArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstanceUriArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstanceUriOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstanceUri {
+		return vs[0].([]GetApiPlatformApiPlatformInstanceUri)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstanceUriOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection struct {
+	Items []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs{...}
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs struct {
+	Items GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput)
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray{ GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs{...} }
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionInput
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput) Items() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection) []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem {
+		return v.Items
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection {
+		return vs[0].([]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollection)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// User-provided changeable and non-unique description of the instance
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance
+	Id string `pulumi:"id"`
+	// IDCS app associated with the instance, that can be used to manage the roles of the users
+	IdcsApps []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp `pulumi:"idcsApps"`
+	// A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given name exactly
+	Name string `pulumi:"name"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Service URIs pertaining to the instance
+	Uris []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri `pulumi:"uris"`
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs{...}
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// User-provided changeable and non-unique description of the instance
+	Description pulumi.StringInput `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance
+	Id pulumi.StringInput `pulumi:"id"`
+	// IDCS app associated with the instance, that can be used to manage the roles of the users
+	IdcsApps GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayInput `pulumi:"idcsApps"`
+	// A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given name exactly
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Service URIs pertaining to the instance
+	Uris GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayInput `pulumi:"uris"`
+}
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput)
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray{ GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs{...} }
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemInput
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// User-provided changeable and non-unique description of the instance
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// IDCS app associated with the instance, that can be used to manage the roles of the users
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) IdcsApps() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp {
+		return v.IdcsApps
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput)
+}
+
+// A message that describes the current state of the instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given name exactly
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// Service URIs pertaining to the instance
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput) Uris() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem) []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri {
+		return v.Uris
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem {
+		return vs[0].([]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItem)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp struct {
+	// IDCS URL of the app
+	Url string `pulumi:"url"`
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs{...}
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs struct {
+	// IDCS URL of the app
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput)
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray{ GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs{...} }
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppInput
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput {
+	return o
+}
+
+// IDCS URL of the app
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp) string {
+		return v.Url
+	}).(pulumi.StringOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp {
+		return vs[0].([]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsApp)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri struct {
+	// Developer's Portal URI of the instance (/developers)
+	DevelopersPortalUri string `pulumi:"developersPortalUri"`
+	// Management Portal URI of the instance (/apiplatform)
+	ManagementPortalUri string `pulumi:"managementPortalUri"`
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs{...}
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs struct {
+	// Developer's Portal URI of the instance (/developers)
+	DevelopersPortalUri pulumi.StringInput `pulumi:"developersPortalUri"`
+	// Management Portal URI of the instance (/apiplatform)
+	ManagementPortalUri pulumi.StringInput `pulumi:"managementPortalUri"`
+}
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput)
+}
+
+// GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayInput is an input type that accepts GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray and GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray{ GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs{...} }
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput
+	ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray []GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriInput
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput {
+	return o
+}
+
+// Developer's Portal URI of the instance (/developers)
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput) DevelopersPortalUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri) string {
+		return v.DevelopersPortalUri
+	}).(pulumi.StringOutput)
+}
+
+// Management Portal URI of the instance (/apiplatform)
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput) ManagementPortalUri() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri) string {
+		return v.ManagementPortalUri
+	}).(pulumi.StringOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput() GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput) ToGetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri {
+		return vs[0].([]GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUri)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesFilter struct {
+	// A filter to return only resources that match the given name exactly
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetApiPlatformApiPlatformInstancesFilterInput is an input type that accepts GetApiPlatformApiPlatformInstancesFilterArgs and GetApiPlatformApiPlatformInstancesFilterOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesFilterInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesFilterArgs{...}
+type GetApiPlatformApiPlatformInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesFilterOutput() GetApiPlatformApiPlatformInstancesFilterOutput
+	ToGetApiPlatformApiPlatformInstancesFilterOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesFilterOutput
+}
+
+type GetApiPlatformApiPlatformInstancesFilterArgs struct {
+	// A filter to return only resources that match the given name exactly
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetApiPlatformApiPlatformInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesFilter)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesFilterArgs) ToGetApiPlatformApiPlatformInstancesFilterOutput() GetApiPlatformApiPlatformInstancesFilterOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesFilterArgs) ToGetApiPlatformApiPlatformInstancesFilterOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesFilterOutput)
+}
+
+// GetApiPlatformApiPlatformInstancesFilterArrayInput is an input type that accepts GetApiPlatformApiPlatformInstancesFilterArray and GetApiPlatformApiPlatformInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetApiPlatformApiPlatformInstancesFilterArrayInput` via:
+//
+//	GetApiPlatformApiPlatformInstancesFilterArray{ GetApiPlatformApiPlatformInstancesFilterArgs{...} }
+type GetApiPlatformApiPlatformInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetApiPlatformApiPlatformInstancesFilterArrayOutput() GetApiPlatformApiPlatformInstancesFilterArrayOutput
+	ToGetApiPlatformApiPlatformInstancesFilterArrayOutputWithContext(context.Context) GetApiPlatformApiPlatformInstancesFilterArrayOutput
+}
+
+type GetApiPlatformApiPlatformInstancesFilterArray []GetApiPlatformApiPlatformInstancesFilterInput
+
+func (GetApiPlatformApiPlatformInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesFilter)(nil)).Elem()
+}
+
+func (i GetApiPlatformApiPlatformInstancesFilterArray) ToGetApiPlatformApiPlatformInstancesFilterArrayOutput() GetApiPlatformApiPlatformInstancesFilterArrayOutput {
+	return i.ToGetApiPlatformApiPlatformInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetApiPlatformApiPlatformInstancesFilterArray) ToGetApiPlatformApiPlatformInstancesFilterArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetApiPlatformApiPlatformInstancesFilterArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetApiPlatformApiPlatformInstancesFilter)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterOutput) ToGetApiPlatformApiPlatformInstancesFilterOutput() GetApiPlatformApiPlatformInstancesFilterOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterOutput) ToGetApiPlatformApiPlatformInstancesFilterOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the given name exactly
+func (o GetApiPlatformApiPlatformInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetApiPlatformApiPlatformInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetApiPlatformApiPlatformInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetApiPlatformApiPlatformInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetApiPlatformApiPlatformInstancesFilter)(nil)).Elem()
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterArrayOutput) ToGetApiPlatformApiPlatformInstancesFilterArrayOutput() GetApiPlatformApiPlatformInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterArrayOutput) ToGetApiPlatformApiPlatformInstancesFilterArrayOutputWithContext(ctx context.Context) GetApiPlatformApiPlatformInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetApiPlatformApiPlatformInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetApiPlatformApiPlatformInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetApiPlatformApiPlatformInstancesFilter {
+		return vs[0].([]GetApiPlatformApiPlatformInstancesFilter)[vs[1].(int)]
+	}).(GetApiPlatformApiPlatformInstancesFilterOutput)
 }
 
 type GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollection struct {
@@ -12178,6 +13223,10 @@ func (o GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayOutput) Index(
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsAppInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceIdcsAppArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsAppArrayInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceIdcsAppArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceUriInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceUriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceUriArrayInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceUriArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArrayInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiaccesscontrolPrivilegedApiRequestApproverDetailInput)(nil)).Elem(), ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs{})
@@ -12188,6 +13237,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsAppInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceIdcsAppArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsAppArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceIdcsAppArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceUriInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceUriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceUriArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceUriArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesFilterInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstancesFilterArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstancesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionInput)(nil)).Elem(), GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArrayInput)(nil)).Elem(), GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemInput)(nil)).Elem(), GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemArgs{})
@@ -12354,6 +13417,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArrayInput)(nil)).Elem(), GetWlmsWlsDomainsWlsDomainCollectionItemConfigurationArray{})
+	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppOutput{})
+	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
+	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceUriOutput{})
+	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceUriArrayOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArrayOutput{})
 	pulumi.RegisterOutputType(ApiaccesscontrolPrivilegedApiRequestApproverDetailOutput{})
@@ -12364,6 +13431,20 @@ func init() {
 	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceIdcsAppOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceUriOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceUriArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemIdcsAppArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionItemUriArrayOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstancesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetApiaccesscontrolApiMetadataByEntityTypesApiMetadataByEntityTypeCollectionItemOutput{})

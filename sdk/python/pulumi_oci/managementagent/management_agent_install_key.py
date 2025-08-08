@@ -117,11 +117,14 @@ class _ManagementAgentInstallKeyState:
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  created_by_principal_id: Optional[pulumi.Input[_builtins.str]] = None,
                  current_key_install_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
                  key: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_expires: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
@@ -131,11 +134,14 @@ class _ManagementAgentInstallKeyState:
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier
         :param pulumi.Input[_builtins.str] created_by_principal_id: Principal id of user who created the Agent Install key
         :param pulumi.Input[_builtins.int] current_key_install_count: Total number of install for this keys
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Management Agent install Key Name
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
         :param pulumi.Input[_builtins.str] key: Management Agent Install Key
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] state: Status of Key
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
         :param pulumi.Input[_builtins.str] time_expires: date after which key would expire after creation
                
@@ -152,8 +158,12 @@ class _ManagementAgentInstallKeyState:
             pulumi.set(__self__, "created_by_principal_id", created_by_principal_id)
         if current_key_install_count is not None:
             pulumi.set(__self__, "current_key_install_count", current_key_install_count)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_unlimited is not None:
             pulumi.set(__self__, "is_unlimited", is_unlimited)
         if key is not None:
@@ -162,6 +172,8 @@ class _ManagementAgentInstallKeyState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_expires is not None:
@@ -218,6 +230,18 @@ class _ManagementAgentInstallKeyState:
         pulumi.set(self, "current_key_install_count", value)
 
     @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -228,6 +252,18 @@ class _ManagementAgentInstallKeyState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="isUnlimited")
@@ -276,6 +312,18 @@ class _ManagementAgentInstallKeyState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -442,9 +490,12 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
             __props__.__dict__["time_expires"] = time_expires
             __props__.__dict__["created_by_principal_id"] = None
             __props__.__dict__["current_key_install_count"] = None
+            __props__.__dict__["defined_tags"] = None
+            __props__.__dict__["freeform_tags"] = None
             __props__.__dict__["key"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(ManagementAgentInstallKey, __self__).__init__(
@@ -461,11 +512,14 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             created_by_principal_id: Optional[pulumi.Input[_builtins.str]] = None,
             current_key_install_count: Optional[pulumi.Input[_builtins.int]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_unlimited: Optional[pulumi.Input[_builtins.bool]] = None,
             key: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_expires: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'ManagementAgentInstallKey':
@@ -480,11 +534,14 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] compartment_id: Compartment Identifier
         :param pulumi.Input[_builtins.str] created_by_principal_id: Principal id of user who created the Agent Install key
         :param pulumi.Input[_builtins.int] current_key_install_count: Total number of install for this keys
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Management Agent install Key Name
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.bool] is_unlimited: If set to true, the install key has no expiration date or usage limit. Defaults to false
         :param pulumi.Input[_builtins.str] key: Management Agent Install Key
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[_builtins.str] state: Status of Key
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
         :param pulumi.Input[_builtins.str] time_expires: date after which key would expire after creation
                
@@ -501,11 +558,14 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["created_by_principal_id"] = created_by_principal_id
         __props__.__dict__["current_key_install_count"] = current_key_install_count
+        __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_unlimited"] = is_unlimited
         __props__.__dict__["key"] = key
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_expires"] = time_expires
         __props__.__dict__["time_updated"] = time_updated
@@ -544,12 +604,28 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         return pulumi.get(self, "current_key_install_count")
 
     @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) Management Agent install Key Name
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
     @pulumi.getter(name="isUnlimited")
@@ -582,6 +658,14 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         Status of Key
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

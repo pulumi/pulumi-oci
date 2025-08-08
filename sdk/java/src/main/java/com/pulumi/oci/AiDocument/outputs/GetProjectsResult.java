@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetProjectsResult {
     /**
-     * @return The compartment identifier.
+     * @return The lock compartment ID.
      * 
      */
     private @Nullable String compartmentId;
@@ -44,7 +44,7 @@ public final class GetProjectsResult {
 
     private GetProjectsResult() {}
     /**
-     * @return The compartment identifier.
+     * @return The lock compartment ID.
      * 
      */
     public Optional<String> compartmentId() {

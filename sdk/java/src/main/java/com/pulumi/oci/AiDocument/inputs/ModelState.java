@@ -6,12 +6,15 @@ package com.pulumi.oci.AiDocument.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.AiDocument.inputs.ModelComponentModelArgs;
+import com.pulumi.oci.AiDocument.inputs.ModelLockArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelMetricArgs;
+import com.pulumi.oci.AiDocument.inputs.ModelModelSubTypeArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTestingDatasetArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelTrainingDatasetArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelValidationDatasetArgs;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -115,6 +118,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Number of replicas required for this model.
+     * 
+     */
+    @Import(name="inferenceUnits")
+    private @Nullable Output<Integer> inferenceUnits;
+
+    /**
+     * @return (Updatable) Number of replicas required for this model.
+     * 
+     */
+    public Optional<Output<Integer>> inferenceUnits() {
+        return Optional.ofNullable(this.inferenceUnits);
+    }
+
+    /**
      * Set to true when the model is created by using multiple key value extraction models.
      * 
      */
@@ -160,6 +178,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     * 
+     */
+    @Import(name="language")
+    private @Nullable Output<String> language;
+
+    /**
+     * @return The document language for model training, abbreviated according to the BCP 47 syntax.
+     * 
+     */
+    public Optional<Output<String>> language() {
+        return Optional.ofNullable(this.language);
+    }
+
+    /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
@@ -172,6 +205,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<ModelLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<ModelLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -209,6 +257,21 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<String>> modelId() {
         return Optional.ofNullable(this.modelId);
+    }
+
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     * 
+     */
+    @Import(name="modelSubType")
+    private @Nullable Output<ModelModelSubTypeArgs> modelSubType;
+
+    /**
+     * @return Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     * 
+     */
+    public Optional<Output<ModelModelSubTypeArgs>> modelSubType() {
+        return Optional.ofNullable(this.modelSubType);
     }
 
     /**
@@ -400,13 +463,17 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.inferenceUnits = $.inferenceUnits;
         this.isComposedModel = $.isComposedModel;
         this.isQuickMode = $.isQuickMode;
         this.labels = $.labels;
+        this.language = $.language;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.maxTrainingTimeInHours = $.maxTrainingTimeInHours;
         this.metrics = $.metrics;
         this.modelId = $.modelId;
+        this.modelSubType = $.modelSubType;
         this.modelType = $.modelType;
         this.modelVersion = $.modelVersion;
         this.projectId = $.projectId;
@@ -576,6 +643,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param inferenceUnits (Updatable) Number of replicas required for this model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inferenceUnits(@Nullable Output<Integer> inferenceUnits) {
+            $.inferenceUnits = inferenceUnits;
+            return this;
+        }
+
+        /**
+         * @param inferenceUnits (Updatable) Number of replicas required for this model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder inferenceUnits(Integer inferenceUnits) {
+            return inferenceUnits(Output.of(inferenceUnits));
+        }
+
+        /**
          * @param isComposedModel Set to true when the model is created by using multiple key value extraction models.
          * 
          * @return builder
@@ -649,6 +737,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param language The document language for model training, abbreviated according to the BCP 47 syntax.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder language(@Nullable Output<String> language) {
+            $.language = language;
+            return this;
+        }
+
+        /**
+         * @param language The document language for model training, abbreviated according to the BCP 47 syntax.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder language(String language) {
+            return language(Output.of(language));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail, that can provide actionable information if training failed.
          * 
          * @return builder
@@ -667,6 +776,37 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<ModelLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<ModelLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(ModelLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -728,6 +868,27 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
 
         public Builder modelId(String modelId) {
             return modelId(Output.of(modelId));
+        }
+
+        /**
+         * @param modelSubType Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelSubType(@Nullable Output<ModelModelSubTypeArgs> modelSubType) {
+            $.modelSubType = modelSubType;
+            return this;
+        }
+
+        /**
+         * @param modelSubType Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelSubType(ModelModelSubTypeArgs modelSubType) {
+            return modelSubType(Output.of(modelSubType));
         }
 
         /**

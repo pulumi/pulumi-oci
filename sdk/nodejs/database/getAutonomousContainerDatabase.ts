@@ -88,6 +88,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
      */
     readonly computeModel: string;
+    /**
+     * Customer Contacts. Setting this to an empty list removes all customer contacts.
+     */
+    readonly customerContacts: outputs.Database.GetAutonomousContainerDatabaseCustomerContact[];
     readonly databaseSoftwareImageId: string;
     /**
      * Array of Dg associations.
@@ -216,6 +220,10 @@ export interface GetAutonomousContainerDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     readonly nextMaintenanceRunId: string;
+    /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     */
+    readonly okvEndPointGroupName: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */

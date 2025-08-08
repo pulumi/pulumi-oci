@@ -52,7 +52,7 @@ class GetProjectsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[_builtins.str]:
         """
-        The compartment identifier.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 

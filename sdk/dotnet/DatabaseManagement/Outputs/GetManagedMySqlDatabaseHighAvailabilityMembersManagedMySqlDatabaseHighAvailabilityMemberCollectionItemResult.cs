@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionItemResult
     {
         /// <summary>
-        /// The host name of the group member which clients use to connect to it.
+        /// The host name of the group member that clients use to connect to it.
         /// </summary>
         public readonly string MemberHost;
         /// <summary>
-        /// The port number of the group member which clients to connect to it.
+        /// The port number of the group member that clients use to connect to it.
         /// </summary>
         public readonly int MemberPort;
         /// <summary>

@@ -17,10 +17,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetAutonomousDatabasesResult {
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     private @Nullable String autonomousContainerDatabaseId;
+    /**
+     * @return The list of autonomous_databases.
+     * 
+     */
     private List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -87,12 +91,16 @@ public final class GetAutonomousDatabasesResult {
 
     private GetAutonomousDatabasesResult() {}
     /**
-     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * 
      */
     public Optional<String> autonomousContainerDatabaseId() {
         return Optional.ofNullable(this.autonomousContainerDatabaseId);
     }
+    /**
+     * @return The list of autonomous_databases.
+     * 
+     */
     public List<GetAutonomousDatabasesAutonomousDatabase> autonomousDatabases() {
         return this.autonomousDatabases;
     }

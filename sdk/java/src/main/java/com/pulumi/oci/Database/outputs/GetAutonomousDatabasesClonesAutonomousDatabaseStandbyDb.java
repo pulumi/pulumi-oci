@@ -11,6 +11,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
     private String availabilityDomain;
     /**
      * @return The amount of time, in seconds, that the data of the standby database lags the data of the primary database. Can be used to determine the potential data loss in the event of a failover.
@@ -54,6 +58,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb {
     private String timeMaintenanceEnd;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDb() {}
+    /**
+     * @return The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+     * 
+     */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }

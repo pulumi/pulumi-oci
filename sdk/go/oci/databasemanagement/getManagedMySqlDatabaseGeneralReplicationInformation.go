@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
 //
-// Retrieves general information regarding replication of a specific MySQL server.
+// Retrieves general information regarding the replication of a specific MySQL server.
 //
 // ## Example Usage
 //
@@ -62,13 +62,13 @@ type GetManagedMySqlDatabaseGeneralReplicationInformationResult struct {
 	ApplyStatusSummary string `pulumi:"applyStatusSummary"`
 	// The binary logging format used by this server.
 	BinaryLogFormat string `pulumi:"binaryLogFormat"`
-	// Status of binary logging on this server.
+	// The status of binary logging on this server.
 	BinaryLogging string `pulumi:"binaryLogging"`
 	// The set of global transaction identifiers for transactions that have been executed on this source server.
 	ExecutedGtidSet string `pulumi:"executedGtidSet"`
 	// A summary of the current status of fetch operations.
 	FetchStatusSummary string `pulumi:"fetchStatusSummary"`
-	// Global Transaction Identifier (GTID) mode of this server.
+	// The Global Transaction Identifier (GTID) mode of this server.
 	GtidMode string `pulumi:"gtidMode"`
 	// The state of this server as a group replication member.
 	HighAvailabilityMemberState string `pulumi:"highAvailabilityMemberState"`
@@ -78,7 +78,7 @@ type GetManagedMySqlDatabaseGeneralReplicationInformationResult struct {
 	Id string `pulumi:"id"`
 	// The number of sources this server is replicating from.
 	InboundReplicationsCount int `pulumi:"inboundReplicationsCount"`
-	// The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+	// The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
 	InstanceType string `pulumi:"instanceType"`
 	// Specifies if high availability is enabled on this server.
 	IsHighAvailabilityEnabled bool   `pulumi:"isHighAvailabilityEnabled"`
@@ -141,7 +141,7 @@ func (o GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput) Binary
 	return o.ApplyT(func(v GetManagedMySqlDatabaseGeneralReplicationInformationResult) string { return v.BinaryLogFormat }).(pulumi.StringOutput)
 }
 
-// Status of binary logging on this server.
+// The status of binary logging on this server.
 func (o GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput) BinaryLogging() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseGeneralReplicationInformationResult) string { return v.BinaryLogging }).(pulumi.StringOutput)
 }
@@ -156,7 +156,7 @@ func (o GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput) FetchS
 	return o.ApplyT(func(v GetManagedMySqlDatabaseGeneralReplicationInformationResult) string { return v.FetchStatusSummary }).(pulumi.StringOutput)
 }
 
-// Global Transaction Identifier (GTID) mode of this server.
+// The Global Transaction Identifier (GTID) mode of this server.
 func (o GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput) GtidMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseGeneralReplicationInformationResult) string { return v.GtidMode }).(pulumi.StringOutput)
 }
@@ -185,7 +185,7 @@ func (o GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput) Inboun
 	}).(pulumi.IntOutput)
 }
 
-// The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+// The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
 func (o GetManagedMySqlDatabaseGeneralReplicationInformationResultOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseGeneralReplicationInformationResult) string { return v.InstanceType }).(pulumi.StringOutput)
 }

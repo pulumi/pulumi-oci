@@ -724,11 +724,17 @@ namespace Pulumi.Oci.ApiGateway
         [Output("gatewayId")]
         public Output<string> GatewayId { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.DeploymentLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
@@ -747,6 +753,9 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
@@ -848,6 +857,17 @@ namespace Pulumi.Oci.ApiGateway
         [Input("gatewayId", required: true)]
         public Input<string> GatewayId { get; set; } = null!;
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.DeploymentLockArgs>? _locks;
+        public InputList<Inputs.DeploymentLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DeploymentLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
         /// </summary>
@@ -916,11 +936,22 @@ namespace Pulumi.Oci.ApiGateway
         [Input("gatewayId")]
         public Input<string>? GatewayId { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.DeploymentLockGetArgs>? _locks;
+        public InputList<Inputs.DeploymentLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DeploymentLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
@@ -939,6 +970,14 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

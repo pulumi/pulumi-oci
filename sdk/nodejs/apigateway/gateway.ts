@@ -124,10 +124,12 @@ export class Gateway extends pulumi.CustomResource {
      * An array of IP addresses associated with the gateway.
      */
     public /*out*/ readonly ipAddresses!: pulumi.Output<outputs.ApiGateway.GatewayIpAddress[]>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly locks!: pulumi.Output<outputs.ApiGateway.GatewayLock[]>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      */
@@ -148,6 +150,7 @@ export class Gateway extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly subnetId!: pulumi.Output<string>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -179,11 +182,14 @@ export class Gateway extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["hostname"] = state ? state.hostname : undefined;
             resourceInputs["ipAddresses"] = state ? state.ipAddresses : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["networkSecurityGroupIds"] = state ? state.networkSecurityGroupIds : undefined;
             resourceInputs["responseCacheDetails"] = state ? state.responseCacheDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -204,6 +210,8 @@ export class Gateway extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["endpointType"] = args ? args.endpointType : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["networkSecurityGroupIds"] = args ? args.networkSecurityGroupIds : undefined;
             resourceInputs["responseCacheDetails"] = args ? args.responseCacheDetails : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -211,6 +219,7 @@ export class Gateway extends pulumi.CustomResource {
             resourceInputs["ipAddresses"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -259,10 +268,12 @@ export interface GatewayState {
      * An array of IP addresses associated with the gateway.
      */
     ipAddresses?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayIpAddress>[]>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[]>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      */
@@ -283,6 +294,7 @@ export interface GatewayState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId?: pulumi.Input<string>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -325,6 +337,8 @@ export interface GatewayArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[]>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      */

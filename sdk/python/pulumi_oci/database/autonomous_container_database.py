@@ -29,6 +29,7 @@ class AutonomousContainerDatabaseArgs:
                  backup_config: Optional[pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs']] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
                  database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
@@ -46,6 +47,7 @@ class AutonomousContainerDatabaseArgs:
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  maintenance_window_details: Optional[pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs']] = None,
                  net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_autonomous_container_database_display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -72,6 +74,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input['AutonomousContainerDatabaseBackupConfigArgs'] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]] customer_contacts: (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
         :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
@@ -88,6 +91,7 @@ class AutonomousContainerDatabaseArgs:
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs'] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        :param pulumi.Input[_builtins.str] okv_end_point_group_name: (Updatable) The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
         :param pulumi.Input[_builtins.str] peer_autonomous_exadata_infrastructure_id: *No longer used.* This parameter is no longer used for Autonomous Database on dedicated Exadata infrasture. Specify a `peerCloudAutonomousVmClusterId` instead. Using this parameter will cause the operation to fail.
@@ -121,6 +125,8 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "cloud_autonomous_vm_cluster_id", cloud_autonomous_vm_cluster_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if customer_contacts is not None:
+            pulumi.set(__self__, "customer_contacts", customer_contacts)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if db_name is not None:
@@ -155,6 +161,8 @@ class AutonomousContainerDatabaseArgs:
             pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
         if net_services_architecture is not None:
             pulumi.set(__self__, "net_services_architecture", net_services_architecture)
+        if okv_end_point_group_name is not None:
+            pulumi.set(__self__, "okv_end_point_group_name", okv_end_point_group_name)
         if peer_autonomous_container_database_backup_config is not None:
             pulumi.set(__self__, "peer_autonomous_container_database_backup_config", peer_autonomous_container_database_backup_config)
         if peer_autonomous_container_database_compartment_id is not None:
@@ -282,6 +290,18 @@ class AutonomousContainerDatabaseArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]:
+        """
+        (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "customer_contacts")
+
+    @customer_contacts.setter
+    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]):
+        pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -483,6 +503,18 @@ class AutonomousContainerDatabaseArgs:
     @net_services_architecture.setter
     def net_services_architecture(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "net_services_architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="okvEndPointGroupName")
+    def okv_end_point_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "okv_end_point_group_name")
+
+    @okv_end_point_group_name.setter
+    def okv_end_point_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_end_point_group_name", value)
 
     @_builtins.property
     @pulumi.getter(name="peerAutonomousContainerDatabaseBackupConfig")
@@ -700,6 +732,7 @@ class _AutonomousContainerDatabaseState:
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]] = None,
                  database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  dataguard_group_members: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]]] = None,
                  dataguards: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]]] = None,
@@ -734,6 +767,7 @@ class _AutonomousContainerDatabaseState:
                  memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_id: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_model: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs']] = None,
@@ -777,6 +811,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]] customer_contacts: (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
         :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardGroupMemberArgs']]] dataguard_group_members: Array of Dg associations.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseDataguardArgs']]] dataguards: The properties that define Autonomous Container Databases Dataguard.
@@ -810,6 +845,7 @@ class _AutonomousContainerDatabaseState:
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param pulumi.Input[_builtins.str] okv_end_point_group_name: (Updatable) The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param pulumi.Input[_builtins.str] patch_model: (Updatable) Database Patch model preference.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
@@ -869,6 +905,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_model is not None:
             pulumi.set(__self__, "compute_model", compute_model)
+        if customer_contacts is not None:
+            pulumi.set(__self__, "customer_contacts", customer_contacts)
         if database_software_image_id is not None:
             pulumi.set(__self__, "database_software_image_id", database_software_image_id)
         if dataguard_group_members is not None:
@@ -937,6 +975,8 @@ class _AutonomousContainerDatabaseState:
             pulumi.set(__self__, "net_services_architecture", net_services_architecture)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
+        if okv_end_point_group_name is not None:
+            pulumi.set(__self__, "okv_end_point_group_name", okv_end_point_group_name)
         if patch_id is not None:
             pulumi.set(__self__, "patch_id", patch_id)
         if patch_model is not None:
@@ -1128,6 +1168,18 @@ class _AutonomousContainerDatabaseState:
     @compute_model.setter
     def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compute_model", value)
+
+    @_builtins.property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]:
+        """
+        (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "customer_contacts")
+
+    @customer_contacts.setter
+    def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousContainerDatabaseCustomerContactArgs']]]]):
+        pulumi.set(self, "customer_contacts", value)
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -1535,6 +1587,18 @@ class _AutonomousContainerDatabaseState:
         pulumi.set(self, "next_maintenance_run_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="okvEndPointGroupName")
+    def okv_end_point_group_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "okv_end_point_group_name")
+
+    @okv_end_point_group_name.setter
+    def okv_end_point_group_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "okv_end_point_group_name", value)
+
+    @_builtins.property
     @pulumi.getter(name="patchId")
     def patch_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1920,6 +1984,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
                  database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1938,6 +2003,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
                  net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_model: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1977,6 +2043,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']] backup_config: (Updatable) Backup options for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
         :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param pulumi.Input[_builtins.int] db_split_threshold: The CPU value beyond which an Autonomous Database will be opened across multiple nodes. The default value of this attribute is 16 for OCPUs and 64 for ECPUs.
@@ -1994,6 +2061,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']] maintenance_window_details: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+        :param pulumi.Input[_builtins.str] okv_end_point_group_name: (Updatable) The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_model: (Updatable) Database Patch model preference.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_display_name: The display name for the peer Autonomous Container Database.
@@ -2054,6 +2122,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
                  database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
                  db_split_threshold: Optional[pulumi.Input[_builtins.int]] = None,
@@ -2072,6 +2141,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
                  kms_key_id: Optional[pulumi.Input[_builtins.str]] = None,
                  maintenance_window_details: Optional[pulumi.Input[Union['AutonomousContainerDatabaseMaintenanceWindowDetailsArgs', 'AutonomousContainerDatabaseMaintenanceWindowDetailsArgsDict']]] = None,
                  net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
+                 okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
                  patch_model: Optional[pulumi.Input[_builtins.str]] = None,
                  peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
                  peer_autonomous_container_database_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2105,6 +2175,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["backup_config"] = backup_config
             __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["customer_contacts"] = customer_contacts
             __props__.__dict__["database_software_image_id"] = database_software_image_id
             __props__.__dict__["db_name"] = db_name
             __props__.__dict__["db_split_threshold"] = db_split_threshold
@@ -2125,6 +2196,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             __props__.__dict__["kms_key_id"] = kms_key_id
             __props__.__dict__["maintenance_window_details"] = maintenance_window_details
             __props__.__dict__["net_services_architecture"] = net_services_architecture
+            __props__.__dict__["okv_end_point_group_name"] = okv_end_point_group_name
             if patch_model is None and not opts.urn:
                 raise TypeError("Missing required property 'patch_model'")
             __props__.__dict__["patch_model"] = patch_model
@@ -2200,6 +2272,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_model: Optional[pulumi.Input[_builtins.str]] = None,
+            customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]]] = None,
             database_software_image_id: Optional[pulumi.Input[_builtins.str]] = None,
             dataguard_group_members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardGroupMemberArgs', 'AutonomousContainerDatabaseDataguardGroupMemberArgsDict']]]]] = None,
             dataguards: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardArgs', 'AutonomousContainerDatabaseDataguardArgsDict']]]]] = None,
@@ -2234,6 +2307,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
             memory_per_oracle_compute_unit_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             net_services_architecture: Optional[pulumi.Input[_builtins.str]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
+            okv_end_point_group_name: Optional[pulumi.Input[_builtins.str]] = None,
             patch_id: Optional[pulumi.Input[_builtins.str]] = None,
             patch_model: Optional[pulumi.Input[_builtins.str]] = None,
             peer_autonomous_container_database_backup_config: Optional[pulumi.Input[Union['AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgsDict']]] = None,
@@ -2282,6 +2356,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseCustomerContactArgs', 'AutonomousContainerDatabaseCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
         :param pulumi.Input[_builtins.str] database_software_image_id: The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardGroupMemberArgs', 'AutonomousContainerDatabaseDataguardGroupMemberArgsDict']]]] dataguard_group_members: Array of Dg associations.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AutonomousContainerDatabaseDataguardArgs', 'AutonomousContainerDatabaseDataguardArgsDict']]]] dataguards: The properties that define Autonomous Container Databases Dataguard.
@@ -2315,6 +2390,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per ECPU or OCPU in the Autonomous VM Cluster.
         :param pulumi.Input[_builtins.str] net_services_architecture: Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
         :param pulumi.Input[_builtins.str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
+        :param pulumi.Input[_builtins.str] okv_end_point_group_name: (Updatable) The OKV End Point Group name for the Autonomous Container Database.
         :param pulumi.Input[_builtins.str] patch_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
         :param pulumi.Input[_builtins.str] patch_model: (Updatable) Database Patch model preference.
         :param pulumi.Input[_builtins.str] peer_autonomous_container_database_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the standby Autonomous Container Database will be created.
@@ -2367,6 +2443,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["cloud_autonomous_vm_cluster_id"] = cloud_autonomous_vm_cluster_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_model"] = compute_model
+        __props__.__dict__["customer_contacts"] = customer_contacts
         __props__.__dict__["database_software_image_id"] = database_software_image_id
         __props__.__dict__["dataguard_group_members"] = dataguard_group_members
         __props__.__dict__["dataguards"] = dataguards
@@ -2401,6 +2478,7 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["memory_per_oracle_compute_unit_in_gbs"] = memory_per_oracle_compute_unit_in_gbs
         __props__.__dict__["net_services_architecture"] = net_services_architecture
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
+        __props__.__dict__["okv_end_point_group_name"] = okv_end_point_group_name
         __props__.__dict__["patch_id"] = patch_id
         __props__.__dict__["patch_model"] = patch_model
         __props__.__dict__["peer_autonomous_container_database_backup_config"] = peer_autonomous_container_database_backup_config
@@ -2518,6 +2596,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
         """
         return pulumi.get(self, "compute_model")
+
+    @_builtins.property
+    @pulumi.getter(name="customerContacts")
+    def customer_contacts(self) -> pulumi.Output[Sequence['outputs.AutonomousContainerDatabaseCustomerContact']]:
+        """
+        (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+        """
+        return pulumi.get(self, "customer_contacts")
 
     @_builtins.property
     @pulumi.getter(name="databaseSoftwareImageId")
@@ -2787,6 +2873,14 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         """
         return pulumi.get(self, "next_maintenance_run_id")
+
+    @_builtins.property
+    @pulumi.getter(name="okvEndPointGroupName")
+    def okv_end_point_group_name(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+        """
+        return pulumi.get(self, "okv_end_point_group_name")
 
     @_builtins.property
     @pulumi.getter(name="patchId")

@@ -6,7 +6,9 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -24,11 +26,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
      * 
      */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails infrastructureConfigurationDetails;
     /**
      * @return (Updatable) The model configuration details.
      * 
      */
-    private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
+    private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails modelGroupConfigurationDetails;
 
     private ModelDeploymentModelDeploymentConfigurationDetails() {}
     /**
@@ -45,12 +49,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails> environmentConfigurationDetails() {
         return Optional.ofNullable(this.environmentConfigurationDetails);
     }
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails> infrastructureConfigurationDetails() {
+        return Optional.ofNullable(this.infrastructureConfigurationDetails);
+    }
     /**
      * @return (Updatable) The model configuration details.
      * 
      */
-    public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails() {
-        return this.modelConfigurationDetails;
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails> modelConfigurationDetails() {
+        return Optional.ofNullable(this.modelConfigurationDetails);
+    }
+    public Optional<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails> modelGroupConfigurationDetails() {
+        return Optional.ofNullable(this.modelGroupConfigurationDetails);
     }
 
     public static Builder builder() {
@@ -64,13 +74,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
     public static final class Builder {
         private String deploymentType;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails environmentConfigurationDetails;
-        private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails infrastructureConfigurationDetails;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails;
+        private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails modelGroupConfigurationDetails;
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.deploymentType = defaults.deploymentType;
     	      this.environmentConfigurationDetails = defaults.environmentConfigurationDetails;
+    	      this.infrastructureConfigurationDetails = defaults.infrastructureConfigurationDetails;
     	      this.modelConfigurationDetails = defaults.modelConfigurationDetails;
+    	      this.modelGroupConfigurationDetails = defaults.modelGroupConfigurationDetails;
         }
 
         @CustomType.Setter
@@ -88,18 +102,30 @@ public final class ModelDeploymentModelDeploymentConfigurationDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder modelConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails) {
-            if (modelConfigurationDetails == null) {
-              throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetails", "modelConfigurationDetails");
-            }
+        public Builder infrastructureConfigurationDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails infrastructureConfigurationDetails) {
+
+            this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelConfigurationDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails) {
+
             this.modelConfigurationDetails = modelConfigurationDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder modelGroupConfigurationDetails(@Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails modelGroupConfigurationDetails) {
+
+            this.modelGroupConfigurationDetails = modelGroupConfigurationDetails;
             return this;
         }
         public ModelDeploymentModelDeploymentConfigurationDetails build() {
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetails();
             _resultValue.deploymentType = deploymentType;
             _resultValue.environmentConfigurationDetails = environmentConfigurationDetails;
+            _resultValue.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
             _resultValue.modelConfigurationDetails = modelConfigurationDetails;
+            _resultValue.modelGroupConfigurationDetails = modelGroupConfigurationDetails;
             return _resultValue;
         }
     }

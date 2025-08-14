@@ -5,6 +5,7 @@ package com.pulumi.oci.AiDocument.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -26,6 +27,11 @@ public final class ProcessorJobInputLocationObjectLocation {
      * 
      */
     private @Nullable String object;
+    /**
+     * @return The page ranges to be analysed.
+     * 
+     */
+    private @Nullable List<String> pageRanges;
 
     private ProcessorJobInputLocationObjectLocation() {}
     /**
@@ -49,6 +55,13 @@ public final class ProcessorJobInputLocationObjectLocation {
     public Optional<String> object() {
         return Optional.ofNullable(this.object);
     }
+    /**
+     * @return The page ranges to be analysed.
+     * 
+     */
+    public List<String> pageRanges() {
+        return this.pageRanges == null ? List.of() : this.pageRanges;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -62,12 +75,14 @@ public final class ProcessorJobInputLocationObjectLocation {
         private @Nullable String bucket;
         private @Nullable String namespace;
         private @Nullable String object;
+        private @Nullable List<String> pageRanges;
         public Builder() {}
         public Builder(ProcessorJobInputLocationObjectLocation defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.bucket = defaults.bucket;
     	      this.namespace = defaults.namespace;
     	      this.object = defaults.object;
+    	      this.pageRanges = defaults.pageRanges;
         }
 
         @CustomType.Setter
@@ -88,11 +103,21 @@ public final class ProcessorJobInputLocationObjectLocation {
             this.object = object;
             return this;
         }
+        @CustomType.Setter
+        public Builder pageRanges(@Nullable List<String> pageRanges) {
+
+            this.pageRanges = pageRanges;
+            return this;
+        }
+        public Builder pageRanges(String... pageRanges) {
+            return pageRanges(List.of(pageRanges));
+        }
         public ProcessorJobInputLocationObjectLocation build() {
             final var _resultValue = new ProcessorJobInputLocationObjectLocation();
             _resultValue.bucket = bucket;
             _resultValue.namespace = namespace;
             _resultValue.object = object;
+            _resultValue.pageRanges = pageRanges;
             return _resultValue;
         }
     }

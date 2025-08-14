@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['ProjectArgs', 'Project']
 
@@ -23,7 +25,8 @@ class ProjectArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]]] = None):
         """
         The set of arguments for constructing a Project resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
@@ -35,6 +38,7 @@ class ProjectArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -45,6 +49,8 @@ class ProjectArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -110,6 +116,18 @@ class ProjectArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
 
 @pulumi.input_type
 class _ProjectState:
@@ -120,6 +138,7 @@ class _ProjectState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -136,6 +155,7 @@ class _ProjectState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current state of the project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.str] time_created: When the project was created, as an RFC3339 datetime string.
@@ -153,6 +173,8 @@ class _ProjectState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -240,6 +262,18 @@ class _ProjectState:
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProjectLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @_builtins.property
+    @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
         The current state of the project.
@@ -298,6 +332,7 @@ class Project(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
                  __props__=None):
         """
         This resource provides the Project resource in Oracle Cloud Infrastructure Ai Document service.
@@ -337,6 +372,7 @@ class Project(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]] locks: Locks associated with this resource.
         """
         ...
     @overload
@@ -391,6 +427,7 @@ class Project(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -407,6 +444,7 @@ class Project(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -428,6 +466,7 @@ class Project(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -449,6 +488,7 @@ class Project(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectLockArgs', 'ProjectLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current state of the project.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[_builtins.str] time_created: When the project was created, as an RFC3339 datetime string.
@@ -464,6 +504,7 @@ class Project(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -521,6 +562,14 @@ class Project(pulumi.CustomResource):
         A message describing the current state in more detail, that can provide actionable information if creation failed.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.ProjectLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter

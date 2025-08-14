@@ -15,11 +15,15 @@ from .get_management_agent_get_auto_upgradable_config import *
 from .get_management_agent_images import *
 from .get_management_agent_install_key import *
 from .get_management_agent_install_keys import *
+from .get_management_agent_named_credentials_metadata import *
 from .get_management_agent_plugin_count import *
 from .get_management_agent_plugins import *
 from .get_management_agents import *
+from .get_named_credential import *
+from .get_named_credentials import *
 from .management_agent import *
 from .management_agent_data_source import *
 from .management_agent_install_key import *
+from .named_credential import *
 from ._inputs import *
 from . import outputs

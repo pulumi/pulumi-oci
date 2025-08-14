@@ -33,14 +33,14 @@ public final class GetConfigsPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      * 
      */
     @Import(name="configType")
     private @Nullable String configType;
 
     /**
-     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      * 
      */
     public Optional<String> configType() {
@@ -188,7 +188,7 @@ public final class GetConfigsPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param configType A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+         * @param configType A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
          * 
          * @return builder
          * 

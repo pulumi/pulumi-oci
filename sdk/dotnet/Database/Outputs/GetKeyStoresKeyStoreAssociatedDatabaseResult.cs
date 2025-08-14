@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DbName;
         /// <summary>
+        /// The unique name of the database that is associated with the key store.
+        /// </summary>
+        public readonly string DbUniqueName;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         public readonly string Id;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.Database.Outputs
         private GetKeyStoresKeyStoreAssociatedDatabaseResult(
             string dbName,
 
+            string dbUniqueName,
+
             string id)
         {
             DbName = dbName;
+            DbUniqueName = dbUniqueName;
             Id = id;
         }
     }

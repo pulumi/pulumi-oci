@@ -80,8 +80,10 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
-	ComputeModel            string `pulumi:"computeModel"`
-	DatabaseSoftwareImageId string `pulumi:"databaseSoftwareImageId"`
+	ComputeModel string `pulumi:"computeModel"`
+	// Customer Contacts. Setting this to an empty list removes all customer contacts.
+	CustomerContacts        []GetAutonomousContainerDatabaseCustomerContact `pulumi:"customerContacts"`
+	DatabaseSoftwareImageId string                                          `pulumi:"databaseSoftwareImageId"`
 	// Array of Dg associations.
 	DataguardGroupMembers []GetAutonomousContainerDatabaseDataguardGroupMember `pulumi:"dataguardGroupMembers"`
 	// The properties that define Autonomous Container Databases Dataguard.
@@ -147,6 +149,8 @@ type LookupAutonomousContainerDatabaseResult struct {
 	NetServicesArchitecture string `pulumi:"netServicesArchitecture"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId string `pulumi:"nextMaintenanceRunId"`
+	// The OKV End Point Group name for the Autonomous Container Database.
+	OkvEndPointGroupName string `pulumi:"okvEndPointGroupName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
 	PatchId string `pulumi:"patchId"`
 	// Database patch model preference.
@@ -297,6 +301,13 @@ func (o LookupAutonomousContainerDatabaseResultOutput) CompartmentId() pulumi.St
 // The compute model of the Autonomous Container Database. For Autonomous Database on Dedicated Exadata Infrastructure, the CPU type (ECPUs or OCPUs) is determined by the parent Autonomous Exadata VM Cluster's compute model. ECPU compute model is the recommended model and OCPU compute model is legacy. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
 func (o LookupAutonomousContainerDatabaseResultOutput) ComputeModel() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
+// Customer Contacts. Setting this to an empty list removes all customer contacts.
+func (o LookupAutonomousContainerDatabaseResultOutput) CustomerContacts() GetAutonomousContainerDatabaseCustomerContactArrayOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) []GetAutonomousContainerDatabaseCustomerContact {
+		return v.CustomerContacts
+	}).(GetAutonomousContainerDatabaseCustomerContactArrayOutput)
 }
 
 func (o LookupAutonomousContainerDatabaseResultOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
@@ -480,6 +491,11 @@ func (o LookupAutonomousContainerDatabaseResultOutput) NetServicesArchitecture()
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 func (o LookupAutonomousContainerDatabaseResultOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
+}
+
+// The OKV End Point Group name for the Autonomous Container Database.
+func (o LookupAutonomousContainerDatabaseResultOutput) OkvEndPointGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) string { return v.OkvEndPointGroupName }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.

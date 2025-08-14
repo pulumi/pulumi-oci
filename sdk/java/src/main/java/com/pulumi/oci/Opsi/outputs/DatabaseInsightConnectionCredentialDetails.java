@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseInsightConnectionCredentialDetails {
     /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
      * 
      */
     private @Nullable String credentialSourceName;
@@ -22,6 +22,11 @@ public final class DatabaseInsightConnectionCredentialDetails {
      * 
      */
     private String credentialType;
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    private @Nullable String namedCredentialId;
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * 
@@ -40,7 +45,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
 
     private DatabaseInsightConnectionCredentialDetails() {}
     /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
      * 
      */
     public Optional<String> credentialSourceName() {
@@ -52,6 +57,13 @@ public final class DatabaseInsightConnectionCredentialDetails {
      */
     public String credentialType() {
         return this.credentialType;
+    }
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    public Optional<String> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
     }
     /**
      * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
@@ -86,6 +98,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
     public static final class Builder {
         private @Nullable String credentialSourceName;
         private String credentialType;
+        private @Nullable String namedCredentialId;
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String userName;
@@ -94,6 +107,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
     	      Objects.requireNonNull(defaults);
     	      this.credentialSourceName = defaults.credentialSourceName;
     	      this.credentialType = defaults.credentialType;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
@@ -111,6 +125,12 @@ public final class DatabaseInsightConnectionCredentialDetails {
               throw new MissingRequiredPropertyException("DatabaseInsightConnectionCredentialDetails", "credentialType");
             }
             this.credentialType = credentialType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(@Nullable String namedCredentialId) {
+
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -135,6 +155,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
             final var _resultValue = new DatabaseInsightConnectionCredentialDetails();
             _resultValue.credentialSourceName = credentialSourceName;
             _resultValue.credentialType = credentialType;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.userName = userName;

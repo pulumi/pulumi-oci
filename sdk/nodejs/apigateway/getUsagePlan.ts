@@ -67,14 +67,17 @@ export interface GetUsagePlanResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
+    readonly locks: outputs.ApiGateway.GetUsagePlanLock[];
     /**
      * The current state of the usage plan.
      */
     readonly state: string;
+    readonly systemTags: {[key: string]: string};
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */

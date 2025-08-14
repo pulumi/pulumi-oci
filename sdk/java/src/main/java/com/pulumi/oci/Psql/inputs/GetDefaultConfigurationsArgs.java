@@ -6,6 +6,7 @@ package com.pulumi.oci.Psql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Psql.inputs.GetDefaultConfigurationsFilterArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -70,14 +71,44 @@ public final class GetDefaultConfigurationsArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The instance memory size in GBs for the configuration.
+     * 
+     */
+    @Import(name="instanceMemorySizeInGbs")
+    private @Nullable Output<Integer> instanceMemorySizeInGbs;
+
+    /**
+     * @return The instance memory size in GBs for the configuration.
+     * 
+     */
+    public Optional<Output<Integer>> instanceMemorySizeInGbs() {
+        return Optional.ofNullable(this.instanceMemorySizeInGbs);
+    }
+
+    /**
+     * The instance ocpu count for the configuration.
+     * 
+     */
+    @Import(name="instanceOcpuCount")
+    private @Nullable Output<Integer> instanceOcpuCount;
+
+    /**
+     * @return The instance ocpu count for the configuration.
+     * 
+     */
+    public Optional<Output<Integer>> instanceOcpuCount() {
+        return Optional.ofNullable(this.instanceOcpuCount);
+    }
+
+    /**
+     * The compute name of the shape for the configuration.
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The compute name of the shape for the configuration.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -106,6 +137,8 @@ public final class GetDefaultConfigurationsArgs extends com.pulumi.resources.Inv
         this.dbVersion = $.dbVersion;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.instanceMemorySizeInGbs = $.instanceMemorySizeInGbs;
+        this.instanceOcpuCount = $.instanceOcpuCount;
         this.shape = $.shape;
         this.state = $.state;
     }
@@ -205,7 +238,49 @@ public final class GetDefaultConfigurationsArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param instanceMemorySizeInGbs The instance memory size in GBs for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceMemorySizeInGbs(@Nullable Output<Integer> instanceMemorySizeInGbs) {
+            $.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param instanceMemorySizeInGbs The instance memory size in GBs for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceMemorySizeInGbs(Integer instanceMemorySizeInGbs) {
+            return instanceMemorySizeInGbs(Output.of(instanceMemorySizeInGbs));
+        }
+
+        /**
+         * @param instanceOcpuCount The instance ocpu count for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceOcpuCount(@Nullable Output<Integer> instanceOcpuCount) {
+            $.instanceOcpuCount = instanceOcpuCount;
+            return this;
+        }
+
+        /**
+         * @param instanceOcpuCount The instance ocpu count for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder instanceOcpuCount(Integer instanceOcpuCount) {
+            return instanceOcpuCount(Output.of(instanceOcpuCount));
+        }
+
+        /**
+         * @param shape The compute name of the shape for the configuration.
          * 
          * @return builder
          * 
@@ -216,7 +291,7 @@ public final class GetDefaultConfigurationsArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param shape The compute name of the shape for the configuration.
          * 
          * @return builder
          * 

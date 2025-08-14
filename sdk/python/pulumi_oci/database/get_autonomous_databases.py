@@ -82,13 +82,16 @@ class GetAutonomousDatabasesResult:
     @pulumi.getter(name="autonomousContainerDatabaseId")
     def autonomous_container_database_id(self) -> Optional[_builtins.str]:
         """
-        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         """
         return pulumi.get(self, "autonomous_container_database_id")
 
     @_builtins.property
     @pulumi.getter(name="autonomousDatabases")
     def autonomous_databases(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseResult']:
+        """
+        The list of autonomous_databases.
+        """
         return pulumi.get(self, "autonomous_databases")
 
     @_builtins.property
@@ -275,6 +278,7 @@ def get_autonomous_databases(autonomous_container_database_id: Optional[_builtin
     :param _builtins.bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
     :param _builtins.bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
     :param _builtins.bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+    :param _builtins.str lifecycle_state_not_equal_to: A filter to return only resources that not match the given lifecycle state.
     :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """
@@ -365,6 +369,7 @@ def get_autonomous_databases_output(autonomous_container_database_id: Optional[p
     :param _builtins.bool is_free_tier: Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
     :param _builtins.bool is_refreshable_clone: Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
     :param _builtins.bool is_resource_pool_leader: Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+    :param _builtins.str lifecycle_state_not_equal_to: A filter to return only resources that not match the given lifecycle state.
     :param _builtins.str resource_pool_leader_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resourcepool Leader Autonomous Database.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
     """

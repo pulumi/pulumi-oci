@@ -106,14 +106,17 @@ export class UsagePlan extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly locks!: pulumi.Output<outputs.ApiGateway.UsagePlanLock[]>;
     /**
      * The current state of the usage plan.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -141,8 +144,11 @@ export class UsagePlan extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["entitlements"] = state ? state.entitlements : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
@@ -158,8 +164,11 @@ export class UsagePlan extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["entitlements"] = args ? args.entitlements : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -196,14 +205,17 @@ export interface UsagePlanState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.UsagePlanLock>[]>;
     /**
      * The current state of the usage plan.
      */
     state?: pulumi.Input<string>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -242,4 +254,6 @@ export interface UsagePlanArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.UsagePlanLock>[]>;
 }

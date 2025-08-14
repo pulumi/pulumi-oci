@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilter {
     /**
-     * @return Type of replication filter that has been configured for the replication channel.
+     * @return The type of replication filter that has been configured for the replication channel.
      * 
      */
     private String filterName;
@@ -23,7 +23,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
 
     private GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilter() {}
     /**
-     * @return Type of replication filter that has been configured for the replication channel.
+     * @return The type of replication filter that has been configured for the replication channel.
      * 
      */
     public String filterName() {

@@ -6,10 +6,16 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail {
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    private String cpuBaseline;
     /**
      * @return The total amount of memory available to the notebook session instance, in gigabytes.
      * 
@@ -22,6 +28,13 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetailNotebookS
     private Double ocpus;
 
     private GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail() {}
+    /**
+     * @return The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * 
+     */
+    public String cpuBaseline() {
+        return this.cpuBaseline;
+    }
     /**
      * @return The total amount of memory available to the notebook session instance, in gigabytes.
      * 
@@ -46,15 +59,25 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetailNotebookS
     }
     @CustomType.Builder
     public static final class Builder {
+        private String cpuBaseline;
         private Double memoryInGbs;
         private Double ocpus;
         public Builder() {}
         public Builder(GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.cpuBaseline = defaults.cpuBaseline;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.ocpus = defaults.ocpus;
         }
 
+        @CustomType.Setter
+        public Builder cpuBaseline(String cpuBaseline) {
+            if (cpuBaseline == null) {
+              throw new MissingRequiredPropertyException("GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail", "cpuBaseline");
+            }
+            this.cpuBaseline = cpuBaseline;
+            return this;
+        }
         @CustomType.Setter
         public Builder memoryInGbs(Double memoryInGbs) {
             if (memoryInGbs == null) {
@@ -73,6 +96,7 @@ public final class GetNotebookSessionNotebookSessionConfigurationDetailNotebookS
         }
         public GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail build() {
             final var _resultValue = new GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetail();
+            _resultValue.cpuBaseline = cpuBaseline;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.ocpus = ocpus;
             return _resultValue;

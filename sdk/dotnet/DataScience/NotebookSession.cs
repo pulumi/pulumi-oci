@@ -43,6 +43,7 @@ namespace Pulumi.Oci.DataScience
     ///             BlockStorageSizeInGbs = notebookSessionNotebookSessionConfigDetailsBlockStorageSizeInGbs,
     ///             NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs
     ///             {
+    ///                 CpuBaseline = notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
     ///                 MemoryInGbs = notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = notebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOcpus,
     ///             },
@@ -56,6 +57,7 @@ namespace Pulumi.Oci.DataScience
     ///             BlockStorageSizeInGbs = notebookSessionNotebookSessionConfigurationDetailsBlockStorageSizeInGbs,
     ///             NotebookSessionShapeConfigDetails = new Oci.DataScience.Inputs.NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsArgs
     ///             {
+    ///                 CpuBaseline = notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsCpuBaseline,
     ///                 MemoryInGbs = notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsMemoryInGbs,
     ///                 Ocpus = notebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOcpus,
     ///             },

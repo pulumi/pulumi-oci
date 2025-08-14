@@ -28,10 +28,6 @@ public final class GetAutoScalingConfigurationPolicyRule {
      * 
      */
     private String id;
-    /**
-     * @return Metric and threshold details for triggering an autoscaling action.
-     * 
-     */
     private List<GetAutoScalingConfigurationPolicyRuleMetric> metrics;
 
     private GetAutoScalingConfigurationPolicyRule() {}
@@ -56,10 +52,6 @@ public final class GetAutoScalingConfigurationPolicyRule {
     public String id() {
         return this.id;
     }
-    /**
-     * @return Metric and threshold details for triggering an autoscaling action.
-     * 
-     */
     public List<GetAutoScalingConfigurationPolicyRuleMetric> metrics() {
         return this.metrics;
     }

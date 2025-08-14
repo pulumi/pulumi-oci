@@ -267,6 +267,12 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isCustomerDeployed() {
         return this.isCustomerDeployed;
     }
+    @Export(name="latestSupportedVersion", refs={String.class}, tree="[0]")
+    private Output<String> latestSupportedVersion;
+
+    public Output<String> latestSupportedVersion() {
+        return this.latestSupportedVersion;
+    }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -392,6 +398,20 @@ public class ManagementAgent extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string

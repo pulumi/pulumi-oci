@@ -128,6 +128,9 @@ namespace Pulumi.Oci.ManagementAgent
         [Output("isCustomerDeployed")]
         public Output<bool> IsCustomerDeployed { get; private set; } = null!;
 
+        [Output("latestSupportedVersion")]
+        public Output<string> LatestSupportedVersion { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -181,6 +184,12 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time the Management Agent was created. An RFC3339 formatted datetime string
@@ -416,6 +425,9 @@ namespace Pulumi.Oci.ManagementAgent
         [Input("isCustomerDeployed")]
         public Input<bool>? IsCustomerDeployed { get; set; }
 
+        [Input("latestSupportedVersion")]
+        public Input<string>? LatestSupportedVersion { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -481,6 +493,18 @@ namespace Pulumi.Oci.ManagementAgent
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time the Management Agent was created. An RFC3339 formatted datetime string

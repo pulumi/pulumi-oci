@@ -17,12 +17,14 @@ from . import outputs
 
 __all__ = [
     'ModelComponentModel',
+    'ModelLock',
     'ModelMetric',
     'ModelMetricDatasetSummary',
     'ModelMetricLabelMetricsReport',
     'ModelMetricLabelMetricsReportConfidenceEntry',
     'ModelMetricOverallMetricsReport',
     'ModelMetricOverallMetricsReportConfidenceEntry',
+    'ModelModelSubType',
     'ModelTestingDataset',
     'ModelTrainingDataset',
     'ModelValidationDataset',
@@ -31,13 +33,18 @@ __all__ = [
     'ProcessorJobOutputLocation',
     'ProcessorJobProcessorConfig',
     'ProcessorJobProcessorConfigFeature',
+    'ProcessorJobProcessorConfigNormalizationField',
+    'ProcessorJobProcessorConfigNormalizationFieldMap',
+    'ProjectLock',
     'GetModelComponentModelResult',
+    'GetModelLockResult',
     'GetModelMetricResult',
     'GetModelMetricDatasetSummaryResult',
     'GetModelMetricLabelMetricsReportResult',
     'GetModelMetricLabelMetricsReportConfidenceEntryResult',
     'GetModelMetricOverallMetricsReportResult',
     'GetModelMetricOverallMetricsReportConfidenceEntryResult',
+    'GetModelModelSubTypeResult',
     'GetModelTestingDatasetResult',
     'GetModelTrainingDatasetResult',
     'GetModelValidationDatasetResult',
@@ -45,12 +52,14 @@ __all__ = [
     'GetModelsModelCollectionResult',
     'GetModelsModelCollectionItemResult',
     'GetModelsModelCollectionItemComponentModelResult',
+    'GetModelsModelCollectionItemLockResult',
     'GetModelsModelCollectionItemMetricResult',
     'GetModelsModelCollectionItemMetricDatasetSummaryResult',
     'GetModelsModelCollectionItemMetricLabelMetricsReportResult',
     'GetModelsModelCollectionItemMetricLabelMetricsReportConfidenceEntryResult',
     'GetModelsModelCollectionItemMetricOverallMetricsReportResult',
     'GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResult',
+    'GetModelsModelCollectionItemModelSubTypeResult',
     'GetModelsModelCollectionItemTestingDatasetResult',
     'GetModelsModelCollectionItemTrainingDatasetResult',
     'GetModelsModelCollectionItemValidationDatasetResult',
@@ -59,9 +68,13 @@ __all__ = [
     'GetProcessorJobOutputLocationResult',
     'GetProcessorJobProcessorConfigResult',
     'GetProcessorJobProcessorConfigFeatureResult',
+    'GetProcessorJobProcessorConfigNormalizationFieldResult',
+    'GetProcessorJobProcessorConfigNormalizationFieldMapResult',
+    'GetProjectLockResult',
     'GetProjectsFilterResult',
     'GetProjectsProjectCollectionResult',
     'GetProjectsProjectCollectionItemResult',
+    'GetProjectsProjectCollectionItemLockResult',
 ]
 
 @pulumi.output_type
@@ -98,6 +111,93 @@ class ModelComponentModel(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class ModelLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 compartment_id: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Lock type.
+        :param _builtins.str compartment_id: (Updatable) The compartment identifier.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: When the model was created, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The compartment identifier.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the model was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -517,6 +617,68 @@ class ModelMetricOverallMetricsReportConfidenceEntry(dict):
 
 
 @pulumi.output_type
+class ModelModelSubType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelSubType":
+            suggest = "model_sub_type"
+        elif key == "modelType":
+            suggest = "model_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelModelSubType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelModelSubType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelModelSubType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_sub_type: _builtins.str,
+                 model_type: _builtins.str):
+        """
+        :param _builtins.str model_sub_type: The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+               * `RECEIPT`
+               * `INVOICE`
+               * `PASSPORT`
+               * `DRIVER_LICENSE`
+               * `HEALTH_INSURANCE_ID`
+        :param _builtins.str model_type: Sub type model based on the model type. The allowed values are:
+               * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+               * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+        """
+        pulumi.set(__self__, "model_sub_type", model_sub_type)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> _builtins.str:
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        return pulumi.get(self, "model_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        Sub type model based on the model type. The allowed values are:
+        * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+        * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
 class ModelTestingDataset(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -788,6 +950,8 @@ class ProcessorJobInputLocation(dict):
             suggest = "source_type"
         elif key == "objectLocations":
             suggest = "object_locations"
+        elif key == "pageRanges":
+            suggest = "page_ranges"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ProcessorJobInputLocation. Access the value via the '{suggest}' property getter instead.")
@@ -803,19 +967,23 @@ class ProcessorJobInputLocation(dict):
     def __init__(__self__, *,
                  source_type: _builtins.str,
                  data: Optional[_builtins.str] = None,
-                 object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None):
+                 object_locations: Optional[Sequence['outputs.ProcessorJobInputLocationObjectLocation']] = None,
+                 page_ranges: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str source_type: The type of input location. The allowed values are:
                * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
                * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         :param _builtins.str data: Raw document data with Base64 encoding.
         :param Sequence['ProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
+        :param Sequence[_builtins.str] page_ranges: The page ranges to be analysed.
         """
         pulumi.set(__self__, "source_type", source_type)
         if data is not None:
             pulumi.set(__self__, "data", data)
         if object_locations is not None:
             pulumi.set(__self__, "object_locations", object_locations)
+        if page_ranges is not None:
+            pulumi.set(__self__, "page_ranges", page_ranges)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
@@ -843,17 +1011,44 @@ class ProcessorJobInputLocation(dict):
         """
         return pulumi.get(self, "object_locations")
 
+    @_builtins.property
+    @pulumi.getter(name="pageRanges")
+    def page_ranges(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The page ranges to be analysed.
+        """
+        return pulumi.get(self, "page_ranges")
+
 
 @pulumi.output_type
 class ProcessorJobInputLocationObjectLocation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "pageRanges":
+            suggest = "page_ranges"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessorJobInputLocationObjectLocation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessorJobInputLocationObjectLocation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessorJobInputLocationObjectLocation.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  bucket: Optional[_builtins.str] = None,
                  namespace: Optional[_builtins.str] = None,
-                 object: Optional[_builtins.str] = None):
+                 object: Optional[_builtins.str] = None,
+                 page_ranges: Optional[Sequence[_builtins.str]] = None):
         """
         :param _builtins.str bucket: The Object Storage bucket name.
         :param _builtins.str namespace: The Object Storage namespace name.
         :param _builtins.str object: The Object Storage object name.
+        :param Sequence[_builtins.str] page_ranges: The page ranges to be analysed.
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -861,6 +1056,8 @@ class ProcessorJobInputLocationObjectLocation(dict):
             pulumi.set(__self__, "namespace", namespace)
         if object is not None:
             pulumi.set(__self__, "object", object)
+        if page_ranges is not None:
+            pulumi.set(__self__, "page_ranges", page_ranges)
 
     @_builtins.property
     @pulumi.getter
@@ -885,6 +1082,14 @@ class ProcessorJobInputLocationObjectLocation(dict):
         The Object Storage object name.
         """
         return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="pageRanges")
+    def page_ranges(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The page ranges to be analysed.
+        """
+        return pulumi.get(self, "page_ranges")
 
 
 @pulumi.output_type
@@ -938,6 +1143,10 @@ class ProcessorJobProcessorConfig(dict):
             suggest = "document_type"
         elif key == "isZipOutputEnabled":
             suggest = "is_zip_output_enabled"
+        elif key == "modelId":
+            suggest = "model_id"
+        elif key == "normalizationFields":
+            suggest = "normalization_fields"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ProcessorJobProcessorConfig. Access the value via the '{suggest}' property getter instead.")
@@ -955,7 +1164,9 @@ class ProcessorJobProcessorConfig(dict):
                  processor_type: _builtins.str,
                  document_type: Optional[_builtins.str] = None,
                  is_zip_output_enabled: Optional[_builtins.bool] = None,
-                 language: Optional[_builtins.str] = None):
+                 language: Optional[_builtins.str] = None,
+                 model_id: Optional[_builtins.str] = None,
+                 normalization_fields: Optional[Sequence['outputs.ProcessorJobProcessorConfigNormalizationField']] = None):
         """
         :param Sequence['ProcessorJobProcessorConfigFeatureArgs'] features: The types of document analysis requested.
         :param _builtins.str processor_type: The type of the processor.
@@ -966,6 +1177,8 @@ class ProcessorJobProcessorConfig(dict):
         :param _builtins.str document_type: The document type.
         :param _builtins.bool is_zip_output_enabled: Whether or not to generate a ZIP file containing the results.
         :param _builtins.str language: The document language, abbreviated according to the BCP 47 Language-Tag syntax.
+        :param _builtins.str model_id: Unique identifier custom model OCID that should be used for inference.
+        :param Sequence['ProcessorJobProcessorConfigNormalizationFieldArgs'] normalization_fields: A string-to-object map where the key is the normalization field and the object contains information about the field.
         """
         pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "processor_type", processor_type)
@@ -975,6 +1188,10 @@ class ProcessorJobProcessorConfig(dict):
             pulumi.set(__self__, "is_zip_output_enabled", is_zip_output_enabled)
         if language is not None:
             pulumi.set(__self__, "language", language)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if normalization_fields is not None:
+            pulumi.set(__self__, "normalization_fields", normalization_fields)
 
     @_builtins.property
     @pulumi.getter
@@ -1020,6 +1237,22 @@ class ProcessorJobProcessorConfig(dict):
         """
         return pulumi.get(self, "language")
 
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        Unique identifier custom model OCID that should be used for inference.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="normalizationFields")
+    def normalization_fields(self) -> Optional[Sequence['outputs.ProcessorJobProcessorConfigNormalizationField']]:
+        """
+        A string-to-object map where the key is the normalization field and the object contains information about the field.
+        """
+        return pulumi.get(self, "normalization_fields")
+
 
 @pulumi.output_type
 class ProcessorJobProcessorConfigFeature(dict):
@@ -1034,6 +1267,8 @@ class ProcessorJobProcessorConfigFeature(dict):
             suggest = "max_results"
         elif key == "modelId":
             suggest = "model_id"
+        elif key == "selectionMarkDetection":
+            suggest = "selection_mark_detection"
         elif key == "tenancyId":
             suggest = "tenancy_id"
 
@@ -1053,6 +1288,7 @@ class ProcessorJobProcessorConfigFeature(dict):
                  generate_searchable_pdf: Optional[_builtins.bool] = None,
                  max_results: Optional[_builtins.int] = None,
                  model_id: Optional[_builtins.str] = None,
+                 selection_mark_detection: Optional[_builtins.bool] = None,
                  tenancy_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str feature_type: The type of document analysis requested. The allowed values are:
@@ -1061,9 +1297,11 @@ class ProcessorJobProcessorConfigFeature(dict):
                * `TABLE_EXTRACTION`: Detect and extract data in tables.
                * `KEY_VALUE_EXTRACTION`: Extract form fields.
                * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+               * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         :param _builtins.bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param _builtins.int max_results: The maximum number of results to return.
-        :param _builtins.str model_id: The custom model ID.
+        :param _builtins.str model_id: Unique identifier custom model OCID that should be used for inference.
+        :param _builtins.bool selection_mark_detection: Whether checkbox detection feature is enabled or disabled.
         :param _builtins.str tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
         pulumi.set(__self__, "feature_type", feature_type)
@@ -1073,6 +1311,8 @@ class ProcessorJobProcessorConfigFeature(dict):
             pulumi.set(__self__, "max_results", max_results)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
+        if selection_mark_detection is not None:
+            pulumi.set(__self__, "selection_mark_detection", selection_mark_detection)
         if tenancy_id is not None:
             pulumi.set(__self__, "tenancy_id", tenancy_id)
 
@@ -1086,6 +1326,7 @@ class ProcessorJobProcessorConfigFeature(dict):
         * `TABLE_EXTRACTION`: Detect and extract data in tables.
         * `KEY_VALUE_EXTRACTION`: Extract form fields.
         * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         """
         return pulumi.get(self, "feature_type")
 
@@ -1109,9 +1350,17 @@ class ProcessorJobProcessorConfigFeature(dict):
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[_builtins.str]:
         """
-        The custom model ID.
+        Unique identifier custom model OCID that should be used for inference.
         """
         return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="selectionMarkDetection")
+    def selection_mark_detection(self) -> Optional[_builtins.bool]:
+        """
+        Whether checkbox detection feature is enabled or disabled.
+        """
+        return pulumi.get(self, "selection_mark_detection")
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
@@ -1120,6 +1369,148 @@ class ProcessorJobProcessorConfigFeature(dict):
         The custom model tenancy ID when modelId represents aliasName.
         """
         return pulumi.get(self, "tenancy_id")
+
+
+@pulumi.output_type
+class ProcessorJobProcessorConfigNormalizationField(dict):
+    def __init__(__self__, *,
+                 maps: Optional[Sequence['outputs.ProcessorJobProcessorConfigNormalizationFieldMap']] = None):
+        """
+        :param Sequence['ProcessorJobProcessorConfigNormalizationFieldMapArgs'] maps: A wrapped map.
+        """
+        if maps is not None:
+            pulumi.set(__self__, "maps", maps)
+
+    @_builtins.property
+    @pulumi.getter
+    def maps(self) -> Optional[Sequence['outputs.ProcessorJobProcessorConfigNormalizationFieldMap']]:
+        """
+        A wrapped map.
+        """
+        return pulumi.get(self, "maps")
+
+
+@pulumi.output_type
+class ProcessorJobProcessorConfigNormalizationFieldMap(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "normalizationType":
+            suggest = "normalization_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProcessorJobProcessorConfigNormalizationFieldMap. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProcessorJobProcessorConfigNormalizationFieldMap.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProcessorJobProcessorConfigNormalizationFieldMap.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 normalization_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str normalization_type: A string mapping to the normalization type.
+        """
+        if normalization_type is not None:
+            pulumi.set(__self__, "normalization_type", normalization_type)
+
+    @_builtins.property
+    @pulumi.getter(name="normalizationType")
+    def normalization_type(self) -> Optional[_builtins.str]:
+        """
+        A string mapping to the normalization type.
+        """
+        return pulumi.get(self, "normalization_type")
+
+
+@pulumi.output_type
+class ProjectLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ProjectLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ProjectLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ProjectLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 compartment_id: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Lock type.
+        :param _builtins.str compartment_id: (Updatable) The compartment identifier.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: When the project was created, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The compartment identifier.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        When the project was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -1138,6 +1529,68 @@ class GetModelComponentModelResult(dict):
         A unique model identifier.
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetModelLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: When the model was created, as an RFC3339 datetime string.
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the model was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -1447,6 +1900,45 @@ class GetModelMetricOverallMetricsReportConfidenceEntryResult(dict):
 
 
 @pulumi.output_type
+class GetModelModelSubTypeResult(dict):
+    def __init__(__self__, *,
+                 model_sub_type: _builtins.str,
+                 model_type: _builtins.str):
+        """
+        :param _builtins.str model_sub_type: The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+               * `RECEIPT`
+               * `INVOICE`
+               * `PASSPORT`
+               * `DRIVER_LICENSE`
+               * `HEALTH_INSURANCE_ID`
+        :param _builtins.str model_type: The type of the Document model.
+        """
+        pulumi.set(__self__, "model_sub_type", model_sub_type)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> _builtins.str:
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        return pulumi.get(self, "model_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        The type of the Document model.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
 class GetModelTestingDatasetResult(dict):
     def __init__(__self__, *,
                  bucket: _builtins.str,
@@ -1681,13 +2173,17 @@ class GetModelsModelCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 inference_units: _builtins.int,
                  is_composed_model: _builtins.bool,
                  is_quick_mode: _builtins.bool,
                  labels: Sequence[_builtins.str],
+                 language: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetModelsModelCollectionItemLockResult'],
                  max_training_time_in_hours: _builtins.float,
                  metrics: Sequence['outputs.GetModelsModelCollectionItemMetricResult'],
                  model_id: _builtins.str,
+                 model_sub_types: Sequence['outputs.GetModelsModelCollectionItemModelSubTypeResult'],
                  model_type: _builtins.str,
                  model_version: _builtins.str,
                  project_id: _builtins.str,
@@ -1708,13 +2204,22 @@ class GetModelsModelCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param _builtins.str id: The filter to find the model with the given identifier.
+        :param _builtins.int inference_units: Number of replicas required for this model.
         :param _builtins.bool is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param _builtins.bool is_quick_mode: Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
         :param Sequence[_builtins.str] labels: The collection of labels used to train the custom model.
+        :param _builtins.str language: The document language for model training, abbreviated according to the BCP 47 syntax.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
+        :param Sequence['GetModelsModelCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.float max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param Sequence['GetModelsModelCollectionItemMetricArgs'] metrics: Trained Model Metrics.
         :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        :param Sequence['GetModelsModelCollectionItemModelSubTypeArgs'] model_sub_types: The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+               * `RECEIPT`
+               * `INVOICE`
+               * `PASSPORT`
+               * `DRIVER_LICENSE`
+               * `HEALTH_INSURANCE_ID`
         :param _builtins.str model_type: The type of the Document model.
         :param _builtins.str model_version: The version of the model.
         :param _builtins.str project_id: The ID of the project for which to list the objects.
@@ -1735,13 +2240,17 @@ class GetModelsModelCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "inference_units", inference_units)
         pulumi.set(__self__, "is_composed_model", is_composed_model)
         pulumi.set(__self__, "is_quick_mode", is_quick_mode)
         pulumi.set(__self__, "labels", labels)
+        pulumi.set(__self__, "language", language)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
         pulumi.set(__self__, "metrics", metrics)
         pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "model_sub_types", model_sub_types)
         pulumi.set(__self__, "model_type", model_type)
         pulumi.set(__self__, "model_version", model_version)
         pulumi.set(__self__, "project_id", project_id)
@@ -1812,6 +2321,14 @@ class GetModelsModelCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="inferenceUnits")
+    def inference_units(self) -> _builtins.int:
+        """
+        Number of replicas required for this model.
+        """
+        return pulumi.get(self, "inference_units")
+
+    @_builtins.property
     @pulumi.getter(name="isComposedModel")
     def is_composed_model(self) -> _builtins.bool:
         """
@@ -1836,12 +2353,28 @@ class GetModelsModelCollectionItemResult(dict):
         return pulumi.get(self, "labels")
 
     @_builtins.property
+    @pulumi.getter
+    def language(self) -> _builtins.str:
+        """
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+        """
+        return pulumi.get(self, "language")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetModelsModelCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
@@ -1866,6 +2399,19 @@ class GetModelsModelCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         """
         return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubTypes")
+    def model_sub_types(self) -> Sequence['outputs.GetModelsModelCollectionItemModelSubTypeResult']:
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        return pulumi.get(self, "model_sub_types")
 
     @_builtins.property
     @pulumi.getter(name="modelType")
@@ -1980,6 +2526,68 @@ class GetModelsModelCollectionItemComponentModelResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         """
         return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetModelsModelCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: When the model was created, as an RFC3339 datetime string.
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the model was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2289,6 +2897,45 @@ class GetModelsModelCollectionItemMetricOverallMetricsReportConfidenceEntryResul
 
 
 @pulumi.output_type
+class GetModelsModelCollectionItemModelSubTypeResult(dict):
+    def __init__(__self__, *,
+                 model_sub_type: _builtins.str,
+                 model_type: _builtins.str):
+        """
+        :param _builtins.str model_sub_type: The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+               * `RECEIPT`
+               * `INVOICE`
+               * `PASSPORT`
+               * `DRIVER_LICENSE`
+               * `HEALTH_INSURANCE_ID`
+        :param _builtins.str model_type: The type of the Document model.
+        """
+        pulumi.set(__self__, "model_sub_type", model_sub_type)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> _builtins.str:
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        return pulumi.get(self, "model_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> _builtins.str:
+        """
+        The type of the Document model.
+        """
+        return pulumi.get(self, "model_type")
+
+
+@pulumi.output_type
 class GetModelsModelCollectionItemTestingDatasetResult(dict):
     def __init__(__self__, *,
                  bucket: _builtins.str,
@@ -2479,16 +3126,19 @@ class GetProcessorJobInputLocationResult(dict):
     def __init__(__self__, *,
                  data: _builtins.str,
                  object_locations: Sequence['outputs.GetProcessorJobInputLocationObjectLocationResult'],
+                 page_ranges: Sequence[_builtins.str],
                  source_type: _builtins.str):
         """
         :param _builtins.str data: Raw document data with Base64 encoding.
         :param Sequence['GetProcessorJobInputLocationObjectLocationArgs'] object_locations: The list of ObjectLocations.
+        :param Sequence[_builtins.str] page_ranges: The page ranges to be analysed.
         :param _builtins.str source_type: The type of input location. The allowed values are:
                * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
                * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         """
         pulumi.set(__self__, "data", data)
         pulumi.set(__self__, "object_locations", object_locations)
+        pulumi.set(__self__, "page_ranges", page_ranges)
         pulumi.set(__self__, "source_type", source_type)
 
     @_builtins.property
@@ -2508,6 +3158,14 @@ class GetProcessorJobInputLocationResult(dict):
         return pulumi.get(self, "object_locations")
 
     @_builtins.property
+    @pulumi.getter(name="pageRanges")
+    def page_ranges(self) -> Sequence[_builtins.str]:
+        """
+        The page ranges to be analysed.
+        """
+        return pulumi.get(self, "page_ranges")
+
+    @_builtins.property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> _builtins.str:
         """
@@ -2523,15 +3181,18 @@ class GetProcessorJobInputLocationObjectLocationResult(dict):
     def __init__(__self__, *,
                  bucket: _builtins.str,
                  namespace: _builtins.str,
-                 object: _builtins.str):
+                 object: _builtins.str,
+                 page_ranges: Sequence[_builtins.str]):
         """
         :param _builtins.str bucket: The Object Storage bucket name.
         :param _builtins.str namespace: The Object Storage namespace.
         :param _builtins.str object: The Object Storage object name.
+        :param Sequence[_builtins.str] page_ranges: The page ranges to be analysed.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "page_ranges", page_ranges)
 
     @_builtins.property
     @pulumi.getter
@@ -2556,6 +3217,14 @@ class GetProcessorJobInputLocationObjectLocationResult(dict):
         The Object Storage object name.
         """
         return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="pageRanges")
+    def page_ranges(self) -> Sequence[_builtins.str]:
+        """
+        The page ranges to be analysed.
+        """
+        return pulumi.get(self, "page_ranges")
 
 
 @pulumi.output_type
@@ -2605,18 +3274,24 @@ class GetProcessorJobProcessorConfigResult(dict):
                  features: Sequence['outputs.GetProcessorJobProcessorConfigFeatureResult'],
                  is_zip_output_enabled: _builtins.bool,
                  language: _builtins.str,
+                 model_id: _builtins.str,
+                 normalization_fields: Sequence['outputs.GetProcessorJobProcessorConfigNormalizationFieldResult'],
                  processor_type: _builtins.str):
         """
         :param _builtins.str document_type: The document type.
         :param Sequence['GetProcessorJobProcessorConfigFeatureArgs'] features: The types of document analysis requested.
         :param _builtins.bool is_zip_output_enabled: Whether or not to generate a ZIP file containing the results.
         :param _builtins.str language: The document language, abbreviated according to the BCP 47 Language-Tag syntax.
+        :param _builtins.str model_id: Unique identifier custom model OCID that should be used for inference.
+        :param Sequence['GetProcessorJobProcessorConfigNormalizationFieldArgs'] normalization_fields: A string-to-object map where the key is the normalization field and the object contains information about the field.
         :param _builtins.str processor_type: The type of the processor.
         """
         pulumi.set(__self__, "document_type", document_type)
         pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "is_zip_output_enabled", is_zip_output_enabled)
         pulumi.set(__self__, "language", language)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "normalization_fields", normalization_fields)
         pulumi.set(__self__, "processor_type", processor_type)
 
     @_builtins.property
@@ -2652,6 +3327,22 @@ class GetProcessorJobProcessorConfigResult(dict):
         return pulumi.get(self, "language")
 
     @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        Unique identifier custom model OCID that should be used for inference.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="normalizationFields")
+    def normalization_fields(self) -> Sequence['outputs.GetProcessorJobProcessorConfigNormalizationFieldResult']:
+        """
+        A string-to-object map where the key is the normalization field and the object contains information about the field.
+        """
+        return pulumi.get(self, "normalization_fields")
+
+    @_builtins.property
     @pulumi.getter(name="processorType")
     def processor_type(self) -> _builtins.str:
         """
@@ -2667,6 +3358,7 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
                  generate_searchable_pdf: _builtins.bool,
                  max_results: _builtins.int,
                  model_id: _builtins.str,
+                 selection_mark_detection: _builtins.bool,
                  tenancy_id: _builtins.str):
         """
         :param _builtins.str feature_type: The type of document analysis requested. The allowed values are:
@@ -2675,15 +3367,18 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
                * `TABLE_EXTRACTION`: Detect and extract data in tables.
                * `KEY_VALUE_EXTRACTION`: Extract form fields.
                * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+               * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         :param _builtins.bool generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param _builtins.int max_results: The maximum number of results to return.
-        :param _builtins.str model_id: The custom model ID.
+        :param _builtins.str model_id: Unique identifier custom model OCID that should be used for inference.
+        :param _builtins.bool selection_mark_detection: Whether checkbox detection feature is enabled or disabled.
         :param _builtins.str tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
         pulumi.set(__self__, "feature_type", feature_type)
         pulumi.set(__self__, "generate_searchable_pdf", generate_searchable_pdf)
         pulumi.set(__self__, "max_results", max_results)
         pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "selection_mark_detection", selection_mark_detection)
         pulumi.set(__self__, "tenancy_id", tenancy_id)
 
     @_builtins.property
@@ -2696,6 +3391,7 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
         * `TABLE_EXTRACTION`: Detect and extract data in tables.
         * `KEY_VALUE_EXTRACTION`: Extract form fields.
         * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         """
         return pulumi.get(self, "feature_type")
 
@@ -2719,9 +3415,17 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The custom model ID.
+        Unique identifier custom model OCID that should be used for inference.
         """
         return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="selectionMarkDetection")
+    def selection_mark_detection(self) -> _builtins.bool:
+        """
+        Whether checkbox detection feature is enabled or disabled.
+        """
+        return pulumi.get(self, "selection_mark_detection")
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
@@ -2730,6 +3434,104 @@ class GetProcessorJobProcessorConfigFeatureResult(dict):
         The custom model tenancy ID when modelId represents aliasName.
         """
         return pulumi.get(self, "tenancy_id")
+
+
+@pulumi.output_type
+class GetProcessorJobProcessorConfigNormalizationFieldResult(dict):
+    def __init__(__self__, *,
+                 maps: Sequence['outputs.GetProcessorJobProcessorConfigNormalizationFieldMapResult']):
+        """
+        :param Sequence['GetProcessorJobProcessorConfigNormalizationFieldMapArgs'] maps: A wrapped map.
+        """
+        pulumi.set(__self__, "maps", maps)
+
+    @_builtins.property
+    @pulumi.getter
+    def maps(self) -> Sequence['outputs.GetProcessorJobProcessorConfigNormalizationFieldMapResult']:
+        """
+        A wrapped map.
+        """
+        return pulumi.get(self, "maps")
+
+
+@pulumi.output_type
+class GetProcessorJobProcessorConfigNormalizationFieldMapResult(dict):
+    def __init__(__self__, *,
+                 normalization_type: _builtins.str):
+        """
+        :param _builtins.str normalization_type: A string mapping to the normalization type.
+        """
+        pulumi.set(__self__, "normalization_type", normalization_type)
+
+    @_builtins.property
+    @pulumi.getter(name="normalizationType")
+    def normalization_type(self) -> _builtins.str:
+        """
+        A string mapping to the normalization type.
+        """
+        return pulumi.get(self, "normalization_type")
+
+
+@pulumi.output_type
+class GetProjectLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: When the project was created, as an RFC3339 datetime string.
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the project was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2781,6 +3583,7 @@ class GetProjectsProjectCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetProjectsProjectCollectionItemLockResult'],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
@@ -2793,6 +3596,7 @@ class GetProjectsProjectCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param _builtins.str id: The filter to find the project with the given identifier.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param Sequence['GetProjectsProjectCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str state: The filter to match projects with the given lifecycleState.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param _builtins.str time_created: When the project was created, as an RFC3339 datetime string.
@@ -2805,6 +3609,7 @@ class GetProjectsProjectCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -2868,6 +3673,14 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetProjectsProjectCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def state(self) -> _builtins.str:
         """
         The filter to match projects with the given lifecycleState.
@@ -2897,5 +3710,67 @@ class GetProjectsProjectCollectionItemResult(dict):
         When the project was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetProjectsProjectCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: When the project was created, as an RFC3339 datetime string.
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the project was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 

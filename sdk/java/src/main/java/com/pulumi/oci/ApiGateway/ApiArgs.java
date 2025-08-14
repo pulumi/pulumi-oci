@@ -6,7 +6,10 @@ package com.pulumi.oci.ApiGateway;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApiGateway.inputs.ApiLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -98,6 +101,20 @@ public final class ApiArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<ApiLockArgs>> locks;
+
+    public Optional<Output<List<ApiLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     private ApiArgs() {}
 
     private ApiArgs(ApiArgs $) {
@@ -106,6 +123,8 @@ public final class ApiArgs extends com.pulumi.resources.ResourceArgs {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
     }
 
     public static Builder builder() {
@@ -235,6 +254,28 @@ public final class ApiArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        public Builder locks(@Nullable Output<List<ApiLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<ApiLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(ApiLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         public ApiArgs build() {

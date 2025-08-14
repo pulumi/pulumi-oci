@@ -26,7 +26,9 @@ import * as utilities from "../utilities";
  *             bucket: processorJobInputLocationObjectLocationsBucket,
  *             namespace: processorJobInputLocationObjectLocationsNamespace,
  *             object: processorJobInputLocationObjectLocationsObject,
+ *             pageRanges: processorJobInputLocationObjectLocationsPageRange,
  *         }],
+ *         pageRanges: processorJobInputLocationPageRange,
  *     },
  *     outputLocation: {
  *         bucket: processorJobOutputLocationBucket,
@@ -34,17 +36,24 @@ import * as utilities from "../utilities";
  *         prefix: processorJobOutputLocationPrefix,
  *     },
  *     processorConfig: {
+ *         processorType: processorJobProcessorConfigProcessorType,
+ *         documentType: processorJobProcessorConfigDocumentType,
  *         features: [{
  *             featureType: processorJobProcessorConfigFeaturesFeatureType,
  *             generateSearchablePdf: processorJobProcessorConfigFeaturesGenerateSearchablePdf,
  *             maxResults: processorJobProcessorConfigFeaturesMaxResults,
  *             modelId: testModel.id,
+ *             selectionMarkDetection: processorJobProcessorConfigFeaturesSelectionMarkDetection,
  *             tenancyId: testTenancy.id,
  *         }],
- *         processorType: processorJobProcessorConfigProcessorType,
- *         documentType: processorJobProcessorConfigDocumentType,
  *         isZipOutputEnabled: processorJobProcessorConfigIsZipOutputEnabled,
  *         language: processorJobProcessorConfigLanguage,
+ *         modelId: testModel.id,
+ *         normalizationFields: [{
+ *             maps: [{
+ *                 normalizationType: processorJobProcessorConfigNormalizationFieldsMapNormalizationType,
+ *             }],
+ *         }],
  *     },
  *     displayName: processorJobDisplayName,
  * });

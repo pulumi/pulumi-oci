@@ -73,13 +73,16 @@ type LookupCertificateResult struct {
 	Id string `pulumi:"id"`
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates string `pulumi:"intermediateCertificates"`
+	IsLockOverride           bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	PrivateKey       string `pulumi:"privateKey"`
+	LifecycleDetails string               `pulumi:"lifecycleDetails"`
+	Locks            []GetCertificateLock `pulumi:"locks"`
+	PrivateKey       string               `pulumi:"privateKey"`
 	// The current state of the certificate.
 	State string `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
-	SubjectNames []string `pulumi:"subjectNames"`
+	SubjectNames []string          `pulumi:"subjectNames"`
+	SystemTags   map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
@@ -161,9 +164,17 @@ func (o LookupCertificateResultOutput) IntermediateCertificates() pulumi.StringO
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.IntermediateCertificates }).(pulumi.StringOutput)
 }
 
+func (o LookupCertificateResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCertificateResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o LookupCertificateResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupCertificateResultOutput) Locks() GetCertificateLockArrayOutput {
+	return o.ApplyT(func(v LookupCertificateResult) []GetCertificateLock { return v.Locks }).(GetCertificateLockArrayOutput)
 }
 
 func (o LookupCertificateResultOutput) PrivateKey() pulumi.StringOutput {
@@ -178,6 +189,10 @@ func (o LookupCertificateResultOutput) State() pulumi.StringOutput {
 // The entity to be secured by the certificate and additional host names.
 func (o LookupCertificateResultOutput) SubjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []string { return v.SubjectNames }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupCertificateResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

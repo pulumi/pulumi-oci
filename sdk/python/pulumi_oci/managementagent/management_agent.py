@@ -119,6 +119,7 @@ class _ManagementAgentState:
                  install_type: Optional[pulumi.Input[_builtins.str]] = None,
                  is_agent_auto_upgradable: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_customer_deployed: Optional[pulumi.Input[_builtins.bool]] = None,
+                 latest_supported_version: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
                  management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentManagementAgentPropertyArgs']]]] = None,
@@ -128,6 +129,7 @@ class _ManagementAgentState:
                  plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]]] = None,
                  resource_artifact_version: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_heartbeat: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -156,6 +158,7 @@ class _ManagementAgentState:
         :param pulumi.Input[Sequence[pulumi.Input['ManagementAgentPluginListArgs']]] plugin_lists: list of managementAgentPlugins associated with the agent
         :param pulumi.Input[_builtins.str] resource_artifact_version: Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         :param pulumi.Input[_builtins.str] state: The current state of managementAgent
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_last_heartbeat: The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
@@ -191,6 +194,8 @@ class _ManagementAgentState:
             pulumi.set(__self__, "is_agent_auto_upgradable", is_agent_auto_upgradable)
         if is_customer_deployed is not None:
             pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
+        if latest_supported_version is not None:
+            pulumi.set(__self__, "latest_supported_version", latest_supported_version)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_agent_id is not None:
@@ -209,6 +214,8 @@ class _ManagementAgentState:
             pulumi.set(__self__, "resource_artifact_version", resource_artifact_version)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_last_heartbeat is not None:
@@ -393,6 +400,15 @@ class _ManagementAgentState:
         pulumi.set(self, "is_customer_deployed", value)
 
     @_builtins.property
+    @pulumi.getter(name="latestSupportedVersion")
+    def latest_supported_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "latest_supported_version")
+
+    @latest_supported_version.setter
+    def latest_supported_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "latest_supported_version", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -499,6 +515,18 @@ class _ManagementAgentState:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -667,6 +695,7 @@ class ManagementAgent(pulumi.CustomResource):
             __props__.__dict__["install_type"] = None
             __props__.__dict__["is_agent_auto_upgradable"] = None
             __props__.__dict__["is_customer_deployed"] = None
+            __props__.__dict__["latest_supported_version"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["management_agent_properties"] = None
             __props__.__dict__["platform_name"] = None
@@ -675,6 +704,7 @@ class ManagementAgent(pulumi.CustomResource):
             __props__.__dict__["plugin_lists"] = None
             __props__.__dict__["resource_artifact_version"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_last_heartbeat"] = None
             __props__.__dict__["time_updated"] = None
@@ -704,6 +734,7 @@ class ManagementAgent(pulumi.CustomResource):
             install_type: Optional[pulumi.Input[_builtins.str]] = None,
             is_agent_auto_upgradable: Optional[pulumi.Input[_builtins.bool]] = None,
             is_customer_deployed: Optional[pulumi.Input[_builtins.bool]] = None,
+            latest_supported_version: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             managed_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
             management_agent_properties: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict']]]]] = None,
@@ -713,6 +744,7 @@ class ManagementAgent(pulumi.CustomResource):
             plugin_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict']]]]] = None,
             resource_artifact_version: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_last_heartbeat: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -746,6 +778,7 @@ class ManagementAgent(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict']]]] plugin_lists: list of managementAgentPlugins associated with the agent
         :param pulumi.Input[_builtins.str] resource_artifact_version: Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         :param pulumi.Input[_builtins.str] state: The current state of managementAgent
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_last_heartbeat: The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         :param pulumi.Input[_builtins.str] time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
@@ -770,6 +803,7 @@ class ManagementAgent(pulumi.CustomResource):
         __props__.__dict__["install_type"] = install_type
         __props__.__dict__["is_agent_auto_upgradable"] = is_agent_auto_upgradable
         __props__.__dict__["is_customer_deployed"] = is_customer_deployed
+        __props__.__dict__["latest_supported_version"] = latest_supported_version
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["managed_agent_id"] = managed_agent_id
         __props__.__dict__["management_agent_properties"] = management_agent_properties
@@ -779,6 +813,7 @@ class ManagementAgent(pulumi.CustomResource):
         __props__.__dict__["plugin_lists"] = plugin_lists
         __props__.__dict__["resource_artifact_version"] = resource_artifact_version
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_last_heartbeat"] = time_last_heartbeat
         __props__.__dict__["time_updated"] = time_updated
@@ -900,6 +935,11 @@ class ManagementAgent(pulumi.CustomResource):
         return pulumi.get(self, "is_customer_deployed")
 
     @_builtins.property
+    @pulumi.getter(name="latestSupportedVersion")
+    def latest_supported_version(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "latest_supported_version")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
@@ -970,6 +1010,14 @@ class ManagementAgent(pulumi.CustomResource):
         The current state of managementAgent
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

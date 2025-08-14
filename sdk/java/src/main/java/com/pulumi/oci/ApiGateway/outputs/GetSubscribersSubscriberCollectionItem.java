@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetSubscribersSubscriberCollectionItemClient;
+import com.pulumi.oci.ApiGateway.outputs.GetSubscribersSubscriberCollectionItemLock;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,16 +45,19 @@ public final class GetSubscribersSubscriberCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetSubscribersSubscriberCollectionItemLock> locks;
     /**
      * @return A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
      * 
      */
     private String state;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -112,6 +117,9 @@ public final class GetSubscribersSubscriberCollectionItem {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -119,12 +127,18 @@ public final class GetSubscribersSubscriberCollectionItem {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public List<GetSubscribersSubscriberCollectionItemLock> locks() {
+        return this.locks;
+    }
     /**
      * @return A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
      * 
      */
     public String state() {
         return this.state;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -163,8 +177,11 @@ public final class GetSubscribersSubscriberCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetSubscribersSubscriberCollectionItemLock> locks;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private List<String> usagePlans;
@@ -177,8 +194,11 @@ public final class GetSubscribersSubscriberCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.usagePlans = defaults.usagePlans;
@@ -236,6 +256,14 @@ public final class GetSubscribersSubscriberCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetSubscribersSubscriberCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetSubscribersSubscriberCollectionItem", "lifecycleDetails");
@@ -244,11 +272,30 @@ public final class GetSubscribersSubscriberCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetSubscribersSubscriberCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetSubscribersSubscriberCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetSubscribersSubscriberCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetSubscribersSubscriberCollectionItem", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSubscribersSubscriberCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -286,8 +333,11 @@ public final class GetSubscribersSubscriberCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.usagePlans = usagePlans;

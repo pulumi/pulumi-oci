@@ -34,6 +34,8 @@ namespace Pulumi.Oci.Psql
         ///         ConfigurationId = testConfiguration.Id,
         ///         DbVersion = configurationDbVersion,
         ///         DisplayName = configurationDisplayName,
+        ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
+        ///         InstanceOcpuCount = configurationInstanceOcpuCount,
         ///         Shape = configurationShape,
         ///         State = configurationState,
         ///     });
@@ -67,6 +69,8 @@ namespace Pulumi.Oci.Psql
         ///         ConfigurationId = testConfiguration.Id,
         ///         DbVersion = configurationDbVersion,
         ///         DisplayName = configurationDisplayName,
+        ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
+        ///         InstanceOcpuCount = configurationInstanceOcpuCount,
         ///         Shape = configurationShape,
         ///         State = configurationState,
         ///     });
@@ -100,6 +104,8 @@ namespace Pulumi.Oci.Psql
         ///         ConfigurationId = testConfiguration.Id,
         ///         DbVersion = configurationDbVersion,
         ///         DisplayName = configurationDisplayName,
+        ///         InstanceMemorySizeInGbs = configurationInstanceMemorySizeInGbs,
+        ///         InstanceOcpuCount = configurationInstanceOcpuCount,
         ///         Shape = configurationShape,
         ///         State = configurationState,
         ///     });
@@ -153,7 +159,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The instance memory size in GBs for the configuration.
+        /// </summary>
+        [Input("instanceMemorySizeInGbs")]
+        public int? InstanceMemorySizeInGbs { get; set; }
+
+        /// <summary>
+        /// The instance ocpu count for the configuration.
+        /// </summary>
+        [Input("instanceOcpuCount")]
+        public int? InstanceOcpuCount { get; set; }
+
+        /// <summary>
+        /// The compute name of the shape for the configuration.
         /// </summary>
         [Input("shape")]
         public string? Shape { get; set; }
@@ -211,7 +229,19 @@ namespace Pulumi.Oci.Psql
         }
 
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The instance memory size in GBs for the configuration.
+        /// </summary>
+        [Input("instanceMemorySizeInGbs")]
+        public Input<int>? InstanceMemorySizeInGbs { get; set; }
+
+        /// <summary>
+        /// The instance ocpu count for the configuration.
+        /// </summary>
+        [Input("instanceOcpuCount")]
+        public Input<int>? InstanceOcpuCount { get; set; }
+
+        /// <summary>
+        /// The compute name of the shape for the configuration.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
@@ -259,9 +289,17 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// Memory size in gigabytes with 1GB increment.
         /// </summary>
-        public readonly string? Shape;
+        public readonly int? InstanceMemorySizeInGbs;
+        /// <summary>
+        /// CPU core count.
+        /// </summary>
+        public readonly int? InstanceOcpuCount;
+        /// <summary>
+        /// The name of the shape for the configuration.
+        /// </summary>
+        public readonly string Shape;
         /// <summary>
         /// The current state of the configuration.
         /// </summary>
@@ -285,7 +323,11 @@ namespace Pulumi.Oci.Psql
 
             string id,
 
-            string? shape,
+            int? instanceMemorySizeInGbs,
+
+            int? instanceOcpuCount,
+
+            string shape,
 
             string? state)
         {
@@ -297,6 +339,8 @@ namespace Pulumi.Oci.Psql
             DisplayName = displayName;
             Filters = filters;
             Id = id;
+            InstanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            InstanceOcpuCount = instanceOcpuCount;
             Shape = shape;
             State = state;
         }

@@ -103,9 +103,11 @@ type Gateway struct {
 	// The hostname for APIs deployed on the gateway.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// An array of IP addresses associated with the gateway.
-	IpAddresses GatewayIpAddressArrayOutput `pulumi:"ipAddresses"`
+	IpAddresses    GatewayIpAddressArrayOutput `pulumi:"ipAddresses"`
+	IsLockOverride pulumi.BoolOutput           `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringOutput    `pulumi:"lifecycleDetails"`
+	Locks            GatewayLockArrayOutput `pulumi:"locks"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayOutput `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
@@ -116,7 +118,8 @@ type Gateway struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId   pulumi.StringOutput    `pulumi:"subnetId"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -179,9 +182,11 @@ type gatewayState struct {
 	// The hostname for APIs deployed on the gateway.
 	Hostname *string `pulumi:"hostname"`
 	// An array of IP addresses associated with the gateway.
-	IpAddresses []GatewayIpAddress `pulumi:"ipAddresses"`
+	IpAddresses    []GatewayIpAddress `pulumi:"ipAddresses"`
+	IsLockOverride *bool              `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string       `pulumi:"lifecycleDetails"`
+	Locks            []GatewayLock `pulumi:"locks"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
@@ -192,7 +197,8 @@ type gatewayState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId *string `pulumi:"subnetId"`
+	SubnetId   *string           `pulumi:"subnetId"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -217,9 +223,11 @@ type GatewayState struct {
 	// The hostname for APIs deployed on the gateway.
 	Hostname pulumi.StringPtrInput
 	// An array of IP addresses associated with the gateway.
-	IpAddresses GatewayIpAddressArrayInput
+	IpAddresses    GatewayIpAddressArrayInput
+	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	Locks            GatewayLockArrayInput
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// (Updatable) Base Gateway response cache.
@@ -230,7 +238,8 @@ type GatewayState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SubnetId pulumi.StringPtrInput
+	SubnetId   pulumi.StringPtrInput
+	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -255,7 +264,9 @@ type gatewayArgs struct {
 	// Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
 	EndpointType string `pulumi:"endpointType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	Locks          []GatewayLock     `pulumi:"locks"`
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// (Updatable) Base Gateway response cache.
@@ -282,7 +293,9 @@ type GatewayArgs struct {
 	// Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
 	EndpointType pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	Locks          GatewayLockArrayInput
 	// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds pulumi.StringArrayInput
 	// (Updatable) Base Gateway response cache.
@@ -426,9 +439,17 @@ func (o GatewayOutput) IpAddresses() GatewayIpAddressArrayOutput {
 	return o.ApplyT(func(v *Gateway) GatewayIpAddressArrayOutput { return v.IpAddresses }).(GatewayIpAddressArrayOutput)
 }
 
+func (o GatewayOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o GatewayOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GatewayOutput) Locks() GatewayLockArrayOutput {
+	return o.ApplyT(func(v *Gateway) GatewayLockArrayOutput { return v.Locks }).(GatewayLockArrayOutput)
 }
 
 // (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -452,6 +473,10 @@ func (o GatewayOutput) State() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o GatewayOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Gateway) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o GatewayOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Gateway) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

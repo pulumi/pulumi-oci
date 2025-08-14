@@ -10,7 +10,9 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ApiGateway.SubscriberArgs;
 import com.pulumi.oci.ApiGateway.inputs.SubscriberState;
 import com.pulumi.oci.ApiGateway.outputs.SubscriberClient;
+import com.pulumi.oci.ApiGateway.outputs.SubscriberLock;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -146,6 +148,12 @@ public class Subscriber extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -160,6 +168,12 @@ public class Subscriber extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    @Export(name="locks", refs={List.class,SubscriberLock.class}, tree="[0,1]")
+    private Output<List<SubscriberLock>> locks;
+
+    public Output<List<SubscriberLock>> locks() {
+        return this.locks;
+    }
     /**
      * The current state of the subscriber.
      * 
@@ -173,6 +187,12 @@ public class Subscriber extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.

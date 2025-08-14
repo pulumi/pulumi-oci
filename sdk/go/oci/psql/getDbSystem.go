@@ -101,7 +101,7 @@ type LookupDbSystemResult struct {
 	PatchOperations []GetDbSystemPatchOperation `pulumi:"patchOperations"`
 	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// The source used to restore the database system.
+	// The source of the database system.
 	Sources []GetDbSystemSource `pulumi:"sources"`
 	// The current state of the database system.
 	State string `pulumi:"state"`
@@ -262,7 +262,7 @@ func (o LookupDbSystemResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The source used to restore the database system.
+// The source of the database system.
 func (o LookupDbSystemResultOutput) Sources() GetDbSystemSourceArrayOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) []GetDbSystemSource { return v.Sources }).(GetDbSystemSourceArrayOutput)
 }

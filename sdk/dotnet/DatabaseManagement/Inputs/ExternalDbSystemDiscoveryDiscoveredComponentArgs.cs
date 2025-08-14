@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
     public sealed class ExternalDbSystemDiscoveryDiscoveredComponentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        /// The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         /// </summary>
         [Input("adrHomeDirectory")]
         public Input<string>? AdrHomeDirectory { get; set; }
@@ -123,6 +123,18 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         /// </summary>
         [Input("dbId")]
         public Input<string>? DbId { get; set; }
+
+        [Input("dbInstances")]
+        private InputList<Inputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs>? _dbInstances;
+
+        /// <summary>
+        /// The list of database instances.
+        /// </summary>
+        public InputList<Inputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs> DbInstances
+        {
+            get => _dbInstances ?? (_dbInstances = new InputList<Inputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs>());
+            set => _dbInstances = value;
+        }
 
         /// <summary>
         /// The name of the DB node.
@@ -275,6 +287,12 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         }
 
         /// <summary>
+        /// The name of the node with the VIP.
+        /// </summary>
+        [Input("nodeName")]
+        public Input<string>? NodeName { get; set; }
+
+        /// <summary>
         /// The role of the cluster node.
         /// </summary>
         [Input("nodeRole")]
@@ -287,7 +305,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string>? OcrFileLocation { get; set; }
 
         /// <summary>
-        /// The Oracle home location of the listener.
+        /// The Oracle home location of the DB instance.
         /// </summary>
         [Input("oracleHome")]
         public Input<string>? OracleHome { get; set; }

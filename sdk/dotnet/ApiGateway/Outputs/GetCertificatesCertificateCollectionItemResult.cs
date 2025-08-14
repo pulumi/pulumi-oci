@@ -41,10 +41,12 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// The intermediate certificate data associated with the certificate in pem format.
         /// </summary>
         public readonly string IntermediateCertificates;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetCertificatesCertificateCollectionItemLockResult> Locks;
         public readonly string PrivateKey;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
@@ -54,6 +56,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// The entity to be secured by the certificate and additional host names.
         /// </summary>
         public readonly ImmutableArray<string> SubjectNames;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -83,13 +86,19 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             string intermediateCertificates,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetCertificatesCertificateCollectionItemLockResult> locks,
 
             string privateKey,
 
             string state,
 
             ImmutableArray<string> subjectNames,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -104,10 +113,13 @@ namespace Pulumi.Oci.ApiGateway.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IntermediateCertificates = intermediateCertificates;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             PrivateKey = privateKey;
             State = state;
             SubjectNames = subjectNames;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeNotValidAfter = timeNotValidAfter;
             TimeUpdated = timeUpdated;

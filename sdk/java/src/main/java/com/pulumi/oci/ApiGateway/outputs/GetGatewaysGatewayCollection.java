@@ -7,7 +7,9 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionCaBundle;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionIpAddress;
+import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionLock;
 import com.pulumi.oci.ApiGateway.outputs.GetGatewaysGatewayCollectionResponseCacheDetail;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -65,11 +67,13 @@ public final class GetGatewaysGatewayCollection {
      * 
      */
     private List<GetGatewaysGatewayCollectionIpAddress> ipAddresses;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetGatewaysGatewayCollectionLock> locks;
     /**
      * @return An array of Network Security Groups OCIDs associated with this API Gateway.
      * 
@@ -90,6 +94,7 @@ public final class GetGatewaysGatewayCollection {
      * 
      */
     private String subnetId;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -172,12 +177,18 @@ public final class GetGatewaysGatewayCollection {
     public List<GetGatewaysGatewayCollectionIpAddress> ipAddresses() {
         return this.ipAddresses;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetGatewaysGatewayCollectionLock> locks() {
+        return this.locks;
     }
     /**
      * @return An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -206,6 +217,9 @@ public final class GetGatewaysGatewayCollection {
      */
     public String subnetId() {
         return this.subnetId;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -241,11 +255,14 @@ public final class GetGatewaysGatewayCollection {
         private String hostname;
         private String id;
         private List<GetGatewaysGatewayCollectionIpAddress> ipAddresses;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetGatewaysGatewayCollectionLock> locks;
         private List<String> networkSecurityGroupIds;
         private List<GetGatewaysGatewayCollectionResponseCacheDetail> responseCacheDetails;
         private String state;
         private String subnetId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -261,11 +278,14 @@ public final class GetGatewaysGatewayCollection {
     	      this.hostname = defaults.hostname;
     	      this.id = defaults.id;
     	      this.ipAddresses = defaults.ipAddresses;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.networkSecurityGroupIds = defaults.networkSecurityGroupIds;
     	      this.responseCacheDetails = defaults.responseCacheDetails;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -357,12 +377,31 @@ public final class GetGatewaysGatewayCollection {
             return ipAddresses(List.of(ipAddresses));
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetGatewaysGatewayCollectionLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetGatewaysGatewayCollectionLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder networkSecurityGroupIds(List<String> networkSecurityGroupIds) {
@@ -403,6 +442,14 @@ public final class GetGatewaysGatewayCollection {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetGatewaysGatewayCollection", "timeCreated");
@@ -430,11 +477,14 @@ public final class GetGatewaysGatewayCollection {
             _resultValue.hostname = hostname;
             _resultValue.id = id;
             _resultValue.ipAddresses = ipAddresses;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.networkSecurityGroupIds = networkSecurityGroupIds;
             _resultValue.responseCacheDetails = responseCacheDetails;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ApmConfig.Outputs
     public sealed class GetConfigsConfigCollectionItemInUseByResult
     {
         /// <summary>
-        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
         /// </summary>
         public readonly string ConfigType;
         /// <summary>

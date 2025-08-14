@@ -10,6 +10,11 @@ export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
 utilities.lazyLoad(exports, ["getModel","getModelOutput"], () => require("./getModel"));
 
+export { GetModelTypeArgs, GetModelTypeResult, GetModelTypeOutputArgs } from "./getModelType";
+export const getModelType: typeof import("./getModelType").getModelType = null as any;
+export const getModelTypeOutput: typeof import("./getModelType").getModelTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getModelType","getModelTypeOutput"], () => require("./getModelType"));
+
 export { GetModelsArgs, GetModelsResult, GetModelsOutputArgs } from "./getModels";
 export const getModels: typeof import("./getModels").getModels = null as any;
 export const getModelsOutput: typeof import("./getModels").getModelsOutput = null as any;

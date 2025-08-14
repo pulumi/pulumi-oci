@@ -5,6 +5,7 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs;
 import java.lang.String;
 import java.util.List;
@@ -45,6 +46,21 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
      */
     public Optional<Output<String>> dbmPrivateEndpointId() {
         return Optional.ofNullable(this.dbmPrivateEndpointId);
+    }
+
+    /**
+     * The autonomous databases that belong to the Autonomous VM Cluster
+     * 
+     */
+    @Import(name="memberAutonomousDetails")
+    private @Nullable Output<List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs>> memberAutonomousDetails;
+
+    /**
+     * @return The autonomous databases that belong to the Autonomous VM Cluster
+     * 
+     */
+    public Optional<Output<List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs>>> memberAutonomousDetails() {
+        return Optional.ofNullable(this.memberAutonomousDetails);
     }
 
     /**
@@ -112,6 +128,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
     private ExadataInsightMemberVmClusterDetailArgs(ExadataInsightMemberVmClusterDetailArgs $) {
         this.compartmentId = $.compartmentId;
         this.dbmPrivateEndpointId = $.dbmPrivateEndpointId;
+        this.memberAutonomousDetails = $.memberAutonomousDetails;
         this.memberDatabaseDetails = $.memberDatabaseDetails;
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
         this.vmClusterType = $.vmClusterType;
@@ -176,6 +193,37 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
          */
         public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
             return dbmPrivateEndpointId(Output.of(dbmPrivateEndpointId));
+        }
+
+        /**
+         * @param memberAutonomousDetails The autonomous databases that belong to the Autonomous VM Cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memberAutonomousDetails(@Nullable Output<List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs>> memberAutonomousDetails) {
+            $.memberAutonomousDetails = memberAutonomousDetails;
+            return this;
+        }
+
+        /**
+         * @param memberAutonomousDetails The autonomous databases that belong to the Autonomous VM Cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memberAutonomousDetails(List<ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs> memberAutonomousDetails) {
+            return memberAutonomousDetails(Output.of(memberAutonomousDetails));
+        }
+
+        /**
+         * @param memberAutonomousDetails The autonomous databases that belong to the Autonomous VM Cluster
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memberAutonomousDetails(ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs... memberAutonomousDetails) {
+            return memberAutonomousDetails(List.of(memberAutonomousDetails));
         }
 
         /**

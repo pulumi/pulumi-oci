@@ -231,6 +231,13 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         return Optional.ofNullable(this.isCustomerDeployed);
     }
 
+    @Import(name="latestSupportedVersion")
+    private @Nullable Output<String> latestSupportedVersion;
+
+    public Optional<Output<String>> latestSupportedVersion() {
+        return Optional.ofNullable(this.latestSupportedVersion);
+    }
+
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -367,6 +374,21 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
@@ -444,6 +466,7 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         this.installType = $.installType;
         this.isAgentAutoUpgradable = $.isAgentAutoUpgradable;
         this.isCustomerDeployed = $.isCustomerDeployed;
+        this.latestSupportedVersion = $.latestSupportedVersion;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managedAgentId = $.managedAgentId;
         this.managementAgentProperties = $.managementAgentProperties;
@@ -453,6 +476,7 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
         this.pluginLists = $.pluginLists;
         this.resourceArtifactVersion = $.resourceArtifactVersion;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeLastHeartbeat = $.timeLastHeartbeat;
         this.timeUpdated = $.timeUpdated;
@@ -786,6 +810,15 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
             return isCustomerDeployed(Output.of(isCustomerDeployed));
         }
 
+        public Builder latestSupportedVersion(@Nullable Output<String> latestSupportedVersion) {
+            $.latestSupportedVersion = latestSupportedVersion;
+            return this;
+        }
+
+        public Builder latestSupportedVersion(String latestSupportedVersion) {
+            return latestSupportedVersion(Output.of(latestSupportedVersion));
+        }
+
         /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
@@ -993,6 +1026,27 @@ public final class ManagementAgentState extends com.pulumi.resources.ResourceArg
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

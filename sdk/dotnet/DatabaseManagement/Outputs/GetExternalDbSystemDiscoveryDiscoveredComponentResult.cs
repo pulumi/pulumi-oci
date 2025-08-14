@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetExternalDbSystemDiscoveryDiscoveredComponentResult
     {
         /// <summary>
-        /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        /// The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         /// </summary>
         public readonly string AdrHomeDirectory;
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstanceResult> AsmInstances;
@@ -71,6 +71,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// The Oracle Database ID.
         /// </summary>
         public readonly string DbId;
+        /// <summary>
+        /// The list of database instances.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceResult> DbInstances;
         /// <summary>
         /// The name of the DB node.
         /// </summary>
@@ -164,6 +168,10 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult> NetworkConfigurations;
         /// <summary>
+        /// The name of the node with the VIP.
+        /// </summary>
+        public readonly string NodeName;
+        /// <summary>
         /// The role of the cluster node.
         /// </summary>
         public readonly string NodeRole;
@@ -172,7 +180,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string OcrFileLocation;
         /// <summary>
-        /// The Oracle home location of the listener.
+        /// The Oracle home location of the DB instance.
         /// </summary>
         public readonly string OracleHome;
         /// <summary>
@@ -238,6 +246,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string dbId,
 
+            ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentDbInstanceResult> dbInstances,
+
             string dbNodeName,
 
             string dbPacks,
@@ -284,6 +294,8 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationResult> networkConfigurations,
 
+            string nodeName,
+
             string nodeRole,
 
             string ocrFileLocation,
@@ -320,6 +332,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             CrsBaseDirectory = crsBaseDirectory;
             DbEdition = dbEdition;
             DbId = dbId;
+            DbInstances = dbInstances;
             DbNodeName = dbNodeName;
             DbPacks = dbPacks;
             DbRole = dbRole;
@@ -343,6 +356,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
             LogDirectory = logDirectory;
             MemorySizeInGbs = memorySizeInGbs;
             NetworkConfigurations = networkConfigurations;
+            NodeName = nodeName;
             NodeRole = nodeRole;
             OcrFileLocation = ocrFileLocation;
             OracleHome = oracleHome;

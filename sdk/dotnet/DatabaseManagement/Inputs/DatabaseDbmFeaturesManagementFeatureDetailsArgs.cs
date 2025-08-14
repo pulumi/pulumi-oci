@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<bool>? IsAutoEnablePluggableDatabase { get; set; }
 
         /// <summary>
-        /// The management type for the database.
+        /// The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         /// </summary>
         [Input("managementType")]
         public Input<string>? ManagementType { get; set; }

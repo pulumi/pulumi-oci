@@ -31,14 +31,14 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * Include traces that have a minTraceStartTime equal to or greater than this value.
      * 
      */
     @Import(name="timeTraceStartedGreaterThanOrEqualTo")
     private @Nullable String timeTraceStartedGreaterThanOrEqualTo;
 
     /**
-     * @return Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * @return Include traces that have a minTraceStartTime equal to or greater than this value.
      * 
      */
     public Optional<String> timeTraceStartedGreaterThanOrEqualTo() {
@@ -46,14 +46,14 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Include traces that have a `minTraceStartTime` less than this value.
+     * Include traces that have a minTraceStartTime less than this value.
      * 
      */
     @Import(name="timeTraceStartedLessThan")
     private @Nullable String timeTraceStartedLessThan;
 
     /**
-     * @return Include traces that have a `minTraceStartTime` less than this value.
+     * @return Include traces that have a minTraceStartTime less than this value.
      * 
      */
     public Optional<String> timeTraceStartedLessThan() {
@@ -130,7 +130,7 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param timeTraceStartedGreaterThanOrEqualTo Include traces that have a `minTraceStartTime` equal to or greater than this value.
+         * @param timeTraceStartedGreaterThanOrEqualTo Include traces that have a minTraceStartTime equal to or greater than this value.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class GetTracePlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param timeTraceStartedLessThan Include traces that have a `minTraceStartTime` less than this value.
+         * @param timeTraceStartedLessThan Include traces that have a minTraceStartTime less than this value.
          * 
          * @return builder
          * 

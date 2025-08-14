@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int BandwidthMbps;
         /// <summary>
-        /// The model deployment instance configuration
+        /// The model deployment instance configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult> InstanceConfigurations;
         /// <summary>

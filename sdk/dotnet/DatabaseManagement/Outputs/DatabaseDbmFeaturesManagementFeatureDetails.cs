@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly bool? IsAutoEnablePluggableDatabase;
         /// <summary>
-        /// The management type for the database.
+        /// The management type for the database. Use "BASIC" for basic management. Use "ADVANCED" for full management.
         /// </summary>
         public readonly string? ManagementType;
 

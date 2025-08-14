@@ -15,12 +15,20 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ConfigConfigArgs',
+    'ConfigConfigArgsDict',
+    'ConfigConfigConfigMapArgs',
+    'ConfigConfigConfigMapArgsDict',
     'ConfigDimensionArgs',
     'ConfigDimensionArgsDict',
     'ConfigInUseByArgs',
     'ConfigInUseByArgsDict',
     'ConfigMetricArgs',
     'ConfigMetricArgsDict',
+    'ConfigOverridesArgs',
+    'ConfigOverridesArgsDict',
+    'ConfigOverridesOverrideListArgs',
+    'ConfigOverridesOverrideListArgsDict',
     'ConfigRuleArgs',
     'ConfigRuleArgsDict',
     'GetConfigsFilterArgs',
@@ -28,6 +36,110 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class ConfigConfigArgsDict(TypedDict):
+        config_maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgsDict']]]]
+        """
+        (Updatable) Map of an agent configuration file.
+        """
+elif False:
+    ConfigConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigConfigArgs:
+    def __init__(__self__, *,
+                 config_maps: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]] config_maps: (Updatable) Map of an agent configuration file.
+        """
+        if config_maps is not None:
+            pulumi.set(__self__, "config_maps", config_maps)
+
+    @_builtins.property
+    @pulumi.getter(name="configMaps")
+    def config_maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]:
+        """
+        (Updatable) Map of an agent configuration file.
+        """
+        return pulumi.get(self, "config_maps")
+
+    @config_maps.setter
+    def config_maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigConfigMapArgs']]]]):
+        pulumi.set(self, "config_maps", value)
+
+
+if not MYPY:
+    class ConfigConfigConfigMapArgsDict(TypedDict):
+        body: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The Base64 encoded agent configuration file.
+        """
+        content_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        """
+        file_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) An agent configuration file name.
+        """
+elif False:
+    ConfigConfigConfigMapArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigConfigConfigMapArgs:
+    def __init__(__self__, *,
+                 body: Optional[pulumi.Input[_builtins.str]] = None,
+                 content_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 file_name: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] body: The Base64 encoded agent configuration file.
+        :param pulumi.Input[_builtins.str] content_type: (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        :param pulumi.Input[_builtins.str] file_name: (Updatable) An agent configuration file name.
+        """
+        if body is not None:
+            pulumi.set(__self__, "body", body)
+        if content_type is not None:
+            pulumi.set(__self__, "content_type", content_type)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def body(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Base64 encoded agent configuration file.
+        """
+        return pulumi.get(self, "body")
+
+    @body.setter
+    def body(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "body", value)
+
+    @_builtins.property
+    @pulumi.getter(name="contentType")
+    def content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+        """
+        return pulumi.get(self, "content_type")
+
+    @content_type.setter
+    def content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "content_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) An agent configuration file name.
+        """
+        return pulumi.get(self, "file_name")
+
+    @file_name.setter
+    def file_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "file_name", value)
+
 
 if not MYPY:
     class ConfigDimensionArgsDict(TypedDict):
@@ -266,6 +378,90 @@ class ConfigMetricArgs:
 
 
 if not MYPY:
+    class ConfigOverridesArgsDict(TypedDict):
+        override_lists: NotRequired[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgsDict']]]]
+        """
+        (Updatable)
+        """
+elif False:
+    ConfigOverridesArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigOverridesArgs:
+    def __init__(__self__, *,
+                 override_lists: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]] override_lists: (Updatable)
+        """
+        if override_lists is not None:
+            pulumi.set(__self__, "override_lists", override_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideLists")
+    def override_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "override_lists")
+
+    @override_lists.setter
+    def override_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigOverridesOverrideListArgs']]]]):
+        pulumi.set(self, "override_lists", value)
+
+
+if not MYPY:
+    class ConfigOverridesOverrideListArgsDict(TypedDict):
+        agent_filter: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The string that defines the Agent Filter expression.
+        """
+        override_map: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+elif False:
+    ConfigOverridesOverrideListArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ConfigOverridesOverrideListArgs:
+    def __init__(__self__, *,
+                 agent_filter: Optional[pulumi.Input[_builtins.str]] = None,
+                 override_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] agent_filter: (Updatable) The string that defines the Agent Filter expression.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] override_map: (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        if agent_filter is not None:
+            pulumi.set(__self__, "agent_filter", agent_filter)
+        if override_map is not None:
+            pulumi.set(__self__, "override_map", override_map)
+
+    @_builtins.property
+    @pulumi.getter(name="agentFilter")
+    def agent_filter(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The string that defines the Agent Filter expression.
+        """
+        return pulumi.get(self, "agent_filter")
+
+    @agent_filter.setter
+    def agent_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "agent_filter", value)
+
+    @_builtins.property
+    @pulumi.getter(name="overrideMap")
+    def override_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+        """
+        return pulumi.get(self, "override_map")
+
+    @override_map.setter
+    def override_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "override_map", value)
+
+
+if not MYPY:
     class ConfigRuleArgsDict(TypedDict):
         display_name: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -293,11 +489,7 @@ if not MYPY:
         """
         tolerating_response_time: NotRequired[pulumi.Input[_builtins.int]]
         """
-        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
 elif False:
     ConfigRuleArgsDict: TypeAlias = Mapping[str, Any]
@@ -319,11 +511,7 @@ class ConfigRuleArgs:
         :param pulumi.Input[_builtins.bool] is_enabled: (Updatable) Specifies whether the Apdex score should be computed for spans matching the rule. This can be used to disable Apdex score for spans that do not need or require it. The default is "true".
         :param pulumi.Input[_builtins.int] priority: (Updatable) The priority controls the order in which multiple rules in a rule set are applied. Lower values indicate higher priorities. Rules with higher priority are applied first, and once a match is found, the rest of the rules are ignored. Rules within the same rule set cannot have the same priority.
         :param pulumi.Input[_builtins.int] satisfied_response_time: (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
-        :param pulumi.Input[_builtins.int] tolerating_response_time: (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.int] tolerating_response_time: (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -416,11 +604,7 @@ class ConfigRuleArgs:
     @pulumi.getter(name="toleratingResponseTime")
     def tolerating_response_time(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime". 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
         """
         return pulumi.get(self, "tolerating_response_time")
 

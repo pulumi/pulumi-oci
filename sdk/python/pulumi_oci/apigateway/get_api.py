@@ -27,7 +27,7 @@ class GetApiResult:
     """
     A collection of values returned by getApi.
     """
-    def __init__(__self__, api_id=None, compartment_id=None, content=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, specification_type=None, state=None, time_created=None, time_updated=None, validation_results=None):
+    def __init__(__self__, api_id=None, compartment_id=None, content=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, lifecycle_details=None, locks=None, specification_type=None, state=None, system_tags=None, time_created=None, time_updated=None, validation_results=None):
         if api_id and not isinstance(api_id, str):
             raise TypeError("Expected argument 'api_id' to be a str")
         pulumi.set(__self__, "api_id", api_id)
@@ -49,15 +49,24 @@ class GetApiResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if specification_type and not isinstance(specification_type, str):
             raise TypeError("Expected argument 'specification_type' to be a str")
         pulumi.set(__self__, "specification_type", specification_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -119,6 +128,11 @@ class GetApiResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -132,6 +146,11 @@ class GetApiResult:
         * 'Canceled' the document validation was canceled
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetApiLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="specificationType")
@@ -148,6 +167,11 @@ class GetApiResult:
         The current state of the API.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -187,9 +211,12 @@ class AwaitableGetApiResult(GetApiResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             specification_type=self.specification_type,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             validation_results=self.validation_results)
@@ -227,9 +254,12 @@ def get_api(api_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         specification_type=pulumi.get(__ret__, 'specification_type'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         validation_results=pulumi.get(__ret__, 'validation_results'))
@@ -264,9 +294,12 @@ def get_api_output(api_id: Optional[pulumi.Input[_builtins.str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         specification_type=pulumi.get(__response__, 'specification_type'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         validation_results=pulumi.get(__response__, 'validation_results')))

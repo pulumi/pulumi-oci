@@ -9,6 +9,10 @@ import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
 import com.pulumi.oci.Utilities;
+import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
+import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancePlainArgs;
+import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesArgs;
 import com.pulumi.oci.oci.inputs.GetApiaccesscontrolApiMetadataByEntityTypesPlainArgs;
@@ -85,6 +89,8 @@ import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainServersPlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsWlsDomainsPlainArgs;
+import com.pulumi.oci.oci.outputs.GetApiPlatformApiPlatformInstanceResult;
+import com.pulumi.oci.oci.outputs.GetApiPlatformApiPlatformInstancesResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolApiMetadataByEntityTypesResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolApiMetadataResult;
 import com.pulumi.oci.oci.outputs.GetApiaccesscontrolApiMetadatasResult;
@@ -126,6 +132,555 @@ import com.pulumi.oci.oci.outputs.GetWlmsWlsDomainsResult;
 import java.util.concurrent.CompletableFuture;
 
 public final class OciFunctions {
+    /**
+     * This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets information about an API Platform Instance
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstanceResult> getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs args) {
+        return getApiPlatformApiPlatformInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets information about an API Platform Instance
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetApiPlatformApiPlatformInstanceResult> getApiPlatformApiPlatformInstancePlain(GetApiPlatformApiPlatformInstancePlainArgs args) {
+        return getApiPlatformApiPlatformInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets information about an API Platform Instance
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstanceResult> getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getApiPlatformApiPlatformInstance:getApiPlatformApiPlatformInstance", TypeShape.of(GetApiPlatformApiPlatformInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets information about an API Platform Instance
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstanceResult> getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getApiPlatformApiPlatformInstance:getApiPlatformApiPlatformInstance", TypeShape.of(GetApiPlatformApiPlatformInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Api Platform Instance resource in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets information about an API Platform Instance
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetApiPlatformApiPlatformInstanceResult> getApiPlatformApiPlatformInstancePlain(GetApiPlatformApiPlatformInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getApiPlatformApiPlatformInstance:getApiPlatformApiPlatformInstance", TypeShape.of(GetApiPlatformApiPlatformInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstances() {
+        return getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstancesPlain() {
+        return getApiPlatformApiPlatformInstancesPlain(GetApiPlatformApiPlatformInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs args) {
+        return getApiPlatformApiPlatformInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstancesPlain(GetApiPlatformApiPlatformInstancesPlainArgs args) {
+        return getApiPlatformApiPlatformInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getApiPlatformApiPlatformInstances:getApiPlatformApiPlatformInstances", TypeShape.of(GetApiPlatformApiPlatformInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getApiPlatformApiPlatformInstances:getApiPlatformApiPlatformInstances", TypeShape.of(GetApiPlatformApiPlatformInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Api Platform Instances in Oracle Cloud Infrastructure Api Platform service.
+     * 
+     * Gets a list of API Platform Instances
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetApiPlatformApiPlatformInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testApiPlatformInstances = OciFunctions.getApiPlatformApiPlatformInstances(GetApiPlatformApiPlatformInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .id(apiPlatformInstanceId)
+     *             .name(apiPlatformInstanceName)
+     *             .state(apiPlatformInstanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetApiPlatformApiPlatformInstancesResult> getApiPlatformApiPlatformInstancesPlain(GetApiPlatformApiPlatformInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getApiPlatformApiPlatformInstances:getApiPlatformApiPlatformInstances", TypeShape.of(GetApiPlatformApiPlatformInstancesResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Api Metadata resource in Oracle Cloud Infrastructure Apiaccesscontrol service.
      * 

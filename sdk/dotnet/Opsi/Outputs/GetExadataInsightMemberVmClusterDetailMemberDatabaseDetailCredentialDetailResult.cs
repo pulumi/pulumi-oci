@@ -15,6 +15,7 @@ namespace Pulumi.Oci.Opsi.Outputs
     {
         public readonly string CredentialSourceName;
         public readonly string CredentialType;
+        public readonly string NamedCredentialId;
         public readonly string PasswordSecretId;
         public readonly string Role;
         public readonly string UserName;
@@ -26,6 +27,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string credentialType,
 
+            string namedCredentialId,
+
             string passwordSecretId,
 
             string role,
@@ -36,6 +39,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         {
             CredentialSourceName = credentialSourceName;
             CredentialType = credentialType;
+            NamedCredentialId = namedCredentialId;
             PasswordSecretId = passwordSecretId;
             Role = role;
             UserName = userName;

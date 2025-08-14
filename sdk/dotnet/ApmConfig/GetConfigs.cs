@@ -121,7 +121,7 @@ namespace Pulumi.Oci.ApmConfig
         public string ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
         /// </summary>
         [Input("configType")]
         public string? ConfigType { get; set; }
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.ApmConfig
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+        /// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
         /// </summary>
         [Input("configType")]
         public Input<string>? ConfigType { get; set; }

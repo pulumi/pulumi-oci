@@ -30,6 +30,18 @@ namespace Pulumi.Oci.AiDocument.Inputs
         [Input("object")]
         public Input<string>? Object { get; set; }
 
+        [Input("pageRanges")]
+        private InputList<string>? _pageRanges;
+
+        /// <summary>
+        /// The page ranges to be analysed.
+        /// </summary>
+        public InputList<string> PageRanges
+        {
+            get => _pageRanges ?? (_pageRanges = new InputList<string>());
+            set => _pageRanges = value;
+        }
+
         public ProcessorJobInputLocationObjectLocationArgs()
         {
         }

@@ -7,7 +7,9 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.GatewayCaBundleArgs;
+import com.pulumi.oci.ApiGateway.inputs.GatewayLockArgs;
 import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -125,6 +127,20 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<GatewayLockArgs>> locks;
+
+    public Optional<Output<List<GatewayLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
      * 
@@ -186,6 +202,8 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.endpointType = $.endpointType;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.networkSecurityGroupIds = $.networkSecurityGroupIds;
         this.responseCacheDetails = $.responseCacheDetails;
         this.subnetId = $.subnetId;
@@ -364,6 +382,28 @@ public final class GatewayArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        public Builder locks(@Nullable Output<List<GatewayLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<GatewayLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(GatewayLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

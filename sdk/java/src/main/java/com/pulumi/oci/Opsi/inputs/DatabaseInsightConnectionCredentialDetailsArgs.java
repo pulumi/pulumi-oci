@@ -17,14 +17,14 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
     public static final DatabaseInsightConnectionCredentialDetailsArgs Empty = new DatabaseInsightConnectionCredentialDetailsArgs();
 
     /**
-     * Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
      * 
      */
     @Import(name="credentialSourceName")
     private @Nullable Output<String> credentialSourceName;
 
     /**
-     * @return Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
      * 
      */
     public Optional<Output<String>> credentialSourceName() {
@@ -44,6 +44,21 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
      */
     public Output<String> credentialType() {
         return this.credentialType;
+    }
+
+    /**
+     * The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    @Import(name="namedCredentialId")
+    private @Nullable Output<String> namedCredentialId;
+
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    public Optional<Output<String>> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
     }
 
     /**
@@ -96,6 +111,7 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
     private DatabaseInsightConnectionCredentialDetailsArgs(DatabaseInsightConnectionCredentialDetailsArgs $) {
         this.credentialSourceName = $.credentialSourceName;
         this.credentialType = $.credentialType;
+        this.namedCredentialId = $.namedCredentialId;
         this.passwordSecretId = $.passwordSecretId;
         this.role = $.role;
         this.userName = $.userName;
@@ -120,7 +136,7 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
         }
 
         /**
-         * @param credentialSourceName Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+         * @param credentialSourceName Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
          * 
          * @return builder
          * 
@@ -131,7 +147,7 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
         }
 
         /**
-         * @param credentialSourceName Credential source name that had been added in Management Agent wallet. This is supplied in the External Database Service.
+         * @param credentialSourceName Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
          * 
          * @return builder
          * 
@@ -159,6 +175,27 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
          */
         public Builder credentialType(String credentialType) {
             return credentialType(Output.of(credentialType));
+        }
+
+        /**
+         * @param namedCredentialId The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(@Nullable Output<String> namedCredentialId) {
+            $.namedCredentialId = namedCredentialId;
+            return this;
+        }
+
+        /**
+         * @param namedCredentialId The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder namedCredentialId(String namedCredentialId) {
+            return namedCredentialId(Output.of(namedCredentialId));
         }
 
         /**

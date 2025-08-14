@@ -10,32 +10,9 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Database
 {
     /// <summary>
-    /// This resource creates and enables the Autonomous Database administrative user account in Oracle Cloud Infrastructure Database service.
+    /// This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testAutonomousDatabaseSaasAdminUser = new Oci.Database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", new()
-    ///     {
-    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
-    ///         Password = autonomousDatabaseSaasAdminUserPassword,
-    ///         AccessType = autonomousDatabaseSaasAdminUserAccessType,
-    ///         Duration = autonomousDatabaseSaasAdminUserDuration,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Import
-    /// 
-    /// Import is not supported for this resource.
+    /// This operation updates SaaS administrative user configuration of the Autonomous Database.
     /// </summary>
     [OciResourceType("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser")]
     public partial class AutonomousDatabaseSaasAdminUser : global::Pulumi.CustomResource
@@ -59,27 +36,30 @@ namespace Pulumi.Oci.Database
         public Output<int?> Duration { get; private set; } = null!;
 
         /// <summary>
-        /// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
+        /// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
         /// </summary>
         [Output("password")]
         public Output<string?> Password { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Output("secretId")]
         public Output<string?> SecretId { get; private set; } = null!;
 
         /// <summary>
         /// The version of the vault secret. If no version is specified, the latest version will be used.
+        /// </summary>
+        [Output("secretVersionNumber")]
+        public Output<int?> SecretVersionNumber { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("secretVersionNumber")]
-        public Output<int?> SecretVersionNumber { get; private set; } = null!;
-
         [Output("timeSaasAdminUserEnabled")]
         public Output<string> TimeSaasAdminUserEnabled { get; private set; } = null!;
 
@@ -155,7 +135,7 @@ namespace Pulumi.Oci.Database
         private Input<string>? _password;
 
         /// <summary>
-        /// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
+        /// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
         /// </summary>
         public Input<string>? Password
         {
@@ -168,21 +148,24 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }
 
         /// <summary>
         /// The version of the vault secret. If no version is specified, the latest version will be used.
+        /// </summary>
+        [Input("secretVersionNumber")]
+        public Input<int>? SecretVersionNumber { get; set; }
+
+        /// <summary>
+        /// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("secretVersionNumber")]
-        public Input<int>? SecretVersionNumber { get; set; }
-
         [Input("timeSaasAdminUserEnabled")]
         public Input<string>? TimeSaasAdminUserEnabled { get; set; }
 
@@ -216,7 +199,7 @@ namespace Pulumi.Oci.Database
         private Input<string>? _password;
 
         /// <summary>
-        /// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
+        /// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
         /// </summary>
         public Input<string>? Password
         {
@@ -229,21 +212,24 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Input("secretId")]
         public Input<string>? SecretId { get; set; }
 
         /// <summary>
         /// The version of the vault secret. If no version is specified, the latest version will be used.
+        /// </summary>
+        [Input("secretVersionNumber")]
+        public Input<int>? SecretVersionNumber { get; set; }
+
+        /// <summary>
+        /// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("secretVersionNumber")]
-        public Input<int>? SecretVersionNumber { get; set; }
-
         [Input("timeSaasAdminUserEnabled")]
         public Input<string>? TimeSaasAdminUserEnabled { get; set; }
 

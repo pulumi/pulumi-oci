@@ -38,13 +38,16 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int AutoRefreshPointLagInSeconds;
         /// <summary>
-        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
         /// </summary>
         public readonly string AutonomousContainerDatabaseId;
         /// <summary>
-        /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle* `availability_domain` - The availability domain where the Autonomous Database Serverless instance is located.
+        /// The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR maintenance schedule follows the normal cycle
         /// </summary>
         public readonly string AutonomousMaintenanceScheduleType;
+        /// <summary>
+        /// The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
         /// List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -55,9 +58,12 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult> BackupConfigs;
         /// <summary>
-        /// Retention period, in days, for backups.
+        /// Retention period, in days, for long-term backups
         /// </summary>
         public readonly int BackupRetentionPeriodInDays;
+        /// <summary>
+        /// The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+        /// </summary>
         public readonly double ByolComputeCountLimit;
         /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -212,7 +218,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsDedicated;
         /// <summary>
-        /// Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+        /// Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
         /// </summary>
         public readonly bool IsDevTier;
         /// <summary>
@@ -264,7 +270,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string KmsKeyLifecycleDetails;
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         /// </summary>
         public readonly string KmsKeyVersionId;
         /// <summary>
@@ -284,7 +290,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string LocalDisasterRecoveryType;
         /// <summary>
-        /// Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// Autonomous Data Guard standby database details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult> LocalStandbyDbs;
         /// <summary>
@@ -295,12 +301,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// The component chosen for maintenance.
         /// </summary>
         public readonly string MaintenanceTargetComponent;
-        /// <summary>
-        /// The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-        /// </summary>
         public readonly int MaxCpuCoreCount;
         /// <summary>
-        /// The amount of memory (in GBs) enabled per OCPU or ECPU. See [Compute Models in Autonomous Database on Dedicated Exadata Infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbak) for more details.
+        /// The amount of memory (in GBs) enabled per ECPU or OCPU.
         /// </summary>
         public readonly int MemoryPerOracleComputeUnitInGbs;
         /// <summary>
@@ -400,7 +403,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SourceId;
         /// <summary>
-        /// **Deprecated** Autonomous Data Guard standby database details.* `availability_domain` - The availability domain of a local Autonomous Data Guard standby database of an Autonomous Database Serverless instance.
+        /// **Deprecated** Autonomous Data Guard standby database details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseStandbyDbResult> StandbyDbs;
         /// <summary>
@@ -444,6 +447,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeDisasterRecoveryRoleChanged;
         /// <summary>
+        /// The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        /// </summary>
+        public readonly string TimeEarliestAvailableDbVersionUpgrade;
+        /// <summary>
+        /// The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        /// </summary>
+        public readonly string TimeLatestAvailableDbVersionUpgrade;
+        /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         /// </summary>
         public readonly string TimeLocalDataGuardEnabled;
@@ -459,6 +470,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// The the date and time that auto-refreshing will begin for an Autonomous Database refreshable clone. This value controls only the start time for the first refresh operation. Subsequent (ongoing) refresh operations have start times controlled by the value of the `autoRefreshFrequencyInSeconds` parameter.
         /// </summary>
         public readonly string TimeOfAutoRefreshStart;
+        /// <summary>
+        /// The time the member joined the resource pool.
+        /// </summary>
         public readonly string TimeOfJoiningResourcePool;
         /// <summary>
         /// The timestamp of the last failover operation.
@@ -485,6 +499,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeReclamationOfFreeAutonomousDatabase;
         /// <summary>
+        /// The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        /// </summary>
+        public readonly string TimeScheduledDbVersionUpgrade;
+        /// <summary>
         /// The date and time the Autonomous Database was most recently undeleted.
         /// </summary>
         public readonly string TimeUndeleted;
@@ -505,7 +523,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int UsedDataStorageSizeInTbs;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         /// </summary>
         public readonly string VaultId;
         /// <summary>
@@ -729,6 +747,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timeDisasterRecoveryRoleChanged,
 
+            string timeEarliestAvailableDbVersionUpgrade,
+
+            string timeLatestAvailableDbVersionUpgrade,
+
             string timeLocalDataGuardEnabled,
 
             string timeMaintenanceBegin,
@@ -750,6 +772,8 @@ namespace Pulumi.Oci.Database.Outputs
             string timeOfNextRefresh,
 
             string timeReclamationOfFreeAutonomousDatabase,
+
+            string timeScheduledDbVersionUpgrade,
 
             string timeUndeleted,
 
@@ -872,6 +896,8 @@ namespace Pulumi.Oci.Database.Outputs
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
             TimeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            TimeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            TimeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;
@@ -883,6 +909,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeOfLastSwitchover = timeOfLastSwitchover;
             TimeOfNextRefresh = timeOfNextRefresh;
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            TimeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             TimeUndeleted = timeUndeleted;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             TotalBackupStorageSizeInGbs = totalBackupStorageSizeInGbs;

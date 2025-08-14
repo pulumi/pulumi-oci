@@ -5,6 +5,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApiGateway.outputs.GetCertificateLock;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -48,11 +50,13 @@ public final class GetCertificateResult {
      * 
      */
     private String intermediateCertificates;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetCertificateLock> locks;
     private String privateKey;
     /**
      * @return The current state of the certificate.
@@ -64,6 +68,7 @@ public final class GetCertificateResult {
      * 
      */
     private List<String> subjectNames;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -133,12 +138,18 @@ public final class GetCertificateResult {
     public String intermediateCertificates() {
         return this.intermediateCertificates;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetCertificateLock> locks() {
+        return this.locks;
     }
     public String privateKey() {
         return this.privateKey;
@@ -156,6 +167,9 @@ public final class GetCertificateResult {
      */
     public List<String> subjectNames() {
         return this.subjectNames;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -196,10 +210,13 @@ public final class GetCertificateResult {
         private Map<String,String> freeformTags;
         private String id;
         private String intermediateCertificates;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetCertificateLock> locks;
         private String privateKey;
         private String state;
         private List<String> subjectNames;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeNotValidAfter;
         private String timeUpdated;
@@ -214,10 +231,13 @@ public final class GetCertificateResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.intermediateCertificates = defaults.intermediateCertificates;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.privateKey = defaults.privateKey;
     	      this.state = defaults.state;
     	      this.subjectNames = defaults.subjectNames;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeNotValidAfter = defaults.timeNotValidAfter;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -288,12 +308,31 @@ public final class GetCertificateResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetCertificateResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetCertificateLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetCertificateLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder privateKey(String privateKey) {
@@ -321,6 +360,14 @@ public final class GetCertificateResult {
         }
         public Builder subjectNames(String... subjectNames) {
             return subjectNames(List.of(subjectNames));
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetCertificateResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
@@ -356,10 +403,13 @@ public final class GetCertificateResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.intermediateCertificates = intermediateCertificates;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.privateKey = privateKey;
             _resultValue.state = state;
             _resultValue.subjectNames = subjectNames;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeNotValidAfter = timeNotValidAfter;
             _resultValue.timeUpdated = timeUpdated;

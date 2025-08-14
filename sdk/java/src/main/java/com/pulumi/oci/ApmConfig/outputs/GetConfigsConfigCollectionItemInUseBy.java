@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConfigsConfigCollectionItemInUseBy {
     /**
-     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      * 
      */
     private String configType;
@@ -33,7 +33,7 @@ public final class GetConfigsConfigCollectionItemInUseBy {
 
     private GetConfigsConfigCollectionItemInUseBy() {}
     /**
-     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+     * @return A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
      * 
      */
     public String configType() {

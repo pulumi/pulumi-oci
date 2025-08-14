@@ -30,9 +30,17 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// </summary>
         public readonly int CurrentKeyInstallCount;
         /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> DefinedTags;
+        /// <summary>
         /// The display name for which the Key needs to be listed.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Agent install Key identifier
         /// </summary>
@@ -53,6 +61,10 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// Filter to return only Management Agents in the particular lifecycle state.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time when Management Agent install Key was created. An RFC3339 formatted date time string
         /// </summary>
@@ -76,7 +88,11 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             int currentKeyInstallCount,
 
+            ImmutableDictionary<string, string> definedTags,
+
             string displayName,
+
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -88,6 +104,8 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string timeCreated,
 
             string timeExpires,
@@ -98,12 +116,15 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
             CompartmentId = compartmentId;
             CreatedByPrincipalId = createdByPrincipalId;
             CurrentKeyInstallCount = currentKeyInstallCount;
+            DefinedTags = definedTags;
             DisplayName = displayName;
+            FreeformTags = freeformTags;
             Id = id;
             IsUnlimited = isUnlimited;
             Key = key;
             LifecycleDetails = lifecycleDetails;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeExpires = timeExpires;
             TimeUpdated = timeUpdated;

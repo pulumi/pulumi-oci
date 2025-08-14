@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItemEntitlement;
+import com.pulumi.oci.ApiGateway.outputs.GetUsagePlansUsagePlanCollectionItemLock;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,16 +45,19 @@ public final class GetUsagePlansUsagePlanCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetUsagePlansUsagePlanCollectionItemLock> locks;
     /**
      * @return A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
      * 
      */
     private String state;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -107,6 +112,9 @@ public final class GetUsagePlansUsagePlanCollectionItem {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -114,12 +122,18 @@ public final class GetUsagePlansUsagePlanCollectionItem {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public List<GetUsagePlansUsagePlanCollectionItemLock> locks() {
+        return this.locks;
+    }
     /**
      * @return A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
      * 
      */
     public String state() {
         return this.state;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -151,8 +165,11 @@ public final class GetUsagePlansUsagePlanCollectionItem {
         private List<GetUsagePlansUsagePlanCollectionItemEntitlement> entitlements;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetUsagePlansUsagePlanCollectionItemLock> locks;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -164,8 +181,11 @@ public final class GetUsagePlansUsagePlanCollectionItem {
     	      this.entitlements = defaults.entitlements;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -222,6 +242,14 @@ public final class GetUsagePlansUsagePlanCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItem", "lifecycleDetails");
@@ -230,11 +258,30 @@ public final class GetUsagePlansUsagePlanCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetUsagePlansUsagePlanCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetUsagePlansUsagePlanCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItem", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlansUsagePlanCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -261,8 +308,11 @@ public final class GetUsagePlansUsagePlanCollectionItem {
             _resultValue.entitlements = entitlements;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

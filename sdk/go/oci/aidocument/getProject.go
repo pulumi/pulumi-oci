@@ -58,7 +58,7 @@ type LookupProjectArgs struct {
 
 // A collection of values returned by getProject.
 type LookupProjectResult struct {
-	// The compartment identifier.
+	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -72,7 +72,9 @@ type LookupProjectResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	ProjectId        string `pulumi:"projectId"`
+	// Locks associated with this resource.
+	Locks     []GetProjectLock `pulumi:"locks"`
+	ProjectId string           `pulumi:"projectId"`
 	// The current state of the project.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
@@ -117,7 +119,7 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
-// The compartment identifier.
+// The lock compartment ID.
 func (o LookupProjectResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -150,6 +152,11 @@ func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
 // A message describing the current state in more detail, that can provide actionable information if creation failed.
 func (o LookupProjectResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupProjectResultOutput) Locks() GetProjectLockArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectLock { return v.Locks }).(GetProjectLockArrayOutput)
 }
 
 func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {

@@ -17,44 +17,13 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
- * This resource creates and enables the Autonomous Database administrative user account in Oracle Cloud Infrastructure Database service.
+ * This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
+ * 
+ * This operation updates SaaS administrative user configuration of the Autonomous Database.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Database.AutonomousDatabaseSaasAdminUser;
- * import com.pulumi.oci.Database.AutonomousDatabaseSaasAdminUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", AutonomousDatabaseSaasAdminUserArgs.builder()
- *             .autonomousDatabaseId(testAutonomousDatabase.id())
- *             .password(autonomousDatabaseSaasAdminUserPassword)
- *             .accessType(autonomousDatabaseSaasAdminUserAccessType)
- *             .duration(autonomousDatabaseSaasAdminUserDuration)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -107,28 +76,28 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
         return Codegen.optional(this.duration);
     }
     /**
-     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if &#34;secret_id&#34; is not present.
+     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      * 
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
     /**
-     * @return A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if &#34;secret_id&#34; is not present.
+     * @return A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
      * 
      */
     public Output<Optional<String>> password() {
         return Codegen.optional(this.password);
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if &#34;password&#34; is not present.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     @Export(name="secretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secretId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if &#34;password&#34; is not present.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * 
      */
     public Output<Optional<String>> secretId() {
@@ -137,9 +106,6 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="secretVersionNumber", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> secretVersionNumber;
@@ -147,16 +113,27 @@ public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.Custom
     /**
      * @return The version of the vault secret. If no version is specified, the latest version will be used.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Output<Optional<Integer>> secretVersionNumber() {
         return Codegen.optional(this.secretVersionNumber);
     }
+    /**
+     * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Export(name="timeSaasAdminUserEnabled", refs={String.class}, tree="[0]")
     private Output<String> timeSaasAdminUserEnabled;
 
+    /**
+     * @return The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<String> timeSaasAdminUserEnabled() {
         return this.timeSaasAdminUserEnabled;
     }

@@ -12,40 +12,9 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource creates and enables the Autonomous Database administrative user account in Oracle Cloud Infrastructure Database service.
+// This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := database.NewAutonomousDatabaseSaasAdminUser(ctx, "test_autonomous_database_saas_admin_user", &database.AutonomousDatabaseSaasAdminUserArgs{
-//				AutonomousDatabaseId: pulumi.Any(testAutonomousDatabase.Id),
-//				Password:             pulumi.Any(autonomousDatabaseSaasAdminUserPassword),
-//				AccessType:           pulumi.Any(autonomousDatabaseSaasAdminUserAccessType),
-//				Duration:             pulumi.Any(autonomousDatabaseSaasAdminUserDuration),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
-// ## Import
-//
-// Import is not supported for this resource.
+// This operation updates SaaS administrative user configuration of the Autonomous Database.
 type AutonomousDatabaseSaasAdminUser struct {
 	pulumi.CustomResourceState
 
@@ -55,15 +24,16 @@ type AutonomousDatabaseSaasAdminUser struct {
 	AutonomousDatabaseId pulumi.StringOutput `pulumi:"autonomousDatabaseId"`
 	// How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
 	Duration pulumi.IntPtrOutput `pulumi:"duration"`
-	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secretId" is not present.
+	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
 	Password pulumi.StringPtrOutput `pulumi:"password"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	SecretId pulumi.StringPtrOutput `pulumi:"secretId"`
 	// The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber pulumi.IntPtrOutput `pulumi:"secretVersionNumber"`
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecretVersionNumber      pulumi.IntPtrOutput `pulumi:"secretVersionNumber"`
 	TimeSaasAdminUserEnabled pulumi.StringOutput `pulumi:"timeSaasAdminUserEnabled"`
 }
 
@@ -113,15 +83,16 @@ type autonomousDatabaseSaasAdminUserState struct {
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
 	// How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
 	Duration *int `pulumi:"duration"`
-	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secretId" is not present.
+	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
 	Password *string `pulumi:"password"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	SecretId *string `pulumi:"secretId"`
 	// The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecretVersionNumber      *int    `pulumi:"secretVersionNumber"`
 	TimeSaasAdminUserEnabled *string `pulumi:"timeSaasAdminUserEnabled"`
 }
 
@@ -132,15 +103,16 @@ type AutonomousDatabaseSaasAdminUserState struct {
 	AutonomousDatabaseId pulumi.StringPtrInput
 	// How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
 	Duration pulumi.IntPtrInput
-	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secretId" is not present.
+	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
 	Password pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	SecretId pulumi.StringPtrInput
 	// The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber pulumi.IntPtrInput
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecretVersionNumber      pulumi.IntPtrInput
 	TimeSaasAdminUserEnabled pulumi.StringPtrInput
 }
 
@@ -155,15 +127,16 @@ type autonomousDatabaseSaasAdminUserArgs struct {
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	// How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
 	Duration *int `pulumi:"duration"`
-	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secretId" is not present.
+	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
 	Password *string `pulumi:"password"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	SecretId *string `pulumi:"secretId"`
 	// The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber *int `pulumi:"secretVersionNumber"`
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecretVersionNumber      *int    `pulumi:"secretVersionNumber"`
 	TimeSaasAdminUserEnabled *string `pulumi:"timeSaasAdminUserEnabled"`
 }
 
@@ -175,15 +148,16 @@ type AutonomousDatabaseSaasAdminUserArgs struct {
 	AutonomousDatabaseId pulumi.StringInput
 	// How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
 	Duration pulumi.IntPtrInput
-	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secretId" is not present.
+	// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
 	Password pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 	SecretId pulumi.StringPtrInput
 	// The version of the vault secret. If no version is specified, the latest version will be used.
+	SecretVersionNumber pulumi.IntPtrInput
+	// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecretVersionNumber      pulumi.IntPtrInput
 	TimeSaasAdminUserEnabled pulumi.StringPtrInput
 }
 
@@ -289,24 +263,25 @@ func (o AutonomousDatabaseSaasAdminUserOutput) Duration() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseSaasAdminUser) pulumi.IntPtrOutput { return v.Duration }).(pulumi.IntPtrOutput)
 }
 
-// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash). The password is mandatory if "secretId" is not present.
+// A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
 func (o AutonomousDatabaseSaasAdminUserOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseSaasAdminUser) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
 func (o AutonomousDatabaseSaasAdminUserOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseSaasAdminUser) pulumi.StringPtrOutput { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
 // The version of the vault secret. If no version is specified, the latest version will be used.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousDatabaseSaasAdminUserOutput) SecretVersionNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseSaasAdminUser) pulumi.IntPtrOutput { return v.SecretVersionNumber }).(pulumi.IntPtrOutput)
 }
 
+// The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AutonomousDatabaseSaasAdminUserOutput) TimeSaasAdminUserEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousDatabaseSaasAdminUser) pulumi.StringOutput { return v.TimeSaasAdminUserEnabled }).(pulumi.StringOutput)
 }

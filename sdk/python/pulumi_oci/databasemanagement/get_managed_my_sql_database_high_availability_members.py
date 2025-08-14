@@ -87,7 +87,7 @@ def get_managed_my_sql_database_high_availability_members(filters: Optional[Sequ
     """
     This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
 
-    Information about high availability members of a specific MySQL server's replication group.
+    Retrieves information about the high availability members of a specific MySQL server's replication group.
 
     ## Example Usage
 
@@ -118,7 +118,7 @@ def get_managed_my_sql_database_high_availability_members_output(filters: Option
     """
     This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
 
-    Information about high availability members of a specific MySQL server's replication group.
+    Retrieves information about the high availability members of a specific MySQL server's replication group.
 
     ## Example Usage
 

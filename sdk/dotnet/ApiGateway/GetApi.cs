@@ -145,6 +145,7 @@ namespace Pulumi.Oci.ApiGateway
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
         /// * 'New' for just updated API Specifications
@@ -156,6 +157,7 @@ namespace Pulumi.Oci.ApiGateway
         /// * 'Canceled' the document validation was canceled
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetApiLockResult> Locks;
         /// <summary>
         /// Type of API Specification file.
         /// </summary>
@@ -164,6 +166,7 @@ namespace Pulumi.Oci.ApiGateway
         /// The current state of the API.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -193,11 +196,17 @@ namespace Pulumi.Oci.ApiGateway
 
             string id,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetApiLockResult> locks,
 
             string specificationType,
 
             string state,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -212,9 +221,12 @@ namespace Pulumi.Oci.ApiGateway
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             SpecificationType = specificationType;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             ValidationResults = validationResults;

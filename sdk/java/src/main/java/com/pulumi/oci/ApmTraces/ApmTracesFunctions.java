@@ -8,15 +8,27 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusPlainArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetLogPlainArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetQueryQuickPicksPlainArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesPlainArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
+import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryPlainArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTraceAggregatedSnapshotDataPlainArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTraceArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTracePlainArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataArgs;
 import com.pulumi.oci.ApmTraces.inputs.GetTraceSnapshotDataPlainArgs;
+import com.pulumi.oci.ApmTraces.outputs.GetAttributeAutoActivateStatusResult;
+import com.pulumi.oci.ApmTraces.outputs.GetLogResult;
 import com.pulumi.oci.ApmTraces.outputs.GetQueryQuickPicksResult;
+import com.pulumi.oci.ApmTraces.outputs.GetScheduledQueriesResult;
+import com.pulumi.oci.ApmTraces.outputs.GetScheduledQueryResult;
 import com.pulumi.oci.ApmTraces.outputs.GetTraceAggregatedSnapshotDataResult;
 import com.pulumi.oci.ApmTraces.outputs.GetTraceResult;
 import com.pulumi.oci.ApmTraces.outputs.GetTraceSnapshotDataResult;
@@ -24,6 +36,466 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class ApmTracesFunctions {
+    /**
+     * This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Get autoactivation status for a private data key or public data key in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeAutoActivateStatusResult> getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs args) {
+        return getAttributeAutoActivateStatus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Get autoactivation status for a private data key or public data key in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeAutoActivateStatusResult> getAttributeAutoActivateStatusPlain(GetAttributeAutoActivateStatusPlainArgs args) {
+        return getAttributeAutoActivateStatusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Get autoactivation status for a private data key or public data key in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeAutoActivateStatusResult> getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getAttributeAutoActivateStatus:getAttributeAutoActivateStatus", TypeShape.of(GetAttributeAutoActivateStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Get autoactivation status for a private data key or public data key in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAttributeAutoActivateStatusResult> getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getAttributeAutoActivateStatus:getAttributeAutoActivateStatus", TypeShape.of(GetAttributeAutoActivateStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Get autoactivation status for a private data key or public data key in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetAttributeAutoActivateStatusArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAttributeAutoActivateStatus = ApmTracesFunctions.getAttributeAutoActivateStatus(GetAttributeAutoActivateStatusArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .dataKeyType(attributeAutoActivateStatusDataKeyType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAttributeAutoActivateStatusResult> getAttributeAutoActivateStatusPlain(GetAttributeAutoActivateStatusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmTraces/getAttributeAutoActivateStatus:getAttributeAutoActivateStatus", TypeShape.of(GetAttributeAutoActivateStatusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a log in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .logKey(logLogKey)
+     *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
+     *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogResult> getLog(GetLogArgs args) {
+        return getLog(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a log in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .logKey(logLogKey)
+     *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
+     *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args) {
+        return getLogPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a log in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .logKey(logLogKey)
+     *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
+     *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogResult> getLog(GetLogArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getLog:getLog", TypeShape.of(GetLogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a log in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .logKey(logLogKey)
+     *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
+     *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetLogResult> getLog(GetLogArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getLog:getLog", TypeShape.of(GetLogResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a log in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetLogArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testLog = ApmTracesFunctions.getLog(GetLogArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .logKey(logLogKey)
+     *             .timeLogEndedLessThan(logTimeLogEndedLessThan)
+     *             .timeLogStartedGreaterThanOrEqualTo(logTimeLogStartedGreaterThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetLogResult> getLogPlain(GetLogPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmTraces/getLog:getLog", TypeShape.of(GetLogResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
      * 
@@ -248,6 +720,456 @@ public final class ApmTracesFunctions {
      */
     public static CompletableFuture<GetQueryQuickPicksResult> getQueryQuickPicksPlain(GetQueryQuickPicksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", TypeShape.of(GetQueryQuickPicksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Queries in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Returns a list of all scheduled queries in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(scheduledQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledQueriesResult> getScheduledQueries(GetScheduledQueriesArgs args) {
+        return getScheduledQueries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Queries in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Returns a list of all scheduled queries in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(scheduledQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledQueriesResult> getScheduledQueriesPlain(GetScheduledQueriesPlainArgs args) {
+        return getScheduledQueriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Scheduled Queries in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Returns a list of all scheduled queries in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(scheduledQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledQueriesResult> getScheduledQueries(GetScheduledQueriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getScheduledQueries:getScheduledQueries", TypeShape.of(GetScheduledQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Queries in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Returns a list of all scheduled queries in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(scheduledQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledQueriesResult> getScheduledQueries(GetScheduledQueriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getScheduledQueries:getScheduledQueries", TypeShape.of(GetScheduledQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Scheduled Queries in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Returns a list of all scheduled queries in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQueries = ApmTracesFunctions.getScheduledQueries(GetScheduledQueriesArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .displayName(scheduledQueryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledQueriesResult> getScheduledQueriesPlain(GetScheduledQueriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmTraces/getScheduledQueries:getScheduledQueries", TypeShape.of(GetScheduledQueriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a scheduled query in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledQueryResult> getScheduledQuery(GetScheduledQueryArgs args) {
+        return getScheduledQuery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a scheduled query in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledQueryResult> getScheduledQueryPlain(GetScheduledQueryPlainArgs args) {
+        return getScheduledQueryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a scheduled query in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledQueryResult> getScheduledQuery(GetScheduledQueryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getScheduledQuery:getScheduledQuery", TypeShape.of(GetScheduledQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a scheduled query in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetScheduledQueryResult> getScheduledQuery(GetScheduledQueryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ApmTraces/getScheduledQuery:getScheduledQuery", TypeShape.of(GetScheduledQueryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
+     * 
+     * Retrieve a scheduled query in the APM Domain.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ApmTraces.ApmTracesFunctions;
+     * import com.pulumi.oci.ApmTraces.inputs.GetScheduledQueryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testScheduledQuery = ApmTracesFunctions.getScheduledQuery(GetScheduledQueryArgs.builder()
+     *             .apmDomainId(testApmDomain.id())
+     *             .scheduledQueryId(testScheduledQueryOciApmTracesScheduledQuery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetScheduledQueryResult> getScheduledQueryPlain(GetScheduledQueryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ApmTraces/getScheduledQuery:getScheduledQuery", TypeShape.of(GetScheduledQueryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.

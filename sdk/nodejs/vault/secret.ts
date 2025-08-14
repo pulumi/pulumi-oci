@@ -76,6 +76,10 @@ export class Secret extends pulumi.CustomResource {
      */
     public /*out*/ readonly isAutoGenerationEnabled!: pulumi.Output<boolean>;
     /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     */
+    public /*out*/ readonly isReplica!: pulumi.Output<boolean>;
+    /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     public readonly keyId!: pulumi.Output<string>;
@@ -95,6 +99,10 @@ export class Secret extends pulumi.CustomResource {
      * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
     public /*out*/ readonly nextRotationTime!: pulumi.Output<string>;
+    /**
+     * (Updatable) Defines the configuration that enables cross-region secret replication.
+     */
+    public readonly replicationConfig!: pulumi.Output<outputs.Vault.SecretReplicationConfig | undefined>;
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      */
@@ -119,6 +127,10 @@ export class Secret extends pulumi.CustomResource {
      * (Updatable) A list of rules to control how the secret is used and managed.
      */
     public readonly secretRules!: pulumi.Output<outputs.Vault.SecretSecretRule[]>;
+    /**
+     * Details for the source that the source secret has.
+     */
+    public /*out*/ readonly sourceRegionInformations!: pulumi.Output<outputs.Vault.SecretSourceRegionInformation[]>;
     /**
      * The current lifecycle state of the secret.
      */
@@ -164,17 +176,20 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["enableAutoGeneration"] = state ? state.enableAutoGeneration : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutoGenerationEnabled"] = state ? state.isAutoGenerationEnabled : undefined;
+            resourceInputs["isReplica"] = state ? state.isReplica : undefined;
             resourceInputs["keyId"] = state ? state.keyId : undefined;
             resourceInputs["lastRotationTime"] = state ? state.lastRotationTime : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["metadata"] = state ? state.metadata : undefined;
             resourceInputs["nextRotationTime"] = state ? state.nextRotationTime : undefined;
+            resourceInputs["replicationConfig"] = state ? state.replicationConfig : undefined;
             resourceInputs["rotationConfig"] = state ? state.rotationConfig : undefined;
             resourceInputs["rotationStatus"] = state ? state.rotationStatus : undefined;
             resourceInputs["secretContent"] = state ? state.secretContent : undefined;
             resourceInputs["secretGenerationContext"] = state ? state.secretGenerationContext : undefined;
             resourceInputs["secretName"] = state ? state.secretName : undefined;
             resourceInputs["secretRules"] = state ? state.secretRules : undefined;
+            resourceInputs["sourceRegionInformations"] = state ? state.sourceRegionInformations : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeOfCurrentVersionExpiry"] = state ? state.timeOfCurrentVersionExpiry : undefined;
@@ -201,6 +216,7 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["keyId"] = args ? args.keyId : undefined;
             resourceInputs["metadata"] = args ? args.metadata : undefined;
+            resourceInputs["replicationConfig"] = args ? args.replicationConfig : undefined;
             resourceInputs["rotationConfig"] = args ? args.rotationConfig : undefined;
             resourceInputs["secretContent"] = args ? args.secretContent : undefined;
             resourceInputs["secretGenerationContext"] = args ? args.secretGenerationContext : undefined;
@@ -209,10 +225,12 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["vaultId"] = args ? args.vaultId : undefined;
             resourceInputs["currentVersionNumber"] = undefined /*out*/;
             resourceInputs["isAutoGenerationEnabled"] = undefined /*out*/;
+            resourceInputs["isReplica"] = undefined /*out*/;
             resourceInputs["lastRotationTime"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nextRotationTime"] = undefined /*out*/;
             resourceInputs["rotationStatus"] = undefined /*out*/;
+            resourceInputs["sourceRegionInformations"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeOfCurrentVersionExpiry"] = undefined /*out*/;
@@ -256,6 +274,10 @@ export interface SecretState {
      */
     isAutoGenerationEnabled?: pulumi.Input<boolean>;
     /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     */
+    isReplica?: pulumi.Input<boolean>;
+    /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      */
     keyId?: pulumi.Input<string>;
@@ -275,6 +297,10 @@ export interface SecretState {
      * A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
      */
     nextRotationTime?: pulumi.Input<string>;
+    /**
+     * (Updatable) Defines the configuration that enables cross-region secret replication.
+     */
+    replicationConfig?: pulumi.Input<inputs.Vault.SecretReplicationConfig>;
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      */
@@ -299,6 +325,10 @@ export interface SecretState {
      * (Updatable) A list of rules to control how the secret is used and managed.
      */
     secretRules?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSecretRule>[]>;
+    /**
+     * Details for the source that the source secret has.
+     */
+    sourceRegionInformations?: pulumi.Input<pulumi.Input<inputs.Vault.SecretSourceRegionInformation>[]>;
     /**
      * The current lifecycle state of the secret.
      */
@@ -357,6 +387,10 @@ export interface SecretArgs {
      * (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
      */
     metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Defines the configuration that enables cross-region secret replication.
+     */
+    replicationConfig?: pulumi.Input<inputs.Vault.SecretReplicationConfig>;
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      */

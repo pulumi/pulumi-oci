@@ -41,7 +41,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
      */
     private @Nullable Boolean isAutoEnablePluggableDatabase;
     /**
-     * @return The management type for the database.
+     * @return The management type for the database. Use &#34;BASIC&#34; for basic management. Use &#34;ADVANCED&#34; for full management.
      * 
      */
     private @Nullable String managementType;
@@ -83,7 +83,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetails {
         return Optional.ofNullable(this.isAutoEnablePluggableDatabase);
     }
     /**
-     * @return The management type for the database.
+     * @return The management type for the database. Use &#34;BASIC&#34; for basic management. Use &#34;ADVANCED&#34; for full management.
      * 
      */
     public Optional<String> managementType() {

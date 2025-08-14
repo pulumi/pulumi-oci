@@ -138,11 +138,17 @@ namespace Pulumi.Oci.ApiGateway
         [Output("ipAddresses")]
         public Output<ImmutableArray<Outputs.GatewayIpAddress>> IpAddresses { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.GatewayLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -171,6 +177,9 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
@@ -290,6 +299,17 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.GatewayLockArgs>? _locks;
+        public InputList<Inputs.GatewayLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.GatewayLockArgs>());
+            set => _locks = value;
+        }
+
         [Input("networkSecurityGroupIds")]
         private InputList<string>? _networkSecurityGroupIds;
 
@@ -404,11 +424,22 @@ namespace Pulumi.Oci.ApiGateway
             set => _ipAddresses = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.GatewayLockGetArgs>? _locks;
+        public InputList<Inputs.GatewayLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.GatewayLockGetArgs>());
+            set => _locks = value;
+        }
 
         [Input("networkSecurityGroupIds")]
         private InputList<string>? _networkSecurityGroupIds;
@@ -443,6 +474,14 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

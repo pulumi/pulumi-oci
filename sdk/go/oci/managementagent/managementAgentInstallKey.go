@@ -64,8 +64,12 @@ type ManagementAgentInstallKey struct {
 	CreatedByPrincipalId pulumi.StringOutput `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
 	CurrentKeyInstallCount pulumi.IntOutput `pulumi:"currentKeyInstallCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Management Agent install Key Name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// If set to true, the install key has no expiration date or usage limit. Defaults to false
 	IsUnlimited pulumi.BoolOutput `pulumi:"isUnlimited"`
 	// Management Agent Install Key
@@ -74,6 +78,8 @@ type ManagementAgentInstallKey struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Status of Key
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// date after which key would expire after creation
@@ -129,8 +135,12 @@ type managementAgentInstallKeyState struct {
 	CreatedByPrincipalId *string `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
 	CurrentKeyInstallCount *int `pulumi:"currentKeyInstallCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Management Agent install Key Name
 	DisplayName *string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If set to true, the install key has no expiration date or usage limit. Defaults to false
 	IsUnlimited *bool `pulumi:"isUnlimited"`
 	// Management Agent Install Key
@@ -139,6 +149,8 @@ type managementAgentInstallKeyState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Status of Key
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// date after which key would expire after creation
@@ -159,8 +171,12 @@ type ManagementAgentInstallKeyState struct {
 	CreatedByPrincipalId pulumi.StringPtrInput
 	// Total number of install for this keys
 	CurrentKeyInstallCount pulumi.IntPtrInput
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Management Agent install Key Name
 	DisplayName pulumi.StringPtrInput
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput
 	// If set to true, the install key has no expiration date or usage limit. Defaults to false
 	IsUnlimited pulumi.BoolPtrInput
 	// Management Agent Install Key
@@ -169,6 +185,8 @@ type ManagementAgentInstallKeyState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Status of Key
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated pulumi.StringPtrInput
 	// date after which key would expire after creation
@@ -324,9 +342,19 @@ func (o ManagementAgentInstallKeyOutput) CurrentKeyInstallCount() pulumi.IntOutp
 	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.IntOutput { return v.CurrentKeyInstallCount }).(pulumi.IntOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o ManagementAgentInstallKeyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // (Updatable) Management Agent install Key Name
 func (o ManagementAgentInstallKeyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o ManagementAgentInstallKeyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // If set to true, the install key has no expiration date or usage limit. Defaults to false
@@ -347,6 +375,11 @@ func (o ManagementAgentInstallKeyOutput) LifecycleDetails() pulumi.StringOutput 
 // Status of Key
 func (o ManagementAgentInstallKeyOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ManagementAgentInstallKeyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagementAgentInstallKey) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when Management Agent install Key was created. An RFC3339 formatted date time string

@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -78,6 +79,21 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
     }
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,String>> definedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * (Updatable) Management Agent install Key Name
      * 
      */
@@ -90,6 +106,21 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,String>> freeformTags;
+
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -153,6 +184,21 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
+    /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
@@ -210,11 +256,14 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
         this.compartmentId = $.compartmentId;
         this.createdByPrincipalId = $.createdByPrincipalId;
         this.currentKeyInstallCount = $.currentKeyInstallCount;
+        this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.freeformTags = $.freeformTags;
         this.isUnlimited = $.isUnlimited;
         this.key = $.key;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeExpires = $.timeExpires;
         this.timeUpdated = $.timeUpdated;
@@ -323,6 +372,27 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
         }
 
         /**
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,String> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param displayName (Updatable) Management Agent install Key Name
          * 
          * @return builder
@@ -341,6 +411,27 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**
@@ -425,6 +516,27 @@ public final class ManagementAgentInstallKeyState extends com.pulumi.resources.R
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

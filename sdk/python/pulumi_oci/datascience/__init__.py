@@ -23,8 +23,15 @@ from .get_model import *
 from .get_model_custom_metadata_artifact_content import *
 from .get_model_defined_metadata_artifact_content import *
 from .get_model_deployment import *
+from .get_model_deployment_model_states import *
 from .get_model_deployment_shapes import *
 from .get_model_deployments import *
+from .get_model_group import *
+from .get_model_group_artifact_content import *
+from .get_model_group_models import *
+from .get_model_group_version_histories import *
+from .get_model_group_version_history import *
+from .get_model_groups import *
 from .get_model_provenance import *
 from .get_model_version_set import *
 from .get_model_version_sets import *
@@ -53,6 +60,9 @@ from .model_artifact_import import *
 from .model_custom_metadata_artifact import *
 from .model_defined_metadata_artifact import *
 from .model_deployment import *
+from .model_group import *
+from .model_group_artifact import *
+from .model_group_version_history import *
 from .model_provenance import *
 from .model_version_set import *
 from .notebook_session import *

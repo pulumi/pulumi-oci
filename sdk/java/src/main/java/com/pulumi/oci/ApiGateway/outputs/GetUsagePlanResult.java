@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetUsagePlanEntitlement;
+import com.pulumi.oci.ApiGateway.outputs.GetUsagePlanLock;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,16 +45,19 @@ public final class GetUsagePlanResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetUsagePlanLock> locks;
     /**
      * @return The current state of the usage plan.
      * 
      */
     private String state;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -108,6 +113,9 @@ public final class GetUsagePlanResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -115,12 +123,18 @@ public final class GetUsagePlanResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public List<GetUsagePlanLock> locks() {
+        return this.locks;
+    }
     /**
      * @return The current state of the usage plan.
      * 
      */
     public String state() {
         return this.state;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -155,8 +169,11 @@ public final class GetUsagePlanResult {
         private List<GetUsagePlanEntitlement> entitlements;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetUsagePlanLock> locks;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String usagePlanId;
@@ -169,8 +186,11 @@ public final class GetUsagePlanResult {
     	      this.entitlements = defaults.entitlements;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.usagePlanId = defaults.usagePlanId;
@@ -228,6 +248,14 @@ public final class GetUsagePlanResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlanResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetUsagePlanResult", "lifecycleDetails");
@@ -236,11 +264,30 @@ public final class GetUsagePlanResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetUsagePlanLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlanResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetUsagePlanLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetUsagePlanResult", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetUsagePlanResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -275,8 +322,11 @@ public final class GetUsagePlanResult {
             _resultValue.entitlements = entitlements;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.usagePlanId = usagePlanId;

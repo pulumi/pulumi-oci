@@ -19,16 +19,16 @@ public final class AutoScalingConfigurationPolicyRule {
      * 
      */
     private @Nullable AutoScalingConfigurationPolicyRuleAction action;
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     private String displayName;
     /**
      * @return ID of the condition that is assigned after creation.
      * 
      */
     private @Nullable String id;
-    /**
-     * @return Metric and threshold details for triggering an autoscaling action.
-     * 
-     */
     private @Nullable AutoScalingConfigurationPolicyRuleMetric metric;
 
     private AutoScalingConfigurationPolicyRule() {}
@@ -39,6 +39,10 @@ public final class AutoScalingConfigurationPolicyRule {
     public Optional<AutoScalingConfigurationPolicyRuleAction> action() {
         return Optional.ofNullable(this.action);
     }
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     public String displayName() {
         return this.displayName;
     }
@@ -49,10 +53,6 @@ public final class AutoScalingConfigurationPolicyRule {
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
-    /**
-     * @return Metric and threshold details for triggering an autoscaling action.
-     * 
-     */
     public Optional<AutoScalingConfigurationPolicyRuleMetric> metric() {
         return Optional.ofNullable(this.metric);
     }

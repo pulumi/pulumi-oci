@@ -27,7 +27,7 @@ class GetAutonomousDatabaseResult:
     """
     A collection of values returned by getAutonomousDatabase.
     """
-    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, auto_refresh_frequency_in_seconds=None, auto_refresh_point_lag_in_seconds=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, availability_domain=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, byol_compute_count_limit=None, character_set=None, clone_table_space_lists=None, clone_type=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, disaster_recovery_type=None, display_name=None, enable_delete_scheduled_operations=None, encryption_key_history_entries=None, encryption_keys=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_backup_retention_locked=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_disconnect_peer=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, maintenance_target_component=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_id=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, public_connection_urls=None, public_endpoint=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, security_attributes=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, subscription_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_auto_refresh_start=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_undeleted=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
+    def __init__(__self__, actual_used_data_storage_size_in_tbs=None, admin_password=None, allocated_storage_size_in_tbs=None, apex_details=None, are_primary_whitelisted_ips_used=None, auto_refresh_frequency_in_seconds=None, auto_refresh_point_lag_in_seconds=None, autonomous_container_database_id=None, autonomous_database_backup_id=None, autonomous_database_id=None, autonomous_maintenance_schedule_type=None, availability_domain=None, available_upgrade_versions=None, backup_configs=None, backup_retention_period_in_days=None, byol_compute_count_limit=None, character_set=None, clone_table_space_lists=None, clone_type=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, connection_strings=None, connection_urls=None, cpu_core_count=None, customer_contacts=None, data_safe_status=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, database_edition=None, database_management_status=None, dataguard_region_type=None, db_name=None, db_tools_details=None, db_version=None, db_workload=None, defined_tags=None, disaster_recovery_region_type=None, disaster_recovery_type=None, display_name=None, enable_delete_scheduled_operations=None, encryption_key_history_entries=None, encryption_keys=None, failed_data_recovery_in_seconds=None, freeform_tags=None, id=None, in_memory_area_in_gbs=None, in_memory_percentage=None, infrastructure_type=None, is_access_control_enabled=None, is_auto_scaling_enabled=None, is_auto_scaling_for_storage_enabled=None, is_backup_retention_locked=None, is_data_guard_enabled=None, is_dedicated=None, is_dev_tier=None, is_disable_db_version_upgrade_schedule=None, is_disconnect_peer=None, is_free_tier=None, is_local_data_guard_enabled=None, is_mtls_connection_required=None, is_preview=None, is_preview_version_with_service_terms_accepted=None, is_reconnect_clone_enabled=None, is_refreshable_clone=None, is_remote_data_guard_enabled=None, is_replicate_automatic_backups=None, is_schedule_db_version_upgrade_to_earliest=None, is_shrink_only=None, key_history_entries=None, key_store_id=None, key_store_wallet_name=None, key_version_id=None, kms_key_id=None, kms_key_lifecycle_details=None, kms_key_version_id=None, license_model=None, lifecycle_details=None, local_adg_auto_failover_max_data_loss_limit=None, local_disaster_recovery_type=None, local_standby_dbs=None, long_term_backup_schedules=None, maintenance_target_component=None, max_cpu_core_count=None, memory_per_oracle_compute_unit_in_gbs=None, ncharacter_set=None, net_services_architecture=None, next_long_term_backup_time_stamp=None, nsg_ids=None, ocpu_count=None, open_mode=None, operations_insights_status=None, peer_db_id=None, peer_db_ids=None, permission_level=None, private_endpoint=None, private_endpoint_ip=None, private_endpoint_label=None, provisionable_cpuses=None, public_connection_urls=None, public_endpoint=None, refreshable_mode=None, refreshable_status=None, remote_disaster_recovery_configurations=None, remote_disaster_recovery_type=None, resource_pool_leader_id=None, resource_pool_summaries=None, role=None, rotate_key_trigger=None, scheduled_operations=None, secret_id=None, secret_version_number=None, security_attributes=None, service_console_url=None, shrink_adb_trigger=None, source=None, source_id=None, standby_dbs=None, standby_whitelisted_ips=None, state=None, subnet_id=None, subscription_id=None, supported_regions_to_clone_tos=None, switchover_to=None, switchover_to_remote_peer_id=None, system_tags=None, time_created=None, time_data_guard_role_changed=None, time_deletion_of_free_autonomous_database=None, time_disaster_recovery_role_changed=None, time_earliest_available_db_version_upgrade=None, time_latest_available_db_version_upgrade=None, time_local_data_guard_enabled=None, time_maintenance_begin=None, time_maintenance_end=None, time_of_auto_refresh_start=None, time_of_joining_resource_pool=None, time_of_last_failover=None, time_of_last_refresh=None, time_of_last_refresh_point=None, time_of_last_switchover=None, time_of_next_refresh=None, time_reclamation_of_free_autonomous_database=None, time_scheduled_db_version_upgrade=None, time_undeleted=None, time_until_reconnect_clone_enabled=None, timestamp=None, total_backup_storage_size_in_gbs=None, use_latest_available_backup_time_stamp=None, used_data_storage_size_in_gbs=None, used_data_storage_size_in_tbs=None, vault_id=None, whitelisted_ips=None):
         if actual_used_data_storage_size_in_tbs and not isinstance(actual_used_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'actual_used_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "actual_used_data_storage_size_in_tbs", actual_used_data_storage_size_in_tbs)
@@ -199,6 +199,9 @@ class GetAutonomousDatabaseResult:
         if is_dev_tier and not isinstance(is_dev_tier, bool):
             raise TypeError("Expected argument 'is_dev_tier' to be a bool")
         pulumi.set(__self__, "is_dev_tier", is_dev_tier)
+        if is_disable_db_version_upgrade_schedule and not isinstance(is_disable_db_version_upgrade_schedule, bool):
+            raise TypeError("Expected argument 'is_disable_db_version_upgrade_schedule' to be a bool")
+        pulumi.set(__self__, "is_disable_db_version_upgrade_schedule", is_disable_db_version_upgrade_schedule)
         if is_disconnect_peer and not isinstance(is_disconnect_peer, bool):
             raise TypeError("Expected argument 'is_disconnect_peer' to be a bool")
         pulumi.set(__self__, "is_disconnect_peer", is_disconnect_peer)
@@ -229,6 +232,9 @@ class GetAutonomousDatabaseResult:
         if is_replicate_automatic_backups and not isinstance(is_replicate_automatic_backups, bool):
             raise TypeError("Expected argument 'is_replicate_automatic_backups' to be a bool")
         pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
+        if is_schedule_db_version_upgrade_to_earliest and not isinstance(is_schedule_db_version_upgrade_to_earliest, bool):
+            raise TypeError("Expected argument 'is_schedule_db_version_upgrade_to_earliest' to be a bool")
+        pulumi.set(__self__, "is_schedule_db_version_upgrade_to_earliest", is_schedule_db_version_upgrade_to_earliest)
         if is_shrink_only and not isinstance(is_shrink_only, bool):
             raise TypeError("Expected argument 'is_shrink_only' to be a bool")
         pulumi.set(__self__, "is_shrink_only", is_shrink_only)
@@ -415,6 +421,12 @@ class GetAutonomousDatabaseResult:
         if time_disaster_recovery_role_changed and not isinstance(time_disaster_recovery_role_changed, str):
             raise TypeError("Expected argument 'time_disaster_recovery_role_changed' to be a str")
         pulumi.set(__self__, "time_disaster_recovery_role_changed", time_disaster_recovery_role_changed)
+        if time_earliest_available_db_version_upgrade and not isinstance(time_earliest_available_db_version_upgrade, str):
+            raise TypeError("Expected argument 'time_earliest_available_db_version_upgrade' to be a str")
+        pulumi.set(__self__, "time_earliest_available_db_version_upgrade", time_earliest_available_db_version_upgrade)
+        if time_latest_available_db_version_upgrade and not isinstance(time_latest_available_db_version_upgrade, str):
+            raise TypeError("Expected argument 'time_latest_available_db_version_upgrade' to be a str")
+        pulumi.set(__self__, "time_latest_available_db_version_upgrade", time_latest_available_db_version_upgrade)
         if time_local_data_guard_enabled and not isinstance(time_local_data_guard_enabled, str):
             raise TypeError("Expected argument 'time_local_data_guard_enabled' to be a str")
         pulumi.set(__self__, "time_local_data_guard_enabled", time_local_data_guard_enabled)
@@ -448,6 +460,9 @@ class GetAutonomousDatabaseResult:
         if time_reclamation_of_free_autonomous_database and not isinstance(time_reclamation_of_free_autonomous_database, str):
             raise TypeError("Expected argument 'time_reclamation_of_free_autonomous_database' to be a str")
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
+        if time_scheduled_db_version_upgrade and not isinstance(time_scheduled_db_version_upgrade, str):
+            raise TypeError("Expected argument 'time_scheduled_db_version_upgrade' to be a str")
+        pulumi.set(__self__, "time_scheduled_db_version_upgrade", time_scheduled_db_version_upgrade)
         if time_undeleted and not isinstance(time_undeleted, str):
             raise TypeError("Expected argument 'time_undeleted' to be a str")
         pulumi.set(__self__, "time_undeleted", time_undeleted)
@@ -922,6 +937,11 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "is_dev_tier")
 
     @_builtins.property
+    @pulumi.getter(name="isDisableDbVersionUpgradeSchedule")
+    def is_disable_db_version_upgrade_schedule(self) -> _builtins.bool:
+        return pulumi.get(self, "is_disable_db_version_upgrade_schedule")
+
+    @_builtins.property
     @pulumi.getter(name="isDisconnectPeer")
     def is_disconnect_peer(self) -> _builtins.bool:
         """
@@ -997,6 +1017,11 @@ class GetAutonomousDatabaseResult:
         If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         """
         return pulumi.get(self, "is_replicate_automatic_backups")
+
+    @_builtins.property
+    @pulumi.getter(name="isScheduleDbVersionUpgradeToEarliest")
+    def is_schedule_db_version_upgrade_to_earliest(self) -> _builtins.bool:
+        return pulumi.get(self, "is_schedule_db_version_upgrade_to_earliest")
 
     @_builtins.property
     @pulumi.getter(name="isShrinkOnly")
@@ -1471,6 +1496,22 @@ class GetAutonomousDatabaseResult:
         return pulumi.get(self, "time_disaster_recovery_role_changed")
 
     @_builtins.property
+    @pulumi.getter(name="timeEarliestAvailableDbVersionUpgrade")
+    def time_earliest_available_db_version_upgrade(self) -> _builtins.str:
+        """
+        The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        """
+        return pulumi.get(self, "time_earliest_available_db_version_upgrade")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLatestAvailableDbVersionUpgrade")
+    def time_latest_available_db_version_upgrade(self) -> _builtins.str:
+        """
+        The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        """
+        return pulumi.get(self, "time_latest_available_db_version_upgrade")
+
+    @_builtins.property
     @pulumi.getter(name="timeLocalDataGuardEnabled")
     def time_local_data_guard_enabled(self) -> _builtins.str:
         """
@@ -1557,6 +1598,14 @@ class GetAutonomousDatabaseResult:
         The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         """
         return pulumi.get(self, "time_reclamation_of_free_autonomous_database")
+
+    @_builtins.property
+    @pulumi.getter(name="timeScheduledDbVersionUpgrade")
+    def time_scheduled_db_version_upgrade(self) -> _builtins.str:
+        """
+        The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        """
+        return pulumi.get(self, "time_scheduled_db_version_upgrade")
 
     @_builtins.property
     @pulumi.getter(name="timeUndeleted")
@@ -1688,6 +1737,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             is_data_guard_enabled=self.is_data_guard_enabled,
             is_dedicated=self.is_dedicated,
             is_dev_tier=self.is_dev_tier,
+            is_disable_db_version_upgrade_schedule=self.is_disable_db_version_upgrade_schedule,
             is_disconnect_peer=self.is_disconnect_peer,
             is_free_tier=self.is_free_tier,
             is_local_data_guard_enabled=self.is_local_data_guard_enabled,
@@ -1698,6 +1748,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             is_refreshable_clone=self.is_refreshable_clone,
             is_remote_data_guard_enabled=self.is_remote_data_guard_enabled,
             is_replicate_automatic_backups=self.is_replicate_automatic_backups,
+            is_schedule_db_version_upgrade_to_earliest=self.is_schedule_db_version_upgrade_to_earliest,
             is_shrink_only=self.is_shrink_only,
             key_history_entries=self.key_history_entries,
             key_store_id=self.key_store_id,
@@ -1760,6 +1811,8 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             time_data_guard_role_changed=self.time_data_guard_role_changed,
             time_deletion_of_free_autonomous_database=self.time_deletion_of_free_autonomous_database,
             time_disaster_recovery_role_changed=self.time_disaster_recovery_role_changed,
+            time_earliest_available_db_version_upgrade=self.time_earliest_available_db_version_upgrade,
+            time_latest_available_db_version_upgrade=self.time_latest_available_db_version_upgrade,
             time_local_data_guard_enabled=self.time_local_data_guard_enabled,
             time_maintenance_begin=self.time_maintenance_begin,
             time_maintenance_end=self.time_maintenance_end,
@@ -1771,6 +1824,7 @@ class AwaitableGetAutonomousDatabaseResult(GetAutonomousDatabaseResult):
             time_of_last_switchover=self.time_of_last_switchover,
             time_of_next_refresh=self.time_of_next_refresh,
             time_reclamation_of_free_autonomous_database=self.time_reclamation_of_free_autonomous_database,
+            time_scheduled_db_version_upgrade=self.time_scheduled_db_version_upgrade,
             time_undeleted=self.time_undeleted,
             time_until_reconnect_clone_enabled=self.time_until_reconnect_clone_enabled,
             timestamp=self.timestamp,
@@ -1864,6 +1918,7 @@ def get_autonomous_database(autonomous_database_id: Optional[_builtins.str] = No
         is_data_guard_enabled=pulumi.get(__ret__, 'is_data_guard_enabled'),
         is_dedicated=pulumi.get(__ret__, 'is_dedicated'),
         is_dev_tier=pulumi.get(__ret__, 'is_dev_tier'),
+        is_disable_db_version_upgrade_schedule=pulumi.get(__ret__, 'is_disable_db_version_upgrade_schedule'),
         is_disconnect_peer=pulumi.get(__ret__, 'is_disconnect_peer'),
         is_free_tier=pulumi.get(__ret__, 'is_free_tier'),
         is_local_data_guard_enabled=pulumi.get(__ret__, 'is_local_data_guard_enabled'),
@@ -1874,6 +1929,7 @@ def get_autonomous_database(autonomous_database_id: Optional[_builtins.str] = No
         is_refreshable_clone=pulumi.get(__ret__, 'is_refreshable_clone'),
         is_remote_data_guard_enabled=pulumi.get(__ret__, 'is_remote_data_guard_enabled'),
         is_replicate_automatic_backups=pulumi.get(__ret__, 'is_replicate_automatic_backups'),
+        is_schedule_db_version_upgrade_to_earliest=pulumi.get(__ret__, 'is_schedule_db_version_upgrade_to_earliest'),
         is_shrink_only=pulumi.get(__ret__, 'is_shrink_only'),
         key_history_entries=pulumi.get(__ret__, 'key_history_entries'),
         key_store_id=pulumi.get(__ret__, 'key_store_id'),
@@ -1936,6 +1992,8 @@ def get_autonomous_database(autonomous_database_id: Optional[_builtins.str] = No
         time_data_guard_role_changed=pulumi.get(__ret__, 'time_data_guard_role_changed'),
         time_deletion_of_free_autonomous_database=pulumi.get(__ret__, 'time_deletion_of_free_autonomous_database'),
         time_disaster_recovery_role_changed=pulumi.get(__ret__, 'time_disaster_recovery_role_changed'),
+        time_earliest_available_db_version_upgrade=pulumi.get(__ret__, 'time_earliest_available_db_version_upgrade'),
+        time_latest_available_db_version_upgrade=pulumi.get(__ret__, 'time_latest_available_db_version_upgrade'),
         time_local_data_guard_enabled=pulumi.get(__ret__, 'time_local_data_guard_enabled'),
         time_maintenance_begin=pulumi.get(__ret__, 'time_maintenance_begin'),
         time_maintenance_end=pulumi.get(__ret__, 'time_maintenance_end'),
@@ -1947,6 +2005,7 @@ def get_autonomous_database(autonomous_database_id: Optional[_builtins.str] = No
         time_of_last_switchover=pulumi.get(__ret__, 'time_of_last_switchover'),
         time_of_next_refresh=pulumi.get(__ret__, 'time_of_next_refresh'),
         time_reclamation_of_free_autonomous_database=pulumi.get(__ret__, 'time_reclamation_of_free_autonomous_database'),
+        time_scheduled_db_version_upgrade=pulumi.get(__ret__, 'time_scheduled_db_version_upgrade'),
         time_undeleted=pulumi.get(__ret__, 'time_undeleted'),
         time_until_reconnect_clone_enabled=pulumi.get(__ret__, 'time_until_reconnect_clone_enabled'),
         timestamp=pulumi.get(__ret__, 'timestamp'),
@@ -2037,6 +2096,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         is_data_guard_enabled=pulumi.get(__response__, 'is_data_guard_enabled'),
         is_dedicated=pulumi.get(__response__, 'is_dedicated'),
         is_dev_tier=pulumi.get(__response__, 'is_dev_tier'),
+        is_disable_db_version_upgrade_schedule=pulumi.get(__response__, 'is_disable_db_version_upgrade_schedule'),
         is_disconnect_peer=pulumi.get(__response__, 'is_disconnect_peer'),
         is_free_tier=pulumi.get(__response__, 'is_free_tier'),
         is_local_data_guard_enabled=pulumi.get(__response__, 'is_local_data_guard_enabled'),
@@ -2047,6 +2107,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         is_refreshable_clone=pulumi.get(__response__, 'is_refreshable_clone'),
         is_remote_data_guard_enabled=pulumi.get(__response__, 'is_remote_data_guard_enabled'),
         is_replicate_automatic_backups=pulumi.get(__response__, 'is_replicate_automatic_backups'),
+        is_schedule_db_version_upgrade_to_earliest=pulumi.get(__response__, 'is_schedule_db_version_upgrade_to_earliest'),
         is_shrink_only=pulumi.get(__response__, 'is_shrink_only'),
         key_history_entries=pulumi.get(__response__, 'key_history_entries'),
         key_store_id=pulumi.get(__response__, 'key_store_id'),
@@ -2109,6 +2170,8 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         time_data_guard_role_changed=pulumi.get(__response__, 'time_data_guard_role_changed'),
         time_deletion_of_free_autonomous_database=pulumi.get(__response__, 'time_deletion_of_free_autonomous_database'),
         time_disaster_recovery_role_changed=pulumi.get(__response__, 'time_disaster_recovery_role_changed'),
+        time_earliest_available_db_version_upgrade=pulumi.get(__response__, 'time_earliest_available_db_version_upgrade'),
+        time_latest_available_db_version_upgrade=pulumi.get(__response__, 'time_latest_available_db_version_upgrade'),
         time_local_data_guard_enabled=pulumi.get(__response__, 'time_local_data_guard_enabled'),
         time_maintenance_begin=pulumi.get(__response__, 'time_maintenance_begin'),
         time_maintenance_end=pulumi.get(__response__, 'time_maintenance_end'),
@@ -2120,6 +2183,7 @@ def get_autonomous_database_output(autonomous_database_id: Optional[pulumi.Input
         time_of_last_switchover=pulumi.get(__response__, 'time_of_last_switchover'),
         time_of_next_refresh=pulumi.get(__response__, 'time_of_next_refresh'),
         time_reclamation_of_free_autonomous_database=pulumi.get(__response__, 'time_reclamation_of_free_autonomous_database'),
+        time_scheduled_db_version_upgrade=pulumi.get(__response__, 'time_scheduled_db_version_upgrade'),
         time_undeleted=pulumi.get(__response__, 'time_undeleted'),
         time_until_reconnect_clone_enabled=pulumi.get(__response__, 'time_until_reconnect_clone_enabled'),
         timestamp=pulumi.get(__response__, 'timestamp'),

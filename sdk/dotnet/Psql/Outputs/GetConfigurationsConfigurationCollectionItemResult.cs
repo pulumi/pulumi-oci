@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public readonly ImmutableArray<string> CompatibleShapes;
+        /// <summary>
         /// A filter to return only resources if their `configType` matches the given `configType`.
         /// </summary>
         public readonly string ConfigType;
@@ -30,6 +34,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// Version of the PostgreSQL database, such as 14.9.
         /// </summary>
         public readonly string DbVersion;
+        /// <summary>
+        /// The Default configuration used for this configuration.
+        /// </summary>
+        public readonly string DefaultConfigId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -51,11 +59,11 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Memory size in gigabytes with 1GB increment.
+        /// The instance memory size in GBs for the configuration.
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// CPU core count.
+        /// The instance ocpu count for the configuration.
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
@@ -67,7 +75,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The compute name of the shape for the configuration.
         /// </summary>
         public readonly string Shape;
         /// <summary>
@@ -87,6 +95,8 @@ namespace Pulumi.Oci.Psql.Outputs
         private GetConfigurationsConfigurationCollectionItemResult(
             string compartmentId,
 
+            ImmutableArray<string> compatibleShapes,
+
             string configType,
 
             ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult> configurationDetails,
@@ -94,6 +104,8 @@ namespace Pulumi.Oci.Psql.Outputs
             ImmutableArray<Outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideResult> dbConfigurationOverrides,
 
             string dbVersion,
+
+            string defaultConfigId,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -122,10 +134,12 @@ namespace Pulumi.Oci.Psql.Outputs
             string timeCreated)
         {
             CompartmentId = compartmentId;
+            CompatibleShapes = compatibleShapes;
             ConfigType = configType;
             ConfigurationDetails = configurationDetails;
             DbConfigurationOverrides = dbConfigurationOverrides;
             DbVersion = dbVersion;
+            DefaultConfigId = defaultConfigId;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;

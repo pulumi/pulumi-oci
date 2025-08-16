@@ -21,10 +21,12 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails? EnvironmentConfigurationDetails;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails? InfrastructureConfigurationDetails;
         /// <summary>
         /// (Updatable) The model configuration details.
         /// </summary>
-        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails ModelConfigurationDetails;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails? ModelConfigurationDetails;
+        public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails? ModelGroupConfigurationDetails;
 
         [OutputConstructor]
         private ModelDeploymentModelDeploymentConfigurationDetails(
@@ -32,11 +34,17 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails? environmentConfigurationDetails,
 
-            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails modelConfigurationDetails)
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails? infrastructureConfigurationDetails,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails? modelConfigurationDetails,
+
+            Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails? modelGroupConfigurationDetails)
         {
             DeploymentType = deploymentType;
             EnvironmentConfigurationDetails = environmentConfigurationDetails;
+            InfrastructureConfigurationDetails = infrastructureConfigurationDetails;
             ModelConfigurationDetails = modelConfigurationDetails;
+            ModelGroupConfigurationDetails = modelGroupConfigurationDetails;
         }
     }
 }

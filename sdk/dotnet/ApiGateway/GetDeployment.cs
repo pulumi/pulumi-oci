@@ -152,10 +152,12 @@ namespace Pulumi.Oci.ApiGateway
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetDeploymentLockResult> Locks;
         /// <summary>
         /// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
         /// </summary>
@@ -168,6 +170,7 @@ namespace Pulumi.Oci.ApiGateway
         /// The current state of the deployment.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -195,13 +198,19 @@ namespace Pulumi.Oci.ApiGateway
 
             string id,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetDeploymentLockResult> locks,
 
             string pathPrefix,
 
             ImmutableArray<Outputs.GetDeploymentSpecificationResult> specifications,
 
             string state,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -215,10 +224,13 @@ namespace Pulumi.Oci.ApiGateway
             FreeformTags = freeformTags;
             GatewayId = gatewayId;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             PathPrefix = pathPrefix;
             Specifications = specifications;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

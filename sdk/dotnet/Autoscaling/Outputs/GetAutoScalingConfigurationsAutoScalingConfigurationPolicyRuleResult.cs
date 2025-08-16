@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Metric and threshold details for triggering an autoscaling action.
+        /// Metric type example: CPU_UTILIZATION, MEMORY_UTILIZATION
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricResult> Metrics;
 

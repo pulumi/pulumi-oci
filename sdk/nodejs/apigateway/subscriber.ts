@@ -90,14 +90,17 @@ export class Subscriber extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly locks!: pulumi.Output<outputs.ApiGateway.SubscriberLock[]>;
     /**
      * The current state of the subscriber.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -133,8 +136,11 @@ export class Subscriber extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["usagePlans"] = state ? state.usagePlans : undefined;
@@ -154,9 +160,12 @@ export class Subscriber extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["usagePlans"] = args ? args.usagePlans : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -189,14 +198,17 @@ export interface SubscriberState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.SubscriberLock>[]>;
     /**
      * The current state of the subscriber.
      */
     state?: pulumi.Input<string>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -239,6 +251,8 @@ export interface SubscriberArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.SubscriberLock>[]>;
     /**
      * (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources. 
      *

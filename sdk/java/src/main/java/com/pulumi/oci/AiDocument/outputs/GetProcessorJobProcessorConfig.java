@@ -6,6 +6,7 @@ package com.pulumi.oci.AiDocument.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetProcessorJobProcessorConfigFeature;
+import com.pulumi.oci.AiDocument.outputs.GetProcessorJobProcessorConfigNormalizationField;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -33,6 +34,16 @@ public final class GetProcessorJobProcessorConfig {
      * 
      */
     private String language;
+    /**
+     * @return Unique identifier custom model OCID that should be used for inference.
+     * 
+     */
+    private String modelId;
+    /**
+     * @return A string-to-object map where the key is the normalization field and the object contains information about the field.
+     * 
+     */
+    private List<GetProcessorJobProcessorConfigNormalizationField> normalizationFields;
     /**
      * @return The type of the processor.
      * 
@@ -69,6 +80,20 @@ public final class GetProcessorJobProcessorConfig {
         return this.language;
     }
     /**
+     * @return Unique identifier custom model OCID that should be used for inference.
+     * 
+     */
+    public String modelId() {
+        return this.modelId;
+    }
+    /**
+     * @return A string-to-object map where the key is the normalization field and the object contains information about the field.
+     * 
+     */
+    public List<GetProcessorJobProcessorConfigNormalizationField> normalizationFields() {
+        return this.normalizationFields;
+    }
+    /**
      * @return The type of the processor.
      * 
      */
@@ -89,6 +114,8 @@ public final class GetProcessorJobProcessorConfig {
         private List<GetProcessorJobProcessorConfigFeature> features;
         private Boolean isZipOutputEnabled;
         private String language;
+        private String modelId;
+        private List<GetProcessorJobProcessorConfigNormalizationField> normalizationFields;
         private String processorType;
         public Builder() {}
         public Builder(GetProcessorJobProcessorConfig defaults) {
@@ -97,6 +124,8 @@ public final class GetProcessorJobProcessorConfig {
     	      this.features = defaults.features;
     	      this.isZipOutputEnabled = defaults.isZipOutputEnabled;
     	      this.language = defaults.language;
+    	      this.modelId = defaults.modelId;
+    	      this.normalizationFields = defaults.normalizationFields;
     	      this.processorType = defaults.processorType;
         }
 
@@ -136,6 +165,25 @@ public final class GetProcessorJobProcessorConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder modelId(String modelId) {
+            if (modelId == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "modelId");
+            }
+            this.modelId = modelId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder normalizationFields(List<GetProcessorJobProcessorConfigNormalizationField> normalizationFields) {
+            if (normalizationFields == null) {
+              throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "normalizationFields");
+            }
+            this.normalizationFields = normalizationFields;
+            return this;
+        }
+        public Builder normalizationFields(GetProcessorJobProcessorConfigNormalizationField... normalizationFields) {
+            return normalizationFields(List.of(normalizationFields));
+        }
+        @CustomType.Setter
         public Builder processorType(String processorType) {
             if (processorType == null) {
               throw new MissingRequiredPropertyException("GetProcessorJobProcessorConfig", "processorType");
@@ -149,6 +197,8 @@ public final class GetProcessorJobProcessorConfig {
             _resultValue.features = features;
             _resultValue.isZipOutputEnabled = isZipOutputEnabled;
             _resultValue.language = language;
+            _resultValue.modelId = modelId;
+            _resultValue.normalizationFields = normalizationFields;
             _resultValue.processorType = processorType;
             return _resultValue;
         }

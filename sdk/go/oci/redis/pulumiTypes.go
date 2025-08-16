@@ -13,6 +13,348 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type OciCacheConfigSetConfigurationDetails struct {
+	// List of ConfigurationInfo objects.
+	Items []OciCacheConfigSetConfigurationDetailsItem `pulumi:"items"`
+}
+
+// OciCacheConfigSetConfigurationDetailsInput is an input type that accepts OciCacheConfigSetConfigurationDetailsArgs and OciCacheConfigSetConfigurationDetailsOutput values.
+// You can construct a concrete instance of `OciCacheConfigSetConfigurationDetailsInput` via:
+//
+//	OciCacheConfigSetConfigurationDetailsArgs{...}
+type OciCacheConfigSetConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToOciCacheConfigSetConfigurationDetailsOutput() OciCacheConfigSetConfigurationDetailsOutput
+	ToOciCacheConfigSetConfigurationDetailsOutputWithContext(context.Context) OciCacheConfigSetConfigurationDetailsOutput
+}
+
+type OciCacheConfigSetConfigurationDetailsArgs struct {
+	// List of ConfigurationInfo objects.
+	Items OciCacheConfigSetConfigurationDetailsItemArrayInput `pulumi:"items"`
+}
+
+func (OciCacheConfigSetConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheConfigSetConfigurationDetails)(nil)).Elem()
+}
+
+func (i OciCacheConfigSetConfigurationDetailsArgs) ToOciCacheConfigSetConfigurationDetailsOutput() OciCacheConfigSetConfigurationDetailsOutput {
+	return i.ToOciCacheConfigSetConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i OciCacheConfigSetConfigurationDetailsArgs) ToOciCacheConfigSetConfigurationDetailsOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetConfigurationDetailsOutput)
+}
+
+func (i OciCacheConfigSetConfigurationDetailsArgs) ToOciCacheConfigSetConfigurationDetailsPtrOutput() OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return i.ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i OciCacheConfigSetConfigurationDetailsArgs) ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetConfigurationDetailsOutput).ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// OciCacheConfigSetConfigurationDetailsPtrInput is an input type that accepts OciCacheConfigSetConfigurationDetailsArgs, OciCacheConfigSetConfigurationDetailsPtr and OciCacheConfigSetConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `OciCacheConfigSetConfigurationDetailsPtrInput` via:
+//
+//	        OciCacheConfigSetConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type OciCacheConfigSetConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToOciCacheConfigSetConfigurationDetailsPtrOutput() OciCacheConfigSetConfigurationDetailsPtrOutput
+	ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(context.Context) OciCacheConfigSetConfigurationDetailsPtrOutput
+}
+
+type ociCacheConfigSetConfigurationDetailsPtrType OciCacheConfigSetConfigurationDetailsArgs
+
+func OciCacheConfigSetConfigurationDetailsPtr(v *OciCacheConfigSetConfigurationDetailsArgs) OciCacheConfigSetConfigurationDetailsPtrInput {
+	return (*ociCacheConfigSetConfigurationDetailsPtrType)(v)
+}
+
+func (*ociCacheConfigSetConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OciCacheConfigSetConfigurationDetails)(nil)).Elem()
+}
+
+func (i *ociCacheConfigSetConfigurationDetailsPtrType) ToOciCacheConfigSetConfigurationDetailsPtrOutput() OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return i.ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *ociCacheConfigSetConfigurationDetailsPtrType) ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetConfigurationDetailsPtrOutput)
+}
+
+type OciCacheConfigSetConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (OciCacheConfigSetConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheConfigSetConfigurationDetails)(nil)).Elem()
+}
+
+func (o OciCacheConfigSetConfigurationDetailsOutput) ToOciCacheConfigSetConfigurationDetailsOutput() OciCacheConfigSetConfigurationDetailsOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsOutput) ToOciCacheConfigSetConfigurationDetailsOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsOutput) ToOciCacheConfigSetConfigurationDetailsPtrOutput() OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return o.ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o OciCacheConfigSetConfigurationDetailsOutput) ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OciCacheConfigSetConfigurationDetails) *OciCacheConfigSetConfigurationDetails {
+		return &v
+	}).(OciCacheConfigSetConfigurationDetailsPtrOutput)
+}
+
+// List of ConfigurationInfo objects.
+func (o OciCacheConfigSetConfigurationDetailsOutput) Items() OciCacheConfigSetConfigurationDetailsItemArrayOutput {
+	return o.ApplyT(func(v OciCacheConfigSetConfigurationDetails) []OciCacheConfigSetConfigurationDetailsItem {
+		return v.Items
+	}).(OciCacheConfigSetConfigurationDetailsItemArrayOutput)
+}
+
+type OciCacheConfigSetConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (OciCacheConfigSetConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OciCacheConfigSetConfigurationDetails)(nil)).Elem()
+}
+
+func (o OciCacheConfigSetConfigurationDetailsPtrOutput) ToOciCacheConfigSetConfigurationDetailsPtrOutput() OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsPtrOutput) ToOciCacheConfigSetConfigurationDetailsPtrOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsPtrOutput) Elem() OciCacheConfigSetConfigurationDetailsOutput {
+	return o.ApplyT(func(v *OciCacheConfigSetConfigurationDetails) OciCacheConfigSetConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret OciCacheConfigSetConfigurationDetails
+		return ret
+	}).(OciCacheConfigSetConfigurationDetailsOutput)
+}
+
+// List of ConfigurationInfo objects.
+func (o OciCacheConfigSetConfigurationDetailsPtrOutput) Items() OciCacheConfigSetConfigurationDetailsItemArrayOutput {
+	return o.ApplyT(func(v *OciCacheConfigSetConfigurationDetails) []OciCacheConfigSetConfigurationDetailsItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(OciCacheConfigSetConfigurationDetailsItemArrayOutput)
+}
+
+type OciCacheConfigSetConfigurationDetailsItem struct {
+	// Key is the configuration key.
+	ConfigKey string `pulumi:"configKey"`
+	// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+	ConfigValue string `pulumi:"configValue"`
+}
+
+// OciCacheConfigSetConfigurationDetailsItemInput is an input type that accepts OciCacheConfigSetConfigurationDetailsItemArgs and OciCacheConfigSetConfigurationDetailsItemOutput values.
+// You can construct a concrete instance of `OciCacheConfigSetConfigurationDetailsItemInput` via:
+//
+//	OciCacheConfigSetConfigurationDetailsItemArgs{...}
+type OciCacheConfigSetConfigurationDetailsItemInput interface {
+	pulumi.Input
+
+	ToOciCacheConfigSetConfigurationDetailsItemOutput() OciCacheConfigSetConfigurationDetailsItemOutput
+	ToOciCacheConfigSetConfigurationDetailsItemOutputWithContext(context.Context) OciCacheConfigSetConfigurationDetailsItemOutput
+}
+
+type OciCacheConfigSetConfigurationDetailsItemArgs struct {
+	// Key is the configuration key.
+	ConfigKey pulumi.StringInput `pulumi:"configKey"`
+	// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+	ConfigValue pulumi.StringInput `pulumi:"configValue"`
+}
+
+func (OciCacheConfigSetConfigurationDetailsItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheConfigSetConfigurationDetailsItem)(nil)).Elem()
+}
+
+func (i OciCacheConfigSetConfigurationDetailsItemArgs) ToOciCacheConfigSetConfigurationDetailsItemOutput() OciCacheConfigSetConfigurationDetailsItemOutput {
+	return i.ToOciCacheConfigSetConfigurationDetailsItemOutputWithContext(context.Background())
+}
+
+func (i OciCacheConfigSetConfigurationDetailsItemArgs) ToOciCacheConfigSetConfigurationDetailsItemOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetConfigurationDetailsItemOutput)
+}
+
+// OciCacheConfigSetConfigurationDetailsItemArrayInput is an input type that accepts OciCacheConfigSetConfigurationDetailsItemArray and OciCacheConfigSetConfigurationDetailsItemArrayOutput values.
+// You can construct a concrete instance of `OciCacheConfigSetConfigurationDetailsItemArrayInput` via:
+//
+//	OciCacheConfigSetConfigurationDetailsItemArray{ OciCacheConfigSetConfigurationDetailsItemArgs{...} }
+type OciCacheConfigSetConfigurationDetailsItemArrayInput interface {
+	pulumi.Input
+
+	ToOciCacheConfigSetConfigurationDetailsItemArrayOutput() OciCacheConfigSetConfigurationDetailsItemArrayOutput
+	ToOciCacheConfigSetConfigurationDetailsItemArrayOutputWithContext(context.Context) OciCacheConfigSetConfigurationDetailsItemArrayOutput
+}
+
+type OciCacheConfigSetConfigurationDetailsItemArray []OciCacheConfigSetConfigurationDetailsItemInput
+
+func (OciCacheConfigSetConfigurationDetailsItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OciCacheConfigSetConfigurationDetailsItem)(nil)).Elem()
+}
+
+func (i OciCacheConfigSetConfigurationDetailsItemArray) ToOciCacheConfigSetConfigurationDetailsItemArrayOutput() OciCacheConfigSetConfigurationDetailsItemArrayOutput {
+	return i.ToOciCacheConfigSetConfigurationDetailsItemArrayOutputWithContext(context.Background())
+}
+
+func (i OciCacheConfigSetConfigurationDetailsItemArray) ToOciCacheConfigSetConfigurationDetailsItemArrayOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetConfigurationDetailsItemArrayOutput)
+}
+
+type OciCacheConfigSetConfigurationDetailsItemOutput struct{ *pulumi.OutputState }
+
+func (OciCacheConfigSetConfigurationDetailsItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheConfigSetConfigurationDetailsItem)(nil)).Elem()
+}
+
+func (o OciCacheConfigSetConfigurationDetailsItemOutput) ToOciCacheConfigSetConfigurationDetailsItemOutput() OciCacheConfigSetConfigurationDetailsItemOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsItemOutput) ToOciCacheConfigSetConfigurationDetailsItemOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsItemOutput {
+	return o
+}
+
+// Key is the configuration key.
+func (o OciCacheConfigSetConfigurationDetailsItemOutput) ConfigKey() pulumi.StringOutput {
+	return o.ApplyT(func(v OciCacheConfigSetConfigurationDetailsItem) string { return v.ConfigKey }).(pulumi.StringOutput)
+}
+
+// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+func (o OciCacheConfigSetConfigurationDetailsItemOutput) ConfigValue() pulumi.StringOutput {
+	return o.ApplyT(func(v OciCacheConfigSetConfigurationDetailsItem) string { return v.ConfigValue }).(pulumi.StringOutput)
+}
+
+type OciCacheConfigSetConfigurationDetailsItemArrayOutput struct{ *pulumi.OutputState }
+
+func (OciCacheConfigSetConfigurationDetailsItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OciCacheConfigSetConfigurationDetailsItem)(nil)).Elem()
+}
+
+func (o OciCacheConfigSetConfigurationDetailsItemArrayOutput) ToOciCacheConfigSetConfigurationDetailsItemArrayOutput() OciCacheConfigSetConfigurationDetailsItemArrayOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsItemArrayOutput) ToOciCacheConfigSetConfigurationDetailsItemArrayOutputWithContext(ctx context.Context) OciCacheConfigSetConfigurationDetailsItemArrayOutput {
+	return o
+}
+
+func (o OciCacheConfigSetConfigurationDetailsItemArrayOutput) Index(i pulumi.IntInput) OciCacheConfigSetConfigurationDetailsItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OciCacheConfigSetConfigurationDetailsItem {
+		return vs[0].([]OciCacheConfigSetConfigurationDetailsItem)[vs[1].(int)]
+	}).(OciCacheConfigSetConfigurationDetailsItemOutput)
+}
+
+type OciCacheConfigSetlistAssociatedOciCacheClusterItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+	Id *string `pulumi:"id"`
+}
+
+// OciCacheConfigSetlistAssociatedOciCacheClusterItemInput is an input type that accepts OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs and OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput values.
+// You can construct a concrete instance of `OciCacheConfigSetlistAssociatedOciCacheClusterItemInput` via:
+//
+//	OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs{...}
+type OciCacheConfigSetlistAssociatedOciCacheClusterItemInput interface {
+	pulumi.Input
+
+	ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutput() OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput
+	ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutputWithContext(context.Context) OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput
+}
+
+type OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+}
+
+func (OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheConfigSetlistAssociatedOciCacheClusterItem)(nil)).Elem()
+}
+
+func (i OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutput() OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput {
+	return i.ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutputWithContext(context.Background())
+}
+
+func (i OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutputWithContext(ctx context.Context) OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput)
+}
+
+// OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayInput is an input type that accepts OciCacheConfigSetlistAssociatedOciCacheClusterItemArray and OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput values.
+// You can construct a concrete instance of `OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayInput` via:
+//
+//	OciCacheConfigSetlistAssociatedOciCacheClusterItemArray{ OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs{...} }
+type OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayInput interface {
+	pulumi.Input
+
+	ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput() OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput
+	ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutputWithContext(context.Context) OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput
+}
+
+type OciCacheConfigSetlistAssociatedOciCacheClusterItemArray []OciCacheConfigSetlistAssociatedOciCacheClusterItemInput
+
+func (OciCacheConfigSetlistAssociatedOciCacheClusterItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OciCacheConfigSetlistAssociatedOciCacheClusterItem)(nil)).Elem()
+}
+
+func (i OciCacheConfigSetlistAssociatedOciCacheClusterItemArray) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput() OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput {
+	return i.ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutputWithContext(context.Background())
+}
+
+func (i OciCacheConfigSetlistAssociatedOciCacheClusterItemArray) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutputWithContext(ctx context.Context) OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput)
+}
+
+type OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput struct{ *pulumi.OutputState }
+
+func (OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OciCacheConfigSetlistAssociatedOciCacheClusterItem)(nil)).Elem()
+}
+
+func (o OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutput() OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput {
+	return o
+}
+
+func (o OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemOutputWithContext(ctx context.Context) OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+func (o OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OciCacheConfigSetlistAssociatedOciCacheClusterItem) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+type OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput struct{ *pulumi.OutputState }
+
+func (OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OciCacheConfigSetlistAssociatedOciCacheClusterItem)(nil)).Elem()
+}
+
+func (o OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput() OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput {
+	return o
+}
+
+func (o OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput) ToOciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutputWithContext(ctx context.Context) OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput {
+	return o
+}
+
+func (o OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput) Index(i pulumi.IntInput) OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OciCacheConfigSetlistAssociatedOciCacheClusterItem {
+		return vs[0].([]OciCacheConfigSetlistAssociatedOciCacheClusterItem)[vs[1].(int)]
+	}).(OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput)
+}
+
 type OciCacheUserAuthenticationMode struct {
 	// (Updatable) This is Authentication Type of Oracle Cloud Infrastructure cache user
 	AuthenticationType string `pulumi:"authenticationType"`
@@ -573,6 +915,1692 @@ func (o RedisClusterNodeCollectionItemArrayOutput) Index(i pulumi.IntInput) Redi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RedisClusterNodeCollectionItem {
 		return vs[0].([]RedisClusterNodeCollectionItem)[vs[1].(int)]
 	}).(RedisClusterNodeCollectionItemOutput)
+}
+
+type GetOciCacheConfigSetConfigurationDetail struct {
+	// List of ConfigurationInfo objects.
+	Items []GetOciCacheConfigSetConfigurationDetailItem `pulumi:"items"`
+}
+
+// GetOciCacheConfigSetConfigurationDetailInput is an input type that accepts GetOciCacheConfigSetConfigurationDetailArgs and GetOciCacheConfigSetConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetConfigurationDetailInput` via:
+//
+//	GetOciCacheConfigSetConfigurationDetailArgs{...}
+type GetOciCacheConfigSetConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetConfigurationDetailOutput() GetOciCacheConfigSetConfigurationDetailOutput
+	ToGetOciCacheConfigSetConfigurationDetailOutputWithContext(context.Context) GetOciCacheConfigSetConfigurationDetailOutput
+}
+
+type GetOciCacheConfigSetConfigurationDetailArgs struct {
+	// List of ConfigurationInfo objects.
+	Items GetOciCacheConfigSetConfigurationDetailItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheConfigSetConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailArgs) ToGetOciCacheConfigSetConfigurationDetailOutput() GetOciCacheConfigSetConfigurationDetailOutput {
+	return i.ToGetOciCacheConfigSetConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailArgs) ToGetOciCacheConfigSetConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetConfigurationDetailOutput)
+}
+
+// GetOciCacheConfigSetConfigurationDetailArrayInput is an input type that accepts GetOciCacheConfigSetConfigurationDetailArray and GetOciCacheConfigSetConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetConfigurationDetailArrayInput` via:
+//
+//	GetOciCacheConfigSetConfigurationDetailArray{ GetOciCacheConfigSetConfigurationDetailArgs{...} }
+type GetOciCacheConfigSetConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetConfigurationDetailArrayOutput() GetOciCacheConfigSetConfigurationDetailArrayOutput
+	ToGetOciCacheConfigSetConfigurationDetailArrayOutputWithContext(context.Context) GetOciCacheConfigSetConfigurationDetailArrayOutput
+}
+
+type GetOciCacheConfigSetConfigurationDetailArray []GetOciCacheConfigSetConfigurationDetailInput
+
+func (GetOciCacheConfigSetConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailArray) ToGetOciCacheConfigSetConfigurationDetailArrayOutput() GetOciCacheConfigSetConfigurationDetailArrayOutput {
+	return i.ToGetOciCacheConfigSetConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailArray) ToGetOciCacheConfigSetConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetConfigurationDetailArrayOutput)
+}
+
+type GetOciCacheConfigSetConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailOutput) ToGetOciCacheConfigSetConfigurationDetailOutput() GetOciCacheConfigSetConfigurationDetailOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailOutput) ToGetOciCacheConfigSetConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailOutput {
+	return o
+}
+
+// List of ConfigurationInfo objects.
+func (o GetOciCacheConfigSetConfigurationDetailOutput) Items() GetOciCacheConfigSetConfigurationDetailItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetConfigurationDetail) []GetOciCacheConfigSetConfigurationDetailItem {
+		return v.Items
+	}).(GetOciCacheConfigSetConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheConfigSetConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailArrayOutput) ToGetOciCacheConfigSetConfigurationDetailArrayOutput() GetOciCacheConfigSetConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailArrayOutput) ToGetOciCacheConfigSetConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetConfigurationDetail {
+		return vs[0].([]GetOciCacheConfigSetConfigurationDetail)[vs[1].(int)]
+	}).(GetOciCacheConfigSetConfigurationDetailOutput)
+}
+
+type GetOciCacheConfigSetConfigurationDetailItem struct {
+	// Key is the configuration key.
+	ConfigKey string `pulumi:"configKey"`
+	// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+	ConfigValue string `pulumi:"configValue"`
+}
+
+// GetOciCacheConfigSetConfigurationDetailItemInput is an input type that accepts GetOciCacheConfigSetConfigurationDetailItemArgs and GetOciCacheConfigSetConfigurationDetailItemOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetConfigurationDetailItemInput` via:
+//
+//	GetOciCacheConfigSetConfigurationDetailItemArgs{...}
+type GetOciCacheConfigSetConfigurationDetailItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetConfigurationDetailItemOutput() GetOciCacheConfigSetConfigurationDetailItemOutput
+	ToGetOciCacheConfigSetConfigurationDetailItemOutputWithContext(context.Context) GetOciCacheConfigSetConfigurationDetailItemOutput
+}
+
+type GetOciCacheConfigSetConfigurationDetailItemArgs struct {
+	// Key is the configuration key.
+	ConfigKey pulumi.StringInput `pulumi:"configKey"`
+	// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+	ConfigValue pulumi.StringInput `pulumi:"configValue"`
+}
+
+func (GetOciCacheConfigSetConfigurationDetailItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailItemArgs) ToGetOciCacheConfigSetConfigurationDetailItemOutput() GetOciCacheConfigSetConfigurationDetailItemOutput {
+	return i.ToGetOciCacheConfigSetConfigurationDetailItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailItemArgs) ToGetOciCacheConfigSetConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetConfigurationDetailItemOutput)
+}
+
+// GetOciCacheConfigSetConfigurationDetailItemArrayInput is an input type that accepts GetOciCacheConfigSetConfigurationDetailItemArray and GetOciCacheConfigSetConfigurationDetailItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetConfigurationDetailItemArrayInput` via:
+//
+//	GetOciCacheConfigSetConfigurationDetailItemArray{ GetOciCacheConfigSetConfigurationDetailItemArgs{...} }
+type GetOciCacheConfigSetConfigurationDetailItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetConfigurationDetailItemArrayOutput() GetOciCacheConfigSetConfigurationDetailItemArrayOutput
+	ToGetOciCacheConfigSetConfigurationDetailItemArrayOutputWithContext(context.Context) GetOciCacheConfigSetConfigurationDetailItemArrayOutput
+}
+
+type GetOciCacheConfigSetConfigurationDetailItemArray []GetOciCacheConfigSetConfigurationDetailItemInput
+
+func (GetOciCacheConfigSetConfigurationDetailItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailItemArray) ToGetOciCacheConfigSetConfigurationDetailItemArrayOutput() GetOciCacheConfigSetConfigurationDetailItemArrayOutput {
+	return i.ToGetOciCacheConfigSetConfigurationDetailItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetConfigurationDetailItemArray) ToGetOciCacheConfigSetConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheConfigSetConfigurationDetailItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetConfigurationDetailItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailItemOutput) ToGetOciCacheConfigSetConfigurationDetailItemOutput() GetOciCacheConfigSetConfigurationDetailItemOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailItemOutput) ToGetOciCacheConfigSetConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailItemOutput {
+	return o
+}
+
+// Key is the configuration key.
+func (o GetOciCacheConfigSetConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetConfigurationDetailItem) string { return v.ConfigKey }).(pulumi.StringOutput)
+}
+
+// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+func (o GetOciCacheConfigSetConfigurationDetailItemOutput) ConfigValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetConfigurationDetailItem) string { return v.ConfigValue }).(pulumi.StringOutput)
+}
+
+type GetOciCacheConfigSetConfigurationDetailItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetConfigurationDetailItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailItemArrayOutput) ToGetOciCacheConfigSetConfigurationDetailItemArrayOutput() GetOciCacheConfigSetConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailItemArrayOutput) ToGetOciCacheConfigSetConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetConfigurationDetailItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetConfigurationDetailItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetConfigurationDetailItem {
+		return vs[0].([]GetOciCacheConfigSetConfigurationDetailItem)[vs[1].(int)]
+	}).(GetOciCacheConfigSetConfigurationDetailItemOutput)
+}
+
+type GetOciCacheConfigSetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOciCacheConfigSetsFilterInput is an input type that accepts GetOciCacheConfigSetsFilterArgs and GetOciCacheConfigSetsFilterOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsFilterInput` via:
+//
+//	GetOciCacheConfigSetsFilterArgs{...}
+type GetOciCacheConfigSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsFilterOutput() GetOciCacheConfigSetsFilterOutput
+	ToGetOciCacheConfigSetsFilterOutputWithContext(context.Context) GetOciCacheConfigSetsFilterOutput
+}
+
+type GetOciCacheConfigSetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOciCacheConfigSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsFilterArgs) ToGetOciCacheConfigSetsFilterOutput() GetOciCacheConfigSetsFilterOutput {
+	return i.ToGetOciCacheConfigSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsFilterArgs) ToGetOciCacheConfigSetsFilterOutputWithContext(ctx context.Context) GetOciCacheConfigSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsFilterOutput)
+}
+
+// GetOciCacheConfigSetsFilterArrayInput is an input type that accepts GetOciCacheConfigSetsFilterArray and GetOciCacheConfigSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsFilterArrayInput` via:
+//
+//	GetOciCacheConfigSetsFilterArray{ GetOciCacheConfigSetsFilterArgs{...} }
+type GetOciCacheConfigSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsFilterArrayOutput() GetOciCacheConfigSetsFilterArrayOutput
+	ToGetOciCacheConfigSetsFilterArrayOutputWithContext(context.Context) GetOciCacheConfigSetsFilterArrayOutput
+}
+
+type GetOciCacheConfigSetsFilterArray []GetOciCacheConfigSetsFilterInput
+
+func (GetOciCacheConfigSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsFilterArray) ToGetOciCacheConfigSetsFilterArrayOutput() GetOciCacheConfigSetsFilterArrayOutput {
+	return i.ToGetOciCacheConfigSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsFilterArray) ToGetOciCacheConfigSetsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsFilterArrayOutput)
+}
+
+type GetOciCacheConfigSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsFilterOutput) ToGetOciCacheConfigSetsFilterOutput() GetOciCacheConfigSetsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsFilterOutput) ToGetOciCacheConfigSetsFilterOutputWithContext(ctx context.Context) GetOciCacheConfigSetsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOciCacheConfigSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOciCacheConfigSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOciCacheConfigSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsFilterArrayOutput) ToGetOciCacheConfigSetsFilterArrayOutput() GetOciCacheConfigSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsFilterArrayOutput) ToGetOciCacheConfigSetsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsFilterArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetsFilter {
+		return vs[0].([]GetOciCacheConfigSetsFilter)[vs[1].(int)]
+	}).(GetOciCacheConfigSetsFilterOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollection struct {
+	// List of ConfigurationInfo objects.
+	Items []GetOciCacheConfigSetsOciCacheConfigSetCollectionItem `pulumi:"items"`
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs and GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs{...}
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs struct {
+	// List of ConfigurationInfo objects.
+	Items GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput)
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionArray and GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionArray{ GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs{...} }
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionArray []GetOciCacheConfigSetsOciCacheConfigSetCollectionInput
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput {
+	return o
+}
+
+// List of ConfigurationInfo objects.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput) Items() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollection) []GetOciCacheConfigSetsOciCacheConfigSetCollectionItem {
+		return v.Items
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetsOciCacheConfigSetCollection {
+		return vs[0].([]GetOciCacheConfigSetsOciCacheConfigSetCollection)[vs[1].(int)]
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// List of Oracle Cloud Infrastructure Cache Config Set Values.
+	ConfigurationDetails []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail `pulumi:"configurationDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
+	DefaultConfigSetId string `pulumi:"defaultConfigSetId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the Oracle Cloud Infrastructure Cache Config Set.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Unique Oracle Cloud Infrastructure Cache Config Set identifier.
+	Id string `pulumi:"id"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+	SoftwareVersion string `pulumi:"softwareVersion"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose lifecycle state matches with the given lifecycle state.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Oracle Cloud Infrastructure Cache Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Oracle Cloud Infrastructure Cache Config Set was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionItemInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs and GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionItemInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs{...}
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// List of Oracle Cloud Infrastructure Cache Config Set Values.
+	ConfigurationDetails GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayInput `pulumi:"configurationDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
+	DefaultConfigSetId pulumi.StringInput `pulumi:"defaultConfigSetId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the Oracle Cloud Infrastructure Cache Config Set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Unique Oracle Cloud Infrastructure Cache Config Set identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose lifecycle state matches with the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Oracle Cloud Infrastructure Cache Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Oracle Cloud Infrastructure Cache Config Set was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput)
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray and GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray{ GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs{...} }
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemInput
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// List of Oracle Cloud Infrastructure Cache Config Set Values.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) ConfigurationDetails() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail {
+		return v.ConfigurationDetails
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) DefaultConfigSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.DefaultConfigSetId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A description of the Oracle Cloud Infrastructure Cache Config Set.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Unique Oracle Cloud Infrastructure Cache Config Set identifier.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) SoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.SoftwareVersion }).(pulumi.StringOutput)
+}
+
+// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose lifecycle state matches with the given lifecycle state.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Oracle Cloud Infrastructure Cache Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Oracle Cloud Infrastructure Cache Config Set was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetsOciCacheConfigSetCollectionItem {
+		return vs[0].([]GetOciCacheConfigSetsOciCacheConfigSetCollectionItem)[vs[1].(int)]
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail struct {
+	// List of ConfigurationInfo objects.
+	Items []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem `pulumi:"items"`
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs and GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs{...}
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs struct {
+	// List of ConfigurationInfo objects.
+	Items GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput)
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray and GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray{ GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs{...} }
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailInput
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput {
+	return o
+}
+
+// List of ConfigurationInfo objects.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput) Items() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail) []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem {
+		return v.Items
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail {
+		return vs[0].([]GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetail)[vs[1].(int)]
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem struct {
+	// Key is the configuration key.
+	ConfigKey string `pulumi:"configKey"`
+	// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+	ConfigValue string `pulumi:"configValue"`
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs and GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs{...}
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs struct {
+	// Key is the configuration key.
+	ConfigKey pulumi.StringInput `pulumi:"configKey"`
+	// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+	ConfigValue pulumi.StringInput `pulumi:"configValue"`
+}
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput)
+}
+
+// GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayInput is an input type that accepts GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray and GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayInput` via:
+//
+//	GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray{ GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs{...} }
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput
+	ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutputWithContext(context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray []GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemInput
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput {
+	return i.ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput {
+	return o
+}
+
+// Key is the configuration key.
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem) string {
+		return v.ConfigKey
+	}).(pulumi.StringOutput)
+}
+
+// Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput) ConfigValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem) string {
+		return v.ConfigValue
+	}).(pulumi.StringOutput)
+}
+
+type GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput() GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput) ToGetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem {
+		return vs[0].([]GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItem)[vs[1].(int)]
+	}).(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput)
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetail struct {
+	// List of DefaultConfigurationInfo objects.
+	Items []GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem `pulumi:"items"`
+}
+
+// GetOciCacheDefaultConfigSetDefaultConfigurationDetailInput is an input type that accepts GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs and GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetDefaultConfigurationDetailInput` via:
+//
+//	GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs{...}
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutputWithContext(context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs struct {
+	// List of DefaultConfigurationInfo objects.
+	Items GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput {
+	return i.ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput)
+}
+
+// GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayInput is an input type that accepts GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray and GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray{ GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs{...} }
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray []GetOciCacheDefaultConfigSetDefaultConfigurationDetailInput
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput {
+	return o
+}
+
+// List of DefaultConfigurationInfo objects.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput) Items() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetail) []GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem {
+		return v.Items
+	}).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetDefaultConfigurationDetail {
+		return vs[0].([]GetOciCacheDefaultConfigSetDefaultConfigurationDetail)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput)
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem struct {
+	// Allowed values for the configuration setting.
+	AllowedValues string `pulumi:"allowedValues"`
+	// The key of the configuration setting.
+	ConfigKey string `pulumi:"configKey"`
+	// The data type of the configuration setting.
+	DataType string `pulumi:"dataType"`
+	// The default value for the configuration setting.
+	DefaultConfigValue string `pulumi:"defaultConfigValue"`
+	// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+	Description string `pulumi:"description"`
+	// Indicates if the configuration is modifiable.
+	IsModifiable bool `pulumi:"isModifiable"`
+}
+
+// GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemInput is an input type that accepts GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs and GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemInput` via:
+//
+//	GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs{...}
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutputWithContext(context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs struct {
+	// Allowed values for the configuration setting.
+	AllowedValues pulumi.StringInput `pulumi:"allowedValues"`
+	// The key of the configuration setting.
+	ConfigKey pulumi.StringInput `pulumi:"configKey"`
+	// The data type of the configuration setting.
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// The default value for the configuration setting.
+	DefaultConfigValue pulumi.StringInput `pulumi:"defaultConfigValue"`
+	// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Indicates if the configuration is modifiable.
+	IsModifiable pulumi.BoolInput `pulumi:"isModifiable"`
+}
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput {
+	return i.ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput)
+}
+
+// GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayInput is an input type that accepts GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray and GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray{ GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs{...} }
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput
+	ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray []GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemInput
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput {
+	return o
+}
+
+// Allowed values for the configuration setting.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) AllowedValues() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem) string { return v.AllowedValues }).(pulumi.StringOutput)
+}
+
+// The key of the configuration setting.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem) string { return v.ConfigKey }).(pulumi.StringOutput)
+}
+
+// The data type of the configuration setting.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// The default value for the configuration setting.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem) string { return v.DefaultConfigValue }).(pulumi.StringOutput)
+}
+
+// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Indicates if the configuration is modifiable.
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput) IsModifiable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem) bool { return v.IsModifiable }).(pulumi.BoolOutput)
+}
+
+type GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput() GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput) ToGetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem {
+		return vs[0].([]GetOciCacheDefaultConfigSetDefaultConfigurationDetailItem)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput)
+}
+
+type GetOciCacheDefaultConfigSetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetOciCacheDefaultConfigSetsFilterInput is an input type that accepts GetOciCacheDefaultConfigSetsFilterArgs and GetOciCacheDefaultConfigSetsFilterOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsFilterInput` via:
+//
+//	GetOciCacheDefaultConfigSetsFilterArgs{...}
+type GetOciCacheDefaultConfigSetsFilterInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsFilterOutput() GetOciCacheDefaultConfigSetsFilterOutput
+	ToGetOciCacheDefaultConfigSetsFilterOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsFilterOutput
+}
+
+type GetOciCacheDefaultConfigSetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetOciCacheDefaultConfigSetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsFilterArgs) ToGetOciCacheDefaultConfigSetsFilterOutput() GetOciCacheDefaultConfigSetsFilterOutput {
+	return i.ToGetOciCacheDefaultConfigSetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsFilterArgs) ToGetOciCacheDefaultConfigSetsFilterOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsFilterOutput)
+}
+
+// GetOciCacheDefaultConfigSetsFilterArrayInput is an input type that accepts GetOciCacheDefaultConfigSetsFilterArray and GetOciCacheDefaultConfigSetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsFilterArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetsFilterArray{ GetOciCacheDefaultConfigSetsFilterArgs{...} }
+type GetOciCacheDefaultConfigSetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsFilterArrayOutput() GetOciCacheDefaultConfigSetsFilterArrayOutput
+	ToGetOciCacheDefaultConfigSetsFilterArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsFilterArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetsFilterArray []GetOciCacheDefaultConfigSetsFilterInput
+
+func (GetOciCacheDefaultConfigSetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsFilter)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsFilterArray) ToGetOciCacheDefaultConfigSetsFilterArrayOutput() GetOciCacheDefaultConfigSetsFilterArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsFilterArray) ToGetOciCacheDefaultConfigSetsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsFilterArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterOutput) ToGetOciCacheDefaultConfigSetsFilterOutput() GetOciCacheDefaultConfigSetsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterOutput) ToGetOciCacheDefaultConfigSetsFilterOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsFilterOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsFilter)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterArrayOutput) ToGetOciCacheDefaultConfigSetsFilterArrayOutput() GetOciCacheDefaultConfigSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterArrayOutput) ToGetOciCacheDefaultConfigSetsFilterArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsFilterArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsFilterArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetsFilter {
+		return vs[0].([]GetOciCacheDefaultConfigSetsFilter)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetsFilterOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection struct {
+	// List of DefaultConfigurationInfo objects.
+	Items []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem `pulumi:"items"`
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs{...}
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs struct {
+	// List of DefaultConfigurationInfo objects.
+	Items GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput)
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray{ GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs{...} }
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionInput
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput {
+	return o
+}
+
+// List of DefaultConfigurationInfo objects.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput) Items() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection) []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem {
+		return v.Items
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection {
+		return vs[0].([]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollection)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem struct {
+	// List of Oracle Cloud Infrastructure Cache Default Config Set Values.
+	DefaultConfigurationDetails []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail `pulumi:"defaultConfigurationDetails"`
+	// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Unique Oracle Cloud Infrastructure Cache Default Config Set identifier.
+	Id string `pulumi:"id"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+	SoftwareVersion string `pulumi:"softwareVersion"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Default Config Set resources, whose lifecycle state matches with the given lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the Oracle Cloud Infrastructure Cache Default Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs{...}
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs struct {
+	// List of Oracle Cloud Infrastructure Cache Default Config Set Values.
+	DefaultConfigurationDetails GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayInput `pulumi:"defaultConfigurationDetails"`
+	// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Unique Oracle Cloud Infrastructure Cache Default Config Set identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+	SoftwareVersion pulumi.StringInput `pulumi:"softwareVersion"`
+	// A filter to return the Oracle Cloud Infrastructure Cache Default Config Set resources, whose lifecycle state matches with the given lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the Oracle Cloud Infrastructure Cache Default Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput)
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray{ GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs{...} }
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemInput
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput {
+	return o
+}
+
+// List of Oracle Cloud Infrastructure Cache Default Config Set Values.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) DefaultConfigurationDetails() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail {
+		return v.DefaultConfigurationDetails
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput)
+}
+
+// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Unique Oracle Cloud Infrastructure Cache Default Config Set identifier.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) SoftwareVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) string {
+		return v.SoftwareVersion
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return the Oracle Cloud Infrastructure Cache Default Config Set resources, whose lifecycle state matches with the given lifecycle state.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the Oracle Cloud Infrastructure Cache Default Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem {
+		return vs[0].([]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItem)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail struct {
+	// List of DefaultConfigurationInfo objects.
+	Items []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem `pulumi:"items"`
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs{...}
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs struct {
+	// List of DefaultConfigurationInfo objects.
+	Items GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayInput `pulumi:"items"`
+}
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput)
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray{ GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs{...} }
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailInput
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput {
+	return o
+}
+
+// List of DefaultConfigurationInfo objects.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput) Items() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail) []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem {
+		return v.Items
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail {
+		return vs[0].([]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetail)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem struct {
+	// Allowed values for the configuration setting.
+	AllowedValues string `pulumi:"allowedValues"`
+	// The key of the configuration setting.
+	ConfigKey string `pulumi:"configKey"`
+	// The data type of the configuration setting.
+	DataType string `pulumi:"dataType"`
+	// The default value for the configuration setting.
+	DefaultConfigValue string `pulumi:"defaultConfigValue"`
+	// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+	Description string `pulumi:"description"`
+	// Indicates if the configuration is modifiable.
+	IsModifiable bool `pulumi:"isModifiable"`
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs{...}
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs struct {
+	// Allowed values for the configuration setting.
+	AllowedValues pulumi.StringInput `pulumi:"allowedValues"`
+	// The key of the configuration setting.
+	ConfigKey pulumi.StringInput `pulumi:"configKey"`
+	// The data type of the configuration setting.
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// The default value for the configuration setting.
+	DefaultConfigValue pulumi.StringInput `pulumi:"defaultConfigValue"`
+	// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Indicates if the configuration is modifiable.
+	IsModifiable pulumi.BoolInput `pulumi:"isModifiable"`
+}
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput)
+}
+
+// GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayInput is an input type that accepts GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray and GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput values.
+// You can construct a concrete instance of `GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayInput` via:
+//
+//	GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray{ GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs{...} }
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayInput interface {
+	pulumi.Input
+
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput
+	ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutputWithContext(context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray []GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemInput
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput {
+	return i.ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput {
+	return o
+}
+
+// Allowed values for the configuration setting.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) AllowedValues() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem) string {
+		return v.AllowedValues
+	}).(pulumi.StringOutput)
+}
+
+// The key of the configuration setting.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) ConfigKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem) string {
+		return v.ConfigKey
+	}).(pulumi.StringOutput)
+}
+
+// The data type of the configuration setting.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem) string {
+		return v.DataType
+	}).(pulumi.StringOutput)
+}
+
+// The default value for the configuration setting.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) DefaultConfigValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem) string {
+		return v.DefaultConfigValue
+	}).(pulumi.StringOutput)
+}
+
+// Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Indicates if the configuration is modifiable.
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput) IsModifiable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem) bool {
+		return v.IsModifiable
+	}).(pulumi.BoolOutput)
+}
+
+type GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem)(nil)).Elem()
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput() GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput) ToGetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutputWithContext(ctx context.Context) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput {
+	return o
+}
+
+func (o GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput) Index(i pulumi.IntInput) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem {
+		return vs[0].([]GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItem)[vs[1].(int)]
+	}).(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput)
 }
 
 type GetOciCacheUserAuthenticationMode struct {
@@ -1851,6 +3879,8 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
 	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
+	// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId string `pulumi:"ociCacheConfigSetId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -1909,6 +3939,8 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	NodeMemoryInGbs pulumi.Float64Input `pulumi:"nodeMemoryInGbs"`
 	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId pulumi.StringInput `pulumi:"ociCacheConfigSetId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringInput `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -2039,6 +4071,11 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) NodeMemoryInGbs() pulu
 // A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 func (o GetRedisClustersRedisClusterCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) OciCacheConfigSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.OciCacheConfigSetId }).(pulumi.StringOutput)
 }
 
 // The private IP address of the API endpoint for the cluster's primary node.
@@ -2335,6 +4372,12 @@ func (o GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayOutput)
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheConfigSetConfigurationDetailsInput)(nil)).Elem(), OciCacheConfigSetConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheConfigSetConfigurationDetailsPtrInput)(nil)).Elem(), OciCacheConfigSetConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheConfigSetConfigurationDetailsItemInput)(nil)).Elem(), OciCacheConfigSetConfigurationDetailsItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheConfigSetConfigurationDetailsItemArrayInput)(nil)).Elem(), OciCacheConfigSetConfigurationDetailsItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheConfigSetlistAssociatedOciCacheClusterItemInput)(nil)).Elem(), OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayInput)(nil)).Elem(), OciCacheConfigSetlistAssociatedOciCacheClusterItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserAuthenticationModeInput)(nil)).Elem(), OciCacheUserAuthenticationModeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserAuthenticationModePtrInput)(nil)).Elem(), OciCacheUserAuthenticationModeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OciCacheUserGetRedisClusterOciCacheClusterInput)(nil)).Elem(), OciCacheUserGetRedisClusterOciCacheClusterArgs{})
@@ -2345,6 +4388,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionArrayInput)(nil)).Elem(), RedisClusterNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionItemInput)(nil)).Elem(), RedisClusterNodeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RedisClusterNodeCollectionItemArrayInput)(nil)).Elem(), RedisClusterNodeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailArrayInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailItemInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetConfigurationDetailItemArrayInput)(nil)).Elem(), GetOciCacheConfigSetConfigurationDetailItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsFilterInput)(nil)).Elem(), GetOciCacheConfigSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsFilterArrayInput)(nil)).Elem(), GetOciCacheConfigSetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayInput)(nil)).Elem(), GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetailInput)(nil)).Elem(), GetOciCacheDefaultConfigSetDefaultConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetDefaultConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemInput)(nil)).Elem(), GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsFilterInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsFilterArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayInput)(nil)).Elem(), GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUserAuthenticationModeInput)(nil)).Elem(), GetOciCacheUserAuthenticationModeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUserAuthenticationModeArrayInput)(nil)).Elem(), GetOciCacheUserAuthenticationModeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOciCacheUsersFilterInput)(nil)).Elem(), GetOciCacheUsersFilterArgs{})
@@ -2373,6 +4444,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionItemInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArrayInput)(nil)).Elem(), GetRedisClustersRedisClusterCollectionItemNodeCollectionItemArray{})
+	pulumi.RegisterOutputType(OciCacheConfigSetConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(OciCacheConfigSetConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(OciCacheConfigSetConfigurationDetailsItemOutput{})
+	pulumi.RegisterOutputType(OciCacheConfigSetConfigurationDetailsItemArrayOutput{})
+	pulumi.RegisterOutputType(OciCacheConfigSetlistAssociatedOciCacheClusterItemOutput{})
+	pulumi.RegisterOutputType(OciCacheConfigSetlistAssociatedOciCacheClusterItemArrayOutput{})
 	pulumi.RegisterOutputType(OciCacheUserAuthenticationModeOutput{})
 	pulumi.RegisterOutputType(OciCacheUserAuthenticationModePtrOutput{})
 	pulumi.RegisterOutputType(OciCacheUserGetRedisClusterOciCacheClusterOutput{})
@@ -2383,6 +4460,34 @@ func init() {
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionItemOutput{})
 	pulumi.RegisterOutputType(RedisClusterNodeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetConfigurationDetailItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetDefaultConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetDefaultConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsFilterOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemOutput{})
+	pulumi.RegisterOutputType(GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUserAuthenticationModeOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUserAuthenticationModeArrayOutput{})
 	pulumi.RegisterOutputType(GetOciCacheUsersFilterOutput{})

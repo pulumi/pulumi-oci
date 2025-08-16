@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -65,6 +66,21 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
     }
 
     /**
+     * The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    @Import(name="stepInfrastructureConfigurationDetails")
+    private @Nullable Output<PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs> stepInfrastructureConfigurationDetails;
+
+    /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    public Optional<Output<PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs>> stepInfrastructureConfigurationDetails() {
+        return Optional.ofNullable(this.stepInfrastructureConfigurationDetails);
+    }
+
+    /**
      * The name of the step.
      * 
      */
@@ -85,6 +101,7 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
         this.stepConfigurationDetails = $.stepConfigurationDetails;
         this.stepContainerConfigurationDetails = $.stepContainerConfigurationDetails;
         this.stepDataflowConfigurationDetails = $.stepDataflowConfigurationDetails;
+        this.stepInfrastructureConfigurationDetails = $.stepInfrastructureConfigurationDetails;
         this.stepName = $.stepName;
     }
 
@@ -167,6 +184,27 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
          */
         public Builder stepDataflowConfigurationDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs stepDataflowConfigurationDetails) {
             return stepDataflowConfigurationDetails(Output.of(stepDataflowConfigurationDetails));
+        }
+
+        /**
+         * @param stepInfrastructureConfigurationDetails The infrastructure configuration details of a pipeline or a step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepInfrastructureConfigurationDetails(@Nullable Output<PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs> stepInfrastructureConfigurationDetails) {
+            $.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param stepInfrastructureConfigurationDetails The infrastructure configuration details of a pipeline or a step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepInfrastructureConfigurationDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs stepInfrastructureConfigurationDetails) {
+            return stepInfrastructureConfigurationDetails(Output.of(stepInfrastructureConfigurationDetails));
         }
 
         /**

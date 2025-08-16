@@ -22,6 +22,7 @@ __all__ = [
     'ManagementAgentDataSourceSummaryList',
     'ManagementAgentManagementAgentProperty',
     'ManagementAgentPluginList',
+    'NamedCredentialProperty',
     'GetManagementAgentAvailableHistoriesAvailabilityHistoryResult',
     'GetManagementAgentAvailableHistoriesFilterResult',
     'GetManagementAgentCountItemResult',
@@ -38,6 +39,8 @@ __all__ = [
     'GetManagementAgentInstallKeysFilterResult',
     'GetManagementAgentInstallKeysManagementAgentInstallKeyResult',
     'GetManagementAgentManagementAgentPropertyResult',
+    'GetManagementAgentNamedCredentialsMetadataMetadataResult',
+    'GetManagementAgentNamedCredentialsMetadataMetadataPropertyResult',
     'GetManagementAgentPluginCountItemResult',
     'GetManagementAgentPluginCountItemDimensionResult',
     'GetManagementAgentPluginListResult',
@@ -50,6 +53,11 @@ __all__ = [
     'GetManagementAgentsManagementAgentDataSourceSummaryListResult',
     'GetManagementAgentsManagementAgentManagementAgentPropertyResult',
     'GetManagementAgentsManagementAgentPluginListResult',
+    'GetNamedCredentialPropertyResult',
+    'GetNamedCredentialsFilterResult',
+    'GetNamedCredentialsNamedCredentialCollectionResult',
+    'GetNamedCredentialsNamedCredentialCollectionItemResult',
+    'GetNamedCredentialsNamedCredentialCollectionItemPropertyResult',
 ]
 
 @pulumi.output_type
@@ -607,6 +615,63 @@ class ManagementAgentPluginList(dict):
         Plugin Version
         """
         return pulumi.get(self, "plugin_version")
+
+
+@pulumi.output_type
+class NamedCredentialProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "valueCategory":
+            suggest = "value_category"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NamedCredentialProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NamedCredentialProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NamedCredentialProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str,
+                 value_category: _builtins.str):
+        """
+        :param _builtins.str name: (Updatable) Name of the property
+        :param _builtins.str value: (Updatable) Value of the property
+        :param _builtins.str value_category: (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_category", value_category)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        (Updatable) Value of the property
+        """
+        return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter(name="valueCategory")
+    def value_category(self) -> _builtins.str:
+        """
+        (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        return pulumi.get(self, "value_category")
 
 
 @pulumi.output_type
@@ -1423,12 +1488,15 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
                  compartment_id: _builtins.str,
                  created_by_principal_id: _builtins.str,
                  current_key_install_count: _builtins.int,
+                 defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_unlimited: _builtins.bool,
                  key: _builtins.str,
                  lifecycle_details: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_expires: _builtins.str,
                  time_updated: _builtins.str):
@@ -1437,12 +1505,15 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
         :param _builtins.str compartment_id: The OCID of the compartment to which a request will be scoped.
         :param _builtins.str created_by_principal_id: Principal id of user who created the Agent Install key
         :param _builtins.int current_key_install_count: Total number of install for this keys
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str display_name: The display name for which the Key needs to be listed.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: Agent install Key identifier
         :param _builtins.bool is_unlimited: If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
         :param _builtins.str key: Management Agent Install Key
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param _builtins.str state: Filter to return only Management Agents in the particular lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time when Management Agent install Key was created. An RFC3339 formatted date time string
         :param _builtins.str time_expires: date after which key would expire after creation
         :param _builtins.str time_updated: The time when Management Agent install Key was updated. An RFC3339 formatted date time string
@@ -1451,12 +1522,15 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "created_by_principal_id", created_by_principal_id)
         pulumi.set(__self__, "current_key_install_count", current_key_install_count)
+        pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_unlimited", is_unlimited)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_expires", time_expires)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -1494,12 +1568,28 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
         return pulumi.get(self, "current_key_install_count")
 
     @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
         The display name for which the Key needs to be listed.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
     @pulumi.getter
@@ -1540,6 +1630,14 @@ class GetManagementAgentInstallKeysManagementAgentInstallKeyResult(dict):
         Filter to return only Management Agents in the particular lifecycle state.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -1604,6 +1702,141 @@ class GetManagementAgentManagementAgentPropertyResult(dict):
         Values of the property
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetManagementAgentNamedCredentialsMetadataMetadataResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 minimum_agent_version: _builtins.str,
+                 properties: Sequence['outputs.GetManagementAgentNamedCredentialsMetadataMetadataPropertyResult'],
+                 type: _builtins.str):
+        """
+        :param _builtins.str display_name: The field display name
+        :param _builtins.str minimum_agent_version: This Named Credential type is supported on management agents at this version or above.
+        :param Sequence['GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs'] properties: The property definitions for this named credential metadata
+        :param _builtins.str type: The type of the Named Credential.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "minimum_agent_version", minimum_agent_version)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The field display name
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumAgentVersion")
+    def minimum_agent_version(self) -> _builtins.str:
+        """
+        This Named Credential type is supported on management agents at this version or above.
+        """
+        return pulumi.get(self, "minimum_agent_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetManagementAgentNamedCredentialsMetadataMetadataPropertyResult']:
+        """
+        The property definitions for this named credential metadata
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the Named Credential.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagementAgentNamedCredentialsMetadataMetadataPropertyResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: Sequence[_builtins.str],
+                 default_value: _builtins.str,
+                 display_name: _builtins.str,
+                 is_required: _builtins.bool,
+                 name: _builtins.str,
+                 regex: _builtins.str,
+                 value_categories: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] allowed_values: List of values which can be applied to the value when valueCategory is ALLOWED_VALUES
+        :param _builtins.str default_value: The default value which will be used if no value is set.  If defaultValue is empty, then no default will be set.
+        :param _builtins.str display_name: The field display name
+        :param _builtins.bool is_required: Set to true if the field must be defined
+        :param _builtins.str name: The field name
+        :param _builtins.str regex: Optional regular expression definition which will be applied to the value when valueCategory is CLEAR_TEXT
+        :param Sequence[_builtins.str] value_categories: List of value categories of field allowed for this property
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "default_value", default_value)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "is_required", is_required)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "regex", regex)
+        pulumi.set(__self__, "value_categories", value_categories)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence[_builtins.str]:
+        """
+        List of values which can be applied to the value when valueCategory is ALLOWED_VALUES
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> _builtins.str:
+        """
+        The default value which will be used if no value is set.  If defaultValue is empty, then no default will be set.
+        """
+        return pulumi.get(self, "default_value")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The field display name
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="isRequired")
+    def is_required(self) -> _builtins.bool:
+        """
+        Set to true if the field must be defined
+        """
+        return pulumi.get(self, "is_required")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The field name
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> _builtins.str:
+        """
+        Optional regular expression definition which will be applied to the value when valueCategory is CLEAR_TEXT
+        """
+        return pulumi.get(self, "regex")
+
+    @_builtins.property
+    @pulumi.getter(name="valueCategories")
+    def value_categories(self) -> Sequence[_builtins.str]:
+        """
+        List of value categories of field allowed for this property
+        """
+        return pulumi.get(self, "value_categories")
 
 
 @pulumi.output_type
@@ -1932,6 +2165,7 @@ class GetManagementAgentsManagementAgentResult(dict):
                  install_type: _builtins.str,
                  is_agent_auto_upgradable: _builtins.bool,
                  is_customer_deployed: _builtins.bool,
+                 latest_supported_version: _builtins.str,
                  lifecycle_details: _builtins.str,
                  managed_agent_id: _builtins.str,
                  management_agent_properties: Sequence['outputs.GetManagementAgentsManagementAgentManagementAgentPropertyResult'],
@@ -1941,6 +2175,7 @@ class GetManagementAgentsManagementAgentResult(dict):
                  plugin_lists: Sequence['outputs.GetManagementAgentsManagementAgentPluginListResult'],
                  resource_artifact_version: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_last_heartbeat: _builtins.str,
                  time_updated: _builtins.str,
@@ -1968,6 +2203,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         :param Sequence['GetManagementAgentsManagementAgentPluginListArgs'] plugin_lists: list of managementAgentPlugins associated with the agent
         :param _builtins.str resource_artifact_version: Version of the deployment artifact instantiated by this Management Agent. The format for Standalone resourceMode is YYMMDD.HHMM, and the format for other modes (whose artifacts are based upon Standalone but can advance independently) is YYMMDD.HHMM.VVVVVVVVVVVV. VVVVVVVVVVVV is always a numeric value between 000000000000 and 999999999999
         :param _builtins.str state: Filter to return only Management Agents in the particular lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
         :param _builtins.str time_last_heartbeat: The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
         :param _builtins.str time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
@@ -1989,6 +2225,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         pulumi.set(__self__, "install_type", install_type)
         pulumi.set(__self__, "is_agent_auto_upgradable", is_agent_auto_upgradable)
         pulumi.set(__self__, "is_customer_deployed", is_customer_deployed)
+        pulumi.set(__self__, "latest_supported_version", latest_supported_version)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_agent_id", managed_agent_id)
         pulumi.set(__self__, "management_agent_properties", management_agent_properties)
@@ -1998,6 +2235,7 @@ class GetManagementAgentsManagementAgentResult(dict):
         pulumi.set(__self__, "plugin_lists", plugin_lists)
         pulumi.set(__self__, "resource_artifact_version", resource_artifact_version)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_heartbeat", time_last_heartbeat)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -2126,6 +2364,11 @@ class GetManagementAgentsManagementAgentResult(dict):
         return pulumi.get(self, "is_customer_deployed")
 
     @_builtins.property
+    @pulumi.getter(name="latestSupportedVersion")
+    def latest_supported_version(self) -> _builtins.str:
+        return pulumi.get(self, "latest_supported_version")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -2193,6 +2436,14 @@ class GetManagementAgentsManagementAgentResult(dict):
         Filter to return only Management Agents in the particular lifecycle state.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -2590,5 +2841,269 @@ class GetManagementAgentsManagementAgentPluginListResult(dict):
         Plugin Version
         """
         return pulumi.get(self, "plugin_version")
+
+
+@pulumi.output_type
+class GetNamedCredentialPropertyResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str,
+                 value_category: _builtins.str):
+        """
+        :param _builtins.str name: Name of the property
+        :param _builtins.str value: Value of the property
+        :param _builtins.str value_category: The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_category", value_category)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the property
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the property
+        """
+        return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter(name="valueCategory")
+    def value_category(self) -> _builtins.str:
+        """
+        The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        return pulumi.get(self, "value_category")
+
+
+@pulumi.output_type
+class GetNamedCredentialsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Filter list for these name items.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Filter list for these name items.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetNamedCredentialsNamedCredentialCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetNamedCredentialsNamedCredentialCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetNamedCredentialsNamedCredentialCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetNamedCredentialsNamedCredentialCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 management_agent_id: _builtins.str,
+                 name: _builtins.str,
+                 properties: Sequence['outputs.GetNamedCredentialsNamedCredentialCollectionItemPropertyResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: Description of the Named Credential.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: Filter list for these Named credentials identifiers (ocid) values.
+        :param _builtins.str management_agent_id: The ManagementAgentID of the agent from which the named credentials are associated.
+        :param _builtins.str name: Filter list for these name items.
+        :param Sequence['GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs'] properties: Properties for the named credential
+        :param _builtins.str state: Filter list to return only Management Agents in the particular lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The time the Named Credential was created. An RFC3339 formatted datetime string
+        :param _builtins.str time_updated: The time the Named Credential data was last updated. An RFC3339 formatted datetime string
+        :param _builtins.str type: Filter list for these type values.
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the Named Credential.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Filter list for these Named credentials identifiers (ocid) values.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> _builtins.str:
+        """
+        The ManagementAgentID of the agent from which the named credentials are associated.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Filter list for these name items.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Sequence['outputs.GetNamedCredentialsNamedCredentialCollectionItemPropertyResult']:
+        """
+        Properties for the named credential
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        Filter list to return only Management Agents in the particular lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the Named Credential was created. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The time the Named Credential data was last updated. An RFC3339 formatted datetime string
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Filter list for these type values.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNamedCredentialsNamedCredentialCollectionItemPropertyResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str,
+                 value_category: _builtins.str):
+        """
+        :param _builtins.str name: Filter list for these name items.
+        :param _builtins.str value: Value of the property
+        :param _builtins.str value_category: The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+        pulumi.set(__self__, "value_category", value_category)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Filter list for these name items.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the property
+        """
+        return pulumi.get(self, "value")
+
+    @_builtins.property
+    @pulumi.getter(name="valueCategory")
+    def value_category(self) -> _builtins.str:
+        """
+        The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+        """
+        return pulumi.get(self, "value_category")
 
 

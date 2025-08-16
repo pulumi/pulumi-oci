@@ -31,8 +31,9 @@ namespace Pulumi.Oci.ManagementDashboard
     /// {
     ///     var testManagementDashboardsImport = new Oci.ManagementDashboard.ManagementDashboardsImport("test_management_dashboards_import", new()
     ///     {
-    ///         ImportDetails = sampleImportDetails,
-    ///         ImportDetailsFile = sampleImportDetailsFilePath,
+    ///         OverrideDashboardCompartmentOcid = managementDashboardsImportOverrideDashboardCompartmentOcid,
+    ///         OverrideSameName = managementDashboardsImportOverrideSameName,
+    ///         OverrideSavedSearchCompartmentOcid = managementDashboardsImportOverrideSavedSearchCompartmentOcid,
     ///     });
     /// 
     /// });
@@ -49,14 +50,33 @@ namespace Pulumi.Oci.ManagementDashboard
     [OciResourceType("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport")]
     public partial class ManagementDashboardsImport : global::Pulumi.CustomResource
     {
-        /// <summary>
-        /// Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        /// </summary>
         [Output("importDetails")]
         public Output<string?> ImportDetails { get; private set; } = null!;
 
         [Output("importDetailsFile")]
         public Output<string?> ImportDetailsFile { get; private set; } = null!;
+
+        /// <summary>
+        /// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        /// </summary>
+        [Output("overrideDashboardCompartmentOcid")]
+        public Output<string> OverrideDashboardCompartmentOcid { get; private set; } = null!;
+
+        /// <summary>
+        /// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        /// </summary>
+        [Output("overrideSameName")]
+        public Output<string> OverrideSameName { get; private set; } = null!;
+
+        /// <summary>
+        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("overrideSavedSearchCompartmentOcid")]
+        public Output<string> OverrideSavedSearchCompartmentOcid { get; private set; } = null!;
 
 
         /// <summary>
@@ -104,14 +124,33 @@ namespace Pulumi.Oci.ManagementDashboard
 
     public sealed class ManagementDashboardsImportArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        /// </summary>
         [Input("importDetails")]
         public Input<string>? ImportDetails { get; set; }
 
         [Input("importDetailsFile")]
         public Input<string>? ImportDetailsFile { get; set; }
+
+        /// <summary>
+        /// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        /// </summary>
+        [Input("overrideDashboardCompartmentOcid")]
+        public Input<string>? OverrideDashboardCompartmentOcid { get; set; }
+
+        /// <summary>
+        /// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        /// </summary>
+        [Input("overrideSameName")]
+        public Input<string>? OverrideSameName { get; set; }
+
+        /// <summary>
+        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("overrideSavedSearchCompartmentOcid")]
+        public Input<string>? OverrideSavedSearchCompartmentOcid { get; set; }
 
         public ManagementDashboardsImportArgs()
         {
@@ -121,14 +160,33 @@ namespace Pulumi.Oci.ManagementDashboard
 
     public sealed class ManagementDashboardsImportState : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-        /// </summary>
         [Input("importDetails")]
         public Input<string>? ImportDetails { get; set; }
 
         [Input("importDetailsFile")]
         public Input<string>? ImportDetailsFile { get; set; }
+
+        /// <summary>
+        /// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+        /// </summary>
+        [Input("overrideDashboardCompartmentOcid")]
+        public Input<string>? OverrideDashboardCompartmentOcid { get; set; }
+
+        /// <summary>
+        /// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+        /// </summary>
+        [Input("overrideSameName")]
+        public Input<string>? OverrideSameName { get; set; }
+
+        /// <summary>
+        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("overrideSavedSearchCompartmentOcid")]
+        public Input<string>? OverrideSavedSearchCompartmentOcid { get; set; }
 
         public ManagementDashboardsImportState()
         {

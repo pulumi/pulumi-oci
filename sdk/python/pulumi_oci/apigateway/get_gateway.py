@@ -27,7 +27,7 @@ class GetGatewayResult:
     """
     A collection of values returned by getGateway.
     """
-    def __init__(__self__, ca_bundles=None, certificate_id=None, compartment_id=None, defined_tags=None, display_name=None, endpoint_type=None, freeform_tags=None, gateway_id=None, hostname=None, id=None, ip_addresses=None, lifecycle_details=None, network_security_group_ids=None, response_cache_details=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, ca_bundles=None, certificate_id=None, compartment_id=None, defined_tags=None, display_name=None, endpoint_type=None, freeform_tags=None, gateway_id=None, hostname=None, id=None, ip_addresses=None, is_lock_override=None, lifecycle_details=None, locks=None, network_security_group_ids=None, response_cache_details=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if ca_bundles and not isinstance(ca_bundles, list):
             raise TypeError("Expected argument 'ca_bundles' to be a list")
         pulumi.set(__self__, "ca_bundles", ca_bundles)
@@ -61,9 +61,15 @@ class GetGatewayResult:
         if ip_addresses and not isinstance(ip_addresses, list):
             raise TypeError("Expected argument 'ip_addresses' to be a list")
         pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if network_security_group_ids and not isinstance(network_security_group_ids, list):
             raise TypeError("Expected argument 'network_security_group_ids' to be a list")
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
@@ -76,6 +82,9 @@ class GetGatewayResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -169,12 +178,22 @@ class GetGatewayResult:
         return pulumi.get(self, "ip_addresses")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetGatewayLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -207,6 +226,11 @@ class GetGatewayResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -242,11 +266,14 @@ class AwaitableGetGatewayResult(GetGatewayResult):
             hostname=self.hostname,
             id=self.id,
             ip_addresses=self.ip_addresses,
+            is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             network_security_group_ids=self.network_security_group_ids,
             response_cache_details=self.response_cache_details,
             state=self.state,
             subnet_id=self.subnet_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -287,11 +314,14 @@ def get_gateway(gateway_id: Optional[_builtins.str] = None,
         hostname=pulumi.get(__ret__, 'hostname'),
         id=pulumi.get(__ret__, 'id'),
         ip_addresses=pulumi.get(__ret__, 'ip_addresses'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         network_security_group_ids=pulumi.get(__ret__, 'network_security_group_ids'),
         response_cache_details=pulumi.get(__ret__, 'response_cache_details'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_gateway_output(gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -329,10 +359,13 @@ def get_gateway_output(gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
         hostname=pulumi.get(__response__, 'hostname'),
         id=pulumi.get(__response__, 'id'),
         ip_addresses=pulumi.get(__response__, 'ip_addresses'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         network_security_group_ids=pulumi.get(__response__, 'network_security_group_ids'),
         response_cache_details=pulumi.get(__response__, 'response_cache_details'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

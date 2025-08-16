@@ -29,6 +29,7 @@ class PipelineRunArgs:
                  delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']] = None,
                  log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
@@ -42,6 +43,7 @@ class PipelineRunArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs'] infrastructure_configuration_override_details: The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -64,6 +66,8 @@ class PipelineRunArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if infrastructure_configuration_override_details is not None:
+            pulumi.set(__self__, "infrastructure_configuration_override_details", infrastructure_configuration_override_details)
         if log_configuration_override_details is not None:
             pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
         if opc_parent_rpt_url is not None:
@@ -167,6 +171,18 @@ class PipelineRunArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
+    def infrastructure_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "infrastructure_configuration_override_details")
+
+    @infrastructure_configuration_override_details.setter
+    def infrastructure_configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "infrastructure_configuration_override_details", value)
+
+    @_builtins.property
     @pulumi.getter(name="logConfigurationOverrideDetails")
     def log_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']]:
         """
@@ -230,6 +246,7 @@ class _PipelineRunState:
                  delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
                  log_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]] = None,
@@ -253,6 +270,7 @@ class _PipelineRunState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs'] infrastructure_configuration_override_details: The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]] log_details: Customer logging details for pipeline run.
@@ -288,6 +306,8 @@ class _PipelineRunState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if infrastructure_configuration_override_details is not None:
+            pulumi.set(__self__, "infrastructure_configuration_override_details", infrastructure_configuration_override_details)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_configuration_override_details is not None:
@@ -409,6 +429,18 @@ class _PipelineRunState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
+    def infrastructure_configuration_override_details(self) -> Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "infrastructure_configuration_override_details")
+
+    @infrastructure_configuration_override_details.setter
+    def infrastructure_configuration_override_details(self, value: Optional[pulumi.Input['PipelineRunInfrastructureConfigurationOverrideDetailsArgs']]):
+        pulumi.set(self, "infrastructure_configuration_override_details", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -595,6 +627,7 @@ class PipelineRun(pulumi.CustomResource):
                  delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
                  log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
                  pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -629,6 +662,15 @@ class PipelineRun(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            infrastructure_configuration_override_details={
+                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "shape_name": test_shape["name"],
+                "shape_config_details": {
+                    "memory_in_gbs": pipeline_run_infrastructure_configuration_override_details_shape_config_details_memory_in_gbs,
+                    "ocpus": pipeline_run_infrastructure_configuration_override_details_shape_config_details_ocpus,
+                },
+                "subnet_id": test_subnet["id"],
+            },
             log_configuration_override_details={
                 "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
                 "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
@@ -656,17 +698,28 @@ class PipelineRun(pulumi.CustomResource):
                     "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
                     "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
                     "driver_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
                     },
                     "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
                     "executor_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
                     },
                     "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
                     "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
                     "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
+                },
+                "step_infrastructure_configuration_details": {
+                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "shape_name": test_shape["name"],
+                    "shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+                    },
+                    "subnet_id": test_subnet["id"],
                 },
             }],
             system_tags=pipeline_run_system_tags)
@@ -687,6 +740,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']] infrastructure_configuration_override_details: The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[_builtins.str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[_builtins.str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
@@ -731,6 +785,15 @@ class PipelineRun(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            infrastructure_configuration_override_details={
+                "block_storage_size_in_gbs": pipeline_run_infrastructure_configuration_override_details_block_storage_size_in_gbs,
+                "shape_name": test_shape["name"],
+                "shape_config_details": {
+                    "memory_in_gbs": pipeline_run_infrastructure_configuration_override_details_shape_config_details_memory_in_gbs,
+                    "ocpus": pipeline_run_infrastructure_configuration_override_details_shape_config_details_ocpus,
+                },
+                "subnet_id": test_subnet["id"],
+            },
             log_configuration_override_details={
                 "enable_auto_log_creation": pipeline_run_log_configuration_override_details_enable_auto_log_creation,
                 "enable_logging": pipeline_run_log_configuration_override_details_enable_logging,
@@ -758,17 +821,28 @@ class PipelineRun(pulumi.CustomResource):
                     "configuration": pipeline_run_step_override_details_step_dataflow_configuration_details_configuration,
                     "driver_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape,
                     "driver_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_driver_shape_config_details_ocpus,
                     },
                     "executor_shape": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape,
                     "executor_shape_config_details": {
+                        "cpu_baseline": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_cpu_baseline,
                         "memory_in_gbs": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_memory_in_gbs,
                         "ocpus": pipeline_run_step_override_details_step_dataflow_configuration_details_executor_shape_config_details_ocpus,
                     },
                     "logs_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_logs_bucket_uri,
                     "num_executors": pipeline_run_step_override_details_step_dataflow_configuration_details_num_executors,
                     "warehouse_bucket_uri": pipeline_run_step_override_details_step_dataflow_configuration_details_warehouse_bucket_uri,
+                },
+                "step_infrastructure_configuration_details": {
+                    "block_storage_size_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
+                    "shape_name": test_shape["name"],
+                    "shape_config_details": {
+                        "memory_in_gbs": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
+                        "ocpus": pipeline_run_step_override_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
+                    },
+                    "subnet_id": test_subnet["id"],
                 },
             }],
             system_tags=pipeline_run_system_tags)
@@ -803,6 +877,7 @@ class PipelineRun(pulumi.CustomResource):
                  delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 infrastructure_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
                  log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[_builtins.str]] = None,
                  pipeline_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -826,6 +901,7 @@ class PipelineRun(pulumi.CustomResource):
             __props__.__dict__["delete_related_job_runs"] = delete_related_job_runs
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["infrastructure_configuration_override_details"] = infrastructure_configuration_override_details
             __props__.__dict__["log_configuration_override_details"] = log_configuration_override_details
             __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
             if pipeline_id is None and not opts.urn:
@@ -864,6 +940,7 @@ class PipelineRun(pulumi.CustomResource):
             delete_related_job_runs: Optional[pulumi.Input[_builtins.bool]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
             log_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict']]]]] = None,
@@ -892,6 +969,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict']] infrastructure_configuration_override_details: The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[_builtins.str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict']]]] log_details: Customer logging details for pipeline run.
@@ -923,6 +1001,7 @@ class PipelineRun(pulumi.CustomResource):
         __props__.__dict__["delete_related_job_runs"] = delete_related_job_runs
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["infrastructure_configuration_override_details"] = infrastructure_configuration_override_details
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_configuration_override_details"] = log_configuration_override_details
         __props__.__dict__["log_details"] = log_details
@@ -999,6 +1078,14 @@ class PipelineRun(pulumi.CustomResource):
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
+    def infrastructure_configuration_override_details(self) -> pulumi.Output['outputs.PipelineRunInfrastructureConfigurationOverrideDetails']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "infrastructure_configuration_override_details")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

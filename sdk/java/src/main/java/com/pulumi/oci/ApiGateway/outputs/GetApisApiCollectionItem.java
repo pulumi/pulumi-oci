@@ -5,7 +5,9 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApiGateway.outputs.GetApisApiCollectionItemLock;
 import com.pulumi.oci.ApiGateway.outputs.GetApisApiCollectionItemValidationResult;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,6 +41,7 @@ public final class GetApisApiCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * &#39;New&#39; for just updated API Specifications
@@ -51,6 +54,7 @@ public final class GetApisApiCollectionItem {
      * 
      */
     private String lifecycleDetails;
+    private List<GetApisApiCollectionItemLock> locks;
     /**
      * @return Type of API Specification file.
      * 
@@ -61,6 +65,7 @@ public final class GetApisApiCollectionItem {
      * 
      */
     private String state;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -116,6 +121,9 @@ public final class GetApisApiCollectionItem {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * &#39;New&#39; for just updated API Specifications
@@ -130,6 +138,9 @@ public final class GetApisApiCollectionItem {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public List<GetApisApiCollectionItemLock> locks() {
+        return this.locks;
+    }
     /**
      * @return Type of API Specification file.
      * 
@@ -143,6 +154,9 @@ public final class GetApisApiCollectionItem {
      */
     public String state() {
         return this.state;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -181,9 +195,12 @@ public final class GetApisApiCollectionItem {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetApisApiCollectionItemLock> locks;
         private String specificationType;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private List<GetApisApiCollectionItemValidationResult> validationResults;
@@ -196,9 +213,12 @@ public final class GetApisApiCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.specificationType = defaults.specificationType;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.validationResults = defaults.validationResults;
@@ -253,12 +273,31 @@ public final class GetApisApiCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetApisApiCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetApisApiCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetApisApiCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetApisApiCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetApisApiCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder specificationType(String specificationType) {
@@ -274,6 +313,14 @@ public final class GetApisApiCollectionItem {
               throw new MissingRequiredPropertyException("GetApisApiCollectionItem", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetApisApiCollectionItem", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -311,9 +358,12 @@ public final class GetApisApiCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.specificationType = specificationType;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.validationResults = validationResults;

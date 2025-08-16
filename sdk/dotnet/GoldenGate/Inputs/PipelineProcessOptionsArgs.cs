@@ -31,7 +31,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string> ShouldRestartOnFailure { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        /// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         /// </summary>
         [Input("startUsingDefaultMapping")]
         public Input<string>? StartUsingDefaultMapping { get; set; }

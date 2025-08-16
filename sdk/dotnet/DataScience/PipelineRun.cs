@@ -44,6 +44,17 @@ namespace Pulumi.Oci.DataScience
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         InfrastructureConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs
+    ///         {
+    ///             BlockStorageSizeInGbs = pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+    ///             ShapeName = testShape.Name,
+    ///             ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs
+    ///             {
+    ///                 MemoryInGbs = pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus,
+    ///             },
+    ///             SubnetId = testSubnet.Id,
+    ///         },
     ///         LogConfigurationOverrideDetails = new Oci.DataScience.Inputs.PipelineRunLogConfigurationOverrideDetailsArgs
     ///         {
     ///             EnableAutoLogCreation = pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
@@ -79,18 +90,31 @@ namespace Pulumi.Oci.DataScience
     ///                     DriverShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
     ///                     DriverShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs
     ///                     {
+    ///                         CpuBaseline = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
     ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
     ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
     ///                     },
     ///                     ExecutorShape = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
     ///                     ExecutorShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs
     ///                     {
+    ///                         CpuBaseline = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
     ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
     ///                         Ocpus = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
     ///                     },
     ///                     LogsBucketUri = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
     ///                     NumExecutors = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
     ///                     WarehouseBucketUri = pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
+    ///                 },
+    ///                 StepInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs
+    ///                 {
+    ///                     BlockStorageSizeInGbs = pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///                     ShapeName = testShape.Name,
+    ///                     ShapeConfigDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs
+    ///                     {
+    ///                         MemoryInGbs = pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+    ///                         Ocpus = pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
+    ///                     },
+    ///                     SubnetId = testSubnet.Id,
     ///                 },
     ///             },
     ///         },
@@ -155,6 +179,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The infrastructure configuration details of a pipeline or a step.
+        /// </summary>
+        [Output("infrastructureConfigurationOverrideDetails")]
+        public Output<Outputs.PipelineRunInfrastructureConfigurationOverrideDetails> InfrastructureConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
         /// Details of the state of the step run.
@@ -336,6 +366,12 @@ namespace Pulumi.Oci.DataScience
         }
 
         /// <summary>
+        /// The infrastructure configuration details of a pipeline or a step.
+        /// </summary>
+        [Input("infrastructureConfigurationOverrideDetails")]
+        public Input<Inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs>? InfrastructureConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
         /// The pipeline log configuration details.
         /// </summary>
         [Input("logConfigurationOverrideDetails")]
@@ -457,6 +493,12 @@ namespace Pulumi.Oci.DataScience
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// The infrastructure configuration details of a pipeline or a step.
+        /// </summary>
+        [Input("infrastructureConfigurationOverrideDetails")]
+        public Input<Inputs.PipelineRunInfrastructureConfigurationOverrideDetailsGetArgs>? InfrastructureConfigurationOverrideDetails { get; set; }
 
         /// <summary>
         /// Details of the state of the step run.

@@ -8,7 +8,9 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.Map;
@@ -142,6 +144,21 @@ public final class JobRunArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    @Import(name="jobInfrastructureConfigurationOverrideDetails")
+    private @Nullable Output<JobRunJobInfrastructureConfigurationOverrideDetailsArgs> jobInfrastructureConfigurationOverrideDetails;
+
+    /**
+     * @return The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    public Optional<Output<JobRunJobInfrastructureConfigurationOverrideDetailsArgs>> jobInfrastructureConfigurationOverrideDetails() {
+        return Optional.ofNullable(this.jobInfrastructureConfigurationOverrideDetails);
+    }
+
+    /**
      * Logging configuration for resource.
      * 
      */
@@ -154,6 +171,21 @@ public final class JobRunArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<JobRunJobLogConfigurationOverrideDetailsArgs>> jobLogConfigurationOverrideDetails() {
         return Optional.ofNullable(this.jobLogConfigurationOverrideDetails);
+    }
+
+    /**
+     * The job node configuration details
+     * 
+     */
+    @Import(name="jobNodeConfigurationOverrideDetails")
+    private @Nullable Output<JobRunJobNodeConfigurationOverrideDetailsArgs> jobNodeConfigurationOverrideDetails;
+
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public Optional<Output<JobRunJobNodeConfigurationOverrideDetailsArgs>> jobNodeConfigurationOverrideDetails() {
+        return Optional.ofNullable(this.jobNodeConfigurationOverrideDetails);
     }
 
     /**
@@ -203,7 +235,9 @@ public final class JobRunArgs extends com.pulumi.resources.ResourceArgs {
         this.jobConfigurationOverrideDetails = $.jobConfigurationOverrideDetails;
         this.jobEnvironmentConfigurationOverrideDetails = $.jobEnvironmentConfigurationOverrideDetails;
         this.jobId = $.jobId;
+        this.jobInfrastructureConfigurationOverrideDetails = $.jobInfrastructureConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = $.jobLogConfigurationOverrideDetails;
+        this.jobNodeConfigurationOverrideDetails = $.jobNodeConfigurationOverrideDetails;
         this.opcParentRptUrl = $.opcParentRptUrl;
         this.projectId = $.projectId;
     }
@@ -395,6 +429,27 @@ public final class JobRunArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param jobInfrastructureConfigurationOverrideDetails The job infrastructure configuration details (shape, block storage, etc.)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobInfrastructureConfigurationOverrideDetails(@Nullable Output<JobRunJobInfrastructureConfigurationOverrideDetailsArgs> jobInfrastructureConfigurationOverrideDetails) {
+            $.jobInfrastructureConfigurationOverrideDetails = jobInfrastructureConfigurationOverrideDetails;
+            return this;
+        }
+
+        /**
+         * @param jobInfrastructureConfigurationOverrideDetails The job infrastructure configuration details (shape, block storage, etc.)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobInfrastructureConfigurationOverrideDetails(JobRunJobInfrastructureConfigurationOverrideDetailsArgs jobInfrastructureConfigurationOverrideDetails) {
+            return jobInfrastructureConfigurationOverrideDetails(Output.of(jobInfrastructureConfigurationOverrideDetails));
+        }
+
+        /**
          * @param jobLogConfigurationOverrideDetails Logging configuration for resource.
          * 
          * @return builder
@@ -413,6 +468,27 @@ public final class JobRunArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobLogConfigurationOverrideDetails(JobRunJobLogConfigurationOverrideDetailsArgs jobLogConfigurationOverrideDetails) {
             return jobLogConfigurationOverrideDetails(Output.of(jobLogConfigurationOverrideDetails));
+        }
+
+        /**
+         * @param jobNodeConfigurationOverrideDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationOverrideDetails(@Nullable Output<JobRunJobNodeConfigurationOverrideDetailsArgs> jobNodeConfigurationOverrideDetails) {
+            $.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+            return this;
+        }
+
+        /**
+         * @param jobNodeConfigurationOverrideDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationOverrideDetails(JobRunJobNodeConfigurationOverrideDetailsArgs jobNodeConfigurationOverrideDetails) {
+            return jobNodeConfigurationOverrideDetails(Output.of(jobNodeConfigurationOverrideDetails));
         }
 
         /**

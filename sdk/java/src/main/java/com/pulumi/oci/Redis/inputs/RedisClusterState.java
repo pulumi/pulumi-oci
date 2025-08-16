@@ -171,6 +171,21 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    @Import(name="ociCacheConfigSetId")
+    private @Nullable Output<String> ociCacheConfigSetId;
+
+    /**
+     * @return (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    public Optional<Output<String>> ociCacheConfigSetId() {
+        return Optional.ofNullable(this.ociCacheConfigSetId);
+    }
+
+    /**
      * The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
@@ -354,6 +369,7 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         this.nodeCount = $.nodeCount;
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
         this.nsgIds = $.nsgIds;
+        this.ociCacheConfigSetId = $.ociCacheConfigSetId;
         this.primaryEndpointIpAddress = $.primaryEndpointIpAddress;
         this.primaryFqdn = $.primaryFqdn;
         this.replicasEndpointIpAddress = $.replicasEndpointIpAddress;
@@ -613,6 +629,27 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param ociCacheConfigSetId (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ociCacheConfigSetId(@Nullable Output<String> ociCacheConfigSetId) {
+            $.ociCacheConfigSetId = ociCacheConfigSetId;
+            return this;
+        }
+
+        /**
+         * @param ociCacheConfigSetId (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            return ociCacheConfigSetId(Output.of(ociCacheConfigSetId));
         }
 
         /**

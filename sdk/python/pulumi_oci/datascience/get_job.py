@@ -27,7 +27,7 @@ class GetJobResult:
     """
     A collection of values returned by getJob.
     """
-    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, defined_tags=None, delete_related_job_runs=None, description=None, display_name=None, empty_artifact=None, freeform_tags=None, id=None, job_artifact=None, job_configuration_details=None, job_environment_configuration_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_details=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, artifact_content_disposition=None, artifact_content_length=None, artifact_content_md5=None, artifact_last_modified=None, compartment_id=None, created_by=None, defined_tags=None, delete_related_job_runs=None, description=None, display_name=None, empty_artifact=None, freeform_tags=None, id=None, job_artifact=None, job_configuration_details=None, job_environment_configuration_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_details=None, job_node_configuration_details=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, project_id=None, state=None, time_created=None):
         if artifact_content_disposition and not isinstance(artifact_content_disposition, str):
             raise TypeError("Expected argument 'artifact_content_disposition' to be a str")
         pulumi.set(__self__, "artifact_content_disposition", artifact_content_disposition)
@@ -85,6 +85,9 @@ class GetJobResult:
         if job_log_configuration_details and not isinstance(job_log_configuration_details, list):
             raise TypeError("Expected argument 'job_log_configuration_details' to be a list")
         pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
+        if job_node_configuration_details and not isinstance(job_node_configuration_details, list):
+            raise TypeError("Expected argument 'job_node_configuration_details' to be a list")
+        pulumi.set(__self__, "job_node_configuration_details", job_node_configuration_details)
         if job_storage_mount_configuration_details_lists and not isinstance(job_storage_mount_configuration_details_lists, list):
             raise TypeError("Expected argument 'job_storage_mount_configuration_details_lists' to be a list")
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
@@ -230,6 +233,14 @@ class GetJobResult:
         return pulumi.get(self, "job_log_configuration_details")
 
     @_builtins.property
+    @pulumi.getter(name="jobNodeConfigurationDetails")
+    def job_node_configuration_details(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailResult']:
+        """
+        The job node configuration details
+        """
+        return pulumi.get(self, "job_node_configuration_details")
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobJobStorageMountConfigurationDetailsListResult']:
         """
@@ -295,6 +306,7 @@ class AwaitableGetJobResult(GetJobResult):
             job_id=self.job_id,
             job_infrastructure_configuration_details=self.job_infrastructure_configuration_details,
             job_log_configuration_details=self.job_log_configuration_details,
+            job_node_configuration_details=self.job_node_configuration_details,
             job_storage_mount_configuration_details_lists=self.job_storage_mount_configuration_details_lists,
             lifecycle_details=self.lifecycle_details,
             project_id=self.project_id,
@@ -346,6 +358,7 @@ def get_job(job_id: Optional[_builtins.str] = None,
         job_id=pulumi.get(__ret__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__ret__, 'job_infrastructure_configuration_details'),
         job_log_configuration_details=pulumi.get(__ret__, 'job_log_configuration_details'),
+        job_node_configuration_details=pulumi.get(__ret__, 'job_node_configuration_details'),
         job_storage_mount_configuration_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         project_id=pulumi.get(__ret__, 'project_id'),
@@ -394,6 +407,7 @@ def get_job_output(job_id: Optional[pulumi.Input[_builtins.str]] = None,
         job_id=pulumi.get(__response__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__response__, 'job_infrastructure_configuration_details'),
         job_log_configuration_details=pulumi.get(__response__, 'job_log_configuration_details'),
+        job_node_configuration_details=pulumi.get(__response__, 'job_node_configuration_details'),
         job_storage_mount_configuration_details_lists=pulumi.get(__response__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         project_id=pulumi.get(__response__, 'project_id'),

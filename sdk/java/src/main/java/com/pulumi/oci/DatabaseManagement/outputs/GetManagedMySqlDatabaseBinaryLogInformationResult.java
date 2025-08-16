@@ -12,17 +12,17 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseBinaryLogInformationResult {
     /**
-     * @return Indicates whether compression is enabled for transactions written to binary log files on this server.
+     * @return Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
      * 
      */
     private String binaryLogCompression;
     /**
-     * @return The compression ratio for binary log expressed as a percentage.
+     * @return The compression ratio for the binary log, expressed as a percentage.
      * 
      */
     private Integer binaryLogCompressionPercent;
     /**
-     * @return The binary logging format used by this server.
+     * @return The binary logging format used by the MySQL server.
      * 
      */
     private String binaryLogFormat;
@@ -37,7 +37,7 @@ public final class GetManagedMySqlDatabaseBinaryLogInformationResult {
      */
     private String binaryLogPosition;
     /**
-     * @return Status of binary logging on this server.
+     * @return The status of binary logging on the MySQL server.
      * 
      */
     private String binaryLogging;
@@ -50,21 +50,21 @@ public final class GetManagedMySqlDatabaseBinaryLogInformationResult {
 
     private GetManagedMySqlDatabaseBinaryLogInformationResult() {}
     /**
-     * @return Indicates whether compression is enabled for transactions written to binary log files on this server.
+     * @return Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
      * 
      */
     public String binaryLogCompression() {
         return this.binaryLogCompression;
     }
     /**
-     * @return The compression ratio for binary log expressed as a percentage.
+     * @return The compression ratio for the binary log, expressed as a percentage.
      * 
      */
     public Integer binaryLogCompressionPercent() {
         return this.binaryLogCompressionPercent;
     }
     /**
-     * @return The binary logging format used by this server.
+     * @return The binary logging format used by the MySQL server.
      * 
      */
     public String binaryLogFormat() {
@@ -85,7 +85,7 @@ public final class GetManagedMySqlDatabaseBinaryLogInformationResult {
         return this.binaryLogPosition;
     }
     /**
-     * @return Status of binary logging on this server.
+     * @return The status of binary logging on the MySQL server.
      * 
      */
     public String binaryLogging() {

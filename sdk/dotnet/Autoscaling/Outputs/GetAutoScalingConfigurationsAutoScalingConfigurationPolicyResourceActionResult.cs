@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// The type of resource action.
+        /// The category of action to run on the resource.
         /// </summary>
         public readonly string ActionType;
 

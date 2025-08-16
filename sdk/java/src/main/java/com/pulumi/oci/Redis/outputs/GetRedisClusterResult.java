@@ -71,6 +71,11 @@ public final class GetRedisClusterResult {
      */
     private List<String> nsgIds;
     /**
+     * @return The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    private String ociCacheConfigSetId;
+    /**
      * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
@@ -206,6 +211,13 @@ public final class GetRedisClusterResult {
         return this.nsgIds;
     }
     /**
+     * @return The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    public String ociCacheConfigSetId() {
+        return this.ociCacheConfigSetId;
+    }
+    /**
      * @return The private IP address of the API endpoint for the cluster&#39;s primary node.
      * 
      */
@@ -306,6 +318,7 @@ public final class GetRedisClusterResult {
         private Integer nodeCount;
         private Double nodeMemoryInGbs;
         private List<String> nsgIds;
+        private String ociCacheConfigSetId;
         private String primaryEndpointIpAddress;
         private String primaryFqdn;
         private String redisClusterId;
@@ -332,6 +345,7 @@ public final class GetRedisClusterResult {
     	      this.nodeCount = defaults.nodeCount;
     	      this.nodeMemoryInGbs = defaults.nodeMemoryInGbs;
     	      this.nsgIds = defaults.nsgIds;
+    	      this.ociCacheConfigSetId = defaults.ociCacheConfigSetId;
     	      this.primaryEndpointIpAddress = defaults.primaryEndpointIpAddress;
     	      this.primaryFqdn = defaults.primaryFqdn;
     	      this.redisClusterId = defaults.redisClusterId;
@@ -439,6 +453,14 @@ public final class GetRedisClusterResult {
         }
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+        @CustomType.Setter
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            if (ociCacheConfigSetId == null) {
+              throw new MissingRequiredPropertyException("GetRedisClusterResult", "ociCacheConfigSetId");
+            }
+            this.ociCacheConfigSetId = ociCacheConfigSetId;
+            return this;
         }
         @CustomType.Setter
         public Builder primaryEndpointIpAddress(String primaryEndpointIpAddress) {
@@ -549,6 +571,7 @@ public final class GetRedisClusterResult {
             _resultValue.nodeCount = nodeCount;
             _resultValue.nodeMemoryInGbs = nodeMemoryInGbs;
             _resultValue.nsgIds = nsgIds;
+            _resultValue.ociCacheConfigSetId = ociCacheConfigSetId;
             _resultValue.primaryEndpointIpAddress = primaryEndpointIpAddress;
             _resultValue.primaryFqdn = primaryFqdn;
             _resultValue.redisClusterId = redisClusterId;

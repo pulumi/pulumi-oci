@@ -113,17 +113,26 @@ namespace Pulumi.Oci.ApiGateway
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.UsagePlanLock>> Locks { get; private set; } = null!;
+
         /// <summary>
         /// The current state of the usage plan.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
@@ -235,6 +244,17 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.UsagePlanLockArgs>? _locks;
+        public InputList<Inputs.UsagePlanLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.UsagePlanLockArgs>());
+            set => _locks = value;
+        }
+
         public UsagePlanArgs()
         {
         }
@@ -295,17 +315,36 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("locks")]
+        private InputList<Inputs.UsagePlanLockGetArgs>? _locks;
+        public InputList<Inputs.UsagePlanLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.UsagePlanLockGetArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The current state of the usage plan.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

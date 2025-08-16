@@ -205,7 +205,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly shape!: pulumi.Output<string>;
     /**
-     * The source used to restore the database system.
+     * The source of the database system.
      */
     public readonly source!: pulumi.Output<outputs.Psql.DbSystemSource>;
     /**
@@ -415,7 +415,7 @@ export interface DbSystemState {
      */
     shape?: pulumi.Input<string>;
     /**
-     * The source used to restore the database system.
+     * The source of the database system.
      */
     source?: pulumi.Input<inputs.Psql.DbSystemSource>;
     /**
@@ -521,7 +521,7 @@ export interface DbSystemArgs {
      */
     shape: pulumi.Input<string>;
     /**
-     * The source used to restore the database system.
+     * The source of the database system.
      */
     source?: pulumi.Input<inputs.Psql.DbSystemSource>;
     /**

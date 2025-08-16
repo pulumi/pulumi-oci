@@ -5,9 +5,11 @@ package com.pulumi.oci.ApmConfig.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ApmConfig.inputs.ConfigConfigArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigDimensionArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigInUseByArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigMetricArgs;
+import com.pulumi.oci.ApmConfig.inputs.ConfigOverridesArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigRuleArgs;
 import java.lang.String;
 import java.util.List;
@@ -22,6 +24,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     public static final ConfigState Empty = new ConfigState();
 
     /**
+     * (Updatable) The version of the referenced agent bundle.
+     * 
+     */
+    @Import(name="agentVersion")
+    private @Nullable Output<String> agentVersion;
+
+    /**
+     * @return (Updatable) The version of the referenced agent bundle.
+     * 
+     */
+    public Optional<Output<String>> agentVersion() {
+        return Optional.ofNullable(this.agentVersion);
+    }
+
+    /**
      * (Updatable) The APM Domain ID the request is intended for.
      * 
      */
@@ -34,6 +51,36 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> apmDomainId() {
         return Optional.ofNullable(this.apmDomainId);
+    }
+
+    /**
+     * (Updatable) The directory owned by runAsUser.
+     * 
+     */
+    @Import(name="attachInstallDir")
+    private @Nullable Output<String> attachInstallDir;
+
+    /**
+     * @return (Updatable) The directory owned by runAsUser.
+     * 
+     */
+    public Optional<Output<String>> attachInstallDir() {
+        return Optional.ofNullable(this.attachInstallDir);
+    }
+
+    /**
+     * (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+     * 
+     */
+    @Import(name="config")
+    private @Nullable Output<ConfigConfigArgs> config;
+
+    /**
+     * @return (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+     * 
+     */
+    public Optional<Output<ConfigConfigArgs>> config() {
+        return Optional.ofNullable(this.config);
     }
 
     /**
@@ -217,6 +264,51 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     * 
+     */
+    @Import(name="managementAgentId")
+    private @Nullable Output<String> managementAgentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     * 
+     */
+    public Optional<Output<String>> managementAgentId() {
+        return Optional.ofNullable(this.managementAgentId);
+    }
+
+    /**
+     * The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     * 
+     */
+    @Import(name="matchAgentsWithAttributeKeys")
+    private @Nullable Output<List<String>> matchAgentsWithAttributeKeys;
+
+    /**
+     * @return The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     * 
+     */
+    public Optional<Output<List<String>>> matchAgentsWithAttributeKeys() {
+        return Optional.ofNullable(this.matchAgentsWithAttributeKeys);
+    }
+
+    /**
+     * The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     * 
+     */
+    @Import(name="matchAgentsWithAttributeValue")
+    private @Nullable Output<String> matchAgentsWithAttributeValue;
+
+    /**
+     * @return The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     * 
+     */
+    public Optional<Output<String>> matchAgentsWithAttributeValue() {
+        return Optional.ofNullable(this.matchAgentsWithAttributeValue);
+    }
+
+    /**
      * (Updatable) The list of metrics in this group.
      * 
      */
@@ -277,6 +369,36 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     * 
+     */
+    @Import(name="overrides")
+    private @Nullable Output<ConfigOverridesArgs> overrides;
+
+    /**
+     * @return (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     * 
+     */
+    public Optional<Output<ConfigOverridesArgs>> overrides() {
+        return Optional.ofNullable(this.overrides);
+    }
+
+    /**
+     * (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     * 
+     */
+    @Import(name="processFilters")
+    private @Nullable Output<List<String>> processFilters;
+
+    /**
+     * @return (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     * 
+     */
+    public Optional<Output<List<String>>> processFilters() {
+        return Optional.ofNullable(this.processFilters);
+    }
+
+    /**
      * (Updatable)
      * 
      */
@@ -289,6 +411,42 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<ConfigRuleArgs>>> rules() {
         return Optional.ofNullable(this.rules);
+    }
+
+    /**
+     * (Updatable) The OS user that should be used to discover Java processes.
+     * 
+     */
+    @Import(name="runAsUser")
+    private @Nullable Output<String> runAsUser;
+
+    /**
+     * @return (Updatable) The OS user that should be used to discover Java processes.
+     * 
+     */
+    public Optional<Output<String>> runAsUser() {
+        return Optional.ofNullable(this.runAsUser);
+    }
+
+    /**
+     * (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="serviceName")
+    private @Nullable Output<String> serviceName;
+
+    /**
+     * @return (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> serviceName() {
+        return Optional.ofNullable(this.serviceName);
     }
 
     /**
@@ -339,7 +497,10 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     private ConfigState() {}
 
     private ConfigState(ConfigState $) {
+        this.agentVersion = $.agentVersion;
         this.apmDomainId = $.apmDomainId;
+        this.attachInstallDir = $.attachInstallDir;
+        this.config = $.config;
         this.configType = $.configType;
         this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
@@ -352,11 +513,18 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.group = $.group;
         this.inUseBies = $.inUseBies;
+        this.managementAgentId = $.managementAgentId;
+        this.matchAgentsWithAttributeKeys = $.matchAgentsWithAttributeKeys;
+        this.matchAgentsWithAttributeValue = $.matchAgentsWithAttributeValue;
         this.metrics = $.metrics;
         this.namespace = $.namespace;
         this.opcDryRun = $.opcDryRun;
         this.options = $.options;
+        this.overrides = $.overrides;
+        this.processFilters = $.processFilters;
         this.rules = $.rules;
+        this.runAsUser = $.runAsUser;
+        this.serviceName = $.serviceName;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
         this.updatedBy = $.updatedBy;
@@ -381,6 +549,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param agentVersion (Updatable) The version of the referenced agent bundle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentVersion(@Nullable Output<String> agentVersion) {
+            $.agentVersion = agentVersion;
+            return this;
+        }
+
+        /**
+         * @param agentVersion (Updatable) The version of the referenced agent bundle.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentVersion(String agentVersion) {
+            return agentVersion(Output.of(agentVersion));
+        }
+
+        /**
          * @param apmDomainId (Updatable) The APM Domain ID the request is intended for.
          * 
          * @return builder
@@ -399,6 +588,48 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder apmDomainId(String apmDomainId) {
             return apmDomainId(Output.of(apmDomainId));
+        }
+
+        /**
+         * @param attachInstallDir (Updatable) The directory owned by runAsUser.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachInstallDir(@Nullable Output<String> attachInstallDir) {
+            $.attachInstallDir = attachInstallDir;
+            return this;
+        }
+
+        /**
+         * @param attachInstallDir (Updatable) The directory owned by runAsUser.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachInstallDir(String attachInstallDir) {
+            return attachInstallDir(Output.of(attachInstallDir));
+        }
+
+        /**
+         * @param config (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+         * 
+         * @return builder
+         * 
+         */
+        public Builder config(@Nullable Output<ConfigConfigArgs> config) {
+            $.config = config;
+            return this;
+        }
+
+        /**
+         * @param config (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+         * 
+         * @return builder
+         * 
+         */
+        public Builder config(ConfigConfigArgs config) {
+            return config(Output.of(config));
         }
 
         /**
@@ -674,6 +905,79 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param managementAgentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentId(@Nullable Output<String> managementAgentId) {
+            $.managementAgentId = managementAgentId;
+            return this;
+        }
+
+        /**
+         * @param managementAgentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder managementAgentId(String managementAgentId) {
+            return managementAgentId(Output.of(managementAgentId));
+        }
+
+        /**
+         * @param matchAgentsWithAttributeKeys The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchAgentsWithAttributeKeys(@Nullable Output<List<String>> matchAgentsWithAttributeKeys) {
+            $.matchAgentsWithAttributeKeys = matchAgentsWithAttributeKeys;
+            return this;
+        }
+
+        /**
+         * @param matchAgentsWithAttributeKeys The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchAgentsWithAttributeKeys(List<String> matchAgentsWithAttributeKeys) {
+            return matchAgentsWithAttributeKeys(Output.of(matchAgentsWithAttributeKeys));
+        }
+
+        /**
+         * @param matchAgentsWithAttributeKeys The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchAgentsWithAttributeKeys(String... matchAgentsWithAttributeKeys) {
+            return matchAgentsWithAttributeKeys(List.of(matchAgentsWithAttributeKeys));
+        }
+
+        /**
+         * @param matchAgentsWithAttributeValue The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchAgentsWithAttributeValue(@Nullable Output<String> matchAgentsWithAttributeValue) {
+            $.matchAgentsWithAttributeValue = matchAgentsWithAttributeValue;
+            return this;
+        }
+
+        /**
+         * @param matchAgentsWithAttributeValue The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder matchAgentsWithAttributeValue(String matchAgentsWithAttributeValue) {
+            return matchAgentsWithAttributeValue(Output.of(matchAgentsWithAttributeValue));
+        }
+
+        /**
          * @param metrics (Updatable) The list of metrics in this group.
          * 
          * @return builder
@@ -768,6 +1072,58 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param overrides (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrides(@Nullable Output<ConfigOverridesArgs> overrides) {
+            $.overrides = overrides;
+            return this;
+        }
+
+        /**
+         * @param overrides (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder overrides(ConfigOverridesArgs overrides) {
+            return overrides(Output.of(overrides));
+        }
+
+        /**
+         * @param processFilters (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processFilters(@Nullable Output<List<String>> processFilters) {
+            $.processFilters = processFilters;
+            return this;
+        }
+
+        /**
+         * @param processFilters (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processFilters(List<String> processFilters) {
+            return processFilters(Output.of(processFilters));
+        }
+
+        /**
+         * @param processFilters (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder processFilters(String... processFilters) {
+            return processFilters(List.of(processFilters));
+        }
+
+        /**
          * @param rules (Updatable)
          * 
          * @return builder
@@ -796,6 +1152,54 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder rules(ConfigRuleArgs... rules) {
             return rules(List.of(rules));
+        }
+
+        /**
+         * @param runAsUser (Updatable) The OS user that should be used to discover Java processes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runAsUser(@Nullable Output<String> runAsUser) {
+            $.runAsUser = runAsUser;
+            return this;
+        }
+
+        /**
+         * @param runAsUser (Updatable) The OS user that should be used to discover Java processes.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder runAsUser(String runAsUser) {
+            return runAsUser(Output.of(runAsUser));
+        }
+
+        /**
+         * @param serviceName (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(@Nullable Output<String> serviceName) {
+            $.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * @param serviceName (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder serviceName(String serviceName) {
+            return serviceName(Output.of(serviceName));
         }
 
         /**

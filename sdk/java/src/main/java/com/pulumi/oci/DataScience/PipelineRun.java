@@ -11,6 +11,7 @@ import com.pulumi.oci.DataScience.PipelineRunArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunState;
 import com.pulumi.oci.DataScience.outputs.PipelineRunConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.PipelineRunConfigurationOverrideDetails;
+import com.pulumi.oci.DataScience.outputs.PipelineRunInfrastructureConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineRunLogConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.PipelineRunStepOverrideDetail;
@@ -41,6 +42,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.PipelineRun;
  * import com.pulumi.oci.DataScience.PipelineRunArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
@@ -48,6 +51,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -73,6 +78,15 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(pipelineRunDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .infrastructureConfigurationOverrideDetails(PipelineRunInfrastructureConfigurationOverrideDetailsArgs.builder()
+ *                 .blockStorageSizeInGbs(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs)
+ *                 .shapeName(testShape.name())
+ *                 .shapeConfigDetails(PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs)
+ *                     .ocpus(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .subnetId(testSubnet.id())
+ *                 .build())
  *             .logConfigurationOverrideDetails(PipelineRunLogConfigurationOverrideDetailsArgs.builder()
  *                 .enableAutoLogCreation(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation)
  *                 .enableLogging(pipelineRunLogConfigurationOverrideDetailsEnableLogging)
@@ -100,17 +114,28 @@ import javax.annotation.Nullable;
  *                     .configuration(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration)
  *                     .driverShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape)
  *                     .driverShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs.builder()
+ *                         .cpuBaseline(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline)
  *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs)
  *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus)
  *                         .build())
  *                     .executorShape(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape)
  *                     .executorShapeConfigDetails(PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs.builder()
+ *                         .cpuBaseline(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline)
  *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs)
  *                         .ocpus(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus)
  *                         .build())
  *                     .logsBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri)
  *                     .numExecutors(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors)
  *                     .warehouseBucketUri(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri)
+ *                     .build())
+ *                 .stepInfrastructureConfigurationDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs.builder()
+ *                     .blockStorageSizeInGbs(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                     .shapeName(testShape.name())
+ *                     .shapeConfigDetails(PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs.builder()
+ *                         .memoryInGbs(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs)
+ *                         .ocpus(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
+ *                         .build())
+ *                     .subnetId(testSubnet.id())
  *                     .build())
  *                 .build())
  *             .systemTags(pipelineRunSystemTags)
@@ -236,6 +261,20 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    /**
+     * The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    @Export(name="infrastructureConfigurationOverrideDetails", refs={PipelineRunInfrastructureConfigurationOverrideDetails.class}, tree="[0]")
+    private Output<PipelineRunInfrastructureConfigurationOverrideDetails> infrastructureConfigurationOverrideDetails;
+
+    /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    public Output<PipelineRunInfrastructureConfigurationOverrideDetails> infrastructureConfigurationOverrideDetails() {
+        return this.infrastructureConfigurationOverrideDetails;
     }
     /**
      * Details of the state of the step run.

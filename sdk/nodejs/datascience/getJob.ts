@@ -96,6 +96,10 @@ export interface GetJobResult {
      */
     readonly jobLogConfigurationDetails: outputs.DataScience.GetJobJobLogConfigurationDetail[];
     /**
+     * The job node configuration details
+     */
+    readonly jobNodeConfigurationDetails: outputs.DataScience.GetJobJobNodeConfigurationDetail[];
+    /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobJobStorageMountConfigurationDetailsList[];

@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDeta
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs;
@@ -115,6 +116,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    @Import(name="computeClusterId")
+    private @Nullable Output<String> computeClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Optional<Output<String>> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
     }
 
     /**
@@ -428,6 +444,21 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
     }
 
     /**
+     * The details for providing placement constraints.
+     * 
+     */
+    @Import(name="placementConstraintDetails")
+    private @Nullable Output<InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs> placementConstraintDetails;
+
+    /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    public Optional<Output<InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs>> placementConstraintDetails() {
+        return Optional.ofNullable(this.placementConstraintDetails);
+    }
+
+    /**
      * (Optional) (Updatable only for VM&#39;s) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
@@ -557,6 +588,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
         this.capacityReservationId = $.capacityReservationId;
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
+        this.computeClusterId = $.computeClusterId;
         this.createVnicDetails = $.createVnicDetails;
         this.dedicatedVmHostId = $.dedicatedVmHostId;
         this.definedTags = $.definedTags;
@@ -571,6 +603,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
         this.launchOptions = $.launchOptions;
         this.licensingConfigs = $.licensingConfigs;
         this.metadata = $.metadata;
+        this.placementConstraintDetails = $.placementConstraintDetails;
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
         this.preferredMaintenanceAction = $.preferredMaintenanceAction;
@@ -722,6 +755,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(@Nullable Output<String> computeClusterId) {
+            $.computeClusterId = computeClusterId;
+            return this;
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            return computeClusterId(Output.of(computeClusterId));
         }
 
         /**
@@ -1116,6 +1170,27 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetailsArgs extends
          */
         public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
+        }
+
+        /**
+         * @param placementConstraintDetails The details for providing placement constraints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(@Nullable Output<InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs> placementConstraintDetails) {
+            $.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+
+        /**
+         * @param placementConstraintDetails The details for providing placement constraints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs placementConstraintDetails) {
+            return placementConstraintDetails(Output.of(placementConstraintDetails));
         }
 
         /**

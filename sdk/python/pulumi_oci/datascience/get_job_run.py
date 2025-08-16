@@ -27,7 +27,7 @@ class GetJobRunResult:
     """
     A collection of values returned by getJobRun.
     """
-    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, opc_parent_rpt_url=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
+    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_infrastructure_configuration_override_details=None, job_log_configuration_override_details=None, job_node_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, node_group_details_lists=None, opc_parent_rpt_url=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
         if asynchronous and not isinstance(asynchronous, bool):
             raise TypeError("Expected argument 'asynchronous' to be a bool")
         pulumi.set(__self__, "asynchronous", asynchronous)
@@ -61,9 +61,15 @@ class GetJobRunResult:
         if job_infrastructure_configuration_details and not isinstance(job_infrastructure_configuration_details, list):
             raise TypeError("Expected argument 'job_infrastructure_configuration_details' to be a list")
         pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        if job_infrastructure_configuration_override_details and not isinstance(job_infrastructure_configuration_override_details, list):
+            raise TypeError("Expected argument 'job_infrastructure_configuration_override_details' to be a list")
+        pulumi.set(__self__, "job_infrastructure_configuration_override_details", job_infrastructure_configuration_override_details)
         if job_log_configuration_override_details and not isinstance(job_log_configuration_override_details, list):
             raise TypeError("Expected argument 'job_log_configuration_override_details' to be a list")
         pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        if job_node_configuration_override_details and not isinstance(job_node_configuration_override_details, list):
+            raise TypeError("Expected argument 'job_node_configuration_override_details' to be a list")
+        pulumi.set(__self__, "job_node_configuration_override_details", job_node_configuration_override_details)
         if job_run_id and not isinstance(job_run_id, str):
             raise TypeError("Expected argument 'job_run_id' to be a str")
         pulumi.set(__self__, "job_run_id", job_run_id)
@@ -76,6 +82,9 @@ class GetJobRunResult:
         if log_details and not isinstance(log_details, list):
             raise TypeError("Expected argument 'log_details' to be a list")
         pulumi.set(__self__, "log_details", log_details)
+        if node_group_details_lists and not isinstance(node_group_details_lists, list):
+            raise TypeError("Expected argument 'node_group_details_lists' to be a list")
+        pulumi.set(__self__, "node_group_details_lists", node_group_details_lists)
         if opc_parent_rpt_url and not isinstance(opc_parent_rpt_url, str):
             raise TypeError("Expected argument 'opc_parent_rpt_url' to be a str")
         pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
@@ -181,12 +190,28 @@ class GetJobRunResult:
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationOverrideDetails")
+    def job_infrastructure_configuration_override_details(self) -> Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailResult']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_override_details")
+
+    @_builtins.property
     @pulumi.getter(name="jobLogConfigurationOverrideDetails")
     def job_log_configuration_override_details(self) -> Sequence['outputs.GetJobRunJobLogConfigurationOverrideDetailResult']:
         """
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_override_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeConfigurationOverrideDetails")
+    def job_node_configuration_override_details(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailResult']:
+        """
+        The job node configuration details
+        """
+        return pulumi.get(self, "job_node_configuration_override_details")
 
     @_builtins.property
     @pulumi.getter(name="jobRunId")
@@ -205,7 +230,7 @@ class GetJobRunResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        Details of the state of the job run.
+        The state details of the node group.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -216,6 +241,14 @@ class GetJobRunResult:
         Customer logging details for job run.
         """
         return pulumi.get(self, "log_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeGroupDetailsLists")
+    def node_group_details_lists(self) -> Sequence['outputs.GetJobRunNodeGroupDetailsListResult']:
+        """
+        Collection of NodeGroupDetails
+        """
+        return pulumi.get(self, "node_group_details_lists")
 
     @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
@@ -280,11 +313,14 @@ class AwaitableGetJobRunResult(GetJobRunResult):
             job_environment_configuration_override_details=self.job_environment_configuration_override_details,
             job_id=self.job_id,
             job_infrastructure_configuration_details=self.job_infrastructure_configuration_details,
+            job_infrastructure_configuration_override_details=self.job_infrastructure_configuration_override_details,
             job_log_configuration_override_details=self.job_log_configuration_override_details,
+            job_node_configuration_override_details=self.job_node_configuration_override_details,
             job_run_id=self.job_run_id,
             job_storage_mount_configuration_details_lists=self.job_storage_mount_configuration_details_lists,
             lifecycle_details=self.lifecycle_details,
             log_details=self.log_details,
+            node_group_details_lists=self.node_group_details_lists,
             opc_parent_rpt_url=self.opc_parent_rpt_url,
             project_id=self.project_id,
             state=self.state,
@@ -329,11 +365,14 @@ def get_job_run(job_run_id: Optional[_builtins.str] = None,
         job_environment_configuration_override_details=pulumi.get(__ret__, 'job_environment_configuration_override_details'),
         job_id=pulumi.get(__ret__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__ret__, 'job_infrastructure_configuration_details'),
+        job_infrastructure_configuration_override_details=pulumi.get(__ret__, 'job_infrastructure_configuration_override_details'),
         job_log_configuration_override_details=pulumi.get(__ret__, 'job_log_configuration_override_details'),
+        job_node_configuration_override_details=pulumi.get(__ret__, 'job_node_configuration_override_details'),
         job_run_id=pulumi.get(__ret__, 'job_run_id'),
         job_storage_mount_configuration_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
+        node_group_details_lists=pulumi.get(__ret__, 'node_group_details_lists'),
         opc_parent_rpt_url=pulumi.get(__ret__, 'opc_parent_rpt_url'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -375,11 +414,14 @@ def get_job_run_output(job_run_id: Optional[pulumi.Input[_builtins.str]] = None,
         job_environment_configuration_override_details=pulumi.get(__response__, 'job_environment_configuration_override_details'),
         job_id=pulumi.get(__response__, 'job_id'),
         job_infrastructure_configuration_details=pulumi.get(__response__, 'job_infrastructure_configuration_details'),
+        job_infrastructure_configuration_override_details=pulumi.get(__response__, 'job_infrastructure_configuration_override_details'),
         job_log_configuration_override_details=pulumi.get(__response__, 'job_log_configuration_override_details'),
+        job_node_configuration_override_details=pulumi.get(__response__, 'job_node_configuration_override_details'),
         job_run_id=pulumi.get(__response__, 'job_run_id'),
         job_storage_mount_configuration_details_lists=pulumi.get(__response__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         log_details=pulumi.get(__response__, 'log_details'),
+        node_group_details_lists=pulumi.get(__response__, 'node_group_details_lists'),
         opc_parent_rpt_url=pulumi.get(__response__, 'opc_parent_rpt_url'),
         project_id=pulumi.get(__response__, 'project_id'),
         state=pulumi.get(__response__, 'state'),

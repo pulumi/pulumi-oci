@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     },
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
- *     shape: configurationShape,
+ *     compatibleShapes: configurationCompatibleShapes,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
  *     instanceOcpuCount: configurationInstanceOcpuCount,
  *     isFlexible: configurationIsFlexible,
+ *     shape: configurationShape,
  *     systemTags: configurationSystemTags,
  * });
  * ```
@@ -83,6 +84,10 @@ export class Configuration extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) Indicates the collection of compatible shapes for this configuration.
+     */
+    public readonly compatibleShapes!: pulumi.Output<string[]>;
+    /**
      * The type of configuration. Either user-created or a default configuration.
      */
     public /*out*/ readonly configType!: pulumi.Output<string>;
@@ -98,6 +103,10 @@ export class Configuration extends pulumi.CustomResource {
      * Version of the PostgreSQL database.
      */
     public readonly dbVersion!: pulumi.Output<string>;
+    /**
+     * The Default configuration used for this configuration.
+     */
+    public /*out*/ readonly defaultConfigId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -135,7 +144,9 @@ export class Configuration extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration. 
+     *
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -169,10 +180,12 @@ export class Configuration extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ConfigurationState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["compatibleShapes"] = state ? state.compatibleShapes : undefined;
             resourceInputs["configType"] = state ? state.configType : undefined;
             resourceInputs["configurationDetails"] = state ? state.configurationDetails : undefined;
             resourceInputs["dbConfigurationOverrides"] = state ? state.dbConfigurationOverrides : undefined;
             resourceInputs["dbVersion"] = state ? state.dbVersion : undefined;
+            resourceInputs["defaultConfigId"] = state ? state.defaultConfigId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -199,10 +212,8 @@ export class Configuration extends pulumi.CustomResource {
             if ((!args || args.displayName === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'displayName'");
             }
-            if ((!args || args.shape === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'shape'");
-            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["compatibleShapes"] = args ? args.compatibleShapes : undefined;
             resourceInputs["dbConfigurationOverrides"] = args ? args.dbConfigurationOverrides : undefined;
             resourceInputs["dbVersion"] = args ? args.dbVersion : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -216,6 +227,7 @@ export class Configuration extends pulumi.CustomResource {
             resourceInputs["systemTags"] = args ? args.systemTags : undefined;
             resourceInputs["configType"] = undefined /*out*/;
             resourceInputs["configurationDetails"] = undefined /*out*/;
+            resourceInputs["defaultConfigId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -234,6 +246,10 @@ export interface ConfigurationState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) Indicates the collection of compatible shapes for this configuration.
+     */
+    compatibleShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * The type of configuration. Either user-created or a default configuration.
      */
     configType?: pulumi.Input<string>;
@@ -249,6 +265,10 @@ export interface ConfigurationState {
      * Version of the PostgreSQL database.
      */
     dbVersion?: pulumi.Input<string>;
+    /**
+     * The Default configuration used for this configuration.
+     */
+    defaultConfigId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -286,7 +306,9 @@ export interface ConfigurationState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration. 
+     *
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
     shape?: pulumi.Input<string>;
     /**
@@ -315,6 +337,10 @@ export interface ConfigurationArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * (Updatable) Indicates the collection of compatible shapes for this configuration.
+     */
+    compatibleShapes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Configuration overrides for a PostgreSQL instance.
      */
@@ -356,9 +382,11 @@ export interface ConfigurationArgs {
      */
     isFlexible?: pulumi.Input<boolean>;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration. 
+     *
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      */
-    shape: pulumi.Input<string>;
+    shape?: pulumi.Input<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
      *

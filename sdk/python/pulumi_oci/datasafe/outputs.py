@@ -16960,16 +16960,19 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -16995,6 +16998,14 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -17205,16 +17216,19 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -17240,6 +17254,14 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -17523,16 +17545,19 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -17558,6 +17583,14 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -17768,16 +17801,19 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -17803,6 +17839,14 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -18086,16 +18130,19 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -18121,6 +18168,14 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -18331,16 +18386,19 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -18366,6 +18424,14 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -18649,16 +18715,19 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -18684,6 +18753,14 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -18894,16 +18971,19 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -18929,6 +19009,14 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -19212,16 +19300,19 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -19247,6 +19338,14 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -19457,16 +19556,19 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -19492,6 +19594,14 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -19775,16 +19885,19 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -19810,6 +19923,14 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -20020,16 +20141,19 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -20055,6 +20179,14 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -20338,16 +20470,19 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -20373,6 +20508,14 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -20583,16 +20726,19 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -20618,6 +20764,14 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -20818,6 +20972,7 @@ class GetSecurityAssessmentFindingFindingResult(dict):
     def __init__(__self__, *,
                  assessment_id: _builtins.str,
                  details: Sequence[_builtins.str],
+                 doclink: _builtins.str,
                  has_target_db_risk_level_changed: _builtins.bool,
                  is_risk_modified: _builtins.bool,
                  is_top_finding: _builtins.bool,
@@ -20837,6 +20992,7 @@ class GetSecurityAssessmentFindingFindingResult(dict):
                  title: _builtins.str):
         pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "doclink", doclink)
         pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
         pulumi.set(__self__, "is_risk_modified", is_risk_modified)
         pulumi.set(__self__, "is_top_finding", is_top_finding)
@@ -20864,6 +21020,11 @@ class GetSecurityAssessmentFindingFindingResult(dict):
     @pulumi.getter
     def details(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def doclink(self) -> _builtins.str:
+        return pulumi.get(self, "doclink")
 
     @_builtins.property
     @pulumi.getter(name="hasTargetDbRiskLevelChanged")
@@ -20957,10 +21118,12 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -20977,6 +21140,11 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
     @pulumi.getter
     def obp(self) -> _builtins.str:
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -21211,6 +21379,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
     def __init__(__self__, *,
                  assessment_id: _builtins.str,
                  details: Sequence[_builtins.str],
+                 doclink: _builtins.str,
                  has_target_db_risk_level_changed: _builtins.bool,
                  is_risk_modified: _builtins.bool,
                  is_top_finding: _builtins.bool,
@@ -21231,6 +21400,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         """
         :param _builtins.str assessment_id: The OCID of the assessment that generated this finding.
         :param Sequence[_builtins.str] details: The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+        :param _builtins.str doclink: Documentation link provided by Oracle that explains a specific security finding or check.
         :param _builtins.bool has_target_db_risk_level_changed: Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
         :param _builtins.bool is_risk_modified: Determines if this risk level was modified by user.
         :param _builtins.bool is_top_finding: A filter to return only the findings that are marked as top findings.
@@ -21251,6 +21421,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         """
         pulumi.set(__self__, "assessment_id", assessment_id)
         pulumi.set(__self__, "details", details)
+        pulumi.set(__self__, "doclink", doclink)
         pulumi.set(__self__, "has_target_db_risk_level_changed", has_target_db_risk_level_changed)
         pulumi.set(__self__, "is_risk_modified", is_risk_modified)
         pulumi.set(__self__, "is_top_finding", is_top_finding)
@@ -21284,6 +21455,14 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
         """
         return pulumi.get(self, "details")
+
+    @_builtins.property
+    @pulumi.getter
+    def doclink(self) -> _builtins.str:
+        """
+        Documentation link provided by Oracle that explains a specific security finding or check.
+        """
+        return pulumi.get(self, "doclink")
 
     @_builtins.property
     @pulumi.getter(name="hasTargetDbRiskLevelChanged")
@@ -21428,16 +21607,19 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
                  cis: _builtins.str,
                  gdpr: _builtins.str,
                  obp: _builtins.str,
+                 orp: _builtins.str,
                  stig: _builtins.str):
         """
         :param _builtins.str cis: Relevant section from CIS.
         :param _builtins.str gdpr: Relevant section from GDPR.
         :param _builtins.str obp: Relevant section from OBP.
+        :param _builtins.str orp: Relevant section from ORP.
         :param _builtins.str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
         pulumi.set(__self__, "obp", obp)
+        pulumi.set(__self__, "orp", orp)
         pulumi.set(__self__, "stig", stig)
 
     @_builtins.property
@@ -21463,6 +21645,14 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
         Relevant section from OBP.
         """
         return pulumi.get(self, "obp")
+
+    @_builtins.property
+    @pulumi.getter
+    def orp(self) -> _builtins.str:
+        """
+        Relevant section from ORP.
+        """
+        return pulumi.get(self, "orp")
 
     @_builtins.property
     @pulumi.getter
@@ -22647,7 +22837,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param _builtins.str time_created: The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_last_assessed: The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param _builtins.str time_updated: The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-        :param _builtins.str triggered_by: A filter to return only security asessments that were created by either user or system.
+        :param _builtins.str triggered_by: A filter to return only security assessments that were created by either user or system.
         :param _builtins.str type: A filter to return only items that match the specified security assessment type.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -22882,7 +23072,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
     @pulumi.getter(name="triggeredBy")
     def triggered_by(self) -> _builtins.str:
         """
-        A filter to return only security asessments that were created by either user or system.
+        A filter to return only security assessments that were created by either user or system.
         """
         return pulumi.get(self, "triggered_by")
 

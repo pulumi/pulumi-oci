@@ -7,6 +7,8 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementArgs;
+import com.pulumi.oci.ApiGateway.inputs.UsagePlanLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -100,6 +102,20 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<UsagePlanLockArgs>> locks;
+
+    public Optional<Output<List<UsagePlanLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     private UsagePlanArgs() {}
 
     private UsagePlanArgs(UsagePlanArgs $) {
@@ -108,6 +124,8 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.entitlements = $.entitlements;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
     }
 
     public static Builder builder() {
@@ -247,6 +265,28 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        public Builder locks(@Nullable Output<List<UsagePlanLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<UsagePlanLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(UsagePlanLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         public UsagePlanArgs build() {

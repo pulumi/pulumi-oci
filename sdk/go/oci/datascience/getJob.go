@@ -88,6 +88,8 @@ type LookupJobResult struct {
 	JobInfrastructureConfigurationDetails []GetJobJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails []GetJobJobLogConfigurationDetail `pulumi:"jobLogConfigurationDetails"`
+	// The job node configuration details
+	JobNodeConfigurationDetails []GetJobJobNodeConfigurationDetail `pulumi:"jobNodeConfigurationDetails"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -223,6 +225,11 @@ func (o LookupJobResultOutput) JobInfrastructureConfigurationDetails() GetJobJob
 // Logging configuration for resource.
 func (o LookupJobResultOutput) JobLogConfigurationDetails() GetJobJobLogConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobResult) []GetJobJobLogConfigurationDetail { return v.JobLogConfigurationDetails }).(GetJobJobLogConfigurationDetailArrayOutput)
+}
+
+// The job node configuration details
+func (o LookupJobResultOutput) JobNodeConfigurationDetails() GetJobJobNodeConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v LookupJobResult) []GetJobJobNodeConfigurationDetail { return v.JobNodeConfigurationDetails }).(GetJobJobNodeConfigurationDetailArrayOutput)
 }
 
 // Collection of JobStorageMountConfigurationDetails.

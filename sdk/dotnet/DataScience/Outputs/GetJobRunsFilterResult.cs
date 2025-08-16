@@ -13,6 +13,9 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class GetJobRunsFilterResult
     {
+        /// <summary>
+        /// node group name.
+        /// </summary>
         public readonly string Name;
         public readonly bool? Regex;
         public readonly ImmutableArray<string> Values;

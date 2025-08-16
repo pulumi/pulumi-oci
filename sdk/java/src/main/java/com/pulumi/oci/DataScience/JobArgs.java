@@ -10,6 +10,7 @@ import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -169,15 +170,15 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
      * The job configuration details
      * 
      */
-    @Import(name="jobConfigurationDetails", required=true)
-    private Output<JobJobConfigurationDetailsArgs> jobConfigurationDetails;
+    @Import(name="jobConfigurationDetails")
+    private @Nullable Output<JobJobConfigurationDetailsArgs> jobConfigurationDetails;
 
     /**
      * @return The job configuration details
      * 
      */
-    public Output<JobJobConfigurationDetailsArgs> jobConfigurationDetails() {
-        return this.jobConfigurationDetails;
+    public Optional<Output<JobJobConfigurationDetailsArgs>> jobConfigurationDetails() {
+        return Optional.ofNullable(this.jobConfigurationDetails);
     }
 
     /**
@@ -199,15 +200,15 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    @Import(name="jobInfrastructureConfigurationDetails", required=true)
-    private Output<JobJobInfrastructureConfigurationDetailsArgs> jobInfrastructureConfigurationDetails;
+    @Import(name="jobInfrastructureConfigurationDetails")
+    private @Nullable Output<JobJobInfrastructureConfigurationDetailsArgs> jobInfrastructureConfigurationDetails;
 
     /**
      * @return (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      * 
      */
-    public Output<JobJobInfrastructureConfigurationDetailsArgs> jobInfrastructureConfigurationDetails() {
-        return this.jobInfrastructureConfigurationDetails;
+    public Optional<Output<JobJobInfrastructureConfigurationDetailsArgs>> jobInfrastructureConfigurationDetails() {
+        return Optional.ofNullable(this.jobInfrastructureConfigurationDetails);
     }
 
     /**
@@ -223,6 +224,21 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<JobJobLogConfigurationDetailsArgs>> jobLogConfigurationDetails() {
         return Optional.ofNullable(this.jobLogConfigurationDetails);
+    }
+
+    /**
+     * The job node configuration details
+     * 
+     */
+    @Import(name="jobNodeConfigurationDetails")
+    private @Nullable Output<JobJobNodeConfigurationDetailsArgs> jobNodeConfigurationDetails;
+
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public Optional<Output<JobJobNodeConfigurationDetailsArgs>> jobNodeConfigurationDetails() {
+        return Optional.ofNullable(this.jobNodeConfigurationDetails);
     }
 
     /**
@@ -271,6 +287,7 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         this.jobEnvironmentConfigurationDetails = $.jobEnvironmentConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = $.jobLogConfigurationDetails;
+        this.jobNodeConfigurationDetails = $.jobNodeConfigurationDetails;
         this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
         this.projectId = $.projectId;
     }
@@ -494,7 +511,7 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder jobConfigurationDetails(Output<JobJobConfigurationDetailsArgs> jobConfigurationDetails) {
+        public Builder jobConfigurationDetails(@Nullable Output<JobJobConfigurationDetailsArgs> jobConfigurationDetails) {
             $.jobConfigurationDetails = jobConfigurationDetails;
             return this;
         }
@@ -536,7 +553,7 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder jobInfrastructureConfigurationDetails(Output<JobJobInfrastructureConfigurationDetailsArgs> jobInfrastructureConfigurationDetails) {
+        public Builder jobInfrastructureConfigurationDetails(@Nullable Output<JobJobInfrastructureConfigurationDetailsArgs> jobInfrastructureConfigurationDetails) {
             $.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             return this;
         }
@@ -570,6 +587,27 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs jobLogConfigurationDetails) {
             return jobLogConfigurationDetails(Output.of(jobLogConfigurationDetails));
+        }
+
+        /**
+         * @param jobNodeConfigurationDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationDetails(@Nullable Output<JobJobNodeConfigurationDetailsArgs> jobNodeConfigurationDetails) {
+            $.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param jobNodeConfigurationDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationDetails(JobJobNodeConfigurationDetailsArgs jobNodeConfigurationDetails) {
+            return jobNodeConfigurationDetails(Output.of(jobNodeConfigurationDetails));
         }
 
         /**
@@ -627,12 +665,6 @@ public final class JobArgs extends com.pulumi.resources.ResourceArgs {
         public JobArgs build() {
             if ($.compartmentId == null) {
                 throw new MissingRequiredPropertyException("JobArgs", "compartmentId");
-            }
-            if ($.jobConfigurationDetails == null) {
-                throw new MissingRequiredPropertyException("JobArgs", "jobConfigurationDetails");
-            }
-            if ($.jobInfrastructureConfigurationDetails == null) {
-                throw new MissingRequiredPropertyException("JobArgs", "jobInfrastructureConfigurationDetails");
             }
             if ($.projectId == null) {
                 throw new MissingRequiredPropertyException("JobArgs", "projectId");

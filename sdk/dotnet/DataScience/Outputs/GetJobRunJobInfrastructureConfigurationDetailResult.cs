@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult> JobShapeConfigDetails;
         /// <summary>
-        /// The shape used to launch the job run instances.
+        /// The name that corresponds to the JobShapeSummary to use for the job node
         /// </summary>
         public readonly string ShapeName;
         /// <summary>

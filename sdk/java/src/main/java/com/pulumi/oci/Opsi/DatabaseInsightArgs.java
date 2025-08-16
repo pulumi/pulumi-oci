@@ -372,6 +372,21 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
     private DatabaseInsightArgs() {}
 
     private DatabaseInsightArgs(DatabaseInsightArgs $) {
@@ -398,6 +413,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
         this.serviceName = $.serviceName;
         this.status = $.status;
+        this.systemTags = $.systemTags;
     }
 
     public static Builder builder() {
@@ -905,6 +921,27 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder status(String status) {
             return status(Output.of(status));
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        /**
+         * @param systemTags System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         public DatabaseInsightArgs build() {

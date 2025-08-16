@@ -26,7 +26,7 @@ class GetManagementAgentInstallKeyResult:
     """
     A collection of values returned by getManagementAgentInstallKey.
     """
-    def __init__(__self__, allowed_key_install_count=None, compartment_id=None, created_by_principal_id=None, current_key_install_count=None, display_name=None, id=None, is_unlimited=None, key=None, lifecycle_details=None, management_agent_install_key_id=None, state=None, time_created=None, time_expires=None, time_updated=None):
+    def __init__(__self__, allowed_key_install_count=None, compartment_id=None, created_by_principal_id=None, current_key_install_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_unlimited=None, key=None, lifecycle_details=None, management_agent_install_key_id=None, state=None, system_tags=None, time_created=None, time_expires=None, time_updated=None):
         if allowed_key_install_count and not isinstance(allowed_key_install_count, int):
             raise TypeError("Expected argument 'allowed_key_install_count' to be a int")
         pulumi.set(__self__, "allowed_key_install_count", allowed_key_install_count)
@@ -39,9 +39,15 @@ class GetManagementAgentInstallKeyResult:
         if current_key_install_count and not isinstance(current_key_install_count, int):
             raise TypeError("Expected argument 'current_key_install_count' to be a int")
         pulumi.set(__self__, "current_key_install_count", current_key_install_count)
+        if defined_tags and not isinstance(defined_tags, dict):
+            raise TypeError("Expected argument 'defined_tags' to be a dict")
+        pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags and not isinstance(freeform_tags, dict):
+            raise TypeError("Expected argument 'freeform_tags' to be a dict")
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -60,6 +66,9 @@ class GetManagementAgentInstallKeyResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -103,12 +112,28 @@ class GetManagementAgentInstallKeyResult:
         return pulumi.get(self, "current_key_install_count")
 
     @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
         Management Agent Install Key Name
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
     @pulumi.getter
@@ -156,6 +181,14 @@ class GetManagementAgentInstallKeyResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -190,13 +223,16 @@ class AwaitableGetManagementAgentInstallKeyResult(GetManagementAgentInstallKeyRe
             compartment_id=self.compartment_id,
             created_by_principal_id=self.created_by_principal_id,
             current_key_install_count=self.current_key_install_count,
+            defined_tags=self.defined_tags,
             display_name=self.display_name,
+            freeform_tags=self.freeform_tags,
             id=self.id,
             is_unlimited=self.is_unlimited,
             key=self.key,
             lifecycle_details=self.lifecycle_details,
             management_agent_install_key_id=self.management_agent_install_key_id,
             state=self.state,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_expires=self.time_expires,
             time_updated=self.time_updated)
@@ -231,13 +267,16 @@ def get_management_agent_install_key(management_agent_install_key_id: Optional[_
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         created_by_principal_id=pulumi.get(__ret__, 'created_by_principal_id'),
         current_key_install_count=pulumi.get(__ret__, 'current_key_install_count'),
+        defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_unlimited=pulumi.get(__ret__, 'is_unlimited'),
         key=pulumi.get(__ret__, 'key'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         management_agent_install_key_id=pulumi.get(__ret__, 'management_agent_install_key_id'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_expires=pulumi.get(__ret__, 'time_expires'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -269,13 +308,16 @@ def get_management_agent_install_key_output(management_agent_install_key_id: Opt
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         created_by_principal_id=pulumi.get(__response__, 'created_by_principal_id'),
         current_key_install_count=pulumi.get(__response__, 'current_key_install_count'),
+        defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
+        freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_unlimited=pulumi.get(__response__, 'is_unlimited'),
         key=pulumi.get(__response__, 'key'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         management_agent_install_key_id=pulumi.get(__response__, 'management_agent_install_key_id'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_expires=pulumi.get(__response__, 'time_expires'),
         time_updated=pulumi.get(__response__, 'time_updated')))

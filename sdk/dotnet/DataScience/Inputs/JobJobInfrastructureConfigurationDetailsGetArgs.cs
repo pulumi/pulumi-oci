@@ -15,8 +15,8 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// <summary>
         /// (Updatable) The size of the block storage volume to attach to the instance running the job
         /// </summary>
-        [Input("blockStorageSizeInGbs", required: true)]
-        public Input<int> BlockStorageSizeInGbs { get; set; } = null!;
+        [Input("blockStorageSizeInGbs")]
+        public Input<int>? BlockStorageSizeInGbs { get; set; }
 
         /// <summary>
         /// (Updatable) The infrastructure type used for job run.
@@ -31,10 +31,10 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsGetArgs>? JobShapeConfigDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The shape used to launch the job run instances.
+        /// (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
         /// </summary>
-        [Input("shapeName", required: true)]
-        public Input<string> ShapeName { get; set; } = null!;
+        [Input("shapeName")]
+        public Input<string>? ShapeName { get; set; }
 
         /// <summary>
         /// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job

@@ -18,14 +18,14 @@ public final class AutonomousDatabaseLongTermBackupScheduleArgs extends com.pulu
     public static final AutonomousDatabaseLongTermBackupScheduleArgs Empty = new AutonomousDatabaseLongTermBackupScheduleArgs();
 
     /**
-     * Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     @Import(name="isDisabled")
     private @Nullable Output<Boolean> isDisabled;
 
     /**
-     * @return Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+     * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
     public Optional<Output<Boolean>> isDisabled() {
@@ -105,7 +105,7 @@ public final class AutonomousDatabaseLongTermBackupScheduleArgs extends com.pulu
         }
 
         /**
-         * @param isDisabled Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         * @param isDisabled Indicates if the resource pool should be deleted for the Autonomous Database.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class AutonomousDatabaseLongTermBackupScheduleArgs extends com.pulu
         }
 
         /**
-         * @param isDisabled Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+         * @param isDisabled Indicates if the resource pool should be deleted for the Autonomous Database.
          * 
          * @return builder
          * 

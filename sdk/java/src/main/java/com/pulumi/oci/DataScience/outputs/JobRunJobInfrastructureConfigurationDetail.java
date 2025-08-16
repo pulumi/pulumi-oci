@@ -30,7 +30,7 @@ public final class JobRunJobInfrastructureConfigurationDetail {
      */
     private @Nullable List<JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
     /**
-     * @return The shape used to launch the job run instances.
+     * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
     private @Nullable String shapeName;
@@ -63,7 +63,7 @@ public final class JobRunJobInfrastructureConfigurationDetail {
         return this.jobShapeConfigDetails == null ? List.of() : this.jobShapeConfigDetails;
     }
     /**
-     * @return The shape used to launch the job run instances.
+     * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
     public Optional<String> shapeName() {

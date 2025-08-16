@@ -114,7 +114,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// A filter to return only security asessments that were created by either user or system.
+        /// A filter to return only security assessments that were created by either user or system.
         /// </summary>
         public readonly string TriggeredBy;
         /// <summary>

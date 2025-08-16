@@ -95,14 +95,14 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsArgs extends com.p
     }
 
     /**
-     * The management type for the database.
+     * The management type for the database. Use &#34;BASIC&#34; for basic management. Use &#34;ADVANCED&#34; for full management.
      * 
      */
     @Import(name="managementType")
     private @Nullable Output<String> managementType;
 
     /**
-     * @return The management type for the database.
+     * @return The management type for the database. Use &#34;BASIC&#34; for basic management. Use &#34;ADVANCED&#34; for full management.
      * 
      */
     public Optional<Output<String>> managementType() {
@@ -244,7 +244,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsArgs extends com.p
         }
 
         /**
-         * @param managementType The management type for the database.
+         * @param managementType The management type for the database. Use &#34;BASIC&#34; for basic management. Use &#34;ADVANCED&#34; for full management.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class DatabaseDbmFeaturesManagementFeatureDetailsArgs extends com.p
         }
 
         /**
-         * @param managementType The management type for the database.
+         * @param managementType The management type for the database. Use &#34;BASIC&#34; for basic management. Use &#34;ADVANCED&#34; for full management.
          * 
          * @return builder
          * 

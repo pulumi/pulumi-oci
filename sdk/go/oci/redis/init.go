@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:Redis/ociCacheConfigSet:OciCacheConfigSet":
+		r = &OciCacheConfigSet{}
+	case "oci:Redis/ociCacheConfigSetlistAssociatedOciCacheCluster:OciCacheConfigSetlistAssociatedOciCacheCluster":
+		r = &OciCacheConfigSetlistAssociatedOciCacheCluster{}
 	case "oci:Redis/ociCacheUser:OciCacheUser":
 		r = &OciCacheUser{}
 	case "oci:Redis/ociCacheUserGetRedisCluster:OciCacheUserGetRedisCluster":
@@ -48,6 +52,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/ociCacheConfigSet",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Redis/ociCacheConfigSetlistAssociatedOciCacheCluster",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Redis/ociCacheUser",

@@ -64,6 +64,12 @@ namespace Pulumi.Oci.AiDocument
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Number of replicas required for this model.
+        /// </summary>
+        [Output("inferenceUnits")]
+        public Output<int> InferenceUnits { get; private set; } = null!;
+
+        /// <summary>
         /// Set to true when the model is created by using multiple key value extraction models.
         /// </summary>
         [Output("isComposedModel")]
@@ -82,10 +88,22 @@ namespace Pulumi.Oci.AiDocument
         public Output<ImmutableArray<string>> Labels { get; private set; } = null!;
 
         /// <summary>
+        /// The document language for model training, abbreviated according to the BCP 47 syntax.
+        /// </summary>
+        [Output("language")]
+        public Output<string> Language { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.ModelLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The maximum model training time in hours, expressed as a decimal fraction.
@@ -101,6 +119,12 @@ namespace Pulumi.Oci.AiDocument
 
         [Output("modelId")]
         public Output<string?> ModelId { get; private set; } = null!;
+
+        /// <summary>
+        /// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        /// </summary>
+        [Output("modelSubType")]
+        public Output<Outputs.ModelModelSubType> ModelSubType { get; private set; } = null!;
 
         /// <summary>
         /// The type of the Document model.
@@ -275,10 +299,34 @@ namespace Pulumi.Oci.AiDocument
         }
 
         /// <summary>
+        /// (Updatable) Number of replicas required for this model.
+        /// </summary>
+        [Input("inferenceUnits")]
+        public Input<int>? InferenceUnits { get; set; }
+
+        /// <summary>
         /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         [Input("isQuickMode")]
         public Input<bool>? IsQuickMode { get; set; }
+
+        /// <summary>
+        /// The document language for model training, abbreviated according to the BCP 47 syntax.
+        /// </summary>
+        [Input("language")]
+        public Input<string>? Language { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ModelLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ModelLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ModelLockArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The maximum model training time in hours, expressed as a decimal fraction.
@@ -288,6 +336,12 @@ namespace Pulumi.Oci.AiDocument
 
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }
+
+        /// <summary>
+        /// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        /// </summary>
+        [Input("modelSubType")]
+        public Input<Inputs.ModelModelSubTypeArgs>? ModelSubType { get; set; }
 
         /// <summary>
         /// The type of the Document model.
@@ -388,6 +442,12 @@ namespace Pulumi.Oci.AiDocument
         }
 
         /// <summary>
+        /// (Updatable) Number of replicas required for this model.
+        /// </summary>
+        [Input("inferenceUnits")]
+        public Input<int>? InferenceUnits { get; set; }
+
+        /// <summary>
         /// Set to true when the model is created by using multiple key value extraction models.
         /// </summary>
         [Input("isComposedModel")]
@@ -412,10 +472,28 @@ namespace Pulumi.Oci.AiDocument
         }
 
         /// <summary>
+        /// The document language for model training, abbreviated according to the BCP 47 syntax.
+        /// </summary>
+        [Input("language")]
+        public Input<string>? Language { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ModelLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ModelLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ModelLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The maximum model training time in hours, expressed as a decimal fraction.
@@ -437,6 +515,12 @@ namespace Pulumi.Oci.AiDocument
 
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }
+
+        /// <summary>
+        /// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        /// </summary>
+        [Input("modelSubType")]
+        public Input<Inputs.ModelModelSubTypeGetArgs>? ModelSubType { get; set; }
 
         /// <summary>
         /// The type of the Document model.

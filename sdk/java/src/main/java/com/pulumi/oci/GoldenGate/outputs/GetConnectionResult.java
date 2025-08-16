@@ -57,6 +57,13 @@ public final class GetConnectionResult {
      */
     private String authenticationType;
     /**
+     * @return The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     * 
+     */
+    private String azureAuthorityHost;
+    /**
      * @return Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
@@ -350,7 +357,7 @@ public final class GetConnectionResult {
      */
     private Boolean shouldUseJndi;
     /**
-     * @return Indicates that the user intents to connect to the instance through resource principal.
+     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     private Boolean shouldUseResourcePrincipal;
@@ -371,13 +378,13 @@ public final class GetConnectionResult {
     private String sslCert;
     private String sslClientKeystash;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
      */
     private String sslClientKeystashSecretId;
     private String sslClientKeystoredb;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
      */
     private String sslClientKeystoredbSecretId;
@@ -572,6 +579,15 @@ public final class GetConnectionResult {
      */
     public String authenticationType() {
         return this.authenticationType;
+    }
+    /**
+     * @return The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     * 
+     */
+    public String azureAuthorityHost() {
+        return this.azureAuthorityHost;
     }
     /**
      * @return Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -999,7 +1015,7 @@ public final class GetConnectionResult {
         return this.shouldUseJndi;
     }
     /**
-     * @return Indicates that the user intents to connect to the instance through resource principal.
+     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     public Boolean shouldUseResourcePrincipal() {
@@ -1030,7 +1046,7 @@ public final class GetConnectionResult {
         return this.sslClientKeystash;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
      */
     public String sslClientKeystashSecretId() {
@@ -1040,7 +1056,7 @@ public final class GetConnectionResult {
         return this.sslClientKeystoredb;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      * 
      */
     public String sslClientKeystoredbSecretId() {
@@ -1271,6 +1287,7 @@ public final class GetConnectionResult {
         private List<GetConnectionAdditionalAttribute> additionalAttributes;
         private String authenticationMode;
         private String authenticationType;
+        private String azureAuthorityHost;
         private String azureTenantId;
         private List<GetConnectionBootstrapServer> bootstrapServers;
         private List<GetConnectionCatalog> catalogs;
@@ -1389,6 +1406,7 @@ public final class GetConnectionResult {
     	      this.additionalAttributes = defaults.additionalAttributes;
     	      this.authenticationMode = defaults.authenticationMode;
     	      this.authenticationType = defaults.authenticationType;
+    	      this.azureAuthorityHost = defaults.azureAuthorityHost;
     	      this.azureTenantId = defaults.azureTenantId;
     	      this.bootstrapServers = defaults.bootstrapServers;
     	      this.catalogs = defaults.catalogs;
@@ -1556,6 +1574,14 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "authenticationType");
             }
             this.authenticationType = authenticationType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder azureAuthorityHost(String azureAuthorityHost) {
+            if (azureAuthorityHost == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "azureAuthorityHost");
+            }
+            this.azureAuthorityHost = azureAuthorityHost;
             return this;
         }
         @CustomType.Setter
@@ -2449,6 +2475,7 @@ public final class GetConnectionResult {
             _resultValue.additionalAttributes = additionalAttributes;
             _resultValue.authenticationMode = authenticationMode;
             _resultValue.authenticationType = authenticationType;
+            _resultValue.azureAuthorityHost = azureAuthorityHost;
             _resultValue.azureTenantId = azureTenantId;
             _resultValue.bootstrapServers = bootstrapServers;
             _resultValue.catalogs = catalogs;

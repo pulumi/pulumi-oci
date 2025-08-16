@@ -68,7 +68,7 @@ type GetProjectsArgs struct {
 
 // A collection of values returned by getProjects.
 type GetProjectsResult struct {
-	// The compartment identifier.
+	// The lock compartment ID.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A human-friendly name for the project, which can be changed.
 	DisplayName *string             `pulumi:"displayName"`
@@ -122,7 +122,7 @@ func (o GetProjectsResultOutput) ToGetProjectsResultOutputWithContext(ctx contex
 	return o
 }
 
-// The compartment identifier.
+// The lock compartment ID.
 func (o GetProjectsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProjectsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

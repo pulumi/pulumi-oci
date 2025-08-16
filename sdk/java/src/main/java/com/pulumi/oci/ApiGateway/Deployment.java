@@ -9,9 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ApiGateway.DeploymentArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentState;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentLock;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecification;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -623,6 +626,12 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -636,6 +645,12 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    @Export(name="locks", refs={List.class,DeploymentLock.class}, tree="[0,1]")
+    private Output<List<DeploymentLock>> locks;
+
+    public Output<List<DeploymentLock>> locks() {
+        return this.locks;
     }
     /**
      * A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
@@ -678,6 +693,12 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.

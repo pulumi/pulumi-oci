@@ -15,6 +15,7 @@ import java.util.Objects;
 public final class GetSecurityAssessmentFindingFinding {
     private String assessmentId;
     private List<String> details;
+    private String doclink;
     private Boolean hasTargetDbRiskLevelChanged;
     private Boolean isRiskModified;
     private Boolean isTopFinding;
@@ -39,6 +40,9 @@ public final class GetSecurityAssessmentFindingFinding {
     }
     public List<String> details() {
         return this.details;
+    }
+    public String doclink() {
+        return this.doclink;
     }
     public Boolean hasTargetDbRiskLevelChanged() {
         return this.hasTargetDbRiskLevelChanged;
@@ -103,6 +107,7 @@ public final class GetSecurityAssessmentFindingFinding {
     public static final class Builder {
         private String assessmentId;
         private List<String> details;
+        private String doclink;
         private Boolean hasTargetDbRiskLevelChanged;
         private Boolean isRiskModified;
         private Boolean isTopFinding;
@@ -125,6 +130,7 @@ public final class GetSecurityAssessmentFindingFinding {
     	      Objects.requireNonNull(defaults);
     	      this.assessmentId = defaults.assessmentId;
     	      this.details = defaults.details;
+    	      this.doclink = defaults.doclink;
     	      this.hasTargetDbRiskLevelChanged = defaults.hasTargetDbRiskLevelChanged;
     	      this.isRiskModified = defaults.isRiskModified;
     	      this.isTopFinding = defaults.isTopFinding;
@@ -162,6 +168,14 @@ public final class GetSecurityAssessmentFindingFinding {
         }
         public Builder details(String... details) {
             return details(List.of(details));
+        }
+        @CustomType.Setter
+        public Builder doclink(String doclink) {
+            if (doclink == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "doclink");
+            }
+            this.doclink = doclink;
+            return this;
         }
         @CustomType.Setter
         public Builder hasTargetDbRiskLevelChanged(Boolean hasTargetDbRiskLevelChanged) {
@@ -306,6 +320,7 @@ public final class GetSecurityAssessmentFindingFinding {
             final var _resultValue = new GetSecurityAssessmentFindingFinding();
             _resultValue.assessmentId = assessmentId;
             _resultValue.details = details;
+            _resultValue.doclink = doclink;
             _resultValue.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
             _resultValue.isRiskModified = isRiskModified;
             _resultValue.isTopFinding = isTopFinding;

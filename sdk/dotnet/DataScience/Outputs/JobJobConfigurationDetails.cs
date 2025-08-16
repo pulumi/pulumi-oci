@@ -29,6 +29,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// A time bound for the execution of the job. Timer starts when the job becomes active.
         /// </summary>
         public readonly string? MaximumRuntimeInMinutes;
+        /// <summary>
+        /// The probe indicates whether the application within the job run has started.
+        /// </summary>
+        public readonly Outputs.JobJobConfigurationDetailsStartupProbeDetails? StartupProbeDetails;
 
         [OutputConstructor]
         private JobJobConfigurationDetails(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string jobType,
 
-            string? maximumRuntimeInMinutes)
+            string? maximumRuntimeInMinutes,
+
+            Outputs.JobJobConfigurationDetailsStartupProbeDetails? startupProbeDetails)
         {
             CommandLineArguments = commandLineArguments;
             EnvironmentVariables = environmentVariables;
             JobType = jobType;
             MaximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            StartupProbeDetails = startupProbeDetails;
         }
     }
 }

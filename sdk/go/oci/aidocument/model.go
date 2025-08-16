@@ -40,19 +40,27 @@ type Model struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) Number of replicas required for this model.
+	InferenceUnits pulumi.IntOutput `pulumi:"inferenceUnits"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel pulumi.BoolOutput `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolOutput `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels pulumi.StringArrayOutput `pulumi:"labels"`
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language pulumi.StringOutput `pulumi:"language"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks ModelLockArrayOutput `pulumi:"locks"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours pulumi.Float64Output `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayOutput `pulumi:"metrics"`
 	ModelId pulumi.StringPtrOutput `pulumi:"modelId"`
+	// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+	ModelSubType ModelModelSubTypeOutput `pulumi:"modelSubType"`
 	// The type of the Document model.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
 	// The model version
@@ -130,19 +138,27 @@ type modelState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Number of replicas required for this model.
+	InferenceUnits *int `pulumi:"inferenceUnits"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel *bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// The collection of labels used to train the custom model.
 	Labels []string `pulumi:"labels"`
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language *string `pulumi:"language"`
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []ModelLock `pulumi:"locks"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
 	// Trained Model Metrics.
 	Metrics []ModelMetric `pulumi:"metrics"`
 	ModelId *string       `pulumi:"modelId"`
+	// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+	ModelSubType *ModelModelSubType `pulumi:"modelSubType"`
 	// The type of the Document model.
 	ModelType *string `pulumi:"modelType"`
 	// The model version
@@ -182,19 +198,27 @@ type ModelState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Number of replicas required for this model.
+	InferenceUnits pulumi.IntPtrInput
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel pulumi.BoolPtrInput
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolPtrInput
 	// The collection of labels used to train the custom model.
 	Labels pulumi.StringArrayInput
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language pulumi.StringPtrInput
 	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks ModelLockArrayInput
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours pulumi.Float64PtrInput
 	// Trained Model Metrics.
 	Metrics ModelMetricArrayInput
 	ModelId pulumi.StringPtrInput
+	// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+	ModelSubType ModelModelSubTypePtrInput
 	// The type of the Document model.
 	ModelType pulumi.StringPtrInput
 	// The model version
@@ -238,11 +262,19 @@ type modelArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Number of replicas required for this model.
+	InferenceUnits *int `pulumi:"inferenceUnits"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode *bool `pulumi:"isQuickMode"`
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language *string `pulumi:"language"`
+	// Locks associated with this resource.
+	Locks []ModelLock `pulumi:"locks"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours *float64 `pulumi:"maxTrainingTimeInHours"`
 	ModelId                *string  `pulumi:"modelId"`
+	// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+	ModelSubType *ModelModelSubType `pulumi:"modelSubType"`
 	// The type of the Document model.
 	ModelType string `pulumi:"modelType"`
 	// The model version
@@ -271,11 +303,19 @@ type ModelArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Number of replicas required for this model.
+	InferenceUnits pulumi.IntPtrInput
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolPtrInput
+	// The document language for model training, abbreviated according to the BCP 47 syntax.
+	Language pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks ModelLockArrayInput
 	// The maximum model training time in hours, expressed as a decimal fraction.
 	MaxTrainingTimeInHours pulumi.Float64PtrInput
 	ModelId                pulumi.StringPtrInput
+	// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+	ModelSubType ModelModelSubTypePtrInput
 	// The type of the Document model.
 	ModelType pulumi.StringInput
 	// The model version
@@ -407,6 +447,11 @@ func (o ModelOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+// (Updatable) Number of replicas required for this model.
+func (o ModelOutput) InferenceUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v *Model) pulumi.IntOutput { return v.InferenceUnits }).(pulumi.IntOutput)
+}
+
 // Set to true when the model is created by using multiple key value extraction models.
 func (o ModelOutput) IsComposedModel() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.IsComposedModel }).(pulumi.BoolOutput)
@@ -422,9 +467,19 @@ func (o ModelOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringArrayOutput { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
+// The document language for model training, abbreviated according to the BCP 47 syntax.
+func (o ModelOutput) Language() pulumi.StringOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Language }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail, that can provide actionable information if training failed.
 func (o ModelOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o ModelOutput) Locks() ModelLockArrayOutput {
+	return o.ApplyT(func(v *Model) ModelLockArrayOutput { return v.Locks }).(ModelLockArrayOutput)
 }
 
 // The maximum model training time in hours, expressed as a decimal fraction.
@@ -439,6 +494,11 @@ func (o ModelOutput) Metrics() ModelMetricArrayOutput {
 
 func (o ModelOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringPtrOutput { return v.ModelId }).(pulumi.StringPtrOutput)
+}
+
+// Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+func (o ModelOutput) ModelSubType() ModelModelSubTypeOutput {
+	return o.ApplyT(func(v *Model) ModelModelSubTypeOutput { return v.ModelSubType }).(ModelModelSubTypeOutput)
 }
 
 // The type of the Document model.

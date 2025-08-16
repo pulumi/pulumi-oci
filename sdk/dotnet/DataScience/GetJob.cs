@@ -176,6 +176,10 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobJobLogConfigurationDetailResult> JobLogConfigurationDetails;
         /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobJobNodeConfigurationDetailResult> JobNodeConfigurationDetails;
+        /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobJobStorageMountConfigurationDetailsListResult> JobStorageMountConfigurationDetailsLists;
@@ -236,6 +240,8 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetJobJobLogConfigurationDetailResult> jobLogConfigurationDetails,
 
+            ImmutableArray<Outputs.GetJobJobNodeConfigurationDetailResult> jobNodeConfigurationDetails,
+
             ImmutableArray<Outputs.GetJobJobStorageMountConfigurationDetailsListResult> jobStorageMountConfigurationDetailsLists,
 
             string lifecycleDetails,
@@ -265,6 +271,7 @@ namespace Pulumi.Oci.DataScience
             JobId = jobId;
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             JobLogConfigurationDetails = jobLogConfigurationDetails;
+            JobNodeConfigurationDetails = jobNodeConfigurationDetails;
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             LifecycleDetails = lifecycleDetails;
             ProjectId = projectId;

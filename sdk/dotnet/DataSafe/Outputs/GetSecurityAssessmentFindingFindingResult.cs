@@ -15,6 +15,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     {
         public readonly string AssessmentId;
         public readonly ImmutableArray<string> Details;
+        public readonly string Doclink;
         public readonly bool HasTargetDbRiskLevelChanged;
         public readonly bool IsRiskModified;
         public readonly bool IsTopFinding;
@@ -38,6 +39,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string assessmentId,
 
             ImmutableArray<string> details,
+
+            string doclink,
 
             bool hasTargetDbRiskLevelChanged,
 
@@ -75,6 +78,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         {
             AssessmentId = assessmentId;
             Details = details;
+            Doclink = doclink;
             HasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
             IsRiskModified = isRiskModified;
             IsTopFinding = isTopFinding;

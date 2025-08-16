@@ -88,6 +88,10 @@ export interface GetRedisClusterResult {
      */
     readonly nsgIds: string[];
     /**
+     * The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     */
+    readonly ociCacheConfigSetId: string;
+    /**
      * The private IP address of the API endpoint for the cluster's primary node.
      */
     readonly primaryEndpointIpAddress: string;

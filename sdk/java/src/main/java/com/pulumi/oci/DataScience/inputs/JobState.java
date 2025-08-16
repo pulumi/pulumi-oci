@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobJobNodeConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -261,6 +262,21 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The job node configuration details
+     * 
+     */
+    @Import(name="jobNodeConfigurationDetails")
+    private @Nullable Output<JobJobNodeConfigurationDetailsArgs> jobNodeConfigurationDetails;
+
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public Optional<Output<JobJobNodeConfigurationDetailsArgs>> jobNodeConfigurationDetails() {
+        return Optional.ofNullable(this.jobNodeConfigurationDetails);
+    }
+
+    /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      * 
      */
@@ -355,6 +371,7 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
         this.jobEnvironmentConfigurationDetails = $.jobEnvironmentConfigurationDetails;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
         this.jobLogConfigurationDetails = $.jobLogConfigurationDetails;
+        this.jobNodeConfigurationDetails = $.jobNodeConfigurationDetails;
         this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
         this.lifecycleDetails = $.lifecycleDetails;
         this.projectId = $.projectId;
@@ -705,6 +722,27 @@ public final class JobState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs jobLogConfigurationDetails) {
             return jobLogConfigurationDetails(Output.of(jobLogConfigurationDetails));
+        }
+
+        /**
+         * @param jobNodeConfigurationDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationDetails(@Nullable Output<JobJobNodeConfigurationDetailsArgs> jobNodeConfigurationDetails) {
+            $.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param jobNodeConfigurationDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationDetails(JobJobNodeConfigurationDetailsArgs jobNodeConfigurationDetails) {
+            return jobNodeConfigurationDetails(Output.of(jobNodeConfigurationDetails));
         }
 
         /**

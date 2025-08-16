@@ -69,7 +69,8 @@ type LookupApiResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 	// * 'New' for just updated API Specifications
 	// * 'Validating' for a document which is being validated.
@@ -78,11 +79,13 @@ type LookupApiResult struct {
 	// * 'Error' the document has been validated and contains errors
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string       `pulumi:"lifecycleDetails"`
+	Locks            []GetApiLock `pulumi:"locks"`
 	// Type of API Specification file.
 	SpecificationType string `pulumi:"specificationType"`
 	// The current state of the API.
-	State string `pulumi:"state"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -158,6 +161,10 @@ func (o LookupApiResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupApiResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupApiResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 // * 'New' for just updated API Specifications
 // * 'Validating' for a document which is being validated.
@@ -170,6 +177,10 @@ func (o LookupApiResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o LookupApiResultOutput) Locks() GetApiLockArrayOutput {
+	return o.ApplyT(func(v LookupApiResult) []GetApiLock { return v.Locks }).(GetApiLockArrayOutput)
+}
+
 // Type of API Specification file.
 func (o LookupApiResultOutput) SpecificationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.SpecificationType }).(pulumi.StringOutput)
@@ -178,6 +189,10 @@ func (o LookupApiResultOutput) SpecificationType() pulumi.StringOutput {
 // The current state of the API.
 func (o LookupApiResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o LookupApiResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupApiResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

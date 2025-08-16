@@ -111,7 +111,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     private String shape;
     /**
-     * @return The source used to restore the database system.
+     * @return The source of the database system.
      * 
      */
     private List<GetDbSystemsDbSystemCollectionItemSource> sources;
@@ -279,7 +279,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
         return this.shape;
     }
     /**
-     * @return The source used to restore the database system.
+     * @return The source of the database system.
      * 
      */
     public List<GetDbSystemsDbSystemCollectionItemSource> sources() {

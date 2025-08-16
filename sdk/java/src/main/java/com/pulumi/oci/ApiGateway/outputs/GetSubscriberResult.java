@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApiGateway.outputs.GetSubscriberClient;
+import com.pulumi.oci.ApiGateway.outputs.GetSubscriberLock;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,17 +45,20 @@ public final class GetSubscriberResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetSubscriberLock> locks;
     /**
      * @return The current state of the subscriber.
      * 
      */
     private String state;
     private String subscriberId;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -113,12 +118,18 @@ public final class GetSubscriberResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetSubscriberLock> locks() {
+        return this.locks;
     }
     /**
      * @return The current state of the subscriber.
@@ -129,6 +140,9 @@ public final class GetSubscriberResult {
     }
     public String subscriberId() {
         return this.subscriberId;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -167,9 +181,12 @@ public final class GetSubscriberResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetSubscriberLock> locks;
         private String state;
         private String subscriberId;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private List<String> usagePlans;
@@ -182,9 +199,12 @@ public final class GetSubscriberResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
     	      this.subscriberId = defaults.subscriberId;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.usagePlans = defaults.usagePlans;
@@ -242,12 +262,31 @@ public final class GetSubscriberResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetSubscriberResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetSubscriberResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetSubscriberLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetSubscriberResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetSubscriberLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -263,6 +302,14 @@ public final class GetSubscriberResult {
               throw new MissingRequiredPropertyException("GetSubscriberResult", "subscriberId");
             }
             this.subscriberId = subscriberId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetSubscriberResult", "systemTags");
+            }
+            this.systemTags = systemTags;
             return this;
         }
         @CustomType.Setter
@@ -300,9 +347,12 @@ public final class GetSubscriberResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.state = state;
             _resultValue.subscriberId = subscriberId;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             _resultValue.usagePlans = usagePlans;

@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.AiDocument.ProjectArgs;
 import com.pulumi.oci.AiDocument.inputs.ProjectState;
+import com.pulumi.oci.AiDocument.outputs.ProjectLock;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -158,6 +160,20 @@ public class Project extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,ProjectLock.class}, tree="[0,1]")
+    private Output<List<ProjectLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<ProjectLock>> locks() {
+        return this.locks;
     }
     /**
      * The current state of the project.

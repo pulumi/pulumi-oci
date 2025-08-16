@@ -5,7 +5,9 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentLock;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecification;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -49,11 +51,13 @@ public final class GetDeploymentResult {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    private List<GetDeploymentLock> locks;
     /**
      * @return A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
      * 
@@ -69,6 +73,7 @@ public final class GetDeploymentResult {
      * 
      */
     private String state;
+    private Map<String,String> systemTags;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -133,12 +138,18 @@ public final class GetDeploymentResult {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public List<GetDeploymentLock> locks() {
+        return this.locks;
     }
     /**
      * @return A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
@@ -160,6 +171,9 @@ public final class GetDeploymentResult {
      */
     public String state() {
         return this.state;
+    }
+    public Map<String,String> systemTags() {
+        return this.systemTags;
     }
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -193,10 +207,13 @@ public final class GetDeploymentResult {
         private Map<String,String> freeformTags;
         private String gatewayId;
         private String id;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetDeploymentLock> locks;
         private String pathPrefix;
         private List<GetDeploymentSpecification> specifications;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -210,10 +227,13 @@ public final class GetDeploymentResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.gatewayId = defaults.gatewayId;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.pathPrefix = defaults.pathPrefix;
     	      this.specifications = defaults.specifications;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -283,12 +303,31 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDeploymentResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetDeploymentLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetDeploymentLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder pathPrefix(String pathPrefix) {
@@ -318,6 +357,14 @@ public final class GetDeploymentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDeploymentResult", "timeCreated");
@@ -343,10 +390,13 @@ public final class GetDeploymentResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.gatewayId = gatewayId;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.pathPrefix = pathPrefix;
             _resultValue.specifications = specifications;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

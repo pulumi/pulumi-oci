@@ -27,7 +27,7 @@ class GetPipelineRunResult:
     """
     A collection of values returned by getPipelineRun.
     """
-    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, configuration_details=None, configuration_override_details=None, created_by=None, defined_tags=None, delete_related_job_runs=None, display_name=None, freeform_tags=None, id=None, infrastructure_configuration_override_details=None, lifecycle_details=None, log_configuration_override_details=None, log_details=None, opc_parent_rpt_url=None, pipeline_id=None, pipeline_run_id=None, project_id=None, state=None, step_override_details=None, step_runs=None, system_tags=None, time_accepted=None, time_finished=None, time_started=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -55,6 +55,9 @@ class GetPipelineRunResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if infrastructure_configuration_override_details and not isinstance(infrastructure_configuration_override_details, list):
+            raise TypeError("Expected argument 'infrastructure_configuration_override_details' to be a list")
+        pulumi.set(__self__, "infrastructure_configuration_override_details", infrastructure_configuration_override_details)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -172,6 +175,14 @@ class GetPipelineRunResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
+    def infrastructure_configuration_override_details(self) -> Sequence['outputs.GetPipelineRunInfrastructureConfigurationOverrideDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "infrastructure_configuration_override_details")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -303,6 +314,7 @@ class AwaitableGetPipelineRunResult(GetPipelineRunResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            infrastructure_configuration_override_details=self.infrastructure_configuration_override_details,
             lifecycle_details=self.lifecycle_details,
             log_configuration_override_details=self.log_configuration_override_details,
             log_details=self.log_details,
@@ -354,6 +366,7 @@ def get_pipeline_run(pipeline_run_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        infrastructure_configuration_override_details=pulumi.get(__ret__, 'infrastructure_configuration_override_details'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_configuration_override_details=pulumi.get(__ret__, 'log_configuration_override_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
@@ -402,6 +415,7 @@ def get_pipeline_run_output(pipeline_run_id: Optional[pulumi.Input[_builtins.str
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        infrastructure_configuration_override_details=pulumi.get(__response__, 'infrastructure_configuration_override_details'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         log_configuration_override_details=pulumi.get(__response__, 'log_configuration_override_details'),
         log_details=pulumi.get(__response__, 'log_details'),

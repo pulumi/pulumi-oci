@@ -18,7 +18,7 @@ public final class JobJobInfrastructureConfigurationDetails {
      * @return (Updatable) The size of the block storage volume to attach to the instance running the job
      * 
      */
-    private Integer blockStorageSizeInGbs;
+    private @Nullable Integer blockStorageSizeInGbs;
     /**
      * @return (Updatable) The infrastructure type used for job run.
      * 
@@ -30,10 +30,10 @@ public final class JobJobInfrastructureConfigurationDetails {
      */
     private @Nullable JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails jobShapeConfigDetails;
     /**
-     * @return (Updatable) The shape used to launch the job run instances.
+     * @return (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
-    private String shapeName;
+    private @Nullable String shapeName;
     /**
      * @return (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
      * 
@@ -45,8 +45,8 @@ public final class JobJobInfrastructureConfigurationDetails {
      * @return (Updatable) The size of the block storage volume to attach to the instance running the job
      * 
      */
-    public Integer blockStorageSizeInGbs() {
-        return this.blockStorageSizeInGbs;
+    public Optional<Integer> blockStorageSizeInGbs() {
+        return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
     /**
      * @return (Updatable) The infrastructure type used for job run.
@@ -63,11 +63,11 @@ public final class JobJobInfrastructureConfigurationDetails {
         return Optional.ofNullable(this.jobShapeConfigDetails);
     }
     /**
-     * @return (Updatable) The shape used to launch the job run instances.
+     * @return (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
-    public String shapeName() {
-        return this.shapeName;
+    public Optional<String> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
     /**
      * @return (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
@@ -86,10 +86,10 @@ public final class JobJobInfrastructureConfigurationDetails {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer blockStorageSizeInGbs;
+        private @Nullable Integer blockStorageSizeInGbs;
         private String jobInfrastructureType;
         private @Nullable JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails jobShapeConfigDetails;
-        private String shapeName;
+        private @Nullable String shapeName;
         private @Nullable String subnetId;
         public Builder() {}
         public Builder(JobJobInfrastructureConfigurationDetails defaults) {
@@ -102,10 +102,8 @@ public final class JobJobInfrastructureConfigurationDetails {
         }
 
         @CustomType.Setter
-        public Builder blockStorageSizeInGbs(Integer blockStorageSizeInGbs) {
-            if (blockStorageSizeInGbs == null) {
-              throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetails", "blockStorageSizeInGbs");
-            }
+        public Builder blockStorageSizeInGbs(@Nullable Integer blockStorageSizeInGbs) {
+
             this.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
@@ -124,10 +122,8 @@ public final class JobJobInfrastructureConfigurationDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder shapeName(String shapeName) {
-            if (shapeName == null) {
-              throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetails", "shapeName");
-            }
+        public Builder shapeName(@Nullable String shapeName) {
+
             this.shapeName = shapeName;
             return this;
         }

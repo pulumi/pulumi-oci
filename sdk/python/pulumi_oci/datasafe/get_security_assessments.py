@@ -278,7 +278,7 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
     :param _builtins.str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
            
            **Example:** 2016-12-19T16:39:57.600Z
-    :param _builtins.str triggered_by: A filter to return only security asessments that were created by either user or system.
+    :param _builtins.str triggered_by: A filter to return only security assessments that were created by either user or system.
     :param _builtins.str type: A filter to return only items that match the specified security assessment type.
     """
     __args__ = dict()
@@ -387,7 +387,7 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     :param _builtins.str time_created_less_than: Search for resources that were created before a specific date. Specifying this parameter corresponding `timeCreatedLessThan` parameter will retrieve all resources created before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
            
            **Example:** 2016-12-19T16:39:57.600Z
-    :param _builtins.str triggered_by: A filter to return only security asessments that were created by either user or system.
+    :param _builtins.str triggered_by: A filter to return only security assessments that were created by either user or system.
     :param _builtins.str type: A filter to return only items that match the specified security assessment type.
     """
     __args__ = dict()

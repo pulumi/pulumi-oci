@@ -141,6 +141,21 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    @Import(name="ociCacheConfigSetId")
+    private @Nullable Output<String> ociCacheConfigSetId;
+
+    /**
+     * @return (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    public Optional<Output<String>> ociCacheConfigSetId() {
+        return Optional.ofNullable(this.ociCacheConfigSetId);
+    }
+
+    /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      * 
      */
@@ -202,6 +217,7 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.nodeCount = $.nodeCount;
         this.nodeMemoryInGbs = $.nodeMemoryInGbs;
         this.nsgIds = $.nsgIds;
+        this.ociCacheConfigSetId = $.ociCacheConfigSetId;
         this.shardCount = $.shardCount;
         this.softwareVersion = $.softwareVersion;
         this.subnetId = $.subnetId;
@@ -401,6 +417,27 @@ public final class RedisClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nsgIds(String... nsgIds) {
             return nsgIds(List.of(nsgIds));
+        }
+
+        /**
+         * @param ociCacheConfigSetId (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ociCacheConfigSetId(@Nullable Output<String> ociCacheConfigSetId) {
+            $.ociCacheConfigSetId = ociCacheConfigSetId;
+            return this;
+        }
+
+        /**
+         * @param ociCacheConfigSetId (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ociCacheConfigSetId(String ociCacheConfigSetId) {
+            return ociCacheConfigSetId(Output.of(ociCacheConfigSetId));
         }
 
         /**

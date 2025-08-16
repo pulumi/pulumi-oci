@@ -15,6 +15,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultConfigurationResult {
     /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    private List<String> compatibleShapes;
+    /**
      * @return List of default configuration values for databases.
      * 
      */
@@ -61,7 +66,7 @@ public final class GetDefaultConfigurationResult {
      */
     private String lifecycleDetails;
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
      * 
      */
     private String shape;
@@ -77,6 +82,13 @@ public final class GetDefaultConfigurationResult {
     private String timeCreated;
 
     private GetDefaultConfigurationResult() {}
+    /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public List<String> compatibleShapes() {
+        return this.compatibleShapes;
+    }
     /**
      * @return List of default configuration values for databases.
      * 
@@ -144,7 +156,7 @@ public final class GetDefaultConfigurationResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
      * 
      */
     public String shape() {
@@ -174,6 +186,7 @@ public final class GetDefaultConfigurationResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> compatibleShapes;
         private List<GetDefaultConfigurationConfigurationDetail> configurationDetails;
         private String dbVersion;
         private String defaultConfigurationId;
@@ -190,6 +203,7 @@ public final class GetDefaultConfigurationResult {
         public Builder() {}
         public Builder(GetDefaultConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compatibleShapes = defaults.compatibleShapes;
     	      this.configurationDetails = defaults.configurationDetails;
     	      this.dbVersion = defaults.dbVersion;
     	      this.defaultConfigurationId = defaults.defaultConfigurationId;
@@ -205,6 +219,17 @@ public final class GetDefaultConfigurationResult {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
+        public Builder compatibleShapes(List<String> compatibleShapes) {
+            if (compatibleShapes == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationResult", "compatibleShapes");
+            }
+            this.compatibleShapes = compatibleShapes;
+            return this;
+        }
+        public Builder compatibleShapes(String... compatibleShapes) {
+            return compatibleShapes(List.of(compatibleShapes));
+        }
         @CustomType.Setter
         public Builder configurationDetails(List<GetDefaultConfigurationConfigurationDetail> configurationDetails) {
             if (configurationDetails == null) {
@@ -314,6 +339,7 @@ public final class GetDefaultConfigurationResult {
         }
         public GetDefaultConfigurationResult build() {
             final var _resultValue = new GetDefaultConfigurationResult();
+            _resultValue.compatibleShapes = compatibleShapes;
             _resultValue.configurationDetails = configurationDetails;
             _resultValue.dbVersion = dbVersion;
             _resultValue.defaultConfigurationId = defaultConfigurationId;

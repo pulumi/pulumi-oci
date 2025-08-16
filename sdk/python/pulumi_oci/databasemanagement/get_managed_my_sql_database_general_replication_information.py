@@ -105,7 +105,7 @@ class GetManagedMySqlDatabaseGeneralReplicationInformationResult:
     @pulumi.getter(name="binaryLogging")
     def binary_logging(self) -> _builtins.str:
         """
-        Status of binary logging on this server.
+        The status of binary logging on this server.
         """
         return pulumi.get(self, "binary_logging")
 
@@ -129,7 +129,7 @@ class GetManagedMySqlDatabaseGeneralReplicationInformationResult:
     @pulumi.getter(name="gtidMode")
     def gtid_mode(self) -> _builtins.str:
         """
-        Global Transaction Identifier (GTID) mode of this server.
+        The Global Transaction Identifier (GTID) mode of this server.
         """
         return pulumi.get(self, "gtid_mode")
 
@@ -169,7 +169,7 @@ class GetManagedMySqlDatabaseGeneralReplicationInformationResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> _builtins.str:
         """
-        The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+        The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
         """
         return pulumi.get(self, "instance_type")
 
@@ -267,7 +267,7 @@ def get_managed_my_sql_database_general_replication_information(managed_my_sql_d
     """
     This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves general information regarding replication of a specific MySQL server.
+    Retrieves general information regarding the replication of a specific MySQL server.
 
     ## Example Usage
 
@@ -311,7 +311,7 @@ def get_managed_my_sql_database_general_replication_information_output(managed_m
     """
     This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
 
-    Retrieves general information regarding replication of a specific MySQL server.
+    Retrieves general information regarding the replication of a specific MySQL server.
 
     ## Example Usage
 

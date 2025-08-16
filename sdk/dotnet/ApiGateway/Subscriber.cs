@@ -91,17 +91,26 @@ namespace Pulumi.Oci.ApiGateway
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.SubscriberLock>> Locks { get; private set; } = null!;
+
         /// <summary>
         /// The current state of the subscriber.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
@@ -219,6 +228,17 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.SubscriberLockArgs>? _locks;
+        public InputList<Inputs.SubscriberLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.SubscriberLockArgs>());
+            set => _locks = value;
+        }
+
         [Input("usagePlans", required: true)]
         private InputList<string>? _usagePlans;
 
@@ -291,17 +311,36 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("locks")]
+        private InputList<Inputs.SubscriberLockGetArgs>? _locks;
+        public InputList<Inputs.SubscriberLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.SubscriberLockGetArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// The current state of the subscriber.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

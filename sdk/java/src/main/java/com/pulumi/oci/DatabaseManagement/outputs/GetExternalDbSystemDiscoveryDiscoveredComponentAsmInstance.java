@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     private String adrHomeDirectory;
@@ -28,7 +28,7 @@ public final class GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance {
 
     private GetExternalDbSystemDiscoveryDiscoveredComponentAsmInstance() {}
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     public String adrHomeDirectory() {

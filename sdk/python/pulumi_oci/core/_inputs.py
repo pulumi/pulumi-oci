@@ -199,6 +199,8 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgsDict',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgsDict',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgsDict',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgsDict',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs',
@@ -243,6 +245,8 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgsDict',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgsDict',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgsDict',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgsDict',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs',
@@ -7590,6 +7594,10 @@ if not MYPY:
         """
         The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
+        compute_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
         create_vnic_details: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgsDict']]
         """
         Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
@@ -7696,6 +7704,10 @@ if not MYPY:
 
         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
+        placement_constraint_details: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgsDict']]
+        """
+        The details for providing placement constraints.
+        """
         platform_config: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgsDict']]
         """
         (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
@@ -7745,6 +7757,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -7759,6 +7772,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                  launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs']] = None,
                  licensing_configs: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs']] = None,
                  platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
                  preferred_maintenance_action: Optional[pulumi.Input[_builtins.str]] = None,
@@ -7773,6 +7787,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        :param pulumi.Input[_builtins.str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
                
@@ -7837,6 +7852,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs'] placement_constraint_details: The details for providing placement constraints.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs'] platform_config: (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -7868,6 +7884,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
             pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
@@ -7896,6 +7914,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
             pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_config is not None:
             pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
@@ -7982,6 +8002,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -8200,6 +8232,18 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsArgs:
     @metadata.setter
     def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs']]:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
     @pulumi.getter(name="platformConfig")
@@ -9091,6 +9135,56 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigsArgs:
     @license_type.setter
     def license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "license_type", value)
+
+
+if not MYPY:
+    class InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgsDict(TypedDict):
+        compute_host_group_id: pulumi.Input[_builtins.str]
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        The type for the placement constraints. Use `HOST_GROUP` when specifying the compute host group OCID.
+        """
+elif False:
+    InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs:
+    def __init__(__self__, *,
+                 compute_host_group_id: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param pulumi.Input[_builtins.str] type: The type for the placement constraints. Use `HOST_GROUP` when specifying the compute host group OCID.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "compute_host_group_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type for the placement constraints. Use `HOST_GROUP` when specifying the compute host group OCID.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
 
 
 if not MYPY:
@@ -10606,6 +10700,10 @@ if not MYPY:
         """
         (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
+        compute_cluster_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
         create_vnic_details: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgsDict']]
         """
         Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
@@ -10666,6 +10764,10 @@ if not MYPY:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
+        placement_constraint_details: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgsDict']]
+        """
+        The details for providing placement constraints.
+        """
         platform_config: NotRequired[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgsDict']]
         """
         The platform configuration requested for the instance.
@@ -10705,6 +10807,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                  capacity_reservation_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compute_cluster_id: Optional[pulumi.Input[_builtins.str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -10719,6 +10822,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
                  launch_options: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs']] = None,
                  licensing_configs: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs']] = None,
                  metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 placement_constraint_details: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs']] = None,
                  platform_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs']] = None,
                  preferred_maintenance_action: Optional[pulumi.Input[_builtins.str]] = None,
@@ -10733,6 +10837,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
         :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param pulumi.Input[_builtins.str] cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        :param pulumi.Input[_builtins.str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param pulumi.Input[_builtins.str] dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -10751,6 +10856,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs'] placement_constraint_details: The details for providing placement constraints.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs'] platform_config: The platform configuration requested for the instance.
         :param pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs'] preemptible_instance_config: Configuration options for preemptible instances.
         :param pulumi.Input[_builtins.str] preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -10772,6 +10878,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
             pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
@@ -10800,6 +10908,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
             pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_config is not None:
             pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
@@ -10886,6 +10996,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
+
+    @compute_cluster_id.setter
+    def compute_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_cluster_id", value)
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -11058,6 +11180,18 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs:
     @metadata.setter
     def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs']]:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
+
+    @placement_constraint_details.setter
+    def placement_constraint_details(self, value: Optional[pulumi.Input['InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs']]):
+        pulumi.set(self, "placement_constraint_details", value)
 
     @_builtins.property
     @pulumi.getter(name="platformConfig")
@@ -11958,6 +12092,56 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArg
     @license_type.setter
     def license_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "license_type", value)
+
+
+if not MYPY:
+    class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgsDict(TypedDict):
+        compute_host_group_id: pulumi.Input[_builtins.str]
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        type: pulumi.Input[_builtins.str]
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+elif False:
+    InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs:
+    def __init__(__self__, *,
+                 compute_host_group_id: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param pulumi.Input[_builtins.str] type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @compute_host_group_id.setter
+    def compute_host_group_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "compute_host_group_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
 
 
 if not MYPY:

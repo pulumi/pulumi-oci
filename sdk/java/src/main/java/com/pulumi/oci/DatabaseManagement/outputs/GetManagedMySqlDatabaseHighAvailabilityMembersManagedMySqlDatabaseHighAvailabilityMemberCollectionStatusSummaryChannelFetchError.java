@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchError {
     /**
-     * @return The name of the replication channel
+     * @return The name of the replication channel.
      * 
      */
     private String channelName;
     /**
-     * @return Error from fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel.
      * 
      */
     private List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchError> fetchErrors;
 
     private GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchError() {}
     /**
-     * @return The name of the replication channel
+     * @return The name of the replication channel.
      * 
      */
     public String channelName() {
         return this.channelName;
     }
     /**
-     * @return Error from fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel.
      * 
      */
     public List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelFetchErrorFetchError> fetchErrors() {

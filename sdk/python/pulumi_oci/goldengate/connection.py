@@ -32,6 +32,7 @@ class ConnectionArgs:
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
                  authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
                  catalog: Optional[pulumi.Input['ConnectionCatalogArgs']] = None,
@@ -141,6 +142,9 @@ class ConnectionArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param pulumi.Input[_builtins.str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        :param pulumi.Input[_builtins.str] azure_authority_host: (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+               * Azure China: https://login.chinacloudapi.cn/
+               * Azure US Government: https://login.microsoftonline.us/
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input['ConnectionCatalogArgs'] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
@@ -159,8 +163,8 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] deployment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
@@ -190,7 +194,7 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[_builtins.str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[_builtins.str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         :param pulumi.Input[_builtins.str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[_builtins.str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
@@ -202,14 +206,22 @@ class ConnectionArgs:
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystash' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[_builtins.str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -264,6 +276,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "authentication_mode", authentication_mode)
         if authentication_type is not None:
             pulumi.set(__self__, "authentication_type", authentication_type)
+        if azure_authority_host is not None:
+            pulumi.set(__self__, "azure_authority_host", azure_authority_host)
         if azure_tenant_id is not None:
             pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
         if bootstrap_servers is not None:
@@ -590,6 +604,20 @@ class ConnectionArgs:
         pulumi.set(self, "authentication_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="azureAuthorityHost")
+    def azure_authority_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+        """
+        return pulumi.get(self, "azure_authority_host")
+
+    @azure_authority_host.setter
+    def azure_authority_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "azure_authority_host", value)
+
+    @_builtins.property
     @pulumi.getter(name="azureTenantId")
     def azure_tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -809,7 +837,7 @@ class ConnectionArgs:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
         """
         return pulumi.get(self, "endpoint")
 
@@ -821,7 +849,7 @@ class ConnectionArgs:
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
@@ -1157,7 +1185,7 @@ class ConnectionArgs:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         """
         return pulumi.get(self, "region")
 
@@ -1301,7 +1329,7 @@ class ConnectionArgs:
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -1349,7 +1377,9 @@ class ConnectionArgs:
     @pulumi.getter(name="sslClientKeystash")
     def ssl_client_keystash(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -1361,7 +1391,9 @@ class ConnectionArgs:
     @pulumi.getter(name="sslClientKeystashSecretId")
     def ssl_client_keystash_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Note: When provided, 'sslClientKeystash' field must not be provided.
         """
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
@@ -1373,7 +1405,9 @@ class ConnectionArgs:
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -1385,7 +1419,9 @@ class ConnectionArgs:
     @pulumi.getter(name="sslClientKeystoredbSecretId")
     def ssl_client_keystoredb_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
         """
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
@@ -1758,6 +1794,7 @@ class _ConnectionState:
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
                  authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
                  catalog: Optional[pulumi.Input['ConnectionCatalogArgs']] = None,
@@ -1873,6 +1910,9 @@ class _ConnectionState:
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param pulumi.Input[_builtins.str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        :param pulumi.Input[_builtins.str] azure_authority_host: (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+               * Azure China: https://login.chinacloudapi.cn/
+               * Azure US Government: https://login.microsoftonline.us/
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input['ConnectionCatalogArgs'] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
@@ -1894,8 +1934,8 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
@@ -1927,7 +1967,7 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[_builtins.str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[_builtins.str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         :param pulumi.Input[_builtins.str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[_builtins.str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
@@ -1939,14 +1979,22 @@ class _ConnectionState:
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystash' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[_builtins.str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -2002,6 +2050,8 @@ class _ConnectionState:
             pulumi.set(__self__, "authentication_mode", authentication_mode)
         if authentication_type is not None:
             pulumi.set(__self__, "authentication_type", authentication_type)
+        if azure_authority_host is not None:
+            pulumi.set(__self__, "azure_authority_host", azure_authority_host)
         if azure_tenant_id is not None:
             pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
         if bootstrap_servers is not None:
@@ -2300,6 +2350,20 @@ class _ConnectionState:
         pulumi.set(self, "authentication_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="azureAuthorityHost")
+    def azure_authority_host(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+        """
+        return pulumi.get(self, "azure_authority_host")
+
+    @azure_authority_host.setter
+    def azure_authority_host(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "azure_authority_host", value)
+
+    @_builtins.property
     @pulumi.getter(name="azureTenantId")
     def azure_tenant_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -2555,7 +2619,7 @@ class _ConnectionState:
     @pulumi.getter
     def endpoint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
         """
         return pulumi.get(self, "endpoint")
 
@@ -2567,7 +2631,7 @@ class _ConnectionState:
     @pulumi.getter
     def fingerprint(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
@@ -2927,7 +2991,7 @@ class _ConnectionState:
     @pulumi.getter
     def region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         """
         return pulumi.get(self, "region")
 
@@ -3071,7 +3135,7 @@ class _ConnectionState:
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -3119,7 +3183,9 @@ class _ConnectionState:
     @pulumi.getter(name="sslClientKeystash")
     def ssl_client_keystash(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -3131,7 +3197,9 @@ class _ConnectionState:
     @pulumi.getter(name="sslClientKeystashSecretId")
     def ssl_client_keystash_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Note: When provided, 'sslClientKeystash' field must not be provided.
         """
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
@@ -3143,7 +3211,9 @@ class _ConnectionState:
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -3155,7 +3225,9 @@ class _ConnectionState:
     @pulumi.getter(name="sslClientKeystoredbSecretId")
     def ssl_client_keystoredb_secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
         """
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
@@ -3591,6 +3663,7 @@ class Connection(pulumi.CustomResource):
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
                  authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
                  catalog: Optional[pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
@@ -3718,6 +3791,7 @@ class Connection(pulumi.CustomResource):
             }],
             authentication_mode=connection_authentication_mode,
             authentication_type=connection_authentication_type,
+            azure_authority_host=connection_azure_authority_host,
             azure_tenant_id=test_azure_tenant["id"],
             bootstrap_servers=[{
                 "host": connection_bootstrap_servers_host,
@@ -3866,6 +3940,9 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param pulumi.Input[_builtins.str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        :param pulumi.Input[_builtins.str] azure_authority_host: (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+               * Azure China: https://login.chinacloudapi.cn/
+               * Azure US Government: https://login.microsoftonline.us/
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
@@ -3887,8 +3964,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
@@ -3918,7 +3995,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[_builtins.str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[_builtins.str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         :param pulumi.Input[_builtins.str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[_builtins.str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
@@ -3930,14 +4007,22 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystash' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[_builtins.str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -4007,6 +4092,7 @@ class Connection(pulumi.CustomResource):
             }],
             authentication_mode=connection_authentication_mode,
             authentication_type=connection_authentication_type,
+            azure_authority_host=connection_azure_authority_host,
             azure_tenant_id=test_azure_tenant["id"],
             bootstrap_servers=[{
                 "host": connection_bootstrap_servers_host,
@@ -4168,6 +4254,7 @@ class Connection(pulumi.CustomResource):
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
                  authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
                  catalog: Optional[pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
@@ -4284,6 +4371,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["additional_attributes"] = additional_attributes
             __props__.__dict__["authentication_mode"] = authentication_mode
             __props__.__dict__["authentication_type"] = authentication_type
+            __props__.__dict__["azure_authority_host"] = azure_authority_host
             __props__.__dict__["azure_tenant_id"] = azure_tenant_id
             __props__.__dict__["bootstrap_servers"] = bootstrap_servers
             __props__.__dict__["catalog"] = catalog
@@ -4417,6 +4505,7 @@ class Connection(pulumi.CustomResource):
             additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]]] = None,
             authentication_mode: Optional[pulumi.Input[_builtins.str]] = None,
             authentication_type: Optional[pulumi.Input[_builtins.str]] = None,
+            azure_authority_host: Optional[pulumi.Input[_builtins.str]] = None,
             azure_tenant_id: Optional[pulumi.Input[_builtins.str]] = None,
             bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]]] = None,
             catalog: Optional[pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']]] = None,
@@ -4537,6 +4626,9 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         :param pulumi.Input[_builtins.str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[_builtins.str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
+        :param pulumi.Input[_builtins.str] azure_authority_host: (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+               * Azure China: https://login.chinacloudapi.cn/
+               * Azure US Government: https://login.microsoftonline.us/
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConnectionBootstrapServerArgs', 'ConnectionBootstrapServerArgsDict']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param pulumi.Input[Union['ConnectionCatalogArgs', 'ConnectionCatalogArgsDict']] catalog: (Updatable) The information about a new catalog of given type used in an Iceberg connection.
@@ -4558,8 +4650,8 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) Metadata about this specific object.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) An object's Display Name.
         :param pulumi.Input[_builtins.bool] does_use_secret_ids: (Updatable) Indicates that sensitive attributes are provided via Secrets.
-        :param pulumi.Input[_builtins.str] endpoint: (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
-        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        :param pulumi.Input[_builtins.str] fingerprint: (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] host: (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
                For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
@@ -4591,7 +4683,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[_builtins.str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param pulumi.Input[_builtins.str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
-        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param pulumi.Input[_builtins.str] region: (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         :param pulumi.Input[_builtins.str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[_builtins.str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] sas_token_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
@@ -4603,14 +4695,22 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
         :param pulumi.Input[_builtins.str] session_mode: (Updatable) The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param pulumi.Input[_builtins.bool] should_use_jndi: (Updatable) If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        :param pulumi.Input[_builtins.bool] should_use_resource_principal: (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         :param pulumi.Input[_builtins.bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[_builtins.str] ssl_ca: (Updatable) The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
-        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystash_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystash' field must not be provided.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        :param pulumi.Input[_builtins.str] ssl_client_keystoredb_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+               
+               Note: When provided, 'sslClientKeystoredb' field must not be provided.
         :param pulumi.Input[_builtins.str] ssl_crl: (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param pulumi.Input[_builtins.str] ssl_key: (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This field will be removed after February 15 2026.
         :param pulumi.Input[_builtins.str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
@@ -4663,6 +4763,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["additional_attributes"] = additional_attributes
         __props__.__dict__["authentication_mode"] = authentication_mode
         __props__.__dict__["authentication_type"] = authentication_type
+        __props__.__dict__["azure_authority_host"] = azure_authority_host
         __props__.__dict__["azure_tenant_id"] = azure_tenant_id
         __props__.__dict__["bootstrap_servers"] = bootstrap_servers
         __props__.__dict__["catalog"] = catalog
@@ -4826,6 +4927,16 @@ class Connection(pulumi.CustomResource):
         (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         """
         return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter(name="azureAuthorityHost")
+    def azure_authority_host(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+        """
+        return pulumi.get(self, "azure_authority_host")
 
     @_builtins.property
     @pulumi.getter(name="azureTenantId")
@@ -4999,7 +5110,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def endpoint(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
         """
         return pulumi.get(self, "endpoint")
 
@@ -5007,7 +5118,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def fingerprint(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         """
         return pulumi.get(self, "fingerprint")
 
@@ -5247,7 +5358,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter
     def region(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         """
         return pulumi.get(self, "region")
 
@@ -5343,7 +5454,7 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -5375,7 +5486,9 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslClientKeystash")
     def ssl_client_keystash(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystash")
 
@@ -5383,7 +5496,9 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslClientKeystashSecretId")
     def ssl_client_keystash_secret_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Note: When provided, 'sslClientKeystash' field must not be provided.
         """
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
@@ -5391,7 +5506,9 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslClientKeystoredb")
     def ssl_client_keystoredb(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         """
         return pulumi.get(self, "ssl_client_keystoredb")
 
@@ -5399,7 +5516,9 @@ class Connection(pulumi.CustomResource):
     @pulumi.getter(name="sslClientKeystoredbSecretId")
     def ssl_client_keystoredb_secret_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+
+        Note: When provided, 'sslClientKeystoredb' field must not be provided.
         """
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 

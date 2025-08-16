@@ -124,7 +124,7 @@ export interface GetDbSystemResult {
      */
     readonly shape: string;
     /**
-     * The source used to restore the database system.
+     * The source of the database system.
      */
     readonly sources: outputs.Psql.GetDbSystemSource[];
     /**

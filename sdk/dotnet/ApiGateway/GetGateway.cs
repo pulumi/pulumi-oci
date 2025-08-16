@@ -164,10 +164,12 @@ namespace Pulumi.Oci.ApiGateway
         /// An array of IP addresses associated with the gateway.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGatewayIpAddressResult> IpAddresses;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetGatewayLockResult> Locks;
         /// <summary>
         /// An array of Network Security Groups OCIDs associated with this API Gateway.
         /// </summary>
@@ -184,6 +186,7 @@ namespace Pulumi.Oci.ApiGateway
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
         /// </summary>
         public readonly string SubnetId;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -217,7 +220,11 @@ namespace Pulumi.Oci.ApiGateway
 
             ImmutableArray<Outputs.GetGatewayIpAddressResult> ipAddresses,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetGatewayLockResult> locks,
 
             ImmutableArray<string> networkSecurityGroupIds,
 
@@ -226,6 +233,8 @@ namespace Pulumi.Oci.ApiGateway
             string state,
 
             string subnetId,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -242,11 +251,14 @@ namespace Pulumi.Oci.ApiGateway
             Hostname = hostname;
             Id = id;
             IpAddresses = ipAddresses;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             NetworkSecurityGroupIds = networkSecurityGroupIds;
             ResponseCacheDetails = responseCacheDetails;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

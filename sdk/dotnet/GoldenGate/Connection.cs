@@ -44,6 +44,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         },
     ///         AuthenticationMode = connectionAuthenticationMode,
     ///         AuthenticationType = connectionAuthenticationType,
+    ///         AzureAuthorityHost = connectionAzureAuthorityHost,
     ///         AzureTenantId = testAzureTenant.Id,
     ///         BootstrapServers = new[]
     ///         {
@@ -244,6 +245,14 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> AuthenticationType { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        /// * Azure China: https://login.chinacloudapi.cn/
+        /// * Azure US Government: https://login.microsoftonline.us/
+        /// </summary>
+        [Output("azureAuthorityHost")]
+        public Output<string> AzureAuthorityHost { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         /// </summary>
         [Output("azureTenantId")]
@@ -370,13 +379,13 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> DoesUseSecretIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         /// </summary>
         [Output("fingerprint")]
         public Output<string> Fingerprint { get; private set; } = null!;
@@ -556,7 +565,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> RedisClusterId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        /// (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
@@ -628,7 +637,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> ShouldUseJndi { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         /// </summary>
         [Output("shouldUseResourcePrincipal")]
         public Output<bool> ShouldUseResourcePrincipal { get; private set; } = null!;
@@ -652,25 +661,33 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslCert { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sslClientKeystash")]
         public Output<string?> SslClientKeystash { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Note: When provided, 'sslClientKeystash' field must not be provided.
         /// </summary>
         [Output("sslClientKeystashSecretId")]
         public Output<string?> SslClientKeystashSecretId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         /// </summary>
         [Output("sslClientKeystoredb")]
         public Output<string?> SslClientKeystoredb { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Note: When provided, 'sslClientKeystoredb' field must not be provided.
         /// </summary>
         [Output("sslClientKeystoredbSecretId")]
         public Output<string?> SslClientKeystoredbSecretId { get; private set; } = null!;
@@ -1013,6 +1030,14 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? AuthenticationType { get; set; }
 
         /// <summary>
+        /// (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        /// * Azure China: https://login.chinacloudapi.cn/
+        /// * Azure US Government: https://login.microsoftonline.us/
+        /// </summary>
+        [Input("azureAuthorityHost")]
+        public Input<string>? AzureAuthorityHost { get; set; }
+
+        /// <summary>
         /// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         /// </summary>
         [Input("azureTenantId")]
@@ -1161,13 +1186,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
 
         /// <summary>
-        /// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         /// </summary>
         [Input("fingerprint")]
         public Input<string>? Fingerprint { get; set; }
@@ -1413,7 +1438,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? RedisClusterId { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        /// (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -1515,7 +1540,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldUseJndi { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         /// </summary>
         [Input("shouldUseResourcePrincipal")]
         public Input<bool>? ShouldUseResourcePrincipal { get; set; }
@@ -1542,7 +1567,9 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystash;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystash
         {
@@ -1555,7 +1582,9 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Note: When provided, 'sslClientKeystash' field must not be provided.
         /// </summary>
         [Input("sslClientKeystashSecretId")]
         public Input<string>? SslClientKeystashSecretId { get; set; }
@@ -1564,7 +1593,9 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystoredb;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystoredb
         {
@@ -1577,7 +1608,9 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Note: When provided, 'sslClientKeystoredb' field must not be provided.
         /// </summary>
         [Input("sslClientKeystoredbSecretId")]
         public Input<string>? SslClientKeystoredbSecretId { get; set; }
@@ -1905,6 +1938,14 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? AuthenticationType { get; set; }
 
         /// <summary>
+        /// (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        /// * Azure China: https://login.chinacloudapi.cn/
+        /// * Azure US Government: https://login.microsoftonline.us/
+        /// </summary>
+        [Input("azureAuthorityHost")]
+        public Input<string>? AzureAuthorityHost { get; set; }
+
+        /// <summary>
         /// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         /// </summary>
         [Input("azureTenantId")]
@@ -2053,13 +2094,13 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
 
         /// <summary>
-        /// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         /// </summary>
         [Input("fingerprint")]
         public Input<string>? Fingerprint { get; set; }
@@ -2323,7 +2364,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? RedisClusterId { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        /// (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -2425,7 +2466,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? ShouldUseJndi { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+        /// (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         /// </summary>
         [Input("shouldUseResourcePrincipal")]
         public Input<bool>? ShouldUseResourcePrincipal { get; set; }
@@ -2452,7 +2493,9 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystash;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystash
         {
@@ -2465,7 +2508,9 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Note: When provided, 'sslClientKeystash' field must not be provided.
         /// </summary>
         [Input("sslClientKeystashSecretId")]
         public Input<string>? SslClientKeystashSecretId { get; set; }
@@ -2474,7 +2519,9 @@ namespace Pulumi.Oci.GoldenGate
         private Input<string>? _sslClientKeystoredb;
 
         /// <summary>
-        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
         /// </summary>
         public Input<string>? SslClientKeystoredb
         {
@@ -2487,7 +2534,9 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        /// 
+        /// Note: When provided, 'sslClientKeystoredb' field must not be provided.
         /// </summary>
         [Input("sslClientKeystoredbSecretId")]
         public Input<string>? SslClientKeystoredbSecretId { get; set; }

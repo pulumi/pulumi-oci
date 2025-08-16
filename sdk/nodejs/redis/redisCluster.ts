@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     nsgIds: redisClusterNsgIds,
+ *     ociCacheConfigSetId: testOciCacheConfigSet.id,
  *     shardCount: redisClusterShardCount,
  * });
  * ```
@@ -113,6 +114,10 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
+     * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     */
+    public readonly ociCacheConfigSetId!: pulumi.Output<string>;
+    /**
      * The private IP address of the API endpoint for the cluster's primary node.
      */
     public /*out*/ readonly primaryEndpointIpAddress!: pulumi.Output<string>;
@@ -184,6 +189,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nodeMemoryInGbs"] = state ? state.nodeMemoryInGbs : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
+            resourceInputs["ociCacheConfigSetId"] = state ? state.ociCacheConfigSetId : undefined;
             resourceInputs["primaryEndpointIpAddress"] = state ? state.primaryEndpointIpAddress : undefined;
             resourceInputs["primaryFqdn"] = state ? state.primaryFqdn : undefined;
             resourceInputs["replicasEndpointIpAddress"] = state ? state.replicasEndpointIpAddress : undefined;
@@ -223,6 +229,7 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["nodeMemoryInGbs"] = args ? args.nodeMemoryInGbs : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["ociCacheConfigSetId"] = args ? args.ociCacheConfigSetId : undefined;
             resourceInputs["shardCount"] = args ? args.shardCount : undefined;
             resourceInputs["softwareVersion"] = args ? args.softwareVersion : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
@@ -286,6 +293,10 @@ export interface RedisClusterState {
      * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     */
+    ociCacheConfigSetId?: pulumi.Input<string>;
     /**
      * The private IP address of the API endpoint for the cluster's primary node.
      */
@@ -372,6 +383,10 @@ export interface RedisClusterArgs {
      * (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     */
+    ociCacheConfigSetId?: pulumi.Input<string>;
     /**
      * (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
      */

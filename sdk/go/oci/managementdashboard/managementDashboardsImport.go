@@ -35,8 +35,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := managementdashboard.NewManagementDashboardsImport(ctx, "test_management_dashboards_import", &managementdashboard.ManagementDashboardsImportArgs{
-//				ImportDetails:     pulumi.Any(sampleImportDetails),
-//				ImportDetailsFile: pulumi.Any(sampleImportDetailsFilePath),
+//				OverrideDashboardCompartmentOcid:   pulumi.Any(managementDashboardsImportOverrideDashboardCompartmentOcid),
+//				OverrideSameName:                   pulumi.Any(managementDashboardsImportOverrideSameName),
+//				OverrideSavedSearchCompartmentOcid: pulumi.Any(managementDashboardsImportOverrideSavedSearchCompartmentOcid),
 //			})
 //			if err != nil {
 //				return err
@@ -57,9 +58,17 @@ import (
 type ManagementDashboardsImport struct {
 	pulumi.CustomResourceState
 
-	// Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
 	ImportDetails     pulumi.StringPtrOutput `pulumi:"importDetails"`
 	ImportDetailsFile pulumi.StringPtrOutput `pulumi:"importDetailsFile"`
+	// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	OverrideDashboardCompartmentOcid pulumi.StringOutput `pulumi:"overrideDashboardCompartmentOcid"`
+	// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+	OverrideSameName pulumi.StringOutput `pulumi:"overrideSameName"`
+	// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideSavedSearchCompartmentOcid pulumi.StringOutput `pulumi:"overrideSavedSearchCompartmentOcid"`
 }
 
 // NewManagementDashboardsImport registers a new resource with the given unique name, arguments, and options.
@@ -92,15 +101,31 @@ func GetManagementDashboardsImport(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ManagementDashboardsImport resources.
 type managementDashboardsImportState struct {
-	// Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
 	ImportDetails     *string `pulumi:"importDetails"`
 	ImportDetailsFile *string `pulumi:"importDetailsFile"`
+	// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	OverrideDashboardCompartmentOcid *string `pulumi:"overrideDashboardCompartmentOcid"`
+	// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+	OverrideSameName *string `pulumi:"overrideSameName"`
+	// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideSavedSearchCompartmentOcid *string `pulumi:"overrideSavedSearchCompartmentOcid"`
 }
 
 type ManagementDashboardsImportState struct {
-	// Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
 	ImportDetails     pulumi.StringPtrInput
 	ImportDetailsFile pulumi.StringPtrInput
+	// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	OverrideDashboardCompartmentOcid pulumi.StringPtrInput
+	// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+	OverrideSameName pulumi.StringPtrInput
+	// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideSavedSearchCompartmentOcid pulumi.StringPtrInput
 }
 
 func (ManagementDashboardsImportState) ElementType() reflect.Type {
@@ -108,16 +133,32 @@ func (ManagementDashboardsImportState) ElementType() reflect.Type {
 }
 
 type managementDashboardsImportArgs struct {
-	// Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
 	ImportDetails     *string `pulumi:"importDetails"`
 	ImportDetailsFile *string `pulumi:"importDetailsFile"`
+	// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	OverrideDashboardCompartmentOcid *string `pulumi:"overrideDashboardCompartmentOcid"`
+	// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+	OverrideSameName *string `pulumi:"overrideSameName"`
+	// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideSavedSearchCompartmentOcid *string `pulumi:"overrideSavedSearchCompartmentOcid"`
 }
 
 // The set of arguments for constructing a ManagementDashboardsImport resource.
 type ManagementDashboardsImportArgs struct {
-	// Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
 	ImportDetails     pulumi.StringPtrInput
 	ImportDetailsFile pulumi.StringPtrInput
+	// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	OverrideDashboardCompartmentOcid pulumi.StringPtrInput
+	// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+	OverrideSameName pulumi.StringPtrInput
+	// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	OverrideSavedSearchCompartmentOcid pulumi.StringPtrInput
 }
 
 func (ManagementDashboardsImportArgs) ElementType() reflect.Type {
@@ -207,13 +248,30 @@ func (o ManagementDashboardsImportOutput) ToManagementDashboardsImportOutputWith
 	return o
 }
 
-// Array of Dashboards to import. The `importDetails` is mandatory if `importDetailsPath` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
 func (o ManagementDashboardsImportOutput) ImportDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagementDashboardsImport) pulumi.StringPtrOutput { return v.ImportDetails }).(pulumi.StringPtrOutput)
 }
 
 func (o ManagementDashboardsImportOutput) ImportDetailsFile() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagementDashboardsImport) pulumi.StringPtrOutput { return v.ImportDetailsFile }).(pulumi.StringPtrOutput)
+}
+
+// If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+func (o ManagementDashboardsImportOutput) OverrideDashboardCompartmentOcid() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementDashboardsImport) pulumi.StringOutput { return v.OverrideDashboardCompartmentOcid }).(pulumi.StringOutput)
+}
+
+// By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+func (o ManagementDashboardsImportOutput) OverrideSameName() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementDashboardsImport) pulumi.StringOutput { return v.OverrideSameName }).(pulumi.StringOutput)
+}
+
+// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagementDashboardsImportOutput) OverrideSavedSearchCompartmentOcid() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementDashboardsImport) pulumi.StringOutput { return v.OverrideSavedSearchCompartmentOcid }).(pulumi.StringOutput)
 }
 
 type ManagementDashboardsImportArrayOutput struct{ *pulumi.OutputState }

@@ -16,6 +16,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         public readonly string Cis;
         public readonly string Gdpr;
         public readonly string Obp;
+        public readonly string Orp;
         public readonly string Stig;
 
         [OutputConstructor]
@@ -26,11 +27,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string obp,
 
+            string orp,
+
             string stig)
         {
             Cis = cis;
             Gdpr = gdpr;
             Obp = obp;
+            Orp = orp;
             Stig = stig;
         }
     }

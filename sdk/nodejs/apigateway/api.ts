@@ -90,6 +90,7 @@ export class Api extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * 'New' for just updated API Specifications
@@ -101,6 +102,7 @@ export class Api extends pulumi.CustomResource {
      * * 'Canceled' the document validation was canceled
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly locks!: pulumi.Output<outputs.ApiGateway.ApiLock[]>;
     /**
      * Type of API Specification file.
      */
@@ -109,6 +111,7 @@ export class Api extends pulumi.CustomResource {
      * The current state of the API.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -140,9 +143,12 @@ export class Api extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["specificationType"] = state ? state.specificationType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
             resourceInputs["validationResults"] = state ? state.validationResults : undefined;
@@ -156,9 +162,12 @@ export class Api extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["specificationType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["validationResults"] = undefined /*out*/;
@@ -196,6 +205,7 @@ export interface ApiState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * 'New' for just updated API Specifications
@@ -207,6 +217,7 @@ export interface ApiState {
      * * 'Canceled' the document validation was canceled
      */
     lifecycleDetails?: pulumi.Input<string>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.ApiLock>[]>;
     /**
      * Type of API Specification file.
      */
@@ -215,6 +226,7 @@ export interface ApiState {
      * The current state of the API.
      */
     state?: pulumi.Input<string>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -257,4 +269,6 @@ export interface ApiArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.ApiLock>[]>;
 }

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
 //
-// Information about high availability members of a specific MySQL server's replication group.
+// Retrieves information about the high availability members of a specific MySQL server's replication group.
 //
 // ## Example Usage
 //

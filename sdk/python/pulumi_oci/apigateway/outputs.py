@@ -16,7 +16,10 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ApiLock',
     'ApiValidationResult',
+    'CertificateLock',
+    'DeploymentLock',
     'DeploymentSpecification',
     'DeploymentSpecificationLoggingPolicies',
     'DeploymentSpecificationLoggingPoliciesAccessLog',
@@ -116,13 +119,16 @@ __all__ = [
     'DeploymentSpecificationRouteResponsePoliciesResponseCacheStore',
     'GatewayCaBundle',
     'GatewayIpAddress',
+    'GatewayLock',
     'GatewayResponseCacheDetails',
     'GatewayResponseCacheDetailsServer',
     'SubscriberClient',
+    'SubscriberLock',
     'UsagePlanEntitlement',
     'UsagePlanEntitlementQuota',
     'UsagePlanEntitlementRateLimit',
     'UsagePlanEntitlementTarget',
+    'UsagePlanLock',
     'GetApiDeploymentSpecificationLoggingPolicyResult',
     'GetApiDeploymentSpecificationLoggingPolicyAccessLogResult',
     'GetApiDeploymentSpecificationLoggingPolicyExecutionLogResult',
@@ -219,17 +225,22 @@ __all__ = [
     'GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderResult',
     'GetApiDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult',
     'GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult',
+    'GetApiLockResult',
     'GetApiValidationResultResult',
     'GetApiValidationValidationResult',
     'GetApiValidationValidationDetailResult',
     'GetApiValidationValidationDetailSrcResult',
     'GetApisApiCollectionResult',
     'GetApisApiCollectionItemResult',
+    'GetApisApiCollectionItemLockResult',
     'GetApisApiCollectionItemValidationResultResult',
     'GetApisFilterResult',
+    'GetCertificateLockResult',
     'GetCertificatesCertificateCollectionResult',
     'GetCertificatesCertificateCollectionItemResult',
+    'GetCertificatesCertificateCollectionItemLockResult',
     'GetCertificatesFilterResult',
+    'GetDeploymentLockResult',
     'GetDeploymentSpecificationResult',
     'GetDeploymentSpecificationLoggingPolicyResult',
     'GetDeploymentSpecificationLoggingPolicyAccessLogResult',
@@ -328,6 +339,7 @@ __all__ = [
     'GetDeploymentSpecificationRouteResponsePolicyHeaderTransformationSetHeaderItemResult',
     'GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult',
     'GetDeploymentsDeploymentCollectionResult',
+    'GetDeploymentsDeploymentCollectionLockResult',
     'GetDeploymentsDeploymentCollectionSpecificationResult',
     'GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyResult',
     'GetDeploymentsDeploymentCollectionSpecificationLoggingPolicyAccessLogResult',
@@ -428,23 +440,28 @@ __all__ = [
     'GetDeploymentsFilterResult',
     'GetGatewayCaBundleResult',
     'GetGatewayIpAddressResult',
+    'GetGatewayLockResult',
     'GetGatewayResponseCacheDetailResult',
     'GetGatewayResponseCacheDetailServerResult',
     'GetGatewaysFilterResult',
     'GetGatewaysGatewayCollectionResult',
     'GetGatewaysGatewayCollectionCaBundleResult',
     'GetGatewaysGatewayCollectionIpAddressResult',
+    'GetGatewaysGatewayCollectionLockResult',
     'GetGatewaysGatewayCollectionResponseCacheDetailResult',
     'GetGatewaysGatewayCollectionResponseCacheDetailServerResult',
     'GetSubscriberClientResult',
+    'GetSubscriberLockResult',
     'GetSubscribersFilterResult',
     'GetSubscribersSubscriberCollectionResult',
     'GetSubscribersSubscriberCollectionItemResult',
     'GetSubscribersSubscriberCollectionItemClientResult',
+    'GetSubscribersSubscriberCollectionItemLockResult',
     'GetUsagePlanEntitlementResult',
     'GetUsagePlanEntitlementQuotaResult',
     'GetUsagePlanEntitlementRateLimitResult',
     'GetUsagePlanEntitlementTargetResult',
+    'GetUsagePlanLockResult',
     'GetUsagePlansFilterResult',
     'GetUsagePlansUsagePlanCollectionResult',
     'GetUsagePlansUsagePlanCollectionItemResult',
@@ -452,7 +469,69 @@ __all__ = [
     'GetUsagePlansUsagePlanCollectionItemEntitlementQuotaResult',
     'GetUsagePlansUsagePlanCollectionItemEntitlementRateLimitResult',
     'GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult',
+    'GetUsagePlansUsagePlanCollectionItemLockResult',
 ]
+
+@pulumi.output_type
+class ApiLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ApiLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ApiLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ApiLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
 
 @pulumi.output_type
 class ApiValidationResult(dict):
@@ -483,6 +562,132 @@ class ApiValidationResult(dict):
         Result of the validation.
         """
         return pulumi.get(self, "result")
+
+
+@pulumi.output_type
+class CertificateLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CertificateLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CertificateLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CertificateLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DeploymentLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the Response Cache Store Policy.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -6809,6 +7014,71 @@ class GatewayIpAddress(dict):
 
 
 @pulumi.output_type
+class GatewayLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GatewayLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GatewayLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GatewayLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of the Response Cache.
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the Response Cache.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class GatewayResponseCacheDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7009,6 +7279,67 @@ class SubscriberClient(dict):
         (Updatable) The token for the client. Must be unique within a tenancy.
         """
         return pulumi.get(self, "token")
+
+
+@pulumi.output_type
+class SubscriberLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SubscriberLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SubscriberLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SubscriberLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -7226,6 +7557,67 @@ class UsagePlanEntitlementTarget(dict):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
         """
         return pulumi.get(self, "deployment_id")
+
+
+@pulumi.output_type
+class UsagePlanLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in UsagePlanLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        UsagePlanLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        UsagePlanLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -11668,6 +12060,45 @@ class GetApiDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult(d
 
 
 @pulumi.output_type
+class GetApiLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetApiValidationResultResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -11809,9 +12240,12 @@ class GetApisApiCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetApisApiCollectionItemLockResult'],
                  specification_type: _builtins.str,
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  validation_results: Sequence['outputs.GetApisApiCollectionItemValidationResultResult']):
@@ -11841,9 +12275,12 @@ class GetApisApiCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "specification_type", specification_type)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "validation_results", validation_results)
@@ -11894,6 +12331,11 @@ class GetApisApiCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -11907,6 +12349,11 @@ class GetApisApiCollectionItemResult(dict):
         * 'Canceled' the document validation was canceled
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetApisApiCollectionItemLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="specificationType")
@@ -11923,6 +12370,11 @@ class GetApisApiCollectionItemResult(dict):
         A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -11947,6 +12399,45 @@ class GetApisApiCollectionItemResult(dict):
         Status of each feature available from the API.
         """
         return pulumi.get(self, "validation_results")
+
+
+@pulumi.output_type
+class GetApisApiCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -12012,6 +12503,45 @@ class GetApisFilterResult(dict):
 
 
 @pulumi.output_type
+class GetCertificateLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetCertificatesCertificateCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetCertificatesCertificateCollectionItemResult']):
@@ -12033,10 +12563,13 @@ class GetCertificatesCertificateCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  intermediate_certificates: _builtins.str,
+                 is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetCertificatesCertificateCollectionItemLockResult'],
                  private_key: _builtins.str,
                  state: _builtins.str,
                  subject_names: Sequence[_builtins.str],
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_not_valid_after: _builtins.str,
                  time_updated: _builtins.str):
@@ -12062,10 +12595,13 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "intermediate_certificates", intermediate_certificates)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "private_key", private_key)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subject_names", subject_names)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_not_valid_after", time_not_valid_after)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -12127,12 +12663,22 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         return pulumi.get(self, "intermediate_certificates")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetCertificatesCertificateCollectionItemLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
@@ -12154,6 +12700,11 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         The entity to be secured by the certificate and additional host names.
         """
         return pulumi.get(self, "subject_names")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -12181,6 +12732,45 @@ class GetCertificatesCertificateCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetCertificatesCertificateCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetCertificatesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -12205,6 +12795,49 @@ class GetCertificatesFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDeploymentLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the Response Cache Store Policy.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the Response Cache Store Policy.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -16696,10 +17329,13 @@ class GetDeploymentsDeploymentCollectionResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  gateway_id: _builtins.str,
                  id: _builtins.str,
+                 is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetDeploymentsDeploymentCollectionLockResult'],
                  path_prefix: _builtins.str,
                  specifications: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationResult'],
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -16724,10 +17360,13 @@ class GetDeploymentsDeploymentCollectionResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "gateway_id", gateway_id)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "path_prefix", path_prefix)
         pulumi.set(__self__, "specifications", specifications)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -16788,12 +17427,22 @@ class GetDeploymentsDeploymentCollectionResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="pathPrefix")
@@ -16820,6 +17469,11 @@ class GetDeploymentsDeploymentCollectionResult(dict):
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -16834,6 +17488,49 @@ class GetDeploymentsDeploymentCollectionResult(dict):
         The time this resource was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the Response Cache Store Policy.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the Response Cache Store Policy.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -21411,6 +22108,49 @@ class GetGatewayIpAddressResult(dict):
 
 
 @pulumi.output_type
+class GetGatewayLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the Response Cache.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the Response Cache.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetGatewayResponseCacheDetailResult(dict):
     def __init__(__self__, *,
                  authentication_secret_id: _builtins.str,
@@ -21585,11 +22325,14 @@ class GetGatewaysGatewayCollectionResult(dict):
                  hostname: _builtins.str,
                  id: _builtins.str,
                  ip_addresses: Sequence['outputs.GetGatewaysGatewayCollectionIpAddressResult'],
+                 is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetGatewaysGatewayCollectionLockResult'],
                  network_security_group_ids: Sequence[_builtins.str],
                  response_cache_details: Sequence['outputs.GetGatewaysGatewayCollectionResponseCacheDetailResult'],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -21621,11 +22364,14 @@ class GetGatewaysGatewayCollectionResult(dict):
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ip_addresses", ip_addresses)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         pulumi.set(__self__, "response_cache_details", response_cache_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -21710,12 +22456,22 @@ class GetGatewaysGatewayCollectionResult(dict):
         return pulumi.get(self, "ip_addresses")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetGatewaysGatewayCollectionLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -21748,6 +22504,11 @@ class GetGatewaysGatewayCollectionResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -21822,6 +22583,49 @@ class GetGatewaysGatewayCollectionIpAddressResult(dict):
         An IP address.
         """
         return pulumi.get(self, "ip_address")
+
+
+@pulumi.output_type
+class GetGatewaysGatewayCollectionLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the Response Cache.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of the Response Cache.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -21989,6 +22793,45 @@ class GetSubscriberClientResult(dict):
 
 
 @pulumi.output_type
+class GetSubscriberLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetSubscribersFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -22042,8 +22885,11 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetSubscribersSubscriberCollectionItemLockResult'],
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str,
                  usage_plans: Sequence[_builtins.str]):
@@ -22066,8 +22912,11 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
         pulumi.set(__self__, "usage_plans", usage_plans)
@@ -22121,6 +22970,11 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -22130,11 +22984,21 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetSubscribersSubscriberCollectionItemLockResult']:
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def state(self) -> _builtins.str:
         """
         A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -22188,6 +23052,45 @@ class GetSubscribersSubscriberCollectionItemClientResult(dict):
         The token for the client. Must be unique within a tenancy.
         """
         return pulumi.get(self, "token")
+
+
+@pulumi.output_type
+class GetSubscribersSubscriberCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -22351,6 +23254,45 @@ class GetUsagePlanEntitlementTargetResult(dict):
 
 
 @pulumi.output_type
+class GetUsagePlanLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetUsagePlansFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -22404,8 +23346,11 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
                  entitlements: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementResult'],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 is_lock_override: _builtins.bool,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemLockResult'],
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
@@ -22426,8 +23371,11 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
         pulumi.set(__self__, "entitlements", entitlements)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -22480,6 +23428,11 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -22489,11 +23442,21 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemLockResult']:
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def state(self) -> _builtins.str:
         """
         A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -22670,5 +23633,44 @@ class GetUsagePlansUsagePlanCollectionItemEntitlementTargetResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a deployment resource.
         """
         return pulumi.get(self, "deployment_id")
+
+
+@pulumi.output_type
+class GetUsagePlansUsagePlanCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        return pulumi.get(self, "type")
 
 

@@ -214,7 +214,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
            **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-           Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+           Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
     :param _builtins.str security_assessment_id: The OCID of the security assessment.
     :param _builtins.str severity: A filter to return only findings of a particular risk level.
     :param _builtins.str state: A filter to return only the findings that match the specified lifecycle states.
@@ -279,7 +279,7 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
            **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-           Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+           Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
     :param _builtins.str security_assessment_id: The OCID of the security assessment.
     :param _builtins.str severity: A filter to return only findings of a particular risk level.
     :param _builtins.str state: A filter to return only the findings that match the specified lifecycle states.

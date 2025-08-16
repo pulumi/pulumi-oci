@@ -25,7 +25,9 @@ import * as utilities from "../utilities";
 export function getDefaultConfiguration(args: GetDefaultConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetDefaultConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", {
+        "compatibleShapes": args.compatibleShapes,
         "defaultConfigurationId": args.defaultConfigurationId,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -34,15 +36,27 @@ export function getDefaultConfiguration(args: GetDefaultConfigurationArgs, opts?
  */
 export interface GetDefaultConfigurationArgs {
     /**
+     * Indicates the collection of compatible shapes for this configuration.
+     */
+    compatibleShapes?: string[];
+    /**
      * A unique identifier for the configuration.
      */
     defaultConfigurationId: string;
+    /**
+     * The name of the shape for the configuration.
+     */
+    shape?: string;
 }
 
 /**
  * A collection of values returned by getDefaultConfiguration.
  */
 export interface GetDefaultConfigurationResult {
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     */
+    readonly compatibleShapes: string[];
     /**
      * List of default configuration values for databases.
      */
@@ -81,7 +95,7 @@ export interface GetDefaultConfigurationResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration.
      */
     readonly shape: string;
     /**
@@ -112,7 +126,9 @@ export interface GetDefaultConfigurationResult {
 export function getDefaultConfigurationOutput(args: GetDefaultConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDefaultConfigurationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Psql/getDefaultConfiguration:getDefaultConfiguration", {
+        "compatibleShapes": args.compatibleShapes,
         "defaultConfigurationId": args.defaultConfigurationId,
+        "shape": args.shape,
     }, opts);
 }
 
@@ -121,7 +137,15 @@ export function getDefaultConfigurationOutput(args: GetDefaultConfigurationOutpu
  */
 export interface GetDefaultConfigurationOutputArgs {
     /**
+     * Indicates the collection of compatible shapes for this configuration.
+     */
+    compatibleShapes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * A unique identifier for the configuration.
      */
     defaultConfigurationId: pulumi.Input<string>;
+    /**
+     * The name of the shape for the configuration.
+     */
+    shape?: pulumi.Input<string>;
 }

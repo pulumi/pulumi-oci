@@ -16,83 +16,6 @@ import (
 //
 // Creates a job.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datascience"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := datascience.NewJob(ctx, "test_job", &datascience.JobArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				JobConfigurationDetails: &datascience.JobJobConfigurationDetailsArgs{
-//					JobType:                 pulumi.Any(jobJobConfigurationDetailsJobType),
-//					CommandLineArguments:    pulumi.Any(jobJobConfigurationDetailsCommandLineArguments),
-//					EnvironmentVariables:    pulumi.Any(jobJobConfigurationDetailsEnvironmentVariables),
-//					MaximumRuntimeInMinutes: pulumi.Any(jobJobConfigurationDetailsMaximumRuntimeInMinutes),
-//				},
-//				JobInfrastructureConfigurationDetails: &datascience.JobJobInfrastructureConfigurationDetailsArgs{
-//					BlockStorageSizeInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
-//					JobInfrastructureType: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobInfrastructureType),
-//					ShapeName:             pulumi.Any(testShape.Name),
-//					JobShapeConfigDetails: &datascience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
-//						MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
-//						Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
-//					},
-//					SubnetId: pulumi.Any(testSubnet.Id),
-//				},
-//				ProjectId: pulumi.Any(testProject.Id),
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				Description: pulumi.Any(jobDescription),
-//				DisplayName: pulumi.Any(jobDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				JobEnvironmentConfigurationDetails: &datascience.JobJobEnvironmentConfigurationDetailsArgs{
-//					Image:              pulumi.Any(jobJobEnvironmentConfigurationDetailsImage),
-//					JobEnvironmentType: pulumi.Any(jobJobEnvironmentConfigurationDetailsJobEnvironmentType),
-//					Cmds:               pulumi.Any(jobJobEnvironmentConfigurationDetailsCmd),
-//					Entrypoints:        pulumi.Any(jobJobEnvironmentConfigurationDetailsEntrypoint),
-//					ImageDigest:        pulumi.Any(jobJobEnvironmentConfigurationDetailsImageDigest),
-//					ImageSignatureId:   pulumi.Any(testImageSignature.Id),
-//				},
-//				JobLogConfigurationDetails: &datascience.JobJobLogConfigurationDetailsArgs{
-//					EnableAutoLogCreation: pulumi.Any(jobJobLogConfigurationDetailsEnableAutoLogCreation),
-//					EnableLogging:         pulumi.Any(jobJobLogConfigurationDetailsEnableLogging),
-//					LogGroupId:            pulumi.Any(testLogGroup.Id),
-//					LogId:                 pulumi.Any(testLog.Id),
-//				},
-//				JobStorageMountConfigurationDetailsLists: datascience.JobJobStorageMountConfigurationDetailsListArray{
-//					&datascience.JobJobStorageMountConfigurationDetailsListArgs{
-//						DestinationDirectoryName: pulumi.Any(jobJobStorageMountConfigurationDetailsListDestinationDirectoryName),
-//						StorageType:              pulumi.Any(jobJobStorageMountConfigurationDetailsListStorageType),
-//						Bucket:                   pulumi.Any(jobJobStorageMountConfigurationDetailsListBucket),
-//						DestinationPath:          pulumi.Any(jobJobStorageMountConfigurationDetailsListDestinationPath),
-//						ExportId:                 pulumi.Any(testExport.Id),
-//						MountTargetId:            pulumi.Any(testMountTarget.Id),
-//						Namespace:                pulumi.Any(jobJobStorageMountConfigurationDetailsListNamespace),
-//						Prefix:                   pulumi.Any(jobJobStorageMountConfigurationDetailsListPrefix),
-//					},
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // Jobs can be imported using the `id`, e.g.
@@ -132,11 +55,13 @@ type Job struct {
 	// The job configuration details
 	JobConfigurationDetails JobJobConfigurationDetailsOutput `pulumi:"jobConfigurationDetails"`
 	// Environment configuration to capture job runtime dependencies.
-	JobEnvironmentConfigurationDetails JobJobEnvironmentConfigurationDetailsOutput `pulumi:"jobEnvironmentConfigurationDetails"`
+	JobEnvironmentConfigurationDetails JobJobEnvironmentConfigurationDetailsPtrOutput `pulumi:"jobEnvironmentConfigurationDetails"`
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsOutput `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsOutput `pulumi:"jobLogConfigurationDetails"`
+	// The job node configuration details
+	JobNodeConfigurationDetails JobJobNodeConfigurationDetailsOutput `pulumi:"jobNodeConfigurationDetails"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -158,12 +83,6 @@ func NewJob(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.JobConfigurationDetails == nil {
-		return nil, errors.New("invalid value for required argument 'JobConfigurationDetails'")
-	}
-	if args.JobInfrastructureConfigurationDetails == nil {
-		return nil, errors.New("invalid value for required argument 'JobInfrastructureConfigurationDetails'")
 	}
 	if args.ProjectId == nil {
 		return nil, errors.New("invalid value for required argument 'ProjectId'")
@@ -225,6 +144,8 @@ type jobState struct {
 	JobInfrastructureConfigurationDetails *JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails *JobJobLogConfigurationDetails `pulumi:"jobLogConfigurationDetails"`
+	// The job node configuration details
+	JobNodeConfigurationDetails *JobJobNodeConfigurationDetails `pulumi:"jobNodeConfigurationDetails"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []JobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The state of the job.
@@ -272,6 +193,8 @@ type JobState struct {
 	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsPtrInput
 	// Logging configuration for resource.
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrInput
+	// The job node configuration details
+	JobNodeConfigurationDetails JobJobNodeConfigurationDetailsPtrInput
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayInput
 	// The state of the job.
@@ -311,13 +234,15 @@ type jobArgs struct {
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact *string `pulumi:"jobArtifact"`
 	// The job configuration details
-	JobConfigurationDetails JobJobConfigurationDetails `pulumi:"jobConfigurationDetails"`
+	JobConfigurationDetails *JobJobConfigurationDetails `pulumi:"jobConfigurationDetails"`
 	// Environment configuration to capture job runtime dependencies.
 	JobEnvironmentConfigurationDetails *JobJobEnvironmentConfigurationDetails `pulumi:"jobEnvironmentConfigurationDetails"`
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
+	JobInfrastructureConfigurationDetails *JobJobInfrastructureConfigurationDetails `pulumi:"jobInfrastructureConfigurationDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationDetails *JobJobLogConfigurationDetails `pulumi:"jobLogConfigurationDetails"`
+	// The job node configuration details
+	JobNodeConfigurationDetails *JobJobNodeConfigurationDetails `pulumi:"jobNodeConfigurationDetails"`
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []JobJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -348,13 +273,15 @@ type JobArgs struct {
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact pulumi.StringPtrInput
 	// The job configuration details
-	JobConfigurationDetails JobJobConfigurationDetailsInput
+	JobConfigurationDetails JobJobConfigurationDetailsPtrInput
 	// Environment configuration to capture job runtime dependencies.
 	JobEnvironmentConfigurationDetails JobJobEnvironmentConfigurationDetailsPtrInput
 	// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
-	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsInput
+	JobInfrastructureConfigurationDetails JobJobInfrastructureConfigurationDetailsPtrInput
 	// Logging configuration for resource.
 	JobLogConfigurationDetails JobJobLogConfigurationDetailsPtrInput
+	// The job node configuration details
+	JobNodeConfigurationDetails JobJobNodeConfigurationDetailsPtrInput
 	// (Updatable) Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobJobStorageMountConfigurationDetailsListArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -519,8 +446,10 @@ func (o JobOutput) JobConfigurationDetails() JobJobConfigurationDetailsOutput {
 }
 
 // Environment configuration to capture job runtime dependencies.
-func (o JobOutput) JobEnvironmentConfigurationDetails() JobJobEnvironmentConfigurationDetailsOutput {
-	return o.ApplyT(func(v *Job) JobJobEnvironmentConfigurationDetailsOutput { return v.JobEnvironmentConfigurationDetails }).(JobJobEnvironmentConfigurationDetailsOutput)
+func (o JobOutput) JobEnvironmentConfigurationDetails() JobJobEnvironmentConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v *Job) JobJobEnvironmentConfigurationDetailsPtrOutput {
+		return v.JobEnvironmentConfigurationDetails
+	}).(JobJobEnvironmentConfigurationDetailsPtrOutput)
 }
 
 // (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
@@ -533,6 +462,11 @@ func (o JobOutput) JobInfrastructureConfigurationDetails() JobJobInfrastructureC
 // Logging configuration for resource.
 func (o JobOutput) JobLogConfigurationDetails() JobJobLogConfigurationDetailsOutput {
 	return o.ApplyT(func(v *Job) JobJobLogConfigurationDetailsOutput { return v.JobLogConfigurationDetails }).(JobJobLogConfigurationDetailsOutput)
+}
+
+// The job node configuration details
+func (o JobOutput) JobNodeConfigurationDetails() JobJobNodeConfigurationDetailsOutput {
+	return o.ApplyT(func(v *Job) JobJobNodeConfigurationDetailsOutput { return v.JobNodeConfigurationDetails }).(JobJobNodeConfigurationDetailsOutput)
 }
 
 // (Updatable) Collection of JobStorageMountConfigurationDetails.

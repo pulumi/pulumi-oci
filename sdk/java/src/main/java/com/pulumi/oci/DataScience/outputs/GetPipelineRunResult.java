@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunConfigurationOverrideDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunInfrastructureConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunLogConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunStepOverrideDetail;
@@ -64,6 +65,11 @@ public final class GetPipelineRunResult {
      * 
      */
     private String id;
+    /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    private List<GetPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails;
     /**
      * @return Details of the state of the step run.
      * 
@@ -197,6 +203,13 @@ public final class GetPipelineRunResult {
         return this.id;
     }
     /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    public List<GetPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails() {
+        return this.infrastructureConfigurationOverrideDetails;
+    }
+    /**
      * @return Details of the state of the step run.
      * 
      */
@@ -312,6 +325,7 @@ public final class GetPipelineRunResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails;
         private String lifecycleDetails;
         private List<GetPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
         private List<GetPipelineRunLogDetail> logDetails;
@@ -339,6 +353,7 @@ public final class GetPipelineRunResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.infrastructureConfigurationOverrideDetails = defaults.infrastructureConfigurationOverrideDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logConfigurationOverrideDetails = defaults.logConfigurationOverrideDetails;
     	      this.logDetails = defaults.logDetails;
@@ -433,6 +448,17 @@ public final class GetPipelineRunResult {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder infrastructureConfigurationOverrideDetails(List<GetPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails) {
+            if (infrastructureConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunResult", "infrastructureConfigurationOverrideDetails");
+            }
+            this.infrastructureConfigurationOverrideDetails = infrastructureConfigurationOverrideDetails;
+            return this;
+        }
+        public Builder infrastructureConfigurationOverrideDetails(GetPipelineRunInfrastructureConfigurationOverrideDetail... infrastructureConfigurationOverrideDetails) {
+            return infrastructureConfigurationOverrideDetails(List.of(infrastructureConfigurationOverrideDetails));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -577,6 +603,7 @@ public final class GetPipelineRunResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.infrastructureConfigurationOverrideDetails = infrastructureConfigurationOverrideDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             _resultValue.logDetails = logDetails;

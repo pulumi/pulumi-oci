@@ -27,7 +27,9 @@ class DeploymentArgs:
                  specification: pulumi.Input['DeploymentSpecificationArgs'],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
@@ -48,6 +50,10 @@ class DeploymentArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -133,6 +139,24 @@ class DeploymentArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
 
 @pulumi.input_type
 class _DeploymentState:
@@ -143,10 +167,13 @@ class _DeploymentState:
                  endpoint: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]] = None,
                  path_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  specification: Optional[pulumi.Input['DeploymentSpecificationArgs']] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -176,14 +203,20 @@ class _DeploymentState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if gateway_id is not None:
             pulumi.set(__self__, "gateway_id", gateway_id)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if path_prefix is not None:
             pulumi.set(__self__, "path_prefix", path_prefix)
         if specification is not None:
             pulumi.set(__self__, "specification", specification)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -262,6 +295,15 @@ class _DeploymentState:
         pulumi.set(self, "gateway_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -272,6 +314,15 @@ class _DeploymentState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="pathPrefix")
@@ -310,6 +361,15 @@ class _DeploymentState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -345,6 +405,8 @@ class Deployment(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
                  path_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  specification: Optional[pulumi.Input[Union['DeploymentSpecificationArgs', 'DeploymentSpecificationArgsDict']]] = None,
                  __props__=None):
@@ -1336,6 +1398,8 @@ class Deployment(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
                  path_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  specification: Optional[pulumi.Input[Union['DeploymentSpecificationArgs', 'DeploymentSpecificationArgsDict']]] = None,
                  __props__=None):
@@ -1356,6 +1420,8 @@ class Deployment(pulumi.CustomResource):
             if gateway_id is None and not opts.urn:
                 raise TypeError("Missing required property 'gateway_id'")
             __props__.__dict__["gateway_id"] = gateway_id
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             if path_prefix is None and not opts.urn:
                 raise TypeError("Missing required property 'path_prefix'")
             __props__.__dict__["path_prefix"] = path_prefix
@@ -1365,6 +1431,7 @@ class Deployment(pulumi.CustomResource):
             __props__.__dict__["endpoint"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Deployment, __self__).__init__(
@@ -1383,10 +1450,13 @@ class Deployment(pulumi.CustomResource):
             endpoint: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gateway_id: Optional[pulumi.Input[_builtins.str]] = None,
+            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentLockArgs', 'DeploymentLockArgsDict']]]]] = None,
             path_prefix: Optional[pulumi.Input[_builtins.str]] = None,
             specification: Optional[pulumi.Input[Union['DeploymentSpecificationArgs', 'DeploymentSpecificationArgsDict']]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Deployment':
         """
@@ -1419,10 +1489,13 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["endpoint"] = endpoint
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gateway_id"] = gateway_id
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["path_prefix"] = path_prefix
         __props__.__dict__["specification"] = specification
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return Deployment(resource_name, opts=opts, __props__=__props__)
@@ -1476,12 +1549,22 @@ class Deployment(pulumi.CustomResource):
         return pulumi.get(self, "gateway_id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.DeploymentLock']]:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="pathPrefix")
@@ -1506,6 +1589,11 @@ class Deployment(pulumi.CustomResource):
         The current state of the deployment.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

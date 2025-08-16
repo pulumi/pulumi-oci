@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsStartupProbeDetailsArgs;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -77,6 +78,21 @@ public final class JobJobConfigurationDetailsArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.maximumRuntimeInMinutes);
     }
 
+    /**
+     * The probe indicates whether the application within the job run has started.
+     * 
+     */
+    @Import(name="startupProbeDetails")
+    private @Nullable Output<JobJobConfigurationDetailsStartupProbeDetailsArgs> startupProbeDetails;
+
+    /**
+     * @return The probe indicates whether the application within the job run has started.
+     * 
+     */
+    public Optional<Output<JobJobConfigurationDetailsStartupProbeDetailsArgs>> startupProbeDetails() {
+        return Optional.ofNullable(this.startupProbeDetails);
+    }
+
     private JobJobConfigurationDetailsArgs() {}
 
     private JobJobConfigurationDetailsArgs(JobJobConfigurationDetailsArgs $) {
@@ -84,6 +100,7 @@ public final class JobJobConfigurationDetailsArgs extends com.pulumi.resources.R
         this.environmentVariables = $.environmentVariables;
         this.jobType = $.jobType;
         this.maximumRuntimeInMinutes = $.maximumRuntimeInMinutes;
+        this.startupProbeDetails = $.startupProbeDetails;
     }
 
     public static Builder builder() {
@@ -186,6 +203,27 @@ public final class JobJobConfigurationDetailsArgs extends com.pulumi.resources.R
          */
         public Builder maximumRuntimeInMinutes(String maximumRuntimeInMinutes) {
             return maximumRuntimeInMinutes(Output.of(maximumRuntimeInMinutes));
+        }
+
+        /**
+         * @param startupProbeDetails The probe indicates whether the application within the job run has started.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder startupProbeDetails(@Nullable Output<JobJobConfigurationDetailsStartupProbeDetailsArgs> startupProbeDetails) {
+            $.startupProbeDetails = startupProbeDetails;
+            return this;
+        }
+
+        /**
+         * @param startupProbeDetails The probe indicates whether the application within the job run has started.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder startupProbeDetails(JobJobConfigurationDetailsStartupProbeDetailsArgs startupProbeDetails) {
+            return startupProbeDetails(Output.of(startupProbeDetails));
         }
 
         public JobJobConfigurationDetailsArgs build() {

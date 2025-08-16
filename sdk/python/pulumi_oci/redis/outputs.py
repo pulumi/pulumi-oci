@@ -16,11 +16,28 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'OciCacheConfigSetConfigurationDetails',
+    'OciCacheConfigSetConfigurationDetailsItem',
+    'OciCacheConfigSetlistAssociatedOciCacheClusterItem',
     'OciCacheUserAuthenticationMode',
     'OciCacheUserGetRedisClusterOciCacheCluster',
     'RedisClusterGetOciCacheUserOciCacheUser',
     'RedisClusterNodeCollection',
     'RedisClusterNodeCollectionItem',
+    'GetOciCacheConfigSetConfigurationDetailResult',
+    'GetOciCacheConfigSetConfigurationDetailItemResult',
+    'GetOciCacheConfigSetsFilterResult',
+    'GetOciCacheConfigSetsOciCacheConfigSetCollectionResult',
+    'GetOciCacheConfigSetsOciCacheConfigSetCollectionItemResult',
+    'GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailResult',
+    'GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemResult',
+    'GetOciCacheDefaultConfigSetDefaultConfigurationDetailResult',
+    'GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemResult',
+    'GetOciCacheDefaultConfigSetsFilterResult',
+    'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionResult',
+    'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemResult',
+    'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailResult',
+    'GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemResult',
     'GetOciCacheUserAuthenticationModeResult',
     'GetOciCacheUsersFilterResult',
     'GetOciCacheUsersOciCacheUserCollectionResult',
@@ -36,6 +53,91 @@ __all__ = [
     'GetRedisClustersRedisClusterCollectionItemNodeCollectionResult',
     'GetRedisClustersRedisClusterCollectionItemNodeCollectionItemResult',
 ]
+
+@pulumi.output_type
+class OciCacheConfigSetConfigurationDetails(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.OciCacheConfigSetConfigurationDetailsItem']):
+        """
+        :param Sequence['OciCacheConfigSetConfigurationDetailsItemArgs'] items: List of ConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.OciCacheConfigSetConfigurationDetailsItem']:
+        """
+        List of ConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class OciCacheConfigSetConfigurationDetailsItem(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configKey":
+            suggest = "config_key"
+        elif key == "configValue":
+            suggest = "config_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in OciCacheConfigSetConfigurationDetailsItem. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        OciCacheConfigSetConfigurationDetailsItem.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        OciCacheConfigSetConfigurationDetailsItem.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config_key: _builtins.str,
+                 config_value: _builtins.str):
+        """
+        :param _builtins.str config_key: Key is the configuration key.
+        :param _builtins.str config_value: Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "config_value", config_value)
+
+    @_builtins.property
+    @pulumi.getter(name="configKey")
+    def config_key(self) -> _builtins.str:
+        """
+        Key is the configuration key.
+        """
+        return pulumi.get(self, "config_key")
+
+    @_builtins.property
+    @pulumi.getter(name="configValue")
+    def config_value(self) -> _builtins.str:
+        """
+        Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        return pulumi.get(self, "config_value")
+
+
+@pulumi.output_type
+class OciCacheConfigSetlistAssociatedOciCacheClusterItem(dict):
+    def __init__(__self__, *,
+                 id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+        """
+        return pulumi.get(self, "id")
+
 
 @pulumi.output_type
 class OciCacheUserAuthenticationMode(dict):
@@ -239,6 +341,606 @@ class RedisClusterNodeCollectionItem(dict):
         The private IP address of the API endpoint to access a specific node.
         """
         return pulumi.get(self, "private_endpoint_ip_address")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheConfigSetConfigurationDetailItemResult']):
+        """
+        :param Sequence['GetOciCacheConfigSetConfigurationDetailItemArgs'] items: List of ConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheConfigSetConfigurationDetailItemResult']:
+        """
+        List of ConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetConfigurationDetailItemResult(dict):
+    def __init__(__self__, *,
+                 config_key: _builtins.str,
+                 config_value: _builtins.str):
+        """
+        :param _builtins.str config_key: Key is the configuration key.
+        :param _builtins.str config_value: Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "config_value", config_value)
+
+    @_builtins.property
+    @pulumi.getter(name="configKey")
+    def config_key(self) -> _builtins.str:
+        """
+        Key is the configuration key.
+        """
+        return pulumi.get(self, "config_key")
+
+    @_builtins.property
+    @pulumi.getter(name="configValue")
+    def config_value(self) -> _builtins.str:
+        """
+        Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        return pulumi.get(self, "config_value")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetsOciCacheConfigSetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheConfigSetsOciCacheConfigSetCollectionItemResult']):
+        """
+        :param Sequence['GetOciCacheConfigSetsOciCacheConfigSetCollectionItemArgs'] items: List of ConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheConfigSetsOciCacheConfigSetCollectionItemResult']:
+        """
+        List of ConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetsOciCacheConfigSetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 configuration_details: Sequence['outputs.GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailResult'],
+                 default_config_set_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 software_version: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence['GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailArgs'] configuration_details: List of Oracle Cloud Infrastructure Cache Config Set Values.
+        :param _builtins.str default_config_set_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str description: A description of the Oracle Cloud Infrastructure Cache Config Set.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: Unique Oracle Cloud Infrastructure Cache Config Set identifier.
+        :param _builtins.str software_version: A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+        :param _builtins.str state: A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose lifecycle state matches with the given lifecycle state.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the Oracle Cloud Infrastructure Cache Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param _builtins.str time_updated: The date and time the Oracle Cloud Infrastructure Cache Config Set was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "configuration_details", configuration_details)
+        pulumi.set(__self__, "default_config_set_id", default_config_set_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_version", software_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="configurationDetails")
+    def configuration_details(self) -> Sequence['outputs.GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailResult']:
+        """
+        List of Oracle Cloud Infrastructure Cache Config Set Values.
+        """
+        return pulumi.get(self, "configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigSetId")
+    def default_config_set_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the default Oracle Cloud Infrastructure Cache Config Set which the custom Oracle Cloud Infrastructure Cache Config Set is based upon.
+        """
+        return pulumi.get(self, "default_config_set_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A description of the Oracle Cloud Infrastructure Cache Config Set.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique Oracle Cloud Infrastructure Cache Config Set identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareVersion")
+    def software_version(self) -> _builtins.str:
+        """
+        A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+        """
+        return pulumi.get(self, "software_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose lifecycle state matches with the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Oracle Cloud Infrastructure Cache Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Oracle Cloud Infrastructure Cache Config Set was updated. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemResult']):
+        """
+        :param Sequence['GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemArgs'] items: List of ConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemResult']:
+        """
+        List of ConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheConfigSetsOciCacheConfigSetCollectionItemConfigurationDetailItemResult(dict):
+    def __init__(__self__, *,
+                 config_key: _builtins.str,
+                 config_value: _builtins.str):
+        """
+        :param _builtins.str config_key: Key is the configuration key.
+        :param _builtins.str config_value: Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "config_value", config_value)
+
+    @_builtins.property
+    @pulumi.getter(name="configKey")
+    def config_key(self) -> _builtins.str:
+        """
+        Key is the configuration key.
+        """
+        return pulumi.get(self, "config_key")
+
+    @_builtins.property
+    @pulumi.getter(name="configValue")
+    def config_value(self) -> _builtins.str:
+        """
+        Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        return pulumi.get(self, "config_value")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetDefaultConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemResult']):
+        """
+        :param Sequence['GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemArgs'] items: List of DefaultConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemResult']:
+        """
+        List of DefaultConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetDefaultConfigurationDetailItemResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: _builtins.str,
+                 config_key: _builtins.str,
+                 data_type: _builtins.str,
+                 default_config_value: _builtins.str,
+                 description: _builtins.str,
+                 is_modifiable: _builtins.bool):
+        """
+        :param _builtins.str allowed_values: Allowed values for the configuration setting.
+        :param _builtins.str config_key: The key of the configuration setting.
+        :param _builtins.str data_type: The data type of the configuration setting.
+        :param _builtins.str default_config_value: The default value for the configuration setting.
+        :param _builtins.str description: Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+        :param _builtins.bool is_modifiable: Indicates if the configuration is modifiable.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "default_config_value", default_config_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_modifiable", is_modifiable)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> _builtins.str:
+        """
+        Allowed values for the configuration setting.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="configKey")
+    def config_key(self) -> _builtins.str:
+        """
+        The key of the configuration setting.
+        """
+        return pulumi.get(self, "config_key")
+
+    @_builtins.property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> _builtins.str:
+        """
+        The data type of the configuration setting.
+        """
+        return pulumi.get(self, "data_type")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigValue")
+    def default_config_value(self) -> _builtins.str:
+        """
+        The default value for the configuration setting.
+        """
+        return pulumi.get(self, "default_config_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isModifiable")
+    def is_modifiable(self) -> _builtins.bool:
+        """
+        Indicates if the configuration is modifiable.
+        """
+        return pulumi.get(self, "is_modifiable")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemResult']):
+        """
+        :param Sequence['GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemArgs'] items: List of DefaultConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemResult']:
+        """
+        List of DefaultConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 default_configuration_details: Sequence['outputs.GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailResult'],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 id: _builtins.str,
+                 software_version: _builtins.str,
+                 state: _builtins.str,
+                 time_created: _builtins.str):
+        """
+        :param Sequence['GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailArgs'] default_configuration_details: List of Oracle Cloud Infrastructure Cache Default Config Set Values.
+        :param _builtins.str description: Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param _builtins.str id: Unique Oracle Cloud Infrastructure Cache Default Config Set identifier.
+        :param _builtins.str software_version: A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+        :param _builtins.str state: A filter to return the Oracle Cloud Infrastructure Cache Default Config Set resources, whose lifecycle state matches with the given lifecycle state.
+        :param _builtins.str time_created: The date and time the Oracle Cloud Infrastructure Cache Default Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        pulumi.set(__self__, "default_configuration_details", default_configuration_details)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "software_version", software_version)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigurationDetails")
+    def default_configuration_details(self) -> Sequence['outputs.GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailResult']:
+        """
+        List of Oracle Cloud Infrastructure Cache Default Config Set Values.
+        """
+        return pulumi.get(self, "default_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        Unique Oracle Cloud Infrastructure Cache Default Config Set identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="softwareVersion")
+    def software_version(self) -> _builtins.str:
+        """
+        A filter to return the Oracle Cloud Infrastructure Cache Config Set resources, whose software version matches with the given software version.
+        """
+        return pulumi.get(self, "software_version")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return the Oracle Cloud Infrastructure Cache Default Config Set resources, whose lifecycle state matches with the given lifecycle state.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Oracle Cloud Infrastructure Cache Default Config Set was created. An [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemResult']):
+        """
+        :param Sequence['GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemArgs'] items: List of DefaultConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemResult']:
+        """
+        List of DefaultConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetOciCacheDefaultConfigSetsOciCacheDefaultConfigSetCollectionItemDefaultConfigurationDetailItemResult(dict):
+    def __init__(__self__, *,
+                 allowed_values: _builtins.str,
+                 config_key: _builtins.str,
+                 data_type: _builtins.str,
+                 default_config_value: _builtins.str,
+                 description: _builtins.str,
+                 is_modifiable: _builtins.bool):
+        """
+        :param _builtins.str allowed_values: Allowed values for the configuration setting.
+        :param _builtins.str config_key: The key of the configuration setting.
+        :param _builtins.str data_type: The data type of the configuration setting.
+        :param _builtins.str default_config_value: The default value for the configuration setting.
+        :param _builtins.str description: Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+        :param _builtins.bool is_modifiable: Indicates if the configuration is modifiable.
+        """
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "default_config_value", default_config_value)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_modifiable", is_modifiable)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> _builtins.str:
+        """
+        Allowed values for the configuration setting.
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="configKey")
+    def config_key(self) -> _builtins.str:
+        """
+        The key of the configuration setting.
+        """
+        return pulumi.get(self, "config_key")
+
+    @_builtins.property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> _builtins.str:
+        """
+        The data type of the configuration setting.
+        """
+        return pulumi.get(self, "data_type")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigValue")
+    def default_config_value(self) -> _builtins.str:
+        """
+        The default value for the configuration setting.
+        """
+        return pulumi.get(self, "default_config_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the Oracle Cloud Infrastructure Cache Default Config Set.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isModifiable")
+    def is_modifiable(self) -> _builtins.bool:
+        """
+        Indicates if the configuration is modifiable.
+        """
+        return pulumi.get(self, "is_modifiable")
 
 
 @pulumi.output_type
@@ -667,6 +1369,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
                  node_count: _builtins.int,
                  node_memory_in_gbs: _builtins.float,
                  nsg_ids: Sequence[_builtins.str],
+                 oci_cache_config_set_id: _builtins.str,
                  primary_endpoint_ip_address: _builtins.str,
                  primary_fqdn: _builtins.str,
                  replicas_endpoint_ip_address: _builtins.str,
@@ -690,6 +1393,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param _builtins.int node_count: The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         :param _builtins.float node_memory_in_gbs: The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param Sequence[_builtins.str] nsg_ids: A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param _builtins.str oci_cache_config_set_id: The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         :param _builtins.str primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
         :param _builtins.str primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param _builtins.str replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
@@ -713,6 +1417,7 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
         pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
         pulumi.set(__self__, "primary_fqdn", primary_fqdn)
         pulumi.set(__self__, "replicas_endpoint_ip_address", replicas_endpoint_ip_address)
@@ -812,6 +1517,14 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="ociCacheConfigSetId")
+    def oci_cache_config_set_id(self) -> _builtins.str:
+        """
+        The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        """
+        return pulumi.get(self, "oci_cache_config_set_id")
 
     @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")

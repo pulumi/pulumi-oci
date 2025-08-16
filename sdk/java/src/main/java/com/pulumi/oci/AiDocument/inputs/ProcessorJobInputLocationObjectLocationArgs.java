@@ -6,6 +6,7 @@ package com.pulumi.oci.AiDocument.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -60,12 +61,28 @@ public final class ProcessorJobInputLocationObjectLocationArgs extends com.pulum
         return Optional.ofNullable(this.object);
     }
 
+    /**
+     * The page ranges to be analysed.
+     * 
+     */
+    @Import(name="pageRanges")
+    private @Nullable Output<List<String>> pageRanges;
+
+    /**
+     * @return The page ranges to be analysed.
+     * 
+     */
+    public Optional<Output<List<String>>> pageRanges() {
+        return Optional.ofNullable(this.pageRanges);
+    }
+
     private ProcessorJobInputLocationObjectLocationArgs() {}
 
     private ProcessorJobInputLocationObjectLocationArgs(ProcessorJobInputLocationObjectLocationArgs $) {
         this.bucket = $.bucket;
         this.namespace = $.namespace;
         this.object = $.object;
+        this.pageRanges = $.pageRanges;
     }
 
     public static Builder builder() {
@@ -147,6 +164,37 @@ public final class ProcessorJobInputLocationObjectLocationArgs extends com.pulum
          */
         public Builder object(String object) {
             return object(Output.of(object));
+        }
+
+        /**
+         * @param pageRanges The page ranges to be analysed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pageRanges(@Nullable Output<List<String>> pageRanges) {
+            $.pageRanges = pageRanges;
+            return this;
+        }
+
+        /**
+         * @param pageRanges The page ranges to be analysed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pageRanges(List<String> pageRanges) {
+            return pageRanges(Output.of(pageRanges));
+        }
+
+        /**
+         * @param pageRanges The page ranges to be analysed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pageRanges(String... pageRanges) {
+            return pageRanges(List.of(pageRanges));
         }
 
         public ProcessorJobInputLocationObjectLocationArgs build() {

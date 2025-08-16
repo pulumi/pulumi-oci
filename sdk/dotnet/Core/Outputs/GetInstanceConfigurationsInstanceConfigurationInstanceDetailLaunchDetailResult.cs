@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// </summary>
+        public readonly string ComputeClusterId;
+        /// <summary>
         /// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult> CreateVnicDetails;
@@ -98,6 +102,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
+        /// The details for providing placement constraints.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult> PlacementConstraintDetails;
+        /// <summary>
         /// The platform configuration requested for the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult> PlatformConfigs;
@@ -139,6 +147,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string compartmentId,
 
+            string computeClusterId,
+
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult> createVnicDetails,
 
             string dedicatedVmHostId,
@@ -167,6 +177,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, string> metadata,
 
+            ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult> placementConstraintDetails,
+
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult> platformConfigs,
 
             ImmutableArray<Outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult> preemptibleInstanceConfigs,
@@ -187,6 +199,7 @@ namespace Pulumi.Oci.Core.Outputs
             CapacityReservationId = capacityReservationId;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
+            ComputeClusterId = computeClusterId;
             CreateVnicDetails = createVnicDetails;
             DedicatedVmHostId = dedicatedVmHostId;
             DefinedTags = definedTags;
@@ -201,6 +214,7 @@ namespace Pulumi.Oci.Core.Outputs
             LaunchOptions = launchOptions;
             LicensingConfigs = licensingConfigs;
             Metadata = metadata;
+            PlacementConstraintDetails = placementConstraintDetails;
             PlatformConfigs = platformConfigs;
             PreemptibleInstanceConfigs = preemptibleInstanceConfigs;
             PreferredMaintenanceAction = preferredMaintenanceAction;

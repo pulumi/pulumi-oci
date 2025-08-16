@@ -24,6 +24,11 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     private List<String> details;
     /**
+     * @return Documentation link provided by Oracle that explains a specific security finding or check.
+     * 
+     */
+    private String doclink;
+    /**
      * @return Determines if this risk level has changed on the target database since the last time &#39;severity&#39; was modified by user.
      * 
      */
@@ -123,6 +128,13 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     public List<String> details() {
         return this.details;
+    }
+    /**
+     * @return Documentation link provided by Oracle that explains a specific security finding or check.
+     * 
+     */
+    public String doclink() {
+        return this.doclink;
     }
     /**
      * @return Determines if this risk level has changed on the target database since the last time &#39;severity&#39; was modified by user.
@@ -255,6 +267,7 @@ public final class GetSecurityAssessmentFindingsFinding {
     public static final class Builder {
         private String assessmentId;
         private List<String> details;
+        private String doclink;
         private Boolean hasTargetDbRiskLevelChanged;
         private Boolean isRiskModified;
         private Boolean isTopFinding;
@@ -277,6 +290,7 @@ public final class GetSecurityAssessmentFindingsFinding {
     	      Objects.requireNonNull(defaults);
     	      this.assessmentId = defaults.assessmentId;
     	      this.details = defaults.details;
+    	      this.doclink = defaults.doclink;
     	      this.hasTargetDbRiskLevelChanged = defaults.hasTargetDbRiskLevelChanged;
     	      this.isRiskModified = defaults.isRiskModified;
     	      this.isTopFinding = defaults.isTopFinding;
@@ -314,6 +328,14 @@ public final class GetSecurityAssessmentFindingsFinding {
         }
         public Builder details(String... details) {
             return details(List.of(details));
+        }
+        @CustomType.Setter
+        public Builder doclink(String doclink) {
+            if (doclink == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsFinding", "doclink");
+            }
+            this.doclink = doclink;
+            return this;
         }
         @CustomType.Setter
         public Builder hasTargetDbRiskLevelChanged(Boolean hasTargetDbRiskLevelChanged) {
@@ -458,6 +480,7 @@ public final class GetSecurityAssessmentFindingsFinding {
             final var _resultValue = new GetSecurityAssessmentFindingsFinding();
             _resultValue.assessmentId = assessmentId;
             _resultValue.details = details;
+            _resultValue.doclink = doclink;
             _resultValue.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
             _resultValue.isRiskModified = isRiskModified;
             _resultValue.isTopFinding = isTopFinding;

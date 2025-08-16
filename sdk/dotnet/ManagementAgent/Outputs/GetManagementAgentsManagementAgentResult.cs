@@ -71,6 +71,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
         /// </summary>
         public readonly bool IsCustomerDeployed;
+        public readonly string LatestSupportedVersion;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -104,6 +105,10 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// Filter to return only Management Agents in the particular lifecycle state.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time the Management Agent was created. An RFC3339 formatted datetime string
         /// </summary>
@@ -155,6 +160,8 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
 
             bool isCustomerDeployed,
 
+            string latestSupportedVersion,
+
             string lifecycleDetails,
 
             string managedAgentId,
@@ -172,6 +179,8 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
             string resourceArtifactVersion,
 
             string state,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -197,6 +206,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
             InstallType = installType;
             IsAgentAutoUpgradable = isAgentAutoUpgradable;
             IsCustomerDeployed = isCustomerDeployed;
+            LatestSupportedVersion = latestSupportedVersion;
             LifecycleDetails = lifecycleDetails;
             ManagedAgentId = managedAgentId;
             ManagementAgentProperties = managementAgentProperties;
@@ -206,6 +216,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
             PluginLists = pluginLists;
             ResourceArtifactVersion = resourceArtifactVersion;
             State = state;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeLastHeartbeat = timeLastHeartbeat;
             TimeUpdated = timeUpdated;

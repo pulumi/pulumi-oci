@@ -253,7 +253,7 @@ namespace Pulumi.Oci.DataSafe
         public string? TimeCreatedLessThan { get; set; }
 
         /// <summary>
-        /// A filter to return only security asessments that were created by either user or system.
+        /// A filter to return only security assessments that were created by either user or system.
         /// </summary>
         [Input("triggeredBy")]
         public string? TriggeredBy { get; set; }
@@ -351,7 +351,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TimeCreatedLessThan { get; set; }
 
         /// <summary>
-        /// A filter to return only security asessments that were created by either user or system.
+        /// A filter to return only security assessments that were created by either user or system.
         /// </summary>
         [Input("triggeredBy")]
         public Input<string>? TriggeredBy { get; set; }

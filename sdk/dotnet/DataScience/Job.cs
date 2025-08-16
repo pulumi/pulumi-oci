@@ -14,84 +14,6 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// Creates a job.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testJob = new Oci.DataScience.Job("test_job", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         JobConfigurationDetails = new Oci.DataScience.Inputs.JobJobConfigurationDetailsArgs
-    ///         {
-    ///             JobType = jobJobConfigurationDetailsJobType,
-    ///             CommandLineArguments = jobJobConfigurationDetailsCommandLineArguments,
-    ///             EnvironmentVariables = jobJobConfigurationDetailsEnvironmentVariables,
-    ///             MaximumRuntimeInMinutes = jobJobConfigurationDetailsMaximumRuntimeInMinutes,
-    ///         },
-    ///         JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsArgs
-    ///         {
-    ///             BlockStorageSizeInGbs = jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
-    ///             JobInfrastructureType = jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
-    ///             ShapeName = testShape.Name,
-    ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
-    ///             {
-    ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
-    ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
-    ///             },
-    ///             SubnetId = testSubnet.Id,
-    ///         },
-    ///         ProjectId = testProject.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = jobDescription,
-    ///         DisplayName = jobDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         JobEnvironmentConfigurationDetails = new Oci.DataScience.Inputs.JobJobEnvironmentConfigurationDetailsArgs
-    ///         {
-    ///             Image = jobJobEnvironmentConfigurationDetailsImage,
-    ///             JobEnvironmentType = jobJobEnvironmentConfigurationDetailsJobEnvironmentType,
-    ///             Cmds = jobJobEnvironmentConfigurationDetailsCmd,
-    ///             Entrypoints = jobJobEnvironmentConfigurationDetailsEntrypoint,
-    ///             ImageDigest = jobJobEnvironmentConfigurationDetailsImageDigest,
-    ///             ImageSignatureId = testImageSignature.Id,
-    ///         },
-    ///         JobLogConfigurationDetails = new Oci.DataScience.Inputs.JobJobLogConfigurationDetailsArgs
-    ///         {
-    ///             EnableAutoLogCreation = jobJobLogConfigurationDetailsEnableAutoLogCreation,
-    ///             EnableLogging = jobJobLogConfigurationDetailsEnableLogging,
-    ///             LogGroupId = testLogGroup.Id,
-    ///             LogId = testLog.Id,
-    ///         },
-    ///         JobStorageMountConfigurationDetailsLists = new[]
-    ///         {
-    ///             new Oci.DataScience.Inputs.JobJobStorageMountConfigurationDetailsListArgs
-    ///             {
-    ///                 DestinationDirectoryName = jobJobStorageMountConfigurationDetailsListDestinationDirectoryName,
-    ///                 StorageType = jobJobStorageMountConfigurationDetailsListStorageType,
-    ///                 Bucket = jobJobStorageMountConfigurationDetailsListBucket,
-    ///                 DestinationPath = jobJobStorageMountConfigurationDetailsListDestinationPath,
-    ///                 ExportId = testExport.Id,
-    ///                 MountTargetId = testMountTarget.Id,
-    ///                 Namespace = jobJobStorageMountConfigurationDetailsListNamespace,
-    ///                 Prefix = jobJobStorageMountConfigurationDetailsListPrefix,
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Jobs can be imported using the `id`, e.g.
@@ -168,7 +90,7 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
@@ -186,7 +108,7 @@ namespace Pulumi.Oci.DataScience
         /// Environment configuration to capture job runtime dependencies.
         /// </summary>
         [Output("jobEnvironmentConfigurationDetails")]
-        public Output<Outputs.JobJobEnvironmentConfigurationDetails> JobEnvironmentConfigurationDetails { get; private set; } = null!;
+        public Output<Outputs.JobJobEnvironmentConfigurationDetails?> JobEnvironmentConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
@@ -199,6 +121,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("jobLogConfigurationDetails")]
         public Output<Outputs.JobJobLogConfigurationDetails> JobLogConfigurationDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        [Output("jobNodeConfigurationDetails")]
+        public Output<Outputs.JobJobNodeConfigurationDetails> JobNodeConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Collection of JobStorageMountConfigurationDetails.
@@ -349,8 +277,8 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// The job configuration details
         /// </summary>
-        [Input("jobConfigurationDetails", required: true)]
-        public Input<Inputs.JobJobConfigurationDetailsArgs> JobConfigurationDetails { get; set; } = null!;
+        [Input("jobConfigurationDetails")]
+        public Input<Inputs.JobJobConfigurationDetailsArgs>? JobConfigurationDetails { get; set; }
 
         /// <summary>
         /// Environment configuration to capture job runtime dependencies.
@@ -361,14 +289,20 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
         /// </summary>
-        [Input("jobInfrastructureConfigurationDetails", required: true)]
-        public Input<Inputs.JobJobInfrastructureConfigurationDetailsArgs> JobInfrastructureConfigurationDetails { get; set; } = null!;
+        [Input("jobInfrastructureConfigurationDetails")]
+        public Input<Inputs.JobJobInfrastructureConfigurationDetailsArgs>? JobInfrastructureConfigurationDetails { get; set; }
 
         /// <summary>
         /// Logging configuration for resource.
         /// </summary>
         [Input("jobLogConfigurationDetails")]
         public Input<Inputs.JobJobLogConfigurationDetailsArgs>? JobLogConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        [Input("jobNodeConfigurationDetails")]
+        public Input<Inputs.JobJobNodeConfigurationDetailsArgs>? JobNodeConfigurationDetails { get; set; }
 
         [Input("jobStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.JobJobStorageMountConfigurationDetailsListArgs>? _jobStorageMountConfigurationDetailsLists;
@@ -504,6 +438,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("jobLogConfigurationDetails")]
         public Input<Inputs.JobJobLogConfigurationDetailsGetArgs>? JobLogConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        [Input("jobNodeConfigurationDetails")]
+        public Input<Inputs.JobJobNodeConfigurationDetailsGetArgs>? JobNodeConfigurationDetails { get; set; }
 
         [Input("jobStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.JobJobStorageMountConfigurationDetailsListGetArgs>? _jobStorageMountConfigurationDetailsLists;

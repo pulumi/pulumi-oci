@@ -7,6 +7,7 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .get_model import *
+from .get_model_type import *
 from .get_models import *
 from .get_processor_job import *
 from .get_project import *

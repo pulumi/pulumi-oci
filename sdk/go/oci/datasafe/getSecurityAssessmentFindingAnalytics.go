@@ -81,6 +81,10 @@ type GetSecurityAssessmentFindingAnalyticsArgs struct {
 	GroupBy *string `pulumi:"groupBy"`
 	// A filter to return only the findings that are marked as top findings.
 	IsTopFinding *bool `pulumi:"isTopFinding"`
+	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+	// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+	// Supported fields: severity reference title category targetId targetName
+	ScimQuery *string `pulumi:"scimQuery"`
 	// A filter to return only findings of a particular risk level.
 	Severity *string `pulumi:"severity"`
 	// An optional filter to return only the top finding that match the specified status.
@@ -98,8 +102,9 @@ type GetSecurityAssessmentFindingAnalyticsResult struct {
 	FindingKey                  *string                                                           `pulumi:"findingKey"`
 	GroupBy                     *string                                                           `pulumi:"groupBy"`
 	// The provider-assigned unique ID for this managed resource.
-	Id           string `pulumi:"id"`
-	IsTopFinding *bool  `pulumi:"isTopFinding"`
+	Id           string  `pulumi:"id"`
+	IsTopFinding *bool   `pulumi:"isTopFinding"`
+	ScimQuery    *string `pulumi:"scimQuery"`
 	// The severity (risk level) of the finding.
 	Severity *string `pulumi:"severity"`
 	// The status of the top finding.  All findings will have "severity" to indicate the risk level, but only top findings will have "status".  Possible status: Pass / Risk (Low, Medium, High)/ Evaluate / Advisory / Deferred Instead of having "Low, Medium, High" in severity, "Risk" will include these three situations in status.
@@ -130,6 +135,10 @@ type GetSecurityAssessmentFindingAnalyticsOutputArgs struct {
 	GroupBy pulumi.StringPtrInput `pulumi:"groupBy"`
 	// A filter to return only the findings that are marked as top findings.
 	IsTopFinding pulumi.BoolPtrInput `pulumi:"isTopFinding"`
+	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+	// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+	// Supported fields: severity reference title category targetId targetName
+	ScimQuery pulumi.StringPtrInput `pulumi:"scimQuery"`
 	// A filter to return only findings of a particular risk level.
 	Severity pulumi.StringPtrInput `pulumi:"severity"`
 	// An optional filter to return only the top finding that match the specified status.
@@ -195,6 +204,10 @@ func (o GetSecurityAssessmentFindingAnalyticsResultOutput) Id() pulumi.StringOut
 
 func (o GetSecurityAssessmentFindingAnalyticsResultOutput) IsTopFinding() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsResult) *bool { return v.IsTopFinding }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingAnalyticsResultOutput) ScimQuery() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingAnalyticsResult) *string { return v.ScimQuery }).(pulumi.StringPtrOutput)
 }
 
 // The severity (risk level) of the finding.

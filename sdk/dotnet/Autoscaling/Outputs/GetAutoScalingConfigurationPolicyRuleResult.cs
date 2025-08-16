@@ -25,9 +25,6 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// ID of the condition that is assigned after creation.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// Metric and threshold details for triggering an autoscaling action.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleMetricResult> Metrics;
 
         [OutputConstructor]

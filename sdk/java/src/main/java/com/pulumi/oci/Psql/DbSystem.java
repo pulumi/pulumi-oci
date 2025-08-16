@@ -429,14 +429,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.shape;
     }
     /**
-     * The source used to restore the database system.
+     * The source of the database system.
      * 
      */
     @Export(name="source", refs={DbSystemSource.class}, tree="[0]")
     private Output<DbSystemSource> source;
 
     /**
-     * @return The source used to restore the database system.
+     * @return The source of the database system.
      * 
      */
     public Output<DbSystemSource> source() {

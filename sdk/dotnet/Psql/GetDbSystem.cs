@@ -213,7 +213,7 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// The source used to restore the database system.
+        /// The source of the database system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbSystemSourceResult> Sources;
         /// <summary>

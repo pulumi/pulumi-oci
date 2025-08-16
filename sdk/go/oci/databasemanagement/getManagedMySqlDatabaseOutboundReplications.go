@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
 //
-// Retrieves information pertaining to outbound replications of a specific MySQL server.
+// Retrieves information pertaining to the outbound replications of a specific MySQL server.
 //
 // ## Example Usage
 //

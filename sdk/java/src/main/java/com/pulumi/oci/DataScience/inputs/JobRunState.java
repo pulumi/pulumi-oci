@@ -8,9 +8,12 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationDetailArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunJobStorageMountConfigurationDetailsListArgs;
 import com.pulumi.oci.DataScience.inputs.JobRunLogDetailArgs;
+import com.pulumi.oci.DataScience.inputs.JobRunNodeGroupDetailsListArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -175,6 +178,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    @Import(name="jobInfrastructureConfigurationOverrideDetails")
+    private @Nullable Output<JobRunJobInfrastructureConfigurationOverrideDetailsArgs> jobInfrastructureConfigurationOverrideDetails;
+
+    /**
+     * @return The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    public Optional<Output<JobRunJobInfrastructureConfigurationOverrideDetailsArgs>> jobInfrastructureConfigurationOverrideDetails() {
+        return Optional.ofNullable(this.jobInfrastructureConfigurationOverrideDetails);
+    }
+
+    /**
      * Logging configuration for resource.
      * 
      */
@@ -187,6 +205,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<JobRunJobLogConfigurationOverrideDetailsArgs>> jobLogConfigurationOverrideDetails() {
         return Optional.ofNullable(this.jobLogConfigurationOverrideDetails);
+    }
+
+    /**
+     * The job node configuration details
+     * 
+     */
+    @Import(name="jobNodeConfigurationOverrideDetails")
+    private @Nullable Output<JobRunJobNodeConfigurationOverrideDetailsArgs> jobNodeConfigurationOverrideDetails;
+
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public Optional<Output<JobRunJobNodeConfigurationOverrideDetailsArgs>> jobNodeConfigurationOverrideDetails() {
+        return Optional.ofNullable(this.jobNodeConfigurationOverrideDetails);
     }
 
     /**
@@ -205,14 +238,14 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Details of the state of the job run.
+     * The state details of the node group.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return Details of the state of the job run.
+     * @return The state details of the node group.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -232,6 +265,21 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<JobRunLogDetailArgs>>> logDetails() {
         return Optional.ofNullable(this.logDetails);
+    }
+
+    /**
+     * Collection of NodeGroupDetails
+     * 
+     */
+    @Import(name="nodeGroupDetailsLists")
+    private @Nullable Output<List<JobRunNodeGroupDetailsListArgs>> nodeGroupDetailsLists;
+
+    /**
+     * @return Collection of NodeGroupDetails
+     * 
+     */
+    public Optional<Output<List<JobRunNodeGroupDetailsListArgs>>> nodeGroupDetailsLists() {
+        return Optional.ofNullable(this.nodeGroupDetailsLists);
     }
 
     /**
@@ -343,10 +391,13 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         this.jobEnvironmentConfigurationOverrideDetails = $.jobEnvironmentConfigurationOverrideDetails;
         this.jobId = $.jobId;
         this.jobInfrastructureConfigurationDetails = $.jobInfrastructureConfigurationDetails;
+        this.jobInfrastructureConfigurationOverrideDetails = $.jobInfrastructureConfigurationOverrideDetails;
         this.jobLogConfigurationOverrideDetails = $.jobLogConfigurationOverrideDetails;
+        this.jobNodeConfigurationOverrideDetails = $.jobNodeConfigurationOverrideDetails;
         this.jobStorageMountConfigurationDetailsLists = $.jobStorageMountConfigurationDetailsLists;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logDetails = $.logDetails;
+        this.nodeGroupDetailsLists = $.nodeGroupDetailsLists;
         this.opcParentRptUrl = $.opcParentRptUrl;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -594,6 +645,27 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param jobInfrastructureConfigurationOverrideDetails The job infrastructure configuration details (shape, block storage, etc.)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobInfrastructureConfigurationOverrideDetails(@Nullable Output<JobRunJobInfrastructureConfigurationOverrideDetailsArgs> jobInfrastructureConfigurationOverrideDetails) {
+            $.jobInfrastructureConfigurationOverrideDetails = jobInfrastructureConfigurationOverrideDetails;
+            return this;
+        }
+
+        /**
+         * @param jobInfrastructureConfigurationOverrideDetails The job infrastructure configuration details (shape, block storage, etc.)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobInfrastructureConfigurationOverrideDetails(JobRunJobInfrastructureConfigurationOverrideDetailsArgs jobInfrastructureConfigurationOverrideDetails) {
+            return jobInfrastructureConfigurationOverrideDetails(Output.of(jobInfrastructureConfigurationOverrideDetails));
+        }
+
+        /**
          * @param jobLogConfigurationOverrideDetails Logging configuration for resource.
          * 
          * @return builder
@@ -612,6 +684,27 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder jobLogConfigurationOverrideDetails(JobRunJobLogConfigurationOverrideDetailsArgs jobLogConfigurationOverrideDetails) {
             return jobLogConfigurationOverrideDetails(Output.of(jobLogConfigurationOverrideDetails));
+        }
+
+        /**
+         * @param jobNodeConfigurationOverrideDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationOverrideDetails(@Nullable Output<JobRunJobNodeConfigurationOverrideDetailsArgs> jobNodeConfigurationOverrideDetails) {
+            $.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+            return this;
+        }
+
+        /**
+         * @param jobNodeConfigurationOverrideDetails The job node configuration details
+         * 
+         * @return builder
+         * 
+         */
+        public Builder jobNodeConfigurationOverrideDetails(JobRunJobNodeConfigurationOverrideDetailsArgs jobNodeConfigurationOverrideDetails) {
+            return jobNodeConfigurationOverrideDetails(Output.of(jobNodeConfigurationOverrideDetails));
         }
 
         /**
@@ -646,7 +739,7 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails Details of the state of the job run.
+         * @param lifecycleDetails The state details of the node group.
          * 
          * @return builder
          * 
@@ -657,7 +750,7 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails Details of the state of the job run.
+         * @param lifecycleDetails The state details of the node group.
          * 
          * @return builder
          * 
@@ -695,6 +788,37 @@ public final class JobRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder logDetails(JobRunLogDetailArgs... logDetails) {
             return logDetails(List.of(logDetails));
+        }
+
+        /**
+         * @param nodeGroupDetailsLists Collection of NodeGroupDetails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeGroupDetailsLists(@Nullable Output<List<JobRunNodeGroupDetailsListArgs>> nodeGroupDetailsLists) {
+            $.nodeGroupDetailsLists = nodeGroupDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param nodeGroupDetailsLists Collection of NodeGroupDetails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeGroupDetailsLists(List<JobRunNodeGroupDetailsListArgs> nodeGroupDetailsLists) {
+            return nodeGroupDetailsLists(Output.of(nodeGroupDetailsLists));
+        }
+
+        /**
+         * @param nodeGroupDetailsLists Collection of NodeGroupDetails
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeGroupDetailsLists(JobRunNodeGroupDetailsListArgs... nodeGroupDetailsLists) {
+            return nodeGroupDetailsLists(List.of(nodeGroupDetailsLists));
         }
 
         /**

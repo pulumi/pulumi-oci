@@ -42,6 +42,12 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("maximumRuntimeInMinutes")]
         public Input<string>? MaximumRuntimeInMinutes { get; set; }
 
+        /// <summary>
+        /// The probe indicates whether the application within the job run has started.
+        /// </summary>
+        [Input("startupProbeDetails")]
+        public Input<Inputs.JobRunJobConfigurationOverrideDetailsStartupProbeDetailsGetArgs>? StartupProbeDetails { get; set; }
+
         public JobRunJobConfigurationOverrideDetailsGetArgs()
         {
         }

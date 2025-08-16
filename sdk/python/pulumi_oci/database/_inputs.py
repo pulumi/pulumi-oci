@@ -43,6 +43,8 @@ __all__ = [
     'AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgsDict',
     'AutonomousContainerDatabaseBackupDestinationPropertiesListArgs',
     'AutonomousContainerDatabaseBackupDestinationPropertiesListArgsDict',
+    'AutonomousContainerDatabaseCustomerContactArgs',
+    'AutonomousContainerDatabaseCustomerContactArgsDict',
     'AutonomousContainerDatabaseDataguardArgs',
     'AutonomousContainerDatabaseDataguardArgsDict',
     'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs',
@@ -2563,6 +2565,38 @@ class AutonomousContainerDatabaseBackupDestinationPropertiesListArgs:
     @time_at_which_storage_details_are_updated.setter
     def time_at_which_storage_details_are_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_at_which_storage_details_are_updated", value)
+
+
+if not MYPY:
+    class AutonomousContainerDatabaseCustomerContactArgsDict(TypedDict):
+        email: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+elif False:
+    AutonomousContainerDatabaseCustomerContactArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AutonomousContainerDatabaseCustomerContactArgs:
+    def __init__(__self__, *,
+                 email: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] email: (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "email", value)
 
 
 if not MYPY:
@@ -5999,7 +6033,7 @@ if not MYPY:
         """
         vault_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
 elif False:
     AutonomousDatabaseKeyHistoryEntryArgsDict: TypeAlias = Mapping[str, Any]
@@ -6015,7 +6049,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
         :param pulumi.Input[_builtins.str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param pulumi.Input[_builtins.str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[_builtins.str] time_activated: The date and time the kms key activated.
-        :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[_builtins.str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -6066,7 +6100,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
         """
         return pulumi.get(self, "vault_id")
 
@@ -6271,7 +6305,7 @@ if not MYPY:
     class AutonomousDatabaseLongTermBackupScheduleArgsDict(TypedDict):
         is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        Indicates if the resource pool should be deleted for the Autonomous Database.
         """
         repeat_cadence: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -6296,7 +6330,7 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
                  retention_period_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  time_of_backup: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.bool] is_disabled: Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        :param pulumi.Input[_builtins.bool] is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
         :param pulumi.Input[_builtins.str] repeat_cadence: The frequency of the long-term backup schedule
         :param pulumi.Input[_builtins.int] retention_period_in_days: Retention period, in days, for long-term backups
         :param pulumi.Input[_builtins.str] time_of_backup: The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
@@ -6314,7 +6348,7 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @pulumi.getter(name="isDisabled")
     def is_disabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates if the long-term backup schedule should be deleted. The default value is `FALSE`.
+        Indicates if the resource pool should be deleted for the Autonomous Database.
         """
         return pulumi.get(self, "is_disabled")
 
@@ -19318,6 +19352,10 @@ if not MYPY:
         """
         The name of the database that is associated with the key store.
         """
+        db_unique_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique name of the database that is associated with the key store.
+        """
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -19329,13 +19367,17 @@ elif False:
 class KeyStoreAssociatedDatabaseArgs:
     def __init__(__self__, *,
                  db_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 db_unique_name: Optional[pulumi.Input[_builtins.str]] = None,
                  id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] db_name: The name of the database that is associated with the key store.
+        :param pulumi.Input[_builtins.str] db_unique_name: The unique name of the database that is associated with the key store.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         """
         if db_name is not None:
             pulumi.set(__self__, "db_name", db_name)
+        if db_unique_name is not None:
+            pulumi.set(__self__, "db_unique_name", db_unique_name)
         if id is not None:
             pulumi.set(__self__, "id", id)
 
@@ -19350,6 +19392,18 @@ class KeyStoreAssociatedDatabaseArgs:
     @db_name.setter
     def db_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "db_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbUniqueName")
+    def db_unique_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique name of the database that is associated with the key store.
+        """
+        return pulumi.get(self, "db_unique_name")
+
+    @db_unique_name.setter
+    def db_unique_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "db_unique_name", value)
 
     @_builtins.property
     @pulumi.getter

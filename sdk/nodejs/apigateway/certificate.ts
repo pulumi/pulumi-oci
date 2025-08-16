@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -90,10 +92,12 @@ export class Certificate extends pulumi.CustomResource {
      * The intermediate certificate data associated with the certificate in pem format.
      */
     public readonly intermediateCertificates!: pulumi.Output<string>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    public readonly locks!: pulumi.Output<outputs.ApiGateway.CertificateLock[]>;
     /**
      * The private key associated with the certificate in pem format.
      *
@@ -110,6 +114,7 @@ export class Certificate extends pulumi.CustomResource {
      * The entity to be secured by the certificate and additional host names.
      */
     public /*out*/ readonly subjectNames!: pulumi.Output<string[]>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -142,10 +147,13 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["intermediateCertificates"] = state ? state.intermediateCertificates : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["privateKey"] = state ? state.privateKey : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subjectNames"] = state ? state.subjectNames : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeNotValidAfter"] = state ? state.timeNotValidAfter : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -166,10 +174,13 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["intermediateCertificates"] = args ? args.intermediateCertificates : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["subjectNames"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeNotValidAfter"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -209,10 +220,12 @@ export interface CertificateState {
      * The intermediate certificate data associated with the certificate in pem format.
      */
     intermediateCertificates?: pulumi.Input<string>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.CertificateLock>[]>;
     /**
      * The private key associated with the certificate in pem format.
      *
@@ -229,6 +242,7 @@ export interface CertificateState {
      * The entity to be secured by the certificate and additional host names.
      */
     subjectNames?: pulumi.Input<pulumi.Input<string>[]>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */
@@ -271,6 +285,8 @@ export interface CertificateArgs {
      * The intermediate certificate data associated with the certificate in pem format.
      */
     intermediateCertificates?: pulumi.Input<string>;
+    isLockOverride?: pulumi.Input<boolean>;
+    locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.CertificateLock>[]>;
     /**
      * The private key associated with the certificate in pem format.
      *

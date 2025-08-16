@@ -10,6 +10,7 @@ import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDet
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs;
+import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig;
@@ -53,6 +54,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      * 
      */
     private @Nullable String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    private @Nullable String computeClusterId;
     /**
      * @return Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
      * 
@@ -174,6 +180,11 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     private @Nullable Map<String,String> metadata;
     /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails placementConstraintDetails;
+    /**
      * @return (Optional) (Updatable only for VM&#39;s) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
@@ -259,6 +270,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Optional<String> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
     }
     /**
      * @return Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
@@ -409,6 +427,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    public Optional<InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails> placementConstraintDetails() {
+        return Optional.ofNullable(this.placementConstraintDetails);
+    }
+    /**
      * @return (Optional) (Updatable only for VM&#39;s) The platform configuration requested for the instance.
      * 
      * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
@@ -481,6 +506,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         private @Nullable String capacityReservationId;
         private @Nullable String clusterPlacementGroupId;
         private @Nullable String compartmentId;
+        private @Nullable String computeClusterId;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails createVnicDetails;
         private @Nullable String dedicatedVmHostId;
         private @Nullable Map<String,String> definedTags;
@@ -495,6 +521,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions launchOptions;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs licensingConfigs;
         private @Nullable Map<String,String> metadata;
+        private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails placementConstraintDetails;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig platformConfig;
         private @Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig;
         private @Nullable String preferredMaintenanceAction;
@@ -511,6 +538,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.createVnicDetails = defaults.createVnicDetails;
     	      this.dedicatedVmHostId = defaults.dedicatedVmHostId;
     	      this.definedTags = defaults.definedTags;
@@ -525,6 +553,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
     	      this.launchOptions = defaults.launchOptions;
     	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
+    	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.platformConfig = defaults.platformConfig;
     	      this.preemptibleInstanceConfig = defaults.preemptibleInstanceConfig;
     	      this.preferredMaintenanceAction = defaults.preferredMaintenanceAction;
@@ -568,6 +597,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
         public Builder compartmentId(@Nullable String compartmentId) {
 
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(@Nullable String computeClusterId) {
+
+            this.computeClusterId = computeClusterId;
             return this;
         }
         @CustomType.Setter
@@ -655,6 +690,12 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder placementConstraintDetails(@Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails placementConstraintDetails) {
+
+            this.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder platformConfig(@Nullable InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig platformConfig) {
 
             this.platformConfig = platformConfig;
@@ -704,6 +745,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.createVnicDetails = createVnicDetails;
             _resultValue.dedicatedVmHostId = dedicatedVmHostId;
             _resultValue.definedTags = definedTags;
@@ -718,6 +760,7 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
             _resultValue.launchOptions = launchOptions;
             _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
+            _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.platformConfig = platformConfig;
             _resultValue.preemptibleInstanceConfig = preemptibleInstanceConfig;
             _resultValue.preferredMaintenanceAction = preferredMaintenanceAction;

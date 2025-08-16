@@ -22,9 +22,17 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult> EnvironmentConfigurationDetails;
         /// <summary>
+        /// The infrastructure configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult> InfrastructureConfigurationDetails;
+        /// <summary>
         /// The model configuration details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult> ModelConfigurationDetails;
+        /// <summary>
+        /// The model group configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult> ModelGroupConfigurationDetails;
 
         [OutputConstructor]
         private GetModelDeploymentModelDeploymentConfigurationDetailResult(
@@ -32,11 +40,17 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult> environmentConfigurationDetails,
 
-            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult> modelConfigurationDetails)
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult> infrastructureConfigurationDetails,
+
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult> modelConfigurationDetails,
+
+            ImmutableArray<Outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult> modelGroupConfigurationDetails)
         {
             DeploymentType = deploymentType;
             EnvironmentConfigurationDetails = environmentConfigurationDetails;
+            InfrastructureConfigurationDetails = infrastructureConfigurationDetails;
             ModelConfigurationDetails = modelConfigurationDetails;
+            ModelGroupConfigurationDetails = modelGroupConfigurationDetails;
         }
     }
 }

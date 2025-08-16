@@ -64,14 +64,14 @@ public final class PipelineProcessOptionsArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
      * 
      */
     @Import(name="startUsingDefaultMapping")
     private @Nullable Output<String> startUsingDefaultMapping;
 
     /**
-     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
      * 
      */
     public Optional<Output<String>> startUsingDefaultMapping() {
@@ -169,7 +169,7 @@ public final class PipelineProcessOptionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param startUsingDefaultMapping (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+         * @param startUsingDefaultMapping (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class PipelineProcessOptionsArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param startUsingDefaultMapping (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+         * @param startUsingDefaultMapping (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
          * 
          * @return builder
          * 

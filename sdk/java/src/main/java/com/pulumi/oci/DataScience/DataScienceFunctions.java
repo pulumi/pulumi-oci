@@ -40,11 +40,25 @@ import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentPl
 import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentShapesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDeploymentsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryPlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelGroupsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelProvenanceArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelProvenancePlainArgs;
@@ -95,9 +109,16 @@ import com.pulumi.oci.DataScience.outputs.GetMlApplicationResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationsResult;
 import com.pulumi.oci.DataScience.outputs.GetModelCustomMetadataArtifactContentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDefinedMetadataArtifactContentResult;
+import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelStatesResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentShapesResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentsResult;
+import com.pulumi.oci.DataScience.outputs.GetModelGroupArtifactContentResult;
+import com.pulumi.oci.DataScience.outputs.GetModelGroupModelsResult;
+import com.pulumi.oci.DataScience.outputs.GetModelGroupResult;
+import com.pulumi.oci.DataScience.outputs.GetModelGroupVersionHistoriesResult;
+import com.pulumi.oci.DataScience.outputs.GetModelGroupVersionHistoryResult;
+import com.pulumi.oci.DataScience.outputs.GetModelGroupsResult;
 import com.pulumi.oci.DataScience.outputs.GetModelProvenanceResult;
 import com.pulumi.oci.DataScience.outputs.GetModelResult;
 import com.pulumi.oci.DataScience.outputs.GetModelVersionSetResult;
@@ -4121,6 +4142,251 @@ public final class DataScienceFunctions {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModelDeployment:getModelDeployment", TypeShape.of(GetModelDeploymentResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Model Deployment Model States in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the status of models in a model group deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelDeploymentId(testModelDeployment.id())
+     *             .displayName(modelDeploymentModelStateDisplayName)
+     *             .inferenceKey(modelDeploymentModelStateInferenceKey)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDeploymentModelStatesResult> getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs args) {
+        return getModelDeploymentModelStates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Deployment Model States in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the status of models in a model group deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelDeploymentId(testModelDeployment.id())
+     *             .displayName(modelDeploymentModelStateDisplayName)
+     *             .inferenceKey(modelDeploymentModelStateInferenceKey)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelDeploymentModelStatesResult> getModelDeploymentModelStatesPlain(GetModelDeploymentModelStatesPlainArgs args) {
+        return getModelDeploymentModelStatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Deployment Model States in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the status of models in a model group deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelDeploymentId(testModelDeployment.id())
+     *             .displayName(modelDeploymentModelStateDisplayName)
+     *             .inferenceKey(modelDeploymentModelStateInferenceKey)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDeploymentModelStatesResult> getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDeploymentModelStates:getModelDeploymentModelStates", TypeShape.of(GetModelDeploymentModelStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Deployment Model States in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the status of models in a model group deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelDeploymentId(testModelDeployment.id())
+     *             .displayName(modelDeploymentModelStateDisplayName)
+     *             .inferenceKey(modelDeploymentModelStateInferenceKey)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelDeploymentModelStatesResult> getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelDeploymentModelStates:getModelDeploymentModelStates", TypeShape.of(GetModelDeploymentModelStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Deployment Model States in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists the status of models in a model group deployment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelDeploymentModelStatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelDeploymentModelStates = DataScienceFunctions.getModelDeploymentModelStates(GetModelDeploymentModelStatesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelDeploymentId(testModelDeployment.id())
+     *             .displayName(modelDeploymentModelStateDisplayName)
+     *             .inferenceKey(modelDeploymentModelStateInferenceKey)
+     *             .modelId(testModel.id())
+     *             .projectId(testProject.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelDeploymentModelStatesResult> getModelDeploymentModelStatesPlain(GetModelDeploymentModelStatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelDeploymentModelStates:getModelDeploymentModelStates", TypeShape.of(GetModelDeploymentModelStatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Model Deployment Shapes in Oracle Cloud Infrastructure Datascience service.
      * 
      * Lists the valid model deployment shapes.
@@ -4584,6 +4850,1411 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetModelDeploymentsResult> getModelDeploymentsPlain(GetModelDeploymentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModelDeployments:getModelDeployments", TypeShape.of(GetModelDeploymentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the Model Group resource based on the specified modelGroup id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupResult> getModelGroup(GetModelGroupArgs args) {
+        return getModelGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Group resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the Model Group resource based on the specified modelGroup id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupResult> getModelGroupPlain(GetModelGroupPlainArgs args) {
+        return getModelGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Group resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the Model Group resource based on the specified modelGroup id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupResult> getModelGroup(GetModelGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroup:getModelGroup", TypeShape.of(GetModelGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the Model Group resource based on the specified modelGroup id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupResult> getModelGroup(GetModelGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroup:getModelGroup", TypeShape.of(GetModelGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Retrieves the Model Group resource based on the specified modelGroup id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroup = DataScienceFunctions.getModelGroup(GetModelGroupArgs.builder()
+     *             .modelGroupId(testModelGroupOciDatascienceModelGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupResult> getModelGroupPlain(GetModelGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelGroup:getModelGroup", TypeShape.of(GetModelGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads the model artifact for the specified model group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
+     *             .modelGroupId(testModelGroup.id())
+     *             .range(modelGroupArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupArtifactContentResult> getModelGroupArtifactContent(GetModelGroupArtifactContentArgs args) {
+        return getModelGroupArtifactContent(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Group Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads the model artifact for the specified model group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
+     *             .modelGroupId(testModelGroup.id())
+     *             .range(modelGroupArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupArtifactContentResult> getModelGroupArtifactContentPlain(GetModelGroupArtifactContentPlainArgs args) {
+        return getModelGroupArtifactContentPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Group Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads the model artifact for the specified model group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
+     *             .modelGroupId(testModelGroup.id())
+     *             .range(modelGroupArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupArtifactContentResult> getModelGroupArtifactContent(GetModelGroupArtifactContentArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupArtifactContent:getModelGroupArtifactContent", TypeShape.of(GetModelGroupArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads the model artifact for the specified model group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
+     *             .modelGroupId(testModelGroup.id())
+     *             .range(modelGroupArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupArtifactContentResult> getModelGroupArtifactContent(GetModelGroupArtifactContentArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupArtifactContent:getModelGroupArtifactContent", TypeShape.of(GetModelGroupArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group Artifact Content resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Downloads the model artifact for the specified model group.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupArtifactContentArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupArtifactContent = DataScienceFunctions.getModelGroupArtifactContent(GetModelGroupArtifactContentArgs.builder()
+     *             .modelGroupId(testModelGroup.id())
+     *             .range(modelGroupArtifactContentRange)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupArtifactContentResult> getModelGroupArtifactContentPlain(GetModelGroupArtifactContentPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelGroupArtifactContent:getModelGroupArtifactContent", TypeShape.of(GetModelGroupArtifactContentResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Group Models in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all models associated with the modelGroup in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelGroupId(testModelGroup.id())
+     *             .createdBy(modelGroupModelCreatedBy)
+     *             .displayName(modelGroupModelDisplayName)
+     *             .id(modelGroupModelId)
+     *             .state(modelGroupModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupModelsResult> getModelGroupModels(GetModelGroupModelsArgs args) {
+        return getModelGroupModels(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Group Models in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all models associated with the modelGroup in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelGroupId(testModelGroup.id())
+     *             .createdBy(modelGroupModelCreatedBy)
+     *             .displayName(modelGroupModelDisplayName)
+     *             .id(modelGroupModelId)
+     *             .state(modelGroupModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupModelsResult> getModelGroupModelsPlain(GetModelGroupModelsPlainArgs args) {
+        return getModelGroupModelsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Group Models in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all models associated with the modelGroup in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelGroupId(testModelGroup.id())
+     *             .createdBy(modelGroupModelCreatedBy)
+     *             .displayName(modelGroupModelDisplayName)
+     *             .id(modelGroupModelId)
+     *             .state(modelGroupModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupModelsResult> getModelGroupModels(GetModelGroupModelsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupModels:getModelGroupModels", TypeShape.of(GetModelGroupModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Group Models in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all models associated with the modelGroup in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelGroupId(testModelGroup.id())
+     *             .createdBy(modelGroupModelCreatedBy)
+     *             .displayName(modelGroupModelDisplayName)
+     *             .id(modelGroupModelId)
+     *             .state(modelGroupModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupModelsResult> getModelGroupModels(GetModelGroupModelsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupModels:getModelGroupModels", TypeShape.of(GetModelGroupModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Group Models in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all models associated with the modelGroup in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupModelsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupModels = DataScienceFunctions.getModelGroupModels(GetModelGroupModelsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelGroupId(testModelGroup.id())
+     *             .createdBy(modelGroupModelCreatedBy)
+     *             .displayName(modelGroupModelDisplayName)
+     *             .id(modelGroupModelId)
+     *             .state(modelGroupModelState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupModelsResult> getModelGroupModelsPlain(GetModelGroupModelsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelGroupModels:getModelGroupModels", TypeShape.of(GetModelGroupModelsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Group Version Histories in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all modelGroupVersionHistories in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistories = DataScienceFunctions.getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupVersionHistoryCreatedBy)
+     *             .displayName(modelGroupVersionHistoryDisplayName)
+     *             .id(modelGroupVersionHistoryId)
+     *             .projectId(testProject.id())
+     *             .state(modelGroupVersionHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupVersionHistoriesResult> getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs args) {
+        return getModelGroupVersionHistories(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Group Version Histories in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all modelGroupVersionHistories in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistories = DataScienceFunctions.getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupVersionHistoryCreatedBy)
+     *             .displayName(modelGroupVersionHistoryDisplayName)
+     *             .id(modelGroupVersionHistoryId)
+     *             .projectId(testProject.id())
+     *             .state(modelGroupVersionHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupVersionHistoriesResult> getModelGroupVersionHistoriesPlain(GetModelGroupVersionHistoriesPlainArgs args) {
+        return getModelGroupVersionHistoriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Group Version Histories in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all modelGroupVersionHistories in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistories = DataScienceFunctions.getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupVersionHistoryCreatedBy)
+     *             .displayName(modelGroupVersionHistoryDisplayName)
+     *             .id(modelGroupVersionHistoryId)
+     *             .projectId(testProject.id())
+     *             .state(modelGroupVersionHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupVersionHistoriesResult> getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupVersionHistories:getModelGroupVersionHistories", TypeShape.of(GetModelGroupVersionHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Group Version Histories in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all modelGroupVersionHistories in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistories = DataScienceFunctions.getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupVersionHistoryCreatedBy)
+     *             .displayName(modelGroupVersionHistoryDisplayName)
+     *             .id(modelGroupVersionHistoryId)
+     *             .projectId(testProject.id())
+     *             .state(modelGroupVersionHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupVersionHistoriesResult> getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupVersionHistories:getModelGroupVersionHistories", TypeShape.of(GetModelGroupVersionHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Group Version Histories in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List all modelGroupVersionHistories in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistories = DataScienceFunctions.getModelGroupVersionHistories(GetModelGroupVersionHistoriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupVersionHistoryCreatedBy)
+     *             .displayName(modelGroupVersionHistoryDisplayName)
+     *             .id(modelGroupVersionHistoryId)
+     *             .projectId(testProject.id())
+     *             .state(modelGroupVersionHistoryState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupVersionHistoriesResult> getModelGroupVersionHistoriesPlain(GetModelGroupVersionHistoriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelGroupVersionHistories:getModelGroupVersionHistories", TypeShape.of(GetModelGroupVersionHistoriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified modelGroupVersionHistory&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupVersionHistoryResult> getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs args) {
+        return getModelGroupVersionHistory(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified modelGroupVersionHistory&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupVersionHistoryResult> getModelGroupVersionHistoryPlain(GetModelGroupVersionHistoryPlainArgs args) {
+        return getModelGroupVersionHistoryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified modelGroupVersionHistory&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupVersionHistoryResult> getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupVersionHistory:getModelGroupVersionHistory", TypeShape.of(GetModelGroupVersionHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified modelGroupVersionHistory&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupVersionHistoryResult> getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroupVersionHistory:getModelGroupVersionHistory", TypeShape.of(GetModelGroupVersionHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Group Version History resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified modelGroupVersionHistory&#39;s information.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupVersionHistoryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroupVersionHistory = DataScienceFunctions.getModelGroupVersionHistory(GetModelGroupVersionHistoryArgs.builder()
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistoryOciDatascienceModelGroupVersionHistory.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupVersionHistoryResult> getModelGroupVersionHistoryPlain(GetModelGroupVersionHistoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelGroupVersionHistory:getModelGroupVersionHistory", TypeShape.of(GetModelGroupVersionHistoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Groups in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all the modelGroups in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroups = DataScienceFunctions.getModelGroups(GetModelGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupCreatedBy)
+     *             .displayName(modelGroupDisplayName)
+     *             .id(modelGroupId)
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
+     *             .projectId(testProject.id())
+     *             .state(modelGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupsResult> getModelGroups(GetModelGroupsArgs args) {
+        return getModelGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Groups in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all the modelGroups in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroups = DataScienceFunctions.getModelGroups(GetModelGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupCreatedBy)
+     *             .displayName(modelGroupDisplayName)
+     *             .id(modelGroupId)
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
+     *             .projectId(testProject.id())
+     *             .state(modelGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupsResult> getModelGroupsPlain(GetModelGroupsPlainArgs args) {
+        return getModelGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Groups in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all the modelGroups in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroups = DataScienceFunctions.getModelGroups(GetModelGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupCreatedBy)
+     *             .displayName(modelGroupDisplayName)
+     *             .id(modelGroupId)
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
+     *             .projectId(testProject.id())
+     *             .state(modelGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupsResult> getModelGroups(GetModelGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroups:getModelGroups", TypeShape.of(GetModelGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Groups in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all the modelGroups in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroups = DataScienceFunctions.getModelGroups(GetModelGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupCreatedBy)
+     *             .displayName(modelGroupDisplayName)
+     *             .id(modelGroupId)
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
+     *             .projectId(testProject.id())
+     *             .state(modelGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetModelGroupsResult> getModelGroups(GetModelGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelGroups:getModelGroups", TypeShape.of(GetModelGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Groups in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Lists all the modelGroups in the specified compartment. The query must include compartmentId.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelGroups = DataScienceFunctions.getModelGroups(GetModelGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .createdBy(modelGroupCreatedBy)
+     *             .displayName(modelGroupDisplayName)
+     *             .id(modelGroupId)
+     *             .modelGroupVersionHistoryId(testModelGroupVersionHistory.id())
+     *             .projectId(testProject.id())
+     *             .state(modelGroupState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetModelGroupsResult> getModelGroupsPlain(GetModelGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelGroups:getModelGroups", TypeShape.of(GetModelGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Model Provenance resource in Oracle Cloud Infrastructure Data Science service.

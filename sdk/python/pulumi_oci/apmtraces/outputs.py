@@ -16,8 +16,24 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ScheduledQueryScheduledQueryProcessingConfiguration',
+    'ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric',
+    'ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage',
+    'ScheduledQueryScheduledQueryProcessingConfigurationStreaming',
+    'GetLogAttributeResult',
     'GetQueryQuickPicksFilterResult',
     'GetQueryQuickPicksQuickPickResult',
+    'GetScheduledQueriesFilterResult',
+    'GetScheduledQueriesScheduledQueryCollectionResult',
+    'GetScheduledQueriesScheduledQueryCollectionItemResult',
+    'GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationResult',
+    'GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricResult',
+    'GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageResult',
+    'GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingResult',
+    'GetScheduledQueryScheduledQueryProcessingConfigurationResult',
+    'GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricResult',
+    'GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageResult',
+    'GetScheduledQueryScheduledQueryProcessingConfigurationStreamingResult',
     'GetTraceAggregatedSnapshotDataDetailResult',
     'GetTraceServiceSummaryResult',
     'GetTraceSnapshotDataTraceSnapshotDetailResult',
@@ -28,6 +44,318 @@ __all__ = [
     'GetTraceSpanSummaryServiceSummaryResult',
     'GetTraceSpanTagResult',
 ]
+
+@pulumi.output_type
+class ScheduledQueryScheduledQueryProcessingConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customMetric":
+            suggest = "custom_metric"
+        elif key == "objectStorage":
+            suggest = "object_storage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduledQueryScheduledQueryProcessingConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_metric: Optional['outputs.ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric'] = None,
+                 object_storage: Optional['outputs.ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage'] = None,
+                 streaming: Optional['outputs.ScheduledQueryScheduledQueryProcessingConfigurationStreaming'] = None):
+        """
+        :param 'ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs' custom_metric: (Updatable) Definition of the Custom Metric.
+        :param 'ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs' object_storage: (Updatable) Definition of the object storage.
+        :param 'ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs' streaming: (Updatable) Definition of the Stream.
+        """
+        if custom_metric is not None:
+            pulumi.set(__self__, "custom_metric", custom_metric)
+        if object_storage is not None:
+            pulumi.set(__self__, "object_storage", object_storage)
+        if streaming is not None:
+            pulumi.set(__self__, "streaming", streaming)
+
+    @_builtins.property
+    @pulumi.getter(name="customMetric")
+    def custom_metric(self) -> Optional['outputs.ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric']:
+        """
+        (Updatable) Definition of the Custom Metric.
+        """
+        return pulumi.get(self, "custom_metric")
+
+    @_builtins.property
+    @pulumi.getter(name="objectStorage")
+    def object_storage(self) -> Optional['outputs.ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage']:
+        """
+        (Updatable) Definition of the object storage.
+        """
+        return pulumi.get(self, "object_storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def streaming(self) -> Optional['outputs.ScheduledQueryScheduledQueryProcessingConfigurationStreaming']:
+        """
+        (Updatable) Definition of the Stream.
+        """
+        return pulumi.get(self, "streaming")
+
+
+@pulumi.output_type
+class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isAnomalyDetectionEnabled":
+            suggest = "is_anomaly_detection_enabled"
+        elif key == "isMetricPublished":
+            suggest = "is_metric_published"
+        elif key == "resourceGroup":
+            suggest = "resource_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 compartment: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None,
+                 is_anomaly_detection_enabled: Optional[_builtins.bool] = None,
+                 is_metric_published: Optional[_builtins.bool] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 resource_group: Optional[_builtins.str] = None,
+                 unit: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: (Updatable) Name of the Custom Metric.
+        :param _builtins.str compartment: (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+        :param _builtins.str description: (Updatable) Description of the Custom Metric.
+        :param _builtins.bool is_anomaly_detection_enabled: (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+        :param _builtins.bool is_metric_published: (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+        :param _builtins.str namespace: (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        :param _builtins.str resource_group: (Updatable) Resource Group of the Custom Metric.
+        :param _builtins.str unit: (Updatable) Unit in which the metric value is reported. For example 'ms'.
+        """
+        pulumi.set(__self__, "name", name)
+        if compartment is not None:
+            pulumi.set(__self__, "compartment", compartment)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if is_anomaly_detection_enabled is not None:
+            pulumi.set(__self__, "is_anomaly_detection_enabled", is_anomaly_detection_enabled)
+        if is_metric_published is not None:
+            pulumi.set(__self__, "is_metric_published", is_metric_published)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        (Updatable) Name of the Custom Metric.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def compartment(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+        """
+        return pulumi.get(self, "compartment")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Description of the Custom Metric.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isAnomalyDetectionEnabled")
+    def is_anomaly_detection_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+        """
+        return pulumi.get(self, "is_anomaly_detection_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricPublished")
+    def is_metric_published(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+        """
+        return pulumi.get(self, "is_metric_published")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Resource Group of the Custom Metric.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unit in which the metric value is reported. For example 'ms'.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nameSpace":
+            suggest = "name_space"
+        elif key == "objectNamePrefix":
+            suggest = "object_name_prefix"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: Optional[_builtins.str] = None,
+                 name_space: Optional[_builtins.str] = None,
+                 object_name_prefix: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bucket: (Updatable) Bucket name in the object store.
+        :param _builtins.str name_space: (Updatable) Namespace in the object store.
+        :param _builtins.str object_name_prefix: (Updatable) Object name prefix in the object store.
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if name_space is not None:
+            pulumi.set(__self__, "name_space", name_space)
+        if object_name_prefix is not None:
+            pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Bucket name in the object store.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="nameSpace")
+    def name_space(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Namespace in the object store.
+        """
+        return pulumi.get(self, "name_space")
+
+    @_builtins.property
+    @pulumi.getter(name="objectNamePrefix")
+    def object_name_prefix(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Object name prefix in the object store.
+        """
+        return pulumi.get(self, "object_name_prefix")
+
+
+@pulumi.output_type
+class ScheduledQueryScheduledQueryProcessingConfigurationStreaming(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "streamId":
+            suggest = "stream_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ScheduledQueryScheduledQueryProcessingConfigurationStreaming. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfigurationStreaming.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ScheduledQueryScheduledQueryProcessingConfigurationStreaming.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 stream_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str stream_id: (Updatable) Stream Id.
+        """
+        if stream_id is not None:
+            pulumi.set(__self__, "stream_id", stream_id)
+
+    @_builtins.property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Stream Id.
+        """
+        return pulumi.get(self, "stream_id")
+
+
+@pulumi.output_type
+class GetLogAttributeResult(dict):
+    def __init__(__self__, *,
+                 attribute_name: _builtins.str,
+                 attribute_value: _builtins.str):
+        """
+        :param _builtins.str attribute_name: Key that specifies the attribute name.
+        :param _builtins.str attribute_value: Value associated with the attribute key.
+        """
+        pulumi.set(__self__, "attribute_name", attribute_name)
+        pulumi.set(__self__, "attribute_value", attribute_value)
+
+    @_builtins.property
+    @pulumi.getter(name="attributeName")
+    def attribute_name(self) -> _builtins.str:
+        """
+        Key that specifies the attribute name.
+        """
+        return pulumi.get(self, "attribute_name")
+
+    @_builtins.property
+    @pulumi.getter(name="attributeValue")
+    def attribute_value(self) -> _builtins.str:
+        """
+        Value associated with the attribute key.
+        """
+        return pulumi.get(self, "attribute_value")
+
 
 @pulumi.output_type
 class GetQueryQuickPicksFilterResult(dict):
@@ -83,6 +411,649 @@ class GetQueryQuickPicksQuickPickResult(dict):
         Query for the Quick Pick.
         """
         return pulumi.get(self, "quick_pick_query")
+
+
+@pulumi.output_type
+class GetScheduledQueriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the Custom Metric.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Custom Metric.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetScheduledQueriesScheduledQueryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetScheduledQueriesScheduledQueryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 apm_domain_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 opc_dry_run: _builtins.str,
+                 scheduled_query_description: _builtins.str,
+                 scheduled_query_instances: _builtins.str,
+                 scheduled_query_maximum_runtime_in_seconds: _builtins.str,
+                 scheduled_query_name: _builtins.str,
+                 scheduled_query_next_run_in_ms: _builtins.str,
+                 scheduled_query_processing_configurations: Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationResult'],
+                 scheduled_query_processing_sub_type: _builtins.str,
+                 scheduled_query_processing_type: _builtins.str,
+                 scheduled_query_retention_criteria: _builtins.str,
+                 scheduled_query_retention_period_in_ms: _builtins.str,
+                 scheduled_query_schedule: _builtins.str,
+                 scheduled_query_text: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param _builtins.str apm_domain_id: The APM Domain ID for the intended request.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled query . An OCID is generated when the scheduled query is created.
+        :param _builtins.str scheduled_query_description: Description for the scheduled query.
+        :param _builtins.str scheduled_query_instances: Scheduled query instances.
+        :param _builtins.str scheduled_query_maximum_runtime_in_seconds: Maximum runtime for the scheduled query in seconds.
+        :param _builtins.str scheduled_query_name: Name of the scheduled query.
+        :param _builtins.str scheduled_query_next_run_in_ms: Next run for the scheduled query.
+        :param Sequence['GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs'] scheduled_query_processing_configurations: Definition of the scheduled query processing configuration.
+        :param _builtins.str scheduled_query_processing_sub_type: Processing sub type of the scheduled query.
+        :param _builtins.str scheduled_query_processing_type: Processing type of the scheduled query.
+        :param _builtins.str scheduled_query_retention_criteria: Retention criteria for the scheduled query.
+        :param _builtins.str scheduled_query_retention_period_in_ms: Retention period for the scheduled query in milliseconds.
+        :param _builtins.str scheduled_query_schedule: Schedule for the scheduled query.
+        :param _builtins.str scheduled_query_text: Scheduled query to be run.
+        :param _builtins.str state: The current lifecycle state of the Scheduled Query.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "opc_dry_run", opc_dry_run)
+        pulumi.set(__self__, "scheduled_query_description", scheduled_query_description)
+        pulumi.set(__self__, "scheduled_query_instances", scheduled_query_instances)
+        pulumi.set(__self__, "scheduled_query_maximum_runtime_in_seconds", scheduled_query_maximum_runtime_in_seconds)
+        pulumi.set(__self__, "scheduled_query_name", scheduled_query_name)
+        pulumi.set(__self__, "scheduled_query_next_run_in_ms", scheduled_query_next_run_in_ms)
+        pulumi.set(__self__, "scheduled_query_processing_configurations", scheduled_query_processing_configurations)
+        pulumi.set(__self__, "scheduled_query_processing_sub_type", scheduled_query_processing_sub_type)
+        pulumi.set(__self__, "scheduled_query_processing_type", scheduled_query_processing_type)
+        pulumi.set(__self__, "scheduled_query_retention_criteria", scheduled_query_retention_criteria)
+        pulumi.set(__self__, "scheduled_query_retention_period_in_ms", scheduled_query_retention_period_in_ms)
+        pulumi.set(__self__, "scheduled_query_schedule", scheduled_query_schedule)
+        pulumi.set(__self__, "scheduled_query_text", scheduled_query_text)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="apmDomainId")
+    def apm_domain_id(self) -> _builtins.str:
+        """
+        The APM Domain ID for the intended request.
+        """
+        return pulumi.get(self, "apm_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled query . An OCID is generated when the scheduled query is created.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="opcDryRun")
+    def opc_dry_run(self) -> _builtins.str:
+        return pulumi.get(self, "opc_dry_run")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryDescription")
+    def scheduled_query_description(self) -> _builtins.str:
+        """
+        Description for the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_description")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryInstances")
+    def scheduled_query_instances(self) -> _builtins.str:
+        """
+        Scheduled query instances.
+        """
+        return pulumi.get(self, "scheduled_query_instances")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryMaximumRuntimeInSeconds")
+    def scheduled_query_maximum_runtime_in_seconds(self) -> _builtins.str:
+        """
+        Maximum runtime for the scheduled query in seconds.
+        """
+        return pulumi.get(self, "scheduled_query_maximum_runtime_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryName")
+    def scheduled_query_name(self) -> _builtins.str:
+        """
+        Name of the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryNextRunInMs")
+    def scheduled_query_next_run_in_ms(self) -> _builtins.str:
+        """
+        Next run for the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_next_run_in_ms")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryProcessingConfigurations")
+    def scheduled_query_processing_configurations(self) -> Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationResult']:
+        """
+        Definition of the scheduled query processing configuration.
+        """
+        return pulumi.get(self, "scheduled_query_processing_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryProcessingSubType")
+    def scheduled_query_processing_sub_type(self) -> _builtins.str:
+        """
+        Processing sub type of the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_processing_sub_type")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryProcessingType")
+    def scheduled_query_processing_type(self) -> _builtins.str:
+        """
+        Processing type of the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_processing_type")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryRetentionCriteria")
+    def scheduled_query_retention_criteria(self) -> _builtins.str:
+        """
+        Retention criteria for the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_retention_criteria")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryRetentionPeriodInMs")
+    def scheduled_query_retention_period_in_ms(self) -> _builtins.str:
+        """
+        Retention period for the scheduled query in milliseconds.
+        """
+        return pulumi.get(self, "scheduled_query_retention_period_in_ms")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQuerySchedule")
+    def scheduled_query_schedule(self) -> _builtins.str:
+        """
+        Schedule for the scheduled query.
+        """
+        return pulumi.get(self, "scheduled_query_schedule")
+
+    @_builtins.property
+    @pulumi.getter(name="scheduledQueryText")
+    def scheduled_query_text(self) -> _builtins.str:
+        """
+        Scheduled query to be run.
+        """
+        return pulumi.get(self, "scheduled_query_text")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current lifecycle state of the Scheduled Query.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationResult(dict):
+    def __init__(__self__, *,
+                 custom_metrics: Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricResult'],
+                 object_storages: Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageResult'],
+                 streamings: Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingResult']):
+        """
+        :param Sequence['GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs'] custom_metrics: Definition of the Custom Metric.
+        :param Sequence['GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs'] object_storages: Definition of the object storage.
+        :param Sequence['GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs'] streamings: Definition of the Stream.
+        """
+        pulumi.set(__self__, "custom_metrics", custom_metrics)
+        pulumi.set(__self__, "object_storages", object_storages)
+        pulumi.set(__self__, "streamings", streamings)
+
+    @_builtins.property
+    @pulumi.getter(name="customMetrics")
+    def custom_metrics(self) -> Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricResult']:
+        """
+        Definition of the Custom Metric.
+        """
+        return pulumi.get(self, "custom_metrics")
+
+    @_builtins.property
+    @pulumi.getter(name="objectStorages")
+    def object_storages(self) -> Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageResult']:
+        """
+        Definition of the object storage.
+        """
+        return pulumi.get(self, "object_storages")
+
+    @_builtins.property
+    @pulumi.getter
+    def streamings(self) -> Sequence['outputs.GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingResult']:
+        """
+        Definition of the Stream.
+        """
+        return pulumi.get(self, "streamings")
+
+
+@pulumi.output_type
+class GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricResult(dict):
+    def __init__(__self__, *,
+                 compartment: _builtins.str,
+                 description: _builtins.str,
+                 is_anomaly_detection_enabled: _builtins.bool,
+                 is_metric_published: _builtins.bool,
+                 name: _builtins.str,
+                 namespace: _builtins.str,
+                 resource_group: _builtins.str,
+                 unit: _builtins.str):
+        """
+        :param _builtins.str compartment: Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+        :param _builtins.str description: Description of the Custom Metric.
+        :param _builtins.bool is_anomaly_detection_enabled: Indicates whether anomaly Detection should be performed on the generated metric.
+        :param _builtins.bool is_metric_published: Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+        :param _builtins.str name: Name of the Custom Metric.
+        :param _builtins.str namespace: Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        :param _builtins.str resource_group: Resource Group of the Custom Metric.
+        :param _builtins.str unit: Unit in which the metric value is reported. For example 'ms'.
+        """
+        pulumi.set(__self__, "compartment", compartment)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_anomaly_detection_enabled", is_anomaly_detection_enabled)
+        pulumi.set(__self__, "is_metric_published", is_metric_published)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter
+    def compartment(self) -> _builtins.str:
+        """
+        Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+        """
+        return pulumi.get(self, "compartment")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the Custom Metric.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isAnomalyDetectionEnabled")
+    def is_anomaly_detection_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether anomaly Detection should be performed on the generated metric.
+        """
+        return pulumi.get(self, "is_anomaly_detection_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricPublished")
+    def is_metric_published(self) -> _builtins.bool:
+        """
+        Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+        """
+        return pulumi.get(self, "is_metric_published")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Custom Metric.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> _builtins.str:
+        """
+        Resource Group of the Custom Metric.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> _builtins.str:
+        """
+        Unit in which the metric value is reported. For example 'ms'.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 name_space: _builtins.str,
+                 object_name_prefix: _builtins.str):
+        """
+        :param _builtins.str bucket: Bucket name in the object store.
+        :param _builtins.str name_space: Namespace in the object store.
+        :param _builtins.str object_name_prefix: Object name prefix in the object store.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "name_space", name_space)
+        pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Bucket name in the object store.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="nameSpace")
+    def name_space(self) -> _builtins.str:
+        """
+        Namespace in the object store.
+        """
+        return pulumi.get(self, "name_space")
+
+    @_builtins.property
+    @pulumi.getter(name="objectNamePrefix")
+    def object_name_prefix(self) -> _builtins.str:
+        """
+        Object name prefix in the object store.
+        """
+        return pulumi.get(self, "object_name_prefix")
+
+
+@pulumi.output_type
+class GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingResult(dict):
+    def __init__(__self__, *,
+                 stream_id: _builtins.str):
+        """
+        :param _builtins.str stream_id: Stream Id.
+        """
+        pulumi.set(__self__, "stream_id", stream_id)
+
+    @_builtins.property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> _builtins.str:
+        """
+        Stream Id.
+        """
+        return pulumi.get(self, "stream_id")
+
+
+@pulumi.output_type
+class GetScheduledQueryScheduledQueryProcessingConfigurationResult(dict):
+    def __init__(__self__, *,
+                 custom_metrics: Sequence['outputs.GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricResult'],
+                 object_storages: Sequence['outputs.GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageResult'],
+                 streamings: Sequence['outputs.GetScheduledQueryScheduledQueryProcessingConfigurationStreamingResult']):
+        """
+        :param Sequence['GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs'] custom_metrics: Definition of the Custom Metric.
+        :param Sequence['GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs'] object_storages: Definition of the object storage.
+        :param Sequence['GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs'] streamings: Definition of the Stream.
+        """
+        pulumi.set(__self__, "custom_metrics", custom_metrics)
+        pulumi.set(__self__, "object_storages", object_storages)
+        pulumi.set(__self__, "streamings", streamings)
+
+    @_builtins.property
+    @pulumi.getter(name="customMetrics")
+    def custom_metrics(self) -> Sequence['outputs.GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricResult']:
+        """
+        Definition of the Custom Metric.
+        """
+        return pulumi.get(self, "custom_metrics")
+
+    @_builtins.property
+    @pulumi.getter(name="objectStorages")
+    def object_storages(self) -> Sequence['outputs.GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageResult']:
+        """
+        Definition of the object storage.
+        """
+        return pulumi.get(self, "object_storages")
+
+    @_builtins.property
+    @pulumi.getter
+    def streamings(self) -> Sequence['outputs.GetScheduledQueryScheduledQueryProcessingConfigurationStreamingResult']:
+        """
+        Definition of the Stream.
+        """
+        return pulumi.get(self, "streamings")
+
+
+@pulumi.output_type
+class GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricResult(dict):
+    def __init__(__self__, *,
+                 compartment: _builtins.str,
+                 description: _builtins.str,
+                 is_anomaly_detection_enabled: _builtins.bool,
+                 is_metric_published: _builtins.bool,
+                 name: _builtins.str,
+                 namespace: _builtins.str,
+                 resource_group: _builtins.str,
+                 unit: _builtins.str):
+        """
+        :param _builtins.str compartment: Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+        :param _builtins.str description: Description of the Custom Metric.
+        :param _builtins.bool is_anomaly_detection_enabled: Indicates whether anomaly Detection should be performed on the generated metric.
+        :param _builtins.bool is_metric_published: Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+        :param _builtins.str name: Name of the Custom Metric.
+        :param _builtins.str namespace: Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        :param _builtins.str resource_group: Resource Group of the Custom Metric.
+        :param _builtins.str unit: Unit in which the metric value is reported. For example 'ms'.
+        """
+        pulumi.set(__self__, "compartment", compartment)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "is_anomaly_detection_enabled", is_anomaly_detection_enabled)
+        pulumi.set(__self__, "is_metric_published", is_metric_published)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "resource_group", resource_group)
+        pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter
+    def compartment(self) -> _builtins.str:
+        """
+        Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+        """
+        return pulumi.get(self, "compartment")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of the Custom Metric.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="isAnomalyDetectionEnabled")
+    def is_anomaly_detection_enabled(self) -> _builtins.bool:
+        """
+        Indicates whether anomaly Detection should be performed on the generated metric.
+        """
+        return pulumi.get(self, "is_anomaly_detection_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMetricPublished")
+    def is_metric_published(self) -> _builtins.bool:
+        """
+        Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+        """
+        return pulumi.get(self, "is_metric_published")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Custom Metric.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> _builtins.str:
+        """
+        Resource Group of the Custom Metric.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> _builtins.str:
+        """
+        Unit in which the metric value is reported. For example 'ms'.
+        """
+        return pulumi.get(self, "unit")
+
+
+@pulumi.output_type
+class GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 name_space: _builtins.str,
+                 object_name_prefix: _builtins.str):
+        """
+        :param _builtins.str bucket: Bucket name in the object store.
+        :param _builtins.str name_space: Namespace in the object store.
+        :param _builtins.str object_name_prefix: Object name prefix in the object store.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "name_space", name_space)
+        pulumi.set(__self__, "object_name_prefix", object_name_prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Bucket name in the object store.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="nameSpace")
+    def name_space(self) -> _builtins.str:
+        """
+        Namespace in the object store.
+        """
+        return pulumi.get(self, "name_space")
+
+    @_builtins.property
+    @pulumi.getter(name="objectNamePrefix")
+    def object_name_prefix(self) -> _builtins.str:
+        """
+        Object name prefix in the object store.
+        """
+        return pulumi.get(self, "object_name_prefix")
+
+
+@pulumi.output_type
+class GetScheduledQueryScheduledQueryProcessingConfigurationStreamingResult(dict):
+    def __init__(__self__, *,
+                 stream_id: _builtins.str):
+        """
+        :param _builtins.str stream_id: Stream Id.
+        """
+        pulumi.set(__self__, "stream_id", stream_id)
+
+    @_builtins.property
+    @pulumi.getter(name="streamId")
+    def stream_id(self) -> _builtins.str:
+        """
+        Stream Id.
+        """
+        return pulumi.get(self, "stream_id")
 
 
 @pulumi.output_type

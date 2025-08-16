@@ -1687,7 +1687,7 @@ class PipelineProcessOptions(dict):
         :param 'PipelineProcessOptionsInitialDataLoadArgs' initial_data_load: (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param 'PipelineProcessOptionsReplicateSchemaChangeArgs' replicate_schema_change: (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param _builtins.str should_restart_on_failure: (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
-        :param _builtins.str start_using_default_mapping: (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        :param _builtins.str start_using_default_mapping: (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         pulumi.set(__self__, "initial_data_load", initial_data_load)
         pulumi.set(__self__, "replicate_schema_change", replicate_schema_change)
@@ -1723,7 +1723,7 @@ class PipelineProcessOptions(dict):
     @pulumi.getter(name="startUsingDefaultMapping")
     def start_using_default_mapping(self) -> Optional[_builtins.str]:
         """
-        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         return pulumi.get(self, "start_using_default_mapping")
 
@@ -2476,6 +2476,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
                  authentication_mode: _builtins.str,
                  authentication_type: _builtins.str,
+                 azure_authority_host: _builtins.str,
                  azure_tenant_id: _builtins.str,
                  bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
                  catalogs: Sequence['outputs.GetConnectionsConnectionCollectionItemCatalogResult'],
@@ -2595,6 +2596,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                * DATABRICKS - Required fields by authentication types:
                * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
                * OAUTH_M2M: user must enter clientId and clientSecret
+        :param _builtins.str azure_authority_host: The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+               * Azure China: https://login.chinacloudapi.cn/
+               * Azure US Government: https://login.microsoftonline.us/
         :param _builtins.str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param Sequence['GetConnectionsConnectionCollectionItemCatalogArgs'] catalogs: Represents the catalog of given type used in an Iceberg connection.
@@ -2621,6 +2625,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param _builtins.bool does_use_secret_ids: Indicates that sensitive attributes are provided via Secrets.
         :param _builtins.str endpoint: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
+        :param _builtins.str fingerprint: Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param _builtins.str host: The name or address of a host.
                In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
@@ -2659,7 +2664,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         :param _builtins.str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param _builtins.bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param _builtins.bool should_use_resource_principal: Indicates that the user intents to connect to the instance through resource principal.
+        :param _builtins.bool should_use_resource_principal: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         :param _builtins.bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
         :param _builtins.str ssl_ca: Database Certificate - The base64 encoded content of a .pem or .crt file. containing the server public key (for 1-way SSL). The supported file formats are .pem and .crt. In case of MYSQL and POSTGRESQL connections it is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param _builtins.str ssl_cert: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
@@ -2701,6 +2706,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "additional_attributes", additional_attributes)
         pulumi.set(__self__, "authentication_mode", authentication_mode)
         pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "azure_authority_host", azure_authority_host)
         pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
         pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
         pulumi.set(__self__, "catalogs", catalogs)
@@ -2866,6 +2872,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         * OAUTH_M2M: user must enter clientId and clientSecret
         """
         return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter(name="azureAuthorityHost")
+    def azure_authority_host(self) -> _builtins.str:
+        """
+        The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+        """
+        return pulumi.get(self, "azure_authority_host")
 
     @_builtins.property
     @pulumi.getter(name="azureTenantId")
@@ -3048,6 +3064,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def fingerprint(self) -> _builtins.str:
+        """
+        Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        """
         return pulumi.get(self, "fingerprint")
 
     @_builtins.property
@@ -3366,7 +3385,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> _builtins.bool:
         """
-        Indicates that the user intents to connect to the instance through resource principal.
+        Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -8048,7 +8067,7 @@ class GetPipelineProcessOptionResult(dict):
         :param Sequence['GetPipelineProcessOptionInitialDataLoadArgs'] initial_data_loads: Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param Sequence['GetPipelineProcessOptionReplicateSchemaChangeArgs'] replicate_schema_changes: Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param _builtins.str should_restart_on_failure: If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
-        :param _builtins.str start_using_default_mapping: If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        :param _builtins.str start_using_default_mapping: If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         pulumi.set(__self__, "initial_data_loads", initial_data_loads)
         pulumi.set(__self__, "replicate_schema_changes", replicate_schema_changes)
@@ -8083,7 +8102,7 @@ class GetPipelineProcessOptionResult(dict):
     @pulumi.getter(name="startUsingDefaultMapping")
     def start_using_default_mapping(self) -> _builtins.str:
         """
-        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         return pulumi.get(self, "start_using_default_mapping")
 
@@ -8917,7 +8936,7 @@ class GetPipelinesPipelineCollectionItemProcessOptionResult(dict):
         :param Sequence['GetPipelinesPipelineCollectionItemProcessOptionInitialDataLoadArgs'] initial_data_loads: Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param Sequence['GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArgs'] replicate_schema_changes: Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param _builtins.str should_restart_on_failure: If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
-        :param _builtins.str start_using_default_mapping: If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        :param _builtins.str start_using_default_mapping: If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         pulumi.set(__self__, "initial_data_loads", initial_data_loads)
         pulumi.set(__self__, "replicate_schema_changes", replicate_schema_changes)
@@ -8952,7 +8971,7 @@ class GetPipelinesPipelineCollectionItemProcessOptionResult(dict):
     @pulumi.getter(name="startUsingDefaultMapping")
     def start_using_default_mapping(self) -> _builtins.str:
         """
-        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         return pulumi.get(self, "start_using_default_mapping")
 

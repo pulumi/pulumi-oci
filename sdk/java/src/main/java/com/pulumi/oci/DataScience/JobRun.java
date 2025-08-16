@@ -12,9 +12,12 @@ import com.pulumi.oci.DataScience.inputs.JobRunState;
 import com.pulumi.oci.DataScience.outputs.JobRunJobConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobEnvironmentConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.JobRunJobInfrastructureConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobLogConfigurationOverrideDetails;
+import com.pulumi.oci.DataScience.outputs.JobRunJobNodeConfigurationOverrideDetails;
 import com.pulumi.oci.DataScience.outputs.JobRunJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.DataScience.outputs.JobRunLogDetail;
+import com.pulumi.oci.DataScience.outputs.JobRunNodeGroupDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
@@ -41,8 +44,13 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.JobRun;
  * import com.pulumi.oci.DataScience.JobRunArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.JobRunJobLogConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -69,6 +77,13 @@ import javax.annotation.Nullable;
  *                 .commandLineArguments(jobRunJobConfigurationOverrideDetailsCommandLineArguments)
  *                 .environmentVariables(jobRunJobConfigurationOverrideDetailsEnvironmentVariables)
  *                 .maximumRuntimeInMinutes(jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes)
+ *                 .startupProbeDetails(JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs.builder()
+ *                     .commands(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand)
+ *                     .jobProbeCheckType(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType)
+ *                     .failureThreshold(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold)
+ *                     .initialDelayInSeconds(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds)
+ *                     .periodInSeconds(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds)
+ *                     .build())
  *                 .build())
  *             .jobEnvironmentConfigurationOverrideDetails(JobRunJobEnvironmentConfigurationOverrideDetailsArgs.builder()
  *                 .image(jobRunJobEnvironmentConfigurationOverrideDetailsImage)
@@ -78,11 +93,66 @@ import javax.annotation.Nullable;
  *                 .imageDigest(jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest)
  *                 .imageSignatureId(testImageSignature.id())
  *                 .build())
+ *             .jobInfrastructureConfigurationOverrideDetails(JobRunJobInfrastructureConfigurationOverrideDetailsArgs.builder()
+ *                 .jobInfrastructureType(jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType)
+ *                 .blockStorageSizeInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs)
+ *                 .jobShapeConfigDetails(JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs.builder()
+ *                     .memoryInGbs(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs)
+ *                     .ocpus(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus)
+ *                     .build())
+ *                 .shapeName(testShape.name())
+ *                 .subnetId(testSubnet.id())
+ *                 .build())
  *             .jobLogConfigurationOverrideDetails(JobRunJobLogConfigurationOverrideDetailsArgs.builder()
  *                 .enableAutoLogCreation(jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation)
  *                 .enableLogging(jobRunJobLogConfigurationOverrideDetailsEnableLogging)
  *                 .logGroupId(testLogGroup.id())
  *                 .logId(testLog.id())
+ *                 .build())
+ *             .jobNodeConfigurationOverrideDetails(JobRunJobNodeConfigurationOverrideDetailsArgs.builder()
+ *                 .jobNodeType(jobRunJobNodeConfigurationOverrideDetailsJobNodeType)
+ *                 .jobNetworkConfiguration(JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs.builder()
+ *                     .jobNetworkType(jobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationJobNetworkType)
+ *                     .subnetId(testSubnet.id())
+ *                     .build())
+ *                 .jobNodeGroupConfigurationDetailsLists(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs.builder()
+ *                     .name(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListName)
+ *                     .jobConfigurationDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs.builder()
+ *                         .jobType(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType)
+ *                         .commandLineArguments(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments)
+ *                         .environmentVariables(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables)
+ *                         .maximumRuntimeInMinutes(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes)
+ *                         .startupProbeDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs.builder()
+ *                             .commands(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand)
+ *                             .jobProbeCheckType(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType)
+ *                             .failureThreshold(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold)
+ *                             .initialDelayInSeconds(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds)
+ *                             .periodInSeconds(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds)
+ *                             .build())
+ *                         .build())
+ *                     .jobEnvironmentConfigurationDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs.builder()
+ *                         .image(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage)
+ *                         .jobEnvironmentType(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType)
+ *                         .cmds(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd)
+ *                         .entrypoints(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint)
+ *                         .imageDigest(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest)
+ *                         .imageSignatureId(testImageSignature.id())
+ *                         .build())
+ *                     .jobInfrastructureConfigurationDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs.builder()
+ *                         .jobInfrastructureType(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType)
+ *                         .blockStorageSizeInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
+ *                         .jobShapeConfigDetails(JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
+ *                             .memoryInGbs(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
+ *                             .ocpus(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
+ *                             .build())
+ *                         .shapeName(testShape.name())
+ *                         .subnetId(testSubnet.id())
+ *                         .build())
+ *                     .minimumSuccessReplicas(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas)
+ *                     .replicas(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas)
+ *                     .build())
+ *                 .maximumRuntimeInMinutes(jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes)
+ *                 .startupOrder(jobRunJobNodeConfigurationOverrideDetailsStartupOrder)
  *                 .build())
  *             .opcParentRptUrl(jobRunOpcParentRptUrl)
  *             .build());
@@ -245,6 +315,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
         return this.jobInfrastructureConfigurationDetails;
     }
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    @Export(name="jobInfrastructureConfigurationOverrideDetails", refs={JobRunJobInfrastructureConfigurationOverrideDetails.class}, tree="[0]")
+    private Output<JobRunJobInfrastructureConfigurationOverrideDetails> jobInfrastructureConfigurationOverrideDetails;
+
+    /**
+     * @return The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    public Output<JobRunJobInfrastructureConfigurationOverrideDetails> jobInfrastructureConfigurationOverrideDetails() {
+        return this.jobInfrastructureConfigurationOverrideDetails;
+    }
+    /**
      * Logging configuration for resource.
      * 
      */
@@ -257,6 +341,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      */
     public Output<JobRunJobLogConfigurationOverrideDetails> jobLogConfigurationOverrideDetails() {
         return this.jobLogConfigurationOverrideDetails;
+    }
+    /**
+     * The job node configuration details
+     * 
+     */
+    @Export(name="jobNodeConfigurationOverrideDetails", refs={JobRunJobNodeConfigurationOverrideDetails.class}, tree="[0]")
+    private Output<JobRunJobNodeConfigurationOverrideDetails> jobNodeConfigurationOverrideDetails;
+
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public Output<JobRunJobNodeConfigurationOverrideDetails> jobNodeConfigurationOverrideDetails() {
+        return this.jobNodeConfigurationOverrideDetails;
     }
     /**
      * Collection of JobStorageMountConfigurationDetails.
@@ -273,14 +371,14 @@ public class JobRun extends com.pulumi.resources.CustomResource {
         return this.jobStorageMountConfigurationDetailsLists;
     }
     /**
-     * Details of the state of the job run.
+     * The state details of the node group.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return Details of the state of the job run.
+     * @return The state details of the node group.
      * 
      */
     public Output<String> lifecycleDetails() {
@@ -299,6 +397,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      */
     public Output<List<JobRunLogDetail>> logDetails() {
         return this.logDetails;
+    }
+    /**
+     * Collection of NodeGroupDetails
+     * 
+     */
+    @Export(name="nodeGroupDetailsLists", refs={List.class,JobRunNodeGroupDetailsList.class}, tree="[0,1]")
+    private Output<List<JobRunNodeGroupDetailsList>> nodeGroupDetailsLists;
+
+    /**
+     * @return Collection of NodeGroupDetails
+     * 
+     */
+    public Output<List<JobRunNodeGroupDetailsList>> nodeGroupDetailsLists() {
+        return this.nodeGroupDetailsLists;
     }
     /**
      * URL to fetch the Resource Principal Token from the parent resource.

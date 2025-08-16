@@ -31,6 +31,7 @@ class RedisClusterArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a RedisCluster resource.
@@ -48,6 +49,7 @@ class RedisClusterArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -64,6 +66,8 @@ class RedisClusterArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if oci_cache_config_set_id is not None:
+            pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
         if shard_count is not None:
             pulumi.set(__self__, "shard_count", shard_count)
 
@@ -192,6 +196,18 @@ class RedisClusterArgs:
         pulumi.set(self, "nsg_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="ociCacheConfigSetId")
+    def oci_cache_config_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        """
+        return pulumi.get(self, "oci_cache_config_set_id")
+
+    @oci_cache_config_set_id.setter
+    def oci_cache_config_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "oci_cache_config_set_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="shardCount")
     def shard_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -217,6 +233,7 @@ class _RedisClusterState:
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
                  primary_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
                  primary_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  replicas_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
@@ -240,6 +257,7 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         :param pulumi.Input[_builtins.str] primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
@@ -276,6 +294,8 @@ class _RedisClusterState:
             pulumi.set(__self__, "node_memory_in_gbs", node_memory_in_gbs)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if oci_cache_config_set_id is not None:
+            pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
         if primary_endpoint_ip_address is not None:
             pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
         if primary_fqdn is not None:
@@ -418,6 +438,18 @@ class _RedisClusterState:
     @nsg_ids.setter
     def nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ociCacheConfigSetId")
+    def oci_cache_config_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        """
+        return pulumi.get(self, "oci_cache_config_set_id")
+
+    @oci_cache_config_set_id.setter
+    def oci_cache_config_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "oci_cache_config_set_id", value)
 
     @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")
@@ -570,6 +602,7 @@ class RedisCluster(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None,
                  software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -600,6 +633,7 @@ class RedisCluster(pulumi.CustomResource):
                 "bar-key": "value",
             },
             nsg_ids=redis_cluster_nsg_ids,
+            oci_cache_config_set_id=test_oci_cache_config_set["id"],
             shard_count=redis_cluster_shard_count)
         ```
 
@@ -621,6 +655,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         :param pulumi.Input[_builtins.int] shard_count: (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         :param pulumi.Input[_builtins.str] software_version: (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
@@ -661,6 +696,7 @@ class RedisCluster(pulumi.CustomResource):
                 "bar-key": "value",
             },
             nsg_ids=redis_cluster_nsg_ids,
+            oci_cache_config_set_id=test_oci_cache_config_set["id"],
             shard_count=redis_cluster_shard_count)
         ```
 
@@ -695,6 +731,7 @@ class RedisCluster(pulumi.CustomResource):
                  node_count: Optional[pulumi.Input[_builtins.int]] = None,
                  node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
                  shard_count: Optional[pulumi.Input[_builtins.int]] = None,
                  software_version: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -723,6 +760,7 @@ class RedisCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'node_memory_in_gbs'")
             __props__.__dict__["node_memory_in_gbs"] = node_memory_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
+            __props__.__dict__["oci_cache_config_set_id"] = oci_cache_config_set_id
             __props__.__dict__["shard_count"] = shard_count
             if software_version is None and not opts.urn:
                 raise TypeError("Missing required property 'software_version'")
@@ -760,6 +798,7 @@ class RedisCluster(pulumi.CustomResource):
             node_count: Optional[pulumi.Input[_builtins.int]] = None,
             node_memory_in_gbs: Optional[pulumi.Input[_builtins.float]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            oci_cache_config_set_id: Optional[pulumi.Input[_builtins.str]] = None,
             primary_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
             primary_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
             replicas_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
@@ -788,6 +827,7 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] node_count: (Updatable) The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
         :param pulumi.Input[_builtins.float] node_memory_in_gbs: (Updatable) The amount of memory allocated to the cluster's nodes, in gigabytes.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+        :param pulumi.Input[_builtins.str] oci_cache_config_set_id: (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
         :param pulumi.Input[_builtins.str] primary_endpoint_ip_address: The private IP address of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] primary_fqdn: The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
         :param pulumi.Input[_builtins.str] replicas_endpoint_ip_address: The private IP address of the API endpoint for the cluster's replica nodes.
@@ -818,6 +858,7 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["node_memory_in_gbs"] = node_memory_in_gbs
         __props__.__dict__["nsg_ids"] = nsg_ids
+        __props__.__dict__["oci_cache_config_set_id"] = oci_cache_config_set_id
         __props__.__dict__["primary_endpoint_ip_address"] = primary_endpoint_ip_address
         __props__.__dict__["primary_fqdn"] = primary_fqdn
         __props__.__dict__["replicas_endpoint_ip_address"] = replicas_endpoint_ip_address
@@ -910,6 +951,14 @@ class RedisCluster(pulumi.CustomResource):
         (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
         """
         return pulumi.get(self, "nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="ociCacheConfigSetId")
+    def oci_cache_config_set_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        """
+        return pulumi.get(self, "oci_cache_config_set_id")
 
     @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")

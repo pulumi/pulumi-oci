@@ -14,11 +14,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetJobRunsFilter {
+    /**
+     * @return node group name.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetJobRunsFilter() {}
+    /**
+     * @return node group name.
+     * 
+     */
     public String name() {
         return this.name;
     }

@@ -63,7 +63,13 @@ import (
 //								},
 //								DisplayName: pulumi.Any(autoScalingConfigurationPoliciesRulesDisplayName),
 //								Metric: &autoscaling.AutoScalingConfigurationPolicyRuleMetricArgs{
-//									MetricType: pulumi.Any(autoScalingConfigurationPoliciesRulesMetricMetricType),
+//									MetricCompartmentId: pulumi.Any(testCompartment.Id),
+//									MetricSource:        pulumi.Any(autoScalingConfigurationPoliciesRulesMetricMetricSource),
+//									MetricType:          pulumi.Any(autoScalingConfigurationPoliciesRulesMetricMetricType),
+//									Namespace:           pulumi.Any(autoScalingConfigurationPoliciesRulesMetricNamespace),
+//									PendingDuration:     pulumi.Any(autoScalingConfigurationPoliciesRulesMetricPendingDuration),
+//									Query:               pulumi.Any(autoScalingConfigurationPoliciesRulesMetricQuery),
+//									ResourceGroup:       pulumi.Any(autoScalingConfigurationPoliciesRulesMetricResourceGroup),
 //									Threshold: &autoscaling.AutoScalingConfigurationPolicyRuleMetricThresholdArgs{
 //										Operator: pulumi.Any(autoScalingConfigurationPoliciesRulesMetricThresholdOperator),
 //										Value:    pulumi.Any(autoScalingConfigurationPoliciesRulesMetricThresholdValue),

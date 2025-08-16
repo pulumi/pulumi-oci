@@ -248,7 +248,7 @@ namespace Pulumi.Oci.Psql
         public Output<string> Shape { get; private set; } = null!;
 
         /// <summary>
-        /// The source used to restore the database system.
+        /// The source of the database system.
         /// </summary>
         [Output("source")]
         public Output<Outputs.DbSystemSource> Source { get; private set; } = null!;
@@ -466,7 +466,7 @@ namespace Pulumi.Oci.Psql
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
-        /// The source used to restore the database system.
+        /// The source of the database system.
         /// </summary>
         [Input("source")]
         public Input<Inputs.DbSystemSourceArgs>? Source { get; set; }
@@ -646,7 +646,7 @@ namespace Pulumi.Oci.Psql
         public Input<string>? Shape { get; set; }
 
         /// <summary>
-        /// The source used to restore the database system.
+        /// The source of the database system.
         /// </summary>
         [Input("source")]
         public Input<Inputs.DbSystemSourceGetArgs>? Source { get; set; }

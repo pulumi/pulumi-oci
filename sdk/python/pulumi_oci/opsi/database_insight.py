@@ -43,7 +43,8 @@ class DatabaseInsightArgs:
                  management_agent_id: Optional[pulumi.Input[_builtins.str]] = None,
                  opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 status: Optional[pulumi.Input[_builtins.str]] = None):
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DatabaseInsight resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier of database
@@ -72,6 +73,7 @@ class DatabaseInsightArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "entity_source", entity_source)
@@ -117,6 +119,8 @@ class DatabaseInsightArgs:
             pulumi.set(__self__, "service_name", service_name)
         if status is not None:
             pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -396,6 +400,18 @@ class DatabaseInsightArgs:
     @status.setter
     def status(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
 
 @pulumi.input_type
@@ -1081,6 +1097,7 @@ class DatabaseInsight(pulumi.CustomResource):
                  opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  status: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         ## Example Usage
@@ -1121,6 +1138,7 @@ class DatabaseInsight(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         ...
     @overload
@@ -1177,6 +1195,7 @@ class DatabaseInsight(pulumi.CustomResource):
                  opsi_private_endpoint_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  status: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1213,6 +1232,7 @@ class DatabaseInsight(pulumi.CustomResource):
             __props__.__dict__["opsi_private_endpoint_id"] = opsi_private_endpoint_id
             __props__.__dict__["service_name"] = service_name
             __props__.__dict__["status"] = status
+            __props__.__dict__["system_tags"] = system_tags
             __props__.__dict__["database_display_name"] = None
             __props__.__dict__["database_name"] = None
             __props__.__dict__["database_type"] = None
@@ -1227,7 +1247,6 @@ class DatabaseInsight(pulumi.CustomResource):
             __props__.__dict__["processor_count"] = None
             __props__.__dict__["root_id"] = None
             __props__.__dict__["state"] = None
-            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(DatabaseInsight, __self__).__init__(
@@ -1411,7 +1430,7 @@ class DatabaseInsight(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="credentialDetails")
-    def credential_details(self) -> pulumi.Output[Optional['outputs.DatabaseInsightCredentialDetails']]:
+    def credential_details(self) -> pulumi.Output['outputs.DatabaseInsightCredentialDetails']:
         """
         User credential details to connect to the database.
         """

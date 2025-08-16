@@ -31,9 +31,10 @@ class AutonomousDatabaseSaasAdminUserArgs:
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         :param pulumi.Input[_builtins.int] duration: How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
-        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
-        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
+        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
                
                
                ** IMPORTANT **
@@ -93,7 +94,7 @@ class AutonomousDatabaseSaasAdminUserArgs:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
+        A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         """
         return pulumi.get(self, "password")
 
@@ -105,7 +106,7 @@ class AutonomousDatabaseSaasAdminUserArgs:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "secret_id")
 
@@ -118,10 +119,6 @@ class AutonomousDatabaseSaasAdminUserArgs:
     def secret_version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "secret_version_number")
 
@@ -132,6 +129,13 @@ class AutonomousDatabaseSaasAdminUserArgs:
     @_builtins.property
     @pulumi.getter(name="timeSaasAdminUserEnabled")
     def time_saas_admin_user_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "time_saas_admin_user_enabled")
 
     @time_saas_admin_user_enabled.setter
@@ -154,9 +158,10 @@ class _AutonomousDatabaseSaasAdminUserState:
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] duration: How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
-        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
-        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
+        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
                
                
                ** IMPORTANT **
@@ -217,7 +222,7 @@ class _AutonomousDatabaseSaasAdminUserState:
     @pulumi.getter
     def password(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
+        A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         """
         return pulumi.get(self, "password")
 
@@ -229,7 +234,7 @@ class _AutonomousDatabaseSaasAdminUserState:
     @pulumi.getter(name="secretId")
     def secret_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "secret_id")
 
@@ -242,10 +247,6 @@ class _AutonomousDatabaseSaasAdminUserState:
     def secret_version_number(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "secret_version_number")
 
@@ -256,6 +257,13 @@ class _AutonomousDatabaseSaasAdminUserState:
     @_builtins.property
     @pulumi.getter(name="timeSaasAdminUserEnabled")
     def time_saas_admin_user_enabled(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "time_saas_admin_user_enabled")
 
     @time_saas_admin_user_enabled.setter
@@ -278,33 +286,19 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
                  time_saas_admin_user_enabled: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
-        This resource creates and enables the Autonomous Database administrative user account in Oracle Cloud Infrastructure Database service.
+        This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
-            autonomous_database_id=test_autonomous_database["id"],
-            password=autonomous_database_saas_admin_user_password,
-            access_type=autonomous_database_saas_admin_user_access_type,
-            duration=autonomous_database_saas_admin_user_duration)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
+        This operation updates SaaS administrative user configuration of the Autonomous Database.
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] duration: How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
-        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
-        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
+        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
                
                
                ** IMPORTANT **
@@ -317,24 +311,9 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
                  args: AutonomousDatabaseSaasAdminUserArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource creates and enables the Autonomous Database administrative user account in Oracle Cloud Infrastructure Database service.
+        This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
-            autonomous_database_id=test_autonomous_database["id"],
-            password=autonomous_database_saas_admin_user_password,
-            access_type=autonomous_database_saas_admin_user_access_type,
-            duration=autonomous_database_saas_admin_user_duration)
-        ```
-
-        ## Import
-
-        Import is not supported for this resource.
+        This operation updates SaaS administrative user configuration of the Autonomous Database.
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseSaasAdminUserArgs args: The arguments to use to populate this resource's properties.
@@ -405,9 +384,10 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[_builtins.int] duration: How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
-        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
-        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        :param pulumi.Input[_builtins.str] password: A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
+        :param pulumi.Input[_builtins.str] secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[_builtins.int] secret_version_number: The version of the vault secret. If no version is specified, the latest version will be used.
+        :param pulumi.Input[_builtins.str] time_saas_admin_user_enabled: The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
                
                
                ** IMPORTANT **
@@ -454,7 +434,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash). The password is mandatory if "secret_id" is not present.
+        A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
         """
         return pulumi.get(self, "password")
 
@@ -462,7 +442,7 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). The secret is mandatory if "password" is not present.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "secret_id")
 
@@ -471,15 +451,18 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
     def secret_version_number(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
         The version of the vault secret. If no version is specified, the latest version will be used.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "secret_version_number")
 
     @_builtins.property
     @pulumi.getter(name="timeSaasAdminUserEnabled")
     def time_saas_admin_user_enabled(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "time_saas_admin_user_enabled")
 

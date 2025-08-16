@@ -29,6 +29,8 @@ class GatewayArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  response_cache_details: Optional[pulumi.Input['GatewayResponseCacheDetailsArgs']] = None):
         """
@@ -61,6 +63,10 @@ class GatewayArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if response_cache_details is not None:
@@ -167,6 +173,24 @@ class GatewayArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
     def network_security_group_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -203,11 +227,14 @@ class _GatewayState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  hostname: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayIpAddressArgs']]]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  response_cache_details: Optional[pulumi.Input['GatewayResponseCacheDetailsArgs']] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -251,8 +278,12 @@ class _GatewayState:
             pulumi.set(__self__, "hostname", hostname)
         if ip_addresses is not None:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if network_security_group_ids is not None:
             pulumi.set(__self__, "network_security_group_ids", network_security_group_ids)
         if response_cache_details is not None:
@@ -261,6 +292,8 @@ class _GatewayState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
@@ -375,6 +408,15 @@ class _GatewayState:
         pulumi.set(self, "ip_addresses", value)
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -385,6 +427,15 @@ class _GatewayState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['GatewayLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -439,6 +490,15 @@ class _GatewayState:
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -476,6 +536,8 @@ class Gateway(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  response_cache_details: Optional[pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -631,6 +693,8 @@ class Gateway(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  endpoint_type: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
                  network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  response_cache_details: Optional[pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -654,6 +718,8 @@ class Gateway(pulumi.CustomResource):
                 raise TypeError("Missing required property 'endpoint_type'")
             __props__.__dict__["endpoint_type"] = endpoint_type
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["network_security_group_ids"] = network_security_group_ids
             __props__.__dict__["response_cache_details"] = response_cache_details
             if subnet_id is None and not opts.urn:
@@ -663,6 +729,7 @@ class Gateway(pulumi.CustomResource):
             __props__.__dict__["ip_addresses"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
         super(Gateway, __self__).__init__(
@@ -684,11 +751,14 @@ class Gateway(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             hostname: Optional[pulumi.Input[_builtins.str]] = None,
             ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict']]]]] = None,
+            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict']]]]] = None,
             network_security_group_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             response_cache_details: Optional[pulumi.Input[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Gateway':
         """
@@ -732,11 +802,14 @@ class Gateway(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["hostname"] = hostname
         __props__.__dict__["ip_addresses"] = ip_addresses
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["network_security_group_ids"] = network_security_group_ids
         __props__.__dict__["response_cache_details"] = response_cache_details
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
         return Gateway(resource_name, opts=opts, __props__=__props__)
@@ -814,12 +887,22 @@ class Gateway(pulumi.CustomResource):
         return pulumi.get(self, "ip_addresses")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.GatewayLock']]:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="networkSecurityGroupIds")
@@ -856,6 +939,11 @@ class Gateway(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

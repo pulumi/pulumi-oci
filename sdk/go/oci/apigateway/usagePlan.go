@@ -92,11 +92,14 @@ type UsagePlan struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringOutput      `pulumi:"lifecycleDetails"`
+	Locks            UsagePlanLockArrayOutput `pulumi:"locks"`
 	// The current state of the usage plan.
-	State pulumi.StringOutput `pulumi:"state"`
+	State      pulumi.StringOutput    `pulumi:"state"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -151,11 +154,14 @@ type usagePlanState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string         `pulumi:"lifecycleDetails"`
+	Locks            []UsagePlanLock `pulumi:"locks"`
 	// The current state of the usage plan.
-	State *string `pulumi:"state"`
+	State      *string           `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -175,11 +181,14 @@ type UsagePlanState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	Locks            UsagePlanLockArrayInput
 	// The current state of the usage plan.
-	State pulumi.StringPtrInput
+	State      pulumi.StringPtrInput
+	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -203,7 +212,9 @@ type usagePlanArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	Locks          []UsagePlanLock   `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a UsagePlan resource.
@@ -220,7 +231,9 @@ type UsagePlanArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	Locks          UsagePlanLockArrayInput
 }
 
 func (UsagePlanArgs) ElementType() reflect.Type {
@@ -338,14 +351,26 @@ func (o UsagePlanOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+func (o UsagePlanOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o UsagePlanOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o UsagePlanOutput) Locks() UsagePlanLockArrayOutput {
+	return o.ApplyT(func(v *UsagePlan) UsagePlanLockArrayOutput { return v.Locks }).(UsagePlanLockArrayOutput)
+}
+
 // The current state of the usage plan.
 func (o UsagePlanOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *UsagePlan) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+func (o UsagePlanOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UsagePlan) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

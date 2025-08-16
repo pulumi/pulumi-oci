@@ -38,6 +38,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// </summary>
+        public readonly string? ComputeClusterId;
+        /// <summary>
         /// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         /// </summary>
         public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails? CreateVnicDetails;
@@ -144,6 +148,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? Metadata;
         /// <summary>
+        /// The details for providing placement constraints.
+        /// </summary>
+        public readonly Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails? PlacementConstraintDetails;
+        /// <summary>
         /// (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -195,6 +203,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             string? compartmentId,
 
+            string? computeClusterId,
+
             Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails? createVnicDetails,
 
             string? dedicatedVmHostId,
@@ -223,6 +233,8 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableDictionary<string, string>? metadata,
 
+            Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails? placementConstraintDetails,
+
             Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig? platformConfig,
 
             Outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig? preemptibleInstanceConfig,
@@ -243,6 +255,7 @@ namespace Pulumi.Oci.Core.Outputs
             CapacityReservationId = capacityReservationId;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
+            ComputeClusterId = computeClusterId;
             CreateVnicDetails = createVnicDetails;
             DedicatedVmHostId = dedicatedVmHostId;
             DefinedTags = definedTags;
@@ -257,6 +270,7 @@ namespace Pulumi.Oci.Core.Outputs
             LaunchOptions = launchOptions;
             LicensingConfigs = licensingConfigs;
             Metadata = metadata;
+            PlacementConstraintDetails = placementConstraintDetails;
             PlatformConfig = platformConfig;
             PreemptibleInstanceConfig = preemptibleInstanceConfig;
             PreferredMaintenanceAction = preferredMaintenanceAction;

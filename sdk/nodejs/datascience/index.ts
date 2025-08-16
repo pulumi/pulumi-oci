@@ -90,6 +90,11 @@ export const getModelDeployment: typeof import("./getModelDeployment").getModelD
 export const getModelDeploymentOutput: typeof import("./getModelDeployment").getModelDeploymentOutput = null as any;
 utilities.lazyLoad(exports, ["getModelDeployment","getModelDeploymentOutput"], () => require("./getModelDeployment"));
 
+export { GetModelDeploymentModelStatesArgs, GetModelDeploymentModelStatesResult, GetModelDeploymentModelStatesOutputArgs } from "./getModelDeploymentModelStates";
+export const getModelDeploymentModelStates: typeof import("./getModelDeploymentModelStates").getModelDeploymentModelStates = null as any;
+export const getModelDeploymentModelStatesOutput: typeof import("./getModelDeploymentModelStates").getModelDeploymentModelStatesOutput = null as any;
+utilities.lazyLoad(exports, ["getModelDeploymentModelStates","getModelDeploymentModelStatesOutput"], () => require("./getModelDeploymentModelStates"));
+
 export { GetModelDeploymentShapesArgs, GetModelDeploymentShapesResult, GetModelDeploymentShapesOutputArgs } from "./getModelDeploymentShapes";
 export const getModelDeploymentShapes: typeof import("./getModelDeploymentShapes").getModelDeploymentShapes = null as any;
 export const getModelDeploymentShapesOutput: typeof import("./getModelDeploymentShapes").getModelDeploymentShapesOutput = null as any;
@@ -99,6 +104,36 @@ export { GetModelDeploymentsArgs, GetModelDeploymentsResult, GetModelDeployments
 export const getModelDeployments: typeof import("./getModelDeployments").getModelDeployments = null as any;
 export const getModelDeploymentsOutput: typeof import("./getModelDeployments").getModelDeploymentsOutput = null as any;
 utilities.lazyLoad(exports, ["getModelDeployments","getModelDeploymentsOutput"], () => require("./getModelDeployments"));
+
+export { GetModelGroupArgs, GetModelGroupResult, GetModelGroupOutputArgs } from "./getModelGroup";
+export const getModelGroup: typeof import("./getModelGroup").getModelGroup = null as any;
+export const getModelGroupOutput: typeof import("./getModelGroup").getModelGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getModelGroup","getModelGroupOutput"], () => require("./getModelGroup"));
+
+export { GetModelGroupArtifactContentArgs, GetModelGroupArtifactContentResult, GetModelGroupArtifactContentOutputArgs } from "./getModelGroupArtifactContent";
+export const getModelGroupArtifactContent: typeof import("./getModelGroupArtifactContent").getModelGroupArtifactContent = null as any;
+export const getModelGroupArtifactContentOutput: typeof import("./getModelGroupArtifactContent").getModelGroupArtifactContentOutput = null as any;
+utilities.lazyLoad(exports, ["getModelGroupArtifactContent","getModelGroupArtifactContentOutput"], () => require("./getModelGroupArtifactContent"));
+
+export { GetModelGroupModelsArgs, GetModelGroupModelsResult, GetModelGroupModelsOutputArgs } from "./getModelGroupModels";
+export const getModelGroupModels: typeof import("./getModelGroupModels").getModelGroupModels = null as any;
+export const getModelGroupModelsOutput: typeof import("./getModelGroupModels").getModelGroupModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getModelGroupModels","getModelGroupModelsOutput"], () => require("./getModelGroupModels"));
+
+export { GetModelGroupVersionHistoriesArgs, GetModelGroupVersionHistoriesResult, GetModelGroupVersionHistoriesOutputArgs } from "./getModelGroupVersionHistories";
+export const getModelGroupVersionHistories: typeof import("./getModelGroupVersionHistories").getModelGroupVersionHistories = null as any;
+export const getModelGroupVersionHistoriesOutput: typeof import("./getModelGroupVersionHistories").getModelGroupVersionHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getModelGroupVersionHistories","getModelGroupVersionHistoriesOutput"], () => require("./getModelGroupVersionHistories"));
+
+export { GetModelGroupVersionHistoryArgs, GetModelGroupVersionHistoryResult, GetModelGroupVersionHistoryOutputArgs } from "./getModelGroupVersionHistory";
+export const getModelGroupVersionHistory: typeof import("./getModelGroupVersionHistory").getModelGroupVersionHistory = null as any;
+export const getModelGroupVersionHistoryOutput: typeof import("./getModelGroupVersionHistory").getModelGroupVersionHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getModelGroupVersionHistory","getModelGroupVersionHistoryOutput"], () => require("./getModelGroupVersionHistory"));
+
+export { GetModelGroupsArgs, GetModelGroupsResult, GetModelGroupsOutputArgs } from "./getModelGroups";
+export const getModelGroups: typeof import("./getModelGroups").getModelGroups = null as any;
+export const getModelGroupsOutput: typeof import("./getModelGroups").getModelGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getModelGroups","getModelGroupsOutput"], () => require("./getModelGroups"));
 
 export { GetModelProvenanceArgs, GetModelProvenanceResult, GetModelProvenanceOutputArgs } from "./getModelProvenance";
 export const getModelProvenance: typeof import("./getModelProvenance").getModelProvenance = null as any;
@@ -240,6 +275,21 @@ export type ModelDeployment = import("./modelDeployment").ModelDeployment;
 export const ModelDeployment: typeof import("./modelDeployment").ModelDeployment = null as any;
 utilities.lazyLoad(exports, ["ModelDeployment"], () => require("./modelDeployment"));
 
+export { ModelGroupArgs, ModelGroupState } from "./modelGroup";
+export type ModelGroup = import("./modelGroup").ModelGroup;
+export const ModelGroup: typeof import("./modelGroup").ModelGroup = null as any;
+utilities.lazyLoad(exports, ["ModelGroup"], () => require("./modelGroup"));
+
+export { ModelGroupArtifactArgs, ModelGroupArtifactState } from "./modelGroupArtifact";
+export type ModelGroupArtifact = import("./modelGroupArtifact").ModelGroupArtifact;
+export const ModelGroupArtifact: typeof import("./modelGroupArtifact").ModelGroupArtifact = null as any;
+utilities.lazyLoad(exports, ["ModelGroupArtifact"], () => require("./modelGroupArtifact"));
+
+export { ModelGroupVersionHistoryArgs, ModelGroupVersionHistoryState } from "./modelGroupVersionHistory";
+export type ModelGroupVersionHistory = import("./modelGroupVersionHistory").ModelGroupVersionHistory;
+export const ModelGroupVersionHistory: typeof import("./modelGroupVersionHistory").ModelGroupVersionHistory = null as any;
+utilities.lazyLoad(exports, ["ModelGroupVersionHistory"], () => require("./modelGroupVersionHistory"));
+
 export { ModelProvenanceArgs, ModelProvenanceState } from "./modelProvenance";
 export type ModelProvenance = import("./modelProvenance").ModelProvenance;
 export const ModelProvenance: typeof import("./modelProvenance").ModelProvenance = null as any;
@@ -307,6 +357,12 @@ const _module = {
                 return new ModelDefinedMetadataArtifact(name, <any>undefined, { urn })
             case "oci:DataScience/modelDeployment:ModelDeployment":
                 return new ModelDeployment(name, <any>undefined, { urn })
+            case "oci:DataScience/modelGroup:ModelGroup":
+                return new ModelGroup(name, <any>undefined, { urn })
+            case "oci:DataScience/modelGroupArtifact:ModelGroupArtifact":
+                return new ModelGroupArtifact(name, <any>undefined, { urn })
+            case "oci:DataScience/modelGroupVersionHistory:ModelGroupVersionHistory":
+                return new ModelGroupVersionHistory(name, <any>undefined, { urn })
             case "oci:DataScience/modelProvenance:ModelProvenance":
                 return new ModelProvenance(name, <any>undefined, { urn })
             case "oci:DataScience/modelVersionSet:ModelVersionSet":
@@ -339,6 +395,9 @@ pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactImport", 
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelCustomMetadataArtifact", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelDefinedMetadataArtifact", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelDeployment", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/modelGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/modelGroupArtifact", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/modelGroupVersionHistory", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelProvenance", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelVersionSet", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/notebookSession", _module)

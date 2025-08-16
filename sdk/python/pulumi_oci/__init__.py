@@ -12,8 +12,6 @@ from .provider import *
 if typing.TYPE_CHECKING:
     import pulumi_oci.adm as __adm
     adm = __adm
-    import pulumi_oci.aianomalydetection as __aianomalydetection
-    aianomalydetection = __aianomalydetection
     import pulumi_oci.aidocument as __aidocument
     aidocument = __aidocument
     import pulumi_oci.ailanguage as __ailanguage
@@ -260,7 +258,6 @@ if typing.TYPE_CHECKING:
     zpr = __zpr
 else:
     adm = _utilities.lazy_import('pulumi_oci.adm')
-    aianomalydetection = _utilities.lazy_import('pulumi_oci.aianomalydetection')
     aidocument = _utilities.lazy_import('pulumi_oci.aidocument')
     ailanguage = _utilities.lazy_import('pulumi_oci.ailanguage')
     aivision = _utilities.lazy_import('pulumi_oci.aivision')
@@ -417,46 +414,6 @@ _utilities.register(
   "fqn": "pulumi_oci.adm",
   "classes": {
    "oci:Adm/vulnerabilityAudit:VulnerabilityAudit": "VulnerabilityAudit"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "AiAnomalyDetection/aiPrivateEndpoint",
-  "fqn": "pulumi_oci.aianomalydetection",
-  "classes": {
-   "oci:AiAnomalyDetection/aiPrivateEndpoint:AiPrivateEndpoint": "AiPrivateEndpoint"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "AiAnomalyDetection/dataAsset",
-  "fqn": "pulumi_oci.aianomalydetection",
-  "classes": {
-   "oci:AiAnomalyDetection/dataAsset:DataAsset": "DataAsset"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "AiAnomalyDetection/detectAnomalyJob",
-  "fqn": "pulumi_oci.aianomalydetection",
-  "classes": {
-   "oci:AiAnomalyDetection/detectAnomalyJob:DetectAnomalyJob": "DetectAnomalyJob"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "AiAnomalyDetection/model",
-  "fqn": "pulumi_oci.aianomalydetection",
-  "classes": {
-   "oci:AiAnomalyDetection/model:Model": "Model"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "AiAnomalyDetection/project",
-  "fqn": "pulumi_oci.aianomalydetection",
-  "classes": {
-   "oci:AiAnomalyDetection/project:Project": "Project"
   }
  },
  {
@@ -673,6 +630,14 @@ _utilities.register(
   "fqn": "pulumi_oci.apmsynthetics",
   "classes": {
    "oci:ApmSynthetics/script:Script": "Script"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ApmTraces/scheduledQuery",
+  "fqn": "pulumi_oci.apmtraces",
+  "classes": {
+   "oci:ApmTraces/scheduledQuery:ScheduledQuery": "ScheduledQuery"
   }
  },
  {
@@ -2629,6 +2594,30 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataScience/modelGroup",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelGroup:ModelGroup": "ModelGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/modelGroupArtifact",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelGroupArtifact:ModelGroupArtifact": "ModelGroupArtifact"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataScience/modelGroupVersionHistory",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelGroupVersionHistory:ModelGroupVersionHistory": "ModelGroupVersionHistory"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataScience/modelProvenance",
   "fqn": "pulumi_oci.datascience",
   "classes": {
@@ -3273,6 +3262,102 @@ _utilities.register(
   "fqn": "pulumi_oci.databasemanagement",
   "classes": {
    "oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement": "AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudAsm",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudAsm:CloudAsm": "CloudAsm"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudAsmInstance",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudAsmInstance:CloudAsmInstance": "CloudAsmInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudCluster",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudCluster:CloudCluster": "CloudCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudClusterInstance",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudClusterInstance:CloudClusterInstance": "CloudClusterInstance"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbHome",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbHome:CloudDbHome": "CloudDbHome"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbNode",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbNode:CloudDbNode": "CloudDbNode"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbSystem",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbSystem:CloudDbSystem": "CloudDbSystem"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbSystemCloudDatabaseManagementsManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbSystemCloudDatabaseManagementsManagement:CloudDbSystemCloudDatabaseManagementsManagement": "CloudDbSystemCloudDatabaseManagementsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement:CloudDbSystemCloudStackMonitoringsManagement": "CloudDbSystemCloudStackMonitoringsManagement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbSystemConnector",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbSystemConnector:CloudDbSystemConnector": "CloudDbSystemConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudDbSystemDiscovery",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery": "CloudDbSystemDiscovery"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseManagement/cloudListener",
+  "fqn": "pulumi_oci.databasemanagement",
+  "classes": {
+   "oci:DatabaseManagement/cloudListener:CloudListener": "CloudListener"
   }
  },
  {
@@ -5389,6 +5474,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "ManagementAgent/namedCredential",
+  "fqn": "pulumi_oci.managementagent",
+  "classes": {
+   "oci:ManagementAgent/namedCredential:NamedCredential": "NamedCredential"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "ManagementDashboard/managementDashboardsImport",
   "fqn": "pulumi_oci.managementdashboard",
   "classes": {
@@ -6517,6 +6610,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Redis/ociCacheConfigSet",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/ociCacheConfigSet:OciCacheConfigSet": "OciCacheConfigSet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Redis/ociCacheConfigSetlistAssociatedOciCacheCluster",
+  "fqn": "pulumi_oci.redis",
+  "classes": {
+   "oci:Redis/ociCacheConfigSetlistAssociatedOciCacheCluster:OciCacheConfigSetlistAssociatedOciCacheCluster": "OciCacheConfigSetlistAssociatedOciCacheCluster"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Redis/ociCacheUser",
   "fqn": "pulumi_oci.redis",
   "classes": {
@@ -7017,6 +7126,14 @@ _utilities.register(
   "fqn": "pulumi_oci.zpr",
   "classes": {
    "oci:Zpr/zprPolicy:ZprPolicy": "ZprPolicy"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/apiPlatformApiPlatformInstance",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance": "ApiPlatformApiPlatformInstance"
   }
  },
  {

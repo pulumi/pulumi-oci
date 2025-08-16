@@ -170,7 +170,8 @@ type LookupAutonomousDatabaseResult struct {
 	// True if the database uses [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).
 	IsDedicated bool `pulumi:"isDedicated"`
 	// Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
-	IsDevTier bool `pulumi:"isDevTier"`
+	IsDevTier                         bool `pulumi:"isDevTier"`
+	IsDisableDbVersionUpgradeSchedule bool `pulumi:"isDisableDbVersionUpgradeSchedule"`
 	// If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
 	IsDisconnectPeer bool `pulumi:"isDisconnectPeer"`
 	// Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
@@ -189,7 +190,8 @@ type LookupAutonomousDatabaseResult struct {
 	// Indicates whether the Autonomous Database has Cross Region Data Guard enabled. Not applicable to Autonomous Databases using dedicated Exadata infrastructure or Exadata Cloud@Customer infrastructure.
 	IsRemoteDataGuardEnabled bool `pulumi:"isRemoteDataGuardEnabled"`
 	// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
-	IsReplicateAutomaticBackups bool `pulumi:"isReplicateAutomaticBackups"`
+	IsReplicateAutomaticBackups          bool `pulumi:"isReplicateAutomaticBackups"`
+	IsScheduleDbVersionUpgradeToEarliest bool `pulumi:"isScheduleDbVersionUpgradeToEarliest"`
 	// Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
 	IsShrinkOnly bool `pulumi:"isShrinkOnly"`
 	// Key History Entry.
@@ -308,6 +310,10 @@ type LookupAutonomousDatabaseResult struct {
 	TimeDeletionOfFreeAutonomousDatabase string `pulumi:"timeDeletionOfFreeAutonomousDatabase"`
 	// The date and time the Disaster Recovery role was switched for the standby Autonomous Database.
 	TimeDisasterRecoveryRoleChanged string `pulumi:"timeDisasterRecoveryRoleChanged"`
+	// The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+	TimeEarliestAvailableDbVersionUpgrade string `pulumi:"timeEarliestAvailableDbVersionUpgrade"`
+	// The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+	TimeLatestAvailableDbVersionUpgrade string `pulumi:"timeLatestAvailableDbVersionUpgrade"`
 	// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
 	TimeLocalDataGuardEnabled string `pulumi:"timeLocalDataGuardEnabled"`
 	// The date and time when maintenance will begin.
@@ -330,6 +336,8 @@ type LookupAutonomousDatabaseResult struct {
 	TimeOfNextRefresh string `pulumi:"timeOfNextRefresh"`
 	// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
 	TimeReclamationOfFreeAutonomousDatabase string `pulumi:"timeReclamationOfFreeAutonomousDatabase"`
+	// The date and time the Autonomous Database scheduled to upgrade to 23ai.
+	TimeScheduledDbVersionUpgrade string `pulumi:"timeScheduledDbVersionUpgrade"`
 	// The date and time the Autonomous Database was most recently undeleted.
 	TimeUndeleted string `pulumi:"timeUndeleted"`
 	// The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
@@ -672,6 +680,10 @@ func (o LookupAutonomousDatabaseResultOutput) IsDevTier() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDevTier }).(pulumi.BoolOutput)
 }
 
+func (o LookupAutonomousDatabaseResultOutput) IsDisableDbVersionUpgradeSchedule() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDisableDbVersionUpgradeSchedule }).(pulumi.BoolOutput)
+}
+
 // If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
 func (o LookupAutonomousDatabaseResultOutput) IsDisconnectPeer() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsDisconnectPeer }).(pulumi.BoolOutput)
@@ -719,6 +731,10 @@ func (o LookupAutonomousDatabaseResultOutput) IsRemoteDataGuardEnabled() pulumi.
 // If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
 func (o LookupAutonomousDatabaseResultOutput) IsReplicateAutomaticBackups() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsReplicateAutomaticBackups }).(pulumi.BoolOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) IsScheduleDbVersionUpgradeToEarliest() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) bool { return v.IsScheduleDbVersionUpgradeToEarliest }).(pulumi.BoolOutput)
 }
 
 // Deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.
@@ -1037,6 +1053,16 @@ func (o LookupAutonomousDatabaseResultOutput) TimeDisasterRecoveryRoleChanged() 
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeDisasterRecoveryRoleChanged }).(pulumi.StringOutput)
 }
 
+// The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+func (o LookupAutonomousDatabaseResultOutput) TimeEarliestAvailableDbVersionUpgrade() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeEarliestAvailableDbVersionUpgrade }).(pulumi.StringOutput)
+}
+
+// The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+func (o LookupAutonomousDatabaseResultOutput) TimeLatestAvailableDbVersionUpgrade() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeLatestAvailableDbVersionUpgrade }).(pulumi.StringOutput)
+}
+
 // The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
 func (o LookupAutonomousDatabaseResultOutput) TimeLocalDataGuardEnabled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeLocalDataGuardEnabled }).(pulumi.StringOutput)
@@ -1090,6 +1116,11 @@ func (o LookupAutonomousDatabaseResultOutput) TimeOfNextRefresh() pulumi.StringO
 // The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
 func (o LookupAutonomousDatabaseResultOutput) TimeReclamationOfFreeAutonomousDatabase() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeReclamationOfFreeAutonomousDatabase }).(pulumi.StringOutput)
+}
+
+// The date and time the Autonomous Database scheduled to upgrade to 23ai.
+func (o LookupAutonomousDatabaseResultOutput) TimeScheduledDbVersionUpgrade() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.TimeScheduledDbVersionUpgrade }).(pulumi.StringOutput)
 }
 
 // The date and time the Autonomous Database was most recently undeleted.

@@ -49,12 +49,24 @@ export interface GetConfigArgs {
  * A collection of values returned by getConfig.
  */
 export interface GetConfigResult {
+    /**
+     * The version of the referenced agent bundle.
+     */
+    readonly agentVersion: string;
     readonly apmDomainId: string;
+    /**
+     * The directory owned by runAsUser.
+     */
+    readonly attachInstallDir: string;
     readonly configId: string;
     /**
      * The type of configuration item.
      */
     readonly configType: string;
+    /**
+     * Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+     */
+    readonly configs: outputs.ApmConfig.GetConfigConfig[];
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
      */
@@ -104,6 +116,18 @@ export interface GetConfigResult {
      */
     readonly inUseBies: outputs.ApmConfig.GetConfigInUseBy[];
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     */
+    readonly managementAgentId: string;
+    /**
+     * The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     */
+    readonly matchAgentsWithAttributeKeys: string[];
+    /**
+     * The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     */
+    readonly matchAgentsWithAttributeValue: string;
+    /**
      * The list of metrics in this group.
      */
     readonly metrics: outputs.ApmConfig.GetConfigMetric[];
@@ -116,7 +140,23 @@ export interface GetConfigResult {
      * The options are stored here as JSON.
      */
     readonly options: string;
+    /**
+     * Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     */
+    readonly overrides: outputs.ApmConfig.GetConfigOverride[];
+    /**
+     * Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     */
+    readonly processFilters: string[];
     readonly rules: outputs.ApmConfig.GetConfigRule[];
+    /**
+     * The OS user that should be used to discover Java processes.
+     */
+    readonly runAsUser: string;
+    /**
+     * The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     */
+    readonly serviceName: string;
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
      */

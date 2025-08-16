@@ -17,18 +17,39 @@ from . import outputs
 
 __all__ = [
     'JobJobConfigurationDetails',
+    'JobJobConfigurationDetailsStartupProbeDetails',
     'JobJobEnvironmentConfigurationDetails',
     'JobJobInfrastructureConfigurationDetails',
     'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
     'JobJobLogConfigurationDetails',
+    'JobJobNodeConfigurationDetails',
+    'JobJobNodeConfigurationDetailsJobNetworkConfiguration',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails',
+    'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
     'JobJobStorageMountConfigurationDetailsList',
     'JobRunJobConfigurationOverrideDetails',
+    'JobRunJobConfigurationOverrideDetailsStartupProbeDetails',
     'JobRunJobEnvironmentConfigurationOverrideDetails',
     'JobRunJobInfrastructureConfigurationDetail',
     'JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail',
+    'JobRunJobInfrastructureConfigurationOverrideDetails',
+    'JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails',
     'JobRunJobLogConfigurationOverrideDetails',
+    'JobRunJobNodeConfigurationOverrideDetails',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails',
+    'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails',
     'JobRunJobStorageMountConfigurationDetailsList',
     'JobRunLogDetail',
+    'JobRunNodeGroupDetailsList',
     'MlApplicationImplementationApplicationComponent',
     'MlApplicationImplementationConfigurationSchema',
     'MlApplicationImplementationLogging',
@@ -50,6 +71,14 @@ __all__ = [
     'ModelDeploymentCategoryLogDetailsPredict',
     'ModelDeploymentModelDeploymentConfigurationDetails',
     'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration',
+    'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails',
@@ -58,7 +87,19 @@ __all__ = [
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration',
     'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration',
+    'ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails',
     'ModelDeploymentModelDeploymentSystemData',
+    'ModelGroupMemberModelEntries',
+    'ModelGroupMemberModelEntriesMemberModelDetail',
+    'ModelGroupModelGroupCloneSourceDetails',
+    'ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails',
+    'ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails',
+    'ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataList',
+    'ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetails',
+    'ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItem',
+    'ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue',
+    'ModelGroupModelGroupDetails',
+    'ModelGroupModelGroupDetailsCustomMetadataList',
     'ModelRetentionOperationDetail',
     'ModelRetentionSetting',
     'NotebookSessionNotebookSessionConfigDetails',
@@ -75,6 +116,8 @@ __all__ = [
     'PipelineLogConfigurationDetails',
     'PipelineRunConfigurationDetail',
     'PipelineRunConfigurationOverrideDetails',
+    'PipelineRunInfrastructureConfigurationOverrideDetails',
+    'PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails',
     'PipelineRunLogConfigurationOverrideDetails',
     'PipelineRunLogDetail',
     'PipelineRunStepOverrideDetail',
@@ -83,6 +126,8 @@ __all__ = [
     'PipelineRunStepOverrideDetailStepDataflowConfigurationDetails',
     'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails',
     'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails',
+    'PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails',
+    'PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails',
     'PipelineRunStepRun',
     'PipelineStepArtifact',
     'PipelineStepDetail',
@@ -119,36 +164,78 @@ __all__ = [
     'GetFastLaunchJobConfigsFastLaunchJobConfigResult',
     'GetFastLaunchJobConfigsFilterResult',
     'GetJobJobConfigurationDetailResult',
+    'GetJobJobConfigurationDetailStartupProbeDetailResult',
     'GetJobJobEnvironmentConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailResult',
     'GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobJobLogConfigurationDetailResult',
+    'GetJobJobNodeConfigurationDetailResult',
+    'GetJobJobNodeConfigurationDetailJobNetworkConfigurationResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
+    'GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobJobStorageMountConfigurationDetailsListResult',
     'GetJobRunJobConfigurationOverrideDetailResult',
+    'GetJobRunJobConfigurationOverrideDetailStartupProbeDetailResult',
     'GetJobRunJobEnvironmentConfigurationOverrideDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobRunJobInfrastructureConfigurationOverrideDetailResult',
+    'GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult',
     'GetJobRunJobLogConfigurationOverrideDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
+    'GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobRunJobStorageMountConfigurationDetailsListResult',
     'GetJobRunLogDetailResult',
+    'GetJobRunNodeGroupDetailsListResult',
     'GetJobRunsFilterResult',
     'GetJobRunsJobRunResult',
     'GetJobRunsJobRunJobConfigurationOverrideDetailResult',
+    'GetJobRunsJobRunJobConfigurationOverrideDetailStartupProbeDetailResult',
     'GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailResult',
     'GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
+    'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult',
+    'GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult',
     'GetJobRunsJobRunJobLogConfigurationOverrideDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
+    'GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult',
     'GetJobRunsJobRunLogDetailResult',
+    'GetJobRunsJobRunNodeGroupDetailsListResult',
     'GetJobShapesFilterResult',
     'GetJobShapesJobShapeResult',
     'GetJobsFilterResult',
     'GetJobsJobResult',
     'GetJobsJobJobConfigurationDetailResult',
+    'GetJobsJobJobConfigurationDetailStartupProbeDetailResult',
     'GetJobsJobJobEnvironmentConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailResult',
     'GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobsJobJobLogConfigurationDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNetworkConfigurationResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult',
+    'GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult',
     'GetJobsJobJobStorageMountConfigurationDetailsListResult',
     'GetMlApplicationImplementationApplicationComponentResult',
     'GetMlApplicationImplementationConfigurationSchemaResult',
@@ -192,6 +279,14 @@ __all__ = [
     'GetModelDeploymentCategoryLogDetailPredictResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
@@ -200,7 +295,10 @@ __all__ = [
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult',
     'GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult',
+    'GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult',
     'GetModelDeploymentModelDeploymentSystemDataResult',
+    'GetModelDeploymentModelStatesFilterResult',
+    'GetModelDeploymentModelStatesModelDeploymentModelStateResult',
     'GetModelDeploymentShapesFilterResult',
     'GetModelDeploymentShapesModelDeploymentShapeResult',
     'GetModelDeploymentsFilterResult',
@@ -210,6 +308,14 @@ __all__ = [
     'GetModelDeploymentsModelDeploymentCategoryLogDetailPredictResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
@@ -218,7 +324,36 @@ __all__ = [
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult',
+    'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult',
+    'GetModelGroupMemberModelEntryResult',
+    'GetModelGroupMemberModelEntryMemberModelDetailResult',
+    'GetModelGroupModelGroupCloneSourceDetailResult',
+    'GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult',
+    'GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult',
+    'GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult',
+    'GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult',
+    'GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult',
+    'GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult',
+    'GetModelGroupModelGroupDetailResult',
+    'GetModelGroupModelGroupDetailCustomMetadataListResult',
+    'GetModelGroupModelsFilterResult',
+    'GetModelGroupModelsModelGroupModelResult',
+    'GetModelGroupVersionHistoriesFilterResult',
+    'GetModelGroupVersionHistoriesModelGroupVersionHistoryResult',
+    'GetModelGroupsFilterResult',
+    'GetModelGroupsModelGroupResult',
+    'GetModelGroupsModelGroupMemberModelEntryResult',
+    'GetModelGroupsModelGroupMemberModelEntryMemberModelDetailResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult',
+    'GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult',
+    'GetModelGroupsModelGroupModelGroupDetailResult',
+    'GetModelGroupsModelGroupModelGroupDetailCustomMetadataListResult',
     'GetModelRetentionOperationDetailResult',
     'GetModelRetentionSettingResult',
     'GetModelVersionSetsFilterResult',
@@ -257,6 +392,8 @@ __all__ = [
     'GetPipelineLogConfigurationDetailResult',
     'GetPipelineRunConfigurationDetailResult',
     'GetPipelineRunConfigurationOverrideDetailResult',
+    'GetPipelineRunInfrastructureConfigurationOverrideDetailResult',
+    'GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult',
     'GetPipelineRunLogConfigurationOverrideDetailResult',
     'GetPipelineRunLogDetailResult',
     'GetPipelineRunStepOverrideDetailResult',
@@ -265,11 +402,15 @@ __all__ = [
     'GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult',
     'GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult',
     'GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailResult',
+    'GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult',
+    'GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
     'GetPipelineRunStepRunResult',
     'GetPipelineRunsFilterResult',
     'GetPipelineRunsPipelineRunResult',
     'GetPipelineRunsPipelineRunConfigurationDetailResult',
     'GetPipelineRunsPipelineRunConfigurationOverrideDetailResult',
+    'GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailResult',
+    'GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult',
     'GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult',
     'GetPipelineRunsPipelineRunLogDetailResult',
     'GetPipelineRunsPipelineRunStepOverrideDetailResult',
@@ -278,6 +419,8 @@ __all__ = [
     'GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult',
     'GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult',
     'GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailResult',
+    'GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult',
+    'GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
     'GetPipelineRunsPipelineRunStepRunResult',
     'GetPipelineStepArtifactResult',
     'GetPipelineStepDetailResult',
@@ -360,6 +503,8 @@ class JobJobConfigurationDetails(dict):
             suggest = "environment_variables"
         elif key == "maximumRuntimeInMinutes":
             suggest = "maximum_runtime_in_minutes"
+        elif key == "startupProbeDetails":
+            suggest = "startup_probe_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in JobJobConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
@@ -376,12 +521,14 @@ class JobJobConfigurationDetails(dict):
                  job_type: _builtins.str,
                  command_line_arguments: Optional[_builtins.str] = None,
                  environment_variables: Optional[Mapping[str, _builtins.str]] = None,
-                 maximum_runtime_in_minutes: Optional[_builtins.str] = None):
+                 maximum_runtime_in_minutes: Optional[_builtins.str] = None,
+                 startup_probe_details: Optional['outputs.JobJobConfigurationDetailsStartupProbeDetails'] = None):
         """
         :param _builtins.str job_type: The type of job.
         :param _builtins.str command_line_arguments: The arguments to pass to the job.
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
         :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param 'JobJobConfigurationDetailsStartupProbeDetailsArgs' startup_probe_details: The probe indicates whether the application within the job run has started.
         """
         pulumi.set(__self__, "job_type", job_type)
         if command_line_arguments is not None:
@@ -390,6 +537,8 @@ class JobJobConfigurationDetails(dict):
             pulumi.set(__self__, "environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
             pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if startup_probe_details is not None:
+            pulumi.set(__self__, "startup_probe_details", startup_probe_details)
 
     @_builtins.property
     @pulumi.getter(name="jobType")
@@ -422,6 +571,102 @@ class JobJobConfigurationDetails(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Optional['outputs.JobJobConfigurationDetailsStartupProbeDetails']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class JobJobConfigurationDetailsStartupProbeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobProbeCheckType":
+            suggest = "job_probe_check_type"
+        elif key == "failureThreshold":
+            suggest = "failure_threshold"
+        elif key == "initialDelayInSeconds":
+            suggest = "initial_delay_in_seconds"
+        elif key == "periodInSeconds":
+            suggest = "period_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobConfigurationDetailsStartupProbeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobConfigurationDetailsStartupProbeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobConfigurationDetailsStartupProbeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 job_probe_check_type: _builtins.str,
+                 failure_threshold: Optional[_builtins.int] = None,
+                 initial_delay_in_seconds: Optional[_builtins.int] = None,
+                 period_in_seconds: Optional[_builtins.int] = None):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        if failure_threshold is not None:
+            pulumi.set(__self__, "failure_threshold", failure_threshold)
+        if initial_delay_in_seconds is not None:
+            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        if period_in_seconds is not None:
+            pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> Optional[_builtins.int]:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
 
 
 @pulumi.output_type
@@ -527,14 +772,14 @@ class JobJobInfrastructureConfigurationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "blockStorageSizeInGbs":
-            suggest = "block_storage_size_in_gbs"
-        elif key == "jobInfrastructureType":
+        if key == "jobInfrastructureType":
             suggest = "job_infrastructure_type"
-        elif key == "shapeName":
-            suggest = "shape_name"
+        elif key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
         elif key == "jobShapeConfigDetails":
             suggest = "job_shape_config_details"
+        elif key == "shapeName":
+            suggest = "shape_name"
         elif key == "subnetId":
             suggest = "subnet_id"
 
@@ -550,33 +795,27 @@ class JobJobInfrastructureConfigurationDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 block_storage_size_in_gbs: _builtins.int,
                  job_infrastructure_type: _builtins.str,
-                 shape_name: _builtins.str,
+                 block_storage_size_in_gbs: Optional[_builtins.int] = None,
                  job_shape_config_details: Optional['outputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+                 shape_name: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.int block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance running the job
         :param _builtins.str job_infrastructure_type: (Updatable) The infrastructure type used for job run.
-        :param _builtins.str shape_name: (Updatable) The shape used to launch the job run instances.
+        :param _builtins.int block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance running the job
         :param 'JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the job
         """
-        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
-        pulumi.set(__self__, "shape_name", shape_name)
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         if job_shape_config_details is not None:
             pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
-
-    @_builtins.property
-    @pulumi.getter(name="blockStorageSizeInGbs")
-    def block_storage_size_in_gbs(self) -> _builtins.int:
-        """
-        (Updatable) The size of the block storage volume to attach to the instance running the job
-        """
-        return pulumi.get(self, "block_storage_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="jobInfrastructureType")
@@ -587,12 +826,12 @@ class JobJobInfrastructureConfigurationDetails(dict):
         return pulumi.get(self, "job_infrastructure_type")
 
     @_builtins.property
-    @pulumi.getter(name="shapeName")
-    def shape_name(self) -> _builtins.str:
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> Optional[_builtins.int]:
         """
-        (Updatable) The shape used to launch the job run instances.
+        (Updatable) The size of the block storage volume to attach to the instance running the job
         """
-        return pulumi.get(self, "shape_name")
+        return pulumi.get(self, "block_storage_size_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="jobShapeConfigDetails")
@@ -601,6 +840,14 @@ class JobJobInfrastructureConfigurationDetails(dict):
         (Updatable) Details for the job run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -616,7 +863,9 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -631,16 +880,28 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
         :param _builtins.float ocpus: (Updatable) The total number of OCPUs available to the job run instance.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -735,6 +996,663 @@ class JobJobLogConfigurationDetails(dict):
         The log id the job run will push logs too.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobNodeType":
+            suggest = "job_node_type"
+        elif key == "jobNetworkConfiguration":
+            suggest = "job_network_configuration"
+        elif key == "jobNodeGroupConfigurationDetailsLists":
+            suggest = "job_node_group_configuration_details_lists"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+        elif key == "startupOrder":
+            suggest = "startup_order"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_node_type: _builtins.str,
+                 job_network_configuration: Optional['outputs.JobJobNodeConfigurationDetailsJobNetworkConfiguration'] = None,
+                 job_node_group_configuration_details_lists: Optional[Sequence['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList']] = None,
+                 maximum_runtime_in_minutes: Optional[_builtins.str] = None,
+                 startup_order: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_node_type: The node type used for job run.
+        :param 'JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs' job_network_configuration: The job network configuration details
+        :param Sequence['JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs'] job_node_group_configuration_details_lists: List of JobNodeGroupConfigurationDetails
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param _builtins.str startup_order: The execution order of node groups
+        """
+        pulumi.set(__self__, "job_node_type", job_node_type)
+        if job_network_configuration is not None:
+            pulumi.set(__self__, "job_network_configuration", job_network_configuration)
+        if job_node_group_configuration_details_lists is not None:
+            pulumi.set(__self__, "job_node_group_configuration_details_lists", job_node_group_configuration_details_lists)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if startup_order is not None:
+            pulumi.set(__self__, "startup_order", startup_order)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeType")
+    def job_node_type(self) -> _builtins.str:
+        """
+        The node type used for job run.
+        """
+        return pulumi.get(self, "job_node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkConfiguration")
+    def job_network_configuration(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNetworkConfiguration']:
+        """
+        The job network configuration details
+        """
+        return pulumi.get(self, "job_network_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeGroupConfigurationDetailsLists")
+    def job_node_group_configuration_details_lists(self) -> Optional[Sequence['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList']]:
+        """
+        List of JobNodeGroupConfigurationDetails
+        """
+        return pulumi.get(self, "job_node_group_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[_builtins.str]:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupOrder")
+    def startup_order(self) -> Optional[_builtins.str]:
+        """
+        The execution order of node groups
+        """
+        return pulumi.get(self, "startup_order")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobNetworkType":
+            suggest = "job_network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_network_type: job network type
+        :param _builtins.str subnet_id: The custom subnet id
+        """
+        pulumi.set(__self__, "job_network_type", job_network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkType")
+    def job_network_type(self) -> _builtins.str:
+        """
+        job network type
+        """
+        return pulumi.get(self, "job_network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The custom subnet id
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobConfigurationDetails":
+            suggest = "job_configuration_details"
+        elif key == "jobEnvironmentConfigurationDetails":
+            suggest = "job_environment_configuration_details"
+        elif key == "jobInfrastructureConfigurationDetails":
+            suggest = "job_infrastructure_configuration_details"
+        elif key == "minimumSuccessReplicas":
+            suggest = "minimum_success_replicas"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 job_configuration_details: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails'] = None,
+                 job_environment_configuration_details: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails'] = None,
+                 job_infrastructure_configuration_details: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails'] = None,
+                 minimum_success_replicas: Optional[_builtins.int] = None,
+                 replicas: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str name: node group name.
+        :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs' job_configuration_details: The job configuration details
+        :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs' job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs' job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param _builtins.int minimum_success_replicas: The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        :param _builtins.int replicas: The number of nodes.
+        """
+        pulumi.set(__self__, "name", name)
+        if job_configuration_details is not None:
+            pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        if job_environment_configuration_details is not None:
+            pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
+        if job_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        if minimum_success_replicas is not None:
+            pulumi.set(__self__, "minimum_success_replicas", minimum_success_replicas)
+        if replicas is not None:
+            pulumi.set(__self__, "replicas", replicas)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="jobConfigurationDetails")
+    def job_configuration_details(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationDetails")
+    def job_infrastructure_configuration_details(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumSuccessReplicas")
+    def minimum_success_replicas(self) -> Optional[_builtins.int]:
+        """
+        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        """
+        return pulumi.get(self, "minimum_success_replicas")
+
+    @_builtins.property
+    @pulumi.getter
+    def replicas(self) -> Optional[_builtins.int]:
+        """
+        The number of nodes.
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobType":
+            suggest = "job_type"
+        elif key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+        elif key == "startupProbeDetails":
+            suggest = "startup_probe_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_type: _builtins.str,
+                 command_line_arguments: Optional[_builtins.str] = None,
+                 environment_variables: Optional[Mapping[str, _builtins.str]] = None,
+                 maximum_runtime_in_minutes: Optional[_builtins.str] = None,
+                 startup_probe_details: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails'] = None):
+        """
+        :param _builtins.str job_type: The type of job.
+        :param _builtins.str command_line_arguments: The arguments to pass to the job.
+        :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs' startup_probe_details: The probe indicates whether the application within the job run has started.
+        """
+        pulumi.set(__self__, "job_type", job_type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if startup_probe_details is not None:
+            pulumi.set(__self__, "startup_probe_details", startup_probe_details)
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[_builtins.str]:
+        """
+        The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[_builtins.str]:
+        """
+        A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobProbeCheckType":
+            suggest = "job_probe_check_type"
+        elif key == "failureThreshold":
+            suggest = "failure_threshold"
+        elif key == "initialDelayInSeconds":
+            suggest = "initial_delay_in_seconds"
+        elif key == "periodInSeconds":
+            suggest = "period_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 job_probe_check_type: _builtins.str,
+                 failure_threshold: Optional[_builtins.int] = None,
+                 initial_delay_in_seconds: Optional[_builtins.int] = None,
+                 period_in_seconds: Optional[_builtins.int] = None):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        if failure_threshold is not None:
+            pulumi.set(__self__, "failure_threshold", failure_threshold)
+        if initial_delay_in_seconds is not None:
+            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        if period_in_seconds is not None:
+            pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> Optional[_builtins.int]:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobEnvironmentType":
+            suggest = "job_environment_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 image: _builtins.str,
+                 job_environment_type: _builtins.str,
+                 cmds: Optional[Sequence[_builtins.str]] = None,
+                 entrypoints: Optional[Sequence[_builtins.str]] = None,
+                 image_digest: Optional[_builtins.str] = None,
+                 image_signature_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str job_environment_type: The environment configuration type used for job runtime.
+        :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> _builtins.str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> _builtins.str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[_builtins.str]:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobInfrastructureType":
+            suggest = "job_infrastructure_type"
+        elif key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "jobShapeConfigDetails":
+            suggest = "job_shape_config_details"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_infrastructure_type: _builtins.str,
+                 block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 job_shape_config_details: Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+                 shape_name: Optional[_builtins.str] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param 'JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Optional['outputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[_builtins.str]:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -876,6 +1794,8 @@ class JobRunJobConfigurationOverrideDetails(dict):
             suggest = "environment_variables"
         elif key == "maximumRuntimeInMinutes":
             suggest = "maximum_runtime_in_minutes"
+        elif key == "startupProbeDetails":
+            suggest = "startup_probe_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in JobRunJobConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
@@ -892,12 +1812,14 @@ class JobRunJobConfigurationOverrideDetails(dict):
                  job_type: _builtins.str,
                  command_line_arguments: Optional[_builtins.str] = None,
                  environment_variables: Optional[Mapping[str, _builtins.str]] = None,
-                 maximum_runtime_in_minutes: Optional[_builtins.str] = None):
+                 maximum_runtime_in_minutes: Optional[_builtins.str] = None,
+                 startup_probe_details: Optional['outputs.JobRunJobConfigurationOverrideDetailsStartupProbeDetails'] = None):
         """
         :param _builtins.str job_type: The type of job.
         :param _builtins.str command_line_arguments: The arguments to pass to the job.
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
         :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param 'JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs' startup_probe_details: The probe indicates whether the application within the job run has started.
         """
         pulumi.set(__self__, "job_type", job_type)
         if command_line_arguments is not None:
@@ -906,6 +1828,8 @@ class JobRunJobConfigurationOverrideDetails(dict):
             pulumi.set(__self__, "environment_variables", environment_variables)
         if maximum_runtime_in_minutes is not None:
             pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if startup_probe_details is not None:
+            pulumi.set(__self__, "startup_probe_details", startup_probe_details)
 
     @_builtins.property
     @pulumi.getter(name="jobType")
@@ -938,6 +1862,102 @@ class JobRunJobConfigurationOverrideDetails(dict):
         A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Optional['outputs.JobRunJobConfigurationOverrideDetailsStartupProbeDetails']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class JobRunJobConfigurationOverrideDetailsStartupProbeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobProbeCheckType":
+            suggest = "job_probe_check_type"
+        elif key == "failureThreshold":
+            suggest = "failure_threshold"
+        elif key == "initialDelayInSeconds":
+            suggest = "initial_delay_in_seconds"
+        elif key == "periodInSeconds":
+            suggest = "period_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobConfigurationOverrideDetailsStartupProbeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobConfigurationOverrideDetailsStartupProbeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobConfigurationOverrideDetailsStartupProbeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 job_probe_check_type: _builtins.str,
+                 failure_threshold: Optional[_builtins.int] = None,
+                 initial_delay_in_seconds: Optional[_builtins.int] = None,
+                 period_in_seconds: Optional[_builtins.int] = None):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        if failure_threshold is not None:
+            pulumi.set(__self__, "failure_threshold", failure_threshold)
+        if initial_delay_in_seconds is not None:
+            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        if period_in_seconds is not None:
+            pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> Optional[_builtins.int]:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
 
 
 @pulumi.output_type
@@ -1075,7 +2095,7 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param _builtins.str shape_name: The shape used to launch the job run instances.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         if block_storage_size_in_gbs is not None:
@@ -1117,7 +2137,7 @@ class JobRunJobInfrastructureConfigurationDetail(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[_builtins.str]:
         """
-        The shape used to launch the job run instances.
+        The name that corresponds to the JobShapeSummary to use for the job node
         """
         return pulumi.get(self, "shape_name")
 
@@ -1135,7 +2155,9 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -1147,6 +2169,157 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
 
     def get(self, key: str, default = None) -> Any:
         JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class JobRunJobInfrastructureConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobInfrastructureType":
+            suggest = "job_infrastructure_type"
+        elif key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "jobShapeConfigDetails":
+            suggest = "job_shape_config_details"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobInfrastructureConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobInfrastructureConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobInfrastructureConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_infrastructure_type: _builtins.str,
+                 block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 job_shape_config_details: Optional['outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails'] = None,
+                 shape_name: Optional[_builtins.str] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param 'JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs' job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Optional['outputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[_builtins.str]:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -1254,6 +2427,663 @@ class JobRunJobLogConfigurationOverrideDetails(dict):
         The log id the job run will push logs too.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobNodeType":
+            suggest = "job_node_type"
+        elif key == "jobNetworkConfiguration":
+            suggest = "job_network_configuration"
+        elif key == "jobNodeGroupConfigurationDetailsLists":
+            suggest = "job_node_group_configuration_details_lists"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+        elif key == "startupOrder":
+            suggest = "startup_order"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_node_type: _builtins.str,
+                 job_network_configuration: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration'] = None,
+                 job_node_group_configuration_details_lists: Optional[Sequence['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList']] = None,
+                 maximum_runtime_in_minutes: Optional[_builtins.str] = None,
+                 startup_order: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_node_type: The node type used for job run.
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs' job_network_configuration: The job network configuration details
+        :param Sequence['JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs'] job_node_group_configuration_details_lists: List of JobNodeGroupConfigurationDetails
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param _builtins.str startup_order: The execution order of node groups
+        """
+        pulumi.set(__self__, "job_node_type", job_node_type)
+        if job_network_configuration is not None:
+            pulumi.set(__self__, "job_network_configuration", job_network_configuration)
+        if job_node_group_configuration_details_lists is not None:
+            pulumi.set(__self__, "job_node_group_configuration_details_lists", job_node_group_configuration_details_lists)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if startup_order is not None:
+            pulumi.set(__self__, "startup_order", startup_order)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeType")
+    def job_node_type(self) -> _builtins.str:
+        """
+        The node type used for job run.
+        """
+        return pulumi.get(self, "job_node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkConfiguration")
+    def job_network_configuration(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration']:
+        """
+        The job network configuration details
+        """
+        return pulumi.get(self, "job_network_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeGroupConfigurationDetailsLists")
+    def job_node_group_configuration_details_lists(self) -> Optional[Sequence['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList']]:
+        """
+        List of JobNodeGroupConfigurationDetails
+        """
+        return pulumi.get(self, "job_node_group_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[_builtins.str]:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupOrder")
+    def startup_order(self) -> Optional[_builtins.str]:
+        """
+        The execution order of node groups
+        """
+        return pulumi.get(self, "startup_order")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobNetworkType":
+            suggest = "job_network_type"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_network_type: _builtins.str,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_network_type: job network type
+        :param _builtins.str subnet_id: The custom subnet id
+        """
+        pulumi.set(__self__, "job_network_type", job_network_type)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkType")
+    def job_network_type(self) -> _builtins.str:
+        """
+        job network type
+        """
+        return pulumi.get(self, "job_network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The custom subnet id
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobConfigurationDetails":
+            suggest = "job_configuration_details"
+        elif key == "jobEnvironmentConfigurationDetails":
+            suggest = "job_environment_configuration_details"
+        elif key == "jobInfrastructureConfigurationDetails":
+            suggest = "job_infrastructure_configuration_details"
+        elif key == "minimumSuccessReplicas":
+            suggest = "minimum_success_replicas"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 job_configuration_details: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails'] = None,
+                 job_environment_configuration_details: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails'] = None,
+                 job_infrastructure_configuration_details: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails'] = None,
+                 minimum_success_replicas: Optional[_builtins.int] = None,
+                 replicas: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str name: node group name.
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs' job_configuration_details: The job configuration details
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs' job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs' job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param _builtins.int minimum_success_replicas: The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        :param _builtins.int replicas: The number of nodes.
+        """
+        pulumi.set(__self__, "name", name)
+        if job_configuration_details is not None:
+            pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        if job_environment_configuration_details is not None:
+            pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
+        if job_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        if minimum_success_replicas is not None:
+            pulumi.set(__self__, "minimum_success_replicas", minimum_success_replicas)
+        if replicas is not None:
+            pulumi.set(__self__, "replicas", replicas)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="jobConfigurationDetails")
+    def job_configuration_details(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationDetails")
+    def job_infrastructure_configuration_details(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumSuccessReplicas")
+    def minimum_success_replicas(self) -> Optional[_builtins.int]:
+        """
+        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        """
+        return pulumi.get(self, "minimum_success_replicas")
+
+    @_builtins.property
+    @pulumi.getter
+    def replicas(self) -> Optional[_builtins.int]:
+        """
+        The number of nodes.
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobType":
+            suggest = "job_type"
+        elif key == "commandLineArguments":
+            suggest = "command_line_arguments"
+        elif key == "environmentVariables":
+            suggest = "environment_variables"
+        elif key == "maximumRuntimeInMinutes":
+            suggest = "maximum_runtime_in_minutes"
+        elif key == "startupProbeDetails":
+            suggest = "startup_probe_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_type: _builtins.str,
+                 command_line_arguments: Optional[_builtins.str] = None,
+                 environment_variables: Optional[Mapping[str, _builtins.str]] = None,
+                 maximum_runtime_in_minutes: Optional[_builtins.str] = None,
+                 startup_probe_details: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails'] = None):
+        """
+        :param _builtins.str job_type: The type of job.
+        :param _builtins.str command_line_arguments: The arguments to pass to the job.
+        :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs' startup_probe_details: The probe indicates whether the application within the job run has started.
+        """
+        pulumi.set(__self__, "job_type", job_type)
+        if command_line_arguments is not None:
+            pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        if environment_variables is not None:
+            pulumi.set(__self__, "environment_variables", environment_variables)
+        if maximum_runtime_in_minutes is not None:
+            pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        if startup_probe_details is not None:
+            pulumi.set(__self__, "startup_probe_details", startup_probe_details)
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> Optional[_builtins.str]:
+        """
+        The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> Optional[_builtins.str]:
+        """
+        A time bound for the execution of the job. Timer starts when the job becomes active.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobProbeCheckType":
+            suggest = "job_probe_check_type"
+        elif key == "failureThreshold":
+            suggest = "failure_threshold"
+        elif key == "initialDelayInSeconds":
+            suggest = "initial_delay_in_seconds"
+        elif key == "periodInSeconds":
+            suggest = "period_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 job_probe_check_type: _builtins.str,
+                 failure_threshold: Optional[_builtins.int] = None,
+                 initial_delay_in_seconds: Optional[_builtins.int] = None,
+                 period_in_seconds: Optional[_builtins.int] = None):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        if failure_threshold is not None:
+            pulumi.set(__self__, "failure_threshold", failure_threshold)
+        if initial_delay_in_seconds is not None:
+            pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        if period_in_seconds is not None:
+            pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> Optional[_builtins.int]:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobEnvironmentType":
+            suggest = "job_environment_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 image: _builtins.str,
+                 job_environment_type: _builtins.str,
+                 cmds: Optional[Sequence[_builtins.str]] = None,
+                 entrypoints: Optional[Sequence[_builtins.str]] = None,
+                 image_digest: Optional[_builtins.str] = None,
+                 image_signature_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str job_environment_type: The environment configuration type used for job runtime.
+        :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> _builtins.str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> _builtins.str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[_builtins.str]:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[_builtins.str]:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jobInfrastructureType":
+            suggest = "job_infrastructure_type"
+        elif key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "jobShapeConfigDetails":
+            suggest = "job_shape_config_details"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 job_infrastructure_type: _builtins.str,
+                 block_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 job_shape_config_details: Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails'] = None,
+                 shape_name: Optional[_builtins.str] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param 'JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs' job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        if block_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        if job_shape_config_details is not None:
+            pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        if shape_name is not None:
+            pulumi.set(__self__, "shape_name", shape_name)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Optional['outputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> Optional[_builtins.str]:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -1432,6 +3262,66 @@ class JobRunLogDetail(dict):
         The log id of the log object the job run logs will be shipped to.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class JobRunNodeGroupDetailsList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in JobRunNodeGroupDetailsList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        JobRunNodeGroupDetailsList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        JobRunNodeGroupDetailsList.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 lifecycle_details: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str lifecycle_details: The state details of the node group.
+        :param _builtins.str name: node group name.
+        :param _builtins.str state: The state of the job run.
+        """
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[_builtins.str]:
+        """
+        The state details of the node group.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The state of the job run.
+        """
+        return pulumi.get(self, "state")
 
 
 @pulumi.output_type
@@ -2762,10 +4652,14 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
         suggest = None
         if key == "deploymentType":
             suggest = "deployment_type"
-        elif key == "modelConfigurationDetails":
-            suggest = "model_configuration_details"
         elif key == "environmentConfigurationDetails":
             suggest = "environment_configuration_details"
+        elif key == "infrastructureConfigurationDetails":
+            suggest = "infrastructure_configuration_details"
+        elif key == "modelConfigurationDetails":
+            suggest = "model_configuration_details"
+        elif key == "modelGroupConfigurationDetails":
+            suggest = "model_group_configuration_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
@@ -2780,17 +4674,24 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
 
     def __init__(__self__, *,
                  deployment_type: _builtins.str,
-                 model_configuration_details: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails',
-                 environment_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails'] = None):
+                 environment_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails'] = None,
+                 infrastructure_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails'] = None,
+                 model_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails'] = None,
+                 model_group_configuration_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails'] = None):
         """
         :param _builtins.str deployment_type: (Updatable) The type of the model deployment.
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs' model_configuration_details: (Updatable) The model configuration details.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs' environment_configuration_details: (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs' model_configuration_details: (Updatable) The model configuration details.
         """
         pulumi.set(__self__, "deployment_type", deployment_type)
-        pulumi.set(__self__, "model_configuration_details", model_configuration_details)
         if environment_configuration_details is not None:
             pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+        if infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
+        if model_configuration_details is not None:
+            pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        if model_group_configuration_details is not None:
+            pulumi.set(__self__, "model_group_configuration_details", model_group_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
@@ -2801,20 +4702,30 @@ class ModelDeploymentModelDeploymentConfigurationDetails(dict):
         return pulumi.get(self, "deployment_type")
 
     @_builtins.property
-    @pulumi.getter(name="modelConfigurationDetails")
-    def model_configuration_details(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails':
-        """
-        (Updatable) The model configuration details.
-        """
-        return pulumi.get(self, "model_configuration_details")
-
-    @_builtins.property
     @pulumi.getter(name="environmentConfigurationDetails")
     def environment_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails']:
         """
         (Updatable) The configuration to carry the environment details thats used in Model Deployment creation
         """
         return pulumi.get(self, "environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationDetails")
+    def infrastructure_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails']:
+        return pulumi.get(self, "infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelConfigurationDetails")
+    def model_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails']:
+        """
+        (Updatable) The model configuration details.
+        """
+        return pulumi.get(self, "model_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupConfigurationDetails")
+    def model_group_configuration_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails']:
+        return pulumi.get(self, "model_group_configuration_details")
 
 
 @pulumi.output_type
@@ -2945,18 +4856,670 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
 
 
 @pulumi.output_type
-class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails(dict):
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "instanceConfiguration":
+        if key == "infrastructureType":
+            suggest = "infrastructure_type"
+        elif key == "instanceConfiguration":
             suggest = "instance_configuration"
-        elif key == "modelId":
-            suggest = "model_id"
         elif key == "bandwidthMbps":
             suggest = "bandwidth_mbps"
         elif key == "maximumBandwidthMbps":
             suggest = "maximum_bandwidth_mbps"
+        elif key == "scalingPolicy":
+            suggest = "scaling_policy"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 infrastructure_type: _builtins.str,
+                 instance_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration',
+                 bandwidth_mbps: Optional[_builtins.int] = None,
+                 maximum_bandwidth_mbps: Optional[_builtins.int] = None,
+                 scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy'] = None):
+        """
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs' instance_configuration: The model deployment instance configuration.
+        :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
+        :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs' scaling_policy: The scaling policy to apply to each model of the deployment.
+        """
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_configuration", instance_configuration)
+        if bandwidth_mbps is not None:
+            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if maximum_bandwidth_mbps is not None:
+            pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        if scaling_policy is not None:
+            pulumi.set(__self__, "scaling_policy", scaling_policy)
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> _builtins.str:
+        return pulumi.get(self, "infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceConfiguration")
+    def instance_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration':
+        """
+        The model deployment instance configuration.
+        """
+        return pulumi.get(self, "instance_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthMbps")
+    def bandwidth_mbps(self) -> Optional[_builtins.int]:
+        """
+        The minimum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumBandwidthMbps")
+    def maximum_bandwidth_mbps(self) -> Optional[_builtins.int]:
+        """
+        The maximum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "maximum_bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingPolicy")
+    def scaling_policy(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy']:
+        """
+        The scaling policy to apply to each model of the deployment.
+        """
+        return pulumi.get(self, "scaling_policy")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceShapeName":
+            suggest = "instance_shape_name"
+        elif key == "modelDeploymentInstanceShapeConfigDetails":
+            suggest = "model_deployment_instance_shape_config_details"
+        elif key == "privateEndpointId":
+            suggest = "private_endpoint_id"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_shape_name: _builtins.str,
+                 model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
+                 private_endpoint_id: Optional[_builtins.str] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs' model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
+        :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        if model_deployment_instance_shape_config_details is not None:
+            pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        if private_endpoint_id is not None:
+            pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceShapeName")
+    def instance_shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the model deployment instances.
+        """
+        return pulumi.get(self, "instance_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
+    def model_deployment_instance_shape_config_details(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails']:
+        """
+        Details for the model-deployment instance shape configuration.
+        """
+        return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "policyType":
+            suggest = "policy_type"
+        elif key == "autoScalingPolicies":
+            suggest = "auto_scaling_policies"
+        elif key == "coolDownInSeconds":
+            suggest = "cool_down_in_seconds"
+        elif key == "instanceCount":
+            suggest = "instance_count"
+        elif key == "isEnabled":
+            suggest = "is_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 policy_type: _builtins.str,
+                 auto_scaling_policies: Optional[Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy']] = None,
+                 cool_down_in_seconds: Optional[_builtins.int] = None,
+                 instance_count: Optional[_builtins.int] = None,
+                 is_enabled: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str policy_type: The type of scaling policy.
+        :param Sequence['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyArgs'] auto_scaling_policies: The list of autoscaling policy details.
+        :param _builtins.int cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param _builtins.int instance_count: The number of instances for the model deployment.
+        :param _builtins.bool is_enabled: Whether the autoscaling policy is enabled.
+        """
+        pulumi.set(__self__, "policy_type", policy_type)
+        if auto_scaling_policies is not None:
+            pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        if cool_down_in_seconds is not None:
+            pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        if instance_count is not None:
+            pulumi.set(__self__, "instance_count", instance_count)
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> _builtins.str:
+        """
+        The type of scaling policy.
+        """
+        return pulumi.get(self, "policy_type")
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> Optional[Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy']]:
+        """
+        The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> Optional[_builtins.int]:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCount")
+    def instance_count(self) -> Optional[_builtins.int]:
+        """
+        The number of instances for the model deployment.
+        """
+        return pulumi.get(self, "instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[_builtins.bool]:
+        """
+        Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoScalingPolicyType":
+            suggest = "auto_scaling_policy_type"
+        elif key == "initialInstanceCount":
+            suggest = "initial_instance_count"
+        elif key == "maximumInstanceCount":
+            suggest = "maximum_instance_count"
+        elif key == "minimumInstanceCount":
+            suggest = "minimum_instance_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: _builtins.str,
+                 initial_instance_count: _builtins.int,
+                 maximum_instance_count: _builtins.int,
+                 minimum_instance_count: _builtins.int,
+                 rules: Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule']):
+        """
+        :param _builtins.str auto_scaling_policy_type: The type of autoscaling policy.
+        :param _builtins.int initial_instance_count: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param _builtins.int maximum_instance_count: For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        :param _builtins.int minimum_instance_count: For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        :param Sequence['ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleArgs'] rules: The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> _builtins.str:
+        """
+        The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @_builtins.property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule']:
+        """
+        The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "metricExpressionRuleType":
+            suggest = "metric_expression_rule_type"
+        elif key == "scaleInConfiguration":
+            suggest = "scale_in_configuration"
+        elif key == "scaleOutConfiguration":
+            suggest = "scale_out_configuration"
+        elif key == "metricType":
+            suggest = "metric_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 metric_expression_rule_type: _builtins.str,
+                 scale_in_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration',
+                 scale_out_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration',
+                 metric_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str metric_expression_rule_type: The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs' scale_in_configuration: The scaling configuration for the predefined metric expression rule.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs' scale_out_configuration: The scaling configuration for the predefined metric expression rule.
+        :param _builtins.str metric_type: Metric type
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "scale_in_configuration", scale_in_configuration)
+        pulumi.set(__self__, "scale_out_configuration", scale_out_configuration)
+        if metric_type is not None:
+            pulumi.set(__self__, "metric_type", metric_type)
+
+    @_builtins.property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> _builtins.str:
+        """
+        The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @_builtins.property
+    @pulumi.getter(name="scaleInConfiguration")
+    def scale_in_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration':
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="scaleOutConfiguration")
+    def scale_out_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration':
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> Optional[_builtins.str]:
+        """
+        Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceCountAdjustment":
+            suggest = "instance_count_adjustment"
+        elif key == "pendingDuration":
+            suggest = "pending_duration"
+        elif key == "scalingConfigurationType":
+            suggest = "scaling_configuration_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_count_adjustment: Optional[_builtins.int] = None,
+                 pending_duration: Optional[_builtins.str] = None,
+                 query: Optional[_builtins.str] = None,
+                 scaling_configuration_type: Optional[_builtins.str] = None,
+                 threshold: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param _builtins.str scaling_configuration_type: The type of scaling configuration.
+        :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if scaling_configuration_type is not None:
+            pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> Optional[_builtins.int]:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> Optional[_builtins.str]:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> Optional[_builtins.str]:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> Optional[_builtins.str]:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> Optional[_builtins.int]:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "instanceCountAdjustment":
+            suggest = "instance_count_adjustment"
+        elif key == "pendingDuration":
+            suggest = "pending_duration"
+        elif key == "scalingConfigurationType":
+            suggest = "scaling_configuration_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 instance_count_adjustment: Optional[_builtins.int] = None,
+                 pending_duration: Optional[_builtins.str] = None,
+                 query: Optional[_builtins.str] = None,
+                 scaling_configuration_type: Optional[_builtins.str] = None,
+                 threshold: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param _builtins.str scaling_configuration_type: The type of scaling configuration.
+        :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        if instance_count_adjustment is not None:
+            pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if scaling_configuration_type is not None:
+            pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        if threshold is not None:
+            pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> Optional[_builtins.int]:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> Optional[_builtins.str]:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> Optional[_builtins.str]:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> Optional[_builtins.str]:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> Optional[_builtins.int]:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "bandwidthMbps":
+            suggest = "bandwidth_mbps"
+        elif key == "instanceConfiguration":
+            suggest = "instance_configuration"
+        elif key == "maximumBandwidthMbps":
+            suggest = "maximum_bandwidth_mbps"
+        elif key == "modelId":
+            suggest = "model_id"
         elif key == "scalingPolicy":
             suggest = "scaling_policy"
 
@@ -2972,42 +5535,28 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration',
-                 model_id: _builtins.str,
                  bandwidth_mbps: Optional[_builtins.int] = None,
+                 instance_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration'] = None,
                  maximum_bandwidth_mbps: Optional[_builtins.int] = None,
+                 model_id: Optional[_builtins.str] = None,
                  scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None):
         """
-        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs' instance_configuration: (Updatable) The model deployment instance configuration
-        :param _builtins.str model_id: (Updatable) The OCID of the model you want to deploy.
         :param _builtins.int bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs' instance_configuration: (Updatable) The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: (Updatable) The maximum network bandwidth for the model deployment.
+        :param _builtins.str model_id: (Updatable) The OCID of the model you want to deploy.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs' scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
         """
-        pulumi.set(__self__, "instance_configuration", instance_configuration)
-        pulumi.set(__self__, "model_id", model_id)
         if bandwidth_mbps is not None:
             pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if instance_configuration is not None:
+            pulumi.set(__self__, "instance_configuration", instance_configuration)
         if maximum_bandwidth_mbps is not None:
             pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
         if scaling_policy is not None:
             pulumi.set(__self__, "scaling_policy", scaling_policy)
-
-    @_builtins.property
-    @pulumi.getter(name="instanceConfiguration")
-    def instance_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration':
-        """
-        (Updatable) The model deployment instance configuration
-        """
-        return pulumi.get(self, "instance_configuration")
-
-    @_builtins.property
-    @pulumi.getter(name="modelId")
-    def model_id(self) -> _builtins.str:
-        """
-        (Updatable) The OCID of the model you want to deploy.
-        """
-        return pulumi.get(self, "model_id")
 
     @_builtins.property
     @pulumi.getter(name="bandwidthMbps")
@@ -3018,12 +5567,28 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return pulumi.get(self, "bandwidth_mbps")
 
     @_builtins.property
+    @pulumi.getter(name="instanceConfiguration")
+    def instance_configuration(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration']:
+        """
+        (Updatable) The model deployment instance configuration.
+        """
+        return pulumi.get(self, "instance_configuration")
+
+    @_builtins.property
     @pulumi.getter(name="maximumBandwidthMbps")
     def maximum_bandwidth_mbps(self) -> Optional[_builtins.int]:
         """
         (Updatable) The maximum network bandwidth for the model deployment.
         """
         return pulumi.get(self, "maximum_bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the model you want to deploy.
+        """
+        return pulumi.get(self, "model_id")
 
     @_builtins.property
     @pulumi.getter(name="scalingPolicy")
@@ -3060,7 +5625,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 instance_shape_name: _builtins.str,
+                 instance_shape_name: Optional[_builtins.str] = None,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
                  private_endpoint_id: Optional[_builtins.str] = None,
                  subnet_id: Optional[_builtins.str] = None):
@@ -3070,7 +5635,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param _builtins.str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
-        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        if instance_shape_name is not None:
+            pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
         if private_endpoint_id is not None:
@@ -3080,7 +5646,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
 
     @_builtins.property
     @pulumi.getter(name="instanceShapeName")
-    def instance_shape_name(self) -> _builtins.str:
+    def instance_shape_name(self) -> Optional[_builtins.str]:
         """
         (Updatable) The shape used to launch the model deployment instances.
         """
@@ -3649,6 +6215,36 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
 
 
 @pulumi.output_type
+class ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelGroupId":
+            suggest = "model_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_group_id: Optional[_builtins.str] = None):
+        if model_group_id is not None:
+            pulumi.set(__self__, "model_group_id", model_group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupId")
+    def model_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "model_group_id")
+
+
+@pulumi.output_type
 class ModelDeploymentModelDeploymentSystemData(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -3696,6 +6292,615 @@ class ModelDeploymentModelDeploymentSystemData(dict):
         The infrastructure type of the model deployment.
         """
         return pulumi.get(self, "system_infra_type")
+
+
+@pulumi.output_type
+class ModelGroupMemberModelEntries(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memberModelDetails":
+            suggest = "member_model_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupMemberModelEntries. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupMemberModelEntries.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupMemberModelEntries.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 member_model_details: Optional[Sequence['outputs.ModelGroupMemberModelEntriesMemberModelDetail']] = None):
+        """
+        :param Sequence['ModelGroupMemberModelEntriesMemberModelDetailArgs'] member_model_details: Each List item contains inference key and model ocid.
+        """
+        if member_model_details is not None:
+            pulumi.set(__self__, "member_model_details", member_model_details)
+
+    @_builtins.property
+    @pulumi.getter(name="memberModelDetails")
+    def member_model_details(self) -> Optional[Sequence['outputs.ModelGroupMemberModelEntriesMemberModelDetail']]:
+        """
+        Each List item contains inference key and model ocid.
+        """
+        return pulumi.get(self, "member_model_details")
+
+
+@pulumi.output_type
+class ModelGroupMemberModelEntriesMemberModelDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "inferenceKey":
+            suggest = "inference_key"
+        elif key == "modelId":
+            suggest = "model_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupMemberModelEntriesMemberModelDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupMemberModelEntriesMemberModelDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupMemberModelEntriesMemberModelDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 inference_key: Optional[_builtins.str] = None,
+                 model_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str inference_key: SaaS friendly name of the model.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        if inference_key is not None:
+            pulumi.set(__self__, "inference_key", inference_key)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> Optional[_builtins.str]:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelGroupCloneSourceType":
+            suggest = "model_group_clone_source_type"
+        elif key == "sourceId":
+            suggest = "source_id"
+        elif key == "modifyModelGroupDetails":
+            suggest = "modify_model_group_details"
+        elif key == "patchModelGroupMemberModelDetails":
+            suggest = "patch_model_group_member_model_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupModelGroupCloneSourceDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupModelGroupCloneSourceDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupModelGroupCloneSourceDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_group_clone_source_type: _builtins.str,
+                 source_id: _builtins.str,
+                 modify_model_group_details: Optional['outputs.ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails'] = None,
+                 patch_model_group_member_model_details: Optional['outputs.ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetails'] = None):
+        """
+        :param _builtins.str model_group_clone_source_type: Source resource for model group clone operation.
+        :param _builtins.str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history.
+        :param 'ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsArgs' modify_model_group_details: Overwrites the properties of the source modelGroup.
+        :param 'ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsArgs' patch_model_group_member_model_details: Specifies the list of new models to be added and list of models from source model group to be removed for cloning.
+        """
+        pulumi.set(__self__, "model_group_clone_source_type", model_group_clone_source_type)
+        pulumi.set(__self__, "source_id", source_id)
+        if modify_model_group_details is not None:
+            pulumi.set(__self__, "modify_model_group_details", modify_model_group_details)
+        if patch_model_group_member_model_details is not None:
+            pulumi.set(__self__, "patch_model_group_member_model_details", patch_model_group_member_model_details)
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupCloneSourceType")
+    def model_group_clone_source_type(self) -> _builtins.str:
+        """
+        Source resource for model group clone operation.
+        """
+        return pulumi.get(self, "model_group_clone_source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history.
+        """
+        return pulumi.get(self, "source_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyModelGroupDetails")
+    def modify_model_group_details(self) -> Optional['outputs.ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails']:
+        """
+        Overwrites the properties of the source modelGroup.
+        """
+        return pulumi.get(self, "modify_model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="patchModelGroupMemberModelDetails")
+    def patch_model_group_member_model_details(self) -> Optional['outputs.ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetails']:
+        """
+        Specifies the list of new models to be added and list of models from source model group to be removed for cloning.
+        """
+        return pulumi.get(self, "patch_model_group_member_model_details")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "displayName":
+            suggest = "display_name"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "modelGroupDetails":
+            suggest = "model_group_details"
+        elif key == "modelGroupVersionHistoryId":
+            suggest = "model_group_version_history_id"
+        elif key == "versionLabel":
+            suggest = "version_label"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 defined_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 description: Optional[_builtins.str] = None,
+                 display_name: Optional[_builtins.str] = None,
+                 freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
+                 model_group_details: Optional['outputs.ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails'] = None,
+                 model_group_version_history_id: Optional[_builtins.str] = None,
+                 version_label: Optional[_builtins.str] = None):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the modelGroup.
+        :param _builtins.str display_name: A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param 'ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsArgs' model_group_details: The model group details.
+        :param _builtins.str model_group_version_history_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
+        :param _builtins.str version_label: An additional description of the lifecycle state of the model group.
+        """
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if model_group_details is not None:
+            pulumi.set(__self__, "model_group_details", model_group_details)
+        if model_group_version_history_id is not None:
+            pulumi.set(__self__, "model_group_version_history_id", model_group_version_history_id)
+        if version_label is not None:
+            pulumi.set(__self__, "version_label", version_label)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        A short description of the modelGroup.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[_builtins.str]:
+        """
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My ModelGroup`
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupDetails")
+    def model_group_details(self) -> Optional['outputs.ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails']:
+        """
+        The model group details.
+        """
+        return pulumi.get(self, "model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupVersionHistoryId")
+    def model_group_version_history_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
+        """
+        return pulumi.get(self, "model_group_version_history_id")
+
+    @_builtins.property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> Optional[_builtins.str]:
+        """
+        An additional description of the lifecycle state of the model group.
+        """
+        return pulumi.get(self, "version_label")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baseModelId":
+            suggest = "base_model_id"
+        elif key == "customMetadataLists":
+            suggest = "custom_metadata_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 base_model_id: Optional[_builtins.str] = None,
+                 custom_metadata_lists: Optional[Sequence['outputs.ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataList']] = None):
+        """
+        :param _builtins.str type: The type of the model group.
+        :param _builtins.str base_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        :param Sequence['ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model group.
+        """
+        pulumi.set(__self__, "type", type)
+        if base_model_id is not None:
+            pulumi.set(__self__, "base_model_id", base_model_id)
+        if custom_metadata_lists is not None:
+            pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the model group.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="baseModelId")
+    def base_model_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        """
+        return pulumi.get(self, "base_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customMetadataLists")
+    def custom_metadata_lists(self) -> Optional[Sequence['outputs.ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataList']]:
+        """
+        An array of custom metadata details for the model group.
+        """
+        return pulumi.get(self, "custom_metadata_lists")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetailsModifyModelGroupDetailsModelGroupDetailsCustomMetadataList(dict):
+    def __init__(__self__, *,
+                 category: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str category: Category of the metadata.
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str key: Key of the metadata.
+        :param _builtins.str value: Value of the metadata.
+        """
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> Optional[_builtins.str]:
+        """
+        Category of the metadata.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Key of the metadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Value of the metadata.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetails(dict):
+    def __init__(__self__, *,
+                 items: Optional[Sequence['outputs.ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItem']] = None):
+        """
+        :param Sequence['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemArgs'] items: Array of patch instructions.
+        """
+        if items is not None:
+            pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Optional[Sequence['outputs.ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItem']]:
+        """
+        Array of patch instructions.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItem(dict):
+    def __init__(__self__, *,
+                 operation: _builtins.str,
+                 values: Sequence['outputs.ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue']):
+        """
+        :param _builtins.str operation: A single instruction to be included as part of Patch request content. Enum type (INSERT and REMOVE).
+        :param Sequence['ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValueArgs'] values: Array of inference key and model OCID.
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> _builtins.str:
+        """
+        A single instruction to be included as part of Patch request content. Enum type (INSERT and REMOVE).
+        """
+        return pulumi.get(self, "operation")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue']:
+        """
+        Array of inference key and model OCID.
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "modelId":
+            suggest = "model_id"
+        elif key == "inferenceKey":
+            suggest = "inference_key"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupModelGroupCloneSourceDetailsPatchModelGroupMemberModelDetailsItemValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 model_id: _builtins.str,
+                 inference_key: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        :param _builtins.str inference_key: SaaS friendly name of the model.
+        """
+        pulumi.set(__self__, "model_id", model_id)
+        if inference_key is not None:
+            pulumi.set(__self__, "inference_key", inference_key)
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> Optional[_builtins.str]:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "baseModelId":
+            suggest = "base_model_id"
+        elif key == "customMetadataLists":
+            suggest = "custom_metadata_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ModelGroupModelGroupDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ModelGroupModelGroupDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ModelGroupModelGroupDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: _builtins.str,
+                 base_model_id: Optional[_builtins.str] = None,
+                 custom_metadata_lists: Optional[Sequence['outputs.ModelGroupModelGroupDetailsCustomMetadataList']] = None):
+        """
+        :param _builtins.str type: The type of the model group.
+        :param _builtins.str base_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        :param Sequence['ModelGroupModelGroupDetailsCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model group.
+        """
+        pulumi.set(__self__, "type", type)
+        if base_model_id is not None:
+            pulumi.set(__self__, "base_model_id", base_model_id)
+        if custom_metadata_lists is not None:
+            pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the model group.
+        """
+        return pulumi.get(self, "type")
+
+    @_builtins.property
+    @pulumi.getter(name="baseModelId")
+    def base_model_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        """
+        return pulumi.get(self, "base_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customMetadataLists")
+    def custom_metadata_lists(self) -> Optional[Sequence['outputs.ModelGroupModelGroupDetailsCustomMetadataList']]:
+        """
+        An array of custom metadata details for the model group.
+        """
+        return pulumi.get(self, "custom_metadata_lists")
+
+
+@pulumi.output_type
+class ModelGroupModelGroupDetailsCustomMetadataList(dict):
+    def __init__(__self__, *,
+                 category: Optional[_builtins.str] = None,
+                 description: Optional[_builtins.str] = None,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str category: Category of the metadata.
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str key: Key of the metadata.
+        :param _builtins.str value: Value of the metadata.
+        """
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> Optional[_builtins.str]:
+        """
+        Category of the metadata.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[_builtins.str]:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Key of the metadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Value of the metadata.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3961,7 +7166,9 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -3976,16 +7183,28 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the notebook session instance.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -4097,7 +7316,9 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -4112,16 +7333,28 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         :param _builtins.float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -4526,7 +7759,9 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -4541,16 +7776,28 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -4799,6 +8046,130 @@ class PipelineRunConfigurationOverrideDetails(dict):
 
 
 @pulumi.output_type
+class PipelineRunInfrastructureConfigurationOverrideDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "shapeConfigDetails":
+            suggest = "shape_config_details"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunInfrastructureConfigurationOverrideDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunInfrastructureConfigurationOverrideDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunInfrastructureConfigurationOverrideDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 shape_name: _builtins.str,
+                 shape_config_details: Optional['outputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails'] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param _builtins.str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param 'PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_name", shape_name)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Optional['outputs.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class PipelineRunLogConfigurationOverrideDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4939,6 +8310,8 @@ class PipelineRunStepOverrideDetail(dict):
             suggest = "step_container_configuration_details"
         elif key == "stepDataflowConfigurationDetails":
             suggest = "step_dataflow_configuration_details"
+        elif key == "stepInfrastructureConfigurationDetails":
+            suggest = "step_infrastructure_configuration_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetail. Access the value via the '{suggest}' property getter instead.")
@@ -4955,12 +8328,14 @@ class PipelineRunStepOverrideDetail(dict):
                  step_configuration_details: 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails',
                  step_name: _builtins.str,
                  step_container_configuration_details: Optional['outputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetails'] = None,
-                 step_dataflow_configuration_details: Optional['outputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetails'] = None):
+                 step_dataflow_configuration_details: Optional['outputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetails'] = None,
+                 step_infrastructure_configuration_details: Optional['outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails'] = None):
         """
         :param 'PipelineRunStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: The configuration details of a step.
         :param _builtins.str step_name: The name of the step.
         :param 'PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs' step_container_configuration_details: Container Details for a step in pipeline.
         :param 'PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsArgs' step_dataflow_configuration_details: The configuration details of a Dataflow step.
+        :param 'PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
@@ -4968,6 +8343,8 @@ class PipelineRunStepOverrideDetail(dict):
             pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         if step_dataflow_configuration_details is not None:
             pulumi.set(__self__, "step_dataflow_configuration_details", step_dataflow_configuration_details)
+        if step_infrastructure_configuration_details is not None:
+            pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -5000,6 +8377,14 @@ class PipelineRunStepOverrideDetail(dict):
         The configuration details of a Dataflow step.
         """
         return pulumi.get(self, "step_dataflow_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="stepInfrastructureConfigurationDetails")
+    def step_infrastructure_configuration_details(self) -> Optional['outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "step_infrastructure_configuration_details")
 
 
 @pulumi.output_type
@@ -5301,7 +8686,9 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeCo
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -5316,16 +8703,28 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeCo
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -5349,7 +8748,9 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShape
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -5361,6 +8762,142 @@ class PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShape
 
     def get(self, key: str, default = None) -> Any:
         PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
+                 memory_in_gbs: Optional[_builtins.float] = None,
+                 ocpus: Optional[_builtins.float] = None):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        if memory_in_gbs is not None:
+            pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        if ocpus is not None:
+            pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> Optional[_builtins.float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> Optional[_builtins.float]:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "blockStorageSizeInGbs":
+            suggest = "block_storage_size_in_gbs"
+        elif key == "shapeName":
+            suggest = "shape_name"
+        elif key == "shapeConfigDetails":
+            suggest = "shape_config_details"
+        elif key == "subnetId":
+            suggest = "subnet_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 shape_name: _builtins.str,
+                 shape_config_details: Optional['outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+                 subnet_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param _builtins.str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param 'PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_name", shape_name)
+        if shape_config_details is not None:
+            pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Optional['outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "memoryInGbs":
+            suggest = "memory_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -6093,7 +9630,9 @@ class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -6108,16 +9647,28 @@ class PipelineStepDetailStepDataflowConfigurationDetailsDriverShapeConfigDetails
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -6141,7 +9692,9 @@ class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetai
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -6156,16 +9709,28 @@ class PipelineStepDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetai
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -6265,7 +9830,9 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "memoryInGbs":
+        if key == "cpuBaseline":
+            suggest = "cpu_baseline"
+        elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
 
         if suggest:
@@ -6280,16 +9847,28 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 cpu_baseline: Optional[_builtins.str] = None,
                  memory_in_gbs: Optional[_builtins.float] = None,
                  ocpus: Optional[_builtins.float] = None):
         """
+        :param _builtins.str cpu_baseline: (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        if cpu_baseline is not None:
+            pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -8331,17 +11910,20 @@ class GetJobJobConfigurationDetailResult(dict):
                  command_line_arguments: _builtins.str,
                  environment_variables: Mapping[str, _builtins.str],
                  job_type: _builtins.str,
-                 maximum_runtime_in_minutes: _builtins.str):
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobJobConfigurationDetailStartupProbeDetailResult']):
         """
         :param _builtins.str command_line_arguments: The arguments to pass to the job.
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
         :param _builtins.str job_type: The type of job.
-        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobJobConfigurationDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         pulumi.set(__self__, "environment_variables", environment_variables)
         pulumi.set(__self__, "job_type", job_type)
         pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
 
     @_builtins.property
     @pulumi.getter(name="commandLineArguments")
@@ -8371,9 +11953,79 @@ class GetJobJobConfigurationDetailResult(dict):
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> _builtins.str:
         """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobJobConfigurationDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobJobConfigurationDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
 
 
 @pulumi.output_type
@@ -8461,7 +12113,7 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param _builtins.str shape_name: The shape used to launch the job run instances.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -8498,7 +12150,7 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the job run instances.
+        The name that corresponds to the JobShapeSummary to use for the job node
         """
         return pulumi.get(self, "shape_name")
 
@@ -8514,14 +12166,25 @@ class GetJobJobInfrastructureConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -8589,6 +12252,458 @@ class GetJobJobLogConfigurationDetailResult(dict):
         The log id the job run will push logs too.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 job_network_configurations: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNetworkConfigurationResult'],
+                 job_node_group_configuration_details_lists: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult'],
+                 job_node_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_order: _builtins.str):
+        """
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNetworkConfigurationArgs'] job_network_configurations: The job network configuration details
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListArgs'] job_node_group_configuration_details_lists: List of JobNodeGroupConfigurationDetails
+        :param _builtins.str job_node_type: The node type used for job run.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param _builtins.str startup_order: The execution order of node groups
+        """
+        pulumi.set(__self__, "job_network_configurations", job_network_configurations)
+        pulumi.set(__self__, "job_node_group_configuration_details_lists", job_node_group_configuration_details_lists)
+        pulumi.set(__self__, "job_node_type", job_node_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_order", startup_order)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkConfigurations")
+    def job_network_configurations(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNetworkConfigurationResult']:
+        """
+        The job network configuration details
+        """
+        return pulumi.get(self, "job_network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeGroupConfigurationDetailsLists")
+    def job_node_group_configuration_details_lists(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult']:
+        """
+        List of JobNodeGroupConfigurationDetails
+        """
+        return pulumi.get(self, "job_node_group_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeType")
+    def job_node_type(self) -> _builtins.str:
+        """
+        The node type used for job run.
+        """
+        return pulumi.get(self, "job_node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupOrder")
+    def startup_order(self) -> _builtins.str:
+        """
+        The execution order of node groups
+        """
+        return pulumi.get(self, "startup_order")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 job_network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str job_network_type: job network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_network_type", job_network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkType")
+    def job_network_type(self) -> _builtins.str:
+        """
+        job network type
+        """
+        return pulumi.get(self, "job_network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 job_configuration_details: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult'],
+                 job_environment_configuration_details: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult'],
+                 job_infrastructure_configuration_details: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult'],
+                 minimum_success_replicas: _builtins.int,
+                 name: _builtins.str,
+                 replicas: _builtins.int):
+        """
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param _builtins.int minimum_success_replicas: The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        :param _builtins.str name: node group name.
+        :param _builtins.int replicas: The number of nodes.
+        """
+        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
+        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        pulumi.set(__self__, "minimum_success_replicas", minimum_success_replicas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "replicas", replicas)
+
+    @_builtins.property
+    @pulumi.getter(name="jobConfigurationDetails")
+    def job_configuration_details(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationDetails")
+    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumSuccessReplicas")
+    def minimum_success_replicas(self) -> _builtins.int:
+        """
+        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        """
+        return pulumi.get(self, "minimum_success_replicas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def replicas(self) -> _builtins.int:
+        """
+        The number of nodes.
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: _builtins.str,
+                 environment_variables: Mapping[str, _builtins.str],
+                 job_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']):
+        """
+        :param _builtins.str command_line_arguments: The arguments to pass to the job.
+        :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
+        :param _builtins.str job_type: The type of job.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
+
+    @_builtins.property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> _builtins.str:
+        """
+        The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[_builtins.str],
+                 entrypoints: Sequence[_builtins.str],
+                 image: _builtins.str,
+                 image_digest: _builtins.str,
+                 image_signature_id: _builtins.str,
+                 job_environment_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
+        :param _builtins.str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def cmds(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> _builtins.str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> _builtins.str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> _builtins.str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> _builtins.str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 job_infrastructure_type: _builtins.str,
+                 job_shape_config_details: Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param Sequence['GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Sequence['outputs.GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -8692,17 +12807,20 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
                  command_line_arguments: _builtins.str,
                  environment_variables: Mapping[str, _builtins.str],
                  job_type: _builtins.str,
-                 maximum_runtime_in_minutes: _builtins.str):
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobRunJobConfigurationOverrideDetailStartupProbeDetailResult']):
         """
         :param _builtins.str command_line_arguments: The arguments to pass to the job.
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
         :param _builtins.str job_type: The type of job.
-        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobRunJobConfigurationOverrideDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         pulumi.set(__self__, "environment_variables", environment_variables)
         pulumi.set(__self__, "job_type", job_type)
         pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
 
     @_builtins.property
     @pulumi.getter(name="commandLineArguments")
@@ -8732,9 +12850,79 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> _builtins.str:
         """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobRunJobConfigurationOverrideDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobRunJobConfigurationOverrideDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
 
 
 @pulumi.output_type
@@ -8822,7 +13010,7 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param _builtins.str shape_name: The shape used to launch the job run instances.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -8859,7 +13047,7 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the job run instances.
+        The name that corresponds to the JobShapeSummary to use for the job node
         """
         return pulumi.get(self, "shape_name")
 
@@ -8874,6 +13062,108 @@ class GetJobRunJobInfrastructureConfigurationDetailResult(dict):
 
 @pulumi.output_type
 class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 job_infrastructure_type: _builtins.str,
+                 job_shape_config_details: Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param Sequence['GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Sequence['outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
@@ -8950,6 +13240,458 @@ class GetJobRunJobLogConfigurationOverrideDetailResult(dict):
         The log id of the log object the job run logs will be shipped to.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 job_network_configurations: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult'],
+                 job_node_group_configuration_details_lists: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult'],
+                 job_node_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_order: _builtins.str):
+        """
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationArgs'] job_network_configurations: The job network configuration details
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListArgs'] job_node_group_configuration_details_lists: List of JobNodeGroupConfigurationDetails
+        :param _builtins.str job_node_type: The node type used for job run.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param _builtins.str startup_order: The execution order of node groups
+        """
+        pulumi.set(__self__, "job_network_configurations", job_network_configurations)
+        pulumi.set(__self__, "job_node_group_configuration_details_lists", job_node_group_configuration_details_lists)
+        pulumi.set(__self__, "job_node_type", job_node_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_order", startup_order)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkConfigurations")
+    def job_network_configurations(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult']:
+        """
+        The job network configuration details
+        """
+        return pulumi.get(self, "job_network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeGroupConfigurationDetailsLists")
+    def job_node_group_configuration_details_lists(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult']:
+        """
+        List of JobNodeGroupConfigurationDetails
+        """
+        return pulumi.get(self, "job_node_group_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeType")
+    def job_node_type(self) -> _builtins.str:
+        """
+        The node type used for job run.
+        """
+        return pulumi.get(self, "job_node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupOrder")
+    def startup_order(self) -> _builtins.str:
+        """
+        The execution order of node groups
+        """
+        return pulumi.get(self, "startup_order")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 job_network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str job_network_type: job network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_network_type", job_network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkType")
+    def job_network_type(self) -> _builtins.str:
+        """
+        job network type
+        """
+        return pulumi.get(self, "job_network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 job_configuration_details: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult'],
+                 job_environment_configuration_details: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult'],
+                 job_infrastructure_configuration_details: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult'],
+                 minimum_success_replicas: _builtins.int,
+                 name: _builtins.str,
+                 replicas: _builtins.int):
+        """
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param _builtins.int minimum_success_replicas: The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        :param _builtins.str name: node group name.
+        :param _builtins.int replicas: The number of nodes.
+        """
+        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
+        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        pulumi.set(__self__, "minimum_success_replicas", minimum_success_replicas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "replicas", replicas)
+
+    @_builtins.property
+    @pulumi.getter(name="jobConfigurationDetails")
+    def job_configuration_details(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationDetails")
+    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumSuccessReplicas")
+    def minimum_success_replicas(self) -> _builtins.int:
+        """
+        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        """
+        return pulumi.get(self, "minimum_success_replicas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def replicas(self) -> _builtins.int:
+        """
+        The number of nodes.
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: _builtins.str,
+                 environment_variables: Mapping[str, _builtins.str],
+                 job_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']):
+        """
+        :param _builtins.str command_line_arguments: The arguments to pass to the job.
+        :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
+        :param _builtins.str job_type: The type of job.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
+
+    @_builtins.property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> _builtins.str:
+        """
+        The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[_builtins.str],
+                 entrypoints: Sequence[_builtins.str],
+                 image: _builtins.str,
+                 image_digest: _builtins.str,
+                 image_signature_id: _builtins.str,
+                 job_environment_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
+        :param _builtins.str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def cmds(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> _builtins.str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> _builtins.str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> _builtins.str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> _builtins.str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 job_infrastructure_type: _builtins.str,
+                 job_shape_config_details: Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param Sequence['GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Sequence['outputs.GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -9077,11 +13819,54 @@ class GetJobRunLogDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJobRunNodeGroupDetailsListResult(dict):
+    def __init__(__self__, *,
+                 lifecycle_details: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str lifecycle_details: The state details of the node group.
+        :param _builtins.str name: node group name.
+        :param _builtins.str state: The state of the job run.
+        """
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        The state details of the node group.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the job run.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
 class GetJobRunsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: node group name.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -9090,6 +13875,9 @@ class GetJobRunsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -9117,10 +13905,13 @@ class GetJobRunsJobRunResult(dict):
                  job_environment_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult'],
                  job_id: _builtins.str,
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationDetailResult'],
+                 job_infrastructure_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult'],
                  job_log_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult'],
+                 job_node_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult'],
                  job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult'],
                  lifecycle_details: _builtins.str,
                  log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
+                 node_group_details_lists: Sequence['outputs.GetJobRunsJobRunNodeGroupDetailsListResult'],
                  opc_parent_rpt_url: _builtins.str,
                  project_id: _builtins.str,
                  state: _builtins.str,
@@ -9138,10 +13929,13 @@ class GetJobRunsJobRunResult(dict):
         :param Sequence['GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
         :param _builtins.str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailArgs'] job_infrastructure_configuration_override_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobRunsJobRunJobLogConfigurationOverrideDetailArgs'] job_log_configuration_override_details: Logging configuration for resource.
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailArgs'] job_node_configuration_override_details: The job node configuration details
         :param Sequence['GetJobRunsJobRunJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
-        :param _builtins.str lifecycle_details: Details of the state of the job run.
+        :param _builtins.str lifecycle_details: The state details of the node group.
         :param Sequence['GetJobRunsJobRunLogDetailArgs'] log_details: Customer logging details for job run.
+        :param Sequence['GetJobRunsJobRunNodeGroupDetailsListArgs'] node_group_details_lists: Collection of NodeGroupDetails
         :param _builtins.str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
         :param _builtins.str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
         :param _builtins.str time_accepted: The date and time the job run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -9159,10 +13953,13 @@ class GetJobRunsJobRunResult(dict):
         pulumi.set(__self__, "job_environment_configuration_override_details", job_environment_configuration_override_details)
         pulumi.set(__self__, "job_id", job_id)
         pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        pulumi.set(__self__, "job_infrastructure_configuration_override_details", job_infrastructure_configuration_override_details)
         pulumi.set(__self__, "job_log_configuration_override_details", job_log_configuration_override_details)
+        pulumi.set(__self__, "job_node_configuration_override_details", job_node_configuration_override_details)
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_details", log_details)
+        pulumi.set(__self__, "node_group_details_lists", node_group_details_lists)
         pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
@@ -9256,12 +14053,28 @@ class GetJobRunsJobRunResult(dict):
         return pulumi.get(self, "job_infrastructure_configuration_details")
 
     @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationOverrideDetails")
+    def job_infrastructure_configuration_override_details(self) -> Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_override_details")
+
+    @_builtins.property
     @pulumi.getter(name="jobLogConfigurationOverrideDetails")
     def job_log_configuration_override_details(self) -> Sequence['outputs.GetJobRunsJobRunJobLogConfigurationOverrideDetailResult']:
         """
         Logging configuration for resource.
         """
         return pulumi.get(self, "job_log_configuration_override_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeConfigurationOverrideDetails")
+    def job_node_configuration_override_details(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult']:
+        """
+        The job node configuration details
+        """
+        return pulumi.get(self, "job_node_configuration_override_details")
 
     @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
@@ -9275,7 +14088,7 @@ class GetJobRunsJobRunResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        Details of the state of the job run.
+        The state details of the node group.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -9286,6 +14099,14 @@ class GetJobRunsJobRunResult(dict):
         Customer logging details for job run.
         """
         return pulumi.get(self, "log_details")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeGroupDetailsLists")
+    def node_group_details_lists(self) -> Sequence['outputs.GetJobRunsJobRunNodeGroupDetailsListResult']:
+        """
+        Collection of NodeGroupDetails
+        """
+        return pulumi.get(self, "node_group_details_lists")
 
     @_builtins.property
     @pulumi.getter(name="opcParentRptUrl")
@@ -9339,17 +14160,20 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
                  command_line_arguments: _builtins.str,
                  environment_variables: Mapping[str, _builtins.str],
                  job_type: _builtins.str,
-                 maximum_runtime_in_minutes: _builtins.str):
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailStartupProbeDetailResult']):
         """
         :param _builtins.str command_line_arguments: The arguments to pass to the job.
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
         :param _builtins.str job_type: The type of job.
-        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobRunsJobRunJobConfigurationOverrideDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         pulumi.set(__self__, "environment_variables", environment_variables)
         pulumi.set(__self__, "job_type", job_type)
         pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
 
     @_builtins.property
     @pulumi.getter(name="commandLineArguments")
@@ -9379,9 +14203,79 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> _builtins.str:
         """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobConfigurationOverrideDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
 
 
 @pulumi.output_type
@@ -9469,7 +14363,7 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param _builtins.str shape_name: The shape used to launch the job run instances.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -9506,7 +14400,7 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the job run instances.
+        The name that corresponds to the JobShapeSummary to use for the job node
         """
         return pulumi.get(self, "shape_name")
 
@@ -9521,6 +14415,108 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailResult(dict):
 
 @pulumi.output_type
 class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 job_infrastructure_type: _builtins.str,
+                 job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param Sequence['GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Sequence['outputs.GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobInfrastructureConfigurationOverrideDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
@@ -9597,6 +14593,458 @@ class GetJobRunsJobRunJobLogConfigurationOverrideDetailResult(dict):
         The log id of the log object the job run logs will be shipped to.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 job_network_configurations: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult'],
+                 job_node_group_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult'],
+                 job_node_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_order: _builtins.str):
+        """
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationArgs'] job_network_configurations: The job network configuration details
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListArgs'] job_node_group_configuration_details_lists: List of JobNodeGroupConfigurationDetails
+        :param _builtins.str job_node_type: The node type used for job run.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param _builtins.str startup_order: The execution order of node groups
+        """
+        pulumi.set(__self__, "job_network_configurations", job_network_configurations)
+        pulumi.set(__self__, "job_node_group_configuration_details_lists", job_node_group_configuration_details_lists)
+        pulumi.set(__self__, "job_node_type", job_node_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_order", startup_order)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkConfigurations")
+    def job_network_configurations(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult']:
+        """
+        The job network configuration details
+        """
+        return pulumi.get(self, "job_network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeGroupConfigurationDetailsLists")
+    def job_node_group_configuration_details_lists(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult']:
+        """
+        List of JobNodeGroupConfigurationDetails
+        """
+        return pulumi.get(self, "job_node_group_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeType")
+    def job_node_type(self) -> _builtins.str:
+        """
+        The node type used for job run.
+        """
+        return pulumi.get(self, "job_node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupOrder")
+    def startup_order(self) -> _builtins.str:
+        """
+        The execution order of node groups
+        """
+        return pulumi.get(self, "startup_order")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 job_network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str job_network_type: job network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_network_type", job_network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkType")
+    def job_network_type(self) -> _builtins.str:
+        """
+        job network type
+        """
+        return pulumi.get(self, "job_network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 job_configuration_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult'],
+                 job_environment_configuration_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult'],
+                 job_infrastructure_configuration_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult'],
+                 minimum_success_replicas: _builtins.int,
+                 name: _builtins.str,
+                 replicas: _builtins.int):
+        """
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param _builtins.int minimum_success_replicas: The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        :param _builtins.str name: node group name.
+        :param _builtins.int replicas: The number of nodes.
+        """
+        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
+        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        pulumi.set(__self__, "minimum_success_replicas", minimum_success_replicas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "replicas", replicas)
+
+    @_builtins.property
+    @pulumi.getter(name="jobConfigurationDetails")
+    def job_configuration_details(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationDetails")
+    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumSuccessReplicas")
+    def minimum_success_replicas(self) -> _builtins.int:
+        """
+        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        """
+        return pulumi.get(self, "minimum_success_replicas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def replicas(self) -> _builtins.int:
+        """
+        The number of nodes.
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: _builtins.str,
+                 environment_variables: Mapping[str, _builtins.str],
+                 job_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']):
+        """
+        :param _builtins.str command_line_arguments: The arguments to pass to the job.
+        :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
+        :param _builtins.str job_type: The type of job.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
+
+    @_builtins.property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> _builtins.str:
+        """
+        The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[_builtins.str],
+                 entrypoints: Sequence[_builtins.str],
+                 image: _builtins.str,
+                 image_digest: _builtins.str,
+                 image_signature_id: _builtins.str,
+                 job_environment_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
+        :param _builtins.str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def cmds(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> _builtins.str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> _builtins.str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> _builtins.str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> _builtins.str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 job_infrastructure_type: _builtins.str,
+                 job_shape_config_details: Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param Sequence['GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Sequence['outputs.GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobRunsJobRunJobNodeConfigurationOverrideDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -9724,6 +15172,46 @@ class GetJobRunsJobRunLogDetailResult(dict):
 
 
 @pulumi.output_type
+class GetJobRunsJobRunNodeGroupDetailsListResult(dict):
+    def __init__(__self__, *,
+                 lifecycle_details: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.str lifecycle_details: The state details of the node group.
+        :param _builtins.str name: node group name.
+        :param _builtins.str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        The state details of the node group.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
 class GetJobShapesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -9813,6 +15301,9 @@ class GetJobsFilterResult(dict):
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
                  regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: node group name.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -9821,6 +15312,9 @@ class GetJobsFilterResult(dict):
     @_builtins.property
     @pulumi.getter
     def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
         return pulumi.get(self, "name")
 
     @_builtins.property
@@ -9855,6 +15349,7 @@ class GetJobsJobResult(dict):
                  job_environment_configuration_details: Sequence['outputs.GetJobsJobJobEnvironmentConfigurationDetailResult'],
                  job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobInfrastructureConfigurationDetailResult'],
                  job_log_configuration_details: Sequence['outputs.GetJobsJobJobLogConfigurationDetailResult'],
+                 job_node_configuration_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailResult'],
                  job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult'],
                  lifecycle_details: _builtins.str,
                  project_id: _builtins.str,
@@ -9872,6 +15367,7 @@ class GetJobsJobResult(dict):
         :param Sequence['GetJobsJobJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
         :param Sequence['GetJobsJobJobLogConfigurationDetailArgs'] job_log_configuration_details: Logging configuration for resource.
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailArgs'] job_node_configuration_details: The job node configuration details
         :param Sequence['GetJobsJobJobStorageMountConfigurationDetailsListArgs'] job_storage_mount_configuration_details_lists: Collection of JobStorageMountConfigurationDetails.
         :param _builtins.str lifecycle_details: The state of the job.
         :param _builtins.str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -9896,6 +15392,7 @@ class GetJobsJobResult(dict):
         pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
         pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
         pulumi.set(__self__, "job_log_configuration_details", job_log_configuration_details)
+        pulumi.set(__self__, "job_node_configuration_details", job_node_configuration_details)
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "project_id", project_id)
@@ -10026,6 +15523,14 @@ class GetJobsJobResult(dict):
         return pulumi.get(self, "job_log_configuration_details")
 
     @_builtins.property
+    @pulumi.getter(name="jobNodeConfigurationDetails")
+    def job_node_configuration_details(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailResult']:
+        """
+        The job node configuration details
+        """
+        return pulumi.get(self, "job_node_configuration_details")
+
+    @_builtins.property
     @pulumi.getter(name="jobStorageMountConfigurationDetailsLists")
     def job_storage_mount_configuration_details_lists(self) -> Sequence['outputs.GetJobsJobJobStorageMountConfigurationDetailsListResult']:
         """
@@ -10072,17 +15577,20 @@ class GetJobsJobJobConfigurationDetailResult(dict):
                  command_line_arguments: _builtins.str,
                  environment_variables: Mapping[str, _builtins.str],
                  job_type: _builtins.str,
-                 maximum_runtime_in_minutes: _builtins.str):
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobsJobJobConfigurationDetailStartupProbeDetailResult']):
         """
         :param _builtins.str command_line_arguments: The arguments to pass to the job.
         :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
         :param _builtins.str job_type: The type of job.
-        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobsJobJobConfigurationDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
         pulumi.set(__self__, "environment_variables", environment_variables)
         pulumi.set(__self__, "job_type", job_type)
         pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
 
     @_builtins.property
     @pulumi.getter(name="commandLineArguments")
@@ -10112,9 +15620,79 @@ class GetJobsJobJobConfigurationDetailResult(dict):
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> _builtins.str:
         """
-        A time bound for the execution of the job. Timer starts when the job becomes active.
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobsJobJobConfigurationDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobsJobJobConfigurationDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
 
 
 @pulumi.output_type
@@ -10202,7 +15780,7 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
         :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
         :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
         :param Sequence['GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
-        :param _builtins.str shape_name: The shape used to launch the job run instances.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
         :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
@@ -10239,7 +15817,7 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> _builtins.str:
         """
-        The shape used to launch the job run instances.
+        The name that corresponds to the JobShapeSummary to use for the job node
         """
         return pulumi.get(self, "shape_name")
 
@@ -10255,14 +15833,25 @@ class GetJobsJobJobInfrastructureConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -10330,6 +15919,458 @@ class GetJobsJobJobLogConfigurationDetailResult(dict):
         The log id the job run will push logs too.
         """
         return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 job_network_configurations: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNetworkConfigurationResult'],
+                 job_node_group_configuration_details_lists: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult'],
+                 job_node_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_order: _builtins.str):
+        """
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNetworkConfigurationArgs'] job_network_configurations: The job network configuration details
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListArgs'] job_node_group_configuration_details_lists: List of JobNodeGroupConfigurationDetails
+        :param _builtins.str job_node_type: The node type used for job run.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param _builtins.str startup_order: The execution order of node groups
+        """
+        pulumi.set(__self__, "job_network_configurations", job_network_configurations)
+        pulumi.set(__self__, "job_node_group_configuration_details_lists", job_node_group_configuration_details_lists)
+        pulumi.set(__self__, "job_node_type", job_node_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_order", startup_order)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkConfigurations")
+    def job_network_configurations(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNetworkConfigurationResult']:
+        """
+        The job network configuration details
+        """
+        return pulumi.get(self, "job_network_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeGroupConfigurationDetailsLists")
+    def job_node_group_configuration_details_lists(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult']:
+        """
+        List of JobNodeGroupConfigurationDetails
+        """
+        return pulumi.get(self, "job_node_group_configuration_details_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="jobNodeType")
+    def job_node_type(self) -> _builtins.str:
+        """
+        The node type used for job run.
+        """
+        return pulumi.get(self, "job_node_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupOrder")
+    def startup_order(self) -> _builtins.str:
+        """
+        The execution order of node groups
+        """
+        return pulumi.get(self, "startup_order")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNetworkConfigurationResult(dict):
+    def __init__(__self__, *,
+                 job_network_type: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str job_network_type: job network type
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "job_network_type", job_network_type)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="jobNetworkType")
+    def job_network_type(self) -> _builtins.str:
+        """
+        job network type
+        """
+        return pulumi.get(self, "job_network_type")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListResult(dict):
+    def __init__(__self__, *,
+                 job_configuration_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult'],
+                 job_environment_configuration_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult'],
+                 job_infrastructure_configuration_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult'],
+                 minimum_success_replicas: _builtins.int,
+                 name: _builtins.str,
+                 replicas: _builtins.int):
+        """
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailArgs'] job_infrastructure_configuration_details: The job infrastructure configuration details (shape, block storage, etc.)
+        :param _builtins.int minimum_success_replicas: The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        :param _builtins.str name: node group name.
+        :param _builtins.int replicas: The number of nodes.
+        """
+        pulumi.set(__self__, "job_configuration_details", job_configuration_details)
+        pulumi.set(__self__, "job_environment_configuration_details", job_environment_configuration_details)
+        pulumi.set(__self__, "job_infrastructure_configuration_details", job_infrastructure_configuration_details)
+        pulumi.set(__self__, "minimum_success_replicas", minimum_success_replicas)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "replicas", replicas)
+
+    @_builtins.property
+    @pulumi.getter(name="jobConfigurationDetails")
+    def job_configuration_details(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult']:
+        """
+        The job configuration details
+        """
+        return pulumi.get(self, "job_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentConfigurationDetails")
+    def job_environment_configuration_details(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult']:
+        """
+        Environment configuration to capture job runtime dependencies.
+        """
+        return pulumi.get(self, "job_environment_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureConfigurationDetails")
+    def job_infrastructure_configuration_details(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult']:
+        """
+        The job infrastructure configuration details (shape, block storage, etc.)
+        """
+        return pulumi.get(self, "job_infrastructure_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumSuccessReplicas")
+    def minimum_success_replicas(self) -> _builtins.int:
+        """
+        The minimum threshold of successful replicas for node group to be successful. All replicas need to succeed if this is not specified.
+        """
+        return pulumi.get(self, "minimum_success_replicas")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        node group name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def replicas(self) -> _builtins.int:
+        """
+        The number of nodes.
+        """
+        return pulumi.get(self, "replicas")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 command_line_arguments: _builtins.str,
+                 environment_variables: Mapping[str, _builtins.str],
+                 job_type: _builtins.str,
+                 maximum_runtime_in_minutes: _builtins.str,
+                 startup_probe_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']):
+        """
+        :param _builtins.str command_line_arguments: The arguments to pass to the job.
+        :param Mapping[str, _builtins.str] environment_variables: Environment variables to set for the job.
+        :param _builtins.str job_type: The type of job.
+        :param _builtins.str maximum_runtime_in_minutes: A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailArgs'] startup_probe_details: The probe indicates whether the application within the job run has started.
+        """
+        pulumi.set(__self__, "command_line_arguments", command_line_arguments)
+        pulumi.set(__self__, "environment_variables", environment_variables)
+        pulumi.set(__self__, "job_type", job_type)
+        pulumi.set(__self__, "maximum_runtime_in_minutes", maximum_runtime_in_minutes)
+        pulumi.set(__self__, "startup_probe_details", startup_probe_details)
+
+    @_builtins.property
+    @pulumi.getter(name="commandLineArguments")
+    def command_line_arguments(self) -> _builtins.str:
+        """
+        The arguments to pass to the job.
+        """
+        return pulumi.get(self, "command_line_arguments")
+
+    @_builtins.property
+    @pulumi.getter(name="environmentVariables")
+    def environment_variables(self) -> Mapping[str, _builtins.str]:
+        """
+        Environment variables to set for the job.
+        """
+        return pulumi.get(self, "environment_variables")
+
+    @_builtins.property
+    @pulumi.getter(name="jobType")
+    def job_type(self) -> _builtins.str:
+        """
+        The type of job.
+        """
+        return pulumi.get(self, "job_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumRuntimeInMinutes")
+    def maximum_runtime_in_minutes(self) -> _builtins.str:
+        """
+        A time bound for the execution of the job run. Timer starts when the job run is in progress.
+        """
+        return pulumi.get(self, "maximum_runtime_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="startupProbeDetails")
+    def startup_probe_details(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult']:
+        """
+        The probe indicates whether the application within the job run has started.
+        """
+        return pulumi.get(self, "startup_probe_details")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobConfigurationDetailStartupProbeDetailResult(dict):
+    def __init__(__self__, *,
+                 commands: Sequence[_builtins.str],
+                 failure_threshold: _builtins.int,
+                 initial_delay_in_seconds: _builtins.int,
+                 job_probe_check_type: _builtins.str,
+                 period_in_seconds: _builtins.int):
+        """
+        :param Sequence[_builtins.str] commands: The commands to run in the target job run to perform the startup probe
+        :param _builtins.int failure_threshold: How many times the job will try before giving up when a probe fails.
+        :param _builtins.int initial_delay_in_seconds: Number of seconds after the job run has started before a startup probe is initiated.
+        :param _builtins.str job_probe_check_type: The probe check type to perform the startup probe and specifies the type of health check for a job.
+        :param _builtins.int period_in_seconds: Number of seconds how often the job run should perform a startup probe
+        """
+        pulumi.set(__self__, "commands", commands)
+        pulumi.set(__self__, "failure_threshold", failure_threshold)
+        pulumi.set(__self__, "initial_delay_in_seconds", initial_delay_in_seconds)
+        pulumi.set(__self__, "job_probe_check_type", job_probe_check_type)
+        pulumi.set(__self__, "period_in_seconds", period_in_seconds)
+
+    @_builtins.property
+    @pulumi.getter
+    def commands(self) -> Sequence[_builtins.str]:
+        """
+        The commands to run in the target job run to perform the startup probe
+        """
+        return pulumi.get(self, "commands")
+
+    @_builtins.property
+    @pulumi.getter(name="failureThreshold")
+    def failure_threshold(self) -> _builtins.int:
+        """
+        How many times the job will try before giving up when a probe fails.
+        """
+        return pulumi.get(self, "failure_threshold")
+
+    @_builtins.property
+    @pulumi.getter(name="initialDelayInSeconds")
+    def initial_delay_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds after the job run has started before a startup probe is initiated.
+        """
+        return pulumi.get(self, "initial_delay_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProbeCheckType")
+    def job_probe_check_type(self) -> _builtins.str:
+        """
+        The probe check type to perform the startup probe and specifies the type of health check for a job.
+        """
+        return pulumi.get(self, "job_probe_check_type")
+
+    @_builtins.property
+    @pulumi.getter(name="periodInSeconds")
+    def period_in_seconds(self) -> _builtins.int:
+        """
+        Number of seconds how often the job run should perform a startup probe
+        """
+        return pulumi.get(self, "period_in_seconds")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[_builtins.str],
+                 entrypoints: Sequence[_builtins.str],
+                 image: _builtins.str,
+                 image_digest: _builtins.str,
+                 image_signature_id: _builtins.str,
+                 job_environment_type: _builtins.str):
+        """
+        :param Sequence[_builtins.str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[_builtins.str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param _builtins.str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        :param _builtins.str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param _builtins.str image_signature_id: OCID of the container image signature
+        :param _builtins.str job_environment_type: The environment configuration type used for job runtime.
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+        pulumi.set(__self__, "job_environment_type", job_environment_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def cmds(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @_builtins.property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[_builtins.str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @_builtins.property
+    @pulumi.getter
+    def image(self) -> _builtins.str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
+        """
+        return pulumi.get(self, "image")
+
+    @_builtins.property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> _builtins.str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @_builtins.property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> _builtins.str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+    @_builtins.property
+    @pulumi.getter(name="jobEnvironmentType")
+    def job_environment_type(self) -> _builtins.str:
+        """
+        The environment configuration type used for job runtime.
+        """
+        return pulumi.get(self, "job_environment_type")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 job_infrastructure_type: _builtins.str,
+                 job_shape_config_details: Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance running the job
+        :param _builtins.str job_infrastructure_type: The infrastructure type used for job run.
+        :param Sequence['GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs'] job_shape_config_details: Details for the job run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The name that corresponds to the JobShapeSummary to use for the job node
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "job_infrastructure_type", job_infrastructure_type)
+        pulumi.set(__self__, "job_shape_config_details", job_shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance running the job
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="jobInfrastructureType")
+    def job_infrastructure_type(self) -> _builtins.str:
+        """
+        The infrastructure type used for job run.
+        """
+        return pulumi.get(self, "job_infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="jobShapeConfigDetails")
+    def job_shape_config_details(self) -> Sequence['outputs.GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult']:
+        """
+        Details for the job run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "job_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The name that corresponds to the JobShapeSummary to use for the job node
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the job
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetJobsJobJobNodeConfigurationDetailJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param _builtins.float ocpus: The total number of OCPUs available to the job run instance.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        The total amount of memory available to the job run instance, in gigabytes.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        The total number of OCPUs available to the job run instance.
+        """
+        return pulumi.get(self, "ocpus")
 
 
 @pulumi.output_type
@@ -12610,15 +18651,21 @@ class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  deployment_type: _builtins.str,
                  environment_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
-                 model_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']):
+                 infrastructure_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult'],
+                 model_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult'],
+                 model_group_configuration_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult']):
         """
         :param _builtins.str deployment_type: The type of the model deployment.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailArgs'] infrastructure_configuration_details: The infrastructure configuration details.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailArgs'] model_group_configuration_details: The model group configuration details.
         """
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+        pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
         pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        pulumi.set(__self__, "model_group_configuration_details", model_group_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
@@ -12637,12 +18684,28 @@ class GetModelDeploymentModelDeploymentConfigurationDetailResult(dict):
         return pulumi.get(self, "environment_configuration_details")
 
     @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationDetails")
+    def infrastructure_configuration_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details.
+        """
+        return pulumi.get(self, "infrastructure_configuration_details")
+
+    @_builtins.property
     @pulumi.getter(name="modelConfigurationDetails")
     def model_configuration_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']:
         """
         The model configuration details.
         """
         return pulumi.get(self, "model_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupConfigurationDetails")
+    def model_group_configuration_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult']:
+        """
+        The model group configuration details.
+        """
+        return pulumi.get(self, "model_group_configuration_details")
 
 
 @pulumi.output_type
@@ -12741,6 +18804,458 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
 
 
 @pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 bandwidth_mbps: _builtins.int,
+                 infrastructure_type: _builtins.str,
+                 instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult'],
+                 maximum_bandwidth_mbps: _builtins.int,
+                 scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult']):
+        """
+        :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
+        :param _builtins.str infrastructure_type: The type of the model deployment infrastructure.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
+        :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
+        """
+        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_configurations", instance_configurations)
+        pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        pulumi.set(__self__, "scaling_policies", scaling_policies)
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthMbps")
+    def bandwidth_mbps(self) -> _builtins.int:
+        """
+        The minimum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> _builtins.str:
+        """
+        The type of the model deployment infrastructure.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceConfigurations")
+    def instance_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult']:
+        """
+        The model deployment instance configuration.
+        """
+        return pulumi.get(self, "instance_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumBandwidthMbps")
+    def maximum_bandwidth_mbps(self) -> _builtins.int:
+        """
+        The maximum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "maximum_bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingPolicies")
+    def scaling_policies(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult']:
+        """
+        The scaling policy to apply to each model of the deployment.
+        """
+        return pulumi.get(self, "scaling_policies")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_shape_name: _builtins.str,
+                 model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 private_endpoint_id: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
+        :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceShapeName")
+    def instance_shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the model deployment instances.
+        """
+        return pulumi.get(self, "instance_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
+    def model_deployment_instance_shape_config_details(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']:
+        """
+        Details for the model-deployment instance shape configuration.
+        """
+        return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult'],
+                 cool_down_in_seconds: _builtins.int,
+                 instance_count: _builtins.int,
+                 is_enabled: _builtins.bool,
+                 policy_type: _builtins.str):
+        """
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyArgs'] auto_scaling_policies: The list of autoscaling policy details.
+        :param _builtins.int cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param _builtins.int instance_count: The number of instances for the model deployment.
+        :param _builtins.bool is_enabled: Whether the autoscaling policy is enabled.
+        :param _builtins.str policy_type: The type of scaling policy.
+        """
+        pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        pulumi.set(__self__, "instance_count", instance_count)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "policy_type", policy_type)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult']:
+        """
+        The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> _builtins.int:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCount")
+    def instance_count(self) -> _builtins.int:
+        """
+        The number of instances for the model deployment.
+        """
+        return pulumi.get(self, "instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> _builtins.str:
+        """
+        The type of scaling policy.
+        """
+        return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: _builtins.str,
+                 initial_instance_count: _builtins.int,
+                 maximum_instance_count: _builtins.int,
+                 minimum_instance_count: _builtins.int,
+                 rules: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']):
+        """
+        :param _builtins.str auto_scaling_policy_type: The type of autoscaling policy.
+        :param _builtins.int initial_instance_count: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param _builtins.int maximum_instance_count: For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        :param _builtins.int minimum_instance_count: For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs'] rules: The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> _builtins.str:
+        """
+        The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @_builtins.property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']:
+        """
+        The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult(dict):
+    def __init__(__self__, *,
+                 metric_expression_rule_type: _builtins.str,
+                 metric_type: _builtins.str,
+                 scale_in_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult'],
+                 scale_out_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']):
+        """
+        :param _builtins.str metric_expression_rule_type: The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        :param _builtins.str metric_type: Metric type
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configurations: The scaling configuration for the predefined metric expression rule.
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configurations: The scaling configuration for the predefined metric expression rule.
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "scale_in_configurations", scale_in_configurations)
+        pulumi.set(__self__, "scale_out_configurations", scale_out_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> _builtins.str:
+        """
+        The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="scaleInConfigurations")
+    def scale_in_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="scaleOutConfigurations")
+    def scale_out_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configurations")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: _builtins.int,
+                 pending_duration: _builtins.str,
+                 query: _builtins.str,
+                 scaling_configuration_type: _builtins.str,
+                 threshold: _builtins.int):
+        """
+        :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param _builtins.str scaling_configuration_type: The type of scaling configuration.
+        :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> _builtins.int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> _builtins.str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> _builtins.str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> _builtins.str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> _builtins.int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: _builtins.int,
+                 pending_duration: _builtins.str,
+                 query: _builtins.str,
+                 scaling_configuration_type: _builtins.str,
+                 threshold: _builtins.int):
+        """
+        :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param _builtins.str scaling_configuration_type: The type of scaling configuration.
+        :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> _builtins.int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> _builtins.str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> _builtins.str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> _builtins.str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> _builtins.int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  bandwidth_mbps: _builtins.int,
@@ -12750,7 +19265,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
-        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
+        :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
         :param _builtins.str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
@@ -12773,7 +19288,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter(name="instanceConfigurations")
     def instance_configurations(self) -> Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']:
         """
-        The model deployment instance configuration
+        The model deployment instance configuration.
         """
         return pulumi.get(self, "instance_configurations")
 
@@ -13193,6 +19708,24 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
 
 
 @pulumi.output_type
+class GetModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 model_group_id: _builtins.str):
+        """
+        :param _builtins.str model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        """
+        pulumi.set(__self__, "model_group_id", model_group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupId")
+    def model_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        """
+        return pulumi.get(self, "model_group_id")
+
+
+@pulumi.output_type
 class GetModelDeploymentModelDeploymentSystemDataResult(dict):
     def __init__(__self__, *,
                  current_instance_count: _builtins.int,
@@ -13219,6 +19752,128 @@ class GetModelDeploymentModelDeploymentSystemDataResult(dict):
         The infrastructure type of the model deployment.
         """
         return pulumi.get(self, "system_infra_type")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelStatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelDeploymentModelStatesModelDeploymentModelStateResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 inference_key: _builtins.str,
+                 model_id: _builtins.str,
+                 project_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str inference_key: <b>Filter</b> results by the inference key.
+        :param _builtins.str model_id: <b>Filter</b> results by the model ocid.
+        :param _builtins.str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param _builtins.str state: The state of the deployed model in model deployment.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "inference_key", inference_key)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the inference key.
+        """
+        return pulumi.get(self, "inference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the model ocid.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the deployed model in model deployment.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
 
 @pulumi.output_type
@@ -13603,15 +20258,21 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult
     def __init__(__self__, *,
                  deployment_type: _builtins.str,
                  environment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailResult'],
-                 model_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']):
+                 infrastructure_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult'],
+                 model_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult'],
+                 model_group_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult']):
         """
         :param _builtins.str deployment_type: The type of the model deployment.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailArgs'] environment_configuration_details: The configuration to carry the environment details thats used in Model Deployment creation
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailArgs'] infrastructure_configuration_details: The infrastructure configuration details.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailArgs'] model_configuration_details: The model configuration details.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailArgs'] model_group_configuration_details: The model group configuration details.
         """
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "environment_configuration_details", environment_configuration_details)
+        pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
         pulumi.set(__self__, "model_configuration_details", model_configuration_details)
+        pulumi.set(__self__, "model_group_configuration_details", model_group_configuration_details)
 
     @_builtins.property
     @pulumi.getter(name="deploymentType")
@@ -13630,12 +20291,28 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult
         return pulumi.get(self, "environment_configuration_details")
 
     @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationDetails")
+    def infrastructure_configuration_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details.
+        """
+        return pulumi.get(self, "infrastructure_configuration_details")
+
+    @_builtins.property
     @pulumi.getter(name="modelConfigurationDetails")
     def model_configuration_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult']:
         """
         The model configuration details.
         """
         return pulumi.get(self, "model_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupConfigurationDetails")
+    def model_group_configuration_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult']:
+        """
+        The model group configuration details.
+        """
+        return pulumi.get(self, "model_group_configuration_details")
 
 
 @pulumi.output_type
@@ -13734,6 +20411,458 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
 
 
 @pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 bandwidth_mbps: _builtins.int,
+                 infrastructure_type: _builtins.str,
+                 instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult'],
+                 maximum_bandwidth_mbps: _builtins.int,
+                 scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult']):
+        """
+        :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
+        :param _builtins.str infrastructure_type: The type of the model deployment infrastructure.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
+        :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
+        """
+        pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        pulumi.set(__self__, "infrastructure_type", infrastructure_type)
+        pulumi.set(__self__, "instance_configurations", instance_configurations)
+        pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        pulumi.set(__self__, "scaling_policies", scaling_policies)
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthMbps")
+    def bandwidth_mbps(self) -> _builtins.int:
+        """
+        The minimum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureType")
+    def infrastructure_type(self) -> _builtins.str:
+        """
+        The type of the model deployment infrastructure.
+        """
+        return pulumi.get(self, "infrastructure_type")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceConfigurations")
+    def instance_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult']:
+        """
+        The model deployment instance configuration.
+        """
+        return pulumi.get(self, "instance_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumBandwidthMbps")
+    def maximum_bandwidth_mbps(self) -> _builtins.int:
+        """
+        The maximum network bandwidth for the model deployment.
+        """
+        return pulumi.get(self, "maximum_bandwidth_mbps")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingPolicies")
+    def scaling_policies(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult']:
+        """
+        The scaling policy to apply to each model of the deployment.
+        """
+        return pulumi.get(self, "scaling_policies")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_shape_name: _builtins.str,
+                 model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
+                 private_endpoint_id: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.str instance_shape_name: The shape used to launch the model deployment instances.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailArgs'] model_deployment_instance_shape_config_details: Details for the model-deployment instance shape configuration.
+        :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
+        :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceShapeName")
+    def instance_shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the model deployment instances.
+        """
+        return pulumi.get(self, "instance_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
+    def model_deployment_instance_shape_config_details(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult']:
+        """
+        Details for the model-deployment instance shape configuration.
+        """
+        return pulumi.get(self, "model_deployment_instance_shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        The OCID of a Data Science private endpoint.
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult'],
+                 cool_down_in_seconds: _builtins.int,
+                 instance_count: _builtins.int,
+                 is_enabled: _builtins.bool,
+                 policy_type: _builtins.str):
+        """
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyArgs'] auto_scaling_policies: The list of autoscaling policy details.
+        :param _builtins.int cool_down_in_seconds: For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        :param _builtins.int instance_count: The number of instances for the model deployment.
+        :param _builtins.bool is_enabled: Whether the autoscaling policy is enabled.
+        :param _builtins.str policy_type: The type of scaling policy.
+        """
+        pulumi.set(__self__, "auto_scaling_policies", auto_scaling_policies)
+        pulumi.set(__self__, "cool_down_in_seconds", cool_down_in_seconds)
+        pulumi.set(__self__, "instance_count", instance_count)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "policy_type", policy_type)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicies")
+    def auto_scaling_policies(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult']:
+        """
+        The list of autoscaling policy details.
+        """
+        return pulumi.get(self, "auto_scaling_policies")
+
+    @_builtins.property
+    @pulumi.getter(name="coolDownInSeconds")
+    def cool_down_in_seconds(self) -> _builtins.int:
+        """
+        For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 600 seconds, which is also the default. The cooldown period starts when the model deployment becomes ACTIVE after the scaling operation.
+        """
+        return pulumi.get(self, "cool_down_in_seconds")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCount")
+    def instance_count(self) -> _builtins.int:
+        """
+        The number of instances for the model deployment.
+        """
+        return pulumi.get(self, "instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        Whether the autoscaling policy is enabled.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="policyType")
+    def policy_type(self) -> _builtins.str:
+        """
+        The type of scaling policy.
+        """
+        return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_scaling_policy_type: _builtins.str,
+                 initial_instance_count: _builtins.int,
+                 maximum_instance_count: _builtins.int,
+                 minimum_instance_count: _builtins.int,
+                 rules: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']):
+        """
+        :param _builtins.str auto_scaling_policy_type: The type of autoscaling policy.
+        :param _builtins.int initial_instance_count: For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        :param _builtins.int maximum_instance_count: For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        :param _builtins.int minimum_instance_count: For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleArgs'] rules: The list of autoscaling policy rules.
+        """
+        pulumi.set(__self__, "auto_scaling_policy_type", auto_scaling_policy_type)
+        pulumi.set(__self__, "initial_instance_count", initial_instance_count)
+        pulumi.set(__self__, "maximum_instance_count", maximum_instance_count)
+        pulumi.set(__self__, "minimum_instance_count", minimum_instance_count)
+        pulumi.set(__self__, "rules", rules)
+
+    @_builtins.property
+    @pulumi.getter(name="autoScalingPolicyType")
+    def auto_scaling_policy_type(self) -> _builtins.str:
+        """
+        The type of autoscaling policy.
+        """
+        return pulumi.get(self, "auto_scaling_policy_type")
+
+    @_builtins.property
+    @pulumi.getter(name="initialInstanceCount")
+    def initial_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the initial number of instances to launch in the model deployment immediately after autoscaling is enabled. Note that anytime this value is updated, the number of instances will be reset to this value. After autoscaling retrieves performance metrics, the number of instances is automatically adjusted from this initial number to a number that is based on the limits that you set.
+        """
+        return pulumi.get(self, "initial_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="maximumInstanceCount")
+    def maximum_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the maximum number of instances the model deployment is allowed to increase to (scale out).
+        """
+        return pulumi.get(self, "maximum_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="minimumInstanceCount")
+    def minimum_instance_count(self) -> _builtins.int:
+        """
+        For a threshold-based autoscaling policy, this value is the minimum number of instances the model deployment is allowed to decrease to (scale in).
+        """
+        return pulumi.get(self, "minimum_instance_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult']:
+        """
+        The list of autoscaling policy rules.
+        """
+        return pulumi.get(self, "rules")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleResult(dict):
+    def __init__(__self__, *,
+                 metric_expression_rule_type: _builtins.str,
+                 metric_type: _builtins.str,
+                 scale_in_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult'],
+                 scale_out_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']):
+        """
+        :param _builtins.str metric_expression_rule_type: The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        :param _builtins.str metric_type: Metric type
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs'] scale_in_configurations: The scaling configuration for the predefined metric expression rule.
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs'] scale_out_configurations: The scaling configuration for the predefined metric expression rule.
+        """
+        pulumi.set(__self__, "metric_expression_rule_type", metric_expression_rule_type)
+        pulumi.set(__self__, "metric_type", metric_type)
+        pulumi.set(__self__, "scale_in_configurations", scale_in_configurations)
+        pulumi.set(__self__, "scale_out_configurations", scale_out_configurations)
+
+    @_builtins.property
+    @pulumi.getter(name="metricExpressionRuleType")
+    def metric_expression_rule_type(self) -> _builtins.str:
+        """
+        The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
+        """
+        return pulumi.get(self, "metric_expression_rule_type")
+
+    @_builtins.property
+    @pulumi.getter(name="metricType")
+    def metric_type(self) -> _builtins.str:
+        """
+        Metric type
+        """
+        return pulumi.get(self, "metric_type")
+
+    @_builtins.property
+    @pulumi.getter(name="scaleInConfigurations")
+    def scale_in_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_in_configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="scaleOutConfigurations")
+    def scale_out_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult']:
+        """
+        The scaling configuration for the predefined metric expression rule.
+        """
+        return pulumi.get(self, "scale_out_configurations")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleInConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: _builtins.int,
+                 pending_duration: _builtins.str,
+                 query: _builtins.str,
+                 scaling_configuration_type: _builtins.str,
+                 threshold: _builtins.int):
+        """
+        :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param _builtins.str scaling_configuration_type: The type of scaling configuration.
+        :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> _builtins.int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> _builtins.str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> _builtins.str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> _builtins.str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> _builtins.int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationResult(dict):
+    def __init__(__self__, *,
+                 instance_count_adjustment: _builtins.int,
+                 pending_duration: _builtins.str,
+                 query: _builtins.str,
+                 scaling_configuration_type: _builtins.str,
+                 threshold: _builtins.int):
+        """
+        :param _builtins.int instance_count_adjustment: The value is used for adjusting the count of instances by.
+        :param _builtins.str pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        :param _builtins.str query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        :param _builtins.str scaling_configuration_type: The type of scaling configuration.
+        :param _builtins.int threshold: A metric value at which the scaling operation will be triggered.
+        """
+        pulumi.set(__self__, "instance_count_adjustment", instance_count_adjustment)
+        pulumi.set(__self__, "pending_duration", pending_duration)
+        pulumi.set(__self__, "query", query)
+        pulumi.set(__self__, "scaling_configuration_type", scaling_configuration_type)
+        pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCountAdjustment")
+    def instance_count_adjustment(self) -> _builtins.int:
+        """
+        The value is used for adjusting the count of instances by.
+        """
+        return pulumi.get(self, "instance_count_adjustment")
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> _builtins.str:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> _builtins.str:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+        """
+        return pulumi.get(self, "query")
+
+    @_builtins.property
+    @pulumi.getter(name="scalingConfigurationType")
+    def scaling_configuration_type(self) -> _builtins.str:
+        """
+        The type of scaling configuration.
+        """
+        return pulumi.get(self, "scaling_configuration_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def threshold(self) -> _builtins.int:
+        """
+        A metric value at which the scaling operation will be triggered.
+        """
+        return pulumi.get(self, "threshold")
+
+
+@pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  bandwidth_mbps: _builtins.int,
@@ -13743,7 +20872,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
-        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration
+        :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
         :param _builtins.str model_id: The OCID of the model you want to deploy.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
@@ -13766,7 +20895,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter(name="instanceConfigurations")
     def instance_configurations(self) -> Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult']:
         """
-        The model deployment instance configuration
+        The model deployment instance configuration.
         """
         return pulumi.get(self, "instance_configurations")
 
@@ -14186,6 +21315,24 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
 
 
 @pulumi.output_type
+class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelGroupConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 model_group_id: _builtins.str):
+        """
+        :param _builtins.str model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        """
+        pulumi.set(__self__, "model_group_id", model_group_id)
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupId")
+    def model_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group you want to deploy.
+        """
+        return pulumi.get(self, "model_group_id")
+
+
+@pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult(dict):
     def __init__(__self__, *,
                  current_instance_count: _builtins.int,
@@ -14212,6 +21359,1477 @@ class GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult(dict):
         The infrastructure type of the model deployment.
         """
         return pulumi.get(self, "system_infra_type")
+
+
+@pulumi.output_type
+class GetModelGroupMemberModelEntryResult(dict):
+    def __init__(__self__, *,
+                 member_model_details: Sequence['outputs.GetModelGroupMemberModelEntryMemberModelDetailResult']):
+        """
+        :param Sequence['GetModelGroupMemberModelEntryMemberModelDetailArgs'] member_model_details: Each List item contains inference key and model ocid.
+        """
+        pulumi.set(__self__, "member_model_details", member_model_details)
+
+    @_builtins.property
+    @pulumi.getter(name="memberModelDetails")
+    def member_model_details(self) -> Sequence['outputs.GetModelGroupMemberModelEntryMemberModelDetailResult']:
+        """
+        Each List item contains inference key and model ocid.
+        """
+        return pulumi.get(self, "member_model_details")
+
+
+@pulumi.output_type
+class GetModelGroupMemberModelEntryMemberModelDetailResult(dict):
+    def __init__(__self__, *,
+                 inference_key: _builtins.str,
+                 model_id: _builtins.str):
+        """
+        :param _builtins.str inference_key: SaaS friendly name of the model.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        pulumi.set(__self__, "inference_key", inference_key)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> _builtins.str:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 model_group_clone_source_type: _builtins.str,
+                 modify_model_group_details: Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult'],
+                 patch_model_group_member_model_details: Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult'],
+                 source_id: _builtins.str):
+        pulumi.set(__self__, "model_group_clone_source_type", model_group_clone_source_type)
+        pulumi.set(__self__, "modify_model_group_details", modify_model_group_details)
+        pulumi.set(__self__, "patch_model_group_member_model_details", patch_model_group_member_model_details)
+        pulumi.set(__self__, "source_id", source_id)
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupCloneSourceType")
+    def model_group_clone_source_type(self) -> _builtins.str:
+        return pulumi.get(self, "model_group_clone_source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyModelGroupDetails")
+    def modify_model_group_details(self) -> Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult']:
+        return pulumi.get(self, "modify_model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="patchModelGroupMemberModelDetails")
+    def patch_model_group_member_model_details(self) -> Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult']:
+        return pulumi.get(self, "patch_model_group_member_model_details")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_id")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 model_group_details: Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult'],
+                 model_group_version_history_id: _builtins.str,
+                 version_label: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str display_name: A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailArgs'] model_group_details: The model group details.
+        :param _builtins.str model_group_version_history_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
+        :param _builtins.str version_label: An additional description of the lifecycle state of the model group.
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "model_group_details", model_group_details)
+        pulumi.set(__self__, "model_group_version_history_id", model_group_version_history_id)
+        pulumi.set(__self__, "version_label", version_label)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupDetails")
+    def model_group_details(self) -> Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult']:
+        """
+        The model group details.
+        """
+        return pulumi.get(self, "model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupVersionHistoryId")
+    def model_group_version_history_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group version history to which the modelGroup is associated.
+        """
+        return pulumi.get(self, "model_group_version_history_id")
+
+    @_builtins.property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> _builtins.str:
+        """
+        An additional description of the lifecycle state of the model group.
+        """
+        return pulumi.get(self, "version_label")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult(dict):
+    def __init__(__self__, *,
+                 base_model_id: _builtins.str,
+                 custom_metadata_lists: Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult'],
+                 type: _builtins.str):
+        """
+        :param _builtins.str base_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        :param Sequence['GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model group.
+        :param _builtins.str type: The type of the model group.
+        """
+        pulumi.set(__self__, "base_model_id", base_model_id)
+        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModelId")
+    def base_model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        """
+        return pulumi.get(self, "base_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customMetadataLists")
+    def custom_metadata_lists(self) -> Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult']:
+        """
+        An array of custom metadata details for the model group.
+        """
+        return pulumi.get(self, "custom_metadata_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the model group.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 description: _builtins.str,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str category: Category of the metadata.
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str key: Key of the metadata.
+        :param _builtins.str value: Value of the metadata.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        Category of the metadata.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Key of the metadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the metadata.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult(dict):
+    def __init__(__self__, *,
+                 operation: _builtins.str,
+                 values: Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult']):
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> _builtins.str:
+        return pulumi.get(self, "operation")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult']:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult(dict):
+    def __init__(__self__, *,
+                 inference_key: _builtins.str,
+                 model_id: _builtins.str):
+        """
+        :param _builtins.str inference_key: SaaS friendly name of the model.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        pulumi.set(__self__, "inference_key", inference_key)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> _builtins.str:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupDetailResult(dict):
+    def __init__(__self__, *,
+                 base_model_id: _builtins.str,
+                 custom_metadata_lists: Sequence['outputs.GetModelGroupModelGroupDetailCustomMetadataListResult'],
+                 type: _builtins.str):
+        """
+        :param _builtins.str base_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        :param Sequence['GetModelGroupModelGroupDetailCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model group.
+        :param _builtins.str type: The type of the model group.
+        """
+        pulumi.set(__self__, "base_model_id", base_model_id)
+        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModelId")
+    def base_model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        """
+        return pulumi.get(self, "base_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customMetadataLists")
+    def custom_metadata_lists(self) -> Sequence['outputs.GetModelGroupModelGroupDetailCustomMetadataListResult']:
+        """
+        An array of custom metadata details for the model group.
+        """
+        return pulumi.get(self, "custom_metadata_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the model group.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetModelGroupModelGroupDetailCustomMetadataListResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 description: _builtins.str,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str category: Category of the metadata.
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str key: Key of the metadata.
+        :param _builtins.str value: Value of the metadata.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        Category of the metadata.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Key of the metadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the metadata.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetModelGroupModelsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelGroupModelsModelGroupModelResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 compartment_id: _builtins.str,
+                 created_by: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_model_by_reference: _builtins.bool,
+                 lifecycle_details: _builtins.str,
+                 model_id: _builtins.str,
+                 project_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str category: The category of the model.
+        :param _builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param _builtins.bool is_model_by_reference: Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        :param _builtins.str lifecycle_details: Details about the lifecycle state of the model.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        :param _builtins.str project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
+        :param _builtins.str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param _builtins.str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_model_by_reference", is_model_by_reference)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        The category of the model.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isModelByReference")
+    def is_model_by_reference(self) -> _builtins.bool:
+        """
+        Identifier to indicate whether a model artifact resides in the Service Tenancy or Customer Tenancy.
+        """
+        return pulumi.get(self, "is_model_by_reference")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Details about the lifecycle state of the model.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
+        """
+        return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetModelGroupVersionHistoriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelGroupVersionHistoriesModelGroupVersionHistoryResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 created_by: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 latest_model_group_id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 project_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: A short description of the modelGroupVersionHistory.
+        :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param _builtins.str latest_model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest version of the model group associated.
+        :param _builtins.str lifecycle_details: Details about the lifecycle state of the model group version history.
+        :param _builtins.str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param _builtins.str state: A filter to return resources matching the given lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param _builtins.str time_updated: The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "latest_model_group_id", latest_model_group_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        A short description of the modelGroupVersionHistory.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="latestModelGroupId")
+    def latest_model_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the latest version of the model group associated.
+        """
+        return pulumi.get(self, "latest_model_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Details about the lifecycle state of the model group version history.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources matching the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetModelGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 create_type: _builtins.str,
+                 created_by: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 member_model_entries: Sequence['outputs.GetModelGroupsModelGroupMemberModelEntryResult'],
+                 model_group_clone_source_details: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailResult'],
+                 model_group_details: Sequence['outputs.GetModelGroupsModelGroupModelGroupDetailResult'],
+                 model_group_version_history_id: _builtins.str,
+                 model_group_version_history_name: _builtins.str,
+                 project_id: _builtins.str,
+                 source_model_group_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 version_id: _builtins.str,
+                 version_label: _builtins.str):
+        """
+        :param _builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str create_type: The type of the model group create operation.
+        :param _builtins.str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param _builtins.str lifecycle_details: Details about the lifecycle state of the model group.
+        :param Sequence['GetModelGroupsModelGroupMemberModelEntryArgs'] member_model_entries: List of member models (inferenceKey & modelId) to be associated with the model group.
+        :param Sequence['GetModelGroupsModelGroupModelGroupDetailArgs'] model_group_details: The model group details.
+        :param _builtins.str model_group_version_history_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroupVersionHistory.
+        :param _builtins.str model_group_version_history_name: The name of the model group version history to which the model group is associated.
+        :param _builtins.str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param _builtins.str source_model_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group used for the clone operation.
+        :param _builtins.str state: A filter to return resources matching the given lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param _builtins.str time_updated: The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param _builtins.str version_id: Unique identifier assigned to each version of the model group. It would be auto-incremented number generated by service.
+        :param _builtins.str version_label: An additional description of the lifecycle state of the model group.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "create_type", create_type)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "member_model_entries", member_model_entries)
+        pulumi.set(__self__, "model_group_clone_source_details", model_group_clone_source_details)
+        pulumi.set(__self__, "model_group_details", model_group_details)
+        pulumi.set(__self__, "model_group_version_history_id", model_group_version_history_id)
+        pulumi.set(__self__, "model_group_version_history_name", model_group_version_history_name)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "source_model_group_id", source_model_group_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "version_id", version_id)
+        pulumi.set(__self__, "version_label", version_label)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createType")
+    def create_type(self) -> _builtins.str:
+        """
+        The type of the model group create operation.
+        """
+        return pulumi.get(self, "create_type")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Details about the lifecycle state of the model group.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="memberModelEntries")
+    def member_model_entries(self) -> Sequence['outputs.GetModelGroupsModelGroupMemberModelEntryResult']:
+        """
+        List of member models (inferenceKey & modelId) to be associated with the model group.
+        """
+        return pulumi.get(self, "member_model_entries")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupCloneSourceDetails")
+    def model_group_clone_source_details(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailResult']:
+        return pulumi.get(self, "model_group_clone_source_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupDetails")
+    def model_group_details(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupDetailResult']:
+        """
+        The model group details.
+        """
+        return pulumi.get(self, "model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupVersionHistoryId")
+    def model_group_version_history_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroupVersionHistory.
+        """
+        return pulumi.get(self, "model_group_version_history_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupVersionHistoryName")
+    def model_group_version_history_name(self) -> _builtins.str:
+        """
+        The name of the model group version history to which the model group is associated.
+        """
+        return pulumi.get(self, "model_group_version_history_name")
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceModelGroupId")
+    def source_model_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model group used for the clone operation.
+        """
+        return pulumi.get(self, "source_model_group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return resources matching the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the resource was last updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="versionId")
+    def version_id(self) -> _builtins.str:
+        """
+        Unique identifier assigned to each version of the model group. It would be auto-incremented number generated by service.
+        """
+        return pulumi.get(self, "version_id")
+
+    @_builtins.property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> _builtins.str:
+        """
+        An additional description of the lifecycle state of the model group.
+        """
+        return pulumi.get(self, "version_label")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupMemberModelEntryResult(dict):
+    def __init__(__self__, *,
+                 member_model_details: Sequence['outputs.GetModelGroupsModelGroupMemberModelEntryMemberModelDetailResult']):
+        """
+        :param Sequence['GetModelGroupsModelGroupMemberModelEntryMemberModelDetailArgs'] member_model_details: Each List item contains inference key and model ocid.
+        """
+        pulumi.set(__self__, "member_model_details", member_model_details)
+
+    @_builtins.property
+    @pulumi.getter(name="memberModelDetails")
+    def member_model_details(self) -> Sequence['outputs.GetModelGroupsModelGroupMemberModelEntryMemberModelDetailResult']:
+        """
+        Each List item contains inference key and model ocid.
+        """
+        return pulumi.get(self, "member_model_details")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupMemberModelEntryMemberModelDetailResult(dict):
+    def __init__(__self__, *,
+                 inference_key: _builtins.str,
+                 model_id: _builtins.str):
+        """
+        :param _builtins.str inference_key: SaaS friendly name of the model.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        pulumi.set(__self__, "inference_key", inference_key)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> _builtins.str:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 model_group_clone_source_type: _builtins.str,
+                 modify_model_group_details: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult'],
+                 patch_model_group_member_model_details: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult'],
+                 source_id: _builtins.str):
+        pulumi.set(__self__, "model_group_clone_source_type", model_group_clone_source_type)
+        pulumi.set(__self__, "modify_model_group_details", modify_model_group_details)
+        pulumi.set(__self__, "patch_model_group_member_model_details", patch_model_group_member_model_details)
+        pulumi.set(__self__, "source_id", source_id)
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupCloneSourceType")
+    def model_group_clone_source_type(self) -> _builtins.str:
+        return pulumi.get(self, "model_group_clone_source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyModelGroupDetails")
+    def modify_model_group_details(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult']:
+        return pulumi.get(self, "modify_model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="patchModelGroupMemberModelDetails")
+    def patch_model_group_member_model_details(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult']:
+        return pulumi.get(self, "patch_model_group_member_model_details")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_id")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailResult(dict):
+    def __init__(__self__, *,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 model_group_details: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult'],
+                 model_group_version_history_id: _builtins.str,
+                 version_label: _builtins.str):
+        """
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Sequence['GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailArgs'] model_group_details: The model group details.
+        :param _builtins.str model_group_version_history_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroupVersionHistory.
+        :param _builtins.str version_label: An additional description of the lifecycle state of the model group.
+        """
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "model_group_details", model_group_details)
+        pulumi.set(__self__, "model_group_version_history_id", model_group_version_history_id)
+        pulumi.set(__self__, "version_label", version_label)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupDetails")
+    def model_group_details(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult']:
+        """
+        The model group details.
+        """
+        return pulumi.get(self, "model_group_details")
+
+    @_builtins.property
+    @pulumi.getter(name="modelGroupVersionHistoryId")
+    def model_group_version_history_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroupVersionHistory.
+        """
+        return pulumi.get(self, "model_group_version_history_id")
+
+    @_builtins.property
+    @pulumi.getter(name="versionLabel")
+    def version_label(self) -> _builtins.str:
+        """
+        An additional description of the lifecycle state of the model group.
+        """
+        return pulumi.get(self, "version_label")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailResult(dict):
+    def __init__(__self__, *,
+                 base_model_id: _builtins.str,
+                 custom_metadata_lists: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult'],
+                 type: _builtins.str):
+        """
+        :param _builtins.str base_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        :param Sequence['GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model group.
+        :param _builtins.str type: The type of the model group.
+        """
+        pulumi.set(__self__, "base_model_id", base_model_id)
+        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModelId")
+    def base_model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        """
+        return pulumi.get(self, "base_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customMetadataLists")
+    def custom_metadata_lists(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult']:
+        """
+        An array of custom metadata details for the model group.
+        """
+        return pulumi.get(self, "custom_metadata_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the model group.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailModifyModelGroupDetailModelGroupDetailCustomMetadataListResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 description: _builtins.str,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str category: Category of the metadata.
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str key: Key of the metadata.
+        :param _builtins.str value: Value of the metadata.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        Category of the metadata.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Key of the metadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the metadata.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemResult(dict):
+    def __init__(__self__, *,
+                 operation: _builtins.str,
+                 values: Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult']):
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> _builtins.str:
+        return pulumi.get(self, "operation")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult']:
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupCloneSourceDetailPatchModelGroupMemberModelDetailItemValueResult(dict):
+    def __init__(__self__, *,
+                 inference_key: _builtins.str,
+                 model_id: _builtins.str):
+        """
+        :param _builtins.str inference_key: SaaS friendly name of the model.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        pulumi.set(__self__, "inference_key", inference_key)
+        pulumi.set(__self__, "model_id", model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="inferenceKey")
+    def inference_key(self) -> _builtins.str:
+        """
+        SaaS friendly name of the model.
+        """
+        return pulumi.get(self, "inference_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupDetailResult(dict):
+    def __init__(__self__, *,
+                 base_model_id: _builtins.str,
+                 custom_metadata_lists: Sequence['outputs.GetModelGroupsModelGroupModelGroupDetailCustomMetadataListResult'],
+                 type: _builtins.str):
+        """
+        :param _builtins.str base_model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        :param Sequence['GetModelGroupsModelGroupModelGroupDetailCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model group.
+        :param _builtins.str type: The type of the model group.
+        """
+        pulumi.set(__self__, "base_model_id", base_model_id)
+        pulumi.set(__self__, "custom_metadata_lists", custom_metadata_lists)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="baseModelId")
+    def base_model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model in the group that represents the base model for stacked deployment.
+        """
+        return pulumi.get(self, "base_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="customMetadataLists")
+    def custom_metadata_lists(self) -> Sequence['outputs.GetModelGroupsModelGroupModelGroupDetailCustomMetadataListResult']:
+        """
+        An array of custom metadata details for the model group.
+        """
+        return pulumi.get(self, "custom_metadata_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of the model group.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetModelGroupsModelGroupModelGroupDetailCustomMetadataListResult(dict):
+    def __init__(__self__, *,
+                 category: _builtins.str,
+                 description: _builtins.str,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str category: Category of the metadata.
+        :param _builtins.str description: Description of model metadata.
+        :param _builtins.str key: Key of the metadata.
+        :param _builtins.str value: Value of the metadata.
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> _builtins.str:
+        """
+        Category of the metadata.
+        """
+        return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        Description of model metadata.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Key of the metadata.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Value of the metadata.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -15294,14 +23912,25 @@ class GetNotebookSessionNotebookSessionConfigDetailResult(dict):
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the notebook session instance.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -15385,14 +24014,25 @@ class GetNotebookSessionNotebookSessionConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the notebook session instance.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -15919,14 +24559,25 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult(dict):
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the notebook session instance.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -16010,14 +24661,25 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailResult
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
         :param _builtins.float ocpus: The total number of OCPUs available to the notebook session instance.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left bank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -16301,14 +24963,25 @@ class GetPipelineInfrastructureConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -16481,6 +25154,86 @@ class GetPipelineRunConfigurationOverrideDetailResult(dict):
 
 
 @pulumi.output_type
+class GetPipelineRunInfrastructureConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 shape_config_details: Sequence['outputs.GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class GetPipelineRunLogConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  enable_auto_log_creation: _builtins.bool,
@@ -16566,16 +25319,19 @@ class GetPipelineRunStepOverrideDetailResult(dict):
                  step_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
                  step_container_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult'],
                  step_dataflow_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult'],
+                 step_infrastructure_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult'],
                  step_name: _builtins.str):
         """
         :param Sequence['GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
         :param Sequence['GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
         :param Sequence['GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs'] step_dataflow_configuration_details: The configuration details of a Dataflow step.
+        :param Sequence['GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         :param _builtins.str step_name: The name of the step.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         pulumi.set(__self__, "step_dataflow_configuration_details", step_dataflow_configuration_details)
+        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
 
     @_builtins.property
@@ -16601,6 +25357,14 @@ class GetPipelineRunStepOverrideDetailResult(dict):
         The configuration details of a Dataflow step.
         """
         return pulumi.get(self, "step_dataflow_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="stepInfrastructureConfigurationDetails")
+    def step_infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "step_infrastructure_configuration_details")
 
     @_builtins.property
     @pulumi.getter(name="stepName")
@@ -16822,14 +25586,25 @@ class GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult(dict
 @pulumi.output_type
 class GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -16850,6 +25625,97 @@ class GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShape
 
 @pulumi.output_type
 class GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 shape_config_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
@@ -17011,6 +25877,7 @@ class GetPipelineRunsPipelineRunResult(dict):
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 infrastructure_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailResult'],
                  lifecycle_details: _builtins.str,
                  log_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult'],
                  log_details: Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult'],
@@ -17034,6 +25901,7 @@ class GetPipelineRunsPipelineRunResult(dict):
         :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param Sequence['GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailArgs'] infrastructure_configuration_override_details: The infrastructure configuration details of a pipeline or a step.
         :param _builtins.str lifecycle_details: Details of the state of the step run.
         :param Sequence['GetPipelineRunsPipelineRunLogConfigurationOverrideDetailArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param Sequence['GetPipelineRunsPipelineRunLogDetailArgs'] log_details: Customer logging details for pipeline run.
@@ -17057,6 +25925,7 @@ class GetPipelineRunsPipelineRunResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "infrastructure_configuration_override_details", infrastructure_configuration_override_details)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
         pulumi.set(__self__, "log_details", log_details)
@@ -17140,6 +26009,14 @@ class GetPipelineRunsPipelineRunResult(dict):
         <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="infrastructureConfigurationOverrideDetails")
+    def infrastructure_configuration_override_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "infrastructure_configuration_override_details")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -17354,6 +26231,86 @@ class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
 
 
 @pulumi.output_type
+class GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 shape_config_details: Sequence['outputs.GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetailShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
 class GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  enable_auto_log_creation: _builtins.bool,
@@ -17439,16 +26396,19 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
                  step_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
                  step_container_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult'],
                  step_dataflow_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailResult'],
+                 step_infrastructure_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult'],
                  step_name: _builtins.str):
         """
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailArgs'] step_dataflow_configuration_details: The configuration details of a Dataflow step.
+        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         :param _builtins.str step_name: The name of the step.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         pulumi.set(__self__, "step_dataflow_configuration_details", step_dataflow_configuration_details)
+        pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
 
     @_builtins.property
@@ -17474,6 +26434,14 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
         The configuration details of a Dataflow step.
         """
         return pulumi.get(self, "step_dataflow_configuration_details")
+
+    @_builtins.property
+    @pulumi.getter(name="stepInfrastructureConfigurationDetails")
+    def step_infrastructure_configuration_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult']:
+        """
+        The infrastructure configuration details of a pipeline or a step.
+        """
+        return pulumi.get(self, "step_infrastructure_configuration_details")
 
     @_builtins.property
     @pulumi.getter(name="stepName")
@@ -17695,14 +26663,25 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetai
 @pulumi.output_type
 class GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -17723,6 +26702,97 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetai
 
 @pulumi.output_type
 class GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailResult(dict):
+    def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
+                 memory_in_gbs: _builtins.float,
+                 ocpus: _builtins.float):
+        """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
+        pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
+        pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
+
+    @_builtins.property
+    @pulumi.getter(name="memoryInGbs")
+    def memory_in_gbs(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        """
+        return pulumi.get(self, "memory_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter
+    def ocpus(self) -> _builtins.float:
+        """
+        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        """
+        return pulumi.get(self, "ocpus")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 block_storage_size_in_gbs: _builtins.int,
+                 shape_config_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
+                 shape_name: _builtins.str,
+                 subnet_id: _builtins.str):
+        """
+        :param _builtins.int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
+        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param _builtins.str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param _builtins.str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
+        pulumi.set(__self__, "shape_config_details", shape_config_details)
+        pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="blockStorageSizeInGbs")
+    def block_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The size of the block storage volume to attach to the instance.
+        """
+        return pulumi.get(self, "block_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeConfigDetails")
+    def shape_config_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult']:
+        """
+        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        """
+        return pulumi.get(self, "shape_config_details")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeName")
+    def shape_name(self) -> _builtins.str:
+        """
+        The shape used to launch the instance for all step runs in the pipeline.
+        """
+        return pulumi.get(self, "shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
@@ -18248,14 +27318,25 @@ class GetPipelineStepDetailStepDataflowConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -18277,14 +27358,25 @@ class GetPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetai
 @pulumi.output_type
 class GetPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -18357,14 +27449,25 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -18924,14 +28027,25 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -19404,14 +28518,25 @@ class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailResult(dict):
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -19433,14 +28558,25 @@ class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailDriverShapeCo
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")
@@ -19513,14 +28649,25 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(
 @pulumi.output_type
 class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult(dict):
     def __init__(__self__, *,
+                 cpu_baseline: _builtins.str,
                  memory_in_gbs: _builtins.float,
                  ocpus: _builtins.float):
         """
+        :param _builtins.str cpu_baseline: The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
         :param _builtins.float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         :param _builtins.float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
+        pulumi.set(__self__, "cpu_baseline", cpu_baseline)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuBaseline")
+    def cpu_baseline(self) -> _builtins.str:
+        """
+        The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+        """
+        return pulumi.get(self, "cpu_baseline")
 
     @_builtins.property
     @pulumi.getter(name="memoryInGbs")

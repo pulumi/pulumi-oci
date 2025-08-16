@@ -46,6 +46,15 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				InfrastructureConfigurationOverrideDetails: &datascience.PipelineRunInfrastructureConfigurationOverrideDetailsArgs{
+//					BlockStorageSizeInGbs: pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
+//					ShapeName:             pulumi.Any(testShape.Name),
+//					ShapeConfigDetails: &datascience.PipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsArgs{
+//						MemoryInGbs: pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus),
+//					},
+//					SubnetId: pulumi.Any(testSubnet.Id),
+//				},
 //				LogConfigurationOverrideDetails: &datascience.PipelineRunLogConfigurationOverrideDetailsArgs{
 //					EnableAutoLogCreation: pulumi.Any(pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation),
 //					EnableLogging:         pulumi.Any(pipelineRunLogConfigurationOverrideDetailsEnableLogging),
@@ -74,17 +83,28 @@ import (
 //							Configuration: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration),
 //							DriverShape:   pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape),
 //							DriverShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsDriverShapeConfigDetailsArgs{
+//								CpuBaseline: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline),
 //								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs),
 //								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus),
 //							},
 //							ExecutorShape: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape),
 //							ExecutorShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepDataflowConfigurationDetailsExecutorShapeConfigDetailsArgs{
+//								CpuBaseline: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline),
 //								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs),
 //								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus),
 //							},
 //							LogsBucketUri:      pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri),
 //							NumExecutors:       pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors),
 //							WarehouseBucketUri: pulumi.Any(pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri),
+//						},
+//						StepInfrastructureConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsArgs{
+//							BlockStorageSizeInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//							ShapeName:             pulumi.Any(testShape.Name),
+//							ShapeConfigDetails: &datascience.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
+//								MemoryInGbs: pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
+//								Ocpus:       pulumi.Any(pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
+//							},
+//							SubnetId: pulumi.Any(testSubnet.Id),
 //						},
 //					},
 //				},
@@ -124,6 +144,8 @@ type PipelineRun struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// The infrastructure configuration details of a pipeline or a step.
+	InfrastructureConfigurationOverrideDetails PipelineRunInfrastructureConfigurationOverrideDetailsOutput `pulumi:"infrastructureConfigurationOverrideDetails"`
 	// Details of the state of the step run.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The pipeline log configuration details.
@@ -211,6 +233,8 @@ type pipelineRunState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The infrastructure configuration details of a pipeline or a step.
+	InfrastructureConfigurationOverrideDetails *PipelineRunInfrastructureConfigurationOverrideDetails `pulumi:"infrastructureConfigurationOverrideDetails"`
 	// Details of the state of the step run.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The pipeline log configuration details.
@@ -260,6 +284,8 @@ type PipelineRunState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The infrastructure configuration details of a pipeline or a step.
+	InfrastructureConfigurationOverrideDetails PipelineRunInfrastructureConfigurationOverrideDetailsPtrInput
 	// Details of the state of the step run.
 	LifecycleDetails pulumi.StringPtrInput
 	// The pipeline log configuration details.
@@ -309,6 +335,8 @@ type pipelineRunArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The infrastructure configuration details of a pipeline or a step.
+	InfrastructureConfigurationOverrideDetails *PipelineRunInfrastructureConfigurationOverrideDetails `pulumi:"infrastructureConfigurationOverrideDetails"`
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails *PipelineRunLogConfigurationOverrideDetails `pulumi:"logConfigurationOverrideDetails"`
 	// URL to fetch the Resource Principal Token from the parent resource.
@@ -339,6 +367,8 @@ type PipelineRunArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
+	// The infrastructure configuration details of a pipeline or a step.
+	InfrastructureConfigurationOverrideDetails PipelineRunInfrastructureConfigurationOverrideDetailsPtrInput
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails PipelineRunLogConfigurationOverrideDetailsPtrInput
 	// URL to fetch the Resource Principal Token from the parent resource.
@@ -482,6 +512,13 @@ func (o PipelineRunOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o PipelineRunOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *PipelineRun) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The infrastructure configuration details of a pipeline or a step.
+func (o PipelineRunOutput) InfrastructureConfigurationOverrideDetails() PipelineRunInfrastructureConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *PipelineRun) PipelineRunInfrastructureConfigurationOverrideDetailsOutput {
+		return v.InfrastructureConfigurationOverrideDetails
+	}).(PipelineRunInfrastructureConfigurationOverrideDetailsOutput)
 }
 
 // Details of the state of the step run.

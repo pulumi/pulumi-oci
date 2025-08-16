@@ -25,6 +25,8 @@ import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeyPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentInstallKeysPlainArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginCountPlainArgs;
@@ -32,6 +34,10 @@ import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentPluginsPlainArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsArgs;
 import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentsPlainArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialPlainArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
+import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsPlainArgs;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentAvailableHistoriesResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentCountResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentDataSourceResult;
@@ -40,10 +46,13 @@ import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentGetAutoUpgradabl
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentImagesResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentInstallKeyResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentInstallKeysResult;
+import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentNamedCredentialsMetadataResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginCountResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentPluginsResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentResult;
 import com.pulumi.oci.ManagementAgent.outputs.GetManagementAgentsResult;
+import com.pulumi.oci.ManagementAgent.outputs.GetNamedCredentialResult;
+import com.pulumi.oci.ManagementAgent.outputs.GetNamedCredentialsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -2109,6 +2118,231 @@ public final class ManagementAgentFunctions {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentInstallKeys:getManagementAgentInstallKeys", TypeShape.of(GetManagementAgentInstallKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .managementAgentId(testManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentNamedCredentialsMetadataResult> getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs args) {
+        return getManagementAgentNamedCredentialsMetadata(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .managementAgentId(testManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagementAgentNamedCredentialsMetadataResult> getManagementAgentNamedCredentialsMetadataPlain(GetManagementAgentNamedCredentialsMetadataPlainArgs args) {
+        return getManagementAgentNamedCredentialsMetadataPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .managementAgentId(testManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentNamedCredentialsMetadataResult> getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentNamedCredentialsMetadata:getManagementAgentNamedCredentialsMetadata", TypeShape.of(GetManagementAgentNamedCredentialsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .managementAgentId(testManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagementAgentNamedCredentialsMetadataResult> getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getManagementAgentNamedCredentialsMetadata:getManagementAgentNamedCredentialsMetadata", TypeShape.of(GetManagementAgentNamedCredentialsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Return the Metadata definition for Named Credentials supported by Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetManagementAgentNamedCredentialsMetadataArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagementAgentNamedCredentialsMetadata = ManagementAgentFunctions.getManagementAgentNamedCredentialsMetadata(GetManagementAgentNamedCredentialsMetadataArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .managementAgentId(testManagementAgent.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagementAgentNamedCredentialsMetadataResult> getManagementAgentNamedCredentialsMetadataPlain(GetManagementAgentNamedCredentialsMetadataPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgentNamedCredentialsMetadata:getManagementAgentNamedCredentialsMetadata", TypeShape.of(GetManagementAgentNamedCredentialsMetadataResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
      * 
      * Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
@@ -2882,5 +3116,465 @@ public final class ManagementAgentFunctions {
      */
     public static CompletableFuture<GetManagementAgentsResult> getManagementAgentsPlain(GetManagementAgentsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getManagementAgents:getManagementAgents", TypeShape.of(GetManagementAgentsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Named credential details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args) {
+        return getNamedCredential(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Named credential details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args) {
+        return getNamedCredentialPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Named credential details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Named credential details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialResult> getNamedCredential(GetNamedCredentialArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * Get Named credential details for given Id and given Management Agent.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredential = ManagementAgentFunctions.getNamedCredential(GetNamedCredentialArgs.builder()
+     *             .namedCredentialId(testNamedCredentialOciManagementAgentNamedCredential.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialResult> getNamedCredentialPlain(GetNamedCredentialPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getNamedCredential:getNamedCredential", TypeShape.of(GetNamedCredentialResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .ids(namedCredentialId)
+     *             .names(namedCredentialName)
+     *             .states(namedCredentialState)
+     *             .types(namedCredentialType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args) {
+        return getNamedCredentials(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .ids(namedCredentialId)
+     *             .names(namedCredentialName)
+     *             .states(namedCredentialState)
+     *             .types(namedCredentialType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialsResult> getNamedCredentialsPlain(GetNamedCredentialsPlainArgs args) {
+        return getNamedCredentialsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .ids(namedCredentialId)
+     *             .names(namedCredentialName)
+     *             .states(namedCredentialState)
+     *             .types(namedCredentialType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .ids(namedCredentialId)
+     *             .names(namedCredentialName)
+     *             .states(namedCredentialState)
+     *             .types(namedCredentialType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetNamedCredentialsResult> getNamedCredentials(GetNamedCredentialsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:ManagementAgent/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Named Credentials in Oracle Cloud Infrastructure Management Agent service.
+     * 
+     * A list of Management Agent Data Sources for the given Management Agent Id.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ManagementAgent.ManagementAgentFunctions;
+     * import com.pulumi.oci.ManagementAgent.inputs.GetNamedCredentialsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamedCredentials = ManagementAgentFunctions.getNamedCredentials(GetNamedCredentialsArgs.builder()
+     *             .managementAgentId(testManagementAgent.id())
+     *             .ids(namedCredentialId)
+     *             .names(namedCredentialName)
+     *             .states(namedCredentialState)
+     *             .types(namedCredentialType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetNamedCredentialsResult> getNamedCredentialsPlain(GetNamedCredentialsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:ManagementAgent/getNamedCredentials:getNamedCredentials", TypeShape.of(GetNamedCredentialsResult.class), args, Utilities.withVersion(options));
     }
 }

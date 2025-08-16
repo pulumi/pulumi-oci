@@ -12,29 +12,89 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
+    /**
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+     * 
+     */
     private @Nullable String credentialSourceName;
+    /**
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     * 
+     */
     private String credentialType;
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    private @Nullable String namedCredentialId;
+    /**
+     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+     * 
+     */
     private @Nullable String passwordSecretId;
+    /**
+     * @return database user role.
+     * 
+     */
     private @Nullable String role;
+    /**
+     * @return database user name.
+     * 
+     */
     private @Nullable String userName;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+     * 
+     */
     private @Nullable String walletSecretId;
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails() {}
+    /**
+     * @return Credential source name that had been added in Management Agent wallet. This value is only required when Credential set by CREDENTIALS_BY_SOURCE and is optional properties for ther others.
+     * 
+     */
     public Optional<String> credentialSourceName() {
         return Optional.ofNullable(this.credentialSourceName);
     }
+    /**
+     * @return CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     * 
+     */
     public String credentialType() {
         return this.credentialType;
     }
+    /**
+     * @return The credential [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) stored in management agent.
+     * 
+     */
+    public Optional<String> namedCredentialId() {
+        return Optional.ofNullable(this.namedCredentialId);
+    }
+    /**
+     * @return The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+     * 
+     */
     public Optional<String> passwordSecretId() {
         return Optional.ofNullable(this.passwordSecretId);
     }
+    /**
+     * @return database user role.
+     * 
+     */
     public Optional<String> role() {
         return Optional.ofNullable(this.role);
     }
+    /**
+     * @return database user name.
+     * 
+     */
     public Optional<String> userName() {
         return Optional.ofNullable(this.userName);
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+     * 
+     */
     public Optional<String> walletSecretId() {
         return Optional.ofNullable(this.walletSecretId);
     }
@@ -50,6 +110,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
     public static final class Builder {
         private @Nullable String credentialSourceName;
         private String credentialType;
+        private @Nullable String namedCredentialId;
         private @Nullable String passwordSecretId;
         private @Nullable String role;
         private @Nullable String userName;
@@ -59,6 +120,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
     	      Objects.requireNonNull(defaults);
     	      this.credentialSourceName = defaults.credentialSourceName;
     	      this.credentialType = defaults.credentialType;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
@@ -77,6 +139,12 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
               throw new MissingRequiredPropertyException("ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails", "credentialType");
             }
             this.credentialType = credentialType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(@Nullable String namedCredentialId) {
+
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -107,6 +175,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCreden
             final var _resultValue = new ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails();
             _resultValue.credentialSourceName = credentialSourceName;
             _resultValue.credentialType = credentialType;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.userName = userName;

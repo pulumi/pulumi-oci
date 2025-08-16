@@ -120,7 +120,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
      * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+     * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
      * 
      */
     @Import(name="scimQuery")
@@ -130,7 +130,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
      * @return The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
      * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+     * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
      * 
      */
     public Optional<Output<String>> scimQuery() {
@@ -385,7 +385,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
          * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-         * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+         * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
          * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-         * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
+         * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
          * 
          * @return builder
          * 

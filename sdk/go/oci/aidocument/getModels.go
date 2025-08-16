@@ -71,7 +71,7 @@ type GetModelsArgs struct {
 
 // A collection of values returned by getModels.
 type GetModelsResult struct {
-	// The compartment identifier.
+	// The lock compartment ID.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// A human-friendly name for the model, which can be changed.
 	DisplayName *string           `pulumi:"displayName"`
@@ -129,7 +129,7 @@ func (o GetModelsResultOutput) ToGetModelsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// The compartment identifier.
+// The lock compartment ID.
 func (o GetModelsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

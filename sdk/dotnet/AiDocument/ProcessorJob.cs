@@ -38,8 +38,10 @@ namespace Pulumi.Oci.AiDocument
     ///                     Bucket = processorJobInputLocationObjectLocationsBucket,
     ///                     Namespace = processorJobInputLocationObjectLocationsNamespace,
     ///                     Object = processorJobInputLocationObjectLocationsObject,
+    ///                     PageRanges = processorJobInputLocationObjectLocationsPageRange,
     ///                 },
     ///             },
+    ///             PageRanges = processorJobInputLocationPageRange,
     ///         },
     ///         OutputLocation = new Oci.AiDocument.Inputs.ProcessorJobOutputLocationArgs
     ///         {
@@ -49,6 +51,8 @@ namespace Pulumi.Oci.AiDocument
     ///         },
     ///         ProcessorConfig = new Oci.AiDocument.Inputs.ProcessorJobProcessorConfigArgs
     ///         {
+    ///             ProcessorType = processorJobProcessorConfigProcessorType,
+    ///             DocumentType = processorJobProcessorConfigDocumentType,
     ///             Features = new[]
     ///             {
     ///                 new Oci.AiDocument.Inputs.ProcessorJobProcessorConfigFeatureArgs
@@ -57,13 +61,26 @@ namespace Pulumi.Oci.AiDocument
     ///                     GenerateSearchablePdf = processorJobProcessorConfigFeaturesGenerateSearchablePdf,
     ///                     MaxResults = processorJobProcessorConfigFeaturesMaxResults,
     ///                     ModelId = testModel.Id,
+    ///                     SelectionMarkDetection = processorJobProcessorConfigFeaturesSelectionMarkDetection,
     ///                     TenancyId = testTenancy.Id,
     ///                 },
     ///             },
-    ///             ProcessorType = processorJobProcessorConfigProcessorType,
-    ///             DocumentType = processorJobProcessorConfigDocumentType,
     ///             IsZipOutputEnabled = processorJobProcessorConfigIsZipOutputEnabled,
     ///             Language = processorJobProcessorConfigLanguage,
+    ///             ModelId = testModel.Id,
+    ///             NormalizationFields = new[]
+    ///             {
+    ///                 new Oci.AiDocument.Inputs.ProcessorJobProcessorConfigNormalizationFieldArgs
+    ///                 {
+    ///                     Maps = new[]
+    ///                     {
+    ///                         new Oci.AiDocument.Inputs.ProcessorJobProcessorConfigNormalizationFieldMapArgs
+    ///                         {
+    ///                             NormalizationType = processorJobProcessorConfigNormalizationFieldsMapNormalizationType,
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
     ///         },
     ///         DisplayName = processorJobDisplayName,
     ///     });

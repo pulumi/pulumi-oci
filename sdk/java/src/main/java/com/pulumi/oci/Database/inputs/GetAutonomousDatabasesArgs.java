@@ -176,9 +176,17 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
         return Optional.ofNullable(this.isResourcePoolLeader);
     }
 
+    /**
+     * A filter to return only resources that not match the given lifecycle state.
+     * 
+     */
     @Import(name="lifecycleStateNotEqualTo")
     private @Nullable Output<String> lifecycleStateNotEqualTo;
 
+    /**
+     * @return A filter to return only resources that not match the given lifecycle state.
+     * 
+     */
     public Optional<Output<String>> lifecycleStateNotEqualTo() {
         return Optional.ofNullable(this.lifecycleStateNotEqualTo);
     }
@@ -473,11 +481,23 @@ public final class GetAutonomousDatabasesArgs extends com.pulumi.resources.Invok
             return isResourcePoolLeader(Output.of(isResourcePoolLeader));
         }
 
+        /**
+         * @param lifecycleStateNotEqualTo A filter to return only resources that not match the given lifecycle state.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lifecycleStateNotEqualTo(@Nullable Output<String> lifecycleStateNotEqualTo) {
             $.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             return this;
         }
 
+        /**
+         * @param lifecycleStateNotEqualTo A filter to return only resources that not match the given lifecycle state.
+         * 
+         * @return builder
+         * 
+         */
         public Builder lifecycleStateNotEqualTo(String lifecycleStateNotEqualTo) {
             return lifecycleStateNotEqualTo(Output.of(lifecycleStateNotEqualTo));
         }

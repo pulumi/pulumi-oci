@@ -47,6 +47,13 @@ import (
 //					CommandLineArguments:    pulumi.Any(jobRunJobConfigurationOverrideDetailsCommandLineArguments),
 //					EnvironmentVariables:    pulumi.Any(jobRunJobConfigurationOverrideDetailsEnvironmentVariables),
 //					MaximumRuntimeInMinutes: pulumi.Any(jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes),
+//					StartupProbeDetails: &datascience.JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs{
+//						Commands:              pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand),
+//						JobProbeCheckType:     pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType),
+//						FailureThreshold:      pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold),
+//						InitialDelayInSeconds: pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds),
+//						PeriodInSeconds:       pulumi.Any(jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds),
+//					},
 //				},
 //				JobEnvironmentConfigurationOverrideDetails: &datascience.JobRunJobEnvironmentConfigurationOverrideDetailsArgs{
 //					Image:              pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsImage),
@@ -56,11 +63,68 @@ import (
 //					ImageDigest:        pulumi.Any(jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest),
 //					ImageSignatureId:   pulumi.Any(testImageSignature.Id),
 //				},
+//				JobInfrastructureConfigurationOverrideDetails: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsArgs{
+//					JobInfrastructureType: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType),
+//					BlockStorageSizeInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs),
+//					JobShapeConfigDetails: &datascience.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs{
+//						MemoryInGbs: pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus),
+//					},
+//					ShapeName: pulumi.Any(testShape.Name),
+//					SubnetId:  pulumi.Any(testSubnet.Id),
+//				},
 //				JobLogConfigurationOverrideDetails: &datascience.JobRunJobLogConfigurationOverrideDetailsArgs{
 //					EnableAutoLogCreation: pulumi.Any(jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation),
 //					EnableLogging:         pulumi.Any(jobRunJobLogConfigurationOverrideDetailsEnableLogging),
 //					LogGroupId:            pulumi.Any(testLogGroup.Id),
 //					LogId:                 pulumi.Any(testLog.Id),
+//				},
+//				JobNodeConfigurationOverrideDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsArgs{
+//					JobNodeType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeType),
+//					JobNetworkConfiguration: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs{
+//						JobNetworkType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationJobNetworkType),
+//						SubnetId:       pulumi.Any(testSubnet.Id),
+//					},
+//					JobNodeGroupConfigurationDetailsLists: datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArray{
+//						&datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs{
+//							Name: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListName),
+//							JobConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs{
+//								JobType:                 pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType),
+//								CommandLineArguments:    pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments),
+//								EnvironmentVariables:    pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables),
+//								MaximumRuntimeInMinutes: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes),
+//								StartupProbeDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs{
+//									Commands:              pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand),
+//									JobProbeCheckType:     pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType),
+//									FailureThreshold:      pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+//									InitialDelayInSeconds: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+//									PeriodInSeconds:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
+//								},
+//							},
+//							JobEnvironmentConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs{
+//								Image:              pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage),
+//								JobEnvironmentType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType),
+//								Cmds:               pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd),
+//								Entrypoints:        pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint),
+//								ImageDigest:        pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest),
+//								ImageSignatureId:   pulumi.Any(testImageSignature.Id),
+//							},
+//							JobInfrastructureConfigurationDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{
+//								JobInfrastructureType: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType),
+//								BlockStorageSizeInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//								JobShapeConfigDetails: &datascience.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
+//									MemoryInGbs: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
+//									Ocpus:       pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//								},
+//								ShapeName: pulumi.Any(testShape.Name),
+//								SubnetId:  pulumi.Any(testSubnet.Id),
+//							},
+//							MinimumSuccessReplicas: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+//							Replicas:               pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas),
+//						},
+//					},
+//					MaximumRuntimeInMinutes: pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes),
+//					StartupOrder:            pulumi.Any(jobRunJobNodeConfigurationOverrideDetailsStartupOrder),
 //				},
 //				OpcParentRptUrl: pulumi.Any(jobRunOpcParentRptUrl),
 //			})
@@ -103,14 +167,20 @@ type JobRun struct {
 	JobId pulumi.StringOutput `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobRunJobInfrastructureConfigurationDetailArrayOutput `pulumi:"jobInfrastructureConfigurationDetails"`
+	// The job infrastructure configuration details (shape, block storage, etc.)
+	JobInfrastructureConfigurationOverrideDetails JobRunJobInfrastructureConfigurationOverrideDetailsOutput `pulumi:"jobInfrastructureConfigurationOverrideDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsOutput `pulumi:"jobLogConfigurationOverrideDetails"`
+	// The job node configuration details
+	JobNodeConfigurationOverrideDetails JobRunJobNodeConfigurationOverrideDetailsOutput `pulumi:"jobNodeConfigurationOverrideDetails"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayOutput `pulumi:"jobStorageMountConfigurationDetailsLists"`
-	// Details of the state of the job run.
+	// The state details of the node group.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayOutput `pulumi:"logDetails"`
+	// Collection of NodeGroupDetails
+	NodeGroupDetailsLists JobRunNodeGroupDetailsListArrayOutput `pulumi:"nodeGroupDetailsLists"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrOutput `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -187,14 +257,20 @@ type jobRunState struct {
 	JobId *string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails []JobRunJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
+	// The job infrastructure configuration details (shape, block storage, etc.)
+	JobInfrastructureConfigurationOverrideDetails *JobRunJobInfrastructureConfigurationOverrideDetails `pulumi:"jobInfrastructureConfigurationOverrideDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
+	// The job node configuration details
+	JobNodeConfigurationOverrideDetails *JobRunJobNodeConfigurationOverrideDetails `pulumi:"jobNodeConfigurationOverrideDetails"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []JobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
-	// Details of the state of the job run.
+	// The state details of the node group.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
 	LogDetails []JobRunLogDetail `pulumi:"logDetails"`
+	// Collection of NodeGroupDetails
+	NodeGroupDetailsLists []JobRunNodeGroupDetailsList `pulumi:"nodeGroupDetailsLists"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -233,14 +309,20 @@ type JobRunState struct {
 	JobId pulumi.StringPtrInput
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails JobRunJobInfrastructureConfigurationDetailArrayInput
+	// The job infrastructure configuration details (shape, block storage, etc.)
+	JobInfrastructureConfigurationOverrideDetails JobRunJobInfrastructureConfigurationOverrideDetailsPtrInput
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
+	// The job node configuration details
+	JobNodeConfigurationOverrideDetails JobRunJobNodeConfigurationOverrideDetailsPtrInput
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists JobRunJobStorageMountConfigurationDetailsListArrayInput
-	// Details of the state of the job run.
+	// The state details of the node group.
 	LifecycleDetails pulumi.StringPtrInput
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayInput
+	// Collection of NodeGroupDetails
+	NodeGroupDetailsLists JobRunNodeGroupDetailsListArrayInput
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -279,8 +361,12 @@ type jobRunArgs struct {
 	JobEnvironmentConfigurationOverrideDetails *JobRunJobEnvironmentConfigurationOverrideDetails `pulumi:"jobEnvironmentConfigurationOverrideDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId string `pulumi:"jobId"`
+	// The job infrastructure configuration details (shape, block storage, etc.)
+	JobInfrastructureConfigurationOverrideDetails *JobRunJobInfrastructureConfigurationOverrideDetails `pulumi:"jobInfrastructureConfigurationOverrideDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
+	// The job node configuration details
+	JobNodeConfigurationOverrideDetails *JobRunJobNodeConfigurationOverrideDetails `pulumi:"jobNodeConfigurationOverrideDetails"`
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -308,8 +394,12 @@ type JobRunArgs struct {
 	JobEnvironmentConfigurationOverrideDetails JobRunJobEnvironmentConfigurationOverrideDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to create a run for.
 	JobId pulumi.StringInput
+	// The job infrastructure configuration details (shape, block storage, etc.)
+	JobInfrastructureConfigurationOverrideDetails JobRunJobInfrastructureConfigurationOverrideDetailsPtrInput
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
+	// The job node configuration details
+	JobNodeConfigurationOverrideDetails JobRunJobNodeConfigurationOverrideDetailsPtrInput
 	// URL to fetch the Resource Principal Token from the parent resource.
 	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -460,11 +550,25 @@ func (o JobRunOutput) JobInfrastructureConfigurationDetails() JobRunJobInfrastru
 	}).(JobRunJobInfrastructureConfigurationDetailArrayOutput)
 }
 
+// The job infrastructure configuration details (shape, block storage, etc.)
+func (o JobRunOutput) JobInfrastructureConfigurationOverrideDetails() JobRunJobInfrastructureConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobInfrastructureConfigurationOverrideDetailsOutput {
+		return v.JobInfrastructureConfigurationOverrideDetails
+	}).(JobRunJobInfrastructureConfigurationOverrideDetailsOutput)
+}
+
 // Logging configuration for resource.
 func (o JobRunOutput) JobLogConfigurationOverrideDetails() JobRunJobLogConfigurationOverrideDetailsOutput {
 	return o.ApplyT(func(v *JobRun) JobRunJobLogConfigurationOverrideDetailsOutput {
 		return v.JobLogConfigurationOverrideDetails
 	}).(JobRunJobLogConfigurationOverrideDetailsOutput)
+}
+
+// The job node configuration details
+func (o JobRunOutput) JobNodeConfigurationOverrideDetails() JobRunJobNodeConfigurationOverrideDetailsOutput {
+	return o.ApplyT(func(v *JobRun) JobRunJobNodeConfigurationOverrideDetailsOutput {
+		return v.JobNodeConfigurationOverrideDetails
+	}).(JobRunJobNodeConfigurationOverrideDetailsOutput)
 }
 
 // Collection of JobStorageMountConfigurationDetails.
@@ -474,7 +578,7 @@ func (o JobRunOutput) JobStorageMountConfigurationDetailsLists() JobRunJobStorag
 	}).(JobRunJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
-// Details of the state of the job run.
+// The state details of the node group.
 func (o JobRunOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *JobRun) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -482,6 +586,11 @@ func (o JobRunOutput) LifecycleDetails() pulumi.StringOutput {
 // Customer logging details for job run.
 func (o JobRunOutput) LogDetails() JobRunLogDetailArrayOutput {
 	return o.ApplyT(func(v *JobRun) JobRunLogDetailArrayOutput { return v.LogDetails }).(JobRunLogDetailArrayOutput)
+}
+
+// Collection of NodeGroupDetails
+func (o JobRunOutput) NodeGroupDetailsLists() JobRunNodeGroupDetailsListArrayOutput {
+	return o.ApplyT(func(v *JobRun) JobRunNodeGroupDetailsListArrayOutput { return v.NodeGroupDetailsLists }).(JobRunNodeGroupDetailsListArrayOutput)
 }
 
 // URL to fetch the Resource Principal Token from the parent resource.

@@ -18,6 +18,9 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         [Input("action")]
         public Input<Inputs.AutoScalingConfigurationPolicyRuleActionGetArgs>? Action { get; set; }
 
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
@@ -27,9 +30,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         [Input("id")]
         public Input<string>? Id { get; set; }
 
-        /// <summary>
-        /// Metric and threshold details for triggering an autoscaling action.
-        /// </summary>
         [Input("metric")]
         public Input<Inputs.AutoScalingConfigurationPolicyRuleMetricGetArgs>? Metric { get; set; }
 

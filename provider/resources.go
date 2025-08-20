@@ -477,12 +477,6 @@ func Provider() tfbridge.ProviderInfo {
 		DataSources: map[string]*tfbridge.DataSourceInfo{
 			"oci_adm_knowledge_base":                   {Tok: tfbridge.MakeDataSource(mainPkg, admMod, "getKnowledgebase")},
 			"oci_adm_knowledge_bases":                  {Tok: tfbridge.MakeDataSource(mainPkg, admMod, "getKnowledgebases")},
-			"oci_ai_anomaly_detection_data_asset":      {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getDetectionDataAsset")},
-			"oci_ai_anomaly_detection_data_assets":     {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getDetectionDataAssets")},
-			"oci_ai_anomaly_detection_model":           {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getDetectionModel")},
-			"oci_ai_anomaly_detection_models":          {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getDetectionModels")},
-			"oci_ai_anomaly_detection_project":         {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getDetectionProject")},
-			"oci_ai_anomaly_detection_projects":        {Tok: tfbridge.MakeDataSource(mainPkg, aiAnomalyDetectionMod, "getDetectionProjects")},
 			"oci_apm_synthetics_public_vantage_point":  {Tok: tfbridge.MakeDataSource(mainPkg, apmSyntheticsMod, "getVantagePoint")},
 			"oci_apm_synthetics_public_vantage_points": {Tok: tfbridge.MakeDataSource(mainPkg, apmSyntheticsMod, "getVantagePoints")},
 			"oci_artifacts_container_image_signatures": {Tok: tfbridge.MakeDataSource(mainPkg, artifactsMod, "getContainerSignatures")},

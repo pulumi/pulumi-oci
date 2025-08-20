@@ -74,6 +74,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .authenticationMode(connectionAuthenticationMode)
  *             .authenticationType(connectionAuthenticationType)
+ *             .azureAuthorityHost(connectionAzureAuthorityHost)
  *             .azureTenantId(testAzureTenant.id())
  *             .bootstrapServers(ConnectionBootstrapServerArgs.builder()
  *                 .host(connectionBootstrapServersHost)
@@ -315,6 +316,24 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> authenticationType() {
         return this.authenticationType;
+    }
+    /**
+     * (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     * 
+     */
+    @Export(name="azureAuthorityHost", refs={String.class}, tree="[0]")
+    private Output<String> azureAuthorityHost;
+
+    /**
+     * @return (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     * 
+     */
+    public Output<String> azureAuthorityHost() {
+        return this.azureAuthorityHost;
     }
     /**
      * (Updatable) Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -611,28 +630,28 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.doesUseSecretIds;
     }
     /**
-     * (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
      * 
      */
     @Export(name="endpoint", refs={String.class}, tree="[0]")
     private Output<String> endpoint;
 
     /**
-     * @return (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * @return (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: &#39;https://kinesis.us-east-1.amazonaws.com&#39; If not provided, GoldenGate will default to the default endpoint in the `region`.
      * 
      */
     public Output<String> endpoint() {
         return this.endpoint;
     }
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
      * 
      */
     @Export(name="fingerprint", refs={String.class}, tree="[0]")
     private Output<String> fingerprint;
 
     /**
-     * @return (Updatable) Fingerprint required by TLS security protocol. Eg.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * @return (Updatable) Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
      * 
      */
     public Output<String> fingerprint() {
@@ -1043,14 +1062,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.redisClusterId;
     }
     /**
-     * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to &#39;us-west-2&#39;. Note: this property will become mandatory after May 20, 2026.
      * 
      */
     @Export(name="region", refs={String.class}, tree="[0]")
     private Output<String> region;
 
     /**
-     * @return (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * @return (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to &#39;us-west-2&#39;. Note: this property will become mandatory after May 20, 2026.
      * 
      */
     public Output<String> region() {
@@ -1211,14 +1230,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.shouldUseJndi;
     }
     /**
-     * (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     @Export(name="shouldUseResourcePrincipal", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> shouldUseResourcePrincipal;
 
     /**
-     * @return (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * @return (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     public Output<Boolean> shouldUseResourcePrincipal() {
@@ -1267,56 +1286,72 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sslCert;
     }
     /**
-     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Export(name="sslClientKeystash", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystash;
 
     /**
-     * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Output<Optional<String>> sslClientKeystash() {
         return Codegen.optional(this.sslClientKeystash);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
      * 
      */
     @Export(name="sslClientKeystashSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystashSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Note: When provided, &#39;sslClientKeystash&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> sslClientKeystashSecretId() {
         return Codegen.optional(this.sslClientKeystashSecretId);
     }
     /**
-     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     @Export(name="sslClientKeystoredb", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystoredb;
 
     /**
-     * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
+     * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This field will be removed after February 15 2026.
      * 
      */
     public Output<Optional<String>> sslClientKeystoredb() {
         return Codegen.optional(this.sslClientKeystoredb);
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
      * 
      */
     @Export(name="sslClientKeystoredbSecretId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystoredbSecretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     * 
+     * Note: When provided, &#39;sslClientKeystoredb&#39; field must not be provided.
      * 
      */
     public Output<Optional<String>> sslClientKeystoredbSecretId() {

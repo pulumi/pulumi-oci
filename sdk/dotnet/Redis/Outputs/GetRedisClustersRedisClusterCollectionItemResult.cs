@@ -58,6 +58,10 @@ namespace Pulumi.Oci.Redis.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
+        /// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        /// </summary>
+        public readonly string OciCacheConfigSetId;
+        /// <summary>
         /// The private IP address of the API endpoint for the cluster's primary node.
         /// </summary>
         public readonly string PrimaryEndpointIpAddress;
@@ -126,6 +130,8 @@ namespace Pulumi.Oci.Redis.Outputs
 
             ImmutableArray<string> nsgIds,
 
+            string ociCacheConfigSetId,
+
             string primaryEndpointIpAddress,
 
             string primaryFqdn,
@@ -159,6 +165,7 @@ namespace Pulumi.Oci.Redis.Outputs
             NodeCount = nodeCount;
             NodeMemoryInGbs = nodeMemoryInGbs;
             NsgIds = nsgIds;
+            OciCacheConfigSetId = ociCacheConfigSetId;
             PrimaryEndpointIpAddress = primaryEndpointIpAddress;
             PrimaryFqdn = primaryFqdn;
             ReplicasEndpointIpAddress = replicasEndpointIpAddress;

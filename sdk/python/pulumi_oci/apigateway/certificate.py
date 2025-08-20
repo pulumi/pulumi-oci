@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['CertificateArgs', 'Certificate']
 
@@ -25,7 +27,9 @@ class CertificateArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 intermediate_certificates: Optional[pulumi.Input[_builtins.str]] = None):
+                 intermediate_certificates: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]]] = None):
         """
         The set of arguments for constructing a Certificate resource.
         :param pulumi.Input[_builtins.str] certificate: The data of the leaf certificate in pem format.
@@ -51,6 +55,10 @@ class CertificateArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if intermediate_certificates is not None:
             pulumi.set(__self__, "intermediate_certificates", intermediate_certificates)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @_builtins.property
     @pulumi.getter
@@ -140,6 +148,24 @@ class CertificateArgs:
     def intermediate_certificates(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "intermediate_certificates", value)
 
+    @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
 
 @pulumi.input_type
 class _CertificateState:
@@ -150,10 +176,13 @@ class _CertificateState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  intermediate_certificates: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]]] = None,
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  subject_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_not_valid_after: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
@@ -189,14 +218,20 @@ class _CertificateState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if intermediate_certificates is not None:
             pulumi.set(__self__, "intermediate_certificates", intermediate_certificates)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if private_key is not None:
             pulumi.set(__self__, "private_key", private_key)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if subject_names is not None:
             pulumi.set(__self__, "subject_names", subject_names)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_not_valid_after is not None:
@@ -277,6 +312,15 @@ class _CertificateState:
         pulumi.set(self, "intermediate_certificates", value)
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -287,6 +331,15 @@ class _CertificateState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CertificateLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
@@ -327,6 +380,15 @@ class _CertificateState:
     @subject_names.setter
     def subject_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subject_names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -377,6 +439,8 @@ class Certificate(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  intermediate_certificates: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]]] = None,
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -486,6 +550,8 @@ class Certificate(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  intermediate_certificates: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]]] = None,
                  private_key: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -506,12 +572,15 @@ class Certificate(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["intermediate_certificates"] = intermediate_certificates
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             if private_key is None and not opts.urn:
                 raise TypeError("Missing required property 'private_key'")
             __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["subject_names"] = None
+            __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_not_valid_after"] = None
             __props__.__dict__["time_updated"] = None
@@ -533,10 +602,13 @@ class Certificate(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             intermediate_certificates: Optional[pulumi.Input[_builtins.str]] = None,
+            is_lock_override: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CertificateLockArgs', 'CertificateLockArgsDict']]]]] = None,
             private_key: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             subject_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_not_valid_after: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'Certificate':
@@ -575,10 +647,13 @@ class Certificate(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["intermediate_certificates"] = intermediate_certificates
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["private_key"] = private_key
         __props__.__dict__["state"] = state
         __props__.__dict__["subject_names"] = subject_names
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_not_valid_after"] = time_not_valid_after
         __props__.__dict__["time_updated"] = time_updated
@@ -633,12 +708,22 @@ class Certificate(pulumi.CustomResource):
         return pulumi.get(self, "intermediate_certificates")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.CertificateLock']]:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
@@ -667,6 +752,11 @@ class Certificate(pulumi.CustomResource):
         The entity to be secured by the certificate and additional host names.
         """
         return pulumi.get(self, "subject_names")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

@@ -52,12 +52,18 @@ func GetDefaultConfiguration(ctx *pulumi.Context, args *GetDefaultConfigurationA
 
 // A collection of arguments for invoking getDefaultConfiguration.
 type GetDefaultConfigurationArgs struct {
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// A unique identifier for the configuration.
 	DefaultConfigurationId string `pulumi:"defaultConfigurationId"`
+	// The name of the shape for the configuration.
+	Shape *string `pulumi:"shape"`
 }
 
 // A collection of values returned by getDefaultConfiguration.
 type GetDefaultConfigurationResult struct {
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// List of default configuration values for databases.
 	ConfigurationDetails []GetDefaultConfigurationConfigurationDetail `pulumi:"configurationDetails"`
 	// Version of the PostgreSQL database.
@@ -77,7 +83,7 @@ type GetDefaultConfigurationResult struct {
 	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The name of the shape for the configuration.
 	Shape string `pulumi:"shape"`
 	// The current state of the configuration.
 	State string `pulumi:"state"`
@@ -96,8 +102,12 @@ func GetDefaultConfigurationOutput(ctx *pulumi.Context, args GetDefaultConfigura
 
 // A collection of arguments for invoking getDefaultConfiguration.
 type GetDefaultConfigurationOutputArgs struct {
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes pulumi.StringArrayInput `pulumi:"compatibleShapes"`
 	// A unique identifier for the configuration.
 	DefaultConfigurationId pulumi.StringInput `pulumi:"defaultConfigurationId"`
+	// The name of the shape for the configuration.
+	Shape pulumi.StringPtrInput `pulumi:"shape"`
 }
 
 func (GetDefaultConfigurationOutputArgs) ElementType() reflect.Type {
@@ -117,6 +127,11 @@ func (o GetDefaultConfigurationResultOutput) ToGetDefaultConfigurationResultOutp
 
 func (o GetDefaultConfigurationResultOutput) ToGetDefaultConfigurationResultOutputWithContext(ctx context.Context) GetDefaultConfigurationResultOutput {
 	return o
+}
+
+// Indicates the collection of compatible shapes for this configuration.
+func (o GetDefaultConfigurationResultOutput) CompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultConfigurationResult) []string { return v.CompatibleShapes }).(pulumi.StringArrayOutput)
 }
 
 // List of default configuration values for databases.
@@ -170,7 +185,7 @@ func (o GetDefaultConfigurationResultOutput) LifecycleDetails() pulumi.StringOut
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+// The name of the shape for the configuration.
 func (o GetDefaultConfigurationResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationResult) string { return v.Shape }).(pulumi.StringOutput)
 }

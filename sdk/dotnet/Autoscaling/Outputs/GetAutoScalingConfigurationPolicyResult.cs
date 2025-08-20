@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// </summary>
         public readonly string PolicyType;
         /// <summary>
-        /// An action that can be executed against a resource.
+        /// An action to run on a resource, such as stopping or starting an instance pool.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyResourceActionResult> ResourceActions;
         public readonly ImmutableArray<Outputs.GetAutoScalingConfigurationPolicyRuleResult> Rules;

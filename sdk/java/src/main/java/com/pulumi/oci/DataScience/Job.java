@@ -13,6 +13,7 @@ import com.pulumi.oci.DataScience.outputs.JobJobConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobEnvironmentConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobInfrastructureConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobLogConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.JobJobNodeConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.JobJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -30,87 +31,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataScience.Job;
- * import com.pulumi.oci.DataScience.JobArgs;
- * import com.pulumi.oci.DataScience.inputs.JobJobConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.JobJobEnvironmentConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.JobJobLogConfigurationDetailsArgs;
- * import com.pulumi.oci.DataScience.inputs.JobJobStorageMountConfigurationDetailsListArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testJob = new Job("testJob", JobArgs.builder()
- *             .compartmentId(compartmentId)
- *             .jobConfigurationDetails(JobJobConfigurationDetailsArgs.builder()
- *                 .jobType(jobJobConfigurationDetailsJobType)
- *                 .commandLineArguments(jobJobConfigurationDetailsCommandLineArguments)
- *                 .environmentVariables(jobJobConfigurationDetailsEnvironmentVariables)
- *                 .maximumRuntimeInMinutes(jobJobConfigurationDetailsMaximumRuntimeInMinutes)
- *                 .build())
- *             .jobInfrastructureConfigurationDetails(JobJobInfrastructureConfigurationDetailsArgs.builder()
- *                 .blockStorageSizeInGbs(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
- *                 .jobInfrastructureType(jobJobInfrastructureConfigurationDetailsJobInfrastructureType)
- *                 .shapeName(testShape.name())
- *                 .jobShapeConfigDetails(JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs.builder()
- *                     .memoryInGbs(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs)
- *                     .ocpus(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus)
- *                     .build())
- *                 .subnetId(testSubnet.id())
- *                 .build())
- *             .projectId(testProject.id())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(jobDescription)
- *             .displayName(jobDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .jobEnvironmentConfigurationDetails(JobJobEnvironmentConfigurationDetailsArgs.builder()
- *                 .image(jobJobEnvironmentConfigurationDetailsImage)
- *                 .jobEnvironmentType(jobJobEnvironmentConfigurationDetailsJobEnvironmentType)
- *                 .cmds(jobJobEnvironmentConfigurationDetailsCmd)
- *                 .entrypoints(jobJobEnvironmentConfigurationDetailsEntrypoint)
- *                 .imageDigest(jobJobEnvironmentConfigurationDetailsImageDigest)
- *                 .imageSignatureId(testImageSignature.id())
- *                 .build())
- *             .jobLogConfigurationDetails(JobJobLogConfigurationDetailsArgs.builder()
- *                 .enableAutoLogCreation(jobJobLogConfigurationDetailsEnableAutoLogCreation)
- *                 .enableLogging(jobJobLogConfigurationDetailsEnableLogging)
- *                 .logGroupId(testLogGroup.id())
- *                 .logId(testLog.id())
- *                 .build())
- *             .jobStorageMountConfigurationDetailsLists(JobJobStorageMountConfigurationDetailsListArgs.builder()
- *                 .destinationDirectoryName(jobJobStorageMountConfigurationDetailsListDestinationDirectoryName)
- *                 .storageType(jobJobStorageMountConfigurationDetailsListStorageType)
- *                 .bucket(jobJobStorageMountConfigurationDetailsListBucket)
- *                 .destinationPath(jobJobStorageMountConfigurationDetailsListDestinationPath)
- *                 .exportId(testExport.id())
- *                 .mountTargetId(testMountTarget.id())
- *                 .namespace(jobJobStorageMountConfigurationDetailsListNamespace)
- *                 .prefix(jobJobStorageMountConfigurationDetailsListPrefix)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -265,14 +185,14 @@ public class Job extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
-    private Output<Map<String,String>> freeformTags;
+    private Output</* @Nullable */ Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,String>> freeformTags() {
-        return this.freeformTags;
+    public Output<Optional<Map<String,String>>> freeformTags() {
+        return Codegen.optional(this.freeformTags);
     }
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in &#34;Creating&#34; state until its artifact is uploaded.
@@ -307,14 +227,14 @@ public class Job extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="jobEnvironmentConfigurationDetails", refs={JobJobEnvironmentConfigurationDetails.class}, tree="[0]")
-    private Output<JobJobEnvironmentConfigurationDetails> jobEnvironmentConfigurationDetails;
+    private Output</* @Nullable */ JobJobEnvironmentConfigurationDetails> jobEnvironmentConfigurationDetails;
 
     /**
      * @return Environment configuration to capture job runtime dependencies.
      * 
      */
-    public Output<JobJobEnvironmentConfigurationDetails> jobEnvironmentConfigurationDetails() {
-        return this.jobEnvironmentConfigurationDetails;
+    public Output<Optional<JobJobEnvironmentConfigurationDetails>> jobEnvironmentConfigurationDetails() {
+        return Codegen.optional(this.jobEnvironmentConfigurationDetails);
     }
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
@@ -343,6 +263,20 @@ public class Job extends com.pulumi.resources.CustomResource {
      */
     public Output<JobJobLogConfigurationDetails> jobLogConfigurationDetails() {
         return this.jobLogConfigurationDetails;
+    }
+    /**
+     * The job node configuration details
+     * 
+     */
+    @Export(name="jobNodeConfigurationDetails", refs={JobJobNodeConfigurationDetails.class}, tree="[0]")
+    private Output<JobJobNodeConfigurationDetails> jobNodeConfigurationDetails;
+
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public Output<JobJobNodeConfigurationDetails> jobNodeConfigurationDetails() {
+        return this.jobNodeConfigurationDetails;
     }
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.

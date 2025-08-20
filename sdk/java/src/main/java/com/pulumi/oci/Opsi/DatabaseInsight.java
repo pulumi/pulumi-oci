@@ -95,14 +95,14 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="credentialDetails", refs={DatabaseInsightCredentialDetails.class}, tree="[0]")
-    private Output</* @Nullable */ DatabaseInsightCredentialDetails> credentialDetails;
+    private Output<DatabaseInsightCredentialDetails> credentialDetails;
 
     /**
      * @return User credential details to connect to the database.
      * 
      */
-    public Output<Optional<DatabaseInsightCredentialDetails>> credentialDetails() {
-        return Codegen.optional(this.credentialDetails);
+    public Output<DatabaseInsightCredentialDetails> credentialDetails() {
+        return this.credentialDetails;
     }
     /**
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.

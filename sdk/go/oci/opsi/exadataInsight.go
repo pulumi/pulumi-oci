@@ -31,14 +31,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := opsi.NewExadataInsight(ctx, "test_exadata_insight", &opsi.ExadataInsightArgs{
-//				CompartmentId:                     pulumi.Any(compartmentId),
-//				EnterpriseManagerBridgeId:         pulumi.Any(testEnterpriseManagerBridge.Id),
-//				EnterpriseManagerEntityIdentifier: pulumi.Any(exadataInsightEnterpriseManagerEntityIdentifier),
-//				EnterpriseManagerIdentifier:       pulumi.Any(exadataInsightEnterpriseManagerIdentifier),
-//				EntitySource:                      pulumi.Any(exadataInsightEntitySource),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				EntitySource:  pulumi.Any(exadataInsightEntitySource),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
+//				EnterpriseManagerBridgeId:         pulumi.Any(testEnterpriseManagerBridge.Id),
+//				EnterpriseManagerEntityIdentifier: pulumi.Any(exadataInsightEnterpriseManagerEntityIdentifier),
+//				EnterpriseManagerIdentifier:       pulumi.Any(exadataInsightEnterpriseManagerIdentifier),
+//				ExadataInfraId:                    pulumi.Any(testExadataInfra.Id),
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
@@ -47,12 +48,52 @@ import (
 //					&opsi.ExadataInsightMemberVmClusterDetailArgs{
 //						CompartmentId:        pulumi.Any(compartmentId),
 //						DbmPrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
+//						MemberAutonomousDetails: opsi.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArray{
+//							&opsi.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailArgs{
+//								CompartmentId: pulumi.Any(compartmentId),
+//								ConnectionCredentialDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionCredentialDetailsArgs{
+//									CredentialType:       pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsCredentialType),
+//									CredentialSourceName: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsCredentialSourceName),
+//									NamedCredentialId:    pulumi.Any(testNamedCredential.Id),
+//									PasswordSecretId:     pulumi.Any(testSecret.Id),
+//									Role:                 pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionCredentialDetailsRole),
+//									UserName:             pulumi.Any(testUser.Name),
+//									WalletSecretId:       pulumi.Any(testSecret.Id),
+//								},
+//								ConnectionDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailConnectionDetailsArgs{
+//									HostName:    pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsHostName),
+//									Port:        pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsPort),
+//									Protocol:    pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsConnectionDetailsProtocol),
+//									ServiceName: pulumi.Any(testService.Name),
+//								},
+//								CredentialDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberAutonomousDetailCredentialDetailsArgs{
+//									CredentialType:       pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsCredentialType),
+//									CredentialSourceName: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsCredentialSourceName),
+//									NamedCredentialId:    pulumi.Any(testNamedCredential.Id),
+//									PasswordSecretId:     pulumi.Any(testSecret.Id),
+//									Role:                 pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsCredentialDetailsRole),
+//									UserName:             pulumi.Any(testUser.Name),
+//									WalletSecretId:       pulumi.Any(testSecret.Id),
+//								},
+//								DatabaseId:                pulumi.Any(testDatabase.Id),
+//								DatabaseResourceType:      pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDatabaseResourceType),
+//								DefinedTags:               pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDefinedTags),
+//								DeploymentType:            pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsDeploymentType),
+//								EntitySource:              pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsEntitySource),
+//								FreeformTags:              pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsFreeformTags),
+//								IsAdvancedFeaturesEnabled: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsIsAdvancedFeaturesEnabled),
+//								ManagementAgentId:         pulumi.Any(testManagementAgent.Id),
+//								OpsiPrivateEndpointId:     pulumi.Any(testPrivateEndpoint.Id),
+//								SystemTags:                pulumi.Any(exadataInsightMemberVmClusterDetailsMemberAutonomousDetailsSystemTags),
+//							},
+//						},
 //						MemberDatabaseDetails: opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{
 //							&opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{
 //								CompartmentId: pulumi.Any(compartmentId),
 //								ConnectionCredentialDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionCredentialDetailsArgs{
 //									CredentialType:       pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialType),
 //									CredentialSourceName: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsCredentialSourceName),
+//									NamedCredentialId:    pulumi.Any(testNamedCredential.Id),
 //									PasswordSecretId:     pulumi.Any(testSecret.Id),
 //									Role:                 pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsConnectionCredentialDetailsRole),
 //									UserName:             pulumi.Any(testUser.Name),
@@ -73,6 +114,7 @@ import (
 //								CredentialDetails: &opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{
 //									CredentialType:       pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialType),
 //									CredentialSourceName: pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsCredentialSourceName),
+//									NamedCredentialId:    pulumi.Any(testNamedCredential.Id),
 //									PasswordSecretId:     pulumi.Any(testSecret.Id),
 //									Role:                 pulumi.Any(exadataInsightMemberVmClusterDetailsMemberDatabaseDetailsCredentialDetailsRole),
 //									UserName:             pulumi.Any(testUser.Name),

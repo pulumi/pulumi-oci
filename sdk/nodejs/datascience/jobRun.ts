@@ -34,6 +34,13 @@ import * as utilities from "../utilities";
  *         commandLineArguments: jobRunJobConfigurationOverrideDetailsCommandLineArguments,
  *         environmentVariables: jobRunJobConfigurationOverrideDetailsEnvironmentVariables,
  *         maximumRuntimeInMinutes: jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+ *         startupProbeDetails: {
+ *             commands: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand,
+ *             jobProbeCheckType: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType,
+ *             failureThreshold: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold,
+ *             initialDelayInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *             periodInSeconds: jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds,
+ *         },
  *     },
  *     jobEnvironmentConfigurationOverrideDetails: {
  *         image: jobRunJobEnvironmentConfigurationOverrideDetailsImage,
@@ -43,11 +50,66 @@ import * as utilities from "../utilities";
  *         imageDigest: jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest,
  *         imageSignatureId: testImageSignature.id,
  *     },
+ *     jobInfrastructureConfigurationOverrideDetails: {
+ *         jobInfrastructureType: jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
+ *         blockStorageSizeInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         jobShapeConfigDetails: {
+ *             memoryInGbs: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
+ *             ocpus: jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
+ *         },
+ *         shapeName: testShape.name,
+ *         subnetId: testSubnet.id,
+ *     },
  *     jobLogConfigurationOverrideDetails: {
  *         enableAutoLogCreation: jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
  *         enableLogging: jobRunJobLogConfigurationOverrideDetailsEnableLogging,
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
+ *     },
+ *     jobNodeConfigurationOverrideDetails: {
+ *         jobNodeType: jobRunJobNodeConfigurationOverrideDetailsJobNodeType,
+ *         jobNetworkConfiguration: {
+ *             jobNetworkType: jobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationJobNetworkType,
+ *             subnetId: testSubnet.id,
+ *         },
+ *         jobNodeGroupConfigurationDetailsLists: [{
+ *             name: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListName,
+ *             jobConfigurationDetails: {
+ *                 jobType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType,
+ *                 commandLineArguments: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments,
+ *                 environmentVariables: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables,
+ *                 maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes,
+ *                 startupProbeDetails: {
+ *                     commands: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
+ *                     jobProbeCheckType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+ *                     failureThreshold: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+ *                     initialDelayInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *                     periodInSeconds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                 },
+ *             },
+ *             jobEnvironmentConfigurationDetails: {
+ *                 image: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage,
+ *                 jobEnvironmentType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType,
+ *                 cmds: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd,
+ *                 entrypoints: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint,
+ *                 imageDigest: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest,
+ *                 imageSignatureId: testImageSignature.id,
+ *             },
+ *             jobInfrastructureConfigurationDetails: {
+ *                 jobInfrastructureType: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
+ *                 blockStorageSizeInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 jobShapeConfigDetails: {
+ *                     memoryInGbs: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+ *                     ocpus: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *                 },
+ *                 shapeName: testShape.name,
+ *                 subnetId: testSubnet.id,
+ *             },
+ *             minimumSuccessReplicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
+ *             replicas: jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *         }],
+ *         maximumRuntimeInMinutes: jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+ *         startupOrder: jobRunJobNodeConfigurationOverrideDetailsStartupOrder,
  *     },
  *     opcParentRptUrl: jobRunOpcParentRptUrl,
  * });
@@ -130,21 +192,33 @@ export class JobRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly jobInfrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationDetail[]>;
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     */
+    public readonly jobInfrastructureConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
+    /**
      * Logging configuration for resource.
      */
     public readonly jobLogConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    /**
+     * The job node configuration details
+     */
+    public readonly jobNodeConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     public /*out*/ readonly jobStorageMountConfigurationDetailsLists!: pulumi.Output<outputs.DataScience.JobRunJobStorageMountConfigurationDetailsList[]>;
     /**
-     * Details of the state of the job run.
+     * The state details of the node group.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
      * Customer logging details for job run.
      */
     public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.JobRunLogDetail[]>;
+    /**
+     * Collection of NodeGroupDetails
+     */
+    public /*out*/ readonly nodeGroupDetailsLists!: pulumi.Output<outputs.DataScience.JobRunNodeGroupDetailsList[]>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
@@ -197,10 +271,13 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = state ? state.jobEnvironmentConfigurationOverrideDetails : undefined;
             resourceInputs["jobId"] = state ? state.jobId : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
+            resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = state ? state.jobInfrastructureConfigurationOverrideDetails : undefined;
             resourceInputs["jobLogConfigurationOverrideDetails"] = state ? state.jobLogConfigurationOverrideDetails : undefined;
+            resourceInputs["jobNodeConfigurationOverrideDetails"] = state ? state.jobNodeConfigurationOverrideDetails : undefined;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logDetails"] = state ? state.logDetails : undefined;
+            resourceInputs["nodeGroupDetailsLists"] = state ? state.nodeGroupDetailsLists : undefined;
             resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -226,7 +303,9 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobConfigurationOverrideDetails"] = args ? args.jobConfigurationOverrideDetails : undefined;
             resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = args ? args.jobEnvironmentConfigurationOverrideDetails : undefined;
             resourceInputs["jobId"] = args ? args.jobId : undefined;
+            resourceInputs["jobInfrastructureConfigurationOverrideDetails"] = args ? args.jobInfrastructureConfigurationOverrideDetails : undefined;
             resourceInputs["jobLogConfigurationOverrideDetails"] = args ? args.jobLogConfigurationOverrideDetails : undefined;
+            resourceInputs["jobNodeConfigurationOverrideDetails"] = args ? args.jobNodeConfigurationOverrideDetails : undefined;
             resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -234,6 +313,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["logDetails"] = undefined /*out*/;
+            resourceInputs["nodeGroupDetailsLists"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeAccepted"] = undefined /*out*/;
             resourceInputs["timeFinished"] = undefined /*out*/;
@@ -289,21 +369,33 @@ export interface JobRunState {
      */
     jobInfrastructureConfigurationDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationDetail>[]>;
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     */
+    jobInfrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
+    /**
      * Logging configuration for resource.
      */
     jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    /**
+     * The job node configuration details
+     */
+    jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunJobStorageMountConfigurationDetailsList>[]>;
     /**
-     * Details of the state of the job run.
+     * The state details of the node group.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
      * Customer logging details for job run.
      */
     logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunLogDetail>[]>;
+    /**
+     * Collection of NodeGroupDetails
+     */
+    nodeGroupDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunNodeGroupDetailsList>[]>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */
@@ -371,9 +463,17 @@ export interface JobRunArgs {
      */
     jobId: pulumi.Input<string>;
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     */
+    jobInfrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobInfrastructureConfigurationOverrideDetails>;
+    /**
      * Logging configuration for resource.
      */
     jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    /**
+     * The job node configuration details
+     */
+    jobNodeConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobNodeConfigurationOverrideDetails>;
     /**
      * URL to fetch the Resource Principal Token from the parent resource.
      */

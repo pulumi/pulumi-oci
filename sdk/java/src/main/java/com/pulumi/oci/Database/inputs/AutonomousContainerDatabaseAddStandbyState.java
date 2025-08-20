@@ -604,6 +604,21 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
     }
 
     /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    @Import(name="okvEndPointGroupName")
+    private @Nullable Output<String> okvEndPointGroupName;
+
+    /**
+     * @return The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<String>> okvEndPointGroupName() {
+        return Optional.ofNullable(this.okvEndPointGroupName);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
@@ -1011,6 +1026,7 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.netServicesArchitecture = $.netServicesArchitecture;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
+        this.okvEndPointGroupName = $.okvEndPointGroupName;
         this.patchId = $.patchId;
         this.patchModel = $.patchModel;
         this.peerAutonomousContainerDatabaseBackupConfig = $.peerAutonomousContainerDatabaseBackupConfig;
@@ -1920,6 +1936,27 @@ public final class AutonomousContainerDatabaseAddStandbyState extends com.pulumi
          */
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             return nextMaintenanceRunId(Output.of(nextMaintenanceRunId));
+        }
+
+        /**
+         * @param okvEndPointGroupName The OKV End Point Group name for the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroupName(@Nullable Output<String> okvEndPointGroupName) {
+            $.okvEndPointGroupName = okvEndPointGroupName;
+            return this;
+        }
+
+        /**
+         * @param okvEndPointGroupName The OKV End Point Group name for the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            return okvEndPointGroupName(Output.of(okvEndPointGroupName));
         }
 
         /**

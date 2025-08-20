@@ -10,10 +10,12 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Utilities;
 import com.pulumi.oci.Vault.SecretArgs;
 import com.pulumi.oci.Vault.inputs.SecretState;
+import com.pulumi.oci.Vault.outputs.SecretReplicationConfig;
 import com.pulumi.oci.Vault.outputs.SecretRotationConfig;
 import com.pulumi.oci.Vault.outputs.SecretSecretContent;
 import com.pulumi.oci.Vault.outputs.SecretSecretGenerationContext;
 import com.pulumi.oci.Vault.outputs.SecretSecretRule;
+import com.pulumi.oci.Vault.outputs.SecretSourceRegionInformation;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -136,6 +138,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
         return this.isAutoGenerationEnabled;
     }
     /**
+     * A Boolean value that indicates whether the secret is a source or replica secret.
+     * 
+     */
+    @Export(name="isReplica", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isReplica;
+
+    /**
+     * @return A Boolean value that indicates whether the secret is a source or replica secret.
+     * 
+     */
+    public Output<Boolean> isReplica() {
+        return this.isReplica;
+    }
+    /**
      * The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
@@ -204,6 +220,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<String> nextRotationTime() {
         return this.nextRotationTime;
+    }
+    /**
+     * (Updatable) Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    @Export(name="replicationConfig", refs={SecretReplicationConfig.class}, tree="[0]")
+    private Output</* @Nullable */ SecretReplicationConfig> replicationConfig;
+
+    /**
+     * @return (Updatable) Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    public Output<Optional<SecretReplicationConfig>> replicationConfig() {
+        return Codegen.optional(this.replicationConfig);
     }
     /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -288,6 +318,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<List<SecretSecretRule>> secretRules() {
         return this.secretRules;
+    }
+    /**
+     * Details for the source that the source secret has.
+     * 
+     */
+    @Export(name="sourceRegionInformations", refs={List.class,SecretSourceRegionInformation.class}, tree="[0,1]")
+    private Output<List<SecretSourceRegionInformation>> sourceRegionInformations;
+
+    /**
+     * @return Details for the source that the source secret has.
+     * 
+     */
+    public Output<List<SecretSourceRegionInformation>> sourceRegionInformations() {
+        return this.sourceRegionInformations;
     }
     /**
      * The current lifecycle state of the secret.

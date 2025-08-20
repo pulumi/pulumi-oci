@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfiguratio
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig;
+import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig;
@@ -53,6 +54,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * 
      */
     private String compartmentId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    private String computeClusterId;
     /**
      * @return Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
      * 
@@ -127,6 +133,11 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * 
      */
     private Map<String,String> metadata;
+    /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail> placementConstraintDetails;
     /**
      * @return The platform configuration requested for the instance.
      * 
@@ -203,6 +214,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public String computeClusterId() {
+        return this.computeClusterId;
     }
     /**
      * @return Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
@@ -307,6 +325,13 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         return this.metadata;
     }
     /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    public List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail> placementConstraintDetails() {
+        return this.placementConstraintDetails;
+    }
+    /**
      * @return The platform configuration requested for the instance.
      * 
      */
@@ -369,6 +394,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private String capacityReservationId;
         private String clusterPlacementGroupId;
         private String compartmentId;
+        private String computeClusterId;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
         private Map<String,String> definedTags;
@@ -383,6 +409,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption> launchOptions;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfig> licensingConfigs;
         private Map<String,String> metadata;
+        private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail> placementConstraintDetails;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig> platformConfigs;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private String preferredMaintenanceAction;
@@ -399,6 +426,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeClusterId = defaults.computeClusterId;
     	      this.createVnicDetails = defaults.createVnicDetails;
     	      this.dedicatedVmHostId = defaults.dedicatedVmHostId;
     	      this.definedTags = defaults.definedTags;
@@ -413,6 +441,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
     	      this.launchOptions = defaults.launchOptions;
     	      this.licensingConfigs = defaults.licensingConfigs;
     	      this.metadata = defaults.metadata;
+    	      this.placementConstraintDetails = defaults.placementConstraintDetails;
     	      this.platformConfigs = defaults.platformConfigs;
     	      this.preemptibleInstanceConfigs = defaults.preemptibleInstanceConfigs;
     	      this.preferredMaintenanceAction = defaults.preferredMaintenanceAction;
@@ -474,6 +503,14 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeClusterId(String computeClusterId) {
+            if (computeClusterId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "computeClusterId");
+            }
+            this.computeClusterId = computeClusterId;
             return this;
         }
         @CustomType.Setter
@@ -601,6 +638,17 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         @CustomType.Setter
+        public Builder placementConstraintDetails(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail> placementConstraintDetails) {
+            if (placementConstraintDetails == null) {
+              throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "placementConstraintDetails");
+            }
+            this.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+        public Builder placementConstraintDetails(GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetail... placementConstraintDetails) {
+            return placementConstraintDetails(List.of(placementConstraintDetails));
+        }
+        @CustomType.Setter
         public Builder platformConfigs(List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig> platformConfigs) {
             if (platformConfigs == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "platformConfigs");
@@ -676,6 +724,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeClusterId = computeClusterId;
             _resultValue.createVnicDetails = createVnicDetails;
             _resultValue.dedicatedVmHostId = dedicatedVmHostId;
             _resultValue.definedTags = definedTags;
@@ -690,6 +739,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             _resultValue.launchOptions = launchOptions;
             _resultValue.licensingConfigs = licensingConfigs;
             _resultValue.metadata = metadata;
+            _resultValue.placementConstraintDetails = placementConstraintDetails;
             _resultValue.platformConfigs = platformConfigs;
             _resultValue.preemptibleInstanceConfigs = preemptibleInstanceConfigs;
             _resultValue.preferredMaintenanceAction = preferredMaintenanceAction;

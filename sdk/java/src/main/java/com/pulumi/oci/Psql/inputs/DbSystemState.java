@@ -327,14 +327,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The source used to restore the database system.
+     * The source of the database system.
      * 
      */
     @Import(name="source")
     private @Nullable Output<DbSystemSourceArgs> source;
 
     /**
-     * @return The source used to restore the database system.
+     * @return The source of the database system.
      * 
      */
     public Optional<Output<DbSystemSourceArgs>> source() {
@@ -938,7 +938,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source The source used to restore the database system.
+         * @param source The source of the database system.
          * 
          * @return builder
          * 
@@ -949,7 +949,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source The source used to restore the database system.
+         * @param source The source of the database system.
          * 
          * @return builder
          * 

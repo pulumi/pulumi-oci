@@ -91,11 +91,17 @@ namespace Pulumi.Oci.ApiGateway
         [Output("intermediateCertificates")]
         public Output<string> IntermediateCertificates { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.CertificateLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The private key associated with the certificate in pem format.
@@ -118,6 +124,9 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Output("subjectNames")]
         public Output<ImmutableArray<string>> SubjectNames { get; private set; } = null!;
+
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
@@ -235,6 +244,17 @@ namespace Pulumi.Oci.ApiGateway
         [Input("intermediateCertificates")]
         public Input<string>? IntermediateCertificates { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.CertificateLockArgs>? _locks;
+        public InputList<Inputs.CertificateLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.CertificateLockArgs>());
+            set => _locks = value;
+        }
+
         [Input("privateKey", required: true)]
         private Input<string>? _privateKey;
 
@@ -311,11 +331,22 @@ namespace Pulumi.Oci.ApiGateway
         [Input("intermediateCertificates")]
         public Input<string>? IntermediateCertificates { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.CertificateLockGetArgs>? _locks;
+        public InputList<Inputs.CertificateLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.CertificateLockGetArgs>());
+            set => _locks = value;
+        }
 
         [Input("privateKey")]
         private Input<string>? _privateKey;
@@ -353,6 +384,14 @@ namespace Pulumi.Oci.ApiGateway
         {
             get => _subjectNames ?? (_subjectNames = new InputList<string>());
             set => _subjectNames = value;
+        }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
         }
 
         /// <summary>

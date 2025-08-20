@@ -6,11 +6,17 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_oci_cache_config_set import *
+from .get_oci_cache_config_sets import *
+from .get_oci_cache_default_config_set import *
+from .get_oci_cache_default_config_sets import *
 from .get_oci_cache_user import *
 from .get_oci_cache_users import *
 from .get_redis_cluster import *
 from .get_redis_cluster_nodes import *
 from .get_redis_clusters import *
+from .oci_cache_config_set import *
+from .oci_cache_config_setlist_associated_oci_cache_cluster import *
 from .oci_cache_user import *
 from .oci_cache_user_get_redis_cluster import *
 from .redis_cluster import *

@@ -87,6 +87,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
         /// * 'New' for just updated API Specifications
@@ -100,6 +103,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.ApiLock>> Locks { get; private set; } = null!;
+
         /// <summary>
         /// Type of API Specification file.
         /// </summary>
@@ -111,6 +117,9 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
@@ -222,6 +231,17 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ApiLockArgs>? _locks;
+        public InputList<Inputs.ApiLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ApiLockArgs>());
+            set => _locks = value;
+        }
+
         public ApiArgs()
         {
         }
@@ -276,6 +296,9 @@ namespace Pulumi.Oci.ApiGateway
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
         /// * 'New' for just updated API Specifications
@@ -289,6 +312,14 @@ namespace Pulumi.Oci.ApiGateway
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("locks")]
+        private InputList<Inputs.ApiLockGetArgs>? _locks;
+        public InputList<Inputs.ApiLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ApiLockGetArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// Type of API Specification file.
         /// </summary>
@@ -300,6 +331,14 @@ namespace Pulumi.Oci.ApiGateway
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.

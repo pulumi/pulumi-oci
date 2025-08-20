@@ -23,6 +23,8 @@ import * as utilities from "../utilities";
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
+ *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: configurationInstanceOcpuCount,
  *     shape: configurationShape,
  *     state: configurationState,
  * });
@@ -38,6 +40,8 @@ export function getConfigurations(args?: GetConfigurationsArgs, opts?: pulumi.In
         "dbVersion": args.dbVersion,
         "displayName": args.displayName,
         "filters": args.filters,
+        "instanceMemorySizeInGbs": args.instanceMemorySizeInGbs,
+        "instanceOcpuCount": args.instanceOcpuCount,
         "shape": args.shape,
         "state": args.state,
     }, opts);
@@ -69,7 +73,15 @@ export interface GetConfigurationsArgs {
     displayName?: string;
     filters?: inputs.Psql.GetConfigurationsFilter[];
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The instance memory size in GBs for the configuration.
+     */
+    instanceMemorySizeInGbs?: number;
+    /**
+     * The instance ocpu count for the configuration.
+     */
+    instanceOcpuCount?: number;
+    /**
+     * The compute name of the shape for the configuration.
      */
     shape?: string;
     /**
@@ -109,9 +121,17 @@ export interface GetConfigurationsResult {
      */
     readonly id: string;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * Memory size in gigabytes with 1GB increment.
      */
-    readonly shape?: string;
+    readonly instanceMemorySizeInGbs?: number;
+    /**
+     * CPU core count.
+     */
+    readonly instanceOcpuCount?: number;
+    /**
+     * The name of the shape for the configuration.
+     */
+    readonly shape: string;
     /**
      * The current state of the configuration.
      */
@@ -134,6 +154,8 @@ export interface GetConfigurationsResult {
  *     configurationId: testConfiguration.id,
  *     dbVersion: configurationDbVersion,
  *     displayName: configurationDisplayName,
+ *     instanceMemorySizeInGbs: configurationInstanceMemorySizeInGbs,
+ *     instanceOcpuCount: configurationInstanceOcpuCount,
  *     shape: configurationShape,
  *     state: configurationState,
  * });
@@ -149,6 +171,8 @@ export function getConfigurationsOutput(args?: GetConfigurationsOutputArgs, opts
         "dbVersion": args.dbVersion,
         "displayName": args.displayName,
         "filters": args.filters,
+        "instanceMemorySizeInGbs": args.instanceMemorySizeInGbs,
+        "instanceOcpuCount": args.instanceOcpuCount,
         "shape": args.shape,
         "state": args.state,
     }, opts);
@@ -180,7 +204,15 @@ export interface GetConfigurationsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Psql.GetConfigurationsFilterArgs>[]>;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The instance memory size in GBs for the configuration.
+     */
+    instanceMemorySizeInGbs?: pulumi.Input<number>;
+    /**
+     * The instance ocpu count for the configuration.
+     */
+    instanceOcpuCount?: pulumi.Input<number>;
+    /**
+     * The compute name of the shape for the configuration.
      */
     shape?: pulumi.Input<string>;
     /**

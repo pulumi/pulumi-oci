@@ -30,6 +30,14 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// </summary>
         public readonly string Language;
         /// <summary>
+        /// Unique identifier custom model OCID that should be used for inference.
+        /// </summary>
+        public readonly string ModelId;
+        /// <summary>
+        /// A string-to-object map where the key is the normalization field and the object contains information about the field.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProcessorJobProcessorConfigNormalizationFieldResult> NormalizationFields;
+        /// <summary>
         /// The type of the processor.
         /// </summary>
         public readonly string ProcessorType;
@@ -44,12 +52,18 @@ namespace Pulumi.Oci.AiDocument.Outputs
 
             string language,
 
+            string modelId,
+
+            ImmutableArray<Outputs.GetProcessorJobProcessorConfigNormalizationFieldResult> normalizationFields,
+
             string processorType)
         {
             DocumentType = documentType;
             Features = features;
             IsZipOutputEnabled = isZipOutputEnabled;
             Language = language;
+            ModelId = modelId;
+            NormalizationFields = normalizationFields;
             ProcessorType = processorType;
         }
     }

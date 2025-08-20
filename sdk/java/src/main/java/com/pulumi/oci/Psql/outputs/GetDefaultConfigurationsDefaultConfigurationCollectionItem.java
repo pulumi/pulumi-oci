@@ -15,6 +15,11 @@ import java.util.Objects;
 @CustomType
 public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
     /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    private List<String> compatibleShapes;
+    /**
      * @return List of default configuration values for databases.
      * 
      */
@@ -40,12 +45,12 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
      */
     private String id;
     /**
-     * @return Memory size in gigabytes with 1GB increment.
+     * @return The instance memory size in GBs for the configuration.
      * 
      */
     private Integer instanceMemorySizeInGbs;
     /**
-     * @return CPU core count.
+     * @return The instance ocpu count for the configuration.
      * 
      */
     private Integer instanceOcpuCount;
@@ -60,7 +65,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The compute name of the shape for the configuration.
      * 
      */
     private String shape;
@@ -76,6 +81,13 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
     private String timeCreated;
 
     private GetDefaultConfigurationsDefaultConfigurationCollectionItem() {}
+    /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public List<String> compatibleShapes() {
+        return this.compatibleShapes;
+    }
     /**
      * @return List of default configuration values for databases.
      * 
@@ -112,14 +124,14 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         return this.id;
     }
     /**
-     * @return Memory size in gigabytes with 1GB increment.
+     * @return The instance memory size in GBs for the configuration.
      * 
      */
     public Integer instanceMemorySizeInGbs() {
         return this.instanceMemorySizeInGbs;
     }
     /**
-     * @return CPU core count.
+     * @return The instance ocpu count for the configuration.
      * 
      */
     public Integer instanceOcpuCount() {
@@ -140,7 +152,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The compute name of the shape for the configuration.
      * 
      */
     public String shape() {
@@ -170,6 +182,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> compatibleShapes;
         private List<GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail> configurationDetails;
         private String dbVersion;
         private String description;
@@ -185,6 +198,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         public Builder() {}
         public Builder(GetDefaultConfigurationsDefaultConfigurationCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.compatibleShapes = defaults.compatibleShapes;
     	      this.configurationDetails = defaults.configurationDetails;
     	      this.dbVersion = defaults.dbVersion;
     	      this.description = defaults.description;
@@ -199,6 +213,17 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
     	      this.timeCreated = defaults.timeCreated;
         }
 
+        @CustomType.Setter
+        public Builder compatibleShapes(List<String> compatibleShapes) {
+            if (compatibleShapes == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationsDefaultConfigurationCollectionItem", "compatibleShapes");
+            }
+            this.compatibleShapes = compatibleShapes;
+            return this;
+        }
+        public Builder compatibleShapes(String... compatibleShapes) {
+            return compatibleShapes(List.of(compatibleShapes));
+        }
         @CustomType.Setter
         public Builder configurationDetails(List<GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail> configurationDetails) {
             if (configurationDetails == null) {
@@ -300,6 +325,7 @@ public final class GetDefaultConfigurationsDefaultConfigurationCollectionItem {
         }
         public GetDefaultConfigurationsDefaultConfigurationCollectionItem build() {
             final var _resultValue = new GetDefaultConfigurationsDefaultConfigurationCollectionItem();
+            _resultValue.compatibleShapes = compatibleShapes;
             _resultValue.configurationDetails = configurationDetails;
             _resultValue.dbVersion = dbVersion;
             _resultValue.description = description;

@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagementAgentDataSource{}
 	case "oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey":
 		r = &ManagementAgentInstallKey{}
+	case "oci:ManagementAgent/namedCredential:NamedCredential":
+		r = &NamedCredential{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"ManagementAgent/managementAgentInstallKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"ManagementAgent/namedCredential",
 		&module{version},
 	)
 }

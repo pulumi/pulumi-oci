@@ -32,6 +32,7 @@ import * as utilities from "../utilities";
  *     }],
  *     authenticationMode: connectionAuthenticationMode,
  *     authenticationType: connectionAuthenticationType,
+ *     azureAuthorityHost: connectionAzureAuthorityHost,
  *     azureTenantId: testAzureTenant.id,
  *     bootstrapServers: [{
  *         host: connectionBootstrapServersHost,
@@ -229,6 +230,12 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly authenticationType!: pulumi.Output<string>;
     /**
+     * (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     */
+    public readonly azureAuthorityHost!: pulumi.Output<string>;
+    /**
      * (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
     public readonly azureTenantId!: pulumi.Output<string>;
@@ -313,11 +320,11 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly doesUseSecretIds!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
      */
     public readonly endpoint!: pulumi.Output<string>;
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
     public readonly fingerprint!: pulumi.Output<string>;
     /**
@@ -437,7 +444,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly redisClusterId!: pulumi.Output<string>;
     /**
-     * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
     public readonly region!: pulumi.Output<string>;
     /**
@@ -485,7 +492,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly shouldUseJndi!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      */
     public readonly shouldUseResourcePrincipal!: pulumi.Output<boolean>;
     /**
@@ -501,19 +508,27 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly sslCert!: pulumi.Output<string>;
     /**
-     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
      */
     public readonly sslClientKeystash!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Note: When provided, 'sslClientKeystash' field must not be provided.
      */
     public readonly sslClientKeystashSecretId!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      */
     public readonly sslClientKeystoredb!: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      */
     public readonly sslClientKeystoredbSecretId!: pulumi.Output<string | undefined>;
     /**
@@ -679,6 +694,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
             resourceInputs["authenticationMode"] = state ? state.authenticationMode : undefined;
             resourceInputs["authenticationType"] = state ? state.authenticationType : undefined;
+            resourceInputs["azureAuthorityHost"] = state ? state.azureAuthorityHost : undefined;
             resourceInputs["azureTenantId"] = state ? state.azureTenantId : undefined;
             resourceInputs["bootstrapServers"] = state ? state.bootstrapServers : undefined;
             resourceInputs["catalog"] = state ? state.catalog : undefined;
@@ -806,6 +822,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
             resourceInputs["authenticationMode"] = args ? args.authenticationMode : undefined;
             resourceInputs["authenticationType"] = args ? args.authenticationType : undefined;
+            resourceInputs["azureAuthorityHost"] = args ? args.azureAuthorityHost : undefined;
             resourceInputs["azureTenantId"] = args ? args.azureTenantId : undefined;
             resourceInputs["bootstrapServers"] = args ? args.bootstrapServers : undefined;
             resourceInputs["catalog"] = args ? args.catalog : undefined;
@@ -953,6 +970,12 @@ export interface ConnectionState {
      */
     authenticationType?: pulumi.Input<string>;
     /**
+     * (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     */
+    azureAuthorityHost?: pulumi.Input<string>;
+    /**
      * (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
     azureTenantId?: pulumi.Input<string>;
@@ -1037,11 +1060,11 @@ export interface ConnectionState {
      */
     doesUseSecretIds?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
      */
     endpoint?: pulumi.Input<string>;
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
     fingerprint?: pulumi.Input<string>;
     /**
@@ -1161,7 +1184,7 @@ export interface ConnectionState {
      */
     redisClusterId?: pulumi.Input<string>;
     /**
-     * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
     region?: pulumi.Input<string>;
     /**
@@ -1209,7 +1232,7 @@ export interface ConnectionState {
      */
     shouldUseJndi?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      */
     shouldUseResourcePrincipal?: pulumi.Input<boolean>;
     /**
@@ -1225,19 +1248,27 @@ export interface ConnectionState {
      */
     sslCert?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
      */
     sslClientKeystash?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Note: When provided, 'sslClientKeystash' field must not be provided.
      */
     sslClientKeystashSecretId?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      */
     sslClientKeystoredb?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      */
     sslClientKeystoredbSecretId?: pulumi.Input<string>;
     /**
@@ -1417,6 +1448,12 @@ export interface ConnectionArgs {
      */
     authenticationType?: pulumi.Input<string>;
     /**
+     * (Updatable) The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     */
+    azureAuthorityHost?: pulumi.Input<string>;
+    /**
      * (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
     azureTenantId?: pulumi.Input<string>;
@@ -1501,11 +1538,11 @@ export interface ConnectionArgs {
      */
     doesUseSecretIds?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Optional Microsoft Fabric service endpoint. Default value: https://onelake.dfs.fabric.microsoft.com
+     * (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
      */
     endpoint?: pulumi.Input<string>;
     /**
-     * (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+     * (Updatable) Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      */
     fingerprint?: pulumi.Input<string>;
     /**
@@ -1617,7 +1654,7 @@ export interface ConnectionArgs {
      */
     redisClusterId?: pulumi.Input<string>;
     /**
-     * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
     region?: pulumi.Input<string>;
     /**
@@ -1665,7 +1702,7 @@ export interface ConnectionArgs {
      */
     shouldUseJndi?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Indicates that the user intents to connect to the instance through resource principal.
+     * (Updatable) Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      */
     shouldUseResourcePrincipal?: pulumi.Input<boolean>;
     /**
@@ -1681,19 +1718,27 @@ export interface ConnectionArgs {
      */
     sslCert?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
      */
     sslClientKeystash?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Note: When provided, 'sslClientKeystash' field must not be provided.
      */
     sslClientKeystashSecretId?: pulumi.Input<string>;
     /**
-     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      */
     sslClientKeystoredb?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+     *
+     * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      */
     sslClientKeystoredbSecretId?: pulumi.Input<string>;
     /**

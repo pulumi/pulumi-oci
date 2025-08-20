@@ -12,12 +12,84 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric {
+    /**
+     * @return The OCID of the compartment containing the metrics.
+     * 
+     */
+    private String metricCompartmentId;
+    /**
+     * @return Source of the metric data for creating the alarm used to trigger autoscaling actions.
+     * 
+     */
+    private String metricSource;
     private String metricType;
+    /**
+     * @return The namespace for the query.
+     * 
+     */
+    private String namespace;
+    /**
+     * @return The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34; or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to &#34;OK.&#34;
+     * 
+     */
+    private String pendingDuration;
+    /**
+     * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+     * 
+     */
+    private String query;
+    /**
+     * @return The resource group for the query.
+     * 
+     */
+    private String resourceGroup;
     private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
 
     private GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric() {}
+    /**
+     * @return The OCID of the compartment containing the metrics.
+     * 
+     */
+    public String metricCompartmentId() {
+        return this.metricCompartmentId;
+    }
+    /**
+     * @return Source of the metric data for creating the alarm used to trigger autoscaling actions.
+     * 
+     */
+    public String metricSource() {
+        return this.metricSource;
+    }
     public String metricType() {
         return this.metricType;
+    }
+    /**
+     * @return The namespace for the query.
+     * 
+     */
+    public String namespace() {
+        return this.namespace;
+    }
+    /**
+     * @return The period of time that the condition defined in the alarm must persist before the alarm state changes from &#34;OK&#34; to &#34;FIRING&#34; or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to &#34;FIRING&#34;; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to &#34;OK.&#34;
+     * 
+     */
+    public String pendingDuration() {
+        return this.pendingDuration;
+    }
+    /**
+     * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+     * 
+     */
+    public String query() {
+        return this.query;
+    }
+    /**
+     * @return The resource group for the query.
+     * 
+     */
+    public String resourceGroup() {
+        return this.resourceGroup;
     }
     public List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds() {
         return this.thresholds;
@@ -32,21 +104,81 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
     }
     @CustomType.Builder
     public static final class Builder {
+        private String metricCompartmentId;
+        private String metricSource;
         private String metricType;
+        private String namespace;
+        private String pendingDuration;
+        private String query;
+        private String resourceGroup;
         private List<GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetricThreshold> thresholds;
         public Builder() {}
         public Builder(GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.metricCompartmentId = defaults.metricCompartmentId;
+    	      this.metricSource = defaults.metricSource;
     	      this.metricType = defaults.metricType;
+    	      this.namespace = defaults.namespace;
+    	      this.pendingDuration = defaults.pendingDuration;
+    	      this.query = defaults.query;
+    	      this.resourceGroup = defaults.resourceGroup;
     	      this.thresholds = defaults.thresholds;
         }
 
+        @CustomType.Setter
+        public Builder metricCompartmentId(String metricCompartmentId) {
+            if (metricCompartmentId == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "metricCompartmentId");
+            }
+            this.metricCompartmentId = metricCompartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder metricSource(String metricSource) {
+            if (metricSource == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "metricSource");
+            }
+            this.metricSource = metricSource;
+            return this;
+        }
         @CustomType.Setter
         public Builder metricType(String metricType) {
             if (metricType == null) {
               throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "metricType");
             }
             this.metricType = metricType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namespace(String namespace) {
+            if (namespace == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "namespace");
+            }
+            this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder pendingDuration(String pendingDuration) {
+            if (pendingDuration == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "pendingDuration");
+            }
+            this.pendingDuration = pendingDuration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder query(String query) {
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "query");
+            }
+            this.query = query;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceGroup(String resourceGroup) {
+            if (resourceGroup == null) {
+              throw new MissingRequiredPropertyException("GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric", "resourceGroup");
+            }
+            this.resourceGroup = resourceGroup;
             return this;
         }
         @CustomType.Setter
@@ -62,7 +194,13 @@ public final class GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRul
         }
         public GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric build() {
             final var _resultValue = new GetAutoScalingConfigurationsAutoScalingConfigurationPolicyRuleMetric();
+            _resultValue.metricCompartmentId = metricCompartmentId;
+            _resultValue.metricSource = metricSource;
             _resultValue.metricType = metricType;
+            _resultValue.namespace = namespace;
+            _resultValue.pendingDuration = pendingDuration;
+            _resultValue.query = query;
+            _resultValue.resourceGroup = resourceGroup;
             _resultValue.thresholds = thresholds;
             return _resultValue;
         }

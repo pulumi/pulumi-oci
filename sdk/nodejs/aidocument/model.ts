@@ -74,6 +74,10 @@ export class Model extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Number of replicas required for this model.
+     */
+    public readonly inferenceUnits!: pulumi.Output<number>;
+    /**
      * Set to true when the model is created by using multiple key value extraction models.
      */
     public /*out*/ readonly isComposedModel!: pulumi.Output<boolean>;
@@ -86,9 +90,17 @@ export class Model extends pulumi.CustomResource {
      */
     public /*out*/ readonly labels!: pulumi.Output<string[]>;
     /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     */
+    public readonly language!: pulumi.Output<string>;
+    /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.AiDocument.ModelLock[]>;
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
@@ -98,6 +110,10 @@ export class Model extends pulumi.CustomResource {
      */
     public /*out*/ readonly metrics!: pulumi.Output<outputs.AiDocument.ModelMetric[]>;
     public readonly modelId!: pulumi.Output<string | undefined>;
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     */
+    public readonly modelSubType!: pulumi.Output<outputs.AiDocument.ModelModelSubType>;
     /**
      * The type of the Document model.
      */
@@ -166,13 +182,17 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["inferenceUnits"] = state ? state.inferenceUnits : undefined;
             resourceInputs["isComposedModel"] = state ? state.isComposedModel : undefined;
             resourceInputs["isQuickMode"] = state ? state.isQuickMode : undefined;
             resourceInputs["labels"] = state ? state.labels : undefined;
+            resourceInputs["language"] = state ? state.language : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["maxTrainingTimeInHours"] = state ? state.maxTrainingTimeInHours : undefined;
             resourceInputs["metrics"] = state ? state.metrics : undefined;
             resourceInputs["modelId"] = state ? state.modelId : undefined;
+            resourceInputs["modelSubType"] = state ? state.modelSubType : undefined;
             resourceInputs["modelType"] = state ? state.modelType : undefined;
             resourceInputs["modelVersion"] = state ? state.modelVersion : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
@@ -202,9 +222,13 @@ export class Model extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["inferenceUnits"] = args ? args.inferenceUnits : undefined;
             resourceInputs["isQuickMode"] = args ? args.isQuickMode : undefined;
+            resourceInputs["language"] = args ? args.language : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["maxTrainingTimeInHours"] = args ? args.maxTrainingTimeInHours : undefined;
             resourceInputs["modelId"] = args ? args.modelId : undefined;
+            resourceInputs["modelSubType"] = args ? args.modelSubType : undefined;
             resourceInputs["modelType"] = args ? args.modelType : undefined;
             resourceInputs["modelVersion"] = args ? args.modelVersion : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
@@ -256,6 +280,10 @@ export interface ModelState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Number of replicas required for this model.
+     */
+    inferenceUnits?: pulumi.Input<number>;
+    /**
      * Set to true when the model is created by using multiple key value extraction models.
      */
     isComposedModel?: pulumi.Input<boolean>;
@@ -268,9 +296,17 @@ export interface ModelState {
      */
     labels?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     */
+    language?: pulumi.Input<string>;
+    /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelLock>[]>;
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
@@ -280,6 +316,10 @@ export interface ModelState {
      */
     metrics?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelMetric>[]>;
     modelId?: pulumi.Input<string>;
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     */
+    modelSubType?: pulumi.Input<inputs.AiDocument.ModelModelSubType>;
     /**
      * The type of the Document model.
      */
@@ -359,14 +399,30 @@ export interface ModelArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
+     * (Updatable) Number of replicas required for this model.
+     */
+    inferenceUnits?: pulumi.Input<number>;
+    /**
      * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
     isQuickMode?: pulumi.Input<boolean>;
+    /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     */
+    language?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.AiDocument.ModelLock>[]>;
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
     maxTrainingTimeInHours?: pulumi.Input<number>;
     modelId?: pulumi.Input<string>;
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     */
+    modelSubType?: pulumi.Input<inputs.AiDocument.ModelModelSubType>;
     /**
      * The type of the Document model.
      */

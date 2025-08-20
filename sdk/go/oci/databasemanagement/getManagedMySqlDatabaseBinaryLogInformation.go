@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
 //
-// Retrieves information pertaining to binary log of a specific MySQL server.
+// Retrieves information pertaining to the binary log of a specific MySQL server.
 //
 // ## Example Usage
 //
@@ -58,17 +58,17 @@ type GetManagedMySqlDatabaseBinaryLogInformationArgs struct {
 
 // A collection of values returned by getManagedMySqlDatabaseBinaryLogInformation.
 type GetManagedMySqlDatabaseBinaryLogInformationResult struct {
-	// Indicates whether compression is enabled for transactions written to binary log files on this server.
+	// Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
 	BinaryLogCompression string `pulumi:"binaryLogCompression"`
-	// The compression ratio for binary log expressed as a percentage.
+	// The compression ratio for the binary log, expressed as a percentage.
 	BinaryLogCompressionPercent int `pulumi:"binaryLogCompressionPercent"`
-	// The binary logging format used by this server.
+	// The binary logging format used by the MySQL server.
 	BinaryLogFormat string `pulumi:"binaryLogFormat"`
 	// The name of the binary log file.
 	BinaryLogName string `pulumi:"binaryLogName"`
 	// The position within the binary log file.
 	BinaryLogPosition string `pulumi:"binaryLogPosition"`
-	// Status of binary logging on this server.
+	// The status of binary logging on the MySQL server.
 	BinaryLogging string `pulumi:"binaryLogging"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                     string `pulumi:"id"`
@@ -109,17 +109,17 @@ func (o GetManagedMySqlDatabaseBinaryLogInformationResultOutput) ToGetManagedMyS
 	return o
 }
 
-// Indicates whether compression is enabled for transactions written to binary log files on this server.
+// Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
 func (o GetManagedMySqlDatabaseBinaryLogInformationResultOutput) BinaryLogCompression() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseBinaryLogInformationResult) string { return v.BinaryLogCompression }).(pulumi.StringOutput)
 }
 
-// The compression ratio for binary log expressed as a percentage.
+// The compression ratio for the binary log, expressed as a percentage.
 func (o GetManagedMySqlDatabaseBinaryLogInformationResultOutput) BinaryLogCompressionPercent() pulumi.IntOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseBinaryLogInformationResult) int { return v.BinaryLogCompressionPercent }).(pulumi.IntOutput)
 }
 
-// The binary logging format used by this server.
+// The binary logging format used by the MySQL server.
 func (o GetManagedMySqlDatabaseBinaryLogInformationResultOutput) BinaryLogFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseBinaryLogInformationResult) string { return v.BinaryLogFormat }).(pulumi.StringOutput)
 }
@@ -134,7 +134,7 @@ func (o GetManagedMySqlDatabaseBinaryLogInformationResultOutput) BinaryLogPositi
 	return o.ApplyT(func(v GetManagedMySqlDatabaseBinaryLogInformationResult) string { return v.BinaryLogPosition }).(pulumi.StringOutput)
 }
 
-// Status of binary logging on this server.
+// The status of binary logging on the MySQL server.
 func (o GetManagedMySqlDatabaseBinaryLogInformationResultOutput) BinaryLogging() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagedMySqlDatabaseBinaryLogInformationResult) string { return v.BinaryLogging }).(pulumi.StringOutput)
 }

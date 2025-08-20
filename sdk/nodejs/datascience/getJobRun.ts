@@ -85,22 +85,34 @@ export interface GetJobRunResult {
      */
     readonly jobInfrastructureConfigurationDetails: outputs.DataScience.GetJobRunJobInfrastructureConfigurationDetail[];
     /**
+     * The job infrastructure configuration details (shape, block storage, etc.)
+     */
+    readonly jobInfrastructureConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobInfrastructureConfigurationOverrideDetail[];
+    /**
      * Logging configuration for resource.
      */
     readonly jobLogConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobLogConfigurationOverrideDetail[];
+    /**
+     * The job node configuration details
+     */
+    readonly jobNodeConfigurationOverrideDetails: outputs.DataScience.GetJobRunJobNodeConfigurationOverrideDetail[];
     readonly jobRunId: string;
     /**
      * Collection of JobStorageMountConfigurationDetails.
      */
     readonly jobStorageMountConfigurationDetailsLists: outputs.DataScience.GetJobRunJobStorageMountConfigurationDetailsList[];
     /**
-     * Details of the state of the job run.
+     * The state details of the node group.
      */
     readonly lifecycleDetails: string;
     /**
      * Customer logging details for job run.
      */
     readonly logDetails: outputs.DataScience.GetJobRunLogDetail[];
+    /**
+     * Collection of NodeGroupDetails
+     */
+    readonly nodeGroupDetailsLists: outputs.DataScience.GetJobRunNodeGroupDetailsList[];
     readonly opcParentRptUrl: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.

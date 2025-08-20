@@ -48,6 +48,7 @@ export function getSecurityAssessmentFindingAnalytics(args: GetSecurityAssessmen
         "findingKey": args.findingKey,
         "groupBy": args.groupBy,
         "isTopFinding": args.isTopFinding,
+        "scimQuery": args.scimQuery,
         "severity": args.severity,
         "topFindingStatus": args.topFindingStatus,
     }, opts);
@@ -83,6 +84,12 @@ export interface GetSecurityAssessmentFindingAnalyticsArgs {
      */
     isTopFinding?: boolean;
     /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * Supported fields: severity reference title category targetId targetName
+     */
+    scimQuery?: string;
+    /**
      * A filter to return only findings of a particular risk level.
      */
     severity?: string;
@@ -111,6 +118,7 @@ export interface GetSecurityAssessmentFindingAnalyticsResult {
      */
     readonly id: string;
     readonly isTopFinding?: boolean;
+    readonly scimQuery?: string;
     /**
      * The severity (risk level) of the finding.
      */
@@ -162,6 +170,7 @@ export function getSecurityAssessmentFindingAnalyticsOutput(args: GetSecurityAss
         "findingKey": args.findingKey,
         "groupBy": args.groupBy,
         "isTopFinding": args.isTopFinding,
+        "scimQuery": args.scimQuery,
         "severity": args.severity,
         "topFindingStatus": args.topFindingStatus,
     }, opts);
@@ -196,6 +205,12 @@ export interface GetSecurityAssessmentFindingAnalyticsOutputArgs {
      * A filter to return only the findings that are marked as top findings.
      */
     isTopFinding?: pulumi.Input<boolean>;
+    /**
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+     * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+     * Supported fields: severity reference title category targetId targetName
+     */
+    scimQuery?: pulumi.Input<string>;
     /**
      * A filter to return only findings of a particular risk level.
      */

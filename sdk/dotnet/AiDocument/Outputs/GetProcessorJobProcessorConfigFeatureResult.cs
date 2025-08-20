@@ -20,6 +20,7 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// * `TABLE_EXTRACTION`: Detect and extract data in tables.
         /// * `KEY_VALUE_EXTRACTION`: Extract form fields.
         /// * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        /// * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         /// </summary>
         public readonly string FeatureType;
         /// <summary>
@@ -31,9 +32,13 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// </summary>
         public readonly int MaxResults;
         /// <summary>
-        /// The custom model ID.
+        /// Unique identifier custom model OCID that should be used for inference.
         /// </summary>
         public readonly string ModelId;
+        /// <summary>
+        /// Whether checkbox detection feature is enabled or disabled.
+        /// </summary>
+        public readonly bool SelectionMarkDetection;
         /// <summary>
         /// The custom model tenancy ID when modelId represents aliasName.
         /// </summary>
@@ -49,12 +54,15 @@ namespace Pulumi.Oci.AiDocument.Outputs
 
             string modelId,
 
+            bool selectionMarkDetection,
+
             string tenancyId)
         {
             FeatureType = featureType;
             GenerateSearchablePdf = generateSearchablePdf;
             MaxResults = maxResults;
             ModelId = modelId;
+            SelectionMarkDetection = selectionMarkDetection;
             TenancyId = tenancyId;
         }
     }

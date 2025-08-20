@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves information pertaining to binary log of a specific MySQL server.
+ * Retrieves information pertaining to the binary log of a specific MySQL server.
  *
  * ## Example Usage
  *
@@ -42,15 +42,15 @@ export interface GetManagedMySqlDatabaseBinaryLogInformationArgs {
  */
 export interface GetManagedMySqlDatabaseBinaryLogInformationResult {
     /**
-     * Indicates whether compression is enabled for transactions written to binary log files on this server.
+     * Indicates whether compression is enabled for transactions written to binary log files on the MySQL server.
      */
     readonly binaryLogCompression: string;
     /**
-     * The compression ratio for binary log expressed as a percentage.
+     * The compression ratio for the binary log, expressed as a percentage.
      */
     readonly binaryLogCompressionPercent: number;
     /**
-     * The binary logging format used by this server.
+     * The binary logging format used by the MySQL server.
      */
     readonly binaryLogFormat: string;
     /**
@@ -62,7 +62,7 @@ export interface GetManagedMySqlDatabaseBinaryLogInformationResult {
      */
     readonly binaryLogPosition: string;
     /**
-     * Status of binary logging on this server.
+     * The status of binary logging on the MySQL server.
      */
     readonly binaryLogging: string;
     /**
@@ -74,7 +74,7 @@ export interface GetManagedMySqlDatabaseBinaryLogInformationResult {
 /**
  * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
  *
- * Retrieves information pertaining to binary log of a specific MySQL server.
+ * Retrieves information pertaining to the binary log of a specific MySQL server.
  *
  * ## Example Usage
  *

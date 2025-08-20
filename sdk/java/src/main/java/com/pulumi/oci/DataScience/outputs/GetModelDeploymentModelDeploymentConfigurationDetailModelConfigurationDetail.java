@@ -20,7 +20,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      */
     private Integer bandwidthMbps;
     /**
-     * @return The model deployment instance configuration
+     * @return The model deployment instance configuration.
      * 
      */
     private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
@@ -49,7 +49,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         return this.bandwidthMbps;
     }
     /**
-     * @return The model deployment instance configuration
+     * @return The model deployment instance configuration.
      * 
      */
     public List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations() {

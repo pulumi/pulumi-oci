@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? DbName { get; set; }
 
         /// <summary>
+        /// The unique name of the database that is associated with the key store.
+        /// </summary>
+        [Input("dbUniqueName")]
+        public Input<string>? DbUniqueName { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         /// </summary>
         [Input("id")]

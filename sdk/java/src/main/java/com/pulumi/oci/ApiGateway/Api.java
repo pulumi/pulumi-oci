@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ApiGateway.ApiArgs;
 import com.pulumi.oci.ApiGateway.inputs.ApiState;
+import com.pulumi.oci.ApiGateway.outputs.ApiLock;
 import com.pulumi.oci.ApiGateway.outputs.ApiValidationResult;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -147,6 +149,12 @@ public class Api extends com.pulumi.resources.CustomResource {
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * &#39;New&#39; for just updated API Specifications
@@ -175,6 +183,12 @@ public class Api extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    @Export(name="locks", refs={List.class,ApiLock.class}, tree="[0,1]")
+    private Output<List<ApiLock>> locks;
+
+    public Output<List<ApiLock>> locks() {
+        return this.locks;
+    }
     /**
      * Type of API Specification file.
      * 
@@ -202,6 +216,12 @@ public class Api extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
+
+    public Output<Map<String,String>> systemTags() {
+        return this.systemTags;
     }
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.

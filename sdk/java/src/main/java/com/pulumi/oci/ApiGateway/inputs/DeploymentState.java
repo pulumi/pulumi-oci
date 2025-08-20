@@ -5,8 +5,11 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentLockArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -107,6 +110,13 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.gatewayId);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -120,6 +130,13 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<DeploymentLockArgs>> locks;
+
+    public Optional<Output<List<DeploymentLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -167,6 +184,13 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
+    }
+
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      * 
@@ -206,10 +230,13 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.endpoint = $.endpoint;
         this.freeformTags = $.freeformTags;
         this.gatewayId = $.gatewayId;
+        this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.pathPrefix = $.pathPrefix;
         this.specification = $.specification;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -358,6 +385,15 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
             return gatewayId(Output.of(gatewayId));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
          * 
@@ -377,6 +413,19 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        public Builder locks(@Nullable Output<List<DeploymentLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<DeploymentLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(DeploymentLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -440,6 +489,15 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

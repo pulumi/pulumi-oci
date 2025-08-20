@@ -199,14 +199,14 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
     }
 
     /**
-     * A filter to return only security asessments that were created by either user or system.
+     * A filter to return only security assessments that were created by either user or system.
      * 
      */
     @Import(name="triggeredBy")
     private @Nullable String triggeredBy;
 
     /**
-     * @return A filter to return only security asessments that were created by either user or system.
+     * @return A filter to return only security assessments that were created by either user or system.
      * 
      */
     public Optional<String> triggeredBy() {
@@ -400,7 +400,7 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param triggeredBy A filter to return only security asessments that were created by either user or system.
+         * @param triggeredBy A filter to return only security assessments that were created by either user or system.
          * 
          * @return builder
          * 

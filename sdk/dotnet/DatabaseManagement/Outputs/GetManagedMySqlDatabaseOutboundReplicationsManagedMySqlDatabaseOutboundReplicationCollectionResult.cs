@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseOutboundReplicationsManagedMySqlDatabaseOutboundReplicationCollectionItemResult> Items;
         /// <summary>
-        /// The number of outbound replications from this server.
+        /// The number of outbound replications from the MySQL server.
         /// </summary>
         public readonly int OutboundReplicationsCount;
 

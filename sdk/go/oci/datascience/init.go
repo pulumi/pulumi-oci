@@ -43,6 +43,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ModelDefinedMetadataArtifact{}
 	case "oci:DataScience/modelDeployment:ModelDeployment":
 		r = &ModelDeployment{}
+	case "oci:DataScience/modelGroup:ModelGroup":
+		r = &ModelGroup{}
+	case "oci:DataScience/modelGroupArtifact:ModelGroupArtifact":
+		r = &ModelGroupArtifact{}
+	case "oci:DataScience/modelGroupVersionHistory:ModelGroupVersionHistory":
+		r = &ModelGroupVersionHistory{}
 	case "oci:DataScience/modelProvenance:ModelProvenance":
 		r = &ModelProvenance{}
 	case "oci:DataScience/modelVersionSet:ModelVersionSet":
@@ -125,6 +131,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataScience/modelDeployment",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelGroupArtifact",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataScience/modelGroupVersionHistory",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

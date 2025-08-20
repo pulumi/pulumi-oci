@@ -30,13 +30,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := psql.GetConfigurations(ctx, &psql.GetConfigurationsArgs{
-//				CompartmentId:   pulumi.StringRef(compartmentId),
-//				ConfigType:      pulumi.StringRef(configurationConfigType),
-//				ConfigurationId: pulumi.StringRef(testConfiguration.Id),
-//				DbVersion:       pulumi.StringRef(configurationDbVersion),
-//				DisplayName:     pulumi.StringRef(configurationDisplayName),
-//				Shape:           pulumi.StringRef(configurationShape),
-//				State:           pulumi.StringRef(configurationState),
+//				CompartmentId:           pulumi.StringRef(compartmentId),
+//				ConfigType:              pulumi.StringRef(configurationConfigType),
+//				ConfigurationId:         pulumi.StringRef(testConfiguration.Id),
+//				DbVersion:               pulumi.StringRef(configurationDbVersion),
+//				DisplayName:             pulumi.StringRef(configurationDisplayName),
+//				InstanceMemorySizeInGbs: pulumi.IntRef(configurationInstanceMemorySizeInGbs),
+//				InstanceOcpuCount:       pulumi.IntRef(configurationInstanceOcpuCount),
+//				Shape:                   pulumi.StringRef(configurationShape),
+//				State:                   pulumi.StringRef(configurationState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -69,7 +71,11 @@ type GetConfigurationsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string                   `pulumi:"displayName"`
 	Filters     []GetConfigurationsFilter `pulumi:"filters"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The instance memory size in GBs for the configuration.
+	InstanceMemorySizeInGbs *int `pulumi:"instanceMemorySizeInGbs"`
+	// The instance ocpu count for the configuration.
+	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
+	// The compute name of the shape for the configuration.
 	Shape *string `pulumi:"shape"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State *string `pulumi:"state"`
@@ -91,8 +97,12 @@ type GetConfigurationsResult struct {
 	Filters     []GetConfigurationsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
-	Shape *string `pulumi:"shape"`
+	// Memory size in gigabytes with 1GB increment.
+	InstanceMemorySizeInGbs *int `pulumi:"instanceMemorySizeInGbs"`
+	// CPU core count.
+	InstanceOcpuCount *int `pulumi:"instanceOcpuCount"`
+	// The name of the shape for the configuration.
+	Shape string `pulumi:"shape"`
 	// The current state of the configuration.
 	State *string `pulumi:"state"`
 }
@@ -119,7 +129,11 @@ type GetConfigurationsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput             `pulumi:"displayName"`
 	Filters     GetConfigurationsFilterArrayInput `pulumi:"filters"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The instance memory size in GBs for the configuration.
+	InstanceMemorySizeInGbs pulumi.IntPtrInput `pulumi:"instanceMemorySizeInGbs"`
+	// The instance ocpu count for the configuration.
+	InstanceOcpuCount pulumi.IntPtrInput `pulumi:"instanceOcpuCount"`
+	// The compute name of the shape for the configuration.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -184,9 +198,19 @@ func (o GetConfigurationsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
-func (o GetConfigurationsResultOutput) Shape() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetConfigurationsResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
+// Memory size in gigabytes with 1GB increment.
+func (o GetConfigurationsResultOutput) InstanceMemorySizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigurationsResult) *int { return v.InstanceMemorySizeInGbs }).(pulumi.IntPtrOutput)
+}
+
+// CPU core count.
+func (o GetConfigurationsResultOutput) InstanceOcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetConfigurationsResult) *int { return v.InstanceOcpuCount }).(pulumi.IntPtrOutput)
+}
+
+// The name of the shape for the configuration.
+func (o GetConfigurationsResultOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationsResult) string { return v.Shape }).(pulumi.StringOutput)
 }
 
 // The current state of the configuration.

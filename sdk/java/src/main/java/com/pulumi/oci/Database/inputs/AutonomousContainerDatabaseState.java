@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseAssociatedBackupConfigurationDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupDestinationPropertiesListArgs;
+import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseDataguardGroupMemberArgs;
 import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseKeyHistoryEntryArgs;
@@ -185,6 +186,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
      */
     public Optional<Output<String>> computeModel() {
         return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
+     * (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     * 
+     */
+    @Import(name="customerContacts")
+    private @Nullable Output<List<AutonomousContainerDatabaseCustomerContactArgs>> customerContacts;
+
+    /**
+     * @return (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+     * 
+     */
+    public Optional<Output<List<AutonomousContainerDatabaseCustomerContactArgs>>> customerContacts() {
+        return Optional.ofNullable(this.customerContacts);
     }
 
     /**
@@ -690,6 +706,21 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
     }
 
     /**
+     * (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    @Import(name="okvEndPointGroupName")
+    private @Nullable Output<String> okvEndPointGroupName;
+
+    /**
+     * @return (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    public Optional<Output<String>> okvEndPointGroupName() {
+        return Optional.ofNullable(this.okvEndPointGroupName);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
@@ -1166,6 +1197,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.cloudAutonomousVmClusterId = $.cloudAutonomousVmClusterId;
         this.compartmentId = $.compartmentId;
         this.computeModel = $.computeModel;
+        this.customerContacts = $.customerContacts;
         this.databaseSoftwareImageId = $.databaseSoftwareImageId;
         this.dataguardGroupMembers = $.dataguardGroupMembers;
         this.dataguards = $.dataguards;
@@ -1200,6 +1232,7 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.netServicesArchitecture = $.netServicesArchitecture;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
+        this.okvEndPointGroupName = $.okvEndPointGroupName;
         this.patchId = $.patchId;
         this.patchModel = $.patchModel;
         this.peerAutonomousContainerDatabaseBackupConfig = $.peerAutonomousContainerDatabaseBackupConfig;
@@ -1488,6 +1521,37 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder computeModel(String computeModel) {
             return computeModel(Output.of(computeModel));
+        }
+
+        /**
+         * @param customerContacts (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customerContacts(@Nullable Output<List<AutonomousContainerDatabaseCustomerContactArgs>> customerContacts) {
+            $.customerContacts = customerContacts;
+            return this;
+        }
+
+        /**
+         * @param customerContacts (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customerContacts(List<AutonomousContainerDatabaseCustomerContactArgs> customerContacts) {
+            return customerContacts(Output.of(customerContacts));
+        }
+
+        /**
+         * @param customerContacts (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder customerContacts(AutonomousContainerDatabaseCustomerContactArgs... customerContacts) {
+            return customerContacts(List.of(customerContacts));
         }
 
         /**
@@ -2240,6 +2304,27 @@ public final class AutonomousContainerDatabaseState extends com.pulumi.resources
          */
         public Builder nextMaintenanceRunId(String nextMaintenanceRunId) {
             return nextMaintenanceRunId(Output.of(nextMaintenanceRunId));
+        }
+
+        /**
+         * @param okvEndPointGroupName (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroupName(@Nullable Output<String> okvEndPointGroupName) {
+            $.okvEndPointGroupName = okvEndPointGroupName;
+            return this;
+        }
+
+        /**
+         * @param okvEndPointGroupName (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            return okvEndPointGroupName(Output.of(okvEndPointGroupName));
         }
 
         /**

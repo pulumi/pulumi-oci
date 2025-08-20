@@ -5,7 +5,6 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
@@ -21,15 +20,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
      * (Updatable) The shape used to launch the model deployment instances.
      * 
      */
-    @Import(name="instanceShapeName", required=true)
-    private Output<String> instanceShapeName;
+    @Import(name="instanceShapeName")
+    private @Nullable Output<String> instanceShapeName;
 
     /**
      * @return (Updatable) The shape used to launch the model deployment instances.
      * 
      */
-    public Output<String> instanceShapeName() {
-        return this.instanceShapeName;
+    public Optional<Output<String>> instanceShapeName() {
+        return Optional.ofNullable(this.instanceShapeName);
     }
 
     /**
@@ -110,7 +109,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
          * @return builder
          * 
          */
-        public Builder instanceShapeName(Output<String> instanceShapeName) {
+        public Builder instanceShapeName(@Nullable Output<String> instanceShapeName) {
             $.instanceShapeName = instanceShapeName;
             return this;
         }
@@ -189,9 +188,6 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs build() {
-            if ($.instanceShapeName == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs", "instanceShapeName");
-            }
             return $;
         }
     }

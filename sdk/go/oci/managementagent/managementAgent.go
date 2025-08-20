@@ -80,7 +80,8 @@ type ManagementAgent struct {
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 	IsAgentAutoUpgradable pulumi.BoolOutput `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed pulumi.BoolOutput `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed     pulumi.BoolOutput   `pulumi:"isCustomerDeployed"`
+	LatestSupportedVersion pulumi.StringOutput `pulumi:"latestSupportedVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Unique Management Agent identifier
@@ -99,6 +100,8 @@ type ManagementAgent struct {
 	ResourceArtifactVersion pulumi.StringOutput `pulumi:"resourceArtifactVersion"`
 	// The current state of managementAgent
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
@@ -169,7 +172,8 @@ type managementAgentState struct {
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 	IsAgentAutoUpgradable *bool `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed *bool `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed     *bool   `pulumi:"isCustomerDeployed"`
+	LatestSupportedVersion *string `pulumi:"latestSupportedVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Unique Management Agent identifier
@@ -188,6 +192,8 @@ type managementAgentState struct {
 	ResourceArtifactVersion *string `pulumi:"resourceArtifactVersion"`
 	// The current state of managementAgent
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
@@ -226,7 +232,8 @@ type ManagementAgentState struct {
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 	IsAgentAutoUpgradable pulumi.BoolPtrInput
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed pulumi.BoolPtrInput
+	IsCustomerDeployed     pulumi.BoolPtrInput
+	LatestSupportedVersion pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Unique Management Agent identifier
@@ -245,6 +252,8 @@ type ManagementAgentState struct {
 	ResourceArtifactVersion pulumi.StringPtrInput
 	// The current state of managementAgent
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
@@ -446,6 +455,10 @@ func (o ManagementAgentOutput) IsCustomerDeployed() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.BoolOutput { return v.IsCustomerDeployed }).(pulumi.BoolOutput)
 }
 
+func (o ManagementAgentOutput) LatestSupportedVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.LatestSupportedVersion }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o ManagementAgentOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -491,6 +504,11 @@ func (o ManagementAgentOutput) ResourceArtifactVersion() pulumi.StringOutput {
 // The current state of managementAgent
 func (o ManagementAgentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ManagementAgent) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ManagementAgentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagementAgent) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Management Agent was created. An RFC3339 formatted datetime string

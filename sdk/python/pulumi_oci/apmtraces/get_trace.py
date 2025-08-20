@@ -352,8 +352,8 @@ def get_trace(apm_domain_id: Optional[_builtins.str] = None,
 
 
     :param _builtins.str apm_domain_id: The APM Domain ID for the intended request.
-    :param _builtins.str time_trace_started_greater_than_or_equal_to: Include traces that have a `minTraceStartTime` equal to or greater than this value.
-    :param _builtins.str time_trace_started_less_than: Include traces that have a `minTraceStartTime` less than this value.
+    :param _builtins.str time_trace_started_greater_than_or_equal_to: Include traces that have a minTraceStartTime equal to or greater than this value.
+    :param _builtins.str time_trace_started_less_than: Include traces that have a minTraceStartTime less than this value.
     :param _builtins.str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     :param _builtins.str trace_namespace: Name space from which the trace details need to be retrieved.
     """
@@ -418,8 +418,8 @@ def get_trace_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = None
 
 
     :param _builtins.str apm_domain_id: The APM Domain ID for the intended request.
-    :param _builtins.str time_trace_started_greater_than_or_equal_to: Include traces that have a `minTraceStartTime` equal to or greater than this value.
-    :param _builtins.str time_trace_started_less_than: Include traces that have a `minTraceStartTime` less than this value.
+    :param _builtins.str time_trace_started_greater_than_or_equal_to: Include traces that have a minTraceStartTime equal to or greater than this value.
+    :param _builtins.str time_trace_started_less_than: Include traces that have a minTraceStartTime less than this value.
     :param _builtins.str trace_key: Unique Application Performance Monitoring trace identifier (traceId).
     :param _builtins.str trace_namespace: Name space from which the trace details need to be retrieved.
     """

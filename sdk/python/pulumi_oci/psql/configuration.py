@@ -25,13 +25,14 @@ class ConfigurationArgs:
                  db_configuration_overrides: pulumi.Input['ConfigurationDbConfigurationOverridesArgs'],
                  db_version: pulumi.Input[_builtins.str],
                  display_name: pulumi.Input[_builtins.str],
-                 shape: pulumi.Input[_builtins.str],
+                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[_builtins.int]] = None,
                  is_flexible: Optional[pulumi.Input[_builtins.bool]] = None,
+                 shape: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Configuration resource.
@@ -39,7 +40,7 @@ class ConfigurationArgs:
         :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Details about the configuration set.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -50,6 +51,9 @@ class ConfigurationArgs:
                
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+               
+               For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
@@ -60,7 +64,8 @@ class ConfigurationArgs:
         pulumi.set(__self__, "db_configuration_overrides", db_configuration_overrides)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "shape", shape)
+        if compatible_shapes is not None:
+            pulumi.set(__self__, "compatible_shapes", compatible_shapes)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -73,6 +78,8 @@ class ConfigurationArgs:
             pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
         if is_flexible is not None:
             pulumi.set(__self__, "is_flexible", is_flexible)
+        if shape is not None:
+            pulumi.set(__self__, "shape", shape)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
 
@@ -125,16 +132,16 @@ class ConfigurationArgs:
         pulumi.set(self, "display_name", value)
 
     @_builtins.property
-    @pulumi.getter
-    def shape(self) -> pulumi.Input[_builtins.str]:
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        (Updatable) Indicates the collection of compatible shapes for this configuration.
         """
-        return pulumi.get(self, "shape")
+        return pulumi.get(self, "compatible_shapes")
 
-    @shape.setter
-    def shape(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "shape", value)
+    @compatible_shapes.setter
+    def compatible_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "compatible_shapes", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -213,6 +220,20 @@ class ConfigurationArgs:
         pulumi.set(self, "is_flexible", value)
 
     @_builtins.property
+    @pulumi.getter
+    def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the shape for the configuration. 
+
+        For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
+        """
+        return pulumi.get(self, "shape")
+
+    @shape.setter
+    def shape(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "shape", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -233,10 +254,12 @@ class ConfigurationArgs:
 class _ConfigurationState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  config_type: Optional[pulumi.Input[_builtins.str]] = None,
                  configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]]] = None,
                  db_configuration_overrides: Optional[pulumi.Input['ConfigurationDbConfigurationOverridesArgs']] = None,
                  db_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 default_config_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -252,10 +275,12 @@ class _ConfigurationState:
         """
         Input properties used for looking up and filtering Configuration resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. Either user-created or a default configuration.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigurationConfigurationDetailArgs']]] configuration_details: List of configuration details.
         :param pulumi.Input['ConfigurationDbConfigurationOverridesArgs'] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
+        :param pulumi.Input[_builtins.str] default_config_id: The Default configuration used for this configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Details about the configuration set.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
@@ -268,7 +293,9 @@ class _ConfigurationState:
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+               
+               For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         :param pulumi.Input[_builtins.str] state: The current state of the configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
@@ -279,6 +306,8 @@ class _ConfigurationState:
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compatible_shapes is not None:
+            pulumi.set(__self__, "compatible_shapes", compatible_shapes)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
         if configuration_details is not None:
@@ -287,6 +316,8 @@ class _ConfigurationState:
             pulumi.set(__self__, "db_configuration_overrides", db_configuration_overrides)
         if db_version is not None:
             pulumi.set(__self__, "db_version", db_version)
+        if default_config_id is not None:
+            pulumi.set(__self__, "default_config_id", default_config_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -323,6 +354,18 @@ class _ConfigurationState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Indicates the collection of compatible shapes for this configuration.
+        """
+        return pulumi.get(self, "compatible_shapes")
+
+    @compatible_shapes.setter
+    def compatible_shapes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "compatible_shapes", value)
 
     @_builtins.property
     @pulumi.getter(name="configType")
@@ -371,6 +414,18 @@ class _ConfigurationState:
     @db_version.setter
     def db_version(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "db_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigId")
+    def default_config_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Default configuration used for this configuration.
+        """
+        return pulumi.get(self, "default_config_id")
+
+    @default_config_id.setter
+    def default_config_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "default_config_id", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -476,7 +531,9 @@ class _ConfigurationState:
     @pulumi.getter
     def shape(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the configuration. 
+
+        For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         """
         return pulumi.get(self, "shape")
 
@@ -532,6 +589,7 @@ class Configuration(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  db_configuration_overrides: Optional[pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
                  db_version: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -565,7 +623,7 @@ class Configuration(pulumi.CustomResource):
             },
             db_version=configuration_db_version,
             display_name=configuration_display_name,
-            shape=configuration_shape,
+            compatible_shapes=configuration_compatible_shapes,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -576,6 +634,7 @@ class Configuration(pulumi.CustomResource):
             instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
             instance_ocpu_count=configuration_instance_ocpu_count,
             is_flexible=configuration_is_flexible,
+            shape=configuration_shape,
             system_tags=configuration_system_tags)
         ```
 
@@ -590,6 +649,7 @@ class Configuration(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
         :param pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -603,7 +663,9 @@ class Configuration(pulumi.CustomResource):
                
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+               
+               For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
@@ -637,7 +699,7 @@ class Configuration(pulumi.CustomResource):
             },
             db_version=configuration_db_version,
             display_name=configuration_display_name,
-            shape=configuration_shape,
+            compatible_shapes=configuration_compatible_shapes,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -648,6 +710,7 @@ class Configuration(pulumi.CustomResource):
             instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
             instance_ocpu_count=configuration_instance_ocpu_count,
             is_flexible=configuration_is_flexible,
+            shape=configuration_shape,
             system_tags=configuration_system_tags)
         ```
 
@@ -675,6 +738,7 @@ class Configuration(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  db_configuration_overrides: Optional[pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
                  db_version: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -698,6 +762,7 @@ class Configuration(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["compatible_shapes"] = compatible_shapes
             if db_configuration_overrides is None and not opts.urn:
                 raise TypeError("Missing required property 'db_configuration_overrides'")
             __props__.__dict__["db_configuration_overrides"] = db_configuration_overrides
@@ -713,12 +778,11 @@ class Configuration(pulumi.CustomResource):
             __props__.__dict__["instance_memory_size_in_gbs"] = instance_memory_size_in_gbs
             __props__.__dict__["instance_ocpu_count"] = instance_ocpu_count
             __props__.__dict__["is_flexible"] = is_flexible
-            if shape is None and not opts.urn:
-                raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
             __props__.__dict__["system_tags"] = system_tags
             __props__.__dict__["config_type"] = None
             __props__.__dict__["configuration_details"] = None
+            __props__.__dict__["default_config_id"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -733,10 +797,12 @@ class Configuration(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            compatible_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             config_type: Optional[pulumi.Input[_builtins.str]] = None,
             configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict']]]]] = None,
             db_configuration_overrides: Optional[pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']]] = None,
             db_version: Optional[pulumi.Input[_builtins.str]] = None,
+            default_config_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -757,10 +823,12 @@ class Configuration(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] compatible_shapes: (Updatable) Indicates the collection of compatible shapes for this configuration.
         :param pulumi.Input[_builtins.str] config_type: The type of configuration. Either user-created or a default configuration.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict']]]] configuration_details: List of configuration details.
         :param pulumi.Input[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict']] db_configuration_overrides: Configuration overrides for a PostgreSQL instance.
         :param pulumi.Input[_builtins.str] db_version: Version of the PostgreSQL database.
+        :param pulumi.Input[_builtins.str] default_config_id: The Default configuration used for this configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) Details about the configuration set.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
@@ -773,7 +841,9 @@ class Configuration(pulumi.CustomResource):
                Skip or set it's value to 0 if configuration is for a flexible shape.
         :param pulumi.Input[_builtins.bool] is_flexible: Whether the configuration supports flexible shapes.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param pulumi.Input[_builtins.str] shape: The name of the shape for the configuration. 
+               
+               For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         :param pulumi.Input[_builtins.str] state: The current state of the configuration.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
@@ -787,10 +857,12 @@ class Configuration(pulumi.CustomResource):
         __props__ = _ConfigurationState.__new__(_ConfigurationState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["compatible_shapes"] = compatible_shapes
         __props__.__dict__["config_type"] = config_type
         __props__.__dict__["configuration_details"] = configuration_details
         __props__.__dict__["db_configuration_overrides"] = db_configuration_overrides
         __props__.__dict__["db_version"] = db_version
+        __props__.__dict__["default_config_id"] = default_config_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
@@ -812,6 +884,14 @@ class Configuration(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the configuration.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        (Updatable) Indicates the collection of compatible shapes for this configuration.
+        """
+        return pulumi.get(self, "compatible_shapes")
 
     @_builtins.property
     @pulumi.getter(name="configType")
@@ -844,6 +924,14 @@ class Configuration(pulumi.CustomResource):
         Version of the PostgreSQL database.
         """
         return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigId")
+    def default_config_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The Default configuration used for this configuration.
+        """
+        return pulumi.get(self, "default_config_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -917,7 +1005,9 @@ class Configuration(pulumi.CustomResource):
     @pulumi.getter
     def shape(self) -> pulumi.Output[_builtins.str]:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        The name of the shape for the configuration. 
+
+        For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         """
         return pulumi.get(self, "shape")
 

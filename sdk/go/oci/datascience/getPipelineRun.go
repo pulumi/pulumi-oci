@@ -76,6 +76,8 @@ type LookupPipelineRunResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
 	Id string `pulumi:"id"`
+	// The infrastructure configuration details of a pipeline or a step.
+	InfrastructureConfigurationOverrideDetails []GetPipelineRunInfrastructureConfigurationOverrideDetail `pulumi:"infrastructureConfigurationOverrideDetails"`
 	// Details of the state of the step run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The pipeline log configuration details.
@@ -185,6 +187,13 @@ func (o LookupPipelineRunResultOutput) FreeformTags() pulumi.StringMapOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline run.
 func (o LookupPipelineRunResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPipelineRunResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The infrastructure configuration details of a pipeline or a step.
+func (o LookupPipelineRunResultOutput) InfrastructureConfigurationOverrideDetails() GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v LookupPipelineRunResult) []GetPipelineRunInfrastructureConfigurationOverrideDetail {
+		return v.InfrastructureConfigurationOverrideDetails
+	}).(GetPipelineRunInfrastructureConfigurationOverrideDetailArrayOutput)
 }
 
 // Details of the state of the step run.

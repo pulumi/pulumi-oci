@@ -44,8 +44,9 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"bar-key": pulumi.String("value"),
 //				},
-//				NsgIds:     pulumi.Any(redisClusterNsgIds),
-//				ShardCount: pulumi.Any(redisClusterShardCount),
+//				NsgIds:              pulumi.Any(redisClusterNsgIds),
+//				OciCacheConfigSetId: pulumi.Any(testOciCacheConfigSet.Id),
+//				ShardCount:          pulumi.Any(redisClusterShardCount),
 //			})
 //			if err != nil {
 //				return err
@@ -86,6 +87,8 @@ type RedisCluster struct {
 	NodeMemoryInGbs pulumi.Float64Output `pulumi:"nodeMemoryInGbs"`
 	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
+	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId pulumi.StringOutput `pulumi:"ociCacheConfigSetId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringOutput `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -181,6 +184,8 @@ type redisClusterState struct {
 	NodeMemoryInGbs *float64 `pulumi:"nodeMemoryInGbs"`
 	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId *string `pulumi:"ociCacheConfigSetId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress *string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -229,6 +234,8 @@ type RedisClusterState struct {
 	NodeMemoryInGbs pulumi.Float64PtrInput
 	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId pulumi.StringPtrInput
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -277,6 +284,8 @@ type redisClusterArgs struct {
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
 	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId *string `pulumi:"ociCacheConfigSetId"`
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount *int `pulumi:"shardCount"`
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -306,6 +315,8 @@ type RedisClusterArgs struct {
 	NodeMemoryInGbs pulumi.Float64Input
 	// (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId pulumi.StringPtrInput
 	// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
 	ShardCount pulumi.IntPtrInput
 	// (Updatable) The Oracle Cloud Infrastructure Cache engine version that the cluster is running.
@@ -452,6 +463,11 @@ func (o RedisClusterOutput) NodeMemoryInGbs() pulumi.Float64Output {
 // (Updatable) A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 func (o RedisClusterOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+func (o RedisClusterOutput) OciCacheConfigSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.OciCacheConfigSetId }).(pulumi.StringOutput)
 }
 
 // The private IP address of the API endpoint for the cluster's primary node.

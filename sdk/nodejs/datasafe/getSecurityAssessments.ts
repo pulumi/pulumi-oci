@@ -122,7 +122,7 @@ export interface GetSecurityAssessmentsArgs {
      */
     timeCreatedLessThan?: string;
     /**
-     * A filter to return only security asessments that were created by either user or system.
+     * A filter to return only security assessments that were created by either user or system.
      */
     triggeredBy?: string;
     /**
@@ -292,7 +292,7 @@ export interface GetSecurityAssessmentsOutputArgs {
      */
     timeCreatedLessThan?: pulumi.Input<string>;
     /**
-     * A filter to return only security asessments that were created by either user or system.
+     * A filter to return only security assessments that were created by either user or system.
      */
     triggeredBy?: pulumi.Input<string>;
     /**

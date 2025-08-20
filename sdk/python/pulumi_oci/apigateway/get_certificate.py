@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetCertificateResult',
@@ -26,7 +27,7 @@ class GetCertificateResult:
     """
     A collection of values returned by getCertificate.
     """
-    def __init__(__self__, certificate=None, certificate_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, intermediate_certificates=None, lifecycle_details=None, private_key=None, state=None, subject_names=None, time_created=None, time_not_valid_after=None, time_updated=None):
+    def __init__(__self__, certificate=None, certificate_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, intermediate_certificates=None, is_lock_override=None, lifecycle_details=None, locks=None, private_key=None, state=None, subject_names=None, system_tags=None, time_created=None, time_not_valid_after=None, time_updated=None):
         if certificate and not isinstance(certificate, str):
             raise TypeError("Expected argument 'certificate' to be a str")
         pulumi.set(__self__, "certificate", certificate)
@@ -51,9 +52,15 @@ class GetCertificateResult:
         if intermediate_certificates and not isinstance(intermediate_certificates, str):
             raise TypeError("Expected argument 'intermediate_certificates' to be a str")
         pulumi.set(__self__, "intermediate_certificates", intermediate_certificates)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if private_key and not isinstance(private_key, str):
             raise TypeError("Expected argument 'private_key' to be a str")
         pulumi.set(__self__, "private_key", private_key)
@@ -63,6 +70,9 @@ class GetCertificateResult:
         if subject_names and not isinstance(subject_names, list):
             raise TypeError("Expected argument 'subject_names' to be a list")
         pulumi.set(__self__, "subject_names", subject_names)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -135,12 +145,22 @@ class GetCertificateResult:
         return pulumi.get(self, "intermediate_certificates")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetCertificateLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="privateKey")
@@ -162,6 +182,11 @@ class GetCertificateResult:
         The entity to be secured by the certificate and additional host names.
         """
         return pulumi.get(self, "subject_names")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -202,10 +227,13 @@ class AwaitableGetCertificateResult(GetCertificateResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             intermediate_certificates=self.intermediate_certificates,
+            is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             private_key=self.private_key,
             state=self.state,
             subject_names=self.subject_names,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_not_valid_after=self.time_not_valid_after,
             time_updated=self.time_updated)
@@ -244,10 +272,13 @@ def get_certificate(certificate_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         intermediate_certificates=pulumi.get(__ret__, 'intermediate_certificates'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         private_key=pulumi.get(__ret__, 'private_key'),
         state=pulumi.get(__ret__, 'state'),
         subject_names=pulumi.get(__ret__, 'subject_names'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_not_valid_after=pulumi.get(__ret__, 'time_not_valid_after'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
@@ -283,10 +314,13 @@ def get_certificate_output(certificate_id: Optional[pulumi.Input[_builtins.str]]
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         intermediate_certificates=pulumi.get(__response__, 'intermediate_certificates'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         private_key=pulumi.get(__response__, 'private_key'),
         state=pulumi.get(__response__, 'state'),
         subject_names=pulumi.get(__response__, 'subject_names'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_not_valid_after=pulumi.get(__response__, 'time_not_valid_after'),
         time_updated=pulumi.get(__response__, 'time_updated')))

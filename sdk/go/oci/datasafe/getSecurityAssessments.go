@@ -105,7 +105,7 @@ type GetSecurityAssessmentsArgs struct {
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeCreatedLessThan *string `pulumi:"timeCreatedLessThan"`
-	// A filter to return only security asessments that were created by either user or system.
+	// A filter to return only security assessments that were created by either user or system.
 	TriggeredBy *string `pulumi:"triggeredBy"`
 	// A filter to return only items that match the specified security assessment type.
 	Type *string `pulumi:"type"`
@@ -177,7 +177,7 @@ type GetSecurityAssessmentsOutputArgs struct {
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
 	TimeCreatedLessThan pulumi.StringPtrInput `pulumi:"timeCreatedLessThan"`
-	// A filter to return only security asessments that were created by either user or system.
+	// A filter to return only security assessments that were created by either user or system.
 	TriggeredBy pulumi.StringPtrInput `pulumi:"triggeredBy"`
 	// A filter to return only items that match the specified security assessment type.
 	Type pulumi.StringPtrInput `pulumi:"type"`

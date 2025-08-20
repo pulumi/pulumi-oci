@@ -18,11 +18,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilterResult> ApplierFilters;
         /// <summary>
-        /// Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+        /// The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
         /// </summary>
         public readonly double ApplyDelay;
         /// <summary>
-        /// Error from apply operation of a MySQL server replication channel.
+        /// Error from the apply operation of a MySQL server replication channel.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyErrorResult> ApplyErrors;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string DesiredDelaySeconds;
         /// <summary>
-        /// Error from fetch operation of a MySQL server replication channel.
+        /// Error from the fetch operation of a MySQL server replication channel.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchErrorResult> FetchErrors;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string FetchStatus;
         /// <summary>
-        /// Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+        /// Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica's own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
         /// </summary>
         public readonly string GtidAssignment;
         /// <summary>

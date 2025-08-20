@@ -147,15 +147,18 @@ namespace Pulumi.Oci.ApiGateway
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        public readonly ImmutableArray<Outputs.GetSubscriberLockResult> Locks;
         /// <summary>
         /// The current state of the subscriber.
         /// </summary>
         public readonly string State;
         public readonly string SubscriberId;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -183,11 +186,17 @@ namespace Pulumi.Oci.ApiGateway
 
             string id,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetSubscriberLockResult> locks,
 
             string state,
 
             string subscriberId,
+
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 
@@ -201,9 +210,12 @@ namespace Pulumi.Oci.ApiGateway
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             State = state;
             SubscriberId = subscriberId;
+            SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
             UsagePlans = usagePlans;

@@ -25,6 +25,10 @@ namespace Pulumi.Oci.AiDocument.Outputs
         /// The Object Storage object name.
         /// </summary>
         public readonly string Object;
+        /// <summary>
+        /// The page ranges to be analysed.
+        /// </summary>
+        public readonly ImmutableArray<string> PageRanges;
 
         [OutputConstructor]
         private GetProcessorJobInputLocationObjectLocationResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.AiDocument.Outputs
 
             string @namespace,
 
-            string @object)
+            string @object,
+
+            ImmutableArray<string> pageRanges)
         {
             Bucket = bucket;
             Namespace = @namespace;
             Object = @object;
+            PageRanges = pageRanges;
         }
     }
 }

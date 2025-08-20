@@ -8,6 +8,14 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetPlainArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsPlainArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetPlainArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
+import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheUserArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheUserPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetOciCacheUsersArgs;
@@ -18,6 +26,10 @@ import com.pulumi.oci.Redis.inputs.GetRedisClusterNodesPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClusterPlainArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClustersArgs;
 import com.pulumi.oci.Redis.inputs.GetRedisClustersPlainArgs;
+import com.pulumi.oci.Redis.outputs.GetOciCacheConfigSetResult;
+import com.pulumi.oci.Redis.outputs.GetOciCacheConfigSetsResult;
+import com.pulumi.oci.Redis.outputs.GetOciCacheDefaultConfigSetResult;
+import com.pulumi.oci.Redis.outputs.GetOciCacheDefaultConfigSetsResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheUserResult;
 import com.pulumi.oci.Redis.outputs.GetOciCacheUsersResult;
 import com.pulumi.oci.Redis.outputs.GetRedisClusterNodesResult;
@@ -27,6 +39,1027 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class RedisFunctions {
+    /**
+     * This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetResult> getOciCacheConfigSet(GetOciCacheConfigSetArgs args) {
+        return getOciCacheConfigSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheConfigSetResult> getOciCacheConfigSetPlain(GetOciCacheConfigSetPlainArgs args) {
+        return getOciCacheConfigSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetResult> getOciCacheConfigSet(GetOciCacheConfigSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheConfigSet:getOciCacheConfigSet", TypeShape.of(GetOciCacheConfigSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetResult> getOciCacheConfigSet(GetOciCacheConfigSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheConfigSet:getOciCacheConfigSet", TypeShape.of(GetOciCacheConfigSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSet = RedisFunctions.getOciCacheConfigSet(GetOciCacheConfigSetArgs.builder()
+     *             .ociCacheConfigSetId(testOciCacheConfigSetOciRedisOciCacheConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheConfigSetResult> getOciCacheConfigSetPlain(GetOciCacheConfigSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheConfigSet:getOciCacheConfigSet", TypeShape.of(GetOciCacheConfigSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetsResult> getOciCacheConfigSets() {
+        return getOciCacheConfigSets(GetOciCacheConfigSetsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheConfigSetsResult> getOciCacheConfigSetsPlain() {
+        return getOciCacheConfigSetsPlain(GetOciCacheConfigSetsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetsResult> getOciCacheConfigSets(GetOciCacheConfigSetsArgs args) {
+        return getOciCacheConfigSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheConfigSetsResult> getOciCacheConfigSetsPlain(GetOciCacheConfigSetsPlainArgs args) {
+        return getOciCacheConfigSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetsResult> getOciCacheConfigSets(GetOciCacheConfigSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheConfigSets:getOciCacheConfigSets", TypeShape.of(GetOciCacheConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheConfigSetsResult> getOciCacheConfigSets(GetOciCacheConfigSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheConfigSets:getOciCacheConfigSets", TypeShape.of(GetOciCacheConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheConfigSets = RedisFunctions.getOciCacheConfigSets(GetOciCacheConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheConfigSetDisplayName)
+     *             .id(ociCacheConfigSetId)
+     *             .softwareVersion(ociCacheConfigSetSoftwareVersion)
+     *             .state(ociCacheConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheConfigSetsResult> getOciCacheConfigSetsPlain(GetOciCacheConfigSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheConfigSets:getOciCacheConfigSets", TypeShape.of(GetOciCacheConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Default Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Default Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheDefaultConfigSetResult> getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs args) {
+        return getOciCacheDefaultConfigSet(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Default Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Default Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheDefaultConfigSetResult> getOciCacheDefaultConfigSetPlain(GetOciCacheDefaultConfigSetPlainArgs args) {
+        return getOciCacheDefaultConfigSetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Default Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Default Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheDefaultConfigSetResult> getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheDefaultConfigSet:getOciCacheDefaultConfigSet", TypeShape.of(GetOciCacheDefaultConfigSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Default Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Default Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheDefaultConfigSetResult> getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheDefaultConfigSet:getOciCacheDefaultConfigSet", TypeShape.of(GetOciCacheDefaultConfigSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oci Cache Default Config Set resource in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Retrieves the specified Oracle Cloud Infrastructure Cache Default Config Set.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSet = RedisFunctions.getOciCacheDefaultConfigSet(GetOciCacheDefaultConfigSetArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .ociCacheDefaultConfigSetId(testOciCacheDefaultConfigSetOciRedisOciCacheDefaultConfigSet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheDefaultConfigSetResult> getOciCacheDefaultConfigSetPlain(GetOciCacheDefaultConfigSetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheDefaultConfigSet:getOciCacheDefaultConfigSet", TypeShape.of(GetOciCacheDefaultConfigSetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Default Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Default Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSets = RedisFunctions.getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheDefaultConfigSetDisplayName)
+     *             .id(ociCacheDefaultConfigSetId)
+     *             .softwareVersion(ociCacheDefaultConfigSetSoftwareVersion)
+     *             .state(ociCacheDefaultConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheDefaultConfigSetsResult> getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs args) {
+        return getOciCacheDefaultConfigSets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Default Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Default Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSets = RedisFunctions.getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheDefaultConfigSetDisplayName)
+     *             .id(ociCacheDefaultConfigSetId)
+     *             .softwareVersion(ociCacheDefaultConfigSetSoftwareVersion)
+     *             .state(ociCacheDefaultConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheDefaultConfigSetsResult> getOciCacheDefaultConfigSetsPlain(GetOciCacheDefaultConfigSetsPlainArgs args) {
+        return getOciCacheDefaultConfigSetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oci Cache Default Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Default Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSets = RedisFunctions.getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheDefaultConfigSetDisplayName)
+     *             .id(ociCacheDefaultConfigSetId)
+     *             .softwareVersion(ociCacheDefaultConfigSetSoftwareVersion)
+     *             .state(ociCacheDefaultConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheDefaultConfigSetsResult> getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheDefaultConfigSets:getOciCacheDefaultConfigSets", TypeShape.of(GetOciCacheDefaultConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Default Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Default Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSets = RedisFunctions.getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheDefaultConfigSetDisplayName)
+     *             .id(ociCacheDefaultConfigSetId)
+     *             .softwareVersion(ociCacheDefaultConfigSetSoftwareVersion)
+     *             .state(ociCacheDefaultConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetOciCacheDefaultConfigSetsResult> getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Redis/getOciCacheDefaultConfigSets:getOciCacheDefaultConfigSets", TypeShape.of(GetOciCacheDefaultConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oci Cache Default Config Sets in Oracle Cloud Infrastructure Redis service.
+     * 
+     * Lists the Oracle Cloud Infrastructure Cache Default Config Sets in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Redis.RedisFunctions;
+     * import com.pulumi.oci.Redis.inputs.GetOciCacheDefaultConfigSetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOciCacheDefaultConfigSets = RedisFunctions.getOciCacheDefaultConfigSets(GetOciCacheDefaultConfigSetsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(ociCacheDefaultConfigSetDisplayName)
+     *             .id(ociCacheDefaultConfigSetId)
+     *             .softwareVersion(ociCacheDefaultConfigSetSoftwareVersion)
+     *             .state(ociCacheDefaultConfigSetState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetOciCacheDefaultConfigSetsResult> getOciCacheDefaultConfigSetsPlain(GetOciCacheDefaultConfigSetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Redis/getOciCacheDefaultConfigSets:getOciCacheDefaultConfigSets", TypeShape.of(GetOciCacheDefaultConfigSetsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Oci Cache User resource in Oracle Cloud Infrastructure Redis service.
      * 

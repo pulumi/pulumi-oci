@@ -74,8 +74,10 @@ type Certificate struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates pulumi.StringOutput `pulumi:"intermediateCertificates"`
+	IsLockOverride           pulumi.BoolOutput   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringOutput        `pulumi:"lifecycleDetails"`
+	Locks            CertificateLockArrayOutput `pulumi:"locks"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -85,6 +87,7 @@ type Certificate struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
 	SubjectNames pulumi.StringArrayOutput `pulumi:"subjectNames"`
+	SystemTags   pulumi.StringMapOutput   `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
@@ -151,8 +154,10 @@ type certificateState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates *string `pulumi:"intermediateCertificates"`
+	IsLockOverride           *bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string           `pulumi:"lifecycleDetails"`
+	Locks            []CertificateLock `pulumi:"locks"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -161,7 +166,8 @@ type certificateState struct {
 	// The current state of the certificate.
 	State *string `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
-	SubjectNames []string `pulumi:"subjectNames"`
+	SubjectNames []string          `pulumi:"subjectNames"`
+	SystemTags   map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
@@ -183,8 +189,10 @@ type CertificateState struct {
 	FreeformTags pulumi.StringMapInput
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates pulumi.StringPtrInput
+	IsLockOverride           pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	Locks            CertificateLockArrayInput
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -194,6 +202,7 @@ type CertificateState struct {
 	State pulumi.StringPtrInput
 	// The entity to be secured by the certificate and additional host names.
 	SubjectNames pulumi.StringArrayInput
+	SystemTags   pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the certificate will expire.
@@ -218,7 +227,9 @@ type certificateArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The intermediate certificate data associated with the certificate in pem format.
-	IntermediateCertificates *string `pulumi:"intermediateCertificates"`
+	IntermediateCertificates *string           `pulumi:"intermediateCertificates"`
+	IsLockOverride           *bool             `pulumi:"isLockOverride"`
+	Locks                    []CertificateLock `pulumi:"locks"`
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -240,6 +251,8 @@ type CertificateArgs struct {
 	FreeformTags pulumi.StringMapInput
 	// The intermediate certificate data associated with the certificate in pem format.
 	IntermediateCertificates pulumi.StringPtrInput
+	IsLockOverride           pulumi.BoolPtrInput
+	Locks                    CertificateLockArrayInput
 	// The private key associated with the certificate in pem format.
 	//
 	// ** IMPORTANT **
@@ -364,9 +377,17 @@ func (o CertificateOutput) IntermediateCertificates() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.IntermediateCertificates }).(pulumi.StringOutput)
 }
 
+func (o CertificateOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o CertificateOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o CertificateOutput) Locks() CertificateLockArrayOutput {
+	return o.ApplyT(func(v *Certificate) CertificateLockArrayOutput { return v.Locks }).(CertificateLockArrayOutput)
 }
 
 // The private key associated with the certificate in pem format.
@@ -385,6 +406,10 @@ func (o CertificateOutput) State() pulumi.StringOutput {
 // The entity to be secured by the certificate and additional host names.
 func (o CertificateOutput) SubjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Certificate) pulumi.StringArrayOutput { return v.SubjectNames }).(pulumi.StringArrayOutput)
+}
+
+func (o CertificateOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

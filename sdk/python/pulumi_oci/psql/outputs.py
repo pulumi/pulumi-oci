@@ -2026,10 +2026,12 @@ class GetConfigurationsConfigurationCollectionResult(dict):
 class GetConfigurationsConfigurationCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
+                 compatible_shapes: Sequence[_builtins.str],
                  config_type: _builtins.str,
                  configuration_details: Sequence['outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult'],
                  db_configuration_overrides: Sequence['outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideResult'],
                  db_version: _builtins.str,
+                 default_config_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  display_name: _builtins.str,
@@ -2045,28 +2047,32 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  time_created: _builtins.str):
         """
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Sequence[_builtins.str] compatible_shapes: Indicates the collection of compatible shapes for this configuration.
         :param _builtins.str config_type: A filter to return only resources if their `configType` matches the given `configType`.
         :param Sequence['GetConfigurationsConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of configuration details.
         :param _builtins.str db_version: Version of the PostgreSQL database, such as 14.9.
+        :param _builtins.str default_config_id: The Default configuration used for this configuration.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A description for the configuration.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: A unique identifier for the configuration. Immutable on creation.
-        :param _builtins.int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
-        :param _builtins.int instance_ocpu_count: CPU core count.
+        :param _builtins.int instance_memory_size_in_gbs: The instance memory size in GBs for the configuration.
+        :param _builtins.int instance_ocpu_count: The instance ocpu count for the configuration.
         :param _builtins.bool is_flexible: Whether the configuration supports flexible shapes.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param _builtins.str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param _builtins.str shape: The compute name of the shape for the configuration.
         :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compatible_shapes", compatible_shapes)
         pulumi.set(__self__, "config_type", config_type)
         pulumi.set(__self__, "configuration_details", configuration_details)
         pulumi.set(__self__, "db_configuration_overrides", db_configuration_overrides)
         pulumi.set(__self__, "db_version", db_version)
+        pulumi.set(__self__, "default_config_id", default_config_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -2088,6 +2094,14 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         The ID of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> Sequence[_builtins.str]:
+        """
+        Indicates the collection of compatible shapes for this configuration.
+        """
+        return pulumi.get(self, "compatible_shapes")
 
     @_builtins.property
     @pulumi.getter(name="configType")
@@ -2117,6 +2131,14 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         Version of the PostgreSQL database, such as 14.9.
         """
         return pulumi.get(self, "db_version")
+
+    @_builtins.property
+    @pulumi.getter(name="defaultConfigId")
+    def default_config_id(self) -> _builtins.str:
+        """
+        The Default configuration used for this configuration.
+        """
+        return pulumi.get(self, "default_config_id")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -2162,7 +2184,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> _builtins.int:
         """
-        Memory size in gigabytes with 1GB increment.
+        The instance memory size in GBs for the configuration.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -2170,7 +2192,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> _builtins.int:
         """
-        CPU core count.
+        The instance ocpu count for the configuration.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -2194,7 +2216,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        The compute name of the shape for the configuration.
         """
         return pulumi.get(self, "shape")
 
@@ -3134,7 +3156,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         :param Sequence['GetDbSystemsDbSystemCollectionItemManagementPolicyArgs'] management_policies: PostgreSQL database system management policy.
         :param Sequence['GetDbSystemsDbSystemCollectionItemNetworkDetailArgs'] network_details: Network details for the database system.
         :param _builtins.str shape: The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
-        :param Sequence['GetDbSystemsDbSystemCollectionItemSourceArgs'] sources: The source used to restore the database system.
+        :param Sequence['GetDbSystemsDbSystemCollectionItemSourceArgs'] sources: The source of the database system.
         :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Sequence['GetDbSystemsDbSystemCollectionItemStorageDetailArgs'] storage_details: Storage details of the database system.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -3331,7 +3353,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
     @pulumi.getter
     def sources(self) -> Sequence['outputs.GetDbSystemsDbSystemCollectionItemSourceResult']:
         """
-        The source used to restore the database system.
+        The source of the database system.
         """
         return pulumi.get(self, "sources")
 
@@ -4048,6 +4070,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionResult(dict):
 @pulumi.output_type
 class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     def __init__(__self__, *,
+                 compatible_shapes: Sequence[_builtins.str],
                  configuration_details: Sequence['outputs.GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailResult'],
                  db_version: _builtins.str,
                  description: _builtins.str,
@@ -4061,19 +4084,21 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
                  state: _builtins.str,
                  time_created: _builtins.str):
         """
+        :param Sequence[_builtins.str] compatible_shapes: Indicates the collection of compatible shapes for this configuration.
         :param Sequence['GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of default configuration values for databases.
         :param _builtins.str db_version: Version of the PostgreSQL database, such as 14.9.
         :param _builtins.str description: A description for the configuration.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param _builtins.str id: A unique identifier for the configuration.
-        :param _builtins.int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
-        :param _builtins.int instance_ocpu_count: CPU core count.
+        :param _builtins.int instance_memory_size_in_gbs: The instance memory size in GBs for the configuration.
+        :param _builtins.int instance_ocpu_count: The instance ocpu count for the configuration.
         :param _builtins.bool is_flexible: True if the configuration supports flexible shapes, false otherwise.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param _builtins.str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        :param _builtins.str shape: The compute name of the shape for the configuration.
         :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param _builtins.str time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
+        pulumi.set(__self__, "compatible_shapes", compatible_shapes)
         pulumi.set(__self__, "configuration_details", configuration_details)
         pulumi.set(__self__, "db_version", db_version)
         pulumi.set(__self__, "description", description)
@@ -4086,6 +4111,14 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="compatibleShapes")
+    def compatible_shapes(self) -> Sequence[_builtins.str]:
+        """
+        Indicates the collection of compatible shapes for this configuration.
+        """
+        return pulumi.get(self, "compatible_shapes")
 
     @_builtins.property
     @pulumi.getter(name="configurationDetails")
@@ -4131,7 +4164,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceMemorySizeInGbs")
     def instance_memory_size_in_gbs(self) -> _builtins.int:
         """
-        Memory size in gigabytes with 1GB increment.
+        The instance memory size in GBs for the configuration.
         """
         return pulumi.get(self, "instance_memory_size_in_gbs")
 
@@ -4139,7 +4172,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter(name="instanceOcpuCount")
     def instance_ocpu_count(self) -> _builtins.int:
         """
-        CPU core count.
+        The instance ocpu count for the configuration.
         """
         return pulumi.get(self, "instance_ocpu_count")
 
@@ -4163,7 +4196,7 @@ class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(dict):
     @pulumi.getter
     def shape(self) -> _builtins.str:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        The compute name of the shape for the configuration.
         """
         return pulumi.get(self, "shape")
 

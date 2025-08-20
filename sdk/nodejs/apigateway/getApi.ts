@@ -65,6 +65,7 @@ export interface GetApiResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
      * * 'New' for just updated API Specifications
@@ -76,6 +77,7 @@ export interface GetApiResult {
      * * 'Canceled' the document validation was canceled
      */
     readonly lifecycleDetails: string;
+    readonly locks: outputs.ApiGateway.GetApiLock[];
     /**
      * Type of API Specification file.
      */
@@ -84,6 +86,7 @@ export interface GetApiResult {
      * The current state of the API.
      */
     readonly state: string;
+    readonly systemTags: {[key: string]: string};
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */

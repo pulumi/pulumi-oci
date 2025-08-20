@@ -22,15 +22,15 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
      * (Updatable) The size of the block storage volume to attach to the instance running the job
      * 
      */
-    @Import(name="blockStorageSizeInGbs", required=true)
-    private Output<Integer> blockStorageSizeInGbs;
+    @Import(name="blockStorageSizeInGbs")
+    private @Nullable Output<Integer> blockStorageSizeInGbs;
 
     /**
      * @return (Updatable) The size of the block storage volume to attach to the instance running the job
      * 
      */
-    public Output<Integer> blockStorageSizeInGbs() {
-        return this.blockStorageSizeInGbs;
+    public Optional<Output<Integer>> blockStorageSizeInGbs() {
+        return Optional.ofNullable(this.blockStorageSizeInGbs);
     }
 
     /**
@@ -64,18 +64,18 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The shape used to launch the job run instances.
+     * (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
-    @Import(name="shapeName", required=true)
-    private Output<String> shapeName;
+    @Import(name="shapeName")
+    private @Nullable Output<String> shapeName;
 
     /**
-     * @return (Updatable) The shape used to launch the job run instances.
+     * @return (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
-    public Output<String> shapeName() {
-        return this.shapeName;
+    public Optional<Output<String>> shapeName() {
+        return Optional.ofNullable(this.shapeName);
     }
 
     /**
@@ -127,7 +127,7 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
          * @return builder
          * 
          */
-        public Builder blockStorageSizeInGbs(Output<Integer> blockStorageSizeInGbs) {
+        public Builder blockStorageSizeInGbs(@Nullable Output<Integer> blockStorageSizeInGbs) {
             $.blockStorageSizeInGbs = blockStorageSizeInGbs;
             return this;
         }
@@ -185,18 +185,18 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
         }
 
         /**
-         * @param shapeName (Updatable) The shape used to launch the job run instances.
+         * @param shapeName (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
          * 
          * @return builder
          * 
          */
-        public Builder shapeName(Output<String> shapeName) {
+        public Builder shapeName(@Nullable Output<String> shapeName) {
             $.shapeName = shapeName;
             return this;
         }
 
         /**
-         * @param shapeName (Updatable) The shape used to launch the job run instances.
+         * @param shapeName (Updatable) The name that corresponds to the JobShapeSummary to use for the job node
          * 
          * @return builder
          * 
@@ -227,14 +227,8 @@ public final class JobJobInfrastructureConfigurationDetailsArgs extends com.pulu
         }
 
         public JobJobInfrastructureConfigurationDetailsArgs build() {
-            if ($.blockStorageSizeInGbs == null) {
-                throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetailsArgs", "blockStorageSizeInGbs");
-            }
             if ($.jobInfrastructureType == null) {
                 throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetailsArgs", "jobInfrastructureType");
-            }
-            if ($.shapeName == null) {
-                throw new MissingRequiredPropertyException("JobJobInfrastructureConfigurationDetailsArgs", "shapeName");
             }
             return $;
         }

@@ -16,6 +16,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
      * 
      */
     private String disasterRecoveryType;
+    /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
     private Boolean isReplicateAutomaticBackups;
     /**
      * @return Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
@@ -36,6 +40,10 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
     public String disasterRecoveryType() {
         return this.disasterRecoveryType;
     }
+    /**
+     * @return If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     * 
+     */
     public Boolean isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
     }

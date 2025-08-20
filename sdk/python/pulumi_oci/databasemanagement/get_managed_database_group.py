@@ -184,7 +184,7 @@ def get_managed_database_group(managed_database_group_id: Optional[_builtins.str
     """
     This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
 
-    Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+    Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
 
     ## Example Usage
 
@@ -221,7 +221,7 @@ def get_managed_database_group_output(managed_database_group_id: Optional[pulumi
     """
     This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
 
-    Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+    Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
 
     ## Example Usage
 

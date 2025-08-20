@@ -867,6 +867,121 @@ func (o ManagementAgentPluginListArrayOutput) Index(i pulumi.IntInput) Managemen
 	}).(ManagementAgentPluginListOutput)
 }
 
+type NamedCredentialProperty struct {
+	// (Updatable) Name of the property
+	Name string `pulumi:"name"`
+	// (Updatable) Value of the property
+	Value string `pulumi:"value"`
+	// (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+	ValueCategory string `pulumi:"valueCategory"`
+}
+
+// NamedCredentialPropertyInput is an input type that accepts NamedCredentialPropertyArgs and NamedCredentialPropertyOutput values.
+// You can construct a concrete instance of `NamedCredentialPropertyInput` via:
+//
+//	NamedCredentialPropertyArgs{...}
+type NamedCredentialPropertyInput interface {
+	pulumi.Input
+
+	ToNamedCredentialPropertyOutput() NamedCredentialPropertyOutput
+	ToNamedCredentialPropertyOutputWithContext(context.Context) NamedCredentialPropertyOutput
+}
+
+type NamedCredentialPropertyArgs struct {
+	// (Updatable) Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Value of the property
+	Value pulumi.StringInput `pulumi:"value"`
+	// (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+	ValueCategory pulumi.StringInput `pulumi:"valueCategory"`
+}
+
+func (NamedCredentialPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamedCredentialProperty)(nil)).Elem()
+}
+
+func (i NamedCredentialPropertyArgs) ToNamedCredentialPropertyOutput() NamedCredentialPropertyOutput {
+	return i.ToNamedCredentialPropertyOutputWithContext(context.Background())
+}
+
+func (i NamedCredentialPropertyArgs) ToNamedCredentialPropertyOutputWithContext(ctx context.Context) NamedCredentialPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamedCredentialPropertyOutput)
+}
+
+// NamedCredentialPropertyArrayInput is an input type that accepts NamedCredentialPropertyArray and NamedCredentialPropertyArrayOutput values.
+// You can construct a concrete instance of `NamedCredentialPropertyArrayInput` via:
+//
+//	NamedCredentialPropertyArray{ NamedCredentialPropertyArgs{...} }
+type NamedCredentialPropertyArrayInput interface {
+	pulumi.Input
+
+	ToNamedCredentialPropertyArrayOutput() NamedCredentialPropertyArrayOutput
+	ToNamedCredentialPropertyArrayOutputWithContext(context.Context) NamedCredentialPropertyArrayOutput
+}
+
+type NamedCredentialPropertyArray []NamedCredentialPropertyInput
+
+func (NamedCredentialPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamedCredentialProperty)(nil)).Elem()
+}
+
+func (i NamedCredentialPropertyArray) ToNamedCredentialPropertyArrayOutput() NamedCredentialPropertyArrayOutput {
+	return i.ToNamedCredentialPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i NamedCredentialPropertyArray) ToNamedCredentialPropertyArrayOutputWithContext(ctx context.Context) NamedCredentialPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NamedCredentialPropertyArrayOutput)
+}
+
+type NamedCredentialPropertyOutput struct{ *pulumi.OutputState }
+
+func (NamedCredentialPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NamedCredentialProperty)(nil)).Elem()
+}
+
+func (o NamedCredentialPropertyOutput) ToNamedCredentialPropertyOutput() NamedCredentialPropertyOutput {
+	return o
+}
+
+func (o NamedCredentialPropertyOutput) ToNamedCredentialPropertyOutputWithContext(ctx context.Context) NamedCredentialPropertyOutput {
+	return o
+}
+
+// (Updatable) Name of the property
+func (o NamedCredentialPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Value of the property
+func (o NamedCredentialPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// (Updatable) The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+func (o NamedCredentialPropertyOutput) ValueCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v NamedCredentialProperty) string { return v.ValueCategory }).(pulumi.StringOutput)
+}
+
+type NamedCredentialPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (NamedCredentialPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NamedCredentialProperty)(nil)).Elem()
+}
+
+func (o NamedCredentialPropertyArrayOutput) ToNamedCredentialPropertyArrayOutput() NamedCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o NamedCredentialPropertyArrayOutput) ToNamedCredentialPropertyArrayOutputWithContext(ctx context.Context) NamedCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o NamedCredentialPropertyArrayOutput) Index(i pulumi.IntInput) NamedCredentialPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NamedCredentialProperty {
+		return vs[0].([]NamedCredentialProperty)[vs[1].(int)]
+	}).(NamedCredentialPropertyOutput)
+}
+
 type GetManagementAgentAvailableHistoriesAvailabilityHistory struct {
 	// The availability status of managementAgent
 	AvailabilityStatus string `pulumi:"availabilityStatus"`
@@ -2704,8 +2819,12 @@ type GetManagementAgentInstallKeysManagementAgentInstallKey struct {
 	CreatedByPrincipalId string `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
 	CurrentKeyInstallCount int `pulumi:"currentKeyInstallCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name for which the Key needs to be listed.
 	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Agent install Key identifier
 	Id string `pulumi:"id"`
 	// If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
@@ -2716,6 +2835,8 @@ type GetManagementAgentInstallKeysManagementAgentInstallKey struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated string `pulumi:"timeCreated"`
 	// date after which key would expire after creation
@@ -2744,8 +2865,12 @@ type GetManagementAgentInstallKeysManagementAgentInstallKeyArgs struct {
 	CreatedByPrincipalId pulumi.StringInput `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
 	CurrentKeyInstallCount pulumi.IntInput `pulumi:"currentKeyInstallCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The display name for which the Key needs to be listed.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Agent install Key identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
@@ -2756,6 +2881,8 @@ type GetManagementAgentInstallKeysManagementAgentInstallKeyArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// date after which key would expire after creation
@@ -2835,9 +2962,21 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) CurrentKey
 	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) int { return v.CurrentKeyInstallCount }).(pulumi.IntOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // The display name for which the Key needs to be listed.
 func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
 }
 
 // Agent install Key identifier
@@ -2863,6 +3002,11 @@ func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) LifecycleD
 // Filter to return only Management Agents in the particular lifecycle state.
 func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetManagementAgentInstallKeysManagementAgentInstallKeyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAgentInstallKeysManagementAgentInstallKey) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when Management Agent install Key was created. An RFC3339 formatted date time string
@@ -3013,6 +3157,283 @@ func (o GetManagementAgentManagementAgentPropertyArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentManagementAgentProperty {
 		return vs[0].([]GetManagementAgentManagementAgentProperty)[vs[1].(int)]
 	}).(GetManagementAgentManagementAgentPropertyOutput)
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadata struct {
+	// The field display name
+	DisplayName string `pulumi:"displayName"`
+	// This Named Credential type is supported on management agents at this version or above.
+	MinimumAgentVersion string `pulumi:"minimumAgentVersion"`
+	// The property definitions for this named credential metadata
+	Properties []GetManagementAgentNamedCredentialsMetadataMetadataProperty `pulumi:"properties"`
+	// The type of the Named Credential.
+	Type string `pulumi:"type"`
+}
+
+// GetManagementAgentNamedCredentialsMetadataMetadataInput is an input type that accepts GetManagementAgentNamedCredentialsMetadataMetadataArgs and GetManagementAgentNamedCredentialsMetadataMetadataOutput values.
+// You can construct a concrete instance of `GetManagementAgentNamedCredentialsMetadataMetadataInput` via:
+//
+//	GetManagementAgentNamedCredentialsMetadataMetadataArgs{...}
+type GetManagementAgentNamedCredentialsMetadataMetadataInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentNamedCredentialsMetadataMetadataOutput() GetManagementAgentNamedCredentialsMetadataMetadataOutput
+	ToGetManagementAgentNamedCredentialsMetadataMetadataOutputWithContext(context.Context) GetManagementAgentNamedCredentialsMetadataMetadataOutput
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataArgs struct {
+	// The field display name
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// This Named Credential type is supported on management agents at this version or above.
+	MinimumAgentVersion pulumi.StringInput `pulumi:"minimumAgentVersion"`
+	// The property definitions for this named credential metadata
+	Properties GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayInput `pulumi:"properties"`
+	// The type of the Named Credential.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadata)(nil)).Elem()
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataArgs) ToGetManagementAgentNamedCredentialsMetadataMetadataOutput() GetManagementAgentNamedCredentialsMetadataMetadataOutput {
+	return i.ToGetManagementAgentNamedCredentialsMetadataMetadataOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataArgs) ToGetManagementAgentNamedCredentialsMetadataMetadataOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentNamedCredentialsMetadataMetadataOutput)
+}
+
+// GetManagementAgentNamedCredentialsMetadataMetadataArrayInput is an input type that accepts GetManagementAgentNamedCredentialsMetadataMetadataArray and GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentNamedCredentialsMetadataMetadataArrayInput` via:
+//
+//	GetManagementAgentNamedCredentialsMetadataMetadataArray{ GetManagementAgentNamedCredentialsMetadataMetadataArgs{...} }
+type GetManagementAgentNamedCredentialsMetadataMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutput() GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput
+	ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutputWithContext(context.Context) GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataArray []GetManagementAgentNamedCredentialsMetadataMetadataInput
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentNamedCredentialsMetadataMetadata)(nil)).Elem()
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataArray) ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutput() GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput {
+	return i.ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataArray) ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput)
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadata)(nil)).Elem()
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataOutput() GetManagementAgentNamedCredentialsMetadataMetadataOutput {
+	return o
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataOutput {
+	return o
+}
+
+// The field display name
+func (o GetManagementAgentNamedCredentialsMetadataMetadataOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadata) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// This Named Credential type is supported on management agents at this version or above.
+func (o GetManagementAgentNamedCredentialsMetadataMetadataOutput) MinimumAgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadata) string { return v.MinimumAgentVersion }).(pulumi.StringOutput)
+}
+
+// The property definitions for this named credential metadata
+func (o GetManagementAgentNamedCredentialsMetadataMetadataOutput) Properties() GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadata) []GetManagementAgentNamedCredentialsMetadataMetadataProperty {
+		return v.Properties
+	}).(GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput)
+}
+
+// The type of the Named Credential.
+func (o GetManagementAgentNamedCredentialsMetadataMetadataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadata) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentNamedCredentialsMetadataMetadata)(nil)).Elem()
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutput() GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataArrayOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput) Index(i pulumi.IntInput) GetManagementAgentNamedCredentialsMetadataMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentNamedCredentialsMetadataMetadata {
+		return vs[0].([]GetManagementAgentNamedCredentialsMetadataMetadata)[vs[1].(int)]
+	}).(GetManagementAgentNamedCredentialsMetadataMetadataOutput)
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataProperty struct {
+	// List of values which can be applied to the value when valueCategory is ALLOWED_VALUES
+	AllowedValues []string `pulumi:"allowedValues"`
+	// The default value which will be used if no value is set.  If defaultValue is empty, then no default will be set.
+	DefaultValue string `pulumi:"defaultValue"`
+	// The field display name
+	DisplayName string `pulumi:"displayName"`
+	// Set to true if the field must be defined
+	IsRequired bool `pulumi:"isRequired"`
+	// The field name
+	Name string `pulumi:"name"`
+	// Optional regular expression definition which will be applied to the value when valueCategory is CLEAR_TEXT
+	Regex string `pulumi:"regex"`
+	// List of value categories of field allowed for this property
+	ValueCategories []string `pulumi:"valueCategories"`
+}
+
+// GetManagementAgentNamedCredentialsMetadataMetadataPropertyInput is an input type that accepts GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs and GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput values.
+// You can construct a concrete instance of `GetManagementAgentNamedCredentialsMetadataMetadataPropertyInput` via:
+//
+//	GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs{...}
+type GetManagementAgentNamedCredentialsMetadataMetadataPropertyInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput() GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput
+	ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutputWithContext(context.Context) GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs struct {
+	// List of values which can be applied to the value when valueCategory is ALLOWED_VALUES
+	AllowedValues pulumi.StringArrayInput `pulumi:"allowedValues"`
+	// The default value which will be used if no value is set.  If defaultValue is empty, then no default will be set.
+	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
+	// The field display name
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Set to true if the field must be defined
+	IsRequired pulumi.BoolInput `pulumi:"isRequired"`
+	// The field name
+	Name pulumi.StringInput `pulumi:"name"`
+	// Optional regular expression definition which will be applied to the value when valueCategory is CLEAR_TEXT
+	Regex pulumi.StringInput `pulumi:"regex"`
+	// List of value categories of field allowed for this property
+	ValueCategories pulumi.StringArrayInput `pulumi:"valueCategories"`
+}
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadataProperty)(nil)).Elem()
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput() GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput {
+	return i.ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput)
+}
+
+// GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayInput is an input type that accepts GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray and GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput values.
+// You can construct a concrete instance of `GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayInput` via:
+//
+//	GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray{ GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs{...} }
+type GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput() GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput
+	ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutputWithContext(context.Context) GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray []GetManagementAgentNamedCredentialsMetadataMetadataPropertyInput
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentNamedCredentialsMetadataMetadataProperty)(nil)).Elem()
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput() GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput {
+	return i.ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput)
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadataProperty)(nil)).Elem()
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput() GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput {
+	return o
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput {
+	return o
+}
+
+// List of values which can be applied to the value when valueCategory is ALLOWED_VALUES
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) AllowedValues() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) []string { return v.AllowedValues }).(pulumi.StringArrayOutput)
+}
+
+// The default value which will be used if no value is set.  If defaultValue is empty, then no default will be set.
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) DefaultValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) string { return v.DefaultValue }).(pulumi.StringOutput)
+}
+
+// The field display name
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Set to true if the field must be defined
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) IsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) bool { return v.IsRequired }).(pulumi.BoolOutput)
+}
+
+// The field name
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Optional regular expression definition which will be applied to the value when valueCategory is CLEAR_TEXT
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) Regex() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) string { return v.Regex }).(pulumi.StringOutput)
+}
+
+// List of value categories of field allowed for this property
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput) ValueCategories() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagementAgentNamedCredentialsMetadataMetadataProperty) []string { return v.ValueCategories }).(pulumi.StringArrayOutput)
+}
+
+type GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagementAgentNamedCredentialsMetadataMetadataProperty)(nil)).Elem()
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput() GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput) ToGetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutputWithContext(ctx context.Context) GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput {
+	return o
+}
+
+func (o GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput) Index(i pulumi.IntInput) GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagementAgentNamedCredentialsMetadataMetadataProperty {
+		return vs[0].([]GetManagementAgentNamedCredentialsMetadataMetadataProperty)[vs[1].(int)]
+	}).(GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput)
 }
 
 type GetManagementAgentPluginCountItem struct {
@@ -3791,7 +4212,8 @@ type GetManagementAgentsManagementAgent struct {
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 	IsAgentAutoUpgradable bool `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed bool `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed     bool   `pulumi:"isCustomerDeployed"`
+	LatestSupportedVersion string `pulumi:"latestSupportedVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ManagedAgentId   string `pulumi:"managedAgentId"`
@@ -3809,6 +4231,8 @@ type GetManagementAgentsManagementAgent struct {
 	ResourceArtifactVersion string `pulumi:"resourceArtifactVersion"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
@@ -3860,7 +4284,8 @@ type GetManagementAgentsManagementAgentArgs struct {
 	// true if the agent can be upgraded automatically; false if it must be upgraded manually. This flag is derived from the tenancy level auto upgrade preference.
 	IsAgentAutoUpgradable pulumi.BoolInput `pulumi:"isAgentAutoUpgradable"`
 	// true, if the agent image is manually downloaded and installed. false, if the agent is deployed as a plugin in Oracle Cloud Agent.
-	IsCustomerDeployed pulumi.BoolInput `pulumi:"isCustomerDeployed"`
+	IsCustomerDeployed     pulumi.BoolInput   `pulumi:"isCustomerDeployed"`
+	LatestSupportedVersion pulumi.StringInput `pulumi:"latestSupportedVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	ManagedAgentId   pulumi.StringInput `pulumi:"managedAgentId"`
@@ -3878,6 +4303,8 @@ type GetManagementAgentsManagementAgentArgs struct {
 	ResourceArtifactVersion pulumi.StringInput `pulumi:"resourceArtifactVersion"`
 	// Filter to return only Management Agents in the particular lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Management Agent has last recorded its health status in telemetry. This value will be null if the agent has not recorded its health status in last 7 days. An RFC3339 formatted datetime string
@@ -4021,6 +4448,10 @@ func (o GetManagementAgentsManagementAgentOutput) IsCustomerDeployed() pulumi.Bo
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) bool { return v.IsCustomerDeployed }).(pulumi.BoolOutput)
 }
 
+func (o GetManagementAgentsManagementAgentOutput) LatestSupportedVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.LatestSupportedVersion }).(pulumi.StringOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetManagementAgentsManagementAgentOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -4067,6 +4498,11 @@ func (o GetManagementAgentsManagementAgentOutput) ResourceArtifactVersion() pulu
 // Filter to return only Management Agents in the particular lifecycle state.
 func (o GetManagementAgentsManagementAgentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetManagementAgentsManagementAgent) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetManagementAgentsManagementAgentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagementAgentsManagementAgent) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Management Agent was created. An RFC3339 formatted datetime string
@@ -4824,6 +5260,639 @@ func (o GetManagementAgentsManagementAgentPluginListArrayOutput) Index(i pulumi.
 	}).(GetManagementAgentsManagementAgentPluginListOutput)
 }
 
+type GetNamedCredentialProperty struct {
+	// Name of the property
+	Name string `pulumi:"name"`
+	// Value of the property
+	Value string `pulumi:"value"`
+	// The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+	ValueCategory string `pulumi:"valueCategory"`
+}
+
+// GetNamedCredentialPropertyInput is an input type that accepts GetNamedCredentialPropertyArgs and GetNamedCredentialPropertyOutput values.
+// You can construct a concrete instance of `GetNamedCredentialPropertyInput` via:
+//
+//	GetNamedCredentialPropertyArgs{...}
+type GetNamedCredentialPropertyInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialPropertyOutput() GetNamedCredentialPropertyOutput
+	ToGetNamedCredentialPropertyOutputWithContext(context.Context) GetNamedCredentialPropertyOutput
+}
+
+type GetNamedCredentialPropertyArgs struct {
+	// Name of the property
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the property
+	Value pulumi.StringInput `pulumi:"value"`
+	// The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+	ValueCategory pulumi.StringInput `pulumi:"valueCategory"`
+}
+
+func (GetNamedCredentialPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialProperty)(nil)).Elem()
+}
+
+func (i GetNamedCredentialPropertyArgs) ToGetNamedCredentialPropertyOutput() GetNamedCredentialPropertyOutput {
+	return i.ToGetNamedCredentialPropertyOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialPropertyArgs) ToGetNamedCredentialPropertyOutputWithContext(ctx context.Context) GetNamedCredentialPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialPropertyOutput)
+}
+
+// GetNamedCredentialPropertyArrayInput is an input type that accepts GetNamedCredentialPropertyArray and GetNamedCredentialPropertyArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialPropertyArrayInput` via:
+//
+//	GetNamedCredentialPropertyArray{ GetNamedCredentialPropertyArgs{...} }
+type GetNamedCredentialPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialPropertyArrayOutput() GetNamedCredentialPropertyArrayOutput
+	ToGetNamedCredentialPropertyArrayOutputWithContext(context.Context) GetNamedCredentialPropertyArrayOutput
+}
+
+type GetNamedCredentialPropertyArray []GetNamedCredentialPropertyInput
+
+func (GetNamedCredentialPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialProperty)(nil)).Elem()
+}
+
+func (i GetNamedCredentialPropertyArray) ToGetNamedCredentialPropertyArrayOutput() GetNamedCredentialPropertyArrayOutput {
+	return i.ToGetNamedCredentialPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialPropertyArray) ToGetNamedCredentialPropertyArrayOutputWithContext(ctx context.Context) GetNamedCredentialPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialPropertyArrayOutput)
+}
+
+type GetNamedCredentialPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialProperty)(nil)).Elem()
+}
+
+func (o GetNamedCredentialPropertyOutput) ToGetNamedCredentialPropertyOutput() GetNamedCredentialPropertyOutput {
+	return o
+}
+
+func (o GetNamedCredentialPropertyOutput) ToGetNamedCredentialPropertyOutputWithContext(ctx context.Context) GetNamedCredentialPropertyOutput {
+	return o
+}
+
+// Name of the property
+func (o GetNamedCredentialPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the property
+func (o GetNamedCredentialPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+func (o GetNamedCredentialPropertyOutput) ValueCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialProperty) string { return v.ValueCategory }).(pulumi.StringOutput)
+}
+
+type GetNamedCredentialPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialProperty)(nil)).Elem()
+}
+
+func (o GetNamedCredentialPropertyArrayOutput) ToGetNamedCredentialPropertyArrayOutput() GetNamedCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialPropertyArrayOutput) ToGetNamedCredentialPropertyArrayOutputWithContext(ctx context.Context) GetNamedCredentialPropertyArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialPropertyArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialProperty {
+		return vs[0].([]GetNamedCredentialProperty)[vs[1].(int)]
+	}).(GetNamedCredentialPropertyOutput)
+}
+
+type GetNamedCredentialsFilter struct {
+	// Filter list for these name items.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetNamedCredentialsFilterInput is an input type that accepts GetNamedCredentialsFilterArgs and GetNamedCredentialsFilterOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsFilterInput` via:
+//
+//	GetNamedCredentialsFilterArgs{...}
+type GetNamedCredentialsFilterInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsFilterOutput() GetNamedCredentialsFilterOutput
+	ToGetNamedCredentialsFilterOutputWithContext(context.Context) GetNamedCredentialsFilterOutput
+}
+
+type GetNamedCredentialsFilterArgs struct {
+	// Filter list for these name items.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetNamedCredentialsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsFilterArgs) ToGetNamedCredentialsFilterOutput() GetNamedCredentialsFilterOutput {
+	return i.ToGetNamedCredentialsFilterOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsFilterArgs) ToGetNamedCredentialsFilterOutputWithContext(ctx context.Context) GetNamedCredentialsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsFilterOutput)
+}
+
+// GetNamedCredentialsFilterArrayInput is an input type that accepts GetNamedCredentialsFilterArray and GetNamedCredentialsFilterArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsFilterArrayInput` via:
+//
+//	GetNamedCredentialsFilterArray{ GetNamedCredentialsFilterArgs{...} }
+type GetNamedCredentialsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsFilterArrayOutput() GetNamedCredentialsFilterArrayOutput
+	ToGetNamedCredentialsFilterArrayOutputWithContext(context.Context) GetNamedCredentialsFilterArrayOutput
+}
+
+type GetNamedCredentialsFilterArray []GetNamedCredentialsFilterInput
+
+func (GetNamedCredentialsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsFilterArray) ToGetNamedCredentialsFilterArrayOutput() GetNamedCredentialsFilterArrayOutput {
+	return i.ToGetNamedCredentialsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsFilterArray) ToGetNamedCredentialsFilterArrayOutputWithContext(ctx context.Context) GetNamedCredentialsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsFilterArrayOutput)
+}
+
+type GetNamedCredentialsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsFilterOutput) ToGetNamedCredentialsFilterOutput() GetNamedCredentialsFilterOutput {
+	return o
+}
+
+func (o GetNamedCredentialsFilterOutput) ToGetNamedCredentialsFilterOutputWithContext(ctx context.Context) GetNamedCredentialsFilterOutput {
+	return o
+}
+
+// Filter list for these name items.
+func (o GetNamedCredentialsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNamedCredentialsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetNamedCredentialsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetNamedCredentialsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNamedCredentialsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetNamedCredentialsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsFilter)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsFilterArrayOutput) ToGetNamedCredentialsFilterArrayOutput() GetNamedCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsFilterArrayOutput) ToGetNamedCredentialsFilterArrayOutputWithContext(ctx context.Context) GetNamedCredentialsFilterArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsFilterArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsFilter {
+		return vs[0].([]GetNamedCredentialsFilter)[vs[1].(int)]
+	}).(GetNamedCredentialsFilterOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollection struct {
+	Items []GetNamedCredentialsNamedCredentialCollectionItem `pulumi:"items"`
+}
+
+// GetNamedCredentialsNamedCredentialCollectionInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionArgs and GetNamedCredentialsNamedCredentialCollectionOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionArgs{...}
+type GetNamedCredentialsNamedCredentialCollectionInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionOutput() GetNamedCredentialsNamedCredentialCollectionOutput
+	ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionArgs struct {
+	Items GetNamedCredentialsNamedCredentialCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetNamedCredentialsNamedCredentialCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArgs) ToGetNamedCredentialsNamedCredentialCollectionOutput() GetNamedCredentialsNamedCredentialCollectionOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArgs) ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionOutput)
+}
+
+// GetNamedCredentialsNamedCredentialCollectionArrayInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionArray and GetNamedCredentialsNamedCredentialCollectionArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionArrayInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionArray{ GetNamedCredentialsNamedCredentialCollectionArgs{...} }
+type GetNamedCredentialsNamedCredentialCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionArrayOutput() GetNamedCredentialsNamedCredentialCollectionArrayOutput
+	ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionArrayOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionArray []GetNamedCredentialsNamedCredentialCollectionInput
+
+func (GetNamedCredentialsNamedCredentialCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArray) ToGetNamedCredentialsNamedCredentialCollectionArrayOutput() GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionArray) ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionOutput) ToGetNamedCredentialsNamedCredentialCollectionOutput() GetNamedCredentialsNamedCredentialCollectionOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionOutput) ToGetNamedCredentialsNamedCredentialCollectionOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionOutput) Items() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollection) []GetNamedCredentialsNamedCredentialCollectionItem {
+		return v.Items
+	}).(GetNamedCredentialsNamedCredentialCollectionItemArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollection)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionArrayOutput() GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsNamedCredentialCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsNamedCredentialCollection {
+		return vs[0].([]GetNamedCredentialsNamedCredentialCollection)[vs[1].(int)]
+	}).(GetNamedCredentialsNamedCredentialCollectionOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItem struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Description of the Named Credential.
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Filter list for these Named credentials identifiers (ocid) values.
+	Id string `pulumi:"id"`
+	// The ManagementAgentID of the agent from which the named credentials are associated.
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// Filter list for these name items.
+	Name string `pulumi:"name"`
+	// Properties for the named credential
+	Properties []GetNamedCredentialsNamedCredentialCollectionItemProperty `pulumi:"properties"`
+	// Filter list to return only Management Agents in the particular lifecycle state.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the Named Credential was created. An RFC3339 formatted datetime string
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the Named Credential data was last updated. An RFC3339 formatted datetime string
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// Filter list for these type values.
+	Type string `pulumi:"type"`
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemArgs and GetNamedCredentialsNamedCredentialCollectionItemOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemArgs{...}
+type GetNamedCredentialsNamedCredentialCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemOutput() GetNamedCredentialsNamedCredentialCollectionItemOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemArgs struct {
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Description of the Named Credential.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Filter list for these Named credentials identifiers (ocid) values.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The ManagementAgentID of the agent from which the named credentials are associated.
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	// Filter list for these name items.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Properties for the named credential
+	Properties GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayInput `pulumi:"properties"`
+	// Filter list to return only Management Agents in the particular lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the Named Credential was created. An RFC3339 formatted datetime string
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the Named Credential data was last updated. An RFC3339 formatted datetime string
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Filter list for these type values.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNamedCredentialsNamedCredentialCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArgs) ToGetNamedCredentialsNamedCredentialCollectionItemOutput() GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArgs) ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemOutput)
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemArrayInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemArray and GetNamedCredentialsNamedCredentialCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemArrayInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemArray{ GetNamedCredentialsNamedCredentialCollectionItemArgs{...} }
+type GetNamedCredentialsNamedCredentialCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemArrayOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemArray []GetNamedCredentialsNamedCredentialCollectionItemInput
+
+func (GetNamedCredentialsNamedCredentialCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArray) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemArray) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) ToGetNamedCredentialsNamedCredentialCollectionItemOutput() GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) ToGetNamedCredentialsNamedCredentialCollectionItemOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return o
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Description of the Named Credential.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Filter list for these Named credentials identifiers (ocid) values.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The ManagementAgentID of the agent from which the named credentials are associated.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// Filter list for these name items.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Properties for the named credential
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Properties() GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) []GetNamedCredentialsNamedCredentialCollectionItemProperty {
+		return v.Properties
+	}).(GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput)
+}
+
+// Filter list to return only Management Agents in the particular lifecycle state.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time the Named Credential was created. An RFC3339 formatted datetime string
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the Named Credential data was last updated. An RFC3339 formatted datetime string
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Filter list for these type values.
+func (o GetNamedCredentialsNamedCredentialCollectionItemOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItem) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItem)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsNamedCredentialCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsNamedCredentialCollectionItem {
+		return vs[0].([]GetNamedCredentialsNamedCredentialCollectionItem)[vs[1].(int)]
+	}).(GetNamedCredentialsNamedCredentialCollectionItemOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemProperty struct {
+	// Filter list for these name items.
+	Name string `pulumi:"name"`
+	// Value of the property
+	Value string `pulumi:"value"`
+	// The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+	ValueCategory string `pulumi:"valueCategory"`
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemPropertyInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs and GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemPropertyInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs{...}
+type GetNamedCredentialsNamedCredentialCollectionItemPropertyInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutput() GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs struct {
+	// Filter list for these name items.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Value of the property
+	Value pulumi.StringInput `pulumi:"value"`
+	// The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+	ValueCategory pulumi.StringInput `pulumi:"valueCategory"`
+}
+
+func (GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemProperty)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutput() GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput)
+}
+
+// GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayInput is an input type that accepts GetNamedCredentialsNamedCredentialCollectionItemPropertyArray and GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput values.
+// You can construct a concrete instance of `GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayInput` via:
+//
+//	GetNamedCredentialsNamedCredentialCollectionItemPropertyArray{ GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs{...} }
+type GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput
+	ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutputWithContext(context.Context) GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemPropertyArray []GetNamedCredentialsNamedCredentialCollectionItemPropertyInput
+
+func (GetNamedCredentialsNamedCredentialCollectionItemPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItemProperty)(nil)).Elem()
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemPropertyArray) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput {
+	return i.ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNamedCredentialsNamedCredentialCollectionItemPropertyArray) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemProperty)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutput() GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput {
+	return o
+}
+
+// Filter list for these name items.
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Value of the property
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+// The category of the Named credential property value. CLEAR_TEXT indicates the value field contains a clear text value. SECRET_IDENTIFIER indicates the value field contains a vault secret ocid identifier. ADB_IDENTIFIER indicates the value field contains an Autonomous database ocid identifier. ALLOWED_VALUE indicates the value should be selected from the options in the allowedValues field.
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput) ValueCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNamedCredentialsNamedCredentialCollectionItemProperty) string { return v.ValueCategory }).(pulumi.StringOutput)
+}
+
+type GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNamedCredentialsNamedCredentialCollectionItemProperty)(nil)).Elem()
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput() GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput) ToGetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutputWithContext(ctx context.Context) GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput {
+	return o
+}
+
+func (o GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput) Index(i pulumi.IntInput) GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNamedCredentialsNamedCredentialCollectionItemProperty {
+		return vs[0].([]GetNamedCredentialsNamedCredentialCollectionItemProperty)[vs[1].(int)]
+	}).(GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceListInput)(nil)).Elem(), ManagementAgentDataSourceListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentDataSourceListArrayInput)(nil)).Elem(), ManagementAgentDataSourceListArray{})
@@ -4837,6 +5906,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), ManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentPluginListInput)(nil)).Elem(), ManagementAgentPluginListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ManagementAgentPluginListArrayInput)(nil)).Elem(), ManagementAgentPluginListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamedCredentialPropertyInput)(nil)).Elem(), NamedCredentialPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NamedCredentialPropertyArrayInput)(nil)).Elem(), NamedCredentialPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentAvailableHistoriesAvailabilityHistoryInput)(nil)).Elem(), GetManagementAgentAvailableHistoriesAvailabilityHistoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayInput)(nil)).Elem(), GetManagementAgentAvailableHistoriesAvailabilityHistoryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentAvailableHistoriesFilterInput)(nil)).Elem(), GetManagementAgentAvailableHistoriesFilterArgs{})
@@ -4869,6 +5940,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentInstallKeysManagementAgentInstallKeyArrayInput)(nil)).Elem(), GetManagementAgentInstallKeysManagementAgentInstallKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentManagementAgentPropertyInput)(nil)).Elem(), GetManagementAgentManagementAgentPropertyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), GetManagementAgentManagementAgentPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadataInput)(nil)).Elem(), GetManagementAgentNamedCredentialsMetadataMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadataArrayInput)(nil)).Elem(), GetManagementAgentNamedCredentialsMetadataMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadataPropertyInput)(nil)).Elem(), GetManagementAgentNamedCredentialsMetadataMetadataPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayInput)(nil)).Elem(), GetManagementAgentNamedCredentialsMetadataMetadataPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentPluginCountItemInput)(nil)).Elem(), GetManagementAgentPluginCountItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentPluginCountItemArrayInput)(nil)).Elem(), GetManagementAgentPluginCountItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentPluginCountItemDimensionInput)(nil)).Elem(), GetManagementAgentPluginCountItemDimensionArgs{})
@@ -4893,6 +5968,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentManagementAgentPropertyArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentManagementAgentPropertyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentPluginListInput)(nil)).Elem(), GetManagementAgentsManagementAgentPluginListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetManagementAgentsManagementAgentPluginListArrayInput)(nil)).Elem(), GetManagementAgentsManagementAgentPluginListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialPropertyInput)(nil)).Elem(), GetNamedCredentialPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialPropertyArrayInput)(nil)).Elem(), GetNamedCredentialPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsFilterInput)(nil)).Elem(), GetNamedCredentialsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsFilterArrayInput)(nil)).Elem(), GetNamedCredentialsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionArrayInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemArrayInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemPropertyInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayInput)(nil)).Elem(), GetNamedCredentialsNamedCredentialCollectionItemPropertyArray{})
 	pulumi.RegisterOutputType(ManagementAgentDataSourceListOutput{})
 	pulumi.RegisterOutputType(ManagementAgentDataSourceListArrayOutput{})
 	pulumi.RegisterOutputType(ManagementAgentDataSourceListMetricDimensionOutput{})
@@ -4905,6 +5990,8 @@ func init() {
 	pulumi.RegisterOutputType(ManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(ManagementAgentPluginListOutput{})
 	pulumi.RegisterOutputType(ManagementAgentPluginListArrayOutput{})
+	pulumi.RegisterOutputType(NamedCredentialPropertyOutput{})
+	pulumi.RegisterOutputType(NamedCredentialPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentAvailableHistoriesAvailabilityHistoryOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentAvailableHistoriesAvailabilityHistoryArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentAvailableHistoriesFilterOutput{})
@@ -4937,6 +6024,10 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAgentInstallKeysManagementAgentInstallKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentManagementAgentPropertyOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentManagementAgentPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentNamedCredentialsMetadataMetadataOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentNamedCredentialsMetadataMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentNamedCredentialsMetadataMetadataPropertyOutput{})
+	pulumi.RegisterOutputType(GetManagementAgentNamedCredentialsMetadataMetadataPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentPluginCountItemOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentPluginCountItemArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentPluginCountItemDimensionOutput{})
@@ -4961,4 +6052,14 @@ func init() {
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentManagementAgentPropertyArrayOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentPluginListOutput{})
 	pulumi.RegisterOutputType(GetManagementAgentsManagementAgentPluginListArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialPropertyOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsFilterOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemPropertyOutput{})
+	pulumi.RegisterOutputType(GetNamedCredentialsNamedCredentialCollectionItemPropertyArrayOutput{})
 }

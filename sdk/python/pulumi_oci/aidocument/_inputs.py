@@ -17,6 +17,8 @@ from .. import _utilities
 __all__ = [
     'ModelComponentModelArgs',
     'ModelComponentModelArgsDict',
+    'ModelLockArgs',
+    'ModelLockArgsDict',
     'ModelMetricArgs',
     'ModelMetricArgsDict',
     'ModelMetricDatasetSummaryArgs',
@@ -29,6 +31,8 @@ __all__ = [
     'ModelMetricOverallMetricsReportArgsDict',
     'ModelMetricOverallMetricsReportConfidenceEntryArgs',
     'ModelMetricOverallMetricsReportConfidenceEntryArgsDict',
+    'ModelModelSubTypeArgs',
+    'ModelModelSubTypeArgsDict',
     'ModelTestingDatasetArgs',
     'ModelTestingDatasetArgsDict',
     'ModelTrainingDatasetArgs',
@@ -45,6 +49,12 @@ __all__ = [
     'ProcessorJobProcessorConfigArgsDict',
     'ProcessorJobProcessorConfigFeatureArgs',
     'ProcessorJobProcessorConfigFeatureArgsDict',
+    'ProcessorJobProcessorConfigNormalizationFieldArgs',
+    'ProcessorJobProcessorConfigNormalizationFieldArgsDict',
+    'ProcessorJobProcessorConfigNormalizationFieldMapArgs',
+    'ProcessorJobProcessorConfigNormalizationFieldMapArgsDict',
+    'ProjectLockArgs',
+    'ProjectLockArgsDict',
     'GetModelsFilterArgs',
     'GetModelsFilterArgsDict',
     'GetProjectsFilterArgs',
@@ -83,6 +93,117 @@ class ModelComponentModelArgs:
     @model_id.setter
     def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "model_id", value)
+
+
+if not MYPY:
+    class ModelLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        """
+        Lock type.
+        """
+        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The compartment identifier.
+        """
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        When the model was created, as an RFC3339 datetime string.
+        """
+elif False:
+    ModelLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ModelLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Lock type.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the model was created, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The compartment identifier.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        When the model was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:
@@ -638,6 +759,77 @@ class ModelMetricOverallMetricsReportConfidenceEntryArgs:
 
 
 if not MYPY:
+    class ModelModelSubTypeArgsDict(TypedDict):
+        model_sub_type: pulumi.Input[_builtins.str]
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        model_type: pulumi.Input[_builtins.str]
+        """
+        Sub type model based on the model type. The allowed values are:
+        * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+        * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+        """
+elif False:
+    ModelModelSubTypeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ModelModelSubTypeArgs:
+    def __init__(__self__, *,
+                 model_sub_type: pulumi.Input[_builtins.str],
+                 model_type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] model_sub_type: The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+               * `RECEIPT`
+               * `INVOICE`
+               * `PASSPORT`
+               * `DRIVER_LICENSE`
+               * `HEALTH_INSURANCE_ID`
+        :param pulumi.Input[_builtins.str] model_type: Sub type model based on the model type. The allowed values are:
+               * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+               * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+        """
+        pulumi.set(__self__, "model_sub_type", model_sub_type)
+        pulumi.set(__self__, "model_type", model_type)
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        return pulumi.get(self, "model_sub_type")
+
+    @model_sub_type.setter
+    def model_sub_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "model_sub_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelType")
+    def model_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Sub type model based on the model type. The allowed values are:
+        * `PRE_TRAINED_KEY_VALUE_EXTRACTION`
+        * `PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION`
+        """
+        return pulumi.get(self, "model_type")
+
+    @model_type.setter
+    def model_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "model_type", value)
+
+
+if not MYPY:
     class ModelTestingDatasetArgsDict(TypedDict):
         dataset_type: pulumi.Input[_builtins.str]
         """
@@ -998,6 +1190,10 @@ if not MYPY:
         """
         The list of ObjectLocations.
         """
+        page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        The page ranges to be analysed.
+        """
 elif False:
     ProcessorJobInputLocationArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1006,19 +1202,23 @@ class ProcessorJobInputLocationArgs:
     def __init__(__self__, *,
                  source_type: pulumi.Input[_builtins.str],
                  data: Optional[pulumi.Input[_builtins.str]] = None,
-                 object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None):
+                 object_locations: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]] = None,
+                 page_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] source_type: The type of input location. The allowed values are:
                * `OBJECT_STORAGE_LOCATIONS`: A list of object locations in Object Storage.
                * `INLINE_DOCUMENT_CONTENT`: The content of an inline document.
         :param pulumi.Input[_builtins.str] data: Raw document data with Base64 encoding.
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]] object_locations: The list of ObjectLocations.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] page_ranges: The page ranges to be analysed.
         """
         pulumi.set(__self__, "source_type", source_type)
         if data is not None:
             pulumi.set(__self__, "data", data)
         if object_locations is not None:
             pulumi.set(__self__, "object_locations", object_locations)
+        if page_ranges is not None:
+            pulumi.set(__self__, "page_ranges", page_ranges)
 
     @_builtins.property
     @pulumi.getter(name="sourceType")
@@ -1058,6 +1258,18 @@ class ProcessorJobInputLocationArgs:
     def object_locations(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobInputLocationObjectLocationArgs']]]]):
         pulumi.set(self, "object_locations", value)
 
+    @_builtins.property
+    @pulumi.getter(name="pageRanges")
+    def page_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The page ranges to be analysed.
+        """
+        return pulumi.get(self, "page_ranges")
+
+    @page_ranges.setter
+    def page_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "page_ranges", value)
+
 
 if not MYPY:
     class ProcessorJobInputLocationObjectLocationArgsDict(TypedDict):
@@ -1073,6 +1285,10 @@ if not MYPY:
         """
         The Object Storage object name.
         """
+        page_ranges: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        The page ranges to be analysed.
+        """
 elif False:
     ProcessorJobInputLocationObjectLocationArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1081,11 +1297,13 @@ class ProcessorJobInputLocationObjectLocationArgs:
     def __init__(__self__, *,
                  bucket: Optional[pulumi.Input[_builtins.str]] = None,
                  namespace: Optional[pulumi.Input[_builtins.str]] = None,
-                 object: Optional[pulumi.Input[_builtins.str]] = None):
+                 object: Optional[pulumi.Input[_builtins.str]] = None,
+                 page_ranges: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         :param pulumi.Input[_builtins.str] bucket: The Object Storage bucket name.
         :param pulumi.Input[_builtins.str] namespace: The Object Storage namespace name.
         :param pulumi.Input[_builtins.str] object: The Object Storage object name.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] page_ranges: The page ranges to be analysed.
         """
         if bucket is not None:
             pulumi.set(__self__, "bucket", bucket)
@@ -1093,6 +1311,8 @@ class ProcessorJobInputLocationObjectLocationArgs:
             pulumi.set(__self__, "namespace", namespace)
         if object is not None:
             pulumi.set(__self__, "object", object)
+        if page_ranges is not None:
+            pulumi.set(__self__, "page_ranges", page_ranges)
 
     @_builtins.property
     @pulumi.getter
@@ -1129,6 +1349,18 @@ class ProcessorJobInputLocationObjectLocationArgs:
     @object.setter
     def object(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "object", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pageRanges")
+    def page_ranges(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The page ranges to be analysed.
+        """
+        return pulumi.get(self, "page_ranges")
+
+    @page_ranges.setter
+    def page_ranges(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "page_ranges", value)
 
 
 if not MYPY:
@@ -1226,6 +1458,14 @@ if not MYPY:
         """
         The document language, abbreviated according to the BCP 47 Language-Tag syntax.
         """
+        model_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Unique identifier custom model OCID that should be used for inference.
+        """
+        normalization_fields: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgsDict']]]]
+        """
+        A string-to-object map where the key is the normalization field and the object contains information about the field.
+        """
 elif False:
     ProcessorJobProcessorConfigArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -1236,7 +1476,9 @@ class ProcessorJobProcessorConfigArgs:
                  processor_type: pulumi.Input[_builtins.str],
                  document_type: Optional[pulumi.Input[_builtins.str]] = None,
                  is_zip_output_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 language: Optional[pulumi.Input[_builtins.str]] = None):
+                 language: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 normalization_fields: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigFeatureArgs']]] features: The types of document analysis requested.
         :param pulumi.Input[_builtins.str] processor_type: The type of the processor.
@@ -1247,6 +1489,8 @@ class ProcessorJobProcessorConfigArgs:
         :param pulumi.Input[_builtins.str] document_type: The document type.
         :param pulumi.Input[_builtins.bool] is_zip_output_enabled: Whether or not to generate a ZIP file containing the results.
         :param pulumi.Input[_builtins.str] language: The document language, abbreviated according to the BCP 47 Language-Tag syntax.
+        :param pulumi.Input[_builtins.str] model_id: Unique identifier custom model OCID that should be used for inference.
+        :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]] normalization_fields: A string-to-object map where the key is the normalization field and the object contains information about the field.
         """
         pulumi.set(__self__, "features", features)
         pulumi.set(__self__, "processor_type", processor_type)
@@ -1256,6 +1500,10 @@ class ProcessorJobProcessorConfigArgs:
             pulumi.set(__self__, "is_zip_output_enabled", is_zip_output_enabled)
         if language is not None:
             pulumi.set(__self__, "language", language)
+        if model_id is not None:
+            pulumi.set(__self__, "model_id", model_id)
+        if normalization_fields is not None:
+            pulumi.set(__self__, "normalization_fields", normalization_fields)
 
     @_builtins.property
     @pulumi.getter
@@ -1321,6 +1569,30 @@ class ProcessorJobProcessorConfigArgs:
     def language(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "language", value)
 
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Unique identifier custom model OCID that should be used for inference.
+        """
+        return pulumi.get(self, "model_id")
+
+    @model_id.setter
+    def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "model_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="normalizationFields")
+    def normalization_fields(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]:
+        """
+        A string-to-object map where the key is the normalization field and the object contains information about the field.
+        """
+        return pulumi.get(self, "normalization_fields")
+
+    @normalization_fields.setter
+    def normalization_fields(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldArgs']]]]):
+        pulumi.set(self, "normalization_fields", value)
+
 
 if not MYPY:
     class ProcessorJobProcessorConfigFeatureArgsDict(TypedDict):
@@ -1332,6 +1604,7 @@ if not MYPY:
         * `TABLE_EXTRACTION`: Detect and extract data in tables.
         * `KEY_VALUE_EXTRACTION`: Extract form fields.
         * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         """
         generate_searchable_pdf: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -1343,7 +1616,11 @@ if not MYPY:
         """
         model_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The custom model ID.
+        Unique identifier custom model OCID that should be used for inference.
+        """
+        selection_mark_detection: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Whether checkbox detection feature is enabled or disabled.
         """
         tenancy_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1359,6 +1636,7 @@ class ProcessorJobProcessorConfigFeatureArgs:
                  generate_searchable_pdf: Optional[pulumi.Input[_builtins.bool]] = None,
                  max_results: Optional[pulumi.Input[_builtins.int]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 selection_mark_detection: Optional[pulumi.Input[_builtins.bool]] = None,
                  tenancy_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] feature_type: The type of document analysis requested. The allowed values are:
@@ -1367,9 +1645,11 @@ class ProcessorJobProcessorConfigFeatureArgs:
                * `TABLE_EXTRACTION`: Detect and extract data in tables.
                * `KEY_VALUE_EXTRACTION`: Extract form fields.
                * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+               * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         :param pulumi.Input[_builtins.bool] generate_searchable_pdf: Whether or not to generate a searchable PDF file.
         :param pulumi.Input[_builtins.int] max_results: The maximum number of results to return.
-        :param pulumi.Input[_builtins.str] model_id: The custom model ID.
+        :param pulumi.Input[_builtins.str] model_id: Unique identifier custom model OCID that should be used for inference.
+        :param pulumi.Input[_builtins.bool] selection_mark_detection: Whether checkbox detection feature is enabled or disabled.
         :param pulumi.Input[_builtins.str] tenancy_id: The custom model tenancy ID when modelId represents aliasName.
         """
         pulumi.set(__self__, "feature_type", feature_type)
@@ -1379,6 +1659,8 @@ class ProcessorJobProcessorConfigFeatureArgs:
             pulumi.set(__self__, "max_results", max_results)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
+        if selection_mark_detection is not None:
+            pulumi.set(__self__, "selection_mark_detection", selection_mark_detection)
         if tenancy_id is not None:
             pulumi.set(__self__, "tenancy_id", tenancy_id)
 
@@ -1392,6 +1674,7 @@ class ProcessorJobProcessorConfigFeatureArgs:
         * `TABLE_EXTRACTION`: Detect and extract data in tables.
         * `KEY_VALUE_EXTRACTION`: Extract form fields.
         * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+        * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
         """
         return pulumi.get(self, "feature_type")
 
@@ -1427,13 +1710,25 @@ class ProcessorJobProcessorConfigFeatureArgs:
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The custom model ID.
+        Unique identifier custom model OCID that should be used for inference.
         """
         return pulumi.get(self, "model_id")
 
     @model_id.setter
     def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "model_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="selectionMarkDetection")
+    def selection_mark_detection(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Whether checkbox detection feature is enabled or disabled.
+        """
+        return pulumi.get(self, "selection_mark_detection")
+
+    @selection_mark_detection.setter
+    def selection_mark_detection(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "selection_mark_detection", value)
 
     @_builtins.property
     @pulumi.getter(name="tenancyId")
@@ -1446,6 +1741,181 @@ class ProcessorJobProcessorConfigFeatureArgs:
     @tenancy_id.setter
     def tenancy_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "tenancy_id", value)
+
+
+if not MYPY:
+    class ProcessorJobProcessorConfigNormalizationFieldArgsDict(TypedDict):
+        maps: NotRequired[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgsDict']]]]
+        """
+        A wrapped map.
+        """
+elif False:
+    ProcessorJobProcessorConfigNormalizationFieldArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ProcessorJobProcessorConfigNormalizationFieldArgs:
+    def __init__(__self__, *,
+                 maps: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]] maps: A wrapped map.
+        """
+        if maps is not None:
+            pulumi.set(__self__, "maps", maps)
+
+    @_builtins.property
+    @pulumi.getter
+    def maps(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]:
+        """
+        A wrapped map.
+        """
+        return pulumi.get(self, "maps")
+
+    @maps.setter
+    def maps(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ProcessorJobProcessorConfigNormalizationFieldMapArgs']]]]):
+        pulumi.set(self, "maps", value)
+
+
+if not MYPY:
+    class ProcessorJobProcessorConfigNormalizationFieldMapArgsDict(TypedDict):
+        normalization_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A string mapping to the normalization type.
+        """
+elif False:
+    ProcessorJobProcessorConfigNormalizationFieldMapArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ProcessorJobProcessorConfigNormalizationFieldMapArgs:
+    def __init__(__self__, *,
+                 normalization_type: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] normalization_type: A string mapping to the normalization type.
+        """
+        if normalization_type is not None:
+            pulumi.set(__self__, "normalization_type", normalization_type)
+
+    @_builtins.property
+    @pulumi.getter(name="normalizationType")
+    def normalization_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A string mapping to the normalization type.
+        """
+        return pulumi.get(self, "normalization_type")
+
+    @normalization_type.setter
+    def normalization_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "normalization_type", value)
+
+
+if not MYPY:
+    class ProjectLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        """
+        Lock type.
+        """
+        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The compartment identifier.
+        """
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        When the project was created, as an RFC3339 datetime string.
+        """
+elif False:
+    ProjectLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ProjectLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Lock type.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[_builtins.str] message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param pulumi.Input[_builtins.str] time_created: When the project was created, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The compartment identifier.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        When the project was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:

@@ -42,6 +42,7 @@ namespace Pulumi.Oci.Redis
     ///             { "bar-key", "value" },
     ///         },
     ///         NsgIds = redisClusterNsgIds,
+    ///         OciCacheConfigSetId = testOciCacheConfigSet.Id,
     ///         ShardCount = redisClusterShardCount,
     ///     });
     /// 
@@ -118,6 +119,12 @@ namespace Pulumi.Oci.Redis
         /// </summary>
         [Output("nsgIds")]
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        /// </summary>
+        [Output("ociCacheConfigSetId")]
+        public Output<string> OciCacheConfigSetId { get; private set; } = null!;
 
         /// <summary>
         /// The private IP address of the API endpoint for the cluster's primary node.
@@ -302,6 +309,12 @@ namespace Pulumi.Oci.Redis
         }
 
         /// <summary>
+        /// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        /// </summary>
+        [Input("ociCacheConfigSetId")]
+        public Input<string>? OciCacheConfigSetId { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
         /// </summary>
         [Input("shardCount")]
@@ -414,6 +427,12 @@ namespace Pulumi.Oci.Redis
             get => _nsgIds ?? (_nsgIds = new InputList<string>());
             set => _nsgIds = value;
         }
+
+        /// <summary>
+        /// (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        /// </summary>
+        [Input("ociCacheConfigSetId")]
+        public Input<string>? OciCacheConfigSetId { get; set; }
 
         /// <summary>
         /// The private IP address of the API endpoint for the cluster's primary node.

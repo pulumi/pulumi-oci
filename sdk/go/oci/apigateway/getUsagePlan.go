@@ -69,11 +69,14 @@ type LookupUsagePlanResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string             `pulumi:"lifecycleDetails"`
+	Locks            []GetUsagePlanLock `pulumi:"locks"`
 	// The current state of the usage plan.
-	State string `pulumi:"state"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -145,14 +148,26 @@ func (o LookupUsagePlanResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupUsagePlanResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupUsagePlanResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o LookupUsagePlanResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o LookupUsagePlanResultOutput) Locks() GetUsagePlanLockArrayOutput {
+	return o.ApplyT(func(v LookupUsagePlanResult) []GetUsagePlanLock { return v.Locks }).(GetUsagePlanLockArrayOutput)
+}
+
 // The current state of the usage plan.
 func (o LookupUsagePlanResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUsagePlanResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o LookupUsagePlanResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupUsagePlanResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

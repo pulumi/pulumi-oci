@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyError {
     /**
-     * @return Error from apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel.
      * 
      */
     private List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyError> applyErrors;
     /**
-     * @return The name of the replication channel
+     * @return The name of the replication channel.
      * 
      */
     private String channelName;
 
     private GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyError() {}
     /**
-     * @return Error from apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel.
      * 
      */
     public List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyError> applyErrors() {
         return this.applyErrors;
     }
     /**
-     * @return The name of the replication channel
+     * @return The name of the replication channel.
      * 
      */
     public String channelName() {

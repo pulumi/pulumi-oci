@@ -75,11 +75,14 @@ type Subscriber struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails pulumi.StringOutput       `pulumi:"lifecycleDetails"`
+	Locks            SubscriberLockArrayOutput `pulumi:"locks"`
 	// The current state of the subscriber.
-	State pulumi.StringOutput `pulumi:"state"`
+	State      pulumi.StringOutput    `pulumi:"state"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -139,11 +142,14 @@ type subscriberState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string          `pulumi:"lifecycleDetails"`
+	Locks            []SubscriberLock `pulumi:"locks"`
 	// The current state of the subscriber.
-	State *string `pulumi:"state"`
+	State      *string           `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -165,11 +171,14 @@ type SubscriberState struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	Locks            SubscriberLockArrayInput
 	// The current state of the subscriber.
-	State pulumi.StringPtrInput
+	State      pulumi.StringPtrInput
+	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -195,7 +204,9 @@ type subscriberArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	Locks          []SubscriberLock  `pulumi:"locks"`
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
 	//
 	// ** IMPORTANT **
@@ -214,7 +225,9 @@ type SubscriberArgs struct {
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	Locks          SubscriberLockArrayInput
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
 	//
 	// ** IMPORTANT **
@@ -334,14 +347,26 @@ func (o SubscriberOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+func (o SubscriberOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Subscriber) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o SubscriberOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o SubscriberOutput) Locks() SubscriberLockArrayOutput {
+	return o.ApplyT(func(v *Subscriber) SubscriberLockArrayOutput { return v.Locks }).(SubscriberLockArrayOutput)
+}
+
 // The current state of the subscriber.
 func (o SubscriberOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+func (o SubscriberOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Subscriber) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

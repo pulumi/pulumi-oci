@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.inputs.ProcessorJobProcessorConfigFeatureArgs;
+import com.pulumi.oci.AiDocument.inputs.ProcessorJobProcessorConfigNormalizationFieldArgs;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -80,6 +81,36 @@ public final class ProcessorJobProcessorConfigArgs extends com.pulumi.resources.
     }
 
     /**
+     * Unique identifier custom model OCID that should be used for inference.
+     * 
+     */
+    @Import(name="modelId")
+    private @Nullable Output<String> modelId;
+
+    /**
+     * @return Unique identifier custom model OCID that should be used for inference.
+     * 
+     */
+    public Optional<Output<String>> modelId() {
+        return Optional.ofNullable(this.modelId);
+    }
+
+    /**
+     * A string-to-object map where the key is the normalization field and the object contains information about the field.
+     * 
+     */
+    @Import(name="normalizationFields")
+    private @Nullable Output<List<ProcessorJobProcessorConfigNormalizationFieldArgs>> normalizationFields;
+
+    /**
+     * @return A string-to-object map where the key is the normalization field and the object contains information about the field.
+     * 
+     */
+    public Optional<Output<List<ProcessorJobProcessorConfigNormalizationFieldArgs>>> normalizationFields() {
+        return Optional.ofNullable(this.normalizationFields);
+    }
+
+    /**
      * The type of the processor.
      * 
      * ** IMPORTANT **
@@ -107,6 +138,8 @@ public final class ProcessorJobProcessorConfigArgs extends com.pulumi.resources.
         this.features = $.features;
         this.isZipOutputEnabled = $.isZipOutputEnabled;
         this.language = $.language;
+        this.modelId = $.modelId;
+        this.normalizationFields = $.normalizationFields;
         this.processorType = $.processorType;
     }
 
@@ -220,6 +253,58 @@ public final class ProcessorJobProcessorConfigArgs extends com.pulumi.resources.
          */
         public Builder language(String language) {
             return language(Output.of(language));
+        }
+
+        /**
+         * @param modelId Unique identifier custom model OCID that should be used for inference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(@Nullable Output<String> modelId) {
+            $.modelId = modelId;
+            return this;
+        }
+
+        /**
+         * @param modelId Unique identifier custom model OCID that should be used for inference.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelId(String modelId) {
+            return modelId(Output.of(modelId));
+        }
+
+        /**
+         * @param normalizationFields A string-to-object map where the key is the normalization field and the object contains information about the field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder normalizationFields(@Nullable Output<List<ProcessorJobProcessorConfigNormalizationFieldArgs>> normalizationFields) {
+            $.normalizationFields = normalizationFields;
+            return this;
+        }
+
+        /**
+         * @param normalizationFields A string-to-object map where the key is the normalization field and the object contains information about the field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder normalizationFields(List<ProcessorJobProcessorConfigNormalizationFieldArgs> normalizationFields) {
+            return normalizationFields(Output.of(normalizationFields));
+        }
+
+        /**
+         * @param normalizationFields A string-to-object map where the key is the normalization field and the object contains information about the field.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder normalizationFields(ProcessorJobProcessorConfigNormalizationFieldArgs... normalizationFields) {
+            return normalizationFields(List.of(normalizationFields));
         }
 
         /**

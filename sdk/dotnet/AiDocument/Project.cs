@@ -88,6 +88,12 @@ namespace Pulumi.Oci.AiDocument
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.ProjectLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
         /// The current state of the project.
         /// </summary>
         [Output("state")]
@@ -203,6 +209,18 @@ namespace Pulumi.Oci.AiDocument
             set => _freeformTags = value;
         }
 
+        [Input("locks")]
+        private InputList<Inputs.ProjectLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ProjectLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ProjectLockArgs>());
+            set => _locks = value;
+        }
+
         public ProjectArgs()
         {
         }
@@ -262,6 +280,18 @@ namespace Pulumi.Oci.AiDocument
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ProjectLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ProjectLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ProjectLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The current state of the project.

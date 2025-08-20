@@ -11,6 +11,7 @@ import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaun
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs;
+import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs;
@@ -115,6 +116,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    @Import(name="computeClusterId")
+    private @Nullable Output<String> computeClusterId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+     * 
+     */
+    public Optional<Output<String>> computeClusterId() {
+        return Optional.ofNullable(this.computeClusterId);
     }
 
     /**
@@ -336,6 +352,21 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
     }
 
     /**
+     * The details for providing placement constraints.
+     * 
+     */
+    @Import(name="placementConstraintDetails")
+    private @Nullable Output<InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs> placementConstraintDetails;
+
+    /**
+     * @return The details for providing placement constraints.
+     * 
+     */
+    public Optional<Output<InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs>> placementConstraintDetails() {
+        return Optional.ofNullable(this.placementConstraintDetails);
+    }
+
+    /**
      * The platform configuration requested for the instance.
      * 
      */
@@ -445,6 +476,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         this.capacityReservationId = $.capacityReservationId;
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
+        this.computeClusterId = $.computeClusterId;
         this.createVnicDetails = $.createVnicDetails;
         this.dedicatedVmHostId = $.dedicatedVmHostId;
         this.definedTags = $.definedTags;
@@ -459,6 +491,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
         this.launchOptions = $.launchOptions;
         this.licensingConfigs = $.licensingConfigs;
         this.metadata = $.metadata;
+        this.placementConstraintDetails = $.placementConstraintDetails;
         this.platformConfig = $.platformConfig;
         this.preemptibleInstanceConfig = $.preemptibleInstanceConfig;
         this.preferredMaintenanceAction = $.preferredMaintenanceAction;
@@ -610,6 +643,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(@Nullable Output<String> computeClusterId) {
+            $.computeClusterId = computeClusterId;
+            return this;
+        }
+
+        /**
+         * @param computeClusterId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeClusterId(String computeClusterId) {
+            return computeClusterId(Output.of(computeClusterId));
         }
 
         /**
@@ -912,6 +966,27 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          */
         public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
+        }
+
+        /**
+         * @param placementConstraintDetails The details for providing placement constraints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(@Nullable Output<InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs> placementConstraintDetails) {
+            $.placementConstraintDetails = placementConstraintDetails;
+            return this;
+        }
+
+        /**
+         * @param placementConstraintDetails The details for providing placement constraints.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder placementConstraintDetails(InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs placementConstraintDetails) {
+            return placementConstraintDetails(Output.of(placementConstraintDetails));
         }
 
         /**

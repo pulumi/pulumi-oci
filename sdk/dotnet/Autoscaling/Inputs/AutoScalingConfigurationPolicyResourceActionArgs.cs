@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// The type of resource action.
+        /// The category of action to run on the resource.
         /// </summary>
         [Input("actionType", required: true)]
         public Input<string> ActionType { get; set; } = null!;

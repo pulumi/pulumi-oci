@@ -5,7 +5,9 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.outputs.GetJobJobConfigurationDetailStartupProbeDetail;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -27,10 +29,15 @@ public final class GetJobJobConfigurationDetail {
      */
     private String jobType;
     /**
-     * @return A time bound for the execution of the job. Timer starts when the job becomes active.
+     * @return A time bound for the execution of the job run. Timer starts when the job run is in progress.
      * 
      */
     private String maximumRuntimeInMinutes;
+    /**
+     * @return The probe indicates whether the application within the job run has started.
+     * 
+     */
+    private List<GetJobJobConfigurationDetailStartupProbeDetail> startupProbeDetails;
 
     private GetJobJobConfigurationDetail() {}
     /**
@@ -55,11 +62,18 @@ public final class GetJobJobConfigurationDetail {
         return this.jobType;
     }
     /**
-     * @return A time bound for the execution of the job. Timer starts when the job becomes active.
+     * @return A time bound for the execution of the job run. Timer starts when the job run is in progress.
      * 
      */
     public String maximumRuntimeInMinutes() {
         return this.maximumRuntimeInMinutes;
+    }
+    /**
+     * @return The probe indicates whether the application within the job run has started.
+     * 
+     */
+    public List<GetJobJobConfigurationDetailStartupProbeDetail> startupProbeDetails() {
+        return this.startupProbeDetails;
     }
 
     public static Builder builder() {
@@ -75,6 +89,7 @@ public final class GetJobJobConfigurationDetail {
         private Map<String,String> environmentVariables;
         private String jobType;
         private String maximumRuntimeInMinutes;
+        private List<GetJobJobConfigurationDetailStartupProbeDetail> startupProbeDetails;
         public Builder() {}
         public Builder(GetJobJobConfigurationDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -82,6 +97,7 @@ public final class GetJobJobConfigurationDetail {
     	      this.environmentVariables = defaults.environmentVariables;
     	      this.jobType = defaults.jobType;
     	      this.maximumRuntimeInMinutes = defaults.maximumRuntimeInMinutes;
+    	      this.startupProbeDetails = defaults.startupProbeDetails;
         }
 
         @CustomType.Setter
@@ -116,12 +132,24 @@ public final class GetJobJobConfigurationDetail {
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
+        @CustomType.Setter
+        public Builder startupProbeDetails(List<GetJobJobConfigurationDetailStartupProbeDetail> startupProbeDetails) {
+            if (startupProbeDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobJobConfigurationDetail", "startupProbeDetails");
+            }
+            this.startupProbeDetails = startupProbeDetails;
+            return this;
+        }
+        public Builder startupProbeDetails(GetJobJobConfigurationDetailStartupProbeDetail... startupProbeDetails) {
+            return startupProbeDetails(List.of(startupProbeDetails));
+        }
         public GetJobJobConfigurationDetail build() {
             final var _resultValue = new GetJobJobConfigurationDetail();
             _resultValue.commandLineArguments = commandLineArguments;
             _resultValue.environmentVariables = environmentVariables;
             _resultValue.jobType = jobType;
             _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            _resultValue.startupProbeDetails = startupProbeDetails;
             return _resultValue;
         }
     }

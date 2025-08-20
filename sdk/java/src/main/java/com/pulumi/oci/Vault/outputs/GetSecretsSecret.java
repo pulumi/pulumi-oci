@@ -5,10 +5,12 @@ package com.pulumi.oci.Vault.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Vault.outputs.GetSecretsSecretReplicationConfig;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecretRotationConfig;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecretSecretContent;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecretSecretGenerationContext;
 import com.pulumi.oci.Vault.outputs.GetSecretsSecretSecretRule;
+import com.pulumi.oci.Vault.outputs.GetSecretsSecretSourceRegionInformation;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -54,6 +56,11 @@ public final class GetSecretsSecret {
      */
     private Boolean isAutoGenerationEnabled;
     /**
+     * @return A Boolean value that indicates whether the secret is a source or replica secret.
+     * 
+     */
+    private Boolean isReplica;
+    /**
      * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
@@ -78,6 +85,11 @@ public final class GetSecretsSecret {
      * 
      */
     private String nextRotationTime;
+    /**
+     * @return Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    private List<GetSecretsSecretReplicationConfig> replicationConfigs;
     /**
      * @return Defines the frequency of the rotation and the information about the target system
      * 
@@ -104,6 +116,11 @@ public final class GetSecretsSecret {
      * 
      */
     private List<GetSecretsSecretSecretRule> secretRules;
+    /**
+     * @return Details for the source that the source secret has.
+     * 
+     */
+    private List<GetSecretsSecretSourceRegionInformation> sourceRegionInformations;
     /**
      * @return A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
@@ -184,6 +201,13 @@ public final class GetSecretsSecret {
         return this.isAutoGenerationEnabled;
     }
     /**
+     * @return A Boolean value that indicates whether the secret is a source or replica secret.
+     * 
+     */
+    public Boolean isReplica() {
+        return this.isReplica;
+    }
+    /**
      * @return The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
      * 
      */
@@ -217,6 +241,13 @@ public final class GetSecretsSecret {
      */
     public String nextRotationTime() {
         return this.nextRotationTime;
+    }
+    /**
+     * @return Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    public List<GetSecretsSecretReplicationConfig> replicationConfigs() {
+        return this.replicationConfigs;
     }
     /**
      * @return Defines the frequency of the rotation and the information about the target system
@@ -255,6 +286,13 @@ public final class GetSecretsSecret {
      */
     public List<GetSecretsSecretSecretRule> secretRules() {
         return this.secretRules;
+    }
+    /**
+     * @return Details for the source that the source secret has.
+     * 
+     */
+    public List<GetSecretsSecretSourceRegionInformation> sourceRegionInformations() {
+        return this.sourceRegionInformations;
     }
     /**
      * @return A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -309,17 +347,20 @@ public final class GetSecretsSecret {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isAutoGenerationEnabled;
+        private Boolean isReplica;
         private String keyId;
         private String lastRotationTime;
         private String lifecycleDetails;
         private Map<String,String> metadata;
         private String nextRotationTime;
+        private List<GetSecretsSecretReplicationConfig> replicationConfigs;
         private List<GetSecretsSecretRotationConfig> rotationConfigs;
         private String rotationStatus;
         private List<GetSecretsSecretSecretContent> secretContents;
         private List<GetSecretsSecretSecretGenerationContext> secretGenerationContexts;
         private String secretName;
         private List<GetSecretsSecretSecretRule> secretRules;
+        private List<GetSecretsSecretSourceRegionInformation> sourceRegionInformations;
         private String state;
         private String timeCreated;
         private String timeOfCurrentVersionExpiry;
@@ -336,17 +377,20 @@ public final class GetSecretsSecret {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutoGenerationEnabled = defaults.isAutoGenerationEnabled;
+    	      this.isReplica = defaults.isReplica;
     	      this.keyId = defaults.keyId;
     	      this.lastRotationTime = defaults.lastRotationTime;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.metadata = defaults.metadata;
     	      this.nextRotationTime = defaults.nextRotationTime;
+    	      this.replicationConfigs = defaults.replicationConfigs;
     	      this.rotationConfigs = defaults.rotationConfigs;
     	      this.rotationStatus = defaults.rotationStatus;
     	      this.secretContents = defaults.secretContents;
     	      this.secretGenerationContexts = defaults.secretGenerationContexts;
     	      this.secretName = defaults.secretName;
     	      this.secretRules = defaults.secretRules;
+    	      this.sourceRegionInformations = defaults.sourceRegionInformations;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeOfCurrentVersionExpiry = defaults.timeOfCurrentVersionExpiry;
@@ -419,6 +463,14 @@ public final class GetSecretsSecret {
             return this;
         }
         @CustomType.Setter
+        public Builder isReplica(Boolean isReplica) {
+            if (isReplica == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "isReplica");
+            }
+            this.isReplica = isReplica;
+            return this;
+        }
+        @CustomType.Setter
         public Builder keyId(String keyId) {
             if (keyId == null) {
               throw new MissingRequiredPropertyException("GetSecretsSecret", "keyId");
@@ -457,6 +509,17 @@ public final class GetSecretsSecret {
             }
             this.nextRotationTime = nextRotationTime;
             return this;
+        }
+        @CustomType.Setter
+        public Builder replicationConfigs(List<GetSecretsSecretReplicationConfig> replicationConfigs) {
+            if (replicationConfigs == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "replicationConfigs");
+            }
+            this.replicationConfigs = replicationConfigs;
+            return this;
+        }
+        public Builder replicationConfigs(GetSecretsSecretReplicationConfig... replicationConfigs) {
+            return replicationConfigs(List.of(replicationConfigs));
         }
         @CustomType.Setter
         public Builder rotationConfigs(List<GetSecretsSecretRotationConfig> rotationConfigs) {
@@ -519,6 +582,17 @@ public final class GetSecretsSecret {
             return secretRules(List.of(secretRules));
         }
         @CustomType.Setter
+        public Builder sourceRegionInformations(List<GetSecretsSecretSourceRegionInformation> sourceRegionInformations) {
+            if (sourceRegionInformations == null) {
+              throw new MissingRequiredPropertyException("GetSecretsSecret", "sourceRegionInformations");
+            }
+            this.sourceRegionInformations = sourceRegionInformations;
+            return this;
+        }
+        public Builder sourceRegionInformations(GetSecretsSecretSourceRegionInformation... sourceRegionInformations) {
+            return sourceRegionInformations(List.of(sourceRegionInformations));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetSecretsSecret", "state");
@@ -568,17 +642,20 @@ public final class GetSecretsSecret {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isAutoGenerationEnabled = isAutoGenerationEnabled;
+            _resultValue.isReplica = isReplica;
             _resultValue.keyId = keyId;
             _resultValue.lastRotationTime = lastRotationTime;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.metadata = metadata;
             _resultValue.nextRotationTime = nextRotationTime;
+            _resultValue.replicationConfigs = replicationConfigs;
             _resultValue.rotationConfigs = rotationConfigs;
             _resultValue.rotationStatus = rotationStatus;
             _resultValue.secretContents = secretContents;
             _resultValue.secretGenerationContexts = secretGenerationContexts;
             _resultValue.secretName = secretName;
             _resultValue.secretRules = secretRules;
+            _resultValue.sourceRegionInformations = sourceRegionInformations;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeOfCurrentVersionExpiry = timeOfCurrentVersionExpiry;

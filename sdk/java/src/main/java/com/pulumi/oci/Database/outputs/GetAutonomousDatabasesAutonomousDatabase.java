@@ -90,10 +90,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs;
     /**
-     * @return Retention period, in days, for backups.
+     * @return Retention period, in days, for long-term backups
      * 
      */
     private Integer backupRetentionPeriodInDays;
+    /**
+     * @return The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
     private Double byolComputeCountLimit;
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -216,10 +220,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String displayName;
-    /**
-     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
-     * 
-     */
     private Boolean enableDeleteScheduledOperations;
     /**
      * @return Key History Entry.
@@ -292,15 +292,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Boolean isDedicated;
     /**
-     * @return Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
+     * @return Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      * 
      */
     private Boolean isDevTier;
-    /**
-     * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
-     * 
-     */
+    private Boolean isDisableDbVersionUpgradeSchedule;
     private Boolean isDisconnectPeer;
     /**
      * @return Filter on the value of the resource&#39;s &#39;isFreeTier&#39; property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
@@ -343,6 +339,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private Boolean isReplicateAutomaticBackups;
+    private Boolean isScheduleDbVersionUpgradeToEarliest;
     /**
      * @deprecated
      * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
@@ -377,7 +374,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String kmsKeyLifecycleDetails;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      * 
      */
     private String kmsKeyVersionId;
@@ -416,10 +413,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String maintenanceTargetComponent;
-    /**
-     * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-     * 
-     */
     private Integer maxCpuCoreCount;
     /**
      * @return The amount of memory (in GBs) enabled per ECPU or OCPU.
@@ -462,10 +455,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String operationsInsightsStatus;
-    /**
-     * @return The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
-     * 
-     */
     private String peerDbId;
     /**
      * @return The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of standby databases located in Autonomous Data Guard remote regions that are associated with the source database. Note that for Autonomous Database Serverless instances, standby databases located in the same region as the source primary database do not have OCIDs.
@@ -585,7 +574,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private String subnetId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
     private String subscriptionId;
@@ -621,6 +609,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private String timeDisasterRecoveryRoleChanged;
+    /**
+     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    private String timeEarliestAvailableDbVersionUpgrade;
+    /**
+     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    private String timeLatestAvailableDbVersionUpgrade;
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
      * 
@@ -677,6 +675,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String timeReclamationOfFreeAutonomousDatabase;
     /**
+     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * 
+     */
+    private String timeScheduledDbVersionUpgrade;
+    /**
      * @return The date and time the Autonomous Database was most recently undeleted.
      * 
      */
@@ -704,7 +707,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private Integer usedDataStorageSizeInTbs;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     private String vaultId;
@@ -802,12 +805,16 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.backupConfigs;
     }
     /**
-     * @return Retention period, in days, for backups.
+     * @return Retention period, in days, for long-term backups
      * 
      */
     public Integer backupRetentionPeriodInDays() {
         return this.backupRetentionPeriodInDays;
     }
+    /**
+     * @return The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
     public Double byolComputeCountLimit() {
         return this.byolComputeCountLimit;
     }
@@ -982,10 +989,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String displayName() {
         return this.displayName;
     }
-    /**
-     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
-     * 
-     */
     public Boolean enableDeleteScheduledOperations() {
         return this.enableDeleteScheduledOperations;
     }
@@ -1088,17 +1091,15 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isDedicated;
     }
     /**
-     * @return Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled
+     * @return Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud{@literal @}Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      * 
      */
     public Boolean isDevTier() {
         return this.isDevTier;
     }
-    /**
-     * @return If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
-     * 
-     */
+    public Boolean isDisableDbVersionUpgradeSchedule() {
+        return this.isDisableDbVersionUpgradeSchedule;
+    }
     public Boolean isDisconnectPeer() {
         return this.isDisconnectPeer;
     }
@@ -1161,6 +1162,9 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public Boolean isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
     }
+    public Boolean isScheduleDbVersionUpgradeToEarliest() {
+        return this.isScheduleDbVersionUpgradeToEarliest;
+    }
     /**
      * @deprecated
      * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
@@ -1209,7 +1213,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.kmsKeyLifecycleDetails;
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      * 
      */
     public String kmsKeyVersionId() {
@@ -1264,10 +1268,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String maintenanceTargetComponent() {
         return this.maintenanceTargetComponent;
     }
-    /**
-     * @return The number of Max OCPU cores to be made available to the autonomous database with auto scaling of cpu enabled.
-     * 
-     */
     public Integer maxCpuCoreCount() {
         return this.maxCpuCoreCount;
     }
@@ -1328,10 +1328,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     public String operationsInsightsStatus() {
         return this.operationsInsightsStatus;
     }
-    /**
-     * @return The database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Disaster Recovery peer (source Primary) database, which is located in a different (remote) region from the current peer database.
-     * 
-     */
     public String peerDbId() {
         return this.peerDbId;
     }
@@ -1509,7 +1505,6 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      * 
      */
     public String subscriptionId() {
@@ -1562,6 +1557,20 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String timeDisasterRecoveryRoleChanged() {
         return this.timeDisasterRecoveryRoleChanged;
+    }
+    /**
+     * @return The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    public String timeEarliestAvailableDbVersionUpgrade() {
+        return this.timeEarliestAvailableDbVersionUpgrade;
+    }
+    /**
+     * @return The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+     * 
+     */
+    public String timeLatestAvailableDbVersionUpgrade() {
+        return this.timeLatestAvailableDbVersionUpgrade;
     }
     /**
      * @return The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
@@ -1641,6 +1650,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
+     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai.
+     * 
+     */
+    public String timeScheduledDbVersionUpgrade() {
+        return this.timeScheduledDbVersionUpgrade;
+    }
+    /**
      * @return The date and time the Autonomous Database was most recently undeleted.
      * 
      */
@@ -1682,7 +1698,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.usedDataStorageSizeInTbs;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
      * 
      */
     public String vaultId() {
@@ -1762,6 +1778,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Boolean isDataGuardEnabled;
         private Boolean isDedicated;
         private Boolean isDevTier;
+        private Boolean isDisableDbVersionUpgradeSchedule;
         private Boolean isDisconnectPeer;
         private Boolean isFreeTier;
         private Boolean isLocalDataGuardEnabled;
@@ -1772,6 +1789,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private Boolean isRefreshableClone;
         private Boolean isRemoteDataGuardEnabled;
         private Boolean isReplicateAutomaticBackups;
+        private Boolean isScheduleDbVersionUpgradeToEarliest;
         private Boolean isShrinkOnly;
         private List<GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntry> keyHistoryEntries;
         private String keyStoreId;
@@ -1834,6 +1852,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timeDataGuardRoleChanged;
         private String timeDeletionOfFreeAutonomousDatabase;
         private String timeDisasterRecoveryRoleChanged;
+        private String timeEarliestAvailableDbVersionUpgrade;
+        private String timeLatestAvailableDbVersionUpgrade;
         private String timeLocalDataGuardEnabled;
         private String timeMaintenanceBegin;
         private String timeMaintenanceEnd;
@@ -1845,6 +1865,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String timeOfLastSwitchover;
         private String timeOfNextRefresh;
         private String timeReclamationOfFreeAutonomousDatabase;
+        private String timeScheduledDbVersionUpgrade;
         private String timeUndeleted;
         private String timeUntilReconnectCloneEnabled;
         private String timestamp;
@@ -1914,6 +1935,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.isDataGuardEnabled = defaults.isDataGuardEnabled;
     	      this.isDedicated = defaults.isDedicated;
     	      this.isDevTier = defaults.isDevTier;
+    	      this.isDisableDbVersionUpgradeSchedule = defaults.isDisableDbVersionUpgradeSchedule;
     	      this.isDisconnectPeer = defaults.isDisconnectPeer;
     	      this.isFreeTier = defaults.isFreeTier;
     	      this.isLocalDataGuardEnabled = defaults.isLocalDataGuardEnabled;
@@ -1924,6 +1946,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.isRefreshableClone = defaults.isRefreshableClone;
     	      this.isRemoteDataGuardEnabled = defaults.isRemoteDataGuardEnabled;
     	      this.isReplicateAutomaticBackups = defaults.isReplicateAutomaticBackups;
+    	      this.isScheduleDbVersionUpgradeToEarliest = defaults.isScheduleDbVersionUpgradeToEarliest;
     	      this.isShrinkOnly = defaults.isShrinkOnly;
     	      this.keyHistoryEntries = defaults.keyHistoryEntries;
     	      this.keyStoreId = defaults.keyStoreId;
@@ -1986,6 +2009,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timeDataGuardRoleChanged = defaults.timeDataGuardRoleChanged;
     	      this.timeDeletionOfFreeAutonomousDatabase = defaults.timeDeletionOfFreeAutonomousDatabase;
     	      this.timeDisasterRecoveryRoleChanged = defaults.timeDisasterRecoveryRoleChanged;
+    	      this.timeEarliestAvailableDbVersionUpgrade = defaults.timeEarliestAvailableDbVersionUpgrade;
+    	      this.timeLatestAvailableDbVersionUpgrade = defaults.timeLatestAvailableDbVersionUpgrade;
     	      this.timeLocalDataGuardEnabled = defaults.timeLocalDataGuardEnabled;
     	      this.timeMaintenanceBegin = defaults.timeMaintenanceBegin;
     	      this.timeMaintenanceEnd = defaults.timeMaintenanceEnd;
@@ -1997,6 +2022,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.timeOfLastSwitchover = defaults.timeOfLastSwitchover;
     	      this.timeOfNextRefresh = defaults.timeOfNextRefresh;
     	      this.timeReclamationOfFreeAutonomousDatabase = defaults.timeReclamationOfFreeAutonomousDatabase;
+    	      this.timeScheduledDbVersionUpgrade = defaults.timeScheduledDbVersionUpgrade;
     	      this.timeUndeleted = defaults.timeUndeleted;
     	      this.timeUntilReconnectCloneEnabled = defaults.timeUntilReconnectCloneEnabled;
     	      this.timestamp = defaults.timestamp;
@@ -2495,6 +2521,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isDisableDbVersionUpgradeSchedule(Boolean isDisableDbVersionUpgradeSchedule) {
+            if (isDisableDbVersionUpgradeSchedule == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isDisableDbVersionUpgradeSchedule");
+            }
+            this.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isDisconnectPeer(Boolean isDisconnectPeer) {
             if (isDisconnectPeer == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isDisconnectPeer");
@@ -2572,6 +2606,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isReplicateAutomaticBackups");
             }
             this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isScheduleDbVersionUpgradeToEarliest(Boolean isScheduleDbVersionUpgradeToEarliest) {
+            if (isScheduleDbVersionUpgradeToEarliest == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "isScheduleDbVersionUpgradeToEarliest");
+            }
+            this.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             return this;
         }
         @CustomType.Setter
@@ -3110,6 +3152,22 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder timeEarliestAvailableDbVersionUpgrade(String timeEarliestAvailableDbVersionUpgrade) {
+            if (timeEarliestAvailableDbVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeEarliestAvailableDbVersionUpgrade");
+            }
+            this.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLatestAvailableDbVersionUpgrade(String timeLatestAvailableDbVersionUpgrade) {
+            if (timeLatestAvailableDbVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeLatestAvailableDbVersionUpgrade");
+            }
+            this.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeLocalDataGuardEnabled(String timeLocalDataGuardEnabled) {
             if (timeLocalDataGuardEnabled == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeLocalDataGuardEnabled");
@@ -3195,6 +3253,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeReclamationOfFreeAutonomousDatabase");
             }
             this.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeScheduledDbVersionUpgrade(String timeScheduledDbVersionUpgrade) {
+            if (timeScheduledDbVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "timeScheduledDbVersionUpgrade");
+            }
+            this.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             return this;
         }
         @CustomType.Setter
@@ -3331,6 +3397,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.isDataGuardEnabled = isDataGuardEnabled;
             _resultValue.isDedicated = isDedicated;
             _resultValue.isDevTier = isDevTier;
+            _resultValue.isDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
             _resultValue.isDisconnectPeer = isDisconnectPeer;
             _resultValue.isFreeTier = isFreeTier;
             _resultValue.isLocalDataGuardEnabled = isLocalDataGuardEnabled;
@@ -3341,6 +3408,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.isRefreshableClone = isRefreshableClone;
             _resultValue.isRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             _resultValue.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            _resultValue.isScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             _resultValue.isShrinkOnly = isShrinkOnly;
             _resultValue.keyHistoryEntries = keyHistoryEntries;
             _resultValue.keyStoreId = keyStoreId;
@@ -3403,6 +3471,8 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
             _resultValue.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             _resultValue.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            _resultValue.timeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            _resultValue.timeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             _resultValue.timeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             _resultValue.timeMaintenanceBegin = timeMaintenanceBegin;
             _resultValue.timeMaintenanceEnd = timeMaintenanceEnd;
@@ -3414,6 +3484,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.timeOfLastSwitchover = timeOfLastSwitchover;
             _resultValue.timeOfNextRefresh = timeOfNextRefresh;
             _resultValue.timeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            _resultValue.timeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             _resultValue.timeUndeleted = timeUndeleted;
             _resultValue.timeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             _resultValue.timestamp = timestamp;

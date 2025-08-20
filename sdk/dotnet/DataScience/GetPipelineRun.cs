@@ -160,6 +160,10 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The infrastructure configuration details of a pipeline or a step.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPipelineRunInfrastructureConfigurationOverrideDetailResult> InfrastructureConfigurationOverrideDetails;
+        /// <summary>
         /// Details of the state of the step run.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -234,6 +238,8 @@ namespace Pulumi.Oci.DataScience
 
             string id,
 
+            ImmutableArray<Outputs.GetPipelineRunInfrastructureConfigurationOverrideDetailResult> infrastructureConfigurationOverrideDetails,
+
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetPipelineRunLogConfigurationOverrideDetailResult> logConfigurationOverrideDetails,
@@ -273,6 +279,7 @@ namespace Pulumi.Oci.DataScience
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            InfrastructureConfigurationOverrideDetails = infrastructureConfigurationOverrideDetails;
             LifecycleDetails = lifecycleDetails;
             LogConfigurationOverrideDetails = logConfigurationOverrideDetails;
             LogDetails = logDetails;

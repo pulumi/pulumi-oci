@@ -15,8 +15,8 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// <summary>
         /// (Updatable) The shape used to launch the model deployment instances.
         /// </summary>
-        [Input("instanceShapeName", required: true)]
-        public Input<string> InstanceShapeName { get; set; } = null!;
+        [Input("instanceShapeName")]
+        public Input<string>? InstanceShapeName { get; set; }
 
         /// <summary>
         /// (Updatable) Details for the model-deployment instance shape configuration.

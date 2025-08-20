@@ -6,12 +6,15 @@ package com.pulumi.oci.AiDocument.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.GetModelComponentModel;
+import com.pulumi.oci.AiDocument.outputs.GetModelLock;
 import com.pulumi.oci.AiDocument.outputs.GetModelMetric;
+import com.pulumi.oci.AiDocument.outputs.GetModelModelSubType;
 import com.pulumi.oci.AiDocument.outputs.GetModelTestingDataset;
 import com.pulumi.oci.AiDocument.outputs.GetModelTrainingDataset;
 import com.pulumi.oci.AiDocument.outputs.GetModelValidationDataset;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -20,7 +23,7 @@ import java.util.Objects;
 @CustomType
 public final class GetModelResult {
     /**
-     * @return The compartment identifier.
+     * @return The lock compartment ID.
      * 
      */
     private String compartmentId;
@@ -55,6 +58,11 @@ public final class GetModelResult {
      */
     private String id;
     /**
+     * @return Number of replicas required for this model.
+     * 
+     */
+    private Integer inferenceUnits;
+    /**
      * @return Set to true when the model is created by using multiple key value extraction models.
      * 
      */
@@ -70,10 +78,20 @@ public final class GetModelResult {
      */
     private List<String> labels;
     /**
+     * @return The document language for model training, abbreviated according to the BCP 47 syntax.
+     * 
+     */
+    private String language;
+    /**
      * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetModelLock> locks;
     /**
      * @return The maximum model training time in hours, expressed as a decimal fraction.
      * 
@@ -89,6 +107,16 @@ public final class GetModelResult {
      * 
      */
     private String modelId;
+    /**
+     * @return The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+     * * `RECEIPT`
+     * * `INVOICE`
+     * * `PASSPORT`
+     * * `DRIVER_LICENSE`
+     * * `HEALTH_INSURANCE_ID`
+     * 
+     */
+    private List<GetModelModelSubType> modelSubTypes;
     /**
      * @return The type of the Document model.
      * 
@@ -152,7 +180,7 @@ public final class GetModelResult {
 
     private GetModelResult() {}
     /**
-     * @return The compartment identifier.
+     * @return The lock compartment ID.
      * 
      */
     public String compartmentId() {
@@ -201,6 +229,13 @@ public final class GetModelResult {
         return this.id;
     }
     /**
+     * @return Number of replicas required for this model.
+     * 
+     */
+    public Integer inferenceUnits() {
+        return this.inferenceUnits;
+    }
+    /**
      * @return Set to true when the model is created by using multiple key value extraction models.
      * 
      */
@@ -222,11 +257,25 @@ public final class GetModelResult {
         return this.labels;
     }
     /**
+     * @return The document language for model training, abbreviated according to the BCP 47 syntax.
+     * 
+     */
+    public String language() {
+        return this.language;
+    }
+    /**
      * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetModelLock> locks() {
+        return this.locks;
     }
     /**
      * @return The maximum model training time in hours, expressed as a decimal fraction.
@@ -248,6 +297,18 @@ public final class GetModelResult {
      */
     public String modelId() {
         return this.modelId;
+    }
+    /**
+     * @return The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+     * * `RECEIPT`
+     * * `INVOICE`
+     * * `PASSPORT`
+     * * `DRIVER_LICENSE`
+     * * `HEALTH_INSURANCE_ID`
+     * 
+     */
+    public List<GetModelModelSubType> modelSubTypes() {
+        return this.modelSubTypes;
     }
     /**
      * @return The type of the Document model.
@@ -350,13 +411,17 @@ public final class GetModelResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Integer inferenceUnits;
         private Boolean isComposedModel;
         private Boolean isQuickMode;
         private List<String> labels;
+        private String language;
         private String lifecycleDetails;
+        private List<GetModelLock> locks;
         private Double maxTrainingTimeInHours;
         private List<GetModelMetric> metrics;
         private String modelId;
+        private List<GetModelModelSubType> modelSubTypes;
         private String modelType;
         private String modelVersion;
         private String projectId;
@@ -379,13 +444,17 @@ public final class GetModelResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.inferenceUnits = defaults.inferenceUnits;
     	      this.isComposedModel = defaults.isComposedModel;
     	      this.isQuickMode = defaults.isQuickMode;
     	      this.labels = defaults.labels;
+    	      this.language = defaults.language;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.maxTrainingTimeInHours = defaults.maxTrainingTimeInHours;
     	      this.metrics = defaults.metrics;
     	      this.modelId = defaults.modelId;
+    	      this.modelSubTypes = defaults.modelSubTypes;
     	      this.modelType = defaults.modelType;
     	      this.modelVersion = defaults.modelVersion;
     	      this.projectId = defaults.projectId;
@@ -460,6 +529,14 @@ public final class GetModelResult {
             return this;
         }
         @CustomType.Setter
+        public Builder inferenceUnits(Integer inferenceUnits) {
+            if (inferenceUnits == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "inferenceUnits");
+            }
+            this.inferenceUnits = inferenceUnits;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isComposedModel(Boolean isComposedModel) {
             if (isComposedModel == null) {
               throw new MissingRequiredPropertyException("GetModelResult", "isComposedModel");
@@ -487,12 +564,31 @@ public final class GetModelResult {
             return labels(List.of(labels));
         }
         @CustomType.Setter
+        public Builder language(String language) {
+            if (language == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "language");
+            }
+            this.language = language;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetModelResult", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetModelLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetModelLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder maxTrainingTimeInHours(Double maxTrainingTimeInHours) {
@@ -520,6 +616,17 @@ public final class GetModelResult {
             }
             this.modelId = modelId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder modelSubTypes(List<GetModelModelSubType> modelSubTypes) {
+            if (modelSubTypes == null) {
+              throw new MissingRequiredPropertyException("GetModelResult", "modelSubTypes");
+            }
+            this.modelSubTypes = modelSubTypes;
+            return this;
+        }
+        public Builder modelSubTypes(GetModelModelSubType... modelSubTypes) {
+            return modelSubTypes(List.of(modelSubTypes));
         }
         @CustomType.Setter
         public Builder modelType(String modelType) {
@@ -635,13 +742,17 @@ public final class GetModelResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.inferenceUnits = inferenceUnits;
             _resultValue.isComposedModel = isComposedModel;
             _resultValue.isQuickMode = isQuickMode;
             _resultValue.labels = labels;
+            _resultValue.language = language;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.maxTrainingTimeInHours = maxTrainingTimeInHours;
             _resultValue.metrics = metrics;
             _resultValue.modelId = modelId;
+            _resultValue.modelSubTypes = modelSubTypes;
             _resultValue.modelType = modelType;
             _resultValue.modelVersion = modelVersion;
             _resultValue.projectId = projectId;

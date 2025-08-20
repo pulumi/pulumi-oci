@@ -13,6 +13,7 @@ public final class GetSecurityAssessmentFindingFindingReference {
     private String cis;
     private String gdpr;
     private String obp;
+    private String orp;
     private String stig;
 
     private GetSecurityAssessmentFindingFindingReference() {}
@@ -24,6 +25,9 @@ public final class GetSecurityAssessmentFindingFindingReference {
     }
     public String obp() {
         return this.obp;
+    }
+    public String orp() {
+        return this.orp;
     }
     public String stig() {
         return this.stig;
@@ -41,6 +45,7 @@ public final class GetSecurityAssessmentFindingFindingReference {
         private String cis;
         private String gdpr;
         private String obp;
+        private String orp;
         private String stig;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingFindingReference defaults) {
@@ -48,6 +53,7 @@ public final class GetSecurityAssessmentFindingFindingReference {
     	      this.cis = defaults.cis;
     	      this.gdpr = defaults.gdpr;
     	      this.obp = defaults.obp;
+    	      this.orp = defaults.orp;
     	      this.stig = defaults.stig;
         }
 
@@ -76,6 +82,14 @@ public final class GetSecurityAssessmentFindingFindingReference {
             return this;
         }
         @CustomType.Setter
+        public Builder orp(String orp) {
+            if (orp == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFindingReference", "orp");
+            }
+            this.orp = orp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stig(String stig) {
             if (stig == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFindingReference", "stig");
@@ -88,6 +102,7 @@ public final class GetSecurityAssessmentFindingFindingReference {
             _resultValue.cis = cis;
             _resultValue.gdpr = gdpr;
             _resultValue.obp = obp;
+            _resultValue.orp = orp;
             _resultValue.stig = stig;
             return _resultValue;
         }

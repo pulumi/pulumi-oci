@@ -15,6 +15,10 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'SecretReplicationConfigArgs',
+    'SecretReplicationConfigArgsDict',
+    'SecretReplicationConfigReplicationTargetArgs',
+    'SecretReplicationConfigReplicationTargetArgsDict',
     'SecretRotationConfigArgs',
     'SecretRotationConfigArgsDict',
     'SecretRotationConfigTargetSystemDetailsArgs',
@@ -25,11 +29,133 @@ __all__ = [
     'SecretSecretGenerationContextArgsDict',
     'SecretSecretRuleArgs',
     'SecretSecretRuleArgsDict',
+    'SecretSourceRegionInformationArgs',
+    'SecretSourceRegionInformationArgsDict',
     'GetSecretsFilterArgs',
     'GetSecretsFilterArgsDict',
 ]
 
 MYPY = False
+
+if not MYPY:
+    class SecretReplicationConfigArgsDict(TypedDict):
+        replication_targets: pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgsDict']]]
+        """
+        (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        is_write_forward_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+elif False:
+    SecretReplicationConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecretReplicationConfigArgs:
+    def __init__(__self__, *,
+                 replication_targets: pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgs']]],
+                 is_write_forward_enabled: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgs']]] replication_targets: (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        :param pulumi.Input[_builtins.bool] is_write_forward_enabled: (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+        pulumi.set(__self__, "replication_targets", replication_targets)
+        if is_write_forward_enabled is not None:
+            pulumi.set(__self__, "is_write_forward_enabled", is_write_forward_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationTargets")
+    def replication_targets(self) -> pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgs']]]:
+        """
+        (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        return pulumi.get(self, "replication_targets")
+
+    @replication_targets.setter
+    def replication_targets(self, value: pulumi.Input[Sequence[pulumi.Input['SecretReplicationConfigReplicationTargetArgs']]]):
+        pulumi.set(self, "replication_targets", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isWriteForwardEnabled")
+    def is_write_forward_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+        return pulumi.get(self, "is_write_forward_enabled")
+
+    @is_write_forward_enabled.setter
+    def is_write_forward_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_write_forward_enabled", value)
+
+
+if not MYPY:
+    class SecretReplicationConfigReplicationTargetArgsDict(TypedDict):
+        target_key_id: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The OCID of the target region KMS key.
+        """
+        target_region: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The name of the target's region.
+        """
+        target_vault_id: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The OCID of the target region's Vault.
+        """
+elif False:
+    SecretReplicationConfigReplicationTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecretReplicationConfigReplicationTargetArgs:
+    def __init__(__self__, *,
+                 target_key_id: pulumi.Input[_builtins.str],
+                 target_region: pulumi.Input[_builtins.str],
+                 target_vault_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] target_key_id: (Updatable) The OCID of the target region KMS key.
+        :param pulumi.Input[_builtins.str] target_region: (Updatable) The name of the target's region.
+        :param pulumi.Input[_builtins.str] target_vault_id: (Updatable) The OCID of the target region's Vault.
+        """
+        pulumi.set(__self__, "target_key_id", target_key_id)
+        pulumi.set(__self__, "target_region", target_region)
+        pulumi.set(__self__, "target_vault_id", target_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="targetKeyId")
+    def target_key_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The OCID of the target region KMS key.
+        """
+        return pulumi.get(self, "target_key_id")
+
+    @target_key_id.setter
+    def target_key_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the target's region.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetVaultId")
+    def target_vault_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The OCID of the target region's Vault.
+        """
+        return pulumi.get(self, "target_vault_id")
+
+    @target_vault_id.setter
+    def target_vault_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_vault_id", value)
+
 
 if not MYPY:
     class SecretRotationConfigArgsDict(TypedDict):
@@ -463,6 +589,78 @@ class SecretSecretRuleArgs:
     @time_of_absolute_expiry.setter
     def time_of_absolute_expiry(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_of_absolute_expiry", value)
+
+
+if not MYPY:
+    class SecretSourceRegionInformationArgsDict(TypedDict):
+        source_key_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the source region KMS key.
+        """
+        source_region: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The name of the source's region.
+        """
+        source_vault_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the source region's Vault.
+        """
+elif False:
+    SecretSourceRegionInformationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecretSourceRegionInformationArgs:
+    def __init__(__self__, *,
+                 source_key_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_region: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_vault_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] source_key_id: The OCID of the source region KMS key.
+        :param pulumi.Input[_builtins.str] source_region: The name of the source's region.
+        :param pulumi.Input[_builtins.str] source_vault_id: The OCID of the source region's Vault.
+        """
+        if source_key_id is not None:
+            pulumi.set(__self__, "source_key_id", source_key_id)
+        if source_region is not None:
+            pulumi.set(__self__, "source_region", source_region)
+        if source_vault_id is not None:
+            pulumi.set(__self__, "source_vault_id", source_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceKeyId")
+    def source_key_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the source region KMS key.
+        """
+        return pulumi.get(self, "source_key_id")
+
+    @source_key_id.setter
+    def source_key_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_key_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The name of the source's region.
+        """
+        return pulumi.get(self, "source_region")
+
+    @source_region.setter
+    def source_region(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceVaultId")
+    def source_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the source region's Vault.
+        """
+        return pulumi.get(self, "source_vault_id")
+
+    @source_vault_id.setter
+    def source_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_vault_id", value)
 
 
 if not MYPY:

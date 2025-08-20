@@ -29,9 +29,13 @@ class ModelArgs:
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
                  is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
+                 language: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_sub_type: Optional[pulumi.Input['ModelModelSubTypeArgs']] = None,
                  model_version: Optional[pulumi.Input[_builtins.str]] = None,
                  testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
                  training_dataset: Optional[pulumi.Input['ModelTrainingDatasetArgs']] = None,
@@ -46,8 +50,12 @@ class ModelArgs:
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] inference_units: (Updatable) Number of replicas required for this model.
         :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+        :param pulumi.Input[_builtins.str] language: The document language for model training, abbreviated according to the BCP 47 syntax.
+        :param pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
+        :param pulumi.Input['ModelModelSubTypeArgs'] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
@@ -66,12 +74,20 @@ class ModelArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if inference_units is not None:
+            pulumi.set(__self__, "inference_units", inference_units)
         if is_quick_mode is not None:
             pulumi.set(__self__, "is_quick_mode", is_quick_mode)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if max_training_time_in_hours is not None:
             pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
+        if model_sub_type is not None:
+            pulumi.set(__self__, "model_sub_type", model_sub_type)
         if model_version is not None:
             pulumi.set(__self__, "model_version", model_version)
         if testing_dataset is not None:
@@ -178,6 +194,18 @@ class ModelArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="inferenceUnits")
+    def inference_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Number of replicas required for this model.
+        """
+        return pulumi.get(self, "inference_units")
+
+    @inference_units.setter
+    def inference_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "inference_units", value)
+
+    @_builtins.property
     @pulumi.getter(name="isQuickMode")
     def is_quick_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -188,6 +216,30 @@ class ModelArgs:
     @is_quick_mode.setter
     def is_quick_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_quick_mode", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+        """
+        return pulumi.get(self, "language")
+
+    @language.setter
+    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "language", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
@@ -209,6 +261,18 @@ class ModelArgs:
     @model_id.setter
     def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "model_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> Optional[pulumi.Input['ModelModelSubTypeArgs']]:
+        """
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        """
+        return pulumi.get(self, "model_sub_type")
+
+    @model_sub_type.setter
+    def model_sub_type(self, value: Optional[pulumi.Input['ModelModelSubTypeArgs']]):
+        pulumi.set(self, "model_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelVersion")
@@ -268,13 +332,17 @@ class _ModelState:
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
                  is_composed_model: Optional[pulumi.Input[_builtins.bool]] = None,
                  is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 language: Optional[pulumi.Input[_builtins.str]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_sub_type: Optional[pulumi.Input['ModelModelSubTypeArgs']] = None,
                  model_type: Optional[pulumi.Input[_builtins.str]] = None,
                  model_version: Optional[pulumi.Input[_builtins.str]] = None,
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -295,12 +363,16 @@ class _ModelState:
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] inference_units: (Updatable) Number of replicas required for this model.
         :param pulumi.Input[_builtins.bool] is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: The collection of labels used to train the custom model.
+        :param pulumi.Input[_builtins.str] language: The document language for model training, abbreviated according to the BCP 47 syntax.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
+        :param pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param pulumi.Input[Sequence[pulumi.Input['ModelMetricArgs']]] metrics: Trained Model Metrics.
+        :param pulumi.Input['ModelModelSubTypeArgs'] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         :param pulumi.Input[_builtins.str] model_type: The type of the Document model.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -326,20 +398,28 @@ class _ModelState:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if inference_units is not None:
+            pulumi.set(__self__, "inference_units", inference_units)
         if is_composed_model is not None:
             pulumi.set(__self__, "is_composed_model", is_composed_model)
         if is_quick_mode is not None:
             pulumi.set(__self__, "is_quick_mode", is_quick_mode)
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
+        if language is not None:
+            pulumi.set(__self__, "language", language)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if max_training_time_in_hours is not None:
             pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
         if metrics is not None:
             pulumi.set(__self__, "metrics", metrics)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
+        if model_sub_type is not None:
+            pulumi.set(__self__, "model_sub_type", model_sub_type)
         if model_type is not None:
             pulumi.set(__self__, "model_type", model_type)
         if model_version is not None:
@@ -438,6 +518,18 @@ class _ModelState:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="inferenceUnits")
+    def inference_units(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Number of replicas required for this model.
+        """
+        return pulumi.get(self, "inference_units")
+
+    @inference_units.setter
+    def inference_units(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "inference_units", value)
+
+    @_builtins.property
     @pulumi.getter(name="isComposedModel")
     def is_composed_model(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
@@ -474,6 +566,18 @@ class _ModelState:
         pulumi.set(self, "labels", value)
 
     @_builtins.property
+    @pulumi.getter
+    def language(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+        """
+        return pulumi.get(self, "language")
+
+    @language.setter
+    def language(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "language", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -484,6 +588,18 @@ class _ModelState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ModelLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
@@ -517,6 +633,18 @@ class _ModelState:
     @model_id.setter
     def model_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "model_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> Optional[pulumi.Input['ModelModelSubTypeArgs']]:
+        """
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        """
+        return pulumi.get(self, "model_sub_type")
+
+    @model_sub_type.setter
+    def model_sub_type(self, value: Optional[pulumi.Input['ModelModelSubTypeArgs']]):
+        pulumi.set(self, "model_sub_type", value)
 
     @_builtins.property
     @pulumi.getter(name="modelType")
@@ -675,9 +803,13 @@ class Model(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
                  is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
+                 language: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_sub_type: Optional[pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
                  model_type: Optional[pulumi.Input[_builtins.str]] = None,
                  model_version: Optional[pulumi.Input[_builtins.str]] = None,
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -708,8 +840,12 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] inference_units: (Updatable) Number of replicas required for this model.
         :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+        :param pulumi.Input[_builtins.str] language: The document language for model training, abbreviated according to the BCP 47 syntax.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
+        :param pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         :param pulumi.Input[_builtins.str] model_type: The type of the Document model.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -759,9 +895,13 @@ class Model(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 inference_units: Optional[pulumi.Input[_builtins.int]] = None,
                  is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
+                 language: Optional[pulumi.Input[_builtins.str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
                  model_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 model_sub_type: Optional[pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
                  model_type: Optional[pulumi.Input[_builtins.str]] = None,
                  model_version: Optional[pulumi.Input[_builtins.str]] = None,
                  project_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -785,9 +925,13 @@ class Model(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["inference_units"] = inference_units
             __props__.__dict__["is_quick_mode"] = is_quick_mode
+            __props__.__dict__["language"] = language
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["max_training_time_in_hours"] = max_training_time_in_hours
             __props__.__dict__["model_id"] = model_id
+            __props__.__dict__["model_sub_type"] = model_sub_type
             if model_type is None and not opts.urn:
                 raise TypeError("Missing required property 'model_type'")
             __props__.__dict__["model_type"] = model_type
@@ -824,13 +968,17 @@ class Model(pulumi.CustomResource):
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inference_units: Optional[pulumi.Input[_builtins.int]] = None,
             is_composed_model: Optional[pulumi.Input[_builtins.bool]] = None,
             is_quick_mode: Optional[pulumi.Input[_builtins.bool]] = None,
             labels: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            language: Optional[pulumi.Input[_builtins.str]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]]] = None,
             max_training_time_in_hours: Optional[pulumi.Input[_builtins.float]] = None,
             metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]]] = None,
             model_id: Optional[pulumi.Input[_builtins.str]] = None,
+            model_sub_type: Optional[pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']]] = None,
             model_type: Optional[pulumi.Input[_builtins.str]] = None,
             model_version: Optional[pulumi.Input[_builtins.str]] = None,
             project_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -856,12 +1004,16 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.int] inference_units: (Updatable) Number of replicas required for this model.
         :param pulumi.Input[_builtins.bool] is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] labels: The collection of labels used to train the custom model.
+        :param pulumi.Input[_builtins.str] language: The document language for model training, abbreviated according to the BCP 47 syntax.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict']]]] metrics: Trained Model Metrics.
+        :param pulumi.Input[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict']] model_sub_type: Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
         :param pulumi.Input[_builtins.str] model_type: The type of the Document model.
         :param pulumi.Input[_builtins.str] model_version: The model version
         :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
@@ -885,13 +1037,17 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["inference_units"] = inference_units
         __props__.__dict__["is_composed_model"] = is_composed_model
         __props__.__dict__["is_quick_mode"] = is_quick_mode
         __props__.__dict__["labels"] = labels
+        __props__.__dict__["language"] = language
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["max_training_time_in_hours"] = max_training_time_in_hours
         __props__.__dict__["metrics"] = metrics
         __props__.__dict__["model_id"] = model_id
+        __props__.__dict__["model_sub_type"] = model_sub_type
         __props__.__dict__["model_type"] = model_type
         __props__.__dict__["model_version"] = model_version
         __props__.__dict__["project_id"] = project_id
@@ -955,6 +1111,14 @@ class Model(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @_builtins.property
+    @pulumi.getter(name="inferenceUnits")
+    def inference_units(self) -> pulumi.Output[_builtins.int]:
+        """
+        (Updatable) Number of replicas required for this model.
+        """
+        return pulumi.get(self, "inference_units")
+
+    @_builtins.property
     @pulumi.getter(name="isComposedModel")
     def is_composed_model(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -979,12 +1143,28 @@ class Model(pulumi.CustomResource):
         return pulumi.get(self, "labels")
 
     @_builtins.property
+    @pulumi.getter
+    def language(self) -> pulumi.Output[_builtins.str]:
+        """
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+        """
+        return pulumi.get(self, "language")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
         A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.ModelLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
@@ -1006,6 +1186,14 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="modelId")
     def model_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubType")
+    def model_sub_type(self) -> pulumi.Output['outputs.ModelModelSubType']:
+        """
+        Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+        """
+        return pulumi.get(self, "model_sub_type")
 
     @_builtins.property
     @pulumi.getter(name="modelType")

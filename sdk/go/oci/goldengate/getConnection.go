@@ -50,6 +50,10 @@ type LookupConnectionResult struct {
 	// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
 	// * OAUTH_M2M: user must enter clientId and clientSecret
 	AuthenticationType string `pulumi:"authenticationType"`
+	// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+	// * Azure China: https://login.chinacloudapi.cn/
+	// * Azure US Government: https://login.microsoftonline.us/
+	AzureAuthorityHost string `pulumi:"azureAuthorityHost"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId string `pulumi:"azureTenantId"`
 	// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -181,7 +185,7 @@ type LookupConnectionResult struct {
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
-	// Indicates that the user intents to connect to the instance through resource principal.
+	// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 	ShouldUseResourcePrincipal bool `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
@@ -190,10 +194,10 @@ type LookupConnectionResult struct {
 	// Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCert           string `pulumi:"sslCert"`
 	SslClientKeystash string `pulumi:"sslClientKeystash"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 	SslClientKeystashSecretId string `pulumi:"sslClientKeystashSecretId"`
 	SslClientKeystoredb       string `pulumi:"sslClientKeystoredb"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 	SslClientKeystoredbSecretId string `pulumi:"sslClientKeystoredbSecretId"`
 	// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl         string `pulumi:"sslCrl"`
@@ -330,6 +334,13 @@ func (o LookupConnectionResultOutput) AuthenticationMode() pulumi.StringOutput {
 // * OAUTH_M2M: user must enter clientId and clientSecret
 func (o LookupConnectionResultOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+// * Azure China: https://login.chinacloudapi.cn/
+// * Azure US Government: https://login.microsoftonline.us/
+func (o LookupConnectionResultOutput) AzureAuthorityHost() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AzureAuthorityHost }).(pulumi.StringOutput)
 }
 
 // Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -661,7 +672,7 @@ func (o LookupConnectionResultOutput) ShouldUseJndi() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
 }
 
-// Indicates that the user intents to connect to the instance through resource principal.
+// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 func (o LookupConnectionResultOutput) ShouldUseResourcePrincipal() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.ShouldUseResourcePrincipal }).(pulumi.BoolOutput)
 }
@@ -685,7 +696,7 @@ func (o LookupConnectionResultOutput) SslClientKeystash() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystash }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 func (o LookupConnectionResultOutput) SslClientKeystashSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystashSecretId }).(pulumi.StringOutput)
 }
@@ -694,7 +705,7 @@ func (o LookupConnectionResultOutput) SslClientKeystoredb() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystoredb }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 func (o LookupConnectionResultOutput) SslClientKeystoredbSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystoredbSecretId }).(pulumi.StringOutput)
 }

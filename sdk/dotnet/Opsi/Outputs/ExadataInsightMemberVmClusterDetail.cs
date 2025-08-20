@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string? DbmPrivateEndpointId;
         /// <summary>
+        /// The autonomous databases that belong to the Autonomous VM Cluster
+        /// </summary>
+        public readonly ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetail> MemberAutonomousDetails;
+        /// <summary>
         /// The databases that belong to the VM Cluster
         /// </summary>
         public readonly ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> MemberDatabaseDetails;
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string? dbmPrivateEndpointId,
 
+            ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberAutonomousDetail> memberAutonomousDetails,
+
             ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail> memberDatabaseDetails,
 
             string? opsiPrivateEndpointId,
@@ -54,6 +60,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         {
             CompartmentId = compartmentId;
             DbmPrivateEndpointId = dbmPrivateEndpointId;
+            MemberAutonomousDetails = memberAutonomousDetails;
             MemberDatabaseDetails = memberDatabaseDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             VmClusterType = vmClusterType;

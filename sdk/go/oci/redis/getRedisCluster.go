@@ -80,6 +80,8 @@ type LookupRedisClusterResult struct {
 	NodeMemoryInGbs float64 `pulumi:"nodeMemoryInGbs"`
 	// A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 	NsgIds []string `pulumi:"nsgIds"`
+	// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+	OciCacheConfigSetId string `pulumi:"ociCacheConfigSetId"`
 	// The private IP address of the API endpoint for the cluster's primary node.
 	PrimaryEndpointIpAddress string `pulumi:"primaryEndpointIpAddress"`
 	// The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
@@ -192,6 +194,11 @@ func (o LookupRedisClusterResultOutput) NodeMemoryInGbs() pulumi.Float64Output {
 // A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this cluster. For more information, see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
 func (o LookupRedisClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupRedisClusterResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+func (o LookupRedisClusterResultOutput) OciCacheConfigSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.OciCacheConfigSetId }).(pulumi.StringOutput)
 }
 
 // The private IP address of the API endpoint for the cluster's primary node.

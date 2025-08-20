@@ -13,6 +13,258 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ConfigConfig struct {
+	// (Updatable) Map of an agent configuration file.
+	ConfigMaps []ConfigConfigConfigMap `pulumi:"configMaps"`
+}
+
+// ConfigConfigInput is an input type that accepts ConfigConfigArgs and ConfigConfigOutput values.
+// You can construct a concrete instance of `ConfigConfigInput` via:
+//
+//	ConfigConfigArgs{...}
+type ConfigConfigInput interface {
+	pulumi.Input
+
+	ToConfigConfigOutput() ConfigConfigOutput
+	ToConfigConfigOutputWithContext(context.Context) ConfigConfigOutput
+}
+
+type ConfigConfigArgs struct {
+	// (Updatable) Map of an agent configuration file.
+	ConfigMaps ConfigConfigConfigMapArrayInput `pulumi:"configMaps"`
+}
+
+func (ConfigConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfig)(nil)).Elem()
+}
+
+func (i ConfigConfigArgs) ToConfigConfigOutput() ConfigConfigOutput {
+	return i.ToConfigConfigOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigArgs) ToConfigConfigOutputWithContext(ctx context.Context) ConfigConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigOutput)
+}
+
+func (i ConfigConfigArgs) ToConfigConfigPtrOutput() ConfigConfigPtrOutput {
+	return i.ToConfigConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigArgs) ToConfigConfigPtrOutputWithContext(ctx context.Context) ConfigConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigOutput).ToConfigConfigPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigPtrInput is an input type that accepts ConfigConfigArgs, ConfigConfigPtr and ConfigConfigPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigPtrInput` via:
+//
+//	        ConfigConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigPtrOutput() ConfigConfigPtrOutput
+	ToConfigConfigPtrOutputWithContext(context.Context) ConfigConfigPtrOutput
+}
+
+type configConfigPtrType ConfigConfigArgs
+
+func ConfigConfigPtr(v *ConfigConfigArgs) ConfigConfigPtrInput {
+	return (*configConfigPtrType)(v)
+}
+
+func (*configConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfig)(nil)).Elem()
+}
+
+func (i *configConfigPtrType) ToConfigConfigPtrOutput() ConfigConfigPtrOutput {
+	return i.ToConfigConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigPtrType) ToConfigConfigPtrOutputWithContext(ctx context.Context) ConfigConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigPtrOutput)
+}
+
+type ConfigConfigOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfig)(nil)).Elem()
+}
+
+func (o ConfigConfigOutput) ToConfigConfigOutput() ConfigConfigOutput {
+	return o
+}
+
+func (o ConfigConfigOutput) ToConfigConfigOutputWithContext(ctx context.Context) ConfigConfigOutput {
+	return o
+}
+
+func (o ConfigConfigOutput) ToConfigConfigPtrOutput() ConfigConfigPtrOutput {
+	return o.ToConfigConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigOutput) ToConfigConfigPtrOutputWithContext(ctx context.Context) ConfigConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfig) *ConfigConfig {
+		return &v
+	}).(ConfigConfigPtrOutput)
+}
+
+// (Updatable) Map of an agent configuration file.
+func (o ConfigConfigOutput) ConfigMaps() ConfigConfigConfigMapArrayOutput {
+	return o.ApplyT(func(v ConfigConfig) []ConfigConfigConfigMap { return v.ConfigMaps }).(ConfigConfigConfigMapArrayOutput)
+}
+
+type ConfigConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfig)(nil)).Elem()
+}
+
+func (o ConfigConfigPtrOutput) ToConfigConfigPtrOutput() ConfigConfigPtrOutput {
+	return o
+}
+
+func (o ConfigConfigPtrOutput) ToConfigConfigPtrOutputWithContext(ctx context.Context) ConfigConfigPtrOutput {
+	return o
+}
+
+func (o ConfigConfigPtrOutput) Elem() ConfigConfigOutput {
+	return o.ApplyT(func(v *ConfigConfig) ConfigConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfig
+		return ret
+	}).(ConfigConfigOutput)
+}
+
+// (Updatable) Map of an agent configuration file.
+func (o ConfigConfigPtrOutput) ConfigMaps() ConfigConfigConfigMapArrayOutput {
+	return o.ApplyT(func(v *ConfigConfig) []ConfigConfigConfigMap {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigMaps
+	}).(ConfigConfigConfigMapArrayOutput)
+}
+
+type ConfigConfigConfigMap struct {
+	// The Base64 encoded agent configuration file.
+	Body *string `pulumi:"body"`
+	// (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+	ContentType *string `pulumi:"contentType"`
+	// (Updatable) An agent configuration file name.
+	FileName *string `pulumi:"fileName"`
+}
+
+// ConfigConfigConfigMapInput is an input type that accepts ConfigConfigConfigMap and ConfigConfigConfigMapOutput values.
+// You can construct a concrete instance of `ConfigConfigConfigMapInput` via:
+//
+//	ConfigConfigConfigMap{ "key": ConfigConfigConfigArgs{...} }
+type ConfigConfigConfigMapInput interface {
+	pulumi.Input
+
+	ToConfigConfigConfigMapOutput() ConfigConfigConfigMapOutput
+	ToConfigConfigConfigMapOutputWithContext(context.Context) ConfigConfigConfigMapOutput
+}
+
+type ConfigConfigConfigMapArgs struct {
+	// The Base64 encoded agent configuration file.
+	Body pulumi.StringPtrInput `pulumi:"body"`
+	// (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+	ContentType pulumi.StringPtrInput `pulumi:"contentType"`
+	// (Updatable) An agent configuration file name.
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
+}
+
+func (ConfigConfigConfigMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (i ConfigConfigConfigMapArgs) ToConfigConfigConfigMapOutput() ConfigConfigConfigMapOutput {
+	return i.ToConfigConfigConfigMapOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigConfigMapArgs) ToConfigConfigConfigMapOutputWithContext(ctx context.Context) ConfigConfigConfigMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigConfigMapOutput)
+}
+
+// ConfigConfigConfigMapArrayInput is an input type that accepts ConfigConfigConfigMapArray and ConfigConfigConfigMapArrayOutput values.
+// You can construct a concrete instance of `ConfigConfigConfigMapArrayInput` via:
+//
+//	ConfigConfigConfigMapArray{ ConfigConfigConfigMapArgs{...} }
+type ConfigConfigConfigMapArrayInput interface {
+	pulumi.Input
+
+	ToConfigConfigConfigMapArrayOutput() ConfigConfigConfigMapArrayOutput
+	ToConfigConfigConfigMapArrayOutputWithContext(context.Context) ConfigConfigConfigMapArrayOutput
+}
+
+type ConfigConfigConfigMapArray []ConfigConfigConfigMapInput
+
+func (ConfigConfigConfigMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (i ConfigConfigConfigMapArray) ToConfigConfigConfigMapArrayOutput() ConfigConfigConfigMapArrayOutput {
+	return i.ToConfigConfigConfigMapArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigConfigMapArray) ToConfigConfigConfigMapArrayOutputWithContext(ctx context.Context) ConfigConfigConfigMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigConfigMapArrayOutput)
+}
+
+type ConfigConfigConfigMapOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigConfigMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (o ConfigConfigConfigMapOutput) ToConfigConfigConfigMapOutput() ConfigConfigConfigMapOutput {
+	return o
+}
+
+func (o ConfigConfigConfigMapOutput) ToConfigConfigConfigMapOutputWithContext(ctx context.Context) ConfigConfigConfigMapOutput {
+	return o
+}
+
+// The Base64 encoded agent configuration file.
+func (o ConfigConfigConfigMapOutput) Body() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigConfigMap) *string { return v.Body }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+func (o ConfigConfigConfigMapOutput) ContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigConfigMap) *string { return v.ContentType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) An agent configuration file name.
+func (o ConfigConfigConfigMapOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigConfigMap) *string { return v.FileName }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigConfigMapArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigConfigMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (o ConfigConfigConfigMapArrayOutput) ToConfigConfigConfigMapArrayOutput() ConfigConfigConfigMapArrayOutput {
+	return o
+}
+
+func (o ConfigConfigConfigMapArrayOutput) ToConfigConfigConfigMapArrayOutputWithContext(ctx context.Context) ConfigConfigConfigMapArrayOutput {
+	return o
+}
+
+func (o ConfigConfigConfigMapArrayOutput) Index(i pulumi.IntInput) ConfigConfigConfigMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigConfigConfigMap {
+		return vs[0].([]ConfigConfigConfigMap)[vs[1].(int)]
+	}).(ConfigConfigConfigMapOutput)
+}
+
 type ConfigDimension struct {
 	// (Updatable) The name of the dimension.
 	Name *string `pulumi:"name"`
@@ -367,6 +619,249 @@ func (o ConfigMetricArrayOutput) Index(i pulumi.IntInput) ConfigMetricOutput {
 	}).(ConfigMetricOutput)
 }
 
+type ConfigOverrides struct {
+	// (Updatable)
+	OverrideLists []ConfigOverridesOverrideList `pulumi:"overrideLists"`
+}
+
+// ConfigOverridesInput is an input type that accepts ConfigOverridesArgs and ConfigOverridesOutput values.
+// You can construct a concrete instance of `ConfigOverridesInput` via:
+//
+//	ConfigOverridesArgs{...}
+type ConfigOverridesInput interface {
+	pulumi.Input
+
+	ToConfigOverridesOutput() ConfigOverridesOutput
+	ToConfigOverridesOutputWithContext(context.Context) ConfigOverridesOutput
+}
+
+type ConfigOverridesArgs struct {
+	// (Updatable)
+	OverrideLists ConfigOverridesOverrideListArrayInput `pulumi:"overrideLists"`
+}
+
+func (ConfigOverridesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigOverrides)(nil)).Elem()
+}
+
+func (i ConfigOverridesArgs) ToConfigOverridesOutput() ConfigOverridesOutput {
+	return i.ToConfigOverridesOutputWithContext(context.Background())
+}
+
+func (i ConfigOverridesArgs) ToConfigOverridesOutputWithContext(ctx context.Context) ConfigOverridesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigOverridesOutput)
+}
+
+func (i ConfigOverridesArgs) ToConfigOverridesPtrOutput() ConfigOverridesPtrOutput {
+	return i.ToConfigOverridesPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigOverridesArgs) ToConfigOverridesPtrOutputWithContext(ctx context.Context) ConfigOverridesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigOverridesOutput).ToConfigOverridesPtrOutputWithContext(ctx)
+}
+
+// ConfigOverridesPtrInput is an input type that accepts ConfigOverridesArgs, ConfigOverridesPtr and ConfigOverridesPtrOutput values.
+// You can construct a concrete instance of `ConfigOverridesPtrInput` via:
+//
+//	        ConfigOverridesArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigOverridesPtrInput interface {
+	pulumi.Input
+
+	ToConfigOverridesPtrOutput() ConfigOverridesPtrOutput
+	ToConfigOverridesPtrOutputWithContext(context.Context) ConfigOverridesPtrOutput
+}
+
+type configOverridesPtrType ConfigOverridesArgs
+
+func ConfigOverridesPtr(v *ConfigOverridesArgs) ConfigOverridesPtrInput {
+	return (*configOverridesPtrType)(v)
+}
+
+func (*configOverridesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigOverrides)(nil)).Elem()
+}
+
+func (i *configOverridesPtrType) ToConfigOverridesPtrOutput() ConfigOverridesPtrOutput {
+	return i.ToConfigOverridesPtrOutputWithContext(context.Background())
+}
+
+func (i *configOverridesPtrType) ToConfigOverridesPtrOutputWithContext(ctx context.Context) ConfigOverridesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigOverridesPtrOutput)
+}
+
+type ConfigOverridesOutput struct{ *pulumi.OutputState }
+
+func (ConfigOverridesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigOverrides)(nil)).Elem()
+}
+
+func (o ConfigOverridesOutput) ToConfigOverridesOutput() ConfigOverridesOutput {
+	return o
+}
+
+func (o ConfigOverridesOutput) ToConfigOverridesOutputWithContext(ctx context.Context) ConfigOverridesOutput {
+	return o
+}
+
+func (o ConfigOverridesOutput) ToConfigOverridesPtrOutput() ConfigOverridesPtrOutput {
+	return o.ToConfigOverridesPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigOverridesOutput) ToConfigOverridesPtrOutputWithContext(ctx context.Context) ConfigOverridesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigOverrides) *ConfigOverrides {
+		return &v
+	}).(ConfigOverridesPtrOutput)
+}
+
+// (Updatable)
+func (o ConfigOverridesOutput) OverrideLists() ConfigOverridesOverrideListArrayOutput {
+	return o.ApplyT(func(v ConfigOverrides) []ConfigOverridesOverrideList { return v.OverrideLists }).(ConfigOverridesOverrideListArrayOutput)
+}
+
+type ConfigOverridesPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigOverridesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigOverrides)(nil)).Elem()
+}
+
+func (o ConfigOverridesPtrOutput) ToConfigOverridesPtrOutput() ConfigOverridesPtrOutput {
+	return o
+}
+
+func (o ConfigOverridesPtrOutput) ToConfigOverridesPtrOutputWithContext(ctx context.Context) ConfigOverridesPtrOutput {
+	return o
+}
+
+func (o ConfigOverridesPtrOutput) Elem() ConfigOverridesOutput {
+	return o.ApplyT(func(v *ConfigOverrides) ConfigOverrides {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigOverrides
+		return ret
+	}).(ConfigOverridesOutput)
+}
+
+// (Updatable)
+func (o ConfigOverridesPtrOutput) OverrideLists() ConfigOverridesOverrideListArrayOutput {
+	return o.ApplyT(func(v *ConfigOverrides) []ConfigOverridesOverrideList {
+		if v == nil {
+			return nil
+		}
+		return v.OverrideLists
+	}).(ConfigOverridesOverrideListArrayOutput)
+}
+
+type ConfigOverridesOverrideList struct {
+	// (Updatable) The string that defines the Agent Filter expression.
+	AgentFilter *string `pulumi:"agentFilter"`
+	// (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+	OverrideMap map[string]string `pulumi:"overrideMap"`
+}
+
+// ConfigOverridesOverrideListInput is an input type that accepts ConfigOverridesOverrideListArgs and ConfigOverridesOverrideListOutput values.
+// You can construct a concrete instance of `ConfigOverridesOverrideListInput` via:
+//
+//	ConfigOverridesOverrideListArgs{...}
+type ConfigOverridesOverrideListInput interface {
+	pulumi.Input
+
+	ToConfigOverridesOverrideListOutput() ConfigOverridesOverrideListOutput
+	ToConfigOverridesOverrideListOutputWithContext(context.Context) ConfigOverridesOverrideListOutput
+}
+
+type ConfigOverridesOverrideListArgs struct {
+	// (Updatable) The string that defines the Agent Filter expression.
+	AgentFilter pulumi.StringPtrInput `pulumi:"agentFilter"`
+	// (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+	OverrideMap pulumi.StringMapInput `pulumi:"overrideMap"`
+}
+
+func (ConfigOverridesOverrideListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigOverridesOverrideList)(nil)).Elem()
+}
+
+func (i ConfigOverridesOverrideListArgs) ToConfigOverridesOverrideListOutput() ConfigOverridesOverrideListOutput {
+	return i.ToConfigOverridesOverrideListOutputWithContext(context.Background())
+}
+
+func (i ConfigOverridesOverrideListArgs) ToConfigOverridesOverrideListOutputWithContext(ctx context.Context) ConfigOverridesOverrideListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigOverridesOverrideListOutput)
+}
+
+// ConfigOverridesOverrideListArrayInput is an input type that accepts ConfigOverridesOverrideListArray and ConfigOverridesOverrideListArrayOutput values.
+// You can construct a concrete instance of `ConfigOverridesOverrideListArrayInput` via:
+//
+//	ConfigOverridesOverrideListArray{ ConfigOverridesOverrideListArgs{...} }
+type ConfigOverridesOverrideListArrayInput interface {
+	pulumi.Input
+
+	ToConfigOverridesOverrideListArrayOutput() ConfigOverridesOverrideListArrayOutput
+	ToConfigOverridesOverrideListArrayOutputWithContext(context.Context) ConfigOverridesOverrideListArrayOutput
+}
+
+type ConfigOverridesOverrideListArray []ConfigOverridesOverrideListInput
+
+func (ConfigOverridesOverrideListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigOverridesOverrideList)(nil)).Elem()
+}
+
+func (i ConfigOverridesOverrideListArray) ToConfigOverridesOverrideListArrayOutput() ConfigOverridesOverrideListArrayOutput {
+	return i.ToConfigOverridesOverrideListArrayOutputWithContext(context.Background())
+}
+
+func (i ConfigOverridesOverrideListArray) ToConfigOverridesOverrideListArrayOutputWithContext(ctx context.Context) ConfigOverridesOverrideListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigOverridesOverrideListArrayOutput)
+}
+
+type ConfigOverridesOverrideListOutput struct{ *pulumi.OutputState }
+
+func (ConfigOverridesOverrideListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigOverridesOverrideList)(nil)).Elem()
+}
+
+func (o ConfigOverridesOverrideListOutput) ToConfigOverridesOverrideListOutput() ConfigOverridesOverrideListOutput {
+	return o
+}
+
+func (o ConfigOverridesOverrideListOutput) ToConfigOverridesOverrideListOutputWithContext(ctx context.Context) ConfigOverridesOverrideListOutput {
+	return o
+}
+
+// (Updatable) The string that defines the Agent Filter expression.
+func (o ConfigOverridesOverrideListOutput) AgentFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigOverridesOverrideList) *string { return v.AgentFilter }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+func (o ConfigOverridesOverrideListOutput) OverrideMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ConfigOverridesOverrideList) map[string]string { return v.OverrideMap }).(pulumi.StringMapOutput)
+}
+
+type ConfigOverridesOverrideListArrayOutput struct{ *pulumi.OutputState }
+
+func (ConfigOverridesOverrideListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConfigOverridesOverrideList)(nil)).Elem()
+}
+
+func (o ConfigOverridesOverrideListArrayOutput) ToConfigOverridesOverrideListArrayOutput() ConfigOverridesOverrideListArrayOutput {
+	return o
+}
+
+func (o ConfigOverridesOverrideListArrayOutput) ToConfigOverridesOverrideListArrayOutputWithContext(ctx context.Context) ConfigOverridesOverrideListArrayOutput {
+	return o
+}
+
+func (o ConfigOverridesOverrideListArrayOutput) Index(i pulumi.IntInput) ConfigOverridesOverrideListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigOverridesOverrideList {
+		return vs[0].([]ConfigOverridesOverrideList)[vs[1].(int)]
+	}).(ConfigOverridesOverrideListOutput)
+}
+
 type ConfigRule struct {
 	// (Updatable) The name by which a configuration entity is displayed to the end user.
 	DisplayName *string `pulumi:"displayName"`
@@ -381,9 +876,6 @@ type ConfigRule struct {
 	// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime *int `pulumi:"satisfiedResponseTime"`
 	// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ToleratingResponseTime *int `pulumi:"toleratingResponseTime"`
 }
 
@@ -412,9 +904,6 @@ type ConfigRuleArgs struct {
 	// (Updatable) The maximum response time in milliseconds that is considered "satisfactory" for the end user.
 	SatisfiedResponseTime pulumi.IntPtrInput `pulumi:"satisfiedResponseTime"`
 	// (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ToleratingResponseTime pulumi.IntPtrInput `pulumi:"toleratingResponseTime"`
 }
 
@@ -500,9 +989,6 @@ func (o ConfigRuleOutput) SatisfiedResponseTime() pulumi.IntPtrOutput {
 }
 
 // (Updatable) The maximum response time in milliseconds that is considered "tolerable" for the end user. A response time beyond this threshold is considered "frustrating". This value cannot be lower than "satisfiedResponseTime".
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ConfigRuleOutput) ToleratingResponseTime() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConfigRule) *int { return v.ToleratingResponseTime }).(pulumi.IntPtrOutput)
 }
@@ -525,6 +1011,218 @@ func (o ConfigRuleArrayOutput) Index(i pulumi.IntInput) ConfigRuleOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConfigRule {
 		return vs[0].([]ConfigRule)[vs[1].(int)]
 	}).(ConfigRuleOutput)
+}
+
+type GetConfigConfig struct {
+	// Map of an agent configuration file.
+	ConfigMaps []GetConfigConfigConfigMap `pulumi:"configMaps"`
+}
+
+// GetConfigConfigInput is an input type that accepts GetConfigConfigArgs and GetConfigConfigOutput values.
+// You can construct a concrete instance of `GetConfigConfigInput` via:
+//
+//	GetConfigConfigArgs{...}
+type GetConfigConfigInput interface {
+	pulumi.Input
+
+	ToGetConfigConfigOutput() GetConfigConfigOutput
+	ToGetConfigConfigOutputWithContext(context.Context) GetConfigConfigOutput
+}
+
+type GetConfigConfigArgs struct {
+	// Map of an agent configuration file.
+	ConfigMaps GetConfigConfigConfigMapArrayInput `pulumi:"configMaps"`
+}
+
+func (GetConfigConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigConfig)(nil)).Elem()
+}
+
+func (i GetConfigConfigArgs) ToGetConfigConfigOutput() GetConfigConfigOutput {
+	return i.ToGetConfigConfigOutputWithContext(context.Background())
+}
+
+func (i GetConfigConfigArgs) ToGetConfigConfigOutputWithContext(ctx context.Context) GetConfigConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigConfigOutput)
+}
+
+// GetConfigConfigArrayInput is an input type that accepts GetConfigConfigArray and GetConfigConfigArrayOutput values.
+// You can construct a concrete instance of `GetConfigConfigArrayInput` via:
+//
+//	GetConfigConfigArray{ GetConfigConfigArgs{...} }
+type GetConfigConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigConfigArrayOutput() GetConfigConfigArrayOutput
+	ToGetConfigConfigArrayOutputWithContext(context.Context) GetConfigConfigArrayOutput
+}
+
+type GetConfigConfigArray []GetConfigConfigInput
+
+func (GetConfigConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigConfig)(nil)).Elem()
+}
+
+func (i GetConfigConfigArray) ToGetConfigConfigArrayOutput() GetConfigConfigArrayOutput {
+	return i.ToGetConfigConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigConfigArray) ToGetConfigConfigArrayOutputWithContext(ctx context.Context) GetConfigConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigConfigArrayOutput)
+}
+
+type GetConfigConfigOutput struct{ *pulumi.OutputState }
+
+func (GetConfigConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigConfig)(nil)).Elem()
+}
+
+func (o GetConfigConfigOutput) ToGetConfigConfigOutput() GetConfigConfigOutput {
+	return o
+}
+
+func (o GetConfigConfigOutput) ToGetConfigConfigOutputWithContext(ctx context.Context) GetConfigConfigOutput {
+	return o
+}
+
+// Map of an agent configuration file.
+func (o GetConfigConfigOutput) ConfigMaps() GetConfigConfigConfigMapArrayOutput {
+	return o.ApplyT(func(v GetConfigConfig) []GetConfigConfigConfigMap { return v.ConfigMaps }).(GetConfigConfigConfigMapArrayOutput)
+}
+
+type GetConfigConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigConfig)(nil)).Elem()
+}
+
+func (o GetConfigConfigArrayOutput) ToGetConfigConfigArrayOutput() GetConfigConfigArrayOutput {
+	return o
+}
+
+func (o GetConfigConfigArrayOutput) ToGetConfigConfigArrayOutputWithContext(ctx context.Context) GetConfigConfigArrayOutput {
+	return o
+}
+
+func (o GetConfigConfigArrayOutput) Index(i pulumi.IntInput) GetConfigConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigConfig {
+		return vs[0].([]GetConfigConfig)[vs[1].(int)]
+	}).(GetConfigConfigOutput)
+}
+
+type GetConfigConfigConfigMap struct {
+	// The Base64 encoded agent configuration file.
+	Body string `pulumi:"body"`
+	// The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+	ContentType string `pulumi:"contentType"`
+	// An agent configuration file name.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetConfigConfigConfigMapInput is an input type that accepts GetConfigConfigConfigMap and GetConfigConfigConfigMapOutput values.
+// You can construct a concrete instance of `GetConfigConfigConfigMapInput` via:
+//
+//	GetConfigConfigConfigMap{ "key": GetConfigConfigConfigArgs{...} }
+type GetConfigConfigConfigMapInput interface {
+	pulumi.Input
+
+	ToGetConfigConfigConfigMapOutput() GetConfigConfigConfigMapOutput
+	ToGetConfigConfigConfigMapOutputWithContext(context.Context) GetConfigConfigConfigMapOutput
+}
+
+type GetConfigConfigConfigMapArgs struct {
+	// The Base64 encoded agent configuration file.
+	Body pulumi.StringInput `pulumi:"body"`
+	// The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+	ContentType pulumi.StringInput `pulumi:"contentType"`
+	// An agent configuration file name.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetConfigConfigConfigMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (i GetConfigConfigConfigMapArgs) ToGetConfigConfigConfigMapOutput() GetConfigConfigConfigMapOutput {
+	return i.ToGetConfigConfigConfigMapOutputWithContext(context.Background())
+}
+
+func (i GetConfigConfigConfigMapArgs) ToGetConfigConfigConfigMapOutputWithContext(ctx context.Context) GetConfigConfigConfigMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigConfigConfigMapOutput)
+}
+
+// GetConfigConfigConfigMapArrayInput is an input type that accepts GetConfigConfigConfigMapArray and GetConfigConfigConfigMapArrayOutput values.
+// You can construct a concrete instance of `GetConfigConfigConfigMapArrayInput` via:
+//
+//	GetConfigConfigConfigMapArray{ GetConfigConfigConfigMapArgs{...} }
+type GetConfigConfigConfigMapArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigConfigConfigMapArrayOutput() GetConfigConfigConfigMapArrayOutput
+	ToGetConfigConfigConfigMapArrayOutputWithContext(context.Context) GetConfigConfigConfigMapArrayOutput
+}
+
+type GetConfigConfigConfigMapArray []GetConfigConfigConfigMapInput
+
+func (GetConfigConfigConfigMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (i GetConfigConfigConfigMapArray) ToGetConfigConfigConfigMapArrayOutput() GetConfigConfigConfigMapArrayOutput {
+	return i.ToGetConfigConfigConfigMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigConfigConfigMapArray) ToGetConfigConfigConfigMapArrayOutputWithContext(ctx context.Context) GetConfigConfigConfigMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigConfigConfigMapArrayOutput)
+}
+
+type GetConfigConfigConfigMapOutput struct{ *pulumi.OutputState }
+
+func (GetConfigConfigConfigMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (o GetConfigConfigConfigMapOutput) ToGetConfigConfigConfigMapOutput() GetConfigConfigConfigMapOutput {
+	return o
+}
+
+func (o GetConfigConfigConfigMapOutput) ToGetConfigConfigConfigMapOutputWithContext(ctx context.Context) GetConfigConfigConfigMapOutput {
+	return o
+}
+
+// The Base64 encoded agent configuration file.
+func (o GetConfigConfigConfigMapOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigConfigConfigMap) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+func (o GetConfigConfigConfigMapOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigConfigConfigMap) string { return v.ContentType }).(pulumi.StringOutput)
+}
+
+// An agent configuration file name.
+func (o GetConfigConfigConfigMapOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigConfigConfigMap) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+type GetConfigConfigConfigMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigConfigConfigMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigConfigConfigMap)(nil)).Elem()
+}
+
+func (o GetConfigConfigConfigMapArrayOutput) ToGetConfigConfigConfigMapArrayOutput() GetConfigConfigConfigMapArrayOutput {
+	return o
+}
+
+func (o GetConfigConfigConfigMapArrayOutput) ToGetConfigConfigConfigMapArrayOutputWithContext(ctx context.Context) GetConfigConfigConfigMapArrayOutput {
+	return o
+}
+
+func (o GetConfigConfigConfigMapArrayOutput) Index(i pulumi.IntInput) GetConfigConfigConfigMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigConfigConfigMap {
+		return vs[0].([]GetConfigConfigConfigMap)[vs[1].(int)]
+	}).(GetConfigConfigConfigMapOutput)
 }
 
 type GetConfigDimension struct {
@@ -881,6 +1579,206 @@ func (o GetConfigMetricArrayOutput) Index(i pulumi.IntInput) GetConfigMetricOutp
 	}).(GetConfigMetricOutput)
 }
 
+type GetConfigOverride struct {
+	OverrideLists []GetConfigOverrideOverrideList `pulumi:"overrideLists"`
+}
+
+// GetConfigOverrideInput is an input type that accepts GetConfigOverrideArgs and GetConfigOverrideOutput values.
+// You can construct a concrete instance of `GetConfigOverrideInput` via:
+//
+//	GetConfigOverrideArgs{...}
+type GetConfigOverrideInput interface {
+	pulumi.Input
+
+	ToGetConfigOverrideOutput() GetConfigOverrideOutput
+	ToGetConfigOverrideOutputWithContext(context.Context) GetConfigOverrideOutput
+}
+
+type GetConfigOverrideArgs struct {
+	OverrideLists GetConfigOverrideOverrideListArrayInput `pulumi:"overrideLists"`
+}
+
+func (GetConfigOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigOverride)(nil)).Elem()
+}
+
+func (i GetConfigOverrideArgs) ToGetConfigOverrideOutput() GetConfigOverrideOutput {
+	return i.ToGetConfigOverrideOutputWithContext(context.Background())
+}
+
+func (i GetConfigOverrideArgs) ToGetConfigOverrideOutputWithContext(ctx context.Context) GetConfigOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigOverrideOutput)
+}
+
+// GetConfigOverrideArrayInput is an input type that accepts GetConfigOverrideArray and GetConfigOverrideArrayOutput values.
+// You can construct a concrete instance of `GetConfigOverrideArrayInput` via:
+//
+//	GetConfigOverrideArray{ GetConfigOverrideArgs{...} }
+type GetConfigOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigOverrideArrayOutput() GetConfigOverrideArrayOutput
+	ToGetConfigOverrideArrayOutputWithContext(context.Context) GetConfigOverrideArrayOutput
+}
+
+type GetConfigOverrideArray []GetConfigOverrideInput
+
+func (GetConfigOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigOverride)(nil)).Elem()
+}
+
+func (i GetConfigOverrideArray) ToGetConfigOverrideArrayOutput() GetConfigOverrideArrayOutput {
+	return i.ToGetConfigOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigOverrideArray) ToGetConfigOverrideArrayOutputWithContext(ctx context.Context) GetConfigOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigOverrideArrayOutput)
+}
+
+type GetConfigOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetConfigOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigOverride)(nil)).Elem()
+}
+
+func (o GetConfigOverrideOutput) ToGetConfigOverrideOutput() GetConfigOverrideOutput {
+	return o
+}
+
+func (o GetConfigOverrideOutput) ToGetConfigOverrideOutputWithContext(ctx context.Context) GetConfigOverrideOutput {
+	return o
+}
+
+func (o GetConfigOverrideOutput) OverrideLists() GetConfigOverrideOverrideListArrayOutput {
+	return o.ApplyT(func(v GetConfigOverride) []GetConfigOverrideOverrideList { return v.OverrideLists }).(GetConfigOverrideOverrideListArrayOutput)
+}
+
+type GetConfigOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigOverride)(nil)).Elem()
+}
+
+func (o GetConfigOverrideArrayOutput) ToGetConfigOverrideArrayOutput() GetConfigOverrideArrayOutput {
+	return o
+}
+
+func (o GetConfigOverrideArrayOutput) ToGetConfigOverrideArrayOutputWithContext(ctx context.Context) GetConfigOverrideArrayOutput {
+	return o
+}
+
+func (o GetConfigOverrideArrayOutput) Index(i pulumi.IntInput) GetConfigOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigOverride {
+		return vs[0].([]GetConfigOverride)[vs[1].(int)]
+	}).(GetConfigOverrideOutput)
+}
+
+type GetConfigOverrideOverrideList struct {
+	// The string that defines the Agent Filter expression.
+	AgentFilter string `pulumi:"agentFilter"`
+	// A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+	OverrideMap map[string]string `pulumi:"overrideMap"`
+}
+
+// GetConfigOverrideOverrideListInput is an input type that accepts GetConfigOverrideOverrideListArgs and GetConfigOverrideOverrideListOutput values.
+// You can construct a concrete instance of `GetConfigOverrideOverrideListInput` via:
+//
+//	GetConfigOverrideOverrideListArgs{...}
+type GetConfigOverrideOverrideListInput interface {
+	pulumi.Input
+
+	ToGetConfigOverrideOverrideListOutput() GetConfigOverrideOverrideListOutput
+	ToGetConfigOverrideOverrideListOutputWithContext(context.Context) GetConfigOverrideOverrideListOutput
+}
+
+type GetConfigOverrideOverrideListArgs struct {
+	// The string that defines the Agent Filter expression.
+	AgentFilter pulumi.StringInput `pulumi:"agentFilter"`
+	// A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+	OverrideMap pulumi.StringMapInput `pulumi:"overrideMap"`
+}
+
+func (GetConfigOverrideOverrideListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigOverrideOverrideList)(nil)).Elem()
+}
+
+func (i GetConfigOverrideOverrideListArgs) ToGetConfigOverrideOverrideListOutput() GetConfigOverrideOverrideListOutput {
+	return i.ToGetConfigOverrideOverrideListOutputWithContext(context.Background())
+}
+
+func (i GetConfigOverrideOverrideListArgs) ToGetConfigOverrideOverrideListOutputWithContext(ctx context.Context) GetConfigOverrideOverrideListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigOverrideOverrideListOutput)
+}
+
+// GetConfigOverrideOverrideListArrayInput is an input type that accepts GetConfigOverrideOverrideListArray and GetConfigOverrideOverrideListArrayOutput values.
+// You can construct a concrete instance of `GetConfigOverrideOverrideListArrayInput` via:
+//
+//	GetConfigOverrideOverrideListArray{ GetConfigOverrideOverrideListArgs{...} }
+type GetConfigOverrideOverrideListArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigOverrideOverrideListArrayOutput() GetConfigOverrideOverrideListArrayOutput
+	ToGetConfigOverrideOverrideListArrayOutputWithContext(context.Context) GetConfigOverrideOverrideListArrayOutput
+}
+
+type GetConfigOverrideOverrideListArray []GetConfigOverrideOverrideListInput
+
+func (GetConfigOverrideOverrideListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigOverrideOverrideList)(nil)).Elem()
+}
+
+func (i GetConfigOverrideOverrideListArray) ToGetConfigOverrideOverrideListArrayOutput() GetConfigOverrideOverrideListArrayOutput {
+	return i.ToGetConfigOverrideOverrideListArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigOverrideOverrideListArray) ToGetConfigOverrideOverrideListArrayOutputWithContext(ctx context.Context) GetConfigOverrideOverrideListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigOverrideOverrideListArrayOutput)
+}
+
+type GetConfigOverrideOverrideListOutput struct{ *pulumi.OutputState }
+
+func (GetConfigOverrideOverrideListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigOverrideOverrideList)(nil)).Elem()
+}
+
+func (o GetConfigOverrideOverrideListOutput) ToGetConfigOverrideOverrideListOutput() GetConfigOverrideOverrideListOutput {
+	return o
+}
+
+func (o GetConfigOverrideOverrideListOutput) ToGetConfigOverrideOverrideListOutputWithContext(ctx context.Context) GetConfigOverrideOverrideListOutput {
+	return o
+}
+
+// The string that defines the Agent Filter expression.
+func (o GetConfigOverrideOverrideListOutput) AgentFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigOverrideOverrideList) string { return v.AgentFilter }).(pulumi.StringOutput)
+}
+
+// A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+func (o GetConfigOverrideOverrideListOutput) OverrideMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigOverrideOverrideList) map[string]string { return v.OverrideMap }).(pulumi.StringMapOutput)
+}
+
+type GetConfigOverrideOverrideListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigOverrideOverrideListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigOverrideOverrideList)(nil)).Elem()
+}
+
+func (o GetConfigOverrideOverrideListArrayOutput) ToGetConfigOverrideOverrideListArrayOutput() GetConfigOverrideOverrideListArrayOutput {
+	return o
+}
+
+func (o GetConfigOverrideOverrideListArrayOutput) ToGetConfigOverrideOverrideListArrayOutputWithContext(ctx context.Context) GetConfigOverrideOverrideListArrayOutput {
+	return o
+}
+
+func (o GetConfigOverrideOverrideListArrayOutput) Index(i pulumi.IntInput) GetConfigOverrideOverrideListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigOverrideOverrideList {
+		return vs[0].([]GetConfigOverrideOverrideList)[vs[1].(int)]
+	}).(GetConfigOverrideOverrideListOutput)
+}
+
 type GetConfigRule struct {
 	// The name by which a configuration entity is displayed to the end user.
 	DisplayName string `pulumi:"displayName"`
@@ -1127,10 +2025,16 @@ func (o GetConfigsConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetConfi
 }
 
 type GetConfigsConfigCollectionItem struct {
+	// The version of the referenced agent bundle.
+	AgentVersion string `pulumi:"agentVersion"`
 	// The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
-	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// The directory owned by runAsUser.
+	AttachInstallDir string `pulumi:"attachInstallDir"`
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 	ConfigType string `pulumi:"configType"`
+	// Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Configs []GetConfigsConfigCollectionItemConfig `pulumi:"configs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1155,14 +2059,28 @@ type GetConfigsConfigCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The list of configuration items that reference the span filter.
 	InUseBies []GetConfigsConfigCollectionItemInUseBy `pulumi:"inUseBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId string `pulumi:"managementAgentId"`
+	// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+	MatchAgentsWithAttributeKeys []string `pulumi:"matchAgentsWithAttributeKeys"`
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue string `pulumi:"matchAgentsWithAttributeValue"`
 	// The list of metrics in this group.
 	Metrics []GetConfigsConfigCollectionItemMetric `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace string `pulumi:"namespace"`
 	OpcDryRun string `pulumi:"opcDryRun"`
 	// The options are stored here as JSON.
-	Options string                               `pulumi:"options"`
-	Rules   []GetConfigsConfigCollectionItemRule `pulumi:"rules"`
+	Options string `pulumi:"options"`
+	// Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides []GetConfigsConfigCollectionItemOverride `pulumi:"overrides"`
+	// Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters []string                             `pulumi:"processFilters"`
+	Rules          []GetConfigsConfigCollectionItemRule `pulumi:"rules"`
+	// The OS user that should be used to discover Java processes.
+	RunAsUser string `pulumi:"runAsUser"`
+	// The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	ServiceName string `pulumi:"serviceName"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -1183,10 +2101,16 @@ type GetConfigsConfigCollectionItemInput interface {
 }
 
 type GetConfigsConfigCollectionItemArgs struct {
+	// The version of the referenced agent bundle.
+	AgentVersion pulumi.StringInput `pulumi:"agentVersion"`
 	// The APM Domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
-	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// The directory owned by runAsUser.
+	AttachInstallDir pulumi.StringInput `pulumi:"attachInstallDir"`
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+	Configs GetConfigsConfigCollectionItemConfigArrayInput `pulumi:"configs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1211,14 +2135,28 @@ type GetConfigsConfigCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The list of configuration items that reference the span filter.
 	InUseBies GetConfigsConfigCollectionItemInUseByArrayInput `pulumi:"inUseBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
+	// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+	MatchAgentsWithAttributeKeys pulumi.StringArrayInput `pulumi:"matchAgentsWithAttributeKeys"`
+	// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+	MatchAgentsWithAttributeValue pulumi.StringInput `pulumi:"matchAgentsWithAttributeValue"`
 	// The list of metrics in this group.
 	Metrics GetConfigsConfigCollectionItemMetricArrayInput `pulumi:"metrics"`
 	// The namespace to which the metrics are published. It must be one of several predefined namespaces.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	OpcDryRun pulumi.StringInput `pulumi:"opcDryRun"`
 	// The options are stored here as JSON.
-	Options pulumi.StringInput                           `pulumi:"options"`
-	Rules   GetConfigsConfigCollectionItemRuleArrayInput `pulumi:"rules"`
+	Options pulumi.StringInput `pulumi:"options"`
+	// Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+	Overrides GetConfigsConfigCollectionItemOverrideArrayInput `pulumi:"overrides"`
+	// Filter patterns used to discover active Java processes for provisioning the APM Agent.
+	ProcessFilters pulumi.StringArrayInput                      `pulumi:"processFilters"`
+	Rules          GetConfigsConfigCollectionItemRuleArrayInput `pulumi:"rules"`
+	// The OS user that should be used to discover Java processes.
+	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
+	// The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
@@ -1278,14 +2216,29 @@ func (o GetConfigsConfigCollectionItemOutput) ToGetConfigsConfigCollectionItemOu
 	return o
 }
 
+// The version of the referenced agent bundle.
+func (o GetConfigsConfigCollectionItemOutput) AgentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.AgentVersion }).(pulumi.StringOutput)
+}
+
 // The APM Domain ID the request is intended for.
 func (o GetConfigsConfigCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
-// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+// The directory owned by runAsUser.
+func (o GetConfigsConfigCollectionItemOutput) AttachInstallDir() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.AttachInstallDir }).(pulumi.StringOutput)
+}
+
+// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
+}
+
+// Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `configMap`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+func (o GetConfigsConfigCollectionItemOutput) Configs() GetConfigsConfigCollectionItemConfigArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemConfig { return v.Configs }).(GetConfigsConfigCollectionItemConfigArrayOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
@@ -1348,6 +2301,21 @@ func (o GetConfigsConfigCollectionItemOutput) InUseBies() GetConfigsConfigCollec
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemInUseBy { return v.InUseBies }).(GetConfigsConfigCollectionItemInUseByArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+func (o GetConfigsConfigCollectionItemOutput) ManagementAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ManagementAgentId }).(pulumi.StringOutput)
+}
+
+// The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+func (o GetConfigsConfigCollectionItemOutput) MatchAgentsWithAttributeKeys() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []string { return v.MatchAgentsWithAttributeKeys }).(pulumi.StringArrayOutput)
+}
+
+// The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+func (o GetConfigsConfigCollectionItemOutput) MatchAgentsWithAttributeValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.MatchAgentsWithAttributeValue }).(pulumi.StringOutput)
+}
+
 // The list of metrics in this group.
 func (o GetConfigsConfigCollectionItemOutput) Metrics() GetConfigsConfigCollectionItemMetricArrayOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemMetric { return v.Metrics }).(GetConfigsConfigCollectionItemMetricArrayOutput)
@@ -1367,8 +2335,28 @@ func (o GetConfigsConfigCollectionItemOutput) Options() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.Options }).(pulumi.StringOutput)
 }
 
+// Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+func (o GetConfigsConfigCollectionItemOutput) Overrides() GetConfigsConfigCollectionItemOverrideArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemOverride { return v.Overrides }).(GetConfigsConfigCollectionItemOverrideArrayOutput)
+}
+
+// Filter patterns used to discover active Java processes for provisioning the APM Agent.
+func (o GetConfigsConfigCollectionItemOutput) ProcessFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []string { return v.ProcessFilters }).(pulumi.StringArrayOutput)
+}
+
 func (o GetConfigsConfigCollectionItemOutput) Rules() GetConfigsConfigCollectionItemRuleArrayOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItem) []GetConfigsConfigCollectionItemRule { return v.Rules }).(GetConfigsConfigCollectionItemRuleArrayOutput)
+}
+
+// The OS user that should be used to discover Java processes.
+func (o GetConfigsConfigCollectionItemOutput) RunAsUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.RunAsUser }).(pulumi.StringOutput)
+}
+
+// The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+func (o GetConfigsConfigCollectionItemOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) string { return v.ServiceName }).(pulumi.StringOutput)
 }
 
 // The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -1404,6 +2392,220 @@ func (o GetConfigsConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetC
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItem {
 		return vs[0].([]GetConfigsConfigCollectionItem)[vs[1].(int)]
 	}).(GetConfigsConfigCollectionItemOutput)
+}
+
+type GetConfigsConfigCollectionItemConfig struct {
+	// Map of an agent configuration file.
+	ConfigMaps []GetConfigsConfigCollectionItemConfigConfigMap `pulumi:"configMaps"`
+}
+
+// GetConfigsConfigCollectionItemConfigInput is an input type that accepts GetConfigsConfigCollectionItemConfigArgs and GetConfigsConfigCollectionItemConfigOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemConfigInput` via:
+//
+//	GetConfigsConfigCollectionItemConfigArgs{...}
+type GetConfigsConfigCollectionItemConfigInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemConfigOutput() GetConfigsConfigCollectionItemConfigOutput
+	ToGetConfigsConfigCollectionItemConfigOutputWithContext(context.Context) GetConfigsConfigCollectionItemConfigOutput
+}
+
+type GetConfigsConfigCollectionItemConfigArgs struct {
+	// Map of an agent configuration file.
+	ConfigMaps GetConfigsConfigCollectionItemConfigConfigMapArrayInput `pulumi:"configMaps"`
+}
+
+func (GetConfigsConfigCollectionItemConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemConfig)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemConfigArgs) ToGetConfigsConfigCollectionItemConfigOutput() GetConfigsConfigCollectionItemConfigOutput {
+	return i.ToGetConfigsConfigCollectionItemConfigOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemConfigArgs) ToGetConfigsConfigCollectionItemConfigOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemConfigOutput)
+}
+
+// GetConfigsConfigCollectionItemConfigArrayInput is an input type that accepts GetConfigsConfigCollectionItemConfigArray and GetConfigsConfigCollectionItemConfigArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemConfigArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemConfigArray{ GetConfigsConfigCollectionItemConfigArgs{...} }
+type GetConfigsConfigCollectionItemConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemConfigArrayOutput() GetConfigsConfigCollectionItemConfigArrayOutput
+	ToGetConfigsConfigCollectionItemConfigArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemConfigArrayOutput
+}
+
+type GetConfigsConfigCollectionItemConfigArray []GetConfigsConfigCollectionItemConfigInput
+
+func (GetConfigsConfigCollectionItemConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemConfig)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemConfigArray) ToGetConfigsConfigCollectionItemConfigArrayOutput() GetConfigsConfigCollectionItemConfigArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemConfigArray) ToGetConfigsConfigCollectionItemConfigArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemConfigArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemConfigOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemConfig)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemConfigOutput) ToGetConfigsConfigCollectionItemConfigOutput() GetConfigsConfigCollectionItemConfigOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemConfigOutput) ToGetConfigsConfigCollectionItemConfigOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigOutput {
+	return o
+}
+
+// Map of an agent configuration file.
+func (o GetConfigsConfigCollectionItemConfigOutput) ConfigMaps() GetConfigsConfigCollectionItemConfigConfigMapArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemConfig) []GetConfigsConfigCollectionItemConfigConfigMap {
+		return v.ConfigMaps
+	}).(GetConfigsConfigCollectionItemConfigConfigMapArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemConfig)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemConfigArrayOutput) ToGetConfigsConfigCollectionItemConfigArrayOutput() GetConfigsConfigCollectionItemConfigArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemConfigArrayOutput) ToGetConfigsConfigCollectionItemConfigArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemConfigArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemConfig {
+		return vs[0].([]GetConfigsConfigCollectionItemConfig)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemConfigOutput)
+}
+
+type GetConfigsConfigCollectionItemConfigConfigMap struct {
+	// The Base64 encoded agent configuration file.
+	Body string `pulumi:"body"`
+	// The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+	ContentType string `pulumi:"contentType"`
+	// An agent configuration file name.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetConfigsConfigCollectionItemConfigConfigMapInput is an input type that accepts GetConfigsConfigCollectionItemConfigConfigMap and GetConfigsConfigCollectionItemConfigConfigMapOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemConfigConfigMapInput` via:
+//
+//	GetConfigsConfigCollectionItemConfigConfigMap{ "key": GetConfigsConfigCollectionItemConfigConfigArgs{...} }
+type GetConfigsConfigCollectionItemConfigConfigMapInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemConfigConfigMapOutput() GetConfigsConfigCollectionItemConfigConfigMapOutput
+	ToGetConfigsConfigCollectionItemConfigConfigMapOutputWithContext(context.Context) GetConfigsConfigCollectionItemConfigConfigMapOutput
+}
+
+type GetConfigsConfigCollectionItemConfigConfigMapArgs struct {
+	// The Base64 encoded agent configuration file.
+	Body pulumi.StringInput `pulumi:"body"`
+	// The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+	ContentType pulumi.StringInput `pulumi:"contentType"`
+	// An agent configuration file name.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetConfigsConfigCollectionItemConfigConfigMapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemConfigConfigMap)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemConfigConfigMapArgs) ToGetConfigsConfigCollectionItemConfigConfigMapOutput() GetConfigsConfigCollectionItemConfigConfigMapOutput {
+	return i.ToGetConfigsConfigCollectionItemConfigConfigMapOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemConfigConfigMapArgs) ToGetConfigsConfigCollectionItemConfigConfigMapOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigConfigMapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemConfigConfigMapOutput)
+}
+
+// GetConfigsConfigCollectionItemConfigConfigMapArrayInput is an input type that accepts GetConfigsConfigCollectionItemConfigConfigMapArray and GetConfigsConfigCollectionItemConfigConfigMapArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemConfigConfigMapArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemConfigConfigMapArray{ GetConfigsConfigCollectionItemConfigConfigMapArgs{...} }
+type GetConfigsConfigCollectionItemConfigConfigMapArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutput() GetConfigsConfigCollectionItemConfigConfigMapArrayOutput
+	ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemConfigConfigMapArrayOutput
+}
+
+type GetConfigsConfigCollectionItemConfigConfigMapArray []GetConfigsConfigCollectionItemConfigConfigMapInput
+
+func (GetConfigsConfigCollectionItemConfigConfigMapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemConfigConfigMap)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemConfigConfigMapArray) ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutput() GetConfigsConfigCollectionItemConfigConfigMapArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemConfigConfigMapArray) ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigConfigMapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemConfigConfigMapArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemConfigConfigMapOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemConfigConfigMapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemConfigConfigMap)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemConfigConfigMapOutput) ToGetConfigsConfigCollectionItemConfigConfigMapOutput() GetConfigsConfigCollectionItemConfigConfigMapOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemConfigConfigMapOutput) ToGetConfigsConfigCollectionItemConfigConfigMapOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigConfigMapOutput {
+	return o
+}
+
+// The Base64 encoded agent configuration file.
+func (o GetConfigsConfigCollectionItemConfigConfigMapOutput) Body() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemConfigConfigMap) string { return v.Body }).(pulumi.StringOutput)
+}
+
+// The MIME Content-Type that describes the content of the body field, for example, text/yaml or text/yaml; charset=utf-8
+func (o GetConfigsConfigCollectionItemConfigConfigMapOutput) ContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemConfigConfigMap) string { return v.ContentType }).(pulumi.StringOutput)
+}
+
+// An agent configuration file name.
+func (o GetConfigsConfigCollectionItemConfigConfigMapOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemConfigConfigMap) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+type GetConfigsConfigCollectionItemConfigConfigMapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemConfigConfigMapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemConfigConfigMap)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemConfigConfigMapArrayOutput) ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutput() GetConfigsConfigCollectionItemConfigConfigMapArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemConfigConfigMapArrayOutput) ToGetConfigsConfigCollectionItemConfigConfigMapArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemConfigConfigMapArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemConfigConfigMapArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemConfigConfigMapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemConfigConfigMap {
+		return vs[0].([]GetConfigsConfigCollectionItemConfigConfigMap)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemConfigConfigMapOutput)
 }
 
 type GetConfigsConfigCollectionItemDimension struct {
@@ -1513,7 +2715,7 @@ func (o GetConfigsConfigCollectionItemDimensionArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetConfigsConfigCollectionItemInUseBy struct {
-	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 	ConfigType string `pulumi:"configType"`
 	// A filter to return resources that match the given display name.
 	DisplayName string `pulumi:"displayName"`
@@ -1535,7 +2737,7 @@ type GetConfigsConfigCollectionItemInUseByInput interface {
 }
 
 type GetConfigsConfigCollectionItemInUseByArgs struct {
-	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+	// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// A filter to return resources that match the given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
@@ -1596,7 +2798,7 @@ func (o GetConfigsConfigCollectionItemInUseByOutput) ToGetConfigsConfigCollectio
 	return o
 }
 
-// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
+// A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, APDEX, AGENT and MACS_APM_EXTENSION.
 func (o GetConfigsConfigCollectionItemInUseByOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigsConfigCollectionItemInUseBy) string { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -1758,6 +2960,208 @@ func (o GetConfigsConfigCollectionItemMetricArrayOutput) Index(i pulumi.IntInput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemMetric {
 		return vs[0].([]GetConfigsConfigCollectionItemMetric)[vs[1].(int)]
 	}).(GetConfigsConfigCollectionItemMetricOutput)
+}
+
+type GetConfigsConfigCollectionItemOverride struct {
+	OverrideLists []GetConfigsConfigCollectionItemOverrideOverrideList `pulumi:"overrideLists"`
+}
+
+// GetConfigsConfigCollectionItemOverrideInput is an input type that accepts GetConfigsConfigCollectionItemOverrideArgs and GetConfigsConfigCollectionItemOverrideOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemOverrideInput` via:
+//
+//	GetConfigsConfigCollectionItemOverrideArgs{...}
+type GetConfigsConfigCollectionItemOverrideInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemOverrideOutput() GetConfigsConfigCollectionItemOverrideOutput
+	ToGetConfigsConfigCollectionItemOverrideOutputWithContext(context.Context) GetConfigsConfigCollectionItemOverrideOutput
+}
+
+type GetConfigsConfigCollectionItemOverrideArgs struct {
+	OverrideLists GetConfigsConfigCollectionItemOverrideOverrideListArrayInput `pulumi:"overrideLists"`
+}
+
+func (GetConfigsConfigCollectionItemOverrideArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemOverride)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemOverrideArgs) ToGetConfigsConfigCollectionItemOverrideOutput() GetConfigsConfigCollectionItemOverrideOutput {
+	return i.ToGetConfigsConfigCollectionItemOverrideOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemOverrideArgs) ToGetConfigsConfigCollectionItemOverrideOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOverrideOutput)
+}
+
+// GetConfigsConfigCollectionItemOverrideArrayInput is an input type that accepts GetConfigsConfigCollectionItemOverrideArray and GetConfigsConfigCollectionItemOverrideArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemOverrideArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemOverrideArray{ GetConfigsConfigCollectionItemOverrideArgs{...} }
+type GetConfigsConfigCollectionItemOverrideArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemOverrideArrayOutput() GetConfigsConfigCollectionItemOverrideArrayOutput
+	ToGetConfigsConfigCollectionItemOverrideArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemOverrideArrayOutput
+}
+
+type GetConfigsConfigCollectionItemOverrideArray []GetConfigsConfigCollectionItemOverrideInput
+
+func (GetConfigsConfigCollectionItemOverrideArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemOverride)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemOverrideArray) ToGetConfigsConfigCollectionItemOverrideArrayOutput() GetConfigsConfigCollectionItemOverrideArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemOverrideArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemOverrideArray) ToGetConfigsConfigCollectionItemOverrideArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOverrideArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemOverrideOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemOverrideOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemOverride)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOutput) ToGetConfigsConfigCollectionItemOverrideOutput() GetConfigsConfigCollectionItemOverrideOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOutput) ToGetConfigsConfigCollectionItemOverrideOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOutput) OverrideLists() GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemOverride) []GetConfigsConfigCollectionItemOverrideOverrideList {
+		return v.OverrideLists
+	}).(GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemOverrideArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemOverrideArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemOverride)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemOverrideArrayOutput) ToGetConfigsConfigCollectionItemOverrideArrayOutput() GetConfigsConfigCollectionItemOverrideArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideArrayOutput) ToGetConfigsConfigCollectionItemOverrideArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemOverrideOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemOverride {
+		return vs[0].([]GetConfigsConfigCollectionItemOverride)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemOverrideOutput)
+}
+
+type GetConfigsConfigCollectionItemOverrideOverrideList struct {
+	// The string that defines the Agent Filter expression.
+	AgentFilter string `pulumi:"agentFilter"`
+	// A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+	OverrideMap map[string]string `pulumi:"overrideMap"`
+}
+
+// GetConfigsConfigCollectionItemOverrideOverrideListInput is an input type that accepts GetConfigsConfigCollectionItemOverrideOverrideListArgs and GetConfigsConfigCollectionItemOverrideOverrideListOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemOverrideOverrideListInput` via:
+//
+//	GetConfigsConfigCollectionItemOverrideOverrideListArgs{...}
+type GetConfigsConfigCollectionItemOverrideOverrideListInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemOverrideOverrideListOutput() GetConfigsConfigCollectionItemOverrideOverrideListOutput
+	ToGetConfigsConfigCollectionItemOverrideOverrideListOutputWithContext(context.Context) GetConfigsConfigCollectionItemOverrideOverrideListOutput
+}
+
+type GetConfigsConfigCollectionItemOverrideOverrideListArgs struct {
+	// The string that defines the Agent Filter expression.
+	AgentFilter pulumi.StringInput `pulumi:"agentFilter"`
+	// A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+	OverrideMap pulumi.StringMapInput `pulumi:"overrideMap"`
+}
+
+func (GetConfigsConfigCollectionItemOverrideOverrideListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemOverrideOverrideList)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemOverrideOverrideListArgs) ToGetConfigsConfigCollectionItemOverrideOverrideListOutput() GetConfigsConfigCollectionItemOverrideOverrideListOutput {
+	return i.ToGetConfigsConfigCollectionItemOverrideOverrideListOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemOverrideOverrideListArgs) ToGetConfigsConfigCollectionItemOverrideOverrideListOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideOverrideListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOverrideOverrideListOutput)
+}
+
+// GetConfigsConfigCollectionItemOverrideOverrideListArrayInput is an input type that accepts GetConfigsConfigCollectionItemOverrideOverrideListArray and GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput values.
+// You can construct a concrete instance of `GetConfigsConfigCollectionItemOverrideOverrideListArrayInput` via:
+//
+//	GetConfigsConfigCollectionItemOverrideOverrideListArray{ GetConfigsConfigCollectionItemOverrideOverrideListArgs{...} }
+type GetConfigsConfigCollectionItemOverrideOverrideListArrayInput interface {
+	pulumi.Input
+
+	ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutput() GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput
+	ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutputWithContext(context.Context) GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput
+}
+
+type GetConfigsConfigCollectionItemOverrideOverrideListArray []GetConfigsConfigCollectionItemOverrideOverrideListInput
+
+func (GetConfigsConfigCollectionItemOverrideOverrideListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemOverrideOverrideList)(nil)).Elem()
+}
+
+func (i GetConfigsConfigCollectionItemOverrideOverrideListArray) ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutput() GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput {
+	return i.ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutputWithContext(context.Background())
+}
+
+func (i GetConfigsConfigCollectionItemOverrideOverrideListArray) ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput)
+}
+
+type GetConfigsConfigCollectionItemOverrideOverrideListOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemOverrideOverrideListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConfigsConfigCollectionItemOverrideOverrideList)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOverrideListOutput) ToGetConfigsConfigCollectionItemOverrideOverrideListOutput() GetConfigsConfigCollectionItemOverrideOverrideListOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOverrideListOutput) ToGetConfigsConfigCollectionItemOverrideOverrideListOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideOverrideListOutput {
+	return o
+}
+
+// The string that defines the Agent Filter expression.
+func (o GetConfigsConfigCollectionItemOverrideOverrideListOutput) AgentFilter() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemOverrideOverrideList) string { return v.AgentFilter }).(pulumi.StringOutput)
+}
+
+// A map whose key is a substitution variable specified within the configuration's body. For example, if below was specified in the configuration's body {{ isJfrEnabled | default false }} Then a valid map key would be "isJfrEnabled". The value is typically different than the default specified in the configuration's body. Thus, in this example, the map entry could be "isJfrEnabled": true
+func (o GetConfigsConfigCollectionItemOverrideOverrideListOutput) OverrideMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItemOverrideOverrideList) map[string]string { return v.OverrideMap }).(pulumi.StringMapOutput)
+}
+
+type GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConfigsConfigCollectionItemOverrideOverrideList)(nil)).Elem()
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput) ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutput() GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput) ToGetConfigsConfigCollectionItemOverrideOverrideListArrayOutputWithContext(ctx context.Context) GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput {
+	return o
+}
+
+func (o GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput) Index(i pulumi.IntInput) GetConfigsConfigCollectionItemOverrideOverrideListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConfigsConfigCollectionItemOverrideOverrideList {
+		return vs[0].([]GetConfigsConfigCollectionItemOverrideOverrideList)[vs[1].(int)]
+	}).(GetConfigsConfigCollectionItemOverrideOverrideListOutput)
 }
 
 type GetConfigsConfigCollectionItemRule struct {
@@ -2021,62 +3425,110 @@ func (o GetConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetConfigsFilterOu
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigInput)(nil)).Elem(), ConfigConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigPtrInput)(nil)).Elem(), ConfigConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigConfigMapInput)(nil)).Elem(), ConfigConfigConfigMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigConfigMapArrayInput)(nil)).Elem(), ConfigConfigConfigMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigDimensionInput)(nil)).Elem(), ConfigDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigDimensionArrayInput)(nil)).Elem(), ConfigDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigInUseByInput)(nil)).Elem(), ConfigInUseByArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigInUseByArrayInput)(nil)).Elem(), ConfigInUseByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigMetricInput)(nil)).Elem(), ConfigMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigMetricArrayInput)(nil)).Elem(), ConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigOverridesInput)(nil)).Elem(), ConfigOverridesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigOverridesPtrInput)(nil)).Elem(), ConfigOverridesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigOverridesOverrideListInput)(nil)).Elem(), ConfigOverridesOverrideListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigOverridesOverrideListArrayInput)(nil)).Elem(), ConfigOverridesOverrideListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigRuleInput)(nil)).Elem(), ConfigRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigRuleArrayInput)(nil)).Elem(), ConfigRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigConfigInput)(nil)).Elem(), GetConfigConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigConfigArrayInput)(nil)).Elem(), GetConfigConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigConfigConfigMapInput)(nil)).Elem(), GetConfigConfigConfigMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigConfigConfigMapArrayInput)(nil)).Elem(), GetConfigConfigConfigMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigDimensionInput)(nil)).Elem(), GetConfigDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigDimensionArrayInput)(nil)).Elem(), GetConfigDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigInUseByInput)(nil)).Elem(), GetConfigInUseByArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigInUseByArrayInput)(nil)).Elem(), GetConfigInUseByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigMetricInput)(nil)).Elem(), GetConfigMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigMetricArrayInput)(nil)).Elem(), GetConfigMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigOverrideInput)(nil)).Elem(), GetConfigOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigOverrideArrayInput)(nil)).Elem(), GetConfigOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigOverrideOverrideListInput)(nil)).Elem(), GetConfigOverrideOverrideListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigOverrideOverrideListArrayInput)(nil)).Elem(), GetConfigOverrideOverrideListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigRuleInput)(nil)).Elem(), GetConfigRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigRuleArrayInput)(nil)).Elem(), GetConfigRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionInput)(nil)).Elem(), GetConfigsConfigCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionArrayInput)(nil)).Elem(), GetConfigsConfigCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInput)(nil)).Elem(), GetConfigsConfigCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemConfigInput)(nil)).Elem(), GetConfigsConfigCollectionItemConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemConfigArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemConfigConfigMapInput)(nil)).Elem(), GetConfigsConfigCollectionItemConfigConfigMapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemConfigConfigMapArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemConfigConfigMapArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemDimensionInput)(nil)).Elem(), GetConfigsConfigCollectionItemDimensionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemDimensionArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemDimensionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInUseByInput)(nil)).Elem(), GetConfigsConfigCollectionItemInUseByArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemInUseByArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemInUseByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemMetricInput)(nil)).Elem(), GetConfigsConfigCollectionItemMetricArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemMetricArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemOverrideInput)(nil)).Elem(), GetConfigsConfigCollectionItemOverrideArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemOverrideArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemOverrideArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemOverrideOverrideListInput)(nil)).Elem(), GetConfigsConfigCollectionItemOverrideOverrideListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemOverrideOverrideListArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemOverrideOverrideListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemRuleInput)(nil)).Elem(), GetConfigsConfigCollectionItemRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsConfigCollectionItemRuleArrayInput)(nil)).Elem(), GetConfigsConfigCollectionItemRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterInput)(nil)).Elem(), GetConfigsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConfigsFilterArrayInput)(nil)).Elem(), GetConfigsFilterArray{})
+	pulumi.RegisterOutputType(ConfigConfigOutput{})
+	pulumi.RegisterOutputType(ConfigConfigPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigConfigMapOutput{})
+	pulumi.RegisterOutputType(ConfigConfigConfigMapArrayOutput{})
 	pulumi.RegisterOutputType(ConfigDimensionOutput{})
 	pulumi.RegisterOutputType(ConfigDimensionArrayOutput{})
 	pulumi.RegisterOutputType(ConfigInUseByOutput{})
 	pulumi.RegisterOutputType(ConfigInUseByArrayOutput{})
 	pulumi.RegisterOutputType(ConfigMetricOutput{})
 	pulumi.RegisterOutputType(ConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(ConfigOverridesOutput{})
+	pulumi.RegisterOutputType(ConfigOverridesPtrOutput{})
+	pulumi.RegisterOutputType(ConfigOverridesOverrideListOutput{})
+	pulumi.RegisterOutputType(ConfigOverridesOverrideListArrayOutput{})
 	pulumi.RegisterOutputType(ConfigRuleOutput{})
 	pulumi.RegisterOutputType(ConfigRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigConfigOutput{})
+	pulumi.RegisterOutputType(GetConfigConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigConfigConfigMapOutput{})
+	pulumi.RegisterOutputType(GetConfigConfigConfigMapArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigDimensionOutput{})
 	pulumi.RegisterOutputType(GetConfigDimensionArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigInUseByOutput{})
 	pulumi.RegisterOutputType(GetConfigInUseByArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigMetricOutput{})
 	pulumi.RegisterOutputType(GetConfigMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigOverrideOutput{})
+	pulumi.RegisterOutputType(GetConfigOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigOverrideOverrideListOutput{})
+	pulumi.RegisterOutputType(GetConfigOverrideOverrideListArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigRuleOutput{})
 	pulumi.RegisterOutputType(GetConfigRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemConfigOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemConfigConfigMapOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemConfigConfigMapArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemDimensionOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemDimensionArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemInUseByOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemInUseByArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemMetricOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOverrideOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOverrideArrayOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOverrideOverrideListOutput{})
+	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemOverrideOverrideListArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemRuleOutput{})
 	pulumi.RegisterOutputType(GetConfigsConfigCollectionItemRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetConfigsFilterOutput{})

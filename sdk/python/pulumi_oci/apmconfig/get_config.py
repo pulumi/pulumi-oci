@@ -27,16 +27,25 @@ class GetConfigResult:
     """
     A collection of values returned by getConfig.
     """
-    def __init__(__self__, apm_domain_id=None, config_id=None, config_type=None, created_by=None, defined_tags=None, description=None, dimensions=None, display_name=None, etag=None, filter_id=None, filter_text=None, freeform_tags=None, group=None, id=None, in_use_bies=None, metrics=None, namespace=None, opc_dry_run=None, options=None, rules=None, time_created=None, time_updated=None, updated_by=None):
+    def __init__(__self__, agent_version=None, apm_domain_id=None, attach_install_dir=None, config_id=None, config_type=None, configs=None, created_by=None, defined_tags=None, description=None, dimensions=None, display_name=None, etag=None, filter_id=None, filter_text=None, freeform_tags=None, group=None, id=None, in_use_bies=None, management_agent_id=None, match_agents_with_attribute_keys=None, match_agents_with_attribute_value=None, metrics=None, namespace=None, opc_dry_run=None, options=None, overrides=None, process_filters=None, rules=None, run_as_user=None, service_name=None, time_created=None, time_updated=None, updated_by=None):
+        if agent_version and not isinstance(agent_version, str):
+            raise TypeError("Expected argument 'agent_version' to be a str")
+        pulumi.set(__self__, "agent_version", agent_version)
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if attach_install_dir and not isinstance(attach_install_dir, str):
+            raise TypeError("Expected argument 'attach_install_dir' to be a str")
+        pulumi.set(__self__, "attach_install_dir", attach_install_dir)
         if config_id and not isinstance(config_id, str):
             raise TypeError("Expected argument 'config_id' to be a str")
         pulumi.set(__self__, "config_id", config_id)
         if config_type and not isinstance(config_type, str):
             raise TypeError("Expected argument 'config_type' to be a str")
         pulumi.set(__self__, "config_type", config_type)
+        if configs and not isinstance(configs, list):
+            raise TypeError("Expected argument 'configs' to be a list")
+        pulumi.set(__self__, "configs", configs)
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -73,6 +82,15 @@ class GetConfigResult:
         if in_use_bies and not isinstance(in_use_bies, list):
             raise TypeError("Expected argument 'in_use_bies' to be a list")
         pulumi.set(__self__, "in_use_bies", in_use_bies)
+        if management_agent_id and not isinstance(management_agent_id, str):
+            raise TypeError("Expected argument 'management_agent_id' to be a str")
+        pulumi.set(__self__, "management_agent_id", management_agent_id)
+        if match_agents_with_attribute_keys and not isinstance(match_agents_with_attribute_keys, list):
+            raise TypeError("Expected argument 'match_agents_with_attribute_keys' to be a list")
+        pulumi.set(__self__, "match_agents_with_attribute_keys", match_agents_with_attribute_keys)
+        if match_agents_with_attribute_value and not isinstance(match_agents_with_attribute_value, str):
+            raise TypeError("Expected argument 'match_agents_with_attribute_value' to be a str")
+        pulumi.set(__self__, "match_agents_with_attribute_value", match_agents_with_attribute_value)
         if metrics and not isinstance(metrics, list):
             raise TypeError("Expected argument 'metrics' to be a list")
         pulumi.set(__self__, "metrics", metrics)
@@ -85,9 +103,21 @@ class GetConfigResult:
         if options and not isinstance(options, str):
             raise TypeError("Expected argument 'options' to be a str")
         pulumi.set(__self__, "options", options)
+        if overrides and not isinstance(overrides, list):
+            raise TypeError("Expected argument 'overrides' to be a list")
+        pulumi.set(__self__, "overrides", overrides)
+        if process_filters and not isinstance(process_filters, list):
+            raise TypeError("Expected argument 'process_filters' to be a list")
+        pulumi.set(__self__, "process_filters", process_filters)
         if rules and not isinstance(rules, list):
             raise TypeError("Expected argument 'rules' to be a list")
         pulumi.set(__self__, "rules", rules)
+        if run_as_user and not isinstance(run_as_user, str):
+            raise TypeError("Expected argument 'run_as_user' to be a str")
+        pulumi.set(__self__, "run_as_user", run_as_user)
+        if service_name and not isinstance(service_name, str):
+            raise TypeError("Expected argument 'service_name' to be a str")
+        pulumi.set(__self__, "service_name", service_name)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -99,9 +129,25 @@ class GetConfigResult:
         pulumi.set(__self__, "updated_by", updated_by)
 
     @_builtins.property
+    @pulumi.getter(name="agentVersion")
+    def agent_version(self) -> _builtins.str:
+        """
+        The version of the referenced agent bundle.
+        """
+        return pulumi.get(self, "agent_version")
+
+    @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> _builtins.str:
         return pulumi.get(self, "apm_domain_id")
+
+    @_builtins.property
+    @pulumi.getter(name="attachInstallDir")
+    def attach_install_dir(self) -> _builtins.str:
+        """
+        The directory owned by runAsUser.
+        """
+        return pulumi.get(self, "attach_install_dir")
 
     @_builtins.property
     @pulumi.getter(name="configId")
@@ -115,6 +161,14 @@ class GetConfigResult:
         The type of configuration item.
         """
         return pulumi.get(self, "config_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> Sequence['outputs.GetConfigConfigResult']:
+        """
+        Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit <some variable> and <some content> {{ <some variable> | default <some content> }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for <some variable> along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
+        """
+        return pulumi.get(self, "configs")
 
     @_builtins.property
     @pulumi.getter(name="createdBy")
@@ -213,6 +267,30 @@ class GetConfigResult:
         return pulumi.get(self, "in_use_bies")
 
     @_builtins.property
+    @pulumi.getter(name="managementAgentId")
+    def management_agent_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+        """
+        return pulumi.get(self, "management_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="matchAgentsWithAttributeKeys")
+    def match_agents_with_attribute_keys(self) -> Sequence[_builtins.str]:
+        """
+        The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+        """
+        return pulumi.get(self, "match_agents_with_attribute_keys")
+
+    @_builtins.property
+    @pulumi.getter(name="matchAgentsWithAttributeValue")
+    def match_agents_with_attribute_value(self) -> _builtins.str:
+        """
+        The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+        """
+        return pulumi.get(self, "match_agents_with_attribute_value")
+
+    @_builtins.property
     @pulumi.getter
     def metrics(self) -> Sequence['outputs.GetConfigMetricResult']:
         """
@@ -243,8 +321,40 @@ class GetConfigResult:
 
     @_builtins.property
     @pulumi.getter
+    def overrides(self) -> Sequence['outputs.GetConfigOverrideResult']:
+        """
+        Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+        """
+        return pulumi.get(self, "overrides")
+
+    @_builtins.property
+    @pulumi.getter(name="processFilters")
+    def process_filters(self) -> Sequence[_builtins.str]:
+        """
+        Filter patterns used to discover active Java processes for provisioning the APM Agent.
+        """
+        return pulumi.get(self, "process_filters")
+
+    @_builtins.property
+    @pulumi.getter
     def rules(self) -> Sequence['outputs.GetConfigRuleResult']:
         return pulumi.get(self, "rules")
+
+    @_builtins.property
+    @pulumi.getter(name="runAsUser")
+    def run_as_user(self) -> _builtins.str:
+        """
+        The OS user that should be used to discover Java processes.
+        """
+        return pulumi.get(self, "run_as_user")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        """
+        The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+        """
+        return pulumi.get(self, "service_name")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -277,9 +387,12 @@ class AwaitableGetConfigResult(GetConfigResult):
         if False:
             yield self
         return GetConfigResult(
+            agent_version=self.agent_version,
             apm_domain_id=self.apm_domain_id,
+            attach_install_dir=self.attach_install_dir,
             config_id=self.config_id,
             config_type=self.config_type,
+            configs=self.configs,
             created_by=self.created_by,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -292,11 +405,18 @@ class AwaitableGetConfigResult(GetConfigResult):
             group=self.group,
             id=self.id,
             in_use_bies=self.in_use_bies,
+            management_agent_id=self.management_agent_id,
+            match_agents_with_attribute_keys=self.match_agents_with_attribute_keys,
+            match_agents_with_attribute_value=self.match_agents_with_attribute_value,
             metrics=self.metrics,
             namespace=self.namespace,
             opc_dry_run=self.opc_dry_run,
             options=self.options,
+            overrides=self.overrides,
+            process_filters=self.process_filters,
             rules=self.rules,
+            run_as_user=self.run_as_user,
+            service_name=self.service_name,
             time_created=self.time_created,
             time_updated=self.time_updated,
             updated_by=self.updated_by)
@@ -331,9 +451,12 @@ def get_config(apm_domain_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:ApmConfig/getConfig:getConfig', __args__, opts=opts, typ=GetConfigResult).value
 
     return AwaitableGetConfigResult(
+        agent_version=pulumi.get(__ret__, 'agent_version'),
         apm_domain_id=pulumi.get(__ret__, 'apm_domain_id'),
+        attach_install_dir=pulumi.get(__ret__, 'attach_install_dir'),
         config_id=pulumi.get(__ret__, 'config_id'),
         config_type=pulumi.get(__ret__, 'config_type'),
+        configs=pulumi.get(__ret__, 'configs'),
         created_by=pulumi.get(__ret__, 'created_by'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -346,11 +469,18 @@ def get_config(apm_domain_id: Optional[_builtins.str] = None,
         group=pulumi.get(__ret__, 'group'),
         id=pulumi.get(__ret__, 'id'),
         in_use_bies=pulumi.get(__ret__, 'in_use_bies'),
+        management_agent_id=pulumi.get(__ret__, 'management_agent_id'),
+        match_agents_with_attribute_keys=pulumi.get(__ret__, 'match_agents_with_attribute_keys'),
+        match_agents_with_attribute_value=pulumi.get(__ret__, 'match_agents_with_attribute_value'),
         metrics=pulumi.get(__ret__, 'metrics'),
         namespace=pulumi.get(__ret__, 'namespace'),
         opc_dry_run=pulumi.get(__ret__, 'opc_dry_run'),
         options=pulumi.get(__ret__, 'options'),
+        overrides=pulumi.get(__ret__, 'overrides'),
+        process_filters=pulumi.get(__ret__, 'process_filters'),
         rules=pulumi.get(__ret__, 'rules'),
+        run_as_user=pulumi.get(__ret__, 'run_as_user'),
+        service_name=pulumi.get(__ret__, 'service_name'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         updated_by=pulumi.get(__ret__, 'updated_by'))
@@ -382,9 +512,12 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:ApmConfig/getConfig:getConfig', __args__, opts=opts, typ=GetConfigResult)
     return __ret__.apply(lambda __response__: GetConfigResult(
+        agent_version=pulumi.get(__response__, 'agent_version'),
         apm_domain_id=pulumi.get(__response__, 'apm_domain_id'),
+        attach_install_dir=pulumi.get(__response__, 'attach_install_dir'),
         config_id=pulumi.get(__response__, 'config_id'),
         config_type=pulumi.get(__response__, 'config_type'),
+        configs=pulumi.get(__response__, 'configs'),
         created_by=pulumi.get(__response__, 'created_by'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
@@ -397,11 +530,18 @@ def get_config_output(apm_domain_id: Optional[pulumi.Input[_builtins.str]] = Non
         group=pulumi.get(__response__, 'group'),
         id=pulumi.get(__response__, 'id'),
         in_use_bies=pulumi.get(__response__, 'in_use_bies'),
+        management_agent_id=pulumi.get(__response__, 'management_agent_id'),
+        match_agents_with_attribute_keys=pulumi.get(__response__, 'match_agents_with_attribute_keys'),
+        match_agents_with_attribute_value=pulumi.get(__response__, 'match_agents_with_attribute_value'),
         metrics=pulumi.get(__response__, 'metrics'),
         namespace=pulumi.get(__response__, 'namespace'),
         opc_dry_run=pulumi.get(__response__, 'opc_dry_run'),
         options=pulumi.get(__response__, 'options'),
+        overrides=pulumi.get(__response__, 'overrides'),
+        process_filters=pulumi.get(__response__, 'process_filters'),
         rules=pulumi.get(__response__, 'rules'),
+        run_as_user=pulumi.get(__response__, 'run_as_user'),
+        service_name=pulumi.get(__response__, 'service_name'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         updated_by=pulumi.get(__response__, 'updated_by')))

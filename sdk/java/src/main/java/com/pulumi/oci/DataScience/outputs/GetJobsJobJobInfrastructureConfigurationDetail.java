@@ -29,7 +29,7 @@ public final class GetJobsJobJobInfrastructureConfigurationDetail {
      */
     private List<GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail> jobShapeConfigDetails;
     /**
-     * @return The shape used to launch the job run instances.
+     * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
     private String shapeName;
@@ -62,7 +62,7 @@ public final class GetJobsJobJobInfrastructureConfigurationDetail {
         return this.jobShapeConfigDetails;
     }
     /**
-     * @return The shape used to launch the job run instances.
+     * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
     public String shapeName() {

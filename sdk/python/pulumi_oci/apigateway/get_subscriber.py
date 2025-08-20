@@ -27,7 +27,7 @@ class GetSubscriberResult:
     """
     A collection of values returned by getSubscriber.
     """
-    def __init__(__self__, clients=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, subscriber_id=None, time_created=None, time_updated=None, usage_plans=None):
+    def __init__(__self__, clients=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_lock_override=None, lifecycle_details=None, locks=None, state=None, subscriber_id=None, system_tags=None, time_created=None, time_updated=None, usage_plans=None):
         if clients and not isinstance(clients, list):
             raise TypeError("Expected argument 'clients' to be a list")
         pulumi.set(__self__, "clients", clients)
@@ -46,15 +46,24 @@ class GetSubscriberResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
         if subscriber_id and not isinstance(subscriber_id, str):
             raise TypeError("Expected argument 'subscriber_id' to be a str")
         pulumi.set(__self__, "subscriber_id", subscriber_id)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -114,12 +123,22 @@ class GetSubscriberResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> _builtins.bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetSubscriberLockResult']:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter
@@ -133,6 +152,11 @@ class GetSubscriberResult:
     @pulumi.getter(name="subscriberId")
     def subscriber_id(self) -> _builtins.str:
         return pulumi.get(self, "subscriber_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -171,9 +195,12 @@ class AwaitableGetSubscriberResult(GetSubscriberResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             state=self.state,
             subscriber_id=self.subscriber_id,
+            system_tags=self.system_tags,
             time_created=self.time_created,
             time_updated=self.time_updated,
             usage_plans=self.usage_plans)
@@ -210,9 +237,12 @@ def get_subscriber(subscriber_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         state=pulumi.get(__ret__, 'state'),
         subscriber_id=pulumi.get(__ret__, 'subscriber_id'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         usage_plans=pulumi.get(__ret__, 'usage_plans'))
@@ -246,9 +276,12 @@ def get_subscriber_output(subscriber_id: Optional[pulumi.Input[_builtins.str]] =
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_lock_override=pulumi.get(__response__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         state=pulumi.get(__response__, 'state'),
         subscriber_id=pulumi.get(__response__, 'subscriber_id'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated'),
         usage_plans=pulumi.get(__response__, 'usage_plans')))

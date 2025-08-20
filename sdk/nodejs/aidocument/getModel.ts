@@ -44,7 +44,7 @@ export interface GetModelArgs {
  */
 export interface GetModelResult {
     /**
-     * The compartment identifier.
+     * The lock compartment ID.
      */
     readonly compartmentId: string;
     /**
@@ -72,6 +72,10 @@ export interface GetModelResult {
      */
     readonly id: string;
     /**
+     * Number of replicas required for this model.
+     */
+    readonly inferenceUnits: number;
+    /**
      * Set to true when the model is created by using multiple key value extraction models.
      */
     readonly isComposedModel: boolean;
@@ -84,9 +88,17 @@ export interface GetModelResult {
      */
     readonly labels: string[];
     /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     */
+    readonly language: string;
+    /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.AiDocument.GetModelLock[];
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
      */
@@ -99,6 +111,15 @@ export interface GetModelResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
      */
     readonly modelId: string;
+    /**
+     * The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+     * * `RECEIPT`
+     * * `INVOICE`
+     * * `PASSPORT`
+     * * `DRIVER_LICENSE`
+     * * `HEALTH_INSURANCE_ID`
+     */
+    readonly modelSubTypes: outputs.AiDocument.GetModelModelSubType[];
     /**
      * The type of the Document model.
      */

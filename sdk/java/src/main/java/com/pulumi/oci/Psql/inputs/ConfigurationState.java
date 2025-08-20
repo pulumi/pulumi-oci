@@ -37,6 +37,21 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    @Import(name="compatibleShapes")
+    private @Nullable Output<List<String>> compatibleShapes;
+
+    /**
+     * @return (Updatable) Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public Optional<Output<List<String>>> compatibleShapes() {
+        return Optional.ofNullable(this.compatibleShapes);
+    }
+
+    /**
      * The type of configuration. Either user-created or a default configuration.
      * 
      */
@@ -94,6 +109,21 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
      */
     public Optional<Output<String>> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
+    }
+
+    /**
+     * The Default configuration used for this configuration.
+     * 
+     */
+    @Import(name="defaultConfigId")
+    private @Nullable Output<String> defaultConfigId;
+
+    /**
+     * @return The Default configuration used for this configuration.
+     * 
+     */
+    public Optional<Output<String>> defaultConfigId() {
+        return Optional.ofNullable(this.defaultConfigId);
     }
 
     /**
@@ -225,14 +255,18 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration.
+     * 
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
+     * 
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -294,10 +328,12 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
 
     private ConfigurationState(ConfigurationState $) {
         this.compartmentId = $.compartmentId;
+        this.compatibleShapes = $.compatibleShapes;
         this.configType = $.configType;
         this.configurationDetails = $.configurationDetails;
         this.dbConfigurationOverrides = $.dbConfigurationOverrides;
         this.dbVersion = $.dbVersion;
+        this.defaultConfigId = $.defaultConfigId;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -349,6 +385,37 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param compatibleShapes (Updatable) Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(@Nullable Output<List<String>> compatibleShapes) {
+            $.compatibleShapes = compatibleShapes;
+            return this;
+        }
+
+        /**
+         * @param compatibleShapes (Updatable) Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(List<String> compatibleShapes) {
+            return compatibleShapes(Output.of(compatibleShapes));
+        }
+
+        /**
+         * @param compatibleShapes (Updatable) Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(String... compatibleShapes) {
+            return compatibleShapes(List.of(compatibleShapes));
         }
 
         /**
@@ -443,6 +510,27 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
          */
         public Builder dbVersion(String dbVersion) {
             return dbVersion(Output.of(dbVersion));
+        }
+
+        /**
+         * @param defaultConfigId The Default configuration used for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultConfigId(@Nullable Output<String> defaultConfigId) {
+            $.defaultConfigId = defaultConfigId;
+            return this;
+        }
+
+        /**
+         * @param defaultConfigId The Default configuration used for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder defaultConfigId(String defaultConfigId) {
+            return defaultConfigId(Output.of(defaultConfigId));
         }
 
         /**
@@ -622,7 +710,9 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param shape The name of the shape for the configuration.
+         * 
+         * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
          * 
          * @return builder
          * 
@@ -633,7 +723,9 @@ public final class ConfigurationState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param shape The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+         * @param shape The name of the shape for the configuration.
+         * 
+         * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
          * 
          * @return builder
          * 

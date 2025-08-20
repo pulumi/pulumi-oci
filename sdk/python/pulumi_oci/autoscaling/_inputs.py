@@ -117,7 +117,7 @@ if not MYPY:
         """
         resource_action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgsDict']]
         """
-        An action that can be executed against a resource.
+        An action to run on a resource, such as stopping or starting an instance pool.
         """
         rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyRuleArgsDict']]]]
         time_created: NotRequired[pulumi.Input[_builtins.str]]
@@ -146,7 +146,7 @@ class AutoScalingConfigurationPolicyArgs:
         :param pulumi.Input['AutoScalingConfigurationPolicyExecutionScheduleArgs'] execution_schedule: An execution schedule for an autoscaling policy.
         :param pulumi.Input[_builtins.str] id: ID of the condition that is assigned after creation.
         :param pulumi.Input[_builtins.bool] is_enabled: Whether the autoscaling policy is enabled.
-        :param pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs'] resource_action: An action that can be executed against a resource.
+        :param pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs'] resource_action: An action to run on a resource, such as stopping or starting an instance pool.
         :param pulumi.Input[_builtins.str] time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "policy_type", policy_type)
@@ -243,7 +243,7 @@ class AutoScalingConfigurationPolicyArgs:
     @pulumi.getter(name="resourceAction")
     def resource_action(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyResourceActionArgs']]:
         """
-        An action that can be executed against a resource.
+        An action to run on a resource, such as stopping or starting an instance pool.
         """
         return pulumi.get(self, "resource_action")
 
@@ -461,7 +461,7 @@ if not MYPY:
         action: pulumi.Input[_builtins.str]
         action_type: pulumi.Input[_builtins.str]
         """
-        The type of resource action.
+        The category of action to run on the resource.
         """
 elif False:
     AutoScalingConfigurationPolicyResourceActionArgsDict: TypeAlias = Mapping[str, Any]
@@ -472,7 +472,7 @@ class AutoScalingConfigurationPolicyResourceActionArgs:
                  action: pulumi.Input[_builtins.str],
                  action_type: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] action_type: The type of resource action.
+        :param pulumi.Input[_builtins.str] action_type: The category of action to run on the resource.
         """
         pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "action_type", action_type)
@@ -490,7 +490,7 @@ class AutoScalingConfigurationPolicyResourceActionArgs:
     @pulumi.getter(name="actionType")
     def action_type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type of resource action.
+        The category of action to run on the resource.
         """
         return pulumi.get(self, "action_type")
 
@@ -502,6 +502,9 @@ class AutoScalingConfigurationPolicyResourceActionArgs:
 if not MYPY:
     class AutoScalingConfigurationPolicyRuleArgsDict(TypedDict):
         display_name: pulumi.Input[_builtins.str]
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
         action: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgsDict']]
         """
         The action to take when autoscaling is triggered.
@@ -511,9 +514,6 @@ if not MYPY:
         ID of the condition that is assigned after creation.
         """
         metric: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgsDict']]
-        """
-        Metric and threshold details for triggering an autoscaling action.
-        """
 elif False:
     AutoScalingConfigurationPolicyRuleArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -525,9 +525,9 @@ class AutoScalingConfigurationPolicyRuleArgs:
                  id: Optional[pulumi.Input[_builtins.str]] = None,
                  metric: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']] = None):
         """
+        :param pulumi.Input[_builtins.str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input['AutoScalingConfigurationPolicyRuleActionArgs'] action: The action to take when autoscaling is triggered.
         :param pulumi.Input[_builtins.str] id: ID of the condition that is assigned after creation.
-        :param pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs'] metric: Metric and threshold details for triggering an autoscaling action.
         """
         pulumi.set(__self__, "display_name", display_name)
         if action is not None:
@@ -540,6 +540,9 @@ class AutoScalingConfigurationPolicyRuleArgs:
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -573,9 +576,6 @@ class AutoScalingConfigurationPolicyRuleArgs:
     @_builtins.property
     @pulumi.getter
     def metric(self) -> Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricArgs']]:
-        """
-        Metric and threshold details for triggering an autoscaling action.
-        """
         return pulumi.get(self, "metric")
 
     @metric.setter
@@ -637,7 +637,45 @@ class AutoScalingConfigurationPolicyRuleActionArgs:
 
 if not MYPY:
     class AutoScalingConfigurationPolicyRuleMetricArgsDict(TypedDict):
+        metric_compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the compartment containing the metrics.
+        """
+        metric_source: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Source of the metric data for creating the alarm used to trigger autoscaling actions.
+
+        The following values are supported:
+        * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+        * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+        """
         metric_type: NotRequired[pulumi.Input[_builtins.str]]
+        namespace: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The namespace for the query.
+        """
+        pending_duration: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        """
+        query: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+
+        Example of threshold alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+
+        -----
+        """
+        resource_group: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The resource group for the query.
+        """
         threshold: NotRequired[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgsDict']]
 elif False:
     AutoScalingConfigurationPolicyRuleMetricArgsDict: TypeAlias = Mapping[str, Any]
@@ -645,12 +683,80 @@ elif False:
 @pulumi.input_type
 class AutoScalingConfigurationPolicyRuleMetricArgs:
     def __init__(__self__, *,
+                 metric_compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 metric_source: Optional[pulumi.Input[_builtins.str]] = None,
                  metric_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 namespace: Optional[pulumi.Input[_builtins.str]] = None,
+                 pending_duration: Optional[pulumi.Input[_builtins.str]] = None,
+                 query: Optional[pulumi.Input[_builtins.str]] = None,
+                 resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  threshold: Optional[pulumi.Input['AutoScalingConfigurationPolicyRuleMetricThresholdArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] metric_compartment_id: The OCID of the compartment containing the metrics.
+        :param pulumi.Input[_builtins.str] metric_source: Source of the metric data for creating the alarm used to trigger autoscaling actions.
+               
+               The following values are supported:
+               * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+               * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+        :param pulumi.Input[_builtins.str] namespace: The namespace for the query.
+        :param pulumi.Input[_builtins.str] pending_duration: The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+               
+               The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        :param pulumi.Input[_builtins.str] query: The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+               
+               Example of threshold alarm:
+               
+               -----
+               
+               CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+               
+               -----
+        :param pulumi.Input[_builtins.str] resource_group: The resource group for the query.
+        """
+        if metric_compartment_id is not None:
+            pulumi.set(__self__, "metric_compartment_id", metric_compartment_id)
+        if metric_source is not None:
+            pulumi.set(__self__, "metric_source", metric_source)
         if metric_type is not None:
             pulumi.set(__self__, "metric_type", metric_type)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if pending_duration is not None:
+            pulumi.set(__self__, "pending_duration", pending_duration)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
+
+    @_builtins.property
+    @pulumi.getter(name="metricCompartmentId")
+    def metric_compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the compartment containing the metrics.
+        """
+        return pulumi.get(self, "metric_compartment_id")
+
+    @metric_compartment_id.setter
+    def metric_compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "metric_compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="metricSource")
+    def metric_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Source of the metric data for creating the alarm used to trigger autoscaling actions.
+
+        The following values are supported:
+        * `COMPUTE_AGENT`: CPU or memory metrics emitted by the Compute Instance Monitoring plugin.
+        * `CUSTOM_QUERY`: A custom Monitoring Query Language (MQL) expression.
+        """
+        return pulumi.get(self, "metric_source")
+
+    @metric_source.setter
+    def metric_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "metric_source", value)
 
     @_builtins.property
     @pulumi.getter(name="metricType")
@@ -660,6 +766,64 @@ class AutoScalingConfigurationPolicyRuleMetricArgs:
     @metric_type.setter
     def metric_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "metric_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The namespace for the query.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "namespace", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingDuration")
+    def pending_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The period of time that the condition defined in the alarm must persist before the alarm state changes from "OK" to "FIRING" or vice versa. For example, a value of 5 minutes means that the alarm must persist in breaching the condition for five minutes before the alarm updates its state to "FIRING"; likewise, the alarm must persist in not breaching the condition for five minutes before the alarm updates its state to "OK."
+
+        The duration is specified as a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT1H. Default: PT3M.
+        """
+        return pulumi.get(self, "pending_duration")
+
+    @pending_duration.setter
+    def pending_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "pending_duration", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def query(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval: `1m`-`60m` (also `1h`). You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`.
+
+        Example of threshold alarm:
+
+        -----
+
+        CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) > 85
+
+        -----
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "query", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The resource group for the query.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "resource_group", value)
 
     @_builtins.property
     @pulumi.getter

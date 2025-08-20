@@ -89,6 +89,12 @@ namespace Pulumi.Oci.Database
         public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+        /// </summary>
+        [Output("customerContacts")]
+        public Output<ImmutableArray<Outputs.AutonomousContainerDatabaseCustomerContact>> CustomerContacts { get; private set; } = null!;
+
+        /// <summary>
         /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         [Output("databaseSoftwareImageId")]
@@ -288,6 +294,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("nextMaintenanceRunId")]
         public Output<string> NextMaintenanceRunId { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+        /// </summary>
+        [Output("okvEndPointGroupName")]
+        public Output<string> OkvEndPointGroupName { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
@@ -555,6 +567,18 @@ namespace Pulumi.Oci.Database
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("customerContacts")]
+        private InputList<Inputs.AutonomousContainerDatabaseCustomerContactArgs>? _customerContacts;
+
+        /// <summary>
+        /// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseCustomerContactArgs> CustomerContacts
+        {
+            get => _customerContacts ?? (_customerContacts = new InputList<Inputs.AutonomousContainerDatabaseCustomerContactArgs>());
+            set => _customerContacts = value;
+        }
+
         /// <summary>
         /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -671,6 +695,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("netServicesArchitecture")]
         public Input<string>? NetServicesArchitecture { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+        /// </summary>
+        [Input("okvEndPointGroupName")]
+        public Input<string>? OkvEndPointGroupName { get; set; }
 
         /// <summary>
         /// (Updatable) Database Patch model preference.
@@ -859,6 +889,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("computeModel")]
         public Input<string>? ComputeModel { get; set; }
+
+        [Input("customerContacts")]
+        private InputList<Inputs.AutonomousContainerDatabaseCustomerContactGetArgs>? _customerContacts;
+
+        /// <summary>
+        /// (Updatable) Customer Contacts. Setting this to an empty list removes all customer contacts.
+        /// </summary>
+        public InputList<Inputs.AutonomousContainerDatabaseCustomerContactGetArgs> CustomerContacts
+        {
+            get => _customerContacts ?? (_customerContacts = new InputList<Inputs.AutonomousContainerDatabaseCustomerContactGetArgs>());
+            set => _customerContacts = value;
+        }
 
         /// <summary>
         /// The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -1102,6 +1144,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("nextMaintenanceRunId")]
         public Input<string>? NextMaintenanceRunId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OKV End Point Group name for the Autonomous Container Database.
+        /// </summary>
+        [Input("okvEndPointGroupName")]
+        public Input<string>? OkvEndPointGroupName { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.

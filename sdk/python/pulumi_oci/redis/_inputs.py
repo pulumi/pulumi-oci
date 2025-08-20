@@ -15,6 +15,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'OciCacheConfigSetConfigurationDetailsArgs',
+    'OciCacheConfigSetConfigurationDetailsArgsDict',
+    'OciCacheConfigSetConfigurationDetailsItemArgs',
+    'OciCacheConfigSetConfigurationDetailsItemArgsDict',
+    'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs',
+    'OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict',
     'OciCacheUserAuthenticationModeArgs',
     'OciCacheUserAuthenticationModeArgsDict',
     'OciCacheUserGetRedisClusterOciCacheClusterArgs',
@@ -25,6 +31,10 @@ __all__ = [
     'RedisClusterNodeCollectionArgsDict',
     'RedisClusterNodeCollectionItemArgs',
     'RedisClusterNodeCollectionItemArgsDict',
+    'GetOciCacheConfigSetsFilterArgs',
+    'GetOciCacheConfigSetsFilterArgsDict',
+    'GetOciCacheDefaultConfigSetsFilterArgs',
+    'GetOciCacheDefaultConfigSetsFilterArgsDict',
     'GetOciCacheUsersFilterArgs',
     'GetOciCacheUsersFilterArgsDict',
     'GetRedisClusterNodesFilterArgs',
@@ -34,6 +44,119 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class OciCacheConfigSetConfigurationDetailsArgsDict(TypedDict):
+        items: pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgsDict']]]
+        """
+        List of ConfigurationInfo objects.
+        """
+elif False:
+    OciCacheConfigSetConfigurationDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OciCacheConfigSetConfigurationDetailsArgs:
+    def __init__(__self__, *,
+                 items: pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgs']]] items: List of ConfigurationInfo objects.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgs']]]:
+        """
+        List of ConfigurationInfo objects.
+        """
+        return pulumi.get(self, "items")
+
+    @items.setter
+    def items(self, value: pulumi.Input[Sequence[pulumi.Input['OciCacheConfigSetConfigurationDetailsItemArgs']]]):
+        pulumi.set(self, "items", value)
+
+
+if not MYPY:
+    class OciCacheConfigSetConfigurationDetailsItemArgsDict(TypedDict):
+        config_key: pulumi.Input[_builtins.str]
+        """
+        Key is the configuration key.
+        """
+        config_value: pulumi.Input[_builtins.str]
+        """
+        Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+elif False:
+    OciCacheConfigSetConfigurationDetailsItemArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OciCacheConfigSetConfigurationDetailsItemArgs:
+    def __init__(__self__, *,
+                 config_key: pulumi.Input[_builtins.str],
+                 config_value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] config_key: Key is the configuration key.
+        :param pulumi.Input[_builtins.str] config_value: Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        pulumi.set(__self__, "config_key", config_key)
+        pulumi.set(__self__, "config_value", config_value)
+
+    @_builtins.property
+    @pulumi.getter(name="configKey")
+    def config_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        Key is the configuration key.
+        """
+        return pulumi.get(self, "config_key")
+
+    @config_key.setter
+    def config_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "config_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configValue")
+    def config_value(self) -> pulumi.Input[_builtins.str]:
+        """
+        Value of the configuration as a string. Can represent a string, boolean, or number. Example: "true", "42", or "someString".
+        """
+        return pulumi.get(self, "config_value")
+
+    @config_value.setter
+    def config_value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "config_value", value)
+
+
+if not MYPY:
+    class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict(TypedDict):
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+        """
+elif False:
+    OciCacheConfigSetlistAssociatedOciCacheClusterItemArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class OciCacheConfigSetlistAssociatedOciCacheClusterItemArgs:
+    def __init__(__self__, *,
+                 id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
 
 if not MYPY:
     class OciCacheUserAuthenticationModeArgsDict(TypedDict):
@@ -252,6 +375,100 @@ class RedisClusterNodeCollectionItemArgs:
     @private_endpoint_ip_address.setter
     def private_endpoint_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "private_endpoint_ip_address", value)
+
+
+if not MYPY:
+    class GetOciCacheConfigSetsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetOciCacheConfigSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetOciCacheConfigSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetOciCacheDefaultConfigSetsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetOciCacheDefaultConfigSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetOciCacheDefaultConfigSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
 
 
 if not MYPY:

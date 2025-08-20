@@ -12,6 +12,7 @@ import java.util.Objects;
 public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail {
     private String credentialSourceName;
     private String credentialType;
+    private String namedCredentialId;
     private String passwordSecretId;
     private String role;
     private String userName;
@@ -23,6 +24,9 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     }
     public String credentialType() {
         return this.credentialType;
+    }
+    public String namedCredentialId() {
+        return this.namedCredentialId;
     }
     public String passwordSecretId() {
         return this.passwordSecretId;
@@ -48,6 +52,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     public static final class Builder {
         private String credentialSourceName;
         private String credentialType;
+        private String namedCredentialId;
         private String passwordSecretId;
         private String role;
         private String userName;
@@ -57,6 +62,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
     	      Objects.requireNonNull(defaults);
     	      this.credentialSourceName = defaults.credentialSourceName;
     	      this.credentialType = defaults.credentialType;
+    	      this.namedCredentialId = defaults.namedCredentialId;
     	      this.passwordSecretId = defaults.passwordSecretId;
     	      this.role = defaults.role;
     	      this.userName = defaults.userName;
@@ -77,6 +83,14 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
               throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail", "credentialType");
             }
             this.credentialType = credentialType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder namedCredentialId(String namedCredentialId) {
+            if (namedCredentialId == null) {
+              throw new MissingRequiredPropertyException("GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail", "namedCredentialId");
+            }
+            this.namedCredentialId = namedCredentialId;
             return this;
         }
         @CustomType.Setter
@@ -115,6 +129,7 @@ public final class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVm
             final var _resultValue = new GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail();
             _resultValue.credentialSourceName = credentialSourceName;
             _resultValue.credentialType = credentialType;
+            _resultValue.namedCredentialId = namedCredentialId;
             _resultValue.passwordSecretId = passwordSecretId;
             _resultValue.role = role;
             _resultValue.userName = userName;

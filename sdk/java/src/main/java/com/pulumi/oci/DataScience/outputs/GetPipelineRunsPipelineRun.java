@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunLogDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetail;
@@ -60,6 +61,11 @@ public final class GetPipelineRunsPipelineRun {
      * 
      */
     private String id;
+    /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    private List<GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails;
     /**
      * @return Details of the state of the step run.
      * 
@@ -188,6 +194,13 @@ public final class GetPipelineRunsPipelineRun {
         return this.id;
     }
     /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    public List<GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails() {
+        return this.infrastructureConfigurationOverrideDetails;
+    }
+    /**
      * @return Details of the state of the step run.
      * 
      */
@@ -300,6 +313,7 @@ public final class GetPipelineRunsPipelineRun {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private List<GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails;
         private String lifecycleDetails;
         private List<GetPipelineRunsPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
         private List<GetPipelineRunsPipelineRunLogDetail> logDetails;
@@ -326,6 +340,7 @@ public final class GetPipelineRunsPipelineRun {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.infrastructureConfigurationOverrideDetails = defaults.infrastructureConfigurationOverrideDetails;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logConfigurationOverrideDetails = defaults.logConfigurationOverrideDetails;
     	      this.logDetails = defaults.logDetails;
@@ -419,6 +434,17 @@ public final class GetPipelineRunsPipelineRun {
             }
             this.id = id;
             return this;
+        }
+        @CustomType.Setter
+        public Builder infrastructureConfigurationOverrideDetails(List<GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetail> infrastructureConfigurationOverrideDetails) {
+            if (infrastructureConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "infrastructureConfigurationOverrideDetails");
+            }
+            this.infrastructureConfigurationOverrideDetails = infrastructureConfigurationOverrideDetails;
+            return this;
+        }
+        public Builder infrastructureConfigurationOverrideDetails(GetPipelineRunsPipelineRunInfrastructureConfigurationOverrideDetail... infrastructureConfigurationOverrideDetails) {
+            return infrastructureConfigurationOverrideDetails(List.of(infrastructureConfigurationOverrideDetails));
         }
         @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
@@ -555,6 +581,7 @@ public final class GetPipelineRunsPipelineRun {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.infrastructureConfigurationOverrideDetails = infrastructureConfigurationOverrideDetails;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             _resultValue.logDetails = logDetails;

@@ -72,7 +72,8 @@ type Api struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 	// * 'New' for just updated API Specifications
 	// * 'Validating' for a document which is being validated.
@@ -82,10 +83,12 @@ type Api struct {
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	Locks            ApiLockArrayOutput  `pulumi:"locks"`
 	// Type of API Specification file.
 	SpecificationType pulumi.StringOutput `pulumi:"specificationType"`
 	// The current state of the API.
-	State pulumi.StringOutput `pulumi:"state"`
+	State      pulumi.StringOutput    `pulumi:"state"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -139,7 +142,8 @@ type apiState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 	// * 'New' for just updated API Specifications
 	// * 'Validating' for a document which is being validated.
@@ -148,11 +152,13 @@ type apiState struct {
 	// * 'Error' the document has been validated and contains errors
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails *string   `pulumi:"lifecycleDetails"`
+	Locks            []ApiLock `pulumi:"locks"`
 	// Type of API Specification file.
 	SpecificationType *string `pulumi:"specificationType"`
 	// The current state of the API.
-	State *string `pulumi:"state"`
+	State      *string           `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -174,7 +180,8 @@ type ApiState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 	// * 'New' for just updated API Specifications
 	// * 'Validating' for a document which is being validated.
@@ -184,10 +191,12 @@ type ApiState struct {
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
 	LifecycleDetails pulumi.StringPtrInput
+	Locks            ApiLockArrayInput
 	// Type of API Specification file.
 	SpecificationType pulumi.StringPtrInput
 	// The current state of the API.
-	State pulumi.StringPtrInput
+	State      pulumi.StringPtrInput
+	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -213,7 +222,9 @@ type apiArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
+	Locks          []ApiLock         `pulumi:"locks"`
 }
 
 // The set of arguments for constructing a Api resource.
@@ -230,7 +241,9 @@ type ApiArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	FreeformTags   pulumi.StringMapInput
+	IsLockOverride pulumi.BoolPtrInput
+	Locks          ApiLockArrayInput
 }
 
 func (ApiArgs) ElementType() reflect.Type {
@@ -348,6 +361,10 @@ func (o ApiOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
+func (o ApiOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Api) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
 // * 'New' for just updated API Specifications
 // * 'Validating' for a document which is being validated.
@@ -360,6 +377,10 @@ func (o ApiOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o ApiOutput) Locks() ApiLockArrayOutput {
+	return o.ApplyT(func(v *Api) ApiLockArrayOutput { return v.Locks }).(ApiLockArrayOutput)
+}
+
 // Type of API Specification file.
 func (o ApiOutput) SpecificationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.SpecificationType }).(pulumi.StringOutput)
@@ -368,6 +389,10 @@ func (o ApiOutput) SpecificationType() pulumi.StringOutput {
 // The current state of the API.
 func (o ApiOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Api) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+func (o ApiOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Api) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         }
 
         /// <summary>
-        /// The shape used to launch the job run instances.
+        /// The name that corresponds to the JobShapeSummary to use for the job node
         /// </summary>
         [Input("shapeName")]
         public Input<string>? ShapeName { get; set; }

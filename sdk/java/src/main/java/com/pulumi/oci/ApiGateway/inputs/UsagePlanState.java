@@ -6,6 +6,8 @@ package com.pulumi.oci.ApiGateway.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApiGateway.inputs.UsagePlanEntitlementArgs;
+import com.pulumi.oci.ApiGateway.inputs.UsagePlanLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -99,6 +101,13 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -114,6 +123,13 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.lifecycleDetails);
     }
 
+    @Import(name="locks")
+    private @Nullable Output<List<UsagePlanLockArgs>> locks;
+
+    public Optional<Output<List<UsagePlanLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * The current state of the usage plan.
      * 
@@ -127,6 +143,13 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
     }
 
     /**
@@ -167,8 +190,11 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.entitlements = $.entitlements;
         this.freeformTags = $.freeformTags;
+        this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.state = $.state;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -312,6 +338,15 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
          * 
@@ -333,6 +368,19 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
             return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
+        public Builder locks(@Nullable Output<List<UsagePlanLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<UsagePlanLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(UsagePlanLockArgs... locks) {
+            return locks(List.of(locks));
+        }
+
         /**
          * @param state The current state of the usage plan.
          * 
@@ -352,6 +400,15 @@ public final class UsagePlanState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

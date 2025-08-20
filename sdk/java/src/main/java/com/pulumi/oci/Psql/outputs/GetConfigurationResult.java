@@ -22,6 +22,11 @@ public final class GetConfigurationResult {
      */
     private String compartmentId;
     /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    private List<String> compatibleShapes;
+    /**
      * @return The type of configuration. Either user-created or a default configuration.
      * 
      */
@@ -38,6 +43,11 @@ public final class GetConfigurationResult {
      * 
      */
     private String dbVersion;
+    /**
+     * @return The Default configuration used for this configuration.
+     * 
+     */
+    private String defaultConfigId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -84,7 +94,7 @@ public final class GetConfigurationResult {
      */
     private String lifecycleDetails;
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
      * 
      */
     private String shape;
@@ -113,6 +123,13 @@ public final class GetConfigurationResult {
         return this.compartmentId;
     }
     /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public List<String> compatibleShapes() {
+        return this.compatibleShapes;
+    }
+    /**
      * @return The type of configuration. Either user-created or a default configuration.
      * 
      */
@@ -138,6 +155,13 @@ public final class GetConfigurationResult {
      */
     public String dbVersion() {
         return this.dbVersion;
+    }
+    /**
+     * @return The Default configuration used for this configuration.
+     * 
+     */
+    public String defaultConfigId() {
+        return this.defaultConfigId;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -203,7 +227,7 @@ public final class GetConfigurationResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
      * 
      */
     public String shape() {
@@ -241,11 +265,13 @@ public final class GetConfigurationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private List<String> compatibleShapes;
         private String configType;
         private List<GetConfigurationConfigurationDetail> configurationDetails;
         private String configurationId;
         private List<GetConfigurationDbConfigurationOverride> dbConfigurationOverrides;
         private String dbVersion;
+        private String defaultConfigId;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -263,11 +289,13 @@ public final class GetConfigurationResult {
         public Builder(GetConfigurationResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.compatibleShapes = defaults.compatibleShapes;
     	      this.configType = defaults.configType;
     	      this.configurationDetails = defaults.configurationDetails;
     	      this.configurationId = defaults.configurationId;
     	      this.dbConfigurationOverrides = defaults.dbConfigurationOverrides;
     	      this.dbVersion = defaults.dbVersion;
+    	      this.defaultConfigId = defaults.defaultConfigId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -290,6 +318,17 @@ public final class GetConfigurationResult {
             }
             this.compartmentId = compartmentId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder compatibleShapes(List<String> compatibleShapes) {
+            if (compatibleShapes == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "compatibleShapes");
+            }
+            this.compatibleShapes = compatibleShapes;
+            return this;
+        }
+        public Builder compatibleShapes(String... compatibleShapes) {
+            return compatibleShapes(List.of(compatibleShapes));
         }
         @CustomType.Setter
         public Builder configType(String configType) {
@@ -335,6 +374,14 @@ public final class GetConfigurationResult {
               throw new MissingRequiredPropertyException("GetConfigurationResult", "dbVersion");
             }
             this.dbVersion = dbVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder defaultConfigId(String defaultConfigId) {
+            if (defaultConfigId == null) {
+              throw new MissingRequiredPropertyException("GetConfigurationResult", "defaultConfigId");
+            }
+            this.defaultConfigId = defaultConfigId;
             return this;
         }
         @CustomType.Setter
@@ -444,11 +491,13 @@ public final class GetConfigurationResult {
         public GetConfigurationResult build() {
             final var _resultValue = new GetConfigurationResult();
             _resultValue.compartmentId = compartmentId;
+            _resultValue.compatibleShapes = compatibleShapes;
             _resultValue.configType = configType;
             _resultValue.configurationDetails = configurationDetails;
             _resultValue.configurationId = configurationId;
             _resultValue.dbConfigurationOverrides = dbConfigurationOverrides;
             _resultValue.dbVersion = dbVersion;
+            _resultValue.defaultConfigId = defaultConfigId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;

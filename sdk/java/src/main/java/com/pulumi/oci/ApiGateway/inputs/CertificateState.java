@@ -5,6 +5,8 @@ package com.pulumi.oci.ApiGateway.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.ApiGateway.inputs.CertificateLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -107,6 +109,13 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.intermediateCertificates);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -120,6 +129,13 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<CertificateLockArgs>> locks;
+
+    public Optional<Output<List<CertificateLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -171,6 +187,13 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<String>>> subjectNames() {
         return Optional.ofNullable(this.subjectNames);
+    }
+
+    @Import(name="systemTags")
+    private @Nullable Output<Map<String,String>> systemTags;
+
+    public Optional<Output<Map<String,String>>> systemTags() {
+        return Optional.ofNullable(this.systemTags);
     }
 
     /**
@@ -227,10 +250,13 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.intermediateCertificates = $.intermediateCertificates;
+        this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.privateKey = $.privateKey;
         this.state = $.state;
         this.subjectNames = $.subjectNames;
+        this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeNotValidAfter = $.timeNotValidAfter;
         this.timeUpdated = $.timeUpdated;
@@ -380,6 +406,15 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
             return intermediateCertificates(Output.of(intermediateCertificates));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
          * 
@@ -399,6 +434,19 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        public Builder locks(@Nullable Output<List<CertificateLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<CertificateLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(CertificateLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -478,6 +526,15 @@ public final class CertificateState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder subjectNames(String... subjectNames) {
             return subjectNames(List.of(subjectNames));
+        }
+
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
+            $.systemTags = systemTags;
+            return this;
+        }
+
+        public Builder systemTags(Map<String,String> systemTags) {
+            return systemTags(Output.of(systemTags));
         }
 
         /**

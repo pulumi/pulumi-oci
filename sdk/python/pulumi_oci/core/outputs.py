@@ -108,6 +108,7 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions',
     'InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs',
+    'InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig',
     'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction',
@@ -130,6 +131,7 @@ __all__ = [
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs',
+    'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig',
     'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigPreemptionAction',
@@ -456,6 +458,7 @@ __all__ = [
     'GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult',
+    'GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult',
     'GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionResult',
@@ -478,6 +481,7 @@ __all__ = [
     'GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionResult',
     'GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult',
     'GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigResult',
+    'GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult',
     'GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult',
     'GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult',
     'GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionResult',
@@ -508,6 +512,7 @@ __all__ = [
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult',
+    'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigPreemptionActionResult',
@@ -530,6 +535,7 @@ __all__ = [
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigResult',
+    'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult',
     'GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigPreemptionActionResult',
@@ -6371,6 +6377,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
             suggest = "cluster_placement_group_id"
         elif key == "compartmentId":
             suggest = "compartment_id"
+        elif key == "computeClusterId":
+            suggest = "compute_cluster_id"
         elif key == "createVnicDetails":
             suggest = "create_vnic_details"
         elif key == "dedicatedVmHostId":
@@ -6397,6 +6405,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
             suggest = "launch_options"
         elif key == "licensingConfigs":
             suggest = "licensing_configs"
+        elif key == "placementConstraintDetails":
+            suggest = "placement_constraint_details"
         elif key == "platformConfig":
             suggest = "platform_config"
         elif key == "preemptibleInstanceConfig":
@@ -6428,6 +6438,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                  capacity_reservation_id: Optional[_builtins.str] = None,
                  cluster_placement_group_id: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
+                 compute_cluster_id: Optional[_builtins.str] = None,
                  create_vnic_details: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails'] = None,
                  dedicated_vm_host_id: Optional[_builtins.str] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
@@ -6442,6 +6453,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                  launch_options: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions'] = None,
                  licensing_configs: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs'] = None,
                  metadata: Optional[Mapping[str, _builtins.str]] = None,
+                 placement_constraint_details: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails'] = None,
                  platform_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig'] = None,
                  preemptible_instance_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig'] = None,
                  preferred_maintenance_action: Optional[_builtins.str] = None,
@@ -6456,6 +6468,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param _builtins.str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param _builtins.str compartment_id: The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
                
@@ -6520,6 +6533,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
                
                The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs' placement_constraint_details: The details for providing placement constraints.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
                
                If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
@@ -6551,6 +6565,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
             pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
@@ -6579,6 +6595,8 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
             pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_config is not None:
             pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
@@ -6641,6 +6659,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -6803,6 +6829,14 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         """
         return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter(name="platformConfig")
@@ -7525,6 +7559,52 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsLicensingConfigs(dict):
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
         """
         return pulumi.get(self, "license_type")
+
+
+@pulumi.output_type
+class InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "computeHostGroupId":
+            suggest = "compute_host_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compute_host_group_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type for the placement constraints. Use `HOST_GROUP` when specifying the compute host group OCID.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type for the placement constraints. Use `HOST_GROUP` when specifying the compute host group OCID.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -8726,6 +8806,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
             suggest = "cluster_placement_group_id"
         elif key == "compartmentId":
             suggest = "compartment_id"
+        elif key == "computeClusterId":
+            suggest = "compute_cluster_id"
         elif key == "createVnicDetails":
             suggest = "create_vnic_details"
         elif key == "dedicatedVmHostId":
@@ -8752,6 +8834,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
             suggest = "launch_options"
         elif key == "licensingConfigs":
             suggest = "licensing_configs"
+        elif key == "placementConstraintDetails":
+            suggest = "placement_constraint_details"
         elif key == "platformConfig":
             suggest = "platform_config"
         elif key == "preemptibleInstanceConfig":
@@ -8783,6 +8867,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                  capacity_reservation_id: Optional[_builtins.str] = None,
                  cluster_placement_group_id: Optional[_builtins.str] = None,
                  compartment_id: Optional[_builtins.str] = None,
+                 compute_cluster_id: Optional[_builtins.str] = None,
                  create_vnic_details: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails'] = None,
                  dedicated_vm_host_id: Optional[_builtins.str] = None,
                  defined_tags: Optional[Mapping[str, _builtins.str]] = None,
@@ -8797,6 +8882,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                  launch_options: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions'] = None,
                  licensing_configs: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs'] = None,
                  metadata: Optional[Mapping[str, _builtins.str]] = None,
+                 placement_constraint_details: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails'] = None,
                  platform_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig'] = None,
                  preemptible_instance_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig'] = None,
                  preferred_maintenance_action: Optional[_builtins.str] = None,
@@ -8811,6 +8897,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param _builtins.str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param _builtins.str compartment_id: (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -8829,6 +8916,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigsArgs' licensing_configs: List of licensing configurations associated with target launch values.
         :param Mapping[str, _builtins.str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetailsArgs' placement_constraint_details: The details for providing placement constraints.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param _builtins.str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -8850,6 +8938,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
             pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if compute_cluster_id is not None:
+            pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         if create_vnic_details is not None:
             pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         if dedicated_vm_host_id is not None:
@@ -8878,6 +8968,8 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
             pulumi.set(__self__, "licensing_configs", licensing_configs)
         if metadata is not None:
             pulumi.set(__self__, "metadata", metadata)
+        if placement_constraint_details is not None:
+            pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         if platform_config is not None:
             pulumi.set(__self__, "platform_config", platform_config)
         if preemptible_instance_config is not None:
@@ -8940,6 +9032,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         (Updatable) The OCID of the compartment containing the instance. Instances created from instance configurations are placed in the same compartment as the instance that was used to create the instance configuration.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -9056,6 +9156,14 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
         return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter(name="platformConfig")
@@ -9782,6 +9890,52 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsLicensingConfigs(di
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
         """
         return pulumi.get(self, "license_type")
+
+
+@pulumi.output_type
+class InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "computeHostGroupId":
+            suggest = "compute_host_group_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlacementConstraintDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compute_host_group_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -29656,6 +29810,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
                  capacity_reservation_id: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -29670,6 +29825,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
                  launch_options: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult'],
                  licensing_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult'],
                  metadata: Mapping[str, _builtins.str],
+                 placement_constraint_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult'],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: _builtins.str,
@@ -29684,6 +29840,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param _builtins.str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param _builtins.str compartment_id: The OCID of the compartment containing images to search
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -29702,6 +29859,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param Mapping[str, _builtins.str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs'] placement_constraint_details: The details for providing placement constraints.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param _builtins.str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -29717,6 +29875,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -29731,6 +29890,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         pulumi.set(__self__, "launch_options", launch_options)
         pulumi.set(__self__, "licensing_configs", licensing_configs)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
@@ -29786,6 +29946,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -29902,6 +30070,14 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
         return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter(name="platformConfigs")
@@ -30395,6 +30571,35 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult(di
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
         """
         return pulumi.get(self, "license_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_host_group_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @_builtins.property
     @pulumi.getter
@@ -31216,6 +31421,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
                  capacity_reservation_id: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -31230,6 +31436,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
                  launch_options: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult'],
                  licensing_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigResult'],
                  metadata: Mapping[str, _builtins.str],
+                 placement_constraint_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult'],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: _builtins.str,
@@ -31244,6 +31451,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param _builtins.str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param _builtins.str compartment_id: The OCID of the compartment containing images to search
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -31262,6 +31470,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param Mapping[str, _builtins.str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs'] placement_constraint_details: The details for providing placement constraints.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param _builtins.str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -31277,6 +31486,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -31291,6 +31501,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         pulumi.set(__self__, "launch_options", launch_options)
         pulumi.set(__self__, "licensing_configs", licensing_configs)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
@@ -31346,6 +31557,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         The OCID of the compartment containing images to search
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -31462,6 +31681,14 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
         return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter(name="platformConfigs")
@@ -31955,6 +32182,35 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigRes
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
         """
         return pulumi.get(self, "license_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_host_group_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @_builtins.property
     @pulumi.getter
@@ -33363,6 +33619,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
                  capacity_reservation_id: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -33377,6 +33634,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
                  launch_options: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult'],
                  licensing_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigResult'],
                  metadata: Mapping[str, _builtins.str],
+                 placement_constraint_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult'],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: _builtins.str,
@@ -33391,6 +33649,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param _builtins.str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -33409,6 +33668,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param Mapping[str, _builtins.str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailArgs'] placement_constraint_details: The details for providing placement constraints.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param _builtins.str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -33424,6 +33684,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -33438,6 +33699,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         pulumi.set(__self__, "launch_options", launch_options)
         pulumi.set(__self__, "licensing_configs", licensing_configs)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
@@ -33493,6 +33755,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -33609,6 +33879,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
         return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter(name="platformConfigs")
@@ -34102,6 +34380,35 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLi
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
         """
         return pulumi.get(self, "license_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_host_group_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @_builtins.property
     @pulumi.getter
@@ -34923,6 +35230,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  capacity_reservation_id: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
+                 compute_cluster_id: _builtins.str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -34937,6 +35245,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  launch_options: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult'],
                  licensing_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigResult'],
                  metadata: Mapping[str, _builtins.str],
+                 placement_constraint_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult'],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: _builtins.str,
@@ -34951,6 +35260,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param _builtins.str capacity_reservation_id: The OCID of the compute capacity reservation this instance is launched under.
         :param _builtins.str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param _builtins.str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -34969,6 +35279,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLicensingConfigArgs'] licensing_configs: List of licensing configurations associated with target launch values.
         :param Mapping[str, _builtins.str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailArgs'] placement_constraint_details: The details for providing placement constraints.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param _builtins.str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -34984,6 +35295,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_cluster_id", compute_cluster_id)
         pulumi.set(__self__, "create_vnic_details", create_vnic_details)
         pulumi.set(__self__, "dedicated_vm_host_id", dedicated_vm_host_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -34998,6 +35310,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         pulumi.set(__self__, "launch_options", launch_options)
         pulumi.set(__self__, "licensing_configs", licensing_configs)
         pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "placement_constraint_details", placement_constraint_details)
         pulumi.set(__self__, "platform_configs", platform_configs)
         pulumi.set(__self__, "preemptible_instance_configs", preemptible_instance_configs)
         pulumi.set(__self__, "preferred_maintenance_action", preferred_maintenance_action)
@@ -35053,6 +35366,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeClusterId")
+    def compute_cluster_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        """
+        return pulumi.get(self, "compute_cluster_id")
 
     @_builtins.property
     @pulumi.getter(name="createVnicDetails")
@@ -35169,6 +35490,14 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
         return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="placementConstraintDetails")
+    def placement_constraint_details(self) -> Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult']:
+        """
+        The details for providing placement constraints.
+        """
+        return pulumi.get(self, "placement_constraint_details")
 
     @_builtins.property
     @pulumi.getter(name="platformConfigs")
@@ -35662,6 +35991,35 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         * `BRING_YOUR_OWN_LICENSE` - Bring your own license.
         """
         return pulumi.get(self, "license_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        The type of action to run when the instance is interrupted for eviction.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlacementConstraintDetailResult(dict):
+    def __init__(__self__, *,
+                 compute_host_group_id: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compute_host_group_id: The OCID of the compute host group. This is only available for dedicated capacity customers.
+        :param _builtins.str type: The type of action to run when the instance is interrupted for eviction.
+        """
+        pulumi.set(__self__, "compute_host_group_id", compute_host_group_id)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="computeHostGroupId")
+    def compute_host_group_id(self) -> _builtins.str:
+        """
+        The OCID of the compute host group. This is only available for dedicated capacity customers.
+        """
+        return pulumi.get(self, "compute_host_group_id")
 
     @_builtins.property
     @pulumi.getter

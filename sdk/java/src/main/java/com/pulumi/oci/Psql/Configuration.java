@@ -60,13 +60,14 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .dbVersion(configurationDbVersion)
  *             .displayName(configurationDisplayName)
- *             .shape(configurationShape)
+ *             .compatibleShapes(configurationCompatibleShapes)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(configurationDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
  *             .instanceOcpuCount(configurationInstanceOcpuCount)
  *             .isFlexible(configurationIsFlexible)
+ *             .shape(configurationShape)
  *             .systemTags(configurationSystemTags)
  *             .build());
  * 
@@ -100,6 +101,20 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * (Updatable) Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    @Export(name="compatibleShapes", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> compatibleShapes;
+
+    /**
+     * @return (Updatable) Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public Output<List<String>> compatibleShapes() {
+        return this.compatibleShapes;
     }
     /**
      * The type of configuration. Either user-created or a default configuration.
@@ -156,6 +171,20 @@ public class Configuration extends com.pulumi.resources.CustomResource {
      */
     public Output<String> dbVersion() {
         return this.dbVersion;
+    }
+    /**
+     * The Default configuration used for this configuration.
+     * 
+     */
+    @Export(name="defaultConfigId", refs={String.class}, tree="[0]")
+    private Output<String> defaultConfigId;
+
+    /**
+     * @return The Default configuration used for this configuration.
+     * 
+     */
+    public Output<String> defaultConfigId() {
+        return this.defaultConfigId;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -278,14 +307,18 @@ public class Configuration extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration.
+     * 
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
     private Output<String> shape;
 
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return The name of the shape for the configuration.
+     * 
+     * For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
      * 
      */
     public Output<String> shape() {

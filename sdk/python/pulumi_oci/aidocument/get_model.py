@@ -27,7 +27,7 @@ class GetModelResult:
     """
     A collection of values returned by getModel.
     """
-    def __init__(__self__, compartment_id=None, component_models=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_composed_model=None, is_quick_mode=None, labels=None, lifecycle_details=None, max_training_time_in_hours=None, metrics=None, model_id=None, model_type=None, model_version=None, project_id=None, state=None, system_tags=None, tenancy_id=None, testing_datasets=None, time_created=None, time_updated=None, trained_time_in_hours=None, training_datasets=None, validation_datasets=None):
+    def __init__(__self__, compartment_id=None, component_models=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, inference_units=None, is_composed_model=None, is_quick_mode=None, labels=None, language=None, lifecycle_details=None, locks=None, max_training_time_in_hours=None, metrics=None, model_id=None, model_sub_types=None, model_type=None, model_version=None, project_id=None, state=None, system_tags=None, tenancy_id=None, testing_datasets=None, time_created=None, time_updated=None, trained_time_in_hours=None, training_datasets=None, validation_datasets=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -49,6 +49,9 @@ class GetModelResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if inference_units and not isinstance(inference_units, int):
+            raise TypeError("Expected argument 'inference_units' to be a int")
+        pulumi.set(__self__, "inference_units", inference_units)
         if is_composed_model and not isinstance(is_composed_model, bool):
             raise TypeError("Expected argument 'is_composed_model' to be a bool")
         pulumi.set(__self__, "is_composed_model", is_composed_model)
@@ -58,9 +61,15 @@ class GetModelResult:
         if labels and not isinstance(labels, list):
             raise TypeError("Expected argument 'labels' to be a list")
         pulumi.set(__self__, "labels", labels)
+        if language and not isinstance(language, str):
+            raise TypeError("Expected argument 'language' to be a str")
+        pulumi.set(__self__, "language", language)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if max_training_time_in_hours and not isinstance(max_training_time_in_hours, float):
             raise TypeError("Expected argument 'max_training_time_in_hours' to be a float")
         pulumi.set(__self__, "max_training_time_in_hours", max_training_time_in_hours)
@@ -70,6 +79,9 @@ class GetModelResult:
         if model_id and not isinstance(model_id, str):
             raise TypeError("Expected argument 'model_id' to be a str")
         pulumi.set(__self__, "model_id", model_id)
+        if model_sub_types and not isinstance(model_sub_types, list):
+            raise TypeError("Expected argument 'model_sub_types' to be a list")
+        pulumi.set(__self__, "model_sub_types", model_sub_types)
         if model_type and not isinstance(model_type, str):
             raise TypeError("Expected argument 'model_type' to be a str")
         pulumi.set(__self__, "model_type", model_type)
@@ -111,7 +123,7 @@ class GetModelResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The compartment identifier.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -164,6 +176,14 @@ class GetModelResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="inferenceUnits")
+    def inference_units(self) -> _builtins.int:
+        """
+        Number of replicas required for this model.
+        """
+        return pulumi.get(self, "inference_units")
+
+    @_builtins.property
     @pulumi.getter(name="isComposedModel")
     def is_composed_model(self) -> _builtins.bool:
         """
@@ -188,12 +208,28 @@ class GetModelResult:
         return pulumi.get(self, "labels")
 
     @_builtins.property
+    @pulumi.getter
+    def language(self) -> _builtins.str:
+        """
+        The document language for model training, abbreviated according to the BCP 47 syntax.
+        """
+        return pulumi.get(self, "language")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
         A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetModelLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter(name="maxTrainingTimeInHours")
@@ -218,6 +254,19 @@ class GetModelResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
         """
         return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelSubTypes")
+    def model_sub_types(self) -> Sequence['outputs.GetModelModelSubTypeResult']:
+        """
+        The model sub type for PRE_TRAINED_KEY_VALUE_EXTRACTION The allowed values are:
+        * `RECEIPT`
+        * `INVOICE`
+        * `PASSPORT`
+        * `DRIVER_LICENSE`
+        * `HEALTH_INSURANCE_ID`
+        """
+        return pulumi.get(self, "model_sub_types")
 
     @_builtins.property
     @pulumi.getter(name="modelType")
@@ -329,13 +378,17 @@ class AwaitableGetModelResult(GetModelResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            inference_units=self.inference_units,
             is_composed_model=self.is_composed_model,
             is_quick_mode=self.is_quick_mode,
             labels=self.labels,
+            language=self.language,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             max_training_time_in_hours=self.max_training_time_in_hours,
             metrics=self.metrics,
             model_id=self.model_id,
+            model_sub_types=self.model_sub_types,
             model_type=self.model_type,
             model_version=self.model_version,
             project_id=self.project_id,
@@ -382,13 +435,17 @@ def get_model(model_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        inference_units=pulumi.get(__ret__, 'inference_units'),
         is_composed_model=pulumi.get(__ret__, 'is_composed_model'),
         is_quick_mode=pulumi.get(__ret__, 'is_quick_mode'),
         labels=pulumi.get(__ret__, 'labels'),
+        language=pulumi.get(__ret__, 'language'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         max_training_time_in_hours=pulumi.get(__ret__, 'max_training_time_in_hours'),
         metrics=pulumi.get(__ret__, 'metrics'),
         model_id=pulumi.get(__ret__, 'model_id'),
+        model_sub_types=pulumi.get(__ret__, 'model_sub_types'),
         model_type=pulumi.get(__ret__, 'model_type'),
         model_version=pulumi.get(__ret__, 'model_version'),
         project_id=pulumi.get(__ret__, 'project_id'),
@@ -432,13 +489,17 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        inference_units=pulumi.get(__response__, 'inference_units'),
         is_composed_model=pulumi.get(__response__, 'is_composed_model'),
         is_quick_mode=pulumi.get(__response__, 'is_quick_mode'),
         labels=pulumi.get(__response__, 'labels'),
+        language=pulumi.get(__response__, 'language'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         max_training_time_in_hours=pulumi.get(__response__, 'max_training_time_in_hours'),
         metrics=pulumi.get(__response__, 'metrics'),
         model_id=pulumi.get(__response__, 'model_id'),
+        model_sub_types=pulumi.get(__response__, 'model_sub_types'),
         model_type=pulumi.get(__response__, 'model_type'),
         model_version=pulumi.get(__response__, 'model_version'),
         project_id=pulumi.get(__response__, 'project_id'),

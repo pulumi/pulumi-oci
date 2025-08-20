@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscove
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponentArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentConnectorArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentEndpointArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfigurationArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabaseArgs;
@@ -28,14 +29,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
     public static final ExternalDbSystemDiscoveryDiscoveredComponentArgs Empty = new ExternalDbSystemDiscoveryDiscoveredComponentArgs();
 
     /**
-     * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     @Import(name="adrHomeDirectory")
     private @Nullable Output<String> adrHomeDirectory;
 
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     public Optional<Output<String>> adrHomeDirectory() {
@@ -249,6 +250,21 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
      */
     public Optional<Output<String>> dbId() {
         return Optional.ofNullable(this.dbId);
+    }
+
+    /**
+     * The list of database instances.
+     * 
+     */
+    @Import(name="dbInstances")
+    private @Nullable Output<List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs>> dbInstances;
+
+    /**
+     * @return The list of database instances.
+     * 
+     */
+    public Optional<Output<List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs>>> dbInstances() {
+        return Optional.ofNullable(this.dbInstances);
     }
 
     /**
@@ -597,6 +613,21 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
     }
 
     /**
+     * The name of the node with the VIP.
+     * 
+     */
+    @Import(name="nodeName")
+    private @Nullable Output<String> nodeName;
+
+    /**
+     * @return The name of the node with the VIP.
+     * 
+     */
+    public Optional<Output<String>> nodeName() {
+        return Optional.ofNullable(this.nodeName);
+    }
+
+    /**
      * The role of the cluster node.
      * 
      */
@@ -627,14 +658,14 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
     }
 
     /**
-     * The Oracle home location of the listener.
+     * The Oracle home location of the DB instance.
      * 
      */
     @Import(name="oracleHome")
     private @Nullable Output<String> oracleHome;
 
     /**
-     * @return The Oracle home location of the listener.
+     * @return The Oracle home location of the DB instance.
      * 
      */
     public Optional<Output<String>> oracleHome() {
@@ -765,6 +796,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         this.crsBaseDirectory = $.crsBaseDirectory;
         this.dbEdition = $.dbEdition;
         this.dbId = $.dbId;
+        this.dbInstances = $.dbInstances;
         this.dbNodeName = $.dbNodeName;
         this.dbPacks = $.dbPacks;
         this.dbRole = $.dbRole;
@@ -788,6 +820,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         this.logDirectory = $.logDirectory;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.networkConfigurations = $.networkConfigurations;
+        this.nodeName = $.nodeName;
         this.nodeRole = $.nodeRole;
         this.ocrFileLocation = $.ocrFileLocation;
         this.oracleHome = $.oracleHome;
@@ -819,7 +852,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         }
 
         /**
-         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
          * 
          * @return builder
          * 
@@ -830,7 +863,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         }
 
         /**
-         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+         * @param adrHomeDirectory The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
          * 
          * @return builder
          * 
@@ -1156,6 +1189,37 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
          */
         public Builder dbId(String dbId) {
             return dbId(Output.of(dbId));
+        }
+
+        /**
+         * @param dbInstances The list of database instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbInstances(@Nullable Output<List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs>> dbInstances) {
+            $.dbInstances = dbInstances;
+            return this;
+        }
+
+        /**
+         * @param dbInstances The list of database instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbInstances(List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs> dbInstances) {
+            return dbInstances(Output.of(dbInstances));
+        }
+
+        /**
+         * @param dbInstances The list of database instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbInstances(ExternalDbSystemDiscoveryDiscoveredComponentDbInstanceArgs... dbInstances) {
+            return dbInstances(List.of(dbInstances));
         }
 
         /**
@@ -1662,6 +1726,27 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         }
 
         /**
+         * @param nodeName The name of the node with the VIP.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeName(@Nullable Output<String> nodeName) {
+            $.nodeName = nodeName;
+            return this;
+        }
+
+        /**
+         * @param nodeName The name of the node with the VIP.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder nodeName(String nodeName) {
+            return nodeName(Output.of(nodeName));
+        }
+
+        /**
          * @param nodeRole The role of the cluster node.
          * 
          * @return builder
@@ -1704,7 +1789,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         }
 
         /**
-         * @param oracleHome The Oracle home location of the listener.
+         * @param oracleHome The Oracle home location of the DB instance.
          * 
          * @return builder
          * 
@@ -1715,7 +1800,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponentArgs extends com.
         }
 
         /**
-         * @param oracleHome The Oracle home location of the listener.
+         * @param oracleHome The Oracle home location of the DB instance.
          * 
          * @return builder
          * 

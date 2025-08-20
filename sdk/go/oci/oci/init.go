@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance":
+		r = &ApiPlatformApiPlatformInstance{}
 	case "oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl":
 		r = &ApiaccesscontrolPrivilegedApiControl{}
 	case "oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest":
@@ -50,6 +52,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/apiPlatformApiPlatformInstance",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/apiaccesscontrolPrivilegedApiControl",

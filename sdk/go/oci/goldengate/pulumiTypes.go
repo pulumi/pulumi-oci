@@ -3153,7 +3153,7 @@ type PipelineProcessOptions struct {
 	ReplicateSchemaChange PipelineProcessOptionsReplicateSchemaChange `pulumi:"replicateSchemaChange"`
 	// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
-	// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 	StartUsingDefaultMapping *string `pulumi:"startUsingDefaultMapping"`
 }
 
@@ -3175,7 +3175,7 @@ type PipelineProcessOptionsArgs struct {
 	ReplicateSchemaChange PipelineProcessOptionsReplicateSchemaChangeInput `pulumi:"replicateSchemaChange"`
 	// (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
-	// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 	StartUsingDefaultMapping pulumi.StringPtrInput `pulumi:"startUsingDefaultMapping"`
 }
 
@@ -3273,7 +3273,7 @@ func (o PipelineProcessOptionsOutput) ShouldRestartOnFailure() pulumi.StringOutp
 	return o.ApplyT(func(v PipelineProcessOptions) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
 }
 
-// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 func (o PipelineProcessOptionsOutput) StartUsingDefaultMapping() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineProcessOptions) *string { return v.StartUsingDefaultMapping }).(pulumi.StringPtrOutput)
 }
@@ -3332,7 +3332,7 @@ func (o PipelineProcessOptionsPtrOutput) ShouldRestartOnFailure() pulumi.StringP
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+// (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 func (o PipelineProcessOptionsPtrOutput) StartUsingDefaultMapping() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineProcessOptions) *string {
 		if v == nil {
@@ -5259,6 +5259,10 @@ type GetConnectionsConnectionCollectionItem struct {
 	// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
 	// * OAUTH_M2M: user must enter clientId and clientSecret
 	AuthenticationType string `pulumi:"authenticationType"`
+	// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+	// * Azure China: https://login.chinacloudapi.cn/
+	// * Azure US Government: https://login.microsoftonline.us/
+	AzureAuthorityHost string `pulumi:"azureAuthorityHost"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId string `pulumi:"azureTenantId"`
 	// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -5306,7 +5310,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	// Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds bool `pulumi:"doesUseSecretIds"`
 	// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-	Endpoint    string `pulumi:"endpoint"`
+	Endpoint string `pulumi:"endpoint"`
+	// Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
@@ -5388,7 +5393,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	SessionMode string `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi bool `pulumi:"shouldUseJndi"`
-	// Indicates that the user intents to connect to the instance through resource principal.
+	// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 	ShouldUseResourcePrincipal bool `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
@@ -5496,6 +5501,10 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
 	// * OAUTH_M2M: user must enter clientId and clientSecret
 	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+	// * Azure China: https://login.chinacloudapi.cn/
+	// * Azure US Government: https://login.microsoftonline.us/
+	AzureAuthorityHost pulumi.StringInput `pulumi:"azureAuthorityHost"`
 	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 	AzureTenantId pulumi.StringInput `pulumi:"azureTenantId"`
 	// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -5543,7 +5552,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds pulumi.BoolInput `pulumi:"doesUseSecretIds"`
 	// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-	Endpoint    pulumi.StringInput `pulumi:"endpoint"`
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringInput `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
@@ -5625,7 +5635,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
 	// If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
 	ShouldUseJndi pulumi.BoolInput `pulumi:"shouldUseJndi"`
-	// Indicates that the user intents to connect to the instance through resource principal.
+	// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 	ShouldUseResourcePrincipal pulumi.BoolInput `pulumi:"shouldUseResourcePrincipal"`
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolInput `pulumi:"shouldValidateServerCertificate"`
@@ -5795,6 +5805,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) AuthenticationType() pulum
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
 
+// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+// * Azure China: https://login.chinacloudapi.cn/
+// * Azure US Government: https://login.microsoftonline.us/
+func (o GetConnectionsConnectionCollectionItemOutput) AzureAuthorityHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AzureAuthorityHost }).(pulumi.StringOutput)
+}
+
 // Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
 func (o GetConnectionsConnectionCollectionItemOutput) AzureTenantId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AzureTenantId }).(pulumi.StringOutput)
@@ -5913,6 +5930,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) Endpoint() pulumi.StringOu
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Endpoint }).(pulumi.StringOutput)
 }
 
+// Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 func (o GetConnectionsConnectionCollectionItemOutput) Fingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Fingerprint }).(pulumi.StringOutput)
 }
@@ -6127,7 +6145,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) ShouldUseJndi() pulumi.Boo
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldUseJndi }).(pulumi.BoolOutput)
 }
 
-// Indicates that the user intents to connect to the instance through resource principal.
+// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
 func (o GetConnectionsConnectionCollectionItemOutput) ShouldUseResourcePrincipal() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.ShouldUseResourcePrincipal }).(pulumi.BoolOutput)
 }
@@ -15142,7 +15160,7 @@ type GetPipelineProcessOption struct {
 	ReplicateSchemaChanges []GetPipelineProcessOptionReplicateSchemaChange `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
-	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 	StartUsingDefaultMapping string `pulumi:"startUsingDefaultMapping"`
 }
 
@@ -15164,7 +15182,7 @@ type GetPipelineProcessOptionArgs struct {
 	ReplicateSchemaChanges GetPipelineProcessOptionReplicateSchemaChangeArrayInput `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
-	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 	StartUsingDefaultMapping pulumi.StringInput `pulumi:"startUsingDefaultMapping"`
 }
 
@@ -15236,7 +15254,7 @@ func (o GetPipelineProcessOptionOutput) ShouldRestartOnFailure() pulumi.StringOu
 	return o.ApplyT(func(v GetPipelineProcessOption) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
 }
 
-// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 func (o GetPipelineProcessOptionOutput) StartUsingDefaultMapping() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineProcessOption) string { return v.StartUsingDefaultMapping }).(pulumi.StringOutput)
 }
@@ -17527,7 +17545,7 @@ type GetPipelinesPipelineCollectionItemProcessOption struct {
 	ReplicateSchemaChanges []GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChange `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure string `pulumi:"shouldRestartOnFailure"`
-	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 	StartUsingDefaultMapping string `pulumi:"startUsingDefaultMapping"`
 }
 
@@ -17549,7 +17567,7 @@ type GetPipelinesPipelineCollectionItemProcessOptionArgs struct {
 	ReplicateSchemaChanges GetPipelinesPipelineCollectionItemProcessOptionReplicateSchemaChangeArrayInput `pulumi:"replicateSchemaChanges"`
 	// If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
 	ShouldRestartOnFailure pulumi.StringInput `pulumi:"shouldRestartOnFailure"`
-	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+	// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 	StartUsingDefaultMapping pulumi.StringInput `pulumi:"startUsingDefaultMapping"`
 }
 
@@ -17623,7 +17641,7 @@ func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) ShouldRestartOnFa
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) string { return v.ShouldRestartOnFailure }).(pulumi.StringOutput)
 }
 
-// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+// If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
 func (o GetPipelinesPipelineCollectionItemProcessOptionOutput) StartUsingDefaultMapping() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineCollectionItemProcessOption) string { return v.StartUsingDefaultMapping }).(pulumi.StringOutput)
 }

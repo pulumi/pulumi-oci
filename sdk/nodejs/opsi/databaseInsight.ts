@@ -64,7 +64,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
     /**
      * User credential details to connect to the database.
      */
-    public readonly credentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightCredentialDetails | undefined>;
+    public readonly credentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightCredentialDetails>;
     /**
      * A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
      */
@@ -199,7 +199,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
+    public readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time the database insight was first enabled. An RFC3339 formatted datetime string
      */
@@ -293,6 +293,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["opsiPrivateEndpointId"] = args ? args.opsiPrivateEndpointId : undefined;
             resourceInputs["serviceName"] = args ? args.serviceName : undefined;
             resourceInputs["status"] = args ? args.status : undefined;
+            resourceInputs["systemTags"] = args ? args.systemTags : undefined;
             resourceInputs["databaseDisplayName"] = undefined /*out*/;
             resourceInputs["databaseName"] = undefined /*out*/;
             resourceInputs["databaseType"] = undefined /*out*/;
@@ -307,7 +308,6 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["processorCount"] = undefined /*out*/;
             resourceInputs["rootId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
-            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -584,4 +584,8 @@ export interface DatabaseInsightArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
      */
     status?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

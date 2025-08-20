@@ -13,6 +13,883 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ScheduledQueryScheduledQueryProcessingConfiguration struct {
+	// (Updatable) Definition of the Custom Metric.
+	CustomMetric *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric `pulumi:"customMetric"`
+	// (Updatable) Definition of the object storage.
+	ObjectStorage *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage `pulumi:"objectStorage"`
+	// (Updatable) Definition of the Stream.
+	Streaming *ScheduledQueryScheduledQueryProcessingConfigurationStreaming `pulumi:"streaming"`
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationArgs and ScheduledQueryScheduledQueryProcessingConfigurationOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationInput` via:
+//
+//	ScheduledQueryScheduledQueryProcessingConfigurationArgs{...}
+type ScheduledQueryScheduledQueryProcessingConfigurationInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationOutput() ScheduledQueryScheduledQueryProcessingConfigurationOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationOutput
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationArgs struct {
+	// (Updatable) Definition of the Custom Metric.
+	CustomMetric ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrInput `pulumi:"customMetric"`
+	// (Updatable) Definition of the object storage.
+	ObjectStorage ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrInput `pulumi:"objectStorage"`
+	// (Updatable) Definition of the Stream.
+	Streaming ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrInput `pulumi:"streaming"`
+}
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationArgs) ToScheduledQueryScheduledQueryProcessingConfigurationOutput() ScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationArgs) ToScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationOutput)
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationArgs) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationArgs) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationOutput).ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(ctx)
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationPtrInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationArgs, ScheduledQueryScheduledQueryProcessingConfigurationPtr and ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationPtrInput` via:
+//
+//	        ScheduledQueryScheduledQueryProcessingConfigurationArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledQueryScheduledQueryProcessingConfigurationPtrInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput
+}
+
+type scheduledQueryScheduledQueryProcessingConfigurationPtrType ScheduledQueryScheduledQueryProcessingConfigurationArgs
+
+func ScheduledQueryScheduledQueryProcessingConfigurationPtr(v *ScheduledQueryScheduledQueryProcessingConfigurationArgs) ScheduledQueryScheduledQueryProcessingConfigurationPtrInput {
+	return (*scheduledQueryScheduledQueryProcessingConfigurationPtrType)(v)
+}
+
+func (*scheduledQueryScheduledQueryProcessingConfigurationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationPtrType) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationPtrType) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) ToScheduledQueryScheduledQueryProcessingConfigurationOutput() ScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) ToScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return o.ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfiguration {
+		return &v
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput)
+}
+
+// (Updatable) Definition of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) CustomMetric() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric {
+		return v.CustomMetric
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput)
+}
+
+// (Updatable) Definition of the object storage.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) ObjectStorage() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage {
+		return v.ObjectStorage
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput)
+}
+
+// (Updatable) Definition of the Stream.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationOutput) Streaming() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfigurationStreaming {
+		return v.Streaming
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) Elem() ScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfiguration) ScheduledQueryScheduledQueryProcessingConfiguration {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledQueryScheduledQueryProcessingConfiguration
+		return ret
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationOutput)
+}
+
+// (Updatable) Definition of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) CustomMetric() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric {
+		if v == nil {
+			return nil
+		}
+		return v.CustomMetric
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput)
+}
+
+// (Updatable) Definition of the object storage.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) ObjectStorage() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectStorage
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput)
+}
+
+// (Updatable) Definition of the Stream.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput) Streaming() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfiguration) *ScheduledQueryScheduledQueryProcessingConfigurationStreaming {
+		if v == nil {
+			return nil
+		}
+		return v.Streaming
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric struct {
+	// (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+	Compartment *string `pulumi:"compartment"`
+	// (Updatable) Description of the Custom Metric.
+	Description *string `pulumi:"description"`
+	// (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+	IsAnomalyDetectionEnabled *bool `pulumi:"isAnomalyDetectionEnabled"`
+	// (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+	IsMetricPublished *bool `pulumi:"isMetricPublished"`
+	// (Updatable) Name of the Custom Metric.
+	Name string `pulumi:"name"`
+	// (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) Resource Group of the Custom Metric.
+	ResourceGroup *string `pulumi:"resourceGroup"`
+	// (Updatable) Unit in which the metric value is reported. For example 'ms'.
+	Unit *string `pulumi:"unit"`
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs and ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput` via:
+//
+//	ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{...}
+type ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs struct {
+	// (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+	Compartment pulumi.StringPtrInput `pulumi:"compartment"`
+	// (Updatable) Description of the Custom Metric.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+	IsAnomalyDetectionEnabled pulumi.BoolPtrInput `pulumi:"isAnomalyDetectionEnabled"`
+	// (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+	IsMetricPublished pulumi.BoolPtrInput `pulumi:"isMetricPublished"`
+	// (Updatable) Name of the Custom Metric.
+	Name pulumi.StringInput `pulumi:"name"`
+	// (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) Resource Group of the Custom Metric.
+	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
+	// (Updatable) Unit in which the metric value is reported. For example 'ms'.
+	Unit pulumi.StringPtrInput `pulumi:"unit"`
+}
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput)
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput).ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(ctx)
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs, ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtr and ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrInput` via:
+//
+//	        ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput
+}
+
+type scheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrType ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs
+
+func ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtr(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrInput {
+	return (*scheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrType)(v)
+}
+
+func (*scheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrType) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrType) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return o.ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric {
+		return &v
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput)
+}
+
+// (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Compartment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string { return v.Compartment }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Description of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) IsAnomalyDetectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *bool {
+		return v.IsAnomalyDetectionEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) IsMetricPublished() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *bool {
+		return v.IsMetricPublished
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Name of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource Group of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unit in which the metric value is reported. For example 'ms'.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string { return v.Unit }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) Elem() ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric
+		return ret
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput)
+}
+
+// (Updatable) Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) Compartment() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Compartment
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Description of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Indicates whether anomaly Detection should be performed on the generated metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) IsAnomalyDetectionEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsAnomalyDetectionEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) IsMetricPublished() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsMetricPublished
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Name of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Resource Group of the Custom Metric.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) ResourceGroup() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceGroup
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unit in which the metric value is reported. For example 'ms'.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput) Unit() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Unit
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage struct {
+	// (Updatable) Bucket name in the object store.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Namespace in the object store.
+	NameSpace *string `pulumi:"nameSpace"`
+	// (Updatable) Object name prefix in the object store.
+	ObjectNamePrefix *string `pulumi:"objectNamePrefix"`
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs and ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput` via:
+//
+//	ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{...}
+type ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs struct {
+	// (Updatable) Bucket name in the object store.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Namespace in the object store.
+	NameSpace pulumi.StringPtrInput `pulumi:"nameSpace"`
+	// (Updatable) Object name prefix in the object store.
+	ObjectNamePrefix pulumi.StringPtrInput `pulumi:"objectNamePrefix"`
+}
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput)
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput).ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(ctx)
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs, ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtr and ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrInput` via:
+//
+//	        ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput
+}
+
+type scheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrType ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs
+
+func ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtr(v *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrInput {
+	return (*scheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrType)(v)
+}
+
+func (*scheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrType) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrType) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return o.ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage {
+		return &v
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput)
+}
+
+// (Updatable) Bucket name in the object store.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace in the object store.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) NameSpace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *string { return v.NameSpace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Object name prefix in the object store.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ObjectNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *string {
+		return v.ObjectNamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) Elem() ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage
+		return ret
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput)
+}
+
+// (Updatable) Bucket name in the object store.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace in the object store.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) NameSpace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.NameSpace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Object name prefix in the object store.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput) ObjectNamePrefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectNamePrefix
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationStreaming struct {
+	// (Updatable) Stream Id.
+	StreamId *string `pulumi:"streamId"`
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationStreamingInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs and ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationStreamingInput` via:
+//
+//	ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{...}
+type ScheduledQueryScheduledQueryProcessingConfigurationStreamingInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs struct {
+	// (Updatable) Stream Id.
+	StreamId pulumi.StringPtrInput `pulumi:"streamId"`
+}
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput)
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput).ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(ctx)
+}
+
+// ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrInput is an input type that accepts ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs, ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtr and ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput values.
+// You can construct a concrete instance of `ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrInput` via:
+//
+//	        ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrInput interface {
+	pulumi.Input
+
+	ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput
+	ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput
+}
+
+type scheduledQueryScheduledQueryProcessingConfigurationStreamingPtrType ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs
+
+func ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtr(v *ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrInput {
+	return (*scheduledQueryScheduledQueryProcessingConfigurationStreamingPtrType)(v)
+}
+
+func (*scheduledQueryScheduledQueryProcessingConfigurationStreamingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationStreamingPtrType) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return i.ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledQueryScheduledQueryProcessingConfigurationStreamingPtrType) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return o.ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledQueryScheduledQueryProcessingConfigurationStreaming) *ScheduledQueryScheduledQueryProcessingConfigurationStreaming {
+		return &v
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput)
+}
+
+// (Updatable) Stream Id.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledQueryScheduledQueryProcessingConfigurationStreaming) *string { return v.StreamId }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput() ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput) ToScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutputWithContext(ctx context.Context) ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput {
+	return o
+}
+
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput) Elem() ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationStreaming) ScheduledQueryScheduledQueryProcessingConfigurationStreaming {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledQueryScheduledQueryProcessingConfigurationStreaming
+		return ret
+	}).(ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput)
+}
+
+// (Updatable) Stream Id.
+func (o ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput) StreamId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledQueryScheduledQueryProcessingConfigurationStreaming) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StreamId
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetLogAttribute struct {
+	// Key that specifies the attribute name.
+	AttributeName string `pulumi:"attributeName"`
+	// Value associated with the attribute key.
+	AttributeValue string `pulumi:"attributeValue"`
+}
+
+// GetLogAttributeInput is an input type that accepts GetLogAttributeArgs and GetLogAttributeOutput values.
+// You can construct a concrete instance of `GetLogAttributeInput` via:
+//
+//	GetLogAttributeArgs{...}
+type GetLogAttributeInput interface {
+	pulumi.Input
+
+	ToGetLogAttributeOutput() GetLogAttributeOutput
+	ToGetLogAttributeOutputWithContext(context.Context) GetLogAttributeOutput
+}
+
+type GetLogAttributeArgs struct {
+	// Key that specifies the attribute name.
+	AttributeName pulumi.StringInput `pulumi:"attributeName"`
+	// Value associated with the attribute key.
+	AttributeValue pulumi.StringInput `pulumi:"attributeValue"`
+}
+
+func (GetLogAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAttribute)(nil)).Elem()
+}
+
+func (i GetLogAttributeArgs) ToGetLogAttributeOutput() GetLogAttributeOutput {
+	return i.ToGetLogAttributeOutputWithContext(context.Background())
+}
+
+func (i GetLogAttributeArgs) ToGetLogAttributeOutputWithContext(ctx context.Context) GetLogAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAttributeOutput)
+}
+
+// GetLogAttributeArrayInput is an input type that accepts GetLogAttributeArray and GetLogAttributeArrayOutput values.
+// You can construct a concrete instance of `GetLogAttributeArrayInput` via:
+//
+//	GetLogAttributeArray{ GetLogAttributeArgs{...} }
+type GetLogAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetLogAttributeArrayOutput() GetLogAttributeArrayOutput
+	ToGetLogAttributeArrayOutputWithContext(context.Context) GetLogAttributeArrayOutput
+}
+
+type GetLogAttributeArray []GetLogAttributeInput
+
+func (GetLogAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAttribute)(nil)).Elem()
+}
+
+func (i GetLogAttributeArray) ToGetLogAttributeArrayOutput() GetLogAttributeArrayOutput {
+	return i.ToGetLogAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetLogAttributeArray) ToGetLogAttributeArrayOutputWithContext(ctx context.Context) GetLogAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLogAttributeArrayOutput)
+}
+
+type GetLogAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetLogAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLogAttribute)(nil)).Elem()
+}
+
+func (o GetLogAttributeOutput) ToGetLogAttributeOutput() GetLogAttributeOutput {
+	return o
+}
+
+func (o GetLogAttributeOutput) ToGetLogAttributeOutputWithContext(ctx context.Context) GetLogAttributeOutput {
+	return o
+}
+
+// Key that specifies the attribute name.
+func (o GetLogAttributeOutput) AttributeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAttribute) string { return v.AttributeName }).(pulumi.StringOutput)
+}
+
+// Value associated with the attribute key.
+func (o GetLogAttributeOutput) AttributeValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLogAttribute) string { return v.AttributeValue }).(pulumi.StringOutput)
+}
+
+type GetLogAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLogAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLogAttribute)(nil)).Elem()
+}
+
+func (o GetLogAttributeArrayOutput) ToGetLogAttributeArrayOutput() GetLogAttributeArrayOutput {
+	return o
+}
+
+func (o GetLogAttributeArrayOutput) ToGetLogAttributeArrayOutputWithContext(ctx context.Context) GetLogAttributeArrayOutput {
+	return o
+}
+
+func (o GetLogAttributeArrayOutput) Index(i pulumi.IntInput) GetLogAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLogAttribute {
+		return vs[0].([]GetLogAttribute)[vs[1].(int)]
+	}).(GetLogAttributeOutput)
+}
+
 type GetQueryQuickPicksFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -223,6 +1100,1499 @@ func (o GetQueryQuickPicksQuickPickArrayOutput) Index(i pulumi.IntInput) GetQuer
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetQueryQuickPicksQuickPick {
 		return vs[0].([]GetQueryQuickPicksQuickPick)[vs[1].(int)]
 	}).(GetQueryQuickPicksQuickPickOutput)
+}
+
+type GetScheduledQueriesFilter struct {
+	// Name of the Custom Metric.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetScheduledQueriesFilterInput is an input type that accepts GetScheduledQueriesFilterArgs and GetScheduledQueriesFilterOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesFilterInput` via:
+//
+//	GetScheduledQueriesFilterArgs{...}
+type GetScheduledQueriesFilterInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesFilterOutput() GetScheduledQueriesFilterOutput
+	ToGetScheduledQueriesFilterOutputWithContext(context.Context) GetScheduledQueriesFilterOutput
+}
+
+type GetScheduledQueriesFilterArgs struct {
+	// Name of the Custom Metric.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetScheduledQueriesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesFilter)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesFilterArgs) ToGetScheduledQueriesFilterOutput() GetScheduledQueriesFilterOutput {
+	return i.ToGetScheduledQueriesFilterOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesFilterArgs) ToGetScheduledQueriesFilterOutputWithContext(ctx context.Context) GetScheduledQueriesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesFilterOutput)
+}
+
+// GetScheduledQueriesFilterArrayInput is an input type that accepts GetScheduledQueriesFilterArray and GetScheduledQueriesFilterArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesFilterArrayInput` via:
+//
+//	GetScheduledQueriesFilterArray{ GetScheduledQueriesFilterArgs{...} }
+type GetScheduledQueriesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesFilterArrayOutput() GetScheduledQueriesFilterArrayOutput
+	ToGetScheduledQueriesFilterArrayOutputWithContext(context.Context) GetScheduledQueriesFilterArrayOutput
+}
+
+type GetScheduledQueriesFilterArray []GetScheduledQueriesFilterInput
+
+func (GetScheduledQueriesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesFilter)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesFilterArray) ToGetScheduledQueriesFilterArrayOutput() GetScheduledQueriesFilterArrayOutput {
+	return i.ToGetScheduledQueriesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesFilterArray) ToGetScheduledQueriesFilterArrayOutputWithContext(ctx context.Context) GetScheduledQueriesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesFilterArrayOutput)
+}
+
+type GetScheduledQueriesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesFilter)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesFilterOutput) ToGetScheduledQueriesFilterOutput() GetScheduledQueriesFilterOutput {
+	return o
+}
+
+func (o GetScheduledQueriesFilterOutput) ToGetScheduledQueriesFilterOutputWithContext(ctx context.Context) GetScheduledQueriesFilterOutput {
+	return o
+}
+
+// Name of the Custom Metric.
+func (o GetScheduledQueriesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetScheduledQueriesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetScheduledQueriesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetScheduledQueriesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueriesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledQueriesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesFilter)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesFilterArrayOutput) ToGetScheduledQueriesFilterArrayOutput() GetScheduledQueriesFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesFilterArrayOutput) ToGetScheduledQueriesFilterArrayOutputWithContext(ctx context.Context) GetScheduledQueriesFilterArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesFilterArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesFilter {
+		return vs[0].([]GetScheduledQueriesFilter)[vs[1].(int)]
+	}).(GetScheduledQueriesFilterOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollection struct {
+	Items []GetScheduledQueriesScheduledQueryCollectionItem `pulumi:"items"`
+}
+
+// GetScheduledQueriesScheduledQueryCollectionInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionArgs and GetScheduledQueriesScheduledQueryCollectionOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionArgs{...}
+type GetScheduledQueriesScheduledQueryCollectionInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionOutput() GetScheduledQueriesScheduledQueryCollectionOutput
+	ToGetScheduledQueriesScheduledQueryCollectionOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionArgs struct {
+	Items GetScheduledQueriesScheduledQueryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetScheduledQueriesScheduledQueryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollection)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionArgs) ToGetScheduledQueriesScheduledQueryCollectionOutput() GetScheduledQueriesScheduledQueryCollectionOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionArgs) ToGetScheduledQueriesScheduledQueryCollectionOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionOutput)
+}
+
+// GetScheduledQueriesScheduledQueryCollectionArrayInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionArray and GetScheduledQueriesScheduledQueryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionArrayInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionArray{ GetScheduledQueriesScheduledQueryCollectionArgs{...} }
+type GetScheduledQueriesScheduledQueryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionArrayOutput() GetScheduledQueriesScheduledQueryCollectionArrayOutput
+	ToGetScheduledQueriesScheduledQueryCollectionArrayOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionArrayOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionArray []GetScheduledQueriesScheduledQueryCollectionInput
+
+func (GetScheduledQueriesScheduledQueryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollection)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionArray) ToGetScheduledQueriesScheduledQueryCollectionArrayOutput() GetScheduledQueriesScheduledQueryCollectionArrayOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionArray) ToGetScheduledQueriesScheduledQueryCollectionArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollection)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionOutput) ToGetScheduledQueriesScheduledQueryCollectionOutput() GetScheduledQueriesScheduledQueryCollectionOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionOutput) ToGetScheduledQueriesScheduledQueryCollectionOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionOutput) Items() GetScheduledQueriesScheduledQueryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollection) []GetScheduledQueriesScheduledQueryCollectionItem {
+		return v.Items
+	}).(GetScheduledQueriesScheduledQueryCollectionItemArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollection)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionArrayOutput() GetScheduledQueriesScheduledQueryCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesScheduledQueryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesScheduledQueryCollection {
+		return vs[0].([]GetScheduledQueriesScheduledQueryCollection)[vs[1].(int)]
+	}).(GetScheduledQueriesScheduledQueryCollectionOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItem struct {
+	// The APM Domain ID for the intended request.
+	ApmDomainId string `pulumi:"apmDomainId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled query . An OCID is generated when the scheduled query is created.
+	Id        string `pulumi:"id"`
+	OpcDryRun string `pulumi:"opcDryRun"`
+	// Description for the scheduled query.
+	ScheduledQueryDescription string `pulumi:"scheduledQueryDescription"`
+	// Scheduled query instances.
+	ScheduledQueryInstances string `pulumi:"scheduledQueryInstances"`
+	// Maximum runtime for the scheduled query in seconds.
+	ScheduledQueryMaximumRuntimeInSeconds string `pulumi:"scheduledQueryMaximumRuntimeInSeconds"`
+	// Name of the scheduled query.
+	ScheduledQueryName string `pulumi:"scheduledQueryName"`
+	// Next run for the scheduled query.
+	ScheduledQueryNextRunInMs string `pulumi:"scheduledQueryNextRunInMs"`
+	// Definition of the scheduled query processing configuration.
+	ScheduledQueryProcessingConfigurations []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration `pulumi:"scheduledQueryProcessingConfigurations"`
+	// Processing sub type of the scheduled query.
+	ScheduledQueryProcessingSubType string `pulumi:"scheduledQueryProcessingSubType"`
+	// Processing type of the scheduled query.
+	ScheduledQueryProcessingType string `pulumi:"scheduledQueryProcessingType"`
+	// Retention criteria for the scheduled query.
+	ScheduledQueryRetentionCriteria string `pulumi:"scheduledQueryRetentionCriteria"`
+	// Retention period for the scheduled query in milliseconds.
+	ScheduledQueryRetentionPeriodInMs string `pulumi:"scheduledQueryRetentionPeriodInMs"`
+	// Schedule for the scheduled query.
+	ScheduledQuerySchedule string `pulumi:"scheduledQuerySchedule"`
+	// Scheduled query to be run.
+	ScheduledQueryText string `pulumi:"scheduledQueryText"`
+	// The current lifecycle state of the Scheduled Query.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemArgs and GetScheduledQueriesScheduledQueryCollectionItemOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemArgs{...}
+type GetScheduledQueriesScheduledQueryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemOutput() GetScheduledQueriesScheduledQueryCollectionItemOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemArgs struct {
+	// The APM Domain ID for the intended request.
+	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled query . An OCID is generated when the scheduled query is created.
+	Id        pulumi.StringInput `pulumi:"id"`
+	OpcDryRun pulumi.StringInput `pulumi:"opcDryRun"`
+	// Description for the scheduled query.
+	ScheduledQueryDescription pulumi.StringInput `pulumi:"scheduledQueryDescription"`
+	// Scheduled query instances.
+	ScheduledQueryInstances pulumi.StringInput `pulumi:"scheduledQueryInstances"`
+	// Maximum runtime for the scheduled query in seconds.
+	ScheduledQueryMaximumRuntimeInSeconds pulumi.StringInput `pulumi:"scheduledQueryMaximumRuntimeInSeconds"`
+	// Name of the scheduled query.
+	ScheduledQueryName pulumi.StringInput `pulumi:"scheduledQueryName"`
+	// Next run for the scheduled query.
+	ScheduledQueryNextRunInMs pulumi.StringInput `pulumi:"scheduledQueryNextRunInMs"`
+	// Definition of the scheduled query processing configuration.
+	ScheduledQueryProcessingConfigurations GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayInput `pulumi:"scheduledQueryProcessingConfigurations"`
+	// Processing sub type of the scheduled query.
+	ScheduledQueryProcessingSubType pulumi.StringInput `pulumi:"scheduledQueryProcessingSubType"`
+	// Processing type of the scheduled query.
+	ScheduledQueryProcessingType pulumi.StringInput `pulumi:"scheduledQueryProcessingType"`
+	// Retention criteria for the scheduled query.
+	ScheduledQueryRetentionCriteria pulumi.StringInput `pulumi:"scheduledQueryRetentionCriteria"`
+	// Retention period for the scheduled query in milliseconds.
+	ScheduledQueryRetentionPeriodInMs pulumi.StringInput `pulumi:"scheduledQueryRetentionPeriodInMs"`
+	// Schedule for the scheduled query.
+	ScheduledQuerySchedule pulumi.StringInput `pulumi:"scheduledQuerySchedule"`
+	// Scheduled query to be run.
+	ScheduledQueryText pulumi.StringInput `pulumi:"scheduledQueryText"`
+	// The current lifecycle state of the Scheduled Query.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+}
+
+func (GetScheduledQueriesScheduledQueryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemArgs) ToGetScheduledQueriesScheduledQueryCollectionItemOutput() GetScheduledQueriesScheduledQueryCollectionItemOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemArgs) ToGetScheduledQueriesScheduledQueryCollectionItemOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemOutput)
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemArrayInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemArray and GetScheduledQueriesScheduledQueryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemArrayInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemArray{ GetScheduledQueriesScheduledQueryCollectionItemArgs{...} }
+type GetScheduledQueriesScheduledQueryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemArrayOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemArrayOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemArray []GetScheduledQueriesScheduledQueryCollectionItemInput
+
+func (GetScheduledQueriesScheduledQueryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItem)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemArray) ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemArrayOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemArray) ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ToGetScheduledQueriesScheduledQueryCollectionItemOutput() GetScheduledQueriesScheduledQueryCollectionItemOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ToGetScheduledQueriesScheduledQueryCollectionItemOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemOutput {
+	return o
+}
+
+// The APM Domain ID for the intended request.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ApmDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ApmDomainId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled query . An OCID is generated when the scheduled query is created.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) OpcDryRun() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.OpcDryRun }).(pulumi.StringOutput)
+}
+
+// Description for the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryDescription() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQueryDescription }).(pulumi.StringOutput)
+}
+
+// Scheduled query instances.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryInstances() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQueryInstances }).(pulumi.StringOutput)
+}
+
+// Maximum runtime for the scheduled query in seconds.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryMaximumRuntimeInSeconds() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string {
+		return v.ScheduledQueryMaximumRuntimeInSeconds
+	}).(pulumi.StringOutput)
+}
+
+// Name of the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQueryName }).(pulumi.StringOutput)
+}
+
+// Next run for the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryNextRunInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQueryNextRunInMs }).(pulumi.StringOutput)
+}
+
+// Definition of the scheduled query processing configuration.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryProcessingConfigurations() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration {
+		return v.ScheduledQueryProcessingConfigurations
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput)
+}
+
+// Processing sub type of the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryProcessingSubType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string {
+		return v.ScheduledQueryProcessingSubType
+	}).(pulumi.StringOutput)
+}
+
+// Processing type of the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryProcessingType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQueryProcessingType }).(pulumi.StringOutput)
+}
+
+// Retention criteria for the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryRetentionCriteria() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string {
+		return v.ScheduledQueryRetentionCriteria
+	}).(pulumi.StringOutput)
+}
+
+// Retention period for the scheduled query in milliseconds.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryRetentionPeriodInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string {
+		return v.ScheduledQueryRetentionPeriodInMs
+	}).(pulumi.StringOutput)
+}
+
+// Schedule for the scheduled query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQuerySchedule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQuerySchedule }).(pulumi.StringOutput)
+}
+
+// Scheduled query to be run.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) ScheduledQueryText() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.ScheduledQueryText }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the Scheduled Query.
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetScheduledQueriesScheduledQueryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItem)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesScheduledQueryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesScheduledQueryCollectionItem {
+		return vs[0].([]GetScheduledQueriesScheduledQueryCollectionItem)[vs[1].(int)]
+	}).(GetScheduledQueriesScheduledQueryCollectionItemOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration struct {
+	// Definition of the Custom Metric.
+	CustomMetrics []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric `pulumi:"customMetrics"`
+	// Definition of the object storage.
+	ObjectStorages []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage `pulumi:"objectStorages"`
+	// Definition of the Stream.
+	Streamings []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming `pulumi:"streamings"`
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs{...}
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs struct {
+	// Definition of the Custom Metric.
+	CustomMetrics GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayInput `pulumi:"customMetrics"`
+	// Definition of the object storage.
+	ObjectStorages GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayInput `pulumi:"objectStorages"`
+	// Definition of the Stream.
+	Streamings GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayInput `pulumi:"streamings"`
+}
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput)
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray{ GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs{...} }
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationInput
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput {
+	return o
+}
+
+// Definition of the Custom Metric.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput) CustomMetrics() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration) []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric {
+		return v.CustomMetrics
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput)
+}
+
+// Definition of the object storage.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput) ObjectStorages() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration) []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage {
+		return v.ObjectStorages
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput)
+}
+
+// Definition of the Stream.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput) Streamings() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration) []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming {
+		return v.Streamings
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration {
+		return vs[0].([]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfiguration)[vs[1].(int)]
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric struct {
+	// Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+	Compartment string `pulumi:"compartment"`
+	// Description of the Custom Metric.
+	Description string `pulumi:"description"`
+	// Indicates whether anomaly Detection should be performed on the generated metric.
+	IsAnomalyDetectionEnabled bool `pulumi:"isAnomalyDetectionEnabled"`
+	// Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+	IsMetricPublished bool `pulumi:"isMetricPublished"`
+	// Name of the Custom Metric.
+	Name string `pulumi:"name"`
+	// Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+	Namespace string `pulumi:"namespace"`
+	// Resource Group of the Custom Metric.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Unit in which the metric value is reported. For example 'ms'.
+	Unit string `pulumi:"unit"`
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs{...}
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs struct {
+	// Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+	Compartment pulumi.StringInput `pulumi:"compartment"`
+	// Description of the Custom Metric.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Indicates whether anomaly Detection should be performed on the generated metric.
+	IsAnomalyDetectionEnabled pulumi.BoolInput `pulumi:"isAnomalyDetectionEnabled"`
+	// Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+	IsMetricPublished pulumi.BoolInput `pulumi:"isMetricPublished"`
+	// Name of the Custom Metric.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Resource Group of the Custom Metric.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Unit in which the metric value is reported. For example 'ms'.
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput)
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray{ GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs{...} }
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricInput
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o
+}
+
+// Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) Compartment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Compartment
+	}).(pulumi.StringOutput)
+}
+
+// Description of the Custom Metric.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether anomaly Detection should be performed on the generated metric.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) IsAnomalyDetectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) bool {
+		return v.IsAnomalyDetectionEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) IsMetricPublished() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) bool {
+		return v.IsMetricPublished
+	}).(pulumi.BoolOutput)
+}
+
+// Name of the Custom Metric.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Name
+	}).(pulumi.StringOutput)
+}
+
+// Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Namespace
+	}).(pulumi.StringOutput)
+}
+
+// Resource Group of the Custom Metric.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// Unit in which the metric value is reported. For example 'ms'.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Unit
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric {
+		return vs[0].([]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetric)[vs[1].(int)]
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage struct {
+	// Bucket name in the object store.
+	Bucket string `pulumi:"bucket"`
+	// Namespace in the object store.
+	NameSpace string `pulumi:"nameSpace"`
+	// Object name prefix in the object store.
+	ObjectNamePrefix string `pulumi:"objectNamePrefix"`
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs{...}
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs struct {
+	// Bucket name in the object store.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Namespace in the object store.
+	NameSpace pulumi.StringInput `pulumi:"nameSpace"`
+	// Object name prefix in the object store.
+	ObjectNamePrefix pulumi.StringInput `pulumi:"objectNamePrefix"`
+}
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput)
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray{ GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs{...} }
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageInput
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o
+}
+
+// Bucket name in the object store.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage) string {
+		return v.Bucket
+	}).(pulumi.StringOutput)
+}
+
+// Namespace in the object store.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput) NameSpace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage) string {
+		return v.NameSpace
+	}).(pulumi.StringOutput)
+}
+
+// Object name prefix in the object store.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput) ObjectNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage) string {
+		return v.ObjectNamePrefix
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage {
+		return vs[0].([]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorage)[vs[1].(int)]
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming struct {
+	// Stream Id.
+	StreamId string `pulumi:"streamId"`
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs{...}
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs struct {
+	// Stream Id.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
+}
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput)
+}
+
+// GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayInput is an input type that accepts GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray and GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayInput` via:
+//
+//	GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray{ GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs{...} }
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput
+	ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray []GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingInput
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return i.ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput {
+	return o
+}
+
+// Stream Id.
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming) string {
+		return v.StreamId
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput() GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput) ToGetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(ctx context.Context) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput) Index(i pulumi.IntInput) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming {
+		return vs[0].([]GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreaming)[vs[1].(int)]
+	}).(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfiguration struct {
+	// Definition of the Custom Metric.
+	CustomMetrics []GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric `pulumi:"customMetrics"`
+	// Definition of the object storage.
+	ObjectStorages []GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage `pulumi:"objectStorages"`
+	// Definition of the Stream.
+	Streamings []GetScheduledQueryScheduledQueryProcessingConfigurationStreaming `pulumi:"streamings"`
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationArgs and GetScheduledQueryScheduledQueryProcessingConfigurationOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationArgs{...}
+type GetScheduledQueryScheduledQueryProcessingConfigurationInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationOutput() GetScheduledQueryScheduledQueryProcessingConfigurationOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationArgs struct {
+	// Definition of the Custom Metric.
+	CustomMetrics GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayInput `pulumi:"customMetrics"`
+	// Definition of the object storage.
+	ObjectStorages GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayInput `pulumi:"objectStorages"`
+	// Definition of the Stream.
+	Streamings GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayInput `pulumi:"streamings"`
+}
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationOutput() GetScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationOutput)
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationArrayInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationArray and GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationArrayInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationArray{ GetScheduledQueryScheduledQueryProcessingConfigurationArgs{...} }
+type GetScheduledQueryScheduledQueryProcessingConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationArray []GetScheduledQueryScheduledQueryProcessingConfigurationInput
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationOutput() GetScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return o
+}
+
+// Definition of the Custom Metric.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationOutput) CustomMetrics() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfiguration) []GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric {
+		return v.CustomMetrics
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput)
+}
+
+// Definition of the object storage.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationOutput) ObjectStorages() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfiguration) []GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage {
+		return v.ObjectStorages
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput)
+}
+
+// Definition of the Stream.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationOutput) Streamings() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfiguration) []GetScheduledQueryScheduledQueryProcessingConfigurationStreaming {
+		return v.Streamings
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfiguration)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput) Index(i pulumi.IntInput) GetScheduledQueryScheduledQueryProcessingConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueryScheduledQueryProcessingConfiguration {
+		return vs[0].([]GetScheduledQueryScheduledQueryProcessingConfiguration)[vs[1].(int)]
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric struct {
+	// Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+	Compartment string `pulumi:"compartment"`
+	// Description of the Custom Metric.
+	Description string `pulumi:"description"`
+	// Indicates whether anomaly Detection should be performed on the generated metric.
+	IsAnomalyDetectionEnabled bool `pulumi:"isAnomalyDetectionEnabled"`
+	// Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+	IsMetricPublished bool `pulumi:"isMetricPublished"`
+	// Name of the Custom Metric.
+	Name string `pulumi:"name"`
+	// Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+	Namespace string `pulumi:"namespace"`
+	// Resource Group of the Custom Metric.
+	ResourceGroup string `pulumi:"resourceGroup"`
+	// Unit in which the metric value is reported. For example 'ms'.
+	Unit string `pulumi:"unit"`
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs and GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{...}
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs struct {
+	// Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+	Compartment pulumi.StringInput `pulumi:"compartment"`
+	// Description of the Custom Metric.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Indicates whether anomaly Detection should be performed on the generated metric.
+	IsAnomalyDetectionEnabled pulumi.BoolInput `pulumi:"isAnomalyDetectionEnabled"`
+	// Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+	IsMetricPublished pulumi.BoolInput `pulumi:"isMetricPublished"`
+	// Name of the Custom Metric.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Resource Group of the Custom Metric.
+	ResourceGroup pulumi.StringInput `pulumi:"resourceGroup"`
+	// Unit in which the metric value is reported. For example 'ms'.
+	Unit pulumi.StringInput `pulumi:"unit"`
+}
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput)
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray and GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray{ GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{...} }
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray []GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return o
+}
+
+// Compartment of the Monitoring Service. It defaults to the APM domain's compartment if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that compartment.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Compartment() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Compartment
+	}).(pulumi.StringOutput)
+}
+
+// Description of the Custom Metric.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Indicates whether anomaly Detection should be performed on the generated metric.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) IsAnomalyDetectionEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) bool {
+		return v.IsAnomalyDetectionEnabled
+	}).(pulumi.BoolOutput)
+}
+
+// Used in conjunction with the dry run header.  When the dry run header is set and the isPublishMetric flag is set to true, the  scheduled query is not created, but validations happen to check if the right Oracle Cloud Infrastructure policies have been set to write to the specified namespace/compartment.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) IsMetricPublished() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) bool {
+		return v.IsMetricPublished
+	}).(pulumi.BoolOutput)
+}
+
+// Name of the Custom Metric.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Resource Group of the Custom Metric.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) ResourceGroup() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string {
+		return v.ResourceGroup
+	}).(pulumi.StringOutput)
+}
+
+// Unit in which the metric value is reported. For example 'ms'.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput) Unit() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric) string { return v.Unit }).(pulumi.StringOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput) Index(i pulumi.IntInput) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric {
+		return vs[0].([]GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetric)[vs[1].(int)]
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage struct {
+	// Bucket name in the object store.
+	Bucket string `pulumi:"bucket"`
+	// Namespace in the object store.
+	NameSpace string `pulumi:"nameSpace"`
+	// Object name prefix in the object store.
+	ObjectNamePrefix string `pulumi:"objectNamePrefix"`
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs and GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{...}
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs struct {
+	// Bucket name in the object store.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Namespace in the object store.
+	NameSpace pulumi.StringInput `pulumi:"nameSpace"`
+	// Object name prefix in the object store.
+	ObjectNamePrefix pulumi.StringInput `pulumi:"objectNamePrefix"`
+}
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput)
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray and GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray{ GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{...} }
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray []GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return o
+}
+
+// Bucket name in the object store.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Namespace in the object store.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) NameSpace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) string { return v.NameSpace }).(pulumi.StringOutput)
+}
+
+// Object name prefix in the object store.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput) ObjectNamePrefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage) string {
+		return v.ObjectNamePrefix
+	}).(pulumi.StringOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput) Index(i pulumi.IntInput) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage {
+		return vs[0].([]GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorage)[vs[1].(int)]
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreaming struct {
+	// Stream Id.
+	StreamId string `pulumi:"streamId"`
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationStreamingInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs and GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationStreamingInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{...}
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreamingInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs struct {
+	// Stream Id.
+	StreamId pulumi.StringInput `pulumi:"streamId"`
+}
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput)
+}
+
+// GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayInput is an input type that accepts GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray and GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput values.
+// You can construct a concrete instance of `GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayInput` via:
+//
+//	GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray{ GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{...} }
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput
+	ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray []GetScheduledQueryScheduledQueryProcessingConfigurationStreamingInput
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return i.ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return o
+}
+
+// Stream Id.
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput) StreamId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledQueryScheduledQueryProcessingConfigurationStreaming) string { return v.StreamId }).(pulumi.StringOutput)
+}
+
+type GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledQueryScheduledQueryProcessingConfigurationStreaming)(nil)).Elem()
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput() GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput) ToGetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutputWithContext(ctx context.Context) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput {
+	return o
+}
+
+func (o GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput) Index(i pulumi.IntInput) GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledQueryScheduledQueryProcessingConfigurationStreaming {
+		return vs[0].([]GetScheduledQueryScheduledQueryProcessingConfigurationStreaming)[vs[1].(int)]
+	}).(GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput)
 }
 
 type GetTraceAggregatedSnapshotDataDetail struct {
@@ -1432,10 +3802,42 @@ func (o GetTraceSpanTagArrayOutput) Index(i pulumi.IntInput) GetTraceSpanTagOutp
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationPtrInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationStreamingInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrInput)(nil)).Elem(), ScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAttributeInput)(nil)).Elem(), GetLogAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLogAttributeArrayInput)(nil)).Elem(), GetLogAttributeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQuickPicksFilterInput)(nil)).Elem(), GetQueryQuickPicksFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQuickPicksFilterArrayInput)(nil)).Elem(), GetQueryQuickPicksFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQuickPicksQuickPickInput)(nil)).Elem(), GetQueryQuickPicksQuickPickArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetQueryQuickPicksQuickPickArrayInput)(nil)).Elem(), GetQueryQuickPicksQuickPickArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesFilterInput)(nil)).Elem(), GetScheduledQueriesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesFilterArrayInput)(nil)).Elem(), GetScheduledQueriesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionArrayInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemArrayInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayInput)(nil)).Elem(), GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationArrayInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationStreamingInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayInput)(nil)).Elem(), GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTraceAggregatedSnapshotDataDetailInput)(nil)).Elem(), GetTraceAggregatedSnapshotDataDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTraceAggregatedSnapshotDataDetailArrayInput)(nil)).Elem(), GetTraceAggregatedSnapshotDataDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTraceServiceSummaryInput)(nil)).Elem(), GetTraceServiceSummaryArgs{})
@@ -1454,10 +3856,42 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTraceSpanSummaryServiceSummaryArrayInput)(nil)).Elem(), GetTraceSpanSummaryServiceSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTraceSpanTagInput)(nil)).Elem(), GetTraceSpanTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTraceSpanTagArrayInput)(nil)).Elem(), GetTraceSpanTagArray{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationCustomMetricPtrOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationObjectStoragePtrOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput{})
+	pulumi.RegisterOutputType(ScheduledQueryScheduledQueryProcessingConfigurationStreamingPtrOutput{})
+	pulumi.RegisterOutputType(GetLogAttributeOutput{})
+	pulumi.RegisterOutputType(GetLogAttributeArrayOutput{})
 	pulumi.RegisterOutputType(GetQueryQuickPicksFilterOutput{})
 	pulumi.RegisterOutputType(GetQueryQuickPicksFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetQueryQuickPicksQuickPickOutput{})
 	pulumi.RegisterOutputType(GetQueryQuickPicksQuickPickArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesFilterOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationCustomMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationObjectStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueriesScheduledQueryCollectionItemScheduledQueryProcessingConfigurationStreamingArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationCustomMetricArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationObjectStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationStreamingOutput{})
+	pulumi.RegisterOutputType(GetScheduledQueryScheduledQueryProcessingConfigurationStreamingArrayOutput{})
 	pulumi.RegisterOutputType(GetTraceAggregatedSnapshotDataDetailOutput{})
 	pulumi.RegisterOutputType(GetTraceAggregatedSnapshotDataDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetTraceServiceSummaryOutput{})

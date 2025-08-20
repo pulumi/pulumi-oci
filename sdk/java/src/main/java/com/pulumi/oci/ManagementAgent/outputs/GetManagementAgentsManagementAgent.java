@@ -89,6 +89,7 @@ public final class GetManagementAgentsManagementAgent {
      * 
      */
     private Boolean isCustomerDeployed;
+    private String latestSupportedVersion;
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -130,6 +131,11 @@ public final class GetManagementAgentsManagementAgent {
      * 
      */
     private String state;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
     /**
      * @return The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
@@ -256,6 +262,9 @@ public final class GetManagementAgentsManagementAgent {
     public Boolean isCustomerDeployed() {
         return this.isCustomerDeployed;
     }
+    public String latestSupportedVersion() {
+        return this.latestSupportedVersion;
+    }
     /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
@@ -316,6 +325,13 @@ public final class GetManagementAgentsManagementAgent {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The time the Management Agent was created. An RFC3339 formatted datetime string
      * 
      */
@@ -369,6 +385,7 @@ public final class GetManagementAgentsManagementAgent {
         private String installType;
         private Boolean isAgentAutoUpgradable;
         private Boolean isCustomerDeployed;
+        private String latestSupportedVersion;
         private String lifecycleDetails;
         private String managedAgentId;
         private List<GetManagementAgentsManagementAgentManagementAgentProperty> managementAgentProperties;
@@ -378,6 +395,7 @@ public final class GetManagementAgentsManagementAgent {
         private List<GetManagementAgentsManagementAgentPluginList> pluginLists;
         private String resourceArtifactVersion;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeLastHeartbeat;
         private String timeUpdated;
@@ -401,6 +419,7 @@ public final class GetManagementAgentsManagementAgent {
     	      this.installType = defaults.installType;
     	      this.isAgentAutoUpgradable = defaults.isAgentAutoUpgradable;
     	      this.isCustomerDeployed = defaults.isCustomerDeployed;
+    	      this.latestSupportedVersion = defaults.latestSupportedVersion;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managedAgentId = defaults.managedAgentId;
     	      this.managementAgentProperties = defaults.managementAgentProperties;
@@ -410,6 +429,7 @@ public final class GetManagementAgentsManagementAgent {
     	      this.pluginLists = defaults.pluginLists;
     	      this.resourceArtifactVersion = defaults.resourceArtifactVersion;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastHeartbeat = defaults.timeLastHeartbeat;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -554,6 +574,14 @@ public final class GetManagementAgentsManagementAgent {
             return this;
         }
         @CustomType.Setter
+        public Builder latestSupportedVersion(String latestSupportedVersion) {
+            if (latestSupportedVersion == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "latestSupportedVersion");
+            }
+            this.latestSupportedVersion = latestSupportedVersion;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "lifecycleDetails");
@@ -632,6 +660,14 @@ public final class GetManagementAgentsManagementAgent {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetManagementAgentsManagementAgent", "timeCreated");
@@ -681,6 +717,7 @@ public final class GetManagementAgentsManagementAgent {
             _resultValue.installType = installType;
             _resultValue.isAgentAutoUpgradable = isAgentAutoUpgradable;
             _resultValue.isCustomerDeployed = isCustomerDeployed;
+            _resultValue.latestSupportedVersion = latestSupportedVersion;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managedAgentId = managedAgentId;
             _resultValue.managementAgentProperties = managementAgentProperties;
@@ -690,6 +727,7 @@ public final class GetManagementAgentsManagementAgent {
             _resultValue.pluginLists = pluginLists;
             _resultValue.resourceArtifactVersion = resourceArtifactVersion;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastHeartbeat = timeLastHeartbeat;
             _resultValue.timeUpdated = timeUpdated;

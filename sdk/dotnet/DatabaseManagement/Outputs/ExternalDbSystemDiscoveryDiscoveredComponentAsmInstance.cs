@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class ExternalDbSystemDiscoveryDiscoveredComponentAsmInstance
     {
         /// <summary>
-        /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        /// The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         /// </summary>
         public readonly string? AdrHomeDirectory;
         /// <summary>

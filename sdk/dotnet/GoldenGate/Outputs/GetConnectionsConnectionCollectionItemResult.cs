@@ -44,6 +44,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string AuthenticationType;
         /// <summary>
+        /// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        /// * Azure China: https://login.chinacloudapi.cn/
+        /// * Azure US Government: https://login.microsoftonline.us/
+        /// </summary>
+        public readonly string AzureAuthorityHost;
+        /// <summary>
         /// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         /// </summary>
         public readonly string AzureTenantId;
@@ -133,6 +139,9 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
         /// </summary>
         public readonly string Endpoint;
+        /// <summary>
+        /// Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
+        /// </summary>
         public readonly string Fingerprint;
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -279,7 +288,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly bool ShouldUseJndi;
         /// <summary>
-        /// Indicates that the user intents to connect to the instance through resource principal.
+        /// Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         /// </summary>
         public readonly bool ShouldUseResourcePrincipal;
         /// <summary>
@@ -434,6 +443,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string authenticationMode,
 
             string authenticationType,
+
+            string azureAuthorityHost,
 
             string azureTenantId,
 
@@ -656,6 +667,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             AdditionalAttributes = additionalAttributes;
             AuthenticationMode = authenticationMode;
             AuthenticationType = authenticationType;
+            AzureAuthorityHost = azureAuthorityHost;
             AzureTenantId = azureTenantId;
             BootstrapServers = bootstrapServers;
             Catalogs = catalogs;

@@ -69,12 +69,15 @@ type LookupSubscriberResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string              `pulumi:"lifecycleDetails"`
+	Locks            []GetSubscriberLock `pulumi:"locks"`
 	// The current state of the subscriber.
-	State        string `pulumi:"state"`
-	SubscriberId string `pulumi:"subscriberId"`
+	State        string            `pulumi:"state"`
+	SubscriberId string            `pulumi:"subscriberId"`
+	SystemTags   map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -147,9 +150,17 @@ func (o LookupSubscriberResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupSubscriberResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSubscriberResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o LookupSubscriberResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupSubscriberResultOutput) Locks() GetSubscriberLockArrayOutput {
+	return o.ApplyT(func(v LookupSubscriberResult) []GetSubscriberLock { return v.Locks }).(GetSubscriberLockArrayOutput)
 }
 
 // The current state of the subscriber.
@@ -159,6 +170,10 @@ func (o LookupSubscriberResultOutput) State() pulumi.StringOutput {
 
 func (o LookupSubscriberResultOutput) SubscriberId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) string { return v.SubscriberId }).(pulumi.StringOutput)
+}
+
+func (o LookupSubscriberResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSubscriberResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

@@ -57,6 +57,13 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String authenticationType;
     /**
+     * @return The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     * 
+     */
+    private String azureAuthorityHost;
+    /**
      * @return Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
@@ -167,6 +174,10 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String endpoint;
+    /**
+     * @return Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
     private String fingerprint;
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -345,7 +356,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private Boolean shouldUseJndi;
     /**
-     * @return Indicates that the user intents to connect to the instance through resource principal.
+     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     private Boolean shouldUseResourcePrincipal;
@@ -569,6 +580,15 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.authenticationType;
     }
     /**
+     * @return The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     * 
+     */
+    public String azureAuthorityHost() {
+        return this.azureAuthorityHost;
+    }
+    /**
      * @return Azure tenant ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      * 
      */
@@ -723,6 +743,10 @@ public final class GetConnectionsConnectionCollectionItem {
     public String endpoint() {
         return this.endpoint;
     }
+    /**
+     * @return Fingerprint required by TLS security protocol. E.g.: &#39;6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c&#39;
+     * 
+     */
     public String fingerprint() {
         return this.fingerprint;
     }
@@ -987,7 +1011,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.shouldUseJndi;
     }
     /**
-     * @return Indicates that the user intents to connect to the instance through resource principal.
+     * @return Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      * 
      */
     public Boolean shouldUseResourcePrincipal() {
@@ -1259,6 +1283,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
         private String authenticationMode;
         private String authenticationType;
+        private String azureAuthorityHost;
         private String azureTenantId;
         private List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers;
         private List<GetConnectionsConnectionCollectionItemCatalog> catalogs;
@@ -1376,6 +1401,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.additionalAttributes = defaults.additionalAttributes;
     	      this.authenticationMode = defaults.authenticationMode;
     	      this.authenticationType = defaults.authenticationType;
+    	      this.azureAuthorityHost = defaults.azureAuthorityHost;
     	      this.azureTenantId = defaults.azureTenantId;
     	      this.bootstrapServers = defaults.bootstrapServers;
     	      this.catalogs = defaults.catalogs;
@@ -1542,6 +1568,14 @@ public final class GetConnectionsConnectionCollectionItem {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "authenticationType");
             }
             this.authenticationType = authenticationType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder azureAuthorityHost(String azureAuthorityHost) {
+            if (azureAuthorityHost == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "azureAuthorityHost");
+            }
+            this.azureAuthorityHost = azureAuthorityHost;
             return this;
         }
         @CustomType.Setter
@@ -2427,6 +2461,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.additionalAttributes = additionalAttributes;
             _resultValue.authenticationMode = authenticationMode;
             _resultValue.authenticationType = authenticationType;
+            _resultValue.azureAuthorityHost = azureAuthorityHost;
             _resultValue.azureTenantId = azureTenantId;
             _resultValue.bootstrapServers = bootstrapServers;
             _resultValue.catalogs = catalogs;

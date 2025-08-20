@@ -64,14 +64,14 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
     }
 
     /**
-     * The shape used to launch the job run instances.
+     * The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
     @Import(name="shapeName")
     private @Nullable Output<String> shapeName;
 
     /**
-     * @return The shape used to launch the job run instances.
+     * @return The name that corresponds to the JobShapeSummary to use for the job node
      * 
      */
     public Optional<Output<String>> shapeName() {
@@ -195,7 +195,7 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
         }
 
         /**
-         * @param shapeName The shape used to launch the job run instances.
+         * @param shapeName The name that corresponds to the JobShapeSummary to use for the job node
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class JobRunJobInfrastructureConfigurationDetailArgs extends com.pu
         }
 
         /**
-         * @param shapeName The shape used to launch the job run instances.
+         * @param shapeName The name that corresponds to the JobShapeSummary to use for the job node
          * 
          * @return builder
          * 

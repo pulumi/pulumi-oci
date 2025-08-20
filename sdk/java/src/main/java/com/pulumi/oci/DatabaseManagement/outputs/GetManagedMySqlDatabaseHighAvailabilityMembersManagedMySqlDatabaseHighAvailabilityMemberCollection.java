@@ -55,7 +55,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
      */
     private List<GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummary> statusSummaries;
     /**
-     * @return Number of transactions that were replicated within the cluster.
+     * @return The number of transactions that were replicated within the cluster.
      * 
      */
     private String transactionsInGtidExecuted;
@@ -123,7 +123,7 @@ public final class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDat
         return this.statusSummaries;
     }
     /**
-     * @return Number of transactions that were replicated within the cluster.
+     * @return The number of transactions that were replicated within the cluster.
      * 
      */
     public String transactionsInGtidExecuted() {

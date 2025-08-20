@@ -140,7 +140,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
      */
     private String timeUpdated;
     /**
-     * @return A filter to return only security asessments that were created by either user or system.
+     * @return A filter to return only security assessments that were created by either user or system.
      * 
      */
     private String triggeredBy;
@@ -327,7 +327,7 @@ public final class GetSecurityAssessmentsSecurityAssessment {
         return this.timeUpdated;
     }
     /**
-     * @return A filter to return only security asessments that were created by either user or system.
+     * @return A filter to return only security assessments that were created by either user or system.
      * 
      */
     public String triggeredBy() {

@@ -63,6 +63,12 @@ export interface GetConnectionResult {
      */
     readonly authenticationType: string;
     /**
+     * The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+     * * Azure China: https://login.chinacloudapi.cn/
+     * * Azure US Government: https://login.microsoftonline.us/
+     */
+    readonly azureAuthorityHost: string;
+    /**
      * Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
      */
     readonly azureTenantId: string;
@@ -302,7 +308,7 @@ export interface GetConnectionResult {
      */
     readonly shouldUseJndi: boolean;
     /**
-     * Indicates that the user intents to connect to the instance through resource principal.
+     * Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
      */
     readonly shouldUseResourcePrincipal: boolean;
     /**
@@ -319,12 +325,12 @@ export interface GetConnectionResult {
     readonly sslCert: string;
     readonly sslClientKeystash: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      */
     readonly sslClientKeystashSecretId: string;
     readonly sslClientKeystoredb: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
      */
     readonly sslClientKeystoredbSecretId: string;
     /**

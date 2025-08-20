@@ -48,6 +48,10 @@ export interface GetConfigurationResult {
      */
     readonly compartmentId: string;
     /**
+     * Indicates the collection of compatible shapes for this configuration.
+     */
+    readonly compatibleShapes: string[];
+    /**
      * The type of configuration. Either user-created or a default configuration.
      */
     readonly configType: string;
@@ -61,6 +65,10 @@ export interface GetConfigurationResult {
      * Version of the PostgreSQL database.
      */
     readonly dbVersion: string;
+    /**
+     * The Default configuration used for this configuration.
+     */
+    readonly defaultConfigId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -98,7 +106,7 @@ export interface GetConfigurationResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * The name of the shape for the configuration.
      */
     readonly shape: string;
     /**

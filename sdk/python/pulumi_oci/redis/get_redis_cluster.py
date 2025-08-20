@@ -27,7 +27,7 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if cluster_mode and not isinstance(cluster_mode, str):
             raise TypeError("Expected argument 'cluster_mode' to be a str")
         pulumi.set(__self__, "cluster_mode", cluster_mode)
@@ -61,6 +61,9 @@ class GetRedisClusterResult:
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
+        if oci_cache_config_set_id and not isinstance(oci_cache_config_set_id, str):
+            raise TypeError("Expected argument 'oci_cache_config_set_id' to be a str")
+        pulumi.set(__self__, "oci_cache_config_set_id", oci_cache_config_set_id)
         if primary_endpoint_ip_address and not isinstance(primary_endpoint_ip_address, str):
             raise TypeError("Expected argument 'primary_endpoint_ip_address' to be a str")
         pulumi.set(__self__, "primary_endpoint_ip_address", primary_endpoint_ip_address)
@@ -187,6 +190,14 @@ class GetRedisClusterResult:
         return pulumi.get(self, "nsg_ids")
 
     @_builtins.property
+    @pulumi.getter(name="ociCacheConfigSetId")
+    def oci_cache_config_set_id(self) -> _builtins.str:
+        """
+        The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+        """
+        return pulumi.get(self, "oci_cache_config_set_id")
+
+    @_builtins.property
     @pulumi.getter(name="primaryEndpointIpAddress")
     def primary_endpoint_ip_address(self) -> _builtins.str:
         """
@@ -297,6 +308,7 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             node_count=self.node_count,
             node_memory_in_gbs=self.node_memory_in_gbs,
             nsg_ids=self.nsg_ids,
+            oci_cache_config_set_id=self.oci_cache_config_set_id,
             primary_endpoint_ip_address=self.primary_endpoint_ip_address,
             primary_fqdn=self.primary_fqdn,
             redis_cluster_id=self.redis_cluster_id,
@@ -347,6 +359,7 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
         node_count=pulumi.get(__ret__, 'node_count'),
         node_memory_in_gbs=pulumi.get(__ret__, 'node_memory_in_gbs'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
+        oci_cache_config_set_id=pulumi.get(__ret__, 'oci_cache_config_set_id'),
         primary_endpoint_ip_address=pulumi.get(__ret__, 'primary_endpoint_ip_address'),
         primary_fqdn=pulumi.get(__ret__, 'primary_fqdn'),
         redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
@@ -394,6 +407,7 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
         node_count=pulumi.get(__response__, 'node_count'),
         node_memory_in_gbs=pulumi.get(__response__, 'node_memory_in_gbs'),
         nsg_ids=pulumi.get(__response__, 'nsg_ids'),
+        oci_cache_config_set_id=pulumi.get(__response__, 'oci_cache_config_set_id'),
         primary_endpoint_ip_address=pulumi.get(__response__, 'primary_endpoint_ip_address'),
         primary_fqdn=pulumi.get(__response__, 'primary_fqdn'),
         redis_cluster_id=pulumi.get(__response__, 'redis_cluster_id'),

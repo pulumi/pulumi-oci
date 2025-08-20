@@ -79,16 +79,22 @@ type LookupJobRunResult struct {
 	JobId string `pulumi:"jobId"`
 	// The job infrastructure configuration details (shape, block storage, etc.)
 	JobInfrastructureConfigurationDetails []GetJobRunJobInfrastructureConfigurationDetail `pulumi:"jobInfrastructureConfigurationDetails"`
+	// The job infrastructure configuration details (shape, block storage, etc.)
+	JobInfrastructureConfigurationOverrideDetails []GetJobRunJobInfrastructureConfigurationOverrideDetail `pulumi:"jobInfrastructureConfigurationOverrideDetails"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails []GetJobRunJobLogConfigurationOverrideDetail `pulumi:"jobLogConfigurationOverrideDetails"`
-	JobRunId                           string                                       `pulumi:"jobRunId"`
+	// The job node configuration details
+	JobNodeConfigurationOverrideDetails []GetJobRunJobNodeConfigurationOverrideDetail `pulumi:"jobNodeConfigurationOverrideDetails"`
+	JobRunId                            string                                        `pulumi:"jobRunId"`
 	// Collection of JobStorageMountConfigurationDetails.
 	JobStorageMountConfigurationDetailsLists []GetJobRunJobStorageMountConfigurationDetailsList `pulumi:"jobStorageMountConfigurationDetailsLists"`
-	// Details of the state of the job run.
+	// The state details of the node group.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
-	LogDetails      []GetJobRunLogDetail `pulumi:"logDetails"`
-	OpcParentRptUrl string               `pulumi:"opcParentRptUrl"`
+	LogDetails []GetJobRunLogDetail `pulumi:"logDetails"`
+	// Collection of NodeGroupDetails
+	NodeGroupDetailsLists []GetJobRunNodeGroupDetailsList `pulumi:"nodeGroupDetailsLists"`
+	OpcParentRptUrl       string                          `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
 	ProjectId string `pulumi:"projectId"`
 	// The state of the job run.
@@ -195,11 +201,25 @@ func (o LookupJobRunResultOutput) JobInfrastructureConfigurationDetails() GetJob
 	}).(GetJobRunJobInfrastructureConfigurationDetailArrayOutput)
 }
 
+// The job infrastructure configuration details (shape, block storage, etc.)
+func (o LookupJobRunResultOutput) JobInfrastructureConfigurationOverrideDetails() GetJobRunJobInfrastructureConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobInfrastructureConfigurationOverrideDetail {
+		return v.JobInfrastructureConfigurationOverrideDetails
+	}).(GetJobRunJobInfrastructureConfigurationOverrideDetailArrayOutput)
+}
+
 // Logging configuration for resource.
 func (o LookupJobRunResultOutput) JobLogConfigurationOverrideDetails() GetJobRunJobLogConfigurationOverrideDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobLogConfigurationOverrideDetail {
 		return v.JobLogConfigurationOverrideDetails
 	}).(GetJobRunJobLogConfigurationOverrideDetailArrayOutput)
+}
+
+// The job node configuration details
+func (o LookupJobRunResultOutput) JobNodeConfigurationOverrideDetails() GetJobRunJobNodeConfigurationOverrideDetailArrayOutput {
+	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunJobNodeConfigurationOverrideDetail {
+		return v.JobNodeConfigurationOverrideDetails
+	}).(GetJobRunJobNodeConfigurationOverrideDetailArrayOutput)
 }
 
 func (o LookupJobRunResultOutput) JobRunId() pulumi.StringOutput {
@@ -213,7 +233,7 @@ func (o LookupJobRunResultOutput) JobStorageMountConfigurationDetailsLists() Get
 	}).(GetJobRunJobStorageMountConfigurationDetailsListArrayOutput)
 }
 
-// Details of the state of the job run.
+// The state details of the node group.
 func (o LookupJobRunResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJobRunResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -221,6 +241,11 @@ func (o LookupJobRunResultOutput) LifecycleDetails() pulumi.StringOutput {
 // Customer logging details for job run.
 func (o LookupJobRunResultOutput) LogDetails() GetJobRunLogDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunLogDetail { return v.LogDetails }).(GetJobRunLogDetailArrayOutput)
+}
+
+// Collection of NodeGroupDetails
+func (o LookupJobRunResultOutput) NodeGroupDetailsLists() GetJobRunNodeGroupDetailsListArrayOutput {
+	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunNodeGroupDetailsList { return v.NodeGroupDetailsLists }).(GetJobRunNodeGroupDetailsListArrayOutput)
 }
 
 func (o LookupJobRunResultOutput) OpcParentRptUrl() pulumi.StringOutput {

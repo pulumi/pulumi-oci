@@ -15,8 +15,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'ApiLockArgs',
+    'ApiLockArgsDict',
     'ApiValidationResultArgs',
     'ApiValidationResultArgsDict',
+    'CertificateLockArgs',
+    'CertificateLockArgsDict',
+    'DeploymentLockArgs',
+    'DeploymentLockArgsDict',
     'DeploymentSpecificationArgs',
     'DeploymentSpecificationArgsDict',
     'DeploymentSpecificationLoggingPoliciesArgs',
@@ -215,12 +221,16 @@ __all__ = [
     'GatewayCaBundleArgsDict',
     'GatewayIpAddressArgs',
     'GatewayIpAddressArgsDict',
+    'GatewayLockArgs',
+    'GatewayLockArgsDict',
     'GatewayResponseCacheDetailsArgs',
     'GatewayResponseCacheDetailsArgsDict',
     'GatewayResponseCacheDetailsServerArgs',
     'GatewayResponseCacheDetailsServerArgsDict',
     'SubscriberClientArgs',
     'SubscriberClientArgsDict',
+    'SubscriberLockArgs',
+    'SubscriberLockArgsDict',
     'UsagePlanEntitlementArgs',
     'UsagePlanEntitlementArgsDict',
     'UsagePlanEntitlementQuotaArgs',
@@ -229,6 +239,8 @@ __all__ = [
     'UsagePlanEntitlementRateLimitArgsDict',
     'UsagePlanEntitlementTargetArgs',
     'UsagePlanEntitlementTargetArgsDict',
+    'UsagePlanLockArgs',
+    'UsagePlanLockArgsDict',
     'GetApisFilterArgs',
     'GetApisFilterArgsDict',
     'GetCertificatesFilterArgs',
@@ -244,6 +256,76 @@ __all__ = [
 ]
 
 MYPY = False
+
+if not MYPY:
+    class ApiLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+elif False:
+    ApiLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class ApiLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
 
 if not MYPY:
     class ApiValidationResultArgsDict(TypedDict):
@@ -295,6 +377,153 @@ class ApiValidationResultArgs:
     @result.setter
     def result(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "result", value)
+
+
+if not MYPY:
+    class CertificateLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+elif False:
+    CertificateLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class CertificateLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
+    class DeploymentLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        """
+        Type of the Response Cache Store Policy.
+        """
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+elif False:
+    DeploymentLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DeploymentLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the Response Cache Store Policy.
+        :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the Response Cache Store Policy.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:
@@ -8592,6 +8821,83 @@ class GatewayIpAddressArgs:
 
 
 if not MYPY:
+    class GatewayLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        """
+        Type of the Response Cache.
+        """
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+elif False:
+    GatewayLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GatewayLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of the Response Cache.
+        :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the Response Cache.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
     class GatewayResponseCacheDetailsArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
@@ -8885,6 +9191,76 @@ class SubscriberClientArgs:
 
 
 if not MYPY:
+    class SubscriberLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+elif False:
+    SubscriberLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SubscriberLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+
+if not MYPY:
     class UsagePlanEntitlementArgsDict(TypedDict):
         name: pulumi.Input[_builtins.str]
         """
@@ -9162,6 +9538,76 @@ class UsagePlanEntitlementTargetArgs:
     @deployment_id.setter
     def deployment_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "deployment_id", value)
+
+
+if not MYPY:
+    class UsagePlanLockArgsDict(TypedDict):
+        type: pulumi.Input[_builtins.str]
+        message: NotRequired[pulumi.Input[_builtins.str]]
+        related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+elif False:
+    UsagePlanLockArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UsagePlanLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[_builtins.str],
+                 message: Optional[pulumi.Input[_builtins.str]] = None,
+                 related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The time this resource was created. An RFC3339 formatted datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
 
 
 if not MYPY:

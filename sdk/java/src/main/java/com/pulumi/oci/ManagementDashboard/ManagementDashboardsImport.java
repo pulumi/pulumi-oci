@@ -50,8 +50,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagementDashboardsImport = new ManagementDashboardsImport("testManagementDashboardsImport", ManagementDashboardsImportArgs.builder()
- *             .importDetails(sampleImportDetails)
- *             .importDetailsFile(sampleImportDetailsFilePath)
+ *             .overrideDashboardCompartmentOcid(managementDashboardsImportOverrideDashboardCompartmentOcid)
+ *             .overrideSameName(managementDashboardsImportOverrideSameName)
+ *             .overrideSavedSearchCompartmentOcid(managementDashboardsImportOverrideSavedSearchCompartmentOcid)
  *             .build());
  * 
  *     }
@@ -71,17 +72,9 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport")
 public class ManagementDashboardsImport extends com.pulumi.resources.CustomResource {
-    /**
-     * Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-     * 
-     */
     @Export(name="importDetails", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> importDetails;
 
-    /**
-     * @return Array of Dashboards to import. The `import_details` is mandatory if `import_details_path` is not passed. Value should be stringified JSON of [ManagementDashboardImportDetails](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/managementdashboard/20200901/ManagementDashboardImportDetails/)
-     * 
-     */
     public Output<Optional<String>> importDetails() {
         return Codegen.optional(this.importDetails);
     }
@@ -90,6 +83,54 @@ public class ManagementDashboardsImport extends com.pulumi.resources.CustomResou
 
     public Output<Optional<String>> importDetailsFile() {
         return Codegen.optional(this.importDetailsFile);
+    }
+    /**
+     * If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     */
+    @Export(name="overrideDashboardCompartmentOcid", refs={String.class}, tree="[0]")
+    private Output<String> overrideDashboardCompartmentOcid;
+
+    /**
+     * @return If this attribute is set, the dashboard resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     */
+    public Output<String> overrideDashboardCompartmentOcid() {
+        return this.overrideDashboardCompartmentOcid;
+    }
+    /**
+     * By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+     * 
+     */
+    @Export(name="overrideSameName", refs={String.class}, tree="[0]")
+    private Output<String> overrideSameName;
+
+    /**
+     * @return By default, if a resource with the same OCID exists in the target compartment, it is updated during the import process, otherwise, a new resource is created. However, if this attribute is set to true, then during the import process if a resource with the same displayName exists in the compartment, then it is updated even if the OCIDs are different. This is useful when importing the same resource multiple times. If the compartment and displayName remain the same, the resource is only updated and multiple copies of a resource are not created.
+     * 
+     */
+    public Output<String> overrideSameName() {
+        return this.overrideSameName;
+    }
+    /**
+     * If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="overrideSavedSearchCompartmentOcid", refs={String.class}, tree="[0]")
+    private Output<String> overrideSavedSearchCompartmentOcid;
+
+    /**
+     * @return If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> overrideSavedSearchCompartmentOcid() {
+        return this.overrideSavedSearchCompartmentOcid;
     }
 
     /**

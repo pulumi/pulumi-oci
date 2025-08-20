@@ -45,6 +45,14 @@ namespace Pulumi.Oci.DataScience
     ///             CommandLineArguments = jobRunJobConfigurationOverrideDetailsCommandLineArguments,
     ///             EnvironmentVariables = jobRunJobConfigurationOverrideDetailsEnvironmentVariables,
     ///             MaximumRuntimeInMinutes = jobRunJobConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+    ///             StartupProbeDetails = new Oci.DataScience.Inputs.JobRunJobConfigurationOverrideDetailsStartupProbeDetailsArgs
+    ///             {
+    ///                 Commands = jobRunJobConfigurationOverrideDetailsStartupProbeDetailsCommand,
+    ///                 JobProbeCheckType = jobRunJobConfigurationOverrideDetailsStartupProbeDetailsJobProbeCheckType,
+    ///                 FailureThreshold = jobRunJobConfigurationOverrideDetailsStartupProbeDetailsFailureThreshold,
+    ///                 InitialDelayInSeconds = jobRunJobConfigurationOverrideDetailsStartupProbeDetailsInitialDelayInSeconds,
+    ///                 PeriodInSeconds = jobRunJobConfigurationOverrideDetailsStartupProbeDetailsPeriodInSeconds,
+    ///             },
     ///         },
     ///         JobEnvironmentConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobEnvironmentConfigurationOverrideDetailsArgs
     ///         {
@@ -55,12 +63,80 @@ namespace Pulumi.Oci.DataScience
     ///             ImageDigest = jobRunJobEnvironmentConfigurationOverrideDetailsImageDigest,
     ///             ImageSignatureId = testImageSignature.Id,
     ///         },
+    ///         JobInfrastructureConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs
+    ///         {
+    ///             JobInfrastructureType = jobRunJobInfrastructureConfigurationOverrideDetailsJobInfrastructureType,
+    ///             BlockStorageSizeInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+    ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsArgs
+    ///             {
+    ///                 MemoryInGbs = jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = jobRunJobInfrastructureConfigurationOverrideDetailsJobShapeConfigDetailsOcpus,
+    ///             },
+    ///             ShapeName = testShape.Name,
+    ///             SubnetId = testSubnet.Id,
+    ///         },
     ///         JobLogConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobLogConfigurationOverrideDetailsArgs
     ///         {
     ///             EnableAutoLogCreation = jobRunJobLogConfigurationOverrideDetailsEnableAutoLogCreation,
     ///             EnableLogging = jobRunJobLogConfigurationOverrideDetailsEnableLogging,
     ///             LogGroupId = testLogGroup.Id,
     ///             LogId = testLog.Id,
+    ///         },
+    ///         JobNodeConfigurationOverrideDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsArgs
+    ///         {
+    ///             JobNodeType = jobRunJobNodeConfigurationOverrideDetailsJobNodeType,
+    ///             JobNetworkConfiguration = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationArgs
+    ///             {
+    ///                 JobNetworkType = jobRunJobNodeConfigurationOverrideDetailsJobNetworkConfigurationJobNetworkType,
+    ///                 SubnetId = testSubnet.Id,
+    ///             },
+    ///             JobNodeGroupConfigurationDetailsLists = new[]
+    ///             {
+    ///                 new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListArgs
+    ///                 {
+    ///                     Name = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListName,
+    ///                     JobConfigurationDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs
+    ///                     {
+    ///                         JobType = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType,
+    ///                         CommandLineArguments = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments,
+    ///                         EnvironmentVariables = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables,
+    ///                         MaximumRuntimeInMinutes = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes,
+    ///                         StartupProbeDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs
+    ///                         {
+    ///                             Commands = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
+    ///                             JobProbeCheckType = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+    ///                             FailureThreshold = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+    ///                             InitialDelayInSeconds = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+    ///                             PeriodInSeconds = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+    ///                         },
+    ///                     },
+    ///                     JobEnvironmentConfigurationDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs
+    ///                     {
+    ///                         Image = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage,
+    ///                         JobEnvironmentType = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType,
+    ///                         Cmds = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd,
+    ///                         Entrypoints = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint,
+    ///                         ImageDigest = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest,
+    ///                         ImageSignatureId = testImageSignature.Id,
+    ///                     },
+    ///                     JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs
+    ///                     {
+    ///                         JobInfrastructureType = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
+    ///                         BlockStorageSizeInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///                         JobShapeConfigDetails = new Oci.DataScience.Inputs.JobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
+    ///                         {
+    ///                             MemoryInGbs = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+    ///                             Ocpus = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///                         },
+    ///                         ShapeName = testShape.Name,
+    ///                         SubnetId = testSubnet.Id,
+    ///                     },
+    ///                     MinimumSuccessReplicas = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
+    ///                     Replicas = jobRunJobNodeConfigurationOverrideDetailsJobNodeGroupConfigurationDetailsListReplicas,
+    ///                 },
+    ///             },
+    ///             MaximumRuntimeInMinutes = jobRunJobNodeConfigurationOverrideDetailsMaximumRuntimeInMinutes,
+    ///             StartupOrder = jobRunJobNodeConfigurationOverrideDetailsStartupOrder,
     ///         },
     ///         OpcParentRptUrl = jobRunOpcParentRptUrl,
     ///     });
@@ -140,10 +216,22 @@ namespace Pulumi.Oci.DataScience
         public Output<ImmutableArray<Outputs.JobRunJobInfrastructureConfigurationDetail>> JobInfrastructureConfigurationDetails { get; private set; } = null!;
 
         /// <summary>
+        /// The job infrastructure configuration details (shape, block storage, etc.)
+        /// </summary>
+        [Output("jobInfrastructureConfigurationOverrideDetails")]
+        public Output<Outputs.JobRunJobInfrastructureConfigurationOverrideDetails> JobInfrastructureConfigurationOverrideDetails { get; private set; } = null!;
+
+        /// <summary>
         /// Logging configuration for resource.
         /// </summary>
         [Output("jobLogConfigurationOverrideDetails")]
         public Output<Outputs.JobRunJobLogConfigurationOverrideDetails> JobLogConfigurationOverrideDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        [Output("jobNodeConfigurationOverrideDetails")]
+        public Output<Outputs.JobRunJobNodeConfigurationOverrideDetails> JobNodeConfigurationOverrideDetails { get; private set; } = null!;
 
         /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
@@ -152,7 +240,7 @@ namespace Pulumi.Oci.DataScience
         public Output<ImmutableArray<Outputs.JobRunJobStorageMountConfigurationDetailsList>> JobStorageMountConfigurationDetailsLists { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the state of the job run.
+        /// The state details of the node group.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
@@ -162,6 +250,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("logDetails")]
         public Output<ImmutableArray<Outputs.JobRunLogDetail>> LogDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Collection of NodeGroupDetails
+        /// </summary>
+        [Output("nodeGroupDetailsLists")]
+        public Output<ImmutableArray<Outputs.JobRunNodeGroupDetailsList>> NodeGroupDetailsLists { get; private set; } = null!;
 
         /// <summary>
         /// URL to fetch the Resource Principal Token from the parent resource.
@@ -310,10 +404,22 @@ namespace Pulumi.Oci.DataScience
         public Input<string> JobId { get; set; } = null!;
 
         /// <summary>
+        /// The job infrastructure configuration details (shape, block storage, etc.)
+        /// </summary>
+        [Input("jobInfrastructureConfigurationOverrideDetails")]
+        public Input<Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsArgs>? JobInfrastructureConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
         /// Logging configuration for resource.
         /// </summary>
         [Input("jobLogConfigurationOverrideDetails")]
         public Input<Inputs.JobRunJobLogConfigurationOverrideDetailsArgs>? JobLogConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        [Input("jobNodeConfigurationOverrideDetails")]
+        public Input<Inputs.JobRunJobNodeConfigurationOverrideDetailsArgs>? JobNodeConfigurationOverrideDetails { get; set; }
 
         /// <summary>
         /// URL to fetch the Resource Principal Token from the parent resource.
@@ -418,10 +524,22 @@ namespace Pulumi.Oci.DataScience
         }
 
         /// <summary>
+        /// The job infrastructure configuration details (shape, block storage, etc.)
+        /// </summary>
+        [Input("jobInfrastructureConfigurationOverrideDetails")]
+        public Input<Inputs.JobRunJobInfrastructureConfigurationOverrideDetailsGetArgs>? JobInfrastructureConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
         /// Logging configuration for resource.
         /// </summary>
         [Input("jobLogConfigurationOverrideDetails")]
         public Input<Inputs.JobRunJobLogConfigurationOverrideDetailsGetArgs>? JobLogConfigurationOverrideDetails { get; set; }
+
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        [Input("jobNodeConfigurationOverrideDetails")]
+        public Input<Inputs.JobRunJobNodeConfigurationOverrideDetailsGetArgs>? JobNodeConfigurationOverrideDetails { get; set; }
 
         [Input("jobStorageMountConfigurationDetailsLists")]
         private InputList<Inputs.JobRunJobStorageMountConfigurationDetailsListGetArgs>? _jobStorageMountConfigurationDetailsLists;
@@ -436,7 +554,7 @@ namespace Pulumi.Oci.DataScience
         }
 
         /// <summary>
-        /// Details of the state of the job run.
+        /// The state details of the node group.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
@@ -451,6 +569,18 @@ namespace Pulumi.Oci.DataScience
         {
             get => _logDetails ?? (_logDetails = new InputList<Inputs.JobRunLogDetailGetArgs>());
             set => _logDetails = value;
+        }
+
+        [Input("nodeGroupDetailsLists")]
+        private InputList<Inputs.JobRunNodeGroupDetailsListGetArgs>? _nodeGroupDetailsLists;
+
+        /// <summary>
+        /// Collection of NodeGroupDetails
+        /// </summary>
+        public InputList<Inputs.JobRunNodeGroupDetailsListGetArgs> NodeGroupDetailsLists
+        {
+            get => _nodeGroupDetailsLists ?? (_nodeGroupDetailsLists = new InputList<Inputs.JobRunNodeGroupDetailsListGetArgs>());
+            set => _nodeGroupDetailsLists = value;
         }
 
         /// <summary>

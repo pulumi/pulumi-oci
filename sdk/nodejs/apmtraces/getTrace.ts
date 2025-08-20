@@ -46,11 +46,11 @@ export interface GetTraceArgs {
      */
     apmDomainId: string;
     /**
-     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * Include traces that have a minTraceStartTime equal to or greater than this value.
      */
     timeTraceStartedGreaterThanOrEqualTo?: string;
     /**
-     * Include traces that have a `minTraceStartTime` less than this value.
+     * Include traces that have a minTraceStartTime less than this value.
      */
     timeTraceStartedLessThan?: string;
     /**
@@ -196,11 +196,11 @@ export interface GetTraceOutputArgs {
      */
     apmDomainId: pulumi.Input<string>;
     /**
-     * Include traces that have a `minTraceStartTime` equal to or greater than this value.
+     * Include traces that have a minTraceStartTime equal to or greater than this value.
      */
     timeTraceStartedGreaterThanOrEqualTo?: pulumi.Input<string>;
     /**
-     * Include traces that have a `minTraceStartTime` less than this value.
+     * Include traces that have a minTraceStartTime less than this value.
      */
     timeTraceStartedLessThan?: pulumi.Input<string>;
     /**

@@ -343,6 +343,7 @@ namespace Pulumi.Oci.Database
         /// Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
         /// </summary>
         public readonly bool IsDevTier;
+        public readonly bool IsDisableDbVersionUpgradeSchedule;
         /// <summary>
         /// If true, this will disconnect the Autonomous Database from its peer and the Autonomous Database can work permanently as a standalone database. To disconnect a cross region standby, please also provide the OCID of the standby database in the `peerDbId` parameter.
         /// </summary>
@@ -380,6 +381,7 @@ namespace Pulumi.Oci.Database
         /// If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         /// </summary>
         public readonly bool IsReplicateAutomaticBackups;
+        public readonly bool IsScheduleDbVersionUpgradeToEarliest;
         public readonly bool IsShrinkOnly;
         /// <summary>
         /// Key History Entry.
@@ -604,6 +606,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeDisasterRecoveryRoleChanged;
         /// <summary>
+        /// The earliest(min) date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        /// </summary>
+        public readonly string TimeEarliestAvailableDbVersionUpgrade;
+        /// <summary>
+        /// The max date and time the Autonomous Database can be scheduled to upgrade to 23ai.
+        /// </summary>
+        public readonly string TimeLatestAvailableDbVersionUpgrade;
+        /// <summary>
         /// The date and time that Autonomous Data Guard was enabled for an Autonomous Database where the standby was provisioned in the same region as the primary database.
         /// </summary>
         public readonly string TimeLocalDataGuardEnabled;
@@ -647,6 +657,10 @@ namespace Pulumi.Oci.Database
         /// The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         /// </summary>
         public readonly string TimeReclamationOfFreeAutonomousDatabase;
+        /// <summary>
+        /// The date and time the Autonomous Database scheduled to upgrade to 23ai.
+        /// </summary>
+        public readonly string TimeScheduledDbVersionUpgrade;
         /// <summary>
         /// The date and time the Autonomous Database was most recently undeleted.
         /// </summary>
@@ -794,6 +808,8 @@ namespace Pulumi.Oci.Database
 
             bool isDevTier,
 
+            bool isDisableDbVersionUpgradeSchedule,
+
             bool isDisconnectPeer,
 
             bool isFreeTier,
@@ -813,6 +829,8 @@ namespace Pulumi.Oci.Database
             bool isRemoteDataGuardEnabled,
 
             bool isReplicateAutomaticBackups,
+
+            bool isScheduleDbVersionUpgradeToEarliest,
 
             bool isShrinkOnly,
 
@@ -938,6 +956,10 @@ namespace Pulumi.Oci.Database
 
             string timeDisasterRecoveryRoleChanged,
 
+            string timeEarliestAvailableDbVersionUpgrade,
+
+            string timeLatestAvailableDbVersionUpgrade,
+
             string timeLocalDataGuardEnabled,
 
             string timeMaintenanceBegin,
@@ -959,6 +981,8 @@ namespace Pulumi.Oci.Database
             string timeOfNextRefresh,
 
             string timeReclamationOfFreeAutonomousDatabase,
+
+            string timeScheduledDbVersionUpgrade,
 
             string timeUndeleted,
 
@@ -1035,6 +1059,7 @@ namespace Pulumi.Oci.Database
             IsDataGuardEnabled = isDataGuardEnabled;
             IsDedicated = isDedicated;
             IsDevTier = isDevTier;
+            IsDisableDbVersionUpgradeSchedule = isDisableDbVersionUpgradeSchedule;
             IsDisconnectPeer = isDisconnectPeer;
             IsFreeTier = isFreeTier;
             IsLocalDataGuardEnabled = isLocalDataGuardEnabled;
@@ -1045,6 +1070,7 @@ namespace Pulumi.Oci.Database
             IsRefreshableClone = isRefreshableClone;
             IsRemoteDataGuardEnabled = isRemoteDataGuardEnabled;
             IsReplicateAutomaticBackups = isReplicateAutomaticBackups;
+            IsScheduleDbVersionUpgradeToEarliest = isScheduleDbVersionUpgradeToEarliest;
             IsShrinkOnly = isShrinkOnly;
             KeyHistoryEntries = keyHistoryEntries;
             KeyStoreId = keyStoreId;
@@ -1107,6 +1133,8 @@ namespace Pulumi.Oci.Database
             TimeDataGuardRoleChanged = timeDataGuardRoleChanged;
             TimeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
             TimeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+            TimeEarliestAvailableDbVersionUpgrade = timeEarliestAvailableDbVersionUpgrade;
+            TimeLatestAvailableDbVersionUpgrade = timeLatestAvailableDbVersionUpgrade;
             TimeLocalDataGuardEnabled = timeLocalDataGuardEnabled;
             TimeMaintenanceBegin = timeMaintenanceBegin;
             TimeMaintenanceEnd = timeMaintenanceEnd;
@@ -1118,6 +1146,7 @@ namespace Pulumi.Oci.Database
             TimeOfLastSwitchover = timeOfLastSwitchover;
             TimeOfNextRefresh = timeOfNextRefresh;
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
+            TimeScheduledDbVersionUpgrade = timeScheduledDbVersionUpgrade;
             TimeUndeleted = timeUndeleted;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;

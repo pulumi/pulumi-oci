@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.PipelineRunConfigurationDetailArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunConfigurationOverrideDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineRunInfrastructureConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunLogDetailArgs;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
@@ -134,6 +135,21 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
+    }
+
+    /**
+     * The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    @Import(name="infrastructureConfigurationOverrideDetails")
+    private @Nullable Output<PipelineRunInfrastructureConfigurationOverrideDetailsArgs> infrastructureConfigurationOverrideDetails;
+
+    /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    public Optional<Output<PipelineRunInfrastructureConfigurationOverrideDetailsArgs>> infrastructureConfigurationOverrideDetails() {
+        return Optional.ofNullable(this.infrastructureConfigurationOverrideDetails);
     }
 
     /**
@@ -363,6 +379,7 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
         this.deleteRelatedJobRuns = $.deleteRelatedJobRuns;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.infrastructureConfigurationOverrideDetails = $.infrastructureConfigurationOverrideDetails;
         this.lifecycleDetails = $.lifecycleDetails;
         this.logConfigurationOverrideDetails = $.logConfigurationOverrideDetails;
         this.logDetails = $.logDetails;
@@ -561,6 +578,27 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param infrastructureConfigurationOverrideDetails The infrastructure configuration details of a pipeline or a step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureConfigurationOverrideDetails(@Nullable Output<PipelineRunInfrastructureConfigurationOverrideDetailsArgs> infrastructureConfigurationOverrideDetails) {
+            $.infrastructureConfigurationOverrideDetails = infrastructureConfigurationOverrideDetails;
+            return this;
+        }
+
+        /**
+         * @param infrastructureConfigurationOverrideDetails The infrastructure configuration details of a pipeline or a step.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder infrastructureConfigurationOverrideDetails(PipelineRunInfrastructureConfigurationOverrideDetailsArgs infrastructureConfigurationOverrideDetails) {
+            return infrastructureConfigurationOverrideDetails(Output.of(infrastructureConfigurationOverrideDetails));
         }
 
         /**

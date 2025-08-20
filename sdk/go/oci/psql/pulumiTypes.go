@@ -4541,6 +4541,8 @@ func (o GetConfigurationsConfigurationCollectionArrayOutput) Index(i pulumi.IntI
 type GetConfigurationsConfigurationCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// A filter to return only resources if their `configType` matches the given `configType`.
 	ConfigType string `pulumi:"configType"`
 	// List of configuration details.
@@ -4548,6 +4550,8 @@ type GetConfigurationsConfigurationCollectionItem struct {
 	DbConfigurationOverrides []GetConfigurationsConfigurationCollectionItemDbConfigurationOverride `pulumi:"dbConfigurationOverrides"`
 	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion string `pulumi:"dbVersion"`
+	// The Default configuration used for this configuration.
+	DefaultConfigId string `pulumi:"defaultConfigId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description for the configuration.
@@ -4558,15 +4562,15 @@ type GetConfigurationsConfigurationCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the configuration. Immutable on creation.
 	Id string `pulumi:"id"`
-	// Memory size in gigabytes with 1GB increment.
+	// The instance memory size in GBs for the configuration.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count.
+	// The instance ocpu count for the configuration.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
 	// Whether the configuration supports flexible shapes.
 	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The compute name of the shape for the configuration.
 	Shape string `pulumi:"shape"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
@@ -4590,6 +4594,8 @@ type GetConfigurationsConfigurationCollectionItemInput interface {
 type GetConfigurationsConfigurationCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes pulumi.StringArrayInput `pulumi:"compatibleShapes"`
 	// A filter to return only resources if their `configType` matches the given `configType`.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// List of configuration details.
@@ -4597,6 +4603,8 @@ type GetConfigurationsConfigurationCollectionItemArgs struct {
 	DbConfigurationOverrides GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideArrayInput `pulumi:"dbConfigurationOverrides"`
 	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
+	// The Default configuration used for this configuration.
+	DefaultConfigId pulumi.StringInput `pulumi:"defaultConfigId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description for the configuration.
@@ -4607,15 +4615,15 @@ type GetConfigurationsConfigurationCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A unique identifier for the configuration. Immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Memory size in gigabytes with 1GB increment.
+	// The instance memory size in GBs for the configuration.
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count.
+	// The instance ocpu count for the configuration.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
 	// Whether the configuration supports flexible shapes.
 	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The compute name of the shape for the configuration.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
@@ -4681,6 +4689,11 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) CompartmentId() pulu
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Indicates the collection of compatible shapes for this configuration.
+func (o GetConfigurationsConfigurationCollectionItemOutput) CompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) []string { return v.CompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
 // A filter to return only resources if their `configType` matches the given `configType`.
 func (o GetConfigurationsConfigurationCollectionItemOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.ConfigType }).(pulumi.StringOutput)
@@ -4702,6 +4715,11 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) DbConfigurationOverr
 // Version of the PostgreSQL database, such as 14.9.
 func (o GetConfigurationsConfigurationCollectionItemOutput) DbVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.DbVersion }).(pulumi.StringOutput)
+}
+
+// The Default configuration used for this configuration.
+func (o GetConfigurationsConfigurationCollectionItemOutput) DefaultConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.DefaultConfigId }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -4729,12 +4747,12 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) Id() pulumi.StringOu
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Memory size in gigabytes with 1GB increment.
+// The instance memory size in GBs for the configuration.
 func (o GetConfigurationsConfigurationCollectionItemOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) int { return v.InstanceMemorySizeInGbs }).(pulumi.IntOutput)
 }
 
-// CPU core count.
+// The instance ocpu count for the configuration.
 func (o GetConfigurationsConfigurationCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -4749,7 +4767,7 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) LifecycleDetails() p
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+// The compute name of the shape for the configuration.
 func (o GetConfigurationsConfigurationCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -7297,7 +7315,7 @@ type GetDbSystemsDbSystemCollectionItem struct {
 	PatchOperations []GetDbSystemsDbSystemCollectionItemPatchOperation `pulumi:"patchOperations"`
 	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape string `pulumi:"shape"`
-	// The source used to restore the database system.
+	// The source of the database system.
 	Sources []GetDbSystemsDbSystemCollectionItemSource `pulumi:"sources"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
@@ -7363,7 +7381,7 @@ type GetDbSystemsDbSystemCollectionItemArgs struct {
 	PatchOperations GetDbSystemsDbSystemCollectionItemPatchOperationArrayInput `pulumi:"patchOperations"`
 	// The name of the shape for the database instance. Example: `VM.Standard.E4.Flex`
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// The source used to restore the database system.
+	// The source of the database system.
 	Sources GetDbSystemsDbSystemCollectionItemSourceArrayInput `pulumi:"sources"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
@@ -7543,7 +7561,7 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// The source used to restore the database system.
+// The source of the database system.
 func (o GetDbSystemsDbSystemCollectionItemOutput) Sources() GetDbSystemsDbSystemCollectionItemSourceArrayOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []GetDbSystemsDbSystemCollectionItemSource {
 		return v.Sources
@@ -9406,6 +9424,8 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionArrayOutput) Index
 }
 
 type GetDefaultConfigurationsDefaultConfigurationCollectionItem struct {
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes []string `pulumi:"compatibleShapes"`
 	// List of default configuration values for databases.
 	ConfigurationDetails []GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail `pulumi:"configurationDetails"`
 	// Version of the PostgreSQL database, such as 14.9.
@@ -9416,15 +9436,15 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// A unique identifier for the configuration.
 	Id string `pulumi:"id"`
-	// Memory size in gigabytes with 1GB increment.
+	// The instance memory size in GBs for the configuration.
 	InstanceMemorySizeInGbs int `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count.
+	// The instance ocpu count for the configuration.
 	InstanceOcpuCount int `pulumi:"instanceOcpuCount"`
 	// True if the configuration supports flexible shapes, false otherwise.
 	IsFlexible bool `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The compute name of the shape for the configuration.
 	Shape string `pulumi:"shape"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
@@ -9444,6 +9464,8 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItemInput interface {
 }
 
 type GetDefaultConfigurationsDefaultConfigurationCollectionItemArgs struct {
+	// Indicates the collection of compatible shapes for this configuration.
+	CompatibleShapes pulumi.StringArrayInput `pulumi:"compatibleShapes"`
 	// List of default configuration values for databases.
 	ConfigurationDetails GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayInput `pulumi:"configurationDetails"`
 	// Version of the PostgreSQL database, such as 14.9.
@@ -9454,15 +9476,15 @@ type GetDefaultConfigurationsDefaultConfigurationCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A unique identifier for the configuration.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Memory size in gigabytes with 1GB increment.
+	// The instance memory size in GBs for the configuration.
 	InstanceMemorySizeInGbs pulumi.IntInput `pulumi:"instanceMemorySizeInGbs"`
-	// CPU core count.
+	// The instance ocpu count for the configuration.
 	InstanceOcpuCount pulumi.IntInput `pulumi:"instanceOcpuCount"`
 	// True if the configuration supports flexible shapes, false otherwise.
 	IsFlexible pulumi.BoolInput `pulumi:"isFlexible"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+	// The compute name of the shape for the configuration.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
@@ -9521,6 +9543,11 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) ToGetD
 	return o
 }
 
+// Indicates the collection of compatible shapes for this configuration.
+func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) CompatibleShapes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) []string { return v.CompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
 // List of default configuration values for databases.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) ConfigurationDetails() GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) []GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetail {
@@ -9548,14 +9575,14 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Id() p
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Memory size in gigabytes with 1GB increment.
+// The instance memory size in GBs for the configuration.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) InstanceMemorySizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) int {
 		return v.InstanceMemorySizeInGbs
 	}).(pulumi.IntOutput)
 }
 
-// CPU core count.
+// The instance ocpu count for the configuration.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) InstanceOcpuCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) int { return v.InstanceOcpuCount }).(pulumi.IntOutput)
 }
@@ -9570,7 +9597,7 @@ func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Lifecy
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+// The compute name of the shape for the configuration.
 func (o GetDefaultConfigurationsDefaultConfigurationCollectionItemOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDefaultConfigurationsDefaultConfigurationCollectionItem) string { return v.Shape }).(pulumi.StringOutput)
 }

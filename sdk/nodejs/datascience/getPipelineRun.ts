@@ -80,6 +80,10 @@ export interface GetPipelineRunResult {
      */
     readonly id: string;
     /**
+     * The infrastructure configuration details of a pipeline or a step.
+     */
+    readonly infrastructureConfigurationOverrideDetails: outputs.DataScience.GetPipelineRunInfrastructureConfigurationOverrideDetail[];
+    /**
      * Details of the state of the step run.
      */
     readonly lifecycleDetails: string;

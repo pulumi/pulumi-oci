@@ -165,22 +165,34 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunJobInfrastructureConfigurationDetailResult> JobInfrastructureConfigurationDetails;
         /// <summary>
+        /// The job infrastructure configuration details (shape, block storage, etc.)
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailResult> JobInfrastructureConfigurationOverrideDetails;
+        /// <summary>
         /// Logging configuration for resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunJobLogConfigurationOverrideDetailResult> JobLogConfigurationOverrideDetails;
+        /// <summary>
+        /// The job node configuration details
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunJobNodeConfigurationOverrideDetailResult> JobNodeConfigurationOverrideDetails;
         public readonly string JobRunId;
         /// <summary>
         /// Collection of JobStorageMountConfigurationDetails.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunJobStorageMountConfigurationDetailsListResult> JobStorageMountConfigurationDetailsLists;
         /// <summary>
-        /// Details of the state of the job run.
+        /// The state details of the node group.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
         /// Customer logging details for job run.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobRunLogDetailResult> LogDetails;
+        /// <summary>
+        /// Collection of NodeGroupDetails
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetJobRunNodeGroupDetailsListResult> NodeGroupDetailsLists;
         public readonly string OpcParentRptUrl;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -227,7 +239,11 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetJobRunJobInfrastructureConfigurationDetailResult> jobInfrastructureConfigurationDetails,
 
+            ImmutableArray<Outputs.GetJobRunJobInfrastructureConfigurationOverrideDetailResult> jobInfrastructureConfigurationOverrideDetails,
+
             ImmutableArray<Outputs.GetJobRunJobLogConfigurationOverrideDetailResult> jobLogConfigurationOverrideDetails,
+
+            ImmutableArray<Outputs.GetJobRunJobNodeConfigurationOverrideDetailResult> jobNodeConfigurationOverrideDetails,
 
             string jobRunId,
 
@@ -236,6 +252,8 @@ namespace Pulumi.Oci.DataScience
             string lifecycleDetails,
 
             ImmutableArray<Outputs.GetJobRunLogDetailResult> logDetails,
+
+            ImmutableArray<Outputs.GetJobRunNodeGroupDetailsListResult> nodeGroupDetailsLists,
 
             string opcParentRptUrl,
 
@@ -260,11 +278,14 @@ namespace Pulumi.Oci.DataScience
             JobEnvironmentConfigurationOverrideDetails = jobEnvironmentConfigurationOverrideDetails;
             JobId = jobId;
             JobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+            JobInfrastructureConfigurationOverrideDetails = jobInfrastructureConfigurationOverrideDetails;
             JobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
+            JobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
             JobRunId = jobRunId;
             JobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             LifecycleDetails = lifecycleDetails;
             LogDetails = logDetails;
+            NodeGroupDetailsLists = nodeGroupDetailsLists;
             OpcParentRptUrl = opcParentRptUrl;
             ProjectId = projectId;
             State = state;

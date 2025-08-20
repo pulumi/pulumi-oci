@@ -17,9 +17,17 @@ public final class GetJobsFilter extends com.pulumi.resources.InvokeArgs {
 
     public static final GetJobsFilter Empty = new GetJobsFilter();
 
+    /**
+     * node group name.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return node group name.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -64,6 +72,12 @@ public final class GetJobsFilter extends com.pulumi.resources.InvokeArgs {
             $ = new GetJobsFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name node group name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

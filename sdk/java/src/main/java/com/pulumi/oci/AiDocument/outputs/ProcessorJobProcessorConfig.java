@@ -6,6 +6,7 @@ package com.pulumi.oci.AiDocument.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiDocument.outputs.ProcessorJobProcessorConfigFeature;
+import com.pulumi.oci.AiDocument.outputs.ProcessorJobProcessorConfigNormalizationField;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -35,6 +36,16 @@ public final class ProcessorJobProcessorConfig {
      * 
      */
     private @Nullable String language;
+    /**
+     * @return Unique identifier custom model OCID that should be used for inference.
+     * 
+     */
+    private @Nullable String modelId;
+    /**
+     * @return A string-to-object map where the key is the normalization field and the object contains information about the field.
+     * 
+     */
+    private @Nullable List<ProcessorJobProcessorConfigNormalizationField> normalizationFields;
     /**
      * @return The type of the processor.
      * 
@@ -74,6 +85,20 @@ public final class ProcessorJobProcessorConfig {
         return Optional.ofNullable(this.language);
     }
     /**
+     * @return Unique identifier custom model OCID that should be used for inference.
+     * 
+     */
+    public Optional<String> modelId() {
+        return Optional.ofNullable(this.modelId);
+    }
+    /**
+     * @return A string-to-object map where the key is the normalization field and the object contains information about the field.
+     * 
+     */
+    public List<ProcessorJobProcessorConfigNormalizationField> normalizationFields() {
+        return this.normalizationFields == null ? List.of() : this.normalizationFields;
+    }
+    /**
      * @return The type of the processor.
      * 
      * ** IMPORTANT **
@@ -97,6 +122,8 @@ public final class ProcessorJobProcessorConfig {
         private List<ProcessorJobProcessorConfigFeature> features;
         private @Nullable Boolean isZipOutputEnabled;
         private @Nullable String language;
+        private @Nullable String modelId;
+        private @Nullable List<ProcessorJobProcessorConfigNormalizationField> normalizationFields;
         private String processorType;
         public Builder() {}
         public Builder(ProcessorJobProcessorConfig defaults) {
@@ -105,6 +132,8 @@ public final class ProcessorJobProcessorConfig {
     	      this.features = defaults.features;
     	      this.isZipOutputEnabled = defaults.isZipOutputEnabled;
     	      this.language = defaults.language;
+    	      this.modelId = defaults.modelId;
+    	      this.normalizationFields = defaults.normalizationFields;
     	      this.processorType = defaults.processorType;
         }
 
@@ -138,6 +167,21 @@ public final class ProcessorJobProcessorConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder modelId(@Nullable String modelId) {
+
+            this.modelId = modelId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder normalizationFields(@Nullable List<ProcessorJobProcessorConfigNormalizationField> normalizationFields) {
+
+            this.normalizationFields = normalizationFields;
+            return this;
+        }
+        public Builder normalizationFields(ProcessorJobProcessorConfigNormalizationField... normalizationFields) {
+            return normalizationFields(List.of(normalizationFields));
+        }
+        @CustomType.Setter
         public Builder processorType(String processorType) {
             if (processorType == null) {
               throw new MissingRequiredPropertyException("ProcessorJobProcessorConfig", "processorType");
@@ -151,6 +195,8 @@ public final class ProcessorJobProcessorConfig {
             _resultValue.features = features;
             _resultValue.isZipOutputEnabled = isZipOutputEnabled;
             _resultValue.language = language;
+            _resultValue.modelId = modelId;
+            _resultValue.normalizationFields = normalizationFields;
             _resultValue.processorType = processorType;
             return _resultValue;
         }

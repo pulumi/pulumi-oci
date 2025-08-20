@@ -33,7 +33,7 @@ type DatabaseInsight struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of External Database Connector
 	ConnectorId pulumi.StringOutput `pulumi:"connectorId"`
 	// User credential details to connect to the database.
-	CredentialDetails DatabaseInsightCredentialDetailsPtrOutput `pulumi:"credentialDetails"`
+	CredentialDetails DatabaseInsightCredentialDetailsOutput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringOutput `pulumi:"databaseConnectionStatusDetails"`
 	// (Updatable) The DBM owned database connector [OCID](https://www.terraform.io/iaas/database-management/doc/view-connector-details.html) mapping to the database credentials and connection details.
@@ -370,6 +370,8 @@ type databaseInsightArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	Status *string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // The set of arguments for constructing a DatabaseInsight resource.
@@ -423,6 +425,8 @@ type DatabaseInsightArgs struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	Status pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 }
 
 func (DatabaseInsightArgs) ElementType() reflect.Type {
@@ -535,8 +539,8 @@ func (o DatabaseInsightOutput) ConnectorId() pulumi.StringOutput {
 }
 
 // User credential details to connect to the database.
-func (o DatabaseInsightOutput) CredentialDetails() DatabaseInsightCredentialDetailsPtrOutput {
-	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightCredentialDetailsPtrOutput { return v.CredentialDetails }).(DatabaseInsightCredentialDetailsPtrOutput)
+func (o DatabaseInsightOutput) CredentialDetails() DatabaseInsightCredentialDetailsOutput {
+	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightCredentialDetailsOutput { return v.CredentialDetails }).(DatabaseInsightCredentialDetailsOutput)
 }
 
 // A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.

@@ -51,7 +51,7 @@ namespace Pulumi.Oci.Opsi
         /// User credential details to connect to the database.
         /// </summary>
         [Output("credentialDetails")]
-        public Output<Outputs.DatabaseInsightCredentialDetails?> CredentialDetails { get; private set; } = null!;
+        public Output<Outputs.DatabaseInsightCredentialDetails> CredentialDetails { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
@@ -464,6 +464,18 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         public DatabaseInsightArgs()
         {

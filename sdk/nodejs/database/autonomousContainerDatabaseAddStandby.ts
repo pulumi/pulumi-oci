@@ -233,6 +233,10 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
      */
     public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
     /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     */
+    public /*out*/ readonly okvEndPointGroupName!: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */
     public /*out*/ readonly patchId!: pulumi.Output<string>;
@@ -385,6 +389,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["netServicesArchitecture"] = state ? state.netServicesArchitecture : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
+            resourceInputs["okvEndPointGroupName"] = state ? state.okvEndPointGroupName : undefined;
             resourceInputs["patchId"] = state ? state.patchId : undefined;
             resourceInputs["patchModel"] = state ? state.patchModel : undefined;
             resourceInputs["peerAutonomousContainerDatabaseBackupConfig"] = state ? state.peerAutonomousContainerDatabaseBackupConfig : undefined;
@@ -461,6 +466,7 @@ export class AutonomousContainerDatabaseAddStandby extends pulumi.CustomResource
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
             resourceInputs["netServicesArchitecture"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
+            resourceInputs["okvEndPointGroupName"] = undefined /*out*/;
             resourceInputs["patchId"] = undefined /*out*/;
             resourceInputs["patchModel"] = undefined /*out*/;
             resourceInputs["provisionableCpuses"] = undefined /*out*/;
@@ -640,6 +646,10 @@ export interface AutonomousContainerDatabaseAddStandbyState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
+    /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     */
+    okvEndPointGroupName?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      */

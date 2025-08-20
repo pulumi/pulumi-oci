@@ -5,6 +5,7 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataScience.outputs.JobRunJobConfigurationOverrideDetailsStartupProbeDetails;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -33,6 +34,11 @@ public final class JobRunJobConfigurationOverrideDetails {
      * 
      */
     private @Nullable String maximumRuntimeInMinutes;
+    /**
+     * @return The probe indicates whether the application within the job run has started.
+     * 
+     */
+    private @Nullable JobRunJobConfigurationOverrideDetailsStartupProbeDetails startupProbeDetails;
 
     private JobRunJobConfigurationOverrideDetails() {}
     /**
@@ -63,6 +69,13 @@ public final class JobRunJobConfigurationOverrideDetails {
     public Optional<String> maximumRuntimeInMinutes() {
         return Optional.ofNullable(this.maximumRuntimeInMinutes);
     }
+    /**
+     * @return The probe indicates whether the application within the job run has started.
+     * 
+     */
+    public Optional<JobRunJobConfigurationOverrideDetailsStartupProbeDetails> startupProbeDetails() {
+        return Optional.ofNullable(this.startupProbeDetails);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -77,6 +90,7 @@ public final class JobRunJobConfigurationOverrideDetails {
         private @Nullable Map<String,String> environmentVariables;
         private String jobType;
         private @Nullable String maximumRuntimeInMinutes;
+        private @Nullable JobRunJobConfigurationOverrideDetailsStartupProbeDetails startupProbeDetails;
         public Builder() {}
         public Builder(JobRunJobConfigurationOverrideDetails defaults) {
     	      Objects.requireNonNull(defaults);
@@ -84,6 +98,7 @@ public final class JobRunJobConfigurationOverrideDetails {
     	      this.environmentVariables = defaults.environmentVariables;
     	      this.jobType = defaults.jobType;
     	      this.maximumRuntimeInMinutes = defaults.maximumRuntimeInMinutes;
+    	      this.startupProbeDetails = defaults.startupProbeDetails;
         }
 
         @CustomType.Setter
@@ -112,12 +127,19 @@ public final class JobRunJobConfigurationOverrideDetails {
             this.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
             return this;
         }
+        @CustomType.Setter
+        public Builder startupProbeDetails(@Nullable JobRunJobConfigurationOverrideDetailsStartupProbeDetails startupProbeDetails) {
+
+            this.startupProbeDetails = startupProbeDetails;
+            return this;
+        }
         public JobRunJobConfigurationOverrideDetails build() {
             final var _resultValue = new JobRunJobConfigurationOverrideDetails();
             _resultValue.commandLineArguments = commandLineArguments;
             _resultValue.environmentVariables = environmentVariables;
             _resultValue.jobType = jobType;
             _resultValue.maximumRuntimeInMinutes = maximumRuntimeInMinutes;
+            _resultValue.startupProbeDetails = startupProbeDetails;
             return _resultValue;
         }
     }

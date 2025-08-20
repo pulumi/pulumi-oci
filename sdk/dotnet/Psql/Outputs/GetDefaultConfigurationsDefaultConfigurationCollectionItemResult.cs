@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class GetDefaultConfigurationsDefaultConfigurationCollectionItemResult
     {
         /// <summary>
+        /// Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public readonly ImmutableArray<string> CompatibleShapes;
+        /// <summary>
         /// List of default configuration values for databases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailResult> ConfigurationDetails;
@@ -34,11 +38,11 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Memory size in gigabytes with 1GB increment.
+        /// The instance memory size in GBs for the configuration.
         /// </summary>
         public readonly int InstanceMemorySizeInGbs;
         /// <summary>
-        /// CPU core count.
+        /// The instance ocpu count for the configuration.
         /// </summary>
         public readonly int InstanceOcpuCount;
         /// <summary>
@@ -50,7 +54,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The compute name of the shape for the configuration.
         /// </summary>
         public readonly string Shape;
         /// <summary>
@@ -64,6 +68,8 @@ namespace Pulumi.Oci.Psql.Outputs
 
         [OutputConstructor]
         private GetDefaultConfigurationsDefaultConfigurationCollectionItemResult(
+            ImmutableArray<string> compatibleShapes,
+
             ImmutableArray<Outputs.GetDefaultConfigurationsDefaultConfigurationCollectionItemConfigurationDetailResult> configurationDetails,
 
             string dbVersion,
@@ -88,6 +94,7 @@ namespace Pulumi.Oci.Psql.Outputs
 
             string timeCreated)
         {
+            CompatibleShapes = compatibleShapes;
             ConfigurationDetails = configurationDetails;
             DbVersion = dbVersion;
             Description = description;

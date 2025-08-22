@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -89,6 +91,10 @@ export class Project extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.AiDocument.ProjectLock[]>;
+    /**
      * The current state of the project.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -124,6 +130,7 @@ export class Project extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -138,6 +145,7 @@ export class Project extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -181,6 +189,10 @@ export interface ProjectState {
      * A message describing the current state in more detail, that can provide actionable information if creation failed.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.AiDocument.ProjectLock>[]>;
     /**
      * The current state of the project.
      */
@@ -227,4 +239,8 @@ export interface ProjectArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.AiDocument.ProjectLock>[]>;
 }

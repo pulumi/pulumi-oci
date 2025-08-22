@@ -6,6 +6,7 @@ package com.pulumi.oci.Vault;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Vault.inputs.SecretReplicationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretRotationConfigArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretContentArgs;
 import com.pulumi.oci.Vault.inputs.SecretSecretGenerationContextArgs;
@@ -129,6 +130,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    @Import(name="replicationConfig")
+    private @Nullable Output<SecretReplicationConfigArgs> replicationConfig;
+
+    /**
+     * @return (Updatable) Defines the configuration that enables cross-region secret replication.
+     * 
+     */
+    public Optional<Output<SecretReplicationConfigArgs>> replicationConfig() {
+        return Optional.ofNullable(this.replicationConfig);
+    }
+
+    /**
      * (Updatable) Defines the frequency of the rotation and the information about the target system
      * 
      */
@@ -234,6 +250,7 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.keyId = $.keyId;
         this.metadata = $.metadata;
+        this.replicationConfig = $.replicationConfig;
         this.rotationConfig = $.rotationConfig;
         this.secretContent = $.secretContent;
         this.secretGenerationContext = $.secretGenerationContext;
@@ -405,6 +422,27 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
+        }
+
+        /**
+         * @param replicationConfig (Updatable) Defines the configuration that enables cross-region secret replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationConfig(@Nullable Output<SecretReplicationConfigArgs> replicationConfig) {
+            $.replicationConfig = replicationConfig;
+            return this;
+        }
+
+        /**
+         * @param replicationConfig (Updatable) Defines the configuration that enables cross-region secret replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationConfig(SecretReplicationConfigArgs replicationConfig) {
+            return replicationConfig(Output.of(replicationConfig));
         }
 
         /**

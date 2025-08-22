@@ -23,7 +23,7 @@ public final class GetManagedMySqlDatabaseGeneralReplicationInformationResult {
      */
     private String binaryLogFormat;
     /**
-     * @return Status of binary logging on this server.
+     * @return The status of binary logging on this server.
      * 
      */
     private String binaryLogging;
@@ -38,7 +38,7 @@ public final class GetManagedMySqlDatabaseGeneralReplicationInformationResult {
      */
     private String fetchStatusSummary;
     /**
-     * @return Global Transaction Identifier (GTID) mode of this server.
+     * @return The Global Transaction Identifier (GTID) mode of this server.
      * 
      */
     private String gtidMode;
@@ -63,7 +63,7 @@ public final class GetManagedMySqlDatabaseGeneralReplicationInformationResult {
      */
     private Integer inboundReplicationsCount;
     /**
-     * @return The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+     * @return The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
      * 
      */
     private String instanceType;
@@ -120,7 +120,7 @@ public final class GetManagedMySqlDatabaseGeneralReplicationInformationResult {
         return this.binaryLogFormat;
     }
     /**
-     * @return Status of binary logging on this server.
+     * @return The status of binary logging on this server.
      * 
      */
     public String binaryLogging() {
@@ -141,7 +141,7 @@ public final class GetManagedMySqlDatabaseGeneralReplicationInformationResult {
         return this.fetchStatusSummary;
     }
     /**
-     * @return Global Transaction Identifier (GTID) mode of this server.
+     * @return The Global Transaction Identifier (GTID) mode of this server.
      * 
      */
     public String gtidMode() {
@@ -176,7 +176,7 @@ public final class GetManagedMySqlDatabaseGeneralReplicationInformationResult {
         return this.inboundReplicationsCount;
     }
     /**
-     * @return The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+     * @return The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
      * 
      */
     public String instanceType() {

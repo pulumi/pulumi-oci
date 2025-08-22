@@ -30364,6 +30364,8 @@ type GetSecurityAssessmentComparisonTargetAuditingBaselineReference struct {
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -30386,6 +30388,8 @@ type GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceArgs struct {
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -30454,6 +30458,11 @@ func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) Gd
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaselineReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingBaselineReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -30733,6 +30742,8 @@ type GetSecurityAssessmentComparisonTargetAuditingCurrentReference struct {
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -30755,6 +30766,8 @@ type GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceArgs struct {
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -30823,6 +30836,11 @@ func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) Gdp
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrentReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuditingCurrentReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -31260,6 +31278,8 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference 
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -31282,6 +31302,8 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceA
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -31355,6 +31377,13 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferen
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference) string {
 		return v.Obp
+	}).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference) string {
+		return v.Orp
 	}).(pulumi.StringOutput)
 }
 
@@ -31645,6 +31674,8 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference s
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -31667,6 +31698,8 @@ type GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceAr
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -31737,6 +31770,11 @@ func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenc
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -32166,6 +32204,8 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference struct
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -32188,6 +32228,8 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceArgs st
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -32256,6 +32298,11 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutp
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -32537,6 +32584,8 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference struct 
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -32559,6 +32608,8 @@ type GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceArgs str
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -32627,6 +32678,11 @@ func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutpu
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -33054,6 +33110,8 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference struc
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -33076,6 +33134,8 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceArgs s
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -33144,6 +33204,11 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOut
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -33425,6 +33490,8 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference struct
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -33447,6 +33514,8 @@ type GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceArgs st
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -33515,6 +33584,11 @@ func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutp
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -33960,6 +34034,8 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefere
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -33982,6 +34058,8 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefere
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -34055,6 +34133,13 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRef
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference) string {
 		return v.Obp
+	}).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineReference) string {
+		return v.Orp
 	}).(pulumi.StringOutput)
 }
 
@@ -34353,6 +34438,8 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferen
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -34375,6 +34462,8 @@ type GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferen
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -34448,6 +34537,13 @@ func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefe
 func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference) string {
 		return v.Obp
+	}).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference) string {
+		return v.Orp
 	}).(pulumi.StringOutput)
 }
 
@@ -34880,6 +34976,8 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference str
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -34902,6 +35000,8 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceArgs
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -34970,6 +35070,11 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceO
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -35253,6 +35358,8 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference stru
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -35275,6 +35382,8 @@ type GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceArgs 
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -35343,6 +35452,11 @@ func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOu
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -35770,6 +35884,8 @@ type GetSecurityAssessmentComparisonTargetUserAccountBaselineReference struct {
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -35792,6 +35908,8 @@ type GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceArgs struc
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -35860,6 +35978,11 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput)
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaselineReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountBaselineReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -36139,6 +36262,8 @@ type GetSecurityAssessmentComparisonTargetUserAccountCurrentReference struct {
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -36161,6 +36286,8 @@ type GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceArgs struct
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -36229,6 +36356,11 @@ func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) 
 // Relevant section from OBP.
 func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrentReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentComparisonTargetUserAccountCurrentReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -36845,6 +36977,7 @@ func (o GetSecurityAssessmentFindingFilterArrayOutput) Index(i pulumi.IntInput) 
 type GetSecurityAssessmentFindingFinding struct {
 	AssessmentId                string                                         `pulumi:"assessmentId"`
 	Details                     []string                                       `pulumi:"details"`
+	Doclink                     string                                         `pulumi:"doclink"`
 	HasTargetDbRiskLevelChanged bool                                           `pulumi:"hasTargetDbRiskLevelChanged"`
 	IsRiskModified              bool                                           `pulumi:"isRiskModified"`
 	IsTopFinding                bool                                           `pulumi:"isTopFinding"`
@@ -36878,6 +37011,7 @@ type GetSecurityAssessmentFindingFindingInput interface {
 type GetSecurityAssessmentFindingFindingArgs struct {
 	AssessmentId                pulumi.StringInput                                     `pulumi:"assessmentId"`
 	Details                     pulumi.StringArrayInput                                `pulumi:"details"`
+	Doclink                     pulumi.StringInput                                     `pulumi:"doclink"`
 	HasTargetDbRiskLevelChanged pulumi.BoolInput                                       `pulumi:"hasTargetDbRiskLevelChanged"`
 	IsRiskModified              pulumi.BoolInput                                       `pulumi:"isRiskModified"`
 	IsTopFinding                pulumi.BoolInput                                       `pulumi:"isTopFinding"`
@@ -36954,6 +37088,10 @@ func (o GetSecurityAssessmentFindingFindingOutput) AssessmentId() pulumi.StringO
 
 func (o GetSecurityAssessmentFindingFindingOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) []string { return v.Details }).(pulumi.StringArrayOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingOutput) Doclink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFinding) string { return v.Doclink }).(pulumi.StringOutput)
 }
 
 func (o GetSecurityAssessmentFindingFindingOutput) HasTargetDbRiskLevelChanged() pulumi.BoolOutput {
@@ -37050,6 +37188,7 @@ type GetSecurityAssessmentFindingFindingReference struct {
 	Cis  string `pulumi:"cis"`
 	Gdpr string `pulumi:"gdpr"`
 	Obp  string `pulumi:"obp"`
+	Orp  string `pulumi:"orp"`
 	Stig string `pulumi:"stig"`
 }
 
@@ -37068,6 +37207,7 @@ type GetSecurityAssessmentFindingFindingReferenceArgs struct {
 	Cis  pulumi.StringInput `pulumi:"cis"`
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	Obp  pulumi.StringInput `pulumi:"obp"`
+	Orp  pulumi.StringInput `pulumi:"orp"`
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
 
@@ -37132,6 +37272,10 @@ func (o GetSecurityAssessmentFindingFindingReferenceOutput) Gdpr() pulumi.String
 
 func (o GetSecurityAssessmentFindingFindingReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingFindingReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+func (o GetSecurityAssessmentFindingFindingReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingFindingReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 func (o GetSecurityAssessmentFindingFindingReferenceOutput) Stig() pulumi.StringOutput {
@@ -37705,6 +37849,8 @@ type GetSecurityAssessmentFindingsFinding struct {
 	AssessmentId string `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details []string `pulumi:"details"`
+	// Documentation link provided by Oracle that explains a specific security finding or check.
+	Doclink string `pulumi:"doclink"`
 	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
 	HasTargetDbRiskLevelChanged bool `pulumi:"hasTargetDbRiskLevelChanged"`
 	// Determines if this risk level was modified by user.
@@ -37757,6 +37903,8 @@ type GetSecurityAssessmentFindingsFindingArgs struct {
 	AssessmentId pulumi.StringInput `pulumi:"assessmentId"`
 	// The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 	Details pulumi.StringArrayInput `pulumi:"details"`
+	// Documentation link provided by Oracle that explains a specific security finding or check.
+	Doclink pulumi.StringInput `pulumi:"doclink"`
 	// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
 	HasTargetDbRiskLevelChanged pulumi.BoolInput `pulumi:"hasTargetDbRiskLevelChanged"`
 	// Determines if this risk level was modified by user.
@@ -37852,6 +38000,11 @@ func (o GetSecurityAssessmentFindingsFindingOutput) AssessmentId() pulumi.String
 // The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
 func (o GetSecurityAssessmentFindingsFindingOutput) Details() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) []string { return v.Details }).(pulumi.StringArrayOutput)
+}
+
+// Documentation link provided by Oracle that explains a specific security finding or check.
+func (o GetSecurityAssessmentFindingsFindingOutput) Doclink() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFinding) string { return v.Doclink }).(pulumi.StringOutput)
 }
 
 // Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
@@ -37968,6 +38121,8 @@ type GetSecurityAssessmentFindingsFindingReference struct {
 	Gdpr string `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp string `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp string `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig string `pulumi:"stig"`
 }
@@ -37990,6 +38145,8 @@ type GetSecurityAssessmentFindingsFindingReferenceArgs struct {
 	Gdpr pulumi.StringInput `pulumi:"gdpr"`
 	// Relevant section from OBP.
 	Obp pulumi.StringInput `pulumi:"obp"`
+	// Relevant section from ORP.
+	Orp pulumi.StringInput `pulumi:"orp"`
 	// Relevant section from STIG.
 	Stig pulumi.StringInput `pulumi:"stig"`
 }
@@ -38058,6 +38215,11 @@ func (o GetSecurityAssessmentFindingsFindingReferenceOutput) Gdpr() pulumi.Strin
 // Relevant section from OBP.
 func (o GetSecurityAssessmentFindingsFindingReferenceOutput) Obp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsFindingReference) string { return v.Obp }).(pulumi.StringOutput)
+}
+
+// Relevant section from ORP.
+func (o GetSecurityAssessmentFindingsFindingReferenceOutput) Orp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsFindingReference) string { return v.Orp }).(pulumi.StringOutput)
 }
 
 // Relevant section from STIG.
@@ -40416,7 +40578,7 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	TimeLastAssessed string `pulumi:"timeLastAssessed"`
 	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// A filter to return only security asessments that were created by either user or system.
+	// A filter to return only security assessments that were created by either user or system.
 	TriggeredBy string `pulumi:"triggeredBy"`
 	// A filter to return only items that match the specified security assessment type.
 	Type string `pulumi:"type"`
@@ -40484,7 +40646,7 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	TimeLastAssessed pulumi.StringInput `pulumi:"timeLastAssessed"`
 	// The date and time the security assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// A filter to return only security asessments that were created by either user or system.
+	// A filter to return only security assessments that were created by either user or system.
 	TriggeredBy pulumi.StringInput `pulumi:"triggeredBy"`
 	// A filter to return only items that match the specified security assessment type.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -40668,7 +40830,7 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) TimeUpdated() pulumi.Str
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// A filter to return only security asessments that were created by either user or system.
+// A filter to return only security assessments that were created by either user or system.
 func (o GetSecurityAssessmentsSecurityAssessmentOutput) TriggeredBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) string { return v.TriggeredBy }).(pulumi.StringOutput)
 }

@@ -66,8 +66,12 @@ type LookupManagementAgentInstallKeyResult struct {
 	CreatedByPrincipalId string `pulumi:"createdByPrincipalId"`
 	// Total number of install for this keys
 	CurrentKeyInstallCount int `pulumi:"currentKeyInstallCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Management Agent Install Key Name
 	DisplayName string `pulumi:"displayName"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Agent install Key identifier
 	Id string `pulumi:"id"`
 	// If set to true, the install key has no expiration date or usage limit. Properties allowedKeyInstallCount and timeExpires are ignored if set to true. Defaults to false.
@@ -79,6 +83,8 @@ type LookupManagementAgentInstallKeyResult struct {
 	ManagementAgentInstallKeyId string `pulumi:"managementAgentInstallKeyId"`
 	// Status of Key
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when Management Agent install Key was created. An RFC3339 formatted date time string
 	TimeCreated string `pulumi:"timeCreated"`
 	// date after which key would expire after creation
@@ -141,9 +147,19 @@ func (o LookupManagementAgentInstallKeyResultOutput) CurrentKeyInstallCount() pu
 	return o.ApplyT(func(v LookupManagementAgentInstallKeyResult) int { return v.CurrentKeyInstallCount }).(pulumi.IntOutput)
 }
 
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o LookupManagementAgentInstallKeyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagementAgentInstallKeyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
 // Management Agent Install Key Name
 func (o LookupManagementAgentInstallKeyResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementAgentInstallKeyResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o LookupManagementAgentInstallKeyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagementAgentInstallKeyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Agent install Key identifier
@@ -173,6 +189,11 @@ func (o LookupManagementAgentInstallKeyResultOutput) ManagementAgentInstallKeyId
 // Status of Key
 func (o LookupManagementAgentInstallKeyResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupManagementAgentInstallKeyResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupManagementAgentInstallKeyResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagementAgentInstallKeyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when Management Agent install Key was created. An RFC3339 formatted date time string

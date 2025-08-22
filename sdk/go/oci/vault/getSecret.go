@@ -73,6 +73,8 @@ type LookupSecretResult struct {
 	Id string `pulumi:"id"`
 	// The value of this flag determines whether or not secret content will be generated automatically.
 	IsAutoGenerationEnabled bool `pulumi:"isAutoGenerationEnabled"`
+	// A Boolean value that indicates whether the secret is a source or replica secret.
+	IsReplica bool `pulumi:"isReplica"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -83,6 +85,8 @@ type LookupSecretResult struct {
 	Metadata map[string]string `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime string `pulumi:"nextRotationTime"`
+	// Defines the configuration that enables cross-region secret replication.
+	ReplicationConfigs []GetSecretReplicationConfig `pulumi:"replicationConfigs"`
 	// Defines the frequency of the rotation and the information about the target system
 	RotationConfigs []GetSecretRotationConfig `pulumi:"rotationConfigs"`
 	// Additional information about the status of the secret rotation
@@ -95,6 +99,8 @@ type LookupSecretResult struct {
 	SecretName string `pulumi:"secretName"`
 	// A list of rules that control how the secret is used and managed.
 	SecretRules []GetSecretSecretRule `pulumi:"secretRules"`
+	// Details for the source that the source secret has.
+	SourceRegionInformations []GetSecretSourceRegionInformation `pulumi:"sourceRegionInformations"`
 	// The current lifecycle state of the secret.
 	State string `pulumi:"state"`
 	// A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -180,6 +186,11 @@ func (o LookupSecretResultOutput) IsAutoGenerationEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSecretResult) bool { return v.IsAutoGenerationEnabled }).(pulumi.BoolOutput)
 }
 
+// A Boolean value that indicates whether the secret is a source or replica secret.
+func (o LookupSecretResultOutput) IsReplica() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupSecretResult) bool { return v.IsReplica }).(pulumi.BoolOutput)
+}
+
 // The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 func (o LookupSecretResultOutput) KeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecretResult) string { return v.KeyId }).(pulumi.StringOutput)
@@ -203,6 +214,11 @@ func (o LookupSecretResultOutput) Metadata() pulumi.StringMapOutput {
 // A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o LookupSecretResultOutput) NextRotationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecretResult) string { return v.NextRotationTime }).(pulumi.StringOutput)
+}
+
+// Defines the configuration that enables cross-region secret replication.
+func (o LookupSecretResultOutput) ReplicationConfigs() GetSecretReplicationConfigArrayOutput {
+	return o.ApplyT(func(v LookupSecretResult) []GetSecretReplicationConfig { return v.ReplicationConfigs }).(GetSecretReplicationConfigArrayOutput)
 }
 
 // Defines the frequency of the rotation and the information about the target system
@@ -236,6 +252,11 @@ func (o LookupSecretResultOutput) SecretName() pulumi.StringOutput {
 // A list of rules that control how the secret is used and managed.
 func (o LookupSecretResultOutput) SecretRules() GetSecretSecretRuleArrayOutput {
 	return o.ApplyT(func(v LookupSecretResult) []GetSecretSecretRule { return v.SecretRules }).(GetSecretSecretRuleArrayOutput)
+}
+
+// Details for the source that the source secret has.
+func (o LookupSecretResultOutput) SourceRegionInformations() GetSecretSourceRegionInformationArrayOutput {
+	return o.ApplyT(func(v LookupSecretResult) []GetSecretSourceRegionInformation { return v.SourceRegionInformations }).(GetSecretSourceRegionInformationArrayOutput)
 }
 
 // The current lifecycle state of the secret.

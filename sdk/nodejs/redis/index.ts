@@ -5,6 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetOciCacheConfigSetArgs, GetOciCacheConfigSetResult, GetOciCacheConfigSetOutputArgs } from "./getOciCacheConfigSet";
+export const getOciCacheConfigSet: typeof import("./getOciCacheConfigSet").getOciCacheConfigSet = null as any;
+export const getOciCacheConfigSetOutput: typeof import("./getOciCacheConfigSet").getOciCacheConfigSetOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheConfigSet","getOciCacheConfigSetOutput"], () => require("./getOciCacheConfigSet"));
+
+export { GetOciCacheConfigSetsArgs, GetOciCacheConfigSetsResult, GetOciCacheConfigSetsOutputArgs } from "./getOciCacheConfigSets";
+export const getOciCacheConfigSets: typeof import("./getOciCacheConfigSets").getOciCacheConfigSets = null as any;
+export const getOciCacheConfigSetsOutput: typeof import("./getOciCacheConfigSets").getOciCacheConfigSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheConfigSets","getOciCacheConfigSetsOutput"], () => require("./getOciCacheConfigSets"));
+
+export { GetOciCacheDefaultConfigSetArgs, GetOciCacheDefaultConfigSetResult, GetOciCacheDefaultConfigSetOutputArgs } from "./getOciCacheDefaultConfigSet";
+export const getOciCacheDefaultConfigSet: typeof import("./getOciCacheDefaultConfigSet").getOciCacheDefaultConfigSet = null as any;
+export const getOciCacheDefaultConfigSetOutput: typeof import("./getOciCacheDefaultConfigSet").getOciCacheDefaultConfigSetOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheDefaultConfigSet","getOciCacheDefaultConfigSetOutput"], () => require("./getOciCacheDefaultConfigSet"));
+
+export { GetOciCacheDefaultConfigSetsArgs, GetOciCacheDefaultConfigSetsResult, GetOciCacheDefaultConfigSetsOutputArgs } from "./getOciCacheDefaultConfigSets";
+export const getOciCacheDefaultConfigSets: typeof import("./getOciCacheDefaultConfigSets").getOciCacheDefaultConfigSets = null as any;
+export const getOciCacheDefaultConfigSetsOutput: typeof import("./getOciCacheDefaultConfigSets").getOciCacheDefaultConfigSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getOciCacheDefaultConfigSets","getOciCacheDefaultConfigSetsOutput"], () => require("./getOciCacheDefaultConfigSets"));
+
 export { GetOciCacheUserArgs, GetOciCacheUserResult, GetOciCacheUserOutputArgs } from "./getOciCacheUser";
 export const getOciCacheUser: typeof import("./getOciCacheUser").getOciCacheUser = null as any;
 export const getOciCacheUserOutput: typeof import("./getOciCacheUser").getOciCacheUserOutput = null as any;
@@ -29,6 +49,16 @@ export { GetRedisClustersArgs, GetRedisClustersResult, GetRedisClustersOutputArg
 export const getRedisClusters: typeof import("./getRedisClusters").getRedisClusters = null as any;
 export const getRedisClustersOutput: typeof import("./getRedisClusters").getRedisClustersOutput = null as any;
 utilities.lazyLoad(exports, ["getRedisClusters","getRedisClustersOutput"], () => require("./getRedisClusters"));
+
+export { OciCacheConfigSetArgs, OciCacheConfigSetState } from "./ociCacheConfigSet";
+export type OciCacheConfigSet = import("./ociCacheConfigSet").OciCacheConfigSet;
+export const OciCacheConfigSet: typeof import("./ociCacheConfigSet").OciCacheConfigSet = null as any;
+utilities.lazyLoad(exports, ["OciCacheConfigSet"], () => require("./ociCacheConfigSet"));
+
+export { OciCacheConfigSetlistAssociatedOciCacheClusterArgs, OciCacheConfigSetlistAssociatedOciCacheClusterState } from "./ociCacheConfigSetlistAssociatedOciCacheCluster";
+export type OciCacheConfigSetlistAssociatedOciCacheCluster = import("./ociCacheConfigSetlistAssociatedOciCacheCluster").OciCacheConfigSetlistAssociatedOciCacheCluster;
+export const OciCacheConfigSetlistAssociatedOciCacheCluster: typeof import("./ociCacheConfigSetlistAssociatedOciCacheCluster").OciCacheConfigSetlistAssociatedOciCacheCluster = null as any;
+utilities.lazyLoad(exports, ["OciCacheConfigSetlistAssociatedOciCacheCluster"], () => require("./ociCacheConfigSetlistAssociatedOciCacheCluster"));
 
 export { OciCacheUserArgs, OciCacheUserState } from "./ociCacheUser";
 export type OciCacheUser = import("./ociCacheUser").OciCacheUser;
@@ -70,6 +100,10 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Redis/ociCacheConfigSet:OciCacheConfigSet":
+                return new OciCacheConfigSet(name, <any>undefined, { urn })
+            case "oci:Redis/ociCacheConfigSetlistAssociatedOciCacheCluster:OciCacheConfigSetlistAssociatedOciCacheCluster":
+                return new OciCacheConfigSetlistAssociatedOciCacheCluster(name, <any>undefined, { urn })
             case "oci:Redis/ociCacheUser:OciCacheUser":
                 return new OciCacheUser(name, <any>undefined, { urn })
             case "oci:Redis/ociCacheUserGetRedisCluster:OciCacheUserGetRedisCluster":
@@ -89,6 +123,8 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheConfigSet", _module)
+pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheConfigSetlistAssociatedOciCacheCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheUser", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/ociCacheUserGetRedisCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Redis/redisCluster", _module)

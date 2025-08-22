@@ -318,7 +318,9 @@ class ProcessorJob(pulumi.CustomResource):
                     "bucket": processor_job_input_location_object_locations_bucket,
                     "namespace": processor_job_input_location_object_locations_namespace,
                     "object": processor_job_input_location_object_locations_object,
+                    "page_ranges": processor_job_input_location_object_locations_page_range,
                 }],
+                "page_ranges": processor_job_input_location_page_range,
             },
             output_location={
                 "bucket": processor_job_output_location_bucket,
@@ -326,17 +328,24 @@ class ProcessorJob(pulumi.CustomResource):
                 "prefix": processor_job_output_location_prefix,
             },
             processor_config={
+                "processor_type": processor_job_processor_config_processor_type,
+                "document_type": processor_job_processor_config_document_type,
                 "features": [{
                     "feature_type": processor_job_processor_config_features_feature_type,
                     "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf,
                     "max_results": processor_job_processor_config_features_max_results,
                     "model_id": test_model["id"],
+                    "selection_mark_detection": processor_job_processor_config_features_selection_mark_detection,
                     "tenancy_id": test_tenancy["id"],
                 }],
-                "processor_type": processor_job_processor_config_processor_type,
-                "document_type": processor_job_processor_config_document_type,
                 "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled,
                 "language": processor_job_processor_config_language,
+                "model_id": test_model["id"],
+                "normalization_fields": [{
+                    "maps": [{
+                        "normalization_type": processor_job_processor_config_normalization_fields_map_normalization_type,
+                    }],
+                }],
             },
             display_name=processor_job_display_name)
         ```
@@ -383,7 +392,9 @@ class ProcessorJob(pulumi.CustomResource):
                     "bucket": processor_job_input_location_object_locations_bucket,
                     "namespace": processor_job_input_location_object_locations_namespace,
                     "object": processor_job_input_location_object_locations_object,
+                    "page_ranges": processor_job_input_location_object_locations_page_range,
                 }],
+                "page_ranges": processor_job_input_location_page_range,
             },
             output_location={
                 "bucket": processor_job_output_location_bucket,
@@ -391,17 +402,24 @@ class ProcessorJob(pulumi.CustomResource):
                 "prefix": processor_job_output_location_prefix,
             },
             processor_config={
+                "processor_type": processor_job_processor_config_processor_type,
+                "document_type": processor_job_processor_config_document_type,
                 "features": [{
                     "feature_type": processor_job_processor_config_features_feature_type,
                     "generate_searchable_pdf": processor_job_processor_config_features_generate_searchable_pdf,
                     "max_results": processor_job_processor_config_features_max_results,
                     "model_id": test_model["id"],
+                    "selection_mark_detection": processor_job_processor_config_features_selection_mark_detection,
                     "tenancy_id": test_tenancy["id"],
                 }],
-                "processor_type": processor_job_processor_config_processor_type,
-                "document_type": processor_job_processor_config_document_type,
                 "is_zip_output_enabled": processor_job_processor_config_is_zip_output_enabled,
                 "language": processor_job_processor_config_language,
+                "model_id": test_model["id"],
+                "normalization_fields": [{
+                    "maps": [{
+                        "normalization_type": processor_job_processor_config_normalization_fields_map_normalization_type,
+                    }],
+                }],
             },
             display_name=processor_job_display_name)
         ```

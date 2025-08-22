@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves general information regarding replication of a specific MySQL server.
+        /// Retrieves general information regarding the replication of a specific MySQL server.
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves general information regarding replication of a specific MySQL server.
+        /// Retrieves general information regarding the replication of a specific MySQL server.
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Retrieves general information regarding replication of a specific MySQL server.
+        /// Retrieves general information regarding the replication of a specific MySQL server.
         /// 
         /// 
         /// ## Example Usage
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string BinaryLogFormat;
         /// <summary>
-        /// Status of binary logging on this server.
+        /// The status of binary logging on this server.
         /// </summary>
         public readonly string BinaryLogging;
         /// <summary>
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string FetchStatusSummary;
         /// <summary>
-        /// Global Transaction Identifier (GTID) mode of this server.
+        /// The Global Transaction Identifier (GTID) mode of this server.
         /// </summary>
         public readonly string GtidMode;
         /// <summary>
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly int InboundReplicationsCount;
         /// <summary>
-        /// The type of the instance. Source, Replica, Primary Group Member, Secondary Group Member, and so on. If the instance is replicating from one or more sources and has one or more replicas, i.e., it belongs to a replication chain, the instance type can be Replica/Source.
+        /// The type of the instance for example, Source, Replica, Primary Group Member, and Secondary Group Member. If the instance is replicating from one or more sources and has one or more replicas, which means, it belongs to a replication chain, the instance type can be Replica/Source.
         /// </summary>
         public readonly string InstanceType;
         /// <summary>

@@ -72,15 +72,18 @@ type LookupDeploymentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	GatewayId string `pulumi:"gatewayId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string              `pulumi:"lifecycleDetails"`
+	Locks            []GetDeploymentLock `pulumi:"locks"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix string `pulumi:"pathPrefix"`
 	// The logical configuration of the API exposed by a deployment.
 	Specifications []GetDeploymentSpecification `pulumi:"specifications"`
 	// The current state of the deployment.
-	State string `pulumi:"state"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -160,9 +163,17 @@ func (o LookupDeploymentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+func (o LookupDeploymentResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupDeploymentResultOutput) Locks() GetDeploymentLockArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentLock { return v.Locks }).(GetDeploymentLockArrayOutput)
 }
 
 // A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
@@ -178,6 +189,10 @@ func (o LookupDeploymentResultOutput) Specifications() GetDeploymentSpecificatio
 // The current state of the deployment.
 func (o LookupDeploymentResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o LookupDeploymentResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

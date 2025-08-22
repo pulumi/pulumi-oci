@@ -77,9 +77,17 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
      */
     public /*out*/ readonly currentKeyInstallCount!: pulumi.Output<number>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) Management Agent install Key Name
      */
     public readonly displayName!: pulumi.Output<string>;
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      */
@@ -96,6 +104,10 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
      * Status of Key
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */
@@ -130,11 +142,14 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["createdByPrincipalId"] = state ? state.createdByPrincipalId : undefined;
             resourceInputs["currentKeyInstallCount"] = state ? state.currentKeyInstallCount : undefined;
+            resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
+            resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isUnlimited"] = state ? state.isUnlimited : undefined;
             resourceInputs["key"] = state ? state.key : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeExpires"] = state ? state.timeExpires : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -153,9 +168,12 @@ export class ManagementAgentInstallKey extends pulumi.CustomResource {
             resourceInputs["timeExpires"] = args ? args.timeExpires : undefined;
             resourceInputs["createdByPrincipalId"] = undefined /*out*/;
             resourceInputs["currentKeyInstallCount"] = undefined /*out*/;
+            resourceInputs["definedTags"] = undefined /*out*/;
+            resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -185,9 +203,17 @@ export interface ManagementAgentInstallKeyState {
      */
     currentKeyInstallCount?: pulumi.Input<number>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     */
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
      * (Updatable) Management Agent install Key Name
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     */
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
      */
@@ -204,6 +230,10 @@ export interface ManagementAgentInstallKeyState {
      * Status of Key
      */
     state?: pulumi.Input<string>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
      */

@@ -9,6 +9,7 @@ import com.pulumi.oci.DataScience.outputs.GetJobsJobJobConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobEnvironmentConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobInfrastructureConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobLogConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobsJobJobNodeConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobsJobJobStorageMountConfigurationDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
@@ -80,6 +81,11 @@ public final class GetJobsJob {
      * 
      */
     private List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    private List<GetJobsJobJobNodeConfigurationDetail> jobNodeConfigurationDetails;
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
@@ -206,6 +212,13 @@ public final class GetJobsJob {
         return this.jobLogConfigurationDetails;
     }
     /**
+     * @return The job node configuration details
+     * 
+     */
+    public List<GetJobsJobJobNodeConfigurationDetail> jobNodeConfigurationDetails() {
+        return this.jobNodeConfigurationDetails;
+    }
+    /**
      * @return Collection of JobStorageMountConfigurationDetails.
      * 
      */
@@ -268,6 +281,7 @@ public final class GetJobsJob {
         private List<GetJobsJobJobEnvironmentConfigurationDetail> jobEnvironmentConfigurationDetails;
         private List<GetJobsJobJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
         private List<GetJobsJobJobLogConfigurationDetail> jobLogConfigurationDetails;
+        private List<GetJobsJobJobNodeConfigurationDetail> jobNodeConfigurationDetails;
         private List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
         private String lifecycleDetails;
         private String projectId;
@@ -294,6 +308,7 @@ public final class GetJobsJob {
     	      this.jobEnvironmentConfigurationDetails = defaults.jobEnvironmentConfigurationDetails;
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
     	      this.jobLogConfigurationDetails = defaults.jobLogConfigurationDetails;
+    	      this.jobNodeConfigurationDetails = defaults.jobNodeConfigurationDetails;
     	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.projectId = defaults.projectId;
@@ -458,6 +473,17 @@ public final class GetJobsJob {
             return jobLogConfigurationDetails(List.of(jobLogConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder jobNodeConfigurationDetails(List<GetJobsJobJobNodeConfigurationDetail> jobNodeConfigurationDetails) {
+            if (jobNodeConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobsJob", "jobNodeConfigurationDetails");
+            }
+            this.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
+            return this;
+        }
+        public Builder jobNodeConfigurationDetails(GetJobsJobJobNodeConfigurationDetail... jobNodeConfigurationDetails) {
+            return jobNodeConfigurationDetails(List.of(jobNodeConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder jobStorageMountConfigurationDetailsLists(List<GetJobsJobJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists) {
             if (jobStorageMountConfigurationDetailsLists == null) {
               throw new MissingRequiredPropertyException("GetJobsJob", "jobStorageMountConfigurationDetailsLists");
@@ -520,6 +546,7 @@ public final class GetJobsJob {
             _resultValue.jobEnvironmentConfigurationDetails = jobEnvironmentConfigurationDetails;
             _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
             _resultValue.jobLogConfigurationDetails = jobLogConfigurationDetails;
+            _resultValue.jobNodeConfigurationDetails = jobNodeConfigurationDetails;
             _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.projectId = projectId;

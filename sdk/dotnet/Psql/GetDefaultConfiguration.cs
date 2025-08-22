@@ -93,11 +93,29 @@ namespace Pulumi.Oci.Psql
 
     public sealed class GetDefaultConfigurationArgs : global::Pulumi.InvokeArgs
     {
+        [Input("compatibleShapes")]
+        private List<string>? _compatibleShapes;
+
+        /// <summary>
+        /// Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public List<string> CompatibleShapes
+        {
+            get => _compatibleShapes ?? (_compatibleShapes = new List<string>());
+            set => _compatibleShapes = value;
+        }
+
         /// <summary>
         /// A unique identifier for the configuration.
         /// </summary>
         [Input("defaultConfigurationId", required: true)]
         public string DefaultConfigurationId { get; set; } = null!;
+
+        /// <summary>
+        /// The name of the shape for the configuration.
+        /// </summary>
+        [Input("shape")]
+        public string? Shape { get; set; }
 
         public GetDefaultConfigurationArgs()
         {
@@ -107,11 +125,29 @@ namespace Pulumi.Oci.Psql
 
     public sealed class GetDefaultConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("compatibleShapes")]
+        private InputList<string>? _compatibleShapes;
+
+        /// <summary>
+        /// Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public InputList<string> CompatibleShapes
+        {
+            get => _compatibleShapes ?? (_compatibleShapes = new InputList<string>());
+            set => _compatibleShapes = value;
+        }
+
         /// <summary>
         /// A unique identifier for the configuration.
         /// </summary>
         [Input("defaultConfigurationId", required: true)]
         public Input<string> DefaultConfigurationId { get; set; } = null!;
+
+        /// <summary>
+        /// The name of the shape for the configuration.
+        /// </summary>
+        [Input("shape")]
+        public Input<string>? Shape { get; set; }
 
         public GetDefaultConfigurationInvokeArgs()
         {
@@ -123,6 +159,10 @@ namespace Pulumi.Oci.Psql
     [OutputType]
     public sealed class GetDefaultConfigurationResult
     {
+        /// <summary>
+        /// Indicates the collection of compatible shapes for this configuration.
+        /// </summary>
+        public readonly ImmutableArray<string> CompatibleShapes;
         /// <summary>
         /// List of default configuration values for databases.
         /// </summary>
@@ -161,7 +201,7 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        /// The name of the shape for the configuration.
         /// </summary>
         public readonly string Shape;
         /// <summary>
@@ -175,6 +215,8 @@ namespace Pulumi.Oci.Psql
 
         [OutputConstructor]
         private GetDefaultConfigurationResult(
+            ImmutableArray<string> compatibleShapes,
+
             ImmutableArray<Outputs.GetDefaultConfigurationConfigurationDetailResult> configurationDetails,
 
             string dbVersion,
@@ -201,6 +243,7 @@ namespace Pulumi.Oci.Psql
 
             string timeCreated)
         {
+            CompatibleShapes = compatibleShapes;
             ConfigurationDetails = configurationDetails;
             DbVersion = dbVersion;
             DefaultConfigurationId = defaultConfigurationId;

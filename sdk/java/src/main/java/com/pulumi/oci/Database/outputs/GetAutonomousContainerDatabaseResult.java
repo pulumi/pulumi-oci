@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseAssociatedBackupConfigurationDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupConfig;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseBackupDestinationPropertiesList;
+import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseCustomerContact;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguard;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseDataguardGroupMember;
 import com.pulumi.oci.Database.outputs.GetAutonomousContainerDatabaseKeyHistoryEntry;
@@ -81,6 +82,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String computeModel;
+    /**
+     * @return Customer Contacts. Setting this to an empty list removes all customer contacts.
+     * 
+     */
+    private List<GetAutonomousContainerDatabaseCustomerContact> customerContacts;
     private String databaseSoftwareImageId;
     /**
      * @return Array of Dg associations.
@@ -240,6 +246,11 @@ public final class GetAutonomousContainerDatabaseResult {
      * 
      */
     private String nextMaintenanceRunId;
+    /**
+     * @return The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    private String okvEndPointGroupName;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
@@ -432,6 +443,13 @@ public final class GetAutonomousContainerDatabaseResult {
      */
     public String computeModel() {
         return this.computeModel;
+    }
+    /**
+     * @return Customer Contacts. Setting this to an empty list removes all customer contacts.
+     * 
+     */
+    public List<GetAutonomousContainerDatabaseCustomerContact> customerContacts() {
+        return this.customerContacts;
     }
     public String databaseSoftwareImageId() {
         return this.databaseSoftwareImageId;
@@ -663,6 +681,13 @@ public final class GetAutonomousContainerDatabaseResult {
         return this.nextMaintenanceRunId;
     }
     /**
+     * @return The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    public String okvEndPointGroupName() {
+        return this.okvEndPointGroupName;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */
@@ -857,6 +882,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private String cloudAutonomousVmClusterId;
         private String compartmentId;
         private String computeModel;
+        private List<GetAutonomousContainerDatabaseCustomerContact> customerContacts;
         private String databaseSoftwareImageId;
         private List<GetAutonomousContainerDatabaseDataguardGroupMember> dataguardGroupMembers;
         private List<GetAutonomousContainerDatabaseDataguard> dataguards;
@@ -892,6 +918,7 @@ public final class GetAutonomousContainerDatabaseResult {
         private Integer memoryPerOracleComputeUnitInGbs;
         private String netServicesArchitecture;
         private String nextMaintenanceRunId;
+        private String okvEndPointGroupName;
         private String patchId;
         private String patchModel;
         private List<GetAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig> peerAutonomousContainerDatabaseBackupConfigs;
@@ -938,6 +965,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.cloudAutonomousVmClusterId = defaults.cloudAutonomousVmClusterId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeModel = defaults.computeModel;
+    	      this.customerContacts = defaults.customerContacts;
     	      this.databaseSoftwareImageId = defaults.databaseSoftwareImageId;
     	      this.dataguardGroupMembers = defaults.dataguardGroupMembers;
     	      this.dataguards = defaults.dataguards;
@@ -973,6 +1001,7 @@ public final class GetAutonomousContainerDatabaseResult {
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.netServicesArchitecture = defaults.netServicesArchitecture;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
+    	      this.okvEndPointGroupName = defaults.okvEndPointGroupName;
     	      this.patchId = defaults.patchId;
     	      this.patchModel = defaults.patchModel;
     	      this.peerAutonomousContainerDatabaseBackupConfigs = defaults.peerAutonomousContainerDatabaseBackupConfigs;
@@ -1110,6 +1139,17 @@ public final class GetAutonomousContainerDatabaseResult {
             }
             this.computeModel = computeModel;
             return this;
+        }
+        @CustomType.Setter
+        public Builder customerContacts(List<GetAutonomousContainerDatabaseCustomerContact> customerContacts) {
+            if (customerContacts == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "customerContacts");
+            }
+            this.customerContacts = customerContacts;
+            return this;
+        }
+        public Builder customerContacts(GetAutonomousContainerDatabaseCustomerContact... customerContacts) {
+            return customerContacts(List.of(customerContacts));
         }
         @CustomType.Setter
         public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
@@ -1410,6 +1450,14 @@ public final class GetAutonomousContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder okvEndPointGroupName(String okvEndPointGroupName) {
+            if (okvEndPointGroupName == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "okvEndPointGroupName");
+            }
+            this.okvEndPointGroupName = okvEndPointGroupName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder patchId(String patchId) {
             if (patchId == null) {
               throw new MissingRequiredPropertyException("GetAutonomousContainerDatabaseResult", "patchId");
@@ -1680,6 +1728,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeModel = computeModel;
+            _resultValue.customerContacts = customerContacts;
             _resultValue.databaseSoftwareImageId = databaseSoftwareImageId;
             _resultValue.dataguardGroupMembers = dataguardGroupMembers;
             _resultValue.dataguards = dataguards;
@@ -1715,6 +1764,7 @@ public final class GetAutonomousContainerDatabaseResult {
             _resultValue.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             _resultValue.netServicesArchitecture = netServicesArchitecture;
             _resultValue.nextMaintenanceRunId = nextMaintenanceRunId;
+            _resultValue.okvEndPointGroupName = okvEndPointGroupName;
             _resultValue.patchId = patchId;
             _resultValue.patchModel = patchModel;
             _resultValue.peerAutonomousContainerDatabaseBackupConfigs = peerAutonomousContainerDatabaseBackupConfigs;

@@ -59,6 +59,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(redisClusterNsgIds)
+ *             .ociCacheConfigSetId(testOciCacheConfigSet.id())
  *             .shardCount(redisClusterShardCount)
  *             .build());
  * 
@@ -218,6 +219,20 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> nsgIds() {
         return this.nsgIds;
+    }
+    /**
+     * (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    @Export(name="ociCacheConfigSetId", refs={String.class}, tree="[0]")
+    private Output<String> ociCacheConfigSetId;
+
+    /**
+     * @return (Updatable) The ID of the corresponding Oracle Cloud Infrastructure Cache Config Set for the cluster.
+     * 
+     */
+    public Output<String> ociCacheConfigSetId() {
+        return this.ociCacheConfigSetId;
     }
     /**
      * The private IP address of the API endpoint for the cluster&#39;s primary node.

@@ -6,7 +6,10 @@ package com.pulumi.oci.ApiGateway;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApiGateway.inputs.CertificateLockArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -107,6 +110,20 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.intermediateCertificates);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<CertificateLockArgs>> locks;
+
+    public Optional<Output<List<CertificateLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * The private key associated with the certificate in pem format.
      * 
@@ -137,6 +154,8 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.intermediateCertificates = $.intermediateCertificates;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.privateKey = $.privateKey;
     }
 
@@ -282,6 +301,28 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder intermediateCertificates(String intermediateCertificates) {
             return intermediateCertificates(Output.of(intermediateCertificates));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        public Builder locks(@Nullable Output<List<CertificateLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<CertificateLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(CertificateLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

@@ -26,6 +26,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly Outputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetails? StepDataflowConfigurationDetails;
         /// <summary>
+        /// The infrastructure configuration details of a pipeline or a step.
+        /// </summary>
+        public readonly Outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails? StepInfrastructureConfigurationDetails;
+        /// <summary>
         /// The name of the step.
         /// </summary>
         public readonly string StepName;
@@ -38,11 +42,14 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             Outputs.PipelineRunStepOverrideDetailStepDataflowConfigurationDetails? stepDataflowConfigurationDetails,
 
+            Outputs.PipelineRunStepOverrideDetailStepInfrastructureConfigurationDetails? stepInfrastructureConfigurationDetails,
+
             string stepName)
         {
             StepConfigurationDetails = stepConfigurationDetails;
             StepContainerConfigurationDetails = stepContainerConfigurationDetails;
             StepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
+            StepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             StepName = stepName;
         }
     }

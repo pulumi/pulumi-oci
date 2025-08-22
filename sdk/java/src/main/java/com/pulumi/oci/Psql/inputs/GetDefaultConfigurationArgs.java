@@ -7,12 +7,30 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetDefaultConfigurationArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetDefaultConfigurationArgs Empty = new GetDefaultConfigurationArgs();
+
+    /**
+     * Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    @Import(name="compatibleShapes")
+    private @Nullable Output<List<String>> compatibleShapes;
+
+    /**
+     * @return Indicates the collection of compatible shapes for this configuration.
+     * 
+     */
+    public Optional<Output<List<String>>> compatibleShapes() {
+        return Optional.ofNullable(this.compatibleShapes);
+    }
 
     /**
      * A unique identifier for the configuration.
@@ -29,10 +47,27 @@ public final class GetDefaultConfigurationArgs extends com.pulumi.resources.Invo
         return this.defaultConfigurationId;
     }
 
+    /**
+     * The name of the shape for the configuration.
+     * 
+     */
+    @Import(name="shape")
+    private @Nullable Output<String> shape;
+
+    /**
+     * @return The name of the shape for the configuration.
+     * 
+     */
+    public Optional<Output<String>> shape() {
+        return Optional.ofNullable(this.shape);
+    }
+
     private GetDefaultConfigurationArgs() {}
 
     private GetDefaultConfigurationArgs(GetDefaultConfigurationArgs $) {
+        this.compatibleShapes = $.compatibleShapes;
         this.defaultConfigurationId = $.defaultConfigurationId;
+        this.shape = $.shape;
     }
 
     public static Builder builder() {
@@ -54,6 +89,37 @@ public final class GetDefaultConfigurationArgs extends com.pulumi.resources.Invo
         }
 
         /**
+         * @param compatibleShapes Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(@Nullable Output<List<String>> compatibleShapes) {
+            $.compatibleShapes = compatibleShapes;
+            return this;
+        }
+
+        /**
+         * @param compatibleShapes Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(List<String> compatibleShapes) {
+            return compatibleShapes(Output.of(compatibleShapes));
+        }
+
+        /**
+         * @param compatibleShapes Indicates the collection of compatible shapes for this configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compatibleShapes(String... compatibleShapes) {
+            return compatibleShapes(List.of(compatibleShapes));
+        }
+
+        /**
          * @param defaultConfigurationId A unique identifier for the configuration.
          * 
          * @return builder
@@ -72,6 +138,27 @@ public final class GetDefaultConfigurationArgs extends com.pulumi.resources.Invo
          */
         public Builder defaultConfigurationId(String defaultConfigurationId) {
             return defaultConfigurationId(Output.of(defaultConfigurationId));
+        }
+
+        /**
+         * @param shape The name of the shape for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(@Nullable Output<String> shape) {
+            $.shape = shape;
+            return this;
+        }
+
+        /**
+         * @param shape The name of the shape for the configuration.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shape(String shape) {
+            return shape(Output.of(shape));
         }
 
         public GetDefaultConfigurationArgs build() {

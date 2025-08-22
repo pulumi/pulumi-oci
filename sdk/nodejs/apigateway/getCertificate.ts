@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -70,10 +72,12 @@ export interface GetCertificateResult {
      * The intermediate certificate data associated with the certificate in pem format.
      */
     readonly intermediateCertificates: string;
+    readonly isLockOverride: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
+    readonly locks: outputs.ApiGateway.GetCertificateLock[];
     readonly privateKey: string;
     /**
      * The current state of the certificate.
@@ -83,6 +87,7 @@ export interface GetCertificateResult {
      * The entity to be secured by the certificate and additional host names.
      */
     readonly subjectNames: string[];
+    readonly systemTags: {[key: string]: string};
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */

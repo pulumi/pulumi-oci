@@ -21,6 +21,7 @@ public final class ProcessorJobProcessorConfigFeature {
      * * `TABLE_EXTRACTION`: Detect and extract data in tables.
      * * `KEY_VALUE_EXTRACTION`: Extract form fields.
      * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+     * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
      * 
      */
     private String featureType;
@@ -35,10 +36,15 @@ public final class ProcessorJobProcessorConfigFeature {
      */
     private @Nullable Integer maxResults;
     /**
-     * @return The custom model ID.
+     * @return Unique identifier custom model OCID that should be used for inference.
      * 
      */
     private @Nullable String modelId;
+    /**
+     * @return Whether checkbox detection feature is enabled or disabled.
+     * 
+     */
+    private @Nullable Boolean selectionMarkDetection;
     /**
      * @return The custom model tenancy ID when modelId represents aliasName.
      * 
@@ -53,6 +59,7 @@ public final class ProcessorJobProcessorConfigFeature {
      * * `TABLE_EXTRACTION`: Detect and extract data in tables.
      * * `KEY_VALUE_EXTRACTION`: Extract form fields.
      * * `DOCUMENT_CLASSIFICATION`: Identify the type of document.
+     * * `DOCUMENT_ELEMENTS_EXTRACTION`: Extract information from bar code
      * 
      */
     public String featureType() {
@@ -73,11 +80,18 @@ public final class ProcessorJobProcessorConfigFeature {
         return Optional.ofNullable(this.maxResults);
     }
     /**
-     * @return The custom model ID.
+     * @return Unique identifier custom model OCID that should be used for inference.
      * 
      */
     public Optional<String> modelId() {
         return Optional.ofNullable(this.modelId);
+    }
+    /**
+     * @return Whether checkbox detection feature is enabled or disabled.
+     * 
+     */
+    public Optional<Boolean> selectionMarkDetection() {
+        return Optional.ofNullable(this.selectionMarkDetection);
     }
     /**
      * @return The custom model tenancy ID when modelId represents aliasName.
@@ -100,6 +114,7 @@ public final class ProcessorJobProcessorConfigFeature {
         private @Nullable Boolean generateSearchablePdf;
         private @Nullable Integer maxResults;
         private @Nullable String modelId;
+        private @Nullable Boolean selectionMarkDetection;
         private @Nullable String tenancyId;
         public Builder() {}
         public Builder(ProcessorJobProcessorConfigFeature defaults) {
@@ -108,6 +123,7 @@ public final class ProcessorJobProcessorConfigFeature {
     	      this.generateSearchablePdf = defaults.generateSearchablePdf;
     	      this.maxResults = defaults.maxResults;
     	      this.modelId = defaults.modelId;
+    	      this.selectionMarkDetection = defaults.selectionMarkDetection;
     	      this.tenancyId = defaults.tenancyId;
         }
 
@@ -138,6 +154,12 @@ public final class ProcessorJobProcessorConfigFeature {
             return this;
         }
         @CustomType.Setter
+        public Builder selectionMarkDetection(@Nullable Boolean selectionMarkDetection) {
+
+            this.selectionMarkDetection = selectionMarkDetection;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tenancyId(@Nullable String tenancyId) {
 
             this.tenancyId = tenancyId;
@@ -149,6 +171,7 @@ public final class ProcessorJobProcessorConfigFeature {
             _resultValue.generateSearchablePdf = generateSearchablePdf;
             _resultValue.maxResults = maxResults;
             _resultValue.modelId = modelId;
+            _resultValue.selectionMarkDetection = selectionMarkDetection;
             _resultValue.tenancyId = tenancyId;
             return _resultValue;
         }

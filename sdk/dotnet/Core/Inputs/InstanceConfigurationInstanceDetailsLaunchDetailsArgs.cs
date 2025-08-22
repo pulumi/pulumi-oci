@@ -49,6 +49,12 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
+        /// </summary>
+        [Input("computeClusterId")]
+        public Input<string>? ComputeClusterId { get; set; }
+
+        /// <summary>
         /// Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         /// </summary>
         [Input("createVnicDetails")]
@@ -205,6 +211,12 @@ namespace Pulumi.Oci.Core.Inputs
             get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
+
+        /// <summary>
+        /// The details for providing placement constraints.
+        /// </summary>
+        [Input("placementConstraintDetails")]
+        public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlacementConstraintDetailsArgs>? PlacementConstraintDetails { get; set; }
 
         /// <summary>
         /// (Optional) (Updatable only for VM's) The platform configuration requested for the instance.

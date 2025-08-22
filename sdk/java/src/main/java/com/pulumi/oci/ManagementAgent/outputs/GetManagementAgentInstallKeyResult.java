@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -33,10 +34,20 @@ public final class GetManagementAgentInstallKeyResult {
      */
     private Integer currentKeyInstallCount;
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,String> definedTags;
+    /**
      * @return Management Agent Install Key Name
      * 
      */
     private String displayName;
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    private Map<String,String> freeformTags;
     /**
      * @return Agent install Key identifier
      * 
@@ -63,6 +74,11 @@ public final class GetManagementAgentInstallKeyResult {
      * 
      */
     private String state;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
     /**
      * @return The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
@@ -109,11 +125,25 @@ public final class GetManagementAgentInstallKeyResult {
         return this.currentKeyInstallCount;
     }
     /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,String> definedTags() {
+        return this.definedTags;
+    }
+    /**
      * @return Management Agent Install Key Name
      * 
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * 
+     */
+    public Map<String,String> freeformTags() {
+        return this.freeformTags;
     }
     /**
      * @return Agent install Key identifier
@@ -154,6 +184,13 @@ public final class GetManagementAgentInstallKeyResult {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return The time when Management Agent install Key was created. An RFC3339 formatted date time string
      * 
      */
@@ -188,13 +225,16 @@ public final class GetManagementAgentInstallKeyResult {
         private String compartmentId;
         private String createdByPrincipalId;
         private Integer currentKeyInstallCount;
+        private Map<String,String> definedTags;
         private String displayName;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isUnlimited;
         private String key;
         private String lifecycleDetails;
         private String managementAgentInstallKeyId;
         private String state;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeExpires;
         private String timeUpdated;
@@ -205,13 +245,16 @@ public final class GetManagementAgentInstallKeyResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.createdByPrincipalId = defaults.createdByPrincipalId;
     	      this.currentKeyInstallCount = defaults.currentKeyInstallCount;
+    	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isUnlimited = defaults.isUnlimited;
     	      this.key = defaults.key;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managementAgentInstallKeyId = defaults.managementAgentInstallKeyId;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeExpires = defaults.timeExpires;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -250,11 +293,27 @@ public final class GetManagementAgentInstallKeyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder definedTags(Map<String,String> definedTags) {
+            if (definedTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeyResult", "definedTags");
+            }
+            this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetManagementAgentInstallKeyResult", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder freeformTags(Map<String,String> freeformTags) {
+            if (freeformTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeyResult", "freeformTags");
+            }
+            this.freeformTags = freeformTags;
             return this;
         }
         @CustomType.Setter
@@ -306,6 +365,14 @@ public final class GetManagementAgentInstallKeyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetManagementAgentInstallKeyResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetManagementAgentInstallKeyResult", "timeCreated");
@@ -335,13 +402,16 @@ public final class GetManagementAgentInstallKeyResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.createdByPrincipalId = createdByPrincipalId;
             _resultValue.currentKeyInstallCount = currentKeyInstallCount;
+            _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isUnlimited = isUnlimited;
             _resultValue.key = key;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managementAgentInstallKeyId = managementAgentInstallKeyId;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeExpires = timeExpires;
             _resultValue.timeUpdated = timeUpdated;

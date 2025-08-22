@@ -10,13 +10,16 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.AiDocument.ModelArgs;
 import com.pulumi.oci.AiDocument.inputs.ModelState;
 import com.pulumi.oci.AiDocument.outputs.ModelComponentModel;
+import com.pulumi.oci.AiDocument.outputs.ModelLock;
 import com.pulumi.oci.AiDocument.outputs.ModelMetric;
+import com.pulumi.oci.AiDocument.outputs.ModelModelSubType;
 import com.pulumi.oci.AiDocument.outputs.ModelTestingDataset;
 import com.pulumi.oci.AiDocument.outputs.ModelTrainingDataset;
 import com.pulumi.oci.AiDocument.outputs.ModelValidationDataset;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -126,6 +129,20 @@ public class Model extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) Number of replicas required for this model.
+     * 
+     */
+    @Export(name="inferenceUnits", refs={Integer.class}, tree="[0]")
+    private Output<Integer> inferenceUnits;
+
+    /**
+     * @return (Updatable) Number of replicas required for this model.
+     * 
+     */
+    public Output<Integer> inferenceUnits() {
+        return this.inferenceUnits;
+    }
+    /**
      * Set to true when the model is created by using multiple key value extraction models.
      * 
      */
@@ -168,6 +185,20 @@ public class Model extends com.pulumi.resources.CustomResource {
         return this.labels;
     }
     /**
+     * The document language for model training, abbreviated according to the BCP 47 syntax.
+     * 
+     */
+    @Export(name="language", refs={String.class}, tree="[0]")
+    private Output<String> language;
+
+    /**
+     * @return The document language for model training, abbreviated according to the BCP 47 syntax.
+     * 
+     */
+    public Output<String> language() {
+        return this.language;
+    }
+    /**
      * A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
@@ -180,6 +211,20 @@ public class Model extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,ModelLock.class}, tree="[0,1]")
+    private Output<List<ModelLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<ModelLock>> locks() {
+        return this.locks;
     }
     /**
      * The maximum model training time in hours, expressed as a decimal fraction.
@@ -214,6 +259,20 @@ public class Model extends com.pulumi.resources.CustomResource {
 
     public Output<Optional<String>> modelId() {
         return Codegen.optional(this.modelId);
+    }
+    /**
+     * Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     * 
+     */
+    @Export(name="modelSubType", refs={ModelModelSubType.class}, tree="[0]")
+    private Output<ModelModelSubType> modelSubType;
+
+    /**
+     * @return Applicable to only PRE_TRAINED_KEY_VALUE_EXTRACTION, PRE_TRAINED_DOCUMENT_ELEMENTS_EXTRACTION.
+     * 
+     */
+    public Output<ModelModelSubType> modelSubType() {
+        return this.modelSubType;
     }
     /**
      * The type of the Document model.

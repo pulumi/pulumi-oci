@@ -8,6 +8,56 @@ import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
 import com.pulumi.deployment.InvokeOptions;
 import com.pulumi.deployment.InvokeOutputOptions;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstanceArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstanceArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomeArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodeArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodePlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesPlainArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabaseArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetDbManagementPrivateEndpointAssociatedDatabasePlainArgs;
@@ -230,6 +280,31 @@ import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialPlainArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsArgs;
 import com.pulumi.oci.DatabaseManagement.inputs.GetNamedCredentialsPlainArgs;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmConfigurationResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmDiskGroupsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmInstanceResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmInstancesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmUsersResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudAsmsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudClusterInstanceResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudClusterInstancesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudClusterResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudClustersResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDatabasesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbHomeResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbHomesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbNodeResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbNodesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemConnectorResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemConnectorsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemDiscoveriesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemDiscoveryResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudDbSystemsResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudListenerResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudListenerServicesResult;
+import com.pulumi.oci.DatabaseManagement.outputs.GetCloudListenersResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabaseResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointAssociatedDatabasesResult;
 import com.pulumi.oci.DatabaseManagement.outputs.GetDbManagementPrivateEndpointResult;
@@ -345,6 +420,6387 @@ import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
 public final class DatabaseManagementFunctions {
+    /**
+     * This data source provides details about a specific Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmResult> getCloudAsm(GetCloudAsmArgs args) {
+        return getCloudAsm(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmResult> getCloudAsmPlain(GetCloudAsmPlainArgs args) {
+        return getCloudAsmPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmResult> getCloudAsm(GetCloudAsmArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsm:getCloudAsm", TypeShape.of(GetCloudAsmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmResult> getCloudAsm(GetCloudAsmArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsm:getCloudAsm", TypeShape.of(GetCloudAsmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsm = DatabaseManagementFunctions.getCloudAsm(GetCloudAsmArgs.builder()
+     *             .cloudAsmId(testCloudAsmOciDatabaseManagementCloudAsm.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmResult> getCloudAsmPlain(GetCloudAsmPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsm:getCloudAsm", TypeShape.of(GetCloudAsmResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmConfigurationResult> getCloudAsmConfiguration(GetCloudAsmConfigurationArgs args) {
+        return getCloudAsmConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmConfigurationResult> getCloudAsmConfigurationPlain(GetCloudAsmConfigurationPlainArgs args) {
+        return getCloudAsmConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmConfigurationResult> getCloudAsmConfiguration(GetCloudAsmConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmConfiguration:getCloudAsmConfiguration", TypeShape.of(GetCloudAsmConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmConfigurationResult> getCloudAsmConfiguration(GetCloudAsmConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmConfiguration:getCloudAsmConfiguration", TypeShape.of(GetCloudAsmConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Configuration resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets configuration details including disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmConfiguration = DatabaseManagementFunctions.getCloudAsmConfiguration(GetCloudAsmConfigurationArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmConfigurationOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmConfigurationResult> getCloudAsmConfigurationPlain(GetCloudAsmConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsmConfiguration:getCloudAsmConfiguration", TypeShape.of(GetCloudAsmConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmDiskGroupsResult> getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs args) {
+        return getCloudAsmDiskGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmDiskGroupsResult> getCloudAsmDiskGroupsPlain(GetCloudAsmDiskGroupsPlainArgs args) {
+        return getCloudAsmDiskGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmDiskGroupsResult> getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmDiskGroups:getCloudAsmDiskGroups", TypeShape.of(GetCloudAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmDiskGroupsResult> getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmDiskGroups:getCloudAsmDiskGroups", TypeShape.of(GetCloudAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmDiskGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmDiskGroups = DatabaseManagementFunctions.getCloudAsmDiskGroups(GetCloudAsmDiskGroupsArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmDiskGroupOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmDiskGroupsResult> getCloudAsmDiskGroupsPlain(GetCloudAsmDiskGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsmDiskGroups:getCloudAsmDiskGroups", TypeShape.of(GetCloudAsmDiskGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM instance specified by `cloudAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstanceResult> getCloudAsmInstance(GetCloudAsmInstanceArgs args) {
+        return getCloudAsmInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM instance specified by `cloudAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmInstanceResult> getCloudAsmInstancePlain(GetCloudAsmInstancePlainArgs args) {
+        return getCloudAsmInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM instance specified by `cloudAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstanceResult> getCloudAsmInstance(GetCloudAsmInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmInstance:getCloudAsmInstance", TypeShape.of(GetCloudAsmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM instance specified by `cloudAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstanceResult> getCloudAsmInstance(GetCloudAsmInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmInstance:getCloudAsmInstance", TypeShape.of(GetCloudAsmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Asm Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud ASM instance specified by `cloudAsmInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstance = DatabaseManagementFunctions.getCloudAsmInstance(GetCloudAsmInstanceArgs.builder()
+     *             .cloudAsmInstanceId(testCloudAsmInstanceOciDatabaseManagementCloudAsmInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmInstanceResult> getCloudAsmInstancePlain(GetCloudAsmInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsmInstance:getCloudAsmInstance", TypeShape.of(GetCloudAsmInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstancesResult> getCloudAsmInstances() {
+        return getCloudAsmInstances(GetCloudAsmInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmInstancesResult> getCloudAsmInstancesPlain() {
+        return getCloudAsmInstancesPlain(GetCloudAsmInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstancesResult> getCloudAsmInstances(GetCloudAsmInstancesArgs args) {
+        return getCloudAsmInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmInstancesResult> getCloudAsmInstancesPlain(GetCloudAsmInstancesPlainArgs args) {
+        return getCloudAsmInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstancesResult> getCloudAsmInstances(GetCloudAsmInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmInstances:getCloudAsmInstances", TypeShape.of(GetCloudAsmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmInstancesResult> getCloudAsmInstances(GetCloudAsmInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmInstances:getCloudAsmInstances", TypeShape.of(GetCloudAsmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASM instances in the specified cloud ASM.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmInstances = DatabaseManagementFunctions.getCloudAsmInstances(GetCloudAsmInstancesArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmInstancesResult> getCloudAsmInstancesPlain(GetCloudAsmInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsmInstances:getCloudAsmInstances", TypeShape.of(GetCloudAsmInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmUsersResult> getCloudAsmUsers(GetCloudAsmUsersArgs args) {
+        return getCloudAsmUsers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmUsersResult> getCloudAsmUsersPlain(GetCloudAsmUsersPlainArgs args) {
+        return getCloudAsmUsersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmUsersResult> getCloudAsmUsers(GetCloudAsmUsersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmUsers:getCloudAsmUsers", TypeShape.of(GetCloudAsmUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmUsersResult> getCloudAsmUsers(GetCloudAsmUsersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsmUsers:getCloudAsmUsers", TypeShape.of(GetCloudAsmUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asm Users in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists ASM users for the cloud ASM specified by `cloudAsmId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmUsersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsmUsers = DatabaseManagementFunctions.getCloudAsmUsers(GetCloudAsmUsersArgs.builder()
+     *             .cloudAsmId(testCloudAsm.id())
+     *             .opcNamedCredentialId(cloudAsmUserOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmUsersResult> getCloudAsmUsersPlain(GetCloudAsmUsersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsmUsers:getCloudAsmUsers", TypeShape.of(GetCloudAsmUsersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmsResult> getCloudAsms() {
+        return getCloudAsms(GetCloudAsmsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmsResult> getCloudAsmsPlain() {
+        return getCloudAsmsPlain(GetCloudAsmsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmsResult> getCloudAsms(GetCloudAsmsArgs args) {
+        return getCloudAsms(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmsResult> getCloudAsmsPlain(GetCloudAsmsPlainArgs args) {
+        return getCloudAsmsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmsResult> getCloudAsms(GetCloudAsmsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsms:getCloudAsms", TypeShape.of(GetCloudAsmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudAsmsResult> getCloudAsms(GetCloudAsmsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudAsms:getCloudAsms", TypeShape.of(GetCloudAsmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Asms in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the ASMs in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudAsmsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudAsms = DatabaseManagementFunctions.getCloudAsms(GetCloudAsmsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudAsmDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudAsmsResult> getCloudAsmsPlain(GetCloudAsmsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudAsms:getCloudAsms", TypeShape.of(GetCloudAsmsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster specified by `cloudClusterId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterResult> getCloudCluster(GetCloudClusterArgs args) {
+        return getCloudCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster specified by `cloudClusterId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterResult> getCloudClusterPlain(GetCloudClusterPlainArgs args) {
+        return getCloudClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster specified by `cloudClusterId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterResult> getCloudCluster(GetCloudClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudCluster:getCloudCluster", TypeShape.of(GetCloudClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster specified by `cloudClusterId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterResult> getCloudCluster(GetCloudClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudCluster:getCloudCluster", TypeShape.of(GetCloudClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster specified by `cloudClusterId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudCluster = DatabaseManagementFunctions.getCloudCluster(GetCloudClusterArgs.builder()
+     *             .cloudClusterId(testCloudClusterOciDatabaseManagementCloudCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterResult> getCloudClusterPlain(GetCloudClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudCluster:getCloudCluster", TypeShape.of(GetCloudClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster instance specified by `cloudClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstanceResult> getCloudClusterInstance(GetCloudClusterInstanceArgs args) {
+        return getCloudClusterInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster instance specified by `cloudClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterInstanceResult> getCloudClusterInstancePlain(GetCloudClusterInstancePlainArgs args) {
+        return getCloudClusterInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster instance specified by `cloudClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstanceResult> getCloudClusterInstance(GetCloudClusterInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudClusterInstance:getCloudClusterInstance", TypeShape.of(GetCloudClusterInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster instance specified by `cloudClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstanceResult> getCloudClusterInstance(GetCloudClusterInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudClusterInstance:getCloudClusterInstance", TypeShape.of(GetCloudClusterInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Cluster Instance resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud cluster instance specified by `cloudClusterInstanceId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstanceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstance = DatabaseManagementFunctions.getCloudClusterInstance(GetCloudClusterInstanceArgs.builder()
+     *             .cloudClusterInstanceId(testCloudClusterInstanceOciDatabaseManagementCloudClusterInstance.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterInstanceResult> getCloudClusterInstancePlain(GetCloudClusterInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudClusterInstance:getCloudClusterInstance", TypeShape.of(GetCloudClusterInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstancesResult> getCloudClusterInstances() {
+        return getCloudClusterInstances(GetCloudClusterInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterInstancesResult> getCloudClusterInstancesPlain() {
+        return getCloudClusterInstancesPlain(GetCloudClusterInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstancesResult> getCloudClusterInstances(GetCloudClusterInstancesArgs args) {
+        return getCloudClusterInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterInstancesResult> getCloudClusterInstancesPlain(GetCloudClusterInstancesPlainArgs args) {
+        return getCloudClusterInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstancesResult> getCloudClusterInstances(GetCloudClusterInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudClusterInstances:getCloudClusterInstances", TypeShape.of(GetCloudClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClusterInstancesResult> getCloudClusterInstances(GetCloudClusterInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudClusterInstances:getCloudClusterInstances", TypeShape.of(GetCloudClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Cluster Instances in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cluster instances in the specified cloud cluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClusterInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusterInstances = DatabaseManagementFunctions.getCloudClusterInstances(GetCloudClusterInstancesArgs.builder()
+     *             .cloudClusterId(testCloudCluster.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterInstanceDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClusterInstancesResult> getCloudClusterInstancesPlain(GetCloudClusterInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudClusterInstances:getCloudClusterInstances", TypeShape.of(GetCloudClusterInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClustersResult> getCloudClusters() {
+        return getCloudClusters(GetCloudClustersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClustersResult> getCloudClustersPlain() {
+        return getCloudClustersPlain(GetCloudClustersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClustersResult> getCloudClusters(GetCloudClustersArgs args) {
+        return getCloudClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClustersResult> getCloudClustersPlain(GetCloudClustersPlainArgs args) {
+        return getCloudClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClustersResult> getCloudClusters(GetCloudClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudClusters:getCloudClusters", TypeShape.of(GetCloudClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudClustersResult> getCloudClusters(GetCloudClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudClusters:getCloudClusters", TypeShape.of(GetCloudClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Clusters in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the clusters in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudClusters = DatabaseManagementFunctions.getCloudClusters(GetCloudClustersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudClusterDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudClustersResult> getCloudClustersPlain(GetCloudClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudClusters:getCloudClusters", TypeShape.of(GetCloudClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDatabaseDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDatabasesResult> getCloudDatabases(GetCloudDatabasesArgs args) {
+        return getCloudDatabases(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDatabaseDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDatabasesResult> getCloudDatabasesPlain(GetCloudDatabasesPlainArgs args) {
+        return getCloudDatabasesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDatabaseDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDatabasesResult> getCloudDatabases(GetCloudDatabasesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDatabases:getCloudDatabases", TypeShape.of(GetCloudDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDatabaseDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDatabasesResult> getCloudDatabases(GetCloudDatabasesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDatabases:getCloudDatabases", TypeShape.of(GetCloudDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Databases in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud databases in the specified compartment or in the specified DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDatabasesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDatabases = DatabaseManagementFunctions.getCloudDatabases(GetCloudDatabasesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDatabaseDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDatabasesResult> getCloudDatabasesPlain(GetCloudDatabasesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDatabases:getCloudDatabases", TypeShape.of(GetCloudDatabasesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB home specified by `cloudDbHomeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomeResult> getCloudDbHome(GetCloudDbHomeArgs args) {
+        return getCloudDbHome(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB home specified by `cloudDbHomeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbHomeResult> getCloudDbHomePlain(GetCloudDbHomePlainArgs args) {
+        return getCloudDbHomePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB home specified by `cloudDbHomeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomeResult> getCloudDbHome(GetCloudDbHomeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbHome:getCloudDbHome", TypeShape.of(GetCloudDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB home specified by `cloudDbHomeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomeResult> getCloudDbHome(GetCloudDbHomeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbHome:getCloudDbHome", TypeShape.of(GetCloudDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Home resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB home specified by `cloudDbHomeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHome = DatabaseManagementFunctions.getCloudDbHome(GetCloudDbHomeArgs.builder()
+     *             .cloudDbHomeId(testCloudDbHomeOciDatabaseManagementCloudDbHome.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbHomeResult> getCloudDbHomePlain(GetCloudDbHomePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbHome:getCloudDbHome", TypeShape.of(GetCloudDbHomeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomesResult> getCloudDbHomes() {
+        return getCloudDbHomes(GetCloudDbHomesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbHomesResult> getCloudDbHomesPlain() {
+        return getCloudDbHomesPlain(GetCloudDbHomesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomesResult> getCloudDbHomes(GetCloudDbHomesArgs args) {
+        return getCloudDbHomes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbHomesResult> getCloudDbHomesPlain(GetCloudDbHomesPlainArgs args) {
+        return getCloudDbHomesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomesResult> getCloudDbHomes(GetCloudDbHomesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbHomes:getCloudDbHomes", TypeShape.of(GetCloudDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbHomesResult> getCloudDbHomes(GetCloudDbHomesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbHomes:getCloudDbHomes", TypeShape.of(GetCloudDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Homes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the DB homes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbHomesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbHomes = DatabaseManagementFunctions.getCloudDbHomes(GetCloudDbHomesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbHomeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbHomesResult> getCloudDbHomesPlain(GetCloudDbHomesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbHomes:getCloudDbHomes", TypeShape.of(GetCloudDbHomesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB node specified by `cloudDbNodeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodeResult> getCloudDbNode(GetCloudDbNodeArgs args) {
+        return getCloudDbNode(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB node specified by `cloudDbNodeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbNodeResult> getCloudDbNodePlain(GetCloudDbNodePlainArgs args) {
+        return getCloudDbNodePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB node specified by `cloudDbNodeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodeResult> getCloudDbNode(GetCloudDbNodeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbNode:getCloudDbNode", TypeShape.of(GetCloudDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB node specified by `cloudDbNodeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodeResult> getCloudDbNode(GetCloudDbNodeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbNode:getCloudDbNode", TypeShape.of(GetCloudDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db Node resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB node specified by `cloudDbNodeId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodeArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNode = DatabaseManagementFunctions.getCloudDbNode(GetCloudDbNodeArgs.builder()
+     *             .cloudDbNodeId(testCloudDbNodeOciDatabaseManagementCloudDbNode.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbNodeResult> getCloudDbNodePlain(GetCloudDbNodePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbNode:getCloudDbNode", TypeShape.of(GetCloudDbNodeResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodesResult> getCloudDbNodes() {
+        return getCloudDbNodes(GetCloudDbNodesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbNodesResult> getCloudDbNodesPlain() {
+        return getCloudDbNodesPlain(GetCloudDbNodesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodesResult> getCloudDbNodes(GetCloudDbNodesArgs args) {
+        return getCloudDbNodes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbNodesResult> getCloudDbNodesPlain(GetCloudDbNodesPlainArgs args) {
+        return getCloudDbNodesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodesResult> getCloudDbNodes(GetCloudDbNodesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbNodes:getCloudDbNodes", TypeShape.of(GetCloudDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbNodesResult> getCloudDbNodes(GetCloudDbNodesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbNodes:getCloudDbNodes", TypeShape.of(GetCloudDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Nodes in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB nodes in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbNodesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbNodes = DatabaseManagementFunctions.getCloudDbNodes(GetCloudDbNodesArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbNodeDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbNodesResult> getCloudDbNodesPlain(GetCloudDbNodesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbNodes:getCloudDbNodes", TypeShape.of(GetCloudDbNodesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system specified by `cloudDbSystemId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemResult> getCloudDbSystem(GetCloudDbSystemArgs args) {
+        return getCloudDbSystem(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system specified by `cloudDbSystemId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemResult> getCloudDbSystemPlain(GetCloudDbSystemPlainArgs args) {
+        return getCloudDbSystemPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system specified by `cloudDbSystemId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemResult> getCloudDbSystem(GetCloudDbSystemArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystem:getCloudDbSystem", TypeShape.of(GetCloudDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system specified by `cloudDbSystemId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemResult> getCloudDbSystem(GetCloudDbSystemArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystem:getCloudDbSystem", TypeShape.of(GetCloudDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system specified by `cloudDbSystemId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystem = DatabaseManagementFunctions.getCloudDbSystem(GetCloudDbSystemArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystemOciDatabaseManagementCloudDbSystem.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemResult> getCloudDbSystemPlain(GetCloudDbSystemPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystem:getCloudDbSystem", TypeShape.of(GetCloudDbSystemResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud connector specified by `cloudDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorResult> getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs args) {
+        return getCloudDbSystemConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud connector specified by `cloudDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemConnectorResult> getCloudDbSystemConnectorPlain(GetCloudDbSystemConnectorPlainArgs args) {
+        return getCloudDbSystemConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud connector specified by `cloudDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorResult> getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemConnector:getCloudDbSystemConnector", TypeShape.of(GetCloudDbSystemConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud connector specified by `cloudDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorResult> getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemConnector:getCloudDbSystemConnector", TypeShape.of(GetCloudDbSystemConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Connector resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud connector specified by `cloudDbSystemConnectorId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnector = DatabaseManagementFunctions.getCloudDbSystemConnector(GetCloudDbSystemConnectorArgs.builder()
+     *             .cloudDbSystemConnectorId(testCloudDbSystemConnectorOciDatabaseManagementCloudDbSystemConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemConnectorResult> getCloudDbSystemConnectorPlain(GetCloudDbSystemConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystemConnector:getCloudDbSystemConnector", TypeShape.of(GetCloudDbSystemConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectors() {
+        return getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectorsPlain() {
+        return getCloudDbSystemConnectorsPlain(GetCloudDbSystemConnectorsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs args) {
+        return getCloudDbSystemConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectorsPlain(GetCloudDbSystemConnectorsPlainArgs args) {
+        return getCloudDbSystemConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemConnectors:getCloudDbSystemConnectors", TypeShape.of(GetCloudDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemConnectors:getCloudDbSystemConnectors", TypeShape.of(GetCloudDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db System Connectors in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud connectors in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemConnectors = DatabaseManagementFunctions.getCloudDbSystemConnectors(GetCloudDbSystemConnectorsArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemConnectorDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemConnectorsResult> getCloudDbSystemConnectorsPlain(GetCloudDbSystemConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystemConnectors:getCloudDbSystemConnectors", TypeShape.of(GetCloudDbSystemConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscoveries = DatabaseManagementFunctions.getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemDiscoveryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemDiscoveriesResult> getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs args) {
+        return getCloudDbSystemDiscoveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscoveries = DatabaseManagementFunctions.getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemDiscoveryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemDiscoveriesResult> getCloudDbSystemDiscoveriesPlain(GetCloudDbSystemDiscoveriesPlainArgs args) {
+        return getCloudDbSystemDiscoveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscoveries = DatabaseManagementFunctions.getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemDiscoveryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemDiscoveriesResult> getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemDiscoveries:getCloudDbSystemDiscoveries", TypeShape.of(GetCloudDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscoveries = DatabaseManagementFunctions.getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemDiscoveryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemDiscoveriesResult> getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemDiscoveries:getCloudDbSystemDiscoveries", TypeShape.of(GetCloudDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db System Discoveries in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB system discovery resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscoveries = DatabaseManagementFunctions.getCloudDbSystemDiscoveries(GetCloudDbSystemDiscoveriesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudDbSystemDiscoveryDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemDiscoveriesResult> getCloudDbSystemDiscoveriesPlain(GetCloudDbSystemDiscoveriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystemDiscoveries:getCloudDbSystemDiscoveries", TypeShape.of(GetCloudDbSystemDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system discovery resource specified by `cloudDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemDiscoveryResult> getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs args) {
+        return getCloudDbSystemDiscovery(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system discovery resource specified by `cloudDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemDiscoveryResult> getCloudDbSystemDiscoveryPlain(GetCloudDbSystemDiscoveryPlainArgs args) {
+        return getCloudDbSystemDiscoveryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system discovery resource specified by `cloudDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemDiscoveryResult> getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemDiscovery:getCloudDbSystemDiscovery", TypeShape.of(GetCloudDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system discovery resource specified by `cloudDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemDiscoveryResult> getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystemDiscovery:getCloudDbSystemDiscovery", TypeShape.of(GetCloudDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Db System Discovery resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud DB system discovery resource specified by `cloudDbSystemDiscoveryId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemDiscoveryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystemDiscovery = DatabaseManagementFunctions.getCloudDbSystemDiscovery(GetCloudDbSystemDiscoveryArgs.builder()
+     *             .cloudDbSystemDiscoveryId(testCloudDbSystemDiscoveryOciDatabaseManagementCloudDbSystemDiscovery.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemDiscoveryResult> getCloudDbSystemDiscoveryPlain(GetCloudDbSystemDiscoveryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystemDiscovery:getCloudDbSystemDiscovery", TypeShape.of(GetCloudDbSystemDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .deploymentType(cloudDbSystemDeploymentType)
+     *             .displayName(cloudDbSystemDisplayName)
+     *             .state(cloudDbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemsResult> getCloudDbSystems(GetCloudDbSystemsArgs args) {
+        return getCloudDbSystems(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .deploymentType(cloudDbSystemDeploymentType)
+     *             .displayName(cloudDbSystemDisplayName)
+     *             .state(cloudDbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemsResult> getCloudDbSystemsPlain(GetCloudDbSystemsPlainArgs args) {
+        return getCloudDbSystemsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .deploymentType(cloudDbSystemDeploymentType)
+     *             .displayName(cloudDbSystemDisplayName)
+     *             .state(cloudDbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemsResult> getCloudDbSystems(GetCloudDbSystemsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystems:getCloudDbSystems", TypeShape.of(GetCloudDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .deploymentType(cloudDbSystemDeploymentType)
+     *             .displayName(cloudDbSystemDisplayName)
+     *             .state(cloudDbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudDbSystemsResult> getCloudDbSystems(GetCloudDbSystemsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudDbSystems:getCloudDbSystems", TypeShape.of(GetCloudDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Db Systems in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the cloud DB systems in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudDbSystemsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudDbSystems = DatabaseManagementFunctions.getCloudDbSystems(GetCloudDbSystemsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .dbaasParentInfrastructureId(testDbaasParentInfrastructure.id())
+     *             .deploymentType(cloudDbSystemDeploymentType)
+     *             .displayName(cloudDbSystemDisplayName)
+     *             .state(cloudDbSystemState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudDbSystemsResult> getCloudDbSystemsPlain(GetCloudDbSystemsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudDbSystems:getCloudDbSystems", TypeShape.of(GetCloudDbSystemsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud listener specified by `cloudListenerId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenerResult> getCloudListener(GetCloudListenerArgs args) {
+        return getCloudListener(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud listener specified by `cloudListenerId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenerResult> getCloudListenerPlain(GetCloudListenerPlainArgs args) {
+        return getCloudListenerPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud listener specified by `cloudListenerId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenerResult> getCloudListener(GetCloudListenerArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudListener:getCloudListener", TypeShape.of(GetCloudListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud listener specified by `cloudListenerId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenerResult> getCloudListener(GetCloudListenerArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudListener:getCloudListener", TypeShape.of(GetCloudListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Cloud Listener resource in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Gets the details for the cloud listener specified by `cloudListenerId`.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListener = DatabaseManagementFunctions.getCloudListener(GetCloudListenerArgs.builder()
+     *             .cloudListenerId(testCloudListenerOciDatabaseManagementCloudListener.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenerResult> getCloudListenerPlain(GetCloudListenerPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudListener:getCloudListener", TypeShape.of(GetCloudListenerResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified cloud listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
+     *             .cloudListenerId(testCloudListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenerServicesResult> getCloudListenerServices(GetCloudListenerServicesArgs args) {
+        return getCloudListenerServices(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified cloud listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
+     *             .cloudListenerId(testCloudListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenerServicesResult> getCloudListenerServicesPlain(GetCloudListenerServicesPlainArgs args) {
+        return getCloudListenerServicesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified cloud listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
+     *             .cloudListenerId(testCloudListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenerServicesResult> getCloudListenerServices(GetCloudListenerServicesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudListenerServices:getCloudListenerServices", TypeShape.of(GetCloudListenerServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified cloud listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
+     *             .cloudListenerId(testCloudListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenerServicesResult> getCloudListenerServices(GetCloudListenerServicesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudListenerServices:getCloudListenerServices", TypeShape.of(GetCloudListenerServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Listener Services in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the database services registered with the specified cloud listener
+     * for the specified Managed Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenerServicesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListenerServices = DatabaseManagementFunctions.getCloudListenerServices(GetCloudListenerServicesArgs.builder()
+     *             .cloudListenerId(testCloudListener.id())
+     *             .managedDatabaseId(testManagedDatabase.id())
+     *             .opcNamedCredentialId(cloudListenerServiceOpcNamedCredentialId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenerServicesResult> getCloudListenerServicesPlain(GetCloudListenerServicesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudListenerServices:getCloudListenerServices", TypeShape.of(GetCloudListenerServicesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenersResult> getCloudListeners() {
+        return getCloudListeners(GetCloudListenersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenersResult> getCloudListenersPlain() {
+        return getCloudListenersPlain(GetCloudListenersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenersResult> getCloudListeners(GetCloudListenersArgs args) {
+        return getCloudListeners(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenersResult> getCloudListenersPlain(GetCloudListenersPlainArgs args) {
+        return getCloudListenersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenersResult> getCloudListeners(GetCloudListenersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudListeners:getCloudListeners", TypeShape.of(GetCloudListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetCloudListenersResult> getCloudListeners(GetCloudListenersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseManagement/getCloudListeners:getCloudListeners", TypeShape.of(GetCloudListenersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Cloud Listeners in Oracle Cloud Infrastructure Database Management service.
+     * 
+     * Lists the listeners in the specified cloud DB system.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetCloudListenersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCloudListeners = DatabaseManagementFunctions.getCloudListeners(GetCloudListenersArgs.builder()
+     *             .cloudDbSystemId(testCloudDbSystem.id())
+     *             .compartmentId(compartmentId)
+     *             .displayName(cloudListenerDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetCloudListenersResult> getCloudListenersPlain(GetCloudListenersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseManagement/getCloudListeners:getCloudListeners", TypeShape.of(GetCloudListenersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
      * 
@@ -11348,7 +17804,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * Gets the details of the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
      * 
@@ -11392,7 +17848,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * Gets the details of the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
      * 
@@ -11436,7 +17892,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * Gets the details of the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
      * 
@@ -11480,7 +17936,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * Gets the details of the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
      * 
@@ -11524,7 +17980,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database specified by managedDatabaseId.
+     * Gets the details of the Managed Database specified by managedDatabaseId.
      * 
      * ## Example Usage
      * 
@@ -13288,7 +19744,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
      * 
@@ -13332,7 +19788,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
      * 
@@ -13376,7 +19832,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
      * 
@@ -13420,7 +19876,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
      * 
@@ -13464,7 +19920,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed Database Group resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Gets the details for the Managed Database Group specified by managedDatabaseGroupId.
+     * Gets the details of the Managed Database Group specified by managedDatabaseGroupId.
      * 
      * ## Example Usage
      * 
@@ -24038,7 +30494,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24082,7 +30538,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24126,7 +30582,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24170,7 +30626,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24214,7 +30670,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database Binary Log Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to binary log of a specific MySQL server.
+     * Retrieves information pertaining to the binary log of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24703,7 +31159,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24747,7 +31203,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24791,7 +31247,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24835,7 +31291,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24879,7 +31335,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides details about a specific Managed My Sql Database General Replication Information resource in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves general information regarding replication of a specific MySQL server.
+     * Retrieves general information regarding the replication of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -24923,7 +31379,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
      * 
      * ## Example Usage
      * 
@@ -24967,7 +31423,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
      * 
      * ## Example Usage
      * 
@@ -25011,7 +31467,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
      * 
      * ## Example Usage
      * 
@@ -25055,7 +31511,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
      * 
      * ## Example Usage
      * 
@@ -25099,7 +31555,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database High Availability Members in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Information about high availability members of a specific MySQL server&#39;s replication group.
+     * Retrieves information about the high availability members of a specific MySQL server&#39;s replication group.
      * 
      * ## Example Usage
      * 
@@ -25363,7 +31819,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -25407,7 +31863,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -25451,7 +31907,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -25495,7 +31951,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      * 
      * ## Example Usage
      * 
@@ -25539,7 +31995,7 @@ public final class DatabaseManagementFunctions {
     /**
      * This data source provides the list of Managed My Sql Database Outbound Replications in Oracle Cloud Infrastructure Database Management service.
      * 
-     * Retrieves information pertaining to outbound replications of a specific MySQL server.
+     * Retrieves information pertaining to the outbound replications of a specific MySQL server.
      * 
      * ## Example Usage
      * 

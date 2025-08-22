@@ -6,8 +6,11 @@ package com.pulumi.oci.ApiGateway;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.ApiGateway.inputs.DeploymentLockArgs;
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationArgs;
+import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -93,6 +96,20 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         return this.gatewayId;
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<DeploymentLockArgs>> locks;
+
+    public Optional<Output<List<DeploymentLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
     /**
      * A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
      * 
@@ -131,6 +148,8 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.gatewayId = $.gatewayId;
+        this.isLockOverride = $.isLockOverride;
+        this.locks = $.locks;
         this.pathPrefix = $.pathPrefix;
         this.specification = $.specification;
     }
@@ -256,6 +275,28 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder gatewayId(String gatewayId) {
             return gatewayId(Output.of(gatewayId));
+        }
+
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
+        public Builder locks(@Nullable Output<List<DeploymentLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<DeploymentLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(DeploymentLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

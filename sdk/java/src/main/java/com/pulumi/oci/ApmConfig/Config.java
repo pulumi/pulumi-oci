@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ApmConfig.ConfigArgs;
 import com.pulumi.oci.ApmConfig.inputs.ConfigState;
+import com.pulumi.oci.ApmConfig.outputs.ConfigConfig;
 import com.pulumi.oci.ApmConfig.outputs.ConfigDimension;
 import com.pulumi.oci.ApmConfig.outputs.ConfigInUseBy;
 import com.pulumi.oci.ApmConfig.outputs.ConfigMetric;
+import com.pulumi.oci.ApmConfig.outputs.ConfigOverrides;
 import com.pulumi.oci.ApmConfig.outputs.ConfigRule;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
@@ -36,8 +38,10 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.ApmConfig.Config;
  * import com.pulumi.oci.ApmConfig.ConfigArgs;
+ * import com.pulumi.oci.ApmConfig.inputs.ConfigConfigArgs;
  * import com.pulumi.oci.ApmConfig.inputs.ConfigDimensionArgs;
  * import com.pulumi.oci.ApmConfig.inputs.ConfigMetricArgs;
+ * import com.pulumi.oci.ApmConfig.inputs.ConfigOverridesArgs;
  * import com.pulumi.oci.ApmConfig.inputs.ConfigRuleArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -55,17 +59,28 @@ import javax.annotation.Nullable;
  *         var testConfig = new Config("testConfig", ConfigArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .configType(configConfigType)
- *             .displayName(configDisplayName)
+ *             .agentVersion(configAgentVersion)
+ *             .attachInstallDir(configAttachInstallDir)
+ *             .config(ConfigConfigArgs.builder()
+ *                 .configMaps(ConfigConfigConfigMapArgs.builder()
+ *                     .fileName(configConfigConfigMapFileName)
+ *                     .body(configConfigConfigMapBody)
+ *                     .contentType(configConfigConfigMapContentType)
+ *                     .build())
+ *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(configDescription)
  *             .dimensions(ConfigDimensionArgs.builder()
  *                 .name(configDimensionsName)
  *                 .valueSource(configDimensionsValueSource)
  *                 .build())
+ *             .displayName(configDisplayName)
  *             .filterId(testFilter.id())
  *             .filterText(configFilterText)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .group(configGroup)
+ *             .managementAgentId(testManagementAgent.id())
+ *             .matchAgentsWithAttributeValue(configMatchAgentsWithAttributeValue)
  *             .metrics(ConfigMetricArgs.builder()
  *                 .description(configMetricsDescription)
  *                 .name(configMetricsName)
@@ -75,6 +90,13 @@ import javax.annotation.Nullable;
  *             .namespace(configNamespace)
  *             .opcDryRun(configOpcDryRun)
  *             .options(configOptions)
+ *             .overrides(ConfigOverridesArgs.builder()
+ *                 .overrideLists(ConfigOverridesOverrideListArgs.builder()
+ *                     .agentFilter(configOverridesOverrideListAgentFilter)
+ *                     .overrideMap(configOverridesOverrideListOverrideMap)
+ *                     .build())
+ *                 .build())
+ *             .processFilters(configProcessFilter)
  *             .rules(ConfigRuleArgs.builder()
  *                 .displayName(configRulesDisplayName)
  *                 .filterText(configRulesFilterText)
@@ -84,6 +106,8 @@ import javax.annotation.Nullable;
  *                 .satisfiedResponseTime(configRulesSatisfiedResponseTime)
  *                 .toleratingResponseTime(configRulesToleratingResponseTime)
  *                 .build())
+ *             .runAsUser(configRunAsUser)
+ *             .serviceName(testService.name())
  *             .build());
  * 
  *     }
@@ -104,6 +128,20 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:ApmConfig/config:Config")
 public class Config extends com.pulumi.resources.CustomResource {
     /**
+     * (Updatable) The version of the referenced agent bundle.
+     * 
+     */
+    @Export(name="agentVersion", refs={String.class}, tree="[0]")
+    private Output<String> agentVersion;
+
+    /**
+     * @return (Updatable) The version of the referenced agent bundle.
+     * 
+     */
+    public Output<String> agentVersion() {
+        return this.agentVersion;
+    }
+    /**
      * (Updatable) The APM Domain ID the request is intended for.
      * 
      */
@@ -116,6 +154,34 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<String> apmDomainId() {
         return this.apmDomainId;
+    }
+    /**
+     * (Updatable) The directory owned by runAsUser.
+     * 
+     */
+    @Export(name="attachInstallDir", refs={String.class}, tree="[0]")
+    private Output<String> attachInstallDir;
+
+    /**
+     * @return (Updatable) The directory owned by runAsUser.
+     * 
+     */
+    public Output<String> attachInstallDir() {
+        return this.attachInstallDir;
+    }
+    /**
+     * (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+     * 
+     */
+    @Export(name="config", refs={ConfigConfig.class}, tree="[0]")
+    private Output<ConfigConfig> config;
+
+    /**
+     * @return (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration&#39;s overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: &#34;agentFilter&#34;: &#34;ApplicationType=&#39;Tomcat&#39;&#34; &#34;overrideMap&#34;: { &#34;isJfrEnabled&#34;: true }
+     * 
+     */
+    public Output<ConfigConfig> config() {
+        return this.config;
     }
     /**
      * (Updatable) The type of configuration item.
@@ -286,6 +352,48 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.inUseBies;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     * 
+     */
+    @Export(name="managementAgentId", refs={String.class}, tree="[0]")
+    private Output<String> managementAgentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent that will provision the APM Agent.
+     * 
+     */
+    public Output<String> managementAgentId() {
+        return this.managementAgentId;
+    }
+    /**
+     * The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     * 
+     */
+    @Export(name="matchAgentsWithAttributeKeys", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> matchAgentsWithAttributeKeys;
+
+    /**
+     * @return The agent attribute KEY by which an Agent configuration is matched to an agent.  All agent configuration objects share the same key. It is [ServiceName, service.name] by default.  The attribute VALUE corresponding to this KEY is in the matchAgentsWithAttributeValue field.
+     * 
+     */
+    public Output<List<String>> matchAgentsWithAttributeKeys() {
+        return this.matchAgentsWithAttributeKeys;
+    }
+    /**
+     * The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     * 
+     */
+    @Export(name="matchAgentsWithAttributeValue", refs={String.class}, tree="[0]")
+    private Output<String> matchAgentsWithAttributeValue;
+
+    /**
+     * @return The agent attribute VALUE by which an agent configuration is matched to an agent.  Each agent configuration object must specify a different value.  The attribute KEY corresponding to this VALUE is in the matchAgentsWithAttributeKey field.
+     * 
+     */
+    public Output<String> matchAgentsWithAttributeValue() {
+        return this.matchAgentsWithAttributeValue;
+    }
+    /**
      * (Updatable) The list of metrics in this group.
      * 
      */
@@ -342,6 +450,34 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.options;
     }
     /**
+     * (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     * 
+     */
+    @Export(name="overrides", refs={ConfigOverrides.class}, tree="[0]")
+    private Output<ConfigOverrides> overrides;
+
+    /**
+     * @return (Updatable) Agent configuration overrides that should apply to a subset of the agents associated with an Agent Config object.
+     * 
+     */
+    public Output<ConfigOverrides> overrides() {
+        return this.overrides;
+    }
+    /**
+     * (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     * 
+     */
+    @Export(name="processFilters", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> processFilters;
+
+    /**
+     * @return (Updatable) Filter patterns used to discover active Java processes for provisioning the APM Agent.
+     * 
+     */
+    public Output<List<String>> processFilters() {
+        return this.processFilters;
+    }
+    /**
      * (Updatable)
      * 
      */
@@ -354,6 +490,40 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ConfigRule>> rules() {
         return this.rules;
+    }
+    /**
+     * (Updatable) The OS user that should be used to discover Java processes.
+     * 
+     */
+    @Export(name="runAsUser", refs={String.class}, tree="[0]")
+    private Output<String> runAsUser;
+
+    /**
+     * @return (Updatable) The OS user that should be used to discover Java processes.
+     * 
+     */
+    public Output<String> runAsUser() {
+        return this.runAsUser;
+    }
+    /**
+     * (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="serviceName", refs={String.class}, tree="[0]")
+    private Output<String> serviceName;
+
+    /**
+     * @return (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> serviceName() {
+        return this.serviceName;
     }
     /**
      * The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
     public sealed class ExternalDbSystemDiscoveryDiscoveredComponentClusterInstanceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+        /// The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
         /// </summary>
         [Input("adrHomeDirectory")]
         public Input<string>? AdrHomeDirectory { get; set; }

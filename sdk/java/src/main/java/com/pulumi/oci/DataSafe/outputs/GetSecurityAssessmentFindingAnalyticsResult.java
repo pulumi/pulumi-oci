@@ -33,6 +33,7 @@ public final class GetSecurityAssessmentFindingAnalyticsResult {
      */
     private String id;
     private @Nullable Boolean isTopFinding;
+    private @Nullable String scimQuery;
     /**
      * @return The severity (risk level) of the finding.
      * 
@@ -80,6 +81,9 @@ public final class GetSecurityAssessmentFindingAnalyticsResult {
     public Optional<Boolean> isTopFinding() {
         return Optional.ofNullable(this.isTopFinding);
     }
+    public Optional<String> scimQuery() {
+        return Optional.ofNullable(this.scimQuery);
+    }
     /**
      * @return The severity (risk level) of the finding.
      * 
@@ -113,6 +117,7 @@ public final class GetSecurityAssessmentFindingAnalyticsResult {
         private @Nullable String groupBy;
         private String id;
         private @Nullable Boolean isTopFinding;
+        private @Nullable String scimQuery;
         private @Nullable String severity;
         private @Nullable String topFindingStatus;
         public Builder() {}
@@ -127,6 +132,7 @@ public final class GetSecurityAssessmentFindingAnalyticsResult {
     	      this.groupBy = defaults.groupBy;
     	      this.id = defaults.id;
     	      this.isTopFinding = defaults.isTopFinding;
+    	      this.scimQuery = defaults.scimQuery;
     	      this.severity = defaults.severity;
     	      this.topFindingStatus = defaults.topFindingStatus;
         }
@@ -198,6 +204,12 @@ public final class GetSecurityAssessmentFindingAnalyticsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder scimQuery(@Nullable String scimQuery) {
+
+            this.scimQuery = scimQuery;
+            return this;
+        }
+        @CustomType.Setter
         public Builder severity(@Nullable String severity) {
 
             this.severity = severity;
@@ -220,6 +232,7 @@ public final class GetSecurityAssessmentFindingAnalyticsResult {
             _resultValue.groupBy = groupBy;
             _resultValue.id = id;
             _resultValue.isTopFinding = isTopFinding;
+            _resultValue.scimQuery = scimQuery;
             _resultValue.severity = severity;
             _resultValue.topFindingStatus = topFindingStatus;
             return _resultValue;

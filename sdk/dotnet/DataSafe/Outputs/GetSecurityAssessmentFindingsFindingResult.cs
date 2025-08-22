@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Details;
         /// <summary>
+        /// Documentation link provided by Oracle that explains a specific security finding or check.
+        /// </summary>
+        public readonly string Doclink;
+        /// <summary>
         /// Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
         /// </summary>
         public readonly bool HasTargetDbRiskLevelChanged;
@@ -96,6 +100,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<string> details,
 
+            string doclink,
+
             bool hasTargetDbRiskLevelChanged,
 
             bool isRiskModified,
@@ -132,6 +138,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         {
             AssessmentId = assessmentId;
             Details = details;
+            Doclink = doclink;
             HasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
             IsRiskModified = isRiskModified;
             IsTopFinding = isTopFinding;

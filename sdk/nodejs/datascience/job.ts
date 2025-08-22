@@ -11,66 +11,6 @@ import * as utilities from "../utilities";
  *
  * Creates a job.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testJob = new oci.datascience.Job("test_job", {
- *     compartmentId: compartmentId,
- *     jobConfigurationDetails: {
- *         jobType: jobJobConfigurationDetailsJobType,
- *         commandLineArguments: jobJobConfigurationDetailsCommandLineArguments,
- *         environmentVariables: jobJobConfigurationDetailsEnvironmentVariables,
- *         maximumRuntimeInMinutes: jobJobConfigurationDetailsMaximumRuntimeInMinutes,
- *     },
- *     jobInfrastructureConfigurationDetails: {
- *         blockStorageSizeInGbs: jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
- *         jobInfrastructureType: jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
- *         shapeName: testShape.name,
- *         jobShapeConfigDetails: {
- *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
- *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
- *         },
- *         subnetId: testSubnet.id,
- *     },
- *     projectId: testProject.id,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: jobDescription,
- *     displayName: jobDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     jobEnvironmentConfigurationDetails: {
- *         image: jobJobEnvironmentConfigurationDetailsImage,
- *         jobEnvironmentType: jobJobEnvironmentConfigurationDetailsJobEnvironmentType,
- *         cmds: jobJobEnvironmentConfigurationDetailsCmd,
- *         entrypoints: jobJobEnvironmentConfigurationDetailsEntrypoint,
- *         imageDigest: jobJobEnvironmentConfigurationDetailsImageDigest,
- *         imageSignatureId: testImageSignature.id,
- *     },
- *     jobLogConfigurationDetails: {
- *         enableAutoLogCreation: jobJobLogConfigurationDetailsEnableAutoLogCreation,
- *         enableLogging: jobJobLogConfigurationDetailsEnableLogging,
- *         logGroupId: testLogGroup.id,
- *         logId: testLog.id,
- *     },
- *     jobStorageMountConfigurationDetailsLists: [{
- *         destinationDirectoryName: jobJobStorageMountConfigurationDetailsListDestinationDirectoryName,
- *         storageType: jobJobStorageMountConfigurationDetailsListStorageType,
- *         bucket: jobJobStorageMountConfigurationDetailsListBucket,
- *         destinationPath: jobJobStorageMountConfigurationDetailsListDestinationPath,
- *         exportId: testExport.id,
- *         mountTargetId: testMountTarget.id,
- *         namespace: jobJobStorageMountConfigurationDetailsListNamespace,
- *         prefix: jobJobStorageMountConfigurationDetailsListPrefix,
- *     }],
- * });
- * ```
- *
  * ## Import
  *
  * Jobs can be imported using the `id`, e.g.
@@ -149,7 +89,7 @@ export class Job extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
      */
@@ -161,7 +101,7 @@ export class Job extends pulumi.CustomResource {
     /**
      * Environment configuration to capture job runtime dependencies.
      */
-    public readonly jobEnvironmentConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobEnvironmentConfigurationDetails>;
+    public readonly jobEnvironmentConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobEnvironmentConfigurationDetails | undefined>;
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
@@ -170,6 +110,10 @@ export class Job extends pulumi.CustomResource {
      * Logging configuration for resource.
      */
     public readonly jobLogConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobLogConfigurationDetails>;
+    /**
+     * The job node configuration details
+     */
+    public readonly jobNodeConfigurationDetails!: pulumi.Output<outputs.DataScience.JobJobNodeConfigurationDetails>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
@@ -221,6 +165,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobEnvironmentConfigurationDetails"] = state ? state.jobEnvironmentConfigurationDetails : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = state ? state.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationDetails"] = state ? state.jobLogConfigurationDetails : undefined;
+            resourceInputs["jobNodeConfigurationDetails"] = state ? state.jobNodeConfigurationDetails : undefined;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
@@ -230,12 +175,6 @@ export class Job extends pulumi.CustomResource {
             const args = argsOrState as JobArgs | undefined;
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
-            }
-            if ((!args || args.jobConfigurationDetails === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'jobConfigurationDetails'");
-            }
-            if ((!args || args.jobInfrastructureConfigurationDetails === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'jobInfrastructureConfigurationDetails'");
             }
             if ((!args || args.projectId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'projectId'");
@@ -253,6 +192,7 @@ export class Job extends pulumi.CustomResource {
             resourceInputs["jobEnvironmentConfigurationDetails"] = args ? args.jobEnvironmentConfigurationDetails : undefined;
             resourceInputs["jobInfrastructureConfigurationDetails"] = args ? args.jobInfrastructureConfigurationDetails : undefined;
             resourceInputs["jobLogConfigurationDetails"] = args ? args.jobLogConfigurationDetails : undefined;
+            resourceInputs["jobNodeConfigurationDetails"] = args ? args.jobNodeConfigurationDetails : undefined;
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = args ? args.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["artifactContentMd5"] = undefined /*out*/;
@@ -336,6 +276,10 @@ export interface JobState {
      */
     jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails>;
     /**
+     * The job node configuration details
+     */
+    jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails>;
+    /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */
     jobStorageMountConfigurationDetailsLists?: pulumi.Input<pulumi.Input<inputs.DataScience.JobJobStorageMountConfigurationDetailsList>[]>;
@@ -404,7 +348,7 @@ export interface JobArgs {
     /**
      * The job configuration details
      */
-    jobConfigurationDetails: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails>;
+    jobConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobConfigurationDetails>;
     /**
      * Environment configuration to capture job runtime dependencies.
      */
@@ -412,11 +356,15 @@ export interface JobArgs {
     /**
      * (Updatable) The job infrastructure configuration details (shape, block storage, etc.)
      */
-    jobInfrastructureConfigurationDetails: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetails>;
+    jobInfrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobInfrastructureConfigurationDetails>;
     /**
      * Logging configuration for resource.
      */
     jobLogConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobLogConfigurationDetails>;
+    /**
+     * The job node configuration details
+     */
+    jobNodeConfigurationDetails?: pulumi.Input<inputs.DataScience.JobJobNodeConfigurationDetails>;
     /**
      * (Updatable) Collection of JobStorageMountConfigurationDetails.
      */

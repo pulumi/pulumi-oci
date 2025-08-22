@@ -6,6 +6,7 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .api_platform_api_platform_instance import *
 from .apiaccesscontrol_privileged_api_control import *
 from .apiaccesscontrol_privileged_api_request import *
 from .dbmulticloud_multi_cloud_resource_discovery import *
@@ -14,6 +15,8 @@ from .dbmulticloud_oracle_db_azure_blob_mount import *
 from .dbmulticloud_oracle_db_azure_connector import *
 from .dbmulticloud_oracle_db_azure_vault import *
 from .dbmulticloud_oracle_db_azure_vault_association import *
+from .get_api_platform_api_platform_instance import *
+from .get_api_platform_api_platform_instances import *
 from .get_apiaccesscontrol_api_metadata import *
 from .get_apiaccesscontrol_api_metadata_by_entity_types import *
 from .get_apiaccesscontrol_api_metadatas import *

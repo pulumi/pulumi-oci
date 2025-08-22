@@ -78,9 +78,11 @@ type LookupGatewayResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	Id string `pulumi:"id"`
 	// An array of IP addresses associated with the gateway.
-	IpAddresses []GetGatewayIpAddress `pulumi:"ipAddresses"`
+	IpAddresses    []GetGatewayIpAddress `pulumi:"ipAddresses"`
+	IsLockOverride bool                  `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails string           `pulumi:"lifecycleDetails"`
+	Locks            []GetGatewayLock `pulumi:"locks"`
 	// An array of Network Security Groups OCIDs associated with this API Gateway.
 	NetworkSecurityGroupIds []string `pulumi:"networkSecurityGroupIds"`
 	// Base Gateway response cache.
@@ -88,7 +90,8 @@ type LookupGatewayResult struct {
 	// The current state of the gateway.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId   string            `pulumi:"subnetId"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -183,9 +186,17 @@ func (o LookupGatewayResultOutput) IpAddresses() GetGatewayIpAddressArrayOutput 
 	return o.ApplyT(func(v LookupGatewayResult) []GetGatewayIpAddress { return v.IpAddresses }).(GetGatewayIpAddressArrayOutput)
 }
 
+func (o LookupGatewayResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupGatewayResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 func (o LookupGatewayResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o LookupGatewayResultOutput) Locks() GetGatewayLockArrayOutput {
+	return o.ApplyT(func(v LookupGatewayResult) []GetGatewayLock { return v.Locks }).(GetGatewayLockArrayOutput)
 }
 
 // An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -206,6 +217,10 @@ func (o LookupGatewayResultOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
 func (o LookupGatewayResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupGatewayResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o LookupGatewayResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGatewayResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this resource was created. An RFC3339 formatted datetime string.

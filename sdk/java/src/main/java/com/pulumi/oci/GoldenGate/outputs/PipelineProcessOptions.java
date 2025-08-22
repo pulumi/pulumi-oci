@@ -30,7 +30,7 @@ public final class PipelineProcessOptions {
      */
     private String shouldRestartOnFailure;
     /**
-     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
      * 
      */
     private @Nullable String startUsingDefaultMapping;
@@ -58,7 +58,7 @@ public final class PipelineProcessOptions {
         return this.shouldRestartOnFailure;
     }
     /**
-     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+     * @return (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
      * 
      */
     public Optional<String> startUsingDefaultMapping() {

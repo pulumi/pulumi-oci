@@ -636,6 +636,20 @@ public class AutonomousContainerDatabaseAddStandby extends com.pulumi.resources.
         return this.nextMaintenanceRunId;
     }
     /**
+     * The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    @Export(name="okvEndPointGroupName", refs={String.class}, tree="[0]")
+    private Output<String> okvEndPointGroupName;
+
+    /**
+     * @return The OKV End Point Group name for the Autonomous Container Database.
+     * 
+     */
+    public Output<String> okvEndPointGroupName() {
+        return this.okvEndPointGroupName;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch applied on the system.
      * 
      */

@@ -18,9 +18,17 @@ public final class GetJobRunsFilterArgs extends com.pulumi.resources.ResourceArg
 
     public static final GetJobRunsFilterArgs Empty = new GetJobRunsFilterArgs();
 
+    /**
+     * node group name.
+     * 
+     */
     @Import(name="name", required=true)
     private Output<String> name;
 
+    /**
+     * @return node group name.
+     * 
+     */
     public Output<String> name() {
         return this.name;
     }
@@ -65,11 +73,23 @@ public final class GetJobRunsFilterArgs extends com.pulumi.resources.ResourceArg
             $ = new GetJobRunsFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name node group name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(Output<String> name) {
             $.name = name;
             return this;
         }
 
+        /**
+         * @param name node group name.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             return name(Output.of(name));
         }

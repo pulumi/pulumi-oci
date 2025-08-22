@@ -12,6 +12,9 @@ namespace Pulumi.Oci.DataScience.Inputs
 
     public sealed class GetJobsFilterInputArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// node group name.
+        /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 

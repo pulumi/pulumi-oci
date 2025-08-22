@@ -8,6 +8,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscov
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentAssociatedComponent;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentClusterInstance;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentConnector;
+import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentDbInstance;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentEndpoint;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration;
 import com.pulumi.oci.DatabaseManagement.outputs.ExternalDbSystemDiscoveryDiscoveredComponentPluggableDatabase;
@@ -24,7 +25,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ExternalDbSystemDiscoveryDiscoveredComponent {
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     private @Nullable String adrHomeDirectory;
@@ -95,6 +96,11 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
      * 
      */
     private @Nullable String dbId;
+    /**
+     * @return The list of database instances.
+     * 
+     */
+    private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstance> dbInstances;
     /**
      * @return The name of the DB node.
      * 
@@ -211,6 +217,11 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
      */
     private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration> networkConfigurations;
     /**
+     * @return The name of the node with the VIP.
+     * 
+     */
+    private @Nullable String nodeName;
+    /**
      * @return The role of the cluster node.
      * 
      */
@@ -221,7 +232,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
      */
     private @Nullable String ocrFileLocation;
     /**
-     * @return The Oracle home location of the listener.
+     * @return The Oracle home location of the DB instance.
      * 
      */
     private @Nullable String oracleHome;
@@ -263,7 +274,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
 
     private ExternalDbSystemDiscoveryDiscoveredComponent() {}
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     public Optional<String> adrHomeDirectory() {
@@ -365,6 +376,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
      */
     public Optional<String> dbId() {
         return Optional.ofNullable(this.dbId);
+    }
+    /**
+     * @return The list of database instances.
+     * 
+     */
+    public List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstance> dbInstances() {
+        return this.dbInstances == null ? List.of() : this.dbInstances;
     }
     /**
      * @return The name of the DB node.
@@ -528,6 +546,13 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         return this.networkConfigurations == null ? List.of() : this.networkConfigurations;
     }
     /**
+     * @return The name of the node with the VIP.
+     * 
+     */
+    public Optional<String> nodeName() {
+        return Optional.ofNullable(this.nodeName);
+    }
+    /**
      * @return The role of the cluster node.
      * 
      */
@@ -542,7 +567,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         return Optional.ofNullable(this.ocrFileLocation);
     }
     /**
-     * @return The Oracle home location of the listener.
+     * @return The Oracle home location of the DB instance.
      * 
      */
     public Optional<String> oracleHome() {
@@ -623,6 +648,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         private @Nullable String crsBaseDirectory;
         private @Nullable String dbEdition;
         private @Nullable String dbId;
+        private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstance> dbInstances;
         private @Nullable String dbNodeName;
         private @Nullable String dbPacks;
         private @Nullable String dbRole;
@@ -646,6 +672,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
         private @Nullable String logDirectory;
         private @Nullable Double memorySizeInGbs;
         private @Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentNetworkConfiguration> networkConfigurations;
+        private @Nullable String nodeName;
         private @Nullable String nodeRole;
         private @Nullable String ocrFileLocation;
         private @Nullable String oracleHome;
@@ -675,6 +702,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
     	      this.crsBaseDirectory = defaults.crsBaseDirectory;
     	      this.dbEdition = defaults.dbEdition;
     	      this.dbId = defaults.dbId;
+    	      this.dbInstances = defaults.dbInstances;
     	      this.dbNodeName = defaults.dbNodeName;
     	      this.dbPacks = defaults.dbPacks;
     	      this.dbRole = defaults.dbRole;
@@ -698,6 +726,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
     	      this.logDirectory = defaults.logDirectory;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.networkConfigurations = defaults.networkConfigurations;
+    	      this.nodeName = defaults.nodeName;
     	      this.nodeRole = defaults.nodeRole;
     	      this.ocrFileLocation = defaults.ocrFileLocation;
     	      this.oracleHome = defaults.oracleHome;
@@ -817,6 +846,15 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
 
             this.dbId = dbId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbInstances(@Nullable List<ExternalDbSystemDiscoveryDiscoveredComponentDbInstance> dbInstances) {
+
+            this.dbInstances = dbInstances;
+            return this;
+        }
+        public Builder dbInstances(ExternalDbSystemDiscoveryDiscoveredComponentDbInstance... dbInstances) {
+            return dbInstances(List.of(dbInstances));
         }
         @CustomType.Setter
         public Builder dbNodeName(@Nullable String dbNodeName) {
@@ -963,6 +1001,12 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
+        public Builder nodeName(@Nullable String nodeName) {
+
+            this.nodeName = nodeName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodeRole(@Nullable String nodeRole) {
 
             this.nodeRole = nodeRole;
@@ -1049,6 +1093,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
             _resultValue.crsBaseDirectory = crsBaseDirectory;
             _resultValue.dbEdition = dbEdition;
             _resultValue.dbId = dbId;
+            _resultValue.dbInstances = dbInstances;
             _resultValue.dbNodeName = dbNodeName;
             _resultValue.dbPacks = dbPacks;
             _resultValue.dbRole = dbRole;
@@ -1072,6 +1117,7 @@ public final class ExternalDbSystemDiscoveryDiscoveredComponent {
             _resultValue.logDirectory = logDirectory;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.nodeName = nodeName;
             _resultValue.nodeRole = nodeRole;
             _resultValue.ocrFileLocation = ocrFileLocation;
             _resultValue.oracleHome = oracleHome;

@@ -26,6 +26,11 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
      */
     private String obp;
     /**
+     * @return Relevant section from ORP.
+     * 
+     */
+    private String orp;
+    /**
      * @return Relevant section from STIG.
      * 
      */
@@ -54,6 +59,13 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
         return this.obp;
     }
     /**
+     * @return Relevant section from ORP.
+     * 
+     */
+    public String orp() {
+        return this.orp;
+    }
+    /**
      * @return Relevant section from STIG.
      * 
      */
@@ -73,6 +85,7 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
         private String cis;
         private String gdpr;
         private String obp;
+        private String orp;
         private String stig;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference defaults) {
@@ -80,6 +93,7 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
     	      this.cis = defaults.cis;
     	      this.gdpr = defaults.gdpr;
     	      this.obp = defaults.obp;
+    	      this.orp = defaults.orp;
     	      this.stig = defaults.stig;
         }
 
@@ -108,6 +122,14 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
             return this;
         }
         @CustomType.Setter
+        public Builder orp(String orp) {
+            if (orp == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference", "orp");
+            }
+            this.orp = orp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stig(String stig) {
             if (stig == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference", "stig");
@@ -120,6 +142,7 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
             _resultValue.cis = cis;
             _resultValue.gdpr = gdpr;
             _resultValue.obp = obp;
+            _resultValue.orp = orp;
             _resultValue.stig = stig;
             return _resultValue;
         }

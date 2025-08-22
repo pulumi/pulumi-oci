@@ -109,22 +109,30 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         return Optional.ofNullable(this.databaseResourceType);
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
     @Import(name="dbmPrivateEndpointId")
     private @Nullable Output<String> dbmPrivateEndpointId;
 
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+     * 
+     */
     public Optional<Output<String>> dbmPrivateEndpointId() {
         return Optional.ofNullable(this.dbmPrivateEndpointId);
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -147,14 +155,14 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
     }
 
     /**
-     * (Updatable) Source of the Exadata system.
+     * Source of the database entity.
      * 
      */
     @Import(name="entitySource")
     private @Nullable Output<String> entitySource;
 
     /**
-     * @return (Updatable) Source of the Exadata system.
+     * @return Source of the database entity.
      * 
      */
     public Optional<Output<String>> entitySource() {
@@ -162,14 +170,14 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -206,9 +214,17 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         return Optional.ofNullable(this.opsiPrivateEndpointId);
     }
 
+    /**
+     * Database service name used for connection requests.
+     * 
+     */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
+    /**
+     * @return Database service name used for connection requests.
+     * 
+     */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
     }
@@ -392,17 +408,29 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
             return databaseResourceType(Output.of(databaseResourceType));
         }
 
+        /**
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbmPrivateEndpointId(@Nullable Output<String> dbmPrivateEndpointId) {
             $.dbmPrivateEndpointId = dbmPrivateEndpointId;
             return this;
         }
 
+        /**
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbmPrivateEndpointId(String dbmPrivateEndpointId) {
             return dbmPrivateEndpointId(Output.of(dbmPrivateEndpointId));
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -413,7 +441,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -444,7 +472,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param entitySource (Updatable) Source of the Exadata system.
+         * @param entitySource Source of the database entity.
          * 
          * @return builder
          * 
@@ -455,7 +483,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param entitySource (Updatable) Source of the Exadata system.
+         * @param entitySource Source of the database entity.
          * 
          * @return builder
          * 
@@ -465,7 +493,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -476,7 +504,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -527,11 +555,23 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
             return opsiPrivateEndpointId(Output.of(opsiPrivateEndpointId));
         }
 
+        /**
+         * @param serviceName Database service name used for connection requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serviceName(@Nullable Output<String> serviceName) {
             $.serviceName = serviceName;
             return this;
         }
 
+        /**
+         * @param serviceName Database service name used for connection requests.
+         * 
+         * @return builder
+         * 
+         */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
         }

@@ -8,9 +8,12 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobEnvironmentConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobInfrastructureConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunJobInfrastructureConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobLogConfigurationOverrideDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunJobNodeConfigurationOverrideDetail;
 import com.pulumi.oci.DataScience.outputs.GetJobRunJobStorageMountConfigurationDetailsList;
 import com.pulumi.oci.DataScience.outputs.GetJobRunLogDetail;
+import com.pulumi.oci.DataScience.outputs.GetJobRunNodeGroupDetailsList;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -71,10 +74,20 @@ public final class GetJobRunResult {
      */
     private List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
     /**
+     * @return The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    private List<GetJobRunJobInfrastructureConfigurationOverrideDetail> jobInfrastructureConfigurationOverrideDetails;
+    /**
      * @return Logging configuration for resource.
      * 
      */
     private List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    private List<GetJobRunJobNodeConfigurationOverrideDetail> jobNodeConfigurationOverrideDetails;
     private String jobRunId;
     /**
      * @return Collection of JobStorageMountConfigurationDetails.
@@ -82,7 +95,7 @@ public final class GetJobRunResult {
      */
     private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
     /**
-     * @return Details of the state of the job run.
+     * @return The state details of the node group.
      * 
      */
     private String lifecycleDetails;
@@ -91,6 +104,11 @@ public final class GetJobRunResult {
      * 
      */
     private List<GetJobRunLogDetail> logDetails;
+    /**
+     * @return Collection of NodeGroupDetails
+     * 
+     */
+    private List<GetJobRunNodeGroupDetailsList> nodeGroupDetailsLists;
     private String opcParentRptUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job run with.
@@ -193,11 +211,25 @@ public final class GetJobRunResult {
         return this.jobInfrastructureConfigurationDetails;
     }
     /**
+     * @return The job infrastructure configuration details (shape, block storage, etc.)
+     * 
+     */
+    public List<GetJobRunJobInfrastructureConfigurationOverrideDetail> jobInfrastructureConfigurationOverrideDetails() {
+        return this.jobInfrastructureConfigurationOverrideDetails;
+    }
+    /**
      * @return Logging configuration for resource.
      * 
      */
     public List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails() {
         return this.jobLogConfigurationOverrideDetails;
+    }
+    /**
+     * @return The job node configuration details
+     * 
+     */
+    public List<GetJobRunJobNodeConfigurationOverrideDetail> jobNodeConfigurationOverrideDetails() {
+        return this.jobNodeConfigurationOverrideDetails;
     }
     public String jobRunId() {
         return this.jobRunId;
@@ -210,7 +242,7 @@ public final class GetJobRunResult {
         return this.jobStorageMountConfigurationDetailsLists;
     }
     /**
-     * @return Details of the state of the job run.
+     * @return The state details of the node group.
      * 
      */
     public String lifecycleDetails() {
@@ -222,6 +254,13 @@ public final class GetJobRunResult {
      */
     public List<GetJobRunLogDetail> logDetails() {
         return this.logDetails;
+    }
+    /**
+     * @return Collection of NodeGroupDetails
+     * 
+     */
+    public List<GetJobRunNodeGroupDetailsList> nodeGroupDetailsLists() {
+        return this.nodeGroupDetailsLists;
     }
     public String opcParentRptUrl() {
         return this.opcParentRptUrl;
@@ -282,11 +321,14 @@ public final class GetJobRunResult {
         private List<GetJobRunJobEnvironmentConfigurationOverrideDetail> jobEnvironmentConfigurationOverrideDetails;
         private String jobId;
         private List<GetJobRunJobInfrastructureConfigurationDetail> jobInfrastructureConfigurationDetails;
+        private List<GetJobRunJobInfrastructureConfigurationOverrideDetail> jobInfrastructureConfigurationOverrideDetails;
         private List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails;
+        private List<GetJobRunJobNodeConfigurationOverrideDetail> jobNodeConfigurationOverrideDetails;
         private String jobRunId;
         private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
         private String lifecycleDetails;
         private List<GetJobRunLogDetail> logDetails;
+        private List<GetJobRunNodeGroupDetailsList> nodeGroupDetailsLists;
         private String opcParentRptUrl;
         private String projectId;
         private String state;
@@ -307,11 +349,14 @@ public final class GetJobRunResult {
     	      this.jobEnvironmentConfigurationOverrideDetails = defaults.jobEnvironmentConfigurationOverrideDetails;
     	      this.jobId = defaults.jobId;
     	      this.jobInfrastructureConfigurationDetails = defaults.jobInfrastructureConfigurationDetails;
+    	      this.jobInfrastructureConfigurationOverrideDetails = defaults.jobInfrastructureConfigurationOverrideDetails;
     	      this.jobLogConfigurationOverrideDetails = defaults.jobLogConfigurationOverrideDetails;
+    	      this.jobNodeConfigurationOverrideDetails = defaults.jobNodeConfigurationOverrideDetails;
     	      this.jobRunId = defaults.jobRunId;
     	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logDetails = defaults.logDetails;
+    	      this.nodeGroupDetailsLists = defaults.nodeGroupDetailsLists;
     	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -418,6 +463,17 @@ public final class GetJobRunResult {
             return jobInfrastructureConfigurationDetails(List.of(jobInfrastructureConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder jobInfrastructureConfigurationOverrideDetails(List<GetJobRunJobInfrastructureConfigurationOverrideDetail> jobInfrastructureConfigurationOverrideDetails) {
+            if (jobInfrastructureConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "jobInfrastructureConfigurationOverrideDetails");
+            }
+            this.jobInfrastructureConfigurationOverrideDetails = jobInfrastructureConfigurationOverrideDetails;
+            return this;
+        }
+        public Builder jobInfrastructureConfigurationOverrideDetails(GetJobRunJobInfrastructureConfigurationOverrideDetail... jobInfrastructureConfigurationOverrideDetails) {
+            return jobInfrastructureConfigurationOverrideDetails(List.of(jobInfrastructureConfigurationOverrideDetails));
+        }
+        @CustomType.Setter
         public Builder jobLogConfigurationOverrideDetails(List<GetJobRunJobLogConfigurationOverrideDetail> jobLogConfigurationOverrideDetails) {
             if (jobLogConfigurationOverrideDetails == null) {
               throw new MissingRequiredPropertyException("GetJobRunResult", "jobLogConfigurationOverrideDetails");
@@ -427,6 +483,17 @@ public final class GetJobRunResult {
         }
         public Builder jobLogConfigurationOverrideDetails(GetJobRunJobLogConfigurationOverrideDetail... jobLogConfigurationOverrideDetails) {
             return jobLogConfigurationOverrideDetails(List.of(jobLogConfigurationOverrideDetails));
+        }
+        @CustomType.Setter
+        public Builder jobNodeConfigurationOverrideDetails(List<GetJobRunJobNodeConfigurationOverrideDetail> jobNodeConfigurationOverrideDetails) {
+            if (jobNodeConfigurationOverrideDetails == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "jobNodeConfigurationOverrideDetails");
+            }
+            this.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
+            return this;
+        }
+        public Builder jobNodeConfigurationOverrideDetails(GetJobRunJobNodeConfigurationOverrideDetail... jobNodeConfigurationOverrideDetails) {
+            return jobNodeConfigurationOverrideDetails(List.of(jobNodeConfigurationOverrideDetails));
         }
         @CustomType.Setter
         public Builder jobRunId(String jobRunId) {
@@ -465,6 +532,17 @@ public final class GetJobRunResult {
         }
         public Builder logDetails(GetJobRunLogDetail... logDetails) {
             return logDetails(List.of(logDetails));
+        }
+        @CustomType.Setter
+        public Builder nodeGroupDetailsLists(List<GetJobRunNodeGroupDetailsList> nodeGroupDetailsLists) {
+            if (nodeGroupDetailsLists == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "nodeGroupDetailsLists");
+            }
+            this.nodeGroupDetailsLists = nodeGroupDetailsLists;
+            return this;
+        }
+        public Builder nodeGroupDetailsLists(GetJobRunNodeGroupDetailsList... nodeGroupDetailsLists) {
+            return nodeGroupDetailsLists(List.of(nodeGroupDetailsLists));
         }
         @CustomType.Setter
         public Builder opcParentRptUrl(String opcParentRptUrl) {
@@ -527,11 +605,14 @@ public final class GetJobRunResult {
             _resultValue.jobEnvironmentConfigurationOverrideDetails = jobEnvironmentConfigurationOverrideDetails;
             _resultValue.jobId = jobId;
             _resultValue.jobInfrastructureConfigurationDetails = jobInfrastructureConfigurationDetails;
+            _resultValue.jobInfrastructureConfigurationOverrideDetails = jobInfrastructureConfigurationOverrideDetails;
             _resultValue.jobLogConfigurationOverrideDetails = jobLogConfigurationOverrideDetails;
+            _resultValue.jobNodeConfigurationOverrideDetails = jobNodeConfigurationOverrideDetails;
             _resultValue.jobRunId = jobRunId;
             _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logDetails = logDetails;
+            _resultValue.nodeGroupDetailsLists = nodeGroupDetailsLists;
             _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.projectId = projectId;
             _resultValue.state = state;

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
     public sealed class GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorResult
     {
         /// <summary>
-        /// Error from apply operation of a MySQL server replication channel.
+        /// Error from the apply operation of a MySQL server replication channel.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetManagedMySqlDatabaseHighAvailabilityMembersManagedMySqlDatabaseHighAvailabilityMemberCollectionStatusSummaryChannelApplyErrorApplyErrorResult> ApplyErrors;
         /// <summary>
-        /// The name of the replication channel
+        /// The name of the replication channel.
         /// </summary>
         public readonly string ChannelName;
 

@@ -27,7 +27,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, catalogs=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, storages=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_key_secret_id=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_authority_host=None, azure_tenant_id=None, bootstrap_servers=None, catalogs=None, client_id=None, client_secret=None, client_secret_secret_id=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, does_use_secret_ids=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_credentials_secret_id=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, key_store_password_secret_id=None, key_store_secret_id=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, password_secret_id=None, port=None, private_ip=None, private_key_file=None, private_key_file_secret_id=None, private_key_passphrase=None, private_key_passphrase_secret_id=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, sas_token_secret_id=None, secret_access_key=None, secret_access_key_secret_id=None, security_protocol=None, servers=None, service_account_key_file=None, service_account_key_file_secret_id=None, session_mode=None, should_use_jndi=None, should_use_resource_principal=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystash_secret_id=None, ssl_client_keystoredb=None, ssl_client_keystoredb_secret_id=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_key_password_secret_id=None, ssl_key_secret_id=None, ssl_mode=None, ssl_server_certificate=None, state=None, storage_credential_name=None, storages=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, tenant_id=None, time_created=None, time_updated=None, tls_ca_file=None, tls_certificate_key_file=None, tls_certificate_key_file_password=None, tls_certificate_key_file_password_secret_id=None, tls_certificate_key_file_secret_id=None, trigger_refresh=None, trust_store=None, trust_store_password=None, trust_store_password_secret_id=None, trust_store_secret_id=None, url=None, user_id=None, username=None, vault_id=None, wallet=None, wallet_secret_id=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -49,6 +49,9 @@ class GetConnectionResult:
         if authentication_type and not isinstance(authentication_type, str):
             raise TypeError("Expected argument 'authentication_type' to be a str")
         pulumi.set(__self__, "authentication_type", authentication_type)
+        if azure_authority_host and not isinstance(azure_authority_host, str):
+            raise TypeError("Expected argument 'azure_authority_host' to be a str")
+        pulumi.set(__self__, "azure_authority_host", azure_authority_host)
         if azure_tenant_id and not isinstance(azure_tenant_id, str):
             raise TypeError("Expected argument 'azure_tenant_id' to be a str")
         pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
@@ -431,6 +434,16 @@ class GetConnectionResult:
         * OAUTH_M2M: user must enter clientId and clientSecret
         """
         return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter(name="azureAuthorityHost")
+    def azure_authority_host(self) -> _builtins.str:
+        """
+        The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
+        * Azure China: https://login.chinacloudapi.cn/
+        * Azure US Government: https://login.microsoftonline.us/
+        """
+        return pulumi.get(self, "azure_authority_host")
 
     @_builtins.property
     @pulumi.getter(name="azureTenantId")
@@ -939,7 +952,7 @@ class GetConnectionResult:
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> _builtins.bool:
         """
-        Indicates that the user intents to connect to the instance through resource principal.
+        Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -976,7 +989,7 @@ class GetConnectionResult:
     @pulumi.getter(name="sslClientKeystashSecretId")
     def ssl_client_keystash_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
         """
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
@@ -989,7 +1002,7 @@ class GetConnectionResult:
     @pulumi.getter(name="sslClientKeystoredbSecretId")
     def ssl_client_keystoredb_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
         """
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
@@ -1257,6 +1270,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             additional_attributes=self.additional_attributes,
             authentication_mode=self.authentication_mode,
             authentication_type=self.authentication_type,
+            azure_authority_host=self.azure_authority_host,
             azure_tenant_id=self.azure_tenant_id,
             bootstrap_servers=self.bootstrap_servers,
             catalogs=self.catalogs,
@@ -1390,6 +1404,7 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
         additional_attributes=pulumi.get(__ret__, 'additional_attributes'),
         authentication_mode=pulumi.get(__ret__, 'authentication_mode'),
         authentication_type=pulumi.get(__ret__, 'authentication_type'),
+        azure_authority_host=pulumi.get(__ret__, 'azure_authority_host'),
         azure_tenant_id=pulumi.get(__ret__, 'azure_tenant_id'),
         bootstrap_servers=pulumi.get(__ret__, 'bootstrap_servers'),
         catalogs=pulumi.get(__ret__, 'catalogs'),
@@ -1520,6 +1535,7 @@ def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] =
         additional_attributes=pulumi.get(__response__, 'additional_attributes'),
         authentication_mode=pulumi.get(__response__, 'authentication_mode'),
         authentication_type=pulumi.get(__response__, 'authentication_type'),
+        azure_authority_host=pulumi.get(__response__, 'azure_authority_host'),
         azure_tenant_id=pulumi.get(__response__, 'azure_tenant_id'),
         bootstrap_servers=pulumi.get(__response__, 'bootstrap_servers'),
         catalogs=pulumi.get(__response__, 'catalogs'),

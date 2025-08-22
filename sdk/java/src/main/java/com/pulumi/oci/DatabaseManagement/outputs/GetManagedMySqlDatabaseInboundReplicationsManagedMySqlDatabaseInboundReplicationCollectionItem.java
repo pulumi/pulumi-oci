@@ -22,12 +22,12 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
      */
     private List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplierFilter> applierFilters;
     /**
-     * @return Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+     * @return The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
      * 
      */
     private Double applyDelay;
     /**
-     * @return Error from apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel.
      * 
      */
     private List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyError> applyErrors;
@@ -52,7 +52,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
      */
     private String desiredDelaySeconds;
     /**
-     * @return Error from fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel.
      * 
      */
     private List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchError> fetchErrors;
@@ -62,7 +62,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
      */
     private String fetchStatus;
     /**
-     * @return Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica&#39;s own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+     * @return Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica&#39;s own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
      * 
      */
     private String gtidAssignment;
@@ -121,14 +121,14 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
         return this.applierFilters;
     }
     /**
-     * @return Time in seconds it took for the transaction that is currently being applied between being committed on the source and applied on the replica.
+     * @return The time in seconds that the current transaction took between being committed on the source and being applied on the replica.
      * 
      */
     public Double applyDelay() {
         return this.applyDelay;
     }
     /**
-     * @return Error from apply operation of a MySQL server replication channel.
+     * @return Error from the apply operation of a MySQL server replication channel.
      * 
      */
     public List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemApplyError> applyErrors() {
@@ -163,7 +163,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
         return this.desiredDelaySeconds;
     }
     /**
-     * @return Error from fetch operation of a MySQL server replication channel.
+     * @return Error from the fetch operation of a MySQL server replication channel.
      * 
      */
     public List<GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabaseInboundReplicationCollectionItemFetchError> fetchErrors() {
@@ -177,7 +177,7 @@ public final class GetManagedMySqlDatabaseInboundReplicationsManagedMySqlDatabas
         return this.fetchStatus;
     }
     /**
-     * @return Whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica&#39;s own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned which includes that manually set UUID value.
+     * @return Indicates whether the channel assigns global transaction identifiers (GTIDs) to anonymous replicated transactions. OFF means no GTIDs are assigned. LOCAL means a GTID is assigned that includes this replica&#39;s own universally unique identifier (UUID). A UUID as value indicates that a GTID is assigned, which includes that manually set UUID value.
      * 
      */
     public String gtidAssignment() {

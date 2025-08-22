@@ -28,7 +28,7 @@ class GetDefaultConfigurationsResult:
     """
     A collection of values returned by getDefaultConfigurations.
     """
-    def __init__(__self__, configuration_id=None, db_version=None, default_configuration_collections=None, display_name=None, filters=None, id=None, shape=None, state=None):
+    def __init__(__self__, configuration_id=None, db_version=None, default_configuration_collections=None, display_name=None, filters=None, id=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, shape=None, state=None):
         if configuration_id and not isinstance(configuration_id, str):
             raise TypeError("Expected argument 'configuration_id' to be a str")
         pulumi.set(__self__, "configuration_id", configuration_id)
@@ -47,6 +47,12 @@ class GetDefaultConfigurationsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if instance_memory_size_in_gbs and not isinstance(instance_memory_size_in_gbs, int):
+            raise TypeError("Expected argument 'instance_memory_size_in_gbs' to be a int")
+        pulumi.set(__self__, "instance_memory_size_in_gbs", instance_memory_size_in_gbs)
+        if instance_ocpu_count and not isinstance(instance_ocpu_count, int):
+            raise TypeError("Expected argument 'instance_ocpu_count' to be a int")
+        pulumi.set(__self__, "instance_ocpu_count", instance_ocpu_count)
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
@@ -97,10 +103,26 @@ class GetDefaultConfigurationsResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
-    @pulumi.getter
-    def shape(self) -> Optional[_builtins.str]:
+    @pulumi.getter(name="instanceMemorySizeInGbs")
+    def instance_memory_size_in_gbs(self) -> Optional[_builtins.int]:
         """
-        The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+        Memory size in gigabytes with 1GB increment.
+        """
+        return pulumi.get(self, "instance_memory_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="instanceOcpuCount")
+    def instance_ocpu_count(self) -> Optional[_builtins.int]:
+        """
+        CPU core count.
+        """
+        return pulumi.get(self, "instance_ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def shape(self) -> _builtins.str:
+        """
+        The name of the shape for the configuration.
         """
         return pulumi.get(self, "shape")
 
@@ -125,6 +147,8 @@ class AwaitableGetDefaultConfigurationsResult(GetDefaultConfigurationsResult):
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
+            instance_memory_size_in_gbs=self.instance_memory_size_in_gbs,
+            instance_ocpu_count=self.instance_ocpu_count,
             shape=self.shape,
             state=self.state)
 
@@ -133,6 +157,8 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
                                db_version: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
                                filters: Optional[Sequence[Union['GetDefaultConfigurationsFilterArgs', 'GetDefaultConfigurationsFilterArgsDict']]] = None,
+                               instance_memory_size_in_gbs: Optional[_builtins.int] = None,
+                               instance_ocpu_count: Optional[_builtins.int] = None,
                                shape: Optional[_builtins.str] = None,
                                state: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDefaultConfigurationsResult:
@@ -150,6 +176,8 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
     test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
         db_version=default_configuration_db_version,
         display_name=default_configuration_display_name,
+        instance_memory_size_in_gbs=default_configuration_instance_memory_size_in_gbs,
+        instance_ocpu_count=default_configuration_instance_ocpu_count,
         shape=default_configuration_shape,
         state=default_configuration_state)
     ```
@@ -158,7 +186,9 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
     :param _builtins.str configuration_id: A unique identifier for the configuration.
     :param _builtins.str db_version: Version of the PostgreSQL database, such as 14.9.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param _builtins.str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+    :param _builtins.int instance_memory_size_in_gbs: The instance memory size in GBs for the configuration.
+    :param _builtins.int instance_ocpu_count: The instance ocpu count for the configuration.
+    :param _builtins.str shape: The compute name of the shape for the configuration.
     :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
     __args__ = dict()
@@ -166,6 +196,8 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
     __args__['dbVersion'] = db_version
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['instanceMemorySizeInGbs'] = instance_memory_size_in_gbs
+    __args__['instanceOcpuCount'] = instance_ocpu_count
     __args__['shape'] = shape
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -178,12 +210,16 @@ def get_default_configurations(configuration_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
+        instance_memory_size_in_gbs=pulumi.get(__ret__, 'instance_memory_size_in_gbs'),
+        instance_ocpu_count=pulumi.get(__ret__, 'instance_ocpu_count'),
         shape=pulumi.get(__ret__, 'shape'),
         state=pulumi.get(__ret__, 'state'))
 def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                       db_version: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                       display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDefaultConfigurationsFilterArgs', 'GetDefaultConfigurationsFilterArgsDict']]]]] = None,
+                                      instance_memory_size_in_gbs: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
+                                      instance_ocpu_count: Optional[pulumi.Input[Optional[_builtins.int]]] = None,
                                       shape: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                       state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDefaultConfigurationsResult]:
@@ -201,6 +237,8 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     test_default_configurations = oci.Psql.get_default_configurations(configuration_id=test_configuration["id"],
         db_version=default_configuration_db_version,
         display_name=default_configuration_display_name,
+        instance_memory_size_in_gbs=default_configuration_instance_memory_size_in_gbs,
+        instance_ocpu_count=default_configuration_instance_ocpu_count,
         shape=default_configuration_shape,
         state=default_configuration_state)
     ```
@@ -209,7 +247,9 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     :param _builtins.str configuration_id: A unique identifier for the configuration.
     :param _builtins.str db_version: Version of the PostgreSQL database, such as 14.9.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param _builtins.str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+    :param _builtins.int instance_memory_size_in_gbs: The instance memory size in GBs for the configuration.
+    :param _builtins.int instance_ocpu_count: The instance ocpu count for the configuration.
+    :param _builtins.str shape: The compute name of the shape for the configuration.
     :param _builtins.str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
     """
     __args__ = dict()
@@ -217,6 +257,8 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
     __args__['dbVersion'] = db_version
     __args__['displayName'] = display_name
     __args__['filters'] = filters
+    __args__['instanceMemorySizeInGbs'] = instance_memory_size_in_gbs
+    __args__['instanceOcpuCount'] = instance_ocpu_count
     __args__['shape'] = shape
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -228,5 +270,7 @@ def get_default_configurations_output(configuration_id: Optional[pulumi.Input[Op
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
+        instance_memory_size_in_gbs=pulumi.get(__response__, 'instance_memory_size_in_gbs'),
+        instance_ocpu_count=pulumi.get(__response__, 'instance_ocpu_count'),
         shape=pulumi.get(__response__, 'shape'),
         state=pulumi.get(__response__, 'state')))

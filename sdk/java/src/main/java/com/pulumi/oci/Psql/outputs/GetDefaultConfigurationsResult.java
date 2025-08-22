@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationsDefaultConfigurationCollection;
 import com.pulumi.oci.Psql.outputs.GetDefaultConfigurationsFilter;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -38,10 +39,20 @@ public final class GetDefaultConfigurationsResult {
      */
     private String id;
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
-    private @Nullable String shape;
+    private @Nullable Integer instanceMemorySizeInGbs;
+    /**
+     * @return CPU core count.
+     * 
+     */
+    private @Nullable Integer instanceOcpuCount;
+    /**
+     * @return The name of the shape for the configuration.
+     * 
+     */
+    private String shape;
     /**
      * @return The current state of the configuration.
      * 
@@ -84,11 +95,25 @@ public final class GetDefaultConfigurationsResult {
         return this.id;
     }
     /**
-     * @return The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
+     * @return Memory size in gigabytes with 1GB increment.
      * 
      */
-    public Optional<String> shape() {
-        return Optional.ofNullable(this.shape);
+    public Optional<Integer> instanceMemorySizeInGbs() {
+        return Optional.ofNullable(this.instanceMemorySizeInGbs);
+    }
+    /**
+     * @return CPU core count.
+     * 
+     */
+    public Optional<Integer> instanceOcpuCount() {
+        return Optional.ofNullable(this.instanceOcpuCount);
+    }
+    /**
+     * @return The name of the shape for the configuration.
+     * 
+     */
+    public String shape() {
+        return this.shape;
     }
     /**
      * @return The current state of the configuration.
@@ -113,7 +138,9 @@ public final class GetDefaultConfigurationsResult {
         private @Nullable String displayName;
         private @Nullable List<GetDefaultConfigurationsFilter> filters;
         private String id;
-        private @Nullable String shape;
+        private @Nullable Integer instanceMemorySizeInGbs;
+        private @Nullable Integer instanceOcpuCount;
+        private String shape;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDefaultConfigurationsResult defaults) {
@@ -124,6 +151,8 @@ public final class GetDefaultConfigurationsResult {
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.instanceMemorySizeInGbs = defaults.instanceMemorySizeInGbs;
+    	      this.instanceOcpuCount = defaults.instanceOcpuCount;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
         }
@@ -175,8 +204,22 @@ public final class GetDefaultConfigurationsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder shape(@Nullable String shape) {
+        public Builder instanceMemorySizeInGbs(@Nullable Integer instanceMemorySizeInGbs) {
 
+            this.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder instanceOcpuCount(@Nullable Integer instanceOcpuCount) {
+
+            this.instanceOcpuCount = instanceOcpuCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder shape(String shape) {
+            if (shape == null) {
+              throw new MissingRequiredPropertyException("GetDefaultConfigurationsResult", "shape");
+            }
             this.shape = shape;
             return this;
         }
@@ -194,6 +237,8 @@ public final class GetDefaultConfigurationsResult {
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.instanceMemorySizeInGbs = instanceMemorySizeInGbs;
+            _resultValue.instanceOcpuCount = instanceOcpuCount;
             _resultValue.shape = shape;
             _resultValue.state = state;
             return _resultValue;

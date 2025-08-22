@@ -16,7 +16,7 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
      */
     private String action;
     /**
-     * @return The type of resource action.
+     * @return The category of action to run on the resource.
      * 
      */
     private String actionType;
@@ -30,7 +30,7 @@ public final class GetAutoScalingConfigurationPolicyResourceAction {
         return this.action;
     }
     /**
-     * @return The type of resource action.
+     * @return The category of action to run on the resource.
      * 
      */
     public String actionType() {

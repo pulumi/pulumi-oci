@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +30,11 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
      * 
      */
     private List<GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
+    /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    private List<GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
     /**
      * @return The name of the step.
      * 
@@ -58,6 +64,13 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
         return this.stepDataflowConfigurationDetails;
     }
     /**
+     * @return The infrastructure configuration details of a pipeline or a step.
+     * 
+     */
+    public List<GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails() {
+        return this.stepInfrastructureConfigurationDetails;
+    }
+    /**
      * @return The name of the step.
      * 
      */
@@ -77,6 +90,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
         private List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
         private List<GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
         private List<GetPipelineRunsPipelineRunStepOverrideDetailStepDataflowConfigurationDetail> stepDataflowConfigurationDetails;
+        private List<GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails;
         private String stepName;
         public Builder() {}
         public Builder(GetPipelineRunsPipelineRunStepOverrideDetail defaults) {
@@ -84,6 +98,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
     	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
     	      this.stepDataflowConfigurationDetails = defaults.stepDataflowConfigurationDetails;
+    	      this.stepInfrastructureConfigurationDetails = defaults.stepInfrastructureConfigurationDetails;
     	      this.stepName = defaults.stepName;
         }
 
@@ -121,6 +136,17 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
             return stepDataflowConfigurationDetails(List.of(stepDataflowConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder stepInfrastructureConfigurationDetails(List<GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail> stepInfrastructureConfigurationDetails) {
+            if (stepInfrastructureConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepInfrastructureConfigurationDetails");
+            }
+            this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
+            return this;
+        }
+        public Builder stepInfrastructureConfigurationDetails(GetPipelineRunsPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail... stepInfrastructureConfigurationDetails) {
+            return stepInfrastructureConfigurationDetails(List.of(stepInfrastructureConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder stepName(String stepName) {
             if (stepName == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepName");
@@ -133,6 +159,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
             _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
             _resultValue.stepDataflowConfigurationDetails = stepDataflowConfigurationDetails;
+            _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             _resultValue.stepName = stepName;
             return _resultValue;
         }

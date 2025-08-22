@@ -28,7 +28,7 @@ class GetSecurityAssessmentFindingAnalyticsResult:
     """
     A collection of values returned by getSecurityAssessmentFindingAnalytics.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, finding_analytics_collections=None, finding_key=None, group_by=None, id=None, is_top_finding=None, severity=None, top_finding_status=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, finding_analytics_collections=None, finding_key=None, group_by=None, id=None, is_top_finding=None, scim_query=None, severity=None, top_finding_status=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -56,6 +56,9 @@ class GetSecurityAssessmentFindingAnalyticsResult:
         if is_top_finding and not isinstance(is_top_finding, bool):
             raise TypeError("Expected argument 'is_top_finding' to be a bool")
         pulumi.set(__self__, "is_top_finding", is_top_finding)
+        if scim_query and not isinstance(scim_query, str):
+            raise TypeError("Expected argument 'scim_query' to be a str")
+        pulumi.set(__self__, "scim_query", scim_query)
         if severity and not isinstance(severity, str):
             raise TypeError("Expected argument 'severity' to be a str")
         pulumi.set(__self__, "severity", severity)
@@ -115,6 +118,11 @@ class GetSecurityAssessmentFindingAnalyticsResult:
         return pulumi.get(self, "is_top_finding")
 
     @_builtins.property
+    @pulumi.getter(name="scimQuery")
+    def scim_query(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "scim_query")
+
+    @_builtins.property
     @pulumi.getter
     def severity(self) -> Optional[_builtins.str]:
         """
@@ -146,6 +154,7 @@ class AwaitableGetSecurityAssessmentFindingAnalyticsResult(GetSecurityAssessment
             group_by=self.group_by,
             id=self.id,
             is_top_finding=self.is_top_finding,
+            scim_query=self.scim_query,
             severity=self.severity,
             top_finding_status=self.top_finding_status)
 
@@ -157,6 +166,7 @@ def get_security_assessment_finding_analytics(access_level: Optional[_builtins.s
                                               finding_key: Optional[_builtins.str] = None,
                                               group_by: Optional[_builtins.str] = None,
                                               is_top_finding: Optional[_builtins.bool] = None,
+                                              scim_query: Optional[_builtins.str] = None,
                                               severity: Optional[_builtins.str] = None,
                                               top_finding_status: Optional[_builtins.str] = None,
                                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingAnalyticsResult:
@@ -197,6 +207,9 @@ def get_security_assessment_finding_analytics(access_level: Optional[_builtins.s
     :param _builtins.str finding_key: The unique key that identifies the finding. It is a string and unique within a security assessment.
     :param _builtins.str group_by: Attribute by which the finding analytics data should be grouped.
     :param _builtins.bool is_top_finding: A filter to return only the findings that are marked as top findings.
+    :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+           **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+           Supported fields: severity reference title category targetId targetName
     :param _builtins.str severity: A filter to return only findings of a particular risk level.
     :param _builtins.str top_finding_status: An optional filter to return only the top finding that match the specified status.
     """
@@ -208,6 +221,7 @@ def get_security_assessment_finding_analytics(access_level: Optional[_builtins.s
     __args__['findingKey'] = finding_key
     __args__['groupBy'] = group_by
     __args__['isTopFinding'] = is_top_finding
+    __args__['scimQuery'] = scim_query
     __args__['severity'] = severity
     __args__['topFindingStatus'] = top_finding_status
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -223,6 +237,7 @@ def get_security_assessment_finding_analytics(access_level: Optional[_builtins.s
         group_by=pulumi.get(__ret__, 'group_by'),
         id=pulumi.get(__ret__, 'id'),
         is_top_finding=pulumi.get(__ret__, 'is_top_finding'),
+        scim_query=pulumi.get(__ret__, 'scim_query'),
         severity=pulumi.get(__ret__, 'severity'),
         top_finding_status=pulumi.get(__ret__, 'top_finding_status'))
 def get_security_assessment_finding_analytics_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -232,6 +247,7 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
                                                      finding_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                      group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                      is_top_finding: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+                                                     scim_query: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                      severity: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                      top_finding_status: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentFindingAnalyticsResult]:
@@ -272,6 +288,9 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
     :param _builtins.str finding_key: The unique key that identifies the finding. It is a string and unique within a security assessment.
     :param _builtins.str group_by: Attribute by which the finding analytics data should be grouped.
     :param _builtins.bool is_top_finding: A filter to return only the findings that are marked as top findings.
+    :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
+           **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
+           Supported fields: severity reference title category targetId targetName
     :param _builtins.str severity: A filter to return only findings of a particular risk level.
     :param _builtins.str top_finding_status: An optional filter to return only the top finding that match the specified status.
     """
@@ -283,6 +302,7 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
     __args__['findingKey'] = finding_key
     __args__['groupBy'] = group_by
     __args__['isTopFinding'] = is_top_finding
+    __args__['scimQuery'] = scim_query
     __args__['severity'] = severity
     __args__['topFindingStatus'] = top_finding_status
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -297,5 +317,6 @@ def get_security_assessment_finding_analytics_output(access_level: Optional[pulu
         group_by=pulumi.get(__response__, 'group_by'),
         id=pulumi.get(__response__, 'id'),
         is_top_finding=pulumi.get(__response__, 'is_top_finding'),
+        scim_query=pulumi.get(__response__, 'scim_query'),
         severity=pulumi.get(__response__, 'severity'),
         top_finding_status=pulumi.get(__response__, 'top_finding_status')))

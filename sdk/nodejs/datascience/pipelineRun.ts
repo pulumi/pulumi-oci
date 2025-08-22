@@ -33,6 +33,15 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     infrastructureConfigurationOverrideDetails: {
+ *         blockStorageSizeInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsBlockStorageSizeInGbs,
+ *         shapeName: testShape.name,
+ *         shapeConfigDetails: {
+ *             memoryInGbs: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsMemoryInGbs,
+ *             ocpus: pipelineRunInfrastructureConfigurationOverrideDetailsShapeConfigDetailsOcpus,
+ *         },
+ *         subnetId: testSubnet.id,
+ *     },
  *     logConfigurationOverrideDetails: {
  *         enableAutoLogCreation: pipelineRunLogConfigurationOverrideDetailsEnableAutoLogCreation,
  *         enableLogging: pipelineRunLogConfigurationOverrideDetailsEnableLogging,
@@ -60,17 +69,28 @@ import * as utilities from "../utilities";
  *             configuration: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsConfiguration,
  *             driverShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShape,
  *             driverShapeConfigDetails: {
+ *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsCpuBaseline,
  *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsMemoryInGbs,
  *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsDriverShapeConfigDetailsOcpus,
  *             },
  *             executorShape: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShape,
  *             executorShapeConfigDetails: {
+ *                 cpuBaseline: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsCpuBaseline,
  *                 memoryInGbs: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsMemoryInGbs,
  *                 ocpus: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsExecutorShapeConfigDetailsOcpus,
  *             },
  *             logsBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsLogsBucketUri,
  *             numExecutors: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsNumExecutors,
  *             warehouseBucketUri: pipelineRunStepOverrideDetailsStepDataflowConfigurationDetailsWarehouseBucketUri,
+ *         },
+ *         stepInfrastructureConfigurationDetails: {
+ *             blockStorageSizeInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *             shapeName: testShape.name,
+ *             shapeConfigDetails: {
+ *                 memoryInGbs: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
+ *                 ocpus: pipelineRunStepOverrideDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
+ *             },
+ *             subnetId: testSubnet.id,
  *         },
  *     }],
  *     systemTags: pipelineRunSystemTags,
@@ -142,6 +162,10 @@ export class PipelineRun extends pulumi.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The infrastructure configuration details of a pipeline or a step.
+     */
+    public readonly infrastructureConfigurationOverrideDetails!: pulumi.Output<outputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
     /**
      * Details of the state of the step run.
      */
@@ -224,6 +248,7 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["deleteRelatedJobRuns"] = state ? state.deleteRelatedJobRuns : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["infrastructureConfigurationOverrideDetails"] = state ? state.infrastructureConfigurationOverrideDetails : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logConfigurationOverrideDetails"] = state ? state.logConfigurationOverrideDetails : undefined;
             resourceInputs["logDetails"] = state ? state.logDetails : undefined;
@@ -255,6 +280,7 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["deleteRelatedJobRuns"] = args ? args.deleteRelatedJobRuns : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["infrastructureConfigurationOverrideDetails"] = args ? args.infrastructureConfigurationOverrideDetails : undefined;
             resourceInputs["logConfigurationOverrideDetails"] = args ? args.logConfigurationOverrideDetails : undefined;
             resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
             resourceInputs["pipelineId"] = args ? args.pipelineId : undefined;
@@ -310,6 +336,10 @@ export interface PipelineRunState {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The infrastructure configuration details of a pipeline or a step.
+     */
+    infrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
     /**
      * Details of the state of the step run.
      */
@@ -397,6 +427,10 @@ export interface PipelineRunArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The infrastructure configuration details of a pipeline or a step.
+     */
+    infrastructureConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunInfrastructureConfigurationOverrideDetails>;
     /**
      * The pipeline log configuration details.
      */

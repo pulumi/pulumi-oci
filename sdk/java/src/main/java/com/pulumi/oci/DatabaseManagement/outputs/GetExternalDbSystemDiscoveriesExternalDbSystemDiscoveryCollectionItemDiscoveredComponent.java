@@ -9,6 +9,7 @@ import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesE
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentAssociatedComponent;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentClusterInstance;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentConnector;
+import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstance;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentEndpoint;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentPluggableDatabase;
@@ -23,7 +24,7 @@ import java.util.Objects;
 @CustomType
 public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent {
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     private String adrHomeDirectory;
@@ -94,6 +95,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      * 
      */
     private String dbId;
+    /**
+     * @return The list of database instances.
+     * 
+     */
+    private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstance> dbInstances;
     /**
      * @return The name of the DB node.
      * 
@@ -210,6 +216,11 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      */
     private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations;
     /**
+     * @return The name of the node with the VIP.
+     * 
+     */
+    private String nodeName;
+    /**
      * @return The role of the cluster node.
      * 
      */
@@ -220,7 +231,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      */
     private String ocrFileLocation;
     /**
-     * @return The Oracle home location of the listener.
+     * @return The Oracle home location of the DB instance.
      * 
      */
     private String oracleHome;
@@ -262,7 +273,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
 
     private GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent() {}
     /**
-     * @return The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     * @return The Automatic Diagnostic Repository (ADR) home directory for the DB instance.
      * 
      */
     public String adrHomeDirectory() {
@@ -364,6 +375,13 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
      */
     public String dbId() {
         return this.dbId;
+    }
+    /**
+     * @return The list of database instances.
+     * 
+     */
+    public List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstance> dbInstances() {
+        return this.dbInstances;
     }
     /**
      * @return The name of the DB node.
@@ -527,6 +545,13 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         return this.networkConfigurations;
     }
     /**
+     * @return The name of the node with the VIP.
+     * 
+     */
+    public String nodeName() {
+        return this.nodeName;
+    }
+    /**
      * @return The role of the cluster node.
      * 
      */
@@ -541,7 +566,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         return this.ocrFileLocation;
     }
     /**
-     * @return The Oracle home location of the listener.
+     * @return The Oracle home location of the DB instance.
      * 
      */
     public String oracleHome() {
@@ -622,6 +647,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         private String crsBaseDirectory;
         private String dbEdition;
         private String dbId;
+        private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstance> dbInstances;
         private String dbNodeName;
         private String dbPacks;
         private String dbRole;
@@ -645,6 +671,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
         private String logDirectory;
         private Double memorySizeInGbs;
         private List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentNetworkConfiguration> networkConfigurations;
+        private String nodeName;
         private String nodeRole;
         private String ocrFileLocation;
         private String oracleHome;
@@ -674,6 +701,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     	      this.crsBaseDirectory = defaults.crsBaseDirectory;
     	      this.dbEdition = defaults.dbEdition;
     	      this.dbId = defaults.dbId;
+    	      this.dbInstances = defaults.dbInstances;
     	      this.dbNodeName = defaults.dbNodeName;
     	      this.dbPacks = defaults.dbPacks;
     	      this.dbRole = defaults.dbRole;
@@ -697,6 +725,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
     	      this.logDirectory = defaults.logDirectory;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.networkConfigurations = defaults.networkConfigurations;
+    	      this.nodeName = defaults.nodeName;
     	      this.nodeRole = defaults.nodeRole;
     	      this.ocrFileLocation = defaults.ocrFileLocation;
     	      this.oracleHome = defaults.oracleHome;
@@ -848,6 +877,17 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             }
             this.dbId = dbId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbInstances(List<GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstance> dbInstances) {
+            if (dbInstances == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "dbInstances");
+            }
+            this.dbInstances = dbInstances;
+            return this;
+        }
+        public Builder dbInstances(GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentDbInstance... dbInstances) {
+            return dbInstances(List.of(dbInstances));
         }
         @CustomType.Setter
         public Builder dbNodeName(String dbNodeName) {
@@ -1040,6 +1080,14 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
+        public Builder nodeName(String nodeName) {
+            if (nodeName == null) {
+              throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "nodeName");
+            }
+            this.nodeName = nodeName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodeRole(String nodeRole) {
             if (nodeRole == null) {
               throw new MissingRequiredPropertyException("GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponent", "nodeRole");
@@ -1146,6 +1194,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             _resultValue.crsBaseDirectory = crsBaseDirectory;
             _resultValue.dbEdition = dbEdition;
             _resultValue.dbId = dbId;
+            _resultValue.dbInstances = dbInstances;
             _resultValue.dbNodeName = dbNodeName;
             _resultValue.dbPacks = dbPacks;
             _resultValue.dbRole = dbRole;
@@ -1169,6 +1218,7 @@ public final class GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollec
             _resultValue.logDirectory = logDirectory;
             _resultValue.memorySizeInGbs = memorySizeInGbs;
             _resultValue.networkConfigurations = networkConfigurations;
+            _resultValue.nodeName = nodeName;
             _resultValue.nodeRole = nodeRole;
             _resultValue.ocrFileLocation = ocrFileLocation;
             _resultValue.oracleHome = oracleHome;

@@ -31,6 +31,21 @@ public final class KeyStoreAssociatedDatabaseArgs extends com.pulumi.resources.R
     }
 
     /**
+     * The unique name of the database that is associated with the key store.
+     * 
+     */
+    @Import(name="dbUniqueName")
+    private @Nullable Output<String> dbUniqueName;
+
+    /**
+     * @return The unique name of the database that is associated with the key store.
+     * 
+     */
+    public Optional<Output<String>> dbUniqueName() {
+        return Optional.ofNullable(this.dbUniqueName);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
      * 
      */
@@ -49,6 +64,7 @@ public final class KeyStoreAssociatedDatabaseArgs extends com.pulumi.resources.R
 
     private KeyStoreAssociatedDatabaseArgs(KeyStoreAssociatedDatabaseArgs $) {
         this.dbName = $.dbName;
+        this.dbUniqueName = $.dbUniqueName;
         this.id = $.id;
     }
 
@@ -89,6 +105,27 @@ public final class KeyStoreAssociatedDatabaseArgs extends com.pulumi.resources.R
          */
         public Builder dbName(String dbName) {
             return dbName(Output.of(dbName));
+        }
+
+        /**
+         * @param dbUniqueName The unique name of the database that is associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
+            $.dbUniqueName = dbUniqueName;
+            return this;
+        }
+
+        /**
+         * @param dbUniqueName The unique name of the database that is associated with the key store.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbUniqueName(String dbUniqueName) {
+            return dbUniqueName(Output.of(dbUniqueName));
         }
 
         /**

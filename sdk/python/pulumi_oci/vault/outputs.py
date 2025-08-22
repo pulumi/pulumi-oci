@@ -16,24 +16,143 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'SecretReplicationConfig',
+    'SecretReplicationConfigReplicationTarget',
     'SecretRotationConfig',
     'SecretRotationConfigTargetSystemDetails',
     'SecretSecretContent',
     'SecretSecretGenerationContext',
     'SecretSecretRule',
+    'SecretSourceRegionInformation',
+    'GetSecretReplicationConfigResult',
+    'GetSecretReplicationConfigReplicationTargetResult',
     'GetSecretRotationConfigResult',
     'GetSecretRotationConfigTargetSystemDetailResult',
     'GetSecretSecretContentResult',
     'GetSecretSecretGenerationContextResult',
     'GetSecretSecretRuleResult',
+    'GetSecretSourceRegionInformationResult',
     'GetSecretsFilterResult',
     'GetSecretsSecretResult',
+    'GetSecretsSecretReplicationConfigResult',
+    'GetSecretsSecretReplicationConfigReplicationTargetResult',
     'GetSecretsSecretRotationConfigResult',
     'GetSecretsSecretRotationConfigTargetSystemDetailResult',
     'GetSecretsSecretSecretContentResult',
     'GetSecretsSecretSecretGenerationContextResult',
     'GetSecretsSecretSecretRuleResult',
+    'GetSecretsSecretSourceRegionInformationResult',
 ]
+
+@pulumi.output_type
+class SecretReplicationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "replicationTargets":
+            suggest = "replication_targets"
+        elif key == "isWriteForwardEnabled":
+            suggest = "is_write_forward_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecretReplicationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecretReplicationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecretReplicationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 replication_targets: Sequence['outputs.SecretReplicationConfigReplicationTarget'],
+                 is_write_forward_enabled: Optional[_builtins.bool] = None):
+        """
+        :param Sequence['SecretReplicationConfigReplicationTargetArgs'] replication_targets: (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        :param _builtins.bool is_write_forward_enabled: (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+        pulumi.set(__self__, "replication_targets", replication_targets)
+        if is_write_forward_enabled is not None:
+            pulumi.set(__self__, "is_write_forward_enabled", is_write_forward_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationTargets")
+    def replication_targets(self) -> Sequence['outputs.SecretReplicationConfigReplicationTarget']:
+        """
+        (Updatable) List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        return pulumi.get(self, "replication_targets")
+
+    @_builtins.property
+    @pulumi.getter(name="isWriteForwardEnabled")
+    def is_write_forward_enabled(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+        return pulumi.get(self, "is_write_forward_enabled")
+
+
+@pulumi.output_type
+class SecretReplicationConfigReplicationTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "targetKeyId":
+            suggest = "target_key_id"
+        elif key == "targetRegion":
+            suggest = "target_region"
+        elif key == "targetVaultId":
+            suggest = "target_vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecretReplicationConfigReplicationTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecretReplicationConfigReplicationTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecretReplicationConfigReplicationTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 target_key_id: _builtins.str,
+                 target_region: _builtins.str,
+                 target_vault_id: _builtins.str):
+        """
+        :param _builtins.str target_key_id: (Updatable) The OCID of the target region KMS key.
+        :param _builtins.str target_region: (Updatable) The name of the target's region.
+        :param _builtins.str target_vault_id: (Updatable) The OCID of the target region's Vault.
+        """
+        pulumi.set(__self__, "target_key_id", target_key_id)
+        pulumi.set(__self__, "target_region", target_region)
+        pulumi.set(__self__, "target_vault_id", target_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="targetKeyId")
+    def target_key_id(self) -> _builtins.str:
+        """
+        (Updatable) The OCID of the target region KMS key.
+        """
+        return pulumi.get(self, "target_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        (Updatable) The name of the target's region.
+        """
+        return pulumi.get(self, "target_region")
+
+    @_builtins.property
+    @pulumi.getter(name="targetVaultId")
+    def target_vault_id(self) -> _builtins.str:
+        """
+        (Updatable) The OCID of the target region's Vault.
+        """
+        return pulumi.get(self, "target_vault_id")
+
 
 @pulumi.output_type
 class SecretRotationConfig(dict):
@@ -400,6 +519,139 @@ class SecretSecretRule(dict):
 
 
 @pulumi.output_type
+class SecretSourceRegionInformation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceKeyId":
+            suggest = "source_key_id"
+        elif key == "sourceRegion":
+            suggest = "source_region"
+        elif key == "sourceVaultId":
+            suggest = "source_vault_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SecretSourceRegionInformation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SecretSourceRegionInformation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SecretSourceRegionInformation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_key_id: Optional[_builtins.str] = None,
+                 source_region: Optional[_builtins.str] = None,
+                 source_vault_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str source_key_id: The OCID of the source region KMS key.
+        :param _builtins.str source_region: The name of the source's region.
+        :param _builtins.str source_vault_id: The OCID of the source region's Vault.
+        """
+        if source_key_id is not None:
+            pulumi.set(__self__, "source_key_id", source_key_id)
+        if source_region is not None:
+            pulumi.set(__self__, "source_region", source_region)
+        if source_vault_id is not None:
+            pulumi.set(__self__, "source_vault_id", source_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceKeyId")
+    def source_key_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the source region KMS key.
+        """
+        return pulumi.get(self, "source_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> Optional[_builtins.str]:
+        """
+        The name of the source's region.
+        """
+        return pulumi.get(self, "source_region")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceVaultId")
+    def source_vault_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the source region's Vault.
+        """
+        return pulumi.get(self, "source_vault_id")
+
+
+@pulumi.output_type
+class GetSecretReplicationConfigResult(dict):
+    def __init__(__self__, *,
+                 is_write_forward_enabled: _builtins.bool,
+                 replication_targets: Sequence['outputs.GetSecretReplicationConfigReplicationTargetResult']):
+        """
+        :param _builtins.bool is_write_forward_enabled: (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        :param Sequence['GetSecretReplicationConfigReplicationTargetArgs'] replication_targets: List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        pulumi.set(__self__, "is_write_forward_enabled", is_write_forward_enabled)
+        pulumi.set(__self__, "replication_targets", replication_targets)
+
+    @_builtins.property
+    @pulumi.getter(name="isWriteForwardEnabled")
+    def is_write_forward_enabled(self) -> _builtins.bool:
+        """
+        (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+        return pulumi.get(self, "is_write_forward_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationTargets")
+    def replication_targets(self) -> Sequence['outputs.GetSecretReplicationConfigReplicationTargetResult']:
+        """
+        List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        return pulumi.get(self, "replication_targets")
+
+
+@pulumi.output_type
+class GetSecretReplicationConfigReplicationTargetResult(dict):
+    def __init__(__self__, *,
+                 target_key_id: _builtins.str,
+                 target_region: _builtins.str,
+                 target_vault_id: _builtins.str):
+        """
+        :param _builtins.str target_key_id: The OCID of the target region KMS key.
+        :param _builtins.str target_region: The name of the target's region.
+        :param _builtins.str target_vault_id: The OCID of the target region's Vault.
+        """
+        pulumi.set(__self__, "target_key_id", target_key_id)
+        pulumi.set(__self__, "target_region", target_region)
+        pulumi.set(__self__, "target_vault_id", target_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="targetKeyId")
+    def target_key_id(self) -> _builtins.str:
+        """
+        The OCID of the target region KMS key.
+        """
+        return pulumi.get(self, "target_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        The name of the target's region.
+        """
+        return pulumi.get(self, "target_region")
+
+    @_builtins.property
+    @pulumi.getter(name="targetVaultId")
+    def target_vault_id(self) -> _builtins.str:
+        """
+        The OCID of the target region's Vault.
+        """
+        return pulumi.get(self, "target_vault_id")
+
+
+@pulumi.output_type
 class GetSecretRotationConfigResult(dict):
     def __init__(__self__, *,
                  is_scheduled_rotation_enabled: _builtins.bool,
@@ -626,6 +878,46 @@ class GetSecretSecretRuleResult(dict):
 
 
 @pulumi.output_type
+class GetSecretSourceRegionInformationResult(dict):
+    def __init__(__self__, *,
+                 source_key_id: _builtins.str,
+                 source_region: _builtins.str,
+                 source_vault_id: _builtins.str):
+        """
+        :param _builtins.str source_key_id: The OCID of the source region KMS key.
+        :param _builtins.str source_region: The name of the source's region.
+        :param _builtins.str source_vault_id: The OCID of the source region's Vault.
+        """
+        pulumi.set(__self__, "source_key_id", source_key_id)
+        pulumi.set(__self__, "source_region", source_region)
+        pulumi.set(__self__, "source_vault_id", source_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceKeyId")
+    def source_key_id(self) -> _builtins.str:
+        """
+        The OCID of the source region KMS key.
+        """
+        return pulumi.get(self, "source_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> _builtins.str:
+        """
+        The name of the source's region.
+        """
+        return pulumi.get(self, "source_region")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceVaultId")
+    def source_vault_id(self) -> _builtins.str:
+        """
+        The OCID of the source region's Vault.
+        """
+        return pulumi.get(self, "source_vault_id")
+
+
+@pulumi.output_type
 class GetSecretsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -669,17 +961,20 @@ class GetSecretsSecretResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_auto_generation_enabled: _builtins.bool,
+                 is_replica: _builtins.bool,
                  key_id: _builtins.str,
                  last_rotation_time: _builtins.str,
                  lifecycle_details: _builtins.str,
                  metadata: Mapping[str, _builtins.str],
                  next_rotation_time: _builtins.str,
+                 replication_configs: Sequence['outputs.GetSecretsSecretReplicationConfigResult'],
                  rotation_configs: Sequence['outputs.GetSecretsSecretRotationConfigResult'],
                  rotation_status: _builtins.str,
                  secret_contents: Sequence['outputs.GetSecretsSecretSecretContentResult'],
                  secret_generation_contexts: Sequence['outputs.GetSecretsSecretSecretGenerationContextResult'],
                  secret_name: _builtins.str,
                  secret_rules: Sequence['outputs.GetSecretsSecretSecretRuleResult'],
+                 source_region_informations: Sequence['outputs.GetSecretsSecretSourceRegionInformationResult'],
                  state: _builtins.str,
                  time_created: _builtins.str,
                  time_of_current_version_expiry: _builtins.str,
@@ -693,16 +988,19 @@ class GetSecretsSecretResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param _builtins.str id: The OCID of the secret.
         :param _builtins.bool is_auto_generation_enabled: The value of this flag determines whether or not secret content will be generated automatically.
+        :param _builtins.bool is_replica: A Boolean value that indicates whether the secret is a source or replica secret.
         :param _builtins.str key_id: The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
         :param _builtins.str last_rotation_time: A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state of the secret.
         :param Mapping[str, _builtins.str] metadata: Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         :param _builtins.str next_rotation_time: A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param Sequence['GetSecretsSecretReplicationConfigArgs'] replication_configs: Defines the configuration that enables cross-region secret replication.
         :param Sequence['GetSecretsSecretRotationConfigArgs'] rotation_configs: Defines the frequency of the rotation and the information about the target system
         :param _builtins.str rotation_status: Additional information about the status of the secret rotation
         :param Sequence['GetSecretsSecretSecretGenerationContextArgs'] secret_generation_contexts: Captures a configurable set of secret generation rules such as length, base characters, additional characters, and so on.
         :param _builtins.str secret_name: The user-friendly name of the secret. Avoid entering confidential information.
         :param Sequence['GetSecretsSecretSecretRuleArgs'] secret_rules: A list of rules that control how the secret is used and managed.
+        :param Sequence['GetSecretsSecretSourceRegionInformationArgs'] source_region_informations: Details for the source that the source secret has.
         :param _builtins.str state: A filter that returns only resources that match the specified lifecycle state. The state value is case-insensitive.
         :param _builtins.str time_created: A property indicating when the secret was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param _builtins.str time_of_current_version_expiry: An optional property indicating when the current secret version will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -717,17 +1015,20 @@ class GetSecretsSecretResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_generation_enabled", is_auto_generation_enabled)
+        pulumi.set(__self__, "is_replica", is_replica)
         pulumi.set(__self__, "key_id", key_id)
         pulumi.set(__self__, "last_rotation_time", last_rotation_time)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "metadata", metadata)
         pulumi.set(__self__, "next_rotation_time", next_rotation_time)
+        pulumi.set(__self__, "replication_configs", replication_configs)
         pulumi.set(__self__, "rotation_configs", rotation_configs)
         pulumi.set(__self__, "rotation_status", rotation_status)
         pulumi.set(__self__, "secret_contents", secret_contents)
         pulumi.set(__self__, "secret_generation_contexts", secret_generation_contexts)
         pulumi.set(__self__, "secret_name", secret_name)
         pulumi.set(__self__, "secret_rules", secret_rules)
+        pulumi.set(__self__, "source_region_informations", source_region_informations)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_of_current_version_expiry", time_of_current_version_expiry)
@@ -796,6 +1097,14 @@ class GetSecretsSecretResult(dict):
         return pulumi.get(self, "is_auto_generation_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isReplica")
+    def is_replica(self) -> _builtins.bool:
+        """
+        A Boolean value that indicates whether the secret is a source or replica secret.
+        """
+        return pulumi.get(self, "is_replica")
+
+    @_builtins.property
     @pulumi.getter(name="keyId")
     def key_id(self) -> _builtins.str:
         """
@@ -834,6 +1143,14 @@ class GetSecretsSecretResult(dict):
         A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "next_rotation_time")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationConfigs")
+    def replication_configs(self) -> Sequence['outputs.GetSecretsSecretReplicationConfigResult']:
+        """
+        Defines the configuration that enables cross-region secret replication.
+        """
+        return pulumi.get(self, "replication_configs")
 
     @_builtins.property
     @pulumi.getter(name="rotationConfigs")
@@ -881,6 +1198,14 @@ class GetSecretsSecretResult(dict):
         return pulumi.get(self, "secret_rules")
 
     @_builtins.property
+    @pulumi.getter(name="sourceRegionInformations")
+    def source_region_informations(self) -> Sequence['outputs.GetSecretsSecretSourceRegionInformationResult']:
+        """
+        Details for the source that the source secret has.
+        """
+        return pulumi.get(self, "source_region_informations")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -919,6 +1244,75 @@ class GetSecretsSecretResult(dict):
         The OCID of the vault.
         """
         return pulumi.get(self, "vault_id")
+
+
+@pulumi.output_type
+class GetSecretsSecretReplicationConfigResult(dict):
+    def __init__(__self__, *,
+                 is_write_forward_enabled: _builtins.bool,
+                 replication_targets: Sequence['outputs.GetSecretsSecretReplicationConfigReplicationTargetResult']):
+        """
+        :param _builtins.bool is_write_forward_enabled: (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        :param Sequence['GetSecretsSecretReplicationConfigReplicationTargetArgs'] replication_targets: List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        pulumi.set(__self__, "is_write_forward_enabled", is_write_forward_enabled)
+        pulumi.set(__self__, "replication_targets", replication_targets)
+
+    @_builtins.property
+    @pulumi.getter(name="isWriteForwardEnabled")
+    def is_write_forward_enabled(self) -> _builtins.bool:
+        """
+        (Optional) A Boolean value to enable forwarding of write requests from replicated secrets to the source secrets. The default value of false disables this option.
+        """
+        return pulumi.get(self, "is_write_forward_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationTargets")
+    def replication_targets(self) -> Sequence['outputs.GetSecretsSecretReplicationConfigReplicationTargetResult']:
+        """
+        List of the secret replication targets. By default, a maximum of 3 targets is allowed. To configure more than 3 targets, an override is required.
+        """
+        return pulumi.get(self, "replication_targets")
+
+
+@pulumi.output_type
+class GetSecretsSecretReplicationConfigReplicationTargetResult(dict):
+    def __init__(__self__, *,
+                 target_key_id: _builtins.str,
+                 target_region: _builtins.str,
+                 target_vault_id: _builtins.str):
+        """
+        :param _builtins.str target_key_id: The OCID of the target region KMS key.
+        :param _builtins.str target_region: The name of the target's region.
+        :param _builtins.str target_vault_id: The OCID of the target region's Vault.
+        """
+        pulumi.set(__self__, "target_key_id", target_key_id)
+        pulumi.set(__self__, "target_region", target_region)
+        pulumi.set(__self__, "target_vault_id", target_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="targetKeyId")
+    def target_key_id(self) -> _builtins.str:
+        """
+        The OCID of the target region KMS key.
+        """
+        return pulumi.get(self, "target_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        The name of the target's region.
+        """
+        return pulumi.get(self, "target_region")
+
+    @_builtins.property
+    @pulumi.getter(name="targetVaultId")
+    def target_vault_id(self) -> _builtins.str:
+        """
+        The OCID of the target region's Vault.
+        """
+        return pulumi.get(self, "target_vault_id")
 
 
 @pulumi.output_type
@@ -1151,5 +1545,45 @@ class GetSecretsSecretSecretRuleResult(dict):
         An optional property indicating the absolute time when this secret will expire, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. The minimum number of days from current time is 1 day and the maximum number of days from current time is 365 days. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_absolute_expiry")
+
+
+@pulumi.output_type
+class GetSecretsSecretSourceRegionInformationResult(dict):
+    def __init__(__self__, *,
+                 source_key_id: _builtins.str,
+                 source_region: _builtins.str,
+                 source_vault_id: _builtins.str):
+        """
+        :param _builtins.str source_key_id: The OCID of the source region KMS key.
+        :param _builtins.str source_region: The name of the source's region.
+        :param _builtins.str source_vault_id: The OCID of the source region's Vault.
+        """
+        pulumi.set(__self__, "source_key_id", source_key_id)
+        pulumi.set(__self__, "source_region", source_region)
+        pulumi.set(__self__, "source_vault_id", source_vault_id)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceKeyId")
+    def source_key_id(self) -> _builtins.str:
+        """
+        The OCID of the source region KMS key.
+        """
+        return pulumi.get(self, "source_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRegion")
+    def source_region(self) -> _builtins.str:
+        """
+        The name of the source's region.
+        """
+        return pulumi.get(self, "source_region")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceVaultId")
+    def source_vault_id(self) -> _builtins.str:
+        """
+        The OCID of the source region's Vault.
+        """
+        return pulumi.get(self, "source_vault_id")
 
 

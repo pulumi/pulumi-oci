@@ -72,10 +72,12 @@ export interface GetDeploymentResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
+    readonly locks: outputs.ApiGateway.GetDeploymentLock[];
     /**
      * A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
      */
@@ -88,6 +90,7 @@ export interface GetDeploymentResult {
      * The current state of the deployment.
      */
     readonly state: string;
+    readonly systemTags: {[key: string]: string};
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
      */

@@ -2039,7 +2039,7 @@ if not MYPY:
         """
         start_using_default_mapping: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
 elif False:
     PipelineProcessOptionsArgsDict: TypeAlias = Mapping[str, Any]
@@ -2055,7 +2055,7 @@ class PipelineProcessOptionsArgs:
         :param pulumi.Input['PipelineProcessOptionsInitialDataLoadArgs'] initial_data_load: (Updatable) Options required for the pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param pulumi.Input['PipelineProcessOptionsReplicateSchemaChangeArgs'] replicate_schema_change: (Updatable) Options required for pipeline Initial Data Load. If enabled, copies existing data from source to target before replication.
         :param pulumi.Input[_builtins.str] should_restart_on_failure: (Updatable) If ENABLED, then the replication process restarts itself upon failure. This option applies when creating or updating a pipeline.
-        :param pulumi.Input[_builtins.str] start_using_default_mapping: (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        :param pulumi.Input[_builtins.str] start_using_default_mapping: (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         pulumi.set(__self__, "initial_data_load", initial_data_load)
         pulumi.set(__self__, "replicate_schema_change", replicate_schema_change)
@@ -2103,7 +2103,7 @@ class PipelineProcessOptionsArgs:
     @pulumi.getter(name="startUsingDefaultMapping")
     def start_using_default_mapping(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option applies when creating or updating a pipeline.
+        (Updatable) If ENABLED, then the pipeline is started as part of pipeline creation. It uses default mapping. This option only applies when creating a pipeline and is not applicable while updating a pipeline.
         """
         return pulumi.get(self, "start_using_default_mapping")
 

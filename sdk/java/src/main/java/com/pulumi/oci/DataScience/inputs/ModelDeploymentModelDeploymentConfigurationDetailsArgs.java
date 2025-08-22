@@ -7,7 +7,9 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -48,19 +50,33 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
         return Optional.ofNullable(this.environmentConfigurationDetails);
     }
 
+    @Import(name="infrastructureConfigurationDetails")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs> infrastructureConfigurationDetails;
+
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs>> infrastructureConfigurationDetails() {
+        return Optional.ofNullable(this.infrastructureConfigurationDetails);
+    }
+
     /**
      * (Updatable) The model configuration details.
      * 
      */
-    @Import(name="modelConfigurationDetails", required=true)
-    private Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs> modelConfigurationDetails;
+    @Import(name="modelConfigurationDetails")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs> modelConfigurationDetails;
 
     /**
      * @return (Updatable) The model configuration details.
      * 
      */
-    public Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs> modelConfigurationDetails() {
-        return this.modelConfigurationDetails;
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs>> modelConfigurationDetails() {
+        return Optional.ofNullable(this.modelConfigurationDetails);
+    }
+
+    @Import(name="modelGroupConfigurationDetails")
+    private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs> modelGroupConfigurationDetails;
+
+    public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs>> modelGroupConfigurationDetails() {
+        return Optional.ofNullable(this.modelGroupConfigurationDetails);
     }
 
     private ModelDeploymentModelDeploymentConfigurationDetailsArgs() {}
@@ -68,7 +84,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
     private ModelDeploymentModelDeploymentConfigurationDetailsArgs(ModelDeploymentModelDeploymentConfigurationDetailsArgs $) {
         this.deploymentType = $.deploymentType;
         this.environmentConfigurationDetails = $.environmentConfigurationDetails;
+        this.infrastructureConfigurationDetails = $.infrastructureConfigurationDetails;
         this.modelConfigurationDetails = $.modelConfigurationDetails;
+        this.modelGroupConfigurationDetails = $.modelGroupConfigurationDetails;
     }
 
     public static Builder builder() {
@@ -131,13 +149,22 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
             return environmentConfigurationDetails(Output.of(environmentConfigurationDetails));
         }
 
+        public Builder infrastructureConfigurationDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs> infrastructureConfigurationDetails) {
+            $.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
+            return this;
+        }
+
+        public Builder infrastructureConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsArgs infrastructureConfigurationDetails) {
+            return infrastructureConfigurationDetails(Output.of(infrastructureConfigurationDetails));
+        }
+
         /**
          * @param modelConfigurationDetails (Updatable) The model configuration details.
          * 
          * @return builder
          * 
          */
-        public Builder modelConfigurationDetails(Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs> modelConfigurationDetails) {
+        public Builder modelConfigurationDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsArgs> modelConfigurationDetails) {
             $.modelConfigurationDetails = modelConfigurationDetails;
             return this;
         }
@@ -152,12 +179,18 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsArgs extend
             return modelConfigurationDetails(Output.of(modelConfigurationDetails));
         }
 
+        public Builder modelGroupConfigurationDetails(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs> modelGroupConfigurationDetails) {
+            $.modelGroupConfigurationDetails = modelGroupConfigurationDetails;
+            return this;
+        }
+
+        public Builder modelGroupConfigurationDetails(ModelDeploymentModelDeploymentConfigurationDetailsModelGroupConfigurationDetailsArgs modelGroupConfigurationDetails) {
+            return modelGroupConfigurationDetails(Output.of(modelGroupConfigurationDetails));
+        }
+
         public ModelDeploymentModelDeploymentConfigurationDetailsArgs build() {
             if ($.deploymentType == null) {
                 throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsArgs", "deploymentType");
-            }
-            if ($.modelConfigurationDetails == null) {
-                throw new MissingRequiredPropertyException("ModelDeploymentModelDeploymentConfigurationDetailsArgs", "modelConfigurationDetails");
             }
             return $;
         }

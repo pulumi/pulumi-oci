@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataScience
     /// {
     ///     var testModelGroupArtifact = new Oci.DataScience.ModelGroupArtifact("test_model_group_artifact", new()
     ///     {
-    ///         ModelGroupArtifact = modelGroupArtifactModelGroupArtifact,
+    ///         GroupArtifact = modelGroupArtifactModelGroupArtifact,
     ///         ContentLength = modelGroupArtifactContentLength,
     ///         ModelGroupId = testModelGroup.Id,
     ///         ContentDisposition = modelGroupArtifactContentDisposition,
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataScience
         /// The model group artifact to upload.
         /// </summary>
         [Output("modelGroupArtifact")]
-        public Output<string> ModelGroupArtifact { get; private set; } = null!;
+        public Output<string> GroupArtifact { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.DataScience
         /// The model group artifact to upload.
         /// </summary>
         [Input("modelGroupArtifact", required: true)]
-        public Input<string> ModelGroupArtifact { get; set; } = null!;
+        public Input<string> GroupArtifact { get; set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.DataScience
         /// The model group artifact to upload.
         /// </summary>
         [Input("modelGroupArtifact")]
-        public Input<string>? ModelGroupArtifact { get; set; }
+        public Input<string>? GroupArtifact { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the modelGroup.

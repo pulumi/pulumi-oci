@@ -358,6 +358,14 @@ func Provider() tfbridge.ProviderInfo {
 
 			"oci_apm_synthetics_monitor": {Tok: tfbridge.MakeResource(mainPkg, apmSyntheticsMod, "Config")},
 
+			"oci_apm_config_config": {
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"config": {
+						CSharpName: "Configuration",
+					},
+				},
+			},
+
 			"oci_budget_alert_rule": {Tok: tfbridge.MakeResource(mainPkg, budgetMod, "Rule")},
 
 			"oci_cloud_guard_data_source": {
@@ -403,6 +411,14 @@ func Provider() tfbridge.ProviderInfo {
 								},
 							},
 						},
+					},
+				},
+			},
+
+			"oci_datascience_model_group_artifact": {
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"model_group_artifact": {
+						CSharpName: "GroupArtifact",
 					},
 				},
 			},

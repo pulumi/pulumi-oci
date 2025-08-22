@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ApmConfig
     ///         ConfigType = configConfigType,
     ///         AgentVersion = configAgentVersion,
     ///         AttachInstallDir = configAttachInstallDir,
-    ///         Config = new Oci.ApmConfig.Inputs.ConfigConfigArgs
+    ///         Configuration = new Oci.ApmConfig.Inputs.ConfigConfigArgs
     ///         {
     ///             ConfigMaps = new[]
     ///             {
@@ -143,7 +143,7 @@ namespace Pulumi.Oci.ApmConfig
         /// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         /// </summary>
         [Output("config")]
-        public Output<Outputs.ConfigConfig> Config { get; private set; } = null!;
+        public Output<Outputs.ConfigConfig> Configuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The type of configuration item.
@@ -379,7 +379,7 @@ namespace Pulumi.Oci.ApmConfig
         /// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         /// </summary>
         [Input("config")]
-        public Input<Inputs.ConfigConfigArgs>? Config { get; set; }
+        public Input<Inputs.ConfigConfigArgs>? Configuration { get; set; }
 
         /// <summary>
         /// (Updatable) The type of configuration item.
@@ -583,7 +583,7 @@ namespace Pulumi.Oci.ApmConfig
         /// (Updatable) Collection of agent configuration files. For agents that use a single configuration file, this SHOULD contain a single entry and the file name MAY be an empty string. For multiple entries, you should use multiple blocks of `config_map`. To apply a different configuration in a subset of the agents, put this block anywhere in the body of the configuration and edit &lt;some variable&gt; and &lt;some content&gt; {{ &lt;some variable&gt; | default &lt;some content&gt; }} Example: com.oracle.apm.agent.tracer.enable.jfr = {{ isJfrEnabled | default false }} Then, in the configuration's overrides, specify a different value for &lt;some variable&gt; along with the desired agent filter. Example: "agentFilter": "ApplicationType='Tomcat'" "overrideMap": { "isJfrEnabled": true }
         /// </summary>
         [Input("config")]
-        public Input<Inputs.ConfigConfigGetArgs>? Config { get; set; }
+        public Input<Inputs.ConfigConfigGetArgs>? Configuration { get; set; }
 
         /// <summary>
         /// (Updatable) The type of configuration item.

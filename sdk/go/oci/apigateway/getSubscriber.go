@@ -72,12 +72,14 @@ type LookupSubscriberResult struct {
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string              `pulumi:"lifecycleDetails"`
-	Locks            []GetSubscriberLock `pulumi:"locks"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetSubscriberLock `pulumi:"locks"`
 	// The current state of the subscriber.
-	State        string            `pulumi:"state"`
-	SubscriberId string            `pulumi:"subscriberId"`
-	SystemTags   map[string]string `pulumi:"systemTags"`
+	State        string `pulumi:"state"`
+	SubscriberId string `pulumi:"subscriberId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -159,6 +161,7 @@ func (o LookupSubscriberResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o LookupSubscriberResultOutput) Locks() GetSubscriberLockArrayOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) []GetSubscriberLock { return v.Locks }).(GetSubscriberLockArrayOutput)
 }
@@ -172,6 +175,7 @@ func (o LookupSubscriberResultOutput) SubscriberId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) string { return v.SubscriberId }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupSubscriberResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupSubscriberResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

@@ -38,6 +38,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApiGateway.Gateway;
  * import com.pulumi.oci.ApiGateway.GatewayArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayCaBundleArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.GatewayLockArgs;
  * import com.pulumi.oci.ApiGateway.inputs.GatewayResponseCacheDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -65,6 +66,10 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(gatewayDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .locks(GatewayLockArgs.builder()
+ *                 .type(gatewayLocksType)
+ *                 .message(gatewayLocksMessage)
+ *                 .build())
  *             .networkSecurityGroupIds(gatewayNetworkSecurityGroupIds)
  *             .responseCacheDetails(GatewayResponseCacheDetailsArgs.builder()
  *                 .type(gatewayResponseCacheDetailsType)
@@ -114,14 +119,14 @@ public class Gateway extends com.pulumi.resources.CustomResource {
         return this.caBundles;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      * 
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      * 
      */
     public Output<String> certificateId() {
@@ -245,9 +250,17 @@ public class Gateway extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Export(name="locks", refs={List.class,GatewayLock.class}, tree="[0,1]")
     private Output<List<GatewayLock>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Output<List<GatewayLock>> locks() {
         return this.locks;
     }
@@ -313,9 +326,17 @@ public class Gateway extends com.pulumi.resources.CustomResource {
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }

@@ -20,6 +20,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly ImmutableArray<Outputs.GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult> RefreshableCloneDetails;
         public readonly string SourceContainerDatabaseAdminPassword;
         public readonly string SourcePluggableDatabaseId;
+        public readonly string SourcePluggableDatabaseSnapshotId;
 
         [OutputConstructor]
         private GetPluggableDatabasePdbCreationTypeDetailResult(
@@ -35,7 +36,9 @@ namespace Pulumi.Oci.Database.Outputs
 
             string sourceContainerDatabaseAdminPassword,
 
-            string sourcePluggableDatabaseId)
+            string sourcePluggableDatabaseId,
+
+            string sourcePluggableDatabaseSnapshotId)
         {
             CreationType = creationType;
             DblinkUserPassword = dblinkUserPassword;
@@ -44,6 +47,7 @@ namespace Pulumi.Oci.Database.Outputs
             RefreshableCloneDetails = refreshableCloneDetails;
             SourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             SourcePluggableDatabaseId = sourcePluggableDatabaseId;
+            SourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
         }
     }
 }

@@ -63,6 +63,14 @@ namespace Pulumi.Oci.ApiGateway
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.ApiGateway.Inputs.UsagePlanLockArgs
+    ///             {
+    ///                 Type = usagePlanLocksType,
+    ///                 Message = usagePlanLocksMessage,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -104,11 +112,7 @@ namespace Pulumi.Oci.ApiGateway
         public Output<ImmutableArray<Outputs.UsagePlanEntitlement>> Entitlements { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
@@ -122,6 +126,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         [Output("locks")]
         public Output<ImmutableArray<Outputs.UsagePlanLock>> Locks { get; private set; } = null!;
 
@@ -131,6 +138,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
@@ -232,11 +242,7 @@ namespace Pulumi.Oci.ApiGateway
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -249,6 +255,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.UsagePlanLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.UsagePlanLockArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.UsagePlanLockArgs>());
@@ -303,11 +313,7 @@ namespace Pulumi.Oci.ApiGateway
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -326,6 +332,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.UsagePlanLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.UsagePlanLockGetArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.UsagePlanLockGetArgs>());
@@ -340,6 +350,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public InputMap<string> SystemTags
         {
             get => _systemTags ?? (_systemTags = new InputMap<string>());

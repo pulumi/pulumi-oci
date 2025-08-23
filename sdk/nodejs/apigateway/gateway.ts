@@ -34,6 +34,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     locks: [{
+ *         type: gatewayLocksType,
+ *         message: gatewayLocksMessage,
+ *     }],
  *     networkSecurityGroupIds: gatewayNetworkSecurityGroupIds,
  *     responseCacheDetails: {
  *         type: gatewayResponseCacheDetailsType,
@@ -93,7 +97,7 @@ export class Gateway extends pulumi.CustomResource {
      */
     public readonly caBundles!: pulumi.Output<outputs.ApiGateway.GatewayCaBundle[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      */
     public readonly certificateId!: pulumi.Output<string>;
     /**
@@ -129,6 +133,9 @@ export class Gateway extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
     public readonly locks!: pulumi.Output<outputs.ApiGateway.GatewayLock[]>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -150,6 +157,9 @@ export class Gateway extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly subnetId!: pulumi.Output<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
@@ -237,7 +247,7 @@ export interface GatewayState {
      */
     caBundles?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayCaBundle>[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      */
     certificateId?: pulumi.Input<string>;
     /**
@@ -273,6 +283,9 @@ export interface GatewayState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[]>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.
@@ -294,6 +307,9 @@ export interface GatewayState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
@@ -314,7 +330,7 @@ export interface GatewayArgs {
      */
     caBundles?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayCaBundle>[]>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource which can be empty string.
      */
     certificateId?: pulumi.Input<string>;
     /**
@@ -338,6 +354,9 @@ export interface GatewayArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.GatewayLock>[]>;
     /**
      * (Updatable) An array of Network Security Groups OCIDs associated with this API Gateway.

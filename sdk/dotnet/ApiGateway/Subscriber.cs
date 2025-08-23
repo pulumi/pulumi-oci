@@ -45,6 +45,14 @@ namespace Pulumi.Oci.ApiGateway
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.ApiGateway.Inputs.SubscriberLockArgs
+    ///             {
+    ///                 Type = subscriberLocksType,
+    ///                 Message = subscriberLocksMessage,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -100,6 +108,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         [Output("locks")]
         public Output<ImmutableArray<Outputs.SubscriberLock>> Locks { get; private set; } = null!;
 
@@ -109,6 +120,9 @@ namespace Pulumi.Oci.ApiGateway
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
@@ -233,6 +247,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.SubscriberLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.SubscriberLockArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.SubscriberLockArgs>());
@@ -322,6 +340,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("locks")]
         private InputList<Inputs.SubscriberLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
         public InputList<Inputs.SubscriberLockGetArgs> Locks
         {
             get => _locks ?? (_locks = new InputList<Inputs.SubscriberLockGetArgs>());
@@ -336,6 +358,10 @@ namespace Pulumi.Oci.ApiGateway
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
         public InputMap<string> SystemTags
         {
             get => _systemTags ?? (_systemTags = new InputMap<string>());

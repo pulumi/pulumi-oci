@@ -32,6 +32,10 @@ namespace Pulumi.Oci.ApiGateway.Inputs
 
         [Input("headers")]
         private InputList<Inputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderGetArgs>? _headers;
+
+        /// <summary>
+        /// The List of Headers
+        /// </summary>
         public InputList<Inputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderGetArgs> Headers
         {
             get => _headers ?? (_headers = new InputList<Inputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderGetArgs>());
@@ -68,6 +72,9 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
+        /// <summary>
+        /// The url of the HTTP Backend
+        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 

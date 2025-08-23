@@ -79,12 +79,14 @@ type LookupApiResult struct {
 	// * 'Error' the document has been validated and contains errors
 	// * 'Failed' the document validation failed
 	// * 'Canceled' the document validation was canceled
-	LifecycleDetails string       `pulumi:"lifecycleDetails"`
-	Locks            []GetApiLock `pulumi:"locks"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetApiLock `pulumi:"locks"`
 	// Type of API Specification file.
 	SpecificationType string `pulumi:"specificationType"`
 	// The current state of the API.
-	State      string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -177,6 +179,7 @@ func (o LookupApiResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o LookupApiResultOutput) Locks() GetApiLockArrayOutput {
 	return o.ApplyT(func(v LookupApiResult) []GetApiLock { return v.Locks }).(GetApiLockArrayOutput)
 }
@@ -191,6 +194,7 @@ func (o LookupApiResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApiResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupApiResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupApiResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

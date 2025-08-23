@@ -18,14 +18,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
     public static final DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs Empty = new DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) The List of Query Parameters
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<List<DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs>> parameters;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The List of Query Parameters
      * 
      */
     public Optional<Output<List<DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs>>> parameters() {
@@ -85,7 +85,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
         }
 
         /**
-         * @param parameters (Updatable)
+         * @param parameters (Updatable) The List of Query Parameters
          * 
          * @return builder
          * 
@@ -96,7 +96,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
         }
 
         /**
-         * @param parameters (Updatable)
+         * @param parameters (Updatable) The List of Query Parameters
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
         }
 
         /**
-         * @param parameters (Updatable)
+         * @param parameters (Updatable) The List of Query Parameters
          * 
          * @return builder
          * 

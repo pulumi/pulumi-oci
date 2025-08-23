@@ -547,6 +547,12 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: apigateway.DeploymentLockArray{
+//					&apigateway.DeploymentLockArgs{
+//						Type:    pulumi.Any(deploymentLocksType),
+//						Message: pulumi.Any(deploymentLocksMessage),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -581,14 +587,16 @@ type Deployment struct {
 	GatewayId      pulumi.StringOutput `pulumi:"gatewayId"`
 	IsLockOverride pulumi.BoolOutput   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput       `pulumi:"lifecycleDetails"`
-	Locks            DeploymentLockArrayOutput `pulumi:"locks"`
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks DeploymentLockArrayOutput `pulumi:"locks"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix pulumi.StringOutput `pulumi:"pathPrefix"`
 	// (Updatable) The logical configuration of the API exposed by a deployment.
 	Specification DeploymentSpecificationOutput `pulumi:"specification"`
 	// The current state of the deployment.
-	State      pulumi.StringOutput    `pulumi:"state"`
+	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -652,14 +660,16 @@ type deploymentState struct {
 	GatewayId      *string `pulumi:"gatewayId"`
 	IsLockOverride *bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string          `pulumi:"lifecycleDetails"`
-	Locks            []DeploymentLock `pulumi:"locks"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []DeploymentLock `pulumi:"locks"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix *string `pulumi:"pathPrefix"`
 	// (Updatable) The logical configuration of the API exposed by a deployment.
 	Specification *DeploymentSpecification `pulumi:"specification"`
 	// The current state of the deployment.
-	State      *string           `pulumi:"state"`
+	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -683,13 +693,15 @@ type DeploymentState struct {
 	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	Locks            DeploymentLockArrayInput
+	// Locks associated with this resource.
+	Locks DeploymentLockArrayInput
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix pulumi.StringPtrInput
 	// (Updatable) The logical configuration of the API exposed by a deployment.
 	Specification DeploymentSpecificationPtrInput
 	// The current state of the deployment.
-	State      pulumi.StringPtrInput
+	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -711,9 +723,10 @@ type deploymentArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
-	GatewayId      string           `pulumi:"gatewayId"`
-	IsLockOverride *bool            `pulumi:"isLockOverride"`
-	Locks          []DeploymentLock `pulumi:"locks"`
+	GatewayId      string `pulumi:"gatewayId"`
+	IsLockOverride *bool  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []DeploymentLock `pulumi:"locks"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix string `pulumi:"pathPrefix"`
 	// (Updatable) The logical configuration of the API exposed by a deployment.
@@ -733,7 +746,8 @@ type DeploymentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
 	GatewayId      pulumi.StringInput
 	IsLockOverride pulumi.BoolPtrInput
-	Locks          DeploymentLockArrayInput
+	// Locks associated with this resource.
+	Locks DeploymentLockArrayInput
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix pulumi.StringInput
 	// (Updatable) The logical configuration of the API exposed by a deployment.
@@ -866,6 +880,7 @@ func (o DeploymentOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o DeploymentOutput) Locks() DeploymentLockArrayOutput {
 	return o.ApplyT(func(v *Deployment) DeploymentLockArrayOutput { return v.Locks }).(DeploymentLockArrayOutput)
 }
@@ -885,6 +900,7 @@ func (o DeploymentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DeploymentOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }

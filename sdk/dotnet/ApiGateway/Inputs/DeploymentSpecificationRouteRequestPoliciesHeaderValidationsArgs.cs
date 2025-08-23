@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs>? _headers;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The List of Headers
         /// </summary>
         public InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs> Headers
         {

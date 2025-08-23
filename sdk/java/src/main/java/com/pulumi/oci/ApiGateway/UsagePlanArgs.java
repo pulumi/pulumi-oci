@@ -84,18 +84,12 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -109,9 +103,17 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isLockOverride);
     }
 
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Import(name="locks")
     private @Nullable Output<List<UsagePlanLockArgs>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Optional<Output<List<UsagePlanLockArgs>>> locks() {
         return Optional.ofNullable(this.locks);
     }
@@ -243,9 +245,6 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -256,9 +255,6 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -276,15 +272,33 @@ public final class UsagePlanArgs extends com.pulumi.resources.ResourceArgs {
             return isLockOverride(Output.of(isLockOverride));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(@Nullable Output<List<UsagePlanLockArgs>> locks) {
             $.locks = locks;
             return this;
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(List<UsagePlanLockArgs> locks) {
             return locks(Output.of(locks));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(UsagePlanLockArgs... locks) {
             return locks(List.of(locks));
         }

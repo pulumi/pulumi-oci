@@ -34,6 +34,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.ApiGateway.Certificate;
  * import com.pulumi.oci.ApiGateway.CertificateArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.CertificateLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -55,6 +56,10 @@ import javax.annotation.Nullable;
  *             .displayName(certificateDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .intermediateCertificates(certificateIntermediateCertificates)
+ *             .locks(CertificateLockArgs.builder()
+ *                 .type(certificateLocksType)
+ *                 .message(certificateLocksMessage)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -178,9 +183,17 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Export(name="locks", refs={List.class,CertificateLock.class}, tree="[0,1]")
     private Output<List<CertificateLock>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Output<List<CertificateLock>> locks() {
         return this.locks;
     }
@@ -232,9 +245,17 @@ public class Certificate extends com.pulumi.resources.CustomResource {
     public Output<List<String>> subjectNames() {
         return this.subjectNames;
     }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }

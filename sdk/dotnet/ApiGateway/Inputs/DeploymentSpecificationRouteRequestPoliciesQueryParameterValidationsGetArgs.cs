@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterGetArgs>? _parameters;
 
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The List of Query Parameters
         /// </summary>
         public InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterGetArgs> Parameters
         {

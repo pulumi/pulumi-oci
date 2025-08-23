@@ -12,6 +12,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation {
+    /**
+     * @return The List of Headers
+     * 
+     */
     private List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers;
     /**
      * @return Validation behavior mode.
@@ -20,6 +24,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPo
     private String validationMode;
 
     private GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidation() {}
+    /**
+     * @return The List of Headers
+     * 
+     */
     public List<GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeader> headers() {
         return this.headers;
     }

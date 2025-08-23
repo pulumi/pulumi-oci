@@ -1337,12 +1337,25 @@ export namespace AnnouncementsService {
 
 export namespace ApiGateway {
     export interface ApiLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
         relatedResourceId?: pulumi.Input<string>;
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
         type: pulumi.Input<string>;
     }
 
@@ -1358,24 +1371,39 @@ export namespace ApiGateway {
     }
 
     export interface CertificateLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
         relatedResourceId?: pulumi.Input<string>;
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
         type: pulumi.Input<string>;
     }
 
     export interface DeploymentLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
         relatedResourceId?: pulumi.Input<string>;
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * Type of the Response Cache Store Policy.
+         * Type of the lock.
          */
         type: pulumi.Input<string>;
     }
@@ -2476,7 +2504,7 @@ export namespace ApiGateway {
 
     export interface DeploymentSpecificationRouteBackend {
         /**
-         * (Updatable)
+         * (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
          */
         allowedPostLogoutUris?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -2528,7 +2556,7 @@ export namespace ApiGateway {
          */
         type: pulumi.Input<string>;
         /**
-         * (Updatable)
+         * (Updatable) The url of the HTTP Backend
          */
         url?: pulumi.Input<string>;
     }
@@ -2568,6 +2596,9 @@ export namespace ApiGateway {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
          */
         functionId?: pulumi.Input<string>;
+        /**
+         * The List of Headers
+         */
         headers?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader>[]>;
         /**
          * Defines whether or not to uphold SSL verification.
@@ -2589,6 +2620,9 @@ export namespace ApiGateway {
          * Type of the Response Cache Store Policy.
          */
         type: pulumi.Input<string>;
+        /**
+         * The url of the HTTP Backend
+         */
         url?: pulumi.Input<string>;
     }
 
@@ -2860,7 +2894,7 @@ export namespace ApiGateway {
 
     export interface DeploymentSpecificationRouteRequestPoliciesHeaderValidations {
         /**
-         * (Updatable)
+         * (Updatable) The List of Headers
          */
         headers?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader>[]>;
         /**
@@ -2961,7 +2995,7 @@ export namespace ApiGateway {
 
     export interface DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations {
         /**
-         * (Updatable)
+         * (Updatable) The List of Query Parameters
          */
         parameters?: pulumi.Input<pulumi.Input<inputs.ApiGateway.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter>[]>;
         /**
@@ -3132,14 +3166,20 @@ export namespace ApiGateway {
     }
 
     export interface GatewayLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
         relatedResourceId?: pulumi.Input<string>;
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
         /**
-         * Type of the Response Cache.
+         * Type of the lock.
          */
         type: pulumi.Input<string>;
     }
@@ -3308,12 +3348,21 @@ export namespace ApiGateway {
     }
 
     export interface SubscriberLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
         relatedResourceId?: pulumi.Input<string>;
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
         type: pulumi.Input<string>;
     }
 
@@ -3378,12 +3427,25 @@ export namespace ApiGateway {
     }
 
     export interface UsagePlanLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
         message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
         relatedResourceId?: pulumi.Input<string>;
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
          */
         timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
         type: pulumi.Input<string>;
     }
 }
@@ -31401,6 +31463,24 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetPluggableDatabaseSnapshotsFilter {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPluggableDatabaseSnapshotsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetPluggableDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -31809,6 +31889,10 @@ export namespace Database {
          * The OCID of the Source Pluggable Database.
          */
         sourcePluggableDatabaseId: pulumi.Input<string>;
+        /**
+         * The OCID of the Source Pluggable Database Snapshot id.
+         */
+        sourcePluggableDatabaseSnapshotId?: pulumi.Input<string>;
     }
 
     export interface PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails {

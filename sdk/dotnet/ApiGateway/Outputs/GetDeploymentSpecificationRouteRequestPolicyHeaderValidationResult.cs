@@ -13,6 +13,9 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     [OutputType]
     public sealed class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult
     {
+        /// <summary>
+        /// The List of Headers
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult> Headers;
         /// <summary>
         /// Validation behavior mode.

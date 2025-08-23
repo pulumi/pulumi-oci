@@ -75,14 +75,16 @@ type LookupDeploymentResult struct {
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string              `pulumi:"lifecycleDetails"`
-	Locks            []GetDeploymentLock `pulumi:"locks"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDeploymentLock `pulumi:"locks"`
 	// A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
 	PathPrefix string `pulumi:"pathPrefix"`
 	// The logical configuration of the API exposed by a deployment.
 	Specifications []GetDeploymentSpecification `pulumi:"specifications"`
 	// The current state of the deployment.
-	State      string            `pulumi:"state"`
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -172,6 +174,7 @@ func (o LookupDeploymentResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o LookupDeploymentResultOutput) Locks() GetDeploymentLockArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentLock { return v.Locks }).(GetDeploymentLockArrayOutput)
 }
@@ -191,6 +194,7 @@ func (o LookupDeploymentResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupDeploymentResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

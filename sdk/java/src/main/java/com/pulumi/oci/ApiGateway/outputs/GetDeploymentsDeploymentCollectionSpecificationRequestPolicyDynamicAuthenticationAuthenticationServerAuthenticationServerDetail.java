@@ -48,6 +48,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
      * 
      */
     private Double maxClockSkewInSeconds;
+    /**
+     * @return The List of Query Parameters
+     * 
+     */
     private Map<String,String> parameters;
     /**
      * @return A set of Public Keys that will be used to verify the JWT signature.
@@ -133,6 +137,10 @@ public final class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyD
     public Double maxClockSkewInSeconds() {
         return this.maxClockSkewInSeconds;
     }
+    /**
+     * @return The List of Query Parameters
+     * 
+     */
     public Map<String,String> parameters() {
         return this.parameters;
     }

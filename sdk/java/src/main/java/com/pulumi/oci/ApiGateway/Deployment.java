@@ -59,6 +59,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesMutualTlsArgs;
  * import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesRateLimitingArgs;
  * import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesUsagePlansArgs;
+ * import com.pulumi.oci.ApiGateway.inputs.DeploymentLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -523,6 +524,10 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(deploymentDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .locks(DeploymentLockArgs.builder()
+ *                 .type(deploymentLocksType)
+ *                 .message(deploymentLocksMessage)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -646,9 +651,17 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Export(name="locks", refs={List.class,DeploymentLock.class}, tree="[0,1]")
     private Output<List<DeploymentLock>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Output<List<DeploymentLock>> locks() {
         return this.locks;
     }
@@ -694,9 +707,17 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
+    /**
+     * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }

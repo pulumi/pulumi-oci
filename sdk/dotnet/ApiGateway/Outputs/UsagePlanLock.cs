@@ -13,12 +13,25 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     [OutputType]
     public sealed class UsagePlanLock
     {
+        /// <summary>
+        /// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        /// </summary>
         public readonly string? Message;
+        /// <summary>
+        /// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        /// </summary>
         public readonly string? RelatedResourceId;
         /// <summary>
         /// The time this resource was created. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string? TimeCreated;
+        /// <summary>
+        /// Type of the lock.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         public readonly string Type;
 
         [OutputConstructor]

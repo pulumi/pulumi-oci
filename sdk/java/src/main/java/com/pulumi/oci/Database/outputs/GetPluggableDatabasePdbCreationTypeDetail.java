@@ -20,6 +20,7 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
     private List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
     private String sourceContainerDatabaseAdminPassword;
     private String sourcePluggableDatabaseId;
+    private String sourcePluggableDatabaseSnapshotId;
 
     private GetPluggableDatabasePdbCreationTypeDetail() {}
     public String creationType() {
@@ -43,6 +44,9 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
     public String sourcePluggableDatabaseId() {
         return this.sourcePluggableDatabaseId;
     }
+    public String sourcePluggableDatabaseSnapshotId() {
+        return this.sourcePluggableDatabaseSnapshotId;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -60,6 +64,7 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
         private List<GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
         private String sourceContainerDatabaseAdminPassword;
         private String sourcePluggableDatabaseId;
+        private String sourcePluggableDatabaseSnapshotId;
         public Builder() {}
         public Builder(GetPluggableDatabasePdbCreationTypeDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -70,6 +75,7 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
     	      this.refreshableCloneDetails = defaults.refreshableCloneDetails;
     	      this.sourceContainerDatabaseAdminPassword = defaults.sourceContainerDatabaseAdminPassword;
     	      this.sourcePluggableDatabaseId = defaults.sourcePluggableDatabaseId;
+    	      this.sourcePluggableDatabaseSnapshotId = defaults.sourcePluggableDatabaseSnapshotId;
         }
 
         @CustomType.Setter
@@ -131,6 +137,14 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
             this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
             return this;
         }
+        @CustomType.Setter
+        public Builder sourcePluggableDatabaseSnapshotId(String sourcePluggableDatabaseSnapshotId) {
+            if (sourcePluggableDatabaseSnapshotId == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasePdbCreationTypeDetail", "sourcePluggableDatabaseSnapshotId");
+            }
+            this.sourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
+            return this;
+        }
         public GetPluggableDatabasePdbCreationTypeDetail build() {
             final var _resultValue = new GetPluggableDatabasePdbCreationTypeDetail();
             _resultValue.creationType = creationType;
@@ -140,6 +154,7 @@ public final class GetPluggableDatabasePdbCreationTypeDetail {
             _resultValue.refreshableCloneDetails = refreshableCloneDetails;
             _resultValue.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             _resultValue.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
+            _resultValue.sourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
             return _resultValue;
         }
     }

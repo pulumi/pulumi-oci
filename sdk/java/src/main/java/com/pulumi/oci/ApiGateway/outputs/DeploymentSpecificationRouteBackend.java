@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteBackend {
     /**
-     * @return (Updatable)
+     * @return (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
      * 
      */
     private @Nullable List<String> allowedPostLogoutUris;
@@ -85,14 +85,14 @@ public final class DeploymentSpecificationRouteBackend {
      */
     private String type;
     /**
-     * @return (Updatable)
+     * @return (Updatable) The url of the HTTP Backend
      * 
      */
     private @Nullable String url;
 
     private DeploymentSpecificationRouteBackend() {}
     /**
-     * @return (Updatable)
+     * @return (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
      * 
      */
     public List<String> allowedPostLogoutUris() {
@@ -183,7 +183,7 @@ public final class DeploymentSpecificationRouteBackend {
         return this.type;
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) The url of the HTTP Backend
      * 
      */
     public Optional<String> url() {

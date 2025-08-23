@@ -123,6 +123,21 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
         return this.sourcePluggableDatabaseId;
     }
 
+    /**
+     * The OCID of the Source Pluggable Database Snapshot id.
+     * 
+     */
+    @Import(name="sourcePluggableDatabaseSnapshotId")
+    private @Nullable Output<String> sourcePluggableDatabaseSnapshotId;
+
+    /**
+     * @return The OCID of the Source Pluggable Database Snapshot id.
+     * 
+     */
+    public Optional<Output<String>> sourcePluggableDatabaseSnapshotId() {
+        return Optional.ofNullable(this.sourcePluggableDatabaseSnapshotId);
+    }
+
     private PluggableDatabasePdbCreationTypeDetailsArgs() {}
 
     private PluggableDatabasePdbCreationTypeDetailsArgs(PluggableDatabasePdbCreationTypeDetailsArgs $) {
@@ -133,6 +148,7 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
         this.refreshableCloneDetails = $.refreshableCloneDetails;
         this.sourceContainerDatabaseAdminPassword = $.sourceContainerDatabaseAdminPassword;
         this.sourcePluggableDatabaseId = $.sourcePluggableDatabaseId;
+        this.sourcePluggableDatabaseSnapshotId = $.sourcePluggableDatabaseSnapshotId;
     }
 
     public static Builder builder() {
@@ -298,6 +314,27 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
          */
         public Builder sourcePluggableDatabaseId(String sourcePluggableDatabaseId) {
             return sourcePluggableDatabaseId(Output.of(sourcePluggableDatabaseId));
+        }
+
+        /**
+         * @param sourcePluggableDatabaseSnapshotId The OCID of the Source Pluggable Database Snapshot id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourcePluggableDatabaseSnapshotId(@Nullable Output<String> sourcePluggableDatabaseSnapshotId) {
+            $.sourcePluggableDatabaseSnapshotId = sourcePluggableDatabaseSnapshotId;
+            return this;
+        }
+
+        /**
+         * @param sourcePluggableDatabaseSnapshotId The OCID of the Source Pluggable Database Snapshot id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourcePluggableDatabaseSnapshotId(String sourcePluggableDatabaseSnapshotId) {
+            return sourcePluggableDatabaseSnapshotId(Output.of(sourcePluggableDatabaseSnapshotId));
         }
 
         public PluggableDatabasePdbCreationTypeDetailsArgs build() {

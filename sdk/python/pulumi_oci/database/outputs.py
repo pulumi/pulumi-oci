@@ -685,6 +685,8 @@ __all__ = [
     'GetPluggableDatabasePdbNodeLevelDetailResult',
     'GetPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetPluggableDatabaseRefreshableCloneConfigResult',
+    'GetPluggableDatabaseSnapshotsFilterResult',
+    'GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotResult',
     'GetPluggableDatabasesFilterResult',
     'GetPluggableDatabasesPluggableDatabaseResult',
     'GetPluggableDatabasesPluggableDatabaseConnectionStringResult',
@@ -15777,6 +15779,8 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
             suggest = "refreshable_clone_details"
         elif key == "sourceContainerDatabaseAdminPassword":
             suggest = "source_container_database_admin_password"
+        elif key == "sourcePluggableDatabaseSnapshotId":
+            suggest = "source_pluggable_database_snapshot_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PluggableDatabasePdbCreationTypeDetails. Access the value via the '{suggest}' property getter instead.")
@@ -15796,7 +15800,8 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
                  dblink_username: Optional[_builtins.str] = None,
                  is_thin_clone: Optional[_builtins.bool] = None,
                  refreshable_clone_details: Optional['outputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails'] = None,
-                 source_container_database_admin_password: Optional[_builtins.str] = None):
+                 source_container_database_admin_password: Optional[_builtins.str] = None,
+                 source_pluggable_database_snapshot_id: Optional[_builtins.str] = None):
         """
         :param _builtins.str creation_type: The Pluggable Database creation type.
         :param _builtins.str source_pluggable_database_id: The OCID of the Source Pluggable Database.
@@ -15805,6 +15810,7 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
         :param _builtins.bool is_thin_clone: True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
         :param 'PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs' refreshable_clone_details: Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param _builtins.str source_container_database_admin_password: The DB system administrator password of the source Container Database.
+        :param _builtins.str source_pluggable_database_snapshot_id: The OCID of the Source Pluggable Database Snapshot id.
         """
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
@@ -15818,6 +15824,8 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
             pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         if source_container_database_admin_password is not None:
             pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
+        if source_pluggable_database_snapshot_id is not None:
+            pulumi.set(__self__, "source_pluggable_database_snapshot_id", source_pluggable_database_snapshot_id)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
@@ -15874,6 +15882,14 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
         The DB system administrator password of the source Container Database.
         """
         return pulumi.get(self, "source_container_database_admin_password")
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePluggableDatabaseSnapshotId")
+    def source_pluggable_database_snapshot_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the Source Pluggable Database Snapshot id.
+        """
+        return pulumi.get(self, "source_pluggable_database_snapshot_id")
 
 
 @pulumi.output_type
@@ -56095,7 +56111,8 @@ class GetPluggableDatabasePdbCreationTypeDetailResult(dict):
                  is_thin_clone: _builtins.bool,
                  refreshable_clone_details: Sequence['outputs.GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult'],
                  source_container_database_admin_password: _builtins.str,
-                 source_pluggable_database_id: _builtins.str):
+                 source_pluggable_database_id: _builtins.str,
+                 source_pluggable_database_snapshot_id: _builtins.str):
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "dblink_user_password", dblink_user_password)
         pulumi.set(__self__, "dblink_username", dblink_username)
@@ -56103,6 +56120,7 @@ class GetPluggableDatabasePdbCreationTypeDetailResult(dict):
         pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
+        pulumi.set(__self__, "source_pluggable_database_snapshot_id", source_pluggable_database_snapshot_id)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
@@ -56138,6 +56156,11 @@ class GetPluggableDatabasePdbCreationTypeDetailResult(dict):
     @pulumi.getter(name="sourcePluggableDatabaseId")
     def source_pluggable_database_id(self) -> _builtins.str:
         return pulumi.get(self, "source_pluggable_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePluggableDatabaseSnapshotId")
+    def source_pluggable_database_snapshot_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_pluggable_database_snapshot_id")
 
 
 @pulumi.output_type
@@ -56221,6 +56244,167 @@ class GetPluggableDatabaseRefreshableCloneConfigResult(dict):
         Indicates whether the Pluggable Database is a refreshable clone.
         """
         return pulumi.get(self, "is_refreshable_clone")
+
+
+@pulumi.output_type
+class GetPluggableDatabaseSnapshotsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPluggableDatabaseSnapshotsPluggableDatabaseSnapshotResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 name: _builtins.str,
+                 pluggable_database_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str cluster_id: A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database Snapshot.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state of the Exadata Pluggable Database Snapshot.
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        :param _builtins.str pluggable_database_id: A filter to return only Exadata Pluggable Database Snapshots that match the given database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str state: A filter to return only Exadata Pluggable Database Snapshots that match the given lifecycle state exactly.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str time_created: The date and time that the Exadata Pluggable Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Node Snapshots that match the given VM cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Pluggable Database Snapshot.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state of the Exadata Pluggable Database Snapshot.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="pluggableDatabaseId")
+    def pluggable_database_id(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Pluggable Database Snapshots that match the given database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "pluggable_database_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Pluggable Database Snapshots that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the Exadata Pluggable Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -56552,7 +56736,8 @@ class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailResult(dict):
                  is_thin_clone: _builtins.bool,
                  refreshable_clone_details: Sequence['outputs.GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult'],
                  source_container_database_admin_password: _builtins.str,
-                 source_pluggable_database_id: _builtins.str):
+                 source_pluggable_database_id: _builtins.str,
+                 source_pluggable_database_snapshot_id: _builtins.str):
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "dblink_user_password", dblink_user_password)
         pulumi.set(__self__, "dblink_username", dblink_username)
@@ -56560,6 +56745,7 @@ class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailResult(dict):
         pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
+        pulumi.set(__self__, "source_pluggable_database_snapshot_id", source_pluggable_database_snapshot_id)
 
     @_builtins.property
     @pulumi.getter(name="creationType")
@@ -56595,6 +56781,11 @@ class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailResult(dict):
     @pulumi.getter(name="sourcePluggableDatabaseId")
     def source_pluggable_database_id(self) -> _builtins.str:
         return pulumi.get(self, "source_pluggable_database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourcePluggableDatabaseSnapshotId")
+    def source_pluggable_database_snapshot_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_pluggable_database_snapshot_id")
 
 
 @pulumi.output_type

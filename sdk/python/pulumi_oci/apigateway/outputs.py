@@ -499,6 +499,13 @@ class ApiLock(dict):
                  related_resource_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None):
         """
+        :param _builtins.str type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -512,16 +519,29 @@ class ApiLock(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "type")
 
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -591,6 +611,9 @@ class CertificateLock(dict):
                  related_resource_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None):
         """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -604,16 +627,25 @@ class CertificateLock(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -652,7 +684,9 @@ class DeploymentLock(dict):
                  related_resource_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -667,18 +701,24 @@ class DeploymentLock(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Type of the Response Cache Store Policy.
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -4727,7 +4767,7 @@ class DeploymentSpecificationRouteBackend(dict):
                  url: Optional[_builtins.str] = None):
         """
         :param _builtins.str type: (Updatable) Type of the API backend.
-        :param Sequence[_builtins.str] allowed_post_logout_uris: (Updatable)
+        :param Sequence[_builtins.str] allowed_post_logout_uris: (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         :param _builtins.str body: (Updatable) The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -4739,7 +4779,7 @@ class DeploymentSpecificationRouteBackend(dict):
         :param 'DeploymentSpecificationRouteBackendSelectionSourceArgs' selection_source: (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
         :param _builtins.float send_timeout_in_seconds: (Updatable) Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: (Updatable) The status code of the stock response from the mock backend.
-        :param _builtins.str url: (Updatable)
+        :param _builtins.str url: (Updatable) The url of the HTTP Backend
         """
         pulumi.set(__self__, "type", type)
         if allowed_post_logout_uris is not None:
@@ -4781,7 +4821,7 @@ class DeploymentSpecificationRouteBackend(dict):
     @pulumi.getter(name="allowedPostLogoutUris")
     def allowed_post_logout_uris(self) -> Optional[Sequence[_builtins.str]]:
         """
-        (Updatable)
+        (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         """
         return pulumi.get(self, "allowed_post_logout_uris")
 
@@ -4877,7 +4917,7 @@ class DeploymentSpecificationRouteBackend(dict):
     @pulumi.getter
     def url(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
+        (Updatable) The url of the HTTP Backend
         """
         return pulumi.get(self, "url")
 
@@ -4987,10 +5027,12 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "type", type)
         if body is not None:
@@ -5047,6 +5089,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Optional[Sequence['outputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader']]:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -5084,6 +5129,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackend(dict):
     @_builtins.property
     @pulumi.getter
     def url(self) -> Optional[_builtins.str]:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -6070,7 +6118,7 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidations(dict):
                  headers: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader']] = None,
                  validation_mode: Optional[_builtins.str] = None):
         """
-        :param Sequence['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs'] headers: (Updatable)
+        :param Sequence['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs'] headers: (Updatable) The List of Headers
         :param _builtins.str validation_mode: (Updatable) Validation behavior mode.
                
                In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
@@ -6088,7 +6136,7 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidations(dict):
     @pulumi.getter
     def headers(self) -> Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeader']]:
         """
-        (Updatable)
+        (Updatable) The List of Headers
         """
         return pulumi.get(self, "headers")
 
@@ -6411,7 +6459,7 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations(dict)
                  parameters: Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter']] = None,
                  validation_mode: Optional[_builtins.str] = None):
         """
-        :param Sequence['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs'] parameters: (Updatable)
+        :param Sequence['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs'] parameters: (Updatable) The List of Query Parameters
         :param _builtins.str validation_mode: (Updatable) Validation behavior mode.
                
                In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
@@ -6429,7 +6477,7 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations(dict)
     @pulumi.getter
     def parameters(self) -> Optional[Sequence['outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter']]:
         """
-        (Updatable)
+        (Updatable) The List of Query Parameters
         """
         return pulumi.get(self, "parameters")
 
@@ -7040,7 +7088,9 @@ class GatewayLock(dict):
                  related_resource_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: Type of the Response Cache.
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -7055,18 +7105,24 @@ class GatewayLock(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Type of the Response Cache.
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -7308,6 +7364,9 @@ class SubscriberLock(dict):
                  related_resource_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None):
         """
+        :param _builtins.str type: Type of the lock.
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -7321,16 +7380,25 @@ class SubscriberLock(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -7586,6 +7654,13 @@ class UsagePlanLock(dict):
                  related_resource_id: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None):
         """
+        :param _builtins.str type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -7599,16 +7674,29 @@ class UsagePlanLock(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "type")
 
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -7794,6 +7882,7 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
         :param _builtins.bool is_anonymous_access_allowed: Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[_builtins.str] issuers: A list of parties that could have issued the token.
         :param _builtins.float max_clock_skew_in_seconds: The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+        :param Mapping[str, _builtins.str] parameters: The List of Query Parameters
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyArgs'] public_keys: A set of Public Keys that will be used to verify the JWT signature.
         :param _builtins.str token_auth_scheme: The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param _builtins.str token_header: The name of the header containing the authentication token.
@@ -7870,6 +7959,9 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -9095,6 +9187,7 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
         :param _builtins.bool is_anonymous_access_allowed: Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[_builtins.str] issuers: A list of parties that could have issued the token.
         :param _builtins.float max_clock_skew_in_seconds: The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+        :param Mapping[str, _builtins.str] parameters: The List of Query Parameters
         :param Sequence['GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyArgs'] public_keys: A set of Public Keys that will be used to verify the JWT signature.
         :param _builtins.str token_auth_scheme: The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param _builtins.str token_header: The name of the header containing the authentication token.
@@ -9171,6 +9264,9 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -10506,9 +10602,11 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
                  type: _builtins.str,
                  url: _builtins.str):
         """
+        :param Sequence[_builtins.str] allowed_post_logout_uris: A list of allowed post-logout URLs to which a request can be redirected after revoke access
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['GetApiDeploymentSpecificationRouteBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.str post_logout_state: Defines a state that should be shared on redirecting to postLogout URL.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
@@ -10517,6 +10615,7 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
         :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
         pulumi.set(__self__, "body", body)
@@ -10536,6 +10635,9 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter(name="allowedPostLogoutUris")
     def allowed_post_logout_uris(self) -> Sequence[_builtins.str]:
+        """
+        A list of allowed post-logout URLs to which a request can be redirected after revoke access
+        """
         return pulumi.get(self, "allowed_post_logout_uris")
 
     @_builtins.property
@@ -10565,6 +10667,9 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetApiDeploymentSpecificationRouteBackendHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -10634,6 +10739,9 @@ class GetApiDeploymentSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def url(self) -> _builtins.str:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -10712,11 +10820,13 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict)
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
         :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "body", body)
         pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
@@ -10756,6 +10866,9 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict)
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -10801,6 +10914,9 @@ class GetApiDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict)
     @_builtins.property
     @pulumi.getter
     def url(self) -> _builtins.str:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -11464,6 +11580,7 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict
                  headers: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult'],
                  validation_mode: _builtins.str):
         """
+        :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderArgs'] headers: The List of Headers
         :param _builtins.str validation_mode: Validation behavior mode.
         """
         pulumi.set(__self__, "headers", headers)
@@ -11472,6 +11589,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -11710,6 +11830,7 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationRes
                  parameters: Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult'],
                  validation_mode: _builtins.str):
         """
+        :param Sequence['GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterArgs'] parameters: The List of Query Parameters
         :param _builtins.str validation_mode: Validation behavior mode.
         """
         pulumi.set(__self__, "parameters", parameters)
@@ -11718,6 +11839,9 @@ class GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationRes
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Sequence['outputs.GetApiDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult']:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -12067,7 +12191,10 @@ class GetApiLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -12077,11 +12204,17 @@ class GetApiLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -12095,6 +12228,9 @@ class GetApiLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -12263,8 +12399,10 @@ class GetApisApiCollectionItemResult(dict):
                * 'Error' the document has been validated and contains errors
                * 'Failed' the document validation failed
                * 'Canceled' the document validation was canceled
+        :param Sequence['GetApisApiCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str specification_type: Type of API Specification file.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE`
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param Sequence['GetApisApiCollectionItemValidationResultArgs'] validation_results: Status of each feature available from the API.
@@ -12353,6 +12491,9 @@ class GetApisApiCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetApisApiCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -12374,6 +12515,9 @@ class GetApisApiCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -12409,7 +12553,10 @@ class GetApisApiCollectionItemLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -12419,11 +12566,17 @@ class GetApisApiCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -12437,6 +12590,9 @@ class GetApisApiCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -12510,7 +12666,10 @@ class GetCertificateLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -12520,11 +12679,17 @@ class GetCertificateLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -12538,6 +12703,9 @@ class GetCertificateLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -12582,8 +12750,10 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param _builtins.str intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetCertificatesCertificateCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state.  Example: `ACTIVE` or `DELETED`
         :param Sequence[_builtins.str] subject_names: The entity to be secured by the certificate and additional host names.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_not_valid_after: The date and time the certificate will expire.
         :param _builtins.str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
@@ -12678,6 +12848,9 @@ class GetCertificatesCertificateCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetCertificatesCertificateCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -12704,6 +12877,9 @@ class GetCertificatesCertificateCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -12739,7 +12915,10 @@ class GetCertificatesCertificateCollectionItemLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -12749,11 +12928,17 @@ class GetCertificatesCertificateCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -12767,6 +12952,9 @@ class GetCertificatesCertificateCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -12805,6 +12993,8 @@ class GetDeploymentLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str type: Type of the Response Cache Store Policy.
         """
@@ -12816,11 +13006,17 @@ class GetDeploymentLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -13054,6 +13250,7 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
         :param _builtins.bool is_anonymous_access_allowed: Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[_builtins.str] issuers: A list of parties that could have issued the token.
         :param _builtins.float max_clock_skew_in_seconds: The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+        :param Mapping[str, _builtins.str] parameters: The List of Query Parameters
         :param Sequence['GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyArgs'] public_keys: A set of Public Keys that will be used to verify the JWT signature.
         :param _builtins.str token_auth_scheme: The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param _builtins.str token_header: The name of the header containing the authentication token.
@@ -13130,6 +13327,9 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -14355,6 +14555,7 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
         :param _builtins.bool is_anonymous_access_allowed: Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[_builtins.str] issuers: A list of parties that could have issued the token.
         :param _builtins.float max_clock_skew_in_seconds: The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+        :param Mapping[str, _builtins.str] parameters: The List of Query Parameters
         :param Sequence['GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyArgs'] public_keys: A set of Public Keys that will be used to verify the JWT signature.
         :param _builtins.str token_auth_scheme: The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param _builtins.str token_header: The name of the header containing the authentication token.
@@ -14431,6 +14632,9 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -15766,9 +15970,11 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
                  type: _builtins.str,
                  url: _builtins.str):
         """
+        :param Sequence[_builtins.str] allowed_post_logout_uris: A list of allowed post-logout URLs to which a request can be redirected after revoke access
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['GetDeploymentSpecificationRouteBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.str post_logout_state: Defines a state that should be shared on redirecting to postLogout URL.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
@@ -15777,6 +15983,7 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
         :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
         pulumi.set(__self__, "body", body)
@@ -15796,6 +16003,9 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter(name="allowedPostLogoutUris")
     def allowed_post_logout_uris(self) -> Sequence[_builtins.str]:
+        """
+        A list of allowed post-logout URLs to which a request can be redirected after revoke access
+        """
         return pulumi.get(self, "allowed_post_logout_uris")
 
     @_builtins.property
@@ -15825,6 +16035,9 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetDeploymentSpecificationRouteBackendHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -15894,6 +16107,9 @@ class GetDeploymentSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def url(self) -> _builtins.str:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -15972,11 +16188,13 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict):
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
         :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "body", body)
         pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
@@ -16016,6 +16234,9 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetDeploymentSpecificationRouteBackendRoutingBackendBackendHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -16061,6 +16282,9 @@ class GetDeploymentSpecificationRouteBackendRoutingBackendBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def url(self) -> _builtins.str:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -16724,6 +16948,7 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict):
                  headers: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult'],
                  validation_mode: _builtins.str):
         """
+        :param Sequence['GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderArgs'] headers: The List of Headers
         :param _builtins.str validation_mode: Validation behavior mode.
         """
         pulumi.set(__self__, "headers", headers)
@@ -16732,6 +16957,9 @@ class GetDeploymentSpecificationRouteRequestPolicyHeaderValidationResult(dict):
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyHeaderValidationHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -16970,6 +17198,7 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult
                  parameters: Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult'],
                  validation_mode: _builtins.str):
         """
+        :param Sequence['GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterArgs'] parameters: The List of Query Parameters
         :param _builtins.str validation_mode: Validation behavior mode.
         """
         pulumi.set(__self__, "parameters", parameters)
@@ -16978,6 +17207,9 @@ class GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationResult
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Sequence['outputs.GetDeploymentSpecificationRouteRequestPolicyQueryParameterValidationParameterResult']:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -17347,9 +17579,11 @@ class GetDeploymentsDeploymentCollectionResult(dict):
         :param _builtins.str gateway_id: Filter deployments by the gateway ocid.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetDeploymentsDeploymentCollectionLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str path_prefix: A path on which to deploy all routes contained in the API deployment specification. For more information, see [Deploying an API on an API Gateway by Creating an API Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationArgs'] specifications: The logical configuration of the API exposed by a deployment.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -17442,6 +17676,9 @@ class GetDeploymentsDeploymentCollectionResult(dict):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -17471,6 +17708,9 @@ class GetDeploymentsDeploymentCollectionResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -17498,6 +17738,8 @@ class GetDeploymentsDeploymentCollectionLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str type: Type of the Response Cache Store Policy.
         """
@@ -17509,11 +17751,17 @@ class GetDeploymentsDeploymentCollectionLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -17747,6 +17995,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
         :param _builtins.bool is_anonymous_access_allowed: Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[_builtins.str] issuers: A list of parties that could have issued the token.
         :param _builtins.float max_clock_skew_in_seconds: The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+        :param Mapping[str, _builtins.str] parameters: The List of Query Parameters
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyArgs'] public_keys: A set of Public Keys that will be used to verify the JWT signature.
         :param _builtins.str token_auth_scheme: The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param _builtins.str token_header: The name of the header containing the authentication token.
@@ -17823,6 +18072,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -19048,6 +19300,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
         :param _builtins.bool is_anonymous_access_allowed: Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[_builtins.str] issuers: A list of parties that could have issued the token.
         :param _builtins.float max_clock_skew_in_seconds: The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
+        :param Mapping[str, _builtins.str] parameters: The List of Query Parameters
         :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyArgs'] public_keys: A set of Public Keys that will be used to verify the JWT signature.
         :param _builtins.str token_auth_scheme: The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param _builtins.str token_header: The name of the header containing the authentication token.
@@ -19124,6 +19377,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Mapping[str, _builtins.str]:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -20459,9 +20715,11 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
                  type: _builtins.str,
                  url: _builtins.str):
         """
+        :param Sequence[_builtins.str] allowed_post_logout_uris: A list of allowed post-logout URLs to which a request can be redirected after revoke access
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.str post_logout_state: Defines a state that should be shared on redirecting to postLogout URL.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
@@ -20470,6 +20728,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
         :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "allowed_post_logout_uris", allowed_post_logout_uris)
         pulumi.set(__self__, "body", body)
@@ -20489,6 +20748,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter(name="allowedPostLogoutUris")
     def allowed_post_logout_uris(self) -> Sequence[_builtins.str]:
+        """
+        A list of allowed post-logout URLs to which a request can be redirected after revoke access
+        """
         return pulumi.get(self, "allowed_post_logout_uris")
 
     @_builtins.property
@@ -20518,6 +20780,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -20587,6 +20852,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendResult(dict):
     @_builtins.property
     @pulumi.getter
     def url(self) -> _builtins.str:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -20665,11 +20933,13 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
         :param _builtins.str body: The body of the stock response from the mock backend.
         :param _builtins.float connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param _builtins.str function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeaderArgs'] headers: The List of Headers
         :param _builtins.bool is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param _builtins.float read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
         :param _builtins.float send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param _builtins.int status: The status code of the stock response from the mock backend.
         :param _builtins.str type: Type of the Response Cache Store Policy.
+        :param _builtins.str url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "body", body)
         pulumi.set(__self__, "connect_timeout_in_seconds", connect_timeout_in_seconds)
@@ -20709,6 +20979,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendBackendHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -20754,6 +21027,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteBackendRoutingBackendB
     @_builtins.property
     @pulumi.getter
     def url(self) -> _builtins.str:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
 
@@ -21417,6 +21693,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderVal
                  headers: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderResult'],
                  validation_mode: _builtins.str):
         """
+        :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderArgs'] headers: The List of Headers
         :param _builtins.str validation_mode: Validation behavior mode.
         """
         pulumi.set(__self__, "headers", headers)
@@ -21425,6 +21702,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderVal
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyHeaderValidationHeaderResult']:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @_builtins.property
@@ -21663,6 +21943,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
                  parameters: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameterResult'],
                  validation_mode: _builtins.str):
         """
+        :param Sequence['GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameterArgs'] parameters: The List of Query Parameters
         :param _builtins.str validation_mode: Validation behavior mode.
         """
         pulumi.set(__self__, "parameters", parameters)
@@ -21671,6 +21952,9 @@ class GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryPara
     @_builtins.property
     @pulumi.getter
     def parameters(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRouteRequestPolicyQueryParameterValidationParameterResult']:
+        """
+        The List of Query Parameters
+        """
         return pulumi.get(self, "parameters")
 
     @_builtins.property
@@ -22115,6 +22399,8 @@ class GetGatewayLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str type: Type of the Response Cache.
         """
@@ -22126,11 +22412,17 @@ class GetGatewayLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -22347,10 +22639,12 @@ class GetGatewaysGatewayCollectionResult(dict):
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param Sequence['GetGatewaysGatewayCollectionIpAddressArgs'] ip_addresses: An array of IP addresses associated with the gateway.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetGatewaysGatewayCollectionLockArgs'] locks: Locks associated with this resource.
         :param Sequence[_builtins.str] network_security_group_ids: An array of Network Security Groups OCIDs associated with this API Gateway.
         :param Sequence['GetGatewaysGatewayCollectionResponseCacheDetailArgs'] response_cache_details: Base Gateway response cache.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state.  Example: `SUCCEEDED`
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in which related resources are created.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -22471,6 +22765,9 @@ class GetGatewaysGatewayCollectionResult(dict):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetGatewaysGatewayCollectionLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -22508,6 +22805,9 @@ class GetGatewaysGatewayCollectionResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -22593,6 +22893,8 @@ class GetGatewaysGatewayCollectionLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str type: Type of the Response Cache.
         """
@@ -22604,11 +22906,17 @@ class GetGatewaysGatewayCollectionLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -22800,7 +23108,10 @@ class GetSubscriberLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -22810,11 +23121,17 @@ class GetSubscriberLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -22828,6 +23145,9 @@ class GetSubscriberLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -22901,7 +23221,9 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetSubscribersSubscriberCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         :param Sequence[_builtins.str] usage_plans: An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
@@ -22985,6 +23307,9 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetSubscribersSubscriberCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -22998,6 +23323,9 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -23062,7 +23390,10 @@ class GetSubscribersSubscriberCollectionItemLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -23072,11 +23403,17 @@ class GetSubscribersSubscriberCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -23090,6 +23427,9 @@ class GetSubscribersSubscriberCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -23261,7 +23601,10 @@ class GetUsagePlanLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -23271,11 +23614,17 @@ class GetUsagePlanLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -23289,6 +23638,9 @@ class GetUsagePlanLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 
@@ -23361,7 +23713,9 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetUsagePlansUsagePlanCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
         :param _builtins.str time_updated: The time this resource was last updated. An RFC3339 formatted datetime string.
         """
@@ -23443,6 +23797,9 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetUsagePlansUsagePlanCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -23456,6 +23813,9 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
@@ -23643,7 +24003,10 @@ class GetUsagePlansUsagePlanCollectionItemLockResult(dict):
                  time_created: _builtins.str,
                  type: _builtins.str):
         """
+        :param _builtins.str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param _builtins.str time_created: The time this resource was created. An RFC3339 formatted datetime string.
+        :param _builtins.str type: Type of the lock.
         """
         pulumi.set(__self__, "message", message)
         pulumi.set(__self__, "related_resource_id", related_resource_id)
@@ -23653,11 +24016,17 @@ class GetUsagePlansUsagePlanCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def message(self) -> _builtins.str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> _builtins.str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @_builtins.property
@@ -23671,6 +24040,9 @@ class GetUsagePlansUsagePlanCollectionItemLockResult(dict):
     @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
 

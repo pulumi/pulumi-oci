@@ -103,9 +103,17 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.isLockOverride);
     }
 
+    /**
+     * Locks associated with this resource.
+     * 
+     */
     @Import(name="locks")
     private @Nullable Output<List<SubscriberLockArgs>> locks;
 
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
     public Optional<Output<List<SubscriberLockArgs>>> locks() {
         return Optional.ofNullable(this.locks);
     }
@@ -286,15 +294,33 @@ public final class SubscriberArgs extends com.pulumi.resources.ResourceArgs {
             return isLockOverride(Output.of(isLockOverride));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(@Nullable Output<List<SubscriberLockArgs>> locks) {
             $.locks = locks;
             return this;
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(List<SubscriberLockArgs> locks) {
             return locks(Output.of(locks));
         }
 
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
         public Builder locks(SubscriberLockArgs... locks) {
             return locks(List.of(locks));
         }

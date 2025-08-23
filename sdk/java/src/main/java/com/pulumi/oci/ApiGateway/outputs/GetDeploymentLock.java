@@ -10,7 +10,15 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentLock {
+    /**
+     * @return A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+     * 
+     */
     private String message;
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
     private String relatedResourceId;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
@@ -24,9 +32,17 @@ public final class GetDeploymentLock {
     private String type;
 
     private GetDeploymentLock() {}
+    /**
+     * @return A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+     * 
+     */
     public String message() {
         return this.message;
     }
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
     public String relatedResourceId() {
         return this.relatedResourceId;
     }

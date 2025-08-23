@@ -157,6 +157,9 @@ class GetDeploymentResult:
     @_builtins.property
     @pulumi.getter
     def locks(self) -> Sequence['outputs.GetDeploymentLockResult']:
+        """
+        Locks associated with this resource.
+        """
         return pulumi.get(self, "locks")
 
     @_builtins.property
@@ -186,6 +189,9 @@ class GetDeploymentResult:
     @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
         return pulumi.get(self, "system_tags")
 
     @_builtins.property

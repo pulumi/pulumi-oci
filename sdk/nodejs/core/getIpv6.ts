@@ -45,6 +45,10 @@ export interface GetIpv6Args {
  */
 export interface GetIpv6Result {
     /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     */
+    readonly cidrPrefixLength: number;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
      */
     readonly compartmentId: string;

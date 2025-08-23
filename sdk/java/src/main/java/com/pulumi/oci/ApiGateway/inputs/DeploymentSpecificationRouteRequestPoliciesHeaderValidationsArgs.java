@@ -18,14 +18,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsA
     public static final DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs Empty = new DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs();
 
     /**
-     * (Updatable)
+     * (Updatable) The List of Headers
      * 
      */
     @Import(name="headers")
     private @Nullable Output<List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs>> headers;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) The List of Headers
      * 
      */
     public Optional<Output<List<DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs>>> headers() {
@@ -85,7 +85,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsA
         }
 
         /**
-         * @param headers (Updatable)
+         * @param headers (Updatable) The List of Headers
          * 
          * @return builder
          * 
@@ -96,7 +96,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsA
         }
 
         /**
-         * @param headers (Updatable)
+         * @param headers (Updatable) The List of Headers
          * 
          * @return builder
          * 
@@ -106,7 +106,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsA
         }
 
         /**
-         * @param headers (Updatable)
+         * @param headers (Updatable) The List of Headers
          * 
          * @return builder
          * 

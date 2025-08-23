@@ -29,6 +29,10 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     intermediateCertificates: certificateIntermediateCertificates,
+ *     locks: [{
+ *         type: certificateLocksType,
+ *         message: certificateLocksMessage,
+ *     }],
  * });
  * ```
  *
@@ -97,6 +101,9 @@ export class Certificate extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
     public readonly locks!: pulumi.Output<outputs.ApiGateway.CertificateLock[]>;
     /**
      * The private key associated with the certificate in pem format.
@@ -114,6 +121,9 @@ export class Certificate extends pulumi.CustomResource {
      * The entity to be secured by the certificate and additional host names.
      */
     public /*out*/ readonly subjectNames!: pulumi.Output<string[]>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
@@ -225,6 +235,9 @@ export interface CertificateState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.CertificateLock>[]>;
     /**
      * The private key associated with the certificate in pem format.
@@ -242,6 +255,9 @@ export interface CertificateState {
      * The entity to be secured by the certificate and additional host names.
      */
     subjectNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
@@ -286,6 +302,9 @@ export interface CertificateArgs {
      */
     intermediateCertificates?: pulumi.Input<string>;
     isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
     locks?: pulumi.Input<pulumi.Input<inputs.ApiGateway.CertificateLock>[]>;
     /**
      * The private key associated with the certificate in pem format.

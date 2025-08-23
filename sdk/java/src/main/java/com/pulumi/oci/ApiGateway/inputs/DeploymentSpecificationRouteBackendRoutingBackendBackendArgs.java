@@ -66,9 +66,17 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         return Optional.ofNullable(this.functionId);
     }
 
+    /**
+     * The List of Headers
+     * 
+     */
     @Import(name="headers")
     private @Nullable Output<List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs>> headers;
 
+    /**
+     * @return The List of Headers
+     * 
+     */
     public Optional<Output<List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs>>> headers() {
         return Optional.ofNullable(this.headers);
     }
@@ -148,9 +156,17 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
         return this.type;
     }
 
+    /**
+     * The url of the HTTP Backend
+     * 
+     */
     @Import(name="url")
     private @Nullable Output<String> url;
 
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
     }
@@ -251,15 +267,33 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
             return functionId(Output.of(functionId));
         }
 
+        /**
+         * @param headers The List of Headers
+         * 
+         * @return builder
+         * 
+         */
         public Builder headers(@Nullable Output<List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs>> headers) {
             $.headers = headers;
             return this;
         }
 
+        /**
+         * @param headers The List of Headers
+         * 
+         * @return builder
+         * 
+         */
         public Builder headers(List<DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs> headers) {
             return headers(Output.of(headers));
         }
 
+        /**
+         * @param headers The List of Headers
+         * 
+         * @return builder
+         * 
+         */
         public Builder headers(DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs... headers) {
             return headers(List.of(headers));
         }
@@ -369,11 +403,23 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs 
             return type(Output.of(type));
         }
 
+        /**
+         * @param url The url of the HTTP Backend
+         * 
+         * @return builder
+         * 
+         */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
             return this;
         }
 
+        /**
+         * @param url The url of the HTTP Backend
+         * 
+         * @return builder
+         * 
+         */
         public Builder url(String url) {
             return url(Output.of(url));
         }

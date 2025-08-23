@@ -75,14 +75,16 @@ type LookupCertificateResult struct {
 	IntermediateCertificates string `pulumi:"intermediateCertificates"`
 	IsLockOverride           bool   `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails string               `pulumi:"lifecycleDetails"`
-	Locks            []GetCertificateLock `pulumi:"locks"`
-	PrivateKey       string               `pulumi:"privateKey"`
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks      []GetCertificateLock `pulumi:"locks"`
+	PrivateKey string               `pulumi:"privateKey"`
 	// The current state of the certificate.
 	State string `pulumi:"state"`
 	// The entity to be secured by the certificate and additional host names.
-	SubjectNames []string          `pulumi:"subjectNames"`
-	SystemTags   map[string]string `pulumi:"systemTags"`
+	SubjectNames []string `pulumi:"subjectNames"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the certificate will expire.
@@ -173,6 +175,7 @@ func (o LookupCertificateResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCertificateResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o LookupCertificateResultOutput) Locks() GetCertificateLockArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []GetCertificateLock { return v.Locks }).(GetCertificateLockArrayOutput)
 }
@@ -191,6 +194,7 @@ func (o LookupCertificateResultOutput) SubjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupCertificateResult) []string { return v.SubjectNames }).(pulumi.StringArrayOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupCertificateResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupCertificateResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }

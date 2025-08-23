@@ -12,19 +12,39 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class SubscriberLock {
+    /**
+     * @return A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+     * 
+     */
     private @Nullable String message;
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
     private @Nullable String relatedResourceId;
     /**
      * @return The time this resource was created. An RFC3339 formatted datetime string.
      * 
      */
     private @Nullable String timeCreated;
+    /**
+     * @return Type of the lock.
+     * 
+     */
     private String type;
 
     private SubscriberLock() {}
+    /**
+     * @return A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+     * 
+     */
     public Optional<String> message() {
         return Optional.ofNullable(this.message);
     }
+    /**
+     * @return The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     * 
+     */
     public Optional<String> relatedResourceId() {
         return Optional.ofNullable(this.relatedResourceId);
     }
@@ -35,6 +55,10 @@ public final class SubscriberLock {
     public Optional<String> timeCreated() {
         return Optional.ofNullable(this.timeCreated);
     }
+    /**
+     * @return Type of the lock.
+     * 
+     */
     public String type() {
         return this.type;
     }

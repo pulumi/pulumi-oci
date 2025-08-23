@@ -17,6 +17,10 @@ import java.util.Objects;
 
 @CustomType
 public final class GetApiDeploymentSpecificationRouteBackend {
+    /**
+     * @return A list of allowed post-logout URLs to which a request can be redirected after revoke access
+     * 
+     */
     private List<String> allowedPostLogoutUris;
     /**
      * @return The body of the stock response from the mock backend.
@@ -33,6 +37,10 @@ public final class GetApiDeploymentSpecificationRouteBackend {
      * 
      */
     private String functionId;
+    /**
+     * @return The List of Headers
+     * 
+     */
     private List<GetApiDeploymentSpecificationRouteBackendHeader> headers;
     /**
      * @return Defines whether or not to uphold SSL verification.
@@ -74,9 +82,17 @@ public final class GetApiDeploymentSpecificationRouteBackend {
      * 
      */
     private String type;
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     private String url;
 
     private GetApiDeploymentSpecificationRouteBackend() {}
+    /**
+     * @return A list of allowed post-logout URLs to which a request can be redirected after revoke access
+     * 
+     */
     public List<String> allowedPostLogoutUris() {
         return this.allowedPostLogoutUris;
     }
@@ -101,6 +117,10 @@ public final class GetApiDeploymentSpecificationRouteBackend {
     public String functionId() {
         return this.functionId;
     }
+    /**
+     * @return The List of Headers
+     * 
+     */
     public List<GetApiDeploymentSpecificationRouteBackendHeader> headers() {
         return this.headers;
     }
@@ -160,6 +180,10 @@ public final class GetApiDeploymentSpecificationRouteBackend {
     public String type() {
         return this.type;
     }
+    /**
+     * @return The url of the HTTP Backend
+     * 
+     */
     public String url() {
         return this.url;
     }

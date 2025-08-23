@@ -16,6 +16,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testIpv6 = new oci.core.Ipv6("test_ipv6", {
+ *     cidrPrefixLength: ipv6CidrPrefixLength,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -68,6 +69,10 @@ export class Ipv6 extends pulumi.CustomResource {
         return obj['__pulumiType'] === Ipv6.__pulumiType;
     }
 
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     */
+    public readonly cidrPrefixLength!: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
      */
@@ -140,6 +145,7 @@ export class Ipv6 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as Ipv6State | undefined;
+            resourceInputs["cidrPrefixLength"] = state ? state.cidrPrefixLength : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -155,6 +161,7 @@ export class Ipv6 extends pulumi.CustomResource {
             resourceInputs["vnicId"] = state ? state.vnicId : undefined;
         } else {
             const args = argsOrState as Ipv6Args | undefined;
+            resourceInputs["cidrPrefixLength"] = args ? args.cidrPrefixLength : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
@@ -178,6 +185,10 @@ export class Ipv6 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Ipv6 resources.
  */
 export interface Ipv6State {
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     */
+    cidrPrefixLength?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
      */
@@ -242,6 +253,10 @@ export interface Ipv6State {
  * The set of arguments for constructing a Ipv6 resource.
  */
 export interface Ipv6Args {
+    /**
+     * Length of cidr range. Optional field to specify flexible cidr.
+     */
+    cidrPrefixLength?: pulumi.Input<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */

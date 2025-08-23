@@ -77,6 +77,9 @@ export interface GetCertificateResult {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
     readonly locks: outputs.ApiGateway.GetCertificateLock[];
     readonly privateKey: string;
     /**
@@ -87,6 +90,9 @@ export interface GetCertificateResult {
      * The entity to be secured by the certificate and additional host names.
      */
     readonly subjectNames: string[];
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
     readonly systemTags: {[key: string]: string};
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.

@@ -26,7 +26,10 @@ class GetIpv6Result:
     """
     A collection of values returned by getIpv6.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_address=None, ip_state=None, ipv6id=None, ipv6subnet_cidr=None, lifetime=None, route_table_id=None, state=None, subnet_id=None, time_created=None, vnic_id=None):
+    def __init__(__self__, cidr_prefix_length=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, ip_address=None, ip_state=None, ipv6id=None, ipv6subnet_cidr=None, lifetime=None, route_table_id=None, state=None, subnet_id=None, time_created=None, vnic_id=None):
+        if cidr_prefix_length and not isinstance(cidr_prefix_length, int):
+            raise TypeError("Expected argument 'cidr_prefix_length' to be a int")
+        pulumi.set(__self__, "cidr_prefix_length", cidr_prefix_length)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -72,6 +75,14 @@ class GetIpv6Result:
         if vnic_id and not isinstance(vnic_id, str):
             raise TypeError("Expected argument 'vnic_id' to be a str")
         pulumi.set(__self__, "vnic_id", vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cidrPrefixLength")
+    def cidr_prefix_length(self) -> _builtins.int:
+        """
+        Length of cidr range. Optional field to specify flexible cidr.
+        """
+        return pulumi.get(self, "cidr_prefix_length")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -196,6 +207,7 @@ class AwaitableGetIpv6Result(GetIpv6Result):
         if False:
             yield self
         return GetIpv6Result(
+            cidr_prefix_length=self.cidr_prefix_length,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -241,6 +253,7 @@ def get_ipv6(ipv6id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Core/getIpv6:getIpv6', __args__, opts=opts, typ=GetIpv6Result).value
 
     return AwaitableGetIpv6Result(
+        cidr_prefix_length=pulumi.get(__ret__, 'cidr_prefix_length'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -283,6 +296,7 @@ def get_ipv6_output(ipv6id: Optional[pulumi.Input[_builtins.str]] = None,
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getIpv6:getIpv6', __args__, opts=opts, typ=GetIpv6Result)
     return __ret__.apply(lambda __response__: GetIpv6Result(
+        cidr_prefix_length=pulumi.get(__response__, 'cidr_prefix_length'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),

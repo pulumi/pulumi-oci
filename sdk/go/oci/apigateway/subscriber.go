@@ -46,6 +46,12 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				Locks: apigateway.SubscriberLockArray{
+//					&apigateway.SubscriberLockArgs{
+//						Type:    pulumi.Any(subscriberLocksType),
+//						Message: pulumi.Any(subscriberLocksMessage),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -78,10 +84,12 @@ type Subscriber struct {
 	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
 	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails pulumi.StringOutput       `pulumi:"lifecycleDetails"`
-	Locks            SubscriberLockArrayOutput `pulumi:"locks"`
+	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks SubscriberLockArrayOutput `pulumi:"locks"`
 	// The current state of the subscriber.
-	State      pulumi.StringOutput    `pulumi:"state"`
+	State pulumi.StringOutput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -145,10 +153,12 @@ type subscriberState struct {
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-	LifecycleDetails *string          `pulumi:"lifecycleDetails"`
-	Locks            []SubscriberLock `pulumi:"locks"`
+	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []SubscriberLock `pulumi:"locks"`
 	// The current state of the subscriber.
-	State      *string           `pulumi:"state"`
+	State *string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -175,9 +185,11 @@ type SubscriberState struct {
 	IsLockOverride pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	Locks            SubscriberLockArrayInput
+	// Locks associated with this resource.
+	Locks SubscriberLockArrayInput
 	// The current state of the subscriber.
-	State      pulumi.StringPtrInput
+	State pulumi.StringPtrInput
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
 	// The time this resource was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -206,7 +218,8 @@ type subscriberArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags   map[string]string `pulumi:"freeformTags"`
 	IsLockOverride *bool             `pulumi:"isLockOverride"`
-	Locks          []SubscriberLock  `pulumi:"locks"`
+	// Locks associated with this resource.
+	Locks []SubscriberLock `pulumi:"locks"`
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
 	//
 	// ** IMPORTANT **
@@ -227,7 +240,8 @@ type SubscriberArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
-	Locks          SubscriberLockArrayInput
+	// Locks associated with this resource.
+	Locks SubscriberLockArrayInput
 	// (Updatable) An array of [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of usage plan resources.
 	//
 	// ** IMPORTANT **
@@ -356,6 +370,7 @@ func (o SubscriberOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
 func (o SubscriberOutput) Locks() SubscriberLockArrayOutput {
 	return o.ApplyT(func(v *Subscriber) SubscriberLockArrayOutput { return v.Locks }).(SubscriberLockArrayOutput)
 }
@@ -365,6 +380,7 @@ func (o SubscriberOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o SubscriberOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Subscriber) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }

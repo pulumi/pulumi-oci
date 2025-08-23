@@ -260,8 +260,21 @@ MYPY = False
 if not MYPY:
     class ApiLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
         The time this resource was created. An RFC3339 formatted datetime string.
@@ -277,6 +290,13 @@ class ApiLockArgs:
                  related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -290,6 +310,13 @@ class ApiLockArgs:
     @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -299,6 +326,9 @@ class ApiLockArgs:
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -308,6 +338,9 @@ class ApiLockArgs:
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
@@ -382,8 +415,17 @@ class ApiValidationResultArgs:
 if not MYPY:
     class CertificateLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
+        """
+        Type of the lock.
+        """
         message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
         The time this resource was created. An RFC3339 formatted datetime string.
@@ -399,6 +441,9 @@ class CertificateLockArgs:
                  related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -412,6 +457,9 @@ class CertificateLockArgs:
     @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -421,6 +469,9 @@ class CertificateLockArgs:
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -430,6 +481,9 @@ class CertificateLockArgs:
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
@@ -453,10 +507,16 @@ if not MYPY:
     class DeploymentLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
-        Type of the Response Cache Store Policy.
+        Type of the lock.
         """
         message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
         The time this resource was created. An RFC3339 formatted datetime string.
@@ -472,7 +532,9 @@ class DeploymentLockArgs:
                  related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] type: Type of the Response Cache Store Policy.
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -487,7 +549,7 @@ class DeploymentLockArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of the Response Cache Store Policy.
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -498,6 +560,9 @@ class DeploymentLockArgs:
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -507,6 +572,9 @@ class DeploymentLockArgs:
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
@@ -5784,7 +5852,7 @@ if not MYPY:
         """
         allowed_post_logout_uris: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
         """
-        (Updatable)
+        (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         """
         body: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5832,7 +5900,7 @@ if not MYPY:
         """
         url: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable)
+        (Updatable) The url of the HTTP Backend
         """
 elif False:
     DeploymentSpecificationRouteBackendArgsDict: TypeAlias = Mapping[str, Any]
@@ -5856,7 +5924,7 @@ class DeploymentSpecificationRouteBackendArgs:
                  url: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of the API backend.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_post_logout_uris: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allowed_post_logout_uris: (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         :param pulumi.Input[_builtins.str] body: (Updatable) The body of the stock response from the mock backend.
         :param pulumi.Input[_builtins.float] connect_timeout_in_seconds: (Updatable) Defines a timeout for establishing a connection with a proxied server.
         :param pulumi.Input[_builtins.str] function_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -5868,7 +5936,7 @@ class DeploymentSpecificationRouteBackendArgs:
         :param pulumi.Input['DeploymentSpecificationRouteBackendSelectionSourceArgs'] selection_source: (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
         :param pulumi.Input[_builtins.float] send_timeout_in_seconds: (Updatable) Defines a timeout for transmitting a request to the proxied server.
         :param pulumi.Input[_builtins.int] status: (Updatable) The status code of the stock response from the mock backend.
-        :param pulumi.Input[_builtins.str] url: (Updatable)
+        :param pulumi.Input[_builtins.str] url: (Updatable) The url of the HTTP Backend
         """
         pulumi.set(__self__, "type", type)
         if allowed_post_logout_uris is not None:
@@ -5914,7 +5982,7 @@ class DeploymentSpecificationRouteBackendArgs:
     @pulumi.getter(name="allowedPostLogoutUris")
     def allowed_post_logout_uris(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable)
+        (Updatable) A list of allowed post-logout URLs to which a request can be redirected after revoke access
         """
         return pulumi.get(self, "allowed_post_logout_uris")
 
@@ -6058,7 +6126,7 @@ class DeploymentSpecificationRouteBackendArgs:
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable)
+        (Updatable) The url of the HTTP Backend
         """
         return pulumi.get(self, "url")
 
@@ -6190,6 +6258,9 @@ if not MYPY:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         """
         headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgsDict']]]]
+        """
+        The List of Headers
+        """
         is_ssl_verify_disabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
         Defines whether or not to uphold SSL verification.
@@ -6207,6 +6278,9 @@ if not MYPY:
         The status code of the stock response from the mock backend.
         """
         url: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The url of the HTTP Backend
+        """
 elif False:
     DeploymentSpecificationRouteBackendRoutingBackendBackendArgsDict: TypeAlias = Mapping[str, Any]
 
@@ -6228,10 +6302,12 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
         :param pulumi.Input[_builtins.str] body: The body of the stock response from the mock backend.
         :param pulumi.Input[_builtins.float] connect_timeout_in_seconds: Defines a timeout for establishing a connection with a proxied server.
         :param pulumi.Input[_builtins.str] function_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]] headers: The List of Headers
         :param pulumi.Input[_builtins.bool] is_ssl_verify_disabled: Defines whether or not to uphold SSL verification.
         :param pulumi.Input[_builtins.float] read_timeout_in_seconds: Defines a timeout for reading a response from the proxied server.
         :param pulumi.Input[_builtins.float] send_timeout_in_seconds: Defines a timeout for transmitting a request to the proxied server.
         :param pulumi.Input[_builtins.int] status: The status code of the stock response from the mock backend.
+        :param pulumi.Input[_builtins.str] url: The url of the HTTP Backend
         """
         pulumi.set(__self__, "type", type)
         if body is not None:
@@ -6304,6 +6380,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @_builtins.property
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs']]]]:
+        """
+        The List of Headers
+        """
         return pulumi.get(self, "headers")
 
     @headers.setter
@@ -6361,6 +6440,9 @@ class DeploymentSpecificationRouteBackendRoutingBackendBackendArgs:
     @_builtins.property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The url of the HTTP Backend
+        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -7592,7 +7674,7 @@ if not MYPY:
     class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgsDict(TypedDict):
         headers: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgsDict']]]]
         """
-        (Updatable)
+        (Updatable) The List of Headers
         """
         validation_mode: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -7613,7 +7695,7 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
                  headers: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]]] = None,
                  validation_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]] headers: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]] headers: (Updatable) The List of Headers
         :param pulumi.Input[_builtins.str] validation_mode: (Updatable) Validation behavior mode.
                
                In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
@@ -7631,7 +7713,7 @@ class DeploymentSpecificationRouteRequestPoliciesHeaderValidationsArgs:
     @pulumi.getter
     def headers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesHeaderValidationsHeaderArgs']]]]:
         """
-        (Updatable)
+        (Updatable) The List of Headers
         """
         return pulumi.get(self, "headers")
 
@@ -8048,7 +8130,7 @@ if not MYPY:
     class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgsDict(TypedDict):
         parameters: NotRequired[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgsDict']]]]
         """
-        (Updatable)
+        (Updatable) The List of Query Parameters
         """
         validation_mode: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -8069,7 +8151,7 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
                  parameters: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]]] = None,
                  validation_mode: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]] parameters: (Updatable)
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]] parameters: (Updatable) The List of Query Parameters
         :param pulumi.Input[_builtins.str] validation_mode: (Updatable) Validation behavior mode.
                
                In `ENFORCING` mode, upon a validation failure, the request will be rejected with a 4xx response and not sent to the backend.
@@ -8087,7 +8169,7 @@ class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsArgs:
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameterArgs']]]]:
         """
-        (Updatable)
+        (Updatable) The List of Query Parameters
         """
         return pulumi.get(self, "parameters")
 
@@ -8824,10 +8906,16 @@ if not MYPY:
     class GatewayLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
         """
-        Type of the Response Cache.
+        Type of the lock.
         """
         message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
         The time this resource was created. An RFC3339 formatted datetime string.
@@ -8843,7 +8931,9 @@ class GatewayLockArgs:
                  related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] type: Type of the Response Cache.
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -8858,7 +8948,7 @@ class GatewayLockArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        Type of the Response Cache.
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -8869,6 +8959,9 @@ class GatewayLockArgs:
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -8878,6 +8971,9 @@ class GatewayLockArgs:
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
@@ -9193,8 +9289,17 @@ class SubscriberClientArgs:
 if not MYPY:
     class SubscriberLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
+        """
+        Type of the lock.
+        """
         message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
         The time this resource was created. An RFC3339 formatted datetime string.
@@ -9210,6 +9315,9 @@ class SubscriberLockArgs:
                  related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -9223,6 +9331,9 @@ class SubscriberLockArgs:
     @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -9232,6 +9343,9 @@ class SubscriberLockArgs:
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -9241,6 +9355,9 @@ class SubscriberLockArgs:
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter
@@ -9543,8 +9660,21 @@ class UsagePlanEntitlementTargetArgs:
 if not MYPY:
     class UsagePlanLockArgsDict(TypedDict):
         type: pulumi.Input[_builtins.str]
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         related_resource_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
         The time this resource was created. An RFC3339 formatted datetime string.
@@ -9560,6 +9690,13 @@ class UsagePlanLockArgs:
                  related_resource_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
         """
+        :param pulumi.Input[_builtins.str] type: Type of the lock.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[_builtins.str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[_builtins.str] time_created: The time this resource was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "type", type)
@@ -9573,6 +9710,13 @@ class UsagePlanLockArgs:
     @_builtins.property
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the lock.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -9582,6 +9726,9 @@ class UsagePlanLockArgs:
     @_builtins.property
     @pulumi.getter
     def message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
         return pulumi.get(self, "message")
 
     @message.setter
@@ -9591,6 +9738,9 @@ class UsagePlanLockArgs:
     @_builtins.property
     @pulumi.getter(name="relatedResourceId")
     def related_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
         return pulumi.get(self, "related_resource_id")
 
     @related_resource_id.setter

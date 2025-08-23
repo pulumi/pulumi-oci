@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations {
     /**
-     * @return (Updatable)
+     * @return (Updatable) The List of Query Parameters
      * 
      */
     private @Nullable List<DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter> parameters;
@@ -32,7 +32,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterVali
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterValidations() {}
     /**
-     * @return (Updatable)
+     * @return (Updatable) The List of Query Parameters
      * 
      */
     public List<DeploymentSpecificationRouteRequestPoliciesQueryParameterValidationsParameter> parameters() {
